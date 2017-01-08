@@ -26,11 +26,14 @@ namespace ClipAngel
         IntPtr _ClipboardViewerNext;
         bool CaptureClipboard = true;
         bool AllowFormClose = false;
+        static string LinkPattern = "\\b(https?|ftp|file)://[-A-Z0-9+&@#/%?=~_|!:,.;]*[A-Z0-9+&@#/%=~_|]";
         int LastId = 0;
         string LastText;
         public string DBFileName;
         public int ClipsNumber = 0;
         public bool StartMinimized = false;
+        MatchCollection TextLinkMatches;
+        MatchCollection UrlLinkMatches;
         KeyboardHook hook = new KeyboardHook();
 
         #region Clipboard Formats
@@ -252,21 +255,24 @@ namespace ClipAngel
                 statusStrip.Items.Find("Chars", false)[0].Text = CurrentRow["Chars"].ToString() + "ch";
                 statusStrip.Items.Find("Type", false)[0].Text = CurrentRow["Type"].ToString();
                 statusStrip.Items.Find("Position", false)[0].Text = "1";
+
                 richTextBox.Clear();
                 richTextBox.Text = CurrentRow["Text"].ToString();
                 if (Filter.Text != "")
                 {
-                    MatchCollection Matches = Regex.Matches(richTextBox.Text, Filter.Text, RegexOptions.IgnoreCase);
-                    foreach (Match Match in Matches)
-                    {
-                        richTextBox.SelectionStart = Match.Index;
-                        richTextBox.SelectionLength = Match.Length;
-                        richTextBox.SelectionColor = Color.Red;
-                    }
+                    MatchCollection Junk;
+                    MarkRegExpMatchesInRichTextBox(richTextBox, Filter.Text, Color.Red, false, out Junk);
                 }
-                richTextBox.DeselectAll();
-                richTextBox.SelectionColor = new Color();
+                MarkLinksInRichTextBox(richTextBox, out TextLinkMatches);
+                richTextBox.SelectionStart = richTextBox.TextLength;
+                richTextBox.SelectionColor = Color.Green;
                 richTextBox.AppendText("<END>");
+                richTextBox.SelectionColor = new Color();
+
+                textBoxUrl.Clear();
+                textBoxUrl.Text = CurrentRow["Url"].ToString();
+                MarkLinksInRichTextBox(textBoxUrl, out UrlLinkMatches);
+
                 if (Type.Text == "img")
                 {
                     Image image = GetImageFromBinary(CurrentRow["Binary"] as byte[]);
@@ -286,6 +292,28 @@ namespace ClipAngel
             }
         }
 
+        private void MarkLinksInRichTextBox(RichTextBox Control, out MatchCollection Matches)
+        {
+             MarkRegExpMatchesInRichTextBox(Control, LinkPattern, Color.Blue, true, out Matches);
+        }
+
+        private void MarkRegExpMatchesInRichTextBox(RichTextBox Control, string Pattern, Color Color, bool Underline, out MatchCollection Matches)
+        {
+            Matches = Regex.Matches(Control.Text, Pattern, RegexOptions.IgnoreCase);
+            Control.DeselectAll();
+            foreach (Match Match in Matches)
+            {
+                Control.SelectionStart = Match.Index;
+                Control.SelectionLength = Match.Length;
+                Control.SelectionColor = Color;
+                if (Underline)
+                    Control.SelectionFont = new Font(Control.SelectionFont, FontStyle.Underline);
+            }
+            Control.DeselectAll();
+            Control.SelectionColor = new Color();
+            Control.SelectionFont = new Font(Control.SelectionFont, FontStyle.Regular);
+        }
+
         private void RichText_Click(object sender, EventArgs e)
         {
             string NewText;
@@ -299,6 +327,7 @@ namespace ClipAngel
 
             //NewText = "" + Text.Cursor;
             //statusStrip.Items.Find("PositionXY", false)[0].Text = NewText;
+            OpenLinkIfCtrlPressed(sender as RichTextBox, e, TextLinkMatches);
         }
 
         private void Filter_TextChanged(object sender, EventArgs e)
@@ -308,6 +337,8 @@ namespace ClipAngel
 
         private void UpdateClipBindingSource()
         {
+            if (dataAdapter == null)
+                return;
             int CurrentClipID = 0;
             if (clipBindingSource.Current != null)
             {
@@ -449,23 +480,26 @@ namespace ClipAngel
             if (iData.GetDataPresent(DataFormats.Html))
             {
                 HtmlText = (string)iData.GetData(DataFormats.Html);
-                Text = (string)iData.GetData(DataFormats.Text);
                 if (iData.GetDataPresent(DataFormats.Text))
                 {
                     Type = "html";
+                    Match Match = Regex.Match(HtmlText, "SourceURL:(" + LinkPattern + ")", RegexOptions.IgnoreCase);
+                    if (Match.Captures.Count > 0)
+                        Url = Match.Groups[1].ToString();
                 }
             }
 
-            StringCollection UrlFormatNames = new StringCollection();
-            UrlFormatNames.Add("text/x-moz-url-priv");
-            foreach(string UrlFormatName in UrlFormatNames)
-                if (iData.GetDataPresent(UrlFormatName))
-                {
-                    var ms = (MemoryStream)iData.GetData(UrlFormatName);
-                    var sr = new StreamReader(ms, Encoding.Unicode, true);
-                    Url = sr.ReadToEnd();
-                    break;
-                }
+            //StringCollection UrlFormatNames = new StringCollection();
+            //UrlFormatNames.Add("text/x-moz-url-priv");
+            //UrlFormatNames.Add("msSourceUrl");
+            //foreach (string UrlFormatName in UrlFormatNames)
+            //    if (iData.GetDataPresent(UrlFormatName))
+            //    {
+            //        var ms = (MemoryStream)iData.GetData(UrlFormatName);
+            //        var sr = new StreamReader(ms, Encoding.Unicode, true);
+            //        Url = sr.ReadToEnd();
+            //        break;
+            //    }
 
             if (iData.GetDataPresent(DataFormats.FileDrop))
             {
@@ -640,7 +674,9 @@ namespace ClipAngel
 
             static class KeyboardLayoutFlags
             {
+                //https://msdn.microsoft.com/ru-ru/library/windows/desktop/ms646305(v=vs.85).aspx
                 public const uint KLF_ACTIVATE = 0x00000001;
+                public const uint KLF_SUBSTITUTE_OK = 0x00000002;
                 public const uint KLF_SETFORPROCESS = 0x00000100;
             }
 
@@ -649,7 +685,7 @@ namespace ClipAngel
                 string layoutName = cultureInfo.LCID.ToString("x8");
 
                 var pwszKlid = new StringBuilder(layoutName);
-                this.hkl = LoadKeyboardLayout(pwszKlid, KeyboardLayoutFlags.KLF_ACTIVATE);
+                this.hkl = LoadKeyboardLayout(pwszKlid, KeyboardLayoutFlags.KLF_ACTIVATE| KeyboardLayoutFlags.KLF_SUBSTITUTE_OK);
             }
 
             private KeyboardLayout(uint hkl)
@@ -750,6 +786,22 @@ namespace ClipAngel
             Clipboard.Clear();
             Clipboard.SetDataObject(dto);
             CaptureClipboard = true;
+
+            CultureInfo EnglishCultureInfo = null;
+            foreach (InputLanguage lang in InputLanguage.InstalledInputLanguages)
+            {
+                if (String.Compare(lang.Culture.TwoLetterISOLanguageName, "en", true)==0)
+                {
+                    EnglishCultureInfo = lang.Culture;
+                    break;
+                }
+            }
+            if (EnglishCultureInfo == null)
+            {
+                MessageBox.Show("Unable to find English input language", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             this.Hide();
             IntPtr hForegroundWindow = GetForegroundWindow();
             EnableWindow(hForegroundWindow, true);
@@ -760,10 +812,9 @@ namespace ClipAngel
             //Thread.Sleep(50);
 
             // Option 1
-            http://stackoverflow.com/questions/37291533/change-keyboard-layout-from-c-sharp-code-with-net-4-5-2
+            // http://stackoverflow.com/questions/37291533/change-keyboard-layout-from-c-sharp-code-with-net-4-5-2
 
-            const int English = 1033;
-            using (new KeyboardLayoutScope(CultureInfo.GetCultureInfo(English)))
+            using (new KeyboardLayoutScope(EnglishCultureInfo))
             {
                 SendKeys.SendWait("^{v}"); // Работает только при включенной английской раскладке клавиатуры
             }
@@ -1083,7 +1134,9 @@ namespace ClipAngel
                 if ((bool)DataRowView.Row["Used"])
                 {
                     foreach (DataGridViewCell Cell in Row.Cells)
-                    { Cell.Style.BackColor = Color.Aqua; }
+                    {
+                        Cell.Style.BackColor = Color.FromArgb(200, 255, 255);
+                    }
                 }
             }
             dataGridView.Update();
@@ -1122,31 +1175,26 @@ namespace ClipAngel
         private void Filter_KeyPress(object sender, KeyPressEventArgs e)
         {
             // http://csharpcoding.org/tag/keypress/ Workaroud strange beeping 
-            if (e.KeyChar == (char)Keys.Enter)
+            if (e.KeyChar == (char)Keys.Enter || e.KeyChar == (char)Keys.Escape)
                 e.Handled = true;
         }
 
-        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void textBoxUrl_LinkClicked(object sender, LinkClickedEventArgs e)
-        {
-            OpenLinkIfCtrlPressed(e);
-        }
-
-        private void richTextBox_LinkClicked(object sender, LinkClickedEventArgs e)
-        {
-            OpenLinkIfCtrlPressed(e);
-        }
-
-        private static void OpenLinkIfCtrlPressed(LinkClickedEventArgs e)
+        private static void OpenLinkIfCtrlPressed(RichTextBox sender, EventArgs e, MatchCollection Matches)
         {
             Keys mod = Control.ModifierKeys & Keys.Modifiers;
             bool ctrlOnly = mod == Keys.Control;
             if (ctrlOnly)
-                Process.Start(e.LinkText);
+                foreach (Match Match in Matches)
+                {
+                    if (Match.Index <= sender.SelectionStart && (Match.Index + Match.Length) >= sender.SelectionStart)
+                        Process.Start(Match.Value);
+                }
+                    
+        }
+
+        private void textBoxUrl_Click(object sender, EventArgs e)
+        {
+            OpenLinkIfCtrlPressed(sender as RichTextBox, e, UrlLinkMatches);
         }
     }
 }

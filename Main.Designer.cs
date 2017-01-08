@@ -358,6 +358,7 @@ namespace ClipAngel
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.ReadOnly = true;
             this.dataGridView.RowHeadersVisible = false;
+            this.dataGridView.RowTemplate.Height = 19;
             this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView.Size = new System.Drawing.Size(299, 394);
             this.dataGridView.TabIndex = 0;
@@ -529,6 +530,7 @@ namespace ClipAngel
             this.tableLayoutPanelData.Controls.Add(this.ImageControl, 0, 1);
             this.tableLayoutPanelData.Controls.Add(this.textBoxUrl, 0, 2);
             this.tableLayoutPanelData.Location = new System.Drawing.Point(0, 26);
+            this.tableLayoutPanelData.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanelData.Name = "tableLayoutPanelData";
             this.tableLayoutPanelData.RowCount = 3;
             this.tableLayoutPanelData.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -539,45 +541,50 @@ namespace ClipAngel
             // 
             // richTextBox
             // 
+            this.richTextBox.DetectUrls = false;
             this.richTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.richTextBox.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.richTextBox.HideSelection = false;
-            this.richTextBox.Location = new System.Drawing.Point(3, 3);
+            this.richTextBox.Location = new System.Drawing.Point(2, 2);
+            this.richTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.richTextBox.Name = "richTextBox";
             this.richTextBox.ReadOnly = true;
-            this.richTextBox.Size = new System.Drawing.Size(385, 166);
+            this.richTextBox.Size = new System.Drawing.Size(387, 168);
             this.richTextBox.TabIndex = 7;
             this.richTextBox.Text = "";
-            this.richTextBox.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.richTextBox_LinkClicked);
             this.richTextBox.Click += new System.EventHandler(this.RichText_Click);
             // 
             // ImageControl
             // 
             this.ImageControl.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ImageControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ImageControl.Location = new System.Drawing.Point(3, 175);
+            this.ImageControl.Location = new System.Drawing.Point(2, 174);
+            this.ImageControl.Margin = new System.Windows.Forms.Padding(2);
             this.ImageControl.Name = "ImageControl";
-            this.ImageControl.Size = new System.Drawing.Size(385, 166);
+            this.ImageControl.Size = new System.Drawing.Size(387, 168);
             this.ImageControl.TabIndex = 8;
             this.ImageControl.TabStop = false;
             // 
             // textBoxUrl
             // 
-            this.textBoxUrl.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clipBindingSource, "Url", true));
+            this.textBoxUrl.DetectUrls = false;
             this.textBoxUrl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBoxUrl.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBoxUrl.HideSelection = false;
-            this.textBoxUrl.Location = new System.Drawing.Point(3, 347);
+            this.textBoxUrl.Location = new System.Drawing.Point(2, 346);
+            this.textBoxUrl.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxUrl.Multiline = false;
             this.textBoxUrl.Name = "textBoxUrl";
             this.textBoxUrl.ReadOnly = true;
-            this.textBoxUrl.Size = new System.Drawing.Size(385, 19);
+            this.textBoxUrl.Size = new System.Drawing.Size(387, 21);
             this.textBoxUrl.TabIndex = 9;
             this.textBoxUrl.Text = "";
-            this.textBoxUrl.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.textBoxUrl_LinkClicked);
+            this.textBoxUrl.Click += new System.EventHandler(this.textBoxUrl_Click);
             // 
             // labelClipSource
             // 
             this.labelClipSource.AutoSize = true;
-            this.labelClipSource.Location = new System.Drawing.Point(0, 6);
+            this.labelClipSource.Location = new System.Drawing.Point(0, 7);
             this.labelClipSource.Margin = new System.Windows.Forms.Padding(0);
             this.labelClipSource.Name = "labelClipSource";
             this.labelClipSource.Size = new System.Drawing.Size(44, 13);
@@ -657,7 +664,7 @@ namespace ClipAngel
             // 
             this.Application.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Application.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clipBindingSource, "Application", true));
-            this.Application.Location = new System.Drawing.Point(308, 2);
+            this.Application.Location = new System.Drawing.Point(308, 3);
             this.Application.Name = "Application";
             this.Application.ReadOnly = true;
             this.Application.Size = new System.Drawing.Size(83, 20);
@@ -669,7 +676,7 @@ namespace ClipAngel
             this.Window.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Window.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clipBindingSource, "Window", true));
-            this.Window.Location = new System.Drawing.Point(47, 2);
+            this.Window.Location = new System.Drawing.Point(47, 3);
             this.Window.Name = "Window";
             this.Window.ReadOnly = true;
             this.Window.Size = new System.Drawing.Size(255, 20);

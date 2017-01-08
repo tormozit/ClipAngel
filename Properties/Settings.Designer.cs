@@ -37,7 +37,7 @@ namespace ClipAngel.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0.82")]
+        [global::System.Configuration.DefaultSettingValueAttribute("0.89")]
         public string Version {
             get {
                 return ((string)(this["Version"]));

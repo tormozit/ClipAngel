@@ -75,17 +75,7 @@ namespace ClipAngel.Properties {
         /// </summary>
         public static System.Drawing.Bitmap Alien_64x64 {
             get {
-                object obj = ResourceManager.GetObject("Alien-64x64", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap alien1 {
-            get {
-                object obj = ResourceManager.GetObject("alien1", resourceCulture);
+                object obj = ResourceManager.GetObject("Alien_64x64", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

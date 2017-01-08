@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("ClipAngel")]
 [assembly: AssemblyDescription("This program captures clipboard objects. It allows you to select and paste one in any program. Freeware. tormozit@gmail.com")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Author: tormozit")]
+[assembly: AssemblyCompany("Tormozit")]
 [assembly: AssemblyProduct("ClipAngel")]
 [assembly: AssemblyCopyright("Copyright ©  2017")]
 [assembly: AssemblyTrademark("")]

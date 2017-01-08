@@ -6,7 +6,7 @@
       <Value Profile="(Default)">1000</Value>
     </Setting>
     <Setting Name="Version" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">0.82</Value>
+      <Value Profile="(Default)">0.89</Value>
     </Setting>
     <Setting Name="HotkeyShowWindow" Type="System.String" Scope="User">
       <Value Profile="(Default)">Alt +V</Value>
