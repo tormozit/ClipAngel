@@ -562,6 +562,7 @@ namespace ClipAngel
             this.ImageControl.Margin = new System.Windows.Forms.Padding(2);
             this.ImageControl.Name = "ImageControl";
             this.ImageControl.Size = new System.Drawing.Size(387, 168);
+            this.ImageControl.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ImageControl.TabIndex = 8;
             this.ImageControl.TabStop = false;
             // 
@@ -868,6 +869,7 @@ namespace ClipAngel
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Main_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Main_FormClosed);
             this.Load += new System.EventHandler(this.Main_Load);
+            this.Shown += new System.EventHandler(this.Main_Shown);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Main_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.contextMenuStripDataGrid.ResumeLayout(false);
@@ -929,7 +931,6 @@ namespace ClipAngel
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem4;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelData;
-        private System.Windows.Forms.PictureBox ImageControl;
         private System.Windows.Forms.DataGridViewImageColumn TypeImg;
         private System.Windows.Forms.DataGridViewTextBoxColumn titleDataGridViewTextBoxColumn;
         private System.Windows.Forms.ToolStripStatusLabel Position;
@@ -946,6 +947,7 @@ namespace ClipAngel
         private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem1;
         private System.Windows.Forms.RichTextBox textBoxUrl;
+        private System.Windows.Forms.PictureBox ImageControl;
     }
 }
 

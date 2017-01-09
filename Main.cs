@@ -15,6 +15,7 @@ using System.Text.RegularExpressions;
 using System.Collections.Specialized;
 using System.Globalization;
 using System.IO;
+using System.Drawing.Imaging;
 
 namespace ClipAngel
 {
@@ -256,9 +257,11 @@ namespace ClipAngel
                 statusStrip.Items.Find("Type", false)[0].Text = CurrentRow["Type"].ToString();
                 statusStrip.Items.Find("Position", false)[0].Text = "1";
 
+                // to prevent autoscrolling during marking
+                richTextBox.HideSelection = true;
                 richTextBox.Clear();
                 richTextBox.Text = CurrentRow["Text"].ToString();
-                if (Filter.Text != "")
+                if (Filter.Text.Length > 1)
                 {
                     MatchCollection Junk;
                     MarkRegExpMatchesInRichTextBox(richTextBox, Filter.Text, Color.Red, false, out Junk);
@@ -268,6 +271,8 @@ namespace ClipAngel
                 richTextBox.SelectionColor = Color.Green;
                 richTextBox.AppendText("<END>");
                 richTextBox.SelectionColor = new Color();
+                richTextBox.SelectionStart = 0;
+                richTextBox.HideSelection = false;
 
                 textBoxUrl.Clear();
                 textBoxUrl.Text = CurrentRow["Url"].ToString();
@@ -755,11 +760,11 @@ namespace ClipAngel
             object HtmlText = CurrentDataRow["HtmlText"];
             byte[] Binary = CurrentDataRow["Binary"] as byte[];
             DataObject dto = new DataObject();
-            //if (Type == "rtf" || Type == "text" || Type == "html")
-            //{
-            string Text = (string)CurrentDataRow["Text"];
-            dto.SetText(Text, TextDataFormat.UnicodeText);
-            //}
+            if (Type == "rtf" || Type == "text" || Type == "html")
+            {
+                string Text = (string)CurrentDataRow["Text"];
+                dto.SetText(Text, TextDataFormat.UnicodeText);
+            }
             if (Type == "rtf" && !(RichText is DBNull) && !OnlyText)
             {
                 dto.SetText((string)RichText, TextDataFormat.Rtf);
@@ -782,6 +787,13 @@ namespace ClipAngel
             {
                 Image image = GetImageFromBinary(Binary);
                 dto.SetImage(image);
+                //MemoryStream ms = new MemoryStream();
+                //MemoryStream ms2 = new MemoryStream();
+                //image.Save(ms, ImageFormat.Bmp);
+                //byte[] b = ms.GetBuffer();
+                //ms2.Write(b, 14, (int)ms.Length - 14);
+                //ms.Position = 0;
+                //dto.SetData("DeviceIndependentBitmap", ms2);
             };
             Clipboard.Clear();
             Clipboard.SetDataObject(dto);
@@ -1021,13 +1033,13 @@ namespace ClipAngel
         private void Filter_KeyDown(object sender, KeyEventArgs e)
         {
             PassKeyToGrid(true, e);
-            e.Handled = true;
+            //e.Handled = true;
         }
 
         private void Filter_KeyUp(object sender, KeyEventArgs e)
         {
             PassKeyToGrid(false, e);
-            e.Handled = true;
+           // e.Handled = true;
         }
 
         private void PassKeyToGrid(bool DownOrUp, KeyEventArgs e)
@@ -1195,6 +1207,11 @@ namespace ClipAngel
         private void textBoxUrl_Click(object sender, EventArgs e)
         {
             OpenLinkIfCtrlPressed(sender as RichTextBox, e, UrlLinkMatches);
+        }
+
+        private void Main_Shown(object sender, EventArgs e)
+        {
+
         }
     }
 }
