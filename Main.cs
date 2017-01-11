@@ -16,6 +16,7 @@ using System.Collections.Specialized;
 using System.Globalization;
 using System.IO;
 using System.Drawing.Imaging;
+using System.Security.Cryptography;
 
 namespace ClipAngel
 {
@@ -26,6 +27,8 @@ namespace ClipAngel
         SQLiteDataAdapter dataAdapter;
         IntPtr _ClipboardViewerNext;
         bool CaptureClipboard = true;
+        bool allowRowLoad = true;
+        bool AutoGotoLastRow = true;
         bool AllowFormClose = false;
         static string LinkPattern = "\\b(https?|ftp|file)://[-A-Z0-9+&@#/%?=~_|!:,.;]*[A-Z0-9+&@#/%=~_|]";
         int LastId = 0;
@@ -208,8 +211,17 @@ namespace ClipAngel
             m_dbConnection = new SQLiteConnection(connectionString);
             m_dbConnection.Open();
 
-            // http://blog.tigrangasparian.com/2012/02/09/getting-started-with-sqlite-in-c-part-one/
+            SQLiteCommand command = new SQLiteCommand("ALTER TABLE Clips" + " ADD COLUMN Hash CHAR(32)", m_dbConnection);
+            try
+            {
+                command.ExecuteNonQuery();
+            }
+            catch
+            {
+                bool ColumnHashExisted = true;
+            }
 
+            // http://blog.tigrangasparian.com/2012/02/09/getting-started-with-sqlite-in-c-part-one/
             //sql = "CREATE TABLE Clips (Title VARCHAR(50), Text VARCHAR(0), Data BLOB, Size INT, Type VARCHAR(10), Created DATETIME, Application VARCHAR(50), Window VARCHAR(100))";
             //command = new SQLiteCommand(sql, m_dbConnection);
             //try
@@ -247,6 +259,11 @@ namespace ClipAngel
                 richTextBox.Text = "";
                 Application.Text = "";
                 Window.Text = "";
+                statusStrip.Items.Find("Created", false)[0].Text = "";
+                statusStrip.Items.Find("Size", false)[0].Text = "";
+                statusStrip.Items.Find("Chars", false)[0].Text = "";
+                statusStrip.Items.Find("Type", false)[0].Text = "";
+                statusStrip.Items.Find("Position", false)[0].Text = "";
             }
             else
             {
@@ -261,7 +278,7 @@ namespace ClipAngel
                 richTextBox.HideSelection = true;
                 richTextBox.Clear();
                 richTextBox.Text = CurrentRow["Text"].ToString();
-                if (Filter.Text.Length > 1)
+                if (Filter.Text.Length > 0)
                 {
                     MatchCollection Junk;
                     MarkRegExpMatchesInRichTextBox(richTextBox, Filter.Text, Color.Red, false, out Junk);
@@ -306,6 +323,7 @@ namespace ClipAngel
         {
             Matches = Regex.Matches(Control.Text, Pattern, RegexOptions.IgnoreCase);
             Control.DeselectAll();
+            int MaxMarked = 100; // prevent slow down
             foreach (Match Match in Matches)
             {
                 Control.SelectionStart = Match.Index;
@@ -313,6 +331,9 @@ namespace ClipAngel
                 Control.SelectionColor = Color;
                 if (Underline)
                     Control.SelectionFont = new Font(Control.SelectionFont, FontStyle.Underline);
+                MaxMarked--;
+                if (MaxMarked < 0)
+                    break;
             }
             Control.DeselectAll();
             Control.SelectionColor = new Color();
@@ -337,41 +358,34 @@ namespace ClipAngel
 
         private void Filter_TextChanged(object sender, EventArgs e)
         {
-            UpdateClipBindingSource();
+            UpdateClipBindingSource(true);
         }
 
-        private void UpdateClipBindingSource()
+        private void UpdateClipBindingSource(bool forceRowLoad = false)
         {
             if (dataAdapter == null)
                 return;
             int CurrentClipID = 0;
             if (clipBindingSource.Current != null)
-            {
                 CurrentClipID = (int)(clipBindingSource.Current as DataRowView).Row["Id"];
-            }
-
             string SelectCommandText = "Select * From Clips";
             if (Filter.Text != "")
             {
-                SelectCommandText += " Where Text Like '%" + Filter.Text + "%'";
+                SelectCommandText += " Where UPPER(Text) Like '%" + Filter.Text.ToUpper() + "%'";
             }
             SelectCommandText += " ORDER BY Id desc";
             dataAdapter.SelectCommand.CommandText = SelectCommandText;
             DataTable table = new DataTable();
             table.Locale = CultureInfo.InvariantCulture;
             dataAdapter.Fill(table);
+            allowRowLoad = false;
             clipBindingSource.DataSource = table;
             PrepareTableGrid();
-            if (CurrentClipID != 0)
-            {
-                clipBindingSource.Position = clipBindingSource.Find("id", CurrentClipID);
-                if (dataGridView.CurrentRow!=null)
-                    dataGridView.CurrentCell = dataGridView.CurrentRow.Cells[0];
-            }
+
             if (LastId == 0)
             {
+                GotoLastRow();
                 ClipsNumber = clipBindingSource.Count;
-                clipBindingSource.MoveFirst();
                 DataRowView LastRow = (DataRowView)clipBindingSource.Current;
                 if (LastRow == null)
                 {
@@ -383,13 +397,23 @@ namespace ClipAngel
                     LastText = (string)LastRow["Text"];
                 }
             }
-            AfterRowLoad();
+            else if (AutoGotoLastRow)
+                GotoLastRow();
+            else if (CurrentClipID != 0)
+            {
+                clipBindingSource.Position = clipBindingSource.Find("id", CurrentClipID);
+                //if (dataGridView.CurrentRow != null)
+                //    dataGridView.CurrentCell = dataGridView.CurrentRow.Cells[0];
+                SelectCurrentRow(forceRowLoad);
+            }
+            allowRowLoad = true;
+            AutoGotoLastRow = false;
         }
 
         private void ClearFilter_Click(object sender = null, EventArgs e = null)
         {
             Filter.Text = "";
-            UpdateClipBindingSource();
+            UpdateClipBindingSource(true);
         }
 
         private void dataGridView_RowEnter(object sender, DataGridViewCellEventArgs e)
@@ -560,8 +584,25 @@ namespace ClipAngel
             LastText = Text;
             Size += BinaryBuffer.Length;
 
-            string sql = "insert into Clips (Id, Title, Text, Application, Window, Created, Type, Binary, Size, Chars, RichText, HtmlText, Used, Url) values (@Id, @Title, @Text, @Application, @Window, @Created, @Type, @Binary, @Size, @Chars, @RichText, @HtmlText, @Used, @Url)";
+            MD5 md5 = new MD5CryptoServiceProvider();
+            byte[] BinaryText = Encoding.Unicode.GetBytes(Text);
+            md5.TransformBlock(BinaryText, 0, BinaryText.Length, BinaryText, 0);
+            byte[] BinaryRichText = Encoding.Unicode.GetBytes(RichText);
+            md5.TransformBlock(BinaryRichText, 0, BinaryRichText.Length, BinaryRichText, 0);
+            byte[] BinaryHtml = Encoding.Unicode.GetBytes(HtmlText);
+            md5.TransformBlock(BinaryHtml, 0, BinaryHtml.Length, BinaryHtml, 0);
+            md5.TransformFinalBlock(BinaryBuffer, 0, BinaryBuffer.Length);
+            string Hash = Convert.ToBase64String(md5.Hash);
+
+            string sql = "DELETE FROM Clips Where Hash = @Hash";
             SQLiteCommand command = new SQLiteCommand(sql, m_dbConnection);
+            command.Parameters.Add("@Hash", System.Data.DbType.String).Value = Hash;
+            command.ExecuteNonQuery();
+
+            sql = "insert into Clips (Id, Title, Text, Application, Window, Created, Type, Binary, Size, Chars, RichText, HtmlText, Used, Url, Hash) "
+               + "values (@Id, @Title, @Text, @Application, @Window, @Created, @Type, @Binary, @Size, @Chars, @RichText, @HtmlText, @Used, @Url, @Hash)";
+
+            command = new SQLiteCommand(sql, m_dbConnection);
             command.Parameters.Add("@Id", System.Data.DbType.Int32).Value = LastId;
             command.Parameters.Add("@Title", System.Data.DbType.String).Value = Title;
             command.Parameters.Add("@Text", System.Data.DbType.String).Value = Text;
@@ -576,6 +617,7 @@ namespace ClipAngel
             command.Parameters.Add("@Chars", System.Data.DbType.Int32).Value = Chars;
             command.Parameters.Add("@Used", System.Data.DbType.Boolean).Value = false;
             command.Parameters.Add("@Url", System.Data.DbType.String).Value = Url;
+            command.Parameters.Add("@Hash", System.Data.DbType.String).Value = Hash;
             command.ExecuteNonQuery();
 
             //dbDataSet.ClipsRow NewRow = (dbDataSet.ClipsRow)dbDataSet.Clips.NewRow();
@@ -982,16 +1024,17 @@ namespace ClipAngel
         }
         private void dataGridView_SelectionChanged(object sender, EventArgs e)
         {
-            AfterRowLoad();
+            if (allowRowLoad)
+                AfterRowLoad();
         }
 
         private void Main_Deactivate(object sender, EventArgs e)
         {
-            if (this.WindowState == FormWindowState.Minimized)
-            {
-                this.ShowInTaskbar = false;
-                //notifyIcon.Visible = true;
-            }
+            //if (this.WindowState == FormWindowState.Minimized)
+            //{
+            //    this.ShowInTaskbar = false;
+            //    //notifyIcon.Visible = true;
+            //}
         }
 
         private void notifyIcon_MouseClick(object sender, MouseEventArgs e)
@@ -1004,8 +1047,9 @@ namespace ClipAngel
         {
             this.WindowState = FormWindowState.Normal;
             this.ShowInTaskbar = true;
-            this.Show();
+            AutoGotoLastRow = true;
             this.Activate();
+            this.Show();
             //notifyIcon.Visible = false;
         }
 
@@ -1033,13 +1077,11 @@ namespace ClipAngel
         private void Filter_KeyDown(object sender, KeyEventArgs e)
         {
             PassKeyToGrid(true, e);
-            //e.Handled = true;
         }
 
         private void Filter_KeyUp(object sender, KeyEventArgs e)
         {
             PassKeyToGrid(false, e);
-           // e.Handled = true;
         }
 
         private void PassKeyToGrid(bool DownOrUp, KeyEventArgs e)
@@ -1047,6 +1089,7 @@ namespace ClipAngel
             if (IsKeyPassedFromFilterToGrid(e.KeyCode, e.Control))
             {
                 sendKey(dataGridView.Handle, e.KeyCode, false, DownOrUp, !DownOrUp);
+                e.Handled = true;
             }
         }
 
@@ -1091,14 +1134,27 @@ namespace ClipAngel
             GotoLastRow();
         }
 
-        // Dublicates system command. Not used.
         void GotoLastRow()
         {
+            if (dataGridView.Rows.Count > 0)
+            {
+                clipBindingSource.MoveFirst();
+                SelectCurrentRow();
+            }
+            AfterRowLoad();
+        }
+
+        void SelectCurrentRow(bool forceRowLoad = false)
+        {
             dataGridView.ClearSelection();
-            int nRowIndex = dataGridView.Rows.Count - 1;
-            dataGridView.Rows[nRowIndex].Selected = true;
-            //dataGridView.Rows[nRowIndex].Cells[0].Selected = true;
-            dataGridView.FirstDisplayedScrollingRowIndex = nRowIndex;
+            if (dataGridView.CurrentRow == null)
+            {
+                GotoLastRow();
+                return;
+            }
+            dataGridView.Rows[dataGridView.CurrentRow.Index].Selected = true;
+            if (forceRowLoad)
+                AfterRowLoad();
         }
 
         private void activateListToolStripMenuItem_Click(object sender, EventArgs e)
@@ -1209,10 +1265,6 @@ namespace ClipAngel
             OpenLinkIfCtrlPressed(sender as RichTextBox, e, UrlLinkMatches);
         }
 
-        private void Main_Shown(object sender, EventArgs e)
-        {
-
-        }
     }
 }
 

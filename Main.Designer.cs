@@ -303,7 +303,6 @@ namespace ClipAngel
             this.clipToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pasteENTERToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pasteTextCTRLENTERToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.deleteToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.settingsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -562,7 +561,7 @@ namespace ClipAngel
             this.ImageControl.Margin = new System.Windows.Forms.Padding(2);
             this.ImageControl.Name = "ImageControl";
             this.ImageControl.Size = new System.Drawing.Size(387, 168);
-            this.ImageControl.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ImageControl.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.ImageControl.TabIndex = 8;
             this.ImageControl.TabStop = false;
             // 
@@ -585,7 +584,7 @@ namespace ClipAngel
             // labelClipSource
             // 
             this.labelClipSource.AutoSize = true;
-            this.labelClipSource.Location = new System.Drawing.Point(0, 7);
+            this.labelClipSource.Location = new System.Drawing.Point(3, 7);
             this.labelClipSource.Margin = new System.Windows.Forms.Padding(0);
             this.labelClipSource.Name = "labelClipSource";
             this.labelClipSource.Size = new System.Drawing.Size(44, 13);
@@ -718,7 +717,7 @@ namespace ClipAngel
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(92, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem1_Click);
             // 
@@ -726,8 +725,7 @@ namespace ClipAngel
             // 
             this.clipToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.pasteENTERToolStripMenuItem,
-            this.pasteTextCTRLENTERToolStripMenuItem,
-            this.deleteToolStripMenuItem2});
+            this.pasteTextCTRLENTERToolStripMenuItem});
             this.clipToolStripMenuItem.Name = "clipToolStripMenuItem";
             this.clipToolStripMenuItem.Size = new System.Drawing.Size(40, 20);
             this.clipToolStripMenuItem.Text = "Clip";
@@ -745,14 +743,6 @@ namespace ClipAngel
             this.pasteTextCTRLENTERToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
             this.pasteTextCTRLENTERToolStripMenuItem.Text = "Paste text (CTRL+ ENTER)";
             this.pasteTextCTRLENTERToolStripMenuItem.Click += new System.EventHandler(this.pasteAsTextToolStripMenuItem_Click);
-            // 
-            // deleteToolStripMenuItem2
-            // 
-            this.deleteToolStripMenuItem2.Name = "deleteToolStripMenuItem2";
-            this.deleteToolStripMenuItem2.ShortcutKeys = System.Windows.Forms.Keys.Delete;
-            this.deleteToolStripMenuItem2.Size = new System.Drawing.Size(209, 22);
-            this.deleteToolStripMenuItem2.Text = "Delete";
-            this.deleteToolStripMenuItem2.Click += new System.EventHandler(this.Delete_Click);
             // 
             // settingsToolStripMenuItem1
             // 
@@ -869,7 +859,6 @@ namespace ClipAngel
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Main_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Main_FormClosed);
             this.Load += new System.EventHandler(this.Main_Load);
-            this.Shown += new System.EventHandler(this.Main_Shown);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Main_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.contextMenuStripDataGrid.ResumeLayout(false);
@@ -941,7 +930,6 @@ namespace ClipAngel
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem clipToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem pasteENTERToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pasteTextCTRLENTERToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem1;
