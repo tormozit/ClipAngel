@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("ClipAngel")]
-[assembly: AssemblyDescription("This program captures clipboard objects. It allows you to select and paste one in any program. Freeware. tormozit@gmail.com")]
+[assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Tormozit")]
 [assembly: AssemblyProduct("ClipAngel")]

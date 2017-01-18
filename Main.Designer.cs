@@ -20,6 +20,9 @@ namespace ClipAngel
             IntPtr hWndNewNext  // handle to next window
             );
 
+        [DllImport("user32.dll")]
+        public static extern IntPtr GetClipboardViewer();
+
         [DllImport("user32.dll", CharSet = CharSet.Auto)]
         public static extern int SendMessage(IntPtr hwnd, int wMsg, IntPtr wParam, IntPtr lParam);
 
@@ -225,6 +228,7 @@ namespace ClipAngel
         WM_HOTKEY = 0x0312,
         WM_PRINT = 0x0317,
         WM_PRINTCLIENT = 0x0318,
+        WM_CLIPBOARDUPDATE = 0x031D,
         WM_HANDHELDFIRST = 0x0358,
         WM_HANDHELDLAST = 0x035F,
         WM_AFXFIRST = 0x0360,
@@ -265,6 +269,14 @@ namespace ClipAngel
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.buttonFindNext = new System.Windows.Forms.Button();
+            this.buttonFindPrevious = new System.Windows.Forms.Button();
+            this.TypeFilter = new System.Windows.Forms.ComboBox();
+            this.checkBoxUsed = new System.Windows.Forms.CheckBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.ClearFilter = new System.Windows.Forms.Button();
+            this.Filter = new System.Windows.Forms.ComboBox();
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.TypeImg = new System.Windows.Forms.DataGridViewImageColumn();
             this.titleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -274,14 +286,6 @@ namespace ClipAngel
             this.deleteToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.clipBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dbDataSet = new ClipAngel.dbDataSet();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.ClearFilter = new System.Windows.Forms.Button();
-            this.Filter = new System.Windows.Forms.ComboBox();
-            this.contextMenuStripFilter = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.clearToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.activateListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanelData = new System.Windows.Forms.TableLayoutPanel();
             this.richTextBox = new System.Windows.Forms.RichTextBox();
             this.ImageControl = new System.Windows.Forms.PictureBox();
@@ -295,14 +299,15 @@ namespace ClipAngel
             this.Created = new System.Windows.Forms.ToolStripStatusLabel();
             this.Application = new System.Windows.Forms.TextBox();
             this.Window = new System.Windows.Forms.TextBox();
-            this.clipsTableAdapter = new ClipAngel.dbDataSetTableAdapters.ClipsTableAdapter();
-            this.tableAdapterManager = new ClipAngel.dbDataSetTableAdapters.TableAdapterManager();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MainMenu = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clipToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pasteENTERToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pasteTextCTRLENTERToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem6 = new System.Windows.Forms.ToolStripMenuItem();
             this.settingsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -316,16 +321,19 @@ namespace ClipAngel
             this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
             this.contextMenuStripNotifyIcon = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.exitToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
-            this.contextMenuStripDataGrid.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.clipBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dbDataSet)).BeginInit();
+            this.toolTipDynamic = new System.Windows.Forms.ToolTip(this.components);
+            this.cultureManager1 = new Infralution.Localization.CultureManager(this.components);
+            this.clipsTableAdapter = new ClipAngel.dbDataSetTableAdapters.ClipsTableAdapter();
+            this.tableAdapterManager = new ClipAngel.dbDataSetTableAdapters.TableAdapterManager();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.contextMenuStripFilter.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
+            this.contextMenuStripDataGrid.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.clipBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dbDataSet)).BeginInit();
             this.tableLayoutPanelData.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ImageControl)).BeginInit();
             this.statusStrip.SuspendLayout();
@@ -333,15 +341,104 @@ namespace ClipAngel
             this.contextMenuStripNotifyIcon.SuspendLayout();
             this.SuspendLayout();
             // 
+            // splitContainer1
+            // 
+            resources.ApplyResources(this.splitContainer1, "splitContainer1");
+            this.splitContainer1.Name = "splitContainer1";
+            // 
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.Controls.Add(this.buttonFindNext);
+            this.splitContainer1.Panel1.Controls.Add(this.buttonFindPrevious);
+            this.splitContainer1.Panel1.Controls.Add(this.TypeFilter);
+            this.splitContainer1.Panel1.Controls.Add(this.checkBoxUsed);
+            this.splitContainer1.Panel1.Controls.Add(this.pictureBox1);
+            this.splitContainer1.Panel1.Controls.Add(this.ClearFilter);
+            this.splitContainer1.Panel1.Controls.Add(this.Filter);
+            this.splitContainer1.Panel1.Controls.Add(this.dataGridView);
+            // 
+            // splitContainer1.Panel2
+            // 
+            resources.ApplyResources(this.splitContainer1.Panel2, "splitContainer1.Panel2");
+            this.splitContainer1.Panel2.Controls.Add(this.tableLayoutPanelData);
+            this.splitContainer1.Panel2.Controls.Add(this.labelClipSource);
+            this.splitContainer1.Panel2.Controls.Add(this.statusStrip);
+            this.splitContainer1.Panel2.Controls.Add(this.Application);
+            this.splitContainer1.Panel2.Controls.Add(this.Window);
+            // 
+            // buttonFindNext
+            // 
+            resources.ApplyResources(this.buttonFindNext, "buttonFindNext");
+            this.buttonFindNext.Image = global::ClipAngel.Properties.Resources.FindNext;
+            this.buttonFindNext.Name = "buttonFindNext";
+            this.toolTipDynamic.SetToolTip(this.buttonFindNext, resources.GetString("buttonFindNext.ToolTip"));
+            this.buttonFindNext.UseVisualStyleBackColor = true;
+            this.buttonFindNext.Click += new System.EventHandler(this.buttonFindNext_Click);
+            // 
+            // buttonFindPrevious
+            // 
+            resources.ApplyResources(this.buttonFindPrevious, "buttonFindPrevious");
+            this.buttonFindPrevious.Image = global::ClipAngel.Properties.Resources.FindPrevious;
+            this.buttonFindPrevious.Name = "buttonFindPrevious";
+            this.toolTipDynamic.SetToolTip(this.buttonFindPrevious, resources.GetString("buttonFindPrevious.ToolTip"));
+            this.buttonFindPrevious.UseVisualStyleBackColor = true;
+            this.buttonFindPrevious.Click += new System.EventHandler(this.buttonFindPrevious_Click);
+            // 
+            // TypeFilter
+            // 
+            resources.ApplyResources(this.TypeFilter, "TypeFilter");
+            this.TypeFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.TypeFilter.FormattingEnabled = true;
+            this.TypeFilter.Items.AddRange(new object[] {
+            resources.GetString("TypeFilter.Items"),
+            resources.GetString("TypeFilter.Items1"),
+            resources.GetString("TypeFilter.Items2"),
+            resources.GetString("TypeFilter.Items3")});
+            this.TypeFilter.Name = "TypeFilter";
+            this.toolTipDynamic.SetToolTip(this.TypeFilter, resources.GetString("TypeFilter.ToolTip"));
+            this.TypeFilter.SelectedValueChanged += new System.EventHandler(this.TypeFilter_SelectedValueChanged);
+            // 
+            // checkBoxUsed
+            // 
+            resources.ApplyResources(this.checkBoxUsed, "checkBoxUsed");
+            this.checkBoxUsed.Name = "checkBoxUsed";
+            this.toolTipDynamic.SetToolTip(this.checkBoxUsed, resources.GetString("checkBoxUsed.ToolTip"));
+            this.checkBoxUsed.UseVisualStyleBackColor = true;
+            this.checkBoxUsed.Click += new System.EventHandler(this.checkBox1_Click);
+            // 
+            // pictureBox1
+            // 
+            resources.ApplyResources(this.pictureBox1, "pictureBox1");
+            this.pictureBox1.Image = global::ClipAngel.Properties.Resources.Filter;
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.TabStop = false;
+            // 
+            // ClearFilter
+            // 
+            resources.ApplyResources(this.ClearFilter, "ClearFilter");
+            this.ClearFilter.Name = "ClearFilter";
+            this.toolTipDynamic.SetToolTip(this.ClearFilter, resources.GetString("ClearFilter.ToolTip"));
+            this.ClearFilter.UseVisualStyleBackColor = true;
+            this.ClearFilter.Click += new System.EventHandler(this.ClearFilter_Click);
+            // 
+            // Filter
+            // 
+            resources.ApplyResources(this.Filter, "Filter");
+            this.Filter.FormattingEnabled = true;
+            this.Filter.Name = "Filter";
+            this.toolTipDynamic.SetToolTip(this.Filter, resources.GetString("Filter.ToolTip"));
+            this.Filter.TextChanged += new System.EventHandler(this.Filter_TextChanged);
+            this.Filter.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Filter_KeyDown);
+            this.Filter.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Filter_KeyPress);
+            this.Filter.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Filter_KeyUp);
+            // 
             // dataGridView
             // 
             this.dataGridView.AllowUserToAddRows = false;
             this.dataGridView.AllowUserToDeleteRows = false;
             this.dataGridView.AllowUserToResizeColumns = false;
             this.dataGridView.AllowUserToResizeRows = false;
-            this.dataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            resources.ApplyResources(this.dataGridView, "dataGridView");
             this.dataGridView.AutoGenerateColumns = false;
             this.dataGridView.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
@@ -353,14 +450,11 @@ namespace ClipAngel
             this.titleDataGridViewTextBoxColumn});
             this.dataGridView.ContextMenuStrip = this.contextMenuStripDataGrid;
             this.dataGridView.DataSource = this.clipBindingSource;
-            this.dataGridView.Location = new System.Drawing.Point(1, 0);
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.ReadOnly = true;
             this.dataGridView.RowHeadersVisible = false;
             this.dataGridView.RowTemplate.Height = 19;
             this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView.Size = new System.Drawing.Size(299, 394);
-            this.dataGridView.TabIndex = 0;
             this.dataGridView.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_RowEnter);
             this.dataGridView.SelectionChanged += new System.EventHandler(this.dataGridView_SelectionChanged);
             this.dataGridView.DoubleClick += new System.EventHandler(this.dataGridView_DoubleClick);
@@ -369,18 +463,17 @@ namespace ClipAngel
             // TypeImg
             // 
             this.TypeImg.Frozen = true;
-            this.TypeImg.HeaderText = "TypeImg";
+            resources.ApplyResources(this.TypeImg, "TypeImg");
             this.TypeImg.Name = "TypeImg";
             this.TypeImg.ReadOnly = true;
             this.TypeImg.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.TypeImg.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.TypeImg.Width = 16;
             // 
             // titleDataGridViewTextBoxColumn
             // 
             this.titleDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.titleDataGridViewTextBoxColumn.DataPropertyName = "Title";
-            this.titleDataGridViewTextBoxColumn.HeaderText = "Title";
+            resources.ApplyResources(this.titleDataGridViewTextBoxColumn, "titleDataGridViewTextBoxColumn");
             this.titleDataGridViewTextBoxColumn.Name = "titleDataGridViewTextBoxColumn";
             this.titleDataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -391,28 +484,24 @@ namespace ClipAngel
             this.toolStripMenuItem3,
             this.deleteToolStripMenuItem1});
             this.contextMenuStripDataGrid.Name = "contextMenuStripDataGrid";
-            this.contextMenuStripDataGrid.Size = new System.Drawing.Size(210, 70);
+            resources.ApplyResources(this.contextMenuStripDataGrid, "contextMenuStripDataGrid");
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(209, 22);
-            this.toolStripMenuItem2.Text = "Paste (ENTER)";
+            resources.ApplyResources(this.toolStripMenuItem2, "toolStripMenuItem2");
             this.toolStripMenuItem2.Click += new System.EventHandler(this.pasteOriginalToolStripMenuItem_Click);
             // 
             // toolStripMenuItem3
             // 
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(209, 22);
-            this.toolStripMenuItem3.Text = "Paste  text (CTRL+ENTER)";
+            resources.ApplyResources(this.toolStripMenuItem3, "toolStripMenuItem3");
             this.toolStripMenuItem3.Click += new System.EventHandler(this.pasteAsTextToolStripMenuItem_Click);
             // 
             // deleteToolStripMenuItem1
             // 
             this.deleteToolStripMenuItem1.Name = "deleteToolStripMenuItem1";
-            this.deleteToolStripMenuItem1.ShortcutKeys = System.Windows.Forms.Keys.Delete;
-            this.deleteToolStripMenuItem1.Size = new System.Drawing.Size(209, 22);
-            this.deleteToolStripMenuItem1.Text = "Delete";
+            resources.ApplyResources(this.deleteToolStripMenuItem1, "deleteToolStripMenuItem1");
             this.deleteToolStripMenuItem1.Click += new System.EventHandler(this.Delete_Click);
             // 
             // clipBindingSource
@@ -425,263 +514,258 @@ namespace ClipAngel
             this.dbDataSet.DataSetName = "dbDataSet";
             this.dbDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Title";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Title";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            // 
-            // splitContainer1
-            // 
-            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 24);
-            this.splitContainer1.Name = "splitContainer1";
-            // 
-            // splitContainer1.Panel1
-            // 
-            this.splitContainer1.Panel1.Controls.Add(this.pictureBox1);
-            this.splitContainer1.Panel1.Controls.Add(this.ClearFilter);
-            this.splitContainer1.Panel1.Controls.Add(this.Filter);
-            this.splitContainer1.Panel1.Controls.Add(this.dataGridView);
-            // 
-            // splitContainer1.Panel2
-            // 
-            this.splitContainer1.Panel2.AutoScroll = true;
-            this.splitContainer1.Panel2.Controls.Add(this.tableLayoutPanelData);
-            this.splitContainer1.Panel2.Controls.Add(this.labelClipSource);
-            this.splitContainer1.Panel2.Controls.Add(this.statusStrip);
-            this.splitContainer1.Panel2.Controls.Add(this.Application);
-            this.splitContainer1.Panel2.Controls.Add(this.Window);
-            this.splitContainer1.Size = new System.Drawing.Size(699, 420);
-            this.splitContainer1.SplitterDistance = 300;
-            this.splitContainer1.TabIndex = 3;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pictureBox1.Image = global::ClipAngel.Properties.Resources.Filter;
-            this.pictureBox1.Location = new System.Drawing.Point(3, 397);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(11, 20);
-            this.pictureBox1.TabIndex = 7;
-            this.pictureBox1.TabStop = false;
-            // 
-            // ClearFilter
-            // 
-            this.ClearFilter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.ClearFilter.Location = new System.Drawing.Point(283, 396);
-            this.ClearFilter.Name = "ClearFilter";
-            this.ClearFilter.Size = new System.Drawing.Size(16, 23);
-            this.ClearFilter.TabIndex = 6;
-            this.ClearFilter.Text = "X";
-            this.ClearFilter.UseVisualStyleBackColor = true;
-            this.ClearFilter.Click += new System.EventHandler(this.ClearFilter_Click);
-            // 
-            // Filter
-            // 
-            this.Filter.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.Filter.ContextMenuStrip = this.contextMenuStripFilter;
-            this.Filter.FormattingEnabled = true;
-            this.Filter.Location = new System.Drawing.Point(17, 397);
-            this.Filter.Name = "Filter";
-            this.Filter.Size = new System.Drawing.Size(266, 21);
-            this.Filter.TabIndex = 6;
-            this.Filter.TextChanged += new System.EventHandler(this.Filter_TextChanged);
-            this.Filter.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Filter_KeyDown);
-            this.Filter.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Filter_KeyPress);
-            this.Filter.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Filter_KeyUp);
-            // 
-            // contextMenuStripFilter
-            // 
-            this.contextMenuStripFilter.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.clearToolStripMenuItem,
-            this.activateListToolStripMenuItem});
-            this.contextMenuStripFilter.Name = "contextMenuStripFilter";
-            this.contextMenuStripFilter.Size = new System.Drawing.Size(182, 48);
-            // 
-            // clearToolStripMenuItem
-            // 
-            this.clearToolStripMenuItem.Name = "clearToolStripMenuItem";
-            this.clearToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F9;
-            this.clearToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
-            this.clearToolStripMenuItem.Text = "Clear";
-            this.clearToolStripMenuItem.Click += new System.EventHandler(this.clearToolStripMenuItem_Click);
-            // 
-            // activateListToolStripMenuItem
-            // 
-            this.activateListToolStripMenuItem.Name = "activateListToolStripMenuItem";
-            this.activateListToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F9)));
-            this.activateListToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
-            this.activateListToolStripMenuItem.Text = "Activate list";
-            this.activateListToolStripMenuItem.Click += new System.EventHandler(this.activateListToolStripMenuItem_Click);
-            // 
             // tableLayoutPanelData
             // 
-            this.tableLayoutPanelData.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanelData.ColumnCount = 1;
-            this.tableLayoutPanelData.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            resources.ApplyResources(this.tableLayoutPanelData, "tableLayoutPanelData");
             this.tableLayoutPanelData.Controls.Add(this.richTextBox, 0, 0);
             this.tableLayoutPanelData.Controls.Add(this.ImageControl, 0, 1);
             this.tableLayoutPanelData.Controls.Add(this.textBoxUrl, 0, 2);
-            this.tableLayoutPanelData.Location = new System.Drawing.Point(0, 26);
-            this.tableLayoutPanelData.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanelData.Name = "tableLayoutPanelData";
-            this.tableLayoutPanelData.RowCount = 3;
-            this.tableLayoutPanelData.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanelData.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanelData.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.tableLayoutPanelData.Size = new System.Drawing.Size(391, 369);
-            this.tableLayoutPanelData.TabIndex = 8;
             // 
             // richTextBox
             // 
+            this.richTextBox.BackColor = System.Drawing.SystemColors.Window;
             this.richTextBox.DetectUrls = false;
-            this.richTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.richTextBox.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            resources.ApplyResources(this.richTextBox, "richTextBox");
             this.richTextBox.HideSelection = false;
-            this.richTextBox.Location = new System.Drawing.Point(2, 2);
-            this.richTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.richTextBox.Name = "richTextBox";
             this.richTextBox.ReadOnly = true;
-            this.richTextBox.Size = new System.Drawing.Size(387, 168);
-            this.richTextBox.TabIndex = 7;
-            this.richTextBox.Text = "";
             this.richTextBox.Click += new System.EventHandler(this.RichText_Click);
             // 
             // ImageControl
             // 
-            this.ImageControl.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ImageControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ImageControl.Location = new System.Drawing.Point(2, 174);
-            this.ImageControl.Margin = new System.Windows.Forms.Padding(2);
+            this.ImageControl.BackColor = System.Drawing.SystemColors.Control;
+            resources.ApplyResources(this.ImageControl, "ImageControl");
             this.ImageControl.Name = "ImageControl";
-            this.ImageControl.Size = new System.Drawing.Size(387, 168);
-            this.ImageControl.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.ImageControl.TabIndex = 8;
             this.ImageControl.TabStop = false;
+            this.ImageControl.DoubleClick += new System.EventHandler(this.ImageControl_DoubleClick);
             // 
             // textBoxUrl
             // 
+            this.textBoxUrl.BackColor = System.Drawing.SystemColors.Window;
             this.textBoxUrl.DetectUrls = false;
-            this.textBoxUrl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxUrl.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            resources.ApplyResources(this.textBoxUrl, "textBoxUrl");
             this.textBoxUrl.HideSelection = false;
-            this.textBoxUrl.Location = new System.Drawing.Point(2, 346);
-            this.textBoxUrl.Margin = new System.Windows.Forms.Padding(2);
-            this.textBoxUrl.Multiline = false;
             this.textBoxUrl.Name = "textBoxUrl";
             this.textBoxUrl.ReadOnly = true;
-            this.textBoxUrl.Size = new System.Drawing.Size(387, 21);
-            this.textBoxUrl.TabIndex = 9;
-            this.textBoxUrl.Text = "";
+            this.toolTipDynamic.SetToolTip(this.textBoxUrl, resources.GetString("textBoxUrl.ToolTip"));
             this.textBoxUrl.Click += new System.EventHandler(this.textBoxUrl_Click);
             // 
             // labelClipSource
             // 
-            this.labelClipSource.AutoSize = true;
-            this.labelClipSource.Location = new System.Drawing.Point(3, 7);
-            this.labelClipSource.Margin = new System.Windows.Forms.Padding(0);
+            resources.ApplyResources(this.labelClipSource, "labelClipSource");
             this.labelClipSource.Name = "labelClipSource";
-            this.labelClipSource.Size = new System.Drawing.Size(44, 13);
-            this.labelClipSource.TabIndex = 6;
-            this.labelClipSource.Text = "Source:";
             // 
             // statusStrip
             // 
-            this.statusStrip.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.statusStrip.AutoSize = false;
-            this.statusStrip.Dock = System.Windows.Forms.DockStyle.None;
+            resources.ApplyResources(this.statusStrip, "statusStrip");
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.Position,
             this.Chars,
             this.Size,
             this.Type,
             this.Created});
-            this.statusStrip.Location = new System.Drawing.Point(0, 398);
             this.statusStrip.Name = "statusStrip";
             this.statusStrip.ShowItemToolTips = true;
-            this.statusStrip.Size = new System.Drawing.Size(395, 22);
-            this.statusStrip.TabIndex = 4;
-            this.statusStrip.Text = "statusStrip";
             // 
             // Position
             // 
-            this.Position.AutoSize = false;
+            resources.ApplyResources(this.Position, "Position");
             this.Position.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Right;
             this.Position.Name = "Position";
-            this.Position.Size = new System.Drawing.Size(90, 17);
-            this.Position.Text = "Position";
-            this.Position.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Position.ToolTipText = "Text selection offset and length";
             // 
             // Chars
             // 
-            this.Chars.AutoSize = false;
+            resources.ApplyResources(this.Chars, "Chars");
             this.Chars.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Right;
             this.Chars.Name = "Chars";
-            this.Chars.Size = new System.Drawing.Size(70, 17);
-            this.Chars.Text = "Chars";
-            this.Chars.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Chars.ToolTipText = "Chars in text";
             // 
             // Size
             // 
-            this.Size.AutoSize = false;
+            resources.ApplyResources(this.Size, "Size");
             this.Size.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Right;
             this.Size.Name = "Size";
-            this.Size.Size = new System.Drawing.Size(70, 17);
-            this.Size.Text = "Size";
-            this.Size.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Size.ToolTipText = "Clip size in bytes";
             // 
             // Type
             // 
-            this.Type.AutoSize = false;
+            resources.ApplyResources(this.Type, "Type");
             this.Type.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Right;
             this.Type.Name = "Type";
-            this.Type.Size = new System.Drawing.Size(30, 17);
-            this.Type.Text = "Type";
-            this.Type.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Type.ToolTipText = "Type";
             // 
             // Created
             // 
-            this.Created.AutoSize = false;
+            resources.ApplyResources(this.Created, "Created");
             this.Created.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Right;
             this.Created.Name = "Created";
-            this.Created.Size = new System.Drawing.Size(110, 17);
-            this.Created.Text = "Created";
-            this.Created.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Created.ToolTipText = "Created time";
             // 
             // Application
             // 
-            this.Application.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            resources.ApplyResources(this.Application, "Application");
+            this.Application.BackColor = System.Drawing.SystemColors.Window;
             this.Application.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clipBindingSource, "Application", true));
-            this.Application.Location = new System.Drawing.Point(308, 3);
             this.Application.Name = "Application";
             this.Application.ReadOnly = true;
-            this.Application.Size = new System.Drawing.Size(83, 20);
-            this.Application.TabIndex = 2;
-            this.Application.Text = "Application";
+            this.toolTipDynamic.SetToolTip(this.Application, resources.GetString("Application.ToolTip"));
             // 
             // Window
             // 
-            this.Window.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            resources.ApplyResources(this.Window, "Window");
+            this.Window.BackColor = System.Drawing.SystemColors.Window;
             this.Window.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clipBindingSource, "Window", true));
-            this.Window.Location = new System.Drawing.Point(47, 3);
             this.Window.Name = "Window";
             this.Window.ReadOnly = true;
-            this.Window.Size = new System.Drawing.Size(255, 20);
-            this.Window.TabIndex = 2;
-            this.Window.Text = "Window";
+            this.toolTipDynamic.SetToolTip(this.Window, resources.GetString("Window.ToolTip"));
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Title";
+            resources.ApplyResources(this.dataGridViewTextBoxColumn2, "dataGridViewTextBoxColumn2");
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // MainMenu
+            // 
+            this.MainMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem1,
+            this.clipToolStripMenuItem,
+            this.settingsToolStripMenuItem1,
+            this.aboutToolStripMenuItem1});
+            resources.ApplyResources(this.MainMenu, "MainMenu");
+            this.MainMenu.Name = "MainMenu";
+            // 
+            // fileToolStripMenuItem1
+            // 
+            this.fileToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.exitToolStripMenuItem});
+            this.fileToolStripMenuItem1.Name = "fileToolStripMenuItem1";
+            resources.ApplyResources(this.fileToolStripMenuItem1, "fileToolStripMenuItem1");
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            resources.ApplyResources(this.exitToolStripMenuItem, "exitToolStripMenuItem");
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem1_Click);
+            // 
+            // clipToolStripMenuItem
+            // 
+            this.clipToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.pasteENTERToolStripMenuItem,
+            this.pasteTextCTRLENTERToolStripMenuItem,
+            this.toolStripMenuItem5,
+            this.toolStripMenuItem6});
+            this.clipToolStripMenuItem.Name = "clipToolStripMenuItem";
+            resources.ApplyResources(this.clipToolStripMenuItem, "clipToolStripMenuItem");
+            // 
+            // pasteENTERToolStripMenuItem
+            // 
+            this.pasteENTERToolStripMenuItem.Name = "pasteENTERToolStripMenuItem";
+            resources.ApplyResources(this.pasteENTERToolStripMenuItem, "pasteENTERToolStripMenuItem");
+            this.pasteENTERToolStripMenuItem.Click += new System.EventHandler(this.pasteOriginalToolStripMenuItem_Click);
+            // 
+            // pasteTextCTRLENTERToolStripMenuItem
+            // 
+            this.pasteTextCTRLENTERToolStripMenuItem.Name = "pasteTextCTRLENTERToolStripMenuItem";
+            resources.ApplyResources(this.pasteTextCTRLENTERToolStripMenuItem, "pasteTextCTRLENTERToolStripMenuItem");
+            this.pasteTextCTRLENTERToolStripMenuItem.Click += new System.EventHandler(this.pasteAsTextToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem5
+            // 
+            this.toolStripMenuItem5.Name = "toolStripMenuItem5";
+            resources.ApplyResources(this.toolStripMenuItem5, "toolStripMenuItem5");
+            this.toolStripMenuItem5.Click += new System.EventHandler(this.ClearFilter_Click);
+            // 
+            // toolStripMenuItem6
+            // 
+            this.toolStripMenuItem6.Name = "toolStripMenuItem6";
+            resources.ApplyResources(this.toolStripMenuItem6, "toolStripMenuItem6");
+            this.toolStripMenuItem6.Click += new System.EventHandler(this.activateListToolStripMenuItem_Click);
+            // 
+            // settingsToolStripMenuItem1
+            // 
+            this.settingsToolStripMenuItem1.Name = "settingsToolStripMenuItem1";
+            resources.ApplyResources(this.settingsToolStripMenuItem1, "settingsToolStripMenuItem1");
+            this.settingsToolStripMenuItem1.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
+            // 
+            // aboutToolStripMenuItem1
+            // 
+            this.aboutToolStripMenuItem1.Name = "aboutToolStripMenuItem1";
+            resources.ApplyResources(this.aboutToolStripMenuItem1, "aboutToolStripMenuItem1");
+            this.aboutToolStripMenuItem1.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
+            // 
+            // fileToolStripMenuItem
+            // 
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem1});
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            resources.ApplyResources(this.fileToolStripMenuItem, "fileToolStripMenuItem");
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            resources.ApplyResources(this.toolStripMenuItem1, "toolStripMenuItem1");
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.exitToolStripMenuItem1_Click);
+            // 
+            // deleteToolStripMenuItem
+            // 
+            this.deleteToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.sendPasteToolStripMenuItem,
+            this.pasteAsTextToolStripMenuItem,
+            this.toolStripMenuItem4});
+            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
+            resources.ApplyResources(this.deleteToolStripMenuItem, "deleteToolStripMenuItem");
+            // 
+            // sendPasteToolStripMenuItem
+            // 
+            this.sendPasteToolStripMenuItem.Name = "sendPasteToolStripMenuItem";
+            resources.ApplyResources(this.sendPasteToolStripMenuItem, "sendPasteToolStripMenuItem");
+            this.sendPasteToolStripMenuItem.Click += new System.EventHandler(this.pasteOriginalToolStripMenuItem_Click);
+            // 
+            // pasteAsTextToolStripMenuItem
+            // 
+            this.pasteAsTextToolStripMenuItem.Name = "pasteAsTextToolStripMenuItem";
+            resources.ApplyResources(this.pasteAsTextToolStripMenuItem, "pasteAsTextToolStripMenuItem");
+            this.pasteAsTextToolStripMenuItem.Click += new System.EventHandler(this.pasteAsTextToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem4
+            // 
+            this.toolStripMenuItem4.Name = "toolStripMenuItem4";
+            resources.ApplyResources(this.toolStripMenuItem4, "toolStripMenuItem4");
+            this.toolStripMenuItem4.Click += new System.EventHandler(this.Delete_Click);
+            // 
+            // settingsToolStripMenuItem
+            // 
+            this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
+            resources.ApplyResources(this.settingsToolStripMenuItem, "settingsToolStripMenuItem");
+            this.settingsToolStripMenuItem.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
+            // 
+            // aboutToolStripMenuItem
+            // 
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            resources.ApplyResources(this.aboutToolStripMenuItem, "aboutToolStripMenuItem");
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
+            // 
+            // notifyIcon
+            // 
+            this.notifyIcon.ContextMenuStrip = this.contextMenuStripNotifyIcon;
+            resources.ApplyResources(this.notifyIcon, "notifyIcon");
+            this.notifyIcon.MouseClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon_MouseClick);
+            // 
+            // contextMenuStripNotifyIcon
+            // 
+            this.contextMenuStripNotifyIcon.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.exitToolStripMenuItem1});
+            this.contextMenuStripNotifyIcon.Name = "contextMenuStripNotifyIcon";
+            resources.ApplyResources(this.contextMenuStripNotifyIcon, "contextMenuStripNotifyIcon");
+            // 
+            // exitToolStripMenuItem1
+            // 
+            this.exitToolStripMenuItem1.Name = "exitToolStripMenuItem1";
+            resources.ApplyResources(this.exitToolStripMenuItem1, "exitToolStripMenuItem1");
+            this.exitToolStripMenuItem1.Click += new System.EventHandler(this.exitToolStripMenuItem1_Click);
+            // 
+            // cultureManager1
+            // 
+            this.cultureManager1.ManagedControl = this;
             // 
             // clipsTableAdapter
             // 
@@ -693,166 +777,16 @@ namespace ClipAngel
             this.tableAdapterManager.ClipsTableAdapter = this.clipsTableAdapter;
             this.tableAdapterManager.UpdateOrder = ClipAngel.dbDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // MainMenu
-            // 
-            this.MainMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem1,
-            this.clipToolStripMenuItem,
-            this.settingsToolStripMenuItem1,
-            this.aboutToolStripMenuItem1});
-            this.MainMenu.Location = new System.Drawing.Point(0, 0);
-            this.MainMenu.Name = "MainMenu";
-            this.MainMenu.Size = new System.Drawing.Size(699, 24);
-            this.MainMenu.TabIndex = 4;
-            this.MainMenu.Text = "menuStrip1";
-            // 
-            // fileToolStripMenuItem1
-            // 
-            this.fileToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.exitToolStripMenuItem});
-            this.fileToolStripMenuItem1.Name = "fileToolStripMenuItem1";
-            this.fileToolStripMenuItem1.Size = new System.Drawing.Size(37, 20);
-            this.fileToolStripMenuItem1.Text = "File";
-            // 
-            // exitToolStripMenuItem
-            // 
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.exitToolStripMenuItem.Text = "Exit";
-            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem1_Click);
-            // 
-            // clipToolStripMenuItem
-            // 
-            this.clipToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.pasteENTERToolStripMenuItem,
-            this.pasteTextCTRLENTERToolStripMenuItem});
-            this.clipToolStripMenuItem.Name = "clipToolStripMenuItem";
-            this.clipToolStripMenuItem.Size = new System.Drawing.Size(40, 20);
-            this.clipToolStripMenuItem.Text = "Clip";
-            // 
-            // pasteENTERToolStripMenuItem
-            // 
-            this.pasteENTERToolStripMenuItem.Name = "pasteENTERToolStripMenuItem";
-            this.pasteENTERToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
-            this.pasteENTERToolStripMenuItem.Text = "Paste (ENTER)";
-            this.pasteENTERToolStripMenuItem.Click += new System.EventHandler(this.pasteOriginalToolStripMenuItem_Click);
-            // 
-            // pasteTextCTRLENTERToolStripMenuItem
-            // 
-            this.pasteTextCTRLENTERToolStripMenuItem.Name = "pasteTextCTRLENTERToolStripMenuItem";
-            this.pasteTextCTRLENTERToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
-            this.pasteTextCTRLENTERToolStripMenuItem.Text = "Paste text (CTRL+ ENTER)";
-            this.pasteTextCTRLENTERToolStripMenuItem.Click += new System.EventHandler(this.pasteAsTextToolStripMenuItem_Click);
-            // 
-            // settingsToolStripMenuItem1
-            // 
-            this.settingsToolStripMenuItem1.Name = "settingsToolStripMenuItem1";
-            this.settingsToolStripMenuItem1.Size = new System.Drawing.Size(61, 20);
-            this.settingsToolStripMenuItem1.Text = "Settings";
-            this.settingsToolStripMenuItem1.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
-            // 
-            // aboutToolStripMenuItem1
-            // 
-            this.aboutToolStripMenuItem1.Name = "aboutToolStripMenuItem1";
-            this.aboutToolStripMenuItem1.Size = new System.Drawing.Size(52, 20);
-            this.aboutToolStripMenuItem1.Text = "About";
-            this.aboutToolStripMenuItem1.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
-            // 
-            // fileToolStripMenuItem
-            // 
-            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem1});
-            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
-            this.fileToolStripMenuItem.Text = "File";
-            // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(92, 22);
-            this.toolStripMenuItem1.Text = "Exit";
-            this.toolStripMenuItem1.Click += new System.EventHandler(this.exitToolStripMenuItem1_Click);
-            // 
-            // deleteToolStripMenuItem
-            // 
-            this.deleteToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.sendPasteToolStripMenuItem,
-            this.pasteAsTextToolStripMenuItem,
-            this.toolStripMenuItem4});
-            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(40, 20);
-            this.deleteToolStripMenuItem.Text = "Clip";
-            // 
-            // sendPasteToolStripMenuItem
-            // 
-            this.sendPasteToolStripMenuItem.Name = "sendPasteToolStripMenuItem";
-            this.sendPasteToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
-            this.sendPasteToolStripMenuItem.Text = "Paste original (ENTER)";
-            this.sendPasteToolStripMenuItem.Click += new System.EventHandler(this.pasteOriginalToolStripMenuItem_Click);
-            // 
-            // pasteAsTextToolStripMenuItem
-            // 
-            this.pasteAsTextToolStripMenuItem.Name = "pasteAsTextToolStripMenuItem";
-            this.pasteAsTextToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
-            this.pasteAsTextToolStripMenuItem.Text = "Paste  text (CTRL+ENTER)";
-            this.pasteAsTextToolStripMenuItem.Click += new System.EventHandler(this.pasteAsTextToolStripMenuItem_Click);
-            // 
-            // toolStripMenuItem4
-            // 
-            this.toolStripMenuItem4.Name = "toolStripMenuItem4";
-            this.toolStripMenuItem4.ShortcutKeys = System.Windows.Forms.Keys.Delete;
-            this.toolStripMenuItem4.Size = new System.Drawing.Size(209, 22);
-            this.toolStripMenuItem4.Text = "Delete";
-            this.toolStripMenuItem4.Click += new System.EventHandler(this.Delete_Click);
-            // 
-            // settingsToolStripMenuItem
-            // 
-            this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
-            this.settingsToolStripMenuItem.Text = "Settings";
-            this.settingsToolStripMenuItem.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
-            // 
-            // aboutToolStripMenuItem
-            // 
-            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
-            this.aboutToolStripMenuItem.Text = "About";
-            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
-            // 
-            // notifyIcon
-            // 
-            this.notifyIcon.ContextMenuStrip = this.contextMenuStripNotifyIcon;
-            this.notifyIcon.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon.Icon")));
-            this.notifyIcon.Text = "Clip Angel";
-            this.notifyIcon.Visible = true;
-            this.notifyIcon.MouseClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon_MouseClick);
-            // 
-            // contextMenuStripNotifyIcon
-            // 
-            this.contextMenuStripNotifyIcon.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.exitToolStripMenuItem1});
-            this.contextMenuStripNotifyIcon.Name = "contextMenuStripNotifyIcon";
-            this.contextMenuStripNotifyIcon.Size = new System.Drawing.Size(93, 26);
-            // 
-            // exitToolStripMenuItem1
-            // 
-            this.exitToolStripMenuItem1.Name = "exitToolStripMenuItem1";
-            this.exitToolStripMenuItem1.Size = new System.Drawing.Size(92, 22);
-            this.exitToolStripMenuItem1.Text = "Exit";
-            this.exitToolStripMenuItem1.Click += new System.EventHandler(this.exitToolStripMenuItem1_Click);
-            // 
             // Main
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AllowDrop = true;
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(699, 444);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.MainMenu);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
             this.MainMenuStrip = this.MainMenu;
             this.Name = "Main";
-            this.Text = "Clip Angel";
             this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
             this.Activated += new System.EventHandler(this.Main_Activated);
             this.Deactivate += new System.EventHandler(this.Main_Deactivate);
@@ -860,17 +794,17 @@ namespace ClipAngel
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Main_FormClosed);
             this.Load += new System.EventHandler(this.Main_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Main_KeyDown);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
-            this.contextMenuStripDataGrid.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.clipBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dbDataSet)).EndInit();
             this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
             this.splitContainer1.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.contextMenuStripFilter.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
+            this.contextMenuStripDataGrid.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.clipBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dbDataSet)).EndInit();
             this.tableLayoutPanelData.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ImageControl)).EndInit();
             this.statusStrip.ResumeLayout(false);
@@ -893,7 +827,6 @@ namespace ClipAngel
         private System.Windows.Forms.BindingSource clipBindingSource;
         private System.Windows.Forms.ComboBox Filter;
         private System.Windows.Forms.Button ClearFilter;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label labelClipSource;
         private dbDataSet dbDataSet;
         private dbDataSetTableAdapters.ClipsTableAdapter clipsTableAdapter;
@@ -906,10 +839,7 @@ namespace ClipAngel
         private System.Windows.Forms.ToolStripMenuItem pasteAsTextToolStripMenuItem;
         private System.Windows.Forms.NotifyIcon notifyIcon;
         private System.Windows.Forms.ContextMenuStrip contextMenuStripDataGrid;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStripFilter;
-        private System.Windows.Forms.ToolStripMenuItem clearToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem activateListToolStripMenuItem;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.ContextMenuStrip contextMenuStripNotifyIcon;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem1;
@@ -936,6 +866,15 @@ namespace ClipAngel
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem1;
         private System.Windows.Forms.RichTextBox textBoxUrl;
         private System.Windows.Forms.PictureBox ImageControl;
+        private System.Windows.Forms.CheckBox checkBoxUsed;
+        private System.Windows.Forms.ToolTip toolTipDynamic;
+        private System.Windows.Forms.ComboBox TypeFilter;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem5;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem6;
+        private System.Windows.Forms.Button buttonFindNext;
+        private System.Windows.Forms.Button buttonFindPrevious;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private Infralution.Localization.CultureManager cultureManager1;
     }
 }
 

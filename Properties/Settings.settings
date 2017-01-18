@@ -6,10 +6,10 @@
       <Value Profile="(Default)">1000</Value>
     </Setting>
     <Setting Name="Version" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">0.92</Value>
+      <Value Profile="(Default)">0.98</Value>
     </Setting>
-    <Setting Name="HotkeyShowWindow" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Alt +V</Value>
+    <Setting Name="HotkeyShow" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Alt + V</Value>
     </Setting>
     <Setting Name="Autostart" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
@@ -26,6 +26,9 @@
   &lt;string&gt;String1&lt;/string&gt;
   &lt;string&gt;String2&lt;/string&gt;
 &lt;/ArrayOfString&gt;</Value>
+    </Setting>
+    <Setting Name="Language" Type="System.String" Scope="User">
+      <Value Profile="(Default)">English</Value>
     </Setting>
   </Settings>
 </SettingsFile>

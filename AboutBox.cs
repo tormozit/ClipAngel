@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
@@ -14,13 +15,6 @@ namespace ClipAngel
         public AboutBox()
         {
             InitializeComponent();
-            this.Text = String.Format("About {0}", AssemblyTitle);
-            this.labelProductName.Text = AssemblyProduct;
-            //this.labelVersion.Text = String.Format("Version {0}", AssemblyVersion);
-            this.labelVersion.Text = Properties.Settings.Default.Version;
-            this.labelCopyright.Text = AssemblyCopyright;
-            this.labelCompanyName.Text = AssemblyCompany;
-            this.textBoxDescription.Text = AssemblyDescription;
         }
 
         #region Assembly Attribute Accessors
@@ -111,6 +105,29 @@ namespace ClipAngel
         private void tableLayoutPanel_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void AboutBox_Load(object sender, EventArgs e)
+        {
+            cultureManager1.UICulture = new CultureInfo(Main.Locale);
+            this.labelProductName.Text = AssemblyProduct;
+            this.labelVersion.Text = Properties.Settings.Default.Version;
+            this.labelCopyright.Text = AssemblyCopyright;
+        }
+
+         private void linkLabelEmail_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("mailto:" + Properties.Resources.Email);
+        }
+
+        private void linkLabelWebsite_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start(Properties.Resources.Website);
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start(Properties.Resources.Donate);
         }
     }
 }

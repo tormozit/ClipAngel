@@ -17,15 +17,17 @@ using System.Globalization;
 using System.IO;
 using System.Drawing.Imaging;
 using System.Security.Cryptography;
+using System.Resources;
 
 namespace ClipAngel
 {
     public partial class Main : Form
     {
+        public static ResourceManager CurrentResourceManager;
+        public static string Locale = "";
         SQLiteConnection m_dbConnection;
         String connectionString;
         SQLiteDataAdapter dataAdapter;
-        IntPtr _ClipboardViewerNext;
         bool CaptureClipboard = true;
         bool allowRowLoad = true;
         bool AutoGotoLastRow = true;
@@ -38,6 +40,7 @@ namespace ClipAngel
         public bool StartMinimized = false;
         MatchCollection TextLinkMatches;
         MatchCollection UrlLinkMatches;
+        MatchCollection FilterMatches;
         KeyboardHook hook = new KeyboardHook();
 
         #region Clipboard Formats
@@ -100,90 +103,67 @@ namespace ClipAngel
             // register the event that is fired after the key press.
             hook.KeyPressed +=
                 new EventHandler<KeyPressedEventArgs>(hook_KeyPressed);
-            // register the control + alt + F12 combination as hot key.
-            hook.RegisterHotKey(EnumModifierKeys.Alt, Keys.V);
+            RegisterHotKeys();
+        }
+        public static T ParseEnum<T>(string value)
+        {
+            return (T)Enum.Parse(typeof(T), value, true);
+        }
+        private void RegisterHotKeys()
+        {
+            string HotkeyText = Properties.Settings.Default.HotkeyShow;
+            EnumModifierKeys Modifiers;
+            Keys Key;
+            ReadHotkeyFromText(HotkeyText, out Modifiers, out Key);
+            hook.RegisterHotKey(Modifiers, Key);
+        }
+
+        private static void ReadHotkeyFromText(string HotkeyText, out EnumModifierKeys Modifiers, out Keys Key)
+        {
+            string[] Frags = HotkeyText.Split(new[] { " + " }, StringSplitOptions.None);
+            Modifiers = 0;
+            for (int i = 0; i < Frags.Length - 1; i++)
+            {
+                EnumModifierKeys Modifier = 0;
+                Enum.TryParse(Frags[i], out Modifier);
+                Modifiers |= Modifier;
+            }
+            Key = 0;
+            Enum.TryParse(Frags[Frags.Length - 1], out Key);
         }
 
         void hook_KeyPressed(object sender, KeyPressedEventArgs e)
         {
-            ShowWindow();
-            Filter.Focus();
+            ShowForPaste();
+            dataGridView.Focus();
         }
 
         protected override void WndProc(ref Message m)
         {
             switch ((Msgs)m.Msg)
             {
-                //
-                // The WM_DRAWCLIPBOARD message is sent to the first window 
-                // in the clipboard viewer chain when the content of the 
-                // clipboard changes. This enables a clipboard viewer 
-                // window to display the new content of the clipboard. 
-                //
-                case Msgs.WM_DRAWCLIPBOARD:
-
-                    Debug.WriteLine("WindowProc DRAWCLIPBOARD: " + m.Msg, "WndProc");
-
+                case Msgs.WM_CLIPBOARDUPDATE:
+                    Debug.WriteLine("WindowProc WM_CLIPBOARDUPDATE: " + m.Msg, "WndProc");
                     GetClipboardData();
-
-                    //
-                    // Each window that receives the WM_DRAWCLIPBOARD message 
-                    // must call the SendMessage function to pass the message 
-                    // on to the next window in the clipboard viewer chain.
-                    //
-                    User32.SendMessage(_ClipboardViewerNext, m.Msg, m.WParam, m.LParam);
                     break;
-
-
-                //
-                // The WM_CHANGECBCHAIN message is sent to the first window 
-                // in the clipboard viewer chain when a window is being 
-                // removed from the chain. 
-                //
-                case Msgs.WM_CHANGECBCHAIN:
-                    Debug.WriteLine("WM_CHANGECBCHAIN: lParam: " + m.LParam, "WndProc");
-
-                    // When a clipboard viewer window receives the WM_CHANGECBCHAIN message, 
-                    // it should call the SendMessage function to pass the message to the 
-                    // next window in the chain, unless the next window is the window 
-                    // being removed. In this case, the clipboard viewer should save 
-                    // the handle specified by the lParam parameter as the next window in the chain. 
-
-                    //
-                    // wParam is the Handle to the window being removed from 
-                    // the clipboard viewer chain 
-                    // lParam is the Handle to the next window in the chain 
-                    // following the window being removed. 
-                    if (m.WParam == _ClipboardViewerNext)
-                    {
-                        //
-                        // If wParam is the next clipboard viewer then it
-                        // is being removed so update pointer to the next
-                        // window in the clipboard chain
-                        //
-                        _ClipboardViewerNext = m.LParam;
-                    }
-                    else
-                    {
-                        User32.SendMessage(_ClipboardViewerNext, m.Msg, m.WParam, m.LParam);
-                    }
-                    break;
-
                 default:
-                    //
-                    // Let the form process the messages that we are
-                    // not interested in
-                    //
                     base.WndProc(ref m);
                     break;
-
             }
 
         }
 
+        [DllImport("user32.dll")]
+        private static extern bool AddClipboardFormatListener(IntPtr hwnd);
+
+        [DllImport("user32.dll")]
+        private static extern bool RemoveClipboardFormatListener(IntPtr hwnd);
+
         private void Main_Load(object sender, EventArgs e)
         {
+            LoadLocalizedResources();
             notifyIcon.Visible = true;
+            TypeFilter.SelectedIndex = 0;
             this.Text += " " + Properties.Settings.Default.Version;
             if (Properties.Settings.Default.LastFilterValues == null)
             {
@@ -235,7 +215,7 @@ namespace ClipAngel
             dataGridView.DataSource = clipBindingSource;
 
             UpdateClipBindingSource();
-            RegisterClipboardViewer();
+            AddClipboardFormatListener(this.Handle);
             if (StartMinimized)
             { 
                 StartMinimized = false;
@@ -269,24 +249,29 @@ namespace ClipAngel
             {
                 DataRow CurrentRow = CurrentRowView.Row;
                 statusStrip.Items.Find("Created", false)[0].Text = CurrentRow["Created"].ToString();
-                statusStrip.Items.Find("Size", false)[0].Text = CurrentRow["Size"].ToString() + "b";
-                statusStrip.Items.Find("Chars", false)[0].Text = CurrentRow["Chars"].ToString() + "ch";
-                statusStrip.Items.Find("Type", false)[0].Text = CurrentRow["Type"].ToString();
+                statusStrip.Items.Find("Size", false)[0].Text = CurrentRow["Size"].ToString() + MultiLangByteUnit();
+                statusStrip.Items.Find("Chars", false)[0].Text = CurrentRow["Chars"].ToString() + MultiLangCharUnit();
+                string TypeEng = CurrentRow["Type"].ToString();
+                if (CurrentResourceManager.GetString(TypeEng) == null)
+                    statusStrip.Items.Find("Type", false)[0].Text = TypeEng;
+                else
+                    statusStrip.Items.Find("Type", false)[0].Text = CurrentResourceManager.GetString(TypeEng);
                 statusStrip.Items.Find("Position", false)[0].Text = "1";
 
                 // to prevent autoscrolling during marking
                 richTextBox.HideSelection = true;
                 richTextBox.Clear();
                 richTextBox.Text = CurrentRow["Text"].ToString();
+                MarkLinksInRichTextBox(richTextBox, out TextLinkMatches);
                 if (Filter.Text.Length > 0)
                 {
-                    MatchCollection Junk;
-                    MarkRegExpMatchesInRichTextBox(richTextBox, Filter.Text, Color.Red, false, out Junk);
+                    MarkRegExpMatchesInRichTextBox(richTextBox, Filter.Text, Color.Red, false, out FilterMatches);
                 }
-                MarkLinksInRichTextBox(richTextBox, out TextLinkMatches);
+                else
+                    FilterMatches = null;
                 richTextBox.SelectionStart = richTextBox.TextLength;
                 richTextBox.SelectionColor = Color.Green;
-                richTextBox.AppendText("<END>");
+                richTextBox.AppendText(MultiLangEndMarker());
                 richTextBox.SelectionColor = new Color();
                 richTextBox.SelectionStart = 0;
                 richTextBox.HideSelection = false;
@@ -295,7 +280,7 @@ namespace ClipAngel
                 textBoxUrl.Text = CurrentRow["Url"].ToString();
                 MarkLinksInRichTextBox(textBoxUrl, out UrlLinkMatches);
 
-                if (Type.Text == "img")
+                if (CurrentRow["type"].ToString() == "img")
                 {
                     Image image = GetImageFromBinary(CurrentRow["Binary"] as byte[]);
                     ImageControl.Image = image;
@@ -314,6 +299,21 @@ namespace ClipAngel
             }
         }
 
+        private static string MultiLangEndMarker()
+        {
+            return "<" + CurrentResourceManager.GetString("EndMarker") + ">";
+        }
+
+        private static string MultiLangCharUnit()
+        {
+            return CurrentResourceManager.GetString("CharUnit");
+        }
+
+        private static string MultiLangByteUnit()
+        {
+            return CurrentResourceManager.GetString("ByteUnit");
+        }
+
         private void MarkLinksInRichTextBox(RichTextBox Control, out MatchCollection Matches)
         {
              MarkRegExpMatchesInRichTextBox(Control, LinkPattern, Color.Blue, true, out Matches);
@@ -321,7 +321,7 @@ namespace ClipAngel
 
         private void MarkRegExpMatchesInRichTextBox(RichTextBox Control, string Pattern, Color Color, bool Underline, out MatchCollection Matches)
         {
-            Matches = Regex.Matches(Control.Text, Pattern, RegexOptions.IgnoreCase);
+            Matches = Regex.Matches(Control.Text, Pattern.Replace("%", ".*?"), RegexOptions.IgnoreCase);
             Control.DeselectAll();
             int MaxMarked = 100; // prevent slow down
             foreach (Match Match in Matches)
@@ -368,19 +368,32 @@ namespace ClipAngel
             int CurrentClipID = 0;
             if (clipBindingSource.Current != null)
                 CurrentClipID = (int)(clipBindingSource.Current as DataRowView).Row["Id"];
-            string SelectCommandText = "Select * From Clips";
+            string SelectCommandText = "Select * From Clips Where 1=1";
             if (Filter.Text != "")
             {
-                SelectCommandText += " Where UPPER(Text) Like '%" + Filter.Text.ToUpper() + "%'";
+                SelectCommandText += " AND UPPER(Text) Like UPPER('%" + Filter.Text + "%')";
+            }
+            if (checkBoxUsed.Checked)
+            {
+                SelectCommandText += " AND Used";
+            }
+            if (TypeFilter.SelectedValue != "all")
+            {
+                string FilterValue = TypeFilter.SelectedValue as string;
+                if (FilterValue == "text")
+                    FilterValue = "'html','rtf','text'";
+                else
+                    FilterValue = "'" + FilterValue + "'";
+                SelectCommandText += " AND type IN (" + FilterValue + ")";
             }
             SelectCommandText += " ORDER BY Id desc";
             dataAdapter.SelectCommand.CommandText = SelectCommandText;
             DataTable table = new DataTable();
             table.Locale = CultureInfo.InvariantCulture;
-            dataAdapter.Fill(table);
+            dataAdapter.Fill(table); // Long
             allowRowLoad = false;
             clipBindingSource.DataSource = table;
-            PrepareTableGrid();
+            PrepareTableGrid(); // Long
 
             if (LastId == 0)
             {
@@ -397,7 +410,7 @@ namespace ClipAngel
                     LastText = (string)LastRow["Text"];
                 }
             }
-            else if (AutoGotoLastRow)
+            else if (AutoGotoLastRow || CurrentClipID == 0)
                 GotoLastRow();
             else if (CurrentClipID != 0)
             {
@@ -413,6 +426,9 @@ namespace ClipAngel
         private void ClearFilter_Click(object sender = null, EventArgs e = null)
         {
             Filter.Text = "";
+            checkBoxUsed.Checked = false;
+            TypeFilter.SelectedIndex = 0;
+            dataGridView.Focus();
             UpdateClipBindingSource(true);
         }
 
@@ -424,18 +440,6 @@ namespace ClipAngel
         private void Text_CursorChanged(object sender, EventArgs e)
         {
             // This event not working. Why? Decided to use Click instead.
-        }
-
-        /// Register this form as a Clipboard Viewer application
-        private void RegisterClipboardViewer()
-        {
-            _ClipboardViewerNext = User32.SetClipboardViewer(this.Handle);
-        }
-
-        /// Remove this form from the Clipboard Viewer list
-        private void UnregisterClipboardViewer()
-        {
-            User32.ChangeClipboardChain(this.Handle, _ClipboardViewerNext);
         }
 
         private void Main_FormClosing(object sender, FormClosingEventArgs e)
@@ -500,7 +504,6 @@ namespace ClipAngel
             if (iData.GetDataPresent(DataFormats.Rtf))
             {
                 RichText = (string)iData.GetData(DataFormats.Rtf);
-                Text = (string)iData.GetData(DataFormats.Text);
                 if (iData.GetDataPresent(DataFormats.Text))
                 {
                     Type = "rtf";
@@ -573,6 +576,11 @@ namespace ClipAngel
             }
             int Size = Text.Length * 2; // dirty
             int Chars = Text.Length;
+            LastId = LastId + 1;
+            LastText = Text;
+            Size += BinaryBuffer.Length;
+            if (Size > Properties.Settings.Default.MaxClipSizeKB * 1000)
+                return;
             DateTime Created = DateTime.Now;
             String Title = Text.TrimStart();
             Title = Regex.Replace(Title, @"\s+", " ");
@@ -580,10 +588,6 @@ namespace ClipAngel
             {
                 Title = Title.Substring(0, 50 - 1 - 3) + "...";
             }
-            LastId = LastId + 1;
-            LastText = Text;
-            Size += BinaryBuffer.Length;
-
             MD5 md5 = new MD5CryptoServiceProvider();
             byte[] BinaryText = Encoding.Unicode.GetBytes(Text);
             md5.TransformBlock(BinaryText, 0, BinaryText.Length, BinaryText, 0);
@@ -620,7 +624,8 @@ namespace ClipAngel
             command.Parameters.Add("@Hash", System.Data.DbType.String).Value = Hash;
             command.ExecuteNonQuery();
 
-            //dbDataSet.ClipsRow NewRow = (dbDataSet.ClipsRow)dbDataSet.Clips.NewRow();
+            //dbDataSet.ClipsDataTable ClipsTable = (dbDataSet.ClipsDataTable)clipBindingSource.DataSource;
+            //dbDataSet.ClipsRow NewRow = (dbDataSet.ClipsRow) ClipsTable.NewRow();
             //NewRow.Id = LastId;
             //NewRow.Title = Title;
             //NewRow.Text = Text;
@@ -634,6 +639,8 @@ namespace ClipAngel
             //NewRow.Size = Size;
             //NewRow.Chars = Chars;
             //NewRow.Used = false;
+            //NewRow.Url = Url;
+            //NewRow.Hash = Hash;
             //foreach (DataColumn Column in dbDataSet.Clips.Columns)
             //{
             //    if (Column.DataType == System.Type.GetType("System.String") && Column.MaxLength > 0)
@@ -642,8 +649,11 @@ namespace ClipAngel
             //        NewRow[Column.ColumnName] = NewValue.Substring(0, Math.Min(NewValue.Length, Column.MaxLength));
             //    }
             //}
-            //dbDataSet.Clips.Rows.Add(NewRow);
-            //clipsTableAdapter.Insert(NewRow.Type, NewRow.Text, NewRow.Title, NewRow.Application, NewRow.Window, NewRow.Size, NewRow.Chars, NewRow.Created, NewRow.Binary, NewRow.RichText, NewRow.Id, NewRow.HtmlText, NewRow.Used);
+            ////dbDataSet.Clips.Rows.Add(NewRow);
+            ////clipsTableAdapter.Insert(NewRow.Type, NewRow.Text, NewRow.Title, NewRow.Application, NewRow.Window, NewRow.Size, NewRow.Chars, NewRow.Created, NewRow.Binary, NewRow.RichText, NewRow.Id, NewRow.HtmlText, NewRow.Used);
+            //ClipsTable.Rows.InsertAt(NewRow, 0);
+            //PrepareTableGrid();
+
             ClipsNumber++;
             if(ClipsNumber > Properties.Settings.Default.HistoryDepthNumber)
             {
@@ -1040,10 +1050,10 @@ namespace ClipAngel
         private void notifyIcon_MouseClick(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
-            { ShowWindow(); }
+            { ShowForPaste(); }
         }
 
-        private void ShowWindow()
+        private void ShowForPaste()
         {
             this.WindowState = FormWindowState.Normal;
             this.ShowInTaskbar = true;
@@ -1105,19 +1115,27 @@ namespace ClipAngel
                 || Key == Keys.End && IsCtrlDown;
         }
 
-        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
-        {
-            if (keyData == (Keys.Control | Keys.F9))
-            {
-                ClearFilter_Click();
-                return true;
-            }
-            return base.ProcessCmdKey(ref msg, keyData);
-        }
+        //protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        //{
+        //    if (keyData == (Keys.Control | Keys.F9))
+        //    {
+        //        ClearFilter_Click();
+        //        return true;
+        //    }
+        //    return base.ProcessCmdKey(ref msg, keyData);
+        //}
 
         private void dataGridView_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
         {
-            if (!IsKeyPassedFromFilterToGrid(e.KeyCode, e.Control) && e.KeyCode != Keys.Delete && e.KeyCode != Keys.Home && e.KeyCode != Keys.End && e.KeyCode != Keys.Enter)
+            if (true
+                && !IsKeyPassedFromFilterToGrid(e.KeyCode, e.Control) 
+                && e.KeyCode != Keys.Delete 
+                && e.KeyCode != Keys.Home 
+                && e.KeyCode != Keys.End 
+                && e.KeyCode != Keys.Enter
+                && e.KeyCode != Keys.ShiftKey
+                && e.KeyCode != Keys.Alt
+                && e.KeyCode != Keys.Menu)
             {
                 Filter.Focus();
                 sendKey(Filter.Handle, e.KeyData, false, true);
@@ -1214,13 +1232,48 @@ namespace ClipAngel
         {
             Settings SettingsForm = new Settings();
             SettingsForm.Owner = this;
+            hook.UnregisterHotKeys();
             SettingsForm.ShowDialog();
+            RegisterHotKeys();
+            LoadLocalizedResources();
+        }
+
+        private class TypeListItem
+        {
+            public string Name { get; set; }
+            public string Text { get; set; }
+        }
+
+        private void LoadLocalizedResources()
+        {
+            // https://www.codeproject.com/articles/23694/changing-your-application-user-interface-culture-o
+            if (Properties.Settings.Default.Language == "Russian")
+            {
+                Locale = "ru";
+                CurrentResourceManager = Properties.Resource_RU.ResourceManager;
+            }
+            else
+            {
+                Locale = "";
+                CurrentResourceManager = Properties.Resources.ResourceManager;
+            }
+            cultureManager1.UICulture = new CultureInfo(Locale);
+
+            BindingList<TypeListItem> _comboItems = new BindingList<TypeListItem>();
+            _comboItems.Add(new TypeListItem { Name = "all", Text = CurrentResourceManager.GetString("all") });
+            _comboItems.Add(new TypeListItem { Name = "text", Text = CurrentResourceManager.GetString("text") });
+            _comboItems.Add(new TypeListItem { Name = "file", Text = CurrentResourceManager.GetString("file") });
+            _comboItems.Add(new TypeListItem { Name = "img", Text = CurrentResourceManager.GetString("img") });
+            TypeFilter.DataSource = _comboItems;
+            TypeFilter.DisplayMember = "Text";
+            TypeFilter.ValueMember = "Name";
+            AfterRowLoad();
         }
 
         private void Main_FormClosed(object sender, FormClosedEventArgs e)
         {
             Properties.Settings.Default.Save();
-            UnregisterClipboardViewer();
+            RemoveClipboardFormatListener(this.Handle);
         }
 
         private void exitToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -1265,6 +1318,61 @@ namespace ClipAngel
             OpenLinkIfCtrlPressed(sender as RichTextBox, e, UrlLinkMatches);
         }
 
+        private void ImageControl_DoubleClick(object sender, EventArgs e)
+        {
+            string TempFile = Path.GetTempFileName() + Guid.NewGuid().ToString() + ".bmp";
+            ImageControl.Image.Save(TempFile);
+            Process.Start(TempFile);
+
+        }
+
+        private void checkBox1_Click(object sender, EventArgs e)
+        {
+            UpdateClipBindingSource();
+        }
+
+        private void TypeFilter_SelectedValueChanged(object sender, EventArgs e)
+        {
+            UpdateClipBindingSource();
+        }
+
+        private void buttonFindNext_Click(object sender, EventArgs e)
+        {
+            RichTextBox Control = richTextBox;
+            MatchCollection Matches = FilterMatches;
+            if (FilterMatches == null)
+                return;
+            foreach (Match Match in Matches)
+            {
+                if (Control.SelectionStart < Match.Index)
+                {
+                    Control.SelectionStart = Match.Index;
+                    Control.SelectionLength = Match.Length;
+                    break;
+                }
+            }
+        }
+
+        private void buttonFindPrevious_Click(object sender, EventArgs e)
+        {
+            RichTextBox Control = richTextBox;
+            MatchCollection Matches = FilterMatches;
+            if (FilterMatches == null)
+                return;
+            Match PrevMatch = null;
+            foreach (Match Match in Matches)
+            {
+                if (Control.SelectionStart > Match.Index)
+                {
+                    PrevMatch = Match;
+                }
+            }
+            if (PrevMatch != null)
+            {
+                Control.SelectionStart = PrevMatch.Index;
+                Control.SelectionLength = PrevMatch.Length;
+            }
+        }
     }
 }
 
@@ -1336,6 +1444,15 @@ public sealed class KeyboardHook : IDisposable
         };
     }
 
+    public void UnregisterHotKeys()
+    {
+        // unregister all the registered hot keys.
+        for (int i = _currentId; i > 0; i--)
+        {
+            UnregisterHotKey(_window.Handle, i);
+        }
+    }
+
     /// <summary>
     /// Registers a hot key in the system.
     /// </summary>
@@ -1349,10 +1466,10 @@ public sealed class KeyboardHook : IDisposable
         // register the hot key.
         if (!RegisterHotKey(_window.Handle, _currentId, (uint)modifier, (uint)key))
         {
-            string HotkeyPresentation = key.ToString();
+            string HotkeyTitle = key.ToString();
             if (modifier.ToString() != "")
-                HotkeyPresentation = modifier.ToString() + " + " + HotkeyPresentation;
-            string ErrorText = "Couldn’t register the hot key " + HotkeyPresentation;
+                HotkeyTitle = modifier.ToString() + " + " + HotkeyTitle;
+            string ErrorText = "Couldn’t register the hot key " + HotkeyTitle;
             //throw new InvalidOperationException(ErrorText);
             MessageBox.Show(ErrorText, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
@@ -1367,12 +1484,7 @@ public sealed class KeyboardHook : IDisposable
 
     public void Dispose()
     {
-        // unregister all the registered hot keys.
-        for (int i = _currentId; i > 0; i--)
-        {
-            UnregisterHotKey(_window.Handle, i);
-        }
-
+        UnregisterHotKeys();
         // dispose the inner native window.
         _window.Dispose();
     }
@@ -1415,4 +1527,47 @@ public enum EnumModifierKeys : uint
     Control = 2,
     Shift = 4,
     Win = 8
+}
+
+// Решение проблемы регистрозависимости UNICODE символов SQLite http://www.cyberforum.ru/ado-net/thread1708878.html
+namespace ASC.Data.SQLite
+{
+
+    /// <summary>
+    /// Класс переопределяет функцию Lower() в SQLite, т.к. встроенная функция некорректно работает с символами > 128
+    /// </summary>
+    [SQLiteFunction(Name = "lower", Arguments = 1, FuncType = FunctionType.Scalar)]
+    public class LowerFunction : SQLiteFunction
+    {
+
+        /// <summary>
+        /// Вызов скалярной функции Lower().
+        /// </summary>
+        /// <param name="args">Параметры функции</param>
+        /// <returns>Строка в нижнем регистре</returns>
+        public override object Invoke(object[] args)
+        {
+            if (args.Length == 0 || args[0] == null) return null;
+            return ((string)args[0]).ToLower();
+        }
+    }
+
+    /// <summary>
+    /// Класс переопределяет функцию Upper() в SQLite, т.к. встроенная функция некорректно работает с символами > 128
+    /// </summary>
+    [SQLiteFunction(Name = "upper", Arguments = 1, FuncType = FunctionType.Scalar)]
+    public class UpperFunction : SQLiteFunction
+    {
+
+        /// <summary>
+        /// Вызов скалярной функции Upper().
+        /// </summary>
+        /// <param name="args">Параметры функции</param>
+        /// <returns>Строка в верхнем регистре</returns>
+        public override object Invoke(object[] args)
+        {
+            if (args.Length == 0 || args[0] == null) return null;
+            return ((string)args[0]).ToUpper();
+        }
+    }
 }

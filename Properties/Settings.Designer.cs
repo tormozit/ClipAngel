@@ -37,7 +37,7 @@ namespace ClipAngel.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0.92")]
+        [global::System.Configuration.DefaultSettingValueAttribute("0.98")]
         public string Version {
             get {
                 return ((string)(this["Version"]));
@@ -46,13 +46,13 @@ namespace ClipAngel.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Alt +V")]
-        public string HotkeyShowWindow {
+        [global::System.Configuration.DefaultSettingValueAttribute("Alt + V")]
+        public string HotkeyShow {
             get {
-                return ((string)(this["HotkeyShowWindow"]));
+                return ((string)(this["HotkeyShow"]));
             }
             set {
-                this["HotkeyShowWindow"] = value;
+                this["HotkeyShow"] = value;
             }
         }
         
@@ -102,6 +102,18 @@ namespace ClipAngel.Properties {
             }
             set {
                 this["ExampleStringList"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("English")]
+        public string Language {
+            get {
+                return ((string)(this["Language"]));
+            }
+            set {
+                this["Language"] = value;
             }
         }
     }

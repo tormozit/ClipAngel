@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -34,14 +35,17 @@ namespace ClipAngel
             HistoryDepthNumber.Text = Properties.Settings.Default.HistoryDepthNumber.ToString();
             MaxClipSizeKB.Text = Properties.Settings.Default.MaxClipSizeKB.ToString();
             Autostart.Checked = Properties.Settings.Default.Autostart;
-            GlobalHotkeyShowWindow.Text = Properties.Settings.Default.HotkeyShowWindow.ToString();
+            GlobalHotkeyShow.Text = Properties.Settings.Default.HotkeyShow.ToString();
+            Language.Text = Properties.Settings.Default.Language.ToString();
             NumberOfClips.Text = (Owner as Main).ClipsNumber.ToString();
+            cultureManager1.UICulture = new CultureInfo(Main.Locale);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             int numValue;
-
+            Properties.Settings.Default.HotkeyShow = GlobalHotkeyShow.Text;
+            Properties.Settings.Default.Language = Language.Text;
             if (Int32.TryParse(HistoryDepthNumber.Text, out numValue))
             { Properties.Settings.Default.HistoryDepthNumber = numValue; }
             else
@@ -77,6 +81,29 @@ namespace ClipAngel
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void GlobalHotkeyShowWindow_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (false
+                || e.KeyCode == Keys.ControlKey
+                || e.KeyCode == Keys.ShiftKey
+                || e.KeyCode == Keys.Menu)
+            { return; }
+            string HotkeyTitle = "";
+            if (e.KeyCode == Keys.Delete)
+                HotkeyTitle = "No";
+            else
+            {
+                if (e.Control)
+                    HotkeyTitle += Keys.Control.ToString() + " + ";
+                if (e.Alt)
+                    HotkeyTitle += Keys.Alt.ToString() + " + ";
+                if (e.Shift)
+                    HotkeyTitle += Keys.Shift.ToString() + " + ";
+                HotkeyTitle += e.KeyCode.ToString();
+            }
+            GlobalHotkeyShow.Text = HotkeyTitle;
         }
     }
 }
