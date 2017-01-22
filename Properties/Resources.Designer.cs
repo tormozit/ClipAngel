@@ -184,6 +184,15 @@ namespace ClipAngel.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to https://sourceforge.net/p/clip-angel/wiki/Description/.
+        /// </summary>
+        public static string HelpPage {
+            get {
+                return ResourceManager.GetString("HelpPage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to img.
         /// </summary>
         public static string img {

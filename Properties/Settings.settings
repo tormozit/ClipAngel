@@ -30,5 +30,17 @@
     <Setting Name="Language" Type="System.String" Scope="User">
       <Value Profile="(Default)">English</Value>
     </Setting>
+    <Setting Name="WordWrap" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="MoveCopiedClipToTop" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="ShowVisibleSizeColumn" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="HotkeyIncrementalPaste" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Control + Alt + V</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

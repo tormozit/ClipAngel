@@ -950,11 +950,11 @@ namespace ClipAngel {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string Url {
                 get {
-                    try {
-                        return ((string)(this[this.tableClips.UrlColumn]));
+                    if (this.IsUrlNull()) {
+                        return null;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Url\' in table \'Clips\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableClips.UrlColumn]));
                     }
                 }
                 set {
@@ -966,11 +966,11 @@ namespace ClipAngel {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string Hash {
                 get {
-                    try {
-                        return ((string)(this[this.tableClips.HashColumn]));
+                    if (this.IsHashNull()) {
+                        return null;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Hash\' in table \'Clips\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableClips.HashColumn]));
                     }
                 }
                 set {

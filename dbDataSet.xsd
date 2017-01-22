@@ -98,7 +98,7 @@
   <xs:element name="dbDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="dbDataSet" msprop:Generator_UserDSName="dbDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Clips" msprop:Generator_TableClassName="ClipsDataTable" msprop:Generator_TableVarName="tableClips" msprop:Generator_RowChangedName="ClipsRowChanged" msprop:Generator_TablePropName="Clips" msprop:Generator_RowDeletingName="ClipsRowDeleting" msprop:Generator_RowChangingName="ClipsRowChanging" msprop:Generator_RowEvHandlerName="ClipsRowChangeEventHandler" msprop:Generator_RowDeletedName="ClipsRowDeleted" msprop:Generator_RowClassName="ClipsRow" msprop:Generator_UserTableName="Clips" msprop:Generator_RowEvArgName="ClipsRowChangeEvent">
+        <xs:element name="Clips" msprop:Generator_TableClassName="ClipsDataTable" msprop:Generator_TableVarName="tableClips" msprop:Generator_TablePropName="Clips" msprop:Generator_RowDeletingName="ClipsRowDeleting" msprop:Generator_RowChangingName="ClipsRowChanging" msprop:Generator_RowEvHandlerName="ClipsRowChangeEventHandler" msprop:Generator_RowDeletedName="ClipsRowDeleted" msprop:Generator_UserTableName="Clips" msprop:Generator_RowChangedName="ClipsRowChanged" msprop:Generator_RowEvArgName="ClipsRowChangeEvent" msprop:Generator_RowClassName="ClipsRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Type" msprop:nullValue="" msprop:Generator_ColumnPropNameInRow="Type" msprop:Generator_ColumnVarNameInTable="columnType" msprop:Generator_ColumnPropNameInTable="TypeColumn" msprop:Generator_UserColumnName="Type" minOccurs="0">
@@ -138,14 +138,14 @@
               <xs:element name="Id" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" minOccurs="0" />
               <xs:element name="HtmlText" msprop:nullValue="" msprop:Generator_ColumnPropNameInRow="HtmlText" msprop:Generator_ColumnVarNameInTable="columnHtmlText" msprop:Generator_ColumnPropNameInTable="HtmlTextColumn" msprop:Generator_UserColumnName="HtmlText" type="xs:string" minOccurs="0" />
               <xs:element name="Used" msprop:nullValue="false" msprop:Generator_ColumnPropNameInRow="Used" msprop:Generator_ColumnVarNameInTable="columnUsed" msprop:Generator_ColumnPropNameInTable="UsedColumn" msprop:Generator_UserColumnName="Used" type="xs:boolean" minOccurs="0" />
-              <xs:element name="Url" msprop:Generator_ColumnVarNameInTable="columnUrl" msprop:Generator_ColumnPropNameInRow="Url" msprop:Generator_ColumnPropNameInTable="UrlColumn" msprop:Generator_UserColumnName="Url" minOccurs="0">
+              <xs:element name="Url" msprop:nullValue="_null" msprop:Generator_ColumnPropNameInRow="Url" msprop:Generator_ColumnVarNameInTable="columnUrl" msprop:Generator_ColumnPropNameInTable="UrlColumn" msprop:Generator_UserColumnName="Url" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="150" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Hash" msprop:Generator_ColumnVarNameInTable="columnHash" msprop:Generator_ColumnPropNameInRow="Hash" msprop:Generator_ColumnPropNameInTable="HashColumn" msprop:Generator_UserColumnName="Hash" minOccurs="0">
+              <xs:element name="Hash" msprop:nullValue="_null" msprop:Generator_ColumnPropNameInRow="Hash" msprop:Generator_ColumnVarNameInTable="columnHash" msprop:Generator_ColumnPropNameInTable="HashColumn" msprop:Generator_UserColumnName="Hash" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="32" />

@@ -148,7 +148,7 @@
     <value>tableLayoutPanel1</value>
   </data>
   <data name="&gt;&gt;HistoryDepthNumber.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>6</value>
   </data>
   <data name="label1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
@@ -181,7 +181,7 @@
     <value>tableLayoutPanel1</value>
   </data>
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>2</value>
   </data>
   <data name="buttonOK.Location" type="System.Drawing.Point, System.Drawing">
     <value>213, 239</value>
@@ -232,7 +232,7 @@
     <value>tableLayoutPanel1</value>
   </data>
   <data name="&gt;&gt;GlobalHotkeyShow.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>3</value>
   </data>
   <data name="label2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
@@ -265,7 +265,7 @@
     <value>tableLayoutPanel1</value>
   </data>
   <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>9</value>
   </data>
   <data name="NumberOfClips.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
@@ -292,7 +292,7 @@
     <value>tableLayoutPanel1</value>
   </data>
   <data name="&gt;&gt;NumberOfClips.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>5</value>
   </data>
   <data name="label3.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
@@ -325,67 +325,19 @@
     <value>tableLayoutPanel1</value>
   </data>
   <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>1</value>
   </data>
-  <data name="Autostart.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+  <data name="checkBoxAutostart.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
-  <data name="Autostart.AutoSize" type="System.Boolean, mscorlib">
+  <data name="tableLayoutPanel1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="tableLayoutPanel1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="Autostart.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 128</value>
-  </data>
-  <data name="Autostart.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 19</value>
-  </data>
-  <data name="Autostart.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="Autostart.Text" xml:space="preserve">
-    <value>Autostart with user logon</value>
-  </data>
-  <data name="Autostart.ToolTip" xml:space="preserve">
-    <value>Autostart program with user logon</value>
-  </data>
-  <data name="&gt;&gt;Autostart.Name" xml:space="preserve">
-    <value>Autostart</value>
-  </data>
-  <data name="&gt;&gt;Autostart.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Autostart.Parent" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;Autostart.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="MaxClipSizeKB.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
-  </data>
-  <data name="MaxClipSizeKB.Location" type="System.Drawing.Point, System.Drawing">
-    <value>187, 78</value>
-  </data>
-  <data name="MaxClipSizeKB.Size" type="System.Drawing.Size, System.Drawing">
-    <value>94, 20</value>
-  </data>
-  <data name="MaxClipSizeKB.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="MaxClipSizeKB.ToolTip" xml:space="preserve">
-    <value>Clips greater this size will not be captured</value>
-  </data>
-  <data name="&gt;&gt;MaxClipSizeKB.Name" xml:space="preserve">
-    <value>MaxClipSizeKB</value>
-  </data>
-  <data name="&gt;&gt;MaxClipSizeKB.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;MaxClipSizeKB.Parent" xml:space="preserve">
-    <value>tableLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;MaxClipSizeKB.ZOrder" xml:space="preserve">
-    <value>5</value>
+  <data name="tableLayoutPanel1.ColumnCount" type="System.Int32, mscorlib">
+    <value>2</value>
   </data>
   <data name="label4.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
@@ -418,7 +370,34 @@
     <value>tableLayoutPanel1</value>
   </data>
   <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>0</value>
+  </data>
+  <data name="MaxClipSizeKB.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="MaxClipSizeKB.Location" type="System.Drawing.Point, System.Drawing">
+    <value>187, 78</value>
+  </data>
+  <data name="MaxClipSizeKB.Size" type="System.Drawing.Size, System.Drawing">
+    <value>94, 20</value>
+  </data>
+  <data name="MaxClipSizeKB.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="MaxClipSizeKB.ToolTip" xml:space="preserve">
+    <value>Clips greater this size will not be captured</value>
+  </data>
+  <data name="&gt;&gt;MaxClipSizeKB.Name" xml:space="preserve">
+    <value>MaxClipSizeKB</value>
+  </data>
+  <data name="&gt;&gt;MaxClipSizeKB.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;MaxClipSizeKB.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;MaxClipSizeKB.ZOrder" xml:space="preserve">
+    <value>4</value>
   </data>
   <data name="Language.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
@@ -451,13 +430,7 @@
     <value>tableLayoutPanel1</value>
   </data>
   <data name="&gt;&gt;Language.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="tableLayoutPanel1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
-  <data name="tableLayoutPanel1.ColumnCount" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>7</value>
   </data>
   <data name="label5.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
@@ -490,16 +463,145 @@
     <value>tableLayoutPanel1</value>
   </data>
   <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>8</value>
+  </data>
+  <data name="checkBoxMoveCopiedClipToTop.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="checkBoxMoveCopiedClipToTop.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="checkBoxMoveCopiedClipToTop.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 153</value>
+  </data>
+  <data name="checkBoxMoveCopiedClipToTop.Size" type="System.Drawing.Size, System.Drawing">
+    <value>278, 19</value>
+  </data>
+  <data name="checkBoxMoveCopiedClipToTop.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="checkBoxMoveCopiedClipToTop.Text" xml:space="preserve">
+    <value>Move copied clip to top</value>
+  </data>
+  <data name="checkBoxMoveCopiedClipToTop.ToolTip" xml:space="preserve">
+    <value>Move copied clip to top of list</value>
+  </data>
+  <data name="&gt;&gt;checkBoxMoveCopiedClipToTop.Name" xml:space="preserve">
+    <value>checkBoxMoveCopiedClipToTop</value>
+  </data>
+  <data name="&gt;&gt;checkBoxMoveCopiedClipToTop.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;checkBoxMoveCopiedClipToTop.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;checkBoxMoveCopiedClipToTop.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="checkBoxShowSizeColumn.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="checkBoxShowSizeColumn.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="checkBoxShowSizeColumn.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 178</value>
+  </data>
+  <data name="checkBoxShowSizeColumn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>278, 19</value>
+  </data>
+  <data name="checkBoxShowSizeColumn.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="checkBoxShowSizeColumn.Text" xml:space="preserve">
+    <value>Show short visible size column</value>
+  </data>
+  <data name="checkBoxShowSizeColumn.ToolTip" xml:space="preserve">
+    <value>Show column with number of digits in visible size</value>
+  </data>
+  <data name="&gt;&gt;checkBoxShowSizeColumn.Name" xml:space="preserve">
+    <value>checkBoxShowSizeColumn</value>
+  </data>
+  <data name="&gt;&gt;checkBoxShowSizeColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;checkBoxShowSizeColumn.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;checkBoxShowSizeColumn.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="label6.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="label6.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 125</value>
+  </data>
+  <data name="label6.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>1, 1, 1, 1</value>
+  </data>
+  <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>178, 25</value>
+  </data>
+  <data name="label6.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>Hotkey to incremental paste</value>
+  </data>
+  <data name="label6.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;label6.Name" xml:space="preserve">
+    <value>label6</value>
+  </data>
+  <data name="&gt;&gt;label6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label6.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="GlobalHotkeyIncrementalPaste.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="GlobalHotkeyIncrementalPaste.Location" type="System.Drawing.Point, System.Drawing">
+    <value>187, 128</value>
+  </data>
+  <data name="GlobalHotkeyIncrementalPaste.Size" type="System.Drawing.Size, System.Drawing">
+    <value>94, 20</value>
+  </data>
+  <data name="GlobalHotkeyIncrementalPaste.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="GlobalHotkeyIncrementalPaste.ToolTip" xml:space="preserve">
+    <value>Use this hot key in any program to show Clip Angel window</value>
+  </data>
+  <data name="&gt;&gt;GlobalHotkeyIncrementalPaste.Name" xml:space="preserve">
+    <value>GlobalHotkeyIncrementalPaste</value>
+  </data>
+  <data name="&gt;&gt;GlobalHotkeyIncrementalPaste.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GlobalHotkeyIncrementalPaste.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;GlobalHotkeyIncrementalPaste.ZOrder" xml:space="preserve">
+    <value>14</value>
   </data>
   <data name="tableLayoutPanel1.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 12</value>
   </data>
   <data name="tableLayoutPanel1.RowCount" type="System.Int32, mscorlib">
-    <value>7</value>
+    <value>9</value>
   </data>
   <data name="tableLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>284, 221</value>
+    <value>284, 225</value>
   </data>
   <data name="tableLayoutPanel1.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
@@ -517,7 +619,34 @@
     <value>0</value>
   </data>
   <data name="tableLayoutPanel1.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="Autostart" Row="5" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label4" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label3" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label1" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="GlobalHotkeyShow" Row="4" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="MaxClipSizeKB" Row="3" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="NumberOfClips" Row="2" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="HistoryDepthNumber" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="Language" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label5" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label2" Row="4" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,100,Absolute,100" /&gt;&lt;Rows Styles="Absolute,25,Absolute,25,Absolute,25,Absolute,25,Absolute,25,Absolute,25,Absolute,20" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="label4" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label3" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label1" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="GlobalHotkeyShow" Row="4" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="MaxClipSizeKB" Row="3" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="NumberOfClips" Row="2" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="HistoryDepthNumber" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="Language" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label5" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label2" Row="4" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="checkBoxMoveCopiedClipToTop" Row="6" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="checkBoxShowSizeColumn" Row="7" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="checkBoxAutostart" Row="8" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="label6" Row="5" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="GlobalHotkeyIncrementalPaste" Row="5" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,100,AutoSize,0" /&gt;&lt;Rows Styles="Absolute,25,Absolute,25,Absolute,25,Absolute,25,Absolute,25,Absolute,25,Absolute,25,Absolute,25,Absolute,25" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
+  <data name="checkBoxAutostart.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 203</value>
+  </data>
+  <data name="checkBoxAutostart.Size" type="System.Drawing.Size, System.Drawing">
+    <value>278, 19</value>
+  </data>
+  <data name="checkBoxAutostart.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="checkBoxAutostart.Text" xml:space="preserve">
+    <value>Autostart on user logon</value>
+  </data>
+  <data name="checkBoxAutostart.ToolTip" xml:space="preserve">
+    <value>Autostart program on user logon</value>
+  </data>
+  <data name="&gt;&gt;checkBoxAutostart.Name" xml:space="preserve">
+    <value>checkBoxAutostart</value>
+  </data>
+  <data name="&gt;&gt;checkBoxAutostart.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;checkBoxAutostart.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;checkBoxAutostart.ZOrder" xml:space="preserve">
+    <value>12</value>
   </data>
   <metadata name="cultureManager1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>114, 17</value>
@@ -527,6 +656,9 @@
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
+  </data>
+  <data name="$this.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>294, 265</value>

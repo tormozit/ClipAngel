@@ -138,4 +138,7 @@
   <data name="text" xml:space="preserve">
     <value>текст</value>
   </data>
+  <data name="HelpPage" xml:space="preserve">
+    <value>https://sourceforge.net/p/clip-angel/wiki/DescriptionRU/</value>
+  </data>
 </root>

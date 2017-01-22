@@ -76,6 +76,7 @@
     <Compile Include="AboutBox.Designer.cs">
       <DependentUpon>AboutBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="DataGridViewRichTextBoxColumn.cs" />
     <Compile Include="dbDataSet.cs">
       <DependentUpon>dbDataSet.xsd</DependentUpon>
     </Compile>
@@ -94,6 +95,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resource_RU.resx</DependentUpon>
     </Compile>
+    <Compile Include="RichTextBoxPrinter.cs" />
     <Compile Include="Settings.cs">
       <SubType>Form</SubType>
     </Compile>

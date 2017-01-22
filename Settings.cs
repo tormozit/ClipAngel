@@ -34,17 +34,24 @@ namespace ClipAngel
         {
             HistoryDepthNumber.Text = Properties.Settings.Default.HistoryDepthNumber.ToString();
             MaxClipSizeKB.Text = Properties.Settings.Default.MaxClipSizeKB.ToString();
-            Autostart.Checked = Properties.Settings.Default.Autostart;
+
             GlobalHotkeyShow.Text = Properties.Settings.Default.HotkeyShow.ToString();
+            GlobalHotkeyIncrementalPaste.Text = Properties.Settings.Default.HotkeyIncrementalPaste.ToString();
             Language.Text = Properties.Settings.Default.Language.ToString();
             NumberOfClips.Text = (Owner as Main).ClipsNumber.ToString();
             cultureManager1.UICulture = new CultureInfo(Main.Locale);
+            checkBoxAutostart.Checked = Properties.Settings.Default.Autostart;
+            checkBoxMoveCopiedClipToTop.Checked = Properties.Settings.Default.MoveCopiedClipToTop;
+            checkBoxShowSizeColumn.Checked = Properties.Settings.Default.ShowVisibleSizeColumn;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             int numValue;
+            Properties.Settings.Default.MoveCopiedClipToTop = checkBoxMoveCopiedClipToTop.Checked;
+            Properties.Settings.Default.ShowVisibleSizeColumn = checkBoxShowSizeColumn.Checked;
             Properties.Settings.Default.HotkeyShow = GlobalHotkeyShow.Text;
+            Properties.Settings.Default.HotkeyIncrementalPaste = GlobalHotkeyIncrementalPaste.Text;
             Properties.Settings.Default.Language = Language.Text;
             if (Int32.TryParse(HistoryDepthNumber.Text, out numValue))
             { Properties.Settings.Default.HistoryDepthNumber = numValue; }
@@ -62,19 +69,20 @@ namespace ClipAngel
             string Keyname = "Clip Angel";
             try
             {
-                if (Autostart.Checked)
+                if (checkBoxAutostart.Checked)
                     reg.SetValue(Keyname, Application.ExecutablePath + " /m");
                 else
                     reg.DeleteValue(Keyname);
 
                 reg.Close();
-                Properties.Settings.Default.Autostart = Autostart.Checked;
+                Properties.Settings.Default.Autostart = checkBoxAutostart.Checked;
             }
             catch
             {
             }
 
             Properties.Settings.Default.Save();
+            this.DialogResult = DialogResult.OK;
             this.Close();
         }
 
@@ -83,7 +91,7 @@ namespace ClipAngel
 
         }
 
-        private void GlobalHotkeyShowWindow_KeyDown(object sender, KeyEventArgs e)
+        private void HotkeyTextBox_KeyDown(object sender, KeyEventArgs e)
         {
             if (false
                 || e.KeyCode == Keys.ControlKey
@@ -103,7 +111,8 @@ namespace ClipAngel
                     HotkeyTitle += Keys.Shift.ToString() + " + ";
                 HotkeyTitle += e.KeyCode.ToString();
             }
-            GlobalHotkeyShow.Text = HotkeyTitle;
+            (sender as TextBox).Text = HotkeyTitle;
         }
+
     }
 }

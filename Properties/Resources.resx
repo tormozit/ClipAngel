@@ -184,4 +184,7 @@
   <data name="Donate" xml:space="preserve">
     <value>http://yasobe.ru/na/clipangel</value>
   </data>
+  <data name="HelpPage" xml:space="preserve">
+    <value>https://sourceforge.net/p/clip-angel/wiki/Description/</value>
+  </data>
 </root>

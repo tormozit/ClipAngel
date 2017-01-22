@@ -276,14 +276,13 @@ namespace ClipAngel
             this.checkBoxUsed = new System.Windows.Forms.CheckBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.ClearFilter = new System.Windows.Forms.Button();
-            this.Filter = new System.Windows.Forms.ComboBox();
+            this.comboBoxFilter = new System.Windows.Forms.ComboBox();
             this.dataGridView = new System.Windows.Forms.DataGridView();
-            this.TypeImg = new System.Windows.Forms.DataGridViewImageColumn();
-            this.titleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contextMenuStripDataGrid = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.copyClipToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clipBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dbDataSet = new ClipAngel.dbDataSet();
             this.tableLayoutPanelData = new System.Windows.Forms.TableLayoutPanel();
@@ -293,12 +292,12 @@ namespace ClipAngel
             this.labelClipSource = new System.Windows.Forms.Label();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.Position = new System.Windows.Forms.ToolStripStatusLabel();
-            this.Chars = new System.Windows.Forms.ToolStripStatusLabel();
+            this.VisibleSize = new System.Windows.Forms.ToolStripStatusLabel();
             this.Size = new System.Windows.Forms.ToolStripStatusLabel();
             this.Type = new System.Windows.Forms.ToolStripStatusLabel();
             this.Created = new System.Windows.Forms.ToolStripStatusLabel();
-            this.Application = new System.Windows.Forms.TextBox();
-            this.Window = new System.Windows.Forms.TextBox();
+            this.textBoxApplication = new System.Windows.Forms.TextBox();
+            this.textBoxWindow = new System.Windows.Forms.TextBox();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MainMenu = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -308,7 +307,11 @@ namespace ClipAngel
             this.pasteTextCTRLENTERToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem6 = new System.Windows.Forms.ToolStripMenuItem();
+            this.nextMatchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.previousMatchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.wordWrapToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.settingsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -325,6 +328,9 @@ namespace ClipAngel
             this.cultureManager1 = new Infralution.Localization.CultureManager(this.components);
             this.clipsTableAdapter = new ClipAngel.dbDataSetTableAdapters.ClipsTableAdapter();
             this.tableAdapterManager = new ClipAngel.dbDataSetTableAdapters.TableAdapterManager();
+            this.TypeImg = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Title = new ClipAngel.DataGridViewRichTextBoxColumn();
+            this.ShortVisibleSize = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -354,7 +360,7 @@ namespace ClipAngel
             this.splitContainer1.Panel1.Controls.Add(this.checkBoxUsed);
             this.splitContainer1.Panel1.Controls.Add(this.pictureBox1);
             this.splitContainer1.Panel1.Controls.Add(this.ClearFilter);
-            this.splitContainer1.Panel1.Controls.Add(this.Filter);
+            this.splitContainer1.Panel1.Controls.Add(this.comboBoxFilter);
             this.splitContainer1.Panel1.Controls.Add(this.dataGridView);
             // 
             // splitContainer1.Panel2
@@ -363,8 +369,8 @@ namespace ClipAngel
             this.splitContainer1.Panel2.Controls.Add(this.tableLayoutPanelData);
             this.splitContainer1.Panel2.Controls.Add(this.labelClipSource);
             this.splitContainer1.Panel2.Controls.Add(this.statusStrip);
-            this.splitContainer1.Panel2.Controls.Add(this.Application);
-            this.splitContainer1.Panel2.Controls.Add(this.Window);
+            this.splitContainer1.Panel2.Controls.Add(this.textBoxApplication);
+            this.splitContainer1.Panel2.Controls.Add(this.textBoxWindow);
             // 
             // buttonFindNext
             // 
@@ -421,16 +427,16 @@ namespace ClipAngel
             this.ClearFilter.UseVisualStyleBackColor = true;
             this.ClearFilter.Click += new System.EventHandler(this.ClearFilter_Click);
             // 
-            // Filter
+            // comboBoxFilter
             // 
-            resources.ApplyResources(this.Filter, "Filter");
-            this.Filter.FormattingEnabled = true;
-            this.Filter.Name = "Filter";
-            this.toolTipDynamic.SetToolTip(this.Filter, resources.GetString("Filter.ToolTip"));
-            this.Filter.TextChanged += new System.EventHandler(this.Filter_TextChanged);
-            this.Filter.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Filter_KeyDown);
-            this.Filter.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Filter_KeyPress);
-            this.Filter.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Filter_KeyUp);
+            resources.ApplyResources(this.comboBoxFilter, "comboBoxFilter");
+            this.comboBoxFilter.FormattingEnabled = true;
+            this.comboBoxFilter.Name = "comboBoxFilter";
+            this.toolTipDynamic.SetToolTip(this.comboBoxFilter, resources.GetString("comboBoxFilter.ToolTip"));
+            this.comboBoxFilter.TextChanged += new System.EventHandler(this.Filter_TextChanged);
+            this.comboBoxFilter.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Filter_KeyDown);
+            this.comboBoxFilter.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Filter_KeyPress);
+            this.comboBoxFilter.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Filter_KeyUp);
             // 
             // dataGridView
             // 
@@ -447,7 +453,8 @@ namespace ClipAngel
             this.dataGridView.ColumnHeadersVisible = false;
             this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.TypeImg,
-            this.titleDataGridViewTextBoxColumn});
+            this.Title,
+            this.ShortVisibleSize});
             this.dataGridView.ContextMenuStrip = this.contextMenuStripDataGrid;
             this.dataGridView.DataSource = this.clipBindingSource;
             this.dataGridView.Name = "dataGridView";
@@ -460,29 +467,13 @@ namespace ClipAngel
             this.dataGridView.DoubleClick += new System.EventHandler(this.dataGridView_DoubleClick);
             this.dataGridView.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.dataGridView_PreviewKeyDown);
             // 
-            // TypeImg
-            // 
-            this.TypeImg.Frozen = true;
-            resources.ApplyResources(this.TypeImg, "TypeImg");
-            this.TypeImg.Name = "TypeImg";
-            this.TypeImg.ReadOnly = true;
-            this.TypeImg.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.TypeImg.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // titleDataGridViewTextBoxColumn
-            // 
-            this.titleDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.titleDataGridViewTextBoxColumn.DataPropertyName = "Title";
-            resources.ApplyResources(this.titleDataGridViewTextBoxColumn, "titleDataGridViewTextBoxColumn");
-            this.titleDataGridViewTextBoxColumn.Name = "titleDataGridViewTextBoxColumn";
-            this.titleDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
             // contextMenuStripDataGrid
             // 
             this.contextMenuStripDataGrid.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem2,
             this.toolStripMenuItem3,
-            this.deleteToolStripMenuItem1});
+            this.deleteToolStripMenuItem1,
+            this.copyClipToolStripMenuItem});
             this.contextMenuStripDataGrid.Name = "contextMenuStripDataGrid";
             resources.ApplyResources(this.contextMenuStripDataGrid, "contextMenuStripDataGrid");
             // 
@@ -503,6 +494,12 @@ namespace ClipAngel
             this.deleteToolStripMenuItem1.Name = "deleteToolStripMenuItem1";
             resources.ApplyResources(this.deleteToolStripMenuItem1, "deleteToolStripMenuItem1");
             this.deleteToolStripMenuItem1.Click += new System.EventHandler(this.Delete_Click);
+            // 
+            // copyClipToolStripMenuItem
+            // 
+            this.copyClipToolStripMenuItem.Name = "copyClipToolStripMenuItem";
+            resources.ApplyResources(this.copyClipToolStripMenuItem, "copyClipToolStripMenuItem");
+            this.copyClipToolStripMenuItem.Click += new System.EventHandler(this.copyClipToolStripMenuItem_Click);
             // 
             // clipBindingSource
             // 
@@ -561,7 +558,7 @@ namespace ClipAngel
             resources.ApplyResources(this.statusStrip, "statusStrip");
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.Position,
-            this.Chars,
+            this.VisibleSize,
             this.Size,
             this.Type,
             this.Created});
@@ -574,11 +571,11 @@ namespace ClipAngel
             this.Position.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Right;
             this.Position.Name = "Position";
             // 
-            // Chars
+            // VisibleSize
             // 
-            resources.ApplyResources(this.Chars, "Chars");
-            this.Chars.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Right;
-            this.Chars.Name = "Chars";
+            resources.ApplyResources(this.VisibleSize, "VisibleSize");
+            this.VisibleSize.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Right;
+            this.VisibleSize.Name = "VisibleSize";
             // 
             // Size
             // 
@@ -598,23 +595,23 @@ namespace ClipAngel
             this.Created.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Right;
             this.Created.Name = "Created";
             // 
-            // Application
+            // textBoxApplication
             // 
-            resources.ApplyResources(this.Application, "Application");
-            this.Application.BackColor = System.Drawing.SystemColors.Window;
-            this.Application.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clipBindingSource, "Application", true));
-            this.Application.Name = "Application";
-            this.Application.ReadOnly = true;
-            this.toolTipDynamic.SetToolTip(this.Application, resources.GetString("Application.ToolTip"));
+            resources.ApplyResources(this.textBoxApplication, "textBoxApplication");
+            this.textBoxApplication.BackColor = System.Drawing.SystemColors.Window;
+            this.textBoxApplication.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clipBindingSource, "Application", true));
+            this.textBoxApplication.Name = "textBoxApplication";
+            this.textBoxApplication.ReadOnly = true;
+            this.toolTipDynamic.SetToolTip(this.textBoxApplication, resources.GetString("textBoxApplication.ToolTip"));
             // 
-            // Window
+            // textBoxWindow
             // 
-            resources.ApplyResources(this.Window, "Window");
-            this.Window.BackColor = System.Drawing.SystemColors.Window;
-            this.Window.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clipBindingSource, "Window", true));
-            this.Window.Name = "Window";
-            this.Window.ReadOnly = true;
-            this.toolTipDynamic.SetToolTip(this.Window, resources.GetString("Window.ToolTip"));
+            resources.ApplyResources(this.textBoxWindow, "textBoxWindow");
+            this.textBoxWindow.BackColor = System.Drawing.SystemColors.Window;
+            this.textBoxWindow.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clipBindingSource, "Window", true));
+            this.textBoxWindow.Name = "textBoxWindow";
+            this.textBoxWindow.ReadOnly = true;
+            this.toolTipDynamic.SetToolTip(this.textBoxWindow, resources.GetString("textBoxWindow.ToolTip"));
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -629,6 +626,7 @@ namespace ClipAngel
             this.fileToolStripMenuItem1,
             this.clipToolStripMenuItem,
             this.settingsToolStripMenuItem1,
+            this.helpToolStripMenuItem,
             this.aboutToolStripMenuItem1});
             resources.ApplyResources(this.MainMenu, "MainMenu");
             this.MainMenu.Name = "MainMenu";
@@ -652,7 +650,10 @@ namespace ClipAngel
             this.pasteENTERToolStripMenuItem,
             this.pasteTextCTRLENTERToolStripMenuItem,
             this.toolStripMenuItem5,
-            this.toolStripMenuItem6});
+            this.toolStripMenuItem6,
+            this.nextMatchToolStripMenuItem,
+            this.previousMatchToolStripMenuItem,
+            this.wordWrapToolStripMenuItem});
             this.clipToolStripMenuItem.Name = "clipToolStripMenuItem";
             resources.ApplyResources(this.clipToolStripMenuItem, "clipToolStripMenuItem");
             // 
@@ -680,11 +681,35 @@ namespace ClipAngel
             resources.ApplyResources(this.toolStripMenuItem6, "toolStripMenuItem6");
             this.toolStripMenuItem6.Click += new System.EventHandler(this.activateListToolStripMenuItem_Click);
             // 
+            // nextMatchToolStripMenuItem
+            // 
+            this.nextMatchToolStripMenuItem.Name = "nextMatchToolStripMenuItem";
+            resources.ApplyResources(this.nextMatchToolStripMenuItem, "nextMatchToolStripMenuItem");
+            this.nextMatchToolStripMenuItem.Click += new System.EventHandler(this.buttonFindNext_Click);
+            // 
+            // previousMatchToolStripMenuItem
+            // 
+            this.previousMatchToolStripMenuItem.Name = "previousMatchToolStripMenuItem";
+            resources.ApplyResources(this.previousMatchToolStripMenuItem, "previousMatchToolStripMenuItem");
+            this.previousMatchToolStripMenuItem.Click += new System.EventHandler(this.buttonFindPrevious_Click);
+            // 
+            // wordWrapToolStripMenuItem
+            // 
+            this.wordWrapToolStripMenuItem.Name = "wordWrapToolStripMenuItem";
+            resources.ApplyResources(this.wordWrapToolStripMenuItem, "wordWrapToolStripMenuItem");
+            this.wordWrapToolStripMenuItem.Click += new System.EventHandler(this.wordWrapToolStripMenuItem_Click);
+            // 
             // settingsToolStripMenuItem1
             // 
             this.settingsToolStripMenuItem1.Name = "settingsToolStripMenuItem1";
             resources.ApplyResources(this.settingsToolStripMenuItem1, "settingsToolStripMenuItem1");
             this.settingsToolStripMenuItem1.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
+            // 
+            // helpToolStripMenuItem
+            // 
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            resources.ApplyResources(this.helpToolStripMenuItem, "helpToolStripMenuItem");
+            this.helpToolStripMenuItem.Click += new System.EventHandler(this.helpToolStripMenuItem_Click);
             // 
             // aboutToolStripMenuItem1
             // 
@@ -777,6 +802,31 @@ namespace ClipAngel
             this.tableAdapterManager.ClipsTableAdapter = this.clipsTableAdapter;
             this.tableAdapterManager.UpdateOrder = ClipAngel.dbDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
+            // TypeImg
+            // 
+            this.TypeImg.Frozen = true;
+            resources.ApplyResources(this.TypeImg, "TypeImg");
+            this.TypeImg.Name = "TypeImg";
+            this.TypeImg.ReadOnly = true;
+            this.TypeImg.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.TypeImg.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // Title
+            // 
+            this.Title.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            resources.ApplyResources(this.Title, "Title");
+            this.Title.Name = "Title";
+            this.Title.ReadOnly = true;
+            this.Title.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Title.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // ShortVisibleSize
+            // 
+            this.ShortVisibleSize.FillWeight = 1F;
+            resources.ApplyResources(this.ShortVisibleSize, "ShortVisibleSize");
+            this.ShortVisibleSize.Name = "ShortVisibleSize";
+            this.ShortVisibleSize.ReadOnly = true;
+            // 
             // Main
             // 
             this.AllowDrop = true;
@@ -821,11 +871,11 @@ namespace ClipAngel
 
         private System.Windows.Forms.DataGridView dataGridView;
         private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.TextBox Application;
-        private System.Windows.Forms.TextBox Window;
+        private System.Windows.Forms.TextBox textBoxApplication;
+        private System.Windows.Forms.TextBox textBoxWindow;
         private System.Windows.Forms.StatusStrip statusStrip;
         private System.Windows.Forms.BindingSource clipBindingSource;
-        private System.Windows.Forms.ComboBox Filter;
+        private System.Windows.Forms.ComboBox comboBoxFilter;
         private System.Windows.Forms.Button ClearFilter;
         private System.Windows.Forms.Label labelClipSource;
         private dbDataSet dbDataSet;
@@ -850,10 +900,8 @@ namespace ClipAngel
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem4;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelData;
-        private System.Windows.Forms.DataGridViewImageColumn TypeImg;
-        private System.Windows.Forms.DataGridViewTextBoxColumn titleDataGridViewTextBoxColumn;
         private System.Windows.Forms.ToolStripStatusLabel Position;
-        private System.Windows.Forms.ToolStripStatusLabel Chars;
+        private System.Windows.Forms.ToolStripStatusLabel VisibleSize;
         private System.Windows.Forms.ToolStripStatusLabel Size;
         private System.Windows.Forms.ToolStripStatusLabel Type;
         private System.Windows.Forms.ToolStripStatusLabel Created;
@@ -875,6 +923,14 @@ namespace ClipAngel
         private System.Windows.Forms.Button buttonFindPrevious;
         private System.Windows.Forms.PictureBox pictureBox1;
         private Infralution.Localization.CultureManager cultureManager1;
+        private System.Windows.Forms.ToolStripMenuItem nextMatchToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem previousMatchToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem wordWrapToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem copyClipToolStripMenuItem;
+        private System.Windows.Forms.DataGridViewImageColumn TypeImg;
+        private DataGridViewRichTextBoxColumn Title;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ShortVisibleSize;
     }
 }
 

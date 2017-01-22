@@ -116,5 +116,53 @@ namespace ClipAngel.Properties {
                 this["Language"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool WordWrap {
+            get {
+                return ((bool)(this["WordWrap"]));
+            }
+            set {
+                this["WordWrap"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool MoveCopiedClipToTop {
+            get {
+                return ((bool)(this["MoveCopiedClipToTop"]));
+            }
+            set {
+                this["MoveCopiedClipToTop"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool ShowVisibleSizeColumn {
+            get {
+                return ((bool)(this["ShowVisibleSizeColumn"]));
+            }
+            set {
+                this["ShowVisibleSizeColumn"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Control + Alt + V")]
+        public string HotkeyIncrementalPaste {
+            get {
+                return ((string)(this["HotkeyIncrementalPaste"]));
+            }
+            set {
+                this["HotkeyIncrementalPaste"] = value;
+            }
+        }
     }
 }
