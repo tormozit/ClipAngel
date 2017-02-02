@@ -61,11 +61,20 @@ namespace ClipAngel.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to все.
+        ///   Looks up a localized string similar to все метки.
         /// </summary>
-        internal static string all {
+        internal static string allMarks {
             get {
-                return ResourceManager.GetString("all", resourceCulture);
+                return ResourceManager.GetString("allMarks", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to все типы.
+        /// </summary>
+        internal static string allTypes {
+            get {
+                return ResourceManager.GetString("allTypes", resourceCulture);
             }
         }
         
@@ -88,11 +97,38 @@ namespace ClipAngel.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Цветовая глубина.
+        /// </summary>
+        internal static string ColorDepth {
+            get {
+                return ResourceManager.GetString("ColorDepth", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Показать остальной текст.
+        /// </summary>
+        internal static string CutMarker {
+            get {
+                return ResourceManager.GetString("CutMarker", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to КОНЕЦ.
         /// </summary>
         internal static string EndMarker {
             get {
                 return ResourceManager.GetString("EndMarker", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to любимые.
+        /// </summary>
+        internal static string favorite {
+            get {
+                return ResourceManager.GetString("favorite", resourceCulture);
             }
         }
         
@@ -124,11 +160,56 @@ namespace ClipAngel.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Для полной смены языка возможно потребуется перезапуск программы.
+        /// </summary>
+        internal static string LangRestart {
+            get {
+                return ResourceManager.GetString("LangRestart", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Следующий клип.
+        /// </summary>
+        internal static string NextClip {
+            get {
+                return ResourceManager.GetString("NextClip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Размер.
+        /// </summary>
+        internal static string Size {
+            get {
+                return ResourceManager.GetString("Size", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to текст.
         /// </summary>
         internal static string text {
             get {
                 return ResourceManager.GetString("text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Обновить на.
+        /// </summary>
+        internal static string UpdateTo {
+            get {
+                return ResourceManager.GetString("UpdateTo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to полезные.
+        /// </summary>
+        internal static string used {
+            get {
+                return ResourceManager.GetString("used", resourceCulture);
             }
         }
     }

@@ -81,11 +81,20 @@ namespace ClipAngel.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to all.
+        ///   Looks up a localized string similar to all marks.
         /// </summary>
-        public static string all {
+        public static string allMarks {
             get {
-                return ResourceManager.GetString("all", resourceCulture);
+                return ResourceManager.GetString("allMarks", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to all types.
+        /// </summary>
+        public static string allTypes {
+            get {
+                return ResourceManager.GetString("allTypes", resourceCulture);
             }
         }
         
@@ -108,6 +117,24 @@ namespace ClipAngel.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Color depth.
+        /// </summary>
+        public static string ColorDepth {
+            get {
+                return ResourceManager.GetString("ColorDepth", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Show rest of text.
+        /// </summary>
+        public static string CutMarker {
+            get {
+                return ResourceManager.GetString("CutMarker", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
         public static byte[] dbTemplate {
@@ -118,11 +145,30 @@ namespace ClipAngel.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap delete {
+            get {
+                object obj = ResourceManager.GetObject("delete", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to http://yasobe.ru/na/clipangel.
         /// </summary>
         public static string Donate {
             get {
                 return ResourceManager.GetString("Donate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to https://sourceforge.net/projects/clip-angel/files/latest/download.
+        /// </summary>
+        public static string DownloadPage {
+            get {
+                return ResourceManager.GetString("DownloadPage", resourceCulture);
             }
         }
         
@@ -141,6 +187,15 @@ namespace ClipAngel.Properties {
         public static string EndMarker {
             get {
                 return ResourceManager.GetString("EndMarker", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to favorite.
+        /// </summary>
+        public static string favorite {
+            get {
+                return ResourceManager.GetString("favorite", resourceCulture);
             }
         }
         
@@ -202,11 +257,68 @@ namespace ClipAngel.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to For full language change you may need to restart program.
+        /// </summary>
+        public static string LangRestart {
+            get {
+                return ResourceManager.GetString("LangRestart", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap MarkFavorite {
+            get {
+                object obj = ResourceManager.GetObject("MarkFavorite", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Next сlip.
+        /// </summary>
+        public static string NextClip {
+            get {
+                return ResourceManager.GetString("NextClip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Size.
+        /// </summary>
+        public static string Size {
+            get {
+                return ResourceManager.GetString("Size", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to text.
         /// </summary>
         public static string text {
             get {
                 return ResourceManager.GetString("text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap Top1 {
+            get {
+                object obj = ResourceManager.GetObject("Top1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap Top2 {
+            get {
+                object obj = ResourceManager.GetObject("Top2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -261,11 +373,58 @@ namespace ClipAngel.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap UnmarkFavorite {
+            get {
+                object obj = ResourceManager.GetObject("UnmarkFavorite", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Update to.
+        /// </summary>
+        public static string UpdateTo {
+            get {
+                return ResourceManager.GetString("UpdateTo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to used.
+        /// </summary>
+        public static string used {
+            get {
+                return ResourceManager.GetString("used", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 1.02.
+        /// </summary>
+        public static string Version {
+            get {
+                return ResourceManager.GetString("Version", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to https://sourceforge.net/projects/clip-angel.
         /// </summary>
         public static string Website {
             get {
                 return ResourceManager.GetString("Website", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap WordWrap {
+            get {
+                object obj = ResourceManager.GetObject("WordWrap", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         

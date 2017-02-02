@@ -1,13 +1,7 @@
 ﻿using Microsoft.Win32;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.IO;
 using System.Windows.Forms;
 
 namespace ClipAngel
@@ -38,18 +32,25 @@ namespace ClipAngel
             GlobalHotkeyShow.Text = Properties.Settings.Default.HotkeyShow.ToString();
             GlobalHotkeyIncrementalPaste.Text = Properties.Settings.Default.HotkeyIncrementalPaste.ToString();
             Language.Text = Properties.Settings.Default.Language.ToString();
-            NumberOfClips.Text = (Owner as Main).ClipsNumber.ToString();
             cultureManager1.UICulture = new CultureInfo(Main.Locale);
             checkBoxAutostart.Checked = Properties.Settings.Default.Autostart;
+            checkBoxWindowAutoPosition.Checked = Properties.Settings.Default.WindowAutoPosition;
             checkBoxMoveCopiedClipToTop.Checked = Properties.Settings.Default.MoveCopiedClipToTop;
             checkBoxShowSizeColumn.Checked = Properties.Settings.Default.ShowVisibleSizeColumn;
+            checkBoxClipListSimpleDraw.Checked = Properties.Settings.Default.ClipListSimpleDraw;
+
+            NumberOfClips.Text = (Owner as Main).ClipsNumber.ToString();
+            textBoxDatabaseFile.Text = (Owner as Main).DBFileName.ToString();
+            textBoxDatabaseSize.Text = ((new FileInfo(textBoxDatabaseFile.Text)).Length / (1024 * 1024)).ToString();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             int numValue;
+            Properties.Settings.Default.ClipListSimpleDraw = checkBoxClipListSimpleDraw.Checked;
             Properties.Settings.Default.MoveCopiedClipToTop = checkBoxMoveCopiedClipToTop.Checked;
             Properties.Settings.Default.ShowVisibleSizeColumn = checkBoxShowSizeColumn.Checked;
+            Properties.Settings.Default.WindowAutoPosition = checkBoxWindowAutoPosition.Checked;
             Properties.Settings.Default.HotkeyShow = GlobalHotkeyShow.Text;
             Properties.Settings.Default.HotkeyIncrementalPaste = GlobalHotkeyIncrementalPaste.Text;
             Properties.Settings.Default.Language = Language.Text;
@@ -99,7 +100,7 @@ namespace ClipAngel
                 || e.KeyCode == Keys.Menu)
             { return; }
             string HotkeyTitle = "";
-            if (e.KeyCode == Keys.Delete)
+            if (e.KeyCode == Keys.Delete || e.KeyCode == Keys.Back)
                 HotkeyTitle = "No";
             else
             {
@@ -112,6 +113,7 @@ namespace ClipAngel
                 HotkeyTitle += e.KeyCode.ToString();
             }
             (sender as TextBox).Text = HotkeyTitle;
+            e.Handled = true;
         }
 
     }

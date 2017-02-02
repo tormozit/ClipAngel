@@ -25,22 +25,13 @@ namespace ClipAngel.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("1000")]
+        [global::System.Configuration.DefaultSettingValueAttribute("10000")]
         public int HistoryDepthNumber {
             get {
                 return ((int)(this["HistoryDepthNumber"]));
             }
             set {
                 this["HistoryDepthNumber"] = value;
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0.98")]
-        public string Version {
-            get {
-                return ((string)(this["Version"]));
             }
         }
         
@@ -70,7 +61,7 @@ namespace ClipAngel.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("200")]
+        [global::System.Configuration.DefaultSettingValueAttribute("1000")]
         public int MaxClipSizeKB {
             get {
                 return ((int)(this["MaxClipSizeKB"]));
@@ -107,7 +98,7 @@ namespace ClipAngel.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("English")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Default")]
         public string Language {
             get {
                 return ((string)(this["Language"]));
@@ -155,13 +146,49 @@ namespace ClipAngel.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Control + Alt + V")]
+        [global::System.Configuration.DefaultSettingValueAttribute("No")]
         public string HotkeyIncrementalPaste {
             get {
                 return ((string)(this["HotkeyIncrementalPaste"]));
             }
             set {
                 this["HotkeyIncrementalPaste"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool SelectTopClipOnShow {
+            get {
+                return ((bool)(this["SelectTopClipOnShow"]));
+            }
+            set {
+                this["SelectTopClipOnShow"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool ClipListSimpleDraw {
+            get {
+                return ((bool)(this["ClipListSimpleDraw"]));
+            }
+            set {
+                this["ClipListSimpleDraw"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool WindowAutoPosition {
+            get {
+                return ((bool)(this["WindowAutoPosition"]));
+            }
+            set {
+                this["WindowAutoPosition"] = value;
             }
         }
     }

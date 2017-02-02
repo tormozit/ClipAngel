@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
 using System.Globalization;
-using System.Linq;
 using System.Reflection;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ClipAngel
@@ -111,11 +106,11 @@ namespace ClipAngel
         {
             cultureManager1.UICulture = new CultureInfo(Main.Locale);
             this.labelProductName.Text = AssemblyProduct;
-            this.labelVersion.Text = Properties.Settings.Default.Version;
+            this.labelVersion.Text = Properties.Resources.Version;
             this.labelCopyright.Text = AssemblyCopyright;
         }
 
-         private void linkLabelEmail_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void linkLabelEmail_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             System.Diagnostics.Process.Start("mailto:" + Properties.Resources.Email);
         }

@@ -117,8 +117,8 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="all" xml:space="preserve">
-    <value>все</value>
+  <data name="allTypes" xml:space="preserve">
+    <value>все типы</value>
   </data>
   <data name="ByteUnit" xml:space="preserve">
     <value>Б</value>
@@ -140,5 +140,32 @@
   </data>
   <data name="HelpPage" xml:space="preserve">
     <value>https://sourceforge.net/p/clip-angel/wiki/DescriptionRU/</value>
+  </data>
+  <data name="NextClip" xml:space="preserve">
+    <value>Следующий клип</value>
+  </data>
+  <data name="allMarks" xml:space="preserve">
+    <value>все метки</value>
+  </data>
+  <data name="favorite" xml:space="preserve">
+    <value>любимые</value>
+  </data>
+  <data name="used" xml:space="preserve">
+    <value>полезные</value>
+  </data>
+  <data name="LangRestart" xml:space="preserve">
+    <value>Для полной смены языка возможно потребуется перезапуск программы</value>
+  </data>
+  <data name="UpdateTo" xml:space="preserve">
+    <value>Обновить на</value>
+  </data>
+  <data name="ColorDepth" xml:space="preserve">
+    <value>Цветовая глубина</value>
+  </data>
+  <data name="Size" xml:space="preserve">
+    <value>Размер</value>
+  </data>
+  <data name="CutMarker" xml:space="preserve">
+    <value>Показать остальной текст</value>
   </data>
 </root>

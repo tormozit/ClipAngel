@@ -118,79 +118,95 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="HistoryDepthNumber.Location" type="System.Drawing.Point, System.Drawing">
-    <value>194, 28</value>
-  </data>
   <data name="HistoryDepthNumber.Size" type="System.Drawing.Size, System.Drawing">
-    <value>96, 20</value>
+    <value>154, 20</value>
   </data>
   <data name="HistoryDepthNumber.ToolTip" xml:space="preserve">
     <value>Максимальное количество клипов для хранения в списке</value>
-  </data>
-  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>185, 25</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
     <value>Глубина истории клипов</value>
   </data>
   <data name="buttonOK.Location" type="System.Drawing.Point, System.Drawing">
-    <value>218, 239</value>
-  </data>
-  <data name="GlobalHotkeyShow.Location" type="System.Drawing.Point, System.Drawing">
-    <value>194, 103</value>
+    <value>223, 343</value>
   </data>
   <data name="GlobalHotkeyShow.Size" type="System.Drawing.Size, System.Drawing">
-    <value>96, 20</value>
+    <value>154, 20</value>
   </data>
   <data name="GlobalHotkeyShow.ToolTip" xml:space="preserve">
     <value>Эта горячая клавиша при нажатии в любой прогрограмме покажет окно Clip Angel, которое сможе послать вставку клипа в исходную программу.
 </value>
   </data>
-  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>185, 25</value>
-  </data>
   <data name="label2.Text" xml:space="preserve">
-    <value>Горячая клавиша для показа окна</value>
+    <value>Горячая клавиша показа окна</value>
   </data>
-  <data name="NumberOfClips.Location" type="System.Drawing.Point, System.Drawing">
-    <value>194, 53</value>
+  <data name="label2.ToolTip" xml:space="preserve">
+    <value>Горячая клавиша показа окна для вставки</value>
   </data>
   <data name="NumberOfClips.Size" type="System.Drawing.Size, System.Drawing">
-    <value>96, 20</value>
+    <value>154, 20</value>
   </data>
   <data name="NumberOfClips.ToolTip" xml:space="preserve">
     <value>Текущее количество клипов в списке
 </value>
   </data>
-  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>185, 25</value>
-  </data>
   <data name="label3.Text" xml:space="preserve">
     <value>Текущее количество клипов</value>
   </data>
-  <data name="MaxClipSizeKB.Location" type="System.Drawing.Point, System.Drawing">
-    <value>194, 78</value>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="textBoxDatabaseSize.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left</value>
   </data>
-  <data name="MaxClipSizeKB.Size" type="System.Drawing.Size, System.Drawing">
-    <value>96, 20</value>
+  <data name="textBoxDatabaseSize.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 20</value>
   </data>
-  <data name="MaxClipSizeKB.ToolTip" xml:space="preserve">
-    <value>Клипы больше этого размера не будут добавляться в список</value>
+  <data name="textBoxDatabaseFile.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
   </data>
-  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>185, 25</value>
+  <data name="textBoxDatabaseFile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>154, 20</value>
   </data>
   <data name="label4.Text" xml:space="preserve">
     <value>Макс. размер  клипа KB</value>
   </data>
-  <data name="Language.Location" type="System.Drawing.Point, System.Drawing">
-    <value>194, 3</value>
+  <data name="MaxClipSizeKB.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left</value>
+  </data>
+  <data name="MaxClipSizeKB.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 20</value>
+  </data>
+  <data name="MaxClipSizeKB.ToolTip" xml:space="preserve">
+    <value>Клипы больше этого размера не будут добавляться в список</value>
   </data>
   <data name="Language.Size" type="System.Drawing.Size, System.Drawing">
-    <value>96, 21</value>
+    <value>154, 21</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>Язык интерфейса</value>
+  </data>
+  <data name="checkBoxShowSizeColumn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>373, 19</value>
+  </data>
+  <data name="checkBoxShowSizeColumn.Text" xml:space="preserve">
+    <value>Отображать колонку видимого размера</value>
+  </data>
+  <data name="checkBoxShowSizeColumn.ToolTip" xml:space="preserve">
+    <value>Отображать колонку с количеством символов в видимом размере</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>Горячая клавиша последоват. вставки</value>
+  </data>
+  <data name="GlobalHotkeyIncrementalPaste.Size" type="System.Drawing.Size, System.Drawing">
+    <value>154, 20</value>
+  </data>
+  <data name="checkBoxClipListSimpleDraw.Size" type="System.Drawing.Size, System.Drawing">
+    <value>373, 19</value>
+  </data>
+  <data name="checkBoxClipListSimpleDraw.Text" xml:space="preserve">
+    <value>Быстрая и простая отрисовка списка клипов</value>
   </data>
   <data name="checkBoxMoveCopiedClipToTop.Size" type="System.Drawing.Size, System.Drawing">
-    <value>287, 19</value>
+    <value>373, 19</value>
   </data>
   <data name="checkBoxMoveCopiedClipToTop.Text" xml:space="preserve">
     <value>Перемещать скопированный клип наверх</value>
@@ -199,29 +215,44 @@
     <value>Перемещать клип наверх списка при копировании
 </value>
   </data>
-  <data name="checkBoxShowSizeColumn.Size" type="System.Drawing.Size, System.Drawing">
-    <value>287, 19</value>
+  <data name="checkBoxWindowAutoPosition.Size" type="System.Drawing.Size, System.Drawing">
+    <value>373, 19</value>
   </data>
-  <data name="checkBoxShowSizeColumn.Text" xml:space="preserve">
-    <value>Отображать колонку видимого размера</value>
+  <data name="checkBoxWindowAutoPosition.Text" xml:space="preserve">
+    <value>Автовыбор положения окна при открытии</value>
   </data>
-  <data name="checkBoxShowSizeColumn.ToolTip" xml:space="preserve">
-    <value>Отображать колонку с количеством символов в видимом размере</value>
+  <data name="checkBoxWindowAutoPosition.ToolTip" xml:space="preserve">
+    <value>Если возможно окно будет открываться около места ввода текста</value>
+  </data>
+  <data name="label7.Text" xml:space="preserve">
+    <value>Файл базы данных</value>
+  </data>
+  <data name="label8.Text" xml:space="preserve">
+    <value>Размер база данных MB</value>
   </data>
   <data name="tableLayoutPanel1.Location" type="System.Drawing.Point, System.Drawing">
     <value>1, 12</value>
   </data>
   <data name="tableLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>293, 221</value>
+    <value>379, 325</value>
   </data>
-  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>185, 25</value>
+  <data name="checkBoxAutostart.Size" type="System.Drawing.Size, System.Drawing">
+    <value>373, 19</value>
   </data>
-  <data name="label5.Text" xml:space="preserve">
-    <value>Язык интерфейса</value>
+  <data name="checkBoxAutostart.Text" xml:space="preserve">
+    <value>Автозапуск при входе пользователя</value>
+  </data>
+  <data name="checkBoxAutostart.ToolTip" xml:space="preserve">
+    <value>Автозапуск программы при входе пользователя</value>
+  </data>
+  <data name="buttonCancel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>304, 343</value>
+  </data>
+  <data name="buttonCancel.Text" xml:space="preserve">
+    <value>Отмена</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>295, 265</value>
+    <value>381, 375</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Настройки</value>

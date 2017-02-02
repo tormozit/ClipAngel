@@ -51,13 +51,24 @@
     <ApplicationIcon>Picture\alien.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Infralution.Localization">
-      <HintPath>..\LocalizationDemo\bin\Debug\Infralution.Localization.dll</HintPath>
+    <Reference Include="AngleSharp, Version=0.9.9.0, Culture=neutral, PublicKeyToken=e83494dcdc6d31ea, processorArchitecture=MSIL">
+      <HintPath>packages\AngleSharp.0.9.9\lib\net45\AngleSharp.dll</HintPath>
+      <Private>True</Private>
     </Reference>
+    <Reference Include="DotNetZip, Version=1.10.1.0, Culture=neutral, PublicKeyToken=6583c7c814667745, processorArchitecture=MSIL">
+      <HintPath>packages\DotNetZip.1.10.1\lib\net20\DotNetZip.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Infralution.Localization, Version=1.2.2.0, Culture=neutral, PublicKeyToken=af4bb5454ff71782, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libs\Infralution.Localization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Data.SQLite">
-      <HintPath>.\System.Data.SQLite.dll</HintPath>
+    <Reference Include="System.Data.SQLite, Version=1.0.103.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libs\System.Data.SQLite.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -118,13 +129,16 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Main.ru.resx">
       <DependentUpon>Main.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resource_RU.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resource_RU.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Settings.resx">
       <DependentUpon>Settings.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
@@ -137,6 +151,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Settings.ru.resx">
       <DependentUpon>Settings.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <None Include="dbDataSet.xsc">
       <DependentUpon>dbDataSet.xsd</DependentUpon>
@@ -150,6 +165,7 @@
       <DependentUpon>dbDataSet.xsd</DependentUpon>
     </None>
     <None Include="DB\db.sqlite" />
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -171,7 +187,6 @@
   <ItemGroup>
     <None Include="Resources\Искать назад.png" />
     <None Include="Resources\Искать вперед.png" />
-    <None Include="Resources\Angel.ico" />
     <None Include="Picture\TypeFile.png" />
     <None Include="Picture\TypeHtml.png" />
     <None Include="Picture\TypeImg.png" />
@@ -179,6 +194,14 @@
     <None Include="Picture\TypeText.png" />
     <None Include="Picture\alien.ico" />
     <None Include="Picture\Alien-64x64.png" />
+    <None Include="Picture\word wrap.png" />
+    <None Include="Picture\Top1.png" />
+    <None Include="Picture\Top2.png" />
+    <None Include="Picture\delete.png" />
+    <None Include="Picture\Set favorite.png" />
+    <None Include="Picture\Reset favorite.png" />
+    <None Include="Picture\Искать вперед.png" />
+    <None Include="Picture\Искать назад.png" />
     <Content Include="Picture\ЭлементПомеченныйНаУдаление.gif" />
   </ItemGroup>
   <ItemGroup>

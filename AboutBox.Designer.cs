@@ -37,10 +37,10 @@
             this.linkLabelEmail = new System.Windows.Forms.LinkLabel();
             this.linkLabelWebSite = new System.Windows.Forms.LinkLabel();
             this.label1 = new System.Windows.Forms.Label();
-            this.okButton = new System.Windows.Forms.Button();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.labelCopyright = new System.Windows.Forms.Label();
             this.labelAuthor = new System.Windows.Forms.Label();
+            this.okButton = new System.Windows.Forms.Button();
             this.cultureManager1 = new Infralution.Localization.CultureManager(this.components);
             this.tableLayoutPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).BeginInit();
@@ -56,7 +56,6 @@
             this.tableLayoutPanel.Controls.Add(this.linkLabelEmail, 1, 6);
             this.tableLayoutPanel.Controls.Add(this.linkLabelWebSite, 1, 5);
             this.tableLayoutPanel.Controls.Add(this.label1, 1, 4);
-            this.tableLayoutPanel.Controls.Add(this.okButton, 1, 9);
             this.tableLayoutPanel.Controls.Add(this.linkLabel1, 1, 7);
             this.tableLayoutPanel.Controls.Add(this.labelCopyright, 1, 2);
             this.tableLayoutPanel.Controls.Add(this.labelAuthor, 1, 3);
@@ -68,7 +67,7 @@
             resources.ApplyResources(this.logoPictureBox, "logoPictureBox");
             this.logoPictureBox.Image = global::ClipAngel.Properties.Resources.Alien_64x64;
             this.logoPictureBox.Name = "logoPictureBox";
-            this.tableLayoutPanel.SetRowSpan(this.logoPictureBox, 10);
+            this.tableLayoutPanel.SetRowSpan(this.logoPictureBox, 9);
             this.logoPictureBox.TabStop = false;
             this.logoPictureBox.Click += new System.EventHandler(this.logoPictureBox_Click);
             // 
@@ -108,12 +107,6 @@
             resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
             // 
-            // okButton
-            // 
-            resources.ApplyResources(this.okButton, "okButton");
-            this.okButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.okButton.Name = "okButton";
-            // 
             // linkLabel1
             // 
             resources.ApplyResources(this.linkLabel1, "linkLabel1");
@@ -131,6 +124,12 @@
             resources.ApplyResources(this.labelAuthor, "labelAuthor");
             this.labelAuthor.Name = "labelAuthor";
             // 
+            // okButton
+            // 
+            resources.ApplyResources(this.okButton, "okButton");
+            this.okButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.okButton.Name = "okButton";
+            // 
             // cultureManager1
             // 
             this.cultureManager1.ManagedControl = this;
@@ -141,6 +140,7 @@
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tableLayoutPanel);
+            this.Controls.Add(this.okButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
