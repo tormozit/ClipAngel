@@ -40,8 +40,8 @@ namespace ClipAngel
             checkBoxClipListSimpleDraw.Checked = Properties.Settings.Default.ClipListSimpleDraw;
 
             NumberOfClips.Text = (Owner as Main).ClipsNumber.ToString();
-            textBoxDatabaseFile.Text = (Owner as Main).DBFileName.ToString();
-            textBoxDatabaseSize.Text = ((new FileInfo(textBoxDatabaseFile.Text)).Length / (1024 * 1024)).ToString();
+            textBoxUserSettingsPath.Text = (Owner as Main).UserSettingsPath;
+            textBoxDatabaseSize.Text = ((new FileInfo((Owner as Main).DBFileName)).Length / (1024 * 1024)).ToString();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -71,10 +71,14 @@ namespace ClipAngel
             try
             {
                 if (checkBoxAutostart.Checked)
-                    reg.SetValue(Keyname, Application.ExecutablePath + " /m");
+                {
+                    string CommandLine = Application.ExecutablePath + " /m";
+                    if ((Owner as Main).PortableMode)
+                        CommandLine += " /p";
+                    reg.SetValue(Keyname, CommandLine);
+                }
                 else
                     reg.DeleteValue(Keyname);
-
                 reg.Close();
                 Properties.Settings.Default.Autostart = checkBoxAutostart.Checked;
             }

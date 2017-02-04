@@ -24,6 +24,7 @@ using System.Net;
 using AngleSharp.Parser.Html;
 using AngleSharp.Dom;
 using System.Timers;
+using System.Reflection;
 
 namespace ClipAngel
 {
@@ -31,8 +32,13 @@ namespace ClipAngel
     {
         public static ResourceManager CurrentResourceManager;
         public static string Locale = "";
+        public bool PortableMode = false;
+        public int ClipsNumber = 0;
+        public string UserSettingsPath;
+        public string DBFileName;
+        public bool StartMinimized = false;
         SQLiteConnection m_dbConnection;
-        String connectionString;
+        string connectionString;
         SQLiteDataAdapter dataAdapter;
         bool CaptureClipboard = true;
         bool allowRowLoad = true;
@@ -42,9 +48,6 @@ namespace ClipAngel
         static string LinkPattern = "\\b(https?|ftp|file)://[-A-Z0-9+&@#/%?=~_|!:,.;]*[A-Z0-9+&@#/%=~_|]";
         int LastId = 0;
         string LastText;
-        public int ClipsNumber = 0;
-        public string DBFileName;
-        public bool StartMinimized = false;
         MatchCollection TextLinkMatches;
         MatchCollection UrlLinkMatches;
         MatchCollection FilterMatches;
@@ -138,6 +141,87 @@ namespace ClipAngel
 
         }
 
+        #region Assembly Attribute Accessors
+
+        public string AssemblyTitle
+        {
+            get
+            {
+                object[] attributes = Assembly.GetExecutingAssembly().GetCustomAttributes(typeof(AssemblyTitleAttribute), false);
+                if (attributes.Length > 0)
+                {
+                    AssemblyTitleAttribute titleAttribute = (AssemblyTitleAttribute)attributes[0];
+                    if (titleAttribute.Title != "")
+                    {
+                        return titleAttribute.Title;
+                    }
+                }
+                return System.IO.Path.GetFileNameWithoutExtension(Assembly.GetExecutingAssembly().CodeBase);
+            }
+        }
+
+        public string AssemblyVersion
+        {
+            get
+            {
+                return Assembly.GetExecutingAssembly().GetName().Version.ToString();
+            }
+        }
+
+        public string AssemblyDescription
+        {
+            get
+            {
+                object[] attributes = Assembly.GetExecutingAssembly().GetCustomAttributes(typeof(AssemblyDescriptionAttribute), false);
+                if (attributes.Length == 0)
+                {
+                    return "";
+                }
+                return ((AssemblyDescriptionAttribute)attributes[0]).Description;
+            }
+        }
+
+        public string AssemblyProduct
+        {
+            get
+            {
+                object[] attributes = Assembly.GetExecutingAssembly().GetCustomAttributes(typeof(AssemblyProductAttribute), false);
+                if (attributes.Length == 0)
+                {
+                    return "";
+                }
+                return ((AssemblyProductAttribute)attributes[0]).Product;
+            }
+        }
+
+        public string AssemblyCopyright
+        {
+            get
+            {
+                object[] attributes = Assembly.GetExecutingAssembly().GetCustomAttributes(typeof(AssemblyCopyrightAttribute), false);
+                if (attributes.Length == 0)
+                {
+                    return "";
+                }
+                return ((AssemblyCopyrightAttribute)attributes[0]).Copyright;
+            }
+        }
+
+        public string AssemblyCompany
+        {
+            get
+            {
+                object[] attributes = Assembly.GetExecutingAssembly().GetCustomAttributes(typeof(AssemblyCompanyAttribute), false);
+                if (attributes.Length == 0)
+                {
+                    return "";
+                }
+                return ((AssemblyCompanyAttribute)attributes[0]).Company;
+            }
+        }
+        #endregion
+
+
         [DllImport("user32.dll")]
         private static extern bool AddClipboardFormatListener(IntPtr hwnd);
 
@@ -155,12 +239,11 @@ namespace ClipAngel
                 Properties.Settings.Default.LastFilterValues = new StringCollection();
             }
             FillFilterItems();
-            string SettingsPath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\ClipAngel";
-            if (!Directory.Exists(SettingsPath))
+            if (!Directory.Exists(UserSettingsPath))
             {
-                Directory.CreateDirectory(SettingsPath);
+                Directory.CreateDirectory(UserSettingsPath);
             }
-            DBFileName = SettingsPath + "\\db.sqlite";
+            DBFileName = UserSettingsPath + "\\" + Properties.Resources.DBShortFilename;
             connectionString = "data source=" + DBFileName + ";";
             string Reputation = "Magic67234784";
             if (!File.Exists(DBFileName))
@@ -382,6 +465,7 @@ namespace ClipAngel
 
         private void Filter_TextChanged(object sender, EventArgs e)
         {
+            ChooseTitleColumnDraw();
             UpdateClipBindingSource(true);
         }
 
@@ -1327,7 +1411,9 @@ namespace ClipAngel
             foreach (DataGridViewRow Row in dataGridView.Rows)
             {
                 DataRowView DataRowView = (DataRowView)(dataGridView.Rows[Row.Index].DataBoundItem);
-                Row.Cells["ShortVisibleSize"].Value = DataRowView.Row["Chars"].ToString().Length;
+                int ShortSize = DataRowView.Row["Chars"].ToString().Length;
+                if (ShortSize > 2)
+                    Row.Cells["ShortVisibleSize"].Value = ShortSize;
                 string ClipType = (string)DataRowView.Row["Type"];
                 Bitmap Image = null;
                 switch (ClipType)
@@ -1423,9 +1509,15 @@ namespace ClipAngel
             MarkFilter.DisplayMember = "Text";
             MarkFilter.ValueMember = "Name";
 
-            dataGridView.Columns["TitleSimple"].Visible = Properties.Settings.Default.ClipListSimpleDraw;
-            dataGridView.Columns["Title"].Visible = !Properties.Settings.Default.ClipListSimpleDraw;
+            ChooseTitleColumnDraw();
             AfterRowLoad();
+        }
+
+        private void ChooseTitleColumnDraw()
+        {
+            bool ResultSimpleDraw = Properties.Settings.Default.ClipListSimpleDraw || comboBoxFilter.Text == "";
+            dataGridView.Columns["TitleSimple"].Visible = ResultSimpleDraw;
+            dataGridView.Columns["Title"].Visible = !ResultSimpleDraw;
         }
 
         public async void CheckUpdate(bool ShowErrors = false)

@@ -135,6 +135,15 @@ namespace ClipAngel.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to db.sqlite.
+        /// </summary>
+        public static string DBShortFilename {
+            get {
+                return ResourceManager.GetString("DBShortFilename", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
         public static byte[] dbTemplate {

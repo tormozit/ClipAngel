@@ -238,4 +238,7 @@
   <data name="CutMarker" xml:space="preserve">
     <value>Show rest of text</value>
   </data>
+  <data name="DBShortFilename" xml:space="preserve">
+    <value>db.sqlite</value>
+  </data>
 </root>
