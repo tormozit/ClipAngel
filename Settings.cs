@@ -38,6 +38,7 @@ namespace ClipAngel
             checkBoxMoveCopiedClipToTop.Checked = Properties.Settings.Default.MoveCopiedClipToTop;
             checkBoxShowSizeColumn.Checked = Properties.Settings.Default.ShowVisibleSizeColumn;
             checkBoxClipListSimpleDraw.Checked = Properties.Settings.Default.ClipListSimpleDraw;
+            checkBoxAutoCheckUpdate.Checked = Properties.Settings.Default.AutoCheckForUpdate;
 
             NumberOfClips.Text = (Owner as Main).ClipsNumber.ToString();
             textBoxUserSettingsPath.Text = (Owner as Main).UserSettingsPath;
@@ -47,6 +48,7 @@ namespace ClipAngel
         private void button1_Click(object sender, EventArgs e)
         {
             int numValue;
+            Properties.Settings.Default.AutoCheckForUpdate = checkBoxAutoCheckUpdate.Checked;
             Properties.Settings.Default.ClipListSimpleDraw = checkBoxClipListSimpleDraw.Checked;
             Properties.Settings.Default.MoveCopiedClipToTop = checkBoxMoveCopiedClipToTop.Checked;
             Properties.Settings.Default.ShowVisibleSizeColumn = checkBoxShowSizeColumn.Checked;

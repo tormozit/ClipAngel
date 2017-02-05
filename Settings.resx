@@ -453,11 +453,8 @@
   <data name="&gt;&gt;GlobalHotkeyIncrementalPaste.ZOrder" xml:space="preserve">
     <value>14</value>
   </data>
-  <data name="checkBoxMoveCopiedClipToTop.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+  <data name="checkBoxClipListSimpleDraw.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
-  </data>
-  <data name="checkBoxMoveCopiedClipToTop.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
   </data>
   <data name="tableLayoutPanel1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
@@ -615,36 +612,38 @@
   <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
     <value>13</value>
   </data>
-  <data name="checkBoxClipListSimpleDraw.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+  <data name="checkBoxMoveCopiedClipToTop.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
-  <data name="checkBoxClipListSimpleDraw.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 278</value>
+  <data name="checkBoxMoveCopiedClipToTop.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
-  <data name="checkBoxClipListSimpleDraw.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="checkBoxMoveCopiedClipToTop.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 253</value>
+  </data>
+  <data name="checkBoxMoveCopiedClipToTop.Size" type="System.Drawing.Size, System.Drawing">
     <value>373, 19</value>
   </data>
-  <data name="checkBoxClipListSimpleDraw.TabIndex" type="System.Int32, mscorlib">
-    <value>15</value>
+  <data name="checkBoxMoveCopiedClipToTop.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
   </data>
-  <data name="checkBoxClipListSimpleDraw.Text" xml:space="preserve">
-    <value>Filtered list fast and simple draw</value>
+  <data name="checkBoxMoveCopiedClipToTop.Text" xml:space="preserve">
+    <value>Move copied clip to top</value>
   </data>
-  <data name="checkBoxClipListSimpleDraw.ToolTip" xml:space="preserve">
-    <value>Filtered list will draw fast without highlighting filter matches.
-But current clip text will highlight filter matches anyway.</value>
+  <data name="checkBoxMoveCopiedClipToTop.ToolTip" xml:space="preserve">
+    <value>Move copied clip to top of list</value>
   </data>
-  <data name="&gt;&gt;checkBoxClipListSimpleDraw.Name" xml:space="preserve">
-    <value>checkBoxClipListSimpleDraw</value>
+  <data name="&gt;&gt;checkBoxMoveCopiedClipToTop.Name" xml:space="preserve">
+    <value>checkBoxMoveCopiedClipToTop</value>
   </data>
-  <data name="&gt;&gt;checkBoxClipListSimpleDraw.Type" xml:space="preserve">
+  <data name="&gt;&gt;checkBoxMoveCopiedClipToTop.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;checkBoxClipListSimpleDraw.Parent" xml:space="preserve">
+  <data name="&gt;&gt;checkBoxMoveCopiedClipToTop.Parent" xml:space="preserve">
     <value>tableLayoutPanel1</value>
   </data>
-  <data name="&gt;&gt;checkBoxClipListSimpleDraw.ZOrder" xml:space="preserve">
-    <value>15</value>
+  <data name="&gt;&gt;checkBoxMoveCopiedClipToTop.ZOrder" xml:space="preserve">
+    <value>16</value>
   </data>
   <data name="checkBoxWindowAutoPosition.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
@@ -766,6 +765,36 @@ But current clip text will highlight filter matches anyway.</value>
   <data name="&gt;&gt;checkBoxAutostart.ZOrder" xml:space="preserve">
     <value>20</value>
   </data>
+  <data name="checkBoxAutoCheckUpdate.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="checkBoxAutoCheckUpdate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 328</value>
+  </data>
+  <data name="checkBoxAutoCheckUpdate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>373, 19</value>
+  </data>
+  <data name="checkBoxAutoCheckUpdate.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="checkBoxAutoCheckUpdate.Text" xml:space="preserve">
+    <value>Autocheck for program update</value>
+  </data>
+  <data name="checkBoxAutoCheckUpdate.ToolTip" xml:space="preserve">
+    <value>Autocheck for update on program start and every day</value>
+  </data>
+  <data name="&gt;&gt;checkBoxAutoCheckUpdate.Name" xml:space="preserve">
+    <value>checkBoxAutoCheckUpdate</value>
+  </data>
+  <data name="&gt;&gt;checkBoxAutoCheckUpdate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;checkBoxAutoCheckUpdate.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;checkBoxAutoCheckUpdate.ZOrder" xml:space="preserve">
+    <value>21</value>
+  </data>
   <data name="tableLayoutPanel1.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 12</value>
   </data>
@@ -773,7 +802,7 @@ But current clip text will highlight filter matches anyway.</value>
     <value>10</value>
   </data>
   <data name="tableLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>379, 325</value>
+    <value>379, 350</value>
   </data>
   <data name="tableLayoutPanel1.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
@@ -791,34 +820,35 @@ But current clip text will highlight filter matches anyway.</value>
     <value>1</value>
   </data>
   <data name="tableLayoutPanel1.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="textBoxDatabaseSize" Row="4" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="textBoxUserSettingsPath" Row="3" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label4" Row="5" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label3" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label1" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="GlobalHotkeyShow" Row="6" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="MaxClipSizeKB" Row="5" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="NumberOfClips" Row="2" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="HistoryDepthNumber" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="Language" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label5" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label2" Row="6" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="checkBoxShowSizeColumn" Row="9" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="label6" Row="7" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="GlobalHotkeyIncrementalPaste" Row="7" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="checkBoxClipListSimpleDraw" Row="11" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="checkBoxMoveCopiedClipToTop" Row="10" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="checkBoxWindowAutoPosition" Row="12" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="label7" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label8" Row="4" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="checkBoxAutostart" Row="8" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Absolute,219,Absolute,160" /&gt;&lt;Rows Styles="Absolute,25,Absolute,25,Absolute,25,Absolute,25,Absolute,25,Absolute,25,Absolute,25,Absolute,25,Absolute,25,Absolute,25,Absolute,25,Absolute,25,Absolute,25,Absolute,20" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="textBoxDatabaseSize" Row="4" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="textBoxUserSettingsPath" Row="3" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label4" Row="5" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label3" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label1" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="GlobalHotkeyShow" Row="6" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="MaxClipSizeKB" Row="5" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="NumberOfClips" Row="2" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="HistoryDepthNumber" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="Language" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label5" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label2" Row="6" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="checkBoxShowSizeColumn" Row="9" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="label6" Row="7" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="GlobalHotkeyIncrementalPaste" Row="7" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="checkBoxClipListSimpleDraw" Row="11" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="checkBoxMoveCopiedClipToTop" Row="10" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="checkBoxWindowAutoPosition" Row="12" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="label7" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label8" Row="4" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="checkBoxAutostart" Row="8" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="checkBoxAutoCheckUpdate" Row="13" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Absolute,219,Absolute,160" /&gt;&lt;Rows Styles="Absolute,25,Absolute,25,Absolute,25,Absolute,25,Absolute,25,Absolute,25,Absolute,25,Absolute,25,Absolute,25,Absolute,25,Absolute,25,Absolute,25,Absolute,25,Absolute,25" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
-  <data name="checkBoxMoveCopiedClipToTop.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 253</value>
+  <data name="checkBoxClipListSimpleDraw.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 278</value>
   </data>
-  <data name="checkBoxMoveCopiedClipToTop.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="checkBoxClipListSimpleDraw.Size" type="System.Drawing.Size, System.Drawing">
     <value>373, 19</value>
   </data>
-  <data name="checkBoxMoveCopiedClipToTop.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
+  <data name="checkBoxClipListSimpleDraw.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
   </data>
-  <data name="checkBoxMoveCopiedClipToTop.Text" xml:space="preserve">
-    <value>Move copied clip to top</value>
+  <data name="checkBoxClipListSimpleDraw.Text" xml:space="preserve">
+    <value>Filtered list fast and simple draw</value>
   </data>
-  <data name="checkBoxMoveCopiedClipToTop.ToolTip" xml:space="preserve">
-    <value>Move copied clip to top of list</value>
+  <data name="checkBoxClipListSimpleDraw.ToolTip" xml:space="preserve">
+    <value>Filtered list will draw fast without highlighting filter matches.
+But current clip text will highlight filter matches anyway.</value>
   </data>
-  <data name="&gt;&gt;checkBoxMoveCopiedClipToTop.Name" xml:space="preserve">
-    <value>checkBoxMoveCopiedClipToTop</value>
+  <data name="&gt;&gt;checkBoxClipListSimpleDraw.Name" xml:space="preserve">
+    <value>checkBoxClipListSimpleDraw</value>
   </data>
-  <data name="&gt;&gt;checkBoxMoveCopiedClipToTop.Type" xml:space="preserve">
+  <data name="&gt;&gt;checkBoxClipListSimpleDraw.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;checkBoxMoveCopiedClipToTop.Parent" xml:space="preserve">
+  <data name="&gt;&gt;checkBoxClipListSimpleDraw.Parent" xml:space="preserve">
     <value>tableLayoutPanel1</value>
   </data>
-  <data name="&gt;&gt;checkBoxMoveCopiedClipToTop.ZOrder" xml:space="preserve">
-    <value>16</value>
+  <data name="&gt;&gt;checkBoxClipListSimpleDraw.ZOrder" xml:space="preserve">
+    <value>15</value>
   </data>
   <data name="buttonCancel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
