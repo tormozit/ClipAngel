@@ -44,14 +44,14 @@
             this.GlobalHotkeyIncrementalPaste = new System.Windows.Forms.TextBox();
             this.checkBoxClipListSimpleDraw = new System.Windows.Forms.CheckBox();
             this.checkBoxShowSizeColumn = new System.Windows.Forms.CheckBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.checkBoxAutoCheckUpdate = new System.Windows.Forms.CheckBox();
             this.checkBoxMoveCopiedClipToTop = new System.Windows.Forms.CheckBox();
+            this.checkBoxWindowAutoPosition = new System.Windows.Forms.CheckBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.textBoxUserSettingsPath = new System.Windows.Forms.TextBox();
             this.textBoxDatabaseSize = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label5 = new System.Windows.Forms.Label();
-            this.checkBoxWindowAutoPosition = new System.Windows.Forms.CheckBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.checkBoxAutostart = new System.Windows.Forms.CheckBox();
@@ -147,12 +147,6 @@
             this.checkBoxShowSizeColumn.Name = "checkBoxShowSizeColumn";
             this.toolTip1.SetToolTip(this.checkBoxShowSizeColumn, resources.GetString("checkBoxShowSizeColumn.ToolTip"));
             // 
-            // label6
-            // 
-            resources.ApplyResources(this.label6, "label6");
-            this.label6.Name = "label6";
-            this.toolTip1.SetToolTip(this.label6, resources.GetString("label6.ToolTip"));
-            // 
             // checkBoxAutoCheckUpdate
             // 
             resources.ApplyResources(this.checkBoxAutoCheckUpdate, "checkBoxAutoCheckUpdate");
@@ -167,6 +161,18 @@
             this.tableLayoutPanel1.SetColumnSpan(this.checkBoxMoveCopiedClipToTop, 2);
             this.checkBoxMoveCopiedClipToTop.Name = "checkBoxMoveCopiedClipToTop";
             this.toolTip1.SetToolTip(this.checkBoxMoveCopiedClipToTop, resources.GetString("checkBoxMoveCopiedClipToTop.ToolTip"));
+            // 
+            // checkBoxWindowAutoPosition
+            // 
+            resources.ApplyResources(this.checkBoxWindowAutoPosition, "checkBoxWindowAutoPosition");
+            this.tableLayoutPanel1.SetColumnSpan(this.checkBoxWindowAutoPosition, 2);
+            this.checkBoxWindowAutoPosition.Name = "checkBoxWindowAutoPosition";
+            this.toolTip1.SetToolTip(this.checkBoxWindowAutoPosition, resources.GetString("checkBoxWindowAutoPosition.ToolTip"));
+            // 
+            // label6
+            // 
+            resources.ApplyResources(this.label6, "label6");
+            this.label6.Name = "label6";
             // 
             // textBoxUserSettingsPath
             // 
@@ -211,13 +217,6 @@
             // 
             resources.ApplyResources(this.label5, "label5");
             this.label5.Name = "label5";
-            // 
-            // checkBoxWindowAutoPosition
-            // 
-            resources.ApplyResources(this.checkBoxWindowAutoPosition, "checkBoxWindowAutoPosition");
-            this.tableLayoutPanel1.SetColumnSpan(this.checkBoxWindowAutoPosition, 2);
-            this.checkBoxWindowAutoPosition.Name = "checkBoxWindowAutoPosition";
-            this.toolTip1.SetToolTip(this.checkBoxWindowAutoPosition, resources.GetString("checkBoxWindowAutoPosition.ToolTip"));
             // 
             // label7
             // 

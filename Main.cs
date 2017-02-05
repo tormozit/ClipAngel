@@ -1265,39 +1265,40 @@ namespace ClipAngel
             this.WindowState = FormWindowState.Normal;
             this.ShowInTaskbar = true;
             AutoGotoLastRow = Properties.Settings.Default.SelectTopClipOnShow;
-
             if (Properties.Settings.Default.WindowAutoPosition)
             {
                 // https://www.codeproject.com/Articles/34520/Getting-Caret-Position-Inside-Any-Application
                 // http://stackoverflow.com/questions/31055249/is-it-possible-to-get-caret-position-in-word-to-update-faster
                 IntPtr hWindow = GetForegroundWindow();
-	            int PID;
-	            uint remoteThreadId = GetWindowThreadProcessId(hWindow, out PID);
-	            var guiInfo = new GUITHREADINFO();
-	            guiInfo.cbSize = (uint)Marshal.SizeOf(guiInfo);
-	            GetGUIThreadInfo(remoteThreadId, out guiInfo);
-	            Point point = new Point(0, 0);
-                ClientToScreen(guiInfo.hwndCaret, out point);
-                //AttachThreadInput(GetCurrentThreadId(), remoteThreadId, true);
-                //int Result = GetCaretPos(out point);
-                //AttachThreadInput(GetCurrentThreadId(), remoteThreadId, false);
-                // Screen.FromHandle(hwnd)
-                if (point.Y > 0)
-	            {
-                    RECT ActiveRect = guiInfo.rcCaret;
-                    this.Left = Math.Min(ActiveRect.right + point.X, SystemInformation.VirtualScreen.Width - this.Width);
-                    this.Top = Math.Min(ActiveRect.bottom + point.Y, SystemInformation.VirtualScreen.Height - this.Height - 30);
-                }
-                else
-                {
-                    ClientToScreen(guiInfo.hwndFocus, out point);
-                    RECT ActiveRect;
-                    GetWindowRect(guiInfo.hwndFocus, out ActiveRect);
-                    this.Left = Math.Min(ActiveRect.left + (ActiveRect.right - ActiveRect.left - this.Width) / 2 + point.X, SystemInformation.VirtualScreen.Width - this.Width);
-                    this.Top = Math.Min(ActiveRect.top + (ActiveRect.bottom - ActiveRect.top - this.Height) / 2 + point.Y, SystemInformation.VirtualScreen.Height - this.Height - 30);
+                if (hWindow != this.Handle)
+                { 
+	                int PID;
+	                uint remoteThreadId = GetWindowThreadProcessId(hWindow, out PID);
+	                var guiInfo = new GUITHREADINFO();
+	                guiInfo.cbSize = (uint)Marshal.SizeOf(guiInfo);
+	                GetGUIThreadInfo(remoteThreadId, out guiInfo);
+	                Point point = new Point(0, 0);
+                    ClientToScreen(guiInfo.hwndCaret, out point);
+                    //AttachThreadInput(GetCurrentThreadId(), remoteThreadId, true);
+                    //int Result = GetCaretPos(out point);
+                    //AttachThreadInput(GetCurrentThreadId(), remoteThreadId, false);
+                    // Screen.FromHandle(hwnd)
+                    if (point.Y > 0)
+	                {
+                        RECT ActiveRect = guiInfo.rcCaret;
+                        this.Left = Math.Min(ActiveRect.right + point.X, SystemInformation.VirtualScreen.Width - this.Width);
+                        this.Top = Math.Min(ActiveRect.bottom + point.Y + 1, SystemInformation.VirtualScreen.Height - this.Height - 30);
+                    }
+                    else
+                    {
+                        ClientToScreen(guiInfo.hwndFocus, out point);
+                        RECT ActiveRect;
+                        GetWindowRect(guiInfo.hwndFocus, out ActiveRect);
+                        this.Left = Math.Max(0, Math.Min((ActiveRect.right - ActiveRect.left - this.Width) / 2 + point.X, SystemInformation.VirtualScreen.Width - this.Width));
+                        this.Top = Math.Max(0, Math.Min((ActiveRect.bottom - ActiveRect.top - this.Height) / 2 + point.Y, SystemInformation.VirtualScreen.Height - this.Height - 30));
+                    }
                 }
             }
-
             this.Activate();
             this.Show();
             //notifyIcon.Visible = false;
@@ -1905,6 +1906,7 @@ namespace ClipAngel
         {
             RowShift(1);
         }
+
     }
 }
 

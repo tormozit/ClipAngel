@@ -597,9 +597,6 @@
   <data name="label6.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
   </data>
-  <data name="label6.ToolTip" xml:space="preserve">
-    <value>Paste clip in active window, move to next clip in list and show it in baloon</value>
-  </data>
   <data name="&gt;&gt;label6.Name" xml:space="preserve">
     <value>label6</value>
   </data>

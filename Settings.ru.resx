@@ -193,4 +193,10 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Настройки</value>
   </data>
+  <data name="checkBoxAutoCheckUpdate.Text" xml:space="preserve">
+    <value>Автоматическая проверка обновлений</value>
+  </data>
+  <data name="checkBoxAutoCheckUpdate.ToolTip" xml:space="preserve">
+    <value>Автоматически проверять обновления при старте программы и каждый день</value>
+  </data>
 </root>
