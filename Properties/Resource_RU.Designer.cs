@@ -169,6 +169,15 @@ namespace ClipAngel.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Новая версия доступна. Для обновления нажмите кнопку в верхней командной панели..
+        /// </summary>
+        internal static string NewVersionAvailable {
+            get {
+                return ResourceManager.GetString("NewVersionAvailable", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Следующий клип.
         /// </summary>
         internal static string NextClip {
@@ -210,6 +219,15 @@ namespace ClipAngel.Properties {
         internal static string used {
             get {
                 return ResourceManager.GetString("used", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Вы используете последнюю версию.
+        /// </summary>
+        internal static string YouLatestVersion {
+            get {
+                return ResourceManager.GetString("YouLatestVersion", resourceCulture);
             }
         }
     }

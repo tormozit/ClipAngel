@@ -285,6 +285,15 @@ namespace ClipAngel.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to New version is available. To update use button is top command bar..
+        /// </summary>
+        public static string NewVersionAvailable {
+            get {
+                return ResourceManager.GetString("NewVersionAvailable", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Next сlip.
         /// </summary>
         public static string NextClip {
@@ -410,7 +419,7 @@ namespace ClipAngel.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 1.02.
+        ///   Looks up a localized string similar to 1.03.
         /// </summary>
         public static string Version {
             get {
@@ -434,6 +443,15 @@ namespace ClipAngel.Properties {
             get {
                 object obj = ResourceManager.GetObject("WordWrap", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You are using the latest version.
+        /// </summary>
+        public static string YouLatestVersion {
+            get {
+                return ResourceManager.GetString("YouLatestVersion", resourceCulture);
             }
         }
         

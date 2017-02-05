@@ -69,13 +69,11 @@
             // 
             resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
-            this.toolTip1.SetToolTip(this.label1, resources.GetString("label1.ToolTip"));
             // 
             // buttonOK
             // 
             resources.ApplyResources(this.buttonOK, "buttonOK");
             this.buttonOK.Name = "buttonOK";
-            this.toolTip1.SetToolTip(this.buttonOK, resources.GetString("buttonOK.ToolTip"));
             this.buttonOK.UseVisualStyleBackColor = true;
             this.buttonOK.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -90,7 +88,6 @@
             // 
             resources.ApplyResources(this.label2, "label2");
             this.label2.Name = "label2";
-            this.toolTip1.SetToolTip(this.label2, resources.GetString("label2.ToolTip"));
             // 
             // NumberOfClips
             // 
@@ -103,7 +100,6 @@
             // 
             resources.ApplyResources(this.label3, "label3");
             this.label3.Name = "label3";
-            this.toolTip1.SetToolTip(this.label3, resources.GetString("label3.ToolTip"));
             // 
             // MaxClipSizeKB
             // 
@@ -115,7 +111,6 @@
             // 
             resources.ApplyResources(this.label4, "label4");
             this.label4.Name = "label4";
-            this.toolTip1.SetToolTip(this.label4, resources.GetString("label4.ToolTip"));
             // 
             // Language
             // 
@@ -177,14 +172,12 @@
             resources.ApplyResources(this.textBoxUserSettingsPath, "textBoxUserSettingsPath");
             this.textBoxUserSettingsPath.Name = "textBoxUserSettingsPath";
             this.textBoxUserSettingsPath.ReadOnly = true;
-            this.toolTip1.SetToolTip(this.textBoxUserSettingsPath, resources.GetString("textBoxUserSettingsPath.ToolTip"));
             // 
             // textBoxDatabaseSize
             // 
             resources.ApplyResources(this.textBoxDatabaseSize, "textBoxDatabaseSize");
             this.textBoxDatabaseSize.Name = "textBoxDatabaseSize";
             this.textBoxDatabaseSize.ReadOnly = true;
-            this.toolTip1.SetToolTip(this.textBoxDatabaseSize, resources.GetString("textBoxDatabaseSize.ToolTip"));
             // 
             // tableLayoutPanel1
             // 
@@ -211,32 +204,27 @@
             this.tableLayoutPanel1.Controls.Add(this.label8, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.checkBoxAutostart, 0, 8);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.toolTip1.SetToolTip(this.tableLayoutPanel1, resources.GetString("tableLayoutPanel1.ToolTip"));
             // 
             // label5
             // 
             resources.ApplyResources(this.label5, "label5");
             this.label5.Name = "label5";
-            this.toolTip1.SetToolTip(this.label5, resources.GetString("label5.ToolTip"));
             // 
             // label7
             // 
             resources.ApplyResources(this.label7, "label7");
             this.label7.Name = "label7";
-            this.toolTip1.SetToolTip(this.label7, resources.GetString("label7.ToolTip"));
             // 
             // label8
             // 
             resources.ApplyResources(this.label8, "label8");
             this.label8.Name = "label8";
-            this.toolTip1.SetToolTip(this.label8, resources.GetString("label8.ToolTip"));
             // 
             // checkBoxAutostart
             // 
             resources.ApplyResources(this.checkBoxAutostart, "checkBoxAutostart");
             this.tableLayoutPanel1.SetColumnSpan(this.checkBoxAutostart, 2);
             this.checkBoxAutostart.Name = "checkBoxAutostart";
-            this.toolTip1.SetToolTip(this.checkBoxAutostart, resources.GetString("checkBoxAutostart.ToolTip"));
             this.checkBoxAutostart.UseVisualStyleBackColor = true;
             // 
             // buttonCancel
@@ -244,7 +232,6 @@
             resources.ApplyResources(this.buttonCancel, "buttonCancel");
             this.buttonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.buttonCancel.Name = "buttonCancel";
-            this.toolTip1.SetToolTip(this.buttonCancel, resources.GetString("buttonCancel.ToolTip"));
             this.buttonCancel.UseVisualStyleBackColor = true;
             // 
             // cultureManager1
@@ -262,7 +249,6 @@
             this.Controls.Add(this.buttonOK);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "Settings";
-            this.toolTip1.SetToolTip(this, resources.GetString("$this.ToolTip"));
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Settings_FormClosing);
             this.Load += new System.EventHandler(this.Settings_Load);
             this.tableLayoutPanel1.ResumeLayout(false);

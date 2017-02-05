@@ -191,5 +191,17 @@ namespace ClipAngel.Properties {
                 this["WindowAutoPosition"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool AutoCheckForUpdate {
+            get {
+                return ((bool)(this["AutoCheckForUpdate"]));
+            }
+            set {
+                this["AutoCheckForUpdate"] = value;
+            }
+        }
     }
 }

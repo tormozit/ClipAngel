@@ -45,9 +45,9 @@ namespace ClipAngel
         bool AutoGotoLastRow = true;
         bool AllowFormClose = false;
         bool AllowHotkeyProcess = true;
+        SQLiteDataReader RowReader;
         static string LinkPattern = "\\b(https?|ftp|file)://[-A-Z0-9+&@#/%?=~_|!:,.;]*[A-Z0-9+&@#/%=~_|]";
         int LastId = 0;
-        string LastText;
         MatchCollection TextLinkMatches;
         MatchCollection UrlLinkMatches;
         MatchCollection FilterMatches;
@@ -322,10 +322,15 @@ namespace ClipAngel
             else
             {
                 DataRow CurrentRow = CurrentRowView.Row;
-                StripLabelCreated.Text = CurrentRow["Created"].ToString();
-                StripLabelSize.Text = CurrentRow["Size"].ToString() + MultiLangByteUnit();
-                StripLabelVisibleSize.Text = CurrentRow["Chars"].ToString() + MultiLangCharUnit();
-                string TypeEng = CurrentRow["Type"].ToString();
+                string sql = "SELECT * FROM Clips Where Id = @Id";
+                SQLiteCommand commandSelect = new SQLiteCommand(sql, m_dbConnection);
+                commandSelect.Parameters.Add("@Id", DbType.Int32).Value = CurrentRow["Id"];
+                RowReader = commandSelect.ExecuteReader();
+                RowReader.Read();
+                StripLabelCreated.Text = RowReader["Created"].ToString();
+                StripLabelSize.Text = RowReader["Size"] + MultiLangByteUnit();
+                StripLabelVisibleSize.Text = RowReader["Chars"]+ MultiLangCharUnit();
+                string TypeEng = RowReader["Type"].ToString();
                 if (CurrentResourceManager.GetString(TypeEng) == null)
                     StripLabelType.Text = TypeEng;
                 else
@@ -335,7 +340,7 @@ namespace ClipAngel
                 // to prevent autoscrolling during marking
                 richTextBox.HideSelection = true;
                 richTextBox.Clear();
-                string FullText = CurrentRow["Text"].ToString();
+                string FullText = RowReader["Text"].ToString();
                 string ShortText;
                 string EndMarker;
                 Font MarkerFont;
@@ -373,13 +378,13 @@ namespace ClipAngel
                 richTextBox.HideSelection = false;
 
                 textBoxUrl.Clear();
-                textBoxUrl.Text = CurrentRow["Url"].ToString();
+                textBoxUrl.Text = RowReader["Url"].ToString();
                 MarkLinksInRichTextBox(textBoxUrl, out UrlLinkMatches);
 
-                ClipType = CurrentRow["type"].ToString();
+                ClipType = RowReader["type"].ToString();
                 if (ClipType == "img")
                 {
-                    Image image = GetImageFromBinary(CurrentRow["Binary"] as byte[]);
+                    Image image = GetImageFromBinary((byte[])RowReader["Binary"]);
                     ImageControl.Image = image;
                 }
             }
@@ -496,7 +501,7 @@ namespace ClipAngel
                 string FilterValue = MarkFilter.SelectedValue as string;
                 SqlFilter += " AND " + FilterValue;
             }
-            string SelectCommandText = "Select * From Clips";
+            string SelectCommandText = "Select Id, Used, Title, Chars, Type, Favorite From Clips";
             SelectCommandText += " WHERE " + SqlFilter;
             SelectCommandText += " ORDER BY Id desc";
             dataAdapter.SelectCommand.CommandText = SelectCommandText;
@@ -524,7 +529,6 @@ namespace ClipAngel
                 else
                 {
                     LastId = (int)LastRow["Id"];
-                    LastText = (string)LastRow["Text"];
                 }
             }
             else if (AutoGotoLastRow || CurrentClipID == 0)
@@ -693,15 +697,10 @@ namespace ClipAngel
         }
         void AddClip(byte[] BinaryBuffer, string HtmlText, string RichText, string Type, string Text, string Application, string Window, string Url, int Chars = 0)
         {
-            if (LastText == Text)
-            {
-                return;
-            }
             int Size = Text.Length * 2; // dirty
             if (Chars == 0)
                 Chars = Text.Length;
             LastId = LastId + 1;
-            LastText = Text;
             Size += BinaryBuffer.Length;
             if (Size > Properties.Settings.Default.MaxClipSizeKB * 1000)
                 return;
@@ -946,11 +945,11 @@ namespace ClipAngel
             }
 
             DataRow CurrentDataRow = ((DataRowView)clipBindingSource.Current).Row;
-            string Type = (string)CurrentDataRow["type"];
-            object RichText = CurrentDataRow["RichText"];
-            object HtmlText = CurrentDataRow["HtmlText"];
-            byte[] Binary = CurrentDataRow["Binary"] as byte[];
-            string Text = (string)CurrentDataRow["Text"];
+            string Type = (string)RowReader["type"];
+            object RichText = RowReader["RichText"];
+            object HtmlText = RowReader["HtmlText"];
+            byte[] Binary = RowReader["Binary"] as byte[];
+            string Text = (string)RowReader["Text"];
             DataObject dto = new DataObject();
             if (Type == "rtf" || Type == "text" || Type == "html")
             {
@@ -1269,25 +1268,34 @@ namespace ClipAngel
 
             if (Properties.Settings.Default.WindowAutoPosition)
             {
-	            // http://stackoverflow.com/questions/31055249/is-it-possible-to-get-caret-position-in-word-to-update-faster
-	            IntPtr hWindow = GetForegroundWindow();
+                // https://www.codeproject.com/Articles/34520/Getting-Caret-Position-Inside-Any-Application
+                // http://stackoverflow.com/questions/31055249/is-it-possible-to-get-caret-position-in-word-to-update-faster
+                IntPtr hWindow = GetForegroundWindow();
 	            int PID;
 	            uint remoteThreadId = GetWindowThreadProcessId(hWindow, out PID);
 	            var guiInfo = new GUITHREADINFO();
 	            guiInfo.cbSize = (uint)Marshal.SizeOf(guiInfo);
 	            GetGUIThreadInfo(remoteThreadId, out guiInfo);
-	            Point point;
-	
-	            ClientToScreen(guiInfo.hwndCaret, out point);
-	            //AttachThreadInput(GetCurrentThreadId(), remoteThreadId, true);
-	            //int Result = GetCaretPos(out point);
-	            //AttachThreadInput(GetCurrentThreadId(), remoteThreadId, false);
-	
-	            if (point.Y > 0)
+	            Point point = new Point(0, 0);
+                ClientToScreen(guiInfo.hwndCaret, out point);
+                //AttachThreadInput(GetCurrentThreadId(), remoteThreadId, true);
+                //int Result = GetCaretPos(out point);
+                //AttachThreadInput(GetCurrentThreadId(), remoteThreadId, false);
+                // Screen.FromHandle(hwnd)
+                if (point.Y > 0)
 	            {
-	                this.Left = Math.Min(guiInfo.rcCaret.right + point.X, SystemInformation.VirtualScreen.Width - this.Width - 30);
-	                this.Top = Math.Min(guiInfo.rcCaret.bottom + point.Y, SystemInformation.VirtualScreen.Height - this.Height - 30);
-	            }
+                    RECT ActiveRect = guiInfo.rcCaret;
+                    this.Left = Math.Min(ActiveRect.right + point.X, SystemInformation.VirtualScreen.Width - this.Width);
+                    this.Top = Math.Min(ActiveRect.bottom + point.Y, SystemInformation.VirtualScreen.Height - this.Height - 30);
+                }
+                else
+                {
+                    ClientToScreen(guiInfo.hwndFocus, out point);
+                    RECT ActiveRect;
+                    GetWindowRect(guiInfo.hwndFocus, out ActiveRect);
+                    this.Left = Math.Min(ActiveRect.left + (ActiveRect.right - ActiveRect.left - this.Width) / 2 + point.X, SystemInformation.VirtualScreen.Width - this.Width);
+                    this.Top = Math.Min(ActiveRect.top + (ActiveRect.bottom - ActiveRect.top - this.Height) / 2 + point.Y, SystemInformation.VirtualScreen.Height - this.Height - 30);
+                }
             }
 
             this.Activate();
@@ -1520,8 +1528,10 @@ namespace ClipAngel
             dataGridView.Columns["Title"].Visible = !ResultSimpleDraw;
         }
 
-        public async void CheckUpdate(bool ShowErrors = false)
+        public async void CheckUpdate(bool UserRequest = false)
         {
+            if (!UserRequest && !Properties.Settings.Default.AutoCheckForUpdate)
+                return;
             buttonUpdate.Visible = false;
             toolStripUpdateToSeparator.Visible = false;
             try
@@ -1542,12 +1552,20 @@ namespace ClipAngel
                         toolStripUpdateToSeparator.Visible = true;
                         buttonUpdate.ForeColor = Color.Blue;
                         buttonUpdate.Text = CurrentResourceManager.GetString("UpdateTo") + " " + ActualVersion;
+                        if (UserRequest)
+                        {
+                            MessageBox.Show(CurrentResourceManager.GetString("NewVersionAvailable"), "Clip Angel");
+                        }
+                    }
+                    else if (UserRequest)
+                    {
+                        MessageBox.Show(CurrentResourceManager.GetString("YouLatestVersion"), "Clip Angel");
                     }
                 }
             }
             catch
             {
-                if (ShowErrors)
+                if (UserRequest)
                     throw;
             }
         }
@@ -1618,7 +1636,7 @@ namespace ClipAngel
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form AboutBox = new AboutBox();
-            AboutBox.ShowDialog();
+            AboutBox.ShowDialog(this);
         }
 
         private void Main_Activated(object sender, EventArgs e)

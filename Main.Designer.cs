@@ -668,7 +668,7 @@ namespace ClipAngel
             // 
             resources.ApplyResources(this.textBoxApplication, "textBoxApplication");
             this.textBoxApplication.BackColor = System.Drawing.SystemColors.Window;
-            this.textBoxApplication.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clipBindingSource, "Application", true));
+            //this.textBoxApplication.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clipBindingSource, "Application", true));
             this.textBoxApplication.Name = "textBoxApplication";
             this.textBoxApplication.ReadOnly = true;
             this.toolTipDynamic.SetToolTip(this.textBoxApplication, resources.GetString("textBoxApplication.ToolTip"));
@@ -677,7 +677,7 @@ namespace ClipAngel
             // 
             resources.ApplyResources(this.textBoxWindow, "textBoxWindow");
             this.textBoxWindow.BackColor = System.Drawing.SystemColors.Window;
-            this.textBoxWindow.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clipBindingSource, "Window", true));
+            //this.textBoxWindow.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clipBindingSource, "Window", true));
             this.textBoxWindow.Name = "textBoxWindow";
             this.textBoxWindow.ReadOnly = true;
             this.toolTipDynamic.SetToolTip(this.textBoxWindow, resources.GetString("textBoxWindow.ToolTip"));

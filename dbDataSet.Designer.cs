@@ -281,33 +281,15 @@ namespace ClipAngel {
             
             private global::System.Data.DataColumn columnType;
             
-            private global::System.Data.DataColumn columnText;
-            
             private global::System.Data.DataColumn columnTitle;
-            
-            private global::System.Data.DataColumn columnApplication;
-            
-            private global::System.Data.DataColumn columnWindow;
-            
-            private global::System.Data.DataColumn columnSize;
             
             private global::System.Data.DataColumn columnChars;
             
-            private global::System.Data.DataColumn columnCreated;
-            
-            private global::System.Data.DataColumn columnBinary;
-            
-            private global::System.Data.DataColumn columnRichText;
-            
             private global::System.Data.DataColumn columnId;
-            
-            private global::System.Data.DataColumn columnHtmlText;
             
             private global::System.Data.DataColumn columnUsed;
             
-            private global::System.Data.DataColumn columnUrl;
-            
-            private global::System.Data.DataColumn columnHash;
+            private global::System.Data.DataColumn columnFavorite;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -352,41 +334,9 @@ namespace ClipAngel {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn TextColumn {
-                get {
-                    return this.columnText;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public global::System.Data.DataColumn TitleColumn {
                 get {
                     return this.columnTitle;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn ApplicationColumn {
-                get {
-                    return this.columnApplication;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn WindowColumn {
-                get {
-                    return this.columnWindow;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn SizeColumn {
-                get {
-                    return this.columnSize;
                 }
             }
             
@@ -400,41 +350,9 @@ namespace ClipAngel {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn CreatedColumn {
-                get {
-                    return this.columnCreated;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn BinaryColumn {
-                get {
-                    return this.columnBinary;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn RichTextColumn {
-                get {
-                    return this.columnRichText;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public global::System.Data.DataColumn IdColumn {
                 get {
                     return this.columnId;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn HtmlTextColumn {
-                get {
-                    return this.columnHtmlText;
                 }
             }
             
@@ -448,17 +366,9 @@ namespace ClipAngel {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn UrlColumn {
+            public global::System.Data.DataColumn FavoriteColumn {
                 get {
-                    return this.columnUrl;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn HashColumn {
-                get {
-                    return this.columnHash;
+                    return this.columnFavorite;
                 }
             }
             
@@ -499,24 +409,15 @@ namespace ClipAngel {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ClipsRow AddClipsRow(string Type, string Text, string Title, string Application, string Window, int Size, int Chars, System.DateTime Created, byte[] Binary, string RichText, int Id, string HtmlText, bool Used, string Url, string Hash) {
+            public ClipsRow AddClipsRow(string Type, string Title, int Chars, int Id, bool Used, bool Favorite) {
                 ClipsRow rowClipsRow = ((ClipsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Type,
-                        Text,
                         Title,
-                        Application,
-                        Window,
-                        Size,
                         Chars,
-                        Created,
-                        Binary,
-                        RichText,
                         Id,
-                        HtmlText,
                         Used,
-                        Url,
-                        Hash};
+                        Favorite};
                 rowClipsRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowClipsRow);
                 return rowClipsRow;
@@ -540,20 +441,11 @@ namespace ClipAngel {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
                 this.columnType = base.Columns["Type"];
-                this.columnText = base.Columns["Text"];
                 this.columnTitle = base.Columns["Title"];
-                this.columnApplication = base.Columns["Application"];
-                this.columnWindow = base.Columns["Window"];
-                this.columnSize = base.Columns["Size"];
                 this.columnChars = base.Columns["Chars"];
-                this.columnCreated = base.Columns["Created"];
-                this.columnBinary = base.Columns["Binary"];
-                this.columnRichText = base.Columns["RichText"];
                 this.columnId = base.Columns["Id"];
-                this.columnHtmlText = base.Columns["HtmlText"];
                 this.columnUsed = base.Columns["Used"];
-                this.columnUrl = base.Columns["Url"];
-                this.columnHash = base.Columns["Hash"];
+                this.columnFavorite = base.Columns["Favorite"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -561,43 +453,21 @@ namespace ClipAngel {
             private void InitClass() {
                 this.columnType = new global::System.Data.DataColumn("Type", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnType);
-                this.columnText = new global::System.Data.DataColumn("Text", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnText);
                 this.columnTitle = new global::System.Data.DataColumn("Title", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTitle);
-                this.columnApplication = new global::System.Data.DataColumn("Application", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnApplication);
-                this.columnWindow = new global::System.Data.DataColumn("Window", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnWindow);
-                this.columnSize = new global::System.Data.DataColumn("Size", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnSize);
                 this.columnChars = new global::System.Data.DataColumn("Chars", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnChars);
-                this.columnCreated = new global::System.Data.DataColumn("Created", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCreated);
-                this.columnBinary = new global::System.Data.DataColumn("Binary", typeof(byte[]), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnBinary);
-                this.columnRichText = new global::System.Data.DataColumn("RichText", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnRichText);
                 this.columnId = new global::System.Data.DataColumn("Id", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnId);
-                this.columnHtmlText = new global::System.Data.DataColumn("HtmlText", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnHtmlText);
                 this.columnUsed = new global::System.Data.DataColumn("Used", typeof(bool), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnUsed);
-                this.columnUrl = new global::System.Data.DataColumn("Url", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnUrl);
-                this.columnHash = new global::System.Data.DataColumn("Hash", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnHash);
+                this.columnFavorite = new global::System.Data.DataColumn("Favorite", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFavorite);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, false));
                 this.columnType.MaxLength = 20;
                 this.columnTitle.MaxLength = 50;
-                this.columnApplication.MaxLength = 50;
-                this.columnWindow.MaxLength = 50;
                 this.columnId.Unique = true;
-                this.columnUrl.MaxLength = 150;
-                this.columnHash.MaxLength = 32;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -756,22 +626,6 @@ namespace ClipAngel {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Text {
-                get {
-                    if (this.IsTextNull()) {
-                        return "";
-                    }
-                    else {
-                        return ((string)(this[this.tableClips.TextColumn]));
-                    }
-                }
-                set {
-                    this[this.tableClips.TextColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string Title {
                 get {
                     if (this.IsTitleNull()) {
@@ -783,54 +637,6 @@ namespace ClipAngel {
                 }
                 set {
                     this[this.tableClips.TitleColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Application {
-                get {
-                    if (this.IsApplicationNull()) {
-                        return "";
-                    }
-                    else {
-                        return ((string)(this[this.tableClips.ApplicationColumn]));
-                    }
-                }
-                set {
-                    this[this.tableClips.ApplicationColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Window {
-                get {
-                    if (this.IsWindowNull()) {
-                        return "";
-                    }
-                    else {
-                        return ((string)(this[this.tableClips.WindowColumn]));
-                    }
-                }
-                set {
-                    this[this.tableClips.WindowColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int Size {
-                get {
-                    if (this.IsSizeNull()) {
-                        return 0;
-                    }
-                    else {
-                        return ((int)(this[this.tableClips.SizeColumn]));
-                    }
-                }
-                set {
-                    this[this.tableClips.SizeColumn] = value;
                 }
             }
             
@@ -852,54 +658,6 @@ namespace ClipAngel {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime Created {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tableClips.CreatedColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Created\' in table \'Clips\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableClips.CreatedColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public byte[] Binary {
-                get {
-                    if (this.IsBinaryNull()) {
-                        return null;
-                    }
-                    else {
-                        return ((byte[])(this[this.tableClips.BinaryColumn]));
-                    }
-                }
-                set {
-                    this[this.tableClips.BinaryColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string RichText {
-                get {
-                    if (this.IsRichTextNull()) {
-                        return "";
-                    }
-                    else {
-                        return ((string)(this[this.tableClips.RichTextColumn]));
-                    }
-                }
-                set {
-                    this[this.tableClips.RichTextColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public int Id {
                 get {
                     try {
@@ -911,22 +669,6 @@ namespace ClipAngel {
                 }
                 set {
                     this[this.tableClips.IdColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string HtmlText {
-                get {
-                    if (this.IsHtmlTextNull()) {
-                        return "";
-                    }
-                    else {
-                        return ((string)(this[this.tableClips.HtmlTextColumn]));
-                    }
-                }
-                set {
-                    this[this.tableClips.HtmlTextColumn] = value;
                 }
             }
             
@@ -948,33 +690,17 @@ namespace ClipAngel {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Url {
+            public bool Favorite {
                 get {
-                    if (this.IsUrlNull()) {
-                        return null;
+                    try {
+                        return ((bool)(this[this.tableClips.FavoriteColumn]));
                     }
-                    else {
-                        return ((string)(this[this.tableClips.UrlColumn]));
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Favorite\' in table \'Clips\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableClips.UrlColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Hash {
-                get {
-                    if (this.IsHashNull()) {
-                        return null;
-                    }
-                    else {
-                        return ((string)(this[this.tableClips.HashColumn]));
-                    }
-                }
-                set {
-                    this[this.tableClips.HashColumn] = value;
+                    this[this.tableClips.FavoriteColumn] = value;
                 }
             }
             
@@ -992,18 +718,6 @@ namespace ClipAngel {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsTextNull() {
-                return this.IsNull(this.tableClips.TextColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetTextNull() {
-                this[this.tableClips.TextColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsTitleNull() {
                 return this.IsNull(this.tableClips.TitleColumn);
             }
@@ -1012,42 +726,6 @@ namespace ClipAngel {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetTitleNull() {
                 this[this.tableClips.TitleColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsApplicationNull() {
-                return this.IsNull(this.tableClips.ApplicationColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetApplicationNull() {
-                this[this.tableClips.ApplicationColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsWindowNull() {
-                return this.IsNull(this.tableClips.WindowColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetWindowNull() {
-                this[this.tableClips.WindowColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsSizeNull() {
-                return this.IsNull(this.tableClips.SizeColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetSizeNull() {
-                this[this.tableClips.SizeColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1064,42 +742,6 @@ namespace ClipAngel {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsCreatedNull() {
-                return this.IsNull(this.tableClips.CreatedColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetCreatedNull() {
-                this[this.tableClips.CreatedColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsBinaryNull() {
-                return this.IsNull(this.tableClips.BinaryColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetBinaryNull() {
-                this[this.tableClips.BinaryColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsRichTextNull() {
-                return this.IsNull(this.tableClips.RichTextColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetRichTextNull() {
-                this[this.tableClips.RichTextColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsIdNull() {
                 return this.IsNull(this.tableClips.IdColumn);
             }
@@ -1108,18 +750,6 @@ namespace ClipAngel {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetIdNull() {
                 this[this.tableClips.IdColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsHtmlTextNull() {
-                return this.IsNull(this.tableClips.HtmlTextColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetHtmlTextNull() {
-                this[this.tableClips.HtmlTextColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1136,26 +766,14 @@ namespace ClipAngel {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsUrlNull() {
-                return this.IsNull(this.tableClips.UrlColumn);
+            public bool IsFavoriteNull() {
+                return this.IsNull(this.tableClips.FavoriteColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetUrlNull() {
-                this[this.tableClips.UrlColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsHashNull() {
-                return this.IsNull(this.tableClips.HashColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetHashNull() {
-                this[this.tableClips.HashColumn] = global::System.Convert.DBNull;
+            public void SetFavoriteNull() {
+                this[this.tableClips.FavoriteColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -1319,24 +937,16 @@ namespace ClipAngel.dbDataSetTableAdapters {
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "Clips";
             tableMapping.ColumnMappings.Add("Type", "Type");
-            tableMapping.ColumnMappings.Add("Text", "Text");
             tableMapping.ColumnMappings.Add("Title", "Title");
-            tableMapping.ColumnMappings.Add("Application", "Application");
-            tableMapping.ColumnMappings.Add("Window", "Window");
-            tableMapping.ColumnMappings.Add("Size", "Size");
             tableMapping.ColumnMappings.Add("Chars", "Chars");
-            tableMapping.ColumnMappings.Add("Created", "Created");
-            tableMapping.ColumnMappings.Add("Binary", "Binary");
-            tableMapping.ColumnMappings.Add("RichText", "RichText");
             tableMapping.ColumnMappings.Add("Id", "Id");
-            tableMapping.ColumnMappings.Add("HtmlText", "HtmlText");
             tableMapping.ColumnMappings.Add("Used", "Used");
-            tableMapping.ColumnMappings.Add("Url", "Url");
-            tableMapping.ColumnMappings.Add("Hash", "Hash");
+            tableMapping.ColumnMappings.Add("Favorite", "Favorite");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.InsertCommand = new global::System.Data.SQLite.SQLiteCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [main].[sqlite_default_schema].[Clips] ([Type], [Text], [Title], [Application], [Window], [Size], [Chars], [Created], [Binary], [RichText], [Id], [HtmlText], [Used], [Url], [Hash]) VALUES (@Type, @Text, @Title, @Application, @Window, @Size, @Chars, @Created, @Binary, @RichText, @Id, @HtmlText, @Used, @Url, @Hash)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [main].[sqlite_default_schema].[Clips] ([Type], [Title], [Chars], [Id" +
+                "], [Used], [Favorite]) VALUES (@Type, @Title, @Chars, @Id, @Used, @Favorite)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             global::System.Data.SQLite.SQLiteParameter param = new global::System.Data.SQLite.SQLiteParameter();
             param.ParameterName = "@Type";
@@ -1345,34 +955,10 @@ namespace ClipAngel.dbDataSetTableAdapters {
             param.SourceColumn = "Type";
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::System.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "@Text";
-            param.DbType = global::System.Data.DbType.AnsiString;
-            param.DbType = global::System.Data.DbType.AnsiString;
-            param.SourceColumn = "Text";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::System.Data.SQLite.SQLiteParameter();
             param.ParameterName = "@Title";
             param.DbType = global::System.Data.DbType.AnsiString;
             param.DbType = global::System.Data.DbType.AnsiString;
             param.SourceColumn = "Title";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::System.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "@Application";
-            param.DbType = global::System.Data.DbType.AnsiString;
-            param.DbType = global::System.Data.DbType.AnsiString;
-            param.SourceColumn = "Application";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::System.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "@Window";
-            param.DbType = global::System.Data.DbType.AnsiString;
-            param.DbType = global::System.Data.DbType.AnsiString;
-            param.SourceColumn = "Window";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::System.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "@Size";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.DbType = global::System.Data.DbType.Int32;
-            param.SourceColumn = "Size";
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::System.Data.SQLite.SQLiteParameter();
             param.ParameterName = "@Chars";
@@ -1381,34 +967,10 @@ namespace ClipAngel.dbDataSetTableAdapters {
             param.SourceColumn = "Chars";
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::System.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "@Created";
-            param.DbType = global::System.Data.DbType.DateTime;
-            param.DbType = global::System.Data.DbType.DateTime;
-            param.SourceColumn = "Created";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::System.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "@Binary";
-            param.DbType = global::System.Data.DbType.Binary;
-            param.DbType = global::System.Data.DbType.Binary;
-            param.SourceColumn = "Binary";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::System.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "@RichText";
-            param.DbType = global::System.Data.DbType.AnsiString;
-            param.DbType = global::System.Data.DbType.AnsiString;
-            param.SourceColumn = "RichText";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::System.Data.SQLite.SQLiteParameter();
             param.ParameterName = "@Id";
             param.DbType = global::System.Data.DbType.Int32;
             param.DbType = global::System.Data.DbType.Int32;
             param.SourceColumn = "Id";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::System.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "@HtmlText";
-            param.DbType = global::System.Data.DbType.AnsiString;
-            param.DbType = global::System.Data.DbType.AnsiString;
-            param.SourceColumn = "HtmlText";
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::System.Data.SQLite.SQLiteParameter();
             param.ParameterName = "@Used";
@@ -1417,16 +979,10 @@ namespace ClipAngel.dbDataSetTableAdapters {
             param.SourceColumn = "Used";
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::System.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "@Url";
-            param.DbType = global::System.Data.DbType.AnsiString;
-            param.DbType = global::System.Data.DbType.AnsiString;
-            param.SourceColumn = "Url";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::System.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "@Hash";
-            param.DbType = global::System.Data.DbType.AnsiString;
-            param.DbType = global::System.Data.DbType.AnsiString;
-            param.SourceColumn = "Hash";
+            param.ParameterName = "@Favorite";
+            param.DbType = global::System.Data.DbType.Boolean;
+            param.DbType = global::System.Data.DbType.Boolean;
+            param.SourceColumn = "Favorite";
             this._adapter.InsertCommand.Parameters.Add(param);
         }
         
@@ -1443,8 +999,7 @@ namespace ClipAngel.dbDataSetTableAdapters {
             this._commandCollection = new global::System.Data.SQLite.SQLiteCommand[3];
             this._commandCollection[0] = new global::System.Data.SQLite.SQLiteCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Type, Text, Title, Application, Window, Size, Chars, Created, Binary, Rich" +
-                "Text, Id, HtmlText, Used, Url, Hash FROM Clips";
+            this._commandCollection[0].CommandText = "SELECT Type, Title, Chars, Id, Used, Favorite FROM Clips";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SQLite.SQLiteCommand();
             this._commandCollection[1].Connection = this.Connection;
@@ -1597,91 +1152,37 @@ namespace ClipAngel.dbDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Type, string Text, string Title, string Application, string Window, global::System.Nullable<int> Size, global::System.Nullable<int> Chars, global::System.Nullable<global::System.DateTime> Created, byte[] Binary, string RichText, int Id, string HtmlText, global::System.Nullable<bool> Used, string Url, string Hash) {
+        public virtual int Insert(string Type, string Title, global::System.Nullable<int> Chars, int Id, global::System.Nullable<bool> Used, global::System.Nullable<bool> Favorite) {
             if ((Type == null)) {
                 throw new global::System.ArgumentNullException("Type");
             }
             else {
                 this.Adapter.InsertCommand.Parameters[0].Value = ((string)(Type));
             }
-            if ((Text == null)) {
+            if ((Title == null)) {
                 this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Text));
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Title));
             }
-            if ((Title == null)) {
+            if ((Chars.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((int)(Chars.Value));
+            }
+            else {
                 this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(Title));
-            }
-            if ((Application == null)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
+            this.Adapter.InsertCommand.Parameters[3].Value = ((int)(Id));
+            if ((Used.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((bool)(Used.Value));
             }
             else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(Application));
-            }
-            if ((Window == null)) {
                 this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(Window));
-            }
-            if ((Size.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((int)(Size.Value));
+            if ((Favorite.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[5].Value = ((bool)(Favorite.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            if ((Chars.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[6].Value = ((int)(Chars.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
-            }
-            if ((Created.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[7].Value = ((System.DateTime)(Created.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
-            }
-            if ((Binary == null)) {
-                this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[8].Value = ((byte[])(Binary));
-            }
-            if ((RichText == null)) {
-                this.Adapter.InsertCommand.Parameters[9].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[9].Value = ((string)(RichText));
-            }
-            this.Adapter.InsertCommand.Parameters[10].Value = ((int)(Id));
-            if ((HtmlText == null)) {
-                this.Adapter.InsertCommand.Parameters[11].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[11].Value = ((string)(HtmlText));
-            }
-            if ((Used.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[12].Value = ((bool)(Used.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[12].Value = global::System.DBNull.Value;
-            }
-            if ((Url == null)) {
-                this.Adapter.InsertCommand.Parameters[13].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[13].Value = ((string)(Url));
-            }
-            if ((Hash == null)) {
-                this.Adapter.InsertCommand.Parameters[14].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[14].Value = ((string)(Hash));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 

@@ -168,4 +168,10 @@
   <data name="CutMarker" xml:space="preserve">
     <value>Показать остальной текст</value>
   </data>
+  <data name="NewVersionAvailable" xml:space="preserve">
+    <value>Новая версия доступна. Для обновления нажмите кнопку в верхней командной панели.</value>
+  </data>
+  <data name="YouLatestVersion" xml:space="preserve">
+    <value>Вы используете последнюю версию</value>
+  </data>
 </root>

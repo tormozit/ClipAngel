@@ -227,7 +227,7 @@
     <value>Update to</value>
   </data>
   <data name="Version" xml:space="preserve">
-    <value>1.02</value>
+    <value>1.03</value>
   </data>
   <data name="ColorDepth" xml:space="preserve">
     <value>Color depth</value>
@@ -240,5 +240,11 @@
   </data>
   <data name="DBShortFilename" xml:space="preserve">
     <value>db.sqlite</value>
+  </data>
+  <data name="NewVersionAvailable" xml:space="preserve">
+    <value>New version is available. To update use button is top command bar.</value>
+  </data>
+  <data name="YouLatestVersion" xml:space="preserve">
+    <value>You are using the latest version</value>
   </data>
 </root>
