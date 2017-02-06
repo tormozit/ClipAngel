@@ -5,7 +5,6 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SQLite;
 using System.Diagnostics;
@@ -15,7 +14,6 @@ using System.Text.RegularExpressions;
 using System.Collections.Specialized;
 using System.Globalization;
 using System.IO;
-using System.Drawing.Imaging;
 using System.Security.Cryptography;
 using System.Resources;
 using Microsoft.VisualBasic;
@@ -1575,11 +1573,13 @@ namespace ClipAngel
         {
             using (WebClient wc = new WebClient())
             {
-                string TempFilename = System.IO.Path.GetTempPath() + Guid.NewGuid().ToString() + ".zip";
+                string TempFolder = System.IO.Path.GetTempPath() + Guid.NewGuid().ToString();
+                Directory.CreateDirectory(TempFolder);
+                string TempFilenameZip = TempFolder + "\\NewVersion" + ".zip";
                 bool Success = true;
                 //try
                 //{
-                    wc.DownloadFile(Properties.Resources.DownloadPage, TempFilename);
+                    wc.DownloadFile(Properties.Resources.DownloadPage, TempFilenameZip);
                 //}
                 //catch (Exception ex)
                 //{
@@ -1593,9 +1593,12 @@ namespace ClipAngel
                 //IHtmlCollection<IElement> Refs = documentHtml.GetElementsByClassName("direct-download");
                 //string DirectLink = Refs[1].GetAttribute("href");
                 //wc.DownloadFile(DirectLink, TempFilename);
+                string UpdaterName = "ExternalUpdater.exe";
+                File.Copy(UpdaterName, TempFolder + "\\" + UpdaterName);
+                File.Copy("DotNetZip.dll", TempFolder + "\\DotNetZip.dll");
                 if (Success)
                 {
-                    Process.Start("ExternalUpdater.exe", "\"" + TempFilename + "\" \"" + Application.StartupPath + "\" \"" + Application.ExecutablePath
+                    Process.Start(TempFolder + "\\" + UpdaterName, "\"" + TempFilenameZip + "\" \"" + Application.StartupPath + "\" \"" + Application.ExecutablePath
                         + "\" " + Process.GetCurrentProcess().Id);
                     exitToolStripMenuItem_Click();
                 }
@@ -1907,6 +1910,11 @@ namespace ClipAngel
             RowShift(1);
         }
 
+        private void historyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //Process.Start(CurrentResourceManager.GetString("HistoryOfChanges")); // Returns 0. Why?
+            Process.Start("https://sourceforge.net/p/clip-angel/blog");
+        }
     }
 }
 

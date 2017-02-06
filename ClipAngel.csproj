@@ -102,11 +102,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dbDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Properties\LastUsedSettings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-      <DependentUpon>LastUsedSettings.settings</DependentUpon>
-    </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -154,7 +149,6 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Settings.resx">
       <DependentUpon>Settings.cs</DependentUpon>
@@ -176,10 +170,6 @@
       <DependentUpon>dbDataSet.xsd</DependentUpon>
     </None>
     <None Include="DB\db.sqlite" />
-    <None Include="Properties\LastUsedSettings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>LastUsedSettings.Designer.cs</LastGenOutput>
-    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -227,7 +227,7 @@
     <value>Update to</value>
   </data>
   <data name="Version" xml:space="preserve">
-    <value>1.03</value>
+    <value>1.04</value>
   </data>
   <data name="ColorDepth" xml:space="preserve">
     <value>Color depth</value>
@@ -246,5 +246,8 @@
   </data>
   <data name="YouLatestVersion" xml:space="preserve">
     <value>You are using the latest version</value>
+  </data>
+  <data name="HistoryOfChanges" xml:space="preserve">
+    <value>https://sourceforge.net/p/clip-angel/blog</value>
   </data>
 </root>
