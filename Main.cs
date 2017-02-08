@@ -1007,12 +1007,19 @@ namespace ClipAngel
             }
             if (EnglishCultureInfo == null)
             {
-                MessageBox.Show("Unable to find English input language", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Unable to find English input language", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             this.Hide();
             IntPtr hForegroundWindow = GetForegroundWindow();
             EnableWindow(hForegroundWindow, true);
+            int TargetProcessID;
+            GetWindowThreadProcessId(hForegroundWindow, out TargetProcessID);
+            if (TargetProcessID !=0 && !UacHelper.IsProcessAccessible(TargetProcessID))
+            {
+                MessageBox.Show(CurrentResourceManager.GetString("CantPasteInElevatedWindow"), Application.ProductName);
+                return;
+            }
             //IntPtr hFocusWindow = FocusWindow();
             //string WindowTitle = GetWindowTitle(hFocusWindow);
             //Debug.WriteLine("Window = " + hFocusWindow + " \"" + WindowTitle + "\"");
@@ -1106,6 +1113,7 @@ namespace ClipAngel
             return LastFilterValues;
         }
 
+        // Unused
         IntPtr FocusWindow()
         {
             IntPtr hwnd = GetForegroundWindow();
@@ -1553,12 +1561,12 @@ namespace ClipAngel
                         buttonUpdate.Text = CurrentResourceManager.GetString("UpdateTo") + " " + ActualVersion;
                         if (UserRequest)
                         {
-                            MessageBox.Show(CurrentResourceManager.GetString("NewVersionAvailable"), "Clip Angel");
+                            MessageBox.Show(CurrentResourceManager.GetString("NewVersionAvailable"), Application.ProductName);
                         }
                     }
                     else if (UserRequest)
                     {
-                        MessageBox.Show(CurrentResourceManager.GetString("YouLatestVersion"), "Clip Angel");
+                        MessageBox.Show(CurrentResourceManager.GetString("YouLatestVersion"), Application.ProductName);
                     }
                 }
             }
@@ -2013,7 +2021,7 @@ public sealed class KeyboardHook : IDisposable
             string hotkeyTitle = HotkeyTitle(key, modifier);
             string ErrorText = "Couldn’t register the hot key " + hotkeyTitle;
             //throw new InvalidOperationException(ErrorText);
-            MessageBox.Show(ErrorText, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            MessageBox.Show(ErrorText, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
     }
 

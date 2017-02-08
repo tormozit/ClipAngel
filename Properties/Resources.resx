@@ -250,4 +250,7 @@
   <data name="HistoryOfChanges" xml:space="preserve">
     <value>https://sourceforge.net/p/clip-angel/blog</value>
   </data>
+  <data name="CantPasteInElevatedWindow" xml:space="preserve">
+    <value>Unable to paste from non elevated process to elevated. Try run program as administrator.</value>
+  </data>
 </root>

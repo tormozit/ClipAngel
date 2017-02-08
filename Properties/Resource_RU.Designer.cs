@@ -88,6 +88,15 @@ namespace ClipAngel.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Невозможно вставить из непривилегированного процесса в привилегированное окно. Попробуйте запустить программу от имени администратора..
+        /// </summary>
+        internal static string CantPasteInElevatedWindow {
+            get {
+                return ResourceManager.GetString("CantPasteInElevatedWindow", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to С.
         /// </summary>
         internal static string CharUnit {

@@ -174,4 +174,7 @@
   <data name="YouLatestVersion" xml:space="preserve">
     <value>Вы используете последнюю версию</value>
   </data>
+  <data name="CantPasteInElevatedWindow" xml:space="preserve">
+    <value>Невозможно вставить из непривилегированного процесса в привилегированное окно. Попробуйте запустить программу от имени администратора.</value>
+  </data>
 </root>
