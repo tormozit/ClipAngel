@@ -1,16 +1,5 @@
-﻿//Copyright 2017 Starykh Sergey (tormozit)
-
-//Licensed under the Apache License, Version 2.0 (the "License");
-//you may not use this file except in compliance with the License.
-//You may obtain a copy of the License at
-
-//  http://www.apache.org/licenses/LICENSE-2.0
-
-//Unless required by applicable law or agreed to in writing, software
-//distributed under the License is distributed on an "AS IS" BASIS,
-//WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-//See the License for the specific language governing permissions and
-//limitations under the License.
+﻿//Copyright 2017 Starykh Sergey (tormozit) tormozit@gmail.com
+//GNU General Public License version 3.0 (GPLv3)
 
 using System;
 using System.Configuration;
@@ -62,16 +51,13 @@ namespace ClipAngel
         {
             try
             {
-                //Проверяем на наличие мутекса в системе
                 Mutex.OpenExisting(MyMutexName);
             }
             catch
             {
-                //Если получили исключение значит такого мутекса нет, и его нужно создать
                 MyMutex = new Mutex(true, MyMutexName);
                 return true;
             }
-            //Если исключения не было, то процесс с таким мутексом уже запущен
             System.Diagnostics.Process[] allProcess = System.Diagnostics.Process.GetProcesses();
             System.Diagnostics.Process currentProcess = System.Diagnostics.Process.GetCurrentProcess();
             foreach (System.Diagnostics.Process process in allProcess)

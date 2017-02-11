@@ -1030,7 +1030,7 @@ namespace ClipAngel
 
             using (new KeyboardLayoutScope(EnglishCultureInfo))
             {
-                SendKeys.SendWait("^{v}"); // Работает только при включенной английской раскладке клавиатуры
+                SendKeys.SendWait("^{v}"); // Works only in english langauge
             }
 
             ((DataRowView)dataGridView.CurrentRow.DataBoundItem).Row["Used"] = true;
@@ -2094,7 +2094,7 @@ public enum EnumModifierKeys : uint
     Win = 8
 }
 
-// Решение проблемы регистрозависимости UNICODE символов SQLite http://www.cyberforum.ru/ado-net/thread1708878.html
+// Solution for casesensitivity in SQLite http://www.cyberforum.ru/ado-net/thread1708878.html
 namespace ASC.Data.SQLite
 {
 
