@@ -277,10 +277,6 @@ namespace ClipAngel
             this.ClearFilter = new System.Windows.Forms.Button();
             this.comboBoxFilter = new System.Windows.Forms.ComboBox();
             this.dataGridView = new System.Windows.Forms.DataGridView();
-            this.TypeImg = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Title = new ClipAngel.DataGridViewRichTextBoxColumn();
-            this.TitleSimple = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ShortVisibleSize = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contextMenuStripDataGrid = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
@@ -355,6 +351,10 @@ namespace ClipAngel
             this.tableAdapterManager = new ClipAngel.dbDataSetTableAdapters.TableAdapterManager();
             this.cultureManager1 = new Infralution.Localization.CultureManager(this.components);
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.TypeImg = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Title = new ClipAngel.DataGridViewRichTextBoxColumn();
+            this.TitleSimple = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ShortVisibleSize = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -490,40 +490,6 @@ namespace ClipAngel
             this.dataGridView.DoubleClick += new System.EventHandler(this.dataGridView_DoubleClick);
             this.dataGridView.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dataGridView_KeyDown);
             this.dataGridView.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.dataGridView_PreviewKeyDown);
-            // 
-            // TypeImg
-            // 
-            this.TypeImg.Frozen = true;
-            resources.ApplyResources(this.TypeImg, "TypeImg");
-            this.TypeImg.Name = "TypeImg";
-            this.TypeImg.ReadOnly = true;
-            this.TypeImg.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.TypeImg.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // Title
-            // 
-            this.Title.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            resources.ApplyResources(this.Title, "Title");
-            this.Title.Name = "Title";
-            this.Title.ReadOnly = true;
-            this.Title.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Title.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // TitleSimple
-            // 
-            this.TitleSimple.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.TitleSimple.DataPropertyName = "Title";
-            resources.ApplyResources(this.TitleSimple, "TitleSimple");
-            this.TitleSimple.Name = "TitleSimple";
-            this.TitleSimple.ReadOnly = true;
-            // 
-            // ShortVisibleSize
-            // 
-            this.ShortVisibleSize.FillWeight = 1F;
-            resources.ApplyResources(this.ShortVisibleSize, "ShortVisibleSize");
-            this.ShortVisibleSize.Name = "ShortVisibleSize";
-            this.ShortVisibleSize.ReadOnly = true;
-            this.ShortVisibleSize.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // contextMenuStripDataGrid
             // 
@@ -1041,6 +1007,40 @@ namespace ClipAngel
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // TypeImg
+            // 
+            this.TypeImg.Frozen = true;
+            resources.ApplyResources(this.TypeImg, "TypeImg");
+            this.TypeImg.Name = "TypeImg";
+            this.TypeImg.ReadOnly = true;
+            this.TypeImg.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.TypeImg.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // Title
+            // 
+            this.Title.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            resources.ApplyResources(this.Title, "Title");
+            this.Title.Name = "Title";
+            this.Title.ReadOnly = true;
+            this.Title.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Title.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // TitleSimple
+            // 
+            this.TitleSimple.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.TitleSimple.DataPropertyName = "Title";
+            resources.ApplyResources(this.TitleSimple, "TitleSimple");
+            this.TitleSimple.Name = "TitleSimple";
+            this.TitleSimple.ReadOnly = true;
+            // 
+            // ShortVisibleSize
+            // 
+            this.ShortVisibleSize.FillWeight = 1F;
+            resources.ApplyResources(this.ShortVisibleSize, "ShortVisibleSize");
+            this.ShortVisibleSize.Name = "ShortVisibleSize";
+            this.ShortVisibleSize.ReadOnly = true;
+            this.ShortVisibleSize.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
             // Main
             // 
             this.AllowDrop = true;
@@ -1142,10 +1142,6 @@ namespace ClipAngel
         private System.Windows.Forms.ToolStripMenuItem fToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem1;
-        private System.Windows.Forms.DataGridViewImageColumn TypeImg;
-        private DataGridViewRichTextBoxColumn Title;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TitleSimple;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ShortVisibleSize;
         private System.Windows.Forms.ToolStripButton toolStripButtonClearFilterAndSelectTop;
         private System.Windows.Forms.ToolStripMenuItem changeClipTitleToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem listToolStripMenuItem;
@@ -1170,6 +1166,10 @@ namespace ClipAngel
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.ToolStripSeparator toolStripUpdateToSeparator;
         private System.Windows.Forms.ToolStripMenuItem historyToolStripMenuItem;
+        private System.Windows.Forms.DataGridViewImageColumn TypeImg;
+        private DataGridViewRichTextBoxColumn Title;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TitleSimple;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ShortVisibleSize;
     }
 }
 

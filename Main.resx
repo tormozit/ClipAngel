@@ -2385,30 +2385,6 @@ Use special char % for marking any sequence of chars. For example filter "po%o" 
   <data name="$this.Text" xml:space="preserve">
     <value>Clip Angel</value>
   </data>
-  <data name="&gt;&gt;TypeImg.Name" xml:space="preserve">
-    <value>TypeImg</value>
-  </data>
-  <data name="&gt;&gt;TypeImg.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewImageColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Title.Name" xml:space="preserve">
-    <value>Title</value>
-  </data>
-  <data name="&gt;&gt;Title.Type" xml:space="preserve">
-    <value>ClipAngel.DataGridViewRichTextBoxColumn, ClipAngel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;TitleSimple.Name" xml:space="preserve">
-    <value>TitleSimple</value>
-  </data>
-  <data name="&gt;&gt;TitleSimple.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ShortVisibleSize.Name" xml:space="preserve">
-    <value>ShortVisibleSize</value>
-  </data>
-  <data name="&gt;&gt;ShortVisibleSize.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;toolStripMenuItem2.Name" xml:space="preserve">
     <value>toolStripMenuItem2</value>
   </data>
@@ -2780,6 +2756,30 @@ Use special char % for marking any sequence of chars. For example filter "po%o" 
   </data>
   <data name="&gt;&gt;timer1.Type" xml:space="preserve">
     <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TypeImg.Name" xml:space="preserve">
+    <value>TypeImg</value>
+  </data>
+  <data name="&gt;&gt;TypeImg.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewImageColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Title.Name" xml:space="preserve">
+    <value>Title</value>
+  </data>
+  <data name="&gt;&gt;Title.Type" xml:space="preserve">
+    <value>ClipAngel.DataGridViewRichTextBoxColumn, ClipAngel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;TitleSimple.Name" xml:space="preserve">
+    <value>TitleSimple</value>
+  </data>
+  <data name="&gt;&gt;TitleSimple.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ShortVisibleSize.Name" xml:space="preserve">
+    <value>ShortVisibleSize</value>
+  </data>
+  <data name="&gt;&gt;ShortVisibleSize.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>Main</value>
