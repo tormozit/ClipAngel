@@ -159,8 +159,8 @@
   <data name="UpdateTo" xml:space="preserve">
     <value>Обновить на</value>
   </data>
-  <data name="ColorDepth" xml:space="preserve">
-    <value>Цветовая глубина</value>
+  <data name="PixelFormat" xml:space="preserve">
+    <value>Формат пикселя</value>
   </data>
   <data name="Size" xml:space="preserve">
     <value>Размер</value>
@@ -176,5 +176,11 @@
   </data>
   <data name="CantPasteInElevatedWindow" xml:space="preserve">
     <value>Невозможно вставить из непривилегированного процесса в привилегированное окно. Попробуйте запустить программу от имени администратора.</value>
+  </data>
+  <data name="EditClipTitle" xml:space="preserve">
+    <value>Изменение заголовка клипа</value>
+  </data>
+  <data name="HowUseAutoTitle" xml:space="preserve">
+    <value>Очистите строку для использования автозаголовка</value>
   </data>
 </root>

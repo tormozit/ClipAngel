@@ -106,20 +106,20 @@ namespace ClipAngel.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Цветовая глубина.
-        /// </summary>
-        internal static string ColorDepth {
-            get {
-                return ResourceManager.GetString("ColorDepth", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Показать остальной текст.
         /// </summary>
         internal static string CutMarker {
             get {
                 return ResourceManager.GetString("CutMarker", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Изменение заголовка клипа.
+        /// </summary>
+        internal static string EditClipTitle {
+            get {
+                return ResourceManager.GetString("EditClipTitle", resourceCulture);
             }
         }
         
@@ -160,6 +160,15 @@ namespace ClipAngel.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Очистите строку для использования автозаголовка.
+        /// </summary>
+        internal static string HowUseAutoTitle {
+            get {
+                return ResourceManager.GetString("HowUseAutoTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to карт.
         /// </summary>
         internal static string img {
@@ -192,6 +201,15 @@ namespace ClipAngel.Properties {
         internal static string NextClip {
             get {
                 return ResourceManager.GetString("NextClip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Формат пикселя.
+        /// </summary>
+        internal static string PixelFormat {
+            get {
+                return ResourceManager.GetString("PixelFormat", resourceCulture);
             }
         }
         

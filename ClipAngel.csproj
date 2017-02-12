@@ -84,6 +84,10 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsInput, Version=1.0.4.0, Culture=neutral, PublicKeyToken=9b287f7dc5073cad, processorArchitecture=MSIL">
+      <HintPath>packages\InputSimulator.1.0.4.0\lib\net20\WindowsInput.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AboutBox.cs">
@@ -92,6 +96,7 @@
     <Compile Include="AboutBox.Designer.cs">
       <DependentUpon>AboutBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="Components\InputBox.cs" />
     <Compile Include="Components\PortableSettingsProvider .cs" />
     <Compile Include="Components\DataGridViewRichTextBoxColumn.cs" />
     <Compile Include="Components\UacHelper.cs" />
@@ -150,7 +155,7 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
-      <LastGenOutput>Resources1.Designer.cs</LastGenOutput>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Settings.resx">
       <DependentUpon>Settings.cs</DependentUpon>
@@ -172,7 +177,9 @@
       <DependentUpon>dbDataSet.xsd</DependentUpon>
     </None>
     <None Include="DB\db.sqlite" />
-    <None Include="packages.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -192,8 +199,6 @@
     <None Include="Picture\Filter.ico" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Искать назад.png" />
-    <None Include="Resources\Искать вперед.png" />
     <None Include="Picture\TypeFile.png" />
     <None Include="Picture\TypeHtml.png" />
     <None Include="Picture\TypeImg.png" />
@@ -207,9 +212,8 @@
     <None Include="Picture\delete.png" />
     <None Include="Picture\Set favorite.png" />
     <None Include="Picture\Reset favorite.png" />
-    <None Include="Picture\Искать вперед.png" />
-    <None Include="Picture\Искать назад.png" />
-    <Content Include="Picture\ЭлементПомеченныйНаУдаление.gif" />
+    <None Include="Picture\FindNext.png" />
+    <None Include="Picture\FindPrevious.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
@@ -222,6 +226,15 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Picture\TopMostWindow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Picture\OpenFile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Picture\Edit.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

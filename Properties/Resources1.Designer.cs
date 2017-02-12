@@ -182,25 +182,6 @@ namespace ClipAngel.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap Edit {
-            get {
-                object obj = ResourceManager.GetObject("Edit", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Edit clip title.
-        /// </summary>
-        public static string EditClipTitle {
-            get {
-                return ResourceManager.GetString("EditClipTitle", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to tormozit@gmail.com.
         /// </summary>
         public static string Email {
@@ -285,15 +266,6 @@ namespace ClipAngel.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Clear string to use auto title.
-        /// </summary>
-        public static string HowUseAutoTitle {
-            get {
-                return ResourceManager.GetString("HowUseAutoTitle", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to img.
         /// </summary>
         public static string img {
@@ -336,16 +308,6 @@ namespace ClipAngel.Properties {
         public static string NextClip {
             get {
                 return ResourceManager.GetString("NextClip", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap OpenFile {
-            get {
-                object obj = ResourceManager.GetObject("OpenFile", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
