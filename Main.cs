@@ -36,9 +36,9 @@ namespace ClipAngel
         SQLiteConnection m_dbConnection;
         string connectionString;
         SQLiteDataAdapter dataAdapter;
-        bool CaptureClipboard = true;
+        //bool CaptureClipboard = true;
         bool allowRowLoad = true;
-        bool AutoGotoLastRow = true;
+        //bool AutoGotoLastRow = true;
         bool AllowFormClose = false;
         bool AllowHotkeyProcess = true;
         bool EditMode = false;
@@ -59,6 +59,8 @@ namespace ClipAngel
         private const uint EVENT_SYSTEM_FOREGROUND = 3;
         private IntPtr LastActiveWindow;
         private IntPtr HookChangeActiveWindow;
+        private bool AllowFilterProcessing = true;
+
         public Main()
         {
             UpdateCurrentCulture(); // Antibug. Before bug it was not required
@@ -342,6 +344,8 @@ namespace ClipAngel
                 RowReader = commandSelect.ExecuteReader();
                 RowReader.Read();
                 ClipType = RowReader["type"].ToString();
+                textBoxApplication.Text = RowReader["Application"].ToString();
+                textBoxWindow.Text = RowReader["Window"].ToString();
                 StripLabelCreated.Text = RowReader["Created"].ToString();
                 StripLabelSize.Text = RowReader["Size"] + MultiLangByteUnit();
                 StripLabelVisibleSize.Text = RowReader["Chars"]+ MultiLangCharUnit();
@@ -487,18 +491,21 @@ namespace ClipAngel
 
         private void Filter_TextChanged(object sender, EventArgs e)
         {
-            ChooseTitleColumnDraw();
-            UpdateClipBindingSource(true);
+            if (AllowFilterProcessing)
+            {
+                ChooseTitleColumnDraw();
+                UpdateClipBindingSource(true);
+            }
         }
 
-        private void UpdateClipBindingSource(bool forceRowLoad = false)
+        private void UpdateClipBindingSource(bool forceRowLoad = false, int CurrentClipID = 0)
         {
             if (dataAdapter == null)
                 return;
             if (EditMode)
                 SaveClipText();
-            int CurrentClipID = 0;
-            if (clipBindingSource.Current != null)
+            ;
+            if (CurrentClipID == 0 && clipBindingSource.Current != null)
                 CurrentClipID = (int)(clipBindingSource.Current as DataRowView).Row["Id"];
             allowRowLoad = false;
             string SqlFilter = "1 = 1";
@@ -550,9 +557,11 @@ namespace ClipAngel
                     LastId = (int)LastRow["Id"];
                 }
             }
-            else if (AutoGotoLastRow || CurrentClipID == 0)
+            else if (false
+                //|| AutoGotoLastRow 
+                || CurrentClipID <= 0)
                 GotoLastRow();
-            else if (CurrentClipID != 0)
+            else if (CurrentClipID > 0)
             {
                 clipBindingSource.Position = clipBindingSource.Find("id", CurrentClipID);
                 //if (dataGridView.CurrentRow != null)
@@ -560,16 +569,24 @@ namespace ClipAngel
                 SelectCurrentRow(forceRowLoad);
             }
             allowRowLoad = true;
-            AutoGotoLastRow = false;
+            //AutoGotoLastRow = false;
         }
 
         private void ClearFilter_Click(object sender = null, EventArgs e = null)
         {
+            ClearFilter();
+        }
+
+        private void ClearFilter(int CurrentClipID = 0)
+        {
+            AllowFilterProcessing = false;
             comboBoxFilter.Text = "";
             TypeFilter.SelectedIndex = 0;
             MarkFilter.SelectedIndex = 0;
             dataGridView.Focus();
-            UpdateClipBindingSource(true);
+            AllowFilterProcessing = true;
+            ChooseTitleColumnDraw();
+            UpdateClipBindingSource(true, CurrentClipID);
         }
 
         private void Text_CursorChanged(object sender, EventArgs e)
@@ -595,8 +612,8 @@ namespace ClipAngel
             // Data on the clipboard uses the 
             // IDataObject interface
             //
-            if (!CaptureClipboard)
-            { return; }
+            //if (!CaptureClipboard)
+            //{ return; }
             IDataObject iData = new DataObject();
             string ClipType = "";
             string ClipText = "";
@@ -706,6 +723,7 @@ namespace ClipAngel
             if (ClipType != "")
             {
                 AddClip(BinaryBuffer, HtmlText, RichText, ClipType, ClipText, ClipApplication, ClipWindow, ClipUrl, ClipChars);
+                UpdateClipBindingSource();
             }
 
         }
@@ -809,7 +827,9 @@ namespace ClipAngel
                 ClipsNumber -= NumberOfClipsToDelete;
             }
             if (this.Visible)
+            {
                 UpdateClipBindingSource();
+            }
         }
 
         private static string TextClipTitle(string Text)
@@ -1034,15 +1054,17 @@ namespace ClipAngel
                 //ms.Position = 0;
                 //dto.SetData("DeviceIndependentBitmap", ms2);
             };
-            if (!Properties.Settings.Default.MoveCopiedClipToTop && !SelectedPlainTextMode)
-                CaptureClipboard = false;
-            //oldDataObject = (DataObject) Clipboard.GetDataObject();
+            //if (!Properties.Settings.Default.MoveCopiedClipToTop)
+            //    CaptureClipboard = false;
+            ////oldDataObject = (DataObject) Clipboard.GetDataObject();
+            RemoveClipboardFormatListener(this.Handle);
             Clipboard.Clear();
             Clipboard.SetDataObject(dto);
-            Application.DoEvents(); // To process UpdateClipBoardMessage
-            //if (CaptureClipboard)
-            //    GotoLastRow();
-            CaptureClipboard = true;
+            AddClipboardFormatListener(this.Handle);
+            //Application.DoEvents(); // To process UpdateClipBoardMessage
+            ////if (CaptureClipboard)
+            ////    GotoLastRow();
+            //CaptureClipboard = true;
             return Text;
         }
 
@@ -1082,7 +1104,10 @@ namespace ClipAngel
                 MessageBox.Show(this, CurrentResourceManager.GetString("CantPasteInElevatedWindow"), Application.ProductName);
                 return;
             }
+            
+            // not reliable method
             // Previous active window by z-order https://www.whitebyte.info/programming/how-to-get-main-window-handle-of-the-last-active-window
+
             if (!this.TopMost)
             {
                 this.Hide();
@@ -1103,7 +1128,7 @@ namespace ClipAngel
                 // http://stackoverflow.com/questions/37291533/change-keyboard-layout-from-c-sharp-code-with-net-4-5-2
                 using (new KeyboardLayoutScope(EnglishCultureInfo))
                 {
-                    SendKeys.SendWait("^{v}"); // Works only in english langauge
+                    SendKeys.SendWait("^{v}"); // Works only in english langauge, here is called DoEvents
 
                     // Equalent?
                     //keybd_event(VK_CONTROL, 0, 0, 0);
@@ -1134,9 +1159,28 @@ namespace ClipAngel
                     MessageBox.Show(this, error.Message);
                 }
             }
-
-            ((DataRowView)dataGridView.CurrentRow.DataBoundItem).Row["Used"] = true;
-            PrepareTableGrid();
+            if (Properties.Settings.Default.MoveCopiedClipToTop)
+            {
+                int CurrentRowIndex = dataGridView.CurrentRow.Index;
+                DataRow CurrentDataRow = ((DataRowView)clipBindingSource[CurrentRowIndex]).Row;
+                int oldID = (int)CurrentDataRow["ID"];
+                int newID = LastId + 1;
+                string sql = "Update Clips set Id=@NewId where Id=@Id";
+                SQLiteCommand command = new SQLiteCommand(sql, m_dbConnection);
+                command.Parameters.Add("@Id", DbType.Int32).Value = oldID;
+                command.Parameters.Add("@NewID", DbType.Int32).Value = newID;
+                command.ExecuteNonQuery();
+                //SelectCurrentRow();
+                clipBindingSource.Position = 0;
+                LastId = newID;
+                UpdateClipBindingSource();
+            }
+            else
+            {
+                ((DataRowView)dataGridView.CurrentRow.DataBoundItem).Row["Used"] = true;
+                //PrepareTableGrid();
+                UpdateTableGridRowBackColor(dataGridView.CurrentRow);
+            }
 
             // We need delay about 100ms before restore clipboard object
             //Clipboard.SetDataObject(oldDataObject);
@@ -1408,7 +1452,7 @@ namespace ClipAngel
         {
             this.WindowState = FormWindowState.Normal;
             this.ShowInTaskbar = true;
-            AutoGotoLastRow = Properties.Settings.Default.SelectTopClipOnShow;
+            //AutoGotoLastRow = Properties.Settings.Default.SelectTopClipOnShow;
             if (Properties.Settings.Default.WindowAutoPosition)
             {
                 // https://www.codeproject.com/Articles/34520/Getting-Caret-Position-Inside-Any-Application
@@ -1601,22 +1645,9 @@ namespace ClipAngel
                 {
                     Row.Cells["TypeImg"].Value = Image;
                 }
-                if (DataRowView.Row["Favorite"] != DBNull.Value && (bool)DataRowView.Row["Favorite"])
-                {
-                    foreach (DataGridViewCell Cell in Row.Cells)
-                    {
-                        Cell.Style.BackColor = Color.FromArgb(255, 220, 220);
-                    }
-                }
-                else if ((bool)DataRowView.Row["Used"])
-                {
-                    foreach (DataGridViewCell Cell in Row.Cells)
-                    {
-                        Cell.Style.BackColor = Color.FromArgb(200, 255, 255);
-                    }
-                }
+                UpdateTableGridRowBackColor(Row);
                 Row.Cells["Title"].Value = DataRowView.Row["Title"].ToString();
-                if (comboBoxFilter.Text!="" && dataGridView.Columns["Title"].Visible)
+                if (comboBoxFilter.Text != "" && dataGridView.Columns["Title"].Visible)
                 {
                     _richTextBox.Clear();
                     _richTextBox.Text = Row.Cells["Title"].Value as string;
@@ -1626,6 +1657,25 @@ namespace ClipAngel
                 }
             }
             dataGridView.Update();
+        }
+
+        private void UpdateTableGridRowBackColor(DataGridViewRow Row)
+        {
+            DataRowView DataRowView = (DataRowView)(dataGridView.Rows[Row.Index].DataBoundItem);
+            if (DataRowView.Row["Favorite"] != DBNull.Value && (bool)DataRowView.Row["Favorite"])
+            {
+                foreach (DataGridViewCell Cell in Row.Cells)
+                {
+                    Cell.Style.BackColor = Color.FromArgb(255, 220, 220);
+                }
+            }
+            else if ((bool)DataRowView.Row["Used"])
+            {
+                foreach (DataGridViewCell Cell in Row.Cells)
+                {
+                    Cell.Style.BackColor = Color.FromArgb(200, 255, 255);
+                }
+            }
         }
 
         private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -1767,11 +1817,12 @@ namespace ClipAngel
                 Locale = "ru";
             else
                 Locale = "en";
-            if (true
-                && CurrentResourceManager != null
-                && String.Compare(Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName, Locale, true) != 0
-            )
-                MessageBox.Show(this, CurrentResourceManager.GetString("LangRestart"), Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //if (true
+            //    && CurrentResourceManager != null
+            //    && String.Compare(Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName, Locale, true) != 0)
+            //{
+            //    MessageBox.Show(this, CurrentResourceManager.GetString("LangRestart"), Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //}
             if (String.Compare(Locale, "ru", true) == 0)
                 CurrentResourceManager = Properties.Resource_RU.ResourceManager;
             else
@@ -1800,11 +1851,14 @@ namespace ClipAngel
 
         private void Main_Activated(object sender, EventArgs e)
         {
-            //#if DEBUG
-            //    return;
-            //#endif
-            //PrepareTableGrid(); // иначе оформление не появлялось при свернутом запуске
-            UpdateClipBindingSource();
+            ////#if DEBUG
+            ////    return;
+            ////#endif
+            ////PrepareTableGrid(); // иначе оформление не появлялось при свернутом запуске
+            //UpdateClipBindingSource();
+
+            if (Properties.Settings.Default.SelectTopClipOnShow)
+                GotoLastRow();
         }
 
         private void Filter_KeyPress(object sender, KeyPressEventArgs e)
@@ -1834,17 +1888,15 @@ namespace ClipAngel
 
         private void ImageControl_DoubleClick(object sender, EventArgs e)
         {
-            OpenInDefaultApplication();
-        }
-
-        private void checkBox1_Click(object sender, EventArgs e)
-        {
-            UpdateClipBindingSource();
+            OpenInDefaultApplication(); 
         }
 
         private void TypeFilter_SelectedValueChanged(object sender, EventArgs e)
         {
-            UpdateClipBindingSource();
+            if (AllowFilterProcessing)
+            {
+                UpdateClipBindingSource();
+            }
         }
 
         private void buttonFindNext_Click(object sender, EventArgs e)
@@ -1921,8 +1973,7 @@ namespace ClipAngel
 
         private void toolStripMenuItemClearFilterAndSelectTop_Click(object sender, EventArgs e)
         {
-            ClearFilter_Click();
-            GotoLastRow();
+            ClearFilter(-1);
         }
 
         private void changeClipTitleToolStripMenuItem_Click(object sender, EventArgs e)
@@ -1960,7 +2011,10 @@ namespace ClipAngel
 
         private void MarkFilter_SelectedValueChanged(object sender, EventArgs e)
         {
-            UpdateClipBindingSource();
+            if (AllowFilterProcessing)
+            {
+                UpdateClipBindingSource(); 
+            }
         }
 
         private void showAllMarksToolStripMenuItem_Click(object sender, EventArgs e)
@@ -2041,10 +2095,10 @@ namespace ClipAngel
                 || IndexShift > 0 && CurrentRowIndex == dataGridView.RowCount
                )
                 return;
-            DataRow CurrentDataRow = ((DataRowView)clipBindingSource[CurrentRowIndex]).Row;
             DataRow NearDataRow = ((DataRowView)clipBindingSource[CurrentRowIndex + IndexShift]).Row;
-            int oldID = (int)CurrentDataRow["ID"];
             int newID = (int)NearDataRow["ID"];
+            DataRow CurrentDataRow = ((DataRowView)clipBindingSource[CurrentRowIndex]).Row;
+            int oldID = (int)CurrentDataRow["ID"];
             int tempID = LastId + 1;
             string sql = "Update Clips set Id=@NewId where Id=@Id";
             SQLiteCommand command = new SQLiteCommand(sql, m_dbConnection);
@@ -2057,8 +2111,8 @@ namespace ClipAngel
             command.Parameters.Add("@Id", DbType.Int32).Value = tempID;
             command.Parameters.Add("@NewID", DbType.Int32).Value = oldID;
             command.ExecuteNonQuery();
-            clipBindingSource.Position = CurrentRowIndex + IndexShift;
             //SelectCurrentRow();
+            clipBindingSource.Position = CurrentRowIndex + IndexShift;
             UpdateClipBindingSource();
         }
 
