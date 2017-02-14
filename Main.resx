@@ -494,7 +494,7 @@ Use special char % for marking any sequence of chars. For example filter "po%o" 
     <value>383, 168</value>
   </data>
   <data name="richTextBox.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+    <value>2</value>
   </data>
   <data name="richTextBox.Text" xml:space="preserve">
     <value />
@@ -596,7 +596,7 @@ Use special char % for marking any sequence of chars. For example filter "po%o" 
     <value>387, 369</value>
   </data>
   <data name="tableLayoutPanelData.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
+    <value>1</value>
   </data>
   <data name="&gt;&gt;tableLayoutPanelData.Name" xml:space="preserve">
     <value>tableLayoutPanelData</value>

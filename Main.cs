@@ -1159,21 +1159,13 @@ namespace ClipAngel
                     MessageBox.Show(this, error.Message);
                 }
             }
-            if (Properties.Settings.Default.MoveCopiedClipToTop)
+            if (false
+                || Properties.Settings.Default.MoveCopiedClipToTop 
+                || (true 
+                    && pasteMethod == PasteMethod.PasteText 
+                    && richTextBox.SelectedText != ""))
             {
-                int CurrentRowIndex = dataGridView.CurrentRow.Index;
-                DataRow CurrentDataRow = ((DataRowView)clipBindingSource[CurrentRowIndex]).Row;
-                int oldID = (int)CurrentDataRow["ID"];
-                int newID = LastId + 1;
-                string sql = "Update Clips set Id=@NewId where Id=@Id";
-                SQLiteCommand command = new SQLiteCommand(sql, m_dbConnection);
-                command.Parameters.Add("@Id", DbType.Int32).Value = oldID;
-                command.Parameters.Add("@NewID", DbType.Int32).Value = newID;
-                command.ExecuteNonQuery();
-                //SelectCurrentRow();
-                clipBindingSource.Position = 0;
-                LastId = newID;
-                UpdateClipBindingSource();
+                GetClipboardData();
             }
             else
             {
