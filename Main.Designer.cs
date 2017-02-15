@@ -362,7 +362,8 @@ namespace ClipAngel
             this.clipsTableAdapter = new ClipAngel.dbDataSetTableAdapters.ClipsTableAdapter();
             this.tableAdapterManager = new ClipAngel.dbDataSetTableAdapters.TableAdapterManager();
             this.cultureManager1 = new Infralution.Localization.CultureManager(this.components);
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.timerCheckUpdate = new System.Windows.Forms.Timer(this.components);
+            this.timerReconnect = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -1109,9 +1110,13 @@ namespace ClipAngel
             // 
             this.cultureManager1.ManagedControl = this;
             // 
-            // timer1
+            // timerCheckUpdate
             // 
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            this.timerCheckUpdate.Tick += new System.EventHandler(this.timerCheckUpdate_Tick);
+            // 
+            // timerReconnect
+            // 
+            this.timerReconnect.Tick += new System.EventHandler(this.timerReconnect_Tick);
             // 
             // Main
             // 
@@ -1235,7 +1240,7 @@ namespace ClipAngel
         private Infralution.Localization.CultureManager cultureManager1;
         private System.Windows.Forms.ToolStripButton buttonUpdate;
         private System.Windows.Forms.ToolStripMenuItem checkUpdateToolStripMenuItem;
-        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Timer timerCheckUpdate;
         private System.Windows.Forms.ToolStripSeparator toolStripUpdateToSeparator;
         private System.Windows.Forms.ToolStripMenuItem historyToolStripMenuItem;
         private System.Windows.Forms.DataGridViewImageColumn TypeImg;
@@ -1250,6 +1255,7 @@ namespace ClipAngel
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemOpenFile;
         private System.Windows.Forms.ToolStripMenuItem editClipTextToolStripMenuItem;
         private System.Windows.Forms.ToolStripButton toolStripMenuItemEditClipText;
+        private System.Windows.Forms.Timer timerReconnect;
     }
 }
 

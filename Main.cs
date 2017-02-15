@@ -71,8 +71,10 @@ namespace ClipAngel
             hook.KeyPressed +=
                 new EventHandler<KeyPressedEventArgs>(hook_KeyPressed);
             RegisterHotKeys();
-            timer1.Interval = (1000 * 60 * 60 * 24); // 1 day
-            timer1.Start();
+            timerCheckUpdate.Interval = (1000 * 60 * 60 * 24); // 1 day
+            timerCheckUpdate.Start();
+            timerReconnect.Interval = (1000 * 5 ); // 5 seconds
+            timerReconnect.Start();
         }
         delegate void WinEventDelegate(IntPtr hWinEventHook, uint eventType, IntPtr hwnd, int idObject, int idChild, uint dwEventThread, uint dwmsEventTime);
 
@@ -235,10 +237,10 @@ namespace ClipAngel
         #endregion
 
 
-        [DllImport("user32.dll")]
+        [DllImport("user32.dll", SetLastError = true)]
         private static extern bool AddClipboardFormatListener(IntPtr hwnd);
 
-        [DllImport("user32.dll")]
+        [DllImport("user32.dll", SetLastError = true)]
         private static extern bool RemoveClipboardFormatListener(IntPtr hwnd);
 
         private void Main_Load(object sender, EventArgs e)
@@ -274,16 +276,20 @@ namespace ClipAngel
             SQLiteCommand command;
 
             command = new SQLiteCommand("ALTER TABLE Clips" + " ADD COLUMN Hash CHAR(32)", m_dbConnection);
-            try {
+            try
+            {
                 command.ExecuteNonQuery();
             }
-            catch {
+            catch
+            {
             }
             command = new SQLiteCommand("ALTER TABLE Clips" + " ADD COLUMN Favorite BOOLEAN", m_dbConnection);
-            try {
+            try
+            {
                 command.ExecuteNonQuery();
             }
-            catch {
+            catch
+            {
             }
 
             // http://blog.tigrangasparian.com/2012/02/09/getting-started-with-sqlite-in-c-part-one/
@@ -300,7 +306,7 @@ namespace ClipAngel
             //dataGridView.DataSource = clipBindingSource;
 
             UpdateClipBindingSource();
-            AddClipboardFormatListener(this.Handle);
+            ConnectClipboard();
             if (StartMinimized)
             {
                 StartMinimized = false;
@@ -309,6 +315,21 @@ namespace ClipAngel
             else
             {
                 this.WindowState = FormWindowState.Normal;
+            }
+        }
+
+        private void ConnectClipboard()
+        {
+            if (!AddClipboardFormatListener(this.Handle))
+            {
+                int ErrorCode = Marshal.GetLastWin32Error();
+                int ERROR_INVALID_PARAMETER = 87;
+                if (ErrorCode!= ERROR_INVALID_PARAMETER)
+                    Debug.WriteLine("Failed to connect clipboard: " + Marshal.GetLastWin32Error());
+                else
+                {
+                    //already connected
+                }
             }
         }
 
@@ -1060,7 +1081,7 @@ namespace ClipAngel
             RemoveClipboardFormatListener(this.Handle);
             Clipboard.Clear();
             Clipboard.SetDataObject(dto);
-            AddClipboardFormatListener(this.Handle);
+            ConnectClipboard();
             //Application.DoEvents(); // To process UpdateClipBoardMessage
             ////if (CaptureClipboard)
             ////    GotoLastRow();
@@ -1110,7 +1131,7 @@ namespace ClipAngel
 
             if (!this.TopMost)
             {
-                this.Hide();
+                this.Visible = false;
             }
             SetForegroundWindow(LastActiveWindow);
             Debug.WriteLine("Set foreground window " + LastActiveWindow + " " + GetWindowTitle(LastActiveWindow));
@@ -1348,7 +1369,6 @@ namespace ClipAngel
         private void dataGridView_DoubleClick(object sender, EventArgs e)
         {
             SendPaste();
-            //this.Hide();
         }
         private void pasteOriginalToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -1480,7 +1500,7 @@ namespace ClipAngel
                 }
             }
             this.Activate();
-            this.Show();
+            this.Visible = true;
             //notifyIcon.Visible = false;
         }
 
@@ -1488,7 +1508,7 @@ namespace ClipAngel
         {
             if (e.KeyCode == Keys.Escape)
             {
-                this.Hide();
+                this.Visible = false;
                 e.Handled = true;
             }
             if (e.KeyCode == Keys.Enter)
@@ -2067,7 +2087,7 @@ namespace ClipAngel
             CheckUpdate(true);
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
+        private void timerCheckUpdate_Tick(object sender, EventArgs e)
         {
             CheckUpdate();
         }
@@ -2205,6 +2225,11 @@ namespace ClipAngel
             editClipTextToolStripMenuItem.Checked = EditMode;
             toolStripMenuItemEditClipText.Checked = EditMode;
             pasteENTERToolStripMenuItem.Enabled = !EditMode;
+        }
+
+        private void timerReconnect_Tick(object sender, EventArgs e)
+        {
+            ConnectClipboard();
         }
     }
 }
