@@ -20,6 +20,7 @@ using AngleSharp.Parser.Html;
 using AngleSharp.Dom;
 using System.Reflection;
 using WindowsInput;
+using WindowsInput.Native;
 
 namespace ClipAngel
 {
@@ -57,7 +58,7 @@ namespace ClipAngel
         WinEventDelegate dele = null;
         private const uint WINEVENT_OUTOFCONTEXT = 0;
         private const uint EVENT_SYSTEM_FOREGROUND = 3;
-        private IntPtr LastActiveWindow;
+        private IntPtr lastActiveWindow;
         private IntPtr HookChangeActiveWindow;
         private bool AllowFilterProcessing = true;
 
@@ -81,7 +82,7 @@ namespace ClipAngel
         public void WinEventProc(IntPtr hWinEventHook, uint eventType, IntPtr hwnd, int idObject, int idChild, uint dwEventThread, uint dwmsEventTime)
         {
             if (GetTopParentWindow(hwnd) != this.Handle)
-                LastActiveWindow = hwnd;
+                lastActiveWindow = hwnd;
         }
 
         public static T ParseEnum<T>(string value)
@@ -998,26 +999,26 @@ namespace ClipAngel
             }
         }
 
-        class KeyboardLayoutScope : IDisposable
+        //class KeyboardLayoutScope : IDisposable
+        //{
+        //    private readonly KeyboardLayout currentLayout;
+
+        //    public KeyboardLayoutScope(CultureInfo culture)
+        //    {
+        //        this.currentLayout = KeyboardLayout.GetCurrent();
+        //        var layout = KeyboardLayout.Load(culture);
+        //        layout.Activate();
+        //    }
+
+        //    public void Dispose()
+        //    {
+        //        this.currentLayout.Activate();
+        //    }
+        //}
+
+        private string CopyClipToClipboard(/*out DataObject oldDataObject,*/ bool OnlySelectedPlainText = false)
         {
-            private readonly KeyboardLayout currentLayout;
-
-            public KeyboardLayoutScope(CultureInfo culture)
-            {
-                this.currentLayout = KeyboardLayout.GetCurrent();
-                var layout = KeyboardLayout.Load(culture);
-                layout.Activate();
-            }
-
-            public void Dispose()
-            {
-                this.currentLayout.Activate();
-            }
-        }
-
-        private string CopyClipToClipboard(out DataObject oldDataObject, bool OnlySelectedPlainText = false)
-        {
-            oldDataObject = null;
+            //oldDataObject = null;
             StringCollection LastFilterValues = Properties.Settings.Default.LastFilterValues;
             if (comboBoxFilter.Text != "" && !LastFilterValues.Contains(comboBoxFilter.Text))
             {
@@ -1038,7 +1039,7 @@ namespace ClipAngel
             bool SelectedPlainTextMode = OnlySelectedPlainText && richTextBox.SelectedText != "";
             if (SelectedPlainTextMode)
             {
-                Text = richTextBox.SelectedText;
+                Text = richTextBox.SelectedText; // Если тут не копировать, а передавать SelectedText, то возникает долгое ожидание потом
             }
             DataObject dto = new DataObject();
             if (IsTextType(Type))
@@ -1079,8 +1080,8 @@ namespace ClipAngel
             //    CaptureClipboard = false;
             ////oldDataObject = (DataObject) Clipboard.GetDataObject();
             RemoveClipboardFormatListener(this.Handle);
-            Clipboard.Clear();
-            Clipboard.SetDataObject(dto);
+            //Clipboard.Clear();
+            Clipboard.SetDataObject(dto, true); // Very important to set second parameter to true to give immidiate access to buffer to other processes!
             ConnectClipboard();
             //Application.DoEvents(); // To process UpdateClipBoardMessage
             ////if (CaptureClipboard)
@@ -1100,26 +1101,25 @@ namespace ClipAngel
             if (dataGridView.CurrentRow == null)
                 return;
             string TextToPaste = "";
-            DataObject oldDataObject;
+            //DataObject oldDataObject;
             //if (pasteMethod != PasteMethod.SendChars)
-            TextToPaste = CopyClipToClipboard(out oldDataObject, pasteMethod != PasteMethod.Standart);
-            SetRowMark("Used");
-            CultureInfo EnglishCultureInfo = null;
-            foreach (InputLanguage lang in InputLanguage.InstalledInputLanguages)
-            {
-                if (String.Compare(lang.Culture.TwoLetterISOLanguageName, "en", true) == 0)
-                {
-                    EnglishCultureInfo = lang.Culture;
-                    break;
-                }
-            }
-            if (EnglishCultureInfo == null)
-            {
-                MessageBox.Show(this, "Unable to find English input language", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
+            TextToPaste = CopyClipToClipboard(/*out oldDataObject,*/ pasteMethod != PasteMethod.Standart);
+            //CultureInfo EnglishCultureInfo = null;
+            //foreach (InputLanguage lang in InputLanguage.InstalledInputLanguages)
+            //{
+            //    if (String.Compare(lang.Culture.TwoLetterISOLanguageName, "en", true) == 0)
+            //    {
+            //        EnglishCultureInfo = lang.Culture;
+            //        break;
+            //    }
+            //}
+            //if (EnglishCultureInfo == null)
+            //{
+            //    MessageBox.Show(this, "Unable to find English input language", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //    return;
+            //}
             int TargetProcessID;
-            uint remoteThreadId = GetWindowThreadProcessId(LastActiveWindow, out TargetProcessID);
+            uint remoteThreadId = GetWindowThreadProcessId(lastActiveWindow, out TargetProcessID);
             if (TargetProcessID != 0 && !UacHelper.IsProcessAccessible(TargetProcessID))
             {
                 MessageBox.Show(this, CurrentResourceManager.GetString("CantPasteInElevatedWindow"), Application.ProductName);
@@ -1133,30 +1133,49 @@ namespace ClipAngel
             {
                 this.Visible = false;
             }
-            SetForegroundWindow(LastActiveWindow);
-            Debug.WriteLine("Set foreground window " + LastActiveWindow + " " + GetWindowTitle(LastActiveWindow));
+            SetForegroundWindow(lastActiveWindow);
+            Debug.WriteLine("Set foreground window " + lastActiveWindow + " " + GetWindowTitle(lastActiveWindow));
             //IntPtr hForegroundWindow = GetForegroundWindow();
             //Debug.WriteLine("Get foreground window " + hForegroundWindow + " " + GetWindowTitle(hForegroundWindow));
-            EnableWindow(LastActiveWindow, true);
+            EnableWindow(lastActiveWindow, true);
             //IntPtr hFocusWindow = FocusWindow();
             //string WindowTitle = GetWindowTitle(hFocusWindow);
             //Debug.WriteLine("Window = " + hFocusWindow + " \"" + WindowTitle + "\"");
             //Thread.Sleep(50);
-
+            InputSimulator inputSimulator = new InputSimulator(); // http://inputsimulator.codeplex.com/
             if (pasteMethod != PasteMethod.SendChars)
             {
-                // Option 1
-                // http://stackoverflow.com/questions/37291533/change-keyboard-layout-from-c-sharp-code-with-net-4-5-2
-                using (new KeyboardLayoutScope(EnglishCultureInfo))
-                {
-                    SendKeys.SendWait("^{v}"); // Works only in english langauge, here is called DoEvents
+                //if (Properties.Settings.Default.PasteByEmulateCTRLV)
+                //{
+                    inputSimulator.Keyboard.KeyDown(VirtualKeyCode.CONTROL);
+                    inputSimulator.Keyboard.KeyPress(VirtualKeyCode.VK_V);
+                    inputSimulator.Keyboard.KeyUp(VirtualKeyCode.CONTROL);
 
-                    // Equalent?
+                    //// http://stackoverflow.com/questions/37291533/change-keyboard-layout-from-c-sharp-code-with-net-4-5-2
+                    //using (new KeyboardLayoutScope(EnglishCultureInfo))
+                    //{
+                    //    SendKeys.SendWait("^{v}"); // Works only in english langauge, here is called DoEvents
+                    //}
+
+                    //// Option 2
+                    //// Equalent ?
                     //keybd_event(VK_CONTROL, 0, 0, 0);
                     //keybd_event((byte)'V', 0, 0, 0);
                     //keybd_event((byte)'V', 0, WM_KEYUP, 0);
                     //keybd_event(VK_CONTROL, 0, WM_KEYUP, 0);
-                }
+                //}
+                //else
+                //{
+                //    const int WM_PASTE = 0x0302;
+                //    var guiInfo = new GUITHREADINFO();
+                //    guiInfo.cbSize = (uint)Marshal.SizeOf(guiInfo);
+                //    GetGUIThreadInfo(remoteThreadId, out guiInfo);
+                //    AttachThreadInput(GetCurrentThreadId(), remoteThreadId, true);
+                //    IntPtr hFocusWindow = GetFocus();
+                //    SendMessage(hFocusWindow, WM_PASTE, 0, 0);
+                //    AttachThreadInput(GetCurrentThreadId(), remoteThreadId, false);
+                //    //// CMD window https://blogs.msdn.microsoft.com/bill/2012/06/09/programmatically-paste-clipboard-text-to-a-cmd-window-c-or-c/
+                //}
             }
             else
             {
@@ -1165,21 +1184,21 @@ namespace ClipAngel
                 if (!IsTextType(Type))
                     return;
                 //IntPtr hFocus = GetFocusWindow();
-                InputSimulator inputSimulator = new InputSimulator(); // http://inputsimulator.codeplex.com/
-                try
-                {
+                //try
+                //{
                     inputSimulator.Keyboard.TextEntry(TextToPaste);
 
                     //// CTRL+V
                     //inputSimulator.Keyboard.KeyDown(VirtualKeyCode.CONTROL);
                     //inputSimulator.Keyboard.KeyPress(VirtualKeyCode.VK_V);
                     //inputSimulator.Keyboard.KeyUp(VirtualKeyCode.CONTROL);
-                }
-                catch (Exception error)
-                {
-                    MessageBox.Show(this, error.Message);
-                }
+                //}
+                //catch (Exception error)
+                //{
+                //    MessageBox.Show(this, error.Message, Application.ProductName);
+                //}
             }
+            SetRowMark("Used");
             if (false
                 || Properties.Settings.Default.MoveCopiedClipToTop 
                 || (true 
@@ -1197,31 +1216,6 @@ namespace ClipAngel
 
             // We need delay about 100ms before restore clipboard object
             //Clipboard.SetDataObject(oldDataObject);
-
-            //// Option 2
-            //const int WM_SYSCOMMAND = 0x0112;
-            //const int SC_CLOSE = 0xF060;
-            //const int WM_COPY = 0x0301;
-            //const int WM_CHAR = 0x0102;
-            //const int WM_PASTE = 0x0302;
-            //const int WM_GETTEXT = 0x000D;
-            //sendKey(hwnd, Keys.ControlKey, false, true, false);
-            //sendKey(hwnd, Keys.V, false, true, false);
-            ////PostMessage(hwnd, WM_PASTE, 0, 0);
-            //if (GetAsyncKeyState(Keys.V) == 0)
-            //{
-            //    sendKey(hwnd, Keys.V, false, false, true);
-            //}
-            //if (GetAsyncKeyState(Keys.ControlKey) == 0)
-            //{
-            //    sendKey(hwnd, Keys.ControlKey, false, false, true);
-            //}
-
-            //// CMD window https://blogs.msdn.microsoft.com/bill/2012/06/09/programmatically-paste-clipboard-text-to-a-cmd-window-c-or-c/
-            //int WM_COMMAND = 0x0111;
-            //SendMessage(hwnd, WM_COMMAND, 0xfff1, 0);
-
-            //this.Show();
         }
 
         private static IntPtr GetTopParentWindow(IntPtr hForegroundWindow)
@@ -1964,8 +1958,8 @@ namespace ClipAngel
 
         private void copyClipToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DataObject oldDataObject;
-            CopyClipToClipboard(out oldDataObject);
+            //DataObject oldDataObject;
+            CopyClipToClipboard(/*out oldDataObject*/);
         }
 
         private void toolStripButtonSelectTopClipOnShow_Click(object sender, EventArgs e)
