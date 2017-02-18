@@ -150,10 +150,10 @@
     <value>Язык интерфейса</value>
   </data>
   <data name="checkBoxShowSizeColumn.Text" xml:space="preserve">
-    <value>Отображать колонку уровня размера клипа</value>
+    <value>Отображать колонку визуального веса клипа</value>
   </data>
   <data name="checkBoxShowSizeColumn.ToolTip" xml:space="preserve">
-    <value>Колонка будет показывать количество цифр в видимом размере клипа</value>
+    <value>Колонка будет показывать визуальный вес (количество цифр в визуальном размере) клипа</value>
   </data>
   <data name="label6.Text" xml:space="preserve">
     <value>Горячая клавиша последоват. вставки</value>

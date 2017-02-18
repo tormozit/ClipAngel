@@ -494,6 +494,15 @@ namespace ClipAngel.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Visual clip weight (number of digits in number representing visual clip size).
+        /// </summary>
+        public static string VisualWeightTooltip {
+            get {
+                return ResourceManager.GetString("VisualWeightTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to https://sourceforge.net/projects/clip-angel.
         /// </summary>
         public static string Website {

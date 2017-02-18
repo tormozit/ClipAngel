@@ -250,6 +250,15 @@ namespace ClipAngel.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Визуальный вес клипа (количество цифр в числе, отражающем визуальный размер клипа).
+        /// </summary>
+        internal static string VisualWeightTooltip {
+            get {
+                return ResourceManager.GetString("VisualWeightTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Вы используете последнюю версию.
         /// </summary>
         internal static string YouLatestVersion {

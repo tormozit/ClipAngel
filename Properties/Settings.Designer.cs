@@ -135,12 +135,12 @@ namespace ClipAngel.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool ShowVisibleSizeColumn {
+        public bool ShowVisualWeightColumn {
             get {
-                return ((bool)(this["ShowVisibleSizeColumn"]));
+                return ((bool)(this["ShowVisualWeightColumn"]));
             }
             set {
-                this["ShowVisibleSizeColumn"] = value;
+                this["ShowVisualWeightColumn"] = value;
             }
         }
         

@@ -183,4 +183,7 @@
   <data name="HowUseAutoTitle" xml:space="preserve">
     <value>Очистите строку для использования автозаголовка</value>
   </data>
+  <data name="VisualWeightTooltip" xml:space="preserve">
+    <value>Визуальный вес клипа (количество цифр в числе, отражающем визуальный размер клипа)</value>
+  </data>
 </root>

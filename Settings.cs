@@ -36,13 +36,13 @@ namespace ClipAngel
             checkBoxAutostart.Checked = Properties.Settings.Default.Autostart;
             checkBoxWindowAutoPosition.Checked = Properties.Settings.Default.WindowAutoPosition;
             checkBoxMoveCopiedClipToTop.Checked = Properties.Settings.Default.MoveCopiedClipToTop;
-            checkBoxShowSizeColumn.Checked = Properties.Settings.Default.ShowVisibleSizeColumn;
+            checkBoxShowSizeColumn.Checked = Properties.Settings.Default.ShowVisualWeightColumn;
             checkBoxClipListSimpleDraw.Checked = Properties.Settings.Default.ClipListSimpleDraw;
             checkBoxAutoCheckUpdate.Checked = Properties.Settings.Default.AutoCheckForUpdate;
 
             NumberOfClips.Text = (Owner as Main).ClipsNumber.ToString();
             textBoxUserSettingsPath.Text = (Owner as Main).UserSettingsPath;
-            textBoxDatabaseSize.Text = ((new FileInfo((Owner as Main).DBFileName)).Length / (1024 * 1024)).ToString();
+            textBoxDatabaseSize.Text = ((new FileInfo((Owner as Main).DbFileName)).Length / (1024 * 1024)).ToString();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -51,7 +51,7 @@ namespace ClipAngel
             Properties.Settings.Default.AutoCheckForUpdate = checkBoxAutoCheckUpdate.Checked;
             Properties.Settings.Default.ClipListSimpleDraw = checkBoxClipListSimpleDraw.Checked;
             Properties.Settings.Default.MoveCopiedClipToTop = checkBoxMoveCopiedClipToTop.Checked;
-            Properties.Settings.Default.ShowVisibleSizeColumn = checkBoxShowSizeColumn.Checked;
+            Properties.Settings.Default.ShowVisualWeightColumn = checkBoxShowSizeColumn.Checked;
             Properties.Settings.Default.WindowAutoPosition = checkBoxWindowAutoPosition.Checked;
             Properties.Settings.Default.HotkeyShow = GlobalHotkeyShow.Text;
             Properties.Settings.Default.HotkeyIncrementalPaste = GlobalHotkeyIncrementalPaste.Text;
@@ -69,7 +69,7 @@ namespace ClipAngel
             string ExePath = System.Windows.Forms.Application.ExecutablePath;
             RegistryKey reg;
             reg = Registry.CurrentUser.CreateSubKey("Software\\Microsoft\\Windows\\CurrentVersion\\Run\\");
-            string Keyname = "Clip Angel";
+            string Keyname = Application.ProductName;
             try
             {
                 if (checkBoxAutostart.Checked)

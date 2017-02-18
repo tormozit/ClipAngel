@@ -265,4 +265,7 @@
   <data name="HowUseAutoTitle" xml:space="preserve">
     <value>Clear string to use auto title</value>
   </data>
+  <data name="VisualWeightTooltip" xml:space="preserve">
+    <value>Visual clip weight (number of digits in number representing visual clip size)</value>
+  </data>
 </root>
