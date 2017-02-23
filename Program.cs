@@ -12,7 +12,7 @@ namespace ClipAngel
 {
     static class Program
     {
-        static string MyMutexName = "ClipAngelApplicationMutex";
+        static readonly string MyMutexName = "ClipAngelApplicationMutex";
         static Mutex MyMutex;
         [STAThread]
         static void Main(string[] args)

@@ -38,6 +38,7 @@
               <Mapping SourceColumn="Id" DataSetColumn="Id" />
               <Mapping SourceColumn="Used" DataSetColumn="Used" />
               <Mapping SourceColumn="Favorite" DataSetColumn="Favorite" />
+              <Mapping SourceColumn="ImageSample" DataSetColumn="ImageSample" />
             </Mappings>
             <Sources>
               <DbSource ConnectionRef="SQLite [db]" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertRow" Modifier="Public" Name="InsertRow" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="InsertRow">
@@ -83,24 +84,25 @@
         <xs:element name="Clips" msprop:Generator_TableClassName="ClipsDataTable" msprop:Generator_TableVarName="tableClips" msprop:Generator_TablePropName="Clips" msprop:Generator_RowDeletingName="ClipsRowDeleting" msprop:Generator_RowChangingName="ClipsRowChanging" msprop:Generator_RowEvHandlerName="ClipsRowChangeEventHandler" msprop:Generator_RowDeletedName="ClipsRowDeleted" msprop:Generator_UserTableName="Clips" msprop:Generator_RowChangedName="ClipsRowChanged" msprop:Generator_RowEvArgName="ClipsRowChangeEvent" msprop:Generator_RowClassName="ClipsRow">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="Type" msprop:nullValue="" msprop:Generator_ColumnPropNameInRow="Type" msprop:Generator_ColumnVarNameInTable="columnType" msprop:Generator_ColumnPropNameInTable="TypeColumn" msprop:Generator_UserColumnName="Type" minOccurs="0">
+              <xs:element name="Type" msdata:ReadOnly="true" msprop:nullValue="" msprop:Generator_ColumnPropNameInRow="Type" msprop:Generator_ColumnVarNameInTable="columnType" msprop:Generator_ColumnPropNameInTable="TypeColumn" msprop:Generator_UserColumnName="Type" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="20" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Title" msprop:nullValue="" msprop:Generator_ColumnPropNameInRow="Title" msprop:Generator_ColumnVarNameInTable="columnTitle" msprop:Generator_ColumnPropNameInTable="TitleColumn" msprop:Generator_UserColumnName="Title" minOccurs="0">
+              <xs:element name="Title" msdata:ReadOnly="true" msprop:nullValue="" msprop:Generator_ColumnPropNameInRow="Title" msprop:Generator_ColumnVarNameInTable="columnTitle" msprop:Generator_ColumnPropNameInTable="TitleColumn" msprop:Generator_UserColumnName="Title" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Chars" msprop:nullValue="0" msprop:Generator_ColumnPropNameInRow="Chars" msprop:Generator_ColumnVarNameInTable="columnChars" msprop:Generator_ColumnPropNameInTable="CharsColumn" msprop:Generator_UserColumnName="Chars" type="xs:int" minOccurs="0" />
-              <xs:element name="Id" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" minOccurs="0" />
-              <xs:element name="Used" msprop:nullValue="false" msprop:Generator_ColumnPropNameInRow="Used" msprop:Generator_ColumnVarNameInTable="columnUsed" msprop:Generator_ColumnPropNameInTable="UsedColumn" msprop:Generator_UserColumnName="Used" type="xs:boolean" minOccurs="0" />
-              <xs:element name="Favorite" msprop:Generator_ColumnVarNameInTable="columnFavorite" msprop:Generator_ColumnPropNameInRow="Favorite" msprop:Generator_ColumnPropNameInTable="FavoriteColumn" msprop:Generator_UserColumnName="Favorite" type="xs:boolean" minOccurs="0" />
+              <xs:element name="Chars" msdata:ReadOnly="true" msprop:nullValue="0" msprop:Generator_ColumnPropNameInRow="Chars" msprop:Generator_ColumnVarNameInTable="columnChars" msprop:Generator_ColumnPropNameInTable="CharsColumn" msprop:Generator_UserColumnName="Chars" type="xs:int" minOccurs="0" />
+              <xs:element name="Id" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" minOccurs="0" />
+              <xs:element name="Used" msdata:ReadOnly="true" msprop:nullValue="false" msprop:Generator_ColumnPropNameInRow="Used" msprop:Generator_ColumnVarNameInTable="columnUsed" msprop:Generator_ColumnPropNameInTable="UsedColumn" msprop:Generator_UserColumnName="Used" type="xs:boolean" minOccurs="0" />
+              <xs:element name="Favorite" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnFavorite" msprop:Generator_ColumnPropNameInRow="Favorite" msprop:Generator_ColumnPropNameInTable="FavoriteColumn" msprop:Generator_UserColumnName="Favorite" type="xs:boolean" minOccurs="0" />
+              <xs:element name="ImageSample" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnImageSample" msprop:Generator_ColumnPropNameInRow="ImageSample" msprop:Generator_ColumnPropNameInTable="ImageSampleColumn" msprop:Generator_UserColumnName="ImageSample" type="xs:base64Binary" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

@@ -159,11 +159,10 @@
     <value>Горячая клавиша последоват. вставки</value>
   </data>
   <data name="checkBoxClipListSimpleDraw.Text" xml:space="preserve">
-    <value>Быстрая и простая отрисовка списка клипов с фильтром</value>
+    <value>Быстрая и простая отрисовка списка клипов</value>
   </data>
   <data name="checkBoxClipListSimpleDraw.ToolTip" xml:space="preserve">
-    <value>При включенном фильтре по тексту список будет рисоваться быстро без выделения найденных фрагментов.
-Но в тексте текущего клипа найденные фрагменты будут все равно выделяться.</value>
+    <value>Список клипов будет рисоваться быстро без выделения найденных фрагментов в заголовках и без фрагментов картинок.</value>
   </data>
   <data name="checkBoxWindowAutoPosition.Text" xml:space="preserve">
     <value>Автовыбор положения окна при открытии</value>

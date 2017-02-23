@@ -829,11 +829,10 @@
     <value>15</value>
   </data>
   <data name="checkBoxClipListSimpleDraw.Text" xml:space="preserve">
-    <value>Filtered list fast and simple draw</value>
+    <value>Fast and simple list draw</value>
   </data>
   <data name="checkBoxClipListSimpleDraw.ToolTip" xml:space="preserve">
-    <value>Filtered list will draw fast without highlighting filter matches.
-But current clip text will highlight filter matches anyway.</value>
+    <value>Clip list will be drawn fast without highlighting filter matches and picture samples</value>
   </data>
   <data name="&gt;&gt;checkBoxClipListSimpleDraw.Name" xml:space="preserve">
     <value>checkBoxClipListSimpleDraw</value>

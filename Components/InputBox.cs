@@ -218,7 +218,7 @@ namespace ClipAngel
 			return OutputResponse;
 		}
 
-		static public InputBoxResult Show(string Prompt,string Title,string Default)
+		static public InputBoxResult Show(string Prompt,string Title,string Default, Form Owner = null)
 		{
 			InitializeComponent();
 
@@ -228,7 +228,7 @@ namespace ClipAngel
 
 			// Display the form as a modal dialog box.
 			LoadForm();
-			frmInputDialog.ShowDialog();
+			frmInputDialog.ShowDialog(Owner);
 			return OutputResponse;
 		}
 

@@ -160,7 +160,7 @@
     <value>Обновить на</value>
   </data>
   <data name="PixelFormat" xml:space="preserve">
-    <value>Формат пикселя</value>
+    <value>Пиксель</value>
   </data>
   <data name="Size" xml:space="preserve">
     <value>Размер</value>
@@ -185,5 +185,11 @@
   </data>
   <data name="VisualWeightTooltip" xml:space="preserve">
     <value>Визуальный вес клипа (количество цифр в числе, отражающем визуальный размер клипа)</value>
+  </data>
+  <data name="KiloByteUnit" xml:space="preserve">
+    <value>КБ</value>
+  </data>
+  <data name="MegaByteUnit" xml:space="preserve">
+    <value>МБ</value>
   </data>
 </root>

@@ -303,6 +303,15 @@ namespace ClipAngel.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to KB.
+        /// </summary>
+        public static string KiloByteUnit {
+            get {
+                return ResourceManager.GetString("KiloByteUnit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to For full language change you may need to restart program.
         /// </summary>
         public static string LangRestart {
@@ -318,6 +327,15 @@ namespace ClipAngel.Properties {
             get {
                 object obj = ResourceManager.GetObject("MarkFavorite", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to MB.
+        /// </summary>
+        public static string MegaByteUnit {
+            get {
+                return ResourceManager.GetString("MegaByteUnit", resourceCulture);
             }
         }
         
@@ -350,7 +368,7 @@ namespace ClipAngel.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Pixel format.
+        ///   Looks up a localized string similar to Pixel.
         /// </summary>
         public static string PixelFormat {
             get {
@@ -485,7 +503,7 @@ namespace ClipAngel.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 1.06.
+        ///   Looks up a localized string similar to 1.07.
         /// </summary>
         public static string Version {
             get {

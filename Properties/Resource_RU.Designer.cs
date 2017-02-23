@@ -178,11 +178,29 @@ namespace ClipAngel.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to КБ.
+        /// </summary>
+        internal static string KiloByteUnit {
+            get {
+                return ResourceManager.GetString("KiloByteUnit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Для полной смены языка возможно потребуется перезапуск программы.
         /// </summary>
         internal static string LangRestart {
             get {
                 return ResourceManager.GetString("LangRestart", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to МБ.
+        /// </summary>
+        internal static string MegaByteUnit {
+            get {
+                return ResourceManager.GetString("MegaByteUnit", resourceCulture);
             }
         }
         
@@ -205,7 +223,7 @@ namespace ClipAngel.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Формат пикселя.
+        ///   Looks up a localized string similar to Пиксель.
         /// </summary>
         internal static string PixelFormat {
             get {

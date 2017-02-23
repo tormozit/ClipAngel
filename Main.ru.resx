@@ -129,6 +129,9 @@
   <data name="TypeFilter.ToolTip" xml:space="preserve">
     <value>Показывать только клипы заданных типов</value>
   </data>
+  <data name="buttonClearFilter.ToolTip" xml:space="preserve">
+    <value>Очистить фильтры</value>
+  </data>
   <data name="comboBoxFilter.ToolTip" xml:space="preserve">
     <value>Горячий фильтр по тексту клипов.
 Используйте спец. символ % для обозначения любой последовательности символов. Например фильтр "кар%а" найдет "картошка".</value>

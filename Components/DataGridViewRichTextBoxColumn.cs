@@ -99,6 +99,7 @@ namespace ClipAngel
                 Size imgSize = new Size(cellSize.Width - 1, cellSize.Height - 1);
                 Image rtfImg = null;
                 ctl.DetectUrls = false; // todo customize
+                ctl.WordWrap = false;
                 if (selected)
                 {
                     // Selected cell state
@@ -149,11 +150,26 @@ namespace ClipAngel
         protected override void Paint(Graphics graphics, Rectangle clipBounds, Rectangle cellBounds, int rowIndex, DataGridViewElementStates cellState, object value, object formattedValue, string errorText, DataGridViewCellStyle cellStyle, DataGridViewAdvancedBorderStyle advancedBorderStyle, DataGridViewPaintParts paintParts)
         {
             base.Paint(graphics, clipBounds, cellBounds, rowIndex, cellState, null, null, errorText, cellStyle, advancedBorderStyle, paintParts);
-
             Image img = GetRtfImage(rowIndex, value, base.Selected, cellStyle);
+            int textWitdh = cellBounds.Right - cellBounds.Left;
 
+            // TODO customize
+            DataGridViewCell SampleCell = DataGridView.Rows[rowIndex].Cells["imageSample"];
+            if (SampleCell.Value != null)
+            {
+                textWitdh -= SampleCell.Size.Width;
+            }
             if (img != null)
-                graphics.DrawImage(img, cellBounds.Left + 2, cellBounds.Top + 2); // tormozit: margin fix
+            {
+                Rectangle rect = new Rectangle(0, 0, textWitdh - 2, cellBounds.Bottom - 2);
+                graphics.DrawImage(img, cellBounds.Left + 2, cellBounds.Top + 2, rect, GraphicsUnit.Pixel);
+            }
+
+            if (SampleCell.Value != null)
+            {
+                Image sample = (Image) SampleCell.Value;
+                graphics.DrawImage(sample, cellBounds.Left + textWitdh + 2, cellBounds.Top + 1);
+            }
         }
 
         #region Handlers of edit events, copyied from DataGridViewTextBoxCell

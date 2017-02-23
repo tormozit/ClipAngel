@@ -291,6 +291,8 @@ namespace ClipAngel {
             
             private global::System.Data.DataColumn columnFavorite;
             
+            private global::System.Data.DataColumn columnImageSample;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public ClipsDataTable() {
@@ -374,6 +376,14 @@ namespace ClipAngel {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ImageSampleColumn {
+                get {
+                    return this.columnImageSample;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -409,7 +419,7 @@ namespace ClipAngel {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ClipsRow AddClipsRow(string Type, string Title, int Chars, int Id, bool Used, bool Favorite) {
+            public ClipsRow AddClipsRow(string Type, string Title, int Chars, int Id, bool Used, bool Favorite, byte[] ImageSample) {
                 ClipsRow rowClipsRow = ((ClipsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Type,
@@ -417,7 +427,8 @@ namespace ClipAngel {
                         Chars,
                         Id,
                         Used,
-                        Favorite};
+                        Favorite,
+                        ImageSample};
                 rowClipsRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowClipsRow);
                 return rowClipsRow;
@@ -446,6 +457,7 @@ namespace ClipAngel {
                 this.columnId = base.Columns["Id"];
                 this.columnUsed = base.Columns["Used"];
                 this.columnFavorite = base.Columns["Favorite"];
+                this.columnImageSample = base.Columns["ImageSample"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -463,11 +475,20 @@ namespace ClipAngel {
                 base.Columns.Add(this.columnUsed);
                 this.columnFavorite = new global::System.Data.DataColumn("Favorite", typeof(bool), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnFavorite);
+                this.columnImageSample = new global::System.Data.DataColumn("ImageSample", typeof(byte[]), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnImageSample);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, false));
+                this.columnType.ReadOnly = true;
                 this.columnType.MaxLength = 20;
+                this.columnTitle.ReadOnly = true;
                 this.columnTitle.MaxLength = 50;
+                this.columnChars.ReadOnly = true;
+                this.columnId.ReadOnly = true;
                 this.columnId.Unique = true;
+                this.columnUsed.ReadOnly = true;
+                this.columnFavorite.ReadOnly = true;
+                this.columnImageSample.ReadOnly = true;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -706,6 +727,22 @@ namespace ClipAngel {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public byte[] ImageSample {
+                get {
+                    try {
+                        return ((byte[])(this[this.tableClips.ImageSampleColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ImageSample\' in table \'Clips\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableClips.ImageSampleColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsTypeNull() {
                 return this.IsNull(this.tableClips.TypeColumn);
             }
@@ -774,6 +811,18 @@ namespace ClipAngel {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetFavoriteNull() {
                 this[this.tableClips.FavoriteColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsImageSampleNull() {
+                return this.IsNull(this.tableClips.ImageSampleColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetImageSampleNull() {
+                this[this.tableClips.ImageSampleColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -942,6 +991,7 @@ namespace ClipAngel.dbDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("Id", "Id");
             tableMapping.ColumnMappings.Add("Used", "Used");
             tableMapping.ColumnMappings.Add("Favorite", "Favorite");
+            tableMapping.ColumnMappings.Add("ImageSample", "ImageSample");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.InsertCommand = new global::System.Data.SQLite.SQLiteCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
