@@ -55,6 +55,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.checkBoxAutostart = new System.Windows.Forms.CheckBox();
+            this.checkBoxClearFiltersOnClose = new System.Windows.Forms.CheckBox();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.cultureManager1 = new Infralution.Localization.CultureManager(this.components);
             this.tableLayoutPanel1.SuspendLayout();
@@ -211,6 +212,7 @@
             this.tableLayoutPanel1.Controls.Add(this.label8, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.checkBoxAutostart, 0, 8);
             this.tableLayoutPanel1.Controls.Add(this.checkBoxAutoCheckUpdate, 0, 13);
+            this.tableLayoutPanel1.Controls.Add(this.checkBoxClearFiltersOnClose, 0, 14);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             // 
             // label5
@@ -234,6 +236,14 @@
             this.tableLayoutPanel1.SetColumnSpan(this.checkBoxAutostart, 2);
             this.checkBoxAutostart.Name = "checkBoxAutostart";
             this.checkBoxAutostart.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxClearFiltersOnClose
+            // 
+            resources.ApplyResources(this.checkBoxClearFiltersOnClose, "checkBoxClearFiltersOnClose");
+            this.tableLayoutPanel1.SetColumnSpan(this.checkBoxClearFiltersOnClose, 2);
+            this.checkBoxClearFiltersOnClose.Name = "checkBoxClearFiltersOnClose";
+            this.checkBoxClearFiltersOnClose.UseVisualStyleBackColor = true;
+            this.checkBoxClearFiltersOnClose.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged_1);
             // 
             // buttonCancel
             // 
@@ -295,5 +305,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.CheckBox checkBoxAutostart;
         private System.Windows.Forms.CheckBox checkBoxAutoCheckUpdate;
+        private System.Windows.Forms.CheckBox checkBoxClearFiltersOnClose;
     }
 }

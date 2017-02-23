@@ -39,6 +39,7 @@ namespace ClipAngel
             checkBoxShowSizeColumn.Checked = Properties.Settings.Default.ShowVisualWeightColumn;
             checkBoxClipListSimpleDraw.Checked = Properties.Settings.Default.ClipListSimpleDraw;
             checkBoxAutoCheckUpdate.Checked = Properties.Settings.Default.AutoCheckForUpdate;
+            checkBoxClearFiltersOnClose.Checked = Properties.Settings.Default.ClearFiltersOnClose;
 
             NumberOfClips.Text = (Owner as Main).ClipsNumber.ToString();
             textBoxUserSettingsPath.Text = (Owner as Main).UserSettingsPath;
@@ -48,6 +49,7 @@ namespace ClipAngel
         private void button1_Click(object sender, EventArgs e)
         {
             int numValue;
+            Properties.Settings.Default.ClearFiltersOnClose = checkBoxClearFiltersOnClose.Checked;
             Properties.Settings.Default.AutoCheckForUpdate = checkBoxAutoCheckUpdate.Checked;
             Properties.Settings.Default.ClipListSimpleDraw = checkBoxClipListSimpleDraw.Checked;
             Properties.Settings.Default.MoveCopiedClipToTop = checkBoxMoveCopiedClipToTop.Checked;
@@ -122,5 +124,9 @@ namespace ClipAngel
             e.Handled = true;
         }
 
+        private void checkBox1_CheckedChanged_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

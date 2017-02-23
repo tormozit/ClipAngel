@@ -203,5 +203,17 @@ namespace ClipAngel.Properties {
                 this["AutoCheckForUpdate"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool ClearFiltersOnClose {
+            get {
+                return ((bool)(this["ClearFiltersOnClose"]));
+            }
+            set {
+                this["ClearFiltersOnClose"] = value;
+            }
+        }
     }
 }

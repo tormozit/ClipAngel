@@ -132,9 +132,9 @@
   <data name="HistoryDepthNumber.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing">
+  <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
-  </data>
+  </metadata>
   <data name="HistoryDepthNumber.ToolTip" xml:space="preserve">
     <value>Maximum number of clips stored in database</value>
   </data>
@@ -187,7 +187,7 @@
     <value>Bottom, Right</value>
   </data>
   <data name="buttonOK.Location" type="System.Drawing.Point, System.Drawing">
-    <value>225, 382</value>
+    <value>225, 392</value>
   </data>
   <data name="buttonOK.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
@@ -765,6 +765,9 @@
   <data name="checkBoxAutoCheckUpdate.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
+  <data name="checkBoxAutoCheckUpdate.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="checkBoxAutoCheckUpdate.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 328</value>
   </data>
@@ -792,14 +795,44 @@
   <data name="&gt;&gt;checkBoxAutoCheckUpdate.ZOrder" xml:space="preserve">
     <value>21</value>
   </data>
+  <data name="checkBoxClearFiltersOnClose.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="checkBoxClearFiltersOnClose.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="checkBoxClearFiltersOnClose.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 353</value>
+  </data>
+  <data name="checkBoxClearFiltersOnClose.Size" type="System.Drawing.Size, System.Drawing">
+    <value>373, 18</value>
+  </data>
+  <data name="checkBoxClearFiltersOnClose.TabIndex" type="System.Int32, mscorlib">
+    <value>21</value>
+  </data>
+  <data name="checkBoxClearFiltersOnClose.Text" xml:space="preserve">
+    <value>Clear filters on window close</value>
+  </data>
+  <data name="&gt;&gt;checkBoxClearFiltersOnClose.Name" xml:space="preserve">
+    <value>checkBoxClearFiltersOnClose</value>
+  </data>
+  <data name="&gt;&gt;checkBoxClearFiltersOnClose.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;checkBoxClearFiltersOnClose.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;checkBoxClearFiltersOnClose.ZOrder" xml:space="preserve">
+    <value>22</value>
+  </data>
   <data name="tableLayoutPanel1.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 12</value>
   </data>
   <data name="tableLayoutPanel1.RowCount" type="System.Int32, mscorlib">
-    <value>10</value>
+    <value>15</value>
   </data>
   <data name="tableLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>379, 350</value>
+    <value>379, 374</value>
   </data>
   <data name="tableLayoutPanel1.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
@@ -817,7 +850,7 @@
     <value>1</value>
   </data>
   <data name="tableLayoutPanel1.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="textBoxDatabaseSize" Row="4" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="textBoxUserSettingsPath" Row="3" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label4" Row="5" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label3" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label1" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="GlobalHotkeyShow" Row="6" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="MaxClipSizeKB" Row="5" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="NumberOfClips" Row="2" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="HistoryDepthNumber" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="Language" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label5" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label2" Row="6" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="checkBoxShowSizeColumn" Row="9" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="label6" Row="7" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="GlobalHotkeyIncrementalPaste" Row="7" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="checkBoxClipListSimpleDraw" Row="11" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="checkBoxMoveCopiedClipToTop" Row="10" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="checkBoxWindowAutoPosition" Row="12" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="label7" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label8" Row="4" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="checkBoxAutostart" Row="8" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="checkBoxAutoCheckUpdate" Row="13" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Absolute,219,Absolute,160" /&gt;&lt;Rows Styles="Absolute,25,Absolute,25,Absolute,25,Absolute,25,Absolute,25,Absolute,25,Absolute,25,Absolute,25,Absolute,25,Absolute,25,Absolute,25,Absolute,25,Absolute,25,Absolute,25" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="textBoxDatabaseSize" Row="4" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="textBoxUserSettingsPath" Row="3" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label4" Row="5" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label3" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label1" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="GlobalHotkeyShow" Row="6" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="MaxClipSizeKB" Row="5" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="NumberOfClips" Row="2" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="HistoryDepthNumber" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="Language" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label5" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label2" Row="6" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="checkBoxShowSizeColumn" Row="9" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="label6" Row="7" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="GlobalHotkeyIncrementalPaste" Row="7" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="checkBoxClipListSimpleDraw" Row="11" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="checkBoxMoveCopiedClipToTop" Row="10" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="checkBoxWindowAutoPosition" Row="12" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="label7" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label8" Row="4" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="checkBoxAutostart" Row="8" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="checkBoxAutoCheckUpdate" Row="13" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="checkBoxClearFiltersOnClose" Row="14" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Absolute,219,Absolute,160" /&gt;&lt;Rows Styles="Absolute,25,Absolute,25,Absolute,25,Absolute,25,Absolute,25,Absolute,25,Absolute,25,Absolute,25,Absolute,25,Absolute,25,Absolute,25,Absolute,25,Absolute,25,Absolute,25,Absolute,20,Absolute,25" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="checkBoxClipListSimpleDraw.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 278</value>
@@ -850,7 +883,7 @@
     <value>Bottom, Right</value>
   </data>
   <data name="buttonCancel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>306, 382</value>
+    <value>306, 392</value>
   </data>
   <data name="buttonCancel.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
@@ -873,12 +906,12 @@
   <data name="&gt;&gt;buttonCancel.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="cultureManager1.TrayLocation" type="System.Drawing.Point, System.Drawing">
+  <metadata name="cultureManager1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>114, 17</value>
-  </data>
-  <data name="$this.Localizable" type="System.Boolean, mscorlib">
+  </metadata>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
-  </data>
+  </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
   </data>
@@ -886,7 +919,7 @@
     <value>True</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>387, 407</value>
+    <value>387, 417</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterParent</value>

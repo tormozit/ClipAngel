@@ -695,6 +695,8 @@ namespace ClipAngel
             {
                 Hide();
                 e.Cancel = true;
+                if (Properties.Settings.Default.ClearFiltersOnClose)
+                    ClearFilter();
             }
         }
 
@@ -1244,7 +1246,7 @@ namespace ClipAngel
 
             if (!this.TopMost)
             {
-                this.Visible = false;
+                this.Close();
             }
             else
             {
@@ -1646,8 +1648,8 @@ namespace ClipAngel
         {
             if (e.KeyCode == Keys.Escape)
             {
-                this.Visible = false;
                 e.Handled = true;
+                this.Close();
             }
             if (e.KeyCode == Keys.Enter)
             {
