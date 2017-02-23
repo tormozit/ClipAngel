@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.Button buttonReset;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Settings));
             this.HistoryDepthNumber = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -58,8 +59,16 @@
             this.checkBoxClearFiltersOnClose = new System.Windows.Forms.CheckBox();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.cultureManager1 = new Infralution.Localization.CultureManager(this.components);
+            buttonReset = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // buttonReset
+            // 
+            resources.ApplyResources(buttonReset, "buttonReset");
+            buttonReset.Name = "buttonReset";
+            buttonReset.UseVisualStyleBackColor = true;
+            buttonReset.Click += new System.EventHandler(this.buttonReset_Click);
             // 
             // HistoryDepthNumber
             // 
@@ -262,6 +271,7 @@
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.buttonCancel;
+            this.Controls.Add(buttonReset);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.buttonOK);

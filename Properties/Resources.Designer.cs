@@ -377,6 +377,15 @@ namespace ClipAngel.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Are you sure want to reset settings to default values?.
+        /// </summary>
+        public static string QuestionResetSettings {
+            get {
+                return ResourceManager.GetString("QuestionResetSettings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Size.
         /// </summary>
         public static string Size {

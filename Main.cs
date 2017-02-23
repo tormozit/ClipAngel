@@ -28,8 +28,8 @@ namespace ClipAngel
     enum PasteMethod {Standart, PasteText, SendChars };
     public partial class Main : Form
     {
-        public static ResourceManager CurrentLangResourceManager;
-        public static string Locale = "";
+        public ResourceManager CurrentLangResourceManager;
+        public string Locale = "";
         public bool PortableMode = false;
         public int ClipsNumber = 0;
         public string UserSettingsPath;
@@ -140,6 +140,12 @@ namespace ClipAngel
             {
                 AllowHotkeyProcess = false;
                 SendPaste();
+                if ((e.Modifier & EnumModifierKeys.Alt) != 0)
+                    keybd_event((byte)VirtualKeyCode.MENU, 0x38, 0, 0); // LEFT
+                if ((e.Modifier & EnumModifierKeys.Control) != 0)
+                    keybd_event((byte)VirtualKeyCode.CONTROL, 0x1D, 0, 0);
+                if ((e.Modifier & EnumModifierKeys.Shift) != 0)
+                    keybd_event((byte)VirtualKeyCode.SHIFT, 0x2A, 0, 0);
                 clipBindingSource.MoveNext();
                 DataRow CurrentDataRow = ((DataRowView)clipBindingSource.Current).Row;
                 notifyIcon.Visible = true;
@@ -488,7 +494,7 @@ namespace ClipAngel
             }
         }
 
-        private static string FormatByteSize(int byteSize)
+        private string FormatByteSize(int byteSize)
         {
             string[] sizes = { MultiLangByteUnit(), MultiLangKiloByteUnit(), MultiLangMegaByteUnit() };
             double len = byteSize;
@@ -505,30 +511,30 @@ namespace ClipAngel
             return result;
         }
 
-        private static string MultiLangEndMarker()
+        private string MultiLangEndMarker()
         {
             return "<" + CurrentLangResourceManager.GetString("EndMarker") + ">";
         }
 
-        private static string MultiLangCutMarker()
+        private string MultiLangCutMarker()
         {
             return "<" + CurrentLangResourceManager.GetString("CutMarker") + ">";
         }
 
-        private static string MultiLangCharUnit()
+        private string MultiLangCharUnit()
         {
             return CurrentLangResourceManager.GetString("CharUnit");
         }
 
-        private static string MultiLangByteUnit()
+        private string MultiLangByteUnit()
         {
             return CurrentLangResourceManager.GetString("ByteUnit");
         }
-        private static string MultiLangKiloByteUnit()
+        private string MultiLangKiloByteUnit()
         {
             return CurrentLangResourceManager.GetString("KiloByteUnit");
         }
-        private static string MultiLangMegaByteUnit()
+        private string MultiLangMegaByteUnit()
         {
             return CurrentLangResourceManager.GetString("MegaByteUnit");
         }

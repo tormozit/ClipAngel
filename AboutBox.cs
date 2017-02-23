@@ -14,7 +14,7 @@ namespace ClipAngel
 
         private void AboutBox_Load(object sender, EventArgs e)
         {
-            cultureManager1.UICulture = new CultureInfo(Main.Locale);
+            cultureManager1.UICulture = new CultureInfo((Owner as Main).Locale);
             this.labelProductName.Text = (Owner as Main).AssemblyProduct;
             this.labelVersion.Text = Properties.Resources.Version;
             this.labelCopyright.Text = (Owner as Main).AssemblyCopyright;

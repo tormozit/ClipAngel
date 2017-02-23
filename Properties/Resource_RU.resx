@@ -192,4 +192,7 @@
   <data name="MegaByteUnit" xml:space="preserve">
     <value>МБ</value>
   </data>
+  <data name="QuestionResetSettings" xml:space="preserve">
+    <value>Вы действительно хотите сбросить все настройки в значения по умолчанию?</value>
+  </data>
 </root>

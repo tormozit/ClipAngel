@@ -1,5 +1,6 @@
 ﻿using Microsoft.Win32;
 using System;
+using System.Configuration;
 using System.Globalization;
 using System.IO;
 using System.Windows.Forms;
@@ -24,7 +25,7 @@ namespace ClipAngel
 
         }
 
-        private void Settings_Load(object sender, EventArgs e)
+        private void Settings_Load(object sender = null, EventArgs e = null)
         {
             HistoryDepthNumber.Text = Properties.Settings.Default.HistoryDepthNumber.ToString();
             MaxClipSizeKB.Text = Properties.Settings.Default.MaxClipSizeKB.ToString();
@@ -32,7 +33,7 @@ namespace ClipAngel
             GlobalHotkeyShow.Text = Properties.Settings.Default.HotkeyShow.ToString();
             GlobalHotkeyIncrementalPaste.Text = Properties.Settings.Default.HotkeyIncrementalPaste.ToString();
             Language.Text = Properties.Settings.Default.Language.ToString();
-            cultureManager1.UICulture = new CultureInfo(Main.Locale);
+            cultureManager1.UICulture = new CultureInfo((Owner as Main).Locale);
             checkBoxAutostart.Checked = Properties.Settings.Default.Autostart;
             checkBoxWindowAutoPosition.Checked = Properties.Settings.Default.WindowAutoPosition;
             checkBoxMoveCopiedClipToTop.Checked = Properties.Settings.Default.MoveCopiedClipToTop;
@@ -127,6 +128,23 @@ namespace ClipAngel
         private void checkBox1_CheckedChanged_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void buttonReset_Click(object sender, EventArgs e)
+        {
+            string question = (Owner as Main).CurrentLangResourceManager.GetString("QuestionResetSettings");
+            if (DialogResult.Yes == MessageBox.Show(question, Application.ProductName, MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation))
+            {
+                //Properties.Settings.Default.Reset(); // Not working, it seem reason is type System.Collections.Specialized.StringCollection
+                foreach (SettingsProperty settingsKey in Properties.Settings.Default.Properties)
+                {
+                    var value = Properties.Settings.Default[settingsKey.Name];
+                    var newValue = Convert.ChangeType(settingsKey.DefaultValue, value.GetType());
+                    if (newValue != null)
+                        Properties.Settings.Default[settingsKey.Name] = newValue;
+                }
+                Settings_Load();
+            }
         }
     }
 }

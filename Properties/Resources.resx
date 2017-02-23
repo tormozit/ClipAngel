@@ -274,4 +274,7 @@
   <data name="MegaByteUnit" xml:space="preserve">
     <value>MB</value>
   </data>
+  <data name="QuestionResetSettings" xml:space="preserve">
+    <value>Are you sure want to reset settings to default values?</value>
+  </data>
 </root>

@@ -232,6 +232,15 @@ namespace ClipAngel.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Вы действительно хотите сбросить все настройки в значения по умолчанию?.
+        /// </summary>
+        internal static string QuestionResetSettings {
+            get {
+                return ResourceManager.GetString("QuestionResetSettings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Размер.
         /// </summary>
         internal static string Size {
