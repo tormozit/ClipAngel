@@ -86,10 +86,6 @@ namespace ClipAngel
             hook.KeyPressed +=
                 new EventHandler<KeyPressedEventArgs>(hook_KeyPressed);
             RegisterHotKeys();
-            timerCheckUpdate.Interval = (1000 * 60 * 60 * 24); // 1 day
-            timerCheckUpdate.Start();
-            timerReconnect.Interval = (1000 * 5 ); // 5 seconds
-            timerReconnect.Start();
         }
         delegate void WinEventDelegate(IntPtr hWinEventHook, uint eventType, IntPtr hwnd, int idObject, int idChild, uint dwEventThread, uint dwmsEventTime);
 
@@ -273,7 +269,6 @@ namespace ClipAngel
             imageFile = resourceManager.GetObject("TypeFile") as Bitmap;
             imageImg = resourceManager.GetObject("TypeImg") as Bitmap;
             defaultFontFamily = richTextBox.Font.FontFamily;
-            CheckUpdate();
             LoadSettings();
             TypeFilter.SelectedIndex = 0;
             MarkFilter.SelectedIndex = 0;
@@ -362,6 +357,10 @@ namespace ClipAngel
             {
                 this.WindowState = FormWindowState.Normal;
             }
+            timerCheckUpdate.Interval = 1;
+            timerCheckUpdate.Start();
+            timerReconnect.Interval = (1000 * 5); // 5 seconds
+            timerReconnect.Start();
         }
 
         private void ConnectClipboard()
@@ -2446,6 +2445,8 @@ namespace ClipAngel
         private void timerCheckUpdate_Tick(object sender, EventArgs e)
         {
             CheckUpdate();
+            timerCheckUpdate.Interval = (1000 * 60 * 60 * 24); // 1 day
+            timerCheckUpdate.Start();
         }
 
         private void moveUpToolStripMenuItem_Click(object sender, EventArgs e)
