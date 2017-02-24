@@ -267,6 +267,16 @@ namespace ClipAngel.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap FixedWidthFont {
+            get {
+                object obj = ResourceManager.GetObject("FixedWidthFont", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to https://sourceforge.net/p/clip-angel/wiki/Description/.
         /// </summary>
         public static string HelpPage {

@@ -201,5 +201,17 @@ namespace ClipAngel.Properties {
                 this["ClearFiltersOnClose"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool MonospacedFont {
+            get {
+                return ((bool)(this["MonospacedFont"]));
+            }
+            set {
+                this["MonospacedFont"] = value;
+            }
+        }
     }
 }

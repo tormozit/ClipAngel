@@ -201,4 +201,7 @@
   <data name="checkBoxClearFiltersOnClose.Text" xml:space="preserve">
     <value>Очищать фильтры при закрытии окна</value>
   </data>
+  <data name="buttonReset.Text" xml:space="preserve">
+    <value>Установить по умолчанию</value>
+  </data>
 </root>

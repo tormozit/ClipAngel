@@ -70,7 +70,11 @@ namespace ClipAngel
         Bitmap imageFile;
         Bitmap imageImg;
         string filterText = ""; // To optimize speed
+        int tabLength = 4;
+        FontFamily defaultFontFamily;
         readonly RichTextBox _richTextBox = new RichTextBox();
+        private bool allowTextPositionChangeUpdate = false;
+        private bool MonitoringClipboard = true;
 
         public Main()
         {
@@ -268,12 +272,13 @@ namespace ClipAngel
             imageRtf = resourceManager.GetObject("TypeRtf") as Bitmap;
             imageFile = resourceManager.GetObject("TypeFile") as Bitmap;
             imageImg = resourceManager.GetObject("TypeImg") as Bitmap;
+            defaultFontFamily = richTextBox.Font.FontFamily;
+            CheckUpdate();
+            LoadSettings();
             TypeFilter.SelectedIndex = 0;
             MarkFilter.SelectedIndex = 0;
             richTextBox.AutoWordSelection = false;
             textBoxUrl.AutoWordSelection = false;
-            CheckUpdate();
-            LoadSettings();
             if (Properties.Settings.Default.LastFilterValues == null)
             {
                 Properties.Settings.Default.LastFilterValues = new StringCollection();
@@ -361,6 +366,8 @@ namespace ClipAngel
 
         private void ConnectClipboard()
         {
+            if (!MonitoringClipboard)
+                return;
             if (!AddClipboardFormatListener(this.Handle))
             {
                 int ErrorCode = Marshal.GetLastWin32Error();
@@ -374,7 +381,7 @@ namespace ClipAngel
             }
         }
 
-        private void AfterRowLoad(int CurrentRowIndex = -1, bool FullTextLoad = false, int selectionStart = 0, int selectionLength = 0)
+        private void AfterRowLoad(bool FullTextLoad = false, int CurrentRowIndex = -1, int selectionStart = -1, int selectionLength = -1)
         {
             DataRowView CurrentRowView;
             string ClipType;
@@ -385,6 +392,10 @@ namespace ClipAngel
             else
             { CurrentRowView = clipBindingSource[CurrentRowIndex] as DataRowView; }
             FilterMatches = null;
+            if (Properties.Settings.Default.MonospacedFont)
+                richTextBox.Font = new Font(FontFamily.GenericMonospace, richTextBox.Font.Size);
+            else
+                richTextBox.Font = new Font(defaultFontFamily, richTextBox.Font.Size);
             if (CurrentRowView == null)
             {
                 ClipType = "";
@@ -395,10 +406,15 @@ namespace ClipAngel
                 StripLabelSize.Text = "";
                 StripLabelVisualSize.Text = "";
                 StripLabelType.Text = "";
-                StripLabelPosition.Text = "";
+                stripLabelPosition.Text = "";
             }
             else
             {
+                allowTextPositionChangeUpdate = false;
+                if (selectionStart == -1)
+                    selectionStart = richTextBox.SelectionStart;
+                if (selectionLength == -1)
+                    selectionLength = richTextBox.SelectionLength;
                 DataRow CurrentRow = CurrentRowView.Row;
                 string sql = "SELECT * FROM Clips Where Id = @Id";
                 SQLiteCommand commandSelect = new SQLiteCommand(sql, m_dbConnection);
@@ -416,11 +432,13 @@ namespace ClipAngel
                     StripLabelType.Text = TypeEng;
                 else
                     StripLabelType.Text = CurrentLangResourceManager.GetString(TypeEng);
-                StripLabelPosition.Text = "1";
+                stripLabelPosition.Text = "1";
 
                 // to prevent autoscrolling during marking
                 richTextBox.HideSelection = true;
                 richTextBox.Clear();
+                int fontsize = (int)richTextBox.Font.Size; // Size should be without digits after comma
+                richTextBox.SelectionTabs = new int[] { fontsize*4, fontsize*8, fontsize*12, fontsize*16}; // Set tab size ~ 4
                 string fullText = RowReader["Text"].ToString();
                 string shortText;
                 string endMarker;
@@ -469,6 +487,14 @@ namespace ClipAngel
                     Image image = GetImageFromBinary((byte[])RowReader["Binary"]);
                     ImageControl.Image = image;
                 }
+                if (selectionStart != 0)
+                {
+                    richTextBox.SelectionStart = selectionStart;
+                    richTextBox.SelectionLength = selectionLength;
+                    richTextBox.HideSelection = false;
+                }
+                allowTextPositionChangeUpdate = true;
+                richTextBox_SelectionChanged();
             }
             if (ClipType == "img")
             {
@@ -486,12 +512,6 @@ namespace ClipAngel
                 tableLayoutPanelData.RowStyles[2].Height = 25;
             if (EditMode)
                 richTextBox.Focus();
-            if (selectionStart != 0)
-            {
-                richTextBox.SelectionStart = selectionStart;
-                richTextBox.SelectionLength = selectionLength;
-                richTextBox.HideSelection = false;
-            }
         }
 
         private string FormatByteSize(int byteSize)
@@ -567,19 +587,9 @@ namespace ClipAngel
 
         private void RichText_Click(object sender, EventArgs e)
         {
-            string newText = "" + richTextBox.SelectionStart;
-            if (richTextBox.SelectionLength > 0)
-            {
-                //NewText += "+" + Text.SelectionLength + "=" + (Text.SelectionStart + Text.SelectionLength);
-                newText += "+" + richTextBox.SelectionLength;
-            }
-            StripLabelPosition.Text = newText;
-
-            //NewText = "" + Text.Cursor;
-            //StripLabelPositionXY.Text = NewText;
             OpenLinkIfCtrlPressed(sender as RichTextBox, e, TextLinkMatches);
             if (MaxTextViewSize >= (sender as RichTextBox).SelectionStart && TextWasCut)
-                AfterRowLoad(-1, true, richTextBox.SelectionStart, richTextBox.SelectionLength);
+                AfterRowLoad(true);
         }
 
         private void Filter_TextChanged(object sender, EventArgs e)
@@ -855,7 +865,27 @@ namespace ClipAngel
             }
 
         }
-        void AddClip(byte[] binaryBuffer = null, byte[] imageSampleBuffer = null, string htmlText = "", string richText = "", string typeText = "text", string plainText = "", string applicationText = "", string windowText = "", string url = "", int chars = 0)
+
+        int CountLines(string str, int position = 0)
+        {
+            if (str == null)
+                throw new ArgumentNullException("str");
+            if (str == string.Empty)
+                return 0;
+            int index = -1;
+            int count = 0;
+            if (position == 0)
+                position = str.Length;
+            //while (-1 != (index = str.IndexOf(Environment.NewLine, index + 1)) && position > index)
+            while (-1 != (index = str.IndexOf("\n", index + 1)) && position > index)
+            {
+                count++;
+            }
+            return count + 1;
+        }
+
+        void AddClip(byte[] binaryBuffer = null, byte[] imageSampleBuffer = null, string htmlText = "", string richText = "", string typeText = "text", string plainText = "",
+            string applicationText = "", string windowText = "", string url = "", int chars = 0)
         {
             if (plainText == null)
                 plainText = "";
@@ -965,7 +995,7 @@ namespace ClipAngel
             }
             //if (this.Visible)
             //{
-                UpdateClipBindingSource();
+                UpdateClipBindingSource(true);
             //}
         }
 
@@ -1518,7 +1548,7 @@ namespace ClipAngel
                 if (EditMode)
                     editClipTextToolStripMenuItem_Click();
                 else
-                    AfterRowLoad();
+                    AfterRowLoad(false, -1, 0, 0);
             }
         }
 
@@ -1696,7 +1726,7 @@ namespace ClipAngel
                 sendKey(dataGridView.Handle, e.KeyCode, false, downOrUp, !downOrUp);
                 e.Handled = true;
             }
-        }
+         }
 
         private static bool IsKeyPassedFromFilterToGrid(Keys key, bool isCtrlDown = false)
         {
@@ -1741,7 +1771,7 @@ namespace ClipAngel
                 clipBindingSource.MoveFirst();
                 SelectCurrentRow();
             }
-            AfterRowLoad();
+            AfterRowLoad(false, -1, 0, 0);
         }
 
         void SelectCurrentRow(bool forceRowLoad = false)
@@ -1754,7 +1784,7 @@ namespace ClipAngel
             }
             dataGridView.Rows[dataGridView.CurrentRow.Index].Selected = true;
             if (forceRowLoad)
-                AfterRowLoad();
+                AfterRowLoad(false, -1, 0, 0);
         }
 
         private void activateListToolStripMenuItem_Click(object sender, EventArgs e)
@@ -2219,7 +2249,7 @@ namespace ClipAngel
             if (FilterMatches == null)
                 return;
             if (TextWasCut)
-                AfterRowLoad(-1, true);
+                AfterRowLoad(true);
             foreach (Match match in FilterMatches)
             {
                 if (false
@@ -2266,7 +2296,10 @@ namespace ClipAngel
         private void wordWrapToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Properties.Settings.Default.WordWrap = !Properties.Settings.Default.WordWrap;
+            allowTextPositionChangeUpdate = false;
             UpdateControlsStates();
+            allowTextPositionChangeUpdate = true;
+            richTextBox_SelectionChanged();
         }
 
         private void helpToolStripMenuItem_Click(object sender, EventArgs e)
@@ -2289,6 +2322,9 @@ namespace ClipAngel
         }
         private void UpdateControlsStates()
         {
+            trayMenuItemMonitoringClipboard.Checked = MonitoringClipboard;
+            toolStripMenuItemMonitoringClipboard.Checked = MonitoringClipboard;
+            toolStripButtonFixedWidthFont.Checked = Properties.Settings.Default.MonospacedFont;
             selectTopClipOnShowToolStripMenuItem.Checked = Properties.Settings.Default.SelectTopClipOnShow;
             toolStripButtonSelectTopClipOnShow.Checked = Properties.Settings.Default.SelectTopClipOnShow;
             wordWrapToolStripMenuItem.Checked = Properties.Settings.Default.WordWrap;
@@ -2389,12 +2425,12 @@ namespace ClipAngel
                 sendKey(comboBoxFilter.Handle, e.KeyData, false, true);
                 e.Handled = true;
             }
-            else if (e.KeyCode == Keys.Tab)
-            {
-                // Tired of trying to make it with TAB order
-                richTextBox.Focus(); 
-            }
-
+            //else if (e.KeyCode == Keys.Tab)
+            //{
+            //    // Tired of trying to make it with TAB order
+            //    richTextBox.Focus();
+            //    e.Handled = true;
+            //}
         }
 
         private void buttonUpdate_Click(object sender, EventArgs e)
@@ -2541,7 +2577,7 @@ namespace ClipAngel
             UpdateClipBindingSource();
             allowRowLoad = true;
             EditMode = newEditMode;
-            AfterRowLoad(-1, true, selectionStart, selectionLength);
+            AfterRowLoad(true);
             editClipTextToolStripMenuItem.Checked = EditMode;
             toolStripMenuItemEditClipText.Checked = EditMode;
             pasteENTERToolStripMenuItem.Enabled = !EditMode;
@@ -2602,6 +2638,58 @@ namespace ClipAngel
                 e.PaintCells(e.ClipBounds, DataGridViewPaintParts.All);
                 e.Handled = true;
             }
+        }
+
+        private void richTextBox_SelectionChanged(object sender = null, EventArgs e = null)
+        {
+            if (!allowTextPositionChangeUpdate)
+                return;
+            string newText = "";
+            int selectionStart = richTextBox.SelectionStart;
+            if (selectionStart > richTextBox.Text.Length)
+                selectionStart = richTextBox.Text.Length;
+            int line = richTextBox.GetLineFromCharIndex(selectionStart);
+            int lineStart = richTextBox.GetFirstCharIndexFromLine(line);
+            string strLine = richTextBox.Text.Substring(lineStart, selectionStart - lineStart);
+            char tab = '\u0009'; // TAB
+            var TabSpace = new String(' ', tabLength);
+            strLine = strLine.Replace(tab.ToString(), TabSpace);
+            int column = strLine.Length + 1;
+            line++;
+            if (richTextBox.Text.Length - MultiLangEndMarker().Length < (int)RowReader["chars"])
+                selectionStart += line - 1; // to take into account /r/n vs /n
+            newText = "" + selectionStart;
+            newText += "(" + line + ":" + column + ")";
+            if (richTextBox.SelectionLength > 0)
+            {
+                //NewText += "+" + Text.SelectionLength + "=" + (Text.SelectionStart + Text.SelectionLength);
+                newText += "+" + richTextBox.SelectionLength;
+            }
+            stripLabelPosition.Text = newText;
+            //NewText = "" + richTextBox.Cursor;
+            //StripLabelPositionXY.Text = NewText;
+        }
+
+        private void toolStripButtonFixedWidthFont_Click(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.MonospacedFont = !Properties.Settings.Default.MonospacedFont;
+            UpdateControlsStates();
+            AfterRowLoad();
+        }
+
+        private void MonitoringClipboardToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SwitchMonitoringClipboard();
+        }
+
+        private void SwitchMonitoringClipboard()
+        {
+            MonitoringClipboard = !MonitoringClipboard;
+            if (MonitoringClipboard)
+                ConnectClipboard();
+            else
+                RemoveClipboardFormatListener(this.Handle);
+            UpdateControlsStates();
         }
     }
 }

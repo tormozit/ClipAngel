@@ -117,18 +117,30 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="EditClipTitle" xml:space="preserve">
+    <value>Edit clip title</value>
+  </data>
   <data name="EndMarker" xml:space="preserve">
     <value>END</value>
+  </data>
+  <data name="KiloByteUnit" xml:space="preserve">
+    <value>KB</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="TypeFile" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Picture\TypeFile.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="used" xml:space="preserve">
     <value>used</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="Alien_64x64" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\Alien-64x64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="UnmarkFavorite" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\Reset favorite.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CharUnit" xml:space="preserve">
+    <value>С</value>
   </data>
   <data name="FindPrevious" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\FindPrevious.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -138,6 +150,9 @@
   </data>
   <data name="allMarks" xml:space="preserve">
     <value>all marks</value>
+  </data>
+  <data name="OpenFile" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Picture\OpenFile.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Size" xml:space="preserve">
     <value>Size</value>
@@ -160,8 +175,8 @@
   <data name="NextClip" xml:space="preserve">
     <value>Next сlip</value>
   </data>
-  <data name="Website" xml:space="preserve">
-    <value>https://sourceforge.net/projects/clip-angel</value>
+  <data name="Edit" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Picture\Edit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="HelpPage" xml:space="preserve">
     <value>https://sourceforge.net/p/clip-angel/wiki/Description/</value>
@@ -190,14 +205,14 @@
   <data name="FindNext" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\FindNext.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="TopMostWindow" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Picture\TopMostWindow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Top1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Picture\Top1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="VisualWeightTooltip" xml:space="preserve">
+    <value>Visual clip weight (number of digits in number representing visual clip size)</value>
   </data>
   <data name="HistoryOfChanges" xml:space="preserve">
     <value>https://sourceforge.net/p/clip-angel/blog</value>
+  </data>
+  <data name="DBShortFilename" xml:space="preserve">
+    <value>db.sqlite</value>
   </data>
   <data name="img" xml:space="preserve">
     <value>img</value>
@@ -211,14 +226,17 @@
   <data name="CantPasteInElevatedWindow" xml:space="preserve">
     <value>Unable to paste from non elevated process to elevated. Try run program as administrator.</value>
   </data>
-  <data name="CharUnit" xml:space="preserve">
-    <value>С</value>
+  <data name="TopMostWindow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Picture\TopMostWindow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="delete" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\delete.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Filter" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\Filter.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MegaByteUnit" xml:space="preserve">
+    <value>MB</value>
   </data>
   <data name="PixelFormat" xml:space="preserve">
     <value>Pixel</value>
@@ -235,8 +253,11 @@
   <data name="WordWrap" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\word wrap.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="DBShortFilename" xml:space="preserve">
-    <value>db.sqlite</value>
+  <data name="Website" xml:space="preserve">
+    <value>https://sourceforge.net/projects/clip-angel</value>
+  </data>
+  <data name="HowUseAutoTitle" xml:space="preserve">
+    <value>Clear string to use auto title</value>
   </data>
   <data name="CutMarker" xml:space="preserve">
     <value>Show rest of text</value>
@@ -250,31 +271,13 @@
   <data name="allTypes" xml:space="preserve">
     <value>all types</value>
   </data>
-  <data name="TypeFile" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Picture\TypeFile.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="OpenFile" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Picture\OpenFile.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Edit" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Picture\Edit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="EditClipTitle" xml:space="preserve">
-    <value>Edit clip title</value>
-  </data>
-  <data name="HowUseAutoTitle" xml:space="preserve">
-    <value>Clear string to use auto title</value>
-  </data>
-  <data name="VisualWeightTooltip" xml:space="preserve">
-    <value>Visual clip weight (number of digits in number representing visual clip size)</value>
-  </data>
-  <data name="KiloByteUnit" xml:space="preserve">
-    <value>KB</value>
-  </data>
-  <data name="MegaByteUnit" xml:space="preserve">
-    <value>MB</value>
+  <data name="Top1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Picture\Top1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="QuestionResetSettings" xml:space="preserve">
     <value>Are you sure want to reset settings to default values?</value>
+  </data>
+  <data name="FixedWidthFont" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Picture\FixedWidthFont.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

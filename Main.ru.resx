@@ -137,6 +137,23 @@
 Используйте спец. символ % для обозначения любой последовательности символов. Например фильтр "кар%а" найдет "картошка".</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="dataGridViewCellStyle2.NullValue" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        Qk32AgAAAAAAADYAAAAoAAAADgAAABAAAAABABgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACEgoTGw8bGw8bGw8bGw8bGw8bGw8bG
+        w8bGw8bGw8bGw8bGw8bGw8YAAAAAAISChP///////////////////////////////////////////8bD
+        xgAAAAAAhIKE////////////////////////////////////////////xsPGAAAAAACEgoT/////////
+        ///////////////////////////////////Gw8YAAAAAAISChP//////////////////////////////
+        /////////////8bDxgAAAAAAhIKE////////////AAD/AAD/////////AAD/AAD/////////xsPGAAAA
+        AACEgoT///////////////8AAP8AAP8AAP8AAP/////////////Gw8YAAAAAAISChP//////////////
+        /////wAA/wAA/////////////////8bDxgAAAAAAhIKE////////////////AAD/AAD/AAD/AAD/////
+        ////////xsPGAAAAAACEgoT///////////8AAP8AAP////////8AAP8AAP/////////Gw8YAAAAAAISC
+        hP///////////////////////////////////////////8bDxgAAAAAAhIKE////////////////////
+        ////////////////////////xsPGAAAAAACEgoT/////////////////////////////////////////
+        ///Gw8YAAAAAAISChP///////////////////////////////////////////8bDxgAAAAAAhIKEhIKE
+        hIKEhIKEhIKEhIKEhIKEhIKEhIKEhIKEhIKEhIKEhIKEhIKEAAA=
+</value>
+  </data>
   <data name="toolStripMenuItem2.Size" type="System.Drawing.Size, System.Drawing">
     <value>235, 22</value>
   </data>
@@ -216,8 +233,8 @@
   <data name="labelClipSource.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="StripLabelPosition.ToolTipText" xml:space="preserve">
-    <value>Начало и длина выделения в тексте</value>
+  <data name="stripLabelPosition.ToolTipText" xml:space="preserve">
+    <value>Позиция в тексте &lt;смещение&gt;(&lt;строка&gt;:&lt;колонка&gt;):&lt;длина&gt;</value>
   </data>
   <data name="StripLabelVisualSize.ToolTipText" xml:space="preserve">
     <value>Визуальный размер: количество симолов или пикселей</value>
@@ -246,11 +263,23 @@
   <data name="splitContainer1.ToolTip" xml:space="preserve">
     <value />
   </data>
+  <data name="windowAlwaysOnTopToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>243, 22</value>
+  </data>
   <data name="windowAlwaysOnTopToolStripMenuItem.Text" xml:space="preserve">
     <value>Всегда сверху</value>
   </data>
   <data name="windowAlwaysOnTopToolStripMenuItem.ToolTipText" xml:space="preserve">
     <value>Режим окна всегда сверху</value>
+  </data>
+  <data name="toolStripMenuItemMonitoringClipboard.Size" type="System.Drawing.Size, System.Drawing">
+    <value>243, 22</value>
+  </data>
+  <data name="toolStripMenuItemMonitoringClipboard.Text" xml:space="preserve">
+    <value>Слежение за буфером обмена</value>
+  </data>
+  <data name="exitToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>243, 22</value>
   </data>
   <data name="exitToolStripMenuItem.Text" xml:space="preserve">
     <value>Выход</value>
@@ -429,6 +458,15 @@
   <data name="wordWrapToolStripMenuItem.ToolTipText" xml:space="preserve">
     <value>Перенос слов в поле просмотра текста</value>
   </data>
+  <data name="monospacedFontToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>238, 22</value>
+  </data>
+  <data name="monospacedFontToolStripMenuItem.Text" xml:space="preserve">
+    <value>Моноширинный шрифт</value>
+  </data>
+  <data name="monospacedFontToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>Моноширинный шрифт в поле просмотра текста</value>
+  </data>
   <data name="clipToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>47, 20</value>
   </data>
@@ -478,14 +516,20 @@
   <data name="MainMenu.ToolTip" xml:space="preserve">
     <value />
   </data>
+  <data name="trayMenuItemMonitoringClipboard.Size" type="System.Drawing.Size, System.Drawing">
+    <value>243, 22</value>
+  </data>
+  <data name="trayMenuItemMonitoringClipboard.Text" xml:space="preserve">
+    <value>Слежение за буфером обмена</value>
+  </data>
   <data name="exitToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>108, 22</value>
+    <value>243, 22</value>
   </data>
   <data name="exitToolStripMenuItem1.Text" xml:space="preserve">
     <value>Выход</value>
   </data>
   <data name="contextMenuStripNotifyIcon.Size" type="System.Drawing.Size, System.Drawing">
-    <value>109, 26</value>
+    <value>244, 48</value>
   </data>
   <data name="contextMenuStripNotifyIcon.ToolTip" xml:space="preserve">
     <value />
@@ -1031,6 +1075,15 @@
   <data name="toolStripButtonWordWrap.Text" xml:space="preserve">
     <value>Перенос слов</value>
   </data>
+  <data name="toolStripButtonWordWrap.ToolTipText" xml:space="preserve">
+    <value>Перенос слов в поле просмотра текста (CTRL+W)</value>
+  </data>
+  <data name="toolStripButtonFixedWidthFont.Text" xml:space="preserve">
+    <value>Моноширинный шрифт</value>
+  </data>
+  <data name="toolStripButtonFixedWidthFont.ToolTipText" xml:space="preserve">
+    <value>Моноширинный шрифт в поле просмотра текста</value>
+  </data>
   <data name="toolStripButtonSelectTopClipOnShow.Text" xml:space="preserve">
     <value>Вставать на верхний клип</value>
   </data>
@@ -1097,7 +1150,7 @@
     <value>Обновить программу на новую версию</value>
   </data>
   <data name="toolStrip1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>311, 25</value>
+    <value>334, 25</value>
   </data>
   <data name="toolStrip1.ToolTip" xml:space="preserve">
     <value />
