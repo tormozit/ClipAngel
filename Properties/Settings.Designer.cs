@@ -213,5 +213,17 @@ namespace ClipAngel.Properties {
                 this["MonospacedFont"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool ShowApplicationIconColumn {
+            get {
+                return ((bool)(this["ShowApplicationIconColumn"]));
+            }
+            set {
+                this["ShowApplicationIconColumn"] = value;
+            }
+        }
     }
 }

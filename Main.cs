@@ -20,8 +20,10 @@ using System.Net;
 using AngleSharp.Parser.Html;
 using AngleSharp.Dom;
 using System.Reflection;
+using System.Runtime.CompilerServices;
 using WindowsInput;
 using WindowsInput.Native;
+using static IconTools;
 
 namespace ClipAngel
 {
@@ -73,8 +75,10 @@ namespace ClipAngel
         int tabLength = 4;
         FontFamily defaultFontFamily;
         readonly RichTextBox _richTextBox = new RichTextBox();
+        Dictionary<string, Bitmap> iconCache = new Dictionary<string, Bitmap>();
         private bool allowTextPositionChangeUpdate = false;
         private bool MonitoringClipboard = true;
+        private int _lastSelectedForCompareId;
 
         public Main()
         {
@@ -270,6 +274,7 @@ namespace ClipAngel
             imageImg = resourceManager.GetObject("TypeImg") as Bitmap;
             defaultFontFamily = richTextBox.Font.FontFamily;
             LoadSettings();
+            (dataGridView.Columns["AppImage"] as DataGridViewImageColumn).DefaultCellStyle.NullValue = null;
             TypeFilter.SelectedIndex = 0;
             MarkFilter.SelectedIndex = 0;
             richTextBox.AutoWordSelection = false;
@@ -306,24 +311,28 @@ namespace ClipAngel
                 command.ExecuteNonQuery();
             }
             catch
-            {
-            }
+            {}
             command = new SQLiteCommand("ALTER TABLE Clips" + " ADD COLUMN Favorite BOOLEAN", m_dbConnection);
             try
             {
                 command.ExecuteNonQuery();
             }
             catch
-            {
-            }
+            {}
             command = new SQLiteCommand("ALTER TABLE Clips" + " ADD COLUMN ImageSample BINARY", m_dbConnection);
             try
             {
                 command.ExecuteNonQuery();
             }
             catch
+            {}
+            command = new SQLiteCommand("ALTER TABLE Clips" + " ADD COLUMN AppPath CHAR(256)", m_dbConnection);
+            try
             {
+                command.ExecuteNonQuery();
             }
+            catch
+            { }
             command = new SQLiteCommand("CREATE unique index unique_hash on Clips(hash)", m_dbConnection);
             try
             {
@@ -406,6 +415,7 @@ namespace ClipAngel
                 StripLabelVisualSize.Text = "";
                 StripLabelType.Text = "";
                 stripLabelPosition.Text = "";
+                pictureBoxSource.Visible = false;
             }
             else
             {
@@ -415,12 +425,16 @@ namespace ClipAngel
                 if (selectionLength == -1)
                     selectionLength = richTextBox.SelectionLength;
                 DataRow CurrentRow = CurrentRowView.Row;
-                string sql = "SELECT * FROM Clips Where Id = @Id";
-                SQLiteCommand commandSelect = new SQLiteCommand(sql, m_dbConnection);
-                commandSelect.Parameters.Add("@Id", DbType.Int32).Value = CurrentRow["Id"];
-                RowReader = commandSelect.ExecuteReader();
-                RowReader.Read();
+                RowReader = getRowReader((int)CurrentRow["Id"]);
                 ClipType = RowReader["type"].ToString();
+                Bitmap appIcon = ApplicationIcon(RowReader["appPath"].ToString());
+                if (appIcon == null)
+                    pictureBoxSource.Visible = false;
+                else
+                {
+                    pictureBoxSource.Visible = true;
+                    pictureBoxSource.Image = appIcon;
+                }
                 textBoxApplication.Text = RowReader["Application"].ToString();
                 textBoxWindow.Text = RowReader["Window"].ToString();
                 StripLabelCreated.Text = RowReader["Created"].ToString();
@@ -511,6 +525,16 @@ namespace ClipAngel
                 tableLayoutPanelData.RowStyles[2].Height = 25;
             if (EditMode)
                 richTextBox.Focus();
+        }
+
+        private SQLiteDataReader getRowReader(int id)
+        {
+            string sql = "SELECT * FROM Clips Where Id = @Id";
+            SQLiteCommand commandSelect = new SQLiteCommand(sql, m_dbConnection);
+            commandSelect.Parameters.AddWithValue("@Id", id);
+            SQLiteDataReader rowReader = commandSelect.ExecuteReader();
+            rowReader.Read();
+            return rowReader;
         }
 
         private string FormatByteSize(int byteSize)
@@ -637,7 +661,7 @@ namespace ClipAngel
                 sqlFilter += " AND " + filterValue;
                 filterOn = true;
             }
-            string selectCommandText = "Select Id, Used, Title, Chars, Type, Favorite, ImageSample From Clips";
+            string selectCommandText = "Select Id, Used, Title, Chars, Type, Favorite, ImageSample, AppPath From Clips";
             selectCommandText += " WHERE " + sqlFilter;
             selectCommandText += " ORDER BY Id desc";
             dataAdapter.SelectCommand.CommandText = selectCommandText;
@@ -735,7 +759,8 @@ namespace ClipAngel
             string htmlText = "";
             string clipUrl = "";
             int clipChars = 0;
-            GetClipboardOwnerInfo(out clipWindow, out clipApplication);
+            string appPath = "";
+            GetClipboardOwnerInfo(out clipWindow, out clipApplication, out appPath);
             try
             {
                 iData = Clipboard.GetDataObject();
@@ -859,7 +884,7 @@ namespace ClipAngel
 
             if (clipType != "")
             {
-                AddClip(binaryBuffer, imageSampleBuffer, htmlText, richText, clipType, clipText, clipApplication, clipWindow, clipUrl, clipChars);
+                AddClip(binaryBuffer, imageSampleBuffer, htmlText, richText, clipType, clipText, clipApplication, clipWindow, clipUrl, clipChars, appPath);
                 //UpdateClipBindingSource();
             }
 
@@ -884,7 +909,7 @@ namespace ClipAngel
         }
 
         void AddClip(byte[] binaryBuffer = null, byte[] imageSampleBuffer = null, string htmlText = "", string richText = "", string typeText = "text", string plainText = "",
-            string applicationText = "", string windowText = "", string url = "", int chars = 0)
+            string applicationText = "", string windowText = "", string url = "", int chars = 0, string appPath = "")
         {
             if (plainText == null)
                 plainText = "";
@@ -918,7 +943,7 @@ namespace ClipAngel
 
             string sql = "SELECT Id, Used FROM Clips Where Hash = @Hash";
             SQLiteCommand commandSelect = new SQLiteCommand(sql, m_dbConnection);
-            commandSelect.Parameters.Add("@Hash", DbType.String).Value = hash;
+            commandSelect.Parameters.AddWithValue("@Hash", hash);
             using (SQLiteDataReader reader = commandSelect.ExecuteReader())
             {
                 if (reader.Read())
@@ -926,31 +951,32 @@ namespace ClipAngel
                     used = reader.GetBoolean(reader.GetOrdinal("Used"));
                     sql = "DELETE FROM Clips Where Id = @Id";
                     SQLiteCommand commandDelete = new SQLiteCommand(sql, m_dbConnection);
-                    commandDelete.Parameters.Add("@Id", DbType.String).Value = reader.GetInt32(reader.GetOrdinal("Id"));
+                    commandDelete.Parameters.AddWithValue("@Id", reader.GetInt32(reader.GetOrdinal("Id")));
                     commandDelete.ExecuteNonQuery();
                 }
             }
 
-            sql = "insert into Clips (Id, Title, Text, Application, Window, Created, Type, Binary, ImageSample, Size, Chars, RichText, HtmlText, Used, Url, Hash) "
-               + "values (@Id, @Title, @Text, @Application, @Window, @Created, @Type, @Binary, @ImageSample, @Size, @Chars, @RichText, @HtmlText, @Used, @Url, @Hash)";
+            sql = "insert into Clips (Id, Title, Text, Application, Window, Created, Type, Binary, ImageSample, Size, Chars, RichText, HtmlText, Used, Url, Hash, appPath) "
+               + "values (@Id, @Title, @Text, @Application, @Window, @Created, @Type, @Binary, @ImageSample, @Size, @Chars, @RichText, @HtmlText, @Used, @Url, @Hash, @appPath)";
 
             SQLiteCommand commandInsert = new SQLiteCommand(sql, m_dbConnection);
-            commandInsert.Parameters.Add("@Id", DbType.Int32).Value = LastId;
-            commandInsert.Parameters.Add("@Title", DbType.String).Value = clipTitle;
-            commandInsert.Parameters.Add("@Text", DbType.String).Value = plainText;
-            commandInsert.Parameters.Add("@RichText", DbType.String).Value = richText;
-            commandInsert.Parameters.Add("@HtmlText", DbType.String).Value = htmlText;
-            commandInsert.Parameters.Add("@Application", DbType.String).Value = applicationText;
-            commandInsert.Parameters.Add("@Window", DbType.String).Value = windowText;
-            commandInsert.Parameters.Add("@Created", DbType.DateTime).Value = created;
-            commandInsert.Parameters.Add("@Type", DbType.String).Value = typeText;
-            commandInsert.Parameters.Add("@Binary", DbType.Binary).Value = binaryBuffer;
-            commandInsert.Parameters.Add("@ImageSample", DbType.Binary).Value = imageSampleBuffer;
-            commandInsert.Parameters.Add("@Size", DbType.Int32).Value = byteSize;
-            commandInsert.Parameters.Add("@Chars", DbType.Int32).Value = chars;
-            commandInsert.Parameters.Add("@Used", DbType.Boolean).Value = used;
-            commandInsert.Parameters.Add("@Url", DbType.String).Value = url;
-            commandInsert.Parameters.Add("@Hash", DbType.String).Value = hash;
+            commandInsert.Parameters.AddWithValue("@Id", LastId);
+            commandInsert.Parameters.AddWithValue("@Title", clipTitle);
+            commandInsert.Parameters.AddWithValue("@Text", plainText);
+            commandInsert.Parameters.AddWithValue("@RichText", richText);
+            commandInsert.Parameters.AddWithValue("@HtmlText", htmlText);
+            commandInsert.Parameters.AddWithValue("@Application", applicationText);
+            commandInsert.Parameters.AddWithValue("@Window", windowText);
+            commandInsert.Parameters.AddWithValue("@Created", created);
+            commandInsert.Parameters.AddWithValue("@Type", typeText);
+            commandInsert.Parameters.AddWithValue("@Binary", binaryBuffer);
+            commandInsert.Parameters.AddWithValue("@ImageSample", imageSampleBuffer);
+            commandInsert.Parameters.AddWithValue("@Size", byteSize);
+            commandInsert.Parameters.AddWithValue("@Chars", chars);
+            commandInsert.Parameters.AddWithValue("@Used", used);
+            commandInsert.Parameters.AddWithValue("@Url", url);
+            commandInsert.Parameters.AddWithValue("@Hash", hash);
+            commandInsert.Parameters.AddWithValue("@appPath", appPath);
             commandInsert.ExecuteNonQuery();
 
             //dbDataSet.ClipsDataTable ClipsTable = (dbDataSet.ClipsDataTable)clipBindingSource.DataSource;
@@ -995,6 +1021,12 @@ namespace ClipAngel
             //if (this.Visible)
             //{
                 UpdateClipBindingSource(true);
+                if (true
+                    && applicationText == "ScreenshotReader"
+                    //&& !Visible 
+                    //&& Properties.Settings.Default.SelectTopClipOnShow 
+                )
+                    ShowForPaste();
             //}
         }
 
@@ -1238,8 +1270,10 @@ namespace ClipAngel
             return clipText;
         }
 
-        private static bool IsTextType(string type)
+        private bool IsTextType(string type = "")
         {
+            if (type == "")
+                type = (string) RowReader["type"];
             return type == "rtf" || type == "text" || type == "html";
         }
 
@@ -1344,8 +1378,7 @@ namespace ClipAngel
             }
             else
             {
-                string type = (string)RowReader["type"];
-                if (!IsTextType(type))
+                if (!IsTextType())
                     return;
                 //{
                     inputSimulator.Keyboard.TextEntry(textToPaste);
@@ -1414,7 +1447,7 @@ namespace ClipAngel
             }
             sql += ")";
             command.CommandText = sql;
-            command.Parameters.Add("@Value", DbType.Boolean).Value = newValue;
+            command.Parameters.AddWithValue("@Value", newValue);
             command.ExecuteNonQuery();
 
             ////dbDataSet.ClipsRow Row = (dbDataSet.ClipsRow)dbDataSet.Clips.Rows[dataGridView.CurrentRow.Index];
@@ -1467,7 +1500,38 @@ namespace ClipAngel
             return hwnd;
         }
 
-        void GetClipboardOwnerInfo(out string window, out string application)
+        [DllImport("kernel32.dll")]
+        public static extern IntPtr OpenProcess(uint processAccess, bool bInheritHandle, int processId);
+
+        [DllImport("psapi.dll")]
+        static extern uint GetModuleFileNameEx(IntPtr hProcess, IntPtr hModule, [Out] StringBuilder lpBaseName, [In] [MarshalAs(UnmanagedType.U4)] int nSize);
+
+        [DllImport("kernel32.dll", SetLastError = true)]
+        [return: MarshalAs(UnmanagedType.Bool)]
+        static extern bool CloseHandle(IntPtr hObject);
+
+        // http://stackoverflow.com/questions/9501771/how-to-avoid-a-win32-exception-when-accessing-process-mainmodule-filename-in-c
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static string GetProcessMainModuleFullName(int pid)
+        {
+            var processHandle = OpenProcess(0x0400 | 0x0010, false, pid);
+            if (processHandle == IntPtr.Zero)
+            {
+                // Not enough priviledges. Need to call it elevated
+                return null;
+            }
+            const int lengthSb = 4000;
+            var sb = new StringBuilder(lengthSb);
+            string result = null;
+            if (GetModuleFileNameEx(processHandle, IntPtr.Zero, sb, lengthSb) > 0)
+            {
+                result = sb.ToString();
+            }
+            CloseHandle(processHandle);
+            return result;
+        }
+
+        void GetClipboardOwnerInfo(out string window, out string application, out string appPath)
         {
             IntPtr hwnd = GetClipboardOwner();
             if (hwnd == IntPtr.Zero)
@@ -1478,6 +1542,7 @@ namespace ClipAngel
             GetWindowThreadProcessId(hwnd, out processId);
             Process process1 = Process.GetProcessById(processId);
             application = process1.ProcessName;
+            appPath = GetProcessMainModuleFullName(processId);
             hwnd = process1.MainWindowHandle;
             window = GetWindowTitle(hwnd);
             //// We need top level window
@@ -1555,14 +1620,14 @@ namespace ClipAngel
         {
             string sql = "Update Clips set Title = @Title, Text = @Text where Id = @Id";
             SQLiteCommand command = new SQLiteCommand(sql, m_dbConnection);
-            command.Parameters.Add("@Id", DbType.Int32).Value = RowReader["Id"];
-            command.Parameters.Add("@Text", DbType.String).Value = richTextBox.Text;
+            command.Parameters.AddWithValue("@Id", RowReader["Id"]);
+            command.Parameters.AddWithValue("@Text", richTextBox.Text);
             string newTitle = "";
             if (RowReader["Title"].ToString() == TextClipTitle(RowReader["Text"].ToString()))
                 newTitle = TextClipTitle(richTextBox.Text);
             else
                 newTitle = RowReader["Title"].ToString();
-            command.Parameters.Add("@Title", DbType.String).Value = newTitle;
+            command.Parameters.AddWithValue("@Title", newTitle);
             command.ExecuteNonQuery();
         }
 
@@ -1859,7 +1924,30 @@ namespace ClipAngel
                     }
 
             }
+            if (dataGridView.Columns["AppImage"].Visible)
+            {
+                var bitmap = ApplicationIcon(dataRowView["appPath"].ToString());
+                if (bitmap != null)
+                    row.Cells["AppImage"].Value = bitmap;
+            }
             UpdateTableGridRowBackColor(row);
+        }
+        private Bitmap ApplicationIcon(string filePath)
+        {
+            Bitmap bitmap = null;
+            if (iconCache.ContainsKey(filePath))
+                bitmap = iconCache[filePath];
+            else
+            {
+                if (File.Exists(filePath))
+                {
+                    Icon smallIcon = null;
+                    smallIcon = IconTools.GetIconForFile(filePath, ShellIconSize.SmallIcon);
+                    bitmap = smallIcon.ToBitmap();
+                }
+                iconCache[filePath] = bitmap;
+            }
+            return bitmap;
         }
 
         public string GetImageForRTF(Image img, int width = 0, int height = 0)
@@ -2066,6 +2154,7 @@ namespace ClipAngel
             MarkFilter.ValueMember = "Name";
 
             ChooseTitleColumnDraw();
+            dataGridView.Columns["appImage"].Visible = Properties.Settings.Default.ShowApplicationIconColumn;
             AfterRowLoad();
         }
 
@@ -2323,7 +2412,8 @@ namespace ClipAngel
         {
             trayMenuItemMonitoringClipboard.Checked = MonitoringClipboard;
             toolStripMenuItemMonitoringClipboard.Checked = MonitoringClipboard;
-            toolStripButtonFixedWidthFont.Checked = Properties.Settings.Default.MonospacedFont;
+            toolStripButtonMonospacedFont.Checked = Properties.Settings.Default.MonospacedFont;
+            monospacedFontToolStripMenuItem.Checked = Properties.Settings.Default.MonospacedFont;
             selectTopClipOnShowToolStripMenuItem.Checked = Properties.Settings.Default.SelectTopClipOnShow;
             toolStripButtonSelectTopClipOnShow.Checked = Properties.Settings.Default.SelectTopClipOnShow;
             wordWrapToolStripMenuItem.Checked = Properties.Settings.Default.WordWrap;
@@ -2347,13 +2437,13 @@ namespace ClipAngel
                 {
                     string sql = "Update Clips set Title=@Title where Id=@Id";
                     SQLiteCommand command = new SQLiteCommand(sql, m_dbConnection);
-                    command.Parameters.Add("@Id", DbType.Int32).Value = RowReader["Id"];
+                    command.Parameters.AddWithValue("@Id", RowReader["Id"]);
                     string newTitle;
                     if (inputResult.Text == "")
                         newTitle = TextClipTitle(RowReader["text"].ToString());
                     else
                         newTitle = inputResult.Text;
-                    command.Parameters.Add("@Title", DbType.String).Value = newTitle;
+                    command.Parameters.AddWithValue("@Title", newTitle);
                     command.ExecuteNonQuery();
                     UpdateClipBindingSource();
                 }
@@ -2471,14 +2561,14 @@ namespace ClipAngel
             int tempID = LastId + 1;
             string sql = "Update Clips set Id=@NewId where Id=@Id";
             SQLiteCommand command = new SQLiteCommand(sql, m_dbConnection);
-            command.Parameters.Add("@Id", DbType.Int32).Value = newID;
-            command.Parameters.Add("@NewID", DbType.Int32).Value = tempID;
+            command.Parameters.AddWithValue("@Id", newID);
+            command.Parameters.AddWithValue("@NewID", tempID);
             command.ExecuteNonQuery();
-            command.Parameters.Add("@Id", DbType.Int32).Value = oldID;
-            command.Parameters.Add("@NewID", DbType.Int32).Value = newID;
+            command.Parameters.AddWithValue("@Id", oldID);
+            command.Parameters.AddWithValue("@NewID", newID);
             command.ExecuteNonQuery();
-            command.Parameters.Add("@Id", DbType.Int32).Value = tempID;
-            command.Parameters.Add("@NewID", DbType.Int32).Value = oldID;
+            command.Parameters.AddWithValue("@Id", tempID);
+            command.Parameters.AddWithValue("@NewID", oldID);
             command.ExecuteNonQuery();
             //SelectCurrentRow();
             clipBindingSource.Position = currentRowIndex + indexShift;
@@ -2492,8 +2582,7 @@ namespace ClipAngel
 
         private void historyToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //Process.Start(CurrentLangResourceManager.GetString("HistoryOfChanges")); // Returns 0. Why?
-            Process.Start("https://sourceforge.net/p/clip-angel/blog");
+            Process.Start(CurrentLangResourceManager.GetString("HistoryOfChanges")); // Returns 0. Why?
         }
 
         private void toolStripMenuItemPasteChars_Click(object sender, EventArgs e)
@@ -2510,17 +2599,29 @@ namespace ClipAngel
         {
             string type = RowReader["type"].ToString();
             //string TempFile = Path.GetTempFileName();
-            string tempFile = Path.GetTempPath() + "Clip " + RowReader["id"] + " copy";
+            SQLiteDataReader rowReader = RowReader;
+            var tempFile = clipTempFile(rowReader, "copy");
             bool deleteAfterOpen = false;
-            if (IsTextType(type))
+            if (type == "text" || type == "file")
             {
-                tempFile += ".txt";
                 File.WriteAllText(tempFile, RowReader["text"].ToString(), Encoding.Default);
+                deleteAfterOpen = true;
+            }
+            else if (type == "rtf" || type == "html")
+            {
+                RichTextBox rtb = new RichTextBox();
+                if (type == "rtf")
+                    rtb.Rtf = RowReader["richText"].ToString();
+                else
+                {
+                    CopyClipToClipboard();
+                    rtb.Paste();
+                }
+                rtb.SaveFile(tempFile);
                 deleteAfterOpen = true;
             }
             else if (type == "img")
             {
-                tempFile += ".bmp";
                 ImageControl.Image.Save(tempFile);
                 deleteAfterOpen = true;
             }
@@ -2549,6 +2650,22 @@ namespace ClipAngel
             }
         }
 
+        private string clipTempFile(SQLiteDataReader rowReader, string suffix = "")
+        {
+            string extension;
+            string type = rowReader["type"].ToString();
+            if (type == "text" || type == "file")
+                extension = "txt";
+            else if (type == "rtf" || type == "html")
+                extension = "rtf";
+            else if (type == "img")
+                extension = "bmp";
+            else
+                extension = "dat";
+            string tempFile = Path.GetTempPath() + "Clip " + rowReader["id"] + " " + suffix + "." + extension;
+            return tempFile;
+        }
+
         private void windowAlwaysOnTopToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.TopMost = !this.TopMost;
@@ -2559,7 +2676,7 @@ namespace ClipAngel
         private void editClipTextToolStripMenuItem_Click(object sender = null, EventArgs e = null)
         {
             string clipType = RowReader["type"].ToString();
-            if (!IsTextType(clipType))
+            if (!IsTextType())
                 return;
             int selectionStart = richTextBox.SelectionStart;
             int selectionLength = richTextBox.SelectionLength;
@@ -2692,8 +2809,142 @@ namespace ClipAngel
                 RemoveClipboardFormatListener(this.Handle);
             UpdateControlsStates();
         }
+
+        private void translateToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var selectedText = getSelectedOrAllText();
+            if (IsTextType())
+                Process.Start("https://translate.google.com/?tl=en#auto/en/" + selectedText);
+        }
+
+        private string getSelectedOrAllText()
+        {
+            string selectedText = richTextBox.SelectedText;
+            if (selectedText == "")
+                selectedText = RowReader["text"].ToString();
+            return selectedText;
+        }
+
+        private void textCompareToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SQLiteDataReader rowReader1;
+            SQLiteDataReader rowReader2;
+            string text1;
+            string text2;
+            string type1;
+            string type2;
+            string comparatorName = comparatorExeFileName();
+            if (comparatorName == "")
+            {
+                return;
+            }
+            if (dataGridView.SelectedRows.Count == 0)
+                return;
+            if (dataGridView.SelectedRows.Count == 1)
+            {
+                type1 = RowReader["type"].ToString();
+                if (!IsTextType() && type1 != "file")
+                    return;
+                if (_lastSelectedForCompareId == 0)
+                {
+                    _lastSelectedForCompareId = (int)RowReader["id"];
+                    //MessageBox.Show("Now execute this command on the second clip to compare", Application.ProductName);
+                    return;
+                }
+                else
+                {
+                    rowReader1 = RowReader;
+                    rowReader2 = getRowReader(_lastSelectedForCompareId);
+                    _lastSelectedForCompareId = 0;
+                }
+            }
+            else //if (dataGridView.SelectedRows.Count > 1)
+            {
+                DataRowView row1 = (DataRowView) dataGridView.SelectedRows[0].DataBoundItem;
+                rowReader1 = getRowReader((int)row1["id"]);
+                DataRowView row2 = (DataRowView)dataGridView.SelectedRows[1].DataBoundItem;
+                rowReader2 = getRowReader((int)row2["id"]);
+            }
+            type1 = rowReader1["type"].ToString();
+            type2 = rowReader2["type"].ToString();
+            if (!IsTextType(type1) && type1 != "file")
+                return;
+            if (!IsTextType(type2) && type2 != "file")
+                return;
+            string filename1 = clipTempFile(rowReader1, "comp");
+            File.WriteAllText(filename1, rowReader1["text"].ToString(), Encoding.Default);
+            string filename2 = clipTempFile(rowReader2, "comp");
+            File.WriteAllText(filename2, rowReader2["text"].ToString(), Encoding.Default);
+            Process.Start(comparatorName, String.Format("\"{0}\" \"{1}\"", filename1, filename2));
+        }
+
+        string comparatorExeFileName()
+        {
+            // TODO read paths from registry and let use custom application
+            string path;
+
+            path = "C:\\Program Files (x86)\\Beyond Compare 3\\BCompare.exe";
+            if (File.Exists(path))
+            {
+                return path;
+            }
+
+            path = "C:\\Program Files\\Beyond Compare 3\\BCompare.exe";
+            if (File.Exists(path))
+            {
+                return path;
+            }
+
+            path = "C:\\Program Files (x86)\\ExamDiff Pro\\ExamDiff.exe";
+            if (File.Exists(path))
+            {
+                return path;
+            }
+
+            path = "C:\\Program Files\\ExamDiff Pro\\ExamDiff.exe";
+            if (File.Exists(path))
+            {
+                return path;
+            }
+
+            path = "C:\\Program Files (x86)\\WinMerge\\WinMergeU.exe";
+            if (File.Exists(path))
+            {
+                return path;
+            }
+
+            path = "C:\\Program Files (x86)\\Araxis\\Araxis Merge\\compare.exe";
+            if (File.Exists(path))
+            {
+                return path;
+            }
+
+            path = "C:\\Program Files\\Araxis\\Araxis Merge\\compare.exe";
+            if (File.Exists(path))
+            {
+                return path;
+            }
+
+            path = "C:\\Program Files (x86)\\SourceGear\\Common\\DiffMerge\\sgdm.exe";
+            if (File.Exists(path))
+            {
+                return path;
+            }
+
+            path = "C:\\Program Files\\SourceGear\\Common\\DiffMerge\\sgdm.exe";
+            if (File.Exists(path))
+            {
+                return path;
+            }
+
+            MessageBox.Show("No supported text compare application found. Will open website to get free one.", Application.ProductName);
+            Process.Start("http://winmerge.org/");
+            return "";
+        }
     }
+
 }
+
 
 public sealed class KeyboardHook : IDisposable
 {

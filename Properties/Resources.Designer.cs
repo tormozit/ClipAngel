@@ -126,6 +126,16 @@ namespace ClipAngel.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap Compare {
+            get {
+                object obj = ResourceManager.GetObject("Compare", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Show rest of text.
         /// </summary>
         public static string CutMarker {
@@ -522,7 +532,7 @@ namespace ClipAngel.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 1.07.
+        ///   Looks up a localized string similar to 1.08.
         /// </summary>
         public static string Version {
             get {

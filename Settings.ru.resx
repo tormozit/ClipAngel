@@ -177,7 +177,7 @@
     <value>Размер база данных MB</value>
   </data>
   <data name="checkBoxAutostart.Text" xml:space="preserve">
-    <value>Автозапуск при входе пользователя</value>
+    <value>Автозапуск программы при входе пользователя</value>
   </data>
   <data name="checkBoxMoveCopiedClipToTop.Text" xml:space="preserve">
     <value>Перемещать скопированный клип наверх</value>
@@ -199,7 +199,7 @@
     <value>Автоматически проверять обновления при старте программы и каждый день</value>
   </data>
   <data name="checkBoxClearFiltersOnClose.Text" xml:space="preserve">
-    <value>Очищать фильтры при закрытии окна</value>
+    <value>Очищать фильтры при закрытии главного окна</value>
   </data>
   <data name="buttonReset.Text" xml:space="preserve">
     <value>Установить по умолчанию</value>

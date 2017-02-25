@@ -160,6 +160,15 @@ namespace ClipAngel.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to https://sourceforge.net/p/clip-angel/blogrus/.
+        /// </summary>
+        internal static string HistoryOfChanges {
+            get {
+                return ResourceManager.GetString("HistoryOfChanges", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Очистите строку для использования автозаголовка.
         /// </summary>
         internal static string HowUseAutoTitle {

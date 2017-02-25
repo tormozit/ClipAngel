@@ -96,6 +96,7 @@
     <Compile Include="AboutBox.Designer.cs">
       <DependentUpon>AboutBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="Components\IconTools.cs" />
     <Compile Include="Components\InputBox.cs" />
     <Compile Include="Components\PortableSettingsProvider .cs" />
     <Compile Include="Components\DataGridViewRichTextBoxColumn.cs" />
@@ -238,6 +239,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Picture\FixedWidthFont.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Picture\Compare.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -195,4 +195,7 @@
   <data name="QuestionResetSettings" xml:space="preserve">
     <value>Вы действительно хотите сбросить все настройки в значения по умолчанию?</value>
   </data>
+  <data name="HistoryOfChanges" xml:space="preserve">
+    <value>https://sourceforge.net/p/clip-angel/blogrus/</value>
+  </data>
 </root>
