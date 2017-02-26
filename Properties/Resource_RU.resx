@@ -201,4 +201,7 @@
   <data name="ActivatedExistedProcess" xml:space="preserve">
     <value>Активирован уже запущенный экземпляр приложения</value>
   </data>
+  <data name="CouldNotRegisterHotkey" xml:space="preserve">
+    <value>Не удалось зарегистрировать глобальное сочетание клавиш</value>
+  </data>
 </root>

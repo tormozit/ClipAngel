@@ -115,6 +115,15 @@ namespace ClipAngel.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Не удалось зарегистрировать глобальное сочетание клавиш.
+        /// </summary>
+        internal static string CouldNotRegisterHotkey {
+            get {
+                return ResourceManager.GetString("CouldNotRegisterHotkey", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Показать остальной текст.
         /// </summary>
         internal static string CutMarker {

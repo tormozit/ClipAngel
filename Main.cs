@@ -58,7 +58,7 @@ namespace ClipAngel
         //DateTime lastAutorunUpdateCheck;
         int MaxTextViewSize = 5000;
         bool TextWasCut;
-        KeyboardHook hook = new KeyboardHook();
+        KeyboardHook keyboardHook;
         WinEventDelegate dele = null;
         private const uint WINEVENT_OUTOFCONTEXT = 0;
         private const uint EVENT_SYSTEM_FOREGROUND = 3;
@@ -82,6 +82,7 @@ namespace ClipAngel
         private bool MonitoringClipboard = true;
         private int _lastSelectedForCompareId;
         private Mutex ElevatedMutex = null;
+        const int ClipTitleLength = 70;
 
         public Main()
         {
@@ -90,7 +91,8 @@ namespace ClipAngel
             dele = new WinEventDelegate(WinEventProc);
             HookChangeActiveWindow = SetWinEventHook(EVENT_SYSTEM_FOREGROUND, EVENT_SYSTEM_FOREGROUND, IntPtr.Zero, dele, 0, 0, WINEVENT_OUTOFCONTEXT);
             // register the event that is fired after the key press.
-            hook.KeyPressed +=
+            keyboardHook = new KeyboardHook(CurrentLangResourceManager);
+            keyboardHook.KeyPressed +=
                 new EventHandler<KeyPressedEventArgs>(hook_KeyPressed);
             RegisterHotKeys();
         }
@@ -116,9 +118,9 @@ namespace ClipAngel
             EnumModifierKeys Modifiers;
             Keys Key;
             if (ReadHotkeyFromText(Properties.Settings.Default.HotkeyShow, out Modifiers, out Key))
-                hook.RegisterHotKey(Modifiers, Key);
+                keyboardHook.RegisterHotKey(Modifiers, Key);
             if (ReadHotkeyFromText(Properties.Settings.Default.HotkeyIncrementalPaste, out Modifiers, out Key))
-                hook.RegisterHotKey(Modifiers, Key);
+                keyboardHook.RegisterHotKey(Modifiers, Key);
         }
 
         private static bool ReadHotkeyFromText(string HotkeyText, out EnumModifierKeys Modifiers, out Keys Key)
@@ -531,7 +533,7 @@ namespace ClipAngel
                     richTextBox.SelectionLength = selectionLength;
                     richTextBox.HideSelection = false;
                 }
-                toolStripButtonMarkFavorite.Checked = BoolFieldValue("Favorite");
+                toolStripButtonMarkFavorite.Checked = BoolFieldValue("Favorite"); // dataGridView.CurrentRow could be null here!
                 allowTextPositionChangeUpdate = true;
                 richTextBox_SelectionChanged();
             }
@@ -1072,9 +1074,9 @@ namespace ClipAngel
         {
             string title = text.TrimStart();
             title = Regex.Replace(title, @"\s+", " ");
-            if (title.Length > 50)
+            if (title.Length > ClipTitleLength)
             {
-                title = title.Substring(0, 50 - 1 - 3) + "...";
+                title = title.Substring(0, ClipTitleLength - 1 - 3) + "...";
             }
 
             return title;
@@ -1269,7 +1271,7 @@ namespace ClipAngel
             if (true
                 && (type == "rtf" || type == "html")
                 && !(richText is DBNull) 
-                && richText != ""
+                && richText.ToString() != ""
                 && !onlySelectedPlainText)
             {
                 dto.SetText((string)richText, TextDataFormat.Rtf);
@@ -2268,7 +2270,8 @@ namespace ClipAngel
         private bool BoolFieldValue(string fieldName, DataRowView dataRowView = null)
         {
             if (dataRowView == null)
-                dataRowView = (DataRowView)(dataGridView.CurrentRow.DataBoundItem);
+                //dataRowView = (DataRowView)(dataGridView.CurrentRow.DataBoundItem);
+                dataRowView = (DataRowView)(clipBindingSource.Current);
             var favVal1 = dataRowView.Row[fieldName];
             bool favVal = favVal1 != DBNull.Value && (bool) favVal1;
             return favVal;
@@ -2277,7 +2280,7 @@ namespace ClipAngel
         private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Settings settingsForm = new Settings();
-            hook.UnregisterHotKeys();
+            keyboardHook.UnregisterHotKeys();
             settingsForm.ShowDialog(this);
             if (settingsForm.DialogResult == DialogResult.OK)
                 LoadSettings();
@@ -2409,15 +2412,14 @@ namespace ClipAngel
 
         private void UpdateCurrentCulture()
         {
-            Locale = getCurrentLocale();
-            CurrentLangResourceManager = getResourceManager();
+            CurrentLangResourceManager = getResourceManager(out Locale);
             // https://www.codeproject.com/Articles/23694/Changing-Your-Application-User-Interface-Culture-O
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(Locale);
         }
 
-        static public ResourceManager getResourceManager()
+        static public ResourceManager getResourceManager(out string Locale)
         {
-            string Locale = getCurrentLocale();
+            Locale = getCurrentLocale();
             //if (true
             //    && CurrentLangResourceManager != null
             //    && String.Compare(Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName, Locale, true) != 0)
@@ -2876,7 +2878,7 @@ namespace ClipAngel
             UpdateClipBindingSource();
             allowRowLoad = true;
             EditMode = newEditMode;
-            AfterRowLoad(true);
+            AfterRowLoad(true, -1, selectionStart, selectionLength);
             editClipTextToolStripMenuItem.Checked = EditMode;
             toolStripMenuItemEditClipText.Checked = EditMode;
             pasteENTERToolStripMenuItem.Enabled = !EditMode;
@@ -3010,8 +3012,6 @@ namespace ClipAngel
         {
             SQLiteDataReader rowReader1;
             SQLiteDataReader rowReader2;
-            string text1;
-            string text2;
             string type1;
             string type2;
             string comparatorName = comparatorExeFileName();
@@ -3152,6 +3152,8 @@ public sealed class KeyboardHook : IDisposable
     [DllImport("user32.dll")]
     private static extern bool UnregisterHotKey(IntPtr hWnd, int id);
 
+    private ResourceManager resourceManager;
+
     /// <summary>
     /// Represents the window that is used internally to get the messages.
     /// </summary>
@@ -3201,8 +3203,9 @@ public sealed class KeyboardHook : IDisposable
     private Window _window = new Window();
     private int _currentId;
 
-    public KeyboardHook()
+    public KeyboardHook(ResourceManager resourceManager)
     {
+        this.resourceManager = resourceManager;
         // register the event of the inner native window.
         _window.KeyPressed += delegate (object sender, KeyPressedEventArgs args)
         {
@@ -3234,7 +3237,7 @@ public sealed class KeyboardHook : IDisposable
         if (!RegisterHotKey(_window.Handle, _currentId, (uint)modifier, (uint)key))
         {
             string hotkeyTitle = HotkeyTitle(key, modifier);
-            string errorText = "Couldn’t register the hot key " + hotkeyTitle;
+            string errorText = resourceManager.GetString("CouldNotRegisterHotkey") + " " + hotkeyTitle;
             //throw new InvalidOperationException(ErrorText);
             MessageBox.Show(errorText, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
         }

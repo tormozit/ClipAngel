@@ -23,7 +23,6 @@ namespace ClipAngel
         [STAThread]
         static void Main(string[] args)
         {
-            CurrentLangResourceManager = ClipAngel.Main.getResourceManager();
             bool elevatedMode = args.Contains("/elevated");
             if (elevatedMode)
             {
@@ -133,6 +132,8 @@ namespace ClipAngel
                     IntPtr hWnd = GetProcessMainWindow(process.Id);
                     if (hWnd != IntPtr.Zero)
                     {
+                        string dummy;
+                        CurrentLangResourceManager = ClipAngel.Main.getResourceManager(out dummy);
                         ShowWindow(hWnd, 1);
                         SetForegroundWindow(hWnd);
                         MessageBox.Show(CurrentLangResourceManager.GetString("ActivatedExistedProcess"), Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information, 

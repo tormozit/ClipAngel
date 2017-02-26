@@ -269,9 +269,9 @@ namespace ClipAngel
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.MarkFilter = new System.Windows.Forms.ComboBox();
             this.buttonFindNext = new System.Windows.Forms.Button();
@@ -288,10 +288,10 @@ namespace ClipAngel
             this.VisualWeight = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contextMenuStripDataGrid = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem7 = new System.Windows.Forms.ToolStripMenuItem();
-            this.deleteToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.copyClipToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.clipBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dbDataSet = new ClipAngel.dbDataSet();
             this.pictureBoxSource = new System.Windows.Forms.PictureBox();
@@ -561,8 +561,8 @@ namespace ClipAngel
             // Title
             // 
             this.Title.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.BottomLeft;
-            this.Title.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.BottomLeft;
+            this.Title.DefaultCellStyle = dataGridViewCellStyle4;
             resources.ApplyResources(this.Title, "Title");
             this.Title.Name = "Title";
             this.Title.ReadOnly = true;
@@ -571,10 +571,10 @@ namespace ClipAngel
             // 
             // ImageSample
             // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle2.NullValue")));
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(0, 1, 0, 0);
-            this.ImageSample.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle5.NullValue")));
+            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(0, 1, 0, 0);
+            this.ImageSample.DefaultCellStyle = dataGridViewCellStyle5;
             this.ImageSample.Description = "LinkedToTitle";
             resources.ApplyResources(this.ImageSample, "ImageSample");
             this.ImageSample.Name = "ImageSample";
@@ -583,9 +583,10 @@ namespace ClipAngel
             // 
             // VisualWeight
             // 
-            dataGridViewCellStyle3.Format = "N0";
-            dataGridViewCellStyle3.NullValue = null;
-            this.VisualWeight.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.DarkGreen;
+            dataGridViewCellStyle6.Format = "N0";
+            dataGridViewCellStyle6.NullValue = null;
+            this.VisualWeight.DefaultCellStyle = dataGridViewCellStyle6;
             this.VisualWeight.FillWeight = 1F;
             resources.ApplyResources(this.VisualWeight, "VisualWeight");
             this.VisualWeight.Name = "VisualWeight";
@@ -610,6 +611,12 @@ namespace ClipAngel
             resources.ApplyResources(this.toolStripMenuItem2, "toolStripMenuItem2");
             this.toolStripMenuItem2.Click += new System.EventHandler(this.pasteOriginalToolStripMenuItem_Click);
             // 
+            // toolStripMenuItem7
+            // 
+            this.toolStripMenuItem7.Name = "toolStripMenuItem7";
+            resources.ApplyResources(this.toolStripMenuItem7, "toolStripMenuItem7");
+            this.toolStripMenuItem7.Click += new System.EventHandler(this.toolStripMenuItemPasteChars_Click);
+            // 
             // toolStripMenuItem3
             // 
             this.toolStripMenuItem3.Image = global::ClipAngel.Properties.Resources.Paste;
@@ -617,11 +624,12 @@ namespace ClipAngel
             resources.ApplyResources(this.toolStripMenuItem3, "toolStripMenuItem3");
             this.toolStripMenuItem3.Click += new System.EventHandler(this.pasteAsTextToolStripMenuItem_Click);
             // 
-            // toolStripMenuItem7
+            // copyClipToolStripMenuItem
             // 
-            this.toolStripMenuItem7.Name = "toolStripMenuItem7";
-            resources.ApplyResources(this.toolStripMenuItem7, "toolStripMenuItem7");
-            this.toolStripMenuItem7.Click += new System.EventHandler(this.toolStripMenuItemPasteChars_Click);
+            this.copyClipToolStripMenuItem.Image = global::ClipAngel.Properties.Resources.copy;
+            this.copyClipToolStripMenuItem.Name = "copyClipToolStripMenuItem";
+            resources.ApplyResources(this.copyClipToolStripMenuItem, "copyClipToolStripMenuItem");
+            this.copyClipToolStripMenuItem.Click += new System.EventHandler(this.copyClipToolStripMenuItem_Click);
             // 
             // deleteToolStripMenuItem1
             // 
@@ -629,13 +637,6 @@ namespace ClipAngel
             resources.ApplyResources(this.deleteToolStripMenuItem1, "deleteToolStripMenuItem1");
             this.deleteToolStripMenuItem1.Name = "deleteToolStripMenuItem1";
             this.deleteToolStripMenuItem1.Click += new System.EventHandler(this.Delete_Click);
-            // 
-            // copyClipToolStripMenuItem
-            // 
-            this.copyClipToolStripMenuItem.Image = global::ClipAngel.Properties.Resources.copy;
-            this.copyClipToolStripMenuItem.Name = "copyClipToolStripMenuItem";
-            resources.ApplyResources(this.copyClipToolStripMenuItem, "copyClipToolStripMenuItem");
-            this.copyClipToolStripMenuItem.Click += new System.EventHandler(this.copyClipToolStripMenuItem_Click);
             // 
             // clipBindingSource
             // 
@@ -1000,6 +1001,7 @@ namespace ClipAngel
             this.textFormattingToolStripMenuItem.Image = global::ClipAngel.Properties.Resources.TextFormatting;
             this.textFormattingToolStripMenuItem.Name = "textFormattingToolStripMenuItem";
             resources.ApplyResources(this.textFormattingToolStripMenuItem, "textFormattingToolStripMenuItem");
+            this.textFormattingToolStripMenuItem.Click += new System.EventHandler(this.toolStripButtonTextFormatting_Click);
             // 
             // settingsToolStripMenuItem1
             // 
@@ -1406,15 +1408,15 @@ namespace ClipAngel
         private System.Windows.Forms.ToolStripMenuItem translateToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem textCompareToolStripMenuItem;
         private System.Windows.Forms.PictureBox pictureBoxSource;
+        private System.Windows.Forms.ToolStripButton toolStripButtonTextFormatting;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem8;
+        private System.Windows.Forms.ToolStripMenuItem textFormattingToolStripMenuItem;
         private System.Windows.Forms.DataGridViewImageColumn AppImage;
         private System.Windows.Forms.DataGridViewImageColumn TypeImg;
         private System.Windows.Forms.DataGridViewTextBoxColumn TitleSimple;
         private DataGridViewRichTextBoxColumn Title;
         private System.Windows.Forms.DataGridViewImageColumn ImageSample;
         private System.Windows.Forms.DataGridViewTextBoxColumn VisualWeight;
-        private System.Windows.Forms.ToolStripButton toolStripButtonTextFormatting;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem8;
-        private System.Windows.Forms.ToolStripMenuItem textFormattingToolStripMenuItem;
     }
 }
 

@@ -295,4 +295,7 @@
   <data name="ActivatedExistedProcess" xml:space="preserve">
     <value>Activated already running instance of the application</value>
   </data>
+  <data name="CouldNotRegisterHotkey" xml:space="preserve">
+    <value>Couldn’t register the global hot key</value>
+  </data>
 </root>

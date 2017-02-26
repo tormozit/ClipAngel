@@ -99,7 +99,7 @@ namespace ClipAngel
                 Size imgSize = new Size(cellSize.Width - 1, cellSize.Height - 1);
                 Image rtfImg = null;
                 ctl.DetectUrls = false; // todo customize
-                ctl.WordWrap = false;
+                ctl.WordWrap = false; // Printer does not respect this 
                 if (selected)
                 {
                     // Selected cell state
@@ -118,7 +118,8 @@ namespace ClipAngel
                 }
 
                 // Print image
-                rtfImg = RichTextBoxPrinter.Print(ctl, imgSize.Width, imgSize.Height);
+                int extraWidth = 200; // To prevent last word cutting off, WordWrap is not respected by printer and is always ON
+                rtfImg = RichTextBoxPrinter.Print(ctl, imgSize.Width + extraWidth, imgSize.Height);
                 
                 // Restore RichTextBox
                 ctl.BackColor = DataGridView.DefaultCellStyle.BackColor;

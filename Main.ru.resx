@@ -175,15 +175,6 @@
   <data name="toolStripMenuItem2.ToolTipText" xml:space="preserve">
     <value>Вставить в активное окно текущий клип</value>
   </data>
-  <data name="toolStripMenuItem3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>235, 22</value>
-  </data>
-  <data name="toolStripMenuItem3.Text" xml:space="preserve">
-    <value>Вставить текст (CTRL+ENTER)</value>
-  </data>
-  <data name="toolStripMenuItem3.ToolTipText" xml:space="preserve">
-    <value>Вставить в активное окно текущий клип как простой текст</value>
-  </data>
   <data name="toolStripMenuItem7.Size" type="System.Drawing.Size, System.Drawing">
     <value>235, 22</value>
   </data>
@@ -194,14 +185,14 @@
     <value>Эмулировать в активном окне ввод текущего текстового клипа или выделенного текста посимвольно.
 Полезно например для удаленных рабочих столов.</value>
   </data>
-  <data name="deleteToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="toolStripMenuItem3.Size" type="System.Drawing.Size, System.Drawing">
     <value>235, 22</value>
   </data>
-  <data name="deleteToolStripMenuItem1.Text" xml:space="preserve">
-    <value>Удалить</value>
+  <data name="toolStripMenuItem3.Text" xml:space="preserve">
+    <value>Вставить текст (CTRL+ENTER)</value>
   </data>
-  <data name="deleteToolStripMenuItem1.ToolTipText" xml:space="preserve">
-    <value>Удалить выделенные клипы из списка</value>
+  <data name="toolStripMenuItem3.ToolTipText" xml:space="preserve">
+    <value>Вставить в активное окно текущий клип как простой текст</value>
   </data>
   <data name="copyClipToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>235, 22</value>
@@ -211,6 +202,15 @@
   </data>
   <data name="copyClipToolStripMenuItem.ToolTipText" xml:space="preserve">
     <value>Копировать текущий клип в буфер обмена</value>
+  </data>
+  <data name="deleteToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>235, 22</value>
+  </data>
+  <data name="deleteToolStripMenuItem1.Text" xml:space="preserve">
+    <value>Удалить</value>
+  </data>
+  <data name="deleteToolStripMenuItem1.ToolTipText" xml:space="preserve">
+    <value>Удалить выделенные клипы из списка</value>
   </data>
   <data name="textBoxUrl.ToolTip" xml:space="preserve">
     <value>Из web страницы с таким адресом клип был скопирован</value>
@@ -460,7 +460,8 @@
     <value>Моноширинный шрифт</value>
   </data>
   <data name="monospacedFontToolStripMenuItem.ToolTipText" xml:space="preserve">
-    <value>Моноширинный шрифт в поле просмотра текста</value>
+    <value>Моноширинный шрифт в поле просмотра текста.
+Может быть переопределен родным офрмлением.</value>
   </data>
   <data name="textFormattingToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>238, 22</value>
@@ -1070,17 +1071,18 @@
   <data name="toolStripButtonWordWrap.ToolTipText" xml:space="preserve">
     <value>Перенос слов в поле просмотра текста (CTRL+W)</value>
   </data>
-  <data name="toolStripButtonMonospacedFont.Text" xml:space="preserve">
-    <value>Моноширинный шрифт</value>
-  </data>
-  <data name="toolStripButtonMonospacedFont.ToolTipText" xml:space="preserve">
-    <value>Моноширинный шрифт в поле просмотра текста</value>
-  </data>
   <data name="toolStripButtonTextFormatting.Text" xml:space="preserve">
     <value>Оформление текста</value>
   </data>
   <data name="toolStripButtonTextFormatting.ToolTipText" xml:space="preserve">
     <value>Показывать родное оформление текста клипа</value>
+  </data>
+  <data name="toolStripButtonMonospacedFont.Text" xml:space="preserve">
+    <value>Моноширинный шрифт</value>
+  </data>
+  <data name="toolStripButtonMonospacedFont.ToolTipText" xml:space="preserve">
+    <value>Моноширинный шрифт в поле просмотра текста.
+Может быть переопределен родным офрмлением.</value>
   </data>
   <data name="toolStripButtonSelectTopClipOnShow.Text" xml:space="preserve">
     <value>Вставать на верхний клип</value>
