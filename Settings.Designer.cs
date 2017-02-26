@@ -59,6 +59,7 @@
             this.checkBoxClearFiltersOnClose = new System.Windows.Forms.CheckBox();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.cultureManager1 = new Infralution.Localization.CultureManager(this.components);
+            this.checkBoxShowApplicationIconColumn = new System.Windows.Forms.CheckBox();
             buttonReset = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -211,17 +212,18 @@
             this.tableLayoutPanel1.Controls.Add(this.Language, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.label5, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 6);
-            this.tableLayoutPanel1.Controls.Add(this.checkBoxShowSizeColumn, 0, 9);
             this.tableLayoutPanel1.Controls.Add(this.label6, 0, 7);
             this.tableLayoutPanel1.Controls.Add(this.GlobalHotkeyIncrementalPaste, 1, 7);
-            this.tableLayoutPanel1.Controls.Add(this.checkBoxClipListSimpleDraw, 0, 11);
-            this.tableLayoutPanel1.Controls.Add(this.checkBoxMoveCopiedClipToTop, 0, 10);
-            this.tableLayoutPanel1.Controls.Add(this.checkBoxWindowAutoPosition, 0, 12);
             this.tableLayoutPanel1.Controls.Add(this.label7, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.label8, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.checkBoxAutostart, 0, 8);
-            this.tableLayoutPanel1.Controls.Add(this.checkBoxAutoCheckUpdate, 0, 13);
-            this.tableLayoutPanel1.Controls.Add(this.checkBoxClearFiltersOnClose, 0, 14);
+            this.tableLayoutPanel1.Controls.Add(this.checkBoxAutoCheckUpdate, 0, 9);
+            this.tableLayoutPanel1.Controls.Add(this.checkBoxShowSizeColumn, 0, 11);
+            this.tableLayoutPanel1.Controls.Add(this.checkBoxShowApplicationIconColumn, 0, 12);
+            this.tableLayoutPanel1.Controls.Add(this.checkBoxWindowAutoPosition, 0, 10);
+            this.tableLayoutPanel1.Controls.Add(this.checkBoxClipListSimpleDraw, 0, 13);
+            this.tableLayoutPanel1.Controls.Add(this.checkBoxMoveCopiedClipToTop, 0, 14);
+            this.tableLayoutPanel1.Controls.Add(this.checkBoxClearFiltersOnClose, 0, 15);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             // 
             // label5
@@ -264,6 +266,13 @@
             // cultureManager1
             // 
             this.cultureManager1.ManagedControl = this;
+            // 
+            // checkBoxShowApplicationIconColumn
+            // 
+            resources.ApplyResources(this.checkBoxShowApplicationIconColumn, "checkBoxShowApplicationIconColumn");
+            this.tableLayoutPanel1.SetColumnSpan(this.checkBoxShowApplicationIconColumn, 2);
+            this.checkBoxShowApplicationIconColumn.Name = "checkBoxShowApplicationIconColumn";
+            this.checkBoxShowApplicationIconColumn.UseVisualStyleBackColor = true;
             // 
             // Settings
             // 
@@ -316,5 +325,6 @@
         private System.Windows.Forms.CheckBox checkBoxAutostart;
         private System.Windows.Forms.CheckBox checkBoxAutoCheckUpdate;
         private System.Windows.Forms.CheckBox checkBoxClearFiltersOnClose;
+        private System.Windows.Forms.CheckBox checkBoxShowApplicationIconColumn;
     }
 }

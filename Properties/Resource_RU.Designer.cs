@@ -61,6 +61,15 @@ namespace ClipAngel.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Активирован уже запущенный экземпляр приложения.
+        /// </summary>
+        internal static string ActivatedExistedProcess {
+            get {
+                return ResourceManager.GetString("ActivatedExistedProcess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to все метки.
         /// </summary>
         internal static string allMarks {
@@ -88,7 +97,7 @@ namespace ClipAngel.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Невозможно вставить из непривилегированного процесса в привилегированное окно. Попробуйте запустить программу от имени администратора..
+        ///   Looks up a localized string similar to Невозможно вставить в окно, имеющее более высокие привилегии. Попробуйте запустить программу от имени администратора..
         /// </summary>
         internal static string CantPasteInElevatedWindow {
             get {

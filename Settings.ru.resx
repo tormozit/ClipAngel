@@ -204,4 +204,7 @@
   <data name="buttonReset.Text" xml:space="preserve">
     <value>Установить по умолчанию</value>
   </data>
+  <data name="checkBoxShowApplicationIconColumn.Text" xml:space="preserve">
+    <value>Отображать колонку иконки источника клипа</value>
+  </data>
 </root>

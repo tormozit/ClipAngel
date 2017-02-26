@@ -225,5 +225,17 @@ namespace ClipAngel.Properties {
                 this["ShowApplicationIconColumn"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool ShowNativeTextFormatting {
+            get {
+                return ((bool)(this["ShowNativeTextFormatting"]));
+            }
+            set {
+                this["ShowNativeTextFormatting"] = value;
+            }
+        }
     }
 }

@@ -61,6 +61,15 @@ namespace ClipAngel.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Activated already running instance of the application.
+        /// </summary>
+        public static string ActivatedExistedProcess {
+            get {
+                return ResourceManager.GetString("ActivatedExistedProcess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
         public static System.Drawing.Icon alien {
@@ -108,7 +117,7 @@ namespace ClipAngel.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Unable to paste from non elevated process to elevated. Try run program as administrator..
+        ///   Looks up a localized string similar to Unable to paste into window having higher priviledges. Try run program as administrator..
         /// </summary>
         public static string CantPasteInElevatedWindow {
             get {
@@ -131,6 +140,16 @@ namespace ClipAngel.Properties {
         public static System.Drawing.Bitmap Compare {
             get {
                 object obj = ResourceManager.GetObject("Compare", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap copy {
+            get {
+                object obj = ResourceManager.GetObject("copy", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -388,6 +407,16 @@ namespace ClipAngel.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap Paste {
+            get {
+                object obj = ResourceManager.GetObject("Paste", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Pixel.
         /// </summary>
         public static string PixelFormat {
@@ -420,6 +449,16 @@ namespace ClipAngel.Properties {
         public static string text {
             get {
                 return ResourceManager.GetString("text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap TextFormatting {
+            get {
+                object obj = ResourceManager.GetObject("TextFormatting", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         

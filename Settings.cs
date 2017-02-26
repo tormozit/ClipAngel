@@ -41,6 +41,7 @@ namespace ClipAngel
             checkBoxClipListSimpleDraw.Checked = Properties.Settings.Default.ClipListSimpleDraw;
             checkBoxAutoCheckUpdate.Checked = Properties.Settings.Default.AutoCheckForUpdate;
             checkBoxClearFiltersOnClose.Checked = Properties.Settings.Default.ClearFiltersOnClose;
+            checkBoxShowApplicationIconColumn.Checked = Properties.Settings.Default.ShowApplicationIconColumn;
 
             NumberOfClips.Text = (Owner as Main).ClipsNumber.ToString();
             textBoxUserSettingsPath.Text = (Owner as Main).UserSettingsPath;
@@ -50,6 +51,7 @@ namespace ClipAngel
         private void button1_Click(object sender, EventArgs e)
         {
             int numValue;
+            Properties.Settings.Default.ShowApplicationIconColumn = checkBoxShowApplicationIconColumn.Checked;
             Properties.Settings.Default.ClearFiltersOnClose = checkBoxClearFiltersOnClose.Checked;
             Properties.Settings.Default.AutoCheckForUpdate = checkBoxAutoCheckUpdate.Checked;
             Properties.Settings.Default.ClipListSimpleDraw = checkBoxClipListSimpleDraw.Checked;

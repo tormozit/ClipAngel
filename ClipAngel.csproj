@@ -39,6 +39,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>x86</PlatformTarget>
@@ -98,6 +99,7 @@
     </Compile>
     <Compile Include="Components\IconTools.cs" />
     <Compile Include="Components\InputBox.cs" />
+    <Compile Include="Components\Paster.cs" />
     <Compile Include="Components\PortableSettingsProvider .cs" />
     <Compile Include="Components\DataGridViewRichTextBoxColumn.cs" />
     <Compile Include="Components\UacHelper.cs" />
@@ -242,6 +244,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Picture\Compare.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Picture\TextFormatting.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Picture\Paste.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Picture\copy.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

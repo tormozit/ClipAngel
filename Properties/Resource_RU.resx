@@ -175,7 +175,7 @@
     <value>Вы используете последнюю версию</value>
   </data>
   <data name="CantPasteInElevatedWindow" xml:space="preserve">
-    <value>Невозможно вставить из непривилегированного процесса в привилегированное окно. Попробуйте запустить программу от имени администратора.</value>
+    <value>Невозможно вставить в окно, имеющее более высокие привилегии. Попробуйте запустить программу от имени администратора.</value>
   </data>
   <data name="EditClipTitle" xml:space="preserve">
     <value>Изменение заголовка клипа</value>
@@ -197,5 +197,8 @@
   </data>
   <data name="HistoryOfChanges" xml:space="preserve">
     <value>https://sourceforge.net/p/clip-angel/blogrus/</value>
+  </data>
+  <data name="ActivatedExistedProcess" xml:space="preserve">
+    <value>Активирован уже запущенный экземпляр приложения</value>
   </data>
 </root>

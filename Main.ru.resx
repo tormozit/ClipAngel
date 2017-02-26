@@ -357,6 +357,9 @@
     <value>Эмулировать в активном окне ввод текстового клипа или выделенного текста посимвольно.
 Полезно например для удаленных рабочих столов.</value>
   </data>
+  <data name="toolStripMenuItem8.Size" type="System.Drawing.Size, System.Drawing">
+    <value>238, 22</value>
+  </data>
   <data name="changeClipTitleToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>238, 22</value>
   </data>
@@ -458,6 +461,15 @@
   </data>
   <data name="monospacedFontToolStripMenuItem.ToolTipText" xml:space="preserve">
     <value>Моноширинный шрифт в поле просмотра текста</value>
+  </data>
+  <data name="textFormattingToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>238, 22</value>
+  </data>
+  <data name="textFormattingToolStripMenuItem.Text" xml:space="preserve">
+    <value>Родное оформление</value>
+  </data>
+  <data name="textFormattingToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>Показывает родное оформление текста клипа</value>
   </data>
   <data name="settingsToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
     <value>79, 20</value>
@@ -1064,6 +1076,12 @@
   <data name="toolStripButtonMonospacedFont.ToolTipText" xml:space="preserve">
     <value>Моноширинный шрифт в поле просмотра текста</value>
   </data>
+  <data name="toolStripButtonTextFormatting.Text" xml:space="preserve">
+    <value>Оформление текста</value>
+  </data>
+  <data name="toolStripButtonTextFormatting.ToolTipText" xml:space="preserve">
+    <value>Показывать родное оформление текста клипа</value>
+  </data>
   <data name="toolStripButtonSelectTopClipOnShow.Text" xml:space="preserve">
     <value>Вставать на верхний клип</value>
   </data>
@@ -1073,17 +1091,11 @@
   <data name="toolStripButtonClearFilterAndSelectTop.Text" xml:space="preserve">
     <value>Очистить фильтры и встать в начало (F9)</value>
   </data>
-  <data name="toolStripButtonDelete.Text" xml:space="preserve">
-    <value>Удалить выбранные клипы</value>
+  <data name="toolStripButtonMarkFavorite.Text" xml:space="preserve">
+    <value>Пометка любимого</value>
   </data>
-  <data name="toolStripButtonDelete.ToolTipText" xml:space="preserve">
-    <value>Удалить выбранные клипы из списка</value>
-  </data>
-  <data name="toolStripButtonMarkFavourite.Text" xml:space="preserve">
-    <value>Пометить любимыми</value>
-  </data>
-  <data name="toolStripButtonUnmarkFavourite.Text" xml:space="preserve">
-    <value>Пометить обычными</value>
+  <data name="toolStripButtonMarkFavorite.ToolTipText" xml:space="preserve">
+    <value>Пометка любимого клипа</value>
   </data>
   <data name="toolStripMenuItemEditClipText.Text" xml:space="preserve">
     <value>Редактировать текст</value>

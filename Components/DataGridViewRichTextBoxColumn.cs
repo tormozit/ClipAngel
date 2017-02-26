@@ -152,7 +152,8 @@ namespace ClipAngel
             base.Paint(graphics, clipBounds, cellBounds, rowIndex, cellState, null, null, errorText, cellStyle, advancedBorderStyle, paintParts);
             Image img = GetRtfImage(rowIndex, value, base.Selected, cellStyle);
             int textWitdh = cellBounds.Right - cellBounds.Left;
-
+            int horizontalSpaceTextImage = 3;
+            
             // TODO customize
             DataGridViewCell SampleCell = DataGridView.Rows[rowIndex].Cells["imageSample"];
             if (SampleCell.Value != null)
@@ -161,14 +162,14 @@ namespace ClipAngel
             }
             if (img != null)
             {
-                Rectangle rect = new Rectangle(0, 0, textWitdh - 2, cellBounds.Bottom - 2);
+                Rectangle rect = new Rectangle(0, 0, textWitdh - horizontalSpaceTextImage, cellBounds.Bottom - 2);
                 graphics.DrawImage(img, cellBounds.Left + 2, cellBounds.Top + 2, rect, GraphicsUnit.Pixel);
             }
 
             if (SampleCell.Value != null)
             {
                 Image sample = (Image) SampleCell.Value;
-                graphics.DrawImage(sample, cellBounds.Left + textWitdh + 2, cellBounds.Top + 1);
+                graphics.DrawImage(sample, cellBounds.Left + textWitdh + horizontalSpaceTextImage, cellBounds.Top + 1);
             }
         }
 
