@@ -87,9 +87,9 @@ namespace ClipAngel
                     Application.EnableVisualStyles();
                     Application.SetCompatibleTextRenderingDefault(false);
                     Main Main = new Main();
-                    Main.StartMinimized = args.Contains("/m");
                     Main.UserSettingsPath = UserSettingsPath;
                     Main.PortableMode = PortableMode;
+                    Main.StartMinimized = args.Contains("/m");
                     Application.Run(Main);
                 }
             }

@@ -56,10 +56,10 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.checkBoxAutostart = new System.Windows.Forms.CheckBox();
+            this.checkBoxShowApplicationIconColumn = new System.Windows.Forms.CheckBox();
             this.checkBoxClearFiltersOnClose = new System.Windows.Forms.CheckBox();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.cultureManager1 = new Infralution.Localization.CultureManager(this.components);
-            this.checkBoxShowApplicationIconColumn = new System.Windows.Forms.CheckBox();
             buttonReset = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -248,6 +248,13 @@
             this.checkBoxAutostart.Name = "checkBoxAutostart";
             this.checkBoxAutostart.UseVisualStyleBackColor = true;
             // 
+            // checkBoxShowApplicationIconColumn
+            // 
+            resources.ApplyResources(this.checkBoxShowApplicationIconColumn, "checkBoxShowApplicationIconColumn");
+            this.tableLayoutPanel1.SetColumnSpan(this.checkBoxShowApplicationIconColumn, 2);
+            this.checkBoxShowApplicationIconColumn.Name = "checkBoxShowApplicationIconColumn";
+            this.checkBoxShowApplicationIconColumn.UseVisualStyleBackColor = true;
+            // 
             // checkBoxClearFiltersOnClose
             // 
             resources.ApplyResources(this.checkBoxClearFiltersOnClose, "checkBoxClearFiltersOnClose");
@@ -266,13 +273,6 @@
             // cultureManager1
             // 
             this.cultureManager1.ManagedControl = this;
-            // 
-            // checkBoxShowApplicationIconColumn
-            // 
-            resources.ApplyResources(this.checkBoxShowApplicationIconColumn, "checkBoxShowApplicationIconColumn");
-            this.tableLayoutPanel1.SetColumnSpan(this.checkBoxShowApplicationIconColumn, 2);
-            this.checkBoxShowApplicationIconColumn.Name = "checkBoxShowApplicationIconColumn";
-            this.checkBoxShowApplicationIconColumn.UseVisualStyleBackColor = true;
             // 
             // Settings
             // 

@@ -115,6 +115,15 @@ namespace ClipAngel.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Файл клипа уже открыт и заблокирован.
+        /// </summary>
+        internal static string ClipFileAlreadyOpened {
+            get {
+                return ResourceManager.GetString("ClipFileAlreadyOpened", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Не удалось зарегистрировать глобальное сочетание клавиш.
         /// </summary>
         internal static string CouldNotRegisterHotkey {

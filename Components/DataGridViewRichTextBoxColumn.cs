@@ -164,7 +164,7 @@ namespace ClipAngel
             if (img != null)
             {
                 Rectangle rect = new Rectangle(0, 0, textWitdh - horizontalSpaceTextImage, cellBounds.Bottom - 2);
-                graphics.DrawImage(img, cellBounds.Left + 2, cellBounds.Top + 2, rect, GraphicsUnit.Pixel);
+                graphics.DrawImage(img, cellBounds.Left + 3, cellBounds.Top + 3, rect, GraphicsUnit.Pixel);
             }
 
             if (SampleCell.Value != null)

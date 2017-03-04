@@ -204,4 +204,7 @@
   <data name="CouldNotRegisterHotkey" xml:space="preserve">
     <value>Не удалось зарегистрировать глобальное сочетание клавиш</value>
   </data>
+  <data name="ClipFileAlreadyOpened" xml:space="preserve">
+    <value>Файл клипа уже открыт и заблокирован</value>
+  </data>
 </root>

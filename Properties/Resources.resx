@@ -298,4 +298,7 @@
   <data name="CouldNotRegisterHotkey" xml:space="preserve">
     <value>Couldn’t register the global hot key</value>
   </data>
+  <data name="ClipFileAlreadyOpened" xml:space="preserve">
+    <value>Clip file already opened and blocked</value>
+  </data>
 </root>
