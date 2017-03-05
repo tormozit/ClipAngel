@@ -2821,7 +2821,7 @@ namespace ClipAngel
 
         private void Main_Activated(object sender, EventArgs e)
         {
-            //Debug.WriteLine("Activated");
+            //Debug.WriteLine("Activated");//
             RestoreWindowIfMinimized();
             SetForegroundWindow(this.Handle);
         }
