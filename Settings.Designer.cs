@@ -98,6 +98,7 @@
             // 
             resources.ApplyResources(this.GlobalHotkeyShow, "GlobalHotkeyShow");
             this.GlobalHotkeyShow.Name = "GlobalHotkeyShow";
+            this.GlobalHotkeyShow.ReadOnly = true;
             this.toolTip1.SetToolTip(this.GlobalHotkeyShow, resources.GetString("GlobalHotkeyShow.ToolTip"));
             this.GlobalHotkeyShow.KeyDown += new System.Windows.Forms.KeyEventHandler(this.HotkeyTextBox_KeyDown);
             // 
@@ -145,6 +146,7 @@
             // 
             resources.ApplyResources(this.GlobalHotkeyIncrementalPaste, "GlobalHotkeyIncrementalPaste");
             this.GlobalHotkeyIncrementalPaste.Name = "GlobalHotkeyIncrementalPaste";
+            this.GlobalHotkeyIncrementalPaste.ReadOnly = true;
             this.toolTip1.SetToolTip(this.GlobalHotkeyIncrementalPaste, resources.GetString("GlobalHotkeyIncrementalPaste.ToolTip"));
             this.GlobalHotkeyIncrementalPaste.KeyDown += new System.Windows.Forms.KeyEventHandler(this.HotkeyTextBox_KeyDown);
             // 
@@ -189,6 +191,7 @@
             // 
             resources.ApplyResources(this.GlobalHotkeyShowFavorites, "GlobalHotkeyShowFavorites");
             this.GlobalHotkeyShowFavorites.Name = "GlobalHotkeyShowFavorites";
+            this.GlobalHotkeyShowFavorites.ReadOnly = true;
             this.toolTip1.SetToolTip(this.GlobalHotkeyShowFavorites, resources.GetString("GlobalHotkeyShowFavorites.ToolTip"));
             this.GlobalHotkeyShowFavorites.KeyDown += new System.Windows.Forms.KeyEventHandler(this.HotkeyTextBox_KeyDown);
             // 
@@ -196,6 +199,7 @@
             // 
             resources.ApplyResources(this.textBoxDefaultFont, "textBoxDefaultFont");
             this.textBoxDefaultFont.Name = "textBoxDefaultFont";
+            this.textBoxDefaultFont.ReadOnly = true;
             this.toolTip1.SetToolTip(this.textBoxDefaultFont, resources.GetString("textBoxDefaultFont.ToolTip"));
             this.textBoxDefaultFont.DoubleClick += new System.EventHandler(this.DefaultFont_DoubleClick);
             // 
