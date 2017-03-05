@@ -137,9 +137,9 @@ namespace ClipAngel
             }
         }
 
-        private void UpdateWindowTitle()
+        private void UpdateWindowTitle(bool forced = false)
         {
-            if (this.Top < 0)
+            if (this.Top < 0 && !forced)
                 return;
             string windowText = "";
             if (lastActiveWindow != null)
@@ -2648,7 +2648,7 @@ namespace ClipAngel
             UpdateCurrentCulture();
             cultureManager1.UICulture = Thread.CurrentThread.CurrentUICulture;
 
-            UpdateWindowTitle();
+            UpdateWindowTitle(true);
 
             BindingList<ListItemNameText> comboItemsTypes = (BindingList < ListItemNameText >) TypeFilter.DataSource;
             foreach (ListItemNameText item in comboItemsTypes)
