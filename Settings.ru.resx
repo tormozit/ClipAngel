@@ -117,18 +117,34 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="buttonReset.Text" xml:space="preserve">
+    <value>Установить по умолчанию</value>
+  </data>
+  <data name="buttonReset.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="HistoryDepthNumber.ToolTip" xml:space="preserve">
     <value>Максимальное количество клипов для хранения в списке</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
     <value>Глубина истории клипов</value>
   </data>
+  <data name="label1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="buttonOK.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="GlobalHotkeyShow.ToolTip" xml:space="preserve">
-    <value>Эта горячая клавиша при нажатии в любой прогрограмме покажет окно Clip Angel, которое сможе послать вставку клипа в исходную программу.
+    <value>Эта горячая клавиша при нажатии в любой программе покажет окно Clip Angel,
+которое сможет послать вставку клипа в исходную программу.
 </value>
   </data>
   <data name="label2.Text" xml:space="preserve">
     <value>Горячая клавиша показа окна</value>
+  </data>
+  <data name="label2.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="NumberOfClips.ToolTip" xml:space="preserve">
     <value>Текущее количество клипов в списке
@@ -137,17 +153,63 @@
   <data name="label3.Text" xml:space="preserve">
     <value>Текущее количество клипов</value>
   </data>
+  <data name="label3.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="MaxClipSizeKB.ToolTip" xml:space="preserve">
     <value>Клипы больше этого размера не будут добавляться в список</value>
   </data>
   <data name="label4.Text" xml:space="preserve">
     <value>Макс. размер  клипа KB</value>
   </data>
+  <data name="label4.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="GlobalHotkeyIncrementalPaste.ToolTip" xml:space="preserve">
-    <value>Эта горячая клавиша при нажатии в любой прогрограмме вставит клип, перейдет к следующему клипу в списке и показать его во всплыющей подсказке</value>
+    <value>Эта горячая клавиша при нажатии в любой программе вставит текущий клип из списка Clip Angel,
+перейдет к следующему клипу в списке и покажет его во всплывающей подсказке</value>
+  </data>
+  <data name="textBoxDatabaseSize.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="textBoxUserSettingsPath.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>Горячая клавиша последоват. вставки</value>
+  </data>
+  <data name="label6.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="label5.Text" xml:space="preserve">
     <value>Язык интерфейса</value>
+  </data>
+  <data name="label5.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="label7.Text" xml:space="preserve">
+    <value>Каталог настроек пользователя</value>
+  </data>
+  <data name="label7.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="label8.Text" xml:space="preserve">
+    <value>Размер база данных MB</value>
+  </data>
+  <data name="label8.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="checkBoxAutostart.Text" xml:space="preserve">
+    <value>Автозапуск программы при входе пользователя</value>
+  </data>
+  <data name="checkBoxAutostart.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="checkBoxAutoCheckUpdate.Text" xml:space="preserve">
+    <value>Автоматическая проверка обновлений</value>
+  </data>
+  <data name="checkBoxAutoCheckUpdate.ToolTip" xml:space="preserve">
+    <value>Автоматически проверять обновления при старте программы и каждый день</value>
   </data>
   <data name="checkBoxShowSizeColumn.Text" xml:space="preserve">
     <value>Отображать колонку визуального веса клипа</value>
@@ -155,29 +217,17 @@
   <data name="checkBoxShowSizeColumn.ToolTip" xml:space="preserve">
     <value>Колонка будет показывать визуальный вес (количество цифр в визуальном размере) клипа</value>
   </data>
-  <data name="label6.Text" xml:space="preserve">
-    <value>Горячая клавиша последоват. вставки</value>
+  <data name="checkBoxShowApplicationIconColumn.Text" xml:space="preserve">
+    <value>Отображать колонку иконки источника клипа</value>
   </data>
-  <data name="checkBoxClipListSimpleDraw.Text" xml:space="preserve">
-    <value>Быстрая и простая отрисовка списка клипов</value>
-  </data>
-  <data name="checkBoxClipListSimpleDraw.ToolTip" xml:space="preserve">
-    <value>Список клипов будет рисоваться быстро без выделения найденных фрагментов в заголовках и без фрагментов картинок.</value>
+  <data name="checkBoxShowApplicationIconColumn.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="checkBoxWindowAutoPosition.Text" xml:space="preserve">
     <value>Автовыбор положения окна при открытии</value>
   </data>
   <data name="checkBoxWindowAutoPosition.ToolTip" xml:space="preserve">
     <value>Если возможно окно будет открываться около места ввода текста</value>
-  </data>
-  <data name="label7.Text" xml:space="preserve">
-    <value>Каталог настроек пользователя</value>
-  </data>
-  <data name="label8.Text" xml:space="preserve">
-    <value>Размер база данных MB</value>
-  </data>
-  <data name="checkBoxAutostart.Text" xml:space="preserve">
-    <value>Автозапуск программы при входе пользователя</value>
   </data>
   <data name="checkBoxMoveCopiedClipToTop.Text" xml:space="preserve">
     <value>Перемещать скопированный клип наверх</value>
@@ -186,25 +236,61 @@
     <value>Перемещать клип наверх списка при копировании
 </value>
   </data>
+  <data name="checkBoxClearFiltersOnClose.Text" xml:space="preserve">
+    <value>Очищать фильтры при закрытии главного окна</value>
+  </data>
+  <data name="checkBoxClearFiltersOnClose.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="label9.Text" xml:space="preserve">
+    <value>Горячая клавиша показа окна любимых</value>
+  </data>
+  <data name="label9.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GlobalHotkeyShowFavorites.ToolTip" xml:space="preserve">
+    <value>Эта горячая клавиша при нажатии в любой программе покажет окно Clip Angel
+с отобором только любимых, которое сможет послать вставку клипа в исходную программу.</value>
+  </data>
+  <data name="label10.Text" xml:space="preserve">
+    <value>Шрифт по умолчанию</value>
+  </data>
+  <data name="label10.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="textBoxDefaultFont.ToolTip" xml:space="preserve">
+    <value>Шрифт списка клипов и по умолчанию для текста клипа</value>
+  </data>
+  <data name="tableLayoutPanel1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="checkBoxClipListSimpleDraw.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 378</value>
+  </data>
+  <data name="checkBoxClipListSimpleDraw.Size" type="System.Drawing.Size, System.Drawing">
+    <value>373, 19</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="checkBoxClipListSimpleDraw.TabIndex" type="System.Int32, mscorlib">
+    <value>23</value>
+  </data>
+  <data name="checkBoxClipListSimpleDraw.Text" xml:space="preserve">
+    <value>Быстрая и простая отрисовка списка клипов</value>
+  </data>
+  <data name="checkBoxClipListSimpleDraw.ToolTip" xml:space="preserve">
+    <value>Список клипов будет рисоваться быстро без выделения найденных фрагментов в заголовках и без фрагментов картинок.</value>
+  </data>
   <data name="buttonCancel.Text" xml:space="preserve">
     <value>Отмена</value>
+  </data>
+  <data name="buttonCancel.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Настройки</value>
   </data>
-  <data name="checkBoxAutoCheckUpdate.Text" xml:space="preserve">
-    <value>Автоматическая проверка обновлений</value>
-  </data>
-  <data name="checkBoxAutoCheckUpdate.ToolTip" xml:space="preserve">
-    <value>Автоматически проверять обновления при старте программы и каждый день</value>
-  </data>
-  <data name="checkBoxClearFiltersOnClose.Text" xml:space="preserve">
-    <value>Очищать фильтры при закрытии главного окна</value>
-  </data>
-  <data name="buttonReset.Text" xml:space="preserve">
-    <value>Установить по умолчанию</value>
-  </data>
-  <data name="checkBoxShowApplicationIconColumn.Text" xml:space="preserve">
-    <value>Отображать колонку иконки источника клипа</value>
+  <data name="$this.ToolTip" xml:space="preserve">
+    <value />
   </data>
 </root>
