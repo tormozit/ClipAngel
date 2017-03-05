@@ -116,6 +116,7 @@ namespace ClipAngel
                     ctl.BackColor = cellStyle.BackColor;
                     ctl.ForeColor = cellStyle.ForeColor;
                 }
+                ctl.Font = cellStyle.Font;
 
                 // Print image
                 int extraWidth = 200; // To prevent last word cutting off, WordWrap is not respected by printer and is always ON

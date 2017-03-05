@@ -206,7 +206,7 @@
   <data name="pictureBoxSource.ToolTip" xml:space="preserve">
     <value>Иконка приложения, из которого клип был скопирован</value>
   </data>
-  <data name="textBoxUrl.ToolTip" xml:space="preserve">
+  <data name="urlTextBox.ToolTip" xml:space="preserve">
     <value>Из web страницы с таким адресом клип был скопирован</value>
   </data>
   <data name="stripLabelPosition.ToolTipText" xml:space="preserve">

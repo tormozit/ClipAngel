@@ -89,6 +89,7 @@ namespace ClipAngel
         int selectionLength = 0;
         int selectionStart = 0;
         bool htmlInitialized = false;
+        private HtmlElement lastClickedHtmlElement;
 
         [DllImport("dwmapi", PreserveSig = true)]
         static extern int DwmSetWindowAttribute(IntPtr hWnd, int attr, ref int value, int attrLen);
@@ -348,7 +349,7 @@ namespace ClipAngel
             TypeFilter.SelectedIndex = 0;
             MarkFilter.SelectedIndex = 0;
             richTextBox.AutoWordSelection = false;
-            textBoxUrl.AutoWordSelection = false;
+            urlTextBox.AutoWordSelection = false;
             if (Properties.Settings.Default.LastFilterValues == null)
             {
                 Properties.Settings.Default.LastFilterValues = new StringCollection();
@@ -477,6 +478,11 @@ namespace ClipAngel
                 richTextBox.Font = new Font(defaultFontFamily, richTextBox.Font.Size);
             bool useNativeTextFormatting = false;
             htmlMode = false;
+            bool elementPanelHasFocus = false
+                                        || ImageControl.Focused
+                                        || richTextBox.Focused
+                                        || htmlTextBox.Focused
+                                        || urlTextBox.Focused;
             if (CurrentRowView == null)
             {
                 clipType = "";
@@ -568,14 +574,15 @@ namespace ClipAngel
                             mshtml.IHTMLBodyElement body = htmlDoc.body as mshtml.IHTMLBodyElement;
                             htmlTextBox.Document.Body.Drag += new HtmlElementEventHandler(htmlTextBoxDrag);
                             htmlTextBox.Document.Body.KeyDown += new HtmlElementEventHandler(htmlTextBoxDocumentKeyDown);
+                            
+                            // Need to be called every time, else handler will be lost
+                            htmlTextBox.Document.AttachEventHandler("onselectionchange", htmlTextBoxDocumentSelectionChange); // No multi call to handler, but why?
                             if (!htmlInitialized)
                             {
                                 mshtml.HTMLDocumentEvents2_Event iEvent = (mshtml.HTMLDocumentEvents2_Event) htmlDoc;
-                                //htmlDoc.body.setAttribute("contentEditable", true); // Something changes inside htmlDoc in first switch contentEditable = true
-                                //htmlDoc.body.setAttribute("contentEditable", false);
-                                iEvent.onclick += new mshtml.HTMLDocumentEvents2_onclickEventHandler(htmlTextBoxDocumentClick);
-                                iEvent.onselectionchange += new mshtml.HTMLDocumentEvents2_onselectionchangeEventHandler(htmlTextBoxDocumentSelectionChange);
-                                //htmlTextBox.Document.AttachEventHandler("onselectionchange", htmlTextBoxDocumentSelectionChange);
+                                iEvent.onclick += new mshtml.HTMLDocumentEvents2_onclickEventHandler(htmlTextBoxDocumentClick); //
+                                iEvent.onmousedown += new mshtml.HTMLDocumentEvents2_onmousedownEventHandler(htmlTextBoxMouseDown); //
+                                //iEvent.onselectionchange += new mshtml.HTMLDocumentEvents2_onselectionchangeEventHandler(htmlTextBoxDocumentSelectionChange);
                                 htmlInitialized = true;
                             }
                             mshtml.IHTMLTxtRange range = body.createTextRange();
@@ -630,10 +637,10 @@ namespace ClipAngel
                 richTextBox.SelectionStart = 0;
                 //richTextBox.HideSelection = false; // slow
 
-                textBoxUrl.HideSelection = true;
-                textBoxUrl.Clear();
-                textBoxUrl.Text = RowReader["Url"].ToString();
-                MarkLinksInRichTextBox(textBoxUrl, out UrlLinkMatches);
+                urlTextBox.HideSelection = true;
+                urlTextBox.Clear();
+                urlTextBox.Text = RowReader["Url"].ToString();
+                MarkLinksInRichTextBox(urlTextBox, out UrlLinkMatches);
 
                 if (clipType == "img")
                 {
@@ -654,6 +661,9 @@ namespace ClipAngel
                 tableLayoutPanelData.RowStyles[1].SizeType = SizeType.Absolute;
                 tableLayoutPanelData.RowStyles[2].Height = 100;
                 tableLayoutPanelData.RowStyles[2].SizeType = SizeType.Percent;
+                if (elementPanelHasFocus)
+                    ImageControl.Focus();
+                htmlTextBox.Visible = false; // Without it htmlTextBox will be visible but why?
             }
             else if (htmlMode)
             {
@@ -663,6 +673,9 @@ namespace ClipAngel
                 tableLayoutPanelData.RowStyles[1].SizeType = SizeType.Percent;
                 tableLayoutPanelData.RowStyles[2].Height = 0;
                 tableLayoutPanelData.RowStyles[2].SizeType = SizeType.Absolute;
+                if (elementPanelHasFocus)
+                    htmlTextBox.Focus();
+                htmlTextBox.Visible = true;
             }
             else
             {
@@ -672,8 +685,10 @@ namespace ClipAngel
                 tableLayoutPanelData.RowStyles[1].SizeType = SizeType.Percent;
                 tableLayoutPanelData.RowStyles[2].Height = 0;
                 tableLayoutPanelData.RowStyles[2].SizeType = SizeType.Absolute;
+                if (elementPanelHasFocus)
+                    richTextBox.Focus();
             }
-            if (textBoxUrl.Text == "")
+            if (urlTextBox.Text == "")
                 tableLayoutPanelData.RowStyles[3].Height = 0;
             else
                 tableLayoutPanelData.RowStyles[3].Height = 25;
@@ -687,24 +702,21 @@ namespace ClipAngel
                 NewSelectionStart = selectionStart;
             if (NewSelectionLength == -1)
                 NewSelectionLength = selectionLength;
-            if (NewSelectionStart != 0)
+            if (htmlMode)
             {
-                if (htmlMode)
-                {
-                    mshtml.IHTMLDocument2 htmlDoc = htmlTextBox.Document.DomDocument as mshtml.IHTMLDocument2;
-                    mshtml.IHTMLBodyElement body = htmlDoc.body as mshtml.IHTMLBodyElement;
-                    mshtml.IHTMLTxtRange range = body.createTextRange();
-                    range.moveStart("character", NewSelectionStart - 1);
-                    range.collapse();
-                    range.moveEnd("character", NewSelectionLength);
-                    range.@select();
-                }
-                else
-                {
-                    richTextBox.SelectionStart = NewSelectionStart;
-                    richTextBox.SelectionLength = NewSelectionLength;
-                    richTextBox.HideSelection = false;
-                }
+                mshtml.IHTMLDocument2 htmlDoc = htmlTextBox.Document.DomDocument as mshtml.IHTMLDocument2;
+                mshtml.IHTMLBodyElement body = htmlDoc.body as mshtml.IHTMLBodyElement;
+                mshtml.IHTMLTxtRange range = body.createTextRange();
+                range.moveStart("character", NewSelectionStart);
+                range.collapse();
+                range.moveEnd("character", NewSelectionLength);
+                range.@select();
+            }
+            else
+            {
+                richTextBox.SelectionStart = NewSelectionStart;
+                richTextBox.SelectionLength = NewSelectionLength;
+                richTextBox.HideSelection = false;
             }
         }
 
@@ -3479,12 +3491,14 @@ namespace ClipAngel
         private bool htmlTextBoxDocumentClick(mshtml.IHTMLEventObj e)
         {
             if (e.altKey)
+            {
                 openLinkInBrowserToolStripMenuItem_Click();
+            }
             return false;
         }
 
-        //private void htmlTextBoxDocumentSelectionChange(Object sender = null, EventArgs e = null)
-        private void htmlTextBoxDocumentSelectionChange(mshtml.IHTMLEventObj e = null)
+        private void htmlTextBoxDocumentSelectionChange(Object sender = null, EventArgs e = null)
+        //private void htmlTextBoxDocumentSelectionChange(mshtml.IHTMLEventObj e = null)
         {
             if (!allowTextPositionChangeUpdate)
                 return;
@@ -3510,9 +3524,9 @@ namespace ClipAngel
         {
             //e.ReturnValue = false;
         }
-        private void htmlTextBoxMouseOver(Object sender, HtmlElementEventArgs e)
+        private void htmlTextBoxMouseDown(IHTMLEventObj pEvtObj)
         {
-            //e.ReturnValue = false;
+            lastClickedHtmlElement = htmlTextBox.Document.GetElementFromPoint(htmlTextBox.PointToClient(MousePosition));
         }
         private void htmlTextBoxDrag(Object sender, HtmlElementEventArgs e)
         {
@@ -3521,12 +3535,11 @@ namespace ClipAngel
 
         private void copyLinkAdressToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var curElem = htmlTextBox.Document.GetElementFromPoint(htmlTextBox.PointToClient(MousePosition));
-            if (String.Compare(curElem.TagName, "A", true) == 0)
+            if (String.Compare(lastClickedHtmlElement.TagName, "A", true) == 0)
             {
-                string href = curElem.GetAttribute("href");
+                string href = lastClickedHtmlElement.GetAttribute("href");
                 Clipboard.Clear();
-                Clipboard.SetText(href);
+                Clipboard.SetText(href, TextDataFormat.UnicodeText);
             }
         }
 
@@ -3537,10 +3550,9 @@ namespace ClipAngel
 
         private void openLinkInBrowserToolStripMenuItem_Click(object sender = null, EventArgs e = null)
         {
-            var curElem = htmlTextBox.Document.GetElementFromPoint(htmlTextBox.PointToClient(MousePosition));
-            if (String.Compare(curElem.TagName, "A", true) == 0)
+            if (String.Compare(lastClickedHtmlElement.TagName, "A", true) == 0)
             {
-                string href = curElem.GetAttribute("href");
+                string href = lastClickedHtmlElement.GetAttribute("href");
                 Process.Start(href);
             }
         }
