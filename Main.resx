@@ -331,6 +331,42 @@ Use special char % for marking any sequence of chars. For example filter "po%o" 
   <data name="dataGridView.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
+  <data name="typeDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="typeDataGridViewTextBoxColumn.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="titleDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+    <value>Title</value>
+  </data>
+  <data name="titleDataGridViewTextBoxColumn.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="charsDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+    <value>Chars</value>
+  </data>
+  <data name="charsDataGridViewTextBoxColumn.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="idDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+    <value>Id</value>
+  </data>
+  <data name="idDataGridViewTextBoxColumn.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="usedDataGridViewCheckBoxColumn.HeaderText" xml:space="preserve">
+    <value>Used</value>
+  </data>
+  <data name="usedDataGridViewCheckBoxColumn.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="favoriteDataGridViewCheckBoxColumn.HeaderText" xml:space="preserve">
+    <value>Favorite</value>
+  </data>
+  <data name="favoriteDataGridViewCheckBoxColumn.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <metadata name="AppImage.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -387,42 +423,6 @@ Use special char % for marking any sequence of chars. For example filter "po%o" 
   </data>
   <data name="VisualWeight.Width" type="System.Int32, mscorlib">
     <value>9</value>
-  </data>
-  <data name="typeDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
-    <value>Type</value>
-  </data>
-  <data name="typeDataGridViewTextBoxColumn.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="titleDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
-    <value>Title</value>
-  </data>
-  <data name="titleDataGridViewTextBoxColumn.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="charsDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
-    <value>Chars</value>
-  </data>
-  <data name="charsDataGridViewTextBoxColumn.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="idDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
-    <value>Id</value>
-  </data>
-  <data name="idDataGridViewTextBoxColumn.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="usedDataGridViewCheckBoxColumn.HeaderText" xml:space="preserve">
-    <value>Used</value>
-  </data>
-  <data name="usedDataGridViewCheckBoxColumn.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="favoriteDataGridViewCheckBoxColumn.HeaderText" xml:space="preserve">
-    <value>Favorite</value>
-  </data>
-  <data name="favoriteDataGridViewCheckBoxColumn.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
   </data>
   <data name="imageSampleDataGridViewImageColumn.HeaderText" xml:space="preserve">
     <value>ImageSample</value>
@@ -572,7 +572,7 @@ Use special char % for marking any sequence of chars. For example filter "po%o" 
     <value>0</value>
   </data>
   <data name="tableLayoutPanelData.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
+    <value>Top, Bottom, Left, Right</value>
   </data>
   <data name="tableLayoutPanelData.ColumnCount" type="System.Int32, mscorlib">
     <value>1</value>
@@ -619,8 +619,35 @@ Use special char % for marking any sequence of chars. For example filter "po%o" 
   <data name="richTextBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
-  <data name="richTextBox.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Tahoma, 9pt</value>
+  <metadata name="contextMenuStripRtf.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>696, 16</value>
+  </metadata>
+  <data name="rtfMenuItemOpenLink.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="rtfMenuItemOpenLink.Size" type="System.Drawing.Size, System.Drawing">
+    <value>194, 22</value>
+  </data>
+  <data name="rtfMenuItemOpenLink.Text" xml:space="preserve">
+    <value>Open link (ALT + click)</value>
+  </data>
+  <data name="rtfMenuItemSelectAll.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Ctrl+A</value>
+  </data>
+  <data name="rtfMenuItemSelectAll.Size" type="System.Drawing.Size, System.Drawing">
+    <value>194, 22</value>
+  </data>
+  <data name="rtfMenuItemSelectAll.Text" xml:space="preserve">
+    <value>Select all</value>
+  </data>
+  <data name="contextMenuStripRtf.Size" type="System.Drawing.Size, System.Drawing">
+    <value>195, 48</value>
+  </data>
+  <data name="&gt;&gt;contextMenuStripRtf.Name" xml:space="preserve">
+    <value>contextMenuStripRtf</value>
+  </data>
+  <data name="&gt;&gt;contextMenuStripRtf.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="richTextBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>2, 2</value>
@@ -655,29 +682,29 @@ Use special char % for marking any sequence of chars. For example filter "po%o" 
   <metadata name="contextMenuStripHtml.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>528, 19</value>
   </metadata>
-  <data name="openLinkInBrowserToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>246, 22</value>
+  <data name="htmlMenuItemOpenLink.Size" type="System.Drawing.Size, System.Drawing">
+    <value>188, 22</value>
   </data>
-  <data name="openLinkInBrowserToolStripMenuItem.Text" xml:space="preserve">
-    <value>Open link in browser (ALT+click)</value>
+  <data name="htmlMenuItemOpenLink.Text" xml:space="preserve">
+    <value>Open link (ALT+click)</value>
   </data>
-  <data name="copyLinkAdressToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>246, 22</value>
+  <data name="htmlMenuItemCopyLinkAdress.Size" type="System.Drawing.Size, System.Drawing">
+    <value>188, 22</value>
   </data>
-  <data name="copyLinkAdressToolStripMenuItem.Text" xml:space="preserve">
+  <data name="htmlMenuItemCopyLinkAdress.Text" xml:space="preserve">
     <value>Copy link adress</value>
   </data>
-  <data name="selectAllToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+  <data name="htmlMenuItemSelectAll.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+A</value>
   </data>
-  <data name="selectAllToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>246, 22</value>
+  <data name="htmlMenuItemSelectAll.Size" type="System.Drawing.Size, System.Drawing">
+    <value>188, 22</value>
   </data>
-  <data name="selectAllToolStripMenuItem.Text" xml:space="preserve">
+  <data name="htmlMenuItemSelectAll.Text" xml:space="preserve">
     <value>Select all</value>
   </data>
   <data name="contextMenuStripHtml.Size" type="System.Drawing.Size, System.Drawing">
-    <value>247, 70</value>
+    <value>189, 70</value>
   </data>
   <data name="&gt;&gt;contextMenuStripHtml.Name" xml:space="preserve">
     <value>contextMenuStripHtml</value>
@@ -974,7 +1001,7 @@ Use special char % for marking any sequence of chars. For example filter "po%o" 
     <value>$this</value>
   </data>
   <data name="&gt;&gt;splitContainer1.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <metadata name="MainMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>1072, 17</value>
@@ -1317,7 +1344,7 @@ Could be overloaded by native formatting.</value>
     <value>$this</value>
   </data>
   <data name="&gt;&gt;MainMenu.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="toolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
     <value>92, 22</value>
@@ -2105,7 +2132,7 @@ Changes in temp file are not synchronized with clip!
     <value>$this</value>
   </data>
   <data name="&gt;&gt;toolStrip1.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <metadata name="cultureManager1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>557, 56</value>
@@ -2114,7 +2141,7 @@ Changes in temp file are not synchronized with clip!
     <value>True</value>
   </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>45</value>
+    <value>77</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
@@ -2663,6 +2690,84 @@ Changes in temp file are not synchronized with clip!
   <data name="$this.Text" xml:space="preserve">
     <value>Clip Angel</value>
   </data>
+  <data name="&gt;&gt;typeDataGridViewTextBoxColumn.Name" xml:space="preserve">
+    <value>typeDataGridViewTextBoxColumn</value>
+  </data>
+  <data name="&gt;&gt;typeDataGridViewTextBoxColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;titleDataGridViewTextBoxColumn.Name" xml:space="preserve">
+    <value>titleDataGridViewTextBoxColumn</value>
+  </data>
+  <data name="&gt;&gt;titleDataGridViewTextBoxColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;charsDataGridViewTextBoxColumn.Name" xml:space="preserve">
+    <value>charsDataGridViewTextBoxColumn</value>
+  </data>
+  <data name="&gt;&gt;charsDataGridViewTextBoxColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;idDataGridViewTextBoxColumn.Name" xml:space="preserve">
+    <value>idDataGridViewTextBoxColumn</value>
+  </data>
+  <data name="&gt;&gt;idDataGridViewTextBoxColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;usedDataGridViewCheckBoxColumn.Name" xml:space="preserve">
+    <value>usedDataGridViewCheckBoxColumn</value>
+  </data>
+  <data name="&gt;&gt;usedDataGridViewCheckBoxColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewCheckBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;favoriteDataGridViewCheckBoxColumn.Name" xml:space="preserve">
+    <value>favoriteDataGridViewCheckBoxColumn</value>
+  </data>
+  <data name="&gt;&gt;favoriteDataGridViewCheckBoxColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewCheckBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AppImage.Name" xml:space="preserve">
+    <value>AppImage</value>
+  </data>
+  <data name="&gt;&gt;AppImage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewImageColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TypeImg.Name" xml:space="preserve">
+    <value>TypeImg</value>
+  </data>
+  <data name="&gt;&gt;TypeImg.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewImageColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TitleSimple.Name" xml:space="preserve">
+    <value>TitleSimple</value>
+  </data>
+  <data name="&gt;&gt;TitleSimple.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ColumnTitle.Name" xml:space="preserve">
+    <value>ColumnTitle</value>
+  </data>
+  <data name="&gt;&gt;ColumnTitle.Type" xml:space="preserve">
+    <value>ClipAngel.DataGridViewRichTextBoxColumn, ClipAngel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;ImageSample.Name" xml:space="preserve">
+    <value>ImageSample</value>
+  </data>
+  <data name="&gt;&gt;ImageSample.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewImageColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;VisualWeight.Name" xml:space="preserve">
+    <value>VisualWeight</value>
+  </data>
+  <data name="&gt;&gt;VisualWeight.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;imageSampleDataGridViewImageColumn.Name" xml:space="preserve">
+    <value>imageSampleDataGridViewImageColumn</value>
+  </data>
+  <data name="&gt;&gt;imageSampleDataGridViewImageColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewImageColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;toolStripMenuItem2.Name" xml:space="preserve">
     <value>toolStripMenuItem2</value>
   </data>
@@ -2705,22 +2810,34 @@ Changes in temp file are not synchronized with clip!
   <data name="&gt;&gt;dbDataSet.Type" xml:space="preserve">
     <value>ClipAngel.dbDataSet, dbDataSet.Designer.cs.dll, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="&gt;&gt;openLinkInBrowserToolStripMenuItem.Name" xml:space="preserve">
-    <value>openLinkInBrowserToolStripMenuItem</value>
+  <data name="&gt;&gt;rtfMenuItemOpenLink.Name" xml:space="preserve">
+    <value>rtfMenuItemOpenLink</value>
   </data>
-  <data name="&gt;&gt;openLinkInBrowserToolStripMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;rtfMenuItemOpenLink.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;copyLinkAdressToolStripMenuItem.Name" xml:space="preserve">
-    <value>copyLinkAdressToolStripMenuItem</value>
+  <data name="&gt;&gt;rtfMenuItemSelectAll.Name" xml:space="preserve">
+    <value>rtfMenuItemSelectAll</value>
   </data>
-  <data name="&gt;&gt;copyLinkAdressToolStripMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;rtfMenuItemSelectAll.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;selectAllToolStripMenuItem.Name" xml:space="preserve">
-    <value>selectAllToolStripMenuItem</value>
+  <data name="&gt;&gt;htmlMenuItemOpenLink.Name" xml:space="preserve">
+    <value>htmlMenuItemOpenLink</value>
   </data>
-  <data name="&gt;&gt;selectAllToolStripMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;htmlMenuItemOpenLink.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;htmlMenuItemCopyLinkAdress.Name" xml:space="preserve">
+    <value>htmlMenuItemCopyLinkAdress</value>
+  </data>
+  <data name="&gt;&gt;htmlMenuItemCopyLinkAdress.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;htmlMenuItemSelectAll.Name" xml:space="preserve">
+    <value>htmlMenuItemSelectAll</value>
+  </data>
+  <data name="&gt;&gt;htmlMenuItemSelectAll.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;stripLabelPosition.Name" xml:space="preserve">
@@ -3155,16 +3272,34 @@ Changes in temp file are not synchronized with clip!
   <data name="&gt;&gt;tableAdapterManager.Type" xml:space="preserve">
     <value>ClipAngel.dbDataSetTableAdapters.TableAdapterManager, dbDataSet.Designer.cs.dll, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
+  <data name="&gt;&gt;dataGridViewImageColumn1.Name" xml:space="preserve">
+    <value>dataGridViewImageColumn1</value>
+  </data>
+  <data name="&gt;&gt;dataGridViewImageColumn1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewImageColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;dataGridViewImageColumn2.Name" xml:space="preserve">
     <value>dataGridViewImageColumn2</value>
   </data>
   <data name="&gt;&gt;dataGridViewImageColumn2.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewImageColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;dataGridViewRichTextBoxColumn1.Name" xml:space="preserve">
+    <value>dataGridViewRichTextBoxColumn1</value>
+  </data>
+  <data name="&gt;&gt;dataGridViewRichTextBoxColumn1.Type" xml:space="preserve">
+    <value>ClipAngel.DataGridViewRichTextBoxColumn, ClipAngel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
   <data name="&gt;&gt;dataGridViewImageColumn3.Name" xml:space="preserve">
     <value>dataGridViewImageColumn3</value>
   </data>
   <data name="&gt;&gt;dataGridViewImageColumn3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewImageColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dataGridViewImageColumn4.Name" xml:space="preserve">
+    <value>dataGridViewImageColumn4</value>
+  </data>
+  <data name="&gt;&gt;dataGridViewImageColumn4.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewImageColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;dataGridViewRichTextBoxColumn2.Name" xml:space="preserve">
@@ -3173,94 +3308,10 @@ Changes in temp file are not synchronized with clip!
   <data name="&gt;&gt;dataGridViewRichTextBoxColumn2.Type" xml:space="preserve">
     <value>ClipAngel.DataGridViewRichTextBoxColumn, ClipAngel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="&gt;&gt;dataGridViewImageColumn4.Name" xml:space="preserve">
-    <value>dataGridViewImageColumn4</value>
-  </data>
-  <data name="&gt;&gt;dataGridViewImageColumn4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewImageColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;dataGridViewImageColumn5.Name" xml:space="preserve">
     <value>dataGridViewImageColumn5</value>
   </data>
   <data name="&gt;&gt;dataGridViewImageColumn5.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewImageColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;AppImage.Name" xml:space="preserve">
-    <value>AppImage</value>
-  </data>
-  <data name="&gt;&gt;AppImage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewImageColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;TypeImg.Name" xml:space="preserve">
-    <value>TypeImg</value>
-  </data>
-  <data name="&gt;&gt;TypeImg.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewImageColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;TitleSimple.Name" xml:space="preserve">
-    <value>TitleSimple</value>
-  </data>
-  <data name="&gt;&gt;TitleSimple.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ColumnTitle.Name" xml:space="preserve">
-    <value>ColumnTitle</value>
-  </data>
-  <data name="&gt;&gt;ColumnTitle.Type" xml:space="preserve">
-    <value>ClipAngel.DataGridViewRichTextBoxColumn, ClipAngel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;ImageSample.Name" xml:space="preserve">
-    <value>ImageSample</value>
-  </data>
-  <data name="&gt;&gt;ImageSample.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewImageColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;VisualWeight.Name" xml:space="preserve">
-    <value>VisualWeight</value>
-  </data>
-  <data name="&gt;&gt;VisualWeight.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;typeDataGridViewTextBoxColumn.Name" xml:space="preserve">
-    <value>typeDataGridViewTextBoxColumn</value>
-  </data>
-  <data name="&gt;&gt;typeDataGridViewTextBoxColumn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;titleDataGridViewTextBoxColumn.Name" xml:space="preserve">
-    <value>titleDataGridViewTextBoxColumn</value>
-  </data>
-  <data name="&gt;&gt;titleDataGridViewTextBoxColumn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;charsDataGridViewTextBoxColumn.Name" xml:space="preserve">
-    <value>charsDataGridViewTextBoxColumn</value>
-  </data>
-  <data name="&gt;&gt;charsDataGridViewTextBoxColumn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;idDataGridViewTextBoxColumn.Name" xml:space="preserve">
-    <value>idDataGridViewTextBoxColumn</value>
-  </data>
-  <data name="&gt;&gt;idDataGridViewTextBoxColumn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;usedDataGridViewCheckBoxColumn.Name" xml:space="preserve">
-    <value>usedDataGridViewCheckBoxColumn</value>
-  </data>
-  <data name="&gt;&gt;usedDataGridViewCheckBoxColumn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewCheckBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;favoriteDataGridViewCheckBoxColumn.Name" xml:space="preserve">
-    <value>favoriteDataGridViewCheckBoxColumn</value>
-  </data>
-  <data name="&gt;&gt;favoriteDataGridViewCheckBoxColumn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewCheckBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;imageSampleDataGridViewImageColumn.Name" xml:space="preserve">
-    <value>imageSampleDataGridViewImageColumn</value>
-  </data>
-  <data name="&gt;&gt;imageSampleDataGridViewImageColumn.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewImageColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
@@ -3279,22 +3330,37 @@ Changes in temp file are not synchronized with clip!
     <value>355, 20</value>
   </metadata>
   <metadata name="clipsTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>752, 17</value>
+    <value>1087, 57</value>
   </metadata>
   <metadata name="tableAdapterManager.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>901, 17</value>
+    <value>1236, 57</value>
   </metadata>
+  <data name="dataGridViewImageColumn1.HeaderText" xml:space="preserve">
+    <value>AppImage</value>
+  </data>
+  <data name="dataGridViewImageColumn1.MinimumWidth" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="dataGridViewImageColumn1.Width" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
   <data name="dataGridViewImageColumn2.HeaderText" xml:space="preserve">
     <value>AppImage</value>
+  </data>
+  <data name="dataGridViewImageColumn2.Width" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="dataGridViewRichTextBoxColumn1.HeaderText" xml:space="preserve">
+    <value>ColumnTitle</value>
   </data>
   <data name="dataGridViewImageColumn3.HeaderText" xml:space="preserve">
     <value>TypeImg</value>
   </data>
-  <data name="dataGridViewRichTextBoxColumn2.HeaderText" xml:space="preserve">
-    <value>ColumnTitle</value>
-  </data>
   <data name="dataGridViewImageColumn4.HeaderText" xml:space="preserve">
     <value>ImageSample</value>
+  </data>
+  <data name="dataGridViewRichTextBoxColumn2.HeaderText" xml:space="preserve">
+    <value>ColumnTitle</value>
   </data>
   <data name="dataGridViewImageColumn5.HeaderText" xml:space="preserve">
     <value>VisualWeight</value>
