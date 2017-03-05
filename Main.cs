@@ -550,7 +550,7 @@ namespace ClipAngel
                 clipType = RowReader["type"].ToString();
                 string fullText = RowReader["Text"].ToString();
                 string fullRTF = RowReader["richText"].ToString();
-                string htmlText = RowReader["htmlText"].ToString();
+                string htmlText = GetHtmlFromHtmlClipText();
                 useNativeTextFormatting = true
                                                && Properties.Settings.Default.ShowNativeTextFormatting
                                                && (clipType == "html" || clipType == "rtf");
@@ -613,7 +613,7 @@ namespace ClipAngel
                             }
                             htmlTextBox.Parent.Enabled = false; // Prevent stealing focus 
                             htmlDoc = htmlTextBox.Document.DomDocument as mshtml.IHTMLDocument2;
-                            htmlDoc.write("");
+                            htmlDoc.write(htmlText);
                             htmlDoc.close();
 
                             mshtml.IHTMLBodyElement body = htmlDoc.body as mshtml.IHTMLBodyElement;
@@ -630,9 +630,6 @@ namespace ClipAngel
                                 //iEvent.onselectionchange += new mshtml.HTMLDocumentEvents2_onselectionchangeEventHandler(htmlTextBoxDocumentSelectionChange);
                                 htmlInitialized = true;
                             }
-                            mshtml.IHTMLTxtRange range = body.createTextRange();
-                            htmlText = htmlText.Substring(htmlText.IndexOf("<html", StringComparison.OrdinalIgnoreCase));
-                            range.pasteHTML(htmlText);
                             htmlTextBox.Parent.Enabled = true;
                         }
                         else
@@ -742,6 +739,15 @@ namespace ClipAngel
                 richTextBox.Focus();
             tableLayoutPanelData.ResumeLayout();
         }
+
+        private string GetHtmlFromHtmlClipText()
+        {
+            string htmlClipText = RowReader["htmlText"].ToString();
+            if (String.IsNullOrEmpty(htmlClipText))
+                return "";
+            return htmlClipText.Substring(htmlClipText.IndexOf("<html", StringComparison.OrdinalIgnoreCase));
+        }
+
         private void RestoreTextSelection(int NewSelectionStart = -1, int NewSelectionLength = -1)
         {
             if (NewSelectionStart == -1)
@@ -1182,7 +1188,7 @@ namespace ClipAngel
             byte[] binaryBuffer = new byte[0];
             byte[] imageSampleBuffer = new byte[0];
             // http://www.cyberforum.ru/ado-net/thread832314.html
-            if (iData.GetDataPresent(DataFormats.Bitmap))
+            if (iData.GetDataPresent(DataFormats.Bitmap) && htmlText == "") // html text check to prevent crush from Excel clip
             {
                 clipType = "img";
                 Bitmap image = iData.GetData(DataFormats.Bitmap) as Bitmap;
@@ -3187,17 +3193,16 @@ namespace ClipAngel
                 File.WriteAllText(tempFile, RowReader["text"].ToString(), Encoding.Default);
                 deleteAfterOpen = true;
             }
-            else if (type == "rtf" || type == "html")
+            else if (type == "rtf")
             {
                 RichTextBox rtb = new RichTextBox();
-                if (type == "rtf")
-                    rtb.Rtf = RowReader["richText"].ToString();
-                else
-                {
-                    CopyClipToClipboard();
-                    rtb.Paste();
-                }
+                rtb.Rtf = RowReader["richText"].ToString();
                 rtb.SaveFile(tempFile);
+                deleteAfterOpen = true;
+            }
+            else if (type == "html")
+            {
+                File.WriteAllText(tempFile, GetHtmlFromHtmlClipText(), Encoding.Default);
                 deleteAfterOpen = true;
             }
             else if (type == "img")
@@ -3219,8 +3224,8 @@ namespace ClipAngel
                     Process.Start(tempFile);
                     if (deleteAfterOpen)
                     {
-                        Thread.Sleep(500); // to be almost sure that file has been opened
-                        File.Delete(tempFile);
+                        //Thread.Sleep(1000); // to be almost sure that file has been opened
+                        //File.Delete(tempFile);
                     }
                 }
                 catch
@@ -3237,7 +3242,7 @@ namespace ClipAngel
             if (type == "text" || type == "file")
                 extension = "txt";
             else if (type == "rtf" || type == "html")
-                extension = "rtf";
+                extension = type;
             else if (type == "img")
                 extension = "bmp";
             else
@@ -3609,8 +3614,9 @@ namespace ClipAngel
             if (!String.IsNullOrEmpty(range.text))
                 selectionStart = range.text.Length;
             string innerText = htmlDoc.body.innerText;
-            if (selectionStart > innerText.Length)
-                selectionStart = innerText.Length;
+            if (!String.IsNullOrEmpty(innerText))
+                if (selectionStart > innerText.Length)
+                    selectionStart = innerText.Length;
             UpdateTextPositionIndicator(0, 0);
         }
 

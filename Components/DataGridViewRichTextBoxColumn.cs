@@ -155,6 +155,7 @@ namespace ClipAngel
             Image img = GetRtfImage(rowIndex, value, base.Selected, cellStyle);
             int textWitdh = cellBounds.Right - cellBounds.Left;
             int horizontalSpaceTextImage = 3;
+            int verticalSpace = 2; // 2 for 9pt font, 3 for 8pt font
             
             // TODO customize
             DataGridViewCell SampleCell = DataGridView.Rows[rowIndex].Cells["imageSample"];
@@ -165,7 +166,7 @@ namespace ClipAngel
             if (img != null)
             {
                 Rectangle rect = new Rectangle(0, 0, textWitdh - horizontalSpaceTextImage, cellBounds.Bottom - 2);
-                graphics.DrawImage(img, cellBounds.Left + 3, cellBounds.Top + 3, rect, GraphicsUnit.Pixel);
+                graphics.DrawImage(img, cellBounds.Left + 3, cellBounds.Top + verticalSpace, rect, GraphicsUnit.Pixel);
             }
 
             if (SampleCell.Value != null)

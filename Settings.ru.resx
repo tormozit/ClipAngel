@@ -259,7 +259,7 @@
     <value />
   </data>
   <data name="textBoxDefaultFont.ToolTip" xml:space="preserve">
-    <value>Шрифт списка клипов и по умолчанию для текста клипа</value>
+    <value>Шрифт списка клипов и по умолчанию для текста клипа. Двойной клик изменяет его.</value>
   </data>
   <data name="tableLayoutPanel1.ToolTip" xml:space="preserve">
     <value />
