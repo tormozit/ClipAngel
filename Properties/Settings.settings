@@ -62,5 +62,8 @@
     <Setting Name="Font" Type="System.Drawing.Font" Scope="User">
       <Value Profile="(Default)">Segoe UI, 9pt</Value>
     </Setting>
+    <Setting Name="HotKeyShowFavorites" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Alt+B</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

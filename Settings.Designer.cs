@@ -48,6 +48,8 @@
             this.checkBoxAutoCheckUpdate = new System.Windows.Forms.CheckBox();
             this.checkBoxMoveCopiedClipToTop = new System.Windows.Forms.CheckBox();
             this.checkBoxWindowAutoPosition = new System.Windows.Forms.CheckBox();
+            this.GlobalHotkeyShowFavorites = new System.Windows.Forms.TextBox();
+            this.textBoxDefaultFont = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.textBoxUserSettingsPath = new System.Windows.Forms.TextBox();
             this.textBoxDatabaseSize = new System.Windows.Forms.TextBox();
@@ -58,8 +60,11 @@
             this.checkBoxAutostart = new System.Windows.Forms.CheckBox();
             this.checkBoxShowApplicationIconColumn = new System.Windows.Forms.CheckBox();
             this.checkBoxClearFiltersOnClose = new System.Windows.Forms.CheckBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.cultureManager1 = new Infralution.Localization.CultureManager(this.components);
+            this.fontDialog1 = new System.Windows.Forms.FontDialog();
             buttonReset = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -87,7 +92,7 @@
             resources.ApplyResources(this.buttonOK, "buttonOK");
             this.buttonOK.Name = "buttonOK";
             this.buttonOK.UseVisualStyleBackColor = true;
-            this.buttonOK.Click += new System.EventHandler(this.button1_Click);
+            this.buttonOK.Click += new System.EventHandler(this.buttonOK_Click);
             // 
             // GlobalHotkeyShow
             // 
@@ -180,6 +185,20 @@
             this.checkBoxWindowAutoPosition.Name = "checkBoxWindowAutoPosition";
             this.toolTip1.SetToolTip(this.checkBoxWindowAutoPosition, resources.GetString("checkBoxWindowAutoPosition.ToolTip"));
             // 
+            // GlobalHotkeyShowFavorites
+            // 
+            resources.ApplyResources(this.GlobalHotkeyShowFavorites, "GlobalHotkeyShowFavorites");
+            this.GlobalHotkeyShowFavorites.Name = "GlobalHotkeyShowFavorites";
+            this.toolTip1.SetToolTip(this.GlobalHotkeyShowFavorites, resources.GetString("GlobalHotkeyShowFavorites.ToolTip"));
+            this.GlobalHotkeyShowFavorites.KeyDown += new System.Windows.Forms.KeyEventHandler(this.HotkeyTextBox_KeyDown);
+            // 
+            // textBoxDefaultFont
+            // 
+            resources.ApplyResources(this.textBoxDefaultFont, "textBoxDefaultFont");
+            this.textBoxDefaultFont.Name = "textBoxDefaultFont";
+            this.toolTip1.SetToolTip(this.textBoxDefaultFont, resources.GetString("textBoxDefaultFont.ToolTip"));
+            this.textBoxDefaultFont.DoubleClick += new System.EventHandler(this.DefaultFont_DoubleClick);
+            // 
             // label6
             // 
             resources.ApplyResources(this.label6, "label6");
@@ -204,26 +223,30 @@
             this.tableLayoutPanel1.Controls.Add(this.textBoxUserSettingsPath, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.label4, 0, 5);
             this.tableLayoutPanel1.Controls.Add(this.label3, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.GlobalHotkeyIncrementalPaste, 1, 9);
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.GlobalHotkeyShow, 1, 6);
+            this.tableLayoutPanel1.Controls.Add(this.label6, 0, 9);
+            this.tableLayoutPanel1.Controls.Add(this.GlobalHotkeyShow, 1, 7);
             this.tableLayoutPanel1.Controls.Add(this.MaxClipSizeKB, 1, 5);
             this.tableLayoutPanel1.Controls.Add(this.NumberOfClips, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.HistoryDepthNumber, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.Language, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.label5, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.label2, 0, 6);
-            this.tableLayoutPanel1.Controls.Add(this.label6, 0, 7);
-            this.tableLayoutPanel1.Controls.Add(this.GlobalHotkeyIncrementalPaste, 1, 7);
+            this.tableLayoutPanel1.Controls.Add(this.label2, 0, 7);
             this.tableLayoutPanel1.Controls.Add(this.label7, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.label8, 0, 4);
-            this.tableLayoutPanel1.Controls.Add(this.checkBoxAutostart, 0, 8);
-            this.tableLayoutPanel1.Controls.Add(this.checkBoxAutoCheckUpdate, 0, 9);
-            this.tableLayoutPanel1.Controls.Add(this.checkBoxShowSizeColumn, 0, 11);
-            this.tableLayoutPanel1.Controls.Add(this.checkBoxShowApplicationIconColumn, 0, 12);
-            this.tableLayoutPanel1.Controls.Add(this.checkBoxWindowAutoPosition, 0, 10);
-            this.tableLayoutPanel1.Controls.Add(this.checkBoxClipListSimpleDraw, 0, 13);
-            this.tableLayoutPanel1.Controls.Add(this.checkBoxMoveCopiedClipToTop, 0, 14);
-            this.tableLayoutPanel1.Controls.Add(this.checkBoxClearFiltersOnClose, 0, 15);
+            this.tableLayoutPanel1.Controls.Add(this.checkBoxAutostart, 0, 10);
+            this.tableLayoutPanel1.Controls.Add(this.checkBoxAutoCheckUpdate, 0, 11);
+            this.tableLayoutPanel1.Controls.Add(this.checkBoxShowSizeColumn, 0, 13);
+            this.tableLayoutPanel1.Controls.Add(this.checkBoxShowApplicationIconColumn, 0, 14);
+            this.tableLayoutPanel1.Controls.Add(this.checkBoxWindowAutoPosition, 0, 12);
+            this.tableLayoutPanel1.Controls.Add(this.checkBoxClipListSimpleDraw, 0, 15);
+            this.tableLayoutPanel1.Controls.Add(this.checkBoxMoveCopiedClipToTop, 0, 16);
+            this.tableLayoutPanel1.Controls.Add(this.checkBoxClearFiltersOnClose, 0, 17);
+            this.tableLayoutPanel1.Controls.Add(this.label9, 0, 8);
+            this.tableLayoutPanel1.Controls.Add(this.GlobalHotkeyShowFavorites, 1, 8);
+            this.tableLayoutPanel1.Controls.Add(this.label10, 0, 6);
+            this.tableLayoutPanel1.Controls.Add(this.textBoxDefaultFont, 1, 6);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             // 
             // label5
@@ -262,6 +285,16 @@
             this.checkBoxClearFiltersOnClose.Name = "checkBoxClearFiltersOnClose";
             this.checkBoxClearFiltersOnClose.UseVisualStyleBackColor = true;
             this.checkBoxClearFiltersOnClose.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged_1);
+            // 
+            // label9
+            // 
+            resources.ApplyResources(this.label9, "label9");
+            this.label9.Name = "label9";
+            // 
+            // label10
+            // 
+            resources.ApplyResources(this.label10, "label10");
+            this.label10.Name = "label10";
             // 
             // buttonCancel
             // 
@@ -326,5 +359,10 @@
         private System.Windows.Forms.CheckBox checkBoxAutoCheckUpdate;
         private System.Windows.Forms.CheckBox checkBoxClearFiltersOnClose;
         private System.Windows.Forms.CheckBox checkBoxShowApplicationIconColumn;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox GlobalHotkeyShowFavorites;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox textBoxDefaultFont;
+        private System.Windows.Forms.FontDialog fontDialog1;
     }
 }

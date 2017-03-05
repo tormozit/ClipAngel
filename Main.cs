@@ -158,6 +158,8 @@ namespace ClipAngel
             Keys Key;
             if (ReadHotkeyFromText(Properties.Settings.Default.HotkeyShow, out Modifiers, out Key))
                 keyboardHook.RegisterHotKey(Modifiers, Key);
+            if (ReadHotkeyFromText(Properties.Settings.Default.HotKeyShowFavorites, out Modifiers, out Key))
+                keyboardHook.RegisterHotKey(Modifiers, Key);
             if (ReadHotkeyFromText(Properties.Settings.Default.HotkeyIncrementalPaste, out Modifiers, out Key))
                 keyboardHook.RegisterHotKey(Modifiers, Key);
         }
@@ -191,6 +193,16 @@ namespace ClipAngel
                 else
                 {
                     ShowForPaste();
+                    dataGridView.Focus();
+                }
+            }
+            else if (hotkeyTitle == Properties.Settings.Default.HotKeyShowFavorites)
+            {
+                if (this.ContainsFocus && this.Top >= 0)
+                    this.Close();
+                else
+                {
+                    ShowForPaste(true);
                     dataGridView.Focus();
                 }
             }
@@ -355,6 +367,26 @@ namespace ClipAngel
             this.ActiveControl = dataGridView;
 
             SetProp(this.Handle, IsMainPropName, new IntPtr(1)) ;
+
+            BindingList<ListItemNameText> _comboItemsTypes = new BindingList<ListItemNameText>
+            {
+                new ListItemNameText {Name = "allTypes"},
+                new ListItemNameText {Name = "text"},
+                new ListItemNameText {Name = "file"},
+                new ListItemNameText {Name = "img"}
+            };
+            TypeFilter.DataSource = _comboItemsTypes;
+            TypeFilter.DisplayMember = "Text";
+            TypeFilter.ValueMember = "Name";
+
+            BindingList<ListItemNameText> _comboItemsMarks = new BindingList<ListItemNameText>();
+            _comboItemsMarks.Add(new ListItemNameText { Name = "allMarks" });
+            _comboItemsMarks.Add(new ListItemNameText { Name = "used" });
+            _comboItemsMarks.Add(new ListItemNameText { Name = "favorite" });
+            MarkFilter.DataSource = _comboItemsMarks;
+            MarkFilter.DisplayMember = "Text";
+            MarkFilter.ValueMember = "Name";
+
             LoadSettings();
             (dataGridView.Columns["AppImage"] as DataGridViewImageColumn).DefaultCellStyle.NullValue = null;
             TypeFilter.SelectedIndex = 0;
@@ -2057,8 +2089,10 @@ namespace ClipAngel
             public int bottom;
         }
 
-        private void ShowForPaste()
+        private void ShowForPaste(bool onlyFavorites = false)
         {
+            if (onlyFavorites)
+                MarkFilter.SelectedValue = "favorite";
             //Stopwatch sw = new Stopwatch();
             //sw.Start();
             this.SuspendLayout();
@@ -2615,24 +2649,24 @@ namespace ClipAngel
             cultureManager1.UICulture = Thread.CurrentThread.CurrentUICulture;
 
             UpdateWindowTitle();
-            BindingList<ListItemNameText> _comboItemsTypes = new BindingList<ListItemNameText>
-            {
-                new ListItemNameText {Name = "allTypes", Text = CurrentLangResourceManager.GetString("allTypes")},
-                new ListItemNameText {Name = "text", Text = CurrentLangResourceManager.GetString("text")},
-                new ListItemNameText {Name = "file", Text = CurrentLangResourceManager.GetString("file")},
-                new ListItemNameText {Name = "img", Text = CurrentLangResourceManager.GetString("img")}
-            };
-            TypeFilter.DataSource = _comboItemsTypes;
-            TypeFilter.DisplayMember = "Text";
-            TypeFilter.ValueMember = "Name";
 
-            BindingList<ListItemNameText> _comboItemsMarks = new BindingList<ListItemNameText>();
-            _comboItemsMarks.Add(new ListItemNameText { Name = "allMarks", Text = CurrentLangResourceManager.GetString("allMarks") });
-            _comboItemsMarks.Add(new ListItemNameText { Name = "used", Text = CurrentLangResourceManager.GetString("used") });
-            _comboItemsMarks.Add(new ListItemNameText { Name = "favorite", Text = CurrentLangResourceManager.GetString("favorite") });
-            MarkFilter.DataSource = _comboItemsMarks;
+            BindingList<ListItemNameText> comboItemsTypes = (BindingList < ListItemNameText >) TypeFilter.DataSource;
+            foreach (ListItemNameText item in comboItemsTypes)
+            {
+                item.Text = CurrentLangResourceManager.GetString(item.Name);
+            }
+            // To refresh text in list
+            TypeFilter.DisplayMember = "";
+            TypeFilter.DisplayMember = "Text";
+
+            BindingList<ListItemNameText> comboItemsMarks = (BindingList<ListItemNameText>) MarkFilter.DataSource;
+            foreach (ListItemNameText item in comboItemsMarks)
+            {
+                item.Text = CurrentLangResourceManager.GetString(item.Name);
+            }
+            // To refresh text in list
+            MarkFilter.DisplayMember = "";
             MarkFilter.DisplayMember = "Text";
-            MarkFilter.ValueMember = "Name";
 
             dataGridView.RowsDefaultCellStyle.Font = Properties.Settings.Default.Font;
             ChooseTitleColumnDraw();

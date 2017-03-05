@@ -261,5 +261,17 @@ namespace ClipAngel.Properties {
                 this["Font"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Alt+B")]
+        public string HotKeyShowFavorites {
+            get {
+                return ((string)(this["HotKeyShowFavorites"]));
+            }
+            set {
+                this["HotKeyShowFavorites"] = value;
+            }
+        }
     }
 }

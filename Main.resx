@@ -1081,14 +1081,14 @@ Use special char % for marking any sequence of chars. For example filter "po%o" 
   <data name="toolStripMenuItem5.Size" type="System.Drawing.Size, System.Drawing">
     <value>226, 6</value>
   </data>
-  <data name="showAllMarksToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+  <data name="showOnlyFavoriteToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+1</value>
   </data>
-  <data name="showAllMarksToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="showOnlyFavoriteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>229, 22</value>
   </data>
-  <data name="showAllMarksToolStripMenuItem.Text" xml:space="preserve">
-    <value>Show all marks</value>
+  <data name="showOnlyFavoriteToolStripMenuItem.Text" xml:space="preserve">
+    <value>Show only favorite</value>
   </data>
   <data name="showOnlyUsedToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+2</value>
@@ -1099,14 +1099,14 @@ Use special char % for marking any sequence of chars. For example filter "po%o" 
   <data name="showOnlyUsedToolStripMenuItem.Text" xml:space="preserve">
     <value>Show only used</value>
   </data>
-  <data name="showOnlyFavoriteToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+  <data name="showAllMarksToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+3</value>
   </data>
-  <data name="showOnlyFavoriteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="showAllMarksToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>229, 22</value>
   </data>
-  <data name="showOnlyFavoriteToolStripMenuItem.Text" xml:space="preserve">
-    <value>Show only favorite</value>
+  <data name="showAllMarksToolStripMenuItem.Text" xml:space="preserve">
+    <value>Show all marks</value>
   </data>
   <data name="listToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>37, 20</value>

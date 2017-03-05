@@ -929,9 +929,9 @@ namespace ClipAngel
             this.moveUpToolStripMenuItem,
             this.moveDownToolStripMenuItem,
             this.toolStripMenuItem5,
-            this.showAllMarksToolStripMenuItem,
+            this.showOnlyFavoriteToolStripMenuItem,
             this.showOnlyUsedToolStripMenuItem,
-            this.showOnlyFavoriteToolStripMenuItem});
+            this.showAllMarksToolStripMenuItem});
             this.listToolStripMenuItem.Name = "listToolStripMenuItem";
             resources.ApplyResources(this.listToolStripMenuItem, "listToolStripMenuItem");
             // 
