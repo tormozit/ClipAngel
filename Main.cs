@@ -606,11 +606,11 @@ namespace ClipAngel
                             && !String.IsNullOrEmpty(htmlText);
                         if (htmlMode)
                         {
-                            while (this.htmlTextBox.ReadyState != WebBrowserReadyState.Complete)
-                            {
-                                Application.DoEvents();
-                                Thread.Sleep(5);
-                            }
+                            //while (this.htmlTextBox.ReadyState != WebBrowserReadyState.Complete)
+                            //{
+                            //    Application.DoEvents();
+                            //    Thread.Sleep(5);
+                            //}
                             htmlTextBox.Parent.Enabled = false; // Prevent stealing focus 
                             htmlDoc = htmlTextBox.Document.DomDocument as mshtml.IHTMLDocument2;
                             htmlDoc.write(htmlText);
