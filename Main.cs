@@ -170,11 +170,11 @@ namespace ClipAngel
             Key = 0;
             if (HotkeyText == "" || HotkeyText == "No")
                 return false;
-            string[] Frags = HotkeyText.Split(new[] { " + " }, StringSplitOptions.None);
+            string[] Frags = HotkeyText.Split(new[] { "+" }, StringSplitOptions.None);
             for (int i = 0; i < Frags.Length - 1; i++)
             {
                 EnumModifierKeys Modifier = 0;
-                Enum.TryParse(Frags[i], out Modifier);
+                Enum.TryParse(Frags[i].Trim(), true, out Modifier);
                 Modifiers |= Modifier;
             }
             Enum.TryParse(Frags[Frags.Length - 1], out Key);
