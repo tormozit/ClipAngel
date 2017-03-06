@@ -991,7 +991,7 @@ namespace ClipAngel
 
         private void ClearFilter(int CurrentClipID = 0)
         {
-            if (!filterOn) 
+            if (!filterOn && CurrentClipID == 0) 
                 return;
             AllowFilterProcessing = false;
             comboBoxFilter.Text = "";
