@@ -95,6 +95,9 @@ namespace ClipAngel
         [DllImport("dwmapi", PreserveSig = true)]
         static extern int DwmSetWindowAttribute(IntPtr hWnd, int attr, ref int value, int attrLen);
 
+        /// <summary>
+        /// Tried to disable animation but failed
+        /// </summary>
         //protected override CreateParams CreateParams
         //{
         //    get
@@ -107,7 +110,7 @@ namespace ClipAngel
 
         public Main()
         {
-            //// Disable window animation on minimize and restore
+            //// Disable window animation on minimize and restore. Failed
             //const int DWMWA_TRANSITIONS_FORCEDISABLED = 3;
             //int value = 1;  // TRUE to disable
             //DwmSetWindowAttribute(this.Handle, DWMWA_TRANSITIONS_FORCEDISABLED, ref value, 4);
@@ -232,14 +235,18 @@ namespace ClipAngel
         private const int SC_MINIMIZE = 0xf020;
         protected override void WndProc(ref Message m)
         {
-            if (m.Msg == WM_SYSCOMMAND)
+            if (Properties.Settings.Default.FastWindowShow)
             {
-                if (m.WParam.ToInt32() == SC_MINIMIZE) // TODO catch MinimizeAll command if it is possible
+                if (m.Msg == WM_SYSCOMMAND)
                 {
-                    m.Result = IntPtr.Zero;
-                    Close();
-                    return;
+                    if (m.WParam.ToInt32() == SC_MINIMIZE) // TODO catch MinimizeAll command if it is possible
+                    {
+                        m.Result = IntPtr.Zero;
+                        Close();
+                        return;
+                    }
                 }
+
             }
             switch ((Msgs)m.Msg)
             {
@@ -354,6 +361,7 @@ namespace ClipAngel
             
             htmlTextBox.Navigate("about:blank");
             htmlTextBox.Document.ExecCommand("EditMode", false, null);
+            //Properties.Settings.Default.FastWindowShow = false; // for debug
 
             // Antiflicker double buffering
             // http://stackoverflow.com/questions/76993/how-to-double-buffer-net-controls-on-a-form
@@ -913,6 +921,7 @@ namespace ClipAngel
 
             }
             allowRowLoad = false;
+            filterOn = false;
             string sqlFilter = "1 = 1";
             string filterValue = "";
             if (filterText != "")
@@ -1023,15 +1032,21 @@ namespace ClipAngel
             if (!AllowFormClose)
             {
                 //this.SuspendLayout();
-                //Hide();
-                //this.ShowInTaskbar = false;
-                bool lastActSet = false;
-                if (lastActiveWindow != null)
-                    lastActSet = SetForegroundWindow(lastActiveWindow);
-                if (!lastActSet)
-                    //SetForegroundWindow(IntPtr.Zero); // This way focus was not lost
-                    SetActiveWindow(IntPtr.Zero);
-                this.Top = -this.Height;
+                if (Properties.Settings.Default.FastWindowShow)
+                {
+                    bool lastActSet = false;
+                    if (lastActiveWindow != null)
+                        lastActSet = SetForegroundWindow(lastActiveWindow);
+                    if (!lastActSet)
+                        //SetForegroundWindow(IntPtr.Zero); // This way focus was not lost
+                        SetActiveWindow(IntPtr.Zero);
+                    this.Top = -this.Height;
+                }
+                else
+                {
+                    this.Hide();
+                    this.ShowInTaskbar = false;
+                }
                 e.Cancel = true;
                 if (Properties.Settings.Default.ClearFiltersOnClose)
                     ClearFilter();
@@ -2039,13 +2054,16 @@ namespace ClipAngel
 
         private void Main_Deactivate(object sender, EventArgs e)
         {
-            //if (this.WindowState == FormWindowState.Minimized)
-            //{
-            //    this.ShowInTaskbar = false;
-            //    //notifyIcon.Visible = true;
-            //}
-            if (this.Top >= 0)
-                factualTop = this.Top;
+            if (Properties.Settings.Default.FastWindowShow)
+            {
+                //if (this.WindowState == FormWindowState.Minimized)
+                //{
+                //    this.ShowInTaskbar = false;
+                //    //notifyIcon.Visible = true;
+                //}
+                if (this.Top >= 0)
+                    factualTop = this.Top;
+            }
         }
 
         private void notifyIcon_MouseClick(object sender, MouseEventArgs e)
@@ -2094,6 +2112,8 @@ namespace ClipAngel
             public int right;
             public int bottom;
         }
+        [DllImport("user32.dll", SetLastError = true)]
+        internal static extern bool MoveWindow(IntPtr hwnd, int X, int Y, int nWidth, int nHeight, bool bRepaint);
 
         private void ShowForPaste(bool onlyFavorites = false)
         {
@@ -2103,8 +2123,9 @@ namespace ClipAngel
             //sw.Start();
             this.SuspendLayout();
 
+            int newX = -1;
+            int newY = -1;
             //AutoGotoLastRow = Properties.Settings.Default.SelectTopClipOnShow;
-            RestoreWindowIfMinimized();
             if (Properties.Settings.Default.WindowAutoPosition)
             {
                 // https://www.codeproject.com/Articles/34520/Getting-Caret-Position-Inside-Any-Application
@@ -2128,8 +2149,8 @@ namespace ClipAngel
                     if (point.Y > 0)
 	                {
                         activeRect = guiInfo.rcCaret;
-                        this.Left = Math.Min(activeRect.right + point.X, SystemInformation.VirtualScreen.Width - this.Width);
-                        this.Top = Math.Min(activeRect.bottom + point.Y + 1, SystemInformation.VirtualScreen.Height - this.Height - 30);
+                        newX = Math.Min(activeRect.right + point.X, SystemInformation.VirtualScreen.Width - this.Width);
+                        newY = Math.Min(activeRect.bottom + point.Y + 1, SystemInformation.VirtualScreen.Height - this.Height - 30);
                     }
                     else
                     {
@@ -2140,33 +2161,53 @@ namespace ClipAngel
                             baseWindow = hWindow;
                         ClientToScreen(baseWindow, out point);
                         GetWindowRect(baseWindow, out activeRect);
-                        this.Left = Math.Max(0, Math.Min((activeRect.right - activeRect.left - this.Width) / 2 + point.X, SystemInformation.VirtualScreen.Width - this.Width));
-                        this.Top = Math.Max(0, Math.Min((activeRect.bottom - activeRect.top - this.Height) / 2 + point.Y, SystemInformation.VirtualScreen.Height - this.Height - 30));
+                        newX = Math.Max(0, Math.Min((activeRect.right - activeRect.left - this.Width) / 2 + point.X, SystemInformation.VirtualScreen.Width - this.Width));
+                        newY = Math.Max(0, Math.Min((activeRect.bottom - activeRect.top - this.Height) / 2 + point.Y, SystemInformation.VirtualScreen.Height - this.Height - 30));
                     }
                 }
             }
-            SetForegroundWindow(this.Handle);
+            RestoreWindowIfMinimized(newX, newY);
             //sw.Stop();
             //Debug.WriteLine("autoposition duration" + sw.ElapsedMilliseconds.ToString());
-            //this.Activate();
-            //this.ShowInTaskbar = true;
-            //this.Show();
-            //SetForegroundWindow(this.Handle);
-            //notifyIcon.Visible = false;
+            if (Properties.Settings.Default.FastWindowShow)
+            {
+                SetForegroundWindow(this.Handle);
+            }
+            else
+            {
+                this.Activate();
+                this.ShowInTaskbar = true;
+                this.Show();
+                //notifyIcon.Visible = false;
+            }
             if (Properties.Settings.Default.SelectTopClipOnShow)
                 GotoLastRow();
             this.ResumeLayout();
         }
 
-        private void RestoreWindowIfMinimized()
+        private void RestoreWindowIfMinimized(int newX = -1, int newY = -1)
         {
+            if (newX == -1)
+            {
+                if (this.Left >= 0)
+                    newX = this.Left;
+                else
+                    newX = this.RestoreBounds.X;
+            }
+            if (newY == -1)
+            {
+                if (this.Top >= 0)
+                    newY = this.Top;
+                else
+                    newY = this.RestoreBounds.Y;
+            }
+            if (Properties.Settings.Default.FastWindowShow)
+                if (newY < 0)
+                    newY = factualTop;
+            if (newX > 0)
+                MoveWindow(this.Handle, newX, newY, this.Width, this.Height, true);
             if (this.WindowState == FormWindowState.Minimized)
                 this.WindowState = FormWindowState.Normal; // Window can be minimized by "Minimize All" command
-            else
-            {
-                if (Top < 0)
-                    this.Top = factualTop;
-            }
         }
 
         private void Main_KeyDown(object sender, KeyEventArgs e)
@@ -2821,9 +2862,12 @@ namespace ClipAngel
 
         private void Main_Activated(object sender, EventArgs e)
         {
-            //Debug.WriteLine("Activated");//
-            RestoreWindowIfMinimized();
-            SetForegroundWindow(this.Handle);
+            //Debug.WriteLine("Activated");
+            if (Properties.Settings.Default.FastWindowShow)
+            {
+                RestoreWindowIfMinimized();
+                SetForegroundWindow(this.Handle);
+            }
         }
 
         private void Filter_KeyPress(object sender, KeyPressEventArgs e)
@@ -2843,7 +2887,6 @@ namespace ClipAngel
                     if (match.Index <= sender.SelectionStart && (match.Index + match.Length) >= sender.SelectionStart)
                         Process.Start(match.Value);
                 }
-                    
         }
 
         private void textBoxUrl_Click(object sender, EventArgs e)

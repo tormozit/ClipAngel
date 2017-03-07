@@ -264,13 +264,25 @@ namespace ClipAngel.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Alt+B")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Alt + B")]
         public string HotKeyShowFavorites {
             get {
                 return ((string)(this["HotKeyShowFavorites"]));
             }
             set {
                 this["HotKeyShowFavorites"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool FastWindowShow {
+            get {
+                return ((bool)(this["FastWindowShow"]));
+            }
+            set {
+                this["FastWindowShow"] = value;
             }
         }
     }

@@ -63,7 +63,10 @@
       <Value Profile="(Default)">Segoe UI, 9pt</Value>
     </Setting>
     <Setting Name="HotKeyShowFavorites" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Alt+B</Value>
+      <Value Profile="(Default)">Alt + B</Value>
+    </Setting>
+    <Setting Name="FastWindowShow" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
     </Setting>
   </Settings>
 </SettingsFile>
