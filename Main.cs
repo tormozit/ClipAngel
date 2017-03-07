@@ -95,18 +95,19 @@ namespace ClipAngel
         [DllImport("dwmapi", PreserveSig = true)]
         static extern int DwmSetWindowAttribute(IntPtr hWnd, int attr, ref int value, int attrLen);
 
-        /// <summary>
-        /// Tried to disable animation but failed
-        /// </summary>
-        //protected override CreateParams CreateParams
-        //{
-        //    get
-        //    {
-        //        CreateParams cp = base.CreateParams;
-        //        cp.ExStyle |= 0x02000000;  // Turn on WS_EX_COMPOSITED
-        //        return cp;
-        //    }
-        //}
+        const int WS_EX_NOACTIVATE = 0x08000000;
+        //const int WS_EX_TOPMOST = 0x00000008;
+
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams param = base.CreateParams;
+                //param.ExStyle |= WS_EX_TOPMOST; // make the form topmost
+                param.ExStyle |= WS_EX_NOACTIVATE; // prevent the form from being activated
+                return param;
+            }
+        }
 
         public Main()
         {
