@@ -117,21 +117,21 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="buttonReset.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="buttonReset.GenerateMember" type="System.Boolean, mscorlib">
     <value>False</value>
-  </metadata>
+  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="buttonReset.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="buttonReset.Location" type="System.Drawing.Point, System.Drawing">
-    <value>66, 462</value>
+    <value>66, 488</value>
   </data>
   <data name="buttonReset.Size" type="System.Drawing.Size, System.Drawing">
     <value>153, 23</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="buttonReset.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
   </data>
@@ -162,9 +162,9 @@
   <data name="HistoryDepthNumber.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <data name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing">
     <value>17, 17</value>
-  </metadata>
+  </data>
   <data name="HistoryDepthNumber.ToolTip" xml:space="preserve">
     <value>Maximum number of clips stored in database</value>
   </data>
@@ -217,7 +217,7 @@
     <value>Bottom, Right</value>
   </data>
   <data name="buttonOK.Location" type="System.Drawing.Point, System.Drawing">
-    <value>225, 462</value>
+    <value>225, 488</value>
   </data>
   <data name="buttonOK.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
@@ -244,7 +244,7 @@
     <value>Top, Bottom, Left, Right</value>
   </data>
   <data name="GlobalHotkeyShow.Location" type="System.Drawing.Point, System.Drawing">
-    <value>222, 178</value>
+    <value>222, 203</value>
   </data>
   <data name="GlobalHotkeyShow.Size" type="System.Drawing.Size, System.Drawing">
     <value>154, 20</value>
@@ -272,7 +272,7 @@ and then paste selected clip in source window</value>
     <value>Top, Bottom, Left, Right</value>
   </data>
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 175</value>
+    <value>3, 200</value>
   </data>
   <data name="label2.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>1, 1, 1, 1</value>
@@ -461,7 +461,7 @@ and then paste selected clip in source window</value>
     <value>Top, Bottom, Left, Right</value>
   </data>
   <data name="GlobalHotkeyIncrementalPaste.Location" type="System.Drawing.Point, System.Drawing">
-    <value>222, 228</value>
+    <value>222, 253</value>
   </data>
   <data name="GlobalHotkeyIncrementalPaste.Size" type="System.Drawing.Size, System.Drawing">
     <value>154, 20</value>
@@ -548,7 +548,7 @@ and then paste selected clip in source window</value>
     <value>NoControl</value>
   </data>
   <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 225</value>
+    <value>3, 250</value>
   </data>
   <data name="label6.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>1, 1, 1, 1</value>
@@ -680,7 +680,7 @@ and then paste selected clip in source window</value>
     <value>NoControl</value>
   </data>
   <data name="checkBoxAutostart.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 253</value>
+    <value>3, 278</value>
   </data>
   <data name="checkBoxAutostart.Size" type="System.Drawing.Size, System.Drawing">
     <value>373, 19</value>
@@ -710,7 +710,7 @@ and then paste selected clip in source window</value>
     <value>NoControl</value>
   </data>
   <data name="checkBoxAutoCheckUpdate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 278</value>
+    <value>3, 303</value>
   </data>
   <data name="checkBoxAutoCheckUpdate.Size" type="System.Drawing.Size, System.Drawing">
     <value>373, 19</value>
@@ -743,7 +743,7 @@ and then paste selected clip in source window</value>
     <value>NoControl</value>
   </data>
   <data name="checkBoxShowSizeColumn.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 328</value>
+    <value>3, 353</value>
   </data>
   <data name="checkBoxShowSizeColumn.Size" type="System.Drawing.Size, System.Drawing">
     <value>373, 19</value>
@@ -779,7 +779,7 @@ and then paste selected clip in source window</value>
     <value>NoControl</value>
   </data>
   <data name="checkBoxShowApplicationIconColumn.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 353</value>
+    <value>3, 378</value>
   </data>
   <data name="checkBoxShowApplicationIconColumn.Size" type="System.Drawing.Size, System.Drawing">
     <value>373, 19</value>
@@ -809,7 +809,7 @@ and then paste selected clip in source window</value>
     <value>NoControl</value>
   </data>
   <data name="checkBoxWindowAutoPosition.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 303</value>
+    <value>3, 328</value>
   </data>
   <data name="checkBoxWindowAutoPosition.Size" type="System.Drawing.Size, System.Drawing">
     <value>373, 19</value>
@@ -845,7 +845,7 @@ and then paste selected clip in source window</value>
     <value>NoControl</value>
   </data>
   <data name="checkBoxMoveCopiedClipToTop.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 403</value>
+    <value>3, 428</value>
   </data>
   <data name="checkBoxMoveCopiedClipToTop.Size" type="System.Drawing.Size, System.Drawing">
     <value>373, 19</value>
@@ -881,7 +881,7 @@ and then paste selected clip in source window</value>
     <value>NoControl</value>
   </data>
   <data name="checkBoxClearFiltersOnClose.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 428</value>
+    <value>3, 453</value>
   </data>
   <data name="checkBoxClearFiltersOnClose.Size" type="System.Drawing.Size, System.Drawing">
     <value>373, 19</value>
@@ -911,7 +911,7 @@ and then paste selected clip in source window</value>
     <value>NoControl</value>
   </data>
   <data name="label9.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 200</value>
+    <value>3, 225</value>
   </data>
   <data name="label9.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>1, 1, 1, 1</value>
@@ -944,7 +944,7 @@ and then paste selected clip in source window</value>
     <value>Top, Bottom, Left, Right</value>
   </data>
   <data name="GlobalHotkeyShowFavorites.Location" type="System.Drawing.Point, System.Drawing">
-    <value>222, 203</value>
+    <value>222, 228</value>
   </data>
   <data name="GlobalHotkeyShowFavorites.Size" type="System.Drawing.Size, System.Drawing">
     <value>154, 20</value>
@@ -975,7 +975,7 @@ and then paste selected clip in source window</value>
     <value>NoControl</value>
   </data>
   <data name="label10.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 150</value>
+    <value>3, 175</value>
   </data>
   <data name="label10.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>1, 1, 1, 1</value>
@@ -1008,7 +1008,7 @@ and then paste selected clip in source window</value>
     <value>Top, Bottom, Left, Right</value>
   </data>
   <data name="textBoxDefaultFont.Location" type="System.Drawing.Point, System.Drawing">
-    <value>222, 153</value>
+    <value>222, 178</value>
   </data>
   <data name="textBoxDefaultFont.Size" type="System.Drawing.Size, System.Drawing">
     <value>154, 20</value>
@@ -1031,14 +1031,79 @@ and then paste selected clip in source window</value>
   <data name="&gt;&gt;textBoxDefaultFont.ZOrder" xml:space="preserve">
     <value>27</value>
   </data>
+  <data name="label11.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="label11.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label11.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 150</value>
+  </data>
+  <data name="label11.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>1, 1, 1, 1</value>
+  </data>
+  <data name="label11.Size" type="System.Drawing.Size, System.Drawing">
+    <value>213, 25</value>
+  </data>
+  <data name="label11.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="label11.Text" xml:space="preserve">
+    <value>Text compare application</value>
+  </data>
+  <data name="label11.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;label11.Name" xml:space="preserve">
+    <value>label11</value>
+  </data>
+  <data name="&gt;&gt;label11.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label11.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;label11.ZOrder" xml:space="preserve">
+    <value>28</value>
+  </data>
+  <data name="textBoxTextCompareApplication.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="textBoxTextCompareApplication.Location" type="System.Drawing.Point, System.Drawing">
+    <value>222, 153</value>
+  </data>
+  <data name="textBoxTextCompareApplication.Size" type="System.Drawing.Size, System.Drawing">
+    <value>154, 20</value>
+  </data>
+  <data name="textBoxTextCompareApplication.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="textBoxTextCompareApplication.ToolTip" xml:space="preserve">
+    <value>Doubleclick to open file selection dialog.
+Leave empty to use automatic search application, wich looks for Beyond Compare, ExamDiff Pro, WinMerge, Araxis Merge, DiffMerge.
+Text compare command is %application% %file1% %file2%</value>
+  </data>
+  <data name="&gt;&gt;textBoxTextCompareApplication.Name" xml:space="preserve">
+    <value>textBoxTextCompareApplication</value>
+  </data>
+  <data name="&gt;&gt;textBoxTextCompareApplication.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textBoxTextCompareApplication.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;textBoxTextCompareApplication.ZOrder" xml:space="preserve">
+    <value>29</value>
+  </data>
   <data name="tableLayoutPanel1.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 12</value>
   </data>
   <data name="tableLayoutPanel1.RowCount" type="System.Int32, mscorlib">
-    <value>18</value>
+    <value>19</value>
   </data>
   <data name="tableLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>379, 450</value>
+    <value>379, 475</value>
   </data>
   <data name="tableLayoutPanel1.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
@@ -1056,10 +1121,10 @@ and then paste selected clip in source window</value>
     <value>2</value>
   </data>
   <data name="tableLayoutPanel1.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="textBoxDatabaseSize" Row="4" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="textBoxUserSettingsPath" Row="3" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label4" Row="5" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label3" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="GlobalHotkeyIncrementalPaste" Row="9" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label1" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label6" Row="9" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="GlobalHotkeyShow" Row="7" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="MaxClipSizeKB" Row="5" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="NumberOfClips" Row="2" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="HistoryDepthNumber" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="Language" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label5" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label2" Row="7" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label7" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label8" Row="4" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="checkBoxAutostart" Row="10" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="checkBoxAutoCheckUpdate" Row="11" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="checkBoxShowSizeColumn" Row="13" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="checkBoxShowApplicationIconColumn" Row="14" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="checkBoxWindowAutoPosition" Row="12" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="checkBoxClipListSimpleDraw" Row="15" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="checkBoxMoveCopiedClipToTop" Row="16" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="checkBoxClearFiltersOnClose" Row="17" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="label9" Row="8" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="GlobalHotkeyShowFavorites" Row="8" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label10" Row="6" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="textBoxDefaultFont" Row="6" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Absolute,219,Absolute,160" /&gt;&lt;Rows Styles="Absolute,25,Absolute,25,Absolute,25,Absolute,25,Absolute,25,Absolute,25,Absolute,25,Absolute,25,Absolute,25,Absolute,25,Absolute,25,Absolute,25,Absolute,25,Absolute,25,Absolute,25,Absolute,25,Absolute,25,Absolute,25" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="textBoxDatabaseSize" Row="4" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="textBoxUserSettingsPath" Row="3" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label4" Row="5" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label3" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="GlobalHotkeyIncrementalPaste" Row="10" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label1" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label6" Row="10" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="GlobalHotkeyShow" Row="8" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="MaxClipSizeKB" Row="5" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="NumberOfClips" Row="2" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="HistoryDepthNumber" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="Language" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label5" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label2" Row="8" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label7" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label8" Row="4" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="checkBoxAutostart" Row="11" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="checkBoxAutoCheckUpdate" Row="12" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="checkBoxShowSizeColumn" Row="14" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="checkBoxShowApplicationIconColumn" Row="15" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="checkBoxWindowAutoPosition" Row="13" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="checkBoxClipListSimpleDraw" Row="16" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="checkBoxMoveCopiedClipToTop" Row="17" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="checkBoxClearFiltersOnClose" Row="18" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="label9" Row="9" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="GlobalHotkeyShowFavorites" Row="9" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label10" Row="7" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="textBoxDefaultFont" Row="7" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label11" Row="6" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="textBoxTextCompareApplication" Row="6" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Absolute,219,Absolute,160" /&gt;&lt;Rows Styles="Absolute,25,Absolute,25,Absolute,25,Absolute,25,Absolute,25,Absolute,25,Absolute,25,Absolute,25,Absolute,25,Absolute,25,Absolute,25,Absolute,25,Absolute,25,Absolute,25,Absolute,25,Absolute,25,Absolute,25,Absolute,25,Absolute,25" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="checkBoxClipListSimpleDraw.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 378</value>
+    <value>3, 403</value>
   </data>
   <data name="checkBoxClipListSimpleDraw.Size" type="System.Drawing.Size, System.Drawing">
     <value>373, 19</value>
@@ -1089,7 +1154,7 @@ and then paste selected clip in source window</value>
     <value>Bottom, Right</value>
   </data>
   <data name="buttonCancel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>306, 462</value>
+    <value>306, 488</value>
   </data>
   <data name="buttonCancel.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
@@ -1112,15 +1177,15 @@ and then paste selected clip in source window</value>
   <data name="&gt;&gt;buttonCancel.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <metadata name="cultureManager1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <data name="cultureManager1.TrayLocation" type="System.Drawing.Point, System.Drawing">
     <value>114, 17</value>
-  </metadata>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  </data>
+  <data name="$this.Localizable" type="System.Boolean, mscorlib">
     <value>True</value>
-  </metadata>
-  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>31</value>
-  </metadata>
+  </data>
+  <data name="$this.TrayHeight" type="System.Int32, mscorlib">
+    <value>34</value>
+  </data>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
   </data>
@@ -1128,7 +1193,7 @@ and then paste selected clip in source window</value>
     <value>True</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>387, 487</value>
+    <value>387, 513</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterParent</value>
@@ -1154,13 +1219,22 @@ and then paste selected clip in source window</value>
   <data name="&gt;&gt;fontDialog1.Type" xml:space="preserve">
     <value>System.Windows.Forms.FontDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;openFileDialog1.Name" xml:space="preserve">
+    <value>openFileDialog1</value>
+  </data>
+  <data name="&gt;&gt;openFileDialog1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.OpenFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>Settings</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <metadata name="fontDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <data name="fontDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing">
     <value>259, 17</value>
-  </metadata>
+  </data>
+  <data name="openFileDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing">
+    <value>375, 17</value>
+  </data>
 </root>

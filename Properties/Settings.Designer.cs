@@ -285,5 +285,17 @@ namespace ClipAngel.Properties {
                 this["ShowInTaskBar"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string TextCompareApplication {
+            get {
+                return ((string)(this["TextCompareApplication"]));
+            }
+            set {
+                this["TextCompareApplication"] = value;
+            }
+        }
     }
 }

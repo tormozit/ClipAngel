@@ -293,4 +293,12 @@
   <data name="$this.ToolTip" xml:space="preserve">
     <value />
   </data>
+  <data name="label11.Text" xml:space="preserve">
+    <value>Программа сравнения текстов</value>
+  </data>
+  <data name="textBoxTextCompareApplication.ToolTip" xml:space="preserve">
+    <value>Двойной клик открывает диалог выбора файла.
+Оставьте пустым для автоматического поиска программы, который поддерживает Beyond Compare, ExamDiff Pro, WinMerge, Araxis Merge, DiffMerge.
+Для сравнения текстов используется команда %программа% %файл1% %файл2%</value>
+  </data>
 </root>

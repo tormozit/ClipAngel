@@ -65,6 +65,9 @@
             this.buttonCancel = new System.Windows.Forms.Button();
             this.cultureManager1 = new Infralution.Localization.CultureManager(this.components);
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
+            this.label11 = new System.Windows.Forms.Label();
+            this.textBoxTextCompareApplication = new System.Windows.Forms.TextBox();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             buttonReset = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -227,30 +230,32 @@
             this.tableLayoutPanel1.Controls.Add(this.textBoxUserSettingsPath, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.label4, 0, 5);
             this.tableLayoutPanel1.Controls.Add(this.label3, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.GlobalHotkeyIncrementalPaste, 1, 9);
+            this.tableLayoutPanel1.Controls.Add(this.GlobalHotkeyIncrementalPaste, 1, 10);
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.label6, 0, 9);
-            this.tableLayoutPanel1.Controls.Add(this.GlobalHotkeyShow, 1, 7);
+            this.tableLayoutPanel1.Controls.Add(this.label6, 0, 10);
+            this.tableLayoutPanel1.Controls.Add(this.GlobalHotkeyShow, 1, 8);
             this.tableLayoutPanel1.Controls.Add(this.MaxClipSizeKB, 1, 5);
             this.tableLayoutPanel1.Controls.Add(this.NumberOfClips, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.HistoryDepthNumber, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.Language, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.label5, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.label2, 0, 7);
+            this.tableLayoutPanel1.Controls.Add(this.label2, 0, 8);
             this.tableLayoutPanel1.Controls.Add(this.label7, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.label8, 0, 4);
-            this.tableLayoutPanel1.Controls.Add(this.checkBoxAutostart, 0, 10);
-            this.tableLayoutPanel1.Controls.Add(this.checkBoxAutoCheckUpdate, 0, 11);
-            this.tableLayoutPanel1.Controls.Add(this.checkBoxShowSizeColumn, 0, 13);
-            this.tableLayoutPanel1.Controls.Add(this.checkBoxShowApplicationIconColumn, 0, 14);
-            this.tableLayoutPanel1.Controls.Add(this.checkBoxWindowAutoPosition, 0, 12);
-            this.tableLayoutPanel1.Controls.Add(this.checkBoxClipListSimpleDraw, 0, 15);
-            this.tableLayoutPanel1.Controls.Add(this.checkBoxMoveCopiedClipToTop, 0, 16);
-            this.tableLayoutPanel1.Controls.Add(this.checkBoxClearFiltersOnClose, 0, 17);
-            this.tableLayoutPanel1.Controls.Add(this.label9, 0, 8);
-            this.tableLayoutPanel1.Controls.Add(this.GlobalHotkeyShowFavorites, 1, 8);
-            this.tableLayoutPanel1.Controls.Add(this.label10, 0, 6);
-            this.tableLayoutPanel1.Controls.Add(this.textBoxDefaultFont, 1, 6);
+            this.tableLayoutPanel1.Controls.Add(this.checkBoxAutostart, 0, 11);
+            this.tableLayoutPanel1.Controls.Add(this.checkBoxAutoCheckUpdate, 0, 12);
+            this.tableLayoutPanel1.Controls.Add(this.checkBoxShowSizeColumn, 0, 14);
+            this.tableLayoutPanel1.Controls.Add(this.checkBoxShowApplicationIconColumn, 0, 15);
+            this.tableLayoutPanel1.Controls.Add(this.checkBoxWindowAutoPosition, 0, 13);
+            this.tableLayoutPanel1.Controls.Add(this.checkBoxClipListSimpleDraw, 0, 16);
+            this.tableLayoutPanel1.Controls.Add(this.checkBoxMoveCopiedClipToTop, 0, 17);
+            this.tableLayoutPanel1.Controls.Add(this.checkBoxClearFiltersOnClose, 0, 18);
+            this.tableLayoutPanel1.Controls.Add(this.label9, 0, 9);
+            this.tableLayoutPanel1.Controls.Add(this.GlobalHotkeyShowFavorites, 1, 9);
+            this.tableLayoutPanel1.Controls.Add(this.label10, 0, 7);
+            this.tableLayoutPanel1.Controls.Add(this.textBoxDefaultFont, 1, 7);
+            this.tableLayoutPanel1.Controls.Add(this.label11, 0, 6);
+            this.tableLayoutPanel1.Controls.Add(this.textBoxTextCompareApplication, 1, 6);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             // 
             // label5
@@ -311,6 +316,22 @@
             // 
             this.cultureManager1.ManagedControl = this;
             // 
+            // label11
+            // 
+            resources.ApplyResources(this.label11, "label11");
+            this.label11.Name = "label11";
+            // 
+            // textBoxTextCompareApplication
+            // 
+            resources.ApplyResources(this.textBoxTextCompareApplication, "textBoxTextCompareApplication");
+            this.textBoxTextCompareApplication.Name = "textBoxTextCompareApplication";
+            this.toolTip1.SetToolTip(this.textBoxTextCompareApplication, resources.GetString("textBoxTextCompareApplication.ToolTip"));
+            this.textBoxTextCompareApplication.DoubleClick += new System.EventHandler(this.textBoxTextCompareApplication_DoubleClick);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
             // Settings
             // 
             this.AcceptButton = this.buttonOK;
@@ -368,5 +389,8 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox textBoxDefaultFont;
         private System.Windows.Forms.FontDialog fontDialog1;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox textBoxTextCompareApplication;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }

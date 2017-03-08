@@ -31,6 +31,7 @@ namespace ClipAngel
             HistoryDepthNumber.Text = Properties.Settings.Default.HistoryDepthNumber.ToString();
             MaxClipSizeKB.Text = Properties.Settings.Default.MaxClipSizeKB.ToString();
 
+            textBoxTextCompareApplication.Text = Properties.Settings.Default.TextCompareApplication;
             textBoxDefaultFont.Font = Properties.Settings.Default.Font;
             textBoxDefaultFont.Text = GetFontPresentation(textBoxDefaultFont.Font);
             GlobalHotkeyShow.Text = Properties.Settings.Default.HotkeyShow;
@@ -55,6 +56,7 @@ namespace ClipAngel
         private void buttonOK_Click(object sender, EventArgs e)
         {
             int numValue;
+            Properties.Settings.Default.TextCompareApplication = textBoxTextCompareApplication.Text;
             Properties.Settings.Default.Font = textBoxDefaultFont.Font;
             Properties.Settings.Default.ShowApplicationIconColumn = checkBoxShowApplicationIconColumn.Checked;
             Properties.Settings.Default.ClearFiltersOnClose = checkBoxClearFiltersOnClose.Checked;
@@ -177,6 +179,15 @@ namespace ClipAngel
             string result;
             result = font.Name + " " + font.Size;
             return result;
+        }
+
+        private void textBoxTextCompareApplication_DoubleClick(object sender, EventArgs e)
+        {
+            openFileDialog1.FileName = textBoxTextCompareApplication.Text;
+            openFileDialog1.CheckFileExists = true;
+            openFileDialog1.Filter = "|*.exe";
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+                textBoxTextCompareApplication.Text = openFileDialog1.FileName;
         }
     }
 }

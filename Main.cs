@@ -14,7 +14,6 @@ using System.Collections.Specialized;
 using System.Drawing.Imaging;
 using System.Globalization;
 using System.IO;
-using System.Linq;
 using System.Security.Cryptography;
 using System.Resources;
 using System.Net;
@@ -22,7 +21,6 @@ using AngleSharp.Parser.Html;
 using AngleSharp.Dom;
 using System.Reflection;
 using System.Runtime.CompilerServices;
-using WindowsInput;
 using WindowsInput.Native;
 using mshtml;
 //using Word = Microsoft.Office.Interop.Word;
@@ -3579,6 +3577,11 @@ namespace ClipAngel
         {
             // TODO read paths from registry and let use custom application
             string path;
+            path = Properties.Settings.Default.TextCompareApplication;
+            if (path != "" && File.Exists(path))
+            {
+                return path;
+            }
 
             path = "C:\\Program Files (x86)\\Beyond Compare 3\\BCompare.exe";
             if (File.Exists(path))
