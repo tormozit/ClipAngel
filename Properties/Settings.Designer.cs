@@ -277,12 +277,12 @@ namespace ClipAngel.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool FastWindowShow {
+        public bool ShowInTaskBar {
             get {
-                return ((bool)(this["FastWindowShow"]));
+                return ((bool)(this["ShowInTaskBar"]));
             }
             set {
-                this["FastWindowShow"] = value;
+                this["ShowInTaskBar"] = value;
             }
         }
     }

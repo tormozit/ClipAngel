@@ -145,7 +145,16 @@ namespace ClipAngel
                 foreach (SettingsProperty settingsKey in Properties.Settings.Default.Properties)
                 {
                     var value = Properties.Settings.Default[settingsKey.Name];
-                    var newValue = Convert.ChangeType(settingsKey.DefaultValue, value.GetType());
+                    object newValue;
+                    try
+                    {
+                        newValue = Convert.ChangeType(settingsKey.DefaultValue, value.GetType());
+                    }
+                    catch
+                    {
+                        // All object types can not be deserialized. why?
+                        continue;
+                    }
                     if (newValue != null)
                         Properties.Settings.Default[settingsKey.Name] = newValue;
                 }

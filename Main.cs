@@ -14,6 +14,7 @@ using System.Collections.Specialized;
 using System.Drawing.Imaging;
 using System.Globalization;
 using System.IO;
+using System.Linq;
 using System.Security.Cryptography;
 using System.Resources;
 using System.Net;
@@ -91,12 +92,14 @@ namespace ClipAngel
         private int clipRichTextLength = 0; // To always know where ends real text (location of end marker)
         bool filterOn = false;
         private HtmlElement lastClickedHtmlElement;
+        private bool FastWindowShow = true;
 
         [DllImport("dwmapi", PreserveSig = true)]
         static extern int DwmSetWindowAttribute(IntPtr hWnd, int attr, ref int value, int attrLen);
 
         const int WS_EX_NOACTIVATE = 0x08000000;
         //const int WS_EX_TOPMOST = 0x00000008;
+        const int WS_EX_COMPOSITED = 0x02000000;
 
         protected override CreateParams CreateParams
         {
@@ -105,6 +108,7 @@ namespace ClipAngel
                 CreateParams param = base.CreateParams;
                 //param.ExStyle |= WS_EX_TOPMOST; // make the form topmost
                 param.ExStyle |= WS_EX_NOACTIVATE; // prevent the form from being activated
+                //param.ExStyle |= WS_EX_COMPOSITED;  // Turn on WS_EX_COMPOSITED
                 return param;
             }
         }
@@ -192,7 +196,7 @@ namespace ClipAngel
             string hotkeyTitle = KeyboardHook.HotkeyTitle(e.Key, e.Modifier);
             if (hotkeyTitle == Properties.Settings.Default.HotkeyShow)
             {
-                if (this.ContainsFocus && this.Top >= 0)
+                if (this.ContainsFocus && this.Top >= 0 && MarkFilter.SelectedValue.ToString() != "favorite")
                     this.Close();
                 else
                 {
@@ -202,7 +206,7 @@ namespace ClipAngel
             }
             else if (hotkeyTitle == Properties.Settings.Default.HotKeyShowFavorites)
             {
-                if (this.ContainsFocus && this.Top >= 0)
+                if (this.ContainsFocus && this.Top >= 0 && MarkFilter.SelectedValue.ToString() == "favorite")
                     this.Close();
                 else
                 {
@@ -236,7 +240,7 @@ namespace ClipAngel
         private const int SC_MINIMIZE = 0xf020;
         protected override void WndProc(ref Message m)
         {
-            if (Properties.Settings.Default.FastWindowShow)
+            if (FastWindowShow)
             {
                 if (m.Msg == WM_SYSCOMMAND)
                 {
@@ -362,7 +366,7 @@ namespace ClipAngel
             
             htmlTextBox.Navigate("about:blank");
             htmlTextBox.Document.ExecCommand("EditMode", false, null);
-            //Properties.Settings.Default.FastWindowShow = false; // for debug
+            //FastWindowShow = false; // for debug
 
             // Antiflicker double buffering
             // http://stackoverflow.com/questions/76993/how-to-double-buffer-net-controls-on-a-form
@@ -986,8 +990,7 @@ namespace ClipAngel
                 clipBindingSource.Position = newPosition;
                 ////if (dataGridView.CurrentRow != null)
                 ////    dataGridView.CurrentCell = dataGridView.CurrentRow.Cells[0];
-                bool keepTextSelection = (newPosition != -1);
-                SelectCurrentRow(forceRowLoad || newPosition == -1, keepTextSelection);
+                SelectCurrentRow(forceRowLoad || newPosition == -1);
             }
             allowRowLoad = true;
             //AutoGotoLastRow = false;
@@ -1033,13 +1036,13 @@ namespace ClipAngel
             if (!AllowFormClose)
             {
                 //this.SuspendLayout();
-                if (Properties.Settings.Default.FastWindowShow)
+                if (FastWindowShow)
                 {
                     bool lastActSet = false;
                     if (lastActiveWindow != null)
                         lastActSet = SetForegroundWindow(lastActiveWindow);
                     if (!lastActSet)
-                        //SetForegroundWindow(IntPtr.Zero); // This way focus was not lost
+                        //SetForegroundWindow(IntPtr.Zero); // This way focus was not lost!
                         SetActiveWindow(IntPtr.Zero);
                     this.Top = -this.Height;
                 }
@@ -1125,51 +1128,51 @@ namespace ClipAngel
             if (iData.GetDataPresent(DataFormats.Html))
             {
                 htmlText = (string)iData.GetData(DataFormats.Html);
-                if (!String.IsNullOrEmpty(htmlText) && iData.GetDataPresent(DataFormats.Text))
+                if (!String.IsNullOrEmpty(htmlText)/* && iData.GetDataPresent(DataFormats.Text)*/)
                 {
                     clipType = "html";
                     Match match = Regex.Match(htmlText, "SourceURL:(" + LinkPattern + ")", RegexOptions.IgnoreCase);
                     if (match.Captures.Count > 0)
                         clipUrl = match.Groups[1].ToString();
                 }
-                if (!iData.GetDataPresent(DataFormats.Rtf))
-                {
-                    //Word.Application wordApp = new Word.Application();
-                    ////winword.ShowAnimation = false;
-                    //wordApp.Visible = false;
-                    //object missing = System.Reflection.Missing.Value;
-                    //Word.Document document = wordApp.Documents.Add(ref missing, ref missing, ref missing, ref missing);
-                    //document.Content.Paste();
+                //if (!iData.GetDataPresent(DataFormats.Rtf))
+                //{
+                //    //Word.Application wordApp = new Word.Application();
+                //    ////winword.ShowAnimation = false;
+                //    //wordApp.Visible = false;
+                //    //object missing = System.Reflection.Missing.Value;
+                //    //Word.Document document = wordApp.Documents.Add(ref missing, ref missing, ref missing, ref missing);
+                //    //document.Content.Paste();
 
-                    //object index = "\\Page";
-                    //Word.Range rng = document.Bookmarks.get_Item(ref index).Range;
-                    //rng.Paste();
-                    //rng.Copy();
+                //    //object index = "\\Page";
+                //    //Word.Range rng = document.Bookmarks.get_Item(ref index).Range;
+                //    //rng.Paste();
+                //    //rng.Copy();
 
-                    //var rtfbox = new RichTextBox();
-                    //rtfbox.Paste();
-                    //richText = rtfbox.Rtf;
+                //    //var rtfbox = new RichTextBox();
+                //    //rtfbox.Paste();
+                //    //richText = rtfbox.Rtf;
 
-                    //wordApp.Quit(false);
-                    //Marshal.ReleaseComObject(wordApp);
+                //    //wordApp.Quit(false);
+                //    //Marshal.ReleaseComObject(wordApp);
 
-                    //var webBrowser = new WebBrowser();
-                    //webBrowser.CreateControl(); // only if needed
-                    //webBrowser.DocumentText = "<html><body></body></html>";
-                    //while (webBrowser.DocumentText == "")
-                    //Application.DoEvents();
-                    //webBrowser.Document.ExecCommand("Paste", false, null);
-                    //webBrowser.Document.ExecCommand("SelectAll", false, null);
-                    //webBrowser.Document.ExecCommand("Copy", false, null);
-                    //var textRange = new TextRange(webBrowser.Document., webBrowser.Document.ContentEnd);
-                    //using (var stream = new MemoryStream())
-                    //{
-                    //    textRange.Save(stream, DataFormats.Rtf);
-                    //    return Encoding.UTF8.GetString(stream.ToArray());
-                    //}
+                //    //var webBrowser = new WebBrowser();
+                //    //webBrowser.CreateControl(); // only if needed
+                //    //webBrowser.DocumentText = "<html><body></body></html>";
+                //    //while (webBrowser.DocumentText == "")
+                //    //Application.DoEvents();
+                //    //webBrowser.Document.ExecCommand("Paste", false, null);
+                //    //webBrowser.Document.ExecCommand("SelectAll", false, null);
+                //    //webBrowser.Document.ExecCommand("Copy", false, null);
+                //    //var textRange = new TextRange(webBrowser.Document., webBrowser.Document.ContentEnd);
+                //    //using (var stream = new MemoryStream())
+                //    //{
+                //    //    textRange.Save(stream, DataFormats.Rtf);
+                //    //    return Encoding.UTF8.GetString(stream.ToArray());
+                //    //}
 
-                    //return;
-                }
+                //    //return;
+                //}
             }
 
             //StringCollection UrlFormatNames = new StringCollection();
@@ -1868,9 +1871,10 @@ namespace ClipAngel
             ////dbDataSet.ClipsRow Row = (dbDataSet.ClipsRow)dbDataSet.Clips.Rows[dataGridView.CurrentRow.Index];
             ////Row[fieldName] = newValue;
             ////dataAdapter.Update(dbDataSet);
-            //UpdateClipBindingSource(true);
-
-            UpdateClipButtons();
+            if (allSelected)
+                UpdateClipBindingSource(true);
+            else
+                UpdateClipButtons();
         }
 
         private void UpdateClipButtons()
@@ -2033,8 +2037,8 @@ namespace ClipAngel
             {
                 if (EditMode)
                     editClipTextToolStripMenuItem_Click();
-                else
-                    AfterRowLoad(false, -1, 0, 0);
+                else 
+                    LoadClipIfChangedID();
             }
         }
 
@@ -2055,7 +2059,7 @@ namespace ClipAngel
 
         private void Main_Deactivate(object sender, EventArgs e)
         {
-            if (Properties.Settings.Default.FastWindowShow)
+            if (FastWindowShow)
             {
                 //if (this.WindowState == FormWindowState.Minimized)
                 //{
@@ -2119,7 +2123,9 @@ namespace ClipAngel
         private void ShowForPaste(bool onlyFavorites = false)
         {
             if (onlyFavorites)
-                MarkFilter.SelectedValue = "favorite";
+                showOnlyFavoriteToolStripMenuItem_Click();
+            else if (MarkFilter.SelectedValue.ToString() == "favorite")
+                showAllMarksToolStripMenuItem_Click();
             //Stopwatch sw = new Stopwatch();
             //sw.Start();
             this.SuspendLayout();
@@ -2170,7 +2176,7 @@ namespace ClipAngel
             RestoreWindowIfMinimized(newX, newY);
             //sw.Stop();
             //Debug.WriteLine("autoposition duration" + sw.ElapsedMilliseconds.ToString());
-            if (Properties.Settings.Default.FastWindowShow)
+            if (FastWindowShow)
             {
                 SetForegroundWindow(this.Handle);
             }
@@ -2202,7 +2208,7 @@ namespace ClipAngel
                 else
                     newY = this.RestoreBounds.Y;
             }
-            if (Properties.Settings.Default.FastWindowShow)
+            if (FastWindowShow)
                 if (newY < 0)
                     newY = factualTop;
             if (newX > 0)
@@ -2303,10 +2309,18 @@ namespace ClipAngel
                 clipBindingSource.MoveFirst();
                 SelectCurrentRow();
             }
-            AfterRowLoad(false, -1, 0, 0);
+            LoadClipIfChangedID();
         }
 
-        void SelectCurrentRow(bool forceRowLoad = false, bool keepTextSelection = false)
+        private bool CurrentIDChanged()
+        {
+            return !(true
+                && RowReader != null
+                && dataGridView.CurrentRow != null
+                && (int)(dataGridView.CurrentRow.DataBoundItem as DataRowView)["ID"] == (int)RowReader["ID"]);
+        }
+
+        void SelectCurrentRow(bool forceRowLoad = false, bool keepTextSelection = true)
         {
             dataGridView.ClearSelection();
             if (dataGridView.CurrentRow == null)
@@ -2315,8 +2329,16 @@ namespace ClipAngel
                 return;
             }
             dataGridView.Rows[dataGridView.CurrentRow.Index].Selected = true;
-            if (forceRowLoad)
+            LoadClipIfChangedID(forceRowLoad, keepTextSelection);
+        }
+
+        private void LoadClipIfChangedID(bool forceRowLoad = false, bool keepTextSelection = true)
+        {
+            bool currentIDChanged = CurrentIDChanged();
+            if (forceRowLoad || currentIDChanged)
             {
+                if (currentIDChanged)
+                    keepTextSelection = false;
                 int NewSelectionStart, NewSelectionLength;
                 if (keepTextSelection)
                 {
@@ -2719,7 +2741,7 @@ namespace ClipAngel
             dataGridView.RowsDefaultCellStyle.Font = Properties.Settings.Default.Font;
             ChooseTitleColumnDraw();
             dataGridView.Columns["appImage"].Visible = Properties.Settings.Default.ShowApplicationIconColumn;
-            AfterRowLoad();
+            GotoLastRow();
         }
 
         private void ChooseTitleColumnDraw()
@@ -2740,10 +2762,22 @@ namespace ClipAngel
                 using (WebClient wc = new WebClient())
                 {
                     string HtmlSource = await wc.DownloadStringTaskAsync(Properties.Resources.Website);
+
+                    // AngileSharp
                     var htmlParser = new HtmlParser();
                     var documentHtml = htmlParser.Parse(HtmlSource);
                     IHtmlCollection<IElement> Refs = documentHtml.GetElementsByClassName("sfdl");
-                    Match match = Regex.Match(Refs[0].TextContent, @"Clip Angel (.*).zip");
+                    string lastVersion = Refs[0].TextContent;
+
+                    // unsuccess to make it by MSHTML
+                    //// MsHTML
+                    //HTMLDocumentClass htmlDoc = new mshtml.HTMLDocumentClass();
+                    //IHTMLDocument2 documentHtml = (IHTMLDocument2)htmlDoc;
+                    //documentHtml.write(new object[] { HtmlSource });
+                    //documentHtml.close();
+                    //string lastVersion = getElementsByTagAndClassName(htmlDoc, "a", "sfdl ")[0].innerText;
+
+                    Match match = Regex.Match(lastVersion, @"Clip Angel (.*).zip");
                     if (match == null)
                         return;
                     ActualVersion = match.Groups[1].Value;
@@ -2864,7 +2898,7 @@ namespace ClipAngel
         private void Main_Activated(object sender, EventArgs e)
         {
             //Debug.WriteLine("Activated");
-            if (Properties.Settings.Default.FastWindowShow)
+            if (FastWindowShow)
             {
                 RestoreWindowIfMinimized();
                 SetForegroundWindow(this.Handle);
@@ -3041,6 +3075,8 @@ namespace ClipAngel
             toolStripButtonWordWrap.Checked = Properties.Settings.Default.WordWrap;
             dataGridView.Columns["VisualWeight"].Visible = Properties.Settings.Default.ShowVisualWeightColumn;
             richTextBox.WordWrap = wordWrapToolStripMenuItem.Checked;
+            showInTaskbarToolStripMenuItem.Checked = Properties.Settings.Default.ShowInTaskBar;
+            this.ShowInTaskbar = Properties.Settings.Default.ShowInTaskBar;
         }
 
         private void toolStripMenuItemClearFilterAndSelectTop_Click(object sender, EventArgs e)
@@ -3090,17 +3126,17 @@ namespace ClipAngel
             }
         }
 
-        private void showAllMarksToolStripMenuItem_Click(object sender, EventArgs e)
+        private void showAllMarksToolStripMenuItem_Click(object sender = null, EventArgs e = null)
         {
             MarkFilter.SelectedValue = "allMarks";
         }
 
-        private void showOnlyUsedToolStripMenuItem_Click(object sender, EventArgs e)
+        private void showOnlyUsedToolStripMenuItem_Click(object sender = null, EventArgs e = null)
         {
             MarkFilter.SelectedValue = "used";
         }
 
-        private void showOnlyFavoriteToolStripMenuItem_Click(object sender, EventArgs e)
+        private void showOnlyFavoriteToolStripMenuItem_Click(object sender = null, EventArgs e = null)
         {
             MarkFilter.SelectedValue = "favorite";
         }
@@ -3167,35 +3203,53 @@ namespace ClipAngel
             RowShift(-1);
         }
 
-        private void RowShift(int indexShift =-1)
+        // indexShift - 0 - TOP
+        //              -1 - UP
+        //              1 - DWON
+        private void RowShift(int indexShift)
         {
             if (dataGridView.CurrentRow == null)
                 return;
             int currentRowIndex = dataGridView.CurrentRow.Index;
             if (false
-                || indexShift < 0 && currentRowIndex == 0
+                || indexShift <= 0 && currentRowIndex == 0
                 || indexShift > 0 && currentRowIndex == dataGridView.RowCount
                )
                 return;
-            DataRow nearDataRow = ((DataRowView)clipBindingSource[currentRowIndex + indexShift]).Row;
-            int newID = (int)nearDataRow["ID"];
+            int newID;
+            if (indexShift != 0)
+            {
+                DataRow nearDataRow = ((DataRowView) clipBindingSource[currentRowIndex + indexShift]).Row;
+                newID = (int) nearDataRow["ID"];
+            }
+            else
+            {
+                LastId++;
+                newID = LastId;
+                //indexShift = -currentRowIndex - 1;
+            }
             DataRow currentDataRow = ((DataRowView)clipBindingSource[currentRowIndex]).Row;
             int oldID = (int)currentDataRow["ID"];
             int tempID = LastId + 1;
             string sql = "Update Clips set Id=@NewId where Id=@Id";
             SQLiteCommand command = new SQLiteCommand(sql, m_dbConnection);
-            command.Parameters.AddWithValue("@Id", newID);
-            command.Parameters.AddWithValue("@NewID", tempID);
-            command.ExecuteNonQuery();
+            if (newID != tempID)
+            {
+                command.Parameters.AddWithValue("@Id", newID);
+                command.Parameters.AddWithValue("@NewID", tempID);
+                command.ExecuteNonQuery();
+            }
             command.Parameters.AddWithValue("@Id", oldID);
             command.Parameters.AddWithValue("@NewID", newID);
             command.ExecuteNonQuery();
-            command.Parameters.AddWithValue("@Id", tempID);
-            command.Parameters.AddWithValue("@NewID", oldID);
-            command.ExecuteNonQuery();
-            //SelectCurrentRow();
-            clipBindingSource.Position = currentRowIndex + indexShift;
-            UpdateClipBindingSource();
+            if (newID != tempID)
+            {
+                command.Parameters.AddWithValue("@Id", tempID);
+                command.Parameters.AddWithValue("@NewID", oldID);
+                command.ExecuteNonQuery();
+            }
+            //clipBindingSource.Position = currentRowIndex + indexShift;
+            UpdateClipBindingSource(false, newID);
         }
 
         private void moveDownToolStripMenuItem_Click(object sender, EventArgs e)
@@ -3646,7 +3700,7 @@ namespace ClipAngel
             if (!allowTextPositionChangeUpdate)
                 return;
             mshtml.IHTMLDocument2 htmlDoc = htmlTextBox.Document.DomDocument as mshtml.IHTMLDocument2;
-            mshtml.IHTMLTxtRange range = htmlDoc.selection.createRange();
+            mshtml.IHTMLTxtRange range = (IHTMLTxtRange) htmlDoc.selection.createRange();
             if (range == null)
                 return;
             selectionLength = 0;
@@ -3704,6 +3758,22 @@ namespace ClipAngel
                 richTextBox.SelectAll();
             else
                 richTextBox.Select(0, clipRichTextLength);
+        }
+
+        private void showInTaskbarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.ShowInTaskBar = !Properties.Settings.Default.ShowInTaskBar;
+            UpdateControlsStates();
+        }
+
+        private void moveTopToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RowShift(0);
+        }
+
+        private void clearClipboardToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Clipboard.Clear();
         }
     }
 }

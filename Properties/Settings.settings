@@ -65,7 +65,7 @@
     <Setting Name="HotKeyShowFavorites" Type="System.String" Scope="User">
       <Value Profile="(Default)">Alt + B</Value>
     </Setting>
-    <Setting Name="FastWindowShow" Type="System.Boolean" Scope="User">
+    <Setting Name="ShowInTaskBar" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
   </Settings>
