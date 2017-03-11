@@ -187,11 +187,29 @@ namespace ClipAngel.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Количество хранимых клипов.
+        /// </summary>
+        internal static string HistoryDepthNumber {
+            get {
+                return ResourceManager.GetString("HistoryDepthNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to https://sourceforge.net/p/clip-angel/blogrus/.
         /// </summary>
         internal static string HistoryOfChanges {
             get {
                 return ResourceManager.GetString("HistoryOfChanges", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Горячие клавиши.
+        /// </summary>
+        internal static string Hotkeys {
+            get {
+                return ResourceManager.GetString("Hotkeys", resourceCulture);
             }
         }
         
@@ -210,6 +228,15 @@ namespace ClipAngel.Properties {
         internal static string img {
             get {
                 return ResourceManager.GetString("img", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Информация.
+        /// </summary>
+        internal static string Info {
+            get {
+                return ResourceManager.GetString("Info", resourceCulture);
             }
         }
         
@@ -255,6 +282,15 @@ namespace ClipAngel.Properties {
         internal static string NextClip {
             get {
                 return ResourceManager.GetString("NextClip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Другое.
+        /// </summary>
+        internal static string Other {
+            get {
+                return ResourceManager.GetString("Other", resourceCulture);
             }
         }
         

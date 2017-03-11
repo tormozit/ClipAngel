@@ -158,6 +158,9 @@
   <data name="&gt;&gt;toolStripMenuItem1.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="toolStripButtonMarkFavorite.Text" xml:space="preserve">
+    <value>Is favorite</value>
+  </data>
   <data name="&gt;&gt;moveTopToolStripMenuItem.Name" xml:space="preserve">
     <value>moveTopToolStripMenuItem</value>
   </data>
@@ -232,6 +235,9 @@
   </data>
   <data name="&gt;&gt;timerReconnect.Type" xml:space="preserve">
     <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;charsDataGridViewTextBoxColumn.Name" xml:space="preserve">
+    <value>charsDataGridViewTextBoxColumn</value>
   </data>
   <data name="&gt;&gt;checkUpdateToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -339,8 +345,8 @@
   <data name="titleDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
     <value>Title</value>
   </data>
-  <data name="&gt;&gt;fileToolStripMenuItem.Name" xml:space="preserve">
-    <value>fileToolStripMenuItem</value>
+  <data name="&gt;&gt;MainMenu.ZOrder" xml:space="preserve">
+    <value>6</value>
   </data>
   <data name="&gt;&gt;tableLayoutPanelData.ZOrder" xml:space="preserve">
     <value>1</value>
@@ -666,9 +672,6 @@
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
   </data>
-  <data name="&gt;&gt;pictureBoxSource.Parent" xml:space="preserve">
-    <value>splitContainer1.Panel2</value>
-  </data>
   <data name="toolStripButtonMarkFavorite.Size" type="System.Drawing.Size, System.Drawing">
     <value>23, 22</value>
   </data>
@@ -717,6 +720,9 @@
   <data name="toolStripButtonWordWrap.ToolTipText" xml:space="preserve">
     <value>Word wrap in clip text field (CTRL+W).
 Not appliable to HTML native formatting.</value>
+  </data>
+  <data name="statusStrip.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 398</value>
   </data>
   <data name="selectTopClipOnShowToolStripMenuItem.Text" xml:space="preserve">
     <value>Select top clip on show</value>
@@ -880,12 +886,6 @@ Not appliable to HTML native formatting.</value>
   <data name="fToolStripMenuItem.Text" xml:space="preserve">
     <value>Help</value>
   </data>
-  <data name="&gt;&gt;windowAlwaysOnTopToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="nextMatchToolStripMenuItem.ToolTipText" xml:space="preserve">
-    <value>Find next match in clip text (F3)</value>
-  </data>
   <data name="fToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>44, 20</value>
   </data>
@@ -910,8 +910,11 @@ Not appliable to HTML native formatting.</value>
   <data name="&gt;&gt;toolStripUpdateToSeparator.Name" xml:space="preserve">
     <value>toolStripUpdateToSeparator</value>
   </data>
-  <data name="toolStripButtonMarkFavorite.Text" xml:space="preserve">
-    <value>Is favorite</value>
+  <data name="&gt;&gt;wordWrapToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="toolStripMenuItem8.Size" type="System.Drawing.Size, System.Drawing">
+    <value>209, 22</value>
   </data>
   <data name="&gt;&gt;aboutToolStripMenuItem1.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -945,6 +948,9 @@ Not appliable to HTML native formatting.</value>
   </data>
   <data name="TypeFilter.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
+  </data>
+  <data name="toolStripMenuItemOpenFile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>28, 25</value>
   </data>
   <data name="dataGridViewRichTextBoxColumn2.HeaderText" xml:space="preserve">
     <value>ColumnTitle</value>
@@ -998,9 +1004,6 @@ Not appliable to HTML native formatting.</value>
   <data name="&gt;&gt;historyToolStripMenuItem.Name" xml:space="preserve">
     <value>historyToolStripMenuItem</value>
   </data>
-  <data name="urlTextBox.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
-  </data>
   <data name="&gt;&gt;fileToolStripMenuItem1.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -1021,9 +1024,6 @@ Not appliable to HTML native formatting.</value>
   </data>
   <data name="textBoxWindow.Location" type="System.Drawing.Point, System.Drawing">
     <value>22, 3</value>
-  </data>
-  <data name="&gt;&gt;toolStripMenuItem10.Name" xml:space="preserve">
-    <value>toolStripMenuItem10</value>
   </data>
   <data name="TypeFilter.Items" xml:space="preserve">
     <value>all</value>
@@ -1063,6 +1063,11 @@ Not appliable to HTML native formatting.</value>
   </data>
   <data name="&gt;&gt;timerCheckUpdate.Name" xml:space="preserve">
     <value>timerCheckUpdate</value>
+  </data>
+  <data name="monospacedFontToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>Monospaced font in clip text field. 
+Could be overloaded by RTF native formatting.
+Not appliable to HTML native formatting.</value>
   </data>
   <data name="contextMenuStripRtf.ToolTip" xml:space="preserve">
     <value />
@@ -1626,8 +1631,8 @@ Not appliable to HTML native formatting.</value>
   <data name="&gt;&gt;fToolStripMenuItem.Name" xml:space="preserve">
     <value>fToolStripMenuItem</value>
   </data>
-  <data name="&gt;&gt;ColumnTitle.Name" xml:space="preserve">
-    <value>ColumnTitle</value>
+  <data name="StripLabelSize.Size" type="System.Drawing.Size, System.Drawing">
+    <value>70, 17</value>
   </data>
   <data name="&gt;&gt;showAllMarksToolStripMenuItem.Name" xml:space="preserve">
     <value>showAllMarksToolStripMenuItem</value>
@@ -1664,8 +1669,8 @@ Changes in temp file are not synchronized with clip!</value>
   <data name="&gt;&gt;imageSampleDataGridViewImageColumn.Name" xml:space="preserve">
     <value>imageSampleDataGridViewImageColumn</value>
   </data>
-  <data name="&gt;&gt;comboBoxFilter.ZOrder" xml:space="preserve">
-    <value>5</value>
+  <data name="&gt;&gt;toolStripMenuItem10.Name" xml:space="preserve">
+    <value>toolStripMenuItem10</value>
   </data>
   <data name="pictureBoxSource.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Center</value>
@@ -1676,10 +1681,8 @@ Changes in temp file are not synchronized with clip!</value>
   <data name="&gt;&gt;typeDataGridViewTextBoxColumn.Name" xml:space="preserve">
     <value>typeDataGridViewTextBoxColumn</value>
   </data>
-  <data name="monospacedFontToolStripMenuItem.ToolTipText" xml:space="preserve">
-    <value>Monospaced font in clip text field. 
-Could be overloaded by RTF native formatting.
-Not appliable to HTML native formatting.</value>
+  <data name="nextMatchToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>Find next match in clip text (F3)</value>
   </data>
   <data name="toolStripButtonClearFilterAndSelectTop.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
@@ -1719,6 +1722,9 @@ Not appliable to HTML native formatting.</value>
   </data>
   <data name="&gt;&gt;dataGridViewTextBoxColumn2.Name" xml:space="preserve">
     <value>dataGridViewTextBoxColumn2</value>
+  </data>
+  <data name="&gt;&gt;comboBoxFilter.ZOrder" xml:space="preserve">
+    <value>5</value>
   </data>
   <data name="fileToolStripMenuItem1.Text" xml:space="preserve">
     <value>Window</value>
@@ -1767,6 +1773,9 @@ Not appliable to HTML native formatting.</value>
   </data>
   <data name="&gt;&gt;dataGridViewImageColumn3.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewImageColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ColumnTitle.Name" xml:space="preserve">
+    <value>ColumnTitle</value>
   </data>
   <data name="&gt;&gt;toolStripButtonClearFilterAndSelectTop.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -1875,9 +1884,6 @@ Not appliable to HTML native formatting.</value>
   </data>
   <data name="dataGridView.ToolTip" xml:space="preserve">
     <value />
-  </data>
-  <data name="&gt;&gt;wordWrapToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="toolStripMenuItem12.Size" type="System.Drawing.Size, System.Drawing">
     <value>235, 22</value>
@@ -2110,6 +2116,9 @@ Not appliable to HTML native formatting.</value>
   <data name="toolStripButtonTopMostWindow.Size" type="System.Drawing.Size, System.Drawing">
     <value>23, 22</value>
   </data>
+  <data name="&gt;&gt;fileToolStripMenuItem.Name" xml:space="preserve">
+    <value>fileToolStripMenuItem</value>
+  </data>
   <data name="&gt;&gt;toolStripMenuItem8.Name" xml:space="preserve">
     <value>toolStripMenuItem8</value>
   </data>
@@ -2128,8 +2137,8 @@ Not appliable to HTML native formatting.</value>
   <data name="&gt;&gt;settingsToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="toolStripMenuItem8.Size" type="System.Drawing.Size, System.Drawing">
-    <value>209, 22</value>
+  <data name="&gt;&gt;checkUpdateToolStripMenuItem.Name" xml:space="preserve">
+    <value>checkUpdateToolStripMenuItem</value>
   </data>
   <data name="moveTopToolStripMenuItem.ToolTipText" xml:space="preserve">
     <value>Move current clip to top</value>
@@ -2248,9 +2257,6 @@ Not appliable to HTML native formatting.</value>
   <data name="richTextBox.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="&gt;&gt;checkUpdateToolStripMenuItem.Name" xml:space="preserve">
-    <value>checkUpdateToolStripMenuItem</value>
-  </data>
   <data name="urlTextBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
@@ -2268,9 +2274,6 @@ Not appliable to HTML native formatting.</value>
   </data>
   <data name="statusStrip.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>None</value>
-  </data>
-  <data name="&gt;&gt;richTextBox.Name" xml:space="preserve">
-    <value>richTextBox</value>
   </data>
   <data name="toolStripMenuItemEditClipText.Size" type="System.Drawing.Size, System.Drawing">
     <value>23, 22</value>
@@ -2295,9 +2298,6 @@ Not appliable to HTML native formatting.</value>
   </data>
   <data name="nextMatchToolStripMenuItem.Text" xml:space="preserve">
     <value>Find next</value>
-  </data>
-  <data name="StripLabelSize.Size" type="System.Drawing.Size, System.Drawing">
-    <value>70, 17</value>
   </data>
   <data name="&gt;&gt;splitContainer1.Panel1.Name" xml:space="preserve">
     <value>splitContainer1.Panel1</value>
@@ -2945,8 +2945,8 @@ Changes in temp file are not synchronized with clip!
   <data name="&gt;&gt;textCompareToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="statusStrip.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 398</value>
+  <data name="&gt;&gt;toolStripButtonMarkFavorite.Name" xml:space="preserve">
+    <value>toolStripButtonMarkFavorite</value>
   </data>
   <data name="aboutToolStripMenuItem1.Text" xml:space="preserve">
     <value>About</value>
@@ -3011,8 +3011,8 @@ Changes in temp file are not synchronized with clip!
   <data name="checkUpdateToolStripMenuItem.ToolTipText" xml:space="preserve">
     <value>Check update is called every start and then every day. This command lets to call it now.</value>
   </data>
-  <data name="&gt;&gt;toolStripButtonMarkFavorite.Name" xml:space="preserve">
-    <value>toolStripButtonMarkFavorite</value>
+  <data name="&gt;&gt;richTextBox.Name" xml:space="preserve">
+    <value>richTextBox</value>
   </data>
   <data name="&gt;&gt;statusStrip.Type" xml:space="preserve">
     <value>System.Windows.Forms.StatusStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -3041,8 +3041,8 @@ Changes in temp file are not synchronized with clip!
   <data name="&gt;&gt;ImageSample.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewImageColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;MainMenu.ZOrder" xml:space="preserve">
-    <value>6</value>
+  <data name="&gt;&gt;pictureBoxSource.Parent" xml:space="preserve">
+    <value>splitContainer1.Panel2</value>
   </data>
   <data name="&gt;&gt;VisualWeight.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -3348,8 +3348,8 @@ Not appliable to HTML native formatting.</value>
   <data name="contextMenuStripHtml.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="toolStripMenuItemOpenFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>28, 25</value>
+  <data name="&gt;&gt;windowAlwaysOnTopToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;pasteTextCTRLENTERToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -3360,8 +3360,8 @@ Not appliable to HTML native formatting.</value>
   <data name="&gt;&gt;timerApplyTextFiler.Name" xml:space="preserve">
     <value>timerApplyTextFiler</value>
   </data>
-  <data name="&gt;&gt;charsDataGridViewTextBoxColumn.Name" xml:space="preserve">
-    <value>charsDataGridViewTextBoxColumn</value>
+  <data name="urlTextBox.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
   </data>
   <data name="&gt;&gt;textBoxWindow.Parent" xml:space="preserve">
     <value>splitContainer1.Panel2</value>
@@ -3458,9 +3458,6 @@ Not appliable to HTML native formatting.</value>
   </metadata>
   <metadata name="AppImage.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
-  </metadata>
-  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>ru</value>
   </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

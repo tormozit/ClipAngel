@@ -117,106 +117,120 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="allTypes" xml:space="preserve">
-    <value>все типы</value>
+  <data name="AutoCheckUpdate" xml:space="preserve">
+    <value>Autocheck for program update</value>
   </data>
-  <data name="ByteUnit" xml:space="preserve">
-    <value>Б</value>
+  <data name="AutoCheckUpdateDescription" xml:space="preserve">
+    <value>Autocheck for update on program start and every day</value>
   </data>
-  <data name="CharUnit" xml:space="preserve">
-    <value>С</value>
+  <data name="Autostart" xml:space="preserve">
+    <value>Autostart program on user logon</value>
   </data>
-  <data name="EndMarker" xml:space="preserve">
-    <value>КОНЕЦ</value>
+  <data name="AutostartDescription" xml:space="preserve">
+    <value />
   </data>
-  <data name="file" xml:space="preserve">
-    <value>файл</value>
+  <data name="ClearFiltersOnClose" xml:space="preserve">
+    <value>Clear filters on main window close</value>
   </data>
-  <data name="img" xml:space="preserve">
-    <value>карт</value>
+  <data name="ClearFiltersOnCloseDescription" xml:space="preserve">
+    <value />
   </data>
-  <data name="text" xml:space="preserve">
-    <value>текст</value>
+  <data name="ClipListSimpleDraw" xml:space="preserve">
+    <value>Fast and simple list draw</value>
   </data>
-  <data name="HelpPage" xml:space="preserve">
-    <value>https://sourceforge.net/p/clip-angel/wikirus/%D0%9E%D1%81%D0%BD%D0%BE%D0%B2%D0%BD%D0%BE%D0%B9/</value>
+  <data name="ClipListSimpleDrawDescription" xml:space="preserve">
+    <value>Clip list will be drawn fast without highlighting filter matches and picture samples</value>
   </data>
-  <data name="NextClip" xml:space="preserve">
-    <value>Следующий клип</value>
+  <data name="DatabaseSize" xml:space="preserve">
+    <value>Database size MB</value>
   </data>
-  <data name="allMarks" xml:space="preserve">
-    <value>все метки</value>
+  <data name="DatabaseSizeDescription" xml:space="preserve">
+    <value />
   </data>
-  <data name="favorite" xml:space="preserve">
-    <value>любимые</value>
+  <data name="DefaultFont" xml:space="preserve">
+    <value>Default font</value>
   </data>
-  <data name="used" xml:space="preserve">
-    <value>полезные</value>
+  <data name="DefaultFontDescription" xml:space="preserve">
+    <value>Font for clip list and default for clip text. Double click to change it.</value>
   </data>
-  <data name="LangRestart" xml:space="preserve">
-    <value>Для полной смены языка возможно потребуется перезапуск программы</value>
+  <data name="GlobalHotkeyIncrementalPaste" xml:space="preserve">
+    <value>Hotkey to incremental paste</value>
   </data>
-  <data name="UpdateTo" xml:space="preserve">
-    <value>Обновить на</value>
+  <data name="GlobalHotkeyIncrementalPasteDescription" xml:space="preserve">
+    <value>Use this hot key in any program to paste current clip from Clip Angel list and select next clip</value>
   </data>
-  <data name="PixelFormat" xml:space="preserve">
-    <value>Пиксель</value>
+  <data name="GlobalHotkeyShow" xml:space="preserve">
+    <value>Hotkey to open window for paste</value>
   </data>
-  <data name="Size" xml:space="preserve">
-    <value>Размер</value>
+  <data name="GlobalHotkeyShowDescription" xml:space="preserve">
+    <value>Use this hot key in any program to show Clip Angel window and then paste selected clip in source window</value>
   </data>
-  <data name="CutMarker" xml:space="preserve">
-    <value>Показать остальной текст</value>
+  <data name="GlobalHotkeyShowFavorites" xml:space="preserve">
+    <value>Hotkey to open for paste from favorites</value>
   </data>
-  <data name="NewVersionAvailable" xml:space="preserve">
-    <value>Новая версия доступна. Для обновления нажмите кнопку в верхней командной панели.</value>
-  </data>
-  <data name="YouLatestVersion" xml:space="preserve">
-    <value>Вы используете последнюю версию</value>
-  </data>
-  <data name="CantPasteInElevatedWindow" xml:space="preserve">
-    <value>Невозможно вставить в окно, имеющее более высокие привилегии. Попробуйте запустить программу от имени администратора.</value>
-  </data>
-  <data name="EditClipTitle" xml:space="preserve">
-    <value>Изменение заголовка клипа</value>
-  </data>
-  <data name="HowUseAutoTitle" xml:space="preserve">
-    <value>Очистите строку для использования автозаголовка</value>
-  </data>
-  <data name="VisualWeightTooltip" xml:space="preserve">
-    <value>Визуальный вес клипа (количество цифр в числе, отражающем визуальный размер клипа)</value>
-  </data>
-  <data name="KiloByteUnit" xml:space="preserve">
-    <value>КБ</value>
-  </data>
-  <data name="MegaByteUnit" xml:space="preserve">
-    <value>МБ</value>
-  </data>
-  <data name="QuestionResetSettings" xml:space="preserve">
-    <value>Вы действительно хотите сбросить все настройки в значения по умолчанию?</value>
-  </data>
-  <data name="HistoryOfChanges" xml:space="preserve">
-    <value>https://sourceforge.net/p/clip-angel/blogrus/</value>
-  </data>
-  <data name="ActivatedExistedProcess" xml:space="preserve">
-    <value>Активирован уже запущенный экземпляр приложения</value>
-  </data>
-  <data name="CouldNotRegisterHotkey" xml:space="preserve">
-    <value>Не удалось зарегистрировать глобальное сочетание клавиш</value>
-  </data>
-  <data name="ClipFileAlreadyOpened" xml:space="preserve">
-    <value>Файл клипа уже открыт и заблокирован</value>
+  <data name="GlobalHotkeyShowFavoritesDescription" xml:space="preserve">
+    <value>Use this hot key in any program to show Clip Angel window with favorites only filter
+and then paste selected clip in source window</value>
   </data>
   <data name="HistoryDepthNumber" xml:space="preserve">
-    <value>Количество хранимых клипов</value>
+    <value>History depth number</value>
   </data>
-  <data name="Hotkeys" xml:space="preserve">
-    <value>Горячие клавиши</value>
+  <data name="HistoryDepthNumberDescription" xml:space="preserve">
+    <value>Maximum number of clips stored in database</value>
   </data>
-  <data name="Info" xml:space="preserve">
-    <value>Информация</value>
+  <data name="Language" xml:space="preserve">
+    <value>Language</value>
   </data>
-  <data name="Other" xml:space="preserve">
-    <value>Другое</value>
+  <data name="LanguageDescription" xml:space="preserve">
+    <value>User interface language</value>
+  </data>
+  <data name="MaxClipSizeKB" xml:space="preserve">
+    <value>Max clip size KB</value>
+  </data>
+  <data name="MaxClipSizeKBDescription" xml:space="preserve">
+    <value>Clips greater this size will not be captured</value>
+  </data>
+  <data name="MoveCopiedClipToTop" xml:space="preserve">
+    <value>Move copied in list clip to top</value>
+  </data>
+  <data name="MoveCopiedClipToTopDescription" xml:space="preserve">
+    <value>Move copied in list clip to top of list</value>
+  </data>
+  <data name="NumberOfClips" xml:space="preserve">
+    <value>Number of clips</value>
+  </data>
+  <data name="NumberOfClipsDescription" xml:space="preserve">
+    <value>Current number of clips in database</value>
+  </data>
+  <data name="ShowApplicationIconColumn" xml:space="preserve">
+    <value>Show clip source icon column</value>
+  </data>
+  <data name="ShowApplicationIconColumnDescription" xml:space="preserve">
+    <value>Show column with icon from application where clip was copied</value>
+  </data>
+  <data name="ShowSizeColumn" xml:space="preserve">
+    <value>Show visual clip weight column</value>
+  </data>
+  <data name="ShowSizeColumnDescription" xml:space="preserve">
+    <value>Column will show visual weight (number of digits in visual size) of clip</value>
+  </data>
+  <data name="TextCompareApplication" xml:space="preserve">
+    <value>Text compare application</value>
+  </data>
+  <data name="TextCompareApplicationDescription" xml:space="preserve">
+    <value>Leave empty to use automatic search application, wich looks for Beyond Compare, ExamDiff Pro, WinMerge, Araxis Merge, DiffMerge.
+Text compare command is %application% %file1% %file2%</value>
+  </data>
+  <data name="UserSettingsPath" xml:space="preserve">
+    <value>User settings path</value>
+  </data>
+  <data name="UserSettingsPathDescription" xml:space="preserve">
+    <value>Files with user settings and database are here</value>
+  </data>
+  <data name="WindowAutoPosition" xml:space="preserve">
+    <value>Window auto position on open</value>
+  </data>
+  <data name="WindowAutoPositionDescription" xml:space="preserve">
+    <value>If possible, window will open near text caret (input), else will place in center of active window</value>
   </data>
 </root>

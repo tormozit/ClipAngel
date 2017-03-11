@@ -94,7 +94,11 @@ namespace ClipAngel.Properties {
             }
         }
         
+        /// <summary>
+        /// desc1
+        /// </summary>
         [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.SettingsDescriptionAttribute("desc1")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("True")]
         public bool WordWrap {

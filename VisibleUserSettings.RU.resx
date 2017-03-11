@@ -1,0 +1,234 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AutoCheckUpdate" xml:space="preserve">
+    <value>Автоматическая проверка обновлений</value>
+  </data>
+  <data name="AutoCheckUpdateDescription" xml:space="preserve">
+    <value>Автоматически проверять обновления при старте программы и каждый день</value>
+  </data>
+  <data name="Autostart" xml:space="preserve">
+    <value>Автозапуск программы при входе пользователя</value>
+  </data>
+  <data name="AutostartDescription" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ClearFiltersOnClose" xml:space="preserve">
+    <value>Очищать фильтры при закрытии главного окна</value>
+  </data>
+  <data name="ClearFiltersOnCloseDescription" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ClipListSimpleDraw" xml:space="preserve">
+    <value>Быстрая и простая отрисовка списка</value>
+  </data>
+  <data name="ClipListSimpleDrawDescription" xml:space="preserve">
+    <value>Список клипов будет рисоваться быстро без выделения найденных фрагментов в заголовках и без фрагментов картинок.</value>
+  </data>
+  <data name="DatabaseSize" xml:space="preserve">
+    <value>Размер базы данных MB</value>
+  </data>
+  <data name="DatabaseSizeDescription" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DefaultFont" xml:space="preserve">
+    <value>Основной шрифт</value>
+  </data>
+  <data name="DefaultFontDescription" xml:space="preserve">
+    <value>Шрифт списка клипов и по умолчанию для текста клипа</value>
+  </data>
+  <data name="GlobalHotkeyIncrementalPaste" xml:space="preserve">
+    <value>Горячая клавиша последоват. вставки</value>
+  </data>
+  <data name="GlobalHotkeyIncrementalPasteDescription" xml:space="preserve">
+    <value>Эта горячая клавиша при нажатии в любой программе вставит текущий клип из списка Clip Angel, перейдет к следующему клипу в списке и покажет его во всплывающей подсказке</value>
+  </data>
+  <data name="GlobalHotkeyShow" xml:space="preserve">
+    <value>Горячая клавиша показа окна</value>
+  </data>
+  <data name="GlobalHotkeyShowDescription" xml:space="preserve">
+    <value>Эта горячая клавиша при нажатии в любой программе покажет окно Clip Angel, которое сможет послать вставку клипа в исходную программу.</value>
+  </data>
+  <data name="GlobalHotkeyShowFavorites" xml:space="preserve">
+    <value>Горячая клавиша показа окна любимых</value>
+  </data>
+  <data name="GlobalHotkeyShowFavoritesDescription" xml:space="preserve">
+    <value>Эта горячая клавиша при нажатии в любой программе покажет окно Clip Angel с отобором только любимых, которое сможет послать вставку клипа в исходную программу.</value>
+  </data>
+  <data name="HistoryDepthNumber" xml:space="preserve">
+    <value>Глубина истории клипов</value>
+  </data>
+  <data name="HistoryDepthNumberDescription" xml:space="preserve">
+    <value>Максимальное количество клипов для хранения в списке</value>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>Язык</value>
+  </data>
+  <data name="LanguageDescription" xml:space="preserve">
+    <value>Язык пользовательского интерфейса</value>
+  </data>
+  <data name="MaxClipSizeKB" xml:space="preserve">
+    <value>Макс. размер  клипа KB</value>
+  </data>
+  <data name="MaxClipSizeKBDescription" xml:space="preserve">
+    <value>Клипы больше этого размера не будут добавляться в список</value>
+  </data>
+  <data name="MoveCopiedClipToTop" xml:space="preserve">
+    <value>Перемещать скопированный клип наверх</value>
+  </data>
+  <data name="MoveCopiedClipToTopDescription" xml:space="preserve">
+    <value>Перемещать клип наверх списка при копировании</value>
+  </data>
+  <data name="NumberOfClips" xml:space="preserve">
+    <value>Количество клипов</value>
+  </data>
+  <data name="NumberOfClipsDescription" xml:space="preserve">
+    <value>Текущее количество клипов в списке</value>
+  </data>
+  <data name="ShowApplicationIconColumn" xml:space="preserve">
+    <value>Отображать колонку иконки источника клипа</value>
+  </data>
+  <data name="ShowApplicationIconColumnDescription" xml:space="preserve">
+    <value>Показать столбец со значком приложения, из которого был скопирован клип</value>
+  </data>
+  <data name="ShowSizeColumn" xml:space="preserve">
+    <value>Отображать колонку визуального веса клипа</value>
+  </data>
+  <data name="ShowSizeColumnDescription" xml:space="preserve">
+    <value>Колонка будет показывать визуальный вес (количество цифр в визуальном размере) клипа</value>
+  </data>
+  <data name="TextCompareApplication" xml:space="preserve">
+    <value>Приложение сравнения файлов</value>
+  </data>
+  <data name="TextCompareApplicationDescription" xml:space="preserve">
+    <value>Оставьте пустым для автоматического поиска программы, который поддерживает Beyond Compare, ExamDiff Pro, WinMerge, Araxis Merge, DiffMerge. Для сравнения текстов используется команда %программа% %файл1% %файл2%</value>
+  </data>
+  <data name="UserSettingsPath" xml:space="preserve">
+    <value>Каталог настроек пользователя</value>
+  </data>
+  <data name="UserSettingsPathDescription" xml:space="preserve">
+    <value>Здесь хранятся файл настроек пользователя и файл базы данных</value>
+  </data>
+  <data name="WindowAutoPosition" xml:space="preserve">
+    <value>Автовыбор положения окна при открытии</value>
+  </data>
+  <data name="WindowAutoPositionDescription" xml:space="preserve">
+    <value>Если возможно, окно будет открываться около места ввода текста, иначе по центру активного окна</value>
+  </data>
+</root>

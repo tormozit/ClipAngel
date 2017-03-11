@@ -117,106 +117,145 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="allTypes" xml:space="preserve">
-    <value>все типы</value>
+  <metadata name="buttonReset.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="buttonReset.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
   </data>
-  <data name="ByteUnit" xml:space="preserve">
-    <value>Б</value>
+  <data name="buttonReset.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="CharUnit" xml:space="preserve">
-    <value>С</value>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="buttonReset.Location" type="System.Drawing.Point, System.Drawing">
+    <value>202, 496</value>
   </data>
-  <data name="EndMarker" xml:space="preserve">
-    <value>КОНЕЦ</value>
+  <data name="buttonReset.Size" type="System.Drawing.Size, System.Drawing">
+    <value>153, 23</value>
   </data>
-  <data name="file" xml:space="preserve">
-    <value>файл</value>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="buttonReset.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
   </data>
-  <data name="img" xml:space="preserve">
-    <value>карт</value>
+  <data name="buttonReset.Text" xml:space="preserve">
+    <value>Reset to defaults</value>
   </data>
-  <data name="text" xml:space="preserve">
-    <value>текст</value>
+  <data name="&gt;&gt;buttonReset.Name" xml:space="preserve">
+    <value>buttonReset</value>
   </data>
-  <data name="HelpPage" xml:space="preserve">
-    <value>https://sourceforge.net/p/clip-angel/wikirus/%D0%9E%D1%81%D0%BD%D0%BE%D0%B2%D0%BD%D0%BE%D0%B9/</value>
+  <data name="&gt;&gt;buttonReset.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="NextClip" xml:space="preserve">
-    <value>Следующий клип</value>
+  <data name="&gt;&gt;buttonReset.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
-  <data name="allMarks" xml:space="preserve">
-    <value>все метки</value>
+  <data name="&gt;&gt;buttonReset.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
-  <data name="favorite" xml:space="preserve">
-    <value>любимые</value>
+  <data name="buttonCancel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
   </data>
-  <data name="used" xml:space="preserve">
-    <value>полезные</value>
+  <data name="buttonCancel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="LangRestart" xml:space="preserve">
-    <value>Для полной смены языка возможно потребуется перезапуск программы</value>
+  <data name="buttonCancel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>442, 496</value>
   </data>
-  <data name="UpdateTo" xml:space="preserve">
-    <value>Обновить на</value>
+  <data name="buttonCancel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
   </data>
-  <data name="PixelFormat" xml:space="preserve">
-    <value>Пиксель</value>
+  <data name="buttonCancel.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
   </data>
-  <data name="Size" xml:space="preserve">
-    <value>Размер</value>
+  <data name="buttonCancel.Text" xml:space="preserve">
+    <value>Cancel</value>
   </data>
-  <data name="CutMarker" xml:space="preserve">
-    <value>Показать остальной текст</value>
+  <data name="&gt;&gt;buttonCancel.Name" xml:space="preserve">
+    <value>buttonCancel</value>
   </data>
-  <data name="NewVersionAvailable" xml:space="preserve">
-    <value>Новая версия доступна. Для обновления нажмите кнопку в верхней командной панели.</value>
+  <data name="&gt;&gt;buttonCancel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="YouLatestVersion" xml:space="preserve">
-    <value>Вы используете последнюю версию</value>
+  <data name="&gt;&gt;buttonCancel.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
-  <data name="CantPasteInElevatedWindow" xml:space="preserve">
-    <value>Невозможно вставить в окно, имеющее более высокие привилегии. Попробуйте запустить программу от имени администратора.</value>
+  <data name="&gt;&gt;buttonCancel.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
-  <data name="EditClipTitle" xml:space="preserve">
-    <value>Изменение заголовка клипа</value>
+  <data name="buttonOK.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
   </data>
-  <data name="HowUseAutoTitle" xml:space="preserve">
-    <value>Очистите строку для использования автозаголовка</value>
+  <data name="buttonOK.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="VisualWeightTooltip" xml:space="preserve">
-    <value>Визуальный вес клипа (количество цифр в числе, отражающем визуальный размер клипа)</value>
+  <data name="buttonOK.Location" type="System.Drawing.Point, System.Drawing">
+    <value>361, 496</value>
   </data>
-  <data name="KiloByteUnit" xml:space="preserve">
-    <value>КБ</value>
+  <data name="buttonOK.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
   </data>
-  <data name="MegaByteUnit" xml:space="preserve">
-    <value>МБ</value>
+  <data name="buttonOK.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
   </data>
-  <data name="QuestionResetSettings" xml:space="preserve">
-    <value>Вы действительно хотите сбросить все настройки в значения по умолчанию?</value>
+  <data name="buttonOK.Text" xml:space="preserve">
+    <value>OK</value>
   </data>
-  <data name="HistoryOfChanges" xml:space="preserve">
-    <value>https://sourceforge.net/p/clip-angel/blogrus/</value>
+  <data name="&gt;&gt;buttonOK.Name" xml:space="preserve">
+    <value>buttonOK</value>
   </data>
-  <data name="ActivatedExistedProcess" xml:space="preserve">
-    <value>Активирован уже запущенный экземпляр приложения</value>
+  <data name="&gt;&gt;buttonOK.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="CouldNotRegisterHotkey" xml:space="preserve">
-    <value>Не удалось зарегистрировать глобальное сочетание клавиш</value>
+  <data name="&gt;&gt;buttonOK.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
-  <data name="ClipFileAlreadyOpened" xml:space="preserve">
-    <value>Файл клипа уже открыт и заблокирован</value>
+  <data name="&gt;&gt;buttonOK.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
-  <data name="HistoryDepthNumber" xml:space="preserve">
-    <value>Количество хранимых клипов</value>
+  <data name="propertyGrid1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
   </data>
-  <data name="Hotkeys" xml:space="preserve">
-    <value>Горячие клавиши</value>
+  <data name="propertyGrid1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 3</value>
   </data>
-  <data name="Info" xml:space="preserve">
-    <value>Информация</value>
+  <data name="propertyGrid1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>513, 487</value>
   </data>
-  <data name="Other" xml:space="preserve">
-    <value>Другое</value>
+  <data name="propertyGrid1.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="&gt;&gt;propertyGrid1.Name" xml:space="preserve">
+    <value>propertyGrid1</value>
+  </data>
+  <data name="&gt;&gt;propertyGrid1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PropertyGrid, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;propertyGrid1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;propertyGrid1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>522, 524</value>
+  </data>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterParent</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>SettingsForm</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>

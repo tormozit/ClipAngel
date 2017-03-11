@@ -45,7 +45,6 @@ namespace ClipAngel
         //bool CaptureClipboard = true;
         bool allowRowLoad = true;
         //bool AutoGotoLastRow = true;
-        bool AllowFormClose = false;
         bool AllowHotkeyProcess = true;
         bool EditMode = false;
         SQLiteDataReader RowReader;
@@ -1031,7 +1030,7 @@ namespace ClipAngel
 
         private void Main_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (!AllowFormClose)
+            if (e.CloseReason == CloseReason.UserClosing)
             {
                 //this.SuspendLayout();
                 if (FastWindowShow)
@@ -1042,7 +1041,7 @@ namespace ClipAngel
                     if (!lastActSet)
                         //SetForegroundWindow(IntPtr.Zero); // This way focus was not lost!
                         SetActiveWindow(IntPtr.Zero);
-                    this.Top = -this.Height;
+                    this.Top = -10000;
                 }
                 else
                 {
@@ -1308,15 +1307,18 @@ namespace ClipAngel
             md5.TransformFinalBlock(binaryHtml, 0, binaryHtml.Length);
             string hash = Convert.ToBase64String(md5.Hash);
             bool used = false;
+            bool favorite = false;
 
-            string sql = "SELECT Id, Used FROM Clips Where Hash = @Hash";
+            string sql = "SELECT Id, Title, Used, Favorite FROM Clips Where Hash = @Hash";
             SQLiteCommand commandSelect = new SQLiteCommand(sql, m_dbConnection);
             commandSelect.Parameters.AddWithValue("@Hash", hash);
             using (SQLiteDataReader reader = commandSelect.ExecuteReader())
             {
                 if (reader.Read())
                 {
-                    used = reader.GetBoolean(reader.GetOrdinal("Used"));
+                    used = GetNullableBoolFromSqlReader(reader, "Used");
+                    favorite = GetNullableBoolFromSqlReader(reader, "Favorite");
+                    clipTitle = reader.GetString(reader.GetOrdinal("Title"));
                     sql = "DELETE FROM Clips Where Id = @Id";
                     SQLiteCommand commandDelete = new SQLiteCommand(sql, m_dbConnection);
                     commandDelete.Parameters.AddWithValue("@Id", reader.GetInt32(reader.GetOrdinal("Id")));
@@ -1324,8 +1326,8 @@ namespace ClipAngel
                 }
             }
 
-            sql = "insert into Clips (Id, Title, Text, Application, Window, Created, Type, Binary, ImageSample, Size, Chars, RichText, HtmlText, Used, Url, Hash, appPath) "
-               + "values (@Id, @Title, @Text, @Application, @Window, @Created, @Type, @Binary, @ImageSample, @Size, @Chars, @RichText, @HtmlText, @Used, @Url, @Hash, @appPath)";
+            sql = "insert into Clips (Id, Title, Text, Application, Window, Created, Type, Binary, ImageSample, Size, Chars, RichText, HtmlText, Used, Favorite, Url, Hash, appPath) "
+               + "values (@Id, @Title, @Text, @Application, @Window, @Created, @Type, @Binary, @ImageSample, @Size, @Chars, @RichText, @HtmlText, @Used, @Favorite, @Url, @Hash, @appPath)";
 
             SQLiteCommand commandInsert = new SQLiteCommand(sql, m_dbConnection);
             commandInsert.Parameters.AddWithValue("@Id", LastId);
@@ -1343,6 +1345,7 @@ namespace ClipAngel
             commandInsert.Parameters.AddWithValue("@Chars", chars);
             commandInsert.Parameters.AddWithValue("@Used", used);
             commandInsert.Parameters.AddWithValue("@Url", url);
+            commandInsert.Parameters.AddWithValue("@Favorite", favorite);
             commandInsert.Parameters.AddWithValue("@Hash", hash);
             commandInsert.Parameters.AddWithValue("@appPath", appPath);
             commandInsert.ExecuteNonQuery();
@@ -1397,6 +1400,18 @@ namespace ClipAngel
                 )
                     ShowForPaste();
             //}
+        }
+
+        private static bool GetNullableBoolFromSqlReader(SQLiteDataReader reader, string columnName)
+        {
+            int columnIndex = reader.GetOrdinal(columnName);
+            bool result;
+            bool DefaultValue = false;
+            if (!reader.IsDBNull(columnIndex))
+                result = reader.GetBoolean(columnIndex);
+            else
+                result = DefaultValue;
+            return result;
         }
 
         private static string TextClipTitle(string text)
@@ -2240,8 +2255,7 @@ namespace ClipAngel
 
         private void exitToolStripMenuItem_Click(object sender = null, EventArgs e = null)
         {
-            AllowFormClose = true;
-            this.Close();
+            Application.Exit();
         }
 
         private void Filter_KeyDown(object sender, KeyEventArgs e)
@@ -2696,10 +2710,10 @@ namespace ClipAngel
 
         private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Settings settingsForm = new Settings();
+            SettingsForm settingsFormForm = new SettingsForm();
             keyboardHook.UnregisterHotKeys();
-            settingsForm.ShowDialog(this);
-            if (settingsForm.DialogResult == DialogResult.OK)
+            settingsFormForm.ShowDialog(this);
+            if (settingsFormForm.DialogResult == DialogResult.OK)
                 LoadSettings();
             RegisterHotKeys();
         }
@@ -2712,6 +2726,7 @@ namespace ClipAngel
 
         private void LoadSettings()
         {
+            this.SuspendLayout();
             UpdateControlsStates();
             UpdateCurrentCulture();
             cultureManager1.UICulture = Thread.CurrentThread.CurrentUICulture;
@@ -2739,7 +2754,9 @@ namespace ClipAngel
             dataGridView.RowsDefaultCellStyle.Font = Properties.Settings.Default.Font;
             ChooseTitleColumnDraw();
             dataGridView.Columns["appImage"].Visible = Properties.Settings.Default.ShowApplicationIconColumn;
-            GotoLastRow();
+            //GotoLastRow();
+            AfterRowLoad();
+            this.ResumeLayout();
         }
 
         private void ChooseTitleColumnDraw()
