@@ -5,7 +5,7 @@
     <Setting Name="HistoryDepthNumber" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">10000</Value>
     </Setting>
-    <Setting Name="HotkeyShow" Type="System.String" Scope="User">
+    <Setting Name="GlobalHotkeyOpen" Type="System.String" Scope="User">
       <Value Profile="(Default)">Alt + V</Value>
     </Setting>
     <Setting Name="Autostart" Type="System.Boolean" Scope="User">
@@ -20,7 +20,7 @@
     <Setting Name="Language" Type="System.String" Scope="User">
       <Value Profile="(Default)">Default</Value>
     </Setting>
-    <Setting Name="WordWrap" Description="desc1" Type="System.Boolean" Scope="User">
+    <Setting Name="WordWrap" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="MoveCopiedClipToTop" Type="System.Boolean" Scope="User">
@@ -29,7 +29,7 @@
     <Setting Name="ShowVisualWeightColumn" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
-    <Setting Name="HotkeyIncrementalPaste" Type="System.String" Scope="User">
+    <Setting Name="GlobalHotkeyIncrementalPaste" Type="System.String" Scope="User">
       <Value Profile="(Default)">No</Value>
     </Setting>
     <Setting Name="SelectTopClipOnShow" Type="System.Boolean" Scope="User">
@@ -62,17 +62,20 @@
     <Setting Name="Font" Type="System.Drawing.Font" Scope="User">
       <Value Profile="(Default)">Segoe UI, 9pt</Value>
     </Setting>
-    <Setting Name="HotKeyShowFavorites" Type="System.String" Scope="User">
+    <Setting Name="GlobalHotkeyOpenFavorites" Type="System.String" Scope="User">
       <Value Profile="(Default)">Alt + B</Value>
-    </Setting>
-    <Setting Name="ShowInTaskBar" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="TextCompareApplication" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="HotkeyCompareLastClips" Type="System.String" Scope="User">
+    <Setting Name="GlobalHotkeyCompareLastClips" Type="System.String" Scope="User">
       <Value Profile="(Default)">No</Value>
+    </Setting>
+    <Setting Name="FastWindowOpen" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="ShowInTaskBar" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
     </Setting>
   </Settings>
 </SettingsFile>

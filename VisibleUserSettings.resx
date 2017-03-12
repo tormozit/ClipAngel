@@ -153,6 +153,12 @@
   <data name="DefaultFontDescription" xml:space="preserve">
     <value>Font for clip list and default for clip text. Double click to change it.</value>
   </data>
+  <data name="FastWindowOpen" xml:space="preserve">
+    <value>Fast window open</value>
+  </data>
+  <data name="FastWindowOpenDescription" xml:space="preserve">
+    <value>Uncheck it if you experience problems with window opening or closing</value>
+  </data>
   <data name="GlobalHotkeyCompareLastClips" xml:space="preserve">
     <value>Hotkey to compare last clips</value>
   </data>
@@ -165,16 +171,16 @@
   <data name="GlobalHotkeyIncrementalPasteDescription" xml:space="preserve">
     <value>Use this hot key in any program to paste current clip from Clip Angel list and select next clip</value>
   </data>
-  <data name="GlobalHotkeyShow" xml:space="preserve">
+  <data name="GlobalHotkeyOpen" xml:space="preserve">
     <value>Hotkey to open window for paste</value>
   </data>
-  <data name="GlobalHotkeyShowDescription" xml:space="preserve">
+  <data name="GlobalHotkeyOpenDescription" xml:space="preserve">
     <value>Use this hot key in any program to show Clip Angel window and then paste selected clip in source window</value>
   </data>
-  <data name="GlobalHotkeyShowFavorites" xml:space="preserve">
+  <data name="GlobalHotkeyOpenFavorites" xml:space="preserve">
     <value>Hotkey to open for paste from favorites</value>
   </data>
-  <data name="GlobalHotkeyShowFavoritesDescription" xml:space="preserve">
+  <data name="GlobalHotkeyOpenFavoritesDescription" xml:space="preserve">
     <value>Use this hot key in any program to show Clip Angel window with favorites only filter
 and then paste selected clip in source window</value>
   </data>

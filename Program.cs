@@ -88,6 +88,7 @@ namespace ClipAngel
                     Application.SetCompatibleTextRenderingDefault(false);
                     Main Main = new Main(UserSettingsPath, PortableMode, args.Contains("/m"));
                     Application.Run(Main);
+                    Properties.Settings.Default.Save();
                 }
             }
         }

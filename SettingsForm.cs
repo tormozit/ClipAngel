@@ -26,6 +26,11 @@ namespace ClipAngel
             //cultureManager1.UICulture = new CultureInfo((Owner as Main).Locale);
             var grid = propertyGrid1.Controls[2];
             grid.MouseClick += grid_MouseClick;
+            grid.ContextMenuStrip = contexMenuGrid;
+            var label = propertyGrid1.Controls[0].Controls[0];
+            label.ContextMenuStrip = contexMenuLabel;
+            label = propertyGrid1.Controls[0].Controls[1];
+            label.ContextMenuStrip = contexMenuLabel;
             propertyGrid1.SelectedObject = set;
         }
 
@@ -128,6 +133,19 @@ namespace ClipAngel
         private void buttonClearFilter_Click(object sender, EventArgs e)
         {
             textBoxFilter.Text = "";
+        }
+
+        private void copyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetText((((sender as ToolStripMenuItem).Owner as ContextMenuStrip).SourceControl as Label).Text);
+        }
+
+        private void gridContextMenuCopy_Click(object sender, EventArgs e)
+        {
+            if (propertyGrid1.SelectedGridItem != null)
+            {
+                Clipboard.SetText(propertyGrid1.SelectedGridItem.Label);
+            }
         }
     }
 
@@ -573,16 +591,17 @@ namespace ClipAngel
         public static List<string> langList = new List<string> { "Default", "English", "Russian" };
         public VisibleUserSettings(Main Owner)
         {
-            HistoryDepthNumber = (int)Properties.Settings.Default.HistoryDepthNumber;
+            FastWindowOpen = Properties.Settings.Default.FastWindowOpen;
+            HistoryDepthNumber = Properties.Settings.Default.HistoryDepthNumber;
             DefaultFont = Properties.Settings.Default.Font;
             Language = Properties.Settings.Default.Language;
             Autostart = Properties.Settings.Default.Autostart;
             TextCompareApplication = Properties.Settings.Default.TextCompareApplication;
             MaxClipSizeKB = Properties.Settings.Default.MaxClipSizeKB;
-            GlobalHotkeyShow = Properties.Settings.Default.HotkeyShow;
-            GlobalHotkeyShowFavorites = Properties.Settings.Default.HotKeyShowFavorites;
-            GlobalHotkeyIncrementalPaste = Properties.Settings.Default.HotkeyIncrementalPaste;
-            GlobalHotkeyCompareLastClips = Properties.Settings.Default.HotkeyCompareLastClips;
+            GlobalHotkeyOpen = Properties.Settings.Default.GlobalHotkeyOpen;
+            GlobalHotkeyOpenFavorites = Properties.Settings.Default.GlobalHotkeyOpenFavorites;
+            GlobalHotkeyIncrementalPaste = Properties.Settings.Default.GlobalHotkeyIncrementalPaste;
+            GlobalHotkeyCompareLastClips = Properties.Settings.Default.GlobalHotkeyCompareLastClips;
             WindowAutoPosition = Properties.Settings.Default.WindowAutoPosition;
             MoveCopiedClipToTop = Properties.Settings.Default.MoveCopiedClipToTop;
             ShowSizeColumn = Properties.Settings.Default.ShowVisualWeightColumn;
@@ -622,6 +641,10 @@ namespace ClipAngel
 
         [GlobalizedCategory("Other")]
         [Editor(typeof(MyBoolEditor), typeof(UITypeEditor))]
+        public bool FastWindowOpen { get; set; }
+
+        [GlobalizedCategory("Other")]
+        [Editor(typeof(MyBoolEditor), typeof(UITypeEditor))]
         public bool ClipListSimpleDraw { get; set; }
 
         [GlobalizedCategory("Other")]
@@ -644,12 +667,12 @@ namespace ClipAngel
         [GlobalizedCategory("Hotkeys")]
         [TypeConverterAttribute(typeof(HotkeyConverter))]
         [EditorAttribute(typeof(HotkeyEditor), typeof(UITypeEditor))]
-        public string GlobalHotkeyShowFavorites { get; set; }
+        public string GlobalHotkeyOpenFavorites { get; set; }
 
         [GlobalizedCategory("Hotkeys")]
         [TypeConverterAttribute(typeof(HotkeyConverter))]
         [EditorAttribute(typeof(HotkeyEditor), typeof(UITypeEditor))]
-        public string GlobalHotkeyShow { get; set; }
+        public string GlobalHotkeyOpen { get; set; }
 
         [GlobalizedCategory("Hotkeys")]
         [TypeConverterAttribute(typeof(HotkeyConverter))]
@@ -680,6 +703,7 @@ namespace ClipAngel
 
         public void Apply(bool PortableMode = false)
         {
+            Properties.Settings.Default.FastWindowOpen = FastWindowOpen;
             Properties.Settings.Default.HistoryDepthNumber = HistoryDepthNumber;
             Properties.Settings.Default.Font = DefaultFont;
             Properties.Settings.Default.Language = Language;
@@ -692,10 +716,10 @@ namespace ClipAngel
             Properties.Settings.Default.MoveCopiedClipToTop = MoveCopiedClipToTop;
             Properties.Settings.Default.ShowVisualWeightColumn = ShowSizeColumn;
             Properties.Settings.Default.WindowAutoPosition = WindowAutoPosition;
-            Properties.Settings.Default.HotkeyShow = GlobalHotkeyShow;
-            Properties.Settings.Default.HotKeyShowFavorites = GlobalHotkeyShowFavorites;
-            Properties.Settings.Default.HotkeyIncrementalPaste = GlobalHotkeyIncrementalPaste;
-            Properties.Settings.Default.HotkeyCompareLastClips = GlobalHotkeyCompareLastClips;
+            Properties.Settings.Default.GlobalHotkeyOpen = GlobalHotkeyOpen;
+            Properties.Settings.Default.GlobalHotkeyOpenFavorites = GlobalHotkeyOpenFavorites;
+            Properties.Settings.Default.GlobalHotkeyIncrementalPaste = GlobalHotkeyIncrementalPaste;
+            Properties.Settings.Default.GlobalHotkeyCompareLastClips = GlobalHotkeyCompareLastClips;
             Properties.Settings.Default.Language = Language;
 
             RegistryKey reg;

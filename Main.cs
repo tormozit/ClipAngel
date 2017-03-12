@@ -89,7 +89,6 @@ namespace ClipAngel
         private int clipRichTextLength = 0; // To always know where ends real text (location of end marker)
         bool filterOn = false;
         private HtmlElement lastClickedHtmlElement;
-        private bool FastWindowShow = true;
         private bool allowVisible = false;
 
         [DllImport("dwmapi", PreserveSig = true)]
@@ -142,7 +141,7 @@ namespace ClipAngel
 
             htmlTextBox.Navigate("about:blank");
             htmlTextBox.Document.ExecCommand("EditMode", false, null);
-            //FastWindowShow = false; // for debug
+            //Properties.Settings.Default.FastWindowOpen = false; // for debug
 
             // Antiflicker double buffering
             // http://stackoverflow.com/questions/76993/how-to-double-buffer-net-controls-on-a-form
@@ -152,10 +151,6 @@ namespace ClipAngel
             aProp.SetValue(dataGridView, true, null);
             //aProp.SetValue(richTextBox, true, null); // No effect
             //aProp.SetValue(htmlTextBox, true, null); // No effect
-
-            this.ActiveControl = dataGridView;
-
-            SetProp(this.Handle, IsMainPropName, new IntPtr(1));
 
             BindingList<ListItemNameText> _comboItemsTypes = new BindingList<ListItemNameText>
             {
@@ -168,6 +163,7 @@ namespace ClipAngel
             TypeFilter.DisplayMember = "Text";
             TypeFilter.ValueMember = "Name";
             //MarkFilter.SelectedValue = "allTypes";
+            MarkFilter.SelectedIndex = 0;
 
             BindingList<ListItemNameText> _comboItemsMarks = new BindingList<ListItemNameText>();
             _comboItemsMarks.Add(new ListItemNameText { Name = "allMarks" });
@@ -177,11 +173,9 @@ namespace ClipAngel
             MarkFilter.DisplayMember = "Text";
             MarkFilter.ValueMember = "Name";
             //MarkFilter.SelectedValue = "allMarks";
-
-            LoadSettings();
-            (dataGridView.Columns["AppImage"] as DataGridViewImageColumn).DefaultCellStyle.NullValue = null;
             TypeFilter.SelectedIndex = 0;
-            MarkFilter.SelectedIndex = 0;
+
+            (dataGridView.Columns["AppImage"] as DataGridViewImageColumn).DefaultCellStyle.NullValue = null;
             richTextBox.AutoWordSelection = false;
             urlTextBox.AutoWordSelection = false;
             if (Properties.Settings.Default.LastFilterValues == null)
@@ -189,6 +183,7 @@ namespace ClipAngel
                 Properties.Settings.Default.LastFilterValues = new StringCollection();
             }
             FillFilterItems();
+
             if (!Directory.Exists(UserSettingsPath))
             {
                 Directory.CreateDirectory(UserSettingsPath);
@@ -277,7 +272,17 @@ namespace ClipAngel
             timerCheckUpdate.Start();
             timerReconnect.Interval = (1000 * 5); // 5 seconds
             timerReconnect.Start();
+            this.ActiveControl = dataGridView;
+            ResetIsMainProperty();
+
+            LoadSettings();
         }
+
+        private void ResetIsMainProperty()
+        {
+            SetProp(this.Handle, IsMainPropName, new IntPtr(1));
+        }
+
         delegate void WinEventDelegate(IntPtr hWinEventHook, uint eventType, IntPtr hwnd, int idObject, int idChild, uint dwEventThread, uint dwmsEventTime);
 
         public void WinEventProc(IntPtr hWinEventHook, uint eventType, IntPtr hwnd, int idObject, int idChild, uint dwEventThread, uint dwmsEventTime)
@@ -310,14 +315,16 @@ namespace ClipAngel
         {
             EnumModifierKeys Modifiers;
             Keys Key;
-            if (ReadHotkeyFromText(Properties.Settings.Default.HotkeyShow, out Modifiers, out Key))
+            if (ReadHotkeyFromText(Properties.Settings.Default.GlobalHotkeyOpen, out Modifiers, out Key))
                 keyboardHook.RegisterHotKey(Modifiers, Key);
-            if (ReadHotkeyFromText(Properties.Settings.Default.HotKeyShowFavorites, out Modifiers, out Key))
+            if (ReadHotkeyFromText(Properties.Settings.Default.GlobalHotkeyOpenFavorites, out Modifiers, out Key))
                 keyboardHook.RegisterHotKey(Modifiers, Key);
-            if (ReadHotkeyFromText(Properties.Settings.Default.HotkeyIncrementalPaste, out Modifiers, out Key))
+            if (ReadHotkeyFromText(Properties.Settings.Default.GlobalHotkeyIncrementalPaste, out Modifiers, out Key))
                 keyboardHook.RegisterHotKey(Modifiers, Key);
-            if (ReadHotkeyFromText(Properties.Settings.Default.HotkeyCompareLastClips, out Modifiers, out Key))
+            if (ReadHotkeyFromText(Properties.Settings.Default.GlobalHotkeyCompareLastClips, out Modifiers, out Key))
                 keyboardHook.RegisterHotKey(Modifiers, Key);
+            //if (ReadHotkeyFromText("Control + F3", out Modifiers, out Key))
+            //    keyboardHook.RegisterHotKey(Modifiers, Key);
         }
 
         private static bool ReadHotkeyFromText(string HotkeyText, out EnumModifierKeys Modifiers, out Keys Key)
@@ -342,7 +349,7 @@ namespace ClipAngel
             if (!AllowHotkeyProcess)
                 return;
             string hotkeyTitle = KeyboardHook.HotkeyTitle(e.Key, e.Modifier);
-            if (hotkeyTitle == Properties.Settings.Default.HotkeyShow)
+            if (hotkeyTitle == Properties.Settings.Default.GlobalHotkeyOpen)
             {
                 if (this.ContainsFocus && this.Top >= 0 && MarkFilter.SelectedValue.ToString() != "favorite")
                     this.Close();
@@ -352,7 +359,7 @@ namespace ClipAngel
                     dataGridView.Focus();
                 }
             }
-            else if (hotkeyTitle == Properties.Settings.Default.HotKeyShowFavorites)
+            else if (hotkeyTitle == Properties.Settings.Default.GlobalHotkeyOpenFavorites)
             {
                 if (this.ContainsFocus && this.Top >= 0 && MarkFilter.SelectedValue.ToString() == "favorite")
                     this.Close();
@@ -362,7 +369,7 @@ namespace ClipAngel
                     dataGridView.Focus();
                 }
             }
-            else if (hotkeyTitle == Properties.Settings.Default.HotkeyIncrementalPaste)
+            else if (hotkeyTitle == Properties.Settings.Default.GlobalHotkeyIncrementalPaste)
             {
                 AllowHotkeyProcess = false;
                 SendPasteClip();
@@ -378,7 +385,7 @@ namespace ClipAngel
                 notifyIcon.ShowBalloonTip(2000, CurrentLangResourceManager.GetString("NextClip"), CurrentDataRow["Title"].ToString(), ToolTipIcon.Info);
                 AllowHotkeyProcess = true;
             }
-            else if (hotkeyTitle == Properties.Settings.Default.HotkeyCompareLastClips)
+            else if (hotkeyTitle == Properties.Settings.Default.GlobalHotkeyCompareLastClips)
             {
                 if (dataGridView.Rows.Count > 1)
                 {
@@ -390,6 +397,10 @@ namespace ClipAngel
 
                 }
             }
+            //else if (hotkeyTitle == "Control + F3")
+            //{
+            //    Paster.SendCopy();
+            //}
             else
             {
                 //int a = 0;
@@ -400,7 +411,7 @@ namespace ClipAngel
         private const int SC_MINIMIZE = 0xf020;
         protected override void WndProc(ref Message m)
         {
-            if (FastWindowShow)
+            if (Properties.Settings.Default.FastWindowOpen)
             {
                 if (m.Msg == WM_SYSCOMMAND)
                 {
@@ -1062,7 +1073,7 @@ namespace ClipAngel
             if (e.CloseReason == CloseReason.UserClosing)
             {
                 //this.SuspendLayout();
-                if (FastWindowShow)
+                if (Properties.Settings.Default.FastWindowOpen)
                 {
                     bool lastActSet = false;
                     if (lastActiveWindow != null)
@@ -2076,7 +2087,7 @@ namespace ClipAngel
 
         private void Main_Deactivate(object sender, EventArgs e)
         {
-            if (FastWindowShow)
+            if (Properties.Settings.Default.FastWindowOpen)
             {
                 //if (this.WindowState == FormWindowState.Minimized)
                 //{
@@ -2193,17 +2204,13 @@ namespace ClipAngel
             RestoreWindowIfMinimized(newX, newY);
             //sw.Stop();
             //Debug.WriteLine("autoposition duration" + sw.ElapsedMilliseconds.ToString());
-            if (FastWindowShow)
+            if (!Properties.Settings.Default.FastWindowOpen)
             {
-                SetForegroundWindow(this.Handle);
-            }
-            else
-            {
-                this.Activate();
+                //this.Activate();
                 this.ShowInTaskbar = true;
                 this.Show();
-                //notifyIcon.Visible = false;
             }
+            SetForegroundWindow(this.Handle);
             if (Properties.Settings.Default.SelectTopClipOnShow)
                 GotoLastRow();
             this.ResumeLayout();
@@ -2230,7 +2237,7 @@ namespace ClipAngel
                 else
                     newY = this.RestoreBounds.Y;
             }
-            if (FastWindowShow)
+            if (Properties.Settings.Default.FastWindowOpen)
                 if (newY < 0)
                     newY = factualTop;
             if (newX > 0)
@@ -2738,7 +2745,7 @@ namespace ClipAngel
             this.SuspendLayout();
             UpdateControlsStates();
             UpdateCurrentCulture();
-            //cultureManager1.UICulture = Thread.CurrentThread.CurrentUICulture;
+            cultureManager1.UICulture = Thread.CurrentThread.CurrentUICulture;
 
             UpdateWindowTitle(true);
 
@@ -2902,7 +2909,7 @@ namespace ClipAngel
 
         private void Main_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Properties.Settings.Default.Save();
+            //Properties.Settings.Default.Save(); // Not all properties were saved here. For example ShowInTaskbar was not saved
             RemoveClipboardFormatListener(this.Handle);
             UnhookWinEvent(HookChangeActiveWindow);
         }
@@ -2921,7 +2928,7 @@ namespace ClipAngel
         private void Main_Activated(object sender, EventArgs e)
         {
             //Debug.WriteLine("Activated");
-            if (FastWindowShow)
+            if (Properties.Settings.Default.FastWindowOpen)
             {
                 RestoreWindowIfMinimized();
                 SetForegroundWindow(this.Handle);
@@ -3098,8 +3105,12 @@ namespace ClipAngel
             toolStripButtonWordWrap.Checked = Properties.Settings.Default.WordWrap;
             dataGridView.Columns["VisualWeight"].Visible = Properties.Settings.Default.ShowVisualWeightColumn;
             richTextBox.WordWrap = wordWrapToolStripMenuItem.Checked;
+            showInTaskbarToolStripMenuItem.Enabled = Properties.Settings.Default.FastWindowOpen;
             showInTaskbarToolStripMenuItem.Checked = Properties.Settings.Default.ShowInTaskBar;
             this.ShowInTaskbar = Properties.Settings.Default.ShowInTaskBar;
+
+            // After ShowInTaskbar change true->false all window properties are deleted. So we need to reset it.
+            ResetIsMainProperty();
         }
 
         private void toolStripMenuItemClearFilterAndSelectTop_Click(object sender, EventArgs e)

@@ -38,12 +38,12 @@ namespace ClipAngel.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("Alt + V")]
-        public string HotkeyShow {
+        public string GlobalHotkeyOpen {
             get {
-                return ((string)(this["HotkeyShow"]));
+                return ((string)(this["GlobalHotkeyOpen"]));
             }
             set {
-                this["HotkeyShow"] = value;
+                this["GlobalHotkeyOpen"] = value;
             }
         }
         
@@ -94,11 +94,7 @@ namespace ClipAngel.Properties {
             }
         }
         
-        /// <summary>
-        /// desc1
-        /// </summary>
         [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Configuration.SettingsDescriptionAttribute("desc1")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("True")]
         public bool WordWrap {
@@ -137,12 +133,12 @@ namespace ClipAngel.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("No")]
-        public string HotkeyIncrementalPaste {
+        public string GlobalHotkeyIncrementalPaste {
             get {
-                return ((string)(this["HotkeyIncrementalPaste"]));
+                return ((string)(this["GlobalHotkeyIncrementalPaste"]));
             }
             set {
-                this["HotkeyIncrementalPaste"] = value;
+                this["GlobalHotkeyIncrementalPaste"] = value;
             }
         }
         
@@ -269,24 +265,12 @@ namespace ClipAngel.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("Alt + B")]
-        public string HotKeyShowFavorites {
+        public string GlobalHotkeyOpenFavorites {
             get {
-                return ((string)(this["HotKeyShowFavorites"]));
+                return ((string)(this["GlobalHotkeyOpenFavorites"]));
             }
             set {
-                this["HotKeyShowFavorites"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool ShowInTaskBar {
-            get {
-                return ((bool)(this["ShowInTaskBar"]));
-            }
-            set {
-                this["ShowInTaskBar"] = value;
+                this["GlobalHotkeyOpenFavorites"] = value;
             }
         }
         
@@ -305,12 +289,36 @@ namespace ClipAngel.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("No")]
-        public string HotkeyCompareLastClips {
+        public string GlobalHotkeyCompareLastClips {
             get {
-                return ((string)(this["HotkeyCompareLastClips"]));
+                return ((string)(this["GlobalHotkeyCompareLastClips"]));
             }
             set {
-                this["HotkeyCompareLastClips"] = value;
+                this["GlobalHotkeyCompareLastClips"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool FastWindowOpen {
+            get {
+                return ((bool)(this["FastWindowOpen"]));
+            }
+            set {
+                this["FastWindowOpen"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool ShowInTaskBar {
+            get {
+                return ((bool)(this["ShowInTaskBar"]));
+            }
+            set {
+                this["ShowInTaskBar"] = value;
             }
         }
     }
