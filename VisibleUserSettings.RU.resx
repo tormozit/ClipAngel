@@ -142,10 +142,12 @@
     <value>Список клипов будет рисоваться быстро без выделения найденных фрагментов в заголовках и без фрагментов картинок.</value>
   </data>
   <data name="CopyTextInAnyWindowOnCTRLF3" xml:space="preserve">
-    <value>Копировать текст в любом окне по Control+F3</value>
+    <value>Копировать текст из любого окна по Control+F3</value>
   </data>
   <data name="CopyTextInAnyWindowOnCTRLF3Description" xml:space="preserve">
-    <value>Копировать выделенный текст в любом окне при нажатии Control+F3. При этом нажатие будет обработано самим окном.</value>
+    <value>Копировать выделенный текст из любого окна при нажатии Control+F3.  
+Это сочетание обычно используется текстовыми редакторами для поиска выделенной строки. 
+При этом нажатие будет обработано самим окном.</value>
   </data>
   <data name="DatabaseSize" xml:space="preserve">
     <value>Размер базы данных MB</value>

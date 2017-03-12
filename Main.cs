@@ -117,7 +117,6 @@ namespace ClipAngel
             //const int DWMWA_TRANSITIONS_FORCEDISABLED = 3;
             //int value = 1;  // TRUE to disable
             //DwmSetWindowAttribute(this.Handle, DWMWA_TRANSITIONS_FORCEDISABLED, ref value, 4);
-
             //this.SetStyle(ControlStyles.AllPaintingInWmPaint | ControlStyles.UserPaint | ControlStyles.DoubleBuffer, true);
 
             UpdateCurrentCulture(); // Antibug. Before bug it was not required
@@ -1085,14 +1084,11 @@ namespace ClipAngel
                         //SetForegroundWindow(IntPtr.Zero); // This way focus was not lost!
                         SetActiveWindow(IntPtr.Zero);
                     this.Top = -10000;
-                    //// For debug
-                    //if (this.Top != -10000)
-                    //    MessageBox.Show(this.Top.ToString());
                 }
                 else
                 {
+                    this.FormBorderStyle = FormBorderStyle.FixedToolWindow; // To disable animation
                     this.Hide();
-                    this.ShowInTaskbar = false;
                 }
                 e.Cancel = true;
                 if (Properties.Settings.Default.ClearFiltersOnClose)
@@ -1471,7 +1467,8 @@ namespace ClipAngel
             //    dataGridView.CurrentCell = dataGridView.Rows[i-1].Cells[0];
             //UpdateClipBindingSource();
             allowRowLoad = true;
-            AfterRowLoad();
+            //AfterRowLoad();
+            SelectCurrentRow();
         }
 
         [DllImport("user32.dll")]
@@ -2209,8 +2206,7 @@ namespace ClipAngel
             //Debug.WriteLine("autoposition duration" + sw.ElapsedMilliseconds.ToString());
             if (!Properties.Settings.Default.FastWindowOpen)
             {
-                //this.Activate();
-                this.ShowInTaskbar = true;
+                this.Activate();
                 this.Show();
             }
             SetForegroundWindow(this.Handle);
@@ -2221,6 +2217,7 @@ namespace ClipAngel
 
         private void RestoreWindowIfMinimized(int newX = -1, int newY = -1)
         {
+            this.FormBorderStyle = FormBorderStyle.Sizable;
             if (!allowVisible)
             {
                 allowVisible = true;
@@ -2939,8 +2936,8 @@ namespace ClipAngel
             if (Properties.Settings.Default.FastWindowOpen)
             {
                 RestoreWindowIfMinimized();
-                SetForegroundWindow(this.Handle);
             }
+            SetForegroundWindow(this.Handle);
         }
 
         private void Filter_KeyPress(object sender, KeyPressEventArgs e)
@@ -3837,7 +3834,7 @@ namespace ClipAngel
             if (Properties.Settings.Default.ShowNativeTextFormatting)
                 Clipboard.SetText(richTextBox.SelectedRtf, TextDataFormat.Rtf);
             else
-                Clipboard.SetText(richTextBox.SelectedText, TextDataFormat.Text);
+                Clipboard.SetText(richTextBox.SelectedText, TextDataFormat.UnicodeText);
         }
     }
 }
