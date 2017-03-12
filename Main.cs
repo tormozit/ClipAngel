@@ -1071,8 +1071,9 @@ namespace ClipAngel
                         //SetForegroundWindow(IntPtr.Zero); // This way focus was not lost!
                         SetActiveWindow(IntPtr.Zero);
                     this.Top = -10000;
-                    if (this.Top != -10000)
-                        MessageBox.Show(this.Top.ToString());
+                    //// For debug
+                    //if (this.Top != -10000)
+                    //    MessageBox.Show(this.Top.ToString());
                 }
                 else
                 {
