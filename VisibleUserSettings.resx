@@ -141,6 +141,12 @@
   <data name="ClipListSimpleDrawDescription" xml:space="preserve">
     <value>Clip list will be drawn fast without highlighting filter matches and picture samples</value>
   </data>
+  <data name="CopyTextInAnyWindowOnCTRLF3" xml:space="preserve">
+    <value>Copy text in any window on Control+F3</value>
+  </data>
+  <data name="CopyTextInAnyWindowOnCTRLF3Description" xml:space="preserve">
+    <value>Copy selected text in any window when Control+F3 is pressed. Key press will be normally processed by the window.</value>
+  </data>
   <data name="DatabaseSize" xml:space="preserve">
     <value>Database size MB</value>
   </data>

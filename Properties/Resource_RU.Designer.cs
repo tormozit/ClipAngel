@@ -322,6 +322,15 @@ namespace ClipAngel.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Специальные.
+        /// </summary>
+        internal static string Special {
+            get {
+                return ResourceManager.GetString("Special", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to текст.
         /// </summary>
         internal static string text {

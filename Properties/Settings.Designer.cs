@@ -321,5 +321,17 @@ namespace ClipAngel.Properties {
                 this["ShowInTaskBar"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool CopyTextInAnyWindowOnCTRLF3 {
+            get {
+                return ((bool)(this["CopyTextInAnyWindowOnCTRLF3"]));
+            }
+            set {
+                this["CopyTextInAnyWindowOnCTRLF3"] = value;
+            }
+        }
     }
 }

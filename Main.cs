@@ -38,7 +38,6 @@ namespace ClipAngel
         public int ClipsNumber = 0;
         public string UserSettingsPath;
         public string DbFileName;
-        public bool StartMinimized = false;
         SQLiteConnection m_dbConnection;
         public string ConnectionString;
         SQLiteDataAdapter dataAdapter;
@@ -114,7 +113,6 @@ namespace ClipAngel
         {
             this.UserSettingsPath = UserSettingsPath;
             this.PortableMode = PortableMode;
-            this.StartMinimized = StartMinimized;
             //// Disable window animation on minimize and restore. Failed
             //const int DWMWA_TRANSITIONS_FORCEDISABLED = 3;
             //int value = 1;  // TRUE to disable
@@ -323,8 +321,8 @@ namespace ClipAngel
                 keyboardHook.RegisterHotKey(Modifiers, Key);
             if (ReadHotkeyFromText(Properties.Settings.Default.GlobalHotkeyCompareLastClips, out Modifiers, out Key))
                 keyboardHook.RegisterHotKey(Modifiers, Key);
-            //if (ReadHotkeyFromText("Control + F3", out Modifiers, out Key))
-            //    keyboardHook.RegisterHotKey(Modifiers, Key);
+            if (ReadHotkeyFromText("Control + F3", out Modifiers, out Key))
+                keyboardHook.RegisterHotKey(Modifiers, Key);
         }
 
         private static bool ReadHotkeyFromText(string HotkeyText, out EnumModifierKeys Modifiers, out Keys Key)
@@ -397,10 +395,15 @@ namespace ClipAngel
 
                 }
             }
-            //else if (hotkeyTitle == "Control + F3")
-            //{
-            //    Paster.SendCopy();
-            //}
+            else if (hotkeyTitle == "Control + F3")
+            {
+                keyboardHook.UnregisterHotKeys();
+                //var data = Clipboard.GetDataObject();
+                Paster.SendCopy();
+                SendKeys.SendWait("^{F3}");
+                RegisterHotKeys();
+                //Clipboard.SetDataObject(data);
+            }
             else
             {
                 //int a = 0;
@@ -2221,27 +2224,31 @@ namespace ClipAngel
             if (!allowVisible)
             {
                 allowVisible = true;
+                this.Activate();
                 Show();
             }
-            if (newX == -1)
-            {
-                if (this.Left >= 0)
-                    newX = this.Left;
-                else
-                    newX = this.RestoreBounds.X;
-            }
-            if (newY == -1)
-            {
-                if (this.Top >= 0)
-                    newY = this.Top;
-                else
-                    newY = this.RestoreBounds.Y;
-            }
             if (Properties.Settings.Default.FastWindowOpen)
-                if (newY < 0)
-                    newY = factualTop;
-            if (newX > 0)
-                MoveWindow(this.Handle, newX, newY, this.Width, this.Height, true);
+            { 
+                if (newX == -1)
+                {
+                    if (this.Left >= 0)
+                        newX = this.Left;
+                    else
+                        newX = this.RestoreBounds.X;
+                }
+                if (newY == -1)
+                {
+                    if (this.Top >= 0)
+                        newY = this.Top;
+                    else
+                        newY = this.RestoreBounds.Y;
+                }
+                if (Properties.Settings.Default.FastWindowOpen)
+                    if (newY < 0)
+                        newY = factualTop;
+                if (newX > 0)
+                    MoveWindow(this.Handle, newX, newY, this.Width, this.Height, true);
+            }
             if (this.WindowState == FormWindowState.Minimized)
                 this.WindowState = FormWindowState.Normal; // Window can be minimized by "Minimize All" command
         }
@@ -3107,10 +3114,12 @@ namespace ClipAngel
             richTextBox.WordWrap = wordWrapToolStripMenuItem.Checked;
             showInTaskbarToolStripMenuItem.Enabled = Properties.Settings.Default.FastWindowOpen;
             showInTaskbarToolStripMenuItem.Checked = Properties.Settings.Default.ShowInTaskBar;
-            this.ShowInTaskbar = Properties.Settings.Default.ShowInTaskBar;
-
-            // After ShowInTaskbar change true->false all window properties are deleted. So we need to reset it.
-            ResetIsMainProperty();
+            if (Properties.Settings.Default.FastWindowOpen)
+            {
+                this.ShowInTaskbar = Properties.Settings.Default.ShowInTaskBar;
+                // After ShowInTaskbar change true->false all window properties are deleted. So we need to reset it.
+                ResetIsMainProperty();
+            }
         }
 
         private void toolStripMenuItemClearFilterAndSelectTop_Click(object sender, EventArgs e)

@@ -219,4 +219,7 @@
   <data name="Other" xml:space="preserve">
     <value>Другое</value>
   </data>
+  <data name="Special" xml:space="preserve">
+    <value>Специальные</value>
+  </data>
 </root>

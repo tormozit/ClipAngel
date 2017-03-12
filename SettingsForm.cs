@@ -591,6 +591,7 @@ namespace ClipAngel
         public static List<string> langList = new List<string> { "Default", "English", "Russian" };
         public VisibleUserSettings(Main Owner)
         {
+            CopyTextInAnyWindowOnCTRLF3 = Properties.Settings.Default.CopyTextInAnyWindowOnCTRLF3;
             FastWindowOpen = Properties.Settings.Default.FastWindowOpen;
             HistoryDepthNumber = Properties.Settings.Default.HistoryDepthNumber;
             DefaultFont = Properties.Settings.Default.Font;
@@ -613,6 +614,49 @@ namespace ClipAngel
             NumberOfClips = Owner.ClipsNumber.ToString();
             UserSettingsPath = Owner.UserSettingsPath;
             DatabaseSize = ((new FileInfo(Owner.DbFileName)).Length / (1024 * 1024)).ToString();
+        }
+
+        public void Apply(bool PortableMode = false)
+        {
+            Properties.Settings.Default.CopyTextInAnyWindowOnCTRLF3 = CopyTextInAnyWindowOnCTRLF3;
+            Properties.Settings.Default.FastWindowOpen = FastWindowOpen;
+            Properties.Settings.Default.HistoryDepthNumber = HistoryDepthNumber;
+            Properties.Settings.Default.Font = DefaultFont;
+            Properties.Settings.Default.Language = Language;
+            Properties.Settings.Default.TextCompareApplication = TextCompareApplication;
+            Properties.Settings.Default.Font = DefaultFont;
+            Properties.Settings.Default.ShowApplicationIconColumn = ShowApplicationIconColumn;
+            Properties.Settings.Default.ClearFiltersOnClose = ClearFiltersOnClose;
+            Properties.Settings.Default.AutoCheckForUpdate = AutoCheckUpdate;
+            Properties.Settings.Default.ClipListSimpleDraw = ClipListSimpleDraw;
+            Properties.Settings.Default.MoveCopiedClipToTop = MoveCopiedClipToTop;
+            Properties.Settings.Default.ShowVisualWeightColumn = ShowSizeColumn;
+            Properties.Settings.Default.WindowAutoPosition = WindowAutoPosition;
+            Properties.Settings.Default.GlobalHotkeyOpen = GlobalHotkeyOpen;
+            Properties.Settings.Default.GlobalHotkeyOpenFavorites = GlobalHotkeyOpenFavorites;
+            Properties.Settings.Default.GlobalHotkeyIncrementalPaste = GlobalHotkeyIncrementalPaste;
+            Properties.Settings.Default.GlobalHotkeyCompareLastClips = GlobalHotkeyCompareLastClips;
+            Properties.Settings.Default.Language = Language;
+
+            RegistryKey reg;
+            reg = Registry.CurrentUser.CreateSubKey("Software\\Microsoft\\Windows\\CurrentVersion\\Run\\");
+            string Keyname = Application.ProductName;
+            try
+            {
+                if (Autostart)
+                {
+                    string CommandLine = Application.ExecutablePath + " /m";
+                    if (PortableMode)
+                        CommandLine += " /p";
+                    reg.SetValue(Keyname, CommandLine);
+                }
+                else
+                    reg.DeleteValue(Keyname);
+                reg.Close();
+                Properties.Settings.Default.Autostart = Autostart;
+            }
+            catch
+            { }
         }
 
         [GlobalizedCategory("Info")]
@@ -679,6 +723,10 @@ namespace ClipAngel
         [EditorAttribute(typeof(HotkeyEditor), typeof(UITypeEditor))]
         public string GlobalHotkeyCompareLastClips { get; set; }
 
+        [GlobalizedCategory("Hotkeys")]
+        [Editor(typeof(MyBoolEditor), typeof(UITypeEditor))]
+        public bool CopyTextInAnyWindowOnCTRLF3 { get; set; }
+
         [GlobalizedCategory("Other")]
         public int MaxClipSizeKB { get; set; }
 
@@ -701,46 +749,5 @@ namespace ClipAngel
         [EditorAttribute(typeof(ApplicationPathEditor), typeof(UITypeEditor))]
         public string TextCompareApplication { get; set; }
 
-        public void Apply(bool PortableMode = false)
-        {
-            Properties.Settings.Default.FastWindowOpen = FastWindowOpen;
-            Properties.Settings.Default.HistoryDepthNumber = HistoryDepthNumber;
-            Properties.Settings.Default.Font = DefaultFont;
-            Properties.Settings.Default.Language = Language;
-            Properties.Settings.Default.TextCompareApplication = TextCompareApplication;
-            Properties.Settings.Default.Font = DefaultFont;
-            Properties.Settings.Default.ShowApplicationIconColumn = ShowApplicationIconColumn;
-            Properties.Settings.Default.ClearFiltersOnClose = ClearFiltersOnClose;
-            Properties.Settings.Default.AutoCheckForUpdate = AutoCheckUpdate;
-            Properties.Settings.Default.ClipListSimpleDraw = ClipListSimpleDraw;
-            Properties.Settings.Default.MoveCopiedClipToTop = MoveCopiedClipToTop;
-            Properties.Settings.Default.ShowVisualWeightColumn = ShowSizeColumn;
-            Properties.Settings.Default.WindowAutoPosition = WindowAutoPosition;
-            Properties.Settings.Default.GlobalHotkeyOpen = GlobalHotkeyOpen;
-            Properties.Settings.Default.GlobalHotkeyOpenFavorites = GlobalHotkeyOpenFavorites;
-            Properties.Settings.Default.GlobalHotkeyIncrementalPaste = GlobalHotkeyIncrementalPaste;
-            Properties.Settings.Default.GlobalHotkeyCompareLastClips = GlobalHotkeyCompareLastClips;
-            Properties.Settings.Default.Language = Language;
-
-            RegistryKey reg;
-            reg = Registry.CurrentUser.CreateSubKey("Software\\Microsoft\\Windows\\CurrentVersion\\Run\\");
-            string Keyname = Application.ProductName;
-            try
-            {
-                if (Autostart)
-                {
-                    string CommandLine = Application.ExecutablePath + " /m";
-                    if (PortableMode)
-                        CommandLine += " /p";
-                    reg.SetValue(Keyname, CommandLine);
-                }
-                else
-                    reg.DeleteValue(Keyname);
-                reg.Close();
-                Properties.Settings.Default.Autostart = Autostart;
-            }
-            catch
-            { }
-        }
     }
 }
