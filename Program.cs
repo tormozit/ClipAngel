@@ -86,10 +86,7 @@ namespace ClipAngel
                     UserSettingsPath = MakePortable(Properties.Settings.Default, PortableMode);
                     Application.EnableVisualStyles();
                     Application.SetCompatibleTextRenderingDefault(false);
-                    Main Main = new Main();
-                    Main.UserSettingsPath = UserSettingsPath;
-                    Main.PortableMode = PortableMode;
-                    Main.StartMinimized = args.Contains("/m");
+                    Main Main = new Main(UserSettingsPath, PortableMode, args.Contains("/m"));
                     Application.Run(Main);
                 }
             }

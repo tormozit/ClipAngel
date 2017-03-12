@@ -7,6 +7,7 @@ using System.IO;
 using System.Reflection;
 using System.Configuration;
 using System.Diagnostics;
+using System.Linq;
 using System.Windows.Forms;
 using System.Windows.Forms.Design;
 using GlobalizedPropertyGrid;
@@ -17,20 +18,43 @@ namespace ClipAngel
     public partial class SettingsForm : Form
     {
         private VisibleUserSettings set;
-        public SettingsForm()
+        public SettingsForm(Main Owner)
         {
             InitializeComponent();
+            this.Owner = Owner;
+            set = new VisibleUserSettings(Owner);
+            //cultureManager1.UICulture = new CultureInfo((Owner as Main).Locale);
+            var grid = propertyGrid1.Controls[2];
+            grid.MouseClick += grid_MouseClick;
+            propertyGrid1.SelectedObject = set;
         }
 
         private void Settings_Load(object sender = null, EventArgs e = null)
         {
-            set = new VisibleUserSettings(Owner as Main);
-            //cultureManager1.UICulture = new CultureInfo((Owner as Main).Locale);
-            var grid = propertyGrid1.Controls[2];
-            grid.MouseClick += grid_MouseClick;
-            grid.KeyDown += grid_KeyDown;
-            propertyGrid1.SelectedObject = set;
-            SetLabelColumnWidth(propertyGrid1, 300);
+            propertyGrid1.SetLabelColumnWidth(300);
+            RequeryRows();
+        }
+
+        private void RequeryRows()
+        {
+            List<string> filteredList = new List<string>();
+            PropertyDescriptorCollection allproperties = TypeDescriptor.GetProperties(propertyGrid1.SelectedObject);
+            foreach (PropertyDescriptor property in allproperties)
+            {
+                if (false
+                    || textBoxFilter.Text == ""
+                    || property.Description.IndexOf(textBoxFilter.Text, StringComparison.InvariantCultureIgnoreCase) >= 0
+                    || property.DisplayName.IndexOf(textBoxFilter.Text, StringComparison.InvariantCultureIgnoreCase) >= 0)
+                {
+                    filteredList.Add(property.Name);
+                }
+            }
+            propertyGrid1.BrowsableProperties = filteredList.ToArray();
+            propertyGrid1.Refresh();
+            if (textBoxFilter.Text != "")
+                buttonClearFilter.BackColor = Color.GreenYellow;
+            else
+                buttonClearFilter.BackColor = DefaultBackColor;
         }
 
         private void buttonOK_Click_1(object sender, EventArgs e)
@@ -39,7 +63,6 @@ namespace ClipAngel
             DialogResult = DialogResult.OK;
             Close();
         }
-
 
         void grid_MouseClick(object sender, MouseEventArgs e)
         {
@@ -71,105 +94,6 @@ namespace ClipAngel
 
         }
 
-        void grid_KeyDown(object sender, KeyEventArgs e)
-        {
-            Debug.WriteLine("Toto");
-            //    var grid = propertyGrid1.Controls[2];
-            //    var flags = BindingFlags.Instance | BindingFlags.NonPublic;
-            //    var invalidPoint = new Point(-2147483648, -2147483648);
-            //    var FindPosition = grid.GetType().GetMethod("FindPosition", flags);
-            //    var p = (Point)FindPosition.Invoke(grid, new object[] { e.X, e.Y });
-            //    GridItem entry = null;
-            //    if (p != invalidPoint && p.X == 2)
-            //    {
-            //        var GetGridEntryFromRow = grid.GetType()
-            //                                      .GetMethod("GetGridEntryFromRow", flags);
-            //        entry = (GridItem)GetGridEntryFromRow.Invoke(grid, new object[] { p.Y });
-            //    }
-            //    if (entry != null && entry.Value != null)
-            //    {
-            //        object parent;
-            //        if (entry.Parent != null && entry.Parent.Value != null)
-            //            parent = entry.Parent.Value;
-            //        else
-            //            parent = propertyGrid1.SelectedObject;
-            //        if (entry.Value != null && entry.Value is bool)
-            //        {
-            //            entry.PropertyDescriptor.SetValue(parent, !(bool)entry.Value);
-            //            propertyGrid1.Refresh();
-            //        }
-            //    }
-            //    if (false
-            //        || e.KeyCode == Keys.ControlKey
-            //        || e.KeyCode == Keys.ShiftKey
-            //        || e.KeyCode == Keys.Menu)
-            //    {
-            //        e.Handled = true;
-            //        return;
-            //    }
-            //    string HotkeyTitle = "";
-            //    if (e.KeyCode == Keys.Delete || e.KeyCode == Keys.Back)
-            //        HotkeyTitle = "No";
-            //    else
-            //    {
-            //        if (e.Control)
-            //            HotkeyTitle += Keys.Control.ToString() + " + ";
-            //        if (e.Alt)
-            //            HotkeyTitle += Keys.Alt.ToString() + " + ";
-            //        if (e.Shift)
-            //            HotkeyTitle += Keys.Shift.ToString() + " + ";
-            //        HotkeyTitle += e.KeyCode.ToString();
-            //    }
-            //    (sender as TextBox).Text = HotkeyTitle;
-            //    e.Handled = true;
-        }
-
-        public static void SetLabelColumnWidth(PropertyGrid grid, int width)
-        {
-            if (grid == null)
-                return;
-
-            FieldInfo fi = grid.GetType().GetField("gridView", BindingFlags.Instance | BindingFlags.NonPublic);
-            if (fi == null)
-                return;
-
-            Control view = fi.GetValue(grid) as Control;
-            if (view == null)
-                return;
-
-            MethodInfo mi = view.GetType().GetMethod("MoveSplitterTo", BindingFlags.Instance | BindingFlags.NonPublic);
-            if (mi == null)
-                return;
-            mi.Invoke(view, new object[] { width });
-        }
-
-        private void HotkeyTextBox_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (false
-                || e.KeyCode == Keys.ControlKey
-                || e.KeyCode == Keys.ShiftKey
-                || e.KeyCode == Keys.Menu)
-            {
-                e.Handled = true;
-                return;
-            }
-            string HotkeyTitle = "";
-            if (e.KeyCode == Keys.Delete || e.KeyCode == Keys.Back)
-                HotkeyTitle = "No";
-            else
-            {
-                if (e.Control)
-                    HotkeyTitle += Keys.Control.ToString() + " + ";
-                if (e.Alt)
-                    HotkeyTitle += Keys.Alt.ToString() + " + ";
-                if (e.Shift)
-                    HotkeyTitle += Keys.Shift.ToString() + " + ";
-                HotkeyTitle += e.KeyCode.ToString();
-            }
-            (sender as TextBox).Text = HotkeyTitle;
-            e.Handled = true;
-        }
-
         private void buttonReset_Click(object sender, EventArgs e)
         {
             string question = (Owner as Main).CurrentLangResourceManager.GetString("QuestionResetSettings");
@@ -194,6 +118,16 @@ namespace ClipAngel
                 }
                 Settings_Load();
             }
+        }
+
+        private void comboBoxFilter_TextChanged(object sender, EventArgs e)
+        {
+            RequeryRows();
+        }
+
+        private void buttonClearFilter_Click(object sender, EventArgs e)
+        {
+            textBoxFilter.Text = "";
         }
     }
 
@@ -279,6 +213,361 @@ namespace ClipAngel
             return base.EditValue(context, provider, value);
         }
     }
+
+    // Makes readonly value text of property
+    public class HotkeyConverter : TypeConverter
+    {
+        public HotkeyConverter()
+        {
+        }
+
+        public override object ConvertTo(ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, Type destinationType)
+        {
+            if (destinationType == typeof(String))
+            {
+                if (value == null)
+                    return "No";
+                else
+                    return value.ToString();
+            }
+            return base.ConvertTo(context, culture, value, destinationType);
+        }
+
+        public override bool CanConvertFrom(ITypeDescriptorContext context, Type sourceType)
+        {
+            if (sourceType == typeof(String))
+                return false;
+            else
+                return base.CanConvertFrom(context, sourceType);
+        }
+    }
+
+    internal class ObjectWrapper : ICustomTypeDescriptor
+    {
+        /// <summary>Contain a reference to the selected objet that will linked to the parent PropertyGrid.</summary>
+        private object m_SelectedObject = null;
+        /// <summary>Contain a reference to the collection of properties to show in the parent PropertyGrid.</summary>
+        /// <remarks>By default, m_PropertyDescriptors contain all the properties of the object. </remarks>
+        List<PropertyDescriptor> m_PropertyDescriptors = new List<PropertyDescriptor>();
+
+        /// <summary>Simple constructor.</summary>
+        /// <param name="obj">A reference to the selected object that will linked to the parent PropertyGrid.</param>
+        internal ObjectWrapper(object obj)
+        {
+            m_SelectedObject = obj;
+        }
+
+        /// <summary>Get or set a reference to the selected objet that will linked to the parent PropertyGrid.</summary>
+        public object SelectedObject
+        {
+            get { return m_SelectedObject; }
+            set { if (m_SelectedObject != value) m_SelectedObject = value; }
+        }
+
+        /// <summary>Get or set a reference to the collection of properties to show in the parent PropertyGrid.</summary>
+        public List<PropertyDescriptor> PropertyDescriptors
+        {
+            get { return m_PropertyDescriptors; }
+            set { m_PropertyDescriptors = value; }
+        }
+
+        #region ICustomTypeDescriptor Members
+        public PropertyDescriptorCollection GetProperties(Attribute[] attributes)
+        {
+            return GetProperties();
+        }
+
+        public PropertyDescriptorCollection GetProperties()
+        {
+            return new PropertyDescriptorCollection(m_PropertyDescriptors.ToArray(), true);
+        }
+
+        /// <summary>GetAttributes.</summary>
+        /// <returns>AttributeCollection</returns>
+        public AttributeCollection GetAttributes()
+        {
+            return TypeDescriptor.GetAttributes(m_SelectedObject, true);
+        }
+        /// <summary>Get Class Name.</summary>
+        /// <returns>String</returns>
+        public String GetClassName()
+        {
+            return TypeDescriptor.GetClassName(m_SelectedObject, true);
+        }
+        /// <summary>GetComponentName.</summary>
+        /// <returns>String</returns>
+        public String GetComponentName()
+        {
+            return TypeDescriptor.GetComponentName(m_SelectedObject, true);
+        }
+
+        /// <summary>GetConverter.</summary>
+        /// <returns>TypeConverter</returns>
+        public TypeConverter GetConverter()
+        {
+            return TypeDescriptor.GetConverter(m_SelectedObject, true);
+        }
+
+        /// <summary>GetDefaultEvent.</summary>
+        /// <returns>EventDescriptor</returns>
+        public EventDescriptor GetDefaultEvent()
+        {
+            return TypeDescriptor.GetDefaultEvent(m_SelectedObject, true);
+        }
+
+        /// <summary>GetDefaultProperty.</summary>
+        /// <returns>PropertyDescriptor</returns>
+        public PropertyDescriptor GetDefaultProperty()
+        {
+            return TypeDescriptor.GetDefaultProperty(m_SelectedObject, true);
+        }
+
+        /// <summary>GetEditor.</summary>
+        /// <param name="editorBaseType">editorBaseType</param>
+        /// <returns>object</returns>
+        public object GetEditor(Type editorBaseType)
+        {
+            return TypeDescriptor.GetEditor(this, editorBaseType, true);
+        }
+
+        public EventDescriptorCollection GetEvents(Attribute[] attributes)
+        {
+            return TypeDescriptor.GetEvents(m_SelectedObject, attributes, true);
+        }
+
+        public EventDescriptorCollection GetEvents()
+        {
+            return TypeDescriptor.GetEvents(m_SelectedObject, true);
+        }
+
+        public object GetPropertyOwner(PropertyDescriptor pd)
+        {
+            return m_SelectedObject;
+        }
+
+        #endregion
+
+    }
+
+    // https://www.codeproject.com/Articles/13342/Filtering-properties-in-a-PropertyGrid
+    /// <summary>
+    /// This class overrides the standard PropertyGrid provided by Microsoft.
+    /// It also allows to hide (or filter) the properties of the SelectedObject displayed by the PropertyGrid.
+    /// </summary>
+    public class FilteredPropertyGrid : PropertyGrid
+    {
+        /// <summary>Contain a reference to the collection of properties to show in the parent PropertyGrid.</summary>
+        /// <remarks>By default, m_PropertyDescriptors contain all the properties of the object. </remarks>
+        List<PropertyDescriptor> m_PropertyDescriptors = new List<PropertyDescriptor>();
+        /// <summary>Contain a reference to the array of properties to display in the PropertyGrid.</summary>
+        private AttributeCollection m_HiddenAttributes = null, m_BrowsableAttributes = null;
+        /// <summary>Contain references to the arrays of properties or categories to hide.</summary>
+        private string[] m_BrowsableProperties = null, m_HiddenProperties = null;
+        /// <summary>Contain a reference to the wrapper that contains the object to be displayed into the PropertyGrid.</summary>
+        private ObjectWrapper m_Wrapper = null;
+
+        /// <summary>Public constructor.</summary>
+        public FilteredPropertyGrid()
+        {
+            //InitializeComponent();
+            base.SelectedObject = m_Wrapper;
+        }
+
+        public void SetLabelColumnWidth(int width)
+        {
+            FieldInfo fi = GetType().BaseType.GetField("gridView", BindingFlags.Instance | BindingFlags.NonPublic);
+            if (fi == null)
+                return;
+
+            Control view = fi.GetValue(this) as Control;
+            if (view == null)
+                return;
+
+            MethodInfo mi = view.GetType().GetMethod("MoveSplitterTo", BindingFlags.Instance | BindingFlags.NonPublic);
+            if (mi == null)
+                return;
+            mi.Invoke(view, new object[] { width });
+        }
+
+        public new AttributeCollection BrowsableAttributes
+        {
+            get { return m_BrowsableAttributes; }
+            set
+            {
+                if (m_BrowsableAttributes != value)
+                {
+                    m_HiddenAttributes = null;
+                    m_BrowsableAttributes = value;
+                    RefreshProperties();
+                }
+            }
+        }
+
+        /// <summary>Get or set the categories to hide.</summary>
+        public AttributeCollection HiddenAttributes
+        {
+            get { return m_HiddenAttributes; }
+            set
+            {
+                if (value != m_HiddenAttributes)
+                {
+                    m_HiddenAttributes = value;
+                    m_BrowsableAttributes = null;
+                    RefreshProperties();
+                }
+            }
+        }
+        /// <summary>Get or set the properties to show.</summary>
+        /// <exception cref="ArgumentException">if one or several properties don't exist.</exception>
+        public string[] BrowsableProperties
+        {
+            get { return m_BrowsableProperties; }
+            set
+            {
+                if (value != m_BrowsableProperties)
+                {
+                    m_BrowsableProperties = value;
+                    //m_HiddenProperties = null;
+                    RefreshProperties();
+                }
+            }
+        }
+
+        /// <summary>Get or set the properties to hide.</summary>
+        public string[] HiddenProperties
+        {
+            get { return m_HiddenProperties; }
+            set
+            {
+                if (value != m_HiddenProperties)
+                {
+                    //m_BrowsableProperties = null;
+                    m_HiddenProperties = value;
+                    RefreshProperties();
+                }
+            }
+        }
+
+        /// <summary>Overwrite the PropertyGrid.SelectedObject property.</summary>
+        /// <remarks>The object passed to the base PropertyGrid is the wrapper.</remarks>
+        public new object SelectedObject
+        {
+            get { return m_Wrapper != null ? ((ObjectWrapper)base.SelectedObject).SelectedObject : null; }
+            set
+            {
+                // Set the new object to the wrapper and create one if necessary.
+                if (m_Wrapper == null)
+                {
+                    m_Wrapper = new ObjectWrapper(value);
+                    RefreshProperties();
+                }
+                else if (m_Wrapper.SelectedObject != value)
+                {
+                    bool needrefresh = value.GetType() != m_Wrapper.SelectedObject.GetType();
+                    m_Wrapper.SelectedObject = value;
+                    if (needrefresh) RefreshProperties();
+                }
+                // Set the list of properties to the wrapper.
+                m_Wrapper.PropertyDescriptors = m_PropertyDescriptors;
+                // Link the wrapper to the parent PropertyGrid.
+                base.SelectedObject = m_Wrapper;
+            }
+        }
+
+        /// <summary>Called when the browsable properties have changed.</summary>
+        private void OnBrowsablePropertiesChanged()
+        {
+            if (m_Wrapper == null) return;
+        }
+
+        /// <summary>Build the list of the properties to be displayed in the PropertyGrid, following the filters defined the Browsable and Hidden properties.</summary>
+        private void RefreshProperties()
+        {
+            if (m_Wrapper == null) return;
+            // Clear the list of properties to be displayed.
+            m_PropertyDescriptors.Clear();
+            // Check whether the list is filtered 
+            if (m_BrowsableAttributes != null && m_BrowsableAttributes.Count > 0)
+            {
+                // Add to the list the attributes that need to be displayed.
+                foreach (Attribute attribute in m_BrowsableAttributes) ShowAttribute(attribute);
+            }
+            else
+            {
+                // Fill the collection with all the properties.
+                PropertyDescriptorCollection originalpropertydescriptors = TypeDescriptor.GetProperties(m_Wrapper.SelectedObject);
+                foreach (PropertyDescriptor propertydescriptor in originalpropertydescriptors) m_PropertyDescriptors.Add(propertydescriptor);
+                // Remove from the list the attributes that mustn't be displayed.
+                if (m_HiddenAttributes != null) foreach (Attribute attribute in m_HiddenAttributes) HideAttribute(attribute);
+            }
+            // Get all the properties of the SelectedObject
+            PropertyDescriptorCollection allproperties = TypeDescriptor.GetProperties(m_Wrapper.SelectedObject);
+            // Hide if necessary, some properties
+            if (m_HiddenProperties != null)
+            {
+                // Remove from the list the properties that mustn't be displayed.
+                foreach (string propertyname in m_HiddenProperties)
+                {
+                    try
+                    {
+                        PropertyDescriptor property = allproperties[propertyname];
+                        // Remove from the list the property
+                        HideProperty(property);
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new ArgumentException(ex.Message);
+                    }
+                }
+            }
+            // Display if necessary, some properties
+            if (m_BrowsableProperties != null)
+            {
+                m_PropertyDescriptors.Clear(); // Added by tormozit
+                foreach (string propertyname in m_BrowsableProperties)
+                {
+                    try
+                    {
+                        ShowProperty(allproperties[propertyname]);
+                    }
+                    catch (Exception knfe)
+                    {
+                        throw new ArgumentException("Property not found", propertyname);
+                    }
+                }
+            }
+        }
+        /// <summary>Allows to hide a set of properties to the parent PropertyGrid.</summary>
+        /// <param name="propertyname">A set of attributes that filter the original collection of properties.</param>
+        /// <remarks>For better performance, include the BrowsableAttribute with true value.</remarks>
+        private void HideAttribute(Attribute attribute)
+        {
+            PropertyDescriptorCollection filteredoriginalpropertydescriptors = TypeDescriptor.GetProperties(m_Wrapper.SelectedObject, new Attribute[] { attribute });
+            if (filteredoriginalpropertydescriptors == null || filteredoriginalpropertydescriptors.Count == 0) throw new ArgumentException("Attribute not found", attribute.ToString());
+            foreach (PropertyDescriptor propertydescriptor in filteredoriginalpropertydescriptors) HideProperty(propertydescriptor);
+        }
+        /// <summary>Add all the properties that match an attribute to the list of properties to be displayed in the PropertyGrid.</summary>
+        /// <param name="property">The attribute to be added.</param>
+        private void ShowAttribute(Attribute attribute)
+        {
+            PropertyDescriptorCollection filteredoriginalpropertydescriptors = TypeDescriptor.GetProperties(m_Wrapper.SelectedObject, new Attribute[] { attribute });
+            if (filteredoriginalpropertydescriptors == null || filteredoriginalpropertydescriptors.Count == 0) throw new ArgumentException("Attribute not found", attribute.ToString());
+            foreach (PropertyDescriptor propertydescriptor in filteredoriginalpropertydescriptors) ShowProperty(propertydescriptor);
+        }
+        /// <summary>Add a property to the list of properties to be displayed in the PropertyGrid.</summary>
+        /// <param name="property">The property to be added.</param>
+        private void ShowProperty(PropertyDescriptor property)
+        {
+            if (!m_PropertyDescriptors.Contains(property)) m_PropertyDescriptors.Add(property);
+        }
+        /// <summary>Allows to hide a property to the parent PropertyGrid.</summary>
+        /// <param name="propertyname">The name of the property to be hidden.</param>
+        private void HideProperty(PropertyDescriptor property)
+        {
+            if (m_PropertyDescriptors.Contains(property)) m_PropertyDescriptors.Remove(property);
+        }
+    }
+
     class VisibleUserSettings : GlobalizedObject
     {
         public static List<string> langList = new List<string> { "Default", "English", "Russian" };
@@ -293,6 +582,7 @@ namespace ClipAngel
             GlobalHotkeyShow = Properties.Settings.Default.HotkeyShow;
             GlobalHotkeyShowFavorites = Properties.Settings.Default.HotKeyShowFavorites;
             GlobalHotkeyIncrementalPaste = Properties.Settings.Default.HotkeyIncrementalPaste;
+            GlobalHotkeyCompareLastClips = Properties.Settings.Default.HotkeyCompareLastClips;
             WindowAutoPosition = Properties.Settings.Default.WindowAutoPosition;
             MoveCopiedClipToTop = Properties.Settings.Default.MoveCopiedClipToTop;
             ShowSizeColumn = Properties.Settings.Default.ShowVisualWeightColumn;
@@ -347,16 +637,24 @@ namespace ClipAngel
         public bool WindowAutoPosition { get; set; }
 
         [GlobalizedCategory("Hotkeys")]
+        [TypeConverterAttribute(typeof(HotkeyConverter))]
         [EditorAttribute(typeof(HotkeyEditor), typeof(UITypeEditor))]
         public string GlobalHotkeyIncrementalPaste { get; set; }
 
         [GlobalizedCategory("Hotkeys")]
+        [TypeConverterAttribute(typeof(HotkeyConverter))]
         [EditorAttribute(typeof(HotkeyEditor), typeof(UITypeEditor))]
         public string GlobalHotkeyShowFavorites { get; set; }
 
         [GlobalizedCategory("Hotkeys")]
+        [TypeConverterAttribute(typeof(HotkeyConverter))]
         [EditorAttribute(typeof(HotkeyEditor), typeof(UITypeEditor))]
         public string GlobalHotkeyShow { get; set; }
+
+        [GlobalizedCategory("Hotkeys")]
+        [TypeConverterAttribute(typeof(HotkeyConverter))]
+        [EditorAttribute(typeof(HotkeyEditor), typeof(UITypeEditor))]
+        public string GlobalHotkeyCompareLastClips { get; set; }
 
         [GlobalizedCategory("Other")]
         public int MaxClipSizeKB { get; set; }
@@ -397,6 +695,7 @@ namespace ClipAngel
             Properties.Settings.Default.HotkeyShow = GlobalHotkeyShow;
             Properties.Settings.Default.HotKeyShowFavorites = GlobalHotkeyShowFavorites;
             Properties.Settings.Default.HotkeyIncrementalPaste = GlobalHotkeyIncrementalPaste;
+            Properties.Settings.Default.HotkeyCompareLastClips = GlobalHotkeyCompareLastClips;
             Properties.Settings.Default.Language = Language;
 
             RegistryKey reg;

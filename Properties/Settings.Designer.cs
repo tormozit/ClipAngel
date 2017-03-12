@@ -301,5 +301,17 @@ namespace ClipAngel.Properties {
                 this["TextCompareApplication"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("No")]
+        public string HotkeyCompareLastClips {
+            get {
+                return ((string)(this["HotkeyCompareLastClips"]));
+            }
+            set {
+                this["HotkeyCompareLastClips"] = value;
+            }
+        }
     }
 }

@@ -90,6 +90,7 @@ namespace ClipAngel
         bool filterOn = false;
         private HtmlElement lastClickedHtmlElement;
         private bool FastWindowShow = true;
+        private bool allowVisible = false;
 
         [DllImport("dwmapi", PreserveSig = true)]
         static extern int DwmSetWindowAttribute(IntPtr hWnd, int attr, ref int value, int attrLen);
@@ -110,8 +111,11 @@ namespace ClipAngel
             }
         }
 
-        public Main()
+        public Main(string UserSettingsPath, bool PortableMode, bool StartMinimized)
         {
+            this.UserSettingsPath = UserSettingsPath;
+            this.PortableMode = PortableMode;
+            this.StartMinimized = StartMinimized;
             //// Disable window animation on minimize and restore. Failed
             //const int DWMWA_TRANSITIONS_FORCEDISABLED = 3;
             //int value = 1;  // TRUE to disable
@@ -128,6 +132,151 @@ namespace ClipAngel
             keyboardHook.KeyPressed +=
                 new EventHandler<KeyPressedEventArgs>(hook_KeyPressed);
             RegisterHotKeys();
+
+            ResourceManager resourceManager = Properties.Resources.ResourceManager;
+            imageText = resourceManager.GetObject("TypeText") as Bitmap;
+            imageHtml = resourceManager.GetObject("TypeHtml") as Bitmap;
+            imageRtf = resourceManager.GetObject("TypeRtf") as Bitmap;
+            imageFile = resourceManager.GetObject("TypeFile") as Bitmap;
+            imageImg = resourceManager.GetObject("TypeImg") as Bitmap;
+
+            htmlTextBox.Navigate("about:blank");
+            htmlTextBox.Document.ExecCommand("EditMode", false, null);
+            //FastWindowShow = false; // for debug
+
+            // Antiflicker double buffering
+            // http://stackoverflow.com/questions/76993/how-to-double-buffer-net-controls-on-a-form
+            System.Reflection.PropertyInfo aProp = typeof(System.Windows.Forms.Control)
+            .GetProperty("DoubleBuffered", System.Reflection.BindingFlags.NonPublic |
+            System.Reflection.BindingFlags.Instance);
+            aProp.SetValue(dataGridView, true, null);
+            //aProp.SetValue(richTextBox, true, null); // No effect
+            //aProp.SetValue(htmlTextBox, true, null); // No effect
+
+            this.ActiveControl = dataGridView;
+
+            SetProp(this.Handle, IsMainPropName, new IntPtr(1));
+
+            BindingList<ListItemNameText> _comboItemsTypes = new BindingList<ListItemNameText>
+            {
+                new ListItemNameText {Name = "allTypes"},
+                new ListItemNameText {Name = "text"},
+                new ListItemNameText {Name = "file"},
+                new ListItemNameText {Name = "img"}
+            };
+            TypeFilter.DataSource = _comboItemsTypes;
+            TypeFilter.DisplayMember = "Text";
+            TypeFilter.ValueMember = "Name";
+            //MarkFilter.SelectedValue = "allTypes";
+
+            BindingList<ListItemNameText> _comboItemsMarks = new BindingList<ListItemNameText>();
+            _comboItemsMarks.Add(new ListItemNameText { Name = "allMarks" });
+            _comboItemsMarks.Add(new ListItemNameText { Name = "used" });
+            _comboItemsMarks.Add(new ListItemNameText { Name = "favorite" });
+            MarkFilter.DataSource = _comboItemsMarks;
+            MarkFilter.DisplayMember = "Text";
+            MarkFilter.ValueMember = "Name";
+            //MarkFilter.SelectedValue = "allMarks";
+
+            LoadSettings();
+            (dataGridView.Columns["AppImage"] as DataGridViewImageColumn).DefaultCellStyle.NullValue = null;
+            TypeFilter.SelectedIndex = 0;
+            MarkFilter.SelectedIndex = 0;
+            richTextBox.AutoWordSelection = false;
+            urlTextBox.AutoWordSelection = false;
+            if (Properties.Settings.Default.LastFilterValues == null)
+            {
+                Properties.Settings.Default.LastFilterValues = new StringCollection();
+            }
+            FillFilterItems();
+            if (!Directory.Exists(UserSettingsPath))
+            {
+                Directory.CreateDirectory(UserSettingsPath);
+            }
+            DbFileName = UserSettingsPath + "\\" + Properties.Resources.DBShortFilename;
+            ConnectionString = "data source=" + DbFileName + ";";
+            string Reputation = "Magic67234784";
+            if (!File.Exists(DbFileName))
+            {
+                File.WriteAllBytes(DbFileName, Properties.Resources.dbTemplate);
+                m_dbConnection = new SQLiteConnection(ConnectionString);
+                m_dbConnection.Open();
+                // Encryption http://stackoverflow.com/questions/12190672/can-i-password-encrypt-sqlite-database
+                m_dbConnection.ChangePassword(Reputation);
+                m_dbConnection.Close();
+            }
+            ConnectionString += "Password = " + Reputation + ";";
+            m_dbConnection = new SQLiteConnection(ConnectionString);
+            m_dbConnection.Open();
+            SQLiteCommand command;
+
+            command = new SQLiteCommand("ALTER TABLE Clips" + " ADD COLUMN Hash CHAR(32)", m_dbConnection);
+            try
+            {
+                command.ExecuteNonQuery();
+            }
+            catch
+            { }
+            command = new SQLiteCommand("ALTER TABLE Clips" + " ADD COLUMN Favorite BOOLEAN", m_dbConnection);
+            try
+            {
+                command.ExecuteNonQuery();
+            }
+            catch
+            { }
+            command = new SQLiteCommand("ALTER TABLE Clips" + " ADD COLUMN ImageSample BINARY", m_dbConnection);
+            try
+            {
+                command.ExecuteNonQuery();
+            }
+            catch
+            { }
+            command = new SQLiteCommand("ALTER TABLE Clips" + " ADD COLUMN AppPath CHAR(256)", m_dbConnection);
+            try
+            {
+                command.ExecuteNonQuery();
+            }
+            catch
+            { }
+            command = new SQLiteCommand("CREATE unique index unique_hash on Clips(hash)", m_dbConnection);
+            try
+            {
+                command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+            }
+
+            // http://blog.tigrangasparian.com/2012/02/09/getting-started-with-sqlite-in-c-part-one/
+            //sql = "CREATE TABLE Clips (Title VARCHAR(50), Text VARCHAR(0), Data BLOB, Size INT, Type VARCHAR(10), Created DATETIME, Application VARCHAR(50), Window VARCHAR(100))";
+            //command = new SQLiteCommand(sql, m_dbConnection);
+            //try
+            //{
+            //    command.ExecuteNonQuery();
+            //}
+            //catch { };
+
+            // https://msdn.microsoft.com/ru-ru/library/fbk67b6z(v=vs.110).aspx
+            dataAdapter = new SQLiteDataAdapter("", ConnectionString);
+            //dataGridView.DataSource = clipBindingSource;
+            UpdateClipBindingSource();
+            ConnectClipboard();
+            if (StartMinimized)
+            {
+                //StartMinimized = false;
+                //Close();
+            }
+            else
+            {
+                RestoreWindowIfMinimized();
+            }
+            if (Properties.Settings.Default.WindowSize.Width > 0)
+                this.Size = Properties.Settings.Default.WindowSize;
+            timerCheckUpdate.Interval = 1;
+            timerCheckUpdate.Start();
+            timerReconnect.Interval = (1000 * 5); // 5 seconds
+            timerReconnect.Start();
         }
         delegate void WinEventDelegate(IntPtr hWinEventHook, uint eventType, IntPtr hwnd, int idObject, int idChild, uint dwEventThread, uint dwmsEventTime);
 
@@ -166,6 +315,8 @@ namespace ClipAngel
             if (ReadHotkeyFromText(Properties.Settings.Default.HotKeyShowFavorites, out Modifiers, out Key))
                 keyboardHook.RegisterHotKey(Modifiers, Key);
             if (ReadHotkeyFromText(Properties.Settings.Default.HotkeyIncrementalPaste, out Modifiers, out Key))
+                keyboardHook.RegisterHotKey(Modifiers, Key);
+            if (ReadHotkeyFromText(Properties.Settings.Default.HotkeyCompareLastClips, out Modifiers, out Key))
                 keyboardHook.RegisterHotKey(Modifiers, Key);
         }
 
@@ -226,6 +377,18 @@ namespace ClipAngel
                 notifyIcon.Visible = true;
                 notifyIcon.ShowBalloonTip(2000, CurrentLangResourceManager.GetString("NextClip"), CurrentDataRow["Title"].ToString(), ToolTipIcon.Info);
                 AllowHotkeyProcess = true;
+            }
+            else if (hotkeyTitle == Properties.Settings.Default.HotkeyCompareLastClips)
+            {
+                if (dataGridView.Rows.Count > 1)
+                {
+                    DataRowView row1 = (DataRowView)dataGridView.Rows[0].DataBoundItem;
+                    int id1 = (int)row1["id"];
+                    DataRowView row2 = (DataRowView)dataGridView.Rows[1].DataBoundItem;
+                    int id2 = (int)row2["id"];
+                    CompareClipsbyID(id1, id2);
+
+                }
             }
             else
             {
@@ -354,148 +517,19 @@ namespace ClipAngel
 
         private void Main_Load(object sender, EventArgs e)
         {
-            ResourceManager resourceManager = Properties.Resources.ResourceManager;
-            imageText = resourceManager.GetObject("TypeText") as Bitmap;
-            imageHtml = resourceManager.GetObject("TypeHtml") as Bitmap;
-            imageRtf = resourceManager.GetObject("TypeRtf") as Bitmap;
-            imageFile = resourceManager.GetObject("TypeFile") as Bitmap;
-            imageImg = resourceManager.GetObject("TypeImg") as Bitmap;
-            
-            htmlTextBox.Navigate("about:blank");
-            htmlTextBox.Document.ExecCommand("EditMode", false, null);
-            //FastWindowShow = false; // for debug
+            // Due to the hidden start window can be shown and this event raised not on the start
+            // So we do not use it and make everything in constructor
+        }
 
-            // Antiflicker double buffering
-            // http://stackoverflow.com/questions/76993/how-to-double-buffer-net-controls-on-a-form
-            System.Reflection.PropertyInfo aProp = typeof(System.Windows.Forms.Control)
-            .GetProperty("DoubleBuffered", System.Reflection.BindingFlags.NonPublic |
-            System.Reflection.BindingFlags.Instance);
-            aProp.SetValue(dataGridView, true, null);
-            //aProp.SetValue(richTextBox, true, null); // No effect
-            //aProp.SetValue(htmlTextBox, true, null); // No effect
-
-            this.ActiveControl = dataGridView;
-
-            SetProp(this.Handle, IsMainPropName, new IntPtr(1)) ;
-
-            BindingList<ListItemNameText> _comboItemsTypes = new BindingList<ListItemNameText>
+        // To hide on start
+        protected override void SetVisibleCore(bool value)
+        {
+            if (!allowVisible)
             {
-                new ListItemNameText {Name = "allTypes"},
-                new ListItemNameText {Name = "text"},
-                new ListItemNameText {Name = "file"},
-                new ListItemNameText {Name = "img"}
-            };
-            TypeFilter.DataSource = _comboItemsTypes;
-            TypeFilter.DisplayMember = "Text";
-            TypeFilter.ValueMember = "Name";
-
-            BindingList<ListItemNameText> _comboItemsMarks = new BindingList<ListItemNameText>();
-            _comboItemsMarks.Add(new ListItemNameText { Name = "allMarks" });
-            _comboItemsMarks.Add(new ListItemNameText { Name = "used" });
-            _comboItemsMarks.Add(new ListItemNameText { Name = "favorite" });
-            MarkFilter.DataSource = _comboItemsMarks;
-            MarkFilter.DisplayMember = "Text";
-            MarkFilter.ValueMember = "Name";
-
-            LoadSettings();
-            (dataGridView.Columns["AppImage"] as DataGridViewImageColumn).DefaultCellStyle.NullValue = null;
-            TypeFilter.SelectedIndex = 0;
-            MarkFilter.SelectedIndex = 0;
-            richTextBox.AutoWordSelection = false;
-            urlTextBox.AutoWordSelection = false;
-            if (Properties.Settings.Default.LastFilterValues == null)
-            {
-                Properties.Settings.Default.LastFilterValues = new StringCollection();
+                value = false;
+                if (!this.IsHandleCreated) CreateHandle();
             }
-            FillFilterItems();
-            if (!Directory.Exists(UserSettingsPath))
-            {
-                Directory.CreateDirectory(UserSettingsPath);
-            }
-            DbFileName = UserSettingsPath + "\\" + Properties.Resources.DBShortFilename;
-            ConnectionString = "data source=" + DbFileName + ";";
-            string Reputation = "Magic67234784";
-            if (!File.Exists(DbFileName))
-            {
-                File.WriteAllBytes(DbFileName, Properties.Resources.dbTemplate);
-                m_dbConnection = new SQLiteConnection(ConnectionString);
-                m_dbConnection.Open();
-                // Encryption http://stackoverflow.com/questions/12190672/can-i-password-encrypt-sqlite-database
-                m_dbConnection.ChangePassword(Reputation);
-                m_dbConnection.Close();
-            }
-            ConnectionString += "Password = " + Reputation + ";";
-            m_dbConnection = new SQLiteConnection(ConnectionString);
-            m_dbConnection.Open();
-            SQLiteCommand command;
-
-            command = new SQLiteCommand("ALTER TABLE Clips" + " ADD COLUMN Hash CHAR(32)", m_dbConnection);
-            try
-            {
-                command.ExecuteNonQuery();
-            }
-            catch
-            {}
-            command = new SQLiteCommand("ALTER TABLE Clips" + " ADD COLUMN Favorite BOOLEAN", m_dbConnection);
-            try
-            {
-                command.ExecuteNonQuery();
-            }
-            catch
-            {}
-            command = new SQLiteCommand("ALTER TABLE Clips" + " ADD COLUMN ImageSample BINARY", m_dbConnection);
-            try
-            {
-                command.ExecuteNonQuery();
-            }
-            catch
-            {}
-            command = new SQLiteCommand("ALTER TABLE Clips" + " ADD COLUMN AppPath CHAR(256)", m_dbConnection);
-            try
-            {
-                command.ExecuteNonQuery();
-            }
-            catch
-            { }
-            command = new SQLiteCommand("CREATE unique index unique_hash on Clips(hash)", m_dbConnection);
-            try
-            {
-                command.ExecuteNonQuery();
-            }
-            catch(Exception ex)
-            {
-                Debug.WriteLine(ex.Message);
-            }
-
-            // http://blog.tigrangasparian.com/2012/02/09/getting-started-with-sqlite-in-c-part-one/
-            //sql = "CREATE TABLE Clips (Title VARCHAR(50), Text VARCHAR(0), Data BLOB, Size INT, Type VARCHAR(10), Created DATETIME, Application VARCHAR(50), Window VARCHAR(100))";
-            //command = new SQLiteCommand(sql, m_dbConnection);
-            //try
-            //{
-            //    command.ExecuteNonQuery();
-            //}
-            //catch { };
-
-            // https://msdn.microsoft.com/ru-ru/library/fbk67b6z(v=vs.110).aspx
-            dataAdapter = new SQLiteDataAdapter("", ConnectionString);
-            //dataGridView.DataSource = clipBindingSource;
-            UpdateClipBindingSource();
-            ConnectClipboard();
-            if (StartMinimized)
-            {
-                //StartMinimized = false;
-                //Close();
-            }
-            else
-            {
-                RestoreWindowIfMinimized();
-            }
-            if (Properties.Settings.Default.WindowSize.Width > 0)
-                this.Size = Properties.Settings.Default.WindowSize;
-            timerCheckUpdate.Interval = 1;
-            timerCheckUpdate.Start();
-            timerReconnect.Interval = (1000 * 5); // 5 seconds
-            timerReconnect.Start();
+            base.SetVisibleCore(value);
         }
 
         private void ConnectClipboard()
@@ -539,20 +573,18 @@ namespace ClipAngel
                                         || htmlTextBox.Focused
                                         || urlTextBox.Focused;
             clipRichTextLength = 0;
-            if (CurrentRowView == null)
-            {
-                clipType = "";
-                richTextBox.Text = "";
-                textBoxApplication.Text = "";
-                textBoxWindow.Text = "";
-                StripLabelCreated.Text = "";
-                StripLabelSize.Text = "";
-                StripLabelVisualSize.Text = "";
-                StripLabelType.Text = "";
-                stripLabelPosition.Text = "";
-                pictureBoxSource.Visible = false;
-            }
-            else
+            clipType = "";
+            pictureBoxSource.Image = null;
+            ImageControl.Image = null;
+            richTextBox.Text = "";
+            textBoxApplication.Text = "";
+            textBoxWindow.Text = "";
+            StripLabelCreated.Text = "";
+            StripLabelSize.Text = "";
+            StripLabelVisualSize.Text = "";
+            StripLabelType.Text = "";
+            stripLabelPosition.Text = "";
+            if (CurrentRowView != null)
             {
                 allowTextPositionChangeUpdate = false;
                 DataRow CurrentRow = CurrentRowView.Row;
@@ -565,11 +597,8 @@ namespace ClipAngel
                                                && Properties.Settings.Default.ShowNativeTextFormatting
                                                && (clipType == "html" || clipType == "rtf");
                 Bitmap appIcon = ApplicationIcon(RowReader["appPath"].ToString());
-                if (appIcon == null)
-                    pictureBoxSource.Visible = false;
-                else
+                if (appIcon != null)
                 {
-                    pictureBoxSource.Visible = true;
                     pictureBoxSource.Image = appIcon;
                 }
                 textBoxApplication.Text = RowReader["Application"].ToString();
@@ -629,12 +658,12 @@ namespace ClipAngel
                             mshtml.IHTMLBodyElement body = htmlDoc.body as mshtml.IHTMLBodyElement;
                             htmlTextBox.Document.Body.Drag += new HtmlElementEventHandler(htmlTextBoxDrag);
                             htmlTextBox.Document.Body.KeyDown += new HtmlElementEventHandler(htmlTextBoxDocumentKeyDown);
-                            
+
                             // Need to be called every time, else handler will be lost
                             htmlTextBox.Document.AttachEventHandler("onselectionchange", htmlTextBoxDocumentSelectionChange); // No multi call to handler, but why?
                             if (!htmlInitialized)
                             {
-                                mshtml.HTMLDocumentEvents2_Event iEvent = (mshtml.HTMLDocumentEvents2_Event) htmlDoc;
+                                mshtml.HTMLDocumentEvents2_Event iEvent = (mshtml.HTMLDocumentEvents2_Event)htmlDoc;
                                 iEvent.onclick += new mshtml.HTMLDocumentEvents2_onclickEventHandler(htmlTextBoxDocumentClick); //
                                 iEvent.onmousedown += new mshtml.HTMLDocumentEvents2_onmousedownEventHandler(htmlTextBoxMouseDown); //
                                 //iEvent.onselectionchange += new mshtml.HTMLDocumentEvents2_onselectionchangeEventHandler(htmlTextBoxDocumentSelectionChange);
@@ -1042,6 +1071,8 @@ namespace ClipAngel
                         //SetForegroundWindow(IntPtr.Zero); // This way focus was not lost!
                         SetActiveWindow(IntPtr.Zero);
                     this.Top = -10000;
+                    if (this.Top != -10000)
+                        MessageBox.Show(this.Top.ToString());
                 }
                 else
                 {
@@ -1101,75 +1132,47 @@ namespace ClipAngel
             }
             if (iData.GetDataPresent(DataFormat_ClipboardViewerIgnore))
                 return;
+            bool textFormatPresent = false;
             if (iData.GetDataPresent(DataFormats.UnicodeText))
             {
                 clipText = (string)iData.GetData(DataFormats.UnicodeText);
                 clipType = "text";
-                //Debug.WriteLine(Text);
+                textFormatPresent = true;
             }
             else if (iData.GetDataPresent(DataFormats.Text))
             {
                 clipText = (string)iData.GetData(DataFormats.Text);
                 clipType = "text";
-                //Debug.WriteLine(Text);
+                textFormatPresent = true;
             }
 
             if (iData.GetDataPresent(DataFormats.Rtf))
             {
                 richText = (string)iData.GetData(DataFormats.Rtf);
-                if (iData.GetDataPresent(DataFormats.Text))
+                clipType = "rtf";
+                if (!textFormatPresent)
                 {
-                    clipType = "rtf";
+                    var rtfBox = new RichTextBox();
+                    rtfBox.Rtf = richText;
+                    clipText = rtfBox.Text;
+                    textFormatPresent = true;
                 }
             }
+
             if (iData.GetDataPresent(DataFormats.Html))
             {
                 htmlText = (string)iData.GetData(DataFormats.Html);
-                if (!String.IsNullOrEmpty(htmlText)/* && iData.GetDataPresent(DataFormats.Text)*/)
+                if (!String.IsNullOrEmpty(htmlText))
                 {
                     clipType = "html";
                     Match match = Regex.Match(htmlText, "SourceURL:(" + LinkPattern + ")", RegexOptions.IgnoreCase);
                     if (match.Captures.Count > 0)
                         clipUrl = match.Groups[1].ToString();
+                    if (!textFormatPresent)
+                    {
+                        // It make take much time to parse big html, so we sacrifice text content
+                    }
                 }
-                //if (!iData.GetDataPresent(DataFormats.Rtf))
-                //{
-                //    //Word.Application wordApp = new Word.Application();
-                //    ////winword.ShowAnimation = false;
-                //    //wordApp.Visible = false;
-                //    //object missing = System.Reflection.Missing.Value;
-                //    //Word.Document document = wordApp.Documents.Add(ref missing, ref missing, ref missing, ref missing);
-                //    //document.Content.Paste();
-
-                //    //object index = "\\Page";
-                //    //Word.Range rng = document.Bookmarks.get_Item(ref index).Range;
-                //    //rng.Paste();
-                //    //rng.Copy();
-
-                //    //var rtfbox = new RichTextBox();
-                //    //rtfbox.Paste();
-                //    //richText = rtfbox.Rtf;
-
-                //    //wordApp.Quit(false);
-                //    //Marshal.ReleaseComObject(wordApp);
-
-                //    //var webBrowser = new WebBrowser();
-                //    //webBrowser.CreateControl(); // only if needed
-                //    //webBrowser.DocumentText = "<html><body></body></html>";
-                //    //while (webBrowser.DocumentText == "")
-                //    //Application.DoEvents();
-                //    //webBrowser.Document.ExecCommand("Paste", false, null);
-                //    //webBrowser.Document.ExecCommand("SelectAll", false, null);
-                //    //webBrowser.Document.ExecCommand("Copy", false, null);
-                //    //var textRange = new TextRange(webBrowser.Document., webBrowser.Document.ContentEnd);
-                //    //using (var stream = new MemoryStream())
-                //    //{
-                //    //    textRange.Save(stream, DataFormats.Rtf);
-                //    //    return Encoding.UTF8.GetString(stream.ToArray());
-                //    //}
-
-                //    //return;
-                //}
             }
 
             //StringCollection UrlFormatNames = new StringCollection();
@@ -2207,6 +2210,11 @@ namespace ClipAngel
 
         private void RestoreWindowIfMinimized(int newX = -1, int newY = -1)
         {
+            if (!allowVisible)
+            {
+                allowVisible = true;
+                Show();
+            }
             if (newX == -1)
             {
                 if (this.Left >= 0)
@@ -2710,9 +2718,9 @@ namespace ClipAngel
 
         private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            SettingsForm settingsFormForm = new SettingsForm();
+            SettingsForm settingsFormForm = new SettingsForm(this);
             keyboardHook.UnregisterHotKeys();
-            settingsFormForm.ShowDialog(this);
+            settingsFormForm.ShowDialog();
             if (settingsFormForm.DialogResult == DialogResult.OK)
                 LoadSettings();
             RegisterHotKeys();
@@ -2729,7 +2737,7 @@ namespace ClipAngel
             this.SuspendLayout();
             UpdateControlsStates();
             UpdateCurrentCulture();
-            cultureManager1.UICulture = Thread.CurrentThread.CurrentUICulture;
+            //cultureManager1.UICulture = Thread.CurrentThread.CurrentUICulture;
 
             UpdateWindowTitle(true);
 
@@ -2754,14 +2762,13 @@ namespace ClipAngel
             dataGridView.RowsDefaultCellStyle.Font = Properties.Settings.Default.Font;
             ChooseTitleColumnDraw();
             dataGridView.Columns["appImage"].Visible = Properties.Settings.Default.ShowApplicationIconColumn;
-            //GotoLastRow();
             AfterRowLoad();
             this.ResumeLayout();
         }
 
         private void ChooseTitleColumnDraw()
         {
-            bool ResultSimpleDraw = Properties.Settings.Default.ClipListSimpleDraw /*|| filterText == ""*/;
+            bool ResultSimpleDraw = Properties.Settings.Default.ClipListSimpleDraw;
             dataGridView.Columns["TitleSimple"].Visible = ResultSimpleDraw;
             dataGridView.Columns["ColumnTitle"].Visible = !ResultSimpleDraw;
         }
@@ -3541,15 +3548,8 @@ namespace ClipAngel
 
         private void textCompareToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            SQLiteDataReader rowReader1;
-            SQLiteDataReader rowReader2;
             string type1;
-            string type2;
-            string comparatorName = comparatorExeFileName();
-            if (comparatorName == "")
-            {
-                return;
-            }
+            int id1, id2;
             if (dataGridView.SelectedRows.Count == 0)
                 return;
             if (dataGridView.SelectedRows.Count == 1)
@@ -3565,18 +3565,32 @@ namespace ClipAngel
                 }
                 else
                 {
-                    rowReader1 = RowReader;
-                    rowReader2 = getRowReader(_lastSelectedForCompareId);
+                    id1 = (int)RowReader["id"];
+                    id2 = _lastSelectedForCompareId;
                     _lastSelectedForCompareId = 0;
                 }
             }
             else //if (dataGridView.SelectedRows.Count > 1)
             {
                 DataRowView row1 = (DataRowView) dataGridView.SelectedRows[0].DataBoundItem;
-                rowReader1 = getRowReader((int)row1["id"]);
+                id1 = (int)row1["id"];
                 DataRowView row2 = (DataRowView)dataGridView.SelectedRows[1].DataBoundItem;
-                rowReader2 = getRowReader((int)row2["id"]);
+                id2 = (int)row2["id"];
             }
+            CompareClipsbyID(id1, id2);
+        }
+
+        private void CompareClipsbyID(int id1, int id2)
+        {
+            string comparatorName = comparatorExeFileName();
+            if (comparatorName == "")
+            {
+                return;
+            }
+            string type1;
+            string type2;
+            var rowReader1 = getRowReader(id1);
+            var rowReader2 = getRowReader(id2);
             type1 = rowReader1["type"].ToString();
             type2 = rowReader2["type"].ToString();
             if (!IsTextType(type1) && type1 != "file")
@@ -3794,6 +3808,14 @@ namespace ClipAngel
         private void clearClipboardToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Clipboard.Clear();
+        }
+
+        private void copyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Properties.Settings.Default.ShowNativeTextFormatting)
+                Clipboard.SetText(richTextBox.SelectedRtf, TextDataFormat.Rtf);
+            else
+                Clipboard.SetText(richTextBox.SelectedText, TextDataFormat.Text);
         }
     }
 }
