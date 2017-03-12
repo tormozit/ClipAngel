@@ -2342,6 +2342,7 @@ namespace ClipAngel
             if (dataGridView.Rows.Count > 0)
             {
                 clipBindingSource.MoveFirst();
+                if (dataGridView.CurrentRow != null)
                 SelectCurrentRow();
             }
             LoadClipIfChangedID();

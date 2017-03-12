@@ -223,15 +223,6 @@
   <data name="contextMenuStripDataGrid.Size" type="System.Drawing.Size, System.Drawing">
     <value>274, 180</value>
   </data>
-  <data name="contextMenuStripDataGrid.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="dataGridView.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="splitContainer1.Panel1.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="pictureBoxSource.ToolTip" xml:space="preserve">
     <value>Иконка приложения, из которого клип был скопирован</value>
   </data>
@@ -262,14 +253,8 @@
   <data name="contextMenuStripRtf.Size" type="System.Drawing.Size, System.Drawing">
     <value>230, 70</value>
   </data>
-  <data name="contextMenuStripRtf.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="richTextBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>433, 94</value>
-  </data>
-  <data name="richTextBox.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="htmlMenuItemOpenLink.Size" type="System.Drawing.Size, System.Drawing">
     <value>229, 22</value>
@@ -292,26 +277,14 @@
   <data name="contextMenuStripHtml.Size" type="System.Drawing.Size, System.Drawing">
     <value>230, 70</value>
   </data>
-  <data name="contextMenuStripHtml.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="htmlTextBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>431, 92</value>
-  </data>
-  <data name="htmlTextBox.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="ImageControl.Size" type="System.Drawing.Size, System.Drawing">
     <value>433, 143</value>
   </data>
-  <data name="ImageControl.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="tableLayoutPanelData.Size" type="System.Drawing.Size, System.Drawing">
     <value>437, 369</value>
-  </data>
-  <data name="tableLayoutPanelData.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="stripLabelPosition.Size" type="System.Drawing.Size, System.Drawing">
     <value>141, 17</value>
@@ -334,9 +307,6 @@
   <data name="statusStrip.Size" type="System.Drawing.Size, System.Drawing">
     <value>441, 22</value>
   </data>
-  <data name="statusStrip.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="textBoxApplication.Location" type="System.Drawing.Point, System.Drawing">
     <value>354, 3</value>
   </data>
@@ -349,14 +319,8 @@
   <data name="textBoxWindow.ToolTip" xml:space="preserve">
     <value>Заголовок окна откуда клип был скопирован</value>
   </data>
-  <data name="splitContainer1.Panel2.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="splitContainer1.Size" type="System.Drawing.Size, System.Drawing">
     <value>815, 420</value>
-  </data>
-  <data name="splitContainer1.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="windowAlwaysOnTopToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>243, 22</value>
@@ -684,9 +648,6 @@
   <data name="MainMenu.Size" type="System.Drawing.Size, System.Drawing">
     <value>815, 24</value>
   </data>
-  <data name="MainMenu.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="trayMenuItemMonitoringClipboard.Size" type="System.Drawing.Size, System.Drawing">
     <value>243, 22</value>
   </data>
@@ -707,9 +668,6 @@
   </data>
   <data name="contextMenuStripNotifyIcon.Size" type="System.Drawing.Size, System.Drawing">
     <value>244, 70</value>
-  </data>
-  <data name="contextMenuStripNotifyIcon.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="notifyIcon.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1329,9 +1287,6 @@
   <data name="buttonUpdate.ToolTipText" xml:space="preserve">
     <value>Обновить программу на новую версию</value>
   </data>
-  <data name="toolStrip1.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>815, 444</value>
   </data>
@@ -1872,8 +1827,5 @@
         wAAAAf/////AAAAB/////8AAAAH/////4AAAA//////gAAAD/////+AAAAP/////8AAAB//////4AAAP
         //////gAAA///////AAAH//////+AAA///////+AAP///////+AD/////////////////////////w==
 </value>
-  </data>
-  <data name="$this.ToolTip" xml:space="preserve">
-    <value />
   </data>
 </root>
