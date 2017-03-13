@@ -1055,8 +1055,8 @@ namespace ClipAngel
             MarkFilter.SelectedIndex = 0;
             AllowFilterProcessing = true;
             ChooseTitleColumnDraw();
-            //UpdateClipBindingSource(true, CurrentClipID);
-            UpdateClipBindingSource(false, CurrentClipID);
+            UpdateClipBindingSource(true, CurrentClipID); // To repaint text
+            //UpdateClipBindingSource(false, CurrentClipID);
         }
 
         private void Text_CursorChanged(object sender, EventArgs e)
