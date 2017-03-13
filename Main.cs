@@ -143,8 +143,7 @@ namespace ClipAngel
             // Antiflicker double buffering
             // http://stackoverflow.com/questions/76993/how-to-double-buffer-net-controls-on-a-form
             System.Reflection.PropertyInfo aProp = typeof(System.Windows.Forms.Control)
-            .GetProperty("DoubleBuffered", System.Reflection.BindingFlags.NonPublic |
-            System.Reflection.BindingFlags.Instance);
+            .GetProperty("DoubleBuffered", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
             aProp.SetValue(dataGridView, true, null);
             //aProp.SetValue(richTextBox, true, null); // No effect
             //aProp.SetValue(htmlTextBox, true, null); // No effect
@@ -261,7 +260,9 @@ namespace ClipAngel
             }
             else
             {
-                RestoreWindowIfMinimized();
+                //UpdateControlsStates(); //
+                //RestoreWindowIfMinimized();
+                allowVisible = true;
             }
             if (Properties.Settings.Default.WindowSize.Width > 0)
                 this.Size = Properties.Settings.Default.WindowSize;
@@ -532,6 +533,8 @@ namespace ClipAngel
         {
             // Due to the hidden start window can be shown and this event raised not on the start
             // So we do not use it and make everything in constructor
+            UpdateControlsStates(); //
+            RestoreWindowIfMinimized();
         }
 
         // To hide on start
@@ -2747,8 +2750,8 @@ namespace ClipAngel
 
         private void LoadSettings()
         {
-            this.SuspendLayout();
             UpdateControlsStates();
+            this.SuspendLayout();
             UpdateCurrentCulture();
             cultureManager1.UICulture = Thread.CurrentThread.CurrentUICulture;
 
