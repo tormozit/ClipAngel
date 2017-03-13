@@ -588,6 +588,7 @@ namespace ClipAngel
                                         || richTextBox.Focused
                                         || htmlTextBox.Focused
                                         || urlTextBox.Focused;
+            allowTextPositionChangeUpdate = false;
             clipRichTextLength = 0;
             clipType = "";
             pictureBoxSource.Image = null;
@@ -602,7 +603,6 @@ namespace ClipAngel
             stripLabelPosition.Text = "";
             if (CurrentRowView != null)
             {
-                allowTextPositionChangeUpdate = false;
                 DataRow CurrentRow = CurrentRowView.Row;
                 RowReader = getRowReader((int)CurrentRow["Id"]);
                 clipType = RowReader["type"].ToString();
