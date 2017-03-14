@@ -129,6 +129,12 @@
   <data name="AutostartDescription" xml:space="preserve">
     <value />
   </data>
+  <data name="AutostartPath" xml:space="preserve">
+    <value>Команда автозапуска программы</value>
+  </data>
+  <data name="AutostartPathDescription" xml:space="preserve">
+    <value>Нажмите ОК для обновления команды автозапуска в соответствии с текущей командой запуска</value>
+  </data>
   <data name="ClearFiltersOnClose" xml:space="preserve">
     <value>Очищать фильтры при закрытии главного окна</value>
   </data>
@@ -148,6 +154,9 @@
     <value>Копировать выделенный текст из любого окна при нажатии Control+F3.  
 Это сочетание обычно используется текстовыми редакторами для поиска выделенной строки. 
 При этом нажатие будет обработано самим окном.</value>
+  </data>
+  <data name="CurrentPath" xml:space="preserve">
+    <value>Команда текущего запуска программы</value>
   </data>
   <data name="DatabaseSize" xml:space="preserve">
     <value>Размер базы данных MB</value>

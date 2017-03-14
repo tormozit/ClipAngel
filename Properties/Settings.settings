@@ -56,7 +56,7 @@
     <Setting Name="ShowNativeTextFormatting" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
-    <Setting Name="WindowSize" Type="System.Drawing.Size" Scope="User">
+    <Setting Name="MainWindowSize" Type="System.Drawing.Size" Scope="User">
       <Value Profile="(Default)">0, 0</Value>
     </Setting>
     <Setting Name="Font" Type="System.Drawing.Font" Scope="User">
@@ -79,6 +79,9 @@
     </Setting>
     <Setting Name="CopyTextInAnyWindowOnCTRLF3" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="SettingsWindowSize" Type="System.Drawing.Size" Scope="User">
+      <Value Profile="(Default)">0, 0</Value>
     </Setting>
   </Settings>
 </SettingsFile>

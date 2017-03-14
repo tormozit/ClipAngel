@@ -51,7 +51,6 @@
             // 
             resources.ApplyResources(buttonReset, "buttonReset");
             buttonReset.Name = "buttonReset";
-            this.toolTip1.SetToolTip(buttonReset, resources.GetString("buttonReset.ToolTip"));
             buttonReset.UseVisualStyleBackColor = true;
             buttonReset.Click += new System.EventHandler(this.buttonReset_Click);
             // 
@@ -60,14 +59,12 @@
             resources.ApplyResources(this.buttonCancel, "buttonCancel");
             this.buttonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.buttonCancel.Name = "buttonCancel";
-            this.toolTip1.SetToolTip(this.buttonCancel, resources.GetString("buttonCancel.ToolTip"));
             this.buttonCancel.UseVisualStyleBackColor = true;
             // 
             // buttonOK
             // 
             resources.ApplyResources(this.buttonOK, "buttonOK");
             this.buttonOK.Name = "buttonOK";
-            this.toolTip1.SetToolTip(this.buttonOK, resources.GetString("buttonOK.ToolTip"));
             this.buttonOK.UseVisualStyleBackColor = true;
             this.buttonOK.Click += new System.EventHandler(this.buttonOK_Click_1);
             // 
@@ -84,7 +81,6 @@
             // 
             resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
-            this.toolTip1.SetToolTip(this.label1, resources.GetString("label1.ToolTip"));
             // 
             // textBoxFilter
             // 
@@ -100,34 +96,31 @@
             this.propertyGrid1.HiddenAttributes = null;
             this.propertyGrid1.HiddenProperties = null;
             this.propertyGrid1.Name = "propertyGrid1";
-            this.toolTip1.SetToolTip(this.propertyGrid1, resources.GetString("propertyGrid1.ToolTip"));
             // 
             // contexMenuLabel
             // 
-            resources.ApplyResources(this.contexMenuLabel, "contexMenuLabel");
             this.contexMenuLabel.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.copyToolStripMenuItem});
             this.contexMenuLabel.Name = "contexMenuLabel";
-            this.toolTip1.SetToolTip(this.contexMenuLabel, resources.GetString("contexMenuLabel.ToolTip"));
+            resources.ApplyResources(this.contexMenuLabel, "contexMenuLabel");
             // 
             // copyToolStripMenuItem
             // 
-            resources.ApplyResources(this.copyToolStripMenuItem, "copyToolStripMenuItem");
             this.copyToolStripMenuItem.Name = "copyToolStripMenuItem";
+            resources.ApplyResources(this.copyToolStripMenuItem, "copyToolStripMenuItem");
             this.copyToolStripMenuItem.Click += new System.EventHandler(this.copyToolStripMenuItem_Click);
             // 
             // contexMenuGrid
             // 
-            resources.ApplyResources(this.contexMenuGrid, "contexMenuGrid");
             this.contexMenuGrid.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.gridContextMenuCopy});
             this.contexMenuGrid.Name = "contexMenuGrid";
-            this.toolTip1.SetToolTip(this.contexMenuGrid, resources.GetString("contexMenuGrid.ToolTip"));
+            resources.ApplyResources(this.contexMenuGrid, "contexMenuGrid");
             // 
             // gridContextMenuCopy
             // 
-            resources.ApplyResources(this.gridContextMenuCopy, "gridContextMenuCopy");
             this.gridContextMenuCopy.Name = "gridContextMenuCopy";
+            resources.ApplyResources(this.gridContextMenuCopy, "gridContextMenuCopy");
             this.gridContextMenuCopy.Click += new System.EventHandler(this.gridContextMenuCopy_Click);
             // 
             // SettingsForm
@@ -146,7 +139,7 @@
             this.Name = "SettingsForm";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
-            this.toolTip1.SetToolTip(this, resources.GetString("$this.ToolTip"));
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SettingsForm_FormClosing);
             this.Load += new System.EventHandler(this.Settings_Load);
             this.contexMenuLabel.ResumeLayout(false);
             this.contexMenuGrid.ResumeLayout(false);

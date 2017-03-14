@@ -129,6 +129,12 @@
   <data name="AutostartDescription" xml:space="preserve">
     <value />
   </data>
+  <data name="AutostartPath" xml:space="preserve">
+    <value>Application autostart command line</value>
+  </data>
+  <data name="AutostartPathDescription" xml:space="preserve">
+    <value>Click OK to update this command from current start path</value>
+  </data>
   <data name="ClearFiltersOnClose" xml:space="preserve">
     <value>Clear filters on main window close</value>
   </data>
@@ -147,6 +153,9 @@
   <data name="CopyTextInAnyWindowOnCTRLF3Description" xml:space="preserve">
     <value>Copy selected text from any window when Control+F3 is pressed. This hotkey usually is used in text editors to search selected string. 
 Key press will be processed by the window. </value>
+  </data>
+  <data name="CurrentPath" xml:space="preserve">
+    <value>Application current start path</value>
   </data>
   <data name="DatabaseSize" xml:space="preserve">
     <value>Database size MB</value>

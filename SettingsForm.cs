@@ -32,6 +32,8 @@ namespace ClipAngel
             label = propertyGrid1.Controls[0].Controls[1];
             label.ContextMenuStrip = contexMenuLabel;
             propertyGrid1.SelectedObject = set;
+            if (Properties.Settings.Default.SettingsWindowSize.Width > 0)
+                this.Size = Properties.Settings.Default.SettingsWindowSize;
         }
 
         private void Settings_Load(object sender = null, EventArgs e = null)
@@ -146,6 +148,14 @@ namespace ClipAngel
             {
                 Clipboard.SetText(propertyGrid1.SelectedGridItem.Label);
             }
+        }
+
+        private void SettingsForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (WindowState == FormWindowState.Normal)
+                Properties.Settings.Default.SettingsWindowSize = Size;
+            else
+                Properties.Settings.Default.SettingsWindowSize = RestoreBounds.Size;
         }
     }
 
@@ -614,6 +624,20 @@ namespace ClipAngel
             NumberOfClips = Owner.ClipsNumber.ToString();
             UserSettingsPath = Owner.UserSettingsPath;
             DatabaseSize = ((new FileInfo(Owner.DbFileName)).Length / (1024 * 1024)).ToString();
+
+            CurrentPath = Application.ExecutablePath;
+            RegistryKey reg;
+            reg = Registry.CurrentUser.CreateSubKey("Software\\Microsoft\\Windows\\CurrentVersion\\Run\\");
+            string Keyname = Application.ProductName;
+
+            try
+            {
+                AutostartPath = reg.GetValue(Keyname).ToString();
+
+            }
+            catch
+            {
+            }
         }
 
         public void Apply(bool PortableMode = false)
@@ -670,6 +694,14 @@ namespace ClipAngel
         [GlobalizedCategory("Info")]
         [ReadOnly(true)]
         public string NumberOfClips { get; set; }
+
+        [GlobalizedCategory("Info")]
+        [ReadOnly(true)]
+        public string AutostartPath { get; set; }
+
+        [GlobalizedCategory("Info")]
+        [ReadOnly(true)]
+        public string CurrentPath { get; set; }
 
         [GlobalizedCategory("Other")]
         [Editor(typeof(MyBoolEditor), typeof(UITypeEditor))]

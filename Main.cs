@@ -264,8 +264,8 @@ namespace ClipAngel
                 //RestoreWindowIfMinimized();
                 allowVisible = true;
             }
-            if (Properties.Settings.Default.WindowSize.Width > 0)
-                this.Size = Properties.Settings.Default.WindowSize;
+            if (Properties.Settings.Default.MainWindowSize.Width > 0)
+                this.Size = Properties.Settings.Default.MainWindowSize;
             timerCheckUpdate.Interval = 1;
             timerCheckUpdate.Start();
             timerReconnect.Interval = (1000 * 5); // 5 seconds
@@ -296,7 +296,7 @@ namespace ClipAngel
 
         private void UpdateWindowTitle(bool forced = false)
         {
-            if (this.Top < 0 && !forced)
+            if ((this.Top < 0 || !this.Visible) && !forced)
                 return;
             string windowText = "";
             if (lastActiveWindow != null)
@@ -1101,9 +1101,9 @@ namespace ClipAngel
             else
             {
                 if (WindowState == FormWindowState.Normal)
-                    Properties.Settings.Default.WindowSize = Size;
+                    Properties.Settings.Default.MainWindowSize = Size;
                 else
-                    Properties.Settings.Default.WindowSize = RestoreBounds.Size;
+                    Properties.Settings.Default.MainWindowSize = RestoreBounds.Size;
             }
         }
 
@@ -1293,7 +1293,7 @@ namespace ClipAngel
         }
 
         void AddClip(byte[] binaryBuffer = null, byte[] imageSampleBuffer = null, string htmlText = "", string richText = "", string typeText = "text", string plainText = "",
-            string applicationText = "", string windowText = "", string url = "", int chars = 0, string appPath = "")
+            string applicationText = "", string windowText = "", string url = "", int chars = 0, string appPath = "", bool used = false, bool favorite = false)
         {
             if (plainText == null)
                 plainText = "";
@@ -1323,8 +1323,6 @@ namespace ClipAngel
             byte[] binaryHtml = Encoding.Unicode.GetBytes(htmlText);
             md5.TransformFinalBlock(binaryHtml, 0, binaryHtml.Length);
             string hash = Convert.ToBase64String(md5.Hash);
-            bool used = false;
-            bool favorite = false;
 
             string sql = "SELECT Id, Title, Used, Favorite FROM Clips Where Hash = @Hash";
             SQLiteCommand commandSelect = new SQLiteCommand(sql, m_dbConnection);
@@ -1434,12 +1432,14 @@ namespace ClipAngel
         private static string TextClipTitle(string text)
         {
             string title = text.TrimStart();
+            // Removing repeats (series) of empty space and leave only 1 space
             title = Regex.Replace(title, @"\s+", " ");
+            // Removing repeats (series of one char) and leave only 3 chars
+            title = Regex.Replace(title, "(.)(?<=\\1\\1\\1\\1)", String.Empty, RegexOptions.IgnoreCase | RegexOptions.CultureInvariant | RegexOptions.Compiled);
             if (title.Length > ClipTitleLength)
             {
                 title = title.Substring(0, ClipTitleLength - 1 - 3) + "...";
             }
-
             return title;
         }
 
@@ -1601,16 +1601,7 @@ namespace ClipAngel
         private string CopyClipToClipboard(/*out DataObject oldDataObject,*/ bool onlySelectedPlainText = false)
         {
             //oldDataObject = null;
-            StringCollection lastFilterValues = Properties.Settings.Default.LastFilterValues;
-            if (filterText != "" && !lastFilterValues.Contains(filterText))
-            {
-                lastFilterValues.Insert(0, filterText);
-                while (lastFilterValues.Count > 20)
-                {
-                    lastFilterValues.RemoveAt(lastFilterValues.Count - 1);
-                }
-                FillFilterItems();
-            }
+            SaveFilterInLastUsedList();
 
             //DataRow CurrentDataRow = ((DataRowView)clipBindingSource.Current).Row;
             string type = (string)RowReader["type"];
@@ -1675,6 +1666,20 @@ namespace ClipAngel
             Clipboard.SetDataObject(dto, true); // Very important to set second parameter to true to give immidiate access to buffer to other processes!
             ConnectClipboard();
             return clipText;
+        }
+
+        private void SaveFilterInLastUsedList()
+        {
+            StringCollection lastFilterValues = Properties.Settings.Default.LastFilterValues;
+            if (filterText != "" && !lastFilterValues.Contains(filterText))
+            {
+                lastFilterValues.Insert(0, filterText);
+                while (lastFilterValues.Count > 20)
+                {
+                    lastFilterValues.RemoveAt(lastFilterValues.Count - 1);
+                }
+                FillFilterItems();
+            }
         }
 
         private bool IsTextType(string type = "")
@@ -2070,6 +2075,7 @@ namespace ClipAngel
                     editClipTextToolStripMenuItem_Click();
                 else 
                     LoadClipIfChangedID();
+                SaveFilterInLastUsedList();
             }
         }
 
@@ -2212,7 +2218,14 @@ namespace ClipAngel
                 this.Activate();
                 this.Show();
             }
-            SetForegroundWindow(this.Handle);
+            if (this.CanFocus)
+                SetForegroundWindow(this.Handle);
+            else
+                foreach (Form form in Application.OpenForms)
+                {
+                    if (form.Modal)
+                        form.Activate();
+                }
             if (Properties.Settings.Default.SelectTopClipOnShow)
                 GotoLastRow();
             this.ResumeLayout();
@@ -2227,6 +2240,7 @@ namespace ClipAngel
                 this.Activate();
                 Show();
             }
+            UpdateWindowTitle(true);
             if (Properties.Settings.Default.FastWindowOpen)
             { 
                 if (newX == -1)
@@ -2735,11 +2749,13 @@ namespace ClipAngel
         private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SettingsForm settingsFormForm = new SettingsForm(this);
-            keyboardHook.UnregisterHotKeys();
             settingsFormForm.ShowDialog();
             if (settingsFormForm.DialogResult == DialogResult.OK)
+            {
                 LoadSettings();
-            RegisterHotKeys();
+                keyboardHook.UnregisterHotKeys();
+                RegisterHotKeys();
+            }
         }
 
         private class ListItemNameText
@@ -2984,6 +3000,7 @@ namespace ClipAngel
         {
             if (EditMode)
                 return;
+            SaveFilterInLastUsedList();
             if (TextWasCut)
                 AfterRowLoad(true);
             if (htmlMode)
@@ -3034,6 +3051,7 @@ namespace ClipAngel
         {
             if (EditMode)
                 return;
+            SaveFilterInLastUsedList();
             if (TextWasCut)
                 AfterRowLoad(true);
             if (htmlMode)
@@ -3427,7 +3445,7 @@ namespace ClipAngel
             {
                 if (clipType != "text")
                 {
-                    AddClip(null, null, "", "", "text", RowReader["text"].ToString());
+                    AddClip(null, null, "", "", "text", RowReader["text"].ToString(), "", "", "", 0, "", (bool)RowReader["used"], (bool)RowReader["favorite"]);
                     GotoLastRow();
                 }
             }
@@ -3838,6 +3856,11 @@ namespace ClipAngel
                 Clipboard.SetText(richTextBox.SelectedRtf, TextDataFormat.Rtf);
             else
                 Clipboard.SetText(richTextBox.SelectedText, TextDataFormat.UnicodeText);
+        }
+
+        private void openFavoritesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ShowForPaste(true);
         }
     }
 }

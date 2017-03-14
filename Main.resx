@@ -125,9 +125,6 @@
   <data name="splitContainer1.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 24</value>
   </data>
-  <metadata name="toolTipDynamic.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>420, 56</value>
-  </metadata>
   <data name="MarkFilter.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
   </data>
@@ -153,6 +150,9 @@
   <data name="MarkFilter.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
   </data>
+  <metadata name="toolTipDynamic.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>420, 56</value>
+  </metadata>
   <data name="MarkFilter.ToolTip" xml:space="preserve">
     <value>Show only clips of this marks</value>
   </data>
@@ -303,11 +303,14 @@
   <data name="comboBoxFilter.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left, Right</value>
   </data>
+  <data name="comboBoxFilter.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9pt</value>
+  </data>
   <data name="comboBoxFilter.Location" type="System.Drawing.Point, System.Drawing">
     <value>153, 397</value>
   </data>
   <data name="comboBoxFilter.Size" type="System.Drawing.Size, System.Drawing">
-    <value>144, 21</value>
+    <value>144, 23</value>
   </data>
   <data name="comboBoxFilter.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -607,6 +610,33 @@ Use special char % for marking any sequence of chars. For example filter "po%o" 
   <data name="tableLayoutPanelData.ColumnCount" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
+  <data name="urlTextBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="urlTextBox.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tahoma, 9pt</value>
+  </data>
+  <data name="urlTextBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>2, 345</value>
+  </data>
+  <data name="urlTextBox.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="urlTextBox.Multiline" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="urlTextBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>408, 22</value>
+  </data>
+  <data name="urlTextBox.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="urlTextBox.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="urlTextBox.ToolTip" xml:space="preserve">
+    <value>From this URL clip was copied</value>
+  </data>
   <data name="&gt;&gt;urlTextBox.Name" xml:space="preserve">
     <value>urlTextBox</value>
   </data>
@@ -618,6 +648,63 @@ Use special char % for marking any sequence of chars. For example filter "po%o" 
   </data>
   <data name="&gt;&gt;urlTextBox.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="richTextBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <metadata name="contextMenuStripRtf.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>696, 16</value>
+  </metadata>
+  <data name="rtfMenuItemOpenLink.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="rtfMenuItemOpenLink.Size" type="System.Drawing.Size, System.Drawing">
+    <value>194, 22</value>
+  </data>
+  <data name="rtfMenuItemOpenLink.Text" xml:space="preserve">
+    <value>Open link (ALT + click)</value>
+  </data>
+  <data name="copyToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Ctrl+C</value>
+  </data>
+  <data name="copyToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>194, 22</value>
+  </data>
+  <data name="copyToolStripMenuItem.Text" xml:space="preserve">
+    <value>Copy</value>
+  </data>
+  <data name="rtfMenuItemSelectAll.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Ctrl+A</value>
+  </data>
+  <data name="rtfMenuItemSelectAll.Size" type="System.Drawing.Size, System.Drawing">
+    <value>194, 22</value>
+  </data>
+  <data name="rtfMenuItemSelectAll.Text" xml:space="preserve">
+    <value>Select all</value>
+  </data>
+  <data name="contextMenuStripRtf.Size" type="System.Drawing.Size, System.Drawing">
+    <value>195, 70</value>
+  </data>
+  <data name="&gt;&gt;contextMenuStripRtf.Name" xml:space="preserve">
+    <value>contextMenuStripRtf</value>
+  </data>
+  <data name="&gt;&gt;contextMenuStripRtf.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="richTextBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>2, 2</value>
+  </data>
+  <data name="richTextBox.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="richTextBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>408, 94</value>
+  </data>
+  <data name="richTextBox.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="richTextBox.Text" xml:space="preserve">
+    <value />
   </data>
   <data name="&gt;&gt;richTextBox.Name" xml:space="preserve">
     <value>richTextBox</value>
@@ -631,6 +718,54 @@ Use special char % for marking any sequence of chars. For example filter "po%o" 
   <data name="&gt;&gt;richTextBox.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="htmlTextBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <metadata name="contextMenuStripHtml.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>528, 19</value>
+  </metadata>
+  <data name="htmlMenuItemOpenLink.Size" type="System.Drawing.Size, System.Drawing">
+    <value>188, 22</value>
+  </data>
+  <data name="htmlMenuItemOpenLink.Text" xml:space="preserve">
+    <value>Open link (ALT+click)</value>
+  </data>
+  <data name="htmlMenuItemCopyLinkAdress.Size" type="System.Drawing.Size, System.Drawing">
+    <value>188, 22</value>
+  </data>
+  <data name="htmlMenuItemCopyLinkAdress.Text" xml:space="preserve">
+    <value>Copy link adress</value>
+  </data>
+  <data name="htmlMenuItemSelectAll.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Ctrl+A</value>
+  </data>
+  <data name="htmlMenuItemSelectAll.Size" type="System.Drawing.Size, System.Drawing">
+    <value>188, 22</value>
+  </data>
+  <data name="htmlMenuItemSelectAll.Text" xml:space="preserve">
+    <value>Select all</value>
+  </data>
+  <data name="contextMenuStripHtml.Size" type="System.Drawing.Size, System.Drawing">
+    <value>189, 70</value>
+  </data>
+  <data name="&gt;&gt;contextMenuStripHtml.Name" xml:space="preserve">
+    <value>contextMenuStripHtml</value>
+  </data>
+  <data name="&gt;&gt;contextMenuStripHtml.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="htmlTextBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 101</value>
+  </data>
+  <data name="htmlTextBox.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>20, 20</value>
+  </data>
+  <data name="htmlTextBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>406, 92</value>
+  </data>
+  <data name="htmlTextBox.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
   <data name="&gt;&gt;htmlTextBox.Name" xml:space="preserve">
     <value>htmlTextBox</value>
   </data>
@@ -642,6 +777,27 @@ Use special char % for marking any sequence of chars. For example filter "po%o" 
   </data>
   <data name="&gt;&gt;htmlTextBox.ZOrder" xml:space="preserve">
     <value>2</value>
+  </data>
+  <data name="ImageControl.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="ImageControl.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ImageControl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>2, 198</value>
+  </data>
+  <data name="ImageControl.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="ImageControl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>408, 143</value>
+  </data>
+  <data name="ImageControl.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>Zoom</value>
+  </data>
+  <data name="ImageControl.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
   </data>
   <data name="&gt;&gt;ImageControl.Name" xml:space="preserve">
     <value>ImageControl</value>
@@ -696,6 +852,81 @@ Use special char % for marking any sequence of chars. For example filter "po%o" 
   </data>
   <data name="statusStrip.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>None</value>
+  </data>
+  <data name="stripLabelPosition.AutoSize" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="stripLabelPosition.Size" type="System.Drawing.Size, System.Drawing">
+    <value>116, 17</value>
+  </data>
+  <data name="stripLabelPosition.Text" xml:space="preserve">
+    <value>Position</value>
+  </data>
+  <data name="stripLabelPosition.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="stripLabelPosition.ToolTipText" xml:space="preserve">
+    <value>Text postion &lt;offset&gt;(&lt;line&gt;:&lt;column&gt;):&lt;length&gt;</value>
+  </data>
+  <data name="StripLabelVisualSize.AutoSize" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="StripLabelVisualSize.Size" type="System.Drawing.Size, System.Drawing">
+    <value>70, 17</value>
+  </data>
+  <data name="StripLabelVisualSize.Text" xml:space="preserve">
+    <value>VisualSize</value>
+  </data>
+  <data name="StripLabelVisualSize.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="StripLabelVisualSize.ToolTipText" xml:space="preserve">
+    <value>Visual size: number of chars or pixels</value>
+  </data>
+  <data name="StripLabelSize.AutoSize" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="StripLabelSize.Size" type="System.Drawing.Size, System.Drawing">
+    <value>70, 17</value>
+  </data>
+  <data name="StripLabelSize.Text" xml:space="preserve">
+    <value>Size</value>
+  </data>
+  <data name="StripLabelSize.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="StripLabelSize.ToolTipText" xml:space="preserve">
+    <value>Total size of all data types of clip in bytes</value>
+  </data>
+  <data name="StripLabelType.AutoSize" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="StripLabelType.Size" type="System.Drawing.Size, System.Drawing">
+    <value>35, 17</value>
+  </data>
+  <data name="StripLabelType.Text" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="StripLabelType.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="StripLabelType.ToolTipText" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="StripLabelCreated.AutoSize" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="StripLabelCreated.Size" type="System.Drawing.Size, System.Drawing">
+    <value>110, 17</value>
+  </data>
+  <data name="StripLabelCreated.Text" xml:space="preserve">
+    <value>Created</value>
+  </data>
+  <data name="StripLabelCreated.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="StripLabelCreated.ToolTipText" xml:space="preserve">
+    <value>Created time</value>
   </data>
   <data name="statusStrip.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 398</value>
@@ -814,318 +1045,9 @@ Use special char % for marking any sequence of chars. For example filter "po%o" 
   <data name="&gt;&gt;splitContainer1.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <metadata name="dbDataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>256, 12</value>
-  </metadata>
-  <data name="urlTextBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
-  </data>
-  <data name="urlTextBox.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Tahoma, 9pt</value>
-  </data>
-  <data name="urlTextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>2, 345</value>
-  </data>
-  <data name="urlTextBox.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
-  </data>
-  <data name="urlTextBox.Multiline" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="urlTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>408, 22</value>
-  </data>
-  <data name="urlTextBox.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
-  </data>
-  <data name="urlTextBox.Text" xml:space="preserve">
-    <value />
-  </data>
-  <data name="urlTextBox.ToolTip" xml:space="preserve">
-    <value>From this URL clip was copied</value>
-  </data>
-  <data name="&gt;&gt;urlTextBox.Name" xml:space="preserve">
-    <value>urlTextBox</value>
-  </data>
-  <data name="&gt;&gt;urlTextBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;urlTextBox.Parent" xml:space="preserve">
-    <value>tableLayoutPanelData</value>
-  </data>
-  <data name="&gt;&gt;urlTextBox.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="richTextBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
-  </data>
-  <metadata name="contextMenuStripRtf.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>696, 16</value>
-  </metadata>
-  <data name="contextMenuStripRtf.Size" type="System.Drawing.Size, System.Drawing">
-    <value>195, 70</value>
-  </data>
-  <data name="&gt;&gt;contextMenuStripRtf.Name" xml:space="preserve">
-    <value>contextMenuStripRtf</value>
-  </data>
-  <data name="&gt;&gt;contextMenuStripRtf.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="richTextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>2, 2</value>
-  </data>
-  <data name="richTextBox.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
-  </data>
-  <data name="richTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>408, 94</value>
-  </data>
-  <data name="richTextBox.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="richTextBox.Text" xml:space="preserve">
-    <value />
-  </data>
-  <data name="&gt;&gt;richTextBox.Name" xml:space="preserve">
-    <value>richTextBox</value>
-  </data>
-  <data name="&gt;&gt;richTextBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;richTextBox.Parent" xml:space="preserve">
-    <value>tableLayoutPanelData</value>
-  </data>
-  <data name="&gt;&gt;richTextBox.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="rtfMenuItemOpenLink.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="rtfMenuItemOpenLink.Size" type="System.Drawing.Size, System.Drawing">
-    <value>194, 22</value>
-  </data>
-  <data name="rtfMenuItemOpenLink.Text" xml:space="preserve">
-    <value>Open link (ALT + click)</value>
-  </data>
-  <data name="copyToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+C</value>
-  </data>
-  <data name="copyToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>194, 22</value>
-  </data>
-  <data name="copyToolStripMenuItem.Text" xml:space="preserve">
-    <value>Copy</value>
-  </data>
-  <data name="rtfMenuItemSelectAll.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+A</value>
-  </data>
-  <data name="rtfMenuItemSelectAll.Size" type="System.Drawing.Size, System.Drawing">
-    <value>194, 22</value>
-  </data>
-  <data name="rtfMenuItemSelectAll.Text" xml:space="preserve">
-    <value>Select all</value>
-  </data>
-  <data name="htmlTextBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
-  </data>
-  <metadata name="contextMenuStripHtml.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>528, 19</value>
-  </metadata>
-  <data name="contextMenuStripHtml.Size" type="System.Drawing.Size, System.Drawing">
-    <value>189, 70</value>
-  </data>
-  <data name="&gt;&gt;contextMenuStripHtml.Name" xml:space="preserve">
-    <value>contextMenuStripHtml</value>
-  </data>
-  <data name="&gt;&gt;contextMenuStripHtml.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="htmlTextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 101</value>
-  </data>
-  <data name="htmlTextBox.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>20, 20</value>
-  </data>
-  <data name="htmlTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>406, 92</value>
-  </data>
-  <data name="htmlTextBox.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="&gt;&gt;htmlTextBox.Name" xml:space="preserve">
-    <value>htmlTextBox</value>
-  </data>
-  <data name="&gt;&gt;htmlTextBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.WebBrowser, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;htmlTextBox.Parent" xml:space="preserve">
-    <value>tableLayoutPanelData</value>
-  </data>
-  <data name="&gt;&gt;htmlTextBox.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="htmlMenuItemOpenLink.Size" type="System.Drawing.Size, System.Drawing">
-    <value>188, 22</value>
-  </data>
-  <data name="htmlMenuItemOpenLink.Text" xml:space="preserve">
-    <value>Open link (ALT+click)</value>
-  </data>
-  <data name="htmlMenuItemCopyLinkAdress.Size" type="System.Drawing.Size, System.Drawing">
-    <value>188, 22</value>
-  </data>
-  <data name="htmlMenuItemCopyLinkAdress.Text" xml:space="preserve">
-    <value>Copy link adress</value>
-  </data>
-  <data name="htmlMenuItemSelectAll.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+A</value>
-  </data>
-  <data name="htmlMenuItemSelectAll.Size" type="System.Drawing.Size, System.Drawing">
-    <value>188, 22</value>
-  </data>
-  <data name="htmlMenuItemSelectAll.Text" xml:space="preserve">
-    <value>Select all</value>
-  </data>
-  <data name="ImageControl.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
-  </data>
-  <data name="ImageControl.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="ImageControl.Location" type="System.Drawing.Point, System.Drawing">
-    <value>2, 198</value>
-  </data>
-  <data name="ImageControl.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
-  </data>
-  <data name="ImageControl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>408, 143</value>
-  </data>
-  <data name="ImageControl.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
-    <value>Zoom</value>
-  </data>
-  <data name="ImageControl.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="&gt;&gt;ImageControl.Name" xml:space="preserve">
-    <value>ImageControl</value>
-  </data>
-  <data name="&gt;&gt;ImageControl.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ImageControl.Parent" xml:space="preserve">
-    <value>tableLayoutPanelData</value>
-  </data>
-  <data name="&gt;&gt;ImageControl.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="stripLabelPosition.AutoSize" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="stripLabelPosition.Size" type="System.Drawing.Size, System.Drawing">
-    <value>116, 17</value>
-  </data>
-  <data name="stripLabelPosition.Text" xml:space="preserve">
-    <value>Position</value>
-  </data>
-  <data name="stripLabelPosition.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleRight</value>
-  </data>
-  <data name="stripLabelPosition.ToolTipText" xml:space="preserve">
-    <value>Text postion &lt;offset&gt;(&lt;line&gt;:&lt;column&gt;):&lt;length&gt;</value>
-  </data>
-  <data name="StripLabelVisualSize.AutoSize" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="StripLabelVisualSize.Size" type="System.Drawing.Size, System.Drawing">
-    <value>70, 17</value>
-  </data>
-  <data name="StripLabelVisualSize.Text" xml:space="preserve">
-    <value>VisualSize</value>
-  </data>
-  <data name="StripLabelVisualSize.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleRight</value>
-  </data>
-  <data name="StripLabelVisualSize.ToolTipText" xml:space="preserve">
-    <value>Visual size: number of chars or pixels</value>
-  </data>
-  <data name="StripLabelSize.AutoSize" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="StripLabelSize.Size" type="System.Drawing.Size, System.Drawing">
-    <value>70, 17</value>
-  </data>
-  <data name="StripLabelSize.Text" xml:space="preserve">
-    <value>Size</value>
-  </data>
-  <data name="StripLabelSize.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleRight</value>
-  </data>
-  <data name="StripLabelSize.ToolTipText" xml:space="preserve">
-    <value>Clip size in bytes</value>
-  </data>
-  <data name="StripLabelType.AutoSize" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="StripLabelType.Size" type="System.Drawing.Size, System.Drawing">
-    <value>35, 17</value>
-  </data>
-  <data name="StripLabelType.Text" xml:space="preserve">
-    <value>Type</value>
-  </data>
-  <data name="StripLabelType.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleRight</value>
-  </data>
-  <data name="StripLabelType.ToolTipText" xml:space="preserve">
-    <value>Type</value>
-  </data>
-  <data name="StripLabelCreated.AutoSize" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="StripLabelCreated.Size" type="System.Drawing.Size, System.Drawing">
-    <value>110, 17</value>
-  </data>
-  <data name="StripLabelCreated.Text" xml:space="preserve">
-    <value>Created</value>
-  </data>
-  <data name="StripLabelCreated.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleRight</value>
-  </data>
-  <data name="StripLabelCreated.ToolTipText" xml:space="preserve">
-    <value>Created time</value>
-  </data>
   <metadata name="MainMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>1072, 17</value>
   </metadata>
-  <data name="MainMenu.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="MainMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>790, 24</value>
-  </data>
-  <data name="MainMenu.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="MainMenu.Text" xml:space="preserve">
-    <value>menuStrip1</value>
-  </data>
-  <data name="&gt;&gt;MainMenu.Name" xml:space="preserve">
-    <value>MainMenu</value>
-  </data>
-  <data name="&gt;&gt;MainMenu.Type" xml:space="preserve">
-    <value>System.Windows.Forms.MenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;MainMenu.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;MainMenu.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="fileToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>63, 20</value>
-  </data>
-  <data name="fileToolStripMenuItem1.Text" xml:space="preserve">
-    <value>Window</value>
-  </data>
   <data name="windowAlwaysOnTopToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>187, 22</value>
   </data>
@@ -1167,11 +1089,11 @@ Used only in fast window open mode.</value>
   <data name="exitToolStripMenuItem.ToolTipText" xml:space="preserve">
     <value>Exit the program</value>
   </data>
-  <data name="listToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>37, 20</value>
+  <data name="fileToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>63, 20</value>
   </data>
-  <data name="listToolStripMenuItem.Text" xml:space="preserve">
-    <value>List</value>
+  <data name="fileToolStripMenuItem1.Text" xml:space="preserve">
+    <value>Window</value>
   </data>
   <data name="toolStripMenuItem6.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+F9</value>
@@ -1263,11 +1185,11 @@ Used only in fast window open mode.</value>
   <data name="showAllMarksToolStripMenuItem.Text" xml:space="preserve">
     <value>Show all marks</value>
   </data>
-  <data name="clipToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>40, 20</value>
+  <data name="listToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>37, 20</value>
   </data>
-  <data name="clipToolStripMenuItem.Text" xml:space="preserve">
-    <value>Clip</value>
+  <data name="listToolStripMenuItem.Text" xml:space="preserve">
+    <value>List</value>
   </data>
   <data name="pasteENTERToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>209, 22</value>
@@ -1276,7 +1198,7 @@ Used only in fast window open mode.</value>
     <value>Paste (ENTER)</value>
   </data>
   <data name="pasteENTERToolStripMenuItem.ToolTipText" xml:space="preserve">
-    <value>Paste in active window current clip</value>
+    <value>Paste in active window current clip. Also performed by double click</value>
   </data>
   <data name="pasteTextCTRLENTERToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>209, 22</value>
@@ -1434,17 +1356,17 @@ Changes in temp file are not synchronized with clip!</value>
   <data name="translateToolStripMenuItem.ToolTipText" xml:space="preserve">
     <value>Translate clip text or its selected part</value>
   </data>
+  <data name="clipToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>40, 20</value>
+  </data>
+  <data name="clipToolStripMenuItem.Text" xml:space="preserve">
+    <value>Clip</value>
+  </data>
   <data name="settingsToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
     <value>61, 20</value>
   </data>
   <data name="settingsToolStripMenuItem1.Text" xml:space="preserve">
     <value>Settings</value>
-  </data>
-  <data name="fToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>44, 20</value>
-  </data>
-  <data name="fToolStripMenuItem.Text" xml:space="preserve">
-    <value>Help</value>
   </data>
   <data name="checkUpdateToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>173, 22</value>
@@ -1473,11 +1395,35 @@ Changes in temp file are not synchronized with clip!</value>
   <data name="aboutToolStripMenuItem1.Text" xml:space="preserve">
     <value>About</value>
   </data>
-  <data name="fileToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>37, 20</value>
+  <data name="fToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>44, 20</value>
   </data>
-  <data name="fileToolStripMenuItem.Text" xml:space="preserve">
-    <value>File</value>
+  <data name="fToolStripMenuItem.Text" xml:space="preserve">
+    <value>Help</value>
+  </data>
+  <data name="MainMenu.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="MainMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>790, 24</value>
+  </data>
+  <data name="MainMenu.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="MainMenu.Text" xml:space="preserve">
+    <value>menuStrip1</value>
+  </data>
+  <data name="&gt;&gt;MainMenu.Name" xml:space="preserve">
+    <value>MainMenu</value>
+  </data>
+  <data name="&gt;&gt;MainMenu.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;MainMenu.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;MainMenu.ZOrder" xml:space="preserve">
+    <value>6</value>
   </data>
   <data name="toolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
     <value>92, 22</value>
@@ -1485,11 +1431,11 @@ Changes in temp file are not synchronized with clip!</value>
   <data name="toolStripMenuItem1.Text" xml:space="preserve">
     <value>Exit</value>
   </data>
-  <data name="deleteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>40, 20</value>
+  <data name="fileToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>37, 20</value>
   </data>
-  <data name="deleteToolStripMenuItem.Text" xml:space="preserve">
-    <value>Clip</value>
+  <data name="fileToolStripMenuItem.Text" xml:space="preserve">
+    <value>File</value>
   </data>
   <data name="sendPasteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>209, 22</value>
@@ -1512,6 +1458,12 @@ Changes in temp file are not synchronized with clip!</value>
   <data name="toolStripMenuItem4.Text" xml:space="preserve">
     <value>Delete</value>
   </data>
+  <data name="deleteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>40, 20</value>
+  </data>
+  <data name="deleteToolStripMenuItem.Text" xml:space="preserve">
+    <value>Clip</value>
+  </data>
   <data name="settingsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>61, 20</value>
   </data>
@@ -1530,8 +1482,32 @@ Changes in temp file are not synchronized with clip!</value>
   <metadata name="contextMenuStripNotifyIcon.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>214, 56</value>
   </metadata>
+  <data name="openFavoritesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 22</value>
+  </data>
+  <data name="openFavoritesToolStripMenuItem.Text" xml:space="preserve">
+    <value>Open favorite clips</value>
+  </data>
+  <data name="trayMenuItemMonitoringClipboard.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 22</value>
+  </data>
+  <data name="trayMenuItemMonitoringClipboard.Text" xml:space="preserve">
+    <value>Monitoring clipboard</value>
+  </data>
+  <data name="toolStripMenuItem9.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 22</value>
+  </data>
+  <data name="toolStripMenuItem9.Text" xml:space="preserve">
+    <value>Clear clipboard</value>
+  </data>
+  <data name="exitToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 22</value>
+  </data>
+  <data name="exitToolStripMenuItem1.Text" xml:space="preserve">
+    <value>Exit</value>
+  </data>
   <data name="contextMenuStripNotifyIcon.Size" type="System.Drawing.Size, System.Drawing">
-    <value>188, 70</value>
+    <value>188, 92</value>
   </data>
   <data name="&gt;&gt;contextMenuStripNotifyIcon.Name" xml:space="preserve">
     <value>contextMenuStripNotifyIcon</value>
@@ -2083,56 +2059,11 @@ Changes in temp file are not synchronized with clip!</value>
   <data name="notifyIcon.Visible" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="trayMenuItemMonitoringClipboard.Size" type="System.Drawing.Size, System.Drawing">
-    <value>187, 22</value>
-  </data>
-  <data name="trayMenuItemMonitoringClipboard.Text" xml:space="preserve">
-    <value>Monitoring clipboard</value>
-  </data>
-  <data name="toolStripMenuItem9.Size" type="System.Drawing.Size, System.Drawing">
-    <value>187, 22</value>
-  </data>
-  <data name="toolStripMenuItem9.Text" xml:space="preserve">
-    <value>Clear clipboard</value>
-  </data>
-  <data name="exitToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>187, 22</value>
-  </data>
-  <data name="exitToolStripMenuItem1.Text" xml:space="preserve">
-    <value>Exit</value>
-  </data>
-  <metadata name="toolTipDynamic.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>420, 56</value>
-  </metadata>
   <metadata name="toolStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>702, 56</value>
   </metadata>
   <data name="toolStrip1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>None</value>
-  </data>
-  <data name="toolStrip1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>372, 0</value>
-  </data>
-  <data name="toolStrip1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>230, 25</value>
-  </data>
-  <data name="toolStrip1.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="toolStrip1.Text" xml:space="preserve">
-    <value>toolStrip1</value>
-  </data>
-  <data name="&gt;&gt;toolStrip1.Name" xml:space="preserve">
-    <value>toolStrip1</value>
-  </data>
-  <data name="&gt;&gt;toolStrip1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStrip1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;toolStrip1.ZOrder" xml:space="preserve">
-    <value>4</value>
   </data>
   <data name="toolStripButtonTextFormatting.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
@@ -2275,11 +2206,32 @@ Changes in temp file are not synchronized with clip!
   <data name="buttonUpdate.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
+  <data name="toolStrip1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>372, 0</value>
+  </data>
+  <data name="toolStrip1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>230, 25</value>
+  </data>
+  <data name="toolStrip1.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="toolStrip1.Text" xml:space="preserve">
+    <value>toolStrip1</value>
+  </data>
+  <data name="&gt;&gt;toolStrip1.Name" xml:space="preserve">
+    <value>toolStrip1</value>
+  </data>
+  <data name="&gt;&gt;toolStrip1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStrip1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;toolStrip1.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
   <metadata name="cultureManager1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>557, 56</value>
-  </metadata>
-  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>ru</value>
   </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -3337,6 +3289,12 @@ Changes in temp file are not synchronized with clip!
   </data>
   <data name="&gt;&gt;notifyIcon.Type" xml:space="preserve">
     <value>System.Windows.Forms.NotifyIcon, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;openFavoritesToolStripMenuItem.Name" xml:space="preserve">
+    <value>openFavoritesToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;openFavoritesToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;trayMenuItemMonitoringClipboard.Name" xml:space="preserve">
     <value>trayMenuItemMonitoringClipboard</value>

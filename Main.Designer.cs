@@ -269,7 +269,7 @@ namespace ClipAngel
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.MarkFilter = new System.Windows.Forms.ComboBox();
             this.buttonFindNext = new System.Windows.Forms.Button();
@@ -376,6 +376,7 @@ namespace ClipAngel
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
             this.contextMenuStripNotifyIcon = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.openFavoritesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.trayMenuItemMonitoringClipboard = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem9 = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -605,8 +606,8 @@ namespace ClipAngel
             // 
             // VisualWeight
             // 
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Green;
-            this.VisualWeight.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Green;
+            this.VisualWeight.DefaultCellStyle = dataGridViewCellStyle1;
             resources.ApplyResources(this.VisualWeight, "VisualWeight");
             this.VisualWeight.Name = "VisualWeight";
             this.VisualWeight.ReadOnly = true;
@@ -1280,11 +1281,18 @@ namespace ClipAngel
             // contextMenuStripNotifyIcon
             // 
             this.contextMenuStripNotifyIcon.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.openFavoritesToolStripMenuItem,
             this.trayMenuItemMonitoringClipboard,
             this.toolStripMenuItem9,
             this.exitToolStripMenuItem1});
             this.contextMenuStripNotifyIcon.Name = "contextMenuStripNotifyIcon";
             resources.ApplyResources(this.contextMenuStripNotifyIcon, "contextMenuStripNotifyIcon");
+            // 
+            // openFavoritesToolStripMenuItem
+            // 
+            this.openFavoritesToolStripMenuItem.Name = "openFavoritesToolStripMenuItem";
+            resources.ApplyResources(this.openFavoritesToolStripMenuItem, "openFavoritesToolStripMenuItem");
+            this.openFavoritesToolStripMenuItem.Click += new System.EventHandler(this.openFavoritesToolStripMenuItem_Click);
             // 
             // trayMenuItemMonitoringClipboard
             // 
@@ -1658,6 +1666,7 @@ namespace ClipAngel
         private System.Windows.Forms.DataGridViewTextBoxColumn titleDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn favoriteDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.ToolStripMenuItem openFavoritesToolStripMenuItem;
     }
 }
 
