@@ -402,10 +402,10 @@
     <value>297, 22</value>
   </data>
   <data name="toolStripMenuItem6.Text" xml:space="preserve">
-    <value>Активизировать список</value>
+    <value>Переключить фокус список/текст</value>
   </data>
   <data name="toolStripMenuItem6.ToolTipText" xml:space="preserve">
-    <value>Активизировать список клипов</value>
+    <value>Переключить фокус между списком и текстом клипа</value>
   </data>
   <data name="toolStripMenuItemClearFilterAndSelectTop.Size" type="System.Drawing.Size, System.Drawing">
     <value>297, 22</value>

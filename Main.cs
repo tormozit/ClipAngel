@@ -64,8 +64,8 @@ namespace ClipAngel
         private IntPtr lastActiveWindow;
         private IntPtr HookChangeActiveWindow;
         private bool AllowFilterProcessing = true;
-        private static Color favoriteColor = Color.FromArgb(255, 220, 220);
-        private static Color _usedColor = Color.FromArgb(200, 255, 255);
+        private static Color favoriteColor = Color.FromArgb(255, 230, 220);
+        private static Color _usedColor = Color.FromArgb(210, 255, 255);
         Bitmap imageText;
         Bitmap imageHtml;
         Bitmap imageRtf;
@@ -593,6 +593,12 @@ namespace ClipAngel
             clipType = "";
             pictureBoxSource.Image = null;
             ImageControl.Image = null;
+            htmlTextBox.Parent.Enabled = false; // Prevent stealing focus 
+            //htmlTextBox.Enabled = false;
+            htmlDoc = htmlTextBox.Document.DomDocument as mshtml.IHTMLDocument2;
+            htmlDoc.write("");
+            htmlDoc.close();
+            richTextBox.Enabled = false;
             richTextBox.Text = "";
             textBoxApplication.Text = "";
             textBoxWindow.Text = "";
@@ -666,8 +672,6 @@ namespace ClipAngel
                             //    Application.DoEvents();
                             //    Thread.Sleep(5);
                             //}
-                            htmlTextBox.Parent.Enabled = false; // Prevent stealing focus 
-                            htmlDoc = htmlTextBox.Document.DomDocument as mshtml.IHTMLDocument2;
                             htmlDoc.write(htmlText);
                             htmlDoc.close();
 
@@ -685,7 +689,6 @@ namespace ClipAngel
                                 //iEvent.onselectionchange += new mshtml.HTMLDocumentEvents2_onselectionchangeEventHandler(htmlTextBoxDocumentSelectionChange);
                                 htmlInitialized = true;
                             }
-                            htmlTextBox.Parent.Enabled = true;
                         }
                         else
                         {
@@ -751,6 +754,7 @@ namespace ClipAngel
             }
             tableLayoutPanelData.SuspendLayout();
             UpdateClipButtons();
+            htmlTextBox.Parent.Enabled = true;
             if (clipType == "img")
             {
                 tableLayoutPanelData.RowStyles[0].Height = 70;
@@ -771,6 +775,7 @@ namespace ClipAngel
                 tableLayoutPanelData.RowStyles[1].SizeType = SizeType.Percent;
                 tableLayoutPanelData.RowStyles[2].Height = 0;
                 tableLayoutPanelData.RowStyles[2].SizeType = SizeType.Absolute;
+                //htmlTextBox.Enabled = true;
                 if (elementPanelHasFocus)
                     htmlTextBox.Focus();
                 htmlTextBox.Visible = true;
@@ -783,6 +788,7 @@ namespace ClipAngel
                 tableLayoutPanelData.RowStyles[1].SizeType = SizeType.Percent;
                 tableLayoutPanelData.RowStyles[2].Height = 0;
                 tableLayoutPanelData.RowStyles[2].SizeType = SizeType.Absolute;
+                richTextBox.Enabled = true;
                 if (elementPanelHasFocus)
                     richTextBox.Focus();
             }
@@ -938,7 +944,7 @@ namespace ClipAngel
 
         private void RichText_Click(object sender, EventArgs e)
         {
-            OpenLinkIfCtrlPressed(sender as RichTextBox, e, TextLinkMatches);
+            OpenLinkIfAltPressed(sender as RichTextBox, e, TextLinkMatches);
             if (MaxTextViewSize >= (sender as RichTextBox).SelectionStart && TextWasCut)
                 AfterRowLoad(true);
         }
@@ -1598,17 +1604,19 @@ namespace ClipAngel
         //    }
         //}
 
-        private string CopyClipToClipboard(/*out DataObject oldDataObject,*/ bool onlySelectedPlainText = false)
+        private string CopyClipToClipboard(/*out DataObject oldDataObject,*/ SQLiteDataReader rowReader = null, bool onlySelectedPlainText = false)
         {
             //oldDataObject = null;
             SaveFilterInLastUsedList();
+            if (rowReader == null)
+                rowReader = RowReader;
 
             //DataRow CurrentDataRow = ((DataRowView)clipBindingSource.Current).Row;
-            string type = (string)RowReader["type"];
-            object richText = RowReader["RichText"];
-            object htmlText = RowReader["HtmlText"];
-            byte[] binary = RowReader["Binary"] as byte[];
-            string clipText = (string)RowReader["Text"];
+            string type = (string)rowReader["type"];
+            object richText = rowReader["RichText"];
+            object htmlText = rowReader["HtmlText"];
+            byte[] binary = rowReader["Binary"] as byte[];
+            string clipText = (string)rowReader["Text"];
             bool selectedPlainTextMode = onlySelectedPlainText && richTextBox.SelectedText != "";
             if (selectedPlainTextMode)
             {
@@ -1689,14 +1697,18 @@ namespace ClipAngel
             return type == "rtf" || type == "text" || type == "html";
         }
 
-        private void SendPasteClip(PasteMethod pasteMethod = PasteMethod.Standart)
+        private void SendPasteClip(DataGridViewRow currentViewRow = null, PasteMethod pasteMethod = PasteMethod.Standart)
         {
-            if (dataGridView.CurrentRow == null)
+            if (currentViewRow == null)
+                currentViewRow = dataGridView.CurrentRow;
+            if (currentViewRow == null)
                 return;
+            var dataRow = (DataRowView)currentViewRow.DataBoundItem;
+            var rowReader = getRowReader((int)dataRow["id"]);
             string textToPaste = "";
             //DataObject oldDataObject;
             //if (pasteMethod != PasteMethod.SendChars)
-            textToPaste = CopyClipToClipboard(/*out oldDataObject,*/ pasteMethod != PasteMethod.Standart);
+            textToPaste = CopyClipToClipboard(/*out oldDataObject,*/ rowReader, pasteMethod != PasteMethod.Standart);
             //CultureInfo EnglishCultureInfo = null;
             //foreach (InputLanguage lang in InputLanguage.InstalledInputLanguages)
             //{
@@ -1835,21 +1847,22 @@ namespace ClipAngel
                 }
             }
             //AttachThreadInput(GetCurrentThreadId(), remoteThreadId, false);
-            SetRowMark("Used");
-            if (false
-                || Properties.Settings.Default.MoveCopiedClipToTop 
-                || (true 
-                    && pasteMethod == PasteMethod.PasteText 
-                    && richTextBox.SelectedText != ""))
-            {
-                GetClipboardData();
-            }
-            else
-            {
-                ((DataRowView)dataGridView.CurrentRow.DataBoundItem).Row["Used"] = true;
+
+            //SetRowMark("Used");
+            //if (false
+            //    || Properties.Settings.Default.MoveCopiedClipToTop 
+            //    || (true 
+            //        && pasteMethod == PasteMethod.PasteText 
+            //        && richTextBox.SelectedText != ""))
+            //{
+            //    GetClipboardData();
+            //}
+            //else
+            //{
+                ((DataRowView)currentViewRow.DataBoundItem).Row["Used"] = true;
                 //PrepareTableGrid();
-                UpdateTableGridRowBackColor(dataGridView.CurrentRow);
-            }
+                UpdateTableGridRowBackColor(currentViewRow);
+            //}
 
             // We need delay about 100ms before restore clipboard object
             //Clipboard.SetDataObject(oldDataObject);
@@ -2057,16 +2070,35 @@ namespace ClipAngel
 
         private void dataGridView_DoubleClick(object sender, EventArgs e)
         {
-            SendPasteClip();
+            SendPasteOfSelectedClips();
         }
         private void pasteOriginalToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            SendPasteClip();
+            SendPasteOfSelectedClips();
         }
         private void pasteAsTextToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            SendPasteClip(PasteMethod.PasteText);
+            SendPasteOfSelectedClips(PasteMethod.PasteText);
         }
+
+        private void SendPasteOfSelectedClips(PasteMethod pasteMethod = PasteMethod.Standart)
+        {
+            foreach (DataGridViewRow selectedRow in dataGridView.SelectedRows)
+            {
+                SendPasteClip(selectedRow, pasteMethod);
+            }
+            SetRowMark("Used");
+            if (false
+                || Properties.Settings.Default.MoveCopiedClipToTop 
+                || (true 
+                    && pasteMethod == PasteMethod.PasteText 
+                    && richTextBox.SelectedText != ""))
+            {
+                // With multipaste works incorrect
+                GetClipboardData();
+            }
+        }
+
         private void dataGridView_SelectionChanged(object sender, EventArgs e)
         {
             if (allowRowLoad)
@@ -2285,7 +2317,7 @@ namespace ClipAngel
                         return;
                     pasteMethod = PasteMethod.Standart;
                 }
-                SendPasteClip(pasteMethod);
+                SendPasteOfSelectedClips(pasteMethod);
                 e.Handled = true;
             }
         }
@@ -2404,9 +2436,18 @@ namespace ClipAngel
             }
         }
 
-        private void activateListToolStripMenuItem_Click(object sender, EventArgs e)
+
+        private void activateListToolStripMenuItem_Click(object sender = null, EventArgs e = null)
         {
-            dataGridView.Focus();
+            if (dataGridView.Focused || comboBoxFilter.Focused)
+            {
+                if (htmlMode)
+                    htmlTextBox.Focus();
+                else if (richTextBox.Enabled)
+                    richTextBox.Focus();
+            }
+            else
+                dataGridView.Focus();
         }
 
         private void PrepareTableGrid()
@@ -2966,21 +3007,26 @@ namespace ClipAngel
                 e.Handled = true;
         }
 
-        private static void OpenLinkIfCtrlPressed(RichTextBox sender, EventArgs e, MatchCollection matches)
+        private static void OpenLinkIfAltPressed(RichTextBox sender, EventArgs e, MatchCollection matches)
         {
             Keys mod = Control.ModifierKeys & Keys.Modifiers;
             bool altOnly = mod == Keys.Alt;
             if (altOnly)
-                foreach (Match match in matches)
-                {
-                    if (match.Index <= sender.SelectionStart && (match.Index + match.Length) >= sender.SelectionStart)
-                        Process.Start(match.Value);
-                }
+                OpenLinkInRichTextBox(sender, matches);
+        }
+
+        private static void OpenLinkInRichTextBox(RichTextBox sender, MatchCollection matches)
+        {
+            foreach (Match match in matches)
+            {
+                if (match.Index <= sender.SelectionStart && (match.Index + match.Length) >= sender.SelectionStart)
+                    Process.Start(match.Value);
+            }
         }
 
         private void textBoxUrl_Click(object sender, EventArgs e)
         {
-            OpenLinkIfCtrlPressed(sender as RichTextBox, e, UrlLinkMatches);
+            OpenLinkIfAltPressed(sender as RichTextBox, e, UrlLinkMatches);
         }
 
         private void ImageControl_DoubleClick(object sender, EventArgs e)
@@ -3326,7 +3372,7 @@ namespace ClipAngel
 
         private void toolStripMenuItemPasteChars_Click(object sender, EventArgs e)
         {
-            SendPasteClip(PasteMethod.SendChars);
+            SendPasteOfSelectedClips(PasteMethod.SendChars);
          }
 
         private void openInDefaultApplicationToolStripMenuItem_Click(object sender, EventArgs e)
@@ -3774,7 +3820,12 @@ namespace ClipAngel
             if (!allowTextPositionChangeUpdate)
                 return;
             mshtml.IHTMLDocument2 htmlDoc = htmlTextBox.Document.DomDocument as mshtml.IHTMLDocument2;
-            mshtml.IHTMLTxtRange range = (IHTMLTxtRange) htmlDoc.selection.createRange();
+            mshtml.IHTMLTxtRange range = null;
+            try
+            {
+                range = (IHTMLTxtRange)htmlDoc.selection.createRange();
+            }
+            catch { }
             if (range == null)
                 return;
             selectionLength = 0;
@@ -3861,6 +3912,11 @@ namespace ClipAngel
         private void openFavoritesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ShowForPaste(true);
+        }
+
+        private void rtfMenuItemOpenLink_Click(object sender, EventArgs e)
+        {
+            OpenLinkInRichTextBox(richTextBox, TextLinkMatches);
         }
     }
 }
