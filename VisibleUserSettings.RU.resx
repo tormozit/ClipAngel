@@ -183,7 +183,7 @@
     <value>Эта горячая клавиша при нажатии в любой программе запустит приложение сравнения 2-х последних клипов</value>
   </data>
   <data name="GlobalHotkeyIncrementalPaste" xml:space="preserve">
-    <value>Горячая клавиша последоват. вставки</value>
+    <value>Горячая клавиша последовательной вставки</value>
   </data>
   <data name="GlobalHotkeyIncrementalPasteDescription" xml:space="preserve">
     <value>Эта горячая клавиша при нажатии в любой программе вставит текущий клип из списка Clip Angel, 
@@ -200,8 +200,7 @@
     <value>Горячая клавиша открытия окна любимых</value>
   </data>
   <data name="GlobalHotkeyOpenFavoritesDescription" xml:space="preserve">
-    <value>Эта горячая клавиша при нажатии в любой программе откроет окно Clip Angel с отобором только любимых, 
-которое сможет послать вставку клипа в исходную программу.</value>
+    <value>Эта горячая клавиша при нажатии в любой программе откроет окно Clip Angel с отобором только любимых</value>
   </data>
   <data name="GlobalHotkeyOpenLast" xml:space="preserve">
     <value>Горячая клавиша открытия окна со сбросом</value>

@@ -151,9 +151,9 @@ namespace ClipAngel
             BindingList<ListItemNameText> _comboItemsTypes = new BindingList<ListItemNameText>
             {
                 new ListItemNameText {Name = "allTypes"},
-                new ListItemNameText {Name = "text"},
+                new ListItemNameText {Name = "img"},
                 new ListItemNameText {Name = "file"},
-                new ListItemNameText {Name = "img"}
+                new ListItemNameText {Name = "text"}
             };
             TypeFilter.DataSource = _comboItemsTypes;
             TypeFilter.DisplayMember = "Text";
@@ -163,8 +163,8 @@ namespace ClipAngel
 
             BindingList<ListItemNameText> _comboItemsMarks = new BindingList<ListItemNameText>();
             _comboItemsMarks.Add(new ListItemNameText { Name = "allMarks" });
-            _comboItemsMarks.Add(new ListItemNameText { Name = "used" });
             _comboItemsMarks.Add(new ListItemNameText { Name = "favorite" });
+            _comboItemsMarks.Add(new ListItemNameText { Name = "used" });
             MarkFilter.DataSource = _comboItemsMarks;
             MarkFilter.DisplayMember = "Text";
             MarkFilter.ValueMember = "Name";
@@ -2346,27 +2346,32 @@ namespace ClipAngel
                 Show();
             }
             UpdateWindowTitle(true);
+            if (newX == -1)
+            {
+                if (this.Left >= 0)
+                    newX = this.Left;
+                else
+                    newX = this.RestoreBounds.X;
+            }
+            if (newY == -1)
+            {
+                if (this.Top >= 0)
+                    newY = this.Top;
+                else
+                    newY = this.RestoreBounds.Y;
+            }
             if (Properties.Settings.Default.FastWindowOpen)
             { 
-                if (newX == -1)
-                {
-                    if (this.Left >= 0)
-                        newX = this.Left;
-                    else
-                        newX = this.RestoreBounds.X;
-                }
-                if (newY == -1)
-                {
-                    if (this.Top >= 0)
-                        newY = this.Top;
-                    else
-                        newY = this.RestoreBounds.Y;
-                }
                 if (Properties.Settings.Default.FastWindowOpen)
                     if (newY < 0)
                         newY = factualTop;
                 if (newX > 0)
                     MoveWindow(this.Handle, newX, newY, this.Width, this.Height, true);
+            }
+            else
+            {
+                this.Left = newX;
+                this.Top = newY;
             }
             if (this.WindowState == FormWindowState.Minimized)
                 this.WindowState = FormWindowState.Normal; // Window can be minimized by "Minimize All" command
@@ -4019,6 +4024,26 @@ namespace ClipAngel
         {
             Properties.Settings.Default.AutoSelectMatch = !Properties.Settings.Default.AutoSelectMatch;
             UpdateControlsStates();
+        }
+
+        private void toolStripMenuItemShowAllTypes_Click(object sender, EventArgs e)
+        {
+            TypeFilter.SelectedValue = "allTypes";
+        }
+
+        private void showOnlyTextsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TypeFilter.SelectedValue = "text";
+        }
+
+        private void showOnlyFilesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TypeFilter.SelectedValue = "file";
+        }
+
+        private void showOnlyImagesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TypeFilter.SelectedValue = "img";
         }
     }
 }
