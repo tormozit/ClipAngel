@@ -271,11 +271,13 @@ namespace ClipAngel
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.toolStrip2 = new System.Windows.Forms.ToolStrip();
+            this.toolStripButtonClearFilter = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonAutoSelectMatch = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonFindNext = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonFindPrevious = new System.Windows.Forms.ToolStripButton();
             this.MarkFilter = new System.Windows.Forms.ComboBox();
-            this.buttonFindNext = new System.Windows.Forms.Button();
-            this.buttonFindPrevious = new System.Windows.Forms.Button();
             this.TypeFilter = new System.Windows.Forms.ComboBox();
-            this.buttonClearFilter = new System.Windows.Forms.Button();
             this.comboBoxFilter = new System.Windows.Forms.ComboBox();
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.AppImage = new System.Windows.Forms.DataGridViewImageColumn();
@@ -397,8 +399,6 @@ namespace ClipAngel
             this.timerCheckUpdate = new System.Windows.Forms.Timer(this.components);
             this.timerReconnect = new System.Windows.Forms.Timer(this.components);
             this.timerApplyTextFiler = new System.Windows.Forms.Timer(this.components);
-            this.clipsTableAdapter = new ClipAngel.dbDataSetTableAdapters.ClipsTableAdapter();
-            this.tableAdapterManager = new ClipAngel.dbDataSetTableAdapters.TableAdapterManager();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewRichTextBoxColumn1 = new ClipAngel.DataGridViewRichTextBoxColumn();
@@ -406,10 +406,13 @@ namespace ClipAngel
             this.dataGridViewImageColumn4 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewRichTextBoxColumn2 = new ClipAngel.DataGridViewRichTextBoxColumn();
             this.dataGridViewImageColumn5 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.clipsTableAdapter = new ClipAngel.dbDataSetTableAdapters.ClipsTableAdapter();
+            this.tableAdapterManager = new ClipAngel.dbDataSetTableAdapters.TableAdapterManager();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            this.toolStrip2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.contextMenuStripDataGrid.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.clipBindingSource)).BeginInit();
@@ -434,11 +437,9 @@ namespace ClipAngel
             // splitContainer1.Panel1
             // 
             resources.ApplyResources(this.splitContainer1.Panel1, "splitContainer1.Panel1");
+            this.splitContainer1.Panel1.Controls.Add(this.toolStrip2);
             this.splitContainer1.Panel1.Controls.Add(this.MarkFilter);
-            this.splitContainer1.Panel1.Controls.Add(this.buttonFindNext);
-            this.splitContainer1.Panel1.Controls.Add(this.buttonFindPrevious);
             this.splitContainer1.Panel1.Controls.Add(this.TypeFilter);
-            this.splitContainer1.Panel1.Controls.Add(this.buttonClearFilter);
             this.splitContainer1.Panel1.Controls.Add(this.comboBoxFilter);
             this.splitContainer1.Panel1.Controls.Add(this.dataGridView);
             this.toolTipDynamic.SetToolTip(this.splitContainer1.Panel1, resources.GetString("splitContainer1.Panel1.ToolTip"));
@@ -455,6 +456,50 @@ namespace ClipAngel
             this.splitContainer1.TabStop = false;
             this.toolTipDynamic.SetToolTip(this.splitContainer1, resources.GetString("splitContainer1.ToolTip"));
             // 
+            // toolStrip2
+            // 
+            resources.ApplyResources(this.toolStrip2, "toolStrip2");
+            this.toolStrip2.CanOverflow = false;
+            this.toolStrip2.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.toolStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButtonClearFilter,
+            this.toolStripButtonAutoSelectMatch,
+            this.toolStripButtonFindNext,
+            this.toolStripButtonFindPrevious});
+            this.toolStrip2.Name = "toolStrip2";
+            this.toolTipDynamic.SetToolTip(this.toolStrip2, resources.GetString("toolStrip2.ToolTip"));
+            // 
+            // toolStripButtonClearFilter
+            // 
+            resources.ApplyResources(this.toolStripButtonClearFilter, "toolStripButtonClearFilter");
+            this.toolStripButtonClearFilter.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButtonClearFilter.Name = "toolStripButtonClearFilter";
+            this.toolStripButtonClearFilter.Click += new System.EventHandler(this.ClearFilter_Click);
+            // 
+            // toolStripButtonAutoSelectMatch
+            // 
+            resources.ApplyResources(this.toolStripButtonAutoSelectMatch, "toolStripButtonAutoSelectMatch");
+            this.toolStripButtonAutoSelectMatch.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonAutoSelectMatch.Image = global::ClipAngel.Properties.Resources.Autoselect_first_match;
+            this.toolStripButtonAutoSelectMatch.Name = "toolStripButtonAutoSelectMatch";
+            this.toolStripButtonAutoSelectMatch.Click += new System.EventHandler(this.buttonAutoSelectMatch_Click);
+            // 
+            // toolStripButtonFindNext
+            // 
+            resources.ApplyResources(this.toolStripButtonFindNext, "toolStripButtonFindNext");
+            this.toolStripButtonFindNext.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonFindNext.Image = global::ClipAngel.Properties.Resources.FindNext;
+            this.toolStripButtonFindNext.Name = "toolStripButtonFindNext";
+            this.toolStripButtonFindNext.Click += new System.EventHandler(this.buttonFindNext_Click);
+            // 
+            // toolStripButtonFindPrevious
+            // 
+            resources.ApplyResources(this.toolStripButtonFindPrevious, "toolStripButtonFindPrevious");
+            this.toolStripButtonFindPrevious.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonFindPrevious.Image = global::ClipAngel.Properties.Resources.FindPrevious;
+            this.toolStripButtonFindPrevious.Name = "toolStripButtonFindPrevious";
+            this.toolStripButtonFindPrevious.Click += new System.EventHandler(this.buttonFindPrevious_Click);
+            // 
             // MarkFilter
             // 
             resources.ApplyResources(this.MarkFilter, "MarkFilter");
@@ -470,26 +515,6 @@ namespace ClipAngel
             this.toolTipDynamic.SetToolTip(this.MarkFilter, resources.GetString("MarkFilter.ToolTip"));
             this.MarkFilter.SelectedValueChanged += new System.EventHandler(this.MarkFilter_SelectedValueChanged);
             // 
-            // buttonFindNext
-            // 
-            resources.ApplyResources(this.buttonFindNext, "buttonFindNext");
-            this.buttonFindNext.Image = global::ClipAngel.Properties.Resources.FindNext;
-            this.buttonFindNext.Name = "buttonFindNext";
-            this.buttonFindNext.TabStop = false;
-            this.toolTipDynamic.SetToolTip(this.buttonFindNext, resources.GetString("buttonFindNext.ToolTip"));
-            this.buttonFindNext.UseVisualStyleBackColor = true;
-            this.buttonFindNext.Click += new System.EventHandler(this.buttonFindNext_Click);
-            // 
-            // buttonFindPrevious
-            // 
-            resources.ApplyResources(this.buttonFindPrevious, "buttonFindPrevious");
-            this.buttonFindPrevious.Image = global::ClipAngel.Properties.Resources.FindPrevious;
-            this.buttonFindPrevious.Name = "buttonFindPrevious";
-            this.buttonFindPrevious.TabStop = false;
-            this.toolTipDynamic.SetToolTip(this.buttonFindPrevious, resources.GetString("buttonFindPrevious.ToolTip"));
-            this.buttonFindPrevious.UseVisualStyleBackColor = true;
-            this.buttonFindPrevious.Click += new System.EventHandler(this.buttonFindPrevious_Click);
-            // 
             // TypeFilter
             // 
             resources.ApplyResources(this.TypeFilter, "TypeFilter");
@@ -504,15 +529,6 @@ namespace ClipAngel
             this.TypeFilter.TabStop = false;
             this.toolTipDynamic.SetToolTip(this.TypeFilter, resources.GetString("TypeFilter.ToolTip"));
             this.TypeFilter.SelectedValueChanged += new System.EventHandler(this.TypeFilter_SelectedValueChanged);
-            // 
-            // buttonClearFilter
-            // 
-            resources.ApplyResources(this.buttonClearFilter, "buttonClearFilter");
-            this.buttonClearFilter.Name = "buttonClearFilter";
-            this.buttonClearFilter.TabStop = false;
-            this.toolTipDynamic.SetToolTip(this.buttonClearFilter, resources.GetString("buttonClearFilter.ToolTip"));
-            this.buttonClearFilter.UseVisualStyleBackColor = true;
-            this.buttonClearFilter.Click += new System.EventHandler(this.ClearFilter_Click);
             // 
             // comboBoxFilter
             // 
@@ -785,6 +801,7 @@ namespace ClipAngel
             this.richTextBox.HideSelection = false;
             this.richTextBox.Name = "richTextBox";
             this.richTextBox.ReadOnly = true;
+            this.richTextBox.TabStop = false;
             this.toolTipDynamic.SetToolTip(this.richTextBox, resources.GetString("richTextBox.ToolTip"));
             this.richTextBox.SelectionChanged += new System.EventHandler(this.richTextBox_SelectionChanged);
             this.richTextBox.Click += new System.EventHandler(this.RichText_Click);
@@ -826,8 +843,8 @@ namespace ClipAngel
             this.htmlTextBox.IsWebBrowserContextMenuEnabled = false;
             this.htmlTextBox.Name = "htmlTextBox";
             this.htmlTextBox.ScriptErrorsSuppressed = true;
+            this.htmlTextBox.TabStop = false;
             this.toolTipDynamic.SetToolTip(this.htmlTextBox, resources.GetString("htmlTextBox.ToolTip"));
-            this.htmlTextBox.WebBrowserShortcutsEnabled = false;
             this.htmlTextBox.DocumentCompleted += new System.Windows.Forms.WebBrowserDocumentCompletedEventHandler(this.htmlTextBox_DocumentCompleted);
             // 
             // contextMenuStripHtml
@@ -1383,6 +1400,7 @@ namespace ClipAngel
             // toolStripButtonClearFilterAndSelectTop
             // 
             resources.ApplyResources(this.toolStripButtonClearFilterAndSelectTop, "toolStripButtonClearFilterAndSelectTop");
+            this.toolStripButtonClearFilterAndSelectTop.BackColor = System.Drawing.SystemColors.Control;
             this.toolStripButtonClearFilterAndSelectTop.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.toolStripButtonClearFilterAndSelectTop.Image = global::ClipAngel.Properties.Resources.Top2;
             this.toolStripButtonClearFilterAndSelectTop.Name = "toolStripButtonClearFilterAndSelectTop";
@@ -1449,16 +1467,6 @@ namespace ClipAngel
             this.timerApplyTextFiler.Interval = 150;
             this.timerApplyTextFiler.Tick += new System.EventHandler(this.timerApplyTextFiler_Tick);
             // 
-            // clipsTableAdapter
-            // 
-            this.clipsTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.ClipsTableAdapter = this.clipsTableAdapter;
-            this.tableAdapterManager.UpdateOrder = ClipAngel.dbDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            // 
             // dataGridViewImageColumn1
             // 
             resources.ApplyResources(this.dataGridViewImageColumn1, "dataGridViewImageColumn1");
@@ -1504,6 +1512,16 @@ namespace ClipAngel
             this.dataGridViewImageColumn5.Name = "dataGridViewImageColumn5";
             this.dataGridViewImageColumn5.ReadOnly = true;
             // 
+            // clipsTableAdapter
+            // 
+            this.clipsTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.ClipsTableAdapter = this.clipsTableAdapter;
+            this.tableAdapterManager.UpdateOrder = ClipAngel.dbDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
             // Main
             // 
             resources.ApplyResources(this, "$this");
@@ -1523,10 +1541,13 @@ namespace ClipAngel
             this.Load += new System.EventHandler(this.Main_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Main_KeyDown);
             this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
             this.splitContainer1.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
+            this.toolStrip2.ResumeLayout(false);
+            this.toolStrip2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.contextMenuStripDataGrid.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.clipBindingSource)).EndInit();
@@ -1557,7 +1578,6 @@ namespace ClipAngel
         private System.Windows.Forms.StatusStrip statusStrip;
         private System.Windows.Forms.BindingSource clipBindingSource;
         private System.Windows.Forms.ComboBox comboBoxFilter;
-        private System.Windows.Forms.Button buttonClearFilter;
         private dbDataSet dbDataSet;
         private dbDataSetTableAdapters.ClipsTableAdapter clipsTableAdapter;
         private dbDataSetTableAdapters.TableAdapterManager tableAdapterManager;
@@ -1591,8 +1611,6 @@ namespace ClipAngel
         private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem1;
         private System.Windows.Forms.ToolTip toolTipDynamic;
         private System.Windows.Forms.ComboBox TypeFilter;
-        private System.Windows.Forms.Button buttonFindNext;
-        private System.Windows.Forms.Button buttonFindPrevious;
         private System.Windows.Forms.ToolStripMenuItem nextMatchToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem previousMatchToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem wordWrapToolStripMenuItem;
@@ -1686,6 +1704,11 @@ namespace ClipAngel
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn favoriteDataGridViewCheckBoxColumn;
         private System.Windows.Forms.ToolStripMenuItem openFavoritesToolStripMenuItem;
+        private System.Windows.Forms.ToolStrip toolStrip2;
+        private System.Windows.Forms.ToolStripButton toolStripButtonFindPrevious;
+        private System.Windows.Forms.ToolStripButton toolStripButtonFindNext;
+        private System.Windows.Forms.ToolStripButton toolStripButtonAutoSelectMatch;
+        private System.Windows.Forms.ToolStripButton toolStripButtonClearFilter;
     }
 }
 

@@ -184,9 +184,7 @@
       <DependentUpon>SettingsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VisibleUserSettings.resx" />
-    <EmbeddedResource Include="VisibleUserSettings.RU.resx">
-      <LastGenOutput>VisibleUserSettings.RU.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
+    <EmbeddedResource Include="VisibleUserSettings.RU.resx" />
     <None Include="dbDataSet.xsc">
       <DependentUpon>dbDataSet.xsd</DependentUpon>
     </None>
@@ -281,6 +279,9 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Picture\Autoselect first match.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

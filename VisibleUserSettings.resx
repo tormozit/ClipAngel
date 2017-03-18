@@ -187,11 +187,11 @@ Key press will be processed by the window. </value>
   <data name="GlobalHotkeyIncrementalPasteDescription" xml:space="preserve">
     <value>Use this hot key in any program to paste current clip from Clip Angel list and select next clip</value>
   </data>
-  <data name="GlobalHotkeyOpen" xml:space="preserve">
-    <value>Hotkey to open window for paste</value>
+  <data name="GlobalHotkeyOpenCurrent" xml:space="preserve">
+    <value>Hotkey to open window with no changes</value>
   </data>
-  <data name="GlobalHotkeyOpenDescription" xml:space="preserve">
-    <value>Use this hot key in any program to show Clip Angel window and then paste selected clip in source window</value>
+  <data name="GlobalHotkeyOpenCurrentDescription" xml:space="preserve">
+    <value>Use this hot key in any program to open Clip Angel window with no changes in filter and clip selection</value>
   </data>
   <data name="GlobalHotkeyOpenFavorites" xml:space="preserve">
     <value>Hotkey to open for paste from favorites</value>
@@ -199,6 +199,12 @@ Key press will be processed by the window. </value>
   <data name="GlobalHotkeyOpenFavoritesDescription" xml:space="preserve">
     <value>Use this hot key in any program to show Clip Angel window with favorites only filter
 and then paste selected clip in source window</value>
+  </data>
+  <data name="GlobalHotkeyOpenLast" xml:space="preserve">
+    <value>Hotkey to open window with reset</value>
+  </data>
+  <data name="GlobalHotkeyOpenLastDescription" xml:space="preserve">
+    <value>Use this hot key in any program to open Clip Angel window, clear filters and select last captured clip</value>
   </data>
   <data name="HistoryDepthNumber" xml:space="preserve">
     <value>History depth number</value>

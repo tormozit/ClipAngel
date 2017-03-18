@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsInput;
 using WindowsInput.Native;
@@ -84,8 +80,8 @@ namespace ClipAngel
             // Send CTLR+C
             const int KEYEVENTF_KEYUP = 0x0002; //Key up flag
             keybd_event((byte)VirtualKeyCode.CONTROL, 0x1D, 0, 0);
-            keybd_event((byte)'C', 0x2f, 0, 0);
-            keybd_event((byte)'C', 0x2f, KEYEVENTF_KEYUP, 0);
+            keybd_event((byte)'C', 0x2e, 0, 0);
+            keybd_event((byte)'C', 0x2e, KEYEVENTF_KEYUP, 0);
             keybd_event((byte)VirtualKeyCode.CONTROL, 0x1D, KEYEVENTF_KEYUP, 0);
 
             //mod.RestoreState();

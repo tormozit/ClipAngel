@@ -123,21 +123,21 @@
   <data name="EndMarker" xml:space="preserve">
     <value>END</value>
   </data>
-  <data name="KiloByteUnit" xml:space="preserve">
-    <value>KB</value>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="MarkFavorite" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Picture\Set favorite.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HowUseAutoTitle" xml:space="preserve">
+    <value>Clear string to use auto title</value>
   </data>
   <data name="used" xml:space="preserve">
     <value>used</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="Alien_64x64" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\Alien-64x64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="UnmarkFavorite" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\Reset favorite.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CharUnit" xml:space="preserve">
-    <value>С</value>
   </data>
   <data name="FindPrevious" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\FindPrevious.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -145,8 +145,8 @@
   <data name="TypeHtml" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\TypeHtml.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="VisualWeightTooltip" xml:space="preserve">
-    <value>Visual clip weight (number of digits in number representing visual clip size)</value>
+  <data name="TopMostWindow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Picture\TopMostWindow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="allMarks" xml:space="preserve">
     <value>all marks</value>
@@ -156,6 +156,9 @@
   </data>
   <data name="copy" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\copy.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Dublicate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Picture\Dublicate.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ActivatedExistedProcess" xml:space="preserve">
     <value>Activated already running instance of the application</value>
@@ -171,9 +174,6 @@
   </data>
   <data name="dbTemplate" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\DB\db.sqlite;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="text" xml:space="preserve">
-    <value>text</value>
   </data>
   <data name="Version" xml:space="preserve">
     <value>1.14</value>
@@ -217,11 +217,14 @@
   <data name="TextFormatting" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\TextFormatting.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Paste" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Picture\Paste.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="VisualWeightTooltip" xml:space="preserve">
+    <value>Visual clip weight (number of digits in number representing visual clip size)</value>
   </data>
   <data name="CouldNotRegisterHotkey" xml:space="preserve">
     <value>Couldn’t register the global hot key</value>
+  </data>
+  <data name="Top1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Picture\Top1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="HistoryOfChanges" xml:space="preserve">
     <value>https://sourceforge.net/p/clip-angel/blog</value>
@@ -229,14 +232,14 @@
   <data name="FindNext" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\FindNext.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="DBShortFilename" xml:space="preserve">
-    <value>db.sqlite</value>
-  </data>
   <data name="img" xml:space="preserve">
     <value>img</value>
   </data>
-  <data name="LangRestart" xml:space="preserve">
-    <value>For full language change you may need to restart program</value>
+  <data name="text" xml:space="preserve">
+    <value>text</value>
+  </data>
+  <data name="OpenFile" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Picture\OpenFile.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="TypeRtf" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\TypeRtf.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -244,8 +247,8 @@
   <data name="CantPasteInElevatedWindow" xml:space="preserve">
     <value>Unable to paste into window having higher priviledges. Try run program as administrator.</value>
   </data>
-  <data name="TopMostWindow" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Picture\TopMostWindow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="CharUnit" xml:space="preserve">
+    <value>С</value>
   </data>
   <data name="delete" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\delete.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -262,11 +265,11 @@
   <data name="favorite" xml:space="preserve">
     <value>favorite</value>
   </data>
-  <data name="OpenFile" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Picture\OpenFile.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Paste" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Picture\Paste.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="TypeFile" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Picture\TypeFile.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="LangRestart" xml:space="preserve">
+    <value>For full language change you may need to restart program</value>
   </data>
   <data name="WordWrap" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\word wrap.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -274,11 +277,11 @@
   <data name="FixedWidthFont" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\FixedWidthFont.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Website" xml:space="preserve">
-    <value>https://sourceforge.net/projects/clip-angel</value>
+  <data name="DBShortFilename" xml:space="preserve">
+    <value>db.sqlite</value>
   </data>
-  <data name="HowUseAutoTitle" xml:space="preserve">
-    <value>Clear string to use auto title</value>
+  <data name="KiloByteUnit" xml:space="preserve">
+    <value>KB</value>
   </data>
   <data name="CutMarker" xml:space="preserve">
     <value>Show rest of text</value>
@@ -286,8 +289,8 @@
   <data name="ByteUnit" xml:space="preserve">
     <value>B</value>
   </data>
-  <data name="MarkFavorite" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Picture\Set favorite.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Website" xml:space="preserve">
+    <value>https://sourceforge.net/projects/clip-angel</value>
   </data>
   <data name="Donate" xml:space="preserve">
     <value>http://yasobe.ru/na/clipangel</value>
@@ -295,13 +298,13 @@
   <data name="allTypes" xml:space="preserve">
     <value>all types</value>
   </data>
-  <data name="Top1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Picture\Top1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="TypeFile" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Picture\TypeFile.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="QuestionResetSettings" xml:space="preserve">
     <value>Are you sure want to reset settings to default values?</value>
   </data>
-  <data name="Dublicate" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Picture\Dublicate.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Autoselect first match" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Picture\Autoselect first match.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

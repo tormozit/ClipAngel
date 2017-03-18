@@ -609,7 +609,8 @@ namespace ClipAngel
             Autostart = Properties.Settings.Default.Autostart;
             TextCompareApplication = Properties.Settings.Default.TextCompareApplication;
             MaxClipSizeKB = Properties.Settings.Default.MaxClipSizeKB;
-            GlobalHotkeyOpen = Properties.Settings.Default.GlobalHotkeyOpen;
+            GlobalHotkeyOpenLast = Properties.Settings.Default.GlobalHotkeyOpenLast;
+            GlobalHotkeyOpenCurrent = Properties.Settings.Default.GlobalHotkeyOpenCurrent;
             GlobalHotkeyOpenFavorites = Properties.Settings.Default.GlobalHotkeyOpenFavorites;
             GlobalHotkeyIncrementalPaste = Properties.Settings.Default.GlobalHotkeyIncrementalPaste;
             GlobalHotkeyCompareLastClips = Properties.Settings.Default.GlobalHotkeyCompareLastClips;
@@ -618,7 +619,7 @@ namespace ClipAngel
             ShowSizeColumn = Properties.Settings.Default.ShowVisualWeightColumn;
             ClipListSimpleDraw = Properties.Settings.Default.ClipListSimpleDraw;
             AutoCheckUpdate = Properties.Settings.Default.AutoCheckForUpdate;
-            ClearFiltersOnClose = Properties.Settings.Default.ClearFiltersOnClose;
+            //ClearFiltersOnClose = Properties.Settings.Default.ClearFiltersOnClose;
             ShowApplicationIconColumn = Properties.Settings.Default.ShowApplicationIconColumn;
 
             NumberOfClips = Owner.ClipsNumber.ToString();
@@ -648,15 +649,17 @@ namespace ClipAngel
             Properties.Settings.Default.Font = DefaultFont;
             Properties.Settings.Default.Language = Language;
             Properties.Settings.Default.TextCompareApplication = TextCompareApplication;
+            Properties.Settings.Default.MaxClipSizeKB = MaxClipSizeKB;
             Properties.Settings.Default.Font = DefaultFont;
             Properties.Settings.Default.ShowApplicationIconColumn = ShowApplicationIconColumn;
-            Properties.Settings.Default.ClearFiltersOnClose = ClearFiltersOnClose;
+            //Properties.Settings.Default.ClearFiltersOnClose = ClearFiltersOnClose;
             Properties.Settings.Default.AutoCheckForUpdate = AutoCheckUpdate;
             Properties.Settings.Default.ClipListSimpleDraw = ClipListSimpleDraw;
             Properties.Settings.Default.MoveCopiedClipToTop = MoveCopiedClipToTop;
             Properties.Settings.Default.ShowVisualWeightColumn = ShowSizeColumn;
             Properties.Settings.Default.WindowAutoPosition = WindowAutoPosition;
-            Properties.Settings.Default.GlobalHotkeyOpen = GlobalHotkeyOpen;
+            Properties.Settings.Default.GlobalHotkeyOpenLast = GlobalHotkeyOpenLast;
+            Properties.Settings.Default.GlobalHotkeyOpenCurrent = GlobalHotkeyOpenCurrent;
             Properties.Settings.Default.GlobalHotkeyOpenFavorites = GlobalHotkeyOpenFavorites;
             Properties.Settings.Default.GlobalHotkeyIncrementalPaste = GlobalHotkeyIncrementalPaste;
             Properties.Settings.Default.GlobalHotkeyCompareLastClips = GlobalHotkeyCompareLastClips;
@@ -707,9 +710,9 @@ namespace ClipAngel
         [Editor(typeof(MyBoolEditor), typeof(UITypeEditor))]
         public bool ShowApplicationIconColumn { get; set; }
 
-        [GlobalizedCategory("Other")]
-        [Editor(typeof(MyBoolEditor), typeof(UITypeEditor))]
-        public bool ClearFiltersOnClose { get; set; }
+        //[GlobalizedCategory("Other")]
+        //[Editor(typeof(MyBoolEditor), typeof(UITypeEditor))]
+        //public bool ClearFiltersOnClose { get; set; }
 
         [GlobalizedCategory("Other")]
         [Editor(typeof(MyBoolEditor), typeof(UITypeEditor))]
@@ -738,7 +741,12 @@ namespace ClipAngel
         [GlobalizedCategory("Hotkeys")]
         [TypeConverterAttribute(typeof(HotkeyConverter))]
         [EditorAttribute(typeof(HotkeyEditor), typeof(UITypeEditor))]
-        public string GlobalHotkeyIncrementalPaste { get; set; }
+        public string GlobalHotkeyOpenCurrent { get; set; }
+
+        [GlobalizedCategory("Hotkeys")]
+        [TypeConverterAttribute(typeof(HotkeyConverter))]
+        [EditorAttribute(typeof(HotkeyEditor), typeof(UITypeEditor))]
+        public string GlobalHotkeyOpenLast { get; set; }
 
         [GlobalizedCategory("Hotkeys")]
         [TypeConverterAttribute(typeof(HotkeyConverter))]
@@ -748,7 +756,7 @@ namespace ClipAngel
         [GlobalizedCategory("Hotkeys")]
         [TypeConverterAttribute(typeof(HotkeyConverter))]
         [EditorAttribute(typeof(HotkeyEditor), typeof(UITypeEditor))]
-        public string GlobalHotkeyOpen { get; set; }
+        public string GlobalHotkeyIncrementalPaste { get; set; }
 
         [GlobalizedCategory("Hotkeys")]
         [TypeConverterAttribute(typeof(HotkeyConverter))]

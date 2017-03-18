@@ -189,19 +189,26 @@
     <value>Эта горячая клавиша при нажатии в любой программе вставит текущий клип из списка Clip Angel, 
 перейдет к следующему клипу в списке и покажет его во всплывающей подсказке</value>
   </data>
-  <data name="GlobalHotkeyOpen" xml:space="preserve">
-    <value>Горячая клавиша показа окна</value>
+  <data name="GlobalHotkeyOpenCurrent" xml:space="preserve">
+    <value>Горячая клавиша открытия окна без изменений</value>
   </data>
-  <data name="GlobalHotkeyOpenDescription" xml:space="preserve">
-    <value>Эта горячая клавиша при нажатии в любой программе откроет окно Clip Angel, 
-которое сможет послать вставку клипа в исходную программу.</value>
+  <data name="GlobalHotkeyOpenCurrentDescription" xml:space="preserve">
+    <value>Эта горячая клавиша при нажатии в любой программе откроет окно Clip Angel 
+без изменений в фильтре и выборе клипа.</value>
   </data>
   <data name="GlobalHotkeyOpenFavorites" xml:space="preserve">
-    <value>Горячая клавиша показа окна любимых</value>
+    <value>Горячая клавиша открытия окна любимых</value>
   </data>
   <data name="GlobalHotkeyOpenFavoritesDescription" xml:space="preserve">
     <value>Эта горячая клавиша при нажатии в любой программе откроет окно Clip Angel с отобором только любимых, 
 которое сможет послать вставку клипа в исходную программу.</value>
+  </data>
+  <data name="GlobalHotkeyOpenLast" xml:space="preserve">
+    <value>Горячая клавиша открытия окна со сбросом</value>
+  </data>
+  <data name="GlobalHotkeyOpenLastDescription" xml:space="preserve">
+    <value>Эта горячая клавиша при нажатии в любой программе откроет окно Clip Angel, 
+сбросит фильтры и выберет последний захваченный клип.</value>
   </data>
   <data name="HistoryDepthNumber" xml:space="preserve">
     <value>Глубина истории клипов</value>

@@ -5,7 +5,7 @@
     <Setting Name="HistoryDepthNumber" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">10000</Value>
     </Setting>
-    <Setting Name="GlobalHotkeyOpen" Type="System.String" Scope="User">
+    <Setting Name="GlobalHotkeyOpenLast" Type="System.String" Scope="User">
       <Value Profile="(Default)">Alt + V</Value>
     </Setting>
     <Setting Name="Autostart" Type="System.Boolean" Scope="User">
@@ -32,7 +32,7 @@
     <Setting Name="GlobalHotkeyIncrementalPaste" Type="System.String" Scope="User">
       <Value Profile="(Default)">No</Value>
     </Setting>
-    <Setting Name="SelectTopClipOnShow" Type="System.Boolean" Scope="User">
+    <Setting Name="SelectTopClipOnOpen" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="ClipListSimpleDraw" Type="System.Boolean" Scope="User">
@@ -82,6 +82,12 @@
     </Setting>
     <Setting Name="SettingsWindowSize" Type="System.Drawing.Size" Scope="User">
       <Value Profile="(Default)">0, 0</Value>
+    </Setting>
+    <Setting Name="GlobalHotkeyOpenCurrent" Type="System.String" Scope="User">
+      <Value Profile="(Default)">No</Value>
+    </Setting>
+    <Setting Name="AutoSelectMatch" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
     </Setting>
   </Settings>
 </SettingsFile>

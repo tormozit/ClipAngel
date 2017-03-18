@@ -313,7 +313,9 @@ namespace ClipAngel
         {
             EnumModifierKeys Modifiers;
             Keys Key;
-            if (ReadHotkeyFromText(Properties.Settings.Default.GlobalHotkeyOpen, out Modifiers, out Key))
+            if (ReadHotkeyFromText(Properties.Settings.Default.GlobalHotkeyOpenLast, out Modifiers, out Key))
+                keyboardHook.RegisterHotKey(Modifiers, Key);
+            if (ReadHotkeyFromText(Properties.Settings.Default.GlobalHotkeyOpenCurrent, out Modifiers, out Key))
                 keyboardHook.RegisterHotKey(Modifiers, Key);
             if (ReadHotkeyFromText(Properties.Settings.Default.GlobalHotkeyOpenFavorites, out Modifiers, out Key))
                 keyboardHook.RegisterHotKey(Modifiers, Key);
@@ -347,7 +349,17 @@ namespace ClipAngel
             if (!AllowHotkeyProcess)
                 return;
             string hotkeyTitle = KeyboardHook.HotkeyTitle(e.Key, e.Modifier);
-            if (hotkeyTitle == Properties.Settings.Default.GlobalHotkeyOpen)
+            if (hotkeyTitle == Properties.Settings.Default.GlobalHotkeyOpenLast)
+            {
+                if (this.ContainsFocus && this.Top >= 0 && MarkFilter.SelectedValue.ToString() != "favorite")
+                    this.Close();
+                else
+                {
+                    ShowForPaste(false, true);
+                    dataGridView.Focus();
+                }
+            }
+            else if (hotkeyTitle == Properties.Settings.Default.GlobalHotkeyOpenCurrent)
             {
                 if (this.ContainsFocus && this.Top >= 0 && MarkFilter.SelectedValue.ToString() != "favorite")
                     this.Close();
@@ -570,8 +582,10 @@ namespace ClipAngel
             DataRowView CurrentRowView;
             mshtml.IHTMLDocument2 htmlDoc;
             string clipType;
+            bool autoSelectMatch = (filterText.Length > 0 && Properties.Settings.Default.AutoSelectMatch);
             FullTextLoad = FullTextLoad || EditMode;
             richTextBox.ReadOnly = !EditMode;
+            RowReader = null;
             if (CurrentRowIndex == -1)
             { CurrentRowView = clipBindingSource.Current as DataRowView; }
             else
@@ -593,11 +607,22 @@ namespace ClipAngel
             clipType = "";
             pictureBoxSource.Image = null;
             ImageControl.Image = null;
-            htmlTextBox.Parent.Enabled = false; // Prevent stealing focus 
-            //htmlTextBox.Enabled = false;
+
+            int filterSelectionLength = 0, filterSelectionStart = 0;
+            if (comboBoxFilter.Focused)
+            {
+                // Antibug webBrowser steals focus
+                filterSelectionLength = comboBoxFilter.SelectionLength;
+                filterSelectionStart = comboBoxFilter.SelectionStart;
+            }
+            //htmlTextBox.Parent = new Control();
+            htmlTextBox.Parent.Enabled = false; // Prevent stealing focus
+            //htmlTextBox.Document.OpenNew(false);
+            //htmlTextBox.Document.Write("");
             htmlDoc = htmlTextBox.Document.DomDocument as mshtml.IHTMLDocument2;
             htmlDoc.write("");
-            htmlDoc.close();
+            htmlDoc.close(); // Steals focus!!!
+
             richTextBox.Enabled = false;
             richTextBox.Text = "";
             textBoxApplication.Text = "";
@@ -672,10 +697,12 @@ namespace ClipAngel
                             //    Application.DoEvents();
                             //    Thread.Sleep(5);
                             //}
+                            //htmlTextBox.Document.OpenNew(false);
+                            //htmlTextBox.Document.Write(htmlText);
                             htmlDoc.write(htmlText);
-                            htmlDoc.close();
-
+                            htmlDoc.close(); // Steals focus!!!
                             mshtml.IHTMLBodyElement body = htmlDoc.body as mshtml.IHTMLBodyElement;
+                            //htmlDoc.selection.empty();
                             htmlTextBox.Document.Body.Drag += new HtmlElementEventHandler(htmlTextBoxDrag);
                             htmlTextBox.Document.Body.KeyDown += new HtmlElementEventHandler(htmlTextBoxDocumentKeyDown);
 
@@ -748,7 +775,8 @@ namespace ClipAngel
                     Image image = GetImageFromBinary((byte[])RowReader["Binary"]);
                     ImageControl.Image = image;
                 }
-                RestoreTextSelection(NewSelectionStart, NewSelectionLength);
+                if (!autoSelectMatch)
+                    RestoreTextSelection(NewSelectionStart, NewSelectionLength);
                 allowTextPositionChangeUpdate = true;
                 UpdateSelectionPosition();
             }
@@ -799,6 +827,15 @@ namespace ClipAngel
             if (EditMode)
                 richTextBox.Focus();
             tableLayoutPanelData.ResumeLayout();
+            if (autoSelectMatch)
+                SelectNextMatchInClipText();
+            if (comboBoxFilter.Focused)
+            {
+                // Antibug webBrowser steals focus. We set it back
+                comboBoxFilter.Focus();
+                comboBoxFilter.SelectionLength = filterSelectionLength;
+                comboBoxFilter.SelectionStart = filterSelectionStart;
+            }
         }
 
         private string GetHtmlFromHtmlClipText()
@@ -906,7 +943,7 @@ namespace ClipAngel
         {
             matches = Regex.Matches(control.Text, pattern, RegexOptions.IgnoreCase);
             control.DeselectAll();
-            int maxMarked = 100; // prevent slow down
+            int maxMarked = 50; // prevent slow down
             foreach (Match match in matches)
             {
                 control.SelectionStart = match.Index;
@@ -929,6 +966,7 @@ namespace ClipAngel
             int boundingTop = 0;
             mshtml.IHTMLBodyElement body = htmlDoc.body as mshtml.IHTMLBodyElement;
             mshtml.IHTMLTxtRange range = body.createTextRange();
+            int maxMarked = 50; // prevent slow down
             while (range.findText(filterText))
             {
                 range.execCommand("ForeColor", false, ColorTranslator.ToHtml(color));
@@ -939,6 +977,9 @@ namespace ClipAngel
                     range.scrollIntoView();
                 }
                 range.collapse(false);
+                maxMarked--;
+                if (maxMarked < 0)
+                    break;
             }
         }
 
@@ -1010,9 +1051,17 @@ namespace ClipAngel
 
             PrepareTableGrid(); // Long
             if (filterOn)
-                buttonClearFilter.BackColor = Color.GreenYellow;
+            {
+                toolStripButtonClearFilter.Enabled = true;
+                //toolStripButtonClearFilter.Checked = true; // Back color wil not change
+                toolStripButtonClearFilter.BackColor = Color.GreenYellow;
+            }
             else
-                buttonClearFilter.BackColor = DefaultBackColor;
+            {
+                toolStripButtonClearFilter.Enabled = false;
+                toolStripButtonClearFilter.BackColor = DefaultBackColor;
+                //toolStripButtonClearFilter.Checked = false;
+            }
             if (LastId == 0)
             {
                 GotoLastRow();
@@ -1027,7 +1076,15 @@ namespace ClipAngel
                     LastId = (int)lastRow["Id"];
                 }
             }
-            else if (false
+            else
+                RestoreSelectedCurrentClip(forceRowLoad, currentClipId);
+            allowRowLoad = true;
+            //AutoGotoLastRow = false;
+        }
+
+        private void RestoreSelectedCurrentClip(bool forceRowLoad = false, int currentClipId = -1)
+        {
+            if (false
                 //|| AutoGotoLastRow 
                 || currentClipId <= 0)
 
@@ -1040,8 +1097,6 @@ namespace ClipAngel
                 ////    dataGridView.CurrentCell = dataGridView.CurrentRow.Cells[0];
                 SelectCurrentRow(forceRowLoad || newPosition == -1);
             }
-            allowRowLoad = true;
-            //AutoGotoLastRow = false;
         }
 
         private void ClearFilter_Click(object sender = null, EventArgs e = null)
@@ -1052,17 +1107,20 @@ namespace ClipAngel
 
         private void ClearFilter(int CurrentClipID = 0)
         {
-            if (!filterOn && CurrentClipID == 0) 
-                return;
-            AllowFilterProcessing = false;
-            comboBoxFilter.Text = "";
-            ReadFilterText();
-            TypeFilter.SelectedIndex = 0;
-            MarkFilter.SelectedIndex = 0;
-            AllowFilterProcessing = true;
-            ChooseTitleColumnDraw();
-            UpdateClipBindingSource(true, CurrentClipID); // To repaint text
-            //UpdateClipBindingSource(false, CurrentClipID);
+            if (filterOn)
+            {
+                AllowFilterProcessing = false;
+                comboBoxFilter.Text = "";
+                ReadFilterText();
+                TypeFilter.SelectedIndex = 0;
+                MarkFilter.SelectedIndex = 0;
+                AllowFilterProcessing = true;
+                ChooseTitleColumnDraw();
+                //UpdateClipBindingSource(false, CurrentClipID);
+                UpdateClipBindingSource(true, CurrentClipID); // To repaint text
+            }
+            else if (CurrentClipID != 0)
+                RestoreSelectedCurrentClip(false, CurrentClipID);
         }
 
         private void Text_CursorChanged(object sender, EventArgs e)
@@ -1096,12 +1154,14 @@ namespace ClipAngel
                 }
                 else
                 {
+                    this.SuspendLayout();
                     this.FormBorderStyle = FormBorderStyle.FixedToolWindow; // To disable animation
                     this.Hide();
+                    this.ResumeLayout();
                 }
                 e.Cancel = true;
-                if (Properties.Settings.Default.ClearFiltersOnClose)
-                    ClearFilter();
+                //if (Properties.Settings.Default.ClearFiltersOnClose)
+                //    ClearFilter();
                 //this.ResumeLayout();
             }
             else
@@ -1417,7 +1477,7 @@ namespace ClipAngel
                     && applicationText == "ScreenshotReader"
                     && IsTextType(typeText)
                     //&& !Visible 
-                    //&& Properties.Settings.Default.SelectTopClipOnShow 
+                    //&& Properties.Settings.Default.SelectTopClipOnOpen 
                 )
                     ShowForPaste();
             //}
@@ -1627,7 +1687,7 @@ namespace ClipAngel
             DataObject dto = new DataObject();
             if (IsTextType() || type == "file")
             {
-                dto.SetText(clipText, TextDataFormat.UnicodeText);
+                SetTextInClipboardDataObject(dto, clipText);
             }
             if (true
                 && (type == "rtf" || type == "html")
@@ -2189,78 +2249,91 @@ namespace ClipAngel
         [DllImport("user32.dll", SetLastError = true)]
         internal static extern bool MoveWindow(IntPtr hwnd, int X, int Y, int nWidth, int nHeight, bool bRepaint);
 
-        private void ShowForPaste(bool onlyFavorites = false)
+        private void ShowForPaste(bool onlyFavorites = false, bool clearFiltersAndGoToTop = false)
         {
-            if (onlyFavorites)
-                showOnlyFavoriteToolStripMenuItem_Click();
-            else if (MarkFilter.SelectedValue.ToString() == "favorite")
-                showAllMarksToolStripMenuItem_Click();
-            //Stopwatch sw = new Stopwatch();
-            //sw.Start();
-            this.SuspendLayout();
-
-            int newX = -1;
-            int newY = -1;
-            //AutoGotoLastRow = Properties.Settings.Default.SelectTopClipOnShow;
-            if (Properties.Settings.Default.WindowAutoPosition)
+            foreach (Form form in Application.OpenForms)
             {
-                // https://www.codeproject.com/Articles/34520/Getting-Caret-Position-Inside-Any-Application
-                // http://stackoverflow.com/questions/31055249/is-it-possible-to-get-caret-position-in-word-to-update-faster
-                //IntPtr hWindow = GetForegroundWindow();
-                IntPtr hWindow = lastActiveWindow;
-                if (hWindow != this.Handle && hWindow != IntPtr.Zero)
-                { 
-	                int pid;
-	                uint remoteThreadId = GetWindowThreadProcessId(hWindow, out pid);
-	                var guiInfo = new GUITHREADINFO();
-	                guiInfo.cbSize = (uint)Marshal.SizeOf(guiInfo);
-	                GetGUIThreadInfo(remoteThreadId, out guiInfo);
-	                Point point = new Point(0, 0);
-                    ClientToScreen(guiInfo.hwndCaret, out point);
-                    //AttachThreadInput(GetCurrentThreadId(), remoteThreadId, true);
-                    //int Result = GetCaretPos(out point);
-                    //AttachThreadInput(GetCurrentThreadId(), remoteThreadId, false);
-                    // Screen.FromHandle(hwnd)
-                    RECT activeRect;
-                    if (point.Y > 0)
-	                {
-                        activeRect = guiInfo.rcCaret;
-                        newX = Math.Min(activeRect.right + point.X, SystemInformation.VirtualScreen.Width - this.Width);
-                        newY = Math.Min(activeRect.bottom + point.Y + 1, SystemInformation.VirtualScreen.Height - this.Height - 30);
-                    }
-                    else
-                    {
-                        IntPtr baseWindow;
-                        if (guiInfo.hwndFocus != IntPtr.Zero)
-                            baseWindow = guiInfo.hwndFocus;
-                        else
-                            baseWindow = hWindow;
-                        ClientToScreen(baseWindow, out point);
-                        GetWindowRect(baseWindow, out activeRect);
-                        newX = Math.Max(0, Math.Min((activeRect.right - activeRect.left - this.Width) / 2 + point.X, SystemInformation.VirtualScreen.Width - this.Width));
-                        newY = Math.Max(0, Math.Min((activeRect.bottom - activeRect.top - this.Height) / 2 + point.Y, SystemInformation.VirtualScreen.Height - this.Height - 30));
-                    }
-                }
-            }
-            RestoreWindowIfMinimized(newX, newY);
-            //sw.Stop();
-            //Debug.WriteLine("autoposition duration" + sw.ElapsedMilliseconds.ToString());
-            if (!Properties.Settings.Default.FastWindowOpen)
-            {
-                this.Activate();
-                this.Show();
-            }
-            if (this.CanFocus)
-                SetForegroundWindow(this.Handle);
-            else
-                foreach (Form form in Application.OpenForms)
+                if (form.Modal)
                 {
-                    if (form.Modal)
-                        form.Activate();
+                    form.Activate();
+                    return;
                 }
-            if (Properties.Settings.Default.SelectTopClipOnShow)
-                GotoLastRow();
-            this.ResumeLayout();
+            }
+
+            //if (this.CanFocus) // With FastOpenWindow=False and TopMost=True is always false
+            //{
+                if (onlyFavorites)
+                    showOnlyFavoriteToolStripMenuItem_Click();
+                else if (MarkFilter.SelectedValue.ToString() == "favorite")
+                    showAllMarksToolStripMenuItem_Click();
+                //if (Properties.Settings.Default.SelectTopClipOnOpen)
+                //    GotoLastRow();
+                //else 
+                if (clearFiltersAndGoToTop)
+                    ClearFilter(-1);
+                //Stopwatch sw = new Stopwatch();
+                //sw.Start();
+                //this.SuspendLayout();
+
+                int newX = -1;
+                int newY = -1;
+                //AutoGotoLastRow = Properties.Settings.Default.SelectTopClipOnOpen;
+                if (Properties.Settings.Default.WindowAutoPosition)
+                {
+                    // https://www.codeproject.com/Articles/34520/Getting-Caret-Position-Inside-Any-Application
+                    // http://stackoverflow.com/questions/31055249/is-it-possible-to-get-caret-position-in-word-to-update-faster
+                    //IntPtr hWindow = GetForegroundWindow();
+                    IntPtr hWindow = lastActiveWindow;
+                    if (hWindow != this.Handle && hWindow != IntPtr.Zero)
+                    {
+                        int pid;
+                        uint remoteThreadId = GetWindowThreadProcessId(hWindow, out pid);
+                        var guiInfo = new GUITHREADINFO();
+                        guiInfo.cbSize = (uint) Marshal.SizeOf(guiInfo);
+                        GetGUIThreadInfo(remoteThreadId, out guiInfo);
+                        Point point = new Point(0, 0);
+                        ClientToScreen(guiInfo.hwndCaret, out point);
+                        //AttachThreadInput(GetCurrentThreadId(), remoteThreadId, true);
+                        //int Result = GetCaretPos(out point);
+                        //AttachThreadInput(GetCurrentThreadId(), remoteThreadId, false);
+                        // Screen.FromHandle(hwnd)
+                        RECT activeRect;
+                        if (point.Y > 0)
+                        {
+                            activeRect = guiInfo.rcCaret;
+                            newX = Math.Min(activeRect.right + point.X,
+                                SystemInformation.VirtualScreen.Width - this.Width);
+                            newY = Math.Min(activeRect.bottom + point.Y + 1,
+                                SystemInformation.VirtualScreen.Height - this.Height - 30);
+                        }
+                        else
+                        {
+                            IntPtr baseWindow;
+                            if (guiInfo.hwndFocus != IntPtr.Zero)
+                                baseWindow = guiInfo.hwndFocus;
+                            else
+                                baseWindow = hWindow;
+                            ClientToScreen(baseWindow, out point);
+                            GetWindowRect(baseWindow, out activeRect);
+                            newX = Math.Max(0,
+                                Math.Min((activeRect.right - activeRect.left - this.Width) / 2 + point.X,
+                                    SystemInformation.VirtualScreen.Width - this.Width));
+                            newY = Math.Max(0,
+                                Math.Min((activeRect.bottom - activeRect.top - this.Height) / 2 + point.Y,
+                                    SystemInformation.VirtualScreen.Height - this.Height - 30));
+                        }
+                    }
+                }
+                RestoreWindowIfMinimized(newX, newY);
+                //sw.Stop();
+                //Debug.WriteLine("autoposition duration" + sw.ElapsedMilliseconds.ToString());
+                if (!Properties.Settings.Default.FastWindowOpen)
+                {
+                    this.Activate();
+                    this.Show();
+                }
+                SetForegroundWindow(this.Handle);
+                //this.ResumeLayout();
         }
 
         private void RestoreWindowIfMinimized(int newX = -1, int newY = -1)
@@ -2389,17 +2462,20 @@ namespace ClipAngel
             {
                 clipBindingSource.MoveFirst();
                 if (dataGridView.CurrentRow != null)
-                SelectCurrentRow();
+                    SelectCurrentRow();
             }
             LoadClipIfChangedID();
         }
 
         private bool CurrentIDChanged()
         {
-            return !(true
-                && RowReader != null
-                && dataGridView.CurrentRow != null
-                && (int)(dataGridView.CurrentRow.DataBoundItem as DataRowView)["ID"] == (int)RowReader["ID"]);
+            return false
+                || (RowReader == null && dataGridView.CurrentRow != null)
+                || (RowReader != null && dataGridView.CurrentRow == null)
+                || !(true
+                    && RowReader != null
+                    && dataGridView.CurrentRow != null
+                    && (int)(dataGridView.CurrentRow.DataBoundItem as DataRowView)["ID"] == (int)RowReader["ID"]);
         }
 
         void SelectCurrentRow(bool forceRowLoad = false, bool keepTextSelection = true)
@@ -2442,7 +2518,9 @@ namespace ClipAngel
             if (dataGridView.Focused || comboBoxFilter.Focused)
             {
                 if (htmlMode)
-                    htmlTextBox.Focus();
+                {
+                   htmlTextBox.Document.Focus();
+                }
                 else if (richTextBox.Enabled)
                     richTextBox.Focus();
             }
@@ -2790,7 +2868,7 @@ namespace ClipAngel
         private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SettingsForm settingsFormForm = new SettingsForm(this);
-            settingsFormForm.ShowDialog();
+            settingsFormForm.ShowDialog(this);
             if (settingsFormForm.DialogResult == DialogResult.OK)
             {
                 LoadSettings();
@@ -3042,20 +3120,25 @@ namespace ClipAngel
             }
         }
 
-        private void buttonFindNext_Click(object sender, EventArgs e)
+        private void buttonFindNext_Click(object sender = null, EventArgs e = null)
         {
             if (EditMode)
                 return;
             SaveFilterInLastUsedList();
             if (TextWasCut)
                 AfterRowLoad(true);
+            SelectNextMatchInClipText();
+        }
+
+        private void SelectNextMatchInClipText()
+        {
             if (htmlMode)
             {
                 mshtml.IHTMLTxtRange range = GetHtmlCurrentTextRangeOrAllDocument();
                 range.collapse(false);
                 if (range.findText(filterText, 1000000000, 0))
                 {
-                    range.select();
+                    range.@select();
                 }
             }
             else
@@ -3070,7 +3153,7 @@ namespace ClipAngel
                         || (true
                             && control.SelectionLength == 0
                             && match.Index == 0
-                            ))
+                        ))
                     {
                         control.SelectionStart = match.Index;
                         control.SelectionLength = match.Length;
@@ -3160,19 +3243,20 @@ namespace ClipAngel
 
         private void toolStripButtonSelectTopClipOnShow_Click(object sender, EventArgs e)
         {
-            Properties.Settings.Default.SelectTopClipOnShow = !Properties.Settings.Default.SelectTopClipOnShow;
+            Properties.Settings.Default.SelectTopClipOnOpen = !Properties.Settings.Default.SelectTopClipOnOpen;
             UpdateControlsStates();
         }
         private void UpdateControlsStates()
         {
+            toolStripButtonAutoSelectMatch.Checked = Properties.Settings.Default.AutoSelectMatch;
             trayMenuItemMonitoringClipboard.Checked = MonitoringClipboard;
             toolStripMenuItemMonitoringClipboard.Checked = MonitoringClipboard;
             toolStripButtonTextFormatting.Checked = Properties.Settings.Default.ShowNativeTextFormatting;
             textFormattingToolStripMenuItem.Checked = Properties.Settings.Default.ShowNativeTextFormatting;
             toolStripButtonMonospacedFont.Checked = Properties.Settings.Default.MonospacedFont;
             monospacedFontToolStripMenuItem.Checked = Properties.Settings.Default.MonospacedFont;
-            selectTopClipOnShowToolStripMenuItem.Checked = Properties.Settings.Default.SelectTopClipOnShow;
-            toolStripButtonSelectTopClipOnShow.Checked = Properties.Settings.Default.SelectTopClipOnShow;
+            selectTopClipOnShowToolStripMenuItem.Checked = Properties.Settings.Default.SelectTopClipOnOpen;
+            toolStripButtonSelectTopClipOnShow.Checked = Properties.Settings.Default.SelectTopClipOnOpen;
             wordWrapToolStripMenuItem.Checked = Properties.Settings.Default.WordWrap;
             toolStripButtonWordWrap.Checked = Properties.Settings.Default.WordWrap;
             dataGridView.Columns["VisualWeight"].Visible = Properties.Settings.Default.ShowVisualWeightColumn;
@@ -3798,6 +3882,8 @@ namespace ClipAngel
                 || e.AltKeyPressed
                 || e.KeyPressedCode == (int)Keys.Down
                 || e.KeyPressedCode == (int)Keys.Up
+                || e.KeyPressedCode == (int)Keys.Left
+                || e.KeyPressedCode == (int)Keys.Right
                 || e.KeyPressedCode == (int)Keys.PageDown
                 || e.KeyPressedCode == (int)Keys.PageUp
                 || e.KeyPressedCode == (int)Keys.Home
@@ -3903,10 +3989,20 @@ namespace ClipAngel
 
         private void copyToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            DataObject dto = new DataObject();
+            string text = richTextBox.SelectedText;
+            SetTextInClipboardDataObject(dto, text);
             if (Properties.Settings.Default.ShowNativeTextFormatting)
-                Clipboard.SetText(richTextBox.SelectedRtf, TextDataFormat.Rtf);
-            else
-                Clipboard.SetText(richTextBox.SelectedText, TextDataFormat.UnicodeText);
+            {
+                dto.SetText(richTextBox.SelectedRtf, TextDataFormat.Rtf);
+            }
+            Clipboard.SetDataObject(dto, true);
+        }
+
+        private static void SetTextInClipboardDataObject(DataObject dto, string text)
+        {
+            dto.SetText(text, TextDataFormat.UnicodeText);
+            dto.SetText(text, TextDataFormat.Text);
         }
 
         private void openFavoritesToolStripMenuItem_Click(object sender, EventArgs e)
@@ -3917,6 +4013,12 @@ namespace ClipAngel
         private void rtfMenuItemOpenLink_Click(object sender, EventArgs e)
         {
             OpenLinkInRichTextBox(richTextBox, TextLinkMatches);
+        }
+
+        private void buttonAutoSelectMatch_Click(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.AutoSelectMatch = !Properties.Settings.Default.AutoSelectMatch;
+            UpdateControlsStates();
         }
     }
 }

@@ -38,12 +38,12 @@ namespace ClipAngel.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("Alt + V")]
-        public string GlobalHotkeyOpen {
+        public string GlobalHotkeyOpenLast {
             get {
-                return ((string)(this["GlobalHotkeyOpen"]));
+                return ((string)(this["GlobalHotkeyOpenLast"]));
             }
             set {
-                this["GlobalHotkeyOpen"] = value;
+                this["GlobalHotkeyOpenLast"] = value;
             }
         }
         
@@ -145,12 +145,12 @@ namespace ClipAngel.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool SelectTopClipOnShow {
+        public bool SelectTopClipOnOpen {
             get {
-                return ((bool)(this["SelectTopClipOnShow"]));
+                return ((bool)(this["SelectTopClipOnOpen"]));
             }
             set {
-                this["SelectTopClipOnShow"] = value;
+                this["SelectTopClipOnOpen"] = value;
             }
         }
         
@@ -343,6 +343,30 @@ namespace ClipAngel.Properties {
             }
             set {
                 this["SettingsWindowSize"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("No")]
+        public string GlobalHotkeyOpenCurrent {
+            get {
+                return ((string)(this["GlobalHotkeyOpenCurrent"]));
+            }
+            set {
+                this["GlobalHotkeyOpenCurrent"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool AutoSelectMatch {
+            get {
+                return ((bool)(this["AutoSelectMatch"]));
+            }
+            set {
+                this["AutoSelectMatch"] = value;
             }
         }
     }
