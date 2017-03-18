@@ -138,28 +138,28 @@ namespace ClipAngel
 
         class ModifiersState
         {
-            public bool rshift, lshift, lcontrol, rcontrol, lalt, ralt, lwin, rwin;
+            //public bool rshift, lshift, lcontrol, rcontrol, lalt, ralt, lwin, rwin;
 
-            // bad idea to restore modifiers state - can make pressed while is already not pressed
-            public void RestoreState()
-            {
-                if (lshift)
-                    keybd_event((byte)VirtualKeyCode.SHIFT, 0x2A, 0, 0);
-                if (rshift)
-                    keybd_event((byte)VirtualKeyCode.SHIFT, 0x36, 0, 0);
-                if (lcontrol)
-                    keybd_event((byte)VirtualKeyCode.CONTROL, 0x1D, 0, 0);
-                if (rcontrol)
-                    keybd_event((byte)VirtualKeyCode.CONTROL, 0x9D, 0, 0);
-                if (lalt)
-                    keybd_event((byte)VirtualKeyCode.MENU, 0x38, 0, 0);
-                if (ralt)
-                    keybd_event((byte)VirtualKeyCode.MENU, 0xB8, 0, 0);
-                if (lwin)
-                    keybd_event((byte)VirtualKeyCode.LWIN, 0x5B, 0, 0);
-                if (rwin)
-                    keybd_event((byte)VirtualKeyCode.RWIN, 0x5C, 0, 0);
-            }
+            //// bad idea to restore modifiers state - can make pressed while is already not pressed
+            //public void RestoreState()
+            //{
+            //    if (lshift)
+            //        keybd_event((byte)VirtualKeyCode.SHIFT, 0x2A, 0, 0);
+            //    if (rshift)
+            //        keybd_event((byte)VirtualKeyCode.SHIFT, 0x36, 0, 0);
+            //    if (lcontrol)
+            //        keybd_event((byte)VirtualKeyCode.CONTROL, 0x1D, 0, 0);
+            //    if (rcontrol)
+            //        keybd_event((byte)VirtualKeyCode.CONTROL, 0x9D, 0, 0);
+            //    if (lalt)
+            //        keybd_event((byte)VirtualKeyCode.MENU, 0x38, 0, 0);
+            //    if (ralt)
+            //        keybd_event((byte)VirtualKeyCode.MENU, 0xB8, 0, 0);
+            //    if (lwin)
+            //        keybd_event((byte)VirtualKeyCode.LWIN, 0x5B, 0, 0);
+            //    if (rwin)
+            //        keybd_event((byte)VirtualKeyCode.RWIN, 0x5C, 0, 0);
+            //}
 
             public void ReleaseAll()
             {
