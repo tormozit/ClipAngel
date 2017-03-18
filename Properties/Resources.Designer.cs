@@ -417,6 +417,16 @@ namespace ClipAngel.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap MoveCopiedClipToTop {
+            get {
+                object obj = ResourceManager.GetObject("MoveCopiedClipToTop", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to New version is available. To update use button is top command bar..
         /// </summary>
         public static string NewVersionAvailable {

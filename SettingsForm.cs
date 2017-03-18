@@ -558,7 +558,7 @@ namespace ClipAngel
                     {
                         ShowProperty(allproperties[propertyname]);
                     }
-                    catch (Exception knfe)
+                    catch
                     {
                         throw new ArgumentException("Property not found", propertyname);
                     }

@@ -2274,7 +2274,8 @@ namespace ClipAngel
                 //Stopwatch sw = new Stopwatch();
                 //sw.Start();
                 //this.SuspendLayout();
-
+                if (this.ContainsFocus)
+                    return;
                 int newX = -1;
                 int newY = -1;
                 //AutoGotoLastRow = Properties.Settings.Default.SelectTopClipOnOpen;
@@ -3253,6 +3254,8 @@ namespace ClipAngel
         }
         private void UpdateControlsStates()
         {
+            moveCopiedClipToTopToolStripMenuItem.Checked = Properties.Settings.Default.MoveCopiedClipToTop;
+            moveCopiedClipToTopToolStripButton.Checked = Properties.Settings.Default.MoveCopiedClipToTop;
             toolStripButtonAutoSelectMatch.Checked = Properties.Settings.Default.AutoSelectMatch;
             trayMenuItemMonitoringClipboard.Checked = MonitoringClipboard;
             toolStripMenuItemMonitoringClipboard.Checked = MonitoringClipboard;
@@ -4044,6 +4047,18 @@ namespace ClipAngel
         private void showOnlyImagesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             TypeFilter.SelectedValue = "img";
+        }
+
+        private void moveCopiedClipToTopToolStripButton_Click(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.MoveCopiedClipToTop = !Properties.Settings.Default.MoveCopiedClipToTop;
+            UpdateControlsStates();
+        }
+
+        private void moveClipToTopToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.MoveCopiedClipToTop = !Properties.Settings.Default.MoveCopiedClipToTop;
+            UpdateControlsStates();
         }
     }
 }

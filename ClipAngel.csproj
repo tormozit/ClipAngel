@@ -283,6 +283,9 @@
   <ItemGroup>
     <None Include="Picture\Autoselect first match.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Picture\MoveCopiedClipToTop.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
