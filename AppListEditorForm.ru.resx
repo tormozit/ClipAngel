@@ -117,112 +117,83 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="allTypes" xml:space="preserve">
-    <value>все типы</value>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>109, 13</value>
   </data>
-  <data name="ByteUnit" xml:space="preserve">
-    <value>Б</value>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Список приложений</value>
   </data>
-  <data name="CharUnit" xml:space="preserve">
-    <value>С</value>
+  <data name="SelectedListModule.Text" xml:space="preserve">
+    <value>Модуль</value>
   </data>
-  <data name="EndMarker" xml:space="preserve">
-    <value>КОНЕЦ</value>
+  <data name="SelectedListApplication.Text" xml:space="preserve">
+    <value>Путь</value>
   </data>
-  <data name="file" xml:space="preserve">
-    <value>файл</value>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>137, 13</value>
   </data>
-  <data name="img" xml:space="preserve">
-    <value>карт</value>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Запущенные приложения</value>
   </data>
-  <data name="text" xml:space="preserve">
-    <value>текст</value>
+  <data name="RunningListModule.Text" xml:space="preserve">
+    <value>Модуль</value>
   </data>
-  <data name="HelpPage" xml:space="preserve">
-    <value>https://sourceforge.net/p/clip-angel/wikirus/%D0%9E%D1%81%D0%BD%D0%BE%D0%B2%D0%BD%D0%BE%D0%B9/</value>
+  <data name="RunningListApplication.Text" xml:space="preserve">
+    <value>Путь</value>
   </data>
-  <data name="NextClip" xml:space="preserve">
-    <value>Следующий клип</value>
+  <data name="buttonCancel.Text" xml:space="preserve">
+    <value>Отмена</value>
   </data>
-  <data name="allMarks" xml:space="preserve">
-    <value>все метки</value>
+  <data name="buttonSelectClipboardOwner.Location" type="System.Drawing.Point, System.Drawing">
+    <value>512, 12</value>
   </data>
-  <data name="favorite" xml:space="preserve">
-    <value>любимые</value>
+  <data name="buttonSelectClipboardOwner.Size" type="System.Drawing.Size, System.Drawing">
+    <value>175, 23</value>
   </data>
-  <data name="used" xml:space="preserve">
-    <value>полезные</value>
+  <data name="buttonSelectClipboardOwner.Text" xml:space="preserve">
+    <value>Выбрать владельца буфера</value>
   </data>
-  <data name="LangRestart" xml:space="preserve">
-    <value>Для полной смены языка возможно потребуется перезапуск программы</value>
+  <data name="buttonSelectClipboardOwner.ToolTip" xml:space="preserve">
+    <value>Выбрать текущего владельца буфера обмена</value>
   </data>
-  <data name="UpdateTo" xml:space="preserve">
-    <value>Обновить на</value>
+  <data name="buttonSelectTargetApplication.Location" type="System.Drawing.Point, System.Drawing">
+    <value>512, 41</value>
   </data>
-  <data name="PixelFormat" xml:space="preserve">
-    <value>Пиксель</value>
+  <data name="buttonSelectTargetApplication.Size" type="System.Drawing.Size, System.Drawing">
+    <value>175, 23</value>
   </data>
-  <data name="Size" xml:space="preserve">
-    <value>Размер</value>
+  <data name="buttonSelectTargetApplication.Text" xml:space="preserve">
+    <value>Выбрать целевое приложение</value>
   </data>
-  <data name="CutMarker" xml:space="preserve">
-    <value>Показать остальной текст</value>
+  <data name="buttonAddByFile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>175, 23</value>
   </data>
-  <data name="NewVersionAvailable" xml:space="preserve">
-    <value>Новая версия доступна. Для обновления нажмите кнопку в верхней командной панели.</value>
+  <data name="buttonAddByFile.Text" xml:space="preserve">
+    <value>Добавить из файла</value>
   </data>
-  <data name="YouLatestVersion" xml:space="preserve">
-    <value>Вы используете последнюю версию</value>
+  <data name="buttonAddByFile.ToolTip" xml:space="preserve">
+    <value>Добавить через диалог выбора файла приложения</value>
   </data>
-  <data name="CantPasteInElevatedWindow" xml:space="preserve">
-    <value>Невозможно вставить в окно, имеющее более высокие привилегии. Попробуйте запустить программу от имени администратора.</value>
+  <data name="buttonDeleteSelected.Size" type="System.Drawing.Size, System.Drawing">
+    <value>175, 23</value>
   </data>
-  <data name="EditClipTitle" xml:space="preserve">
-    <value>Изменение заголовка клипа</value>
+  <data name="buttonDeleteSelected.Text" xml:space="preserve">
+    <value>Удалить выбранные</value>
   </data>
-  <data name="HowUseAutoTitle" xml:space="preserve">
-    <value>Очистите строку для использования автозаголовка</value>
+  <data name="buttonAdd.Text" xml:space="preserve">
+    <value>Добавить выбранные</value>
   </data>
-  <data name="VisualWeightTooltip" xml:space="preserve">
-    <value>Визуальный вес клипа (количество цифр в числе, отражающем визуальный размер клипа)</value>
+  <data name="buttonAdd.ToolTip" xml:space="preserve">
+    <value>Добавить выбранные запущенные приложения</value>
   </data>
-  <data name="KiloByteUnit" xml:space="preserve">
-    <value>КБ</value>
+  <data name="buttonRefresh.Text" xml:space="preserve">
+    <value>Обновить</value>
   </data>
-  <data name="MegaByteUnit" xml:space="preserve">
-    <value>МБ</value>
+  <data name="buttonRefresh.ToolTip" xml:space="preserve">
+    <value>Обновить запущенные приложения</value>
   </data>
-  <data name="QuestionResetSettings" xml:space="preserve">
-    <value>Вы действительно хотите сбросить все настройки в значения по умолчанию?</value>
-  </data>
-  <data name="HistoryOfChanges" xml:space="preserve">
-    <value>https://sourceforge.net/p/clip-angel/blogrus/</value>
-  </data>
-  <data name="ActivatedExistedProcess" xml:space="preserve">
-    <value>Активирован уже запущенный экземпляр приложения</value>
-  </data>
-  <data name="CouldNotRegisterHotkey" xml:space="preserve">
-    <value>Не удалось зарегистрировать глобальное сочетание клавиш</value>
-  </data>
-  <data name="ClipFileAlreadyOpened" xml:space="preserve">
-    <value>Файл клипа уже открыт и заблокирован</value>
-  </data>
-  <data name="HistoryDepthNumber" xml:space="preserve">
-    <value>Количество хранимых клипов</value>
-  </data>
-  <data name="Hotkeys" xml:space="preserve">
-    <value>Горячие клавиши</value>
-  </data>
-  <data name="Info" xml:space="preserve">
-    <value>Информация</value>
-  </data>
-  <data name="Other" xml:space="preserve">
-    <value>Другое</value>
-  </data>
-  <data name="Special" xml:space="preserve">
-    <value>Специальные</value>
-  </data>
-  <data name="ApplicationAddedToIgnoreList" xml:space="preserve">
-    <value>Приложение "{0}" добавлено в список игнорирования, который можно отредактировать из диалога "Настройки".</value>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Редактор списка приложений</value>
   </data>
 </root>

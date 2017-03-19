@@ -121,8 +121,8 @@
   <data name="StripLabelCreated.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleRight</value>
   </data>
-  <data name="toolStrip1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>253, 25</value>
+  <data name="moveCopiedClipToTopToolStripMenuItem.Text" xml:space="preserve">
+    <value>Move clip to top after copy/paste</value>
   </data>
   <data name="toolStripMenuItem13.Size" type="System.Drawing.Size, System.Drawing">
     <value>247, 6</value>
@@ -158,7 +158,7 @@ Changes in temp file are not synchronized with clip!
     <value>23, 22</value>
   </data>
   <data name="pasteTextCTRLENTERToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>209, 22</value>
+    <value>214, 22</value>
   </data>
   <data name="toolStripButtonAutoSelectMatch.Size" type="System.Drawing.Size, System.Drawing">
     <value>23, 22</value>
@@ -248,6 +248,9 @@ Changes in temp file are not synchronized with clip!
   <data name="&gt;&gt;cultureManager1.Type" xml:space="preserve">
     <value>Infralution.Localization.CultureManager, Infralution.Localization, Version=1.2.2.0, Culture=neutral, PublicKeyToken=af4bb5454ff71782</value>
   </data>
+  <data name="&gt;&gt;contextMenuStripApplication.Name" xml:space="preserve">
+    <value>contextMenuStripApplication</value>
+  </data>
   <data name="&gt;&gt;timerReconnect.Type" xml:space="preserve">
     <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -257,8 +260,8 @@ Changes in temp file are not synchronized with clip!
   <data name="&gt;&gt;showAllMarksToolStripMenuItem.Name" xml:space="preserve">
     <value>showAllMarksToolStripMenuItem</value>
   </data>
-  <data name="toolStripMenuItem2.ToolTipText" xml:space="preserve">
-    <value>Paste in active window current clip</value>
+  <data name="toolStripMenuItem14.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Alt+Q</value>
   </data>
   <data name="&gt;&gt;helpToolStripMenuItem.Name" xml:space="preserve">
     <value>helpToolStripMenuItem</value>
@@ -273,11 +276,14 @@ Submenu "List" has commands for quick selection</value>
   <data name="usedDataGridViewCheckBoxColumn.HeaderText" xml:space="preserve">
     <value>Used</value>
   </data>
-  <data name="textBoxApplication.ToolTip" xml:space="preserve">
-    <value>Application which was copied clip</value>
+  <data name="showInTaskbarToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 22</value>
   </data>
   <data name="toolStripButtonClearFilter.ToolTipText" xml:space="preserve">
     <value>Clear filters</value>
+  </data>
+  <data name="copyFullFilenameToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>171, 22</value>
   </data>
   <data name="&gt;&gt;listToolStripMenuItem.Name" xml:space="preserve">
     <value>listToolStripMenuItem</value>
@@ -309,6 +315,9 @@ Submenu "List" has commands for quick selection</value>
   <data name="toolStripMenuItem6.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>F10</value>
   </data>
+  <data name="toolStripMenuItem14.ToolTipText" xml:space="preserve">
+    <value>Mark selected clips as favorite</value>
+  </data>
   <data name="&gt;&gt;toolStripMenuItem4.Name" xml:space="preserve">
     <value>toolStripMenuItem4</value>
   </data>
@@ -319,7 +328,7 @@ Submenu "List" has commands for quick selection</value>
     <value>toolStripMenuItem3</value>
   </data>
   <data name="openInDefaultApplicationToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>209, 22</value>
+    <value>214, 22</value>
   </data>
   <data name="&gt;&gt;openFavoritesToolStripMenuItem.Name" xml:space="preserve">
     <value>openFavoritesToolStripMenuItem</value>
@@ -370,6 +379,9 @@ Submenu "List" has commands for quick selection</value>
   <data name="toolStripButtonFindNext.ToolTipText" xml:space="preserve">
     <value>Find next match in clip text (F3)</value>
   </data>
+  <data name="copyFullFilenameToolStripMenuItem.Text" xml:space="preserve">
+    <value>Copy full filename</value>
+  </data>
   <data name="&gt;&gt;tableLayoutPanelData.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
@@ -388,8 +400,8 @@ Submenu "List" has commands for quick selection</value>
   <data name="&gt;&gt;copyToClipboardToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;textBoxWindow.Parent" xml:space="preserve">
-    <value>splitContainer1.Panel2</value>
+  <data name="toolStripButtonTextFormatting.ToolTipText" xml:space="preserve">
+    <value>Show native text formatting</value>
   </data>
   <data name="deleteToolStripMenuItem1.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Del</value>
@@ -408,6 +420,9 @@ Submenu "List" has commands for quick selection</value>
   </data>
   <data name="ImageSample.HeaderText" xml:space="preserve">
     <value>ImageSample</value>
+  </data>
+  <data name="checkUpdateToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>173, 22</value>
   </data>
   <data name="&gt;&gt;resetFavouriteToolStripMenuItem.Name" xml:space="preserve">
     <value>resetFavouriteToolStripMenuItem</value>
@@ -440,7 +455,7 @@ Submenu "List" has commands for quick selection</value>
     <value>1, 3</value>
   </data>
   <data name="resetFavouriteToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Alt+2</value>
+    <value>Alt+W</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>Main</value>
@@ -480,6 +495,9 @@ Submenu "List" has commands for quick selection</value>
   </data>
   <data name="&gt;&gt;stripLabelPosition.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;changeClipTitleToolStripMenuItem.Name" xml:space="preserve">
+    <value>changeClipTitleToolStripMenuItem</value>
   </data>
   <data name="showOnlyImagesToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Alt+2</value>
@@ -541,14 +559,17 @@ Submenu "List" has commands for quick selection</value>
   <data name="&gt;&gt;contextMenuStripHtml.Name" xml:space="preserve">
     <value>contextMenuStripHtml</value>
   </data>
-  <data name="&gt;&gt;changeClipTitleToolStripMenuItem.Name" xml:space="preserve">
-    <value>changeClipTitleToolStripMenuItem</value>
+  <data name="splitContainer1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 24</value>
   </data>
   <data name="&gt;&gt;stripLabelPosition.Name" xml:space="preserve">
     <value>stripLabelPosition</value>
   </data>
   <data name="settingsToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
     <value>61, 20</value>
+  </data>
+  <data name="&gt;&gt;previousMatchToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="imageSampleDataGridViewImageColumn.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -604,8 +625,11 @@ Submenu "List" has commands for quick selection</value>
   <data name="&gt;&gt;ColumnTitle.Type" xml:space="preserve">
     <value>ClipAngel.DataGridViewRichTextBoxColumn, ClipAngel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="&gt;&gt;buttonUpdate.Name" xml:space="preserve">
-    <value>buttonUpdate</value>
+  <data name="toolStripMenuItemMonitoringClipboard.Text" xml:space="preserve">
+    <value>Monitoring clipboard</value>
+  </data>
+  <data name="splitContainer1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>790, 420</value>
   </data>
   <data name="&gt;&gt;splitContainer1.Panel2.Type" xml:space="preserve">
     <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -634,8 +658,8 @@ Submenu "List" has commands for quick selection</value>
   <data name="copyToClipboardToolStripMenuItem.Text" xml:space="preserve">
     <value>Copy to clipboard</value>
   </data>
-  <data name="dataGridViewImageColumn1.MinimumWidth" type="System.Int32, mscorlib">
-    <value>18</value>
+  <data name="&gt;&gt;pasteTextCTRLENTERToolStripMenuItem.Name" xml:space="preserve">
+    <value>pasteTextCTRLENTERToolStripMenuItem</value>
   </data>
   <data name="&gt;&gt;TypeFilter.ZOrder" xml:space="preserve">
     <value>2</value>
@@ -644,13 +668,10 @@ Submenu "List" has commands for quick selection</value>
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="textCompareToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>209, 22</value>
+    <value>214, 22</value>
   </data>
   <data name="&gt;&gt;toolStripMenuItemClearFilterAndSelectTop.Name" xml:space="preserve">
     <value>toolStripMenuItemClearFilterAndSelectTop</value>
-  </data>
-  <data name="moveCopiedClipToTopToolStripMenuItem.Text" xml:space="preserve">
-    <value>Move clip to top after copy/paste</value>
   </data>
   <data name="textCompareToolStripMenuItem.Text" xml:space="preserve">
     <value>Text compare</value>
@@ -661,8 +682,11 @@ Submenu "List" has commands for quick selection</value>
   <data name="&gt;&gt;clipsTableAdapter.Name" xml:space="preserve">
     <value>clipsTableAdapter</value>
   </data>
-  <data name="&gt;&gt;toolStripButtonTopMostWindow.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="toolStrip1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>253, 25</value>
+  </data>
+  <data name="dataGridViewImageColumn1.MinimumWidth" type="System.Int32, mscorlib">
+    <value>18</value>
   </data>
   <data name="pasteTextCTRLENTERToolStripMenuItem.ToolTipText" xml:space="preserve">
     <value>Paste in active window current clip or its selected part as plain text.</value>
@@ -671,7 +695,7 @@ Submenu "List" has commands for quick selection</value>
     <value>Ctrl+3</value>
   </data>
   <data name="toolStripMenuItemPasteChars.Size" type="System.Drawing.Size, System.Drawing">
-    <value>209, 22</value>
+    <value>214, 22</value>
   </data>
   <data name="pictureBoxSource.Size" type="System.Drawing.Size, System.Drawing">
     <value>16, 20</value>
@@ -690,9 +714,6 @@ Submenu "List" has commands for quick selection</value>
   </data>
   <data name="&gt;&gt;toolStripMenuItem6.Name" xml:space="preserve">
     <value>toolStripMenuItem6</value>
-  </data>
-  <data name="AppImage.MinimumWidth" type="System.Int32, mscorlib">
-    <value>18</value>
   </data>
   <data name="&gt;&gt;toolStripButtonClearFilter.Name" xml:space="preserve">
     <value>toolStripButtonClearFilter</value>
@@ -732,9 +753,6 @@ Submenu "List" has commands for quick selection</value>
   </data>
   <data name="toolStripMenuItemPasteChars.Text" xml:space="preserve">
     <value>Simulate char input</value>
-  </data>
-  <data name="&gt;&gt;windowAlwaysOnTopToolStripMenuItem.Name" xml:space="preserve">
-    <value>windowAlwaysOnTopToolStripMenuItem</value>
   </data>
   <data name="&gt;&gt;textBoxWindow.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -777,13 +795,10 @@ Not appliable to HTML native formatting.</value>
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;splitContainer1.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="&gt;&gt;contextMenuStripRtf.Name" xml:space="preserve">
     <value>contextMenuStripRtf</value>
-  </data>
-  <data name="&gt;&gt;titleDataGridViewTextBoxColumn.Name" xml:space="preserve">
-    <value>titleDataGridViewTextBoxColumn</value>
   </data>
   <data name="toolStripMenuItem11.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+F4</value>
@@ -809,6 +824,9 @@ Not appliable to HTML native formatting.</value>
   <data name="textBoxWindow.ToolTip" xml:space="preserve">
     <value>Title of window which was copied clip</value>
   </data>
+  <data name="&gt;&gt;toolStripButtonTopMostWindow.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;splitContainer1.Panel1.Parent" xml:space="preserve">
     <value>splitContainer1</value>
   </data>
@@ -820,9 +838,6 @@ Not appliable to HTML native formatting.</value>
   </data>
   <data name="buttonUpdate.Size" type="System.Drawing.Size, System.Drawing">
     <value>63, 22</value>
-  </data>
-  <data name="splitContainer1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 24</value>
   </data>
   <data name="clipToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>40, 20</value>
@@ -877,6 +892,9 @@ Not appliable to HTML native formatting.</value>
   </data>
   <data name="ImageControl.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="ignoreApplicationInCaptureToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>214, 22</value>
   </data>
   <data name="StripLabelSize.Text" xml:space="preserve">
     <value>Size</value>
@@ -974,6 +992,9 @@ Not appliable to HTML native formatting.</value>
   <data name="deleteToolStripMenuItem1.ToolTipText" xml:space="preserve">
     <value>Delete selected clips from history</value>
   </data>
+  <data name="contextMenuStripApplication.Size" type="System.Drawing.Size, System.Drawing">
+    <value>172, 26</value>
+  </data>
   <data name="&gt;&gt;settingsToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -1062,8 +1083,8 @@ Not appliable to HTML native formatting.</value>
   <data name="&gt;&gt;aboutToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;textCompareToolStripMenuItem.Name" xml:space="preserve">
-    <value>textCompareToolStripMenuItem</value>
+  <data name="&gt;&gt;toolStripMenuItem14.Name" xml:space="preserve">
+    <value>toolStripMenuItem14</value>
   </data>
   <data name="toolStrip1.Location" type="System.Drawing.Point, System.Drawing">
     <value>372, 0</value>
@@ -1085,6 +1106,9 @@ Not appliable to HTML native formatting.</value>
   </data>
   <data name="&gt;&gt;dbDataSet.Name" xml:space="preserve">
     <value>dbDataSet</value>
+  </data>
+  <data name="&gt;&gt;textCompareToolStripMenuItem.Name" xml:space="preserve">
+    <value>textCompareToolStripMenuItem</value>
   </data>
   <data name="&gt;&gt;toolStripMenuItem1.Name" xml:space="preserve">
     <value>toolStripMenuItem1</value>
@@ -1135,7 +1159,7 @@ Not appliable to HTML native formatting.</value>
     <value>timerReconnect</value>
   </data>
   <data name="setFavouriteToolStripMenuItem.Text" xml:space="preserve">
-    <value>Mark favorite</value>
+    <value>Mark as favorite</value>
   </data>
   <data name="notifyIcon.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1702,9 +1726,6 @@ Not appliable to HTML native formatting.</value>
   <data name="tableLayoutPanelData.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
-  <data name="&gt;&gt;dbDataSet.Type" xml:space="preserve">
-    <value>ClipAngel.dbDataSet, dbDataSet.Designer.cs.dll, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
   <data name="showOnlyFilesToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Alt+3</value>
   </data>
@@ -1730,6 +1751,9 @@ Not appliable to HTML native formatting.</value>
     <value>Save data to temp file for text or image clip.
 Open clip file in default application.
 Changes in temp file are not synchronized with clip!</value>
+  </data>
+  <data name="toolStripMenuItem14.Size" type="System.Drawing.Size, System.Drawing">
+    <value>211, 22</value>
   </data>
   <data name="&gt;&gt;toolTipDynamic.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -1815,13 +1839,19 @@ Used only in fast window open mode.</value>
     <value>Fill</value>
   </data>
   <data name="monospacedFontToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>209, 22</value>
+    <value>214, 22</value>
   </data>
   <data name="editClipTextToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>209, 22</value>
+    <value>214, 22</value>
   </data>
   <data name="pictureBoxSource.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>CenterImage</value>
+  </data>
+  <data name="toolStripMenuItem2.ToolTipText" xml:space="preserve">
+    <value>Paste in active window current clip</value>
+  </data>
+  <data name="toolStripMenuItem14.Text" xml:space="preserve">
+    <value>Mark as favorite</value>
   </data>
   <data name="toolStripMenuItem8.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
     <value>None</value>
@@ -1831,9 +1861,6 @@ Used only in fast window open mode.</value>
   </data>
   <data name="toolStripMenuItem4.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Del</value>
-  </data>
-  <data name="toolStripButtonTextFormatting.ToolTipText" xml:space="preserve">
-    <value>Show native text formatting</value>
   </data>
   <data name="&gt;&gt;contextMenuStripNotifyIcon.Name" xml:space="preserve">
     <value>contextMenuStripNotifyIcon</value>
@@ -1881,10 +1908,10 @@ Used only in fast window open mode.</value>
     <value>Top, Left, Right</value>
   </data>
   <data name="pasteENTERToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>209, 22</value>
+    <value>214, 22</value>
   </data>
   <data name="changeClipTitleToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>209, 22</value>
+    <value>214, 22</value>
   </data>
   <data name="&gt;&gt;textBoxWindow.ZOrder" xml:space="preserve">
     <value>4</value>
@@ -1966,6 +1993,9 @@ Not appliable to HTML native formatting.</value>
   <data name="&gt;&gt;urlTextBox.Name" xml:space="preserve">
     <value>urlTextBox</value>
   </data>
+  <data name="&gt;&gt;copyFullFilenameToolStripMenuItem.Name" xml:space="preserve">
+    <value>copyFullFilenameToolStripMenuItem</value>
+  </data>
   <data name="&gt;&gt;aboutToolStripMenuItem1.Name" xml:space="preserve">
     <value>aboutToolStripMenuItem1</value>
   </data>
@@ -1981,8 +2011,8 @@ Not appliable to HTML native formatting.</value>
   <data name="dataGridView.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="&gt;&gt;wordWrapToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="selectTopClipOnShowToolStripMenuItem.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="toolStripMenuItem12.Size" type="System.Drawing.Size, System.Drawing">
     <value>211, 22</value>
@@ -1992,9 +2022,6 @@ Not appliable to HTML native formatting.</value>
   </data>
   <data name="toolStripButtonTextFormatting.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
-  </data>
-  <data name="selectTopClipOnShowToolStripMenuItem.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
   </data>
   <data name="historyToolStripMenuItem.Text" xml:space="preserve">
     <value>History of changes</value>
@@ -2018,7 +2045,7 @@ Not appliable to HTML native formatting.</value>
     <value>toolStrip1</value>
   </data>
   <data name="wordWrapToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>209, 22</value>
+    <value>214, 22</value>
   </data>
   <data name="toolStripButtonMonospacedFont.Size" type="System.Drawing.Size, System.Drawing">
     <value>23, 22</value>
@@ -2045,7 +2072,7 @@ Not appliable to HTML native formatting.</value>
     <value>splitContainer1.Panel2</value>
   </data>
   <data name="contextMenuStripDataGrid.Size" type="System.Drawing.Size, System.Drawing">
-    <value>212, 180</value>
+    <value>212, 202</value>
   </data>
   <data name="&gt;&gt;changeClipTitleToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -2149,14 +2176,14 @@ Not appliable to HTML native formatting.</value>
   <data name="pictureBoxSource.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="checkUpdateToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>173, 22</value>
+  <data name="dataGridView.Size" type="System.Drawing.Size, System.Drawing">
+    <value>369, 393</value>
   </data>
   <data name="&gt;&gt;showOnlyFavoriteToolStripMenuItem.Name" xml:space="preserve">
     <value>showOnlyFavoriteToolStripMenuItem</value>
   </data>
   <data name="nextMatchToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>209, 22</value>
+    <value>214, 22</value>
   </data>
   <data name="copyToolStripMenuItem.Text" xml:space="preserve">
     <value>Copy</value>
@@ -2210,10 +2237,10 @@ Not appliable to HTML native formatting.</value>
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="setFavouriteToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Alt+1</value>
+    <value>Alt+Q</value>
   </data>
   <data name="setFavouriteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>209, 22</value>
+    <value>214, 22</value>
   </data>
   <data name="StripLabelCreated.AutoSize" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -2227,6 +2254,9 @@ Not appliable to HTML native formatting.</value>
   <data name="textBoxApplication.Text" xml:space="preserve">
     <value>Application</value>
   </data>
+  <data name="&gt;&gt;ignoreApplicationInCaptureToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;toolStripMenuItemMonitoringClipboard.Name" xml:space="preserve">
     <value>toolStripMenuItemMonitoringClipboard</value>
   </data>
@@ -2234,7 +2264,7 @@ Not appliable to HTML native formatting.</value>
     <value>Icon of the application which was copied clip</value>
   </data>
   <data name="resetFavouriteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>209, 22</value>
+    <value>214, 22</value>
   </data>
   <data name="&gt;&gt;textBoxApplication.Parent" xml:space="preserve">
     <value>splitContainer1.Panel2</value>
@@ -2271,7 +2301,7 @@ Submenu "List" has commands for quick selection</value>
     <value>Open clip file</value>
   </data>
   <data name="toolStripMenuItem8.Size" type="System.Drawing.Size, System.Drawing">
-    <value>209, 22</value>
+    <value>214, 22</value>
   </data>
   <data name="&gt;&gt;toolStripButtonTextFormatting.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -2342,8 +2372,11 @@ Submenu "List" has commands for quick selection</value>
   <data name="&gt;&gt;openInDefaultApplicationToolStripMenuItem.Name" xml:space="preserve">
     <value>openInDefaultApplicationToolStripMenuItem</value>
   </data>
-  <data name="&gt;&gt;previousMatchToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="setFavouriteToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>Mark selected clips as favorite</value>
+  </data>
+  <data name="&gt;&gt;windowAlwaysOnTopToolStripMenuItem.Name" xml:space="preserve">
+    <value>windowAlwaysOnTopToolStripMenuItem</value>
   </data>
   <data name="richTextBox.Text" xml:space="preserve">
     <value />
@@ -2405,6 +2438,9 @@ Submenu "List" has commands for quick selection</value>
   <data name="&gt;&gt;dataGridViewImageColumn2.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewImageColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;buttonUpdate.Name" xml:space="preserve">
+    <value>buttonUpdate</value>
+  </data>
   <data name="showOnlyTextsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>250, 22</value>
   </data>
@@ -2421,7 +2457,7 @@ Submenu "List" has commands for quick selection</value>
     <value>95, 25</value>
   </data>
   <data name="&gt;&gt;toolStrip1.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="sendPasteToolStripMenuItem.Text" xml:space="preserve">
     <value>Paste original (ENTER)</value>
@@ -2436,7 +2472,7 @@ Submenu "List" has commands for quick selection</value>
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="resetFavouriteToolStripMenuItem.Text" xml:space="preserve">
-    <value>Unmark favorite</value>
+    <value>Unmark as favorite</value>
   </data>
   <data name="&gt;&gt;splitContainer1.Panel1.Name" xml:space="preserve">
     <value>splitContainer1.Panel1</value>
@@ -2455,9 +2491,6 @@ Submenu "List" has commands for quick selection</value>
   </data>
   <data name="TypeImg.HeaderText" xml:space="preserve">
     <value>TypeImg</value>
-  </data>
-  <data name="showInTaskbarToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>187, 22</value>
   </data>
   <data name="toolStripMenuItemClearFilterAndSelectTop.Text" xml:space="preserve">
     <value>Clear filters and select top</value>
@@ -2518,6 +2551,9 @@ Submenu "List" has commands for quick selection</value>
   </data>
   <data name="toolStripButtonFindNext.Size" type="System.Drawing.Size, System.Drawing">
     <value>23, 22</value>
+  </data>
+  <data name="&gt;&gt;wordWrapToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;dataGridViewImageColumn5.Name" xml:space="preserve">
     <value>dataGridViewImageColumn5</value>
@@ -3076,7 +3112,7 @@ Submenu "List" has commands for quick selection</value>
     <value>splitContainer1.Panel2</value>
   </data>
   <data name="translateToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>209, 22</value>
+    <value>214, 22</value>
   </data>
   <data name="TypeFilter.Location" type="System.Drawing.Point, System.Drawing">
     <value>84, 395</value>
@@ -3098,6 +3134,9 @@ Submenu "List" has commands for quick selection</value>
   </data>
   <data name="statusStrip.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 398</value>
+  </data>
+  <data name="&gt;&gt;contextMenuStripApplication.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="aboutToolStripMenuItem1.Text" xml:space="preserve">
     <value>About</value>
@@ -3168,8 +3207,8 @@ Submenu "List" has commands for quick selection</value>
   <data name="&gt;&gt;statusStrip.Type" xml:space="preserve">
     <value>System.Windows.Forms.StatusStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="dataGridView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>369, 393</value>
+  <data name="&gt;&gt;dbDataSet.Type" xml:space="preserve">
+    <value>ClipAngel.dbDataSet, dbDataSet.Designer.cs.dll, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="exitToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
     <value>187, 22</value>
@@ -3196,7 +3235,7 @@ Submenu "List" has commands for quick selection</value>
     <value>329, 3</value>
   </data>
   <data name="&gt;&gt;MainMenu.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="&gt;&gt;VisualWeight.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -3211,7 +3250,7 @@ Submenu "List" has commands for quick selection</value>
     <value>250, 22</value>
   </data>
   <data name="previousMatchToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>209, 22</value>
+    <value>214, 22</value>
   </data>
   <data name="&gt;&gt;showOnlyFilesToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -3234,6 +3273,9 @@ Submenu "List" has commands for quick selection</value>
   <data name="&gt;&gt;moveDownToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;ignoreApplicationInCaptureToolStripMenuItem.Name" xml:space="preserve">
+    <value>ignoreApplicationInCaptureToolStripMenuItem</value>
+  </data>
   <data name="ImageControl.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -3250,8 +3292,8 @@ Use special char % for marking any sequence of chars. For example filter "po%o" 
   <data name="splitContainer1.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="exitToolStripMenuItem1.Text" xml:space="preserve">
-    <value>Exit</value>
+  <data name="resetFavouriteToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>Unmark selected clips as favorite</value>
   </data>
   <data name="toolStripButtonMonospacedFont.ToolTipText" xml:space="preserve">
     <value>Monospaced font in clip text field. 
@@ -3272,6 +3314,9 @@ Not appliable to HTML native formatting.</value>
   </data>
   <data name="stripLabelPosition.ToolTipText" xml:space="preserve">
     <value>Text postion &lt;offset&gt;(&lt;line&gt;:&lt;column&gt;):&lt;length&gt;</value>
+  </data>
+  <data name="&gt;&gt;copyFullFilenameToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;settingsToolStripMenuItem1.Name" xml:space="preserve">
     <value>settingsToolStripMenuItem1</value>
@@ -3331,8 +3376,8 @@ Not appliable to HTML native formatting.</value>
   <data name="&gt;&gt;charsDataGridViewTextBoxColumn.Name" xml:space="preserve">
     <value>charsDataGridViewTextBoxColumn</value>
   </data>
-  <data name="toolStripMenuItemMonitoringClipboard.Text" xml:space="preserve">
-    <value>Monitoring clipboard</value>
+  <data name="&gt;&gt;titleDataGridViewTextBoxColumn.Name" xml:space="preserve">
+    <value>titleDataGridViewTextBoxColumn</value>
   </data>
   <data name="&gt;&gt;moveCopiedClipToTopToolStripButton.Name" xml:space="preserve">
     <value>moveCopiedClipToTopToolStripButton</value>
@@ -3352,6 +3397,9 @@ Not appliable to HTML native formatting.</value>
   <data name="StripLabelType.Text" xml:space="preserve">
     <value>Type</value>
   </data>
+  <data name="contextMenuStripApplication.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="toolStripMenuItem6.ToolTipText" xml:space="preserve">
     <value>Switch focus between list and clip text</value>
   </data>
@@ -3361,11 +3409,17 @@ Not appliable to HTML native formatting.</value>
   <data name="toolStripMenuItemEditClipText.ToolTipText" xml:space="preserve">
     <value>Edit clip text (F4)</value>
   </data>
+  <data name="&gt;&gt;toolStripMenuItem14.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;checkUpdateToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="nextMatchToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>F3</value>
+  </data>
+  <data name="&gt;&gt;rtfMenuItemOpenLink.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="htmlTextBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
@@ -3378,6 +3432,9 @@ Not appliable to HTML native formatting.</value>
   </data>
   <data name="MarkFilter.Items1" xml:space="preserve">
     <value>text</value>
+  </data>
+  <data name="exitToolStripMenuItem1.Text" xml:space="preserve">
+    <value>Exit</value>
   </data>
   <data name="trayMenuItemMonitoringClipboard.Size" type="System.Drawing.Size, System.Drawing">
     <value>187, 22</value>
@@ -3415,8 +3472,8 @@ Not appliable to HTML native formatting.</value>
   <data name="&gt;&gt;timerCheckUpdate.Type" xml:space="preserve">
     <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;rtfMenuItemOpenLink.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="textBoxApplication.ToolTip" xml:space="preserve">
+    <value>Application which was copied clip</value>
   </data>
   <data name="usedDataGridViewCheckBoxColumn.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -3433,8 +3490,8 @@ Not appliable to HTML native formatting.</value>
   <data name="TypeFilter.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
   </data>
-  <data name="splitContainer1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>790, 420</value>
+  <data name="ignoreApplicationInCaptureToolStripMenuItem.Text" xml:space="preserve">
+    <value>Ignore application</value>
   </data>
   <data name="toolStripButtonTextFormatting.Text" xml:space="preserve">
     <value>Native formatting</value>
@@ -3483,6 +3540,10 @@ Not appliable to HTML native formatting.</value>
   </data>
   <data name="&gt;&gt;VisualWeight.Name" xml:space="preserve">
     <value>VisualWeight</value>
+  </data>
+  <data name="ignoreApplicationInCaptureToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>Ignore application in clip capture. Application will be 
+added to ignore list, wich can be edited in Settings window.</value>
   </data>
   <data name="&gt;&gt;textBoxApplication.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -3535,6 +3596,9 @@ Not appliable to HTML native formatting.</value>
   <data name="urlTextBox.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
   </data>
+  <data name="&gt;&gt;textBoxWindow.Parent" xml:space="preserve">
+    <value>splitContainer1.Panel2</value>
+  </data>
   <data name="&gt;&gt;buttonUpdate.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -3578,7 +3642,7 @@ Not appliable to HTML native formatting.</value>
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="textFormattingToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>209, 22</value>
+    <value>214, 22</value>
   </data>
   <data name="&gt;&gt;htmlMenuItemOpenLink.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -3586,8 +3650,8 @@ Not appliable to HTML native formatting.</value>
   <data name="moveDownToolStripMenuItem.ToolTipText" xml:space="preserve">
     <value>Move current clip one step down</value>
   </data>
-  <data name="&gt;&gt;pasteTextCTRLENTERToolStripMenuItem.Name" xml:space="preserve">
-    <value>pasteTextCTRLENTERToolStripMenuItem</value>
+  <data name="AppImage.MinimumWidth" type="System.Int32, mscorlib">
+    <value>18</value>
   </data>
   <data name="dataGridViewImageColumn5.HeaderText" xml:space="preserve">
     <value>VisualWeight</value>
@@ -3626,66 +3690,72 @@ Not appliable to HTML native formatting.</value>
     <value>12, 16</value>
   </metadata>
   <metadata name="toolTipDynamic.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>420, 56</value>
+    <value>420, 55</value>
   </metadata>
   <metadata name="ColumnTitle.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <metadata name="timerCheckUpdate.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>807, 56</value>
+    <value>807, 55</value>
   </metadata>
   <metadata name="AppImage.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>ru</value>
+  </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
+  </metadata>
+  <metadata name="contextMenuStripApplication.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>860, 16</value>
   </metadata>
   <metadata name="dbDataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>256, 12</value>
   </metadata>
   <metadata name="toolStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>702, 56</value>
+    <value>702, 55</value>
   </metadata>
   <metadata name="toolStrip2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 96</value>
+    <value>17, 94</value>
   </metadata>
   <metadata name="TypeImg.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <metadata name="notifyIcon.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1182, 17</value>
+    <value>1181, 16</value>
   </metadata>
   <metadata name="MainMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1072, 17</value>
+    <value>1071, 16</value>
   </metadata>
   <metadata name="contextMenuStripRtf.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>696, 16</value>
   </metadata>
-  <metadata name="clipsTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1087, 57</value>
+  <metadata name="timerApplyTextFiler.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>355, 20</value>
   </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>73</value>
   </metadata>
   <metadata name="contextMenuStripDataGrid.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 56</value>
+    <value>17, 55</value>
   </metadata>
   <metadata name="tableAdapterManager.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1236, 57</value>
+    <value>1246, 55</value>
   </metadata>
   <metadata name="contextMenuStripNotifyIcon.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>214, 56</value>
+    <value>214, 55</value>
   </metadata>
   <metadata name="timerReconnect.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>960, 56</value>
+    <value>960, 55</value>
   </metadata>
   <metadata name="cultureManager1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>557, 56</value>
-  </metadata>
-  <metadata name="timerApplyTextFiler.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>355, 20</value>
+    <value>557, 55</value>
   </metadata>
   <metadata name="VisualWeight.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
+  </metadata>
+  <metadata name="clipsTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>1097, 55</value>
   </metadata>
 </root>

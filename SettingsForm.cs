@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Design;
@@ -207,6 +208,34 @@ namespace ClipAngel
                     if (ofd.ShowDialog() == DialogResult.OK)
                     {
                         return ofd.FileName;
+                    }
+                }
+            }
+            return base.EditValue(context, provider, value);
+        }
+    }
+
+    public partial class AppListEditor : UITypeEditor
+    {
+        private AppListEditorForm ofd;
+        public override UITypeEditorEditStyle GetEditStyle(ITypeDescriptorContext context)
+        {
+            return UITypeEditorEditStyle.Modal;
+        }
+        public override object EditValue(ITypeDescriptorContext context, IServiceProvider provider, object value)
+        {
+            if ((context != null) && (provider != null))
+            {
+                IWindowsFormsEditorService editorService =
+                (IWindowsFormsEditorService)
+                provider.GetService(typeof(IWindowsFormsEditorService));
+                if (editorService != null)
+                {
+                    ofd = new AppListEditorForm();
+                    ofd.AppList = (StringCollection) value;
+                    if (ofd.ShowDialog() == DialogResult.OK)
+                    {
+                        return ofd.AppList;
                     }
                 }
             }
@@ -601,6 +630,7 @@ namespace ClipAngel
         public static List<string> langList = new List<string> { "Default", "English", "Russian" };
         public VisibleUserSettings(Main Owner)
         {
+            IgnoreApplicationsClipCapture = Properties.Settings.Default.IgnoreApplicationsClipCapture;
             CopyTextInAnyWindowOnCTRLF3 = Properties.Settings.Default.CopyTextInAnyWindowOnCTRLF3;
             FastWindowOpen = Properties.Settings.Default.FastWindowOpen;
             HistoryDepthNumber = Properties.Settings.Default.HistoryDepthNumber;
@@ -643,6 +673,7 @@ namespace ClipAngel
 
         public void Apply(bool PortableMode = false)
         {
+            Properties.Settings.Default.IgnoreApplicationsClipCapture = IgnoreApplicationsClipCapture;
             Properties.Settings.Default.CopyTextInAnyWindowOnCTRLF3 = CopyTextInAnyWindowOnCTRLF3;
             Properties.Settings.Default.FastWindowOpen = FastWindowOpen;
             Properties.Settings.Default.HistoryDepthNumber = HistoryDepthNumber;
@@ -710,7 +741,7 @@ namespace ClipAngel
         [Editor(typeof(MyBoolEditor), typeof(UITypeEditor))]
         public bool ShowApplicationIconColumn { get; set; }
 
-        //[GlobalizedCategory("Other")]
+       //[GlobalizedCategory("Other")]
         //[Editor(typeof(MyBoolEditor), typeof(UITypeEditor))]
         //public bool ClearFiltersOnClose { get; set; }
 
@@ -788,6 +819,10 @@ namespace ClipAngel
         //[EditorAttribute(typeof(FileNameEditor), typeof(UITypeEditor))]
         [EditorAttribute(typeof(ApplicationPathEditor), typeof(UITypeEditor))]
         public string TextCompareApplication { get; set; }
+
+        [GlobalizedCategory("Other")]
+        [Editor(typeof(AppListEditor), typeof(UITypeEditor))]
+        public StringCollection IgnoreApplicationsClipCapture { get; set; }
 
     }
 }

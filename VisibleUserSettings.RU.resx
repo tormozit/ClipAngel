@@ -215,6 +215,12 @@
   <data name="HistoryDepthNumberDescription" xml:space="preserve">
     <value>Максимальное количество клипов для хранения в списке</value>
   </data>
+  <data name="IgnoreApplicationsClipCapture" xml:space="preserve">
+    <value>Игнорируемые приложения в захвате клипов</value>
+  </data>
+  <data name="IgnoreApplicationsClipCaptureDescription" xml:space="preserve">
+    <value>Клипы из этих приложений не будут захватываться</value>
+  </data>
   <data name="Language" xml:space="preserve">
     <value>Язык</value>
   </data>

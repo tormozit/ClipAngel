@@ -194,11 +194,10 @@ Key press will be processed by the window. </value>
     <value>Use this hot key in any program to open Clip Angel window with no changes in filter and clip selection</value>
   </data>
   <data name="GlobalHotkeyOpenFavorites" xml:space="preserve">
-    <value>Hotkey to open for paste from favorites</value>
+    <value>Hotkey to open window with favorites</value>
   </data>
   <data name="GlobalHotkeyOpenFavoritesDescription" xml:space="preserve">
-    <value>Use this hot key in any program to show Clip Angel window with favorites only filter
-and then paste selected clip in source window</value>
+    <value>Use this hot key in any program to show Clip Angel window with favorites only filter</value>
   </data>
   <data name="GlobalHotkeyOpenLast" xml:space="preserve">
     <value>Hotkey to open window with reset</value>
@@ -211,6 +210,12 @@ and then paste selected clip in source window</value>
   </data>
   <data name="HistoryDepthNumberDescription" xml:space="preserve">
     <value>Maximum number of clips stored in database</value>
+  </data>
+  <data name="IgnoreApplicationsClipCapture" xml:space="preserve">
+    <value>Ignored applications in clip capture</value>
+  </data>
+  <data name="IgnoreApplicationsClipCaptureDescription" xml:space="preserve">
+    <value>Clips from this applications will be not be captured</value>
   </data>
   <data name="Language" xml:space="preserve">
     <value>Language</value>

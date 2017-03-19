@@ -61,7 +61,7 @@ namespace ClipAngel.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("1000")]
+        [global::System.Configuration.DefaultSettingValueAttribute("2000")]
         public int MaxClipSizeKB {
             get {
                 return ((int)(this["MaxClipSizeKB"]));
@@ -367,6 +367,17 @@ namespace ClipAngel.Properties {
             }
             set {
                 this["AutoSelectMatch"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.Collections.Specialized.StringCollection IgnoreApplicationsClipCapture {
+            get {
+                return ((global::System.Collections.Specialized.StringCollection)(this["IgnoreApplicationsClipCapture"]));
+            }
+            set {
+                this["IgnoreApplicationsClipCapture"] = value;
             }
         }
     }

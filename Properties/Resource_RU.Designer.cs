@@ -88,6 +88,15 @@ namespace ClipAngel.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Приложение &quot;{0}&quot; добавлено в список игнорирования, который можно отредактировать из диалога &quot;Настройки&quot;..
+        /// </summary>
+        internal static string ApplicationAddedToIgnoreList {
+            get {
+                return ResourceManager.GetString("ApplicationAddedToIgnoreList", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Б.
         /// </summary>
         internal static string ByteUnit {

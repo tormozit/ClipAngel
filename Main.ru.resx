@@ -216,6 +216,15 @@
   <data name="toolStripMenuItem12.ToolTipText" xml:space="preserve">
     <value>Редактировать заголовок клипа</value>
   </data>
+  <data name="toolStripMenuItem14.Size" type="System.Drawing.Size, System.Drawing">
+    <value>273, 22</value>
+  </data>
+  <data name="toolStripMenuItem14.Text" xml:space="preserve">
+    <value>Пометить любимыми</value>
+  </data>
+  <data name="toolStripMenuItem14.ToolTipText" xml:space="preserve">
+    <value>Пометить выбранные клипы любимыми</value>
+  </data>
   <data name="toolStripMenuItem11.Size" type="System.Drawing.Size, System.Drawing">
     <value>273, 22</value>
   </data>
@@ -247,7 +256,7 @@
     <value>Удалить выделенные клипы</value>
   </data>
   <data name="contextMenuStripDataGrid.Size" type="System.Drawing.Size, System.Drawing">
-    <value>274, 180</value>
+    <value>274, 202</value>
   </data>
   <data name="contextMenuStripDataGrid.ToolTip" xml:space="preserve">
     <value />
@@ -370,6 +379,9 @@
     <value>441, 22</value>
   </data>
   <data name="statusStrip.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="contextMenuStripApplication.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="textBoxApplication.Location" type="System.Drawing.Point, System.Drawing">
@@ -705,6 +717,16 @@
   </data>
   <data name="translateToolStripMenuItem.ToolTipText" xml:space="preserve">
     <value>Перевести текст клипа или его выделенную часть</value>
+  </data>
+  <data name="ignoreApplicationInCaptureToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>238, 22</value>
+  </data>
+  <data name="ignoreApplicationInCaptureToolStripMenuItem.Text" xml:space="preserve">
+    <value>Игнорировать приложение</value>
+  </data>
+  <data name="ignoreApplicationInCaptureToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>Игнорировать приложение при захвате клипов. Приложение будет добавлено в список игнорирования, 
+который можно отредактировать через диалог "Настройки".</value>
   </data>
   <data name="clipToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>47, 20</value>
