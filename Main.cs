@@ -178,10 +178,17 @@ namespace ClipAngel
             (dataGridView.Columns["AppImage"] as DataGridViewImageColumn).DefaultCellStyle.NullValue = null;
             richTextBox.AutoWordSelection = false;
             urlTextBox.AutoWordSelection = false;
+
+            // Initialize StringCollection settings to prevent error saving settings 
             if (Properties.Settings.Default.LastFilterValues == null)
             {
                 Properties.Settings.Default.LastFilterValues = new StringCollection();
             }
+            if (Properties.Settings.Default.IgnoreApplicationsClipCapture == null)
+            {
+                Properties.Settings.Default.IgnoreApplicationsClipCapture = new StringCollection();
+            }
+
             FillFilterItems();
 
             if (!Directory.Exists(UserSettingsPath))
@@ -779,7 +786,7 @@ namespace ClipAngel
                         richTextBox.SelectionColor = markerColor;
                         richTextBox.SelectionFont = markerFont;
                         if (TextWasCut)
-                            endMarker = "\r\n" + endMarker;
+                            endMarker = Environment.NewLine + endMarker;
                         richTextBox.AppendText(endMarker);
                             // Do it first, else ending hyperlink will connect underline to it
 
@@ -1793,11 +1800,7 @@ namespace ClipAngel
             //if (!Properties.Settings.Default.MoveCopiedClipToTop)
             //    CaptureClipboard = false;
             ////oldDataObject = (DataObject) Clipboard.GetDataObject();
-            RemoveClipboardFormatListener(this.Handle);
-            Clipboard.Clear();
-            Clipboard.SetDataObject(dto, true);
-                // Very important to set second parameter to true to give immidiate access to buffer to other processes!
-            ConnectClipboard();
+            Clipboard.SetDataObject(dto, true, 10, 10); // Very important to set second parameter to true to give immidiate access to buffer to other processes!
             return clipText;
         }
 
@@ -1822,7 +1825,7 @@ namespace ClipAngel
             return type == "rtf" || type == "text" || type == "html";
         }
 
-        private void SendPasteClip(DataGridViewRow currentViewRow = null, PasteMethod pasteMethod = PasteMethod.Standart)
+        private void SendPasteClip(DataGridViewRow currentViewRow = null, PasteMethod pasteMethod = PasteMethod.Standart, bool pasteDelimiter = false)
         {
             if (currentViewRow == null)
                 currentViewRow = dataGridView.CurrentRow;
@@ -1830,24 +1833,45 @@ namespace ClipAngel
                 return;
             var dataRow = (DataRowView) currentViewRow.DataBoundItem;
             var rowReader = getRowReader((int) dataRow["id"]);
+            string type = (string)rowReader["type"];
+            RemoveClipboardFormatListener(this.Handle);
+            if (true
+                && pasteDelimiter
+                && IsTextType(type))
+            {
+                Thread.Sleep(20);
+                SetTextInClipboard(Environment.NewLine + Environment.NewLine);
+                SendPaste(pasteMethod);
+                Thread.Sleep(20);
+            }
             string textToPaste = "";
-            //DataObject oldDataObject;
-            //if (pasteMethod != PasteMethod.SendChars)
             textToPaste = CopyClipToClipboard( /*out oldDataObject,*/ rowReader, pasteMethod != PasteMethod.Standart);
-            //CultureInfo EnglishCultureInfo = null;
-            //foreach (InputLanguage lang in InputLanguage.InstalledInputLanguages)
+            ConnectClipboard();
+            if (SendPaste(pasteMethod))
+                return;
+
+            //SetRowMark("Used");
+            //if (false
+            //    || Properties.Settings.Default.MoveCopiedClipToTop 
+            //    || (true 
+            //        && pasteMethod == PasteMethod.PasteText 
+            //        && richTextBox.SelectedText != ""))
             //{
-            //    if (String.Compare(lang.Culture.TwoLetterISOLanguageName, "en", true) == 0)
-            //    {
-            //        EnglishCultureInfo = lang.Culture;
-            //        break;
-            //    }
+            //    GetClipboardData();
             //}
-            //if (EnglishCultureInfo == null)
+            //else
             //{
-            //    MessageBox.Show(this, "Unable to find English input language", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //    return;
+            ((DataRowView) currentViewRow.DataBoundItem).Row["Used"] = true;
+            //PrepareTableGrid();
+            UpdateTableGridRowBackColor(currentViewRow);
             //}
+
+            // We need delay about 100ms before restore clipboard object
+            //Clipboard.SetDataObject(oldDataObject);
+        }
+
+        private bool SendPaste(PasteMethod pasteMethod = PasteMethod.Standart)
+        {
             int targetProcessId;
             uint remoteThreadId = GetWindowThreadProcessId(lastActiveWindow, out targetProcessId);
             bool needElevation = targetProcessId != 0 && !UacHelper.IsProcessAccessible(targetProcessId);
@@ -1879,29 +1903,6 @@ namespace ClipAngel
                 Thread.Sleep(waitStep);
             }
             Debug.WriteLine("Get foreground window " + hForegroundWindow + " " + GetWindowTitle(hForegroundWindow));
-            //IntPtr hFocusWindow = FocusWindow();
-            //string WindowTitle = GetWindowTitle(hFocusWindow);
-            //Debug.WriteLine("Window = " + hFocusWindow + " \"" + WindowTitle + "\"");
-            //Thread.Sleep(50);
-
-            //AttachThreadInput(GetCurrentThreadId(), remoteThreadId, true);
-            //IntPtr hFocusWindow = IntPtr.Zero;
-            //for (int i = 0; i < 500; i+= waitStep)
-            //{
-            //    hFocusWindow = GetFocus();
-            //    //var guiInfo = new GUITHREADINFO();
-            //    //guiInfo.cbSize = (uint)Marshal.SizeOf(guiInfo);
-            //    //GetGUIThreadInfo(remoteThreadId, out guiInfo);
-            //    if (hFocusWindow != IntPtr.Zero)
-            //    {
-            //        //Debug.WriteLine("Active " + guiInfo.hwndActive);
-            //        //Debug.WriteLine("Caret " + guiInfo.hwndCaret);
-            //        SetActiveWindow(hFocusWindow);
-            //        break;
-            //    }
-            //    Thread.Sleep(waitStep);
-            //}
-            //Debug.WriteLine("Got focus window " + hFocusWindow + " " + GetWindowTitle(hFocusWindow));
 
             var curproc = Process.GetCurrentProcess();
             if (needElevation)
@@ -1925,7 +1926,7 @@ namespace ClipAngel
                     catch
                     {
                         ShowElevationFail();
-                        return;
+                        return true;
                     }
                 }
                 int maxWait = 2000;
@@ -1946,7 +1947,7 @@ namespace ClipAngel
                 if (ElevatedMutex == null)
                 {
                     ShowElevationFail();
-                    return;
+                    return true;
                 }
             }
             if (pasteMethod != PasteMethod.SendChars)
@@ -1962,7 +1963,7 @@ namespace ClipAngel
             else
             {
                 if (!IsTextType())
-                    return;
+                    return true;
                 if (!needElevation)
                     Paster.SendChars();
                 else
@@ -1971,26 +1972,7 @@ namespace ClipAngel
                     sendCharsEvent.Set();
                 }
             }
-            //AttachThreadInput(GetCurrentThreadId(), remoteThreadId, false);
-
-            //SetRowMark("Used");
-            //if (false
-            //    || Properties.Settings.Default.MoveCopiedClipToTop 
-            //    || (true 
-            //        && pasteMethod == PasteMethod.PasteText 
-            //        && richTextBox.SelectedText != ""))
-            //{
-            //    GetClipboardData();
-            //}
-            //else
-            //{
-            ((DataRowView) currentViewRow.DataBoundItem).Row["Used"] = true;
-            //PrepareTableGrid();
-            UpdateTableGridRowBackColor(currentViewRow);
-            //}
-
-            // We need delay about 100ms before restore clipboard object
-            //Clipboard.SetDataObject(oldDataObject);
+            return false;
         }
 
         private void ShowElevationFail()
@@ -2221,9 +2203,12 @@ namespace ClipAngel
 
         private void SendPasteOfSelectedClips(PasteMethod pasteMethod = PasteMethod.Standart)
         {
-            foreach (DataGridViewRow selectedRow in dataGridView.SelectedRows)
+            bool pasteDelimiter = false;
+            for (int i = dataGridView.SelectedRows.Count - 1; i >= 0; i--)
             {
-                SendPasteClip(selectedRow, pasteMethod);
+                DataGridViewRow selectedRow = dataGridView.SelectedRows[i];
+                SendPasteClip(selectedRow, pasteMethod, pasteDelimiter);
+                pasteDelimiter = true;
             }
             SetRowMark("Used");
             if (false
@@ -2424,7 +2409,6 @@ namespace ClipAngel
             if (!allowVisible)
             {
                 allowVisible = true;
-                this.Activate();
                 Show();
             }
             UpdateWindowTitle(true);
@@ -2457,6 +2441,7 @@ namespace ClipAngel
             }
             if (this.WindowState == FormWindowState.Minimized)
                 this.WindowState = FormWindowState.Normal; // Window can be minimized by "Minimize All" command
+            this.Activate(); // Without it window can be shown and be not focused
         }
 
         private void Main_KeyDown(object sender, KeyEventArgs e)
@@ -2468,18 +2453,30 @@ namespace ClipAngel
             }
             if (e.KeyCode == Keys.Enter)
             {
-                PasteMethod pasteMethod;
-                if (e.Control)
-                    pasteMethod = PasteMethod.PasteText;
-                else
-                {
-                    if (!pasteENTERToolStripMenuItem.Enabled)
-                        return;
-                    pasteMethod = PasteMethod.Standart;
-                }
-                SendPasteOfSelectedClips(pasteMethod);
+                if (ProcessEnterKeyDown(e.Control))
+                    return;
                 e.Handled = true;
             }
+            if (e.KeyCode == Keys.Tab)
+            {
+                e.Handled = true;
+                FocusClipText();
+            }
+        }
+
+        private bool ProcessEnterKeyDown(bool isControlPressed)
+        {
+            PasteMethod pasteMethod;
+            if (isControlPressed)
+                pasteMethod = PasteMethod.PasteText;
+            else
+            {
+                if (!pasteENTERToolStripMenuItem.Enabled)
+                    return true;
+                pasteMethod = PasteMethod.Standart;
+            }
+            SendPasteOfSelectedClips(pasteMethod);
+            return false;
         }
 
         private void exitToolStripMenuItem_Click(object sender = null, EventArgs e = null)
@@ -2583,7 +2580,10 @@ namespace ClipAngel
             if (forceRowLoad || currentIDChanged)
             {
                 if (currentIDChanged)
+                {
                     keepTextSelection = false;
+                    EditMode = false;
+                }
                 int NewSelectionStart, NewSelectionLength;
                 if (keepTextSelection)
                 {
@@ -2603,16 +2603,19 @@ namespace ClipAngel
         private void activateListToolStripMenuItem_Click(object sender = null, EventArgs e = null)
         {
             if (dataGridView.Focused || comboBoxFilter.Focused)
-            {
-                if (htmlMode)
-                {
-                    htmlTextBox.Document.Focus();
-                }
-                else if (richTextBox.Enabled)
-                    richTextBox.Focus();
-            }
+                FocusClipText();
             else
                 dataGridView.Focus();
+        }
+
+        private void FocusClipText()
+        {
+            if (htmlMode)
+            {
+                htmlTextBox.Document.Focus();
+            }
+            else if (richTextBox.Enabled)
+                richTextBox.Focus();
         }
 
         private void PrepareTableGrid()
@@ -4006,6 +4009,12 @@ namespace ClipAngel
                             || e.KeyPressedCode == (int) Keys.Home
                             || e.KeyPressedCode == (int) Keys.End
                 ;
+            if (e.KeyPressedCode == (int) Keys.Escape)
+                Close();
+            else if (e.KeyPressedCode == (int)Keys.Enter)
+            {
+                ProcessEnterKeyDown(e.CtrlKeyPressed);
+            }
         }
 
         private bool htmlTextBoxDocumentClick(mshtml.IHTMLEventObj e)
@@ -4117,7 +4126,7 @@ namespace ClipAngel
             {
                 dto.SetText(richTextBox.SelectedRtf, TextDataFormat.Rtf);
             }
-            Clipboard.SetDataObject(dto, true);
+            Clipboard.SetDataObject(dto, true, 10, 10);
         }
 
         private static void SetTextInClipboardDataObject(DataObject dto, string text)
@@ -4209,9 +4218,19 @@ namespace ClipAngel
             if (RowReader == null)
                 return;
             string fullFilename = RowReader["AppPath"].ToString();
+            SetTextInClipboard(fullFilename);
+        }
+
+        private static void SetTextInClipboard(string text)
+        {
             DataObject dto = new DataObject();
-            SetTextInClipboardDataObject(dto, fullFilename);
-            Clipboard.SetDataObject(dto, true);
+            SetTextInClipboardDataObject(dto, text);
+            Clipboard.SetDataObject(dto, true, 10, 10);
+        }
+
+        private void toolStripMenuItem16_Click(object sender, EventArgs e)
+        {
+            FocusClipText();
         }
     }
 }

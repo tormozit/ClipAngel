@@ -628,7 +628,7 @@ namespace ClipAngel.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 1.15.
+        ///   Looks up a localized string similar to 1.16.
         /// </summary>
         public static string Version {
             get {

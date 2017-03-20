@@ -332,13 +332,14 @@ namespace ClipAngel
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MainMenu = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItemSwitchFocus = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItemSetFocusClipText = new System.Windows.Forms.ToolStripMenuItem();
             this.windowAlwaysOnTopToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.showInTaskbarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemMonitoringClipboard = new System.Windows.Forms.ToolStripMenuItem();
             this.сдуфкClipboardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem6 = new System.Windows.Forms.ToolStripMenuItem();
             this.moveCopiedClipToTopToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemClearFilterAndSelectTop = new System.Windows.Forms.ToolStripMenuItem();
             this.selectTopClipOnShowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -589,6 +590,7 @@ namespace ClipAngel
             this.dataGridView.RowTemplate.Height = 19;
             this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView.StandardTab = true;
+            this.dataGridView.TabStop = false;
             this.toolTipDynamic.SetToolTip(this.dataGridView, resources.GetString("dataGridView.ToolTip"));
             this.dataGridView.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView_CellFormatting);
             this.dataGridView.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView_CellMouseDown);
@@ -1002,12 +1004,26 @@ namespace ClipAngel
             // 
             resources.ApplyResources(this.fileToolStripMenuItem1, "fileToolStripMenuItem1");
             this.fileToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItemSwitchFocus,
+            this.toolStripMenuItemSetFocusClipText,
             this.windowAlwaysOnTopToolStripMenuItem,
             this.showInTaskbarToolStripMenuItem,
             this.toolStripMenuItemMonitoringClipboard,
             this.сдуфкClipboardToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem1.Name = "fileToolStripMenuItem1";
+            // 
+            // toolStripMenuItemSwitchFocus
+            // 
+            resources.ApplyResources(this.toolStripMenuItemSwitchFocus, "toolStripMenuItemSwitchFocus");
+            this.toolStripMenuItemSwitchFocus.Name = "toolStripMenuItemSwitchFocus";
+            this.toolStripMenuItemSwitchFocus.Click += new System.EventHandler(this.activateListToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItemSetFocusClipText
+            // 
+            resources.ApplyResources(this.toolStripMenuItemSetFocusClipText, "toolStripMenuItemSetFocusClipText");
+            this.toolStripMenuItemSetFocusClipText.Name = "toolStripMenuItemSetFocusClipText";
+            this.toolStripMenuItemSetFocusClipText.Click += new System.EventHandler(this.toolStripMenuItem16_Click);
             // 
             // windowAlwaysOnTopToolStripMenuItem
             // 
@@ -1044,7 +1060,6 @@ namespace ClipAngel
             // 
             resources.ApplyResources(this.listToolStripMenuItem, "listToolStripMenuItem");
             this.listToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem6,
             this.moveCopiedClipToTopToolStripMenuItem,
             this.toolStripMenuItemClearFilterAndSelectTop,
             this.selectTopClipOnShowToolStripMenuItem,
@@ -1061,12 +1076,6 @@ namespace ClipAngel
             this.showOnlyFilesToolStripMenuItem,
             this.showOnlyTextsToolStripMenuItem});
             this.listToolStripMenuItem.Name = "listToolStripMenuItem";
-            // 
-            // toolStripMenuItem6
-            // 
-            resources.ApplyResources(this.toolStripMenuItem6, "toolStripMenuItem6");
-            this.toolStripMenuItem6.Name = "toolStripMenuItem6";
-            this.toolStripMenuItem6.Click += new System.EventHandler(this.activateListToolStripMenuItem_Click);
             // 
             // moveCopiedClipToTopToolStripMenuItem
             // 
@@ -1717,7 +1726,6 @@ namespace ClipAngel
         private System.Windows.Forms.ToolStripButton toolStripButtonClearFilterAndSelectTop;
         private System.Windows.Forms.ToolStripMenuItem changeClipTitleToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem listToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem6;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemClearFilterAndSelectTop;
         private System.Windows.Forms.ToolStripMenuItem selectTopClipOnShowToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem setFavouriteToolStripMenuItem;
@@ -1813,6 +1821,8 @@ namespace ClipAngel
         private System.Windows.Forms.ToolStripMenuItem ignoreApplicationInCaptureToolStripMenuItem;
         private System.Windows.Forms.ContextMenuStrip contextMenuStripApplication;
         private System.Windows.Forms.ToolStripMenuItem copyFullFilenameToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemSwitchFocus;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemSetFocusClipText;
     }
 }
 
