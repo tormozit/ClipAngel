@@ -601,8 +601,7 @@ namespace ClipAngel
             }
         }
 
-        private void AfterRowLoad(bool FullTextLoad = false, int CurrentRowIndex = -1, int NewSelectionStart = -1,
-            int NewSelectionLength = -1)
+        private void AfterRowLoad(bool FullTextLoad = false, int CurrentRowIndex = -1, int NewSelectionStart = -1,int NewSelectionLength = -1)
         {
             DataRowView CurrentRowView;
             mshtml.IHTMLDocument2 htmlDoc;
@@ -637,13 +636,6 @@ namespace ClipAngel
             pictureBoxSource.Image = null;
             ImageControl.Image = null;
 
-            int filterSelectionLength = 0, filterSelectionStart = 0;
-            if (comboBoxFilter.Focused)
-            {
-                // Antibug webBrowser steals focus
-                filterSelectionLength = comboBoxFilter.SelectionLength;
-                filterSelectionStart = comboBoxFilter.SelectionStart;
-            }
             //htmlTextBox.Parent = new Control();
             htmlTextBox.Parent.Enabled = false; // Prevent stealing focus
             //htmlTextBox.Document.OpenNew(false);
@@ -776,8 +768,7 @@ namespace ClipAngel
                         //htmlTextBox.Document.Body.AppendChild(paragraph);
                         if (filterText.Length > 0)
                         {
-                            MarkRegExpMatchesInWebBrowser(htmlTextBox, Regex.Escape(filterText).Replace("%", ".*?"),
-                                Color.Red);
+                            MarkRegExpMatchesInWebBrowser(htmlTextBox, Regex.Escape(filterText).Replace("%", ".*?"), Color.Red, true);
                         }
                     }
                     else
@@ -793,8 +784,7 @@ namespace ClipAngel
                         MarkLinksInRichTextBox(richTextBox, out TextLinkMatches);
                         if (filterText.Length > 0)
                         {
-                            MarkRegExpMatchesInRichTextBox(richTextBox, Regex.Escape(filterText).Replace("%", ".*?"),
-                                Color.Red, false, out FilterMatches);
+                            MarkRegExpMatchesInRichTextBox(richTextBox, Regex.Escape(filterText).Replace("%", ".*?"), Color.Red, false, true, out FilterMatches);
                         }
                     }
                 }
@@ -820,6 +810,15 @@ namespace ClipAngel
             tableLayoutPanelData.SuspendLayout();
             UpdateClipButtons();
             htmlTextBox.Parent.Enabled = true;
+            if (comboBoxFilter.Focused)
+            {
+                // Antibug webBrowser steals focus. We set it back
+                int filterSelectionLength = comboBoxFilter.SelectionLength;
+                int filterSelectionStart = comboBoxFilter.SelectionStart;
+                comboBoxFilter.Focus();
+                comboBoxFilter.SelectionStart = filterSelectionStart;
+                comboBoxFilter.SelectionLength = filterSelectionLength;
+            }
             if (clipType == "img")
             {
                 tableLayoutPanelData.RowStyles[0].Height = 70;
@@ -831,6 +830,7 @@ namespace ClipAngel
                 if (elementPanelHasFocus)
                     ImageControl.Focus();
                 htmlTextBox.Visible = false; // Without it htmlTextBox will be visible but why?
+                richTextBox.Enabled = true;
             }
             else if (htmlMode)
             {
@@ -866,13 +866,6 @@ namespace ClipAngel
             tableLayoutPanelData.ResumeLayout();
             if (autoSelectMatch)
                 SelectNextMatchInClipText();
-            if (comboBoxFilter.Focused)
-            {
-                // Antibug webBrowser steals focus. We set it back
-                comboBoxFilter.Focus();
-                comboBoxFilter.SelectionLength = filterSelectionLength;
-                comboBoxFilter.SelectionStart = filterSelectionStart;
-            }
         }
 
         private string GetHtmlFromHtmlClipText()
@@ -975,11 +968,10 @@ namespace ClipAngel
 
         private void MarkLinksInRichTextBox(RichTextBox control, out MatchCollection matches)
         {
-            MarkRegExpMatchesInRichTextBox(control, LinkPattern, Color.Blue, true, out matches);
+            MarkRegExpMatchesInRichTextBox(control, LinkPattern, Color.Blue, true, false, out matches);
         }
 
-        private void MarkRegExpMatchesInRichTextBox(RichTextBox control, string pattern, Color color, bool underline,
-            out MatchCollection matches)
+        private void MarkRegExpMatchesInRichTextBox(RichTextBox control, string pattern, Color color, bool underline, bool bold, out MatchCollection matches)
         {
             matches = Regex.Matches(control.Text, pattern, RegexOptions.IgnoreCase | RegexOptions.Singleline);
             control.DeselectAll();
@@ -989,8 +981,13 @@ namespace ClipAngel
                 control.SelectionStart = match.Index;
                 control.SelectionLength = match.Length;
                 control.SelectionColor = color;
+                FontStyle newstyle = control.SelectionFont.Style;
+                if (bold)
+                    newstyle = newstyle | FontStyle.Bold;
                 if (underline)
-                    control.SelectionFont = new Font(control.SelectionFont, FontStyle.Underline);
+                    newstyle = newstyle | FontStyle.Underline;
+                if (newstyle != control.SelectionFont.Style)
+                    control.SelectionFont = new Font(control.SelectionFont, newstyle);
                 maxMarked--;
                 if (maxMarked < 0)
                     break;
@@ -1000,7 +997,7 @@ namespace ClipAngel
             control.SelectionFont = new Font(control.SelectionFont, FontStyle.Regular);
         }
 
-        private void MarkRegExpMatchesInWebBrowser(WebBrowser control, string pattern, Color color)
+        private void MarkRegExpMatchesInWebBrowser(WebBrowser control, string pattern, Color color, bool bold)
         {
             mshtml.IHTMLDocument2 htmlDoc = (mshtml.IHTMLDocument2) htmlTextBox.Document.DomDocument;
             int boundingTop = 0;
@@ -1010,6 +1007,8 @@ namespace ClipAngel
             while (range.findText(filterText))
             {
                 range.execCommand("ForeColor", false, ColorTranslator.ToHtml(color));
+                if (bold)
+                    range.execCommand("Bold", true);
                 mshtml.IHTMLTextRangeMetrics metrics = (mshtml.IHTMLTextRangeMetrics) range;
                 if (boundingTop == 0 || boundingTop > metrics.boundingTop)
                 {
@@ -1034,6 +1033,7 @@ namespace ClipAngel
         {
             if (AllowFilterProcessing)
                 timerApplyTextFiler.Start();
+
         }
 
         private void TextFilterApply()
@@ -1106,14 +1106,14 @@ namespace ClipAngel
             {
                 GotoLastRow();
                 ClipsNumber = clipBindingSource.Count;
-                DataRowView lastRow = (DataRowView) clipBindingSource.Current;
+                DataRowView lastRow = (DataRowView)clipBindingSource.Current;
                 if (lastRow == null)
                 {
                     LastId = 0;
                 }
                 else
                 {
-                    LastId = (int) lastRow["Id"];
+                    LastId = (int)lastRow["Id"];
                 }
             }
             else
@@ -1747,11 +1747,19 @@ namespace ClipAngel
             object htmlText = rowReader["HtmlText"];
             byte[] binary = rowReader["Binary"] as byte[];
             string clipText = (string) rowReader["Text"];
-            bool selectedPlainTextMode = onlySelectedPlainText && richTextBox.SelectedText != "";
-            if (selectedPlainTextMode)
+            mshtml.IHTMLTxtRange htmlSelection = GetHtmlCurrentTextRangeOrAllDocument(true);
+            bool selectedPlainTextMode = true
+                && onlySelectedPlainText
+                && (false
+                    || richTextBox.SelectedText != ""
+                    || htmlSelection != null && htmlSelection.text != "");
+            if (selectedPlainTextMode && richTextBox.SelectedText != "")
             {
                 clipText = richTextBox.SelectedText;
-                    // Если тут не копировать, а передавать SelectedText, то возникает долгое ожидание потом
+            }
+            else if (selectedPlainTextMode && htmlSelection.text != "")
+            {
+                clipText = htmlSelection.text;
             }
             else if (EditMode)
                 clipText = richTextBox.Text;
@@ -2055,12 +2063,19 @@ namespace ClipAngel
 
         private void FillFilterItems()
         {
+            int filterSelectionLength = comboBoxFilter.SelectionLength;
+            int filterSelectionStart = comboBoxFilter.SelectionStart;
+
             StringCollection lastFilterValues = Properties.Settings.Default.LastFilterValues;
             comboBoxFilter.Items.Clear();
             foreach (string String in lastFilterValues)
             {
                 comboBoxFilter.Items.Add(String);
             }
+
+            // For some reason selection is reset. So we restore it
+            comboBoxFilter.SelectionStart = filterSelectionStart;
+            comboBoxFilter.SelectionLength = filterSelectionLength;
         }
 
         IntPtr GetFocusWindow(int maxWait = 100)
@@ -2204,15 +2219,18 @@ namespace ClipAngel
         private void SendPasteOfSelectedClips(PasteMethod pasteMethod = PasteMethod.Standart)
         {
             bool pasteDelimiter = false;
-            for (int i = dataGridView.SelectedRows.Count - 1; i >= 0; i--)
+            int count = dataGridView.SelectedRows.Count;
+            for (int i = count - 1; i >= 0; i--)
             {
                 DataGridViewRow selectedRow = dataGridView.SelectedRows[i];
                 SendPasteClip(selectedRow, pasteMethod, pasteDelimiter);
                 pasteDelimiter = true;
             }
-            SetRowMark("Used");
+            SetRowMark("Used", true, true);
             if (false
-                || Properties.Settings.Default.MoveCopiedClipToTop
+                || (true
+                    && Properties.Settings.Default.MoveCopiedClipToTop
+                    && count == 1)
                 || (true
                     && pasteMethod == PasteMethod.PasteText
                     && richTextBox.SelectedText != ""))
@@ -2526,10 +2544,6 @@ namespace ClipAngel
         //    return base.ProcessCmdKey(ref msg, keyData);
         //}
 
-        private void dataGridView_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
-        {
-        }
-
         private void clearToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ClearFilter_Click();
@@ -2666,10 +2680,10 @@ namespace ClipAngel
             if (filterText != "" && dataGridView.Columns["ColumnTitle"].Visible)
             {
                 _richTextBox.Clear();
+                _richTextBox.Font = dataGridView.RowsDefaultCellStyle.Font;
                 _richTextBox.Text = row.Cells["ColumnTitle"].Value.ToString();
                 MatchCollection tempMatches;
-                MarkRegExpMatchesInRichTextBox(_richTextBox, Regex.Escape(filterText).Replace("%", ".*?"), Color.Red,
-                    false, out tempMatches);
+                MarkRegExpMatchesInRichTextBox(_richTextBox, Regex.Escape(filterText).Replace("%", ".*?"), Color.Red, false, true, out tempMatches);
                 row.Cells["ColumnTitle"].Value = _richTextBox.Rtf;
             }
             if (dataGridView.Columns["ColumnTitle"].Visible)
@@ -3277,14 +3291,14 @@ namespace ClipAngel
             }
         }
 
-        private mshtml.IHTMLTxtRange GetHtmlCurrentTextRangeOrAllDocument()
+        private mshtml.IHTMLTxtRange GetHtmlCurrentTextRangeOrAllDocument(bool onlySelection = false)
         {
             mshtml.IHTMLDocument2 htmlDoc = (mshtml.IHTMLDocument2) htmlTextBox.Document.DomDocument;
             mshtml.IHTMLBodyElement body = htmlDoc.body as mshtml.IHTMLBodyElement;
             mshtml.IHTMLSelectionObject sel = htmlDoc.selection;
             //sel.empty(); // get an empty selection, so we start from the beginning
             mshtml.IHTMLTxtRange range = (mshtml.IHTMLTxtRange) sel.createRange();
-            if (range == null)
+            if (range == null && !onlySelection)
                 range = body.createTextRange();
             return range;
         }
@@ -3371,8 +3385,6 @@ namespace ClipAngel
             textFormattingToolStripMenuItem.Checked = Properties.Settings.Default.ShowNativeTextFormatting;
             toolStripButtonMonospacedFont.Checked = Properties.Settings.Default.MonospacedFont;
             monospacedFontToolStripMenuItem.Checked = Properties.Settings.Default.MonospacedFont;
-            selectTopClipOnShowToolStripMenuItem.Checked = Properties.Settings.Default.SelectTopClipOnOpen;
-            toolStripButtonSelectTopClipOnShow.Checked = Properties.Settings.Default.SelectTopClipOnOpen;
             wordWrapToolStripMenuItem.Checked = Properties.Settings.Default.WordWrap;
             toolStripButtonWordWrap.Checked = Properties.Settings.Default.WordWrap;
             dataGridView.Columns["VisualWeight"].Visible = Properties.Settings.Default.ShowVisualWeightColumn;

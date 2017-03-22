@@ -65,15 +65,17 @@ namespace ClipAngel
             }
         }
 
-        private static void SetRichTextBoxText(RichTextBox ctl, string text)
+        private static bool SetRichTextBoxText(RichTextBox ctl, string text)
         {
             try
             {
                 ctl.Rtf = text;
+                return false;
             }
             catch (ArgumentException)
             {
                 ctl.Text = text;
+                return true;
             }
         }
 
@@ -90,7 +92,8 @@ namespace ClipAngel
             {
                 ctl = _editingControl;
                 ctl.Size = GetSize(rowIndex);
-                SetRichTextBoxText(ctl, Convert.ToString(value));
+                if (SetRichTextBoxText(ctl, Convert.ToString(value)))
+                    ctl.Font = cellStyle.Font;
             }
 
             if (ctl != null)
@@ -116,7 +119,7 @@ namespace ClipAngel
                     ctl.BackColor = cellStyle.BackColor;
                     ctl.ForeColor = cellStyle.ForeColor;
                 }
-                ctl.Font = cellStyle.Font;
+                //ctl.Font = cellStyle.Font; // It ignores font from in rtf text
 
                 // Print image
                 int extraWidth = 200; // To prevent last word cutting off, WordWrap is not respected by printer and is always ON

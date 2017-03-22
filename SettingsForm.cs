@@ -205,7 +205,7 @@ namespace ClipAngel
                     ofd.Multiselect = true;
                     ofd.Filter = "Application|*.exe";
                     ofd.FileName = value.ToString();
-                    if (ofd.ShowDialog() == DialogResult.OK)
+                    if (ofd.ShowDialog((((ObjectWrapper)context.Instance).SelectedObject as VisibleUserSettings).Owner.Owner) == DialogResult.OK)
                     {
                         return ofd.FileName;
                     }
@@ -233,7 +233,7 @@ namespace ClipAngel
                 {
                     ofd = new AppListEditorForm();
                     ofd.AppList = (StringCollection) value;
-                    if (ofd.ShowDialog() == DialogResult.OK)
+                    if (ofd.ShowDialog((((ObjectWrapper)context.Instance).SelectedObject as VisibleUserSettings).Owner) == DialogResult.OK)
                     {
                         return ofd.AppList;
                     }
@@ -261,7 +261,7 @@ namespace ClipAngel
                 {
                     ofd = new HotkeyEditorForm();
                     ofd.HotkeyTextbox.Text = value.ToString();
-                    if (ofd.ShowDialog() == DialogResult.OK)
+                    if (ofd.ShowDialog((((ObjectWrapper)context.Instance).SelectedObject as VisibleUserSettings).Owner) == DialogResult.OK)
                     {
                         return ofd.HotkeyTextbox.Text;
                     }
@@ -627,9 +627,11 @@ namespace ClipAngel
 
     class VisibleUserSettings : GlobalizedObject
     {
+        public Form Owner;
         public static List<string> langList = new List<string> { "Default", "English", "Russian" };
         public VisibleUserSettings(Main Owner)
         {
+            this.Owner = Owner;
             IgnoreApplicationsClipCapture = Properties.Settings.Default.IgnoreApplicationsClipCapture;
             CopyTextInAnyWindowOnCTRLF3 = Properties.Settings.Default.CopyTextInAnyWindowOnCTRLF3;
             FastWindowOpen = Properties.Settings.Default.FastWindowOpen;
