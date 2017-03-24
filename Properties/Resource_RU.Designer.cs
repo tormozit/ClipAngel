@@ -295,6 +295,15 @@ namespace ClipAngel.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Не найдено поддерживаемое приложение для сравнения текстов. Сейчас откроем вебсайт, чтобы скачать бесплатное..
+        /// </summary>
+        internal static string NoSupportedTextCompareApplication {
+            get {
+                return ResourceManager.GetString("NoSupportedTextCompareApplication", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Другое.
         /// </summary>
         internal static string Other {

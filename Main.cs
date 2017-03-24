@@ -842,7 +842,7 @@ namespace ClipAngel
                 tableLayoutPanelData.RowStyles[2].SizeType = SizeType.Absolute;
                 //htmlTextBox.Enabled = true;
                 if (elementPanelHasFocus)
-                    htmlTextBox.Focus();
+                    htmlTextBox.Document.Focus();
                 htmlTextBox.Visible = true;
             }
             else
@@ -1527,7 +1527,7 @@ namespace ClipAngel
                 //&& !Visible 
                 //&& Properties.Settings.Default.SelectTopClipOnOpen 
             )
-                ShowForPaste();
+                ShowForPaste(false, true);
             //}
         }
 
@@ -1847,10 +1847,10 @@ namespace ClipAngel
                 && pasteDelimiter
                 && IsTextType(type))
             {
-                Thread.Sleep(20);
+                Thread.Sleep(50);
                 SetTextInClipboard(Environment.NewLine + Environment.NewLine);
                 SendPaste(pasteMethod);
-                Thread.Sleep(20);
+                Thread.Sleep(50);
             }
             string textToPaste = "";
             textToPaste = CopyClipToClipboard( /*out oldDataObject,*/ rowReader, pasteMethod != PasteMethod.Standart);
@@ -2616,7 +2616,7 @@ namespace ClipAngel
 
         private void activateListToolStripMenuItem_Click(object sender = null, EventArgs e = null)
         {
-            if (dataGridView.Focused || comboBoxFilter.Focused)
+            if (dataGridView.Focused)
                 FocusClipText();
             else
                 dataGridView.Focus();
@@ -2625,9 +2625,7 @@ namespace ClipAngel
         private void FocusClipText()
         {
             if (htmlMode)
-            {
                 htmlTextBox.Document.Focus();
-            }
             else if (richTextBox.Enabled)
                 richTextBox.Focus();
         }
@@ -3042,7 +3040,9 @@ namespace ClipAngel
 
         private void ChooseTitleColumnDraw()
         {
-            bool ResultSimpleDraw = Properties.Settings.Default.ClipListSimpleDraw;
+            bool ResultSimpleDraw;
+            //ResultSimpleDraw = Properties.Settings.Default.ClipListSimpleDraw;
+            ResultSimpleDraw = false;
             dataGridView.Columns["TitleSimple"].Visible = ResultSimpleDraw;
             dataGridView.Columns["ColumnTitle"].Visible = !ResultSimpleDraw;
         }
@@ -3387,10 +3387,10 @@ namespace ClipAngel
             monospacedFontToolStripMenuItem.Checked = Properties.Settings.Default.MonospacedFont;
             wordWrapToolStripMenuItem.Checked = Properties.Settings.Default.WordWrap;
             toolStripButtonWordWrap.Checked = Properties.Settings.Default.WordWrap;
-            dataGridView.Columns["VisualWeight"].Visible = Properties.Settings.Default.ShowVisualWeightColumn;
             richTextBox.WordWrap = wordWrapToolStripMenuItem.Checked;
             showInTaskbarToolStripMenuItem.Enabled = Properties.Settings.Default.FastWindowOpen;
             showInTaskbarToolStripMenuItem.Checked = Properties.Settings.Default.ShowInTaskBar;
+            //dataGridView.Columns["VisualWeight"].Visible = Properties.Settings.Default.ShowVisualWeightColumn;
             if (Properties.Settings.Default.FastWindowOpen)
             {
                 this.ShowInTaskbar = Properties.Settings.Default.ShowInTaskBar;
@@ -3474,6 +3474,8 @@ namespace ClipAngel
                 && e.KeyCode != Keys.Alt
                 && e.KeyCode != Keys.Menu
                 && e.KeyCode != Keys.Tab
+                && e.KeyCode != Keys.Apps
+                && e.KeyCode != Keys.F10
                 && !e.Control
                 //&& e.KeyCode != Keys.F1
                 //&& e.KeyCode != Keys.F2
@@ -3969,8 +3971,7 @@ namespace ClipAngel
                 return path;
             }
 
-            MessageBox.Show("No supported text compare application found. Will open website to get free one.",
-                Application.ProductName);
+            MessageBox.Show(this, CurrentLangResourceManager.GetString("NoSupportedTextCompareApplication"), Application.ProductName);
             Process.Start("http://winmerge.org/");
             return "";
         }

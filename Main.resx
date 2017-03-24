@@ -1098,6 +1098,9 @@ Use special char % for marking any sequence of chars. For example filter "po%o" 
   <data name="toolStripMenuItemSetFocusClipText.Text" xml:space="preserve">
     <value>Set focus to clip text (TAB)</value>
   </data>
+  <data name="windowAlwaysOnTopToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Ctrl+T</value>
+  </data>
   <data name="windowAlwaysOnTopToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>212, 22</value>
   </data>
@@ -1342,6 +1345,9 @@ Used only in fast window open mode.</value>
   </data>
   <data name="previousMatchToolStripMenuItem.ToolTipText" xml:space="preserve">
     <value>Find previuos match in clip text (SHIFT+F3)</value>
+  </data>
+  <data name="textFormattingToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Ctrl+N</value>
   </data>
   <data name="textFormattingToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>214, 22</value>

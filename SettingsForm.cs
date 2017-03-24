@@ -648,8 +648,8 @@ namespace ClipAngel
             GlobalHotkeyCompareLastClips = Properties.Settings.Default.GlobalHotkeyCompareLastClips;
             WindowAutoPosition = Properties.Settings.Default.WindowAutoPosition;
             MoveCopiedClipToTop = Properties.Settings.Default.MoveCopiedClipToTop;
-            ShowSizeColumn = Properties.Settings.Default.ShowVisualWeightColumn;
-            ClipListSimpleDraw = Properties.Settings.Default.ClipListSimpleDraw;
+            //ShowSizeColumn = Properties.Settings.Default.ShowVisualWeightColumn;
+            //ClipListSimpleDraw = Properties.Settings.Default.ClipListSimpleDraw;
             AutoCheckUpdate = Properties.Settings.Default.AutoCheckForUpdate;
             //ClearFiltersOnClose = Properties.Settings.Default.ClearFiltersOnClose;
             ShowApplicationIconColumn = Properties.Settings.Default.ShowApplicationIconColumn;
@@ -687,9 +687,9 @@ namespace ClipAngel
             Properties.Settings.Default.ShowApplicationIconColumn = ShowApplicationIconColumn;
             //Properties.Settings.Default.ClearFiltersOnClose = ClearFiltersOnClose;
             Properties.Settings.Default.AutoCheckForUpdate = AutoCheckUpdate;
-            Properties.Settings.Default.ClipListSimpleDraw = ClipListSimpleDraw;
+            //Properties.Settings.Default.ClipListSimpleDraw = ClipListSimpleDraw;
             Properties.Settings.Default.MoveCopiedClipToTop = MoveCopiedClipToTop;
-            Properties.Settings.Default.ShowVisualWeightColumn = ShowSizeColumn;
+            //Properties.Settings.Default.ShowVisualWeightColumn = ShowSizeColumn;
             Properties.Settings.Default.WindowAutoPosition = WindowAutoPosition;
             Properties.Settings.Default.GlobalHotkeyOpenLast = GlobalHotkeyOpenLast;
             Properties.Settings.Default.GlobalHotkeyOpenCurrent = GlobalHotkeyOpenCurrent;
@@ -755,13 +755,13 @@ namespace ClipAngel
         [Editor(typeof(MyBoolEditor), typeof(UITypeEditor))]
         public bool FastWindowOpen { get; set; }
 
-        [GlobalizedCategory("Other")]
-        [Editor(typeof(MyBoolEditor), typeof(UITypeEditor))]
-        public bool ClipListSimpleDraw { get; set; }
+        //[GlobalizedCategory("Other")]
+        //[Editor(typeof(MyBoolEditor), typeof(UITypeEditor))]
+        //public bool ClipListSimpleDraw { get; set; }
 
-        [GlobalizedCategory("Other")]
-        [Editor(typeof(MyBoolEditor), typeof(UITypeEditor))]
-        public bool ShowSizeColumn { get; set; }
+        //[GlobalizedCategory("Other")]
+        //[Editor(typeof(MyBoolEditor), typeof(UITypeEditor))]
+        //public bool ShowSizeColumn { get; set; }
 
         [GlobalizedCategory("Other")]
         [Editor(typeof(MyBoolEditor), typeof(UITypeEditor))]

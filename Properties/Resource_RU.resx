@@ -225,4 +225,7 @@
   <data name="ApplicationAddedToIgnoreList" xml:space="preserve">
     <value>Приложение "{0}" добавлено в список игнорирования, который можно отредактировать из диалога "Настройки".</value>
   </data>
+  <data name="NoSupportedTextCompareApplication" xml:space="preserve">
+    <value>Не найдено поддерживаемое приложение для сравнения текстов. Сейчас откроем вебсайт, чтобы скачать бесплатное.</value>
+  </data>
 </root>

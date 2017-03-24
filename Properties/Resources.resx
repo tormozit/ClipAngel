@@ -313,4 +313,7 @@
   <data name="ApplicationAddedToIgnoreList" xml:space="preserve">
     <value>Application "{0}" added to ignore list, wich can be edited in Settings window</value>
   </data>
+  <data name="NoSupportedTextCompareApplication" xml:space="preserve">
+    <value>No supported text compare application was found. Now we open website to get free one.</value>
+  </data>
 </root>
