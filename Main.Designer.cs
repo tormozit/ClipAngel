@@ -271,7 +271,7 @@ namespace ClipAngel
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.toolStrip2 = new System.Windows.Forms.ToolStrip();
+            this.toolStripBottom = new System.Windows.Forms.ToolStrip();
             this.toolStripButtonClearFilter = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonAutoSelectMatch = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonFindNext = new System.Windows.Forms.ToolStripButton();
@@ -434,7 +434,7 @@ namespace ClipAngel
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            this.toolStrip2.SuspendLayout();
+            this.toolStripBottom.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.contextMenuStripDataGrid.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.clipBindingSource)).BeginInit();
@@ -461,7 +461,7 @@ namespace ClipAngel
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.toolStrip2);
+            this.splitContainer1.Panel1.Controls.Add(this.toolStripBottom);
             this.splitContainer1.Panel1.Controls.Add(this.MarkFilter);
             this.splitContainer1.Panel1.Controls.Add(this.TypeFilter);
             this.splitContainer1.Panel1.Controls.Add(this.comboBoxFilter);
@@ -477,17 +477,17 @@ namespace ClipAngel
             this.splitContainer1.Panel2.Controls.Add(this.textBoxWindow);
             this.splitContainer1.TabStop = false;
             // 
-            // toolStrip2
+            // toolStripBottom
             // 
-            resources.ApplyResources(this.toolStrip2, "toolStrip2");
-            this.toolStrip2.CanOverflow = false;
-            this.toolStrip2.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.toolStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            resources.ApplyResources(this.toolStripBottom, "toolStripBottom");
+            this.toolStripBottom.CanOverflow = false;
+            this.toolStripBottom.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.toolStripBottom.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButtonClearFilter,
             this.toolStripButtonAutoSelectMatch,
             this.toolStripButtonFindNext,
             this.toolStripButtonFindPrevious});
-            this.toolStrip2.Name = "toolStrip2";
+            this.toolStripBottom.Name = "toolStripBottom";
             // 
             // toolStripButtonClearFilter
             // 
@@ -1147,12 +1147,14 @@ namespace ClipAngel
             // 
             // moveUpToolStripMenuItem
             // 
+            this.moveUpToolStripMenuItem.Image = global::ClipAngel.Properties.Resources.up;
             this.moveUpToolStripMenuItem.Name = "moveUpToolStripMenuItem";
             resources.ApplyResources(this.moveUpToolStripMenuItem, "moveUpToolStripMenuItem");
             this.moveUpToolStripMenuItem.Click += new System.EventHandler(this.moveUpToolStripMenuItem_Click);
             // 
             // moveDownToolStripMenuItem
             // 
+            this.moveDownToolStripMenuItem.Image = global::ClipAngel.Properties.Resources.down;
             this.moveDownToolStripMenuItem.Name = "moveDownToolStripMenuItem";
             resources.ApplyResources(this.moveDownToolStripMenuItem, "moveDownToolStripMenuItem");
             this.moveDownToolStripMenuItem.Click += new System.EventHandler(this.moveDownToolStripMenuItem_Click);
@@ -1721,8 +1723,8 @@ namespace ClipAngel
             this.splitContainer1.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            this.toolStrip2.ResumeLayout(false);
-            this.toolStrip2.PerformLayout();
+            this.toolStripBottom.ResumeLayout(false);
+            this.toolStripBottom.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.contextMenuStripDataGrid.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.clipBindingSource)).EndInit();
@@ -1879,7 +1881,7 @@ namespace ClipAngel
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn favoriteDataGridViewCheckBoxColumn;
         private System.Windows.Forms.ToolStripMenuItem openFavoritesToolStripMenuItem;
-        private System.Windows.Forms.ToolStrip toolStrip2;
+        private System.Windows.Forms.ToolStrip toolStripBottom;
         private System.Windows.Forms.ToolStripButton toolStripButtonFindPrevious;
         private System.Windows.Forms.ToolStripButton toolStripButtonFindNext;
         private System.Windows.Forms.ToolStripButton toolStripButtonAutoSelectMatch;

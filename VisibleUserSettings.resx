@@ -209,7 +209,7 @@ Key press will be processed by the window. </value>
     <value>Hotkey to paste plain text</value>
   </data>
   <data name="GlobalHotkeyPasteTextDescription" xml:space="preserve">
-    <value>Use this hot key in any program to paste last clip as plain text</value>
+    <value>Use this hot key in any program to paste last captured clip as plain text</value>
   </data>
   <data name="HistoryDepthDays" xml:space="preserve">
     <value>History depth days</value>
@@ -245,7 +245,7 @@ Key press will be processed by the window. </value>
     <value>Move copied in list clip to top</value>
   </data>
   <data name="MoveCopiedClipToTopDescription" xml:space="preserve">
-    <value>Move copied in list clip to top of list</value>
+    <value>Move copied in list or fully pasted clip to top of list</value>
   </data>
   <data name="NumberOfClips" xml:space="preserve">
     <value>Number of clips</value>

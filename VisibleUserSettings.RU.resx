@@ -209,6 +209,12 @@
     <value>Эта горячая клавиша при нажатии в любой программе откроет окно Clip Angel, 
 сбросит фильтры и выберет последний захваченный клип.</value>
   </data>
+  <data name="GlobalHotkeyPasteText" xml:space="preserve">
+    <value>Горячая клавиша вставки простого текста</value>
+  </data>
+  <data name="GlobalHotkeyPasteTextDescription" xml:space="preserve">
+    <value>Эта горячая клавиша при нажатии в любой программе вставит последний захваченный клип в виде простого текста</value>
+  </data>
   <data name="HistoryDepthDays" xml:space="preserve">
     <value>Глубина истории клипов по дням</value>
   </data>
@@ -243,7 +249,7 @@
     <value>Перемещать скопированный клип наверх</value>
   </data>
   <data name="MoveCopiedClipToTopDescription" xml:space="preserve">
-    <value>Перемещать клип наверх списка при копировании</value>
+    <value>Перемещать клип наверх списка при копировании в списке или полной вставке</value>
   </data>
   <data name="NumberOfClips" xml:space="preserve">
     <value>Количество клипов</value>

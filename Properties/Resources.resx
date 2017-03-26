@@ -148,8 +148,8 @@
   <data name="upload" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\upload.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="TextFormatting" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Picture\TextFormatting.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Confirmation" xml:space="preserve">
+    <value>Confirmation</value>
   </data>
   <data name="FindNext" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\FindNext.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -172,11 +172,11 @@
   <data name="EndMarker" xml:space="preserve">
     <value>END</value>
   </data>
+  <data name="up" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Picture\up.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Donate" xml:space="preserve">
     <value>https://www.paypal.me/tormozit/500</value>
-  </data>
-  <data name="MegaByteUnit" xml:space="preserve">
-    <value>MB</value>
   </data>
   <data name="Size" xml:space="preserve">
     <value>Size</value>
@@ -223,6 +223,9 @@
   <data name="HelpPage" xml:space="preserve">
     <value>https://sourceforge.net/p/clip-angel/wiki/Description/</value>
   </data>
+  <data name="ClipFileAlreadyOpened" xml:space="preserve">
+    <value>Clip file already opened and blocked</value>
+  </data>
   <data name="copy" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\copy.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -259,6 +262,9 @@
   <data name="Version" xml:space="preserve">
     <value>1.17</value>
   </data>
+  <data name="eye" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Picture\eye.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="CouldNotRegisterHotkey" xml:space="preserve">
     <value>Couldn’t register the global hot key</value>
   </data>
@@ -286,11 +292,14 @@
   <data name="MoveCopiedClipToTop" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\MoveCopiedClipToTop.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="СonfirmDeleteAllNonFavorite" xml:space="preserve">
+    <value>Are you sure want to delete all non favorite clips?</value>
+  </data>
   <data name="TypeFile" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\TypeFile.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ClipFileAlreadyOpened" xml:space="preserve">
-    <value>Clip file already opened and blocked</value>
+  <data name="TextFormatting" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Picture\TextFormatting.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Email" xml:space="preserve">
     <value>tormozit@gmail.com</value>
@@ -322,8 +331,8 @@
   <data name="Compare" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\Compare.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="СonfirmDeleteAllNonFavorite" xml:space="preserve">
-    <value>Are you sure want to delete all non favorite clips?</value>
+  <data name="Edit" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Picture\Edit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="KiloByteUnit" xml:space="preserve">
     <value>KB</value>
@@ -337,10 +346,10 @@
   <data name="FixedWidthFont" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\FixedWidthFont.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Edit" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Picture\Edit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="MegaByteUnit" xml:space="preserve">
+    <value>MB</value>
   </data>
-  <data name="eye" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Picture\eye.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="down" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Picture\down.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

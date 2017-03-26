@@ -133,6 +133,15 @@ namespace ClipAngel.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Подтверждение.
+        /// </summary>
+        internal static string Confirmation {
+            get {
+                return ResourceManager.GetString("Confirmation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Не удалось зарегистрировать глобальное сочетание клавиш.
         /// </summary>
         internal static string CouldNotRegisterHotkey {

@@ -237,4 +237,7 @@
   <data name="Donate" xml:space="preserve">
     <value>http://yasobe.ru/na/clipangel</value>
   </data>
+  <data name="Confirmation" xml:space="preserve">
+    <value>Подтверждение</value>
+  </data>
 </root>

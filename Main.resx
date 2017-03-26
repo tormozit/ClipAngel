@@ -125,13 +125,13 @@
   <data name="splitContainer1.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 24</value>
   </data>
-  <metadata name="toolStrip2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 94</value>
+  <metadata name="toolStripBottom.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 57</value>
   </metadata>
-  <data name="toolStrip2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+  <data name="toolStripBottom.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
   </data>
-  <data name="toolStrip2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="toolStripBottom.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>None</value>
   </data>
   <data name="toolStripButtonClearFilter.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -188,32 +188,32 @@
   <data name="toolStripButtonFindPrevious.ToolTipText" xml:space="preserve">
     <value>Find previuos match in clip text (SHIFT+F3)</value>
   </data>
-  <data name="toolStrip2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>277, 394</value>
+  <data name="toolStripBottom.Location" type="System.Drawing.Point, System.Drawing">
+    <value>276, 395</value>
   </data>
-  <data name="toolStrip2.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+  <data name="toolStripBottom.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
     <value>Yes</value>
   </data>
-  <data name="toolStrip2.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="toolStripBottom.Size" type="System.Drawing.Size, System.Drawing">
     <value>95, 25</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="toolStrip2.TabIndex" type="System.Int32, mscorlib">
+  <data name="toolStripBottom.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
   </data>
-  <data name="toolStrip2.Text" xml:space="preserve">
+  <data name="toolStripBottom.Text" xml:space="preserve">
     <value>toolStrip2</value>
   </data>
-  <data name="&gt;&gt;toolStrip2.Name" xml:space="preserve">
-    <value>toolStrip2</value>
+  <data name="&gt;&gt;toolStripBottom.Name" xml:space="preserve">
+    <value>toolStripBottom</value>
   </data>
-  <data name="&gt;&gt;toolStrip2.Type" xml:space="preserve">
+  <data name="&gt;&gt;toolStripBottom.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;toolStrip2.Parent" xml:space="preserve">
+  <data name="&gt;&gt;toolStripBottom.Parent" xml:space="preserve">
     <value>splitContainer1.Panel1</value>
   </data>
-  <data name="&gt;&gt;toolStrip2.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;toolStripBottom.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="MarkFilter.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
@@ -448,7 +448,7 @@ Use special char % for marking any sequence of chars. For example filter "po%o" 
     <value>Paste (ENTER)</value>
   </data>
   <data name="toolStripMenuItem2.ToolTipText" xml:space="preserve">
-    <value>Paste in active window current clip</value>
+    <value>Paste in active window selected clips. Also performed by double click.</value>
   </data>
   <data name="toolStripMenuItem3.Size" type="System.Drawing.Size, System.Drawing">
     <value>211, 22</value>
@@ -457,7 +457,8 @@ Use special char % for marking any sequence of chars. For example filter "po%o" 
     <value>Paste  text (CTRL+ENTER)</value>
   </data>
   <data name="toolStripMenuItem3.ToolTipText" xml:space="preserve">
-    <value>Paste in active window current clip as plain text</value>
+    <value>Paste in active window as plain text selected text of clip or agregated text of selected clips.
+</value>
   </data>
   <data name="toolStripMenuItem7.Size" type="System.Drawing.Size, System.Drawing">
     <value>211, 22</value>
@@ -466,7 +467,7 @@ Use special char % for marking any sequence of chars. For example filter "po%o" 
     <value>Simulate char input</value>
   </data>
   <data name="toolStripMenuItem7.ToolTipText" xml:space="preserve">
-    <value>Simulate in active window char input of current text clip</value>
+    <value>Simulate in active window char input of selected text of clip or agregated text of selected clips.</value>
   </data>
   <data name="copyToClipboardToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+C</value>
@@ -712,7 +713,8 @@ Use special char % for marking any sequence of chars. For example filter "po%o" 
     <value>Paste text (CTRL+ ENTER)</value>
   </data>
   <data name="toolStripMenuItem6.ToolTipText" xml:space="preserve">
-    <value>Paste in active window current clip or its selected part as plain text.</value>
+    <value>Paste in active window as plain text selected text of clip or agregated text of selected clips.
+</value>
   </data>
   <data name="rtfMenuItemSelectAll.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+A</value>
@@ -784,7 +786,8 @@ Use special char % for marking any sequence of chars. For example filter "po%o" 
     <value>Paste text (CTRL+ ENTER)</value>
   </data>
   <data name="toolStripMenuItem15.ToolTipText" xml:space="preserve">
-    <value>Paste in active window current clip or its selected part as plain text.</value>
+    <value>Paste in active window as plain text selected text of clip or agregated text of selected clips.
+</value>
   </data>
   <data name="htmlMenuItemSelectAll.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+A</value>
@@ -1063,13 +1066,13 @@ Use special char % for marking any sequence of chars. For example filter "po%o" 
     <value>1232, 29</value>
   </metadata>
   <data name="toolStripWindowTitleCopyAll.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+    <value>139, 22</value>
   </data>
   <data name="toolStripWindowTitleCopyAll.Text" xml:space="preserve">
     <value>Copy all text</value>
   </data>
   <data name="contextMenuWindowTitle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>153, 48</value>
+    <value>140, 26</value>
   </data>
   <data name="&gt;&gt;contextMenuWindowTitle.Name" xml:space="preserve">
     <value>contextMenuWindowTitle</value>
@@ -1150,7 +1153,7 @@ Use special char % for marking any sequence of chars. For example filter "po%o" 
     <value>Switch focus list/text</value>
   </data>
   <data name="toolStripMenuItemSwitchFocus.ToolTipText" xml:space="preserve">
-    <value>Switch focus between list and clip text</value>
+    <value>Switch focus between list and clip text. If focus is in other place, list will be activated.</value>
   </data>
   <data name="toolStripMenuItemSetFocusClipText.Size" type="System.Drawing.Size, System.Drawing">
     <value>212, 22</value>
@@ -1186,6 +1189,9 @@ Used only in fast window open mode.</value>
   </data>
   <data name="toolStripMenuItemMonitoringClipboard.Text" xml:space="preserve">
     <value>Monitoring clipboard</value>
+  </data>
+  <data name="toolStripMenuItemMonitoringClipboard.ToolTipText" xml:space="preserve">
+    <value>Capture changes in clipboard</value>
   </data>
   <data name="сдуфкClipboardToolStripMenuItem.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
     <value>None</value>
@@ -1267,6 +1273,9 @@ Used only in fast window open mode.</value>
   </data>
   <data name="deleteAllNonFavoriteToolStripMenuItem.Text" xml:space="preserve">
     <value>Delete all non favorite</value>
+  </data>
+  <data name="deleteAllNonFavoriteToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>Delete all non favorite clips</value>
   </data>
   <data name="toolStripMenuItem5.Size" type="System.Drawing.Size, System.Drawing">
     <value>247, 6</value>
@@ -1350,16 +1359,16 @@ Used only in fast window open mode.</value>
     <value>Paste (ENTER)</value>
   </data>
   <data name="pasteENTERToolStripMenuItem.ToolTipText" xml:space="preserve">
-    <value>Paste in active window current clip. Also performed by double click</value>
+    <value>Paste in active window selected clips. Also performed by double click.</value>
   </data>
   <data name="pasteTextCTRLENTERToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>214, 22</value>
   </data>
   <data name="pasteTextCTRLENTERToolStripMenuItem.Text" xml:space="preserve">
-    <value>Paste text (CTRL+ ENTER)</value>
+    <value>Paste text (CTRL+ENTER)</value>
   </data>
   <data name="pasteTextCTRLENTERToolStripMenuItem.ToolTipText" xml:space="preserve">
-    <value>Paste in active window current clip or its selected part as plain text.</value>
+    <value>Paste in active window as plain text selected text of clip or agregated text of selected clips.</value>
   </data>
   <data name="toolStripMenuItemPasteChars.Size" type="System.Drawing.Size, System.Drawing">
     <value>214, 22</value>
@@ -1368,7 +1377,7 @@ Used only in fast window open mode.</value>
     <value>Simulate char input</value>
   </data>
   <data name="toolStripMenuItemPasteChars.ToolTipText" xml:space="preserve">
-    <value>Simulate in active window char input of current text clip or its selected part </value>
+    <value>Simulate in active window char input of selected text of clip or agregated text of selected clips.</value>
   </data>
   <data name="toolStripMenuItem8.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
     <value>None</value>
@@ -1380,7 +1389,7 @@ Used only in fast window open mode.</value>
     <value>Delete</value>
   </data>
   <data name="toolStripMenuItem8.ToolTipText" xml:space="preserve">
-    <value>Delete selected clips from history</value>
+    <value>Delete selected clips from list</value>
   </data>
   <data name="changeClipTitleToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>F2</value>
@@ -1389,6 +1398,9 @@ Used only in fast window open mode.</value>
     <value>214, 22</value>
   </data>
   <data name="changeClipTitleToolStripMenuItem.Text" xml:space="preserve">
+    <value>Edit title</value>
+  </data>
+  <data name="changeClipTitleToolStripMenuItem.ToolTipText" xml:space="preserve">
     <value>Edit clip title</value>
   </data>
   <data name="nextMatchToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
@@ -1694,6 +1706,9 @@ Url will be saved in current clip and will be copied to clipboard.</value>
   </data>
   <data name="trayMenuItemMonitoringClipboard.Text" xml:space="preserve">
     <value>Monitoring clipboard</value>
+  </data>
+  <data name="trayMenuItemMonitoringClipboard.ToolTipText" xml:space="preserve">
+    <value>Capture changes in clipboard</value>
   </data>
   <data name="toolStripMenuItem9.Size" type="System.Drawing.Size, System.Drawing">
     <value>187, 22</value>

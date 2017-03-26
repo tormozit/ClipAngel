@@ -95,6 +95,7 @@ namespace ClipAngel
         private HtmlElement lastClickedHtmlElement;
         private bool allowVisible = false;
         private StringCollection ignoreModulesInClipCapture;
+        static Dictionary<string, object> clipboardContents = new Dictionary<string, object>();
 
         [DllImport("dwmapi", PreserveSig = true)]
         static extern int DwmSetWindowAttribute(IntPtr hWnd, int attr, ref int value, int attrLen);
@@ -135,6 +136,8 @@ namespace ClipAngel
             keyboardHook.KeyPressed +=
                 new EventHandler<KeyPressedEventArgs>(hook_KeyPressed);
             RegisterHotKeys();
+            toolStripTop.Renderer = new MyToolStripRenderer();
+            toolStripBottom.Renderer = new MyToolStripRenderer();
 
             ResourceManager resourceManager = Properties.Resources.ResourceManager;
             imageText = resourceManager.GetObject("TypeText") as Bitmap;
@@ -316,6 +319,24 @@ namespace ClipAngel
             }
         }
 
+        private class MyToolStripRenderer : ToolStripProfessionalRenderer
+        {
+            protected override void OnRenderButtonBackground(ToolStripItemRenderEventArgs e)
+            {
+                var btn = e.Item as ToolStripButton;
+                if (btn != null && btn.Checked && !btn.Selected)
+                {
+                    Rectangle bounds1 = new Rectangle(Point.Empty, e.Item.Size);
+                    bounds1 = new Rectangle(bounds1.Left, bounds1.Top, e.Item.Size.Width - 1, e.Item.Size.Height - 1);
+                    Rectangle bounds2 = new Rectangle(bounds1.Left + 1, bounds1.Top + 1, bounds1.Right - 1, bounds1.Bottom - 1);
+                    e.Graphics.DrawRectangle(new Pen(Color.DeepSkyBlue), bounds1);
+                    Brush brush = new SolidBrush(Color.FromArgb(255, 180, 240, 240));
+                    e.Graphics.FillRectangle(brush, bounds2);
+                }
+                else base.OnRenderButtonBackground(e);
+            }
+        }
+
         private void UpdateWindowTitle(bool forced = false)
         {
             if ((this.Top < 0 || !this.Visible) && !forced)
@@ -432,16 +453,37 @@ namespace ClipAngel
             else if (hotkeyTitle == "Control + F3")
             {
                 keyboardHook.UnregisterHotKeys();
-                //var data = Clipboard.GetDataObject();
+                BackupClipboard();
                 Paster.SendCopy();
                 SendKeys.SendWait("^{F3}");
                 RegisterHotKeys();
-                //Clipboard.SetDataObject(data);
+                //RemoveClipboardFormatListener(this.Handle);
+                RestoreClipboard();
+                //ConnectClipboard();
             }
             else
             {
                 //int a = 0;
             }
+        }
+
+        public void BackupClipboard()
+        {
+            clipboardContents.Clear();
+            IDataObject o = Clipboard.GetDataObject();
+            foreach (string format in o.GetFormats())
+                clipboardContents.Add(format, o.GetData(format));
+        }
+
+        public void RestoreClipboard()
+        {
+            DataObject o = new DataObject();
+            foreach (string format in clipboardContents.Keys)
+            {
+                o.SetData(format, clipboardContents[format]);
+            }
+            //Clipboard.SetDataObject(o);
+            SetClipboardDataObject(o);
         }
 
         private const int WM_SYSCOMMAND = 0x0112;
@@ -1053,10 +1095,23 @@ namespace ClipAngel
                 return;
             if (EditMode)
                 SaveClipText();
+            List<int> selectedClipIDs = null;
             if (currentClipId == 0 && clipBindingSource.Current != null)
             {
                 currentClipId = (int) (clipBindingSource.Current as DataRowView).Row["Id"];
+                if (dataGridView.SelectedRows.Count > 1)
+                {
+                    selectedClipIDs = new List<int>();
+                    foreach (DataGridViewRow selectedRow in dataGridView.SelectedRows)
+                    {
+                        if (selectedRow == null)
+                            continue;
+                        DataRowView dataRow = (DataRowView)selectedRow.DataBoundItem;
+                        selectedClipIDs.Insert(0, (int)dataRow["Id"]);
+                    }
+                }
             }
+
             allowRowLoad = false;
             filterOn = false;
             string sqlFilter = "1 = 1";
@@ -1109,18 +1164,28 @@ namespace ClipAngel
             {
                 GotoLastRow();
                 ClipsNumber = clipBindingSource.Count;
-                DataRowView lastRow = (DataRowView)clipBindingSource.Current;
+                DataRowView lastRow = (DataRowView) clipBindingSource.Current;
                 if (lastRow == null)
                 {
                     LastId = 0;
                 }
                 else
                 {
-                    LastId = (int)lastRow["Id"];
+                    LastId = (int) lastRow["Id"];
                 }
             }
             else
+            {
                 RestoreSelectedCurrentClip(forceRowLoad, currentClipId);
+                if (selectedClipIDs != null)
+                {
+                    dataGridView.ClearSelection();
+                    foreach (int selectedID in selectedClipIDs)
+                    {
+                        dataGridView.Rows[clipBindingSource.Find("Id", selectedID)].Selected = true;
+                    }
+                }
+            }
             allowRowLoad = true;
             //AutoGotoLastRow = false;
         }
@@ -1237,7 +1302,7 @@ namespace ClipAngel
             string appPath = "";
             string clipWindow = "";
             string clipApplication = "";
-            GetClipboardOwnerInfo(false, out clipWindow, out clipApplication, out appPath);
+            GetClipboardOwnerLockerInfo(false, out clipWindow, out clipApplication, out appPath);
             if (ignoreModulesInClipCapture.Contains(clipApplication.ToLower()))
                 return;
             try
@@ -1261,14 +1326,20 @@ namespace ClipAngel
             if (iData.GetDataPresent(DataFormats.UnicodeText))
             {
                 clipText = (string) iData.GetData(DataFormats.UnicodeText);
-                clipType = "text";
-                textFormatPresent = true;
+                if (!String.IsNullOrEmpty(clipText))
+                {
+                    clipType = "text";
+                    textFormatPresent = true;
+                }
             }
-            else if (iData.GetDataPresent(DataFormats.Text))
+            if (!textFormatPresent && iData.GetDataPresent(DataFormats.Text))
             {
                 clipText = (string) iData.GetData(DataFormats.Text);
-                clipType = "text";
-                textFormatPresent = true;
+                if (!String.IsNullOrEmpty(clipText))
+                {
+                    clipType = "text";
+                    textFormatPresent = true;
+                }
             }
 
             if (iData.GetDataPresent(DataFormats.Rtf))
@@ -1748,10 +1819,8 @@ namespace ClipAngel
         //    }
         //}
 
-        private string CopyClipToClipboard( /*out DataObject oldDataObject,*/
-            SQLiteDataReader rowReader = null, bool onlySelectedPlainText = false)
+        private string CopyClipToClipboard(SQLiteDataReader rowReader = null, bool onlySelectedPlainText = false)
         {
-            //oldDataObject = null;
             SaveFilterInLastUsedList();
             if (rowReader == null)
                 rowReader = RowReader;
@@ -1822,7 +1891,6 @@ namespace ClipAngel
             }
             //if (!Properties.Settings.Default.MoveCopiedClipToTop)
             //    CaptureClipboard = false;
-            ////oldDataObject = (DataObject) Clipboard.GetDataObject();
             SetClipboardDataObject(dto);
             return clipText;
         }
@@ -1878,7 +1946,7 @@ namespace ClipAngel
                     Thread.Sleep(multipasteDelay);
                 }
             }
-            CopyClipToClipboard( /*out oldDataObject,*/ rowReader, pasteMethod != PasteMethod.Standart);
+            CopyClipToClipboard(rowReader, pasteMethod != PasteMethod.Standart);
             ConnectClipboard();
             if (SendPaste(pasteMethod))
                 return "";
@@ -1898,10 +1966,6 @@ namespace ClipAngel
             //PrepareTableGrid();
             UpdateTableGridRowBackColor(currentViewRow);
             //}
-
-            // We need delay about 100ms before restore clipboard object
-            //Clipboard.SetDataObject(oldDataObject);
-
             return "";
         }
 
@@ -2043,6 +2107,7 @@ namespace ClipAngel
                 selectedRows.Add(dataGridView.CurrentRow);
             int counter = 0;
             ReadFilterText();
+            List<int> selectedIDs = new List<int>();
             foreach (DataGridViewRow selectedRow in selectedRows)
             {
                 if (selectedRow == null)
@@ -2051,6 +2116,7 @@ namespace ClipAngel
                 string parameterName = "@Id" + counter;
                 sql += "," + parameterName;
                 command.Parameters.Add(parameterName, DbType.Int32).Value = dataRow["Id"];
+                selectedIDs.Insert(0, (int) dataRow["Id"]);
                 counter++;
                 dataRow[fieldName] = newValue;
                 UpdateTableGridRowBackColor(selectedRow);
@@ -2161,7 +2227,7 @@ namespace ClipAngel
         [System.Runtime.InteropServices.DllImport("user32.dll")]
         static extern IntPtr GetOpenClipboardWindow();
 
-        static public void GetClipboardOwnerInfo(bool Locker, out string window, out string application, out string appPath, bool replaceNullWithLastActive = true)
+        static public void GetClipboardOwnerLockerInfo(bool Locker, out string window, out string application, out string appPath, bool replaceNullWithLastActive = true)
         {
             IntPtr hwnd;
             if (Locker)
@@ -3435,10 +3501,11 @@ namespace ClipAngel
 
         private void copyClipToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //DataObject oldDataObject;
-            CopyClipToClipboard( /*out oldDataObject*/);
+            RemoveClipboardFormatListener(this.Handle);
+            CopyClipToClipboard();
             if (Properties.Settings.Default.MoveCopiedClipToTop)
                 CaptureClipboardData();
+            ConnectClipboard();
         }
 
         private void toolStripButtonSelectTopClipOnShow_Click(object sender, EventArgs e)
@@ -4226,6 +4293,8 @@ namespace ClipAngel
 
         private static void SetTextInClipboardDataObject(DataObject dto, string text)
         {
+            if (String.IsNullOrEmpty(text))
+                return;
             dto.SetText(text, TextDataFormat.UnicodeText);
             dto.SetText(text, TextDataFormat.Text);
         }
@@ -4316,25 +4385,32 @@ namespace ClipAngel
             SetTextInClipboard(fullFilename);
         }
 
-        private void SetTextInClipboard(string text)
+        void SetTextInClipboard(string text)
         {
             DataObject dto = new DataObject();
             SetTextInClipboardDataObject(dto, text);
             SetClipboardDataObject(dto);
         }
 
-        private void SetClipboardDataObject(DataObject dto)
+        void SetClipboardDataObject(IDataObject dto)
         {
             try
             {
-                Clipboard.SetDataObject(dto, true, 20, 50);  // Very important to set second parameter to true to give immidiate access to buffer to other processes!
+                Clipboard.SetDataObject(dto, true, 10, 10); // Very important to set second parameter to true to give immidiate access to buffer to other processes!
+                return;
+            }
+            catch
+            {}
+            try
+            {
+                Clipboard.SetDataObject(dto, false, 10, 10); 
             }
             catch (Exception ex)
             {
                 string appPath = "";
                 string clipWindow = "";
                 string clipApplication = "";
-                GetClipboardOwnerInfo(true, out clipWindow, out clipApplication, out appPath);
+                GetClipboardOwnerLockerInfo(true, out clipWindow, out clipApplication, out appPath);
                 MessageBox.Show(this, String.Format(CurrentLangResourceManager.GetString("FailedToWriteClipboard"), clipWindow, clipApplication));
             }
         }
@@ -4358,7 +4434,7 @@ namespace ClipAngel
 
         private void deleteAllNonFavoriteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show(this, CurrentLangResourceManager.GetString("СonfirmDeleteAllNonFavorite"), "Confirmation", MessageBoxButtons.OKCancel);
+            DialogResult result = MessageBox.Show(this, CurrentLangResourceManager.GetString("СonfirmDeleteAllNonFavorite"), CurrentLangResourceManager.GetString("Confirmation"), MessageBoxButtons.OKCancel);
             if (result != DialogResult.OK)
                 return;
             allowRowLoad = false;
@@ -4421,9 +4497,18 @@ namespace ClipAngel
                 AfterRowLoad();
                 SetTextInClipboard(ImageUrl);
             }
-            catch
+            catch (Exception ex)
             {
+                WriteExcetionToLog(ex);
+                MessageBox.Show(this, ex.Message, "Error uploading image", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private static void WriteExcetionToLog(Exception ex)
+        {
+            Debug.WriteLine("--- " + DateTime.Now);
+            Debug.WriteLine(ex.Message);
+            Debug.WriteLine(ex.StackTrace);
         }
 
         private void toolStripWindowTitleCopyAll_Click(object sender, EventArgs e)
@@ -4445,7 +4530,6 @@ namespace ClipAngel
         }
     }
 }
-
 
 public sealed class KeyboardHook : IDisposable
 {
@@ -4496,14 +4580,14 @@ public sealed class KeyboardHook : IDisposable
 
         public event EventHandler<KeyPressedEventArgs> KeyPressed;
 
-        #region IDisposable Members
+#region IDisposable Members
 
         public void Dispose()
         {
             this.DestroyHandle();
         }
 
-        #endregion
+#endregion
     }
 
     private Window _window = new Window();
@@ -4569,7 +4653,7 @@ public sealed class KeyboardHook : IDisposable
     /// </summary>
     public event EventHandler<KeyPressedEventArgs> KeyPressed;
 
-    #region IDisposable Members
+#region IDisposable Members
 
     public void Dispose()
     {
@@ -4578,7 +4662,7 @@ public sealed class KeyboardHook : IDisposable
         _window.Dispose();
     }
 
-    #endregion
+#endregion
 }
 
 /// <summary>
