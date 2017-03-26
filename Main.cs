@@ -2334,17 +2334,17 @@ namespace ClipAngel
         {
             string agregateTextToPaste = "";
             PasteMethod itemPasteMethod;
+            string selectedText = "";
             if (pasteMethod == PasteMethod.Standart)
                 itemPasteMethod = pasteMethod;
             else
-                itemPasteMethod = PasteMethod.Null;
-           int count = 0;
-           if (pasteMethod == PasteMethod.PasteText)
             {
-                string selectedText = GetSelectedText();
+                itemPasteMethod = PasteMethod.Null;
+                selectedText = GetSelectedText();
                 if (!String.IsNullOrEmpty(selectedText))
                     agregateTextToPaste = selectedText;
             }
+            int count = 0;
             if (String.IsNullOrEmpty(agregateTextToPaste))
             {
                 bool pasteDelimiter = false;
@@ -2363,16 +2363,22 @@ namespace ClipAngel
                 SendPaste(pasteMethod);
                 ConnectClipboard();
             }
-            SetRowMark("Used", true, true);
-            if (false
-                || (true
-                    && Properties.Settings.Default.MoveCopiedClipToTop
-                    && count == 1)
-                || (true
-                    && pasteMethod == PasteMethod.PasteText
-                    && !String.IsNullOrEmpty(richTextBox.SelectedText)))
+            if (String.IsNullOrEmpty(selectedText))
+                SetRowMark("Used", true, true);
+            if (true
+                && Properties.Settings.Default.MoveCopiedClipToTop
+                && String.IsNullOrEmpty(selectedText)
+                && count == 1)
+            {
+                RowShift(0);
+                //CaptureClipboardData();
+            }
+            else if (true
+                && pasteMethod == PasteMethod.PasteText
+                && !String.IsNullOrEmpty(selectedText))
             {
                 // With multipaste works incorrect
+                RowShift(0);
                 CaptureClipboardData();
             }
         }
