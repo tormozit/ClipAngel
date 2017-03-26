@@ -219,13 +219,13 @@
     <value>Глубина истории клипов по дням</value>
   </data>
   <data name="HistoryDepthDaysDescription" xml:space="preserve">
-    <value>Максимальное количество дней  хранения не любимых клипов. Удаление выполняется при старте, каждый день, при применении настроек.</value>
+    <value>Максимальное количество дней  хранения не любимых клипов. Удаление выполняется при старте, каждый день, при применении настроек. 0 - не удалять.</value>
   </data>
   <data name="HistoryDepthNumber" xml:space="preserve">
     <value>Глубина истории клипов по количеству</value>
   </data>
   <data name="HistoryDepthNumberDescription" xml:space="preserve">
-    <value>Максимальное количество хранимых не любимых клипов. Удаление выполняется при старте, каждый день, при применении настроек.</value>
+    <value>Максимальное количество хранимых не любимых клипов. Удаление выполняется при старте, каждый день, при применении настроек. 0 - не удалять.</value>
   </data>
   <data name="IgnoreApplicationsClipCapture" xml:space="preserve">
     <value>Игнорируемые приложения в захвате клипов</value>

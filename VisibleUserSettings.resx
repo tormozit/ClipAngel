@@ -215,13 +215,13 @@ Key press will be processed by the window. </value>
     <value>History depth days</value>
   </data>
   <data name="HistoryDepthDaysDescription" xml:space="preserve">
-    <value>Maximum number of days non favorite clips are stored. Deletion is executed on start, every day, on settings apply.</value>
+    <value>Maximum number of days non favorite clips are stored. Deletion is executed on start, every day, on settings apply. 0 - do not delete.</value>
   </data>
   <data name="HistoryDepthNumber" xml:space="preserve">
     <value>History depth number</value>
   </data>
   <data name="HistoryDepthNumberDescription" xml:space="preserve">
-    <value>Maximum number of stored non favorite clips. Deletion is executed on start, every day, on settings apply.</value>
+    <value>Maximum number of stored non favorite clips. Deletion is executed on start, every day, on settings apply. 0 - do not delete.</value>
   </data>
   <data name="IgnoreApplicationsClipCapture" xml:space="preserve">
     <value>Ignored applications in clip capture</value>

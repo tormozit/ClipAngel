@@ -1176,21 +1176,23 @@ namespace ClipAngel
             }
             else
             {
-                RestoreSelectedCurrentClip(forceRowLoad, currentClipId);
+                dataGridView.ClearSelection();
                 if (selectedClipIDs != null)
                 {
-                    dataGridView.ClearSelection();
                     foreach (int selectedID in selectedClipIDs)
                     {
-                        dataGridView.Rows[clipBindingSource.Find("Id", selectedID)].Selected = true;
+                        int newIndex = clipBindingSource.Find("Id", selectedID);
+                        if (newIndex >= 0)
+                            dataGridView.Rows[newIndex].Selected = true;
                     }
                 }
+                RestoreSelectedCurrentClip(forceRowLoad, currentClipId, false);
             }
             allowRowLoad = true;
             //AutoGotoLastRow = false;
         }
 
-        private void RestoreSelectedCurrentClip(bool forceRowLoad = false, int currentClipId = -1)
+        private void RestoreSelectedCurrentClip(bool forceRowLoad = false, int currentClipId = -1, bool clearSelection = true)
         {
             if (false
                 //|| AutoGotoLastRow 
@@ -1203,7 +1205,7 @@ namespace ClipAngel
                 clipBindingSource.Position = newPosition;
                 ////if (dataGridView.CurrentRow != null)
                 ////    dataGridView.CurrentCell = dataGridView.CurrentRow.Cells[0];
-                SelectCurrentRow(forceRowLoad || newPosition == -1);
+                SelectCurrentRow(forceRowLoad || newPosition == -1, true, clearSelection);
             }
         }
 
@@ -1831,22 +1833,12 @@ namespace ClipAngel
             object htmlText = rowReader["HtmlText"];
             byte[] binary = rowReader["Binary"] as byte[];
             string clipText = (string) rowReader["Text"];
-            mshtml.IHTMLTxtRange htmlSelection = GetHtmlCurrentTextRangeOrAllDocument(true);
-            bool selectedPlainTextMode = true
-                && onlySelectedPlainText
-                && (false
-                    || !String.IsNullOrEmpty(richTextBox.SelectedText)
-                    || htmlSelection != null && !String.IsNullOrEmpty(htmlSelection.text));
-            if (selectedPlainTextMode && !String.IsNullOrEmpty(richTextBox.SelectedText))
+            if (rowReader == RowReader)
             {
-                clipText = richTextBox.SelectedText;
+                string selectedText = GetSelectedText(onlySelectedPlainText);
+                if (!String.IsNullOrEmpty(selectedText))
+                    clipText = selectedText;
             }
-            else if (selectedPlainTextMode && !String.IsNullOrEmpty(htmlSelection.text))
-            {
-                clipText = htmlSelection.text;
-            }
-            else if (EditMode)
-                clipText = richTextBox.Text;
             DataObject dto = new DataObject();
             if (IsTextType() || type == "file")
             {
@@ -1893,6 +1885,28 @@ namespace ClipAngel
             //    CaptureClipboard = false;
             SetClipboardDataObject(dto);
             return clipText;
+        }
+
+        private string GetSelectedText(bool onlySelectedPlainText = true)
+        {
+            string selectedText = "";
+            mshtml.IHTMLTxtRange htmlSelection = GetHtmlCurrentTextRangeOrAllDocument(true);
+            bool selectedPlainTextMode = true
+                                         && onlySelectedPlainText
+                                         && (false
+                                             || !String.IsNullOrEmpty(richTextBox.SelectedText)
+                                             || htmlSelection != null && !String.IsNullOrEmpty(htmlSelection.text));
+            if (selectedPlainTextMode && !String.IsNullOrEmpty(richTextBox.SelectedText))
+            {
+                selectedText = richTextBox.SelectedText;
+            }
+            else if (selectedPlainTextMode && !String.IsNullOrEmpty(htmlSelection.text))
+            {
+                selectedText = htmlSelection.text;
+            }
+            else if (EditMode)
+                selectedText = richTextBox.Text;
+            return selectedText;
         }
 
         private void SaveFilterInLastUsedList()
@@ -2303,34 +2317,44 @@ namespace ClipAngel
 
         private void dataGridView_DoubleClick(object sender, EventArgs e)
         {
-            SendPasteOfSelectedClips();
+            SendPasteOfSelectedTextOrSelectedClips();
         }
 
         private void pasteOriginalToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            SendPasteOfSelectedClips();
+            SendPasteOfSelectedTextOrSelectedClips();
         }
 
         private void pasteAsTextToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            SendPasteOfSelectedClips(PasteMethod.PasteText);
+            SendPasteOfSelectedTextOrSelectedClips(PasteMethod.PasteText);
         }
 
-        private void SendPasteOfSelectedClips(PasteMethod pasteMethod = PasteMethod.Standart)
+        private void SendPasteOfSelectedTextOrSelectedClips(PasteMethod pasteMethod = PasteMethod.Standart)
         {
-            bool pasteDelimiter = false;
-            int count = dataGridView.SelectedRows.Count;
             string agregateTextToPaste = "";
             PasteMethod itemPasteMethod;
             if (pasteMethod == PasteMethod.Standart)
                 itemPasteMethod = pasteMethod;
             else
                 itemPasteMethod = PasteMethod.Null;
-            for (int i = count - 1; i >= 0; i--)
+           int count = 0;
+           if (pasteMethod == PasteMethod.PasteText)
             {
-                DataGridViewRow selectedRow = dataGridView.SelectedRows[i];
-                agregateTextToPaste += SendPasteClip(selectedRow, itemPasteMethod, pasteDelimiter);
-                pasteDelimiter = true;
+                string selectedText = GetSelectedText();
+                if (!String.IsNullOrEmpty(selectedText))
+                    agregateTextToPaste = selectedText;
+            }
+            if (String.IsNullOrEmpty(agregateTextToPaste))
+            {
+                bool pasteDelimiter = false;
+                count = dataGridView.SelectedRows.Count;
+                for (int i = count - 1; i >= 0; i--)
+                {
+                    DataGridViewRow selectedRow = dataGridView.SelectedRows[i];
+                    agregateTextToPaste += SendPasteClip(selectedRow, itemPasteMethod, pasteDelimiter);
+                    pasteDelimiter = true;
+                }
             }
             if (itemPasteMethod == PasteMethod.Null)
             {
@@ -2615,7 +2639,7 @@ namespace ClipAngel
                     return true;
                 pasteMethod = PasteMethod.Standart;
             }
-            SendPasteOfSelectedClips(pasteMethod);
+            SendPasteOfSelectedTextOrSelectedClips(pasteMethod);
             return false;
         }
 
@@ -2698,9 +2722,10 @@ namespace ClipAngel
                         && (int) (dataGridView.CurrentRow.DataBoundItem as DataRowView)["ID"] == (int) RowReader["ID"]);
         }
 
-        void SelectCurrentRow(bool forceRowLoad = false, bool keepTextSelection = true)
+        void SelectCurrentRow(bool forceRowLoad = false, bool keepTextSelection = true, bool clearSelection = true)
         {
-            dataGridView.ClearSelection();
+            if (clearSelection)
+                dataGridView.ClearSelection();
             if (dataGridView.CurrentRow == null)
             {
                 GotoLastRow();
@@ -3729,7 +3754,7 @@ namespace ClipAngel
 
         private void toolStripMenuItemPasteChars_Click(object sender, EventArgs e)
         {
-            SendPasteOfSelectedClips(PasteMethod.SendChars);
+            SendPasteOfSelectedTextOrSelectedClips(PasteMethod.SendChars);
         }
 
         private void openInDefaultApplicationToolStripMenuItem_Click(object sender, EventArgs e)
