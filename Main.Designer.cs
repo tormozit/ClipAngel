@@ -844,6 +844,7 @@ namespace ClipAngel
             this.richTextBox.SelectionChanged += new System.EventHandler(this.richTextBox_SelectionChanged);
             this.richTextBox.Click += new System.EventHandler(this.RichText_Click);
             this.richTextBox.Enter += new System.EventHandler(this.richTextBox_Enter);
+            this.richTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.richTextBox_KeyDown);
             // 
             // contextMenuStripRtf
             // 
