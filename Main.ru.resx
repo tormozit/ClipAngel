@@ -502,6 +502,9 @@
   <data name="toolStripMenuItemMonitoringClipboard.Text" xml:space="preserve">
     <value>Слежение за буфером обмена</value>
   </data>
+  <data name="toolStripMenuItemMonitoringClipboard.ToolTipText" xml:space="preserve">
+    <value>Захватывать изменения в буфере обмена</value>
+  </data>
   <data name="сдуфкClipboardToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>287, 22</value>
   </data>
@@ -883,6 +886,9 @@
   <data name="trayMenuItemMonitoringClipboard.Text" xml:space="preserve">
     <value>Слежение за буфером обмена</value>
   </data>
+  <data name="trayMenuItemMonitoringClipboard.ToolTipText" xml:space="preserve">
+    <value>Захватывать изменения в буфере обмена</value>
+  </data>
   <data name="toolStripMenuItem9.Size" type="System.Drawing.Size, System.Drawing">
     <value>243, 22</value>
   </data>
@@ -896,7 +902,7 @@
     <value>Выход</value>
   </data>
   <data name="contextMenuStripNotifyIcon.Size" type="System.Drawing.Size, System.Drawing">
-    <value>244, 114</value>
+    <value>244, 136</value>
   </data>
   <data name="contextMenuStripNotifyIcon.ToolTip" xml:space="preserve">
     <value />

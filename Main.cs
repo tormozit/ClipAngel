@@ -4418,7 +4418,7 @@ namespace ClipAngel
 
         void SetClipboardDataObject(IDataObject dto, bool allowSelfCapture = true)
         {
-            RemoveClipboardFormatListener(this.Handle);
+            RemoveClipboardFormatListener(this.Handle); // If not doing this WM_CLIPBOARDUPDATE event will be raised 2 times (why?) if "copy"=true
             bool success = false;
             try
             {
