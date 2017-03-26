@@ -154,6 +154,26 @@ namespace ClipAngel.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap clear1 {
+            get {
+                object obj = ResourceManager.GetObject("clear1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap clear2 {
+            get {
+                object obj = ResourceManager.GetObject("clear2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Clip file already opened and blocked.
         /// </summary>
         public static string ClipFileAlreadyOpened {
@@ -230,7 +250,7 @@ namespace ClipAngel.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to http://yasobe.ru/na/clipangel.
+        ///   Looks up a localized string similar to https://www.paypal.me/tormozit/500.
         /// </summary>
         public static string Donate {
             get {
@@ -291,6 +311,25 @@ namespace ClipAngel.Properties {
         public static string EndMarker {
             get {
                 return ResourceManager.GetString("EndMarker", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap eye {
+            get {
+                object obj = ResourceManager.GetObject("eye", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Failed to write clipboard. It is locked by window &quot;{0}&quot; application &quot;{1}&quot;.
+        /// </summary>
+        public static string FailedToWriteClipboard {
+            get {
+                return ResourceManager.GetString("FailedToWriteClipboard", resourceCulture);
             }
         }
         
@@ -389,6 +428,16 @@ namespace ClipAngel.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap keyboard {
+            get {
+                object obj = ResourceManager.GetObject("keyboard", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to KB.
         /// </summary>
         public static string KiloByteUnit {
@@ -459,6 +508,16 @@ namespace ClipAngel.Properties {
         public static string NoSupportedTextCompareApplication {
             get {
                 return ResourceManager.GetString("NoSupportedTextCompareApplication", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap Open_with {
+            get {
+                object obj = ResourceManager.GetObject("Open with", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -561,6 +620,16 @@ namespace ClipAngel.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap translate {
+            get {
+                object obj = ResourceManager.GetObject("translate", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap TypeFile {
             get {
                 object obj = ResourceManager.GetObject("TypeFile", resourceCulture);
@@ -628,6 +697,16 @@ namespace ClipAngel.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap upload {
+            get {
+                object obj = ResourceManager.GetObject("upload", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to used.
         /// </summary>
         public static string used {
@@ -679,6 +758,15 @@ namespace ClipAngel.Properties {
         public static string YouLatestVersion {
             get {
                 return ResourceManager.GetString("YouLatestVersion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Are you sure want to delete all non favorite clips?.
+        /// </summary>
+        public static string СonfirmDeleteAllNonFavorite {
+            get {
+                return ResourceManager.GetString("СonfirmDeleteAllNonFavorite", resourceCulture);
             }
         }
     }

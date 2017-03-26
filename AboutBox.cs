@@ -32,7 +32,7 @@ namespace ClipAngel
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            System.Diagnostics.Process.Start(Properties.Resources.Donate);
+            System.Diagnostics.Process.Start((Owner as Main).CurrentLangResourceManager.GetString("Donate"));
         }
     }
 }

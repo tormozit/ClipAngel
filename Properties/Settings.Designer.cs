@@ -380,5 +380,41 @@ namespace ClipAngel.Properties {
                 this["IgnoreApplicationsClipCapture"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool UseFormattingInDublicateDetection {
+            get {
+                return ((bool)(this["UseFormattingInDublicateDetection"]));
+            }
+            set {
+                this["UseFormattingInDublicateDetection"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("No")]
+        public string GlobalHotkeyPasteText {
+            get {
+                return ((string)(this["GlobalHotkeyPasteText"]));
+            }
+            set {
+                this["GlobalHotkeyPasteText"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int HistoryDepthDays {
+            get {
+                return ((int)(this["HistoryDepthDays"]));
+            }
+            set {
+                this["HistoryDepthDays"] = value;
+            }
+        }
     }
 }

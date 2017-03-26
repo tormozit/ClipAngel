@@ -209,11 +209,17 @@
     <value>Эта горячая клавиша при нажатии в любой программе откроет окно Clip Angel, 
 сбросит фильтры и выберет последний захваченный клип.</value>
   </data>
+  <data name="HistoryDepthDays" xml:space="preserve">
+    <value>Глубина истории клипов по дням</value>
+  </data>
+  <data name="HistoryDepthDaysDescription" xml:space="preserve">
+    <value>Максимальное количество дней  хранения не любимых клипов. Удаление выполняется при старте, каждый день, при применении настроек.</value>
+  </data>
   <data name="HistoryDepthNumber" xml:space="preserve">
-    <value>Глубина истории клипов</value>
+    <value>Глубина истории клипов по количеству</value>
   </data>
   <data name="HistoryDepthNumberDescription" xml:space="preserve">
-    <value>Максимальное количество клипов для хранения в списке</value>
+    <value>Максимальное количество хранимых не любимых клипов. Удаление выполняется при старте, каждый день, при применении настроек.</value>
   </data>
   <data name="IgnoreApplicationsClipCapture" xml:space="preserve">
     <value>Игнорируемые приложения в захвате клипов</value>
@@ -263,6 +269,12 @@
   <data name="TextCompareApplicationDescription" xml:space="preserve">
     <value>Оставьте пустым для автоматического поиска программы, который поддерживает Beyond Compare, ExamDiff Pro, 
 WinMerge, Araxis Merge, DiffMerge. Для сравнения текстов используется команда %программа% %файл1% %файл2%</value>
+  </data>
+  <data name="UseFormattingInDublicateDetection" xml:space="preserve">
+    <value>Использовать оформление при поиске дублей</value>
+  </data>
+  <data name="UseFormattingInDublicateDetectionDescription" xml:space="preserve">
+    <value>Использовать родное оформление текста при поиске дублей. Иначе только обычный текст будет использован при поиске дублей клипа.</value>
   </data>
   <data name="UserSettingsPath" xml:space="preserve">
     <value>Каталог настроек пользователя</value>

@@ -151,6 +151,15 @@ namespace ClipAngel.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to http://yasobe.ru/na/clipangel.
+        /// </summary>
+        internal static string Donate {
+            get {
+                return ResourceManager.GetString("Donate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Изменение заголовка клипа.
         /// </summary>
         internal static string EditClipTitle {
@@ -165,6 +174,15 @@ namespace ClipAngel.Properties {
         internal static string EndMarker {
             get {
                 return ResourceManager.GetString("EndMarker", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Не удалось записать в буфер обмена. Он заблокирован окном &quot;{0}&quot; приложения &quot;{1}&quot;.
+        /// </summary>
+        internal static string FailedToWriteClipboard {
+            get {
+                return ResourceManager.GetString("FailedToWriteClipboard", resourceCulture);
             }
         }
         
@@ -390,6 +408,15 @@ namespace ClipAngel.Properties {
         internal static string YouLatestVersion {
             get {
                 return ResourceManager.GetString("YouLatestVersion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Вы действительно хотите удалить все не любимые клипы?.
+        /// </summary>
+        internal static string СonfirmDeleteAllNonFavorite {
+            get {
+                return ResourceManager.GetString("СonfirmDeleteAllNonFavorite", resourceCulture);
             }
         }
     }

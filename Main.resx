@@ -189,7 +189,7 @@
     <value>Find previuos match in clip text (SHIFT+F3)</value>
   </data>
   <data name="toolStrip2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>275, 395</value>
+    <value>277, 394</value>
   </data>
   <data name="toolStrip2.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
     <value>Yes</value>
@@ -244,7 +244,7 @@
     <value>12</value>
   </data>
   <metadata name="toolTipDynamic.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>420, 55</value>
+    <value>377, 31</value>
   </metadata>
   <data name="MarkFilter.ToolTip" xml:space="preserve">
     <value>Show only clips of this marks. 
@@ -439,7 +439,7 @@ Use special char % for marking any sequence of chars. For example filter "po%o" 
     <value>False</value>
   </data>
   <metadata name="contextMenuStripDataGrid.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 55</value>
+    <value>-2, 26</value>
   </metadata>
   <data name="toolStripMenuItem2.Size" type="System.Drawing.Size, System.Drawing">
     <value>211, 22</value>
@@ -547,10 +547,10 @@ Use special char % for marking any sequence of chars. For example filter "po%o" 
     <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <metadata name="clipBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>112, 20</value>
+    <value>97, 0</value>
   </metadata>
   <metadata name="dbDataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>256, 12</value>
+    <value>235, 2</value>
   </metadata>
   <data name="dataGridView.Location" type="System.Drawing.Point, System.Drawing">
     <value>1, 0</value>
@@ -630,6 +630,24 @@ Use special char % for marking any sequence of chars. For example filter "po%o" 
   <data name="urlTextBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
+  <metadata name="contextMenuUrl.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>1177, 0</value>
+  </metadata>
+  <data name="toolStripUrlCopyAll.Size" type="System.Drawing.Size, System.Drawing">
+    <value>139, 22</value>
+  </data>
+  <data name="toolStripUrlCopyAll.Text" xml:space="preserve">
+    <value>Copy all text</value>
+  </data>
+  <data name="contextMenuUrl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>140, 26</value>
+  </data>
+  <data name="&gt;&gt;contextMenuUrl.Name" xml:space="preserve">
+    <value>contextMenuUrl</value>
+  </data>
+  <data name="&gt;&gt;contextMenuUrl.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="urlTextBox.Font" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 9pt</value>
   </data>
@@ -670,10 +688,10 @@ Use special char % for marking any sequence of chars. For example filter "po%o" 
     <value>Top, Bottom, Left, Right</value>
   </data>
   <metadata name="contextMenuStripRtf.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>696, 16</value>
+    <value>600, 2</value>
   </metadata>
   <data name="rtfMenuItemOpenLink.Size" type="System.Drawing.Size, System.Drawing">
-    <value>194, 22</value>
+    <value>209, 22</value>
   </data>
   <data name="rtfMenuItemOpenLink.Text" xml:space="preserve">
     <value>Open link (ALT + click)</value>
@@ -682,22 +700,31 @@ Use special char % for marking any sequence of chars. For example filter "po%o" 
     <value>Ctrl+C</value>
   </data>
   <data name="copyToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>194, 22</value>
+    <value>209, 22</value>
   </data>
   <data name="copyToolStripMenuItem.Text" xml:space="preserve">
     <value>Copy</value>
+  </data>
+  <data name="toolStripMenuItem6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>209, 22</value>
+  </data>
+  <data name="toolStripMenuItem6.Text" xml:space="preserve">
+    <value>Paste text (CTRL+ ENTER)</value>
+  </data>
+  <data name="toolStripMenuItem6.ToolTipText" xml:space="preserve">
+    <value>Paste in active window current clip or its selected part as plain text.</value>
   </data>
   <data name="rtfMenuItemSelectAll.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+A</value>
   </data>
   <data name="rtfMenuItemSelectAll.Size" type="System.Drawing.Size, System.Drawing">
-    <value>194, 22</value>
+    <value>209, 22</value>
   </data>
   <data name="rtfMenuItemSelectAll.Text" xml:space="preserve">
     <value>Select all</value>
   </data>
   <data name="contextMenuStripRtf.Size" type="System.Drawing.Size, System.Drawing">
-    <value>195, 70</value>
+    <value>210, 92</value>
   </data>
   <data name="&gt;&gt;contextMenuStripRtf.Name" xml:space="preserve">
     <value>contextMenuStripRtf</value>
@@ -736,31 +763,40 @@ Use special char % for marking any sequence of chars. For example filter "po%o" 
     <value>Top, Bottom, Left, Right</value>
   </data>
   <metadata name="contextMenuStripHtml.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>528, 19</value>
+    <value>451, 2</value>
   </metadata>
   <data name="htmlMenuItemOpenLink.Size" type="System.Drawing.Size, System.Drawing">
-    <value>188, 22</value>
+    <value>209, 22</value>
   </data>
   <data name="htmlMenuItemOpenLink.Text" xml:space="preserve">
     <value>Open link (ALT+click)</value>
   </data>
   <data name="htmlMenuItemCopyLinkAdress.Size" type="System.Drawing.Size, System.Drawing">
-    <value>188, 22</value>
+    <value>209, 22</value>
   </data>
   <data name="htmlMenuItemCopyLinkAdress.Text" xml:space="preserve">
     <value>Copy link adress</value>
+  </data>
+  <data name="toolStripMenuItem15.Size" type="System.Drawing.Size, System.Drawing">
+    <value>209, 22</value>
+  </data>
+  <data name="toolStripMenuItem15.Text" xml:space="preserve">
+    <value>Paste text (CTRL+ ENTER)</value>
+  </data>
+  <data name="toolStripMenuItem15.ToolTipText" xml:space="preserve">
+    <value>Paste in active window current clip or its selected part as plain text.</value>
   </data>
   <data name="htmlMenuItemSelectAll.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+A</value>
   </data>
   <data name="htmlMenuItemSelectAll.Size" type="System.Drawing.Size, System.Drawing">
-    <value>188, 22</value>
+    <value>209, 22</value>
   </data>
   <data name="htmlMenuItemSelectAll.Text" xml:space="preserve">
     <value>Select all</value>
   </data>
   <data name="contextMenuStripHtml.Size" type="System.Drawing.Size, System.Drawing">
-    <value>189, 70</value>
+    <value>210, 92</value>
   </data>
   <data name="&gt;&gt;contextMenuStripHtml.Name" xml:space="preserve">
     <value>contextMenuStripHtml</value>
@@ -856,7 +892,7 @@ Use special char % for marking any sequence of chars. For example filter "po%o" 
     <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="urlTextBox" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="richTextBox" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="htmlTextBox" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="ImageControl" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,100" /&gt;&lt;Rows Styles="Percent,28,57143,Percent,28,57143,Percent,42,85715,Absolute,25" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <metadata name="statusStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>12, 16</value>
+    <value>5, -1</value>
   </metadata>
   <data name="statusStrip.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left, Right</value>
@@ -970,7 +1006,7 @@ Use special char % for marking any sequence of chars. For example filter "po%o" 
     <value>Top, Right</value>
   </data>
   <metadata name="contextMenuStripApplication.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>860, 16</value>
+    <value>751, 2</value>
   </metadata>
   <data name="copyFullFilenameToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>171, 22</value>
@@ -978,8 +1014,14 @@ Use special char % for marking any sequence of chars. For example filter "po%o" 
   <data name="copyFullFilenameToolStripMenuItem.Text" xml:space="preserve">
     <value>Copy full filename</value>
   </data>
+  <data name="toolStripApplicationCopyAll.Size" type="System.Drawing.Size, System.Drawing">
+    <value>171, 22</value>
+  </data>
+  <data name="toolStripApplicationCopyAll.Text" xml:space="preserve">
+    <value>Copy all text</value>
+  </data>
   <data name="contextMenuStripApplication.Size" type="System.Drawing.Size, System.Drawing">
-    <value>172, 26</value>
+    <value>172, 48</value>
   </data>
   <data name="&gt;&gt;contextMenuStripApplication.Name" xml:space="preserve">
     <value>contextMenuStripApplication</value>
@@ -1000,7 +1042,7 @@ Use special char % for marking any sequence of chars. For example filter "po%o" 
     <value>Application</value>
   </data>
   <data name="textBoxApplication.ToolTip" xml:space="preserve">
-    <value>Application which was copied clip</value>
+    <value>Application which copied clip</value>
   </data>
   <data name="&gt;&gt;textBoxApplication.Name" xml:space="preserve">
     <value>textBoxApplication</value>
@@ -1017,6 +1059,24 @@ Use special char % for marking any sequence of chars. For example filter "po%o" 
   <data name="textBoxWindow.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
   </data>
+  <metadata name="contextMenuWindowTitle.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>1232, 29</value>
+  </metadata>
+  <data name="toolStripWindowTitleCopyAll.Size" type="System.Drawing.Size, System.Drawing">
+    <value>152, 22</value>
+  </data>
+  <data name="toolStripWindowTitleCopyAll.Text" xml:space="preserve">
+    <value>Copy all text</value>
+  </data>
+  <data name="contextMenuWindowTitle.Size" type="System.Drawing.Size, System.Drawing">
+    <value>153, 48</value>
+  </data>
+  <data name="&gt;&gt;contextMenuWindowTitle.Name" xml:space="preserve">
+    <value>contextMenuWindowTitle</value>
+  </data>
+  <data name="&gt;&gt;contextMenuWindowTitle.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="textBoxWindow.Location" type="System.Drawing.Point, System.Drawing">
     <value>22, 3</value>
   </data>
@@ -1030,7 +1090,7 @@ Use special char % for marking any sequence of chars. For example filter "po%o" 
     <value>Window</value>
   </data>
   <data name="textBoxWindow.ToolTip" xml:space="preserve">
-    <value>Title of window which was copied clip</value>
+    <value>Title of window which copied clip</value>
   </data>
   <data name="&gt;&gt;textBoxWindow.Name" xml:space="preserve">
     <value>textBoxWindow</value>
@@ -1075,10 +1135,10 @@ Use special char % for marking any sequence of chars. For example filter "po%o" 
     <value>$this</value>
   </data>
   <data name="&gt;&gt;splitContainer1.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>8</value>
   </data>
   <metadata name="MainMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1071, 16</value>
+    <value>946, 0</value>
   </metadata>
   <data name="toolStripMenuItemSwitchFocus.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>F10</value>
@@ -1126,6 +1186,9 @@ Used only in fast window open mode.</value>
   </data>
   <data name="toolStripMenuItemMonitoringClipboard.Text" xml:space="preserve">
     <value>Monitoring clipboard</value>
+  </data>
+  <data name="сдуфкClipboardToolStripMenuItem.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
   </data>
   <data name="сдуфкClipboardToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>212, 22</value>
@@ -1198,6 +1261,12 @@ Used only in fast window open mode.</value>
   </data>
   <data name="moveDownToolStripMenuItem.ToolTipText" xml:space="preserve">
     <value>Move current clip one step down</value>
+  </data>
+  <data name="deleteAllNonFavoriteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>250, 22</value>
+  </data>
+  <data name="deleteAllNonFavoriteToolStripMenuItem.Text" xml:space="preserve">
+    <value>Delete all non favorite</value>
   </data>
   <data name="toolStripMenuItem5.Size" type="System.Drawing.Size, System.Drawing">
     <value>247, 6</value>
@@ -1415,18 +1484,29 @@ Not appliable to HTML native formatting.</value>
   <data name="editClipTextToolStripMenuItem.Text" xml:space="preserve">
     <value>Edit clip text</value>
   </data>
-  <data name="openInDefaultApplicationToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+  <data name="toolStripMenuItem16.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+F4</value>
   </data>
-  <data name="openInDefaultApplicationToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="toolStripMenuItem16.Size" type="System.Drawing.Size, System.Drawing">
     <value>214, 22</value>
   </data>
-  <data name="openInDefaultApplicationToolStripMenuItem.Text" xml:space="preserve">
+  <data name="toolStripMenuItem16.Text" xml:space="preserve">
     <value>Open clip file</value>
   </data>
-  <data name="openInDefaultApplicationToolStripMenuItem.ToolTipText" xml:space="preserve">
+  <data name="toolStripMenuItem16.ToolTipText" xml:space="preserve">
     <value>Save data to temp file for text or image clip.
 Open clip file in default application.
+Changes in temp file are not synchronized with clip!</value>
+  </data>
+  <data name="openWithToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>214, 22</value>
+  </data>
+  <data name="openWithToolStripMenuItem.Text" xml:space="preserve">
+    <value>Open clip file with...</value>
+  </data>
+  <data name="openWithToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>Save data to temp file for text or image clip.
+Open system menu to open clip file in choosen application.
 Changes in temp file are not synchronized with clip!</value>
   </data>
   <data name="textCompareToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
@@ -1457,6 +1537,16 @@ Changes in temp file are not synchronized with clip!</value>
   <data name="ignoreApplicationInCaptureToolStripMenuItem.ToolTipText" xml:space="preserve">
     <value>Ignore application in clip capture. Application will be 
 added to ignore list, wich can be edited in Settings window.</value>
+  </data>
+  <data name="uploadImageToWebToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>214, 22</value>
+  </data>
+  <data name="uploadImageToWebToolStripMenuItem.Text" xml:space="preserve">
+    <value>Upload image to web</value>
+  </data>
+  <data name="uploadImageToWebToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>Upload image clip to image hosting website. 
+Url will be saved in current clip and will be copied to clipboard.</value>
   </data>
   <data name="clipToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>40, 20</value>
@@ -1525,7 +1615,7 @@ added to ignore list, wich can be edited in Settings window.</value>
     <value>$this</value>
   </data>
   <data name="&gt;&gt;MainMenu.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>9</value>
   </data>
   <data name="toolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
     <value>92, 22</value>
@@ -1579,16 +1669,25 @@ added to ignore list, wich can be edited in Settings window.</value>
     <value>About</value>
   </data>
   <metadata name="notifyIcon.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1181, 16</value>
+    <value>1071, -1</value>
   </metadata>
   <metadata name="contextMenuStripNotifyIcon.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>214, 55</value>
+    <value>183, 28</value>
   </metadata>
   <data name="openFavoritesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>187, 22</value>
   </data>
   <data name="openFavoritesToolStripMenuItem.Text" xml:space="preserve">
     <value>Open favorite clips</value>
+  </data>
+  <data name="toolStripMenuItemCompareLastClips.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 22</value>
+  </data>
+  <data name="toolStripMenuItemCompareLastClips.Text" xml:space="preserve">
+    <value>Compare last clips</value>
+  </data>
+  <data name="toolStripMenuItemCompareLastClips.ToolTipText" xml:space="preserve">
+    <value>Compare text of last clips</value>
   </data>
   <data name="trayMenuItemMonitoringClipboard.Size" type="System.Drawing.Size, System.Drawing">
     <value>187, 22</value>
@@ -1609,7 +1708,7 @@ added to ignore list, wich can be edited in Settings window.</value>
     <value>Exit</value>
   </data>
   <data name="contextMenuStripNotifyIcon.Size" type="System.Drawing.Size, System.Drawing">
-    <value>188, 92</value>
+    <value>188, 114</value>
   </data>
   <data name="&gt;&gt;contextMenuStripNotifyIcon.Name" xml:space="preserve">
     <value>contextMenuStripNotifyIcon</value>
@@ -2161,10 +2260,10 @@ added to ignore list, wich can be edited in Settings window.</value>
   <data name="notifyIcon.Visible" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <metadata name="toolStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>702, 55</value>
+  <metadata name="toolStripTop.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>626, 24</value>
   </metadata>
-  <data name="toolStrip1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="toolStripTop.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>None</value>
   </data>
   <data name="toolStripButtonTextFormatting.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
@@ -2254,6 +2353,18 @@ Open clip file in default application.
 Changes in temp file are not synchronized with clip!
 </value>
   </data>
+  <data name="toolStripButtonOpenWith.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="toolStripButtonOpenWith.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 22</value>
+  </data>
+  <data name="toolStripButtonOpenWith.ToolTipText" xml:space="preserve">
+    <value>Save data to temp file for text or image clip.
+Open system menu to open clip file in choosen application.
+Changes in temp file are not synchronized with clip!
+</value>
+  </data>
   <data name="toolStripButtonTopMostWindow.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
   </data>
@@ -2299,38 +2410,38 @@ Changes in temp file are not synchronized with clip!
   <data name="buttonUpdate.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="toolStrip1.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="toolStripTop.Location" type="System.Drawing.Point, System.Drawing">
     <value>372, 0</value>
   </data>
-  <data name="toolStrip1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>230, 25</value>
+  <data name="toolStripTop.Size" type="System.Drawing.Size, System.Drawing">
+    <value>253, 25</value>
   </data>
-  <data name="toolStrip1.TabIndex" type="System.Int32, mscorlib">
+  <data name="toolStripTop.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
-  <data name="toolStrip1.Text" xml:space="preserve">
+  <data name="toolStripTop.Text" xml:space="preserve">
     <value>toolStrip1</value>
   </data>
-  <data name="&gt;&gt;toolStrip1.Name" xml:space="preserve">
-    <value>toolStrip1</value>
+  <data name="&gt;&gt;toolStripTop.Name" xml:space="preserve">
+    <value>toolStripTop</value>
   </data>
-  <data name="&gt;&gt;toolStrip1.Type" xml:space="preserve">
+  <data name="&gt;&gt;toolStripTop.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;toolStrip1.Parent" xml:space="preserve">
+  <data name="&gt;&gt;toolStripTop.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;toolStrip1.ZOrder" xml:space="preserve">
-    <value>5</value>
+  <data name="&gt;&gt;toolStripTop.ZOrder" xml:space="preserve">
+    <value>7</value>
   </data>
   <metadata name="cultureManager1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>557, 55</value>
+    <value>500, 30</value>
   </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>73</value>
+    <value>79</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
@@ -3050,6 +3161,12 @@ Changes in temp file are not synchronized with clip!
   <data name="&gt;&gt;dbDataSet.Type" xml:space="preserve">
     <value>ClipAngel.dbDataSet, dbDataSet.Designer.cs.dll, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
+  <data name="&gt;&gt;toolStripUrlCopyAll.Name" xml:space="preserve">
+    <value>toolStripUrlCopyAll</value>
+  </data>
+  <data name="&gt;&gt;toolStripUrlCopyAll.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;rtfMenuItemOpenLink.Name" xml:space="preserve">
     <value>rtfMenuItemOpenLink</value>
   </data>
@@ -3060,6 +3177,12 @@ Changes in temp file are not synchronized with clip!
     <value>copyToolStripMenuItem</value>
   </data>
   <data name="&gt;&gt;copyToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItem6.Name" xml:space="preserve">
+    <value>toolStripMenuItem6</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItem6.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;rtfMenuItemSelectAll.Name" xml:space="preserve">
@@ -3078,6 +3201,12 @@ Changes in temp file are not synchronized with clip!
     <value>htmlMenuItemCopyLinkAdress</value>
   </data>
   <data name="&gt;&gt;htmlMenuItemCopyLinkAdress.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItem15.Name" xml:space="preserve">
+    <value>toolStripMenuItem15</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItem15.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;htmlMenuItemSelectAll.Name" xml:space="preserve">
@@ -3120,6 +3249,18 @@ Changes in temp file are not synchronized with clip!
     <value>copyFullFilenameToolStripMenuItem</value>
   </data>
   <data name="&gt;&gt;copyFullFilenameToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripApplicationCopyAll.Name" xml:space="preserve">
+    <value>toolStripApplicationCopyAll</value>
+  </data>
+  <data name="&gt;&gt;toolStripApplicationCopyAll.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripWindowTitleCopyAll.Name" xml:space="preserve">
+    <value>toolStripWindowTitleCopyAll</value>
+  </data>
+  <data name="&gt;&gt;toolStripWindowTitleCopyAll.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;dataGridViewTextBoxColumn2.Name" xml:space="preserve">
@@ -3210,6 +3351,12 @@ Changes in temp file are not synchronized with clip!
     <value>moveDownToolStripMenuItem</value>
   </data>
   <data name="&gt;&gt;moveDownToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;deleteAllNonFavoriteToolStripMenuItem.Name" xml:space="preserve">
+    <value>deleteAllNonFavoriteToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;deleteAllNonFavoriteToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;toolStripMenuItem5.Name" xml:space="preserve">
@@ -3350,10 +3497,16 @@ Changes in temp file are not synchronized with clip!
   <data name="&gt;&gt;editClipTextToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;openInDefaultApplicationToolStripMenuItem.Name" xml:space="preserve">
-    <value>openInDefaultApplicationToolStripMenuItem</value>
+  <data name="&gt;&gt;toolStripMenuItem16.Name" xml:space="preserve">
+    <value>toolStripMenuItem16</value>
   </data>
-  <data name="&gt;&gt;openInDefaultApplicationToolStripMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;toolStripMenuItem16.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;openWithToolStripMenuItem.Name" xml:space="preserve">
+    <value>openWithToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;openWithToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;textCompareToolStripMenuItem.Name" xml:space="preserve">
@@ -3372,6 +3525,12 @@ Changes in temp file are not synchronized with clip!
     <value>ignoreApplicationInCaptureToolStripMenuItem</value>
   </data>
   <data name="&gt;&gt;ignoreApplicationInCaptureToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;uploadImageToWebToolStripMenuItem.Name" xml:space="preserve">
+    <value>uploadImageToWebToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;uploadImageToWebToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;settingsToolStripMenuItem1.Name" xml:space="preserve">
@@ -3470,6 +3629,12 @@ Changes in temp file are not synchronized with clip!
   <data name="&gt;&gt;openFavoritesToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;toolStripMenuItemCompareLastClips.Name" xml:space="preserve">
+    <value>toolStripMenuItemCompareLastClips</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItemCompareLastClips.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;trayMenuItemMonitoringClipboard.Name" xml:space="preserve">
     <value>trayMenuItemMonitoringClipboard</value>
   </data>
@@ -3542,6 +3707,12 @@ Changes in temp file are not synchronized with clip!
   <data name="&gt;&gt;toolStripMenuItemOpenFile.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;toolStripButtonOpenWith.Name" xml:space="preserve">
+    <value>toolStripButtonOpenWith</value>
+  </data>
+  <data name="&gt;&gt;toolStripButtonOpenWith.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;toolStripButtonTopMostWindow.Name" xml:space="preserve">
     <value>toolStripButtonTopMostWindow</value>
   </data>
@@ -3566,10 +3737,10 @@ Changes in temp file are not synchronized with clip!
   <data name="&gt;&gt;cultureManager1.Type" xml:space="preserve">
     <value>Infralution.Localization.CultureManager, Infralution.Localization, Version=1.2.2.0, Culture=neutral, PublicKeyToken=af4bb5454ff71782</value>
   </data>
-  <data name="&gt;&gt;timerCheckUpdate.Name" xml:space="preserve">
-    <value>timerCheckUpdate</value>
+  <data name="&gt;&gt;timerDaily.Name" xml:space="preserve">
+    <value>timerDaily</value>
   </data>
-  <data name="&gt;&gt;timerCheckUpdate.Type" xml:space="preserve">
+  <data name="&gt;&gt;timerDaily.Type" xml:space="preserve">
     <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;timerReconnect.Name" xml:space="preserve">
@@ -3644,14 +3815,14 @@ Changes in temp file are not synchronized with clip!
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <metadata name="timerCheckUpdate.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>807, 55</value>
+  <metadata name="timerDaily.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>727, 30</value>
   </metadata>
   <metadata name="timerReconnect.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>960, 55</value>
+    <value>827, 30</value>
   </metadata>
   <metadata name="timerApplyTextFiler.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>355, 20</value>
+    <value>325, 3</value>
   </metadata>
   <data name="dataGridViewImageColumn1.HeaderText" xml:space="preserve">
     <value>AppImage</value>
@@ -3684,9 +3855,9 @@ Changes in temp file are not synchronized with clip!
     <value>VisualWeight</value>
   </data>
   <metadata name="clipsTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1097, 55</value>
+    <value>946, 26</value>
   </metadata>
   <metadata name="tableAdapterManager.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1246, 55</value>
+    <value>1078, 27</value>
   </metadata>
 </root>

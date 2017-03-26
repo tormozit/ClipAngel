@@ -185,7 +185,7 @@ Key press will be processed by the window. </value>
     <value>Hotkey to incremental paste</value>
   </data>
   <data name="GlobalHotkeyIncrementalPasteDescription" xml:space="preserve">
-    <value>Use this hot key in any program to paste current clip from Clip Angel list and select next clip</value>
+    <value>Use this hot key in any program to paste current clip from Clip Angel list and select next clip which will be shown in tray tooltip</value>
   </data>
   <data name="GlobalHotkeyOpenCurrent" xml:space="preserve">
     <value>Hotkey to open window with no changes</value>
@@ -205,11 +205,23 @@ Key press will be processed by the window. </value>
   <data name="GlobalHotkeyOpenLastDescription" xml:space="preserve">
     <value>Use this hot key in any program to open Clip Angel window, clear filters and select last captured clip</value>
   </data>
+  <data name="GlobalHotkeyPasteText" xml:space="preserve">
+    <value>Hotkey to paste plain text</value>
+  </data>
+  <data name="GlobalHotkeyPasteTextDescription" xml:space="preserve">
+    <value>Use this hot key in any program to paste last clip as plain text</value>
+  </data>
+  <data name="HistoryDepthDays" xml:space="preserve">
+    <value>History depth days</value>
+  </data>
+  <data name="HistoryDepthDaysDescription" xml:space="preserve">
+    <value>Maximum number of days non favorite clips are stored. Deletion is executed on start, every day, on settings apply.</value>
+  </data>
   <data name="HistoryDepthNumber" xml:space="preserve">
     <value>History depth number</value>
   </data>
   <data name="HistoryDepthNumberDescription" xml:space="preserve">
-    <value>Maximum number of clips stored in database</value>
+    <value>Maximum number of stored non favorite clips. Deletion is executed on start, every day, on settings apply.</value>
   </data>
   <data name="IgnoreApplicationsClipCapture" xml:space="preserve">
     <value>Ignored applications in clip capture</value>
@@ -259,6 +271,12 @@ Key press will be processed by the window. </value>
   <data name="TextCompareApplicationDescription" xml:space="preserve">
     <value>Leave empty to use automatic search application, wich looks for Beyond Compare, ExamDiff Pro, 
 WinMerge, Araxis Merge, DiffMerge. Text compare command is %application% %file1% %file2%</value>
+  </data>
+  <data name="UseFormattingInDublicateDetection" xml:space="preserve">
+    <value>Use formatting in dublicate detection</value>
+  </data>
+  <data name="UseFormattingInDublicateDetectionDescription" xml:space="preserve">
+    <value>Use native text formatting in dublicate detection. Else only plain text will be used for detecting dublicate of text clip</value>
   </data>
   <data name="UserSettingsPath" xml:space="preserve">
     <value>User settings path</value>

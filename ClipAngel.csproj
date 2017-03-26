@@ -91,6 +91,7 @@
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
     <Reference Include="WindowsInput, Version=1.0.4.0, Culture=neutral, PublicKeyToken=9b287f7dc5073cad, processorArchitecture=MSIL">
       <HintPath>packages\InputSimulator.1.0.4.0\lib\net20\WindowsInput.dll</HintPath>
       <Private>True</Private>
@@ -302,6 +303,27 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Picture\MoveCopiedClipToTop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Picture\Open with.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Picture\upload.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Picture\translate.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Picture\keyboard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Picture\clear2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Picture\clear1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Picture\eye.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

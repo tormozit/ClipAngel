@@ -632,9 +632,12 @@ namespace ClipAngel
         public VisibleUserSettings(Main Owner)
         {
             this.Owner = Owner;
+            GlobalHotkeyPasteText = Properties.Settings.Default.GlobalHotkeyPasteText;
+            UseFormattingInDublicateDetection = Properties.Settings.Default.UseFormattingInDublicateDetection;
             IgnoreApplicationsClipCapture = Properties.Settings.Default.IgnoreApplicationsClipCapture;
             CopyTextInAnyWindowOnCTRLF3 = Properties.Settings.Default.CopyTextInAnyWindowOnCTRLF3;
             FastWindowOpen = Properties.Settings.Default.FastWindowOpen;
+            HistoryDepthDays = Properties.Settings.Default.HistoryDepthDays;
             HistoryDepthNumber = Properties.Settings.Default.HistoryDepthNumber;
             DefaultFont = Properties.Settings.Default.Font;
             Language = Properties.Settings.Default.Language;
@@ -675,9 +678,12 @@ namespace ClipAngel
 
         public void Apply(bool PortableMode = false)
         {
+            Properties.Settings.Default.GlobalHotkeyPasteText = GlobalHotkeyPasteText;
+            Properties.Settings.Default.UseFormattingInDublicateDetection = UseFormattingInDublicateDetection;
             Properties.Settings.Default.IgnoreApplicationsClipCapture = IgnoreApplicationsClipCapture;
             Properties.Settings.Default.CopyTextInAnyWindowOnCTRLF3 = CopyTextInAnyWindowOnCTRLF3;
             Properties.Settings.Default.FastWindowOpen = FastWindowOpen;
+            Properties.Settings.Default.HistoryDepthDays = HistoryDepthDays;
             Properties.Settings.Default.HistoryDepthNumber = HistoryDepthNumber;
             Properties.Settings.Default.Font = DefaultFont;
             Properties.Settings.Default.Language = Language;
@@ -797,6 +803,11 @@ namespace ClipAngel
         public string GlobalHotkeyCompareLastClips { get; set; }
 
         [GlobalizedCategory("Hotkeys")]
+        [TypeConverterAttribute(typeof(HotkeyConverter))]
+        [EditorAttribute(typeof(HotkeyEditor), typeof(UITypeEditor))]
+        public string GlobalHotkeyPasteText { get; set; }
+
+        [GlobalizedCategory("Hotkeys")]
         [Editor(typeof(MyBoolEditor), typeof(UITypeEditor))]
         public bool CopyTextInAnyWindowOnCTRLF3 { get; set; }
 
@@ -805,6 +816,9 @@ namespace ClipAngel
 
         [GlobalizedCategory("Other")]
         public int HistoryDepthNumber { get; set; }
+
+        [GlobalizedCategory("Other")]
+        public int HistoryDepthDays { get; set; }
 
         [GlobalizedCategory("Other")]
         public Font DefaultFont { get; set; }
@@ -816,6 +830,10 @@ namespace ClipAngel
         [GlobalizedCategory("Other")]
         [Editor(typeof(MyBoolEditor), typeof(UITypeEditor))]
         public bool Autostart { get; set; }
+
+        [GlobalizedCategory("Other")]
+        [Editor(typeof(MyBoolEditor), typeof(UITypeEditor))]
+        public bool UseFormattingInDublicateDetection { get; set; }
 
         [GlobalizedCategory("Other")]
         //[EditorAttribute(typeof(FileNameEditor), typeof(UITypeEditor))]

@@ -228,4 +228,13 @@
   <data name="NoSupportedTextCompareApplication" xml:space="preserve">
     <value>Не найдено поддерживаемое приложение для сравнения текстов. Сейчас откроем вебсайт, чтобы скачать бесплатное.</value>
   </data>
+  <data name="СonfirmDeleteAllNonFavorite" xml:space="preserve">
+    <value>Вы действительно хотите удалить все не любимые клипы?</value>
+  </data>
+  <data name="FailedToWriteClipboard" xml:space="preserve">
+    <value>Не удалось записать в буфер обмена. Он заблокирован окном "{0}" приложения "{1}"</value>
+  </data>
+  <data name="Donate" xml:space="preserve">
+    <value>http://yasobe.ru/na/clipangel</value>
+  </data>
 </root>
