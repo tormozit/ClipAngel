@@ -1173,6 +1173,7 @@ namespace ClipAngel
             }
             else
             {
+                allowRowLoad = false;
                 dataGridView.ClearSelection();
                 if (selectedClipIDs != null)
                 {
@@ -1183,6 +1184,7 @@ namespace ClipAngel
                             dataGridView.Rows[newIndex].Selected = true;
                     }
                 }
+                allowRowLoad = true;
                 RestoreSelectedCurrentClip(forceRowLoad, currentClipId, false, keepTextSelectionIfIDChanged);
             }
             allowRowLoad = true;
@@ -2702,15 +2704,17 @@ namespace ClipAngel
             GotoLastRow();
         }
 
-        void GotoLastRow()
+        void GotoLastRow(bool keepTextSelectionIfIDChanged = false)
         {
             if (dataGridView.Rows.Count > 0)
             {
-                clipBindingSource.MoveFirst();
+                allowRowLoad = false;
+                clipBindingSource.MoveFirst(); // It changes selected row
+                allowRowLoad = true;
                 if (dataGridView.CurrentRow != null)
-                    SelectCurrentRow();
+                    SelectCurrentRow(false, true, true, keepTextSelectionIfIDChanged);
             }
-            LoadClipIfChangedID();
+            LoadClipIfChangedID(false, true, keepTextSelectionIfIDChanged);
         }
 
         private bool CurrentIDChanged()
@@ -2727,13 +2731,19 @@ namespace ClipAngel
         void SelectCurrentRow(bool forceRowLoad = false, bool keepTextSelection = true, bool clearSelection = true, bool keepTextSelectionIfIDChanged = false)
         {
             if (clearSelection)
+            {
+                allowRowLoad = false;
                 dataGridView.ClearSelection();
+                allowRowLoad = true;
+            }
             if (dataGridView.CurrentRow == null)
             {
                 GotoLastRow();
                 return;
             }
+            allowRowLoad = false;
             dataGridView.Rows[dataGridView.CurrentRow.Index].Selected = true;
+            allowRowLoad = true;
             LoadClipIfChangedID(forceRowLoad, keepTextSelection, keepTextSelectionIfIDChanged);
         }
 
@@ -3882,7 +3892,7 @@ namespace ClipAngel
                 {
                     AddClip(null, null, "", "", "text", RowReader["text"].ToString(), "", "", "", 0, "",
                         (bool) RowReader["used"], (bool) RowReader["favorite"]);
-                    GotoLastRow();
+                    GotoLastRow(true);
                 }
             }
             UpdateClipBindingSource();
