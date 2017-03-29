@@ -2537,9 +2537,9 @@ namespace ClipAngel
                     {
                         activeRect = guiInfo.rcCaret;
                         newX = Math.Min(activeRect.right + point.X,
-                            SystemInformation.VirtualScreen.Width - this.Width);
+                            SystemInformation.VirtualScreen.Width + SystemInformation.VirtualScreen.Left - this.Width);
                         newY = Math.Min(activeRect.bottom + point.Y + 1,
-                            SystemInformation.VirtualScreen.Height - this.Height - 30);
+                            SystemInformation.VirtualScreen.Height + SystemInformation.VirtualScreen.Top - this.Height -30);
                     }
                     else
                     {
@@ -2552,10 +2552,10 @@ namespace ClipAngel
                         GetWindowRect(baseWindow, out activeRect);
                         newX = Math.Max(0,
                             Math.Min((activeRect.right - activeRect.left - this.Width) / 2 + point.X,
-                                SystemInformation.VirtualScreen.Width - this.Width));
+                                SystemInformation.VirtualScreen.Width + SystemInformation.VirtualScreen.Left - this.Width));
                         newY = Math.Max(0,
                             Math.Min((activeRect.bottom - activeRect.top - this.Height) / 2 + point.Y,
-                                SystemInformation.VirtualScreen.Height - this.Height - 30));
+                                SystemInformation.VirtualScreen.Height + SystemInformation.VirtualScreen.Top - this.Height - 30));
                     }
                 }
             }
