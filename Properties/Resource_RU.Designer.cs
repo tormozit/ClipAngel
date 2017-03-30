@@ -187,6 +187,15 @@ namespace ClipAngel.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Не удалось прочитать данные формата &quot;{0}&quot; из буфера обмена..
+        /// </summary>
+        internal static string FailedToReadFormatFromClipboard {
+            get {
+                return ResourceManager.GetString("FailedToReadFormatFromClipboard", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Не удалось записать в буфер обмена. Он заблокирован окном &quot;{0}&quot; приложения &quot;{1}&quot;.
         /// </summary>
         internal static string FailedToWriteClipboard {

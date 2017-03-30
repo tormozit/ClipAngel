@@ -632,6 +632,7 @@ namespace ClipAngel
         public VisibleUserSettings(Main Owner)
         {
             this.Owner = Owner;
+            RestoreCaretPositionOnFocusReturn = Properties.Settings.Default.RestoreCaretPositionOnFocusReturn;
             GlobalHotkeyPasteText = Properties.Settings.Default.GlobalHotkeyPasteText;
             UseFormattingInDublicateDetection = Properties.Settings.Default.UseFormattingInDublicateDetection;
             IgnoreApplicationsClipCapture = Properties.Settings.Default.IgnoreApplicationsClipCapture;
@@ -678,6 +679,7 @@ namespace ClipAngel
 
         public void Apply(bool PortableMode = false)
         {
+            Properties.Settings.Default.RestoreCaretPositionOnFocusReturn = RestoreCaretPositionOnFocusReturn;
             Properties.Settings.Default.GlobalHotkeyPasteText = GlobalHotkeyPasteText;
             Properties.Settings.Default.UseFormattingInDublicateDetection = UseFormattingInDublicateDetection;
             Properties.Settings.Default.IgnoreApplicationsClipCapture = IgnoreApplicationsClipCapture;
@@ -776,6 +778,10 @@ namespace ClipAngel
         [GlobalizedCategory("Other")]
         [Editor(typeof(MyBoolEditor), typeof(UITypeEditor))]
         public bool WindowAutoPosition { get; set; }
+
+        [GlobalizedCategory("Other")]
+        [Editor(typeof(MyBoolEditor), typeof(UITypeEditor))]
+        public bool RestoreCaretPositionOnFocusReturn { get; set; }
 
         [GlobalizedCategory("Hotkeys")]
         [TypeConverterAttribute(typeof(HotkeyConverter))]

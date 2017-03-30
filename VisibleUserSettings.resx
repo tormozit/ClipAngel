@@ -253,6 +253,12 @@ Key press will be processed by the window. </value>
   <data name="NumberOfClipsDescription" xml:space="preserve">
     <value>Current number of clips in database</value>
   </data>
+  <data name="RestoreCaretPositionOnFocusReturn" xml:space="preserve">
+    <value>Restore caret position on focus return</value>
+  </data>
+  <data name="RestoreCaretPositionOnFocusReturnDescription" xml:space="preserve">
+    <value>Enable this to try restore caret position after focus is returned to target window. This is usefull for textboxes which select all text after loosing focus</value>
+  </data>
   <data name="ShowApplicationIconColumn" xml:space="preserve">
     <value>Show clip source icon column</value>
   </data>

@@ -240,4 +240,7 @@
   <data name="Confirmation" xml:space="preserve">
     <value>Подтверждение</value>
   </data>
+  <data name="FailedToReadFormatFromClipboard" xml:space="preserve">
+    <value>Не удалось прочитать данные формата "{0}" из буфера обмена.</value>
+  </data>
 </root>

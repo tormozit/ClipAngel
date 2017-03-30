@@ -66,7 +66,11 @@ namespace ClipAngel
         WinEventDelegate dele = null;
         private const uint WINEVENT_OUTOFCONTEXT = 0;
         private const uint EVENT_SYSTEM_FOREGROUND = 3;
-        static private IntPtr lastActiveWindow;
+        static private IntPtr lastActiveParentWindow;
+        static private IntPtr lastChildWindow;
+        static private RECT lastChildWindowRect;
+        static private string lastWindowSelectedText;
+        static Point lastCaretPoint;
         private IntPtr HookChangeActiveWindow;
         private bool AllowFilterProcessing = true;
         private static Color favoriteColor = Color.FromArgb(255, 230, 220);
@@ -96,6 +100,7 @@ namespace ClipAngel
         private bool allowVisible = false;
         private StringCollection ignoreModulesInClipCapture;
         static Dictionary<string, object> clipboardContents = new Dictionary<string, object>();
+        private bool UsualClipboardMode = false;
 
         [DllImport("dwmapi", PreserveSig = true)]
         static extern int DwmSetWindowAttribute(IntPtr hWnd, int attr, ref int value, int attrLen);
@@ -314,7 +319,11 @@ namespace ClipAngel
             uint remoteThreadId = GetWindowThreadProcessId(hwnd, out targetProcessId);
             if (targetProcessId != Process.GetCurrentProcess().Id)
             {
-                lastActiveWindow = hwnd;
+                lastActiveParentWindow = hwnd;
+                lastChildWindow = IntPtr.Zero;
+                lastChildWindowRect = new RECT();
+                lastCaretPoint = new Point();
+                lastWindowSelectedText = null;
                 UpdateWindowTitle();
             }
         }
@@ -342,9 +351,9 @@ namespace ClipAngel
             if ((this.Top < 0 || !this.Visible) && !forced)
                 return;
             string windowText = "";
-            if (lastActiveWindow != null)
-                windowText = GetWindowTitle(lastActiveWindow);
-            Debug.WriteLine("Active window " + lastActiveWindow + " " + windowText);
+            if (lastActiveParentWindow != null)
+                windowText = GetWindowTitle(lastActiveParentWindow);
+            Debug.WriteLine("Active window " + lastActiveParentWindow + " " + windowText);
             this.Text = Application.ProductName + " " + Properties.Resources.Version + " >> " + windowText;
         }
 
@@ -369,7 +378,7 @@ namespace ClipAngel
                 keyboardHook.RegisterHotKey(Modifiers, Key);
             if (ReadHotkeyFromText(Properties.Settings.Default.GlobalHotkeyPasteText, out Modifiers, out Key))
                 keyboardHook.RegisterHotKey(Modifiers, Key);
-            if (ReadHotkeyFromText("Control + F3", out Modifiers, out Key))
+            if (Properties.Settings.Default.CopyTextInAnyWindowOnCTRLF3 && ReadHotkeyFromText("Control + F3", out Modifiers, out Key))
                 keyboardHook.RegisterHotKey(Modifiers, Key);
         }
 
@@ -454,6 +463,7 @@ namespace ClipAngel
             {
                 keyboardHook.UnregisterHotKeys();
                 BackupClipboard();
+                Clipboard.Clear();
                 Paster.SendCopy();
                 SendKeys.SendWait("^{F3}");
                 RegisterHotKeys();
@@ -470,7 +480,19 @@ namespace ClipAngel
             clipboardContents.Clear();
             IDataObject o = Clipboard.GetDataObject();
             foreach (string format in o.GetFormats())
-                clipboardContents.Add(format, o.GetData(format));
+            {
+                object data;
+                try
+                {
+                    data = o.GetData(format);
+                }
+                catch
+                {
+                    Debug.WriteLine(String.Format(CurrentLangResourceManager.GetString("FailedToReadFormatFromClipboard"), format));
+                    continue;
+                }
+                clipboardContents.Add(format, data);
+            }
         }
 
         public void RestoreClipboard()
@@ -505,7 +527,10 @@ namespace ClipAngel
             {
                 case Msgs.WM_CLIPBOARDUPDATE:
                     Debug.WriteLine("WindowProc WM_CLIPBOARDUPDATE: " + m.Msg, "WndProc");
-                    CaptureClipboardData();
+                    if (UsualClipboardMode)
+                        UsualClipboardMode = false;
+                    else
+                        CaptureClipboardData();
                     break;
                 default:
                     base.WndProc(ref m);
@@ -1254,8 +1279,8 @@ namespace ClipAngel
                 if (Properties.Settings.Default.FastWindowOpen)
                 {
                     bool lastActSet = false;
-                    if (lastActiveWindow != null)
-                        lastActSet = SetForegroundWindow(lastActiveWindow);
+                    if (lastActiveParentWindow != null)
+                        lastActSet = SetForegroundWindow(lastActiveParentWindow);
                     if (!lastActSet)
                         //SetForegroundWindow(IntPtr.Zero); // This way focus was not lost!
                         SetActiveWindow(IntPtr.Zero);
@@ -1975,9 +2000,12 @@ namespace ClipAngel
             //}
             //else
             //{
-            ((DataRowView) currentViewRow.DataBoundItem).Row["Used"] = true;
-            //PrepareTableGrid();
-            UpdateTableGridRowBackColor(currentViewRow);
+            if (currentViewRow.DataBoundItem != null)
+            {
+                ((DataRowView)currentViewRow.DataBoundItem).Row["Used"] = true;
+                //PrepareTableGrid();
+                UpdateTableGridRowBackColor(currentViewRow);
+            }
             //}
             return "";
         }
@@ -1985,7 +2013,11 @@ namespace ClipAngel
         private bool SendPaste(PasteMethod pasteMethod = PasteMethod.Standart)
         {
             int targetProcessId;
-            uint remoteThreadId = GetWindowThreadProcessId(lastActiveWindow, out targetProcessId);
+            string oldWindowSelectedText = lastWindowSelectedText;
+            IntPtr oldChildWindow = lastChildWindow;
+            RECT oldChildWindowRect  = lastChildWindowRect;
+            Point oldCaretPoint = lastCaretPoint;
+            uint remoteThreadId = GetWindowThreadProcessId(lastActiveParentWindow, out targetProcessId);
             bool needElevation = targetProcessId != 0 && !UacHelper.IsProcessAccessible(targetProcessId);
             //if (needElevation && pasteMethod == PasteMethod.SendChars)
             //{
@@ -2002,8 +2034,8 @@ namespace ClipAngel
             }
             else
             {
-                SetForegroundWindow(lastActiveWindow);
-                Debug.WriteLine("Set foreground window " + lastActiveWindow + " " + GetWindowTitle(lastActiveWindow));
+                SetForegroundWindow(lastActiveParentWindow);
+                Debug.WriteLine("Set foreground window " + lastActiveParentWindow + " " + GetWindowTitle(lastActiveParentWindow));
             }
             int waitStep = 5;
             IntPtr hForegroundWindow = IntPtr.Zero;
@@ -2015,6 +2047,37 @@ namespace ClipAngel
                 Thread.Sleep(waitStep);
             }
             Debug.WriteLine("Get foreground window " + hForegroundWindow + " " + GetWindowTitle(hForegroundWindow));
+
+            if (oldChildWindow != IntPtr.Zero && Properties.Settings.Default.RestoreCaretPositionOnFocusReturn)
+            {
+                Point point;
+                RECT newRect;
+                GUITHREADINFO guiInfo = new GUITHREADINFO();
+                for (int i = 0; i < 500; i += waitStep)
+                {
+                    guiInfo = GetGuiInfo(lastActiveParentWindow, out point);
+                    if (guiInfo.hwndFocus == oldChildWindow)
+                        break;
+                    Thread.Sleep(waitStep);
+                }
+                GetWindowRect(oldChildWindow, out newRect);
+                if (newRect.Equals(oldChildWindowRect))
+                {
+                    if (guiInfo.hwndFocus != oldChildWindow)
+                    {
+                        // Adress text box of IE11
+                        Paster.ClickOnPoint(oldChildWindow, oldCaretPoint);
+                    }
+                    else
+                    {
+                        string newActiveWindowSelectedText = getActiveWindowSelectedText();
+                        if (newActiveWindowSelectedText != oldWindowSelectedText && oldWindowSelectedText == "")
+                        {
+                            Paster.ClickOnPoint(oldChildWindow, oldCaretPoint);
+                        }
+                    }
+                }
+            }
 
             var curproc = Process.GetCurrentProcess();
             if (needElevation)
@@ -2085,6 +2148,33 @@ namespace ClipAngel
                 }
             }
             return false;
+        }
+
+        private string getActiveWindowSelectedText()
+        {
+            string newActiveWindowSelectedText = "";
+            //RemoveClipboardFormatListener(this.Handle);
+            BackupClipboard();
+            //Clipboard.Clear(); // Если не делать, то ошибка записи в буфер обмена потом возникает с большей вероятностью
+            UsualClipboardMode = true;
+            Paster.SendCopy();
+            int waitStep = 10;
+            for (int i = 0; i < 100; i += waitStep)
+            {
+                Application.DoEvents();
+                if (!UsualClipboardMode)
+                {
+                    newActiveWindowSelectedText = Clipboard.GetText(TextDataFormat.UnicodeText);
+                    break;
+                }
+                Thread.Sleep(waitStep);
+            }
+            Debug.WriteLine("UsualClipboardMode = " + UsualClipboardMode);
+            UsualClipboardMode = false;
+            Debug.WriteLine("selected text = " + newActiveWindowSelectedText);
+            RestoreClipboard();
+            //ConnectClipboard();
+            return newActiveWindowSelectedText;
         }
 
         private void ShowElevationFail()
@@ -2250,7 +2340,7 @@ namespace ClipAngel
             if (hwnd == IntPtr.Zero)
             {
                 if (replaceNullWithLastActive)
-                    hwnd = lastActiveWindow;
+                    hwnd = lastActiveParentWindow;
                 else
                 {
                     window = null;
@@ -2512,34 +2602,32 @@ namespace ClipAngel
                 return;
             int newX = -1;
             int newY = -1;
-            //AutoGotoLastRow = Properties.Settings.Default.SelectTopClipOnOpen;
-            if (Properties.Settings.Default.WindowAutoPosition)
+            // https://www.codeproject.com/Articles/34520/Getting-Caret-Position-Inside-Any-Application
+            // http://stackoverflow.com/questions/31055249/is-it-possible-to-get-caret-position-in-word-to-update-faster
+            //IntPtr hWindow = GetForegroundWindow();
+            IntPtr hWindow = lastActiveParentWindow;
+            if (hWindow != IntPtr.Zero)
             {
-                // https://www.codeproject.com/Articles/34520/Getting-Caret-Position-Inside-Any-Application
-                // http://stackoverflow.com/questions/31055249/is-it-possible-to-get-caret-position-in-word-to-update-faster
-                //IntPtr hWindow = GetForegroundWindow();
-                IntPtr hWindow = lastActiveWindow;
-                if (hWindow != this.Handle && hWindow != IntPtr.Zero)
+                Point caretPoint;
+                GUITHREADINFO guiInfo = GetGuiInfo(hWindow, out caretPoint);
+                if (caretPoint.Y > 0 && Properties.Settings.Default.RestoreCaretPositionOnFocusReturn)
                 {
-                    int pid;
-                    uint remoteThreadId = GetWindowThreadProcessId(hWindow, out pid);
-                    var guiInfo = new GUITHREADINFO();
-                    guiInfo.cbSize = (uint) Marshal.SizeOf(guiInfo);
-                    GetGUIThreadInfo(remoteThreadId, out guiInfo);
-                    Point point = new Point(0, 0);
-                    ClientToScreen(guiInfo.hwndCaret, out point);
-                    //AttachThreadInput(GetCurrentThreadId(), remoteThreadId, true);
-                    //int Result = GetCaretPos(out point);
-                    //AttachThreadInput(GetCurrentThreadId(), remoteThreadId, false);
-                    // Screen.FromHandle(hwnd)
+                    lastChildWindow = guiInfo.hwndFocus;
+                    lastWindowSelectedText = getActiveWindowSelectedText();
+                    GetWindowRect(lastChildWindow, out lastChildWindowRect);
+                    lastCaretPoint = new Point(guiInfo.rcCaret.left, guiInfo.rcCaret.top);
+                }
+                if (Properties.Settings.Default.WindowAutoPosition)
+                {
                     RECT activeRect;
-                    if (point.Y > 0)
+                    if (caretPoint.Y > 0)
                     {
                         activeRect = guiInfo.rcCaret;
-                        newX = Math.Min(activeRect.right + point.X,
+                        newX = Math.Min(activeRect.right + caretPoint.X,
                             SystemInformation.VirtualScreen.Width + SystemInformation.VirtualScreen.Left - this.Width);
-                        newY = Math.Min(activeRect.bottom + point.Y + 1,
-                            SystemInformation.VirtualScreen.Height + SystemInformation.VirtualScreen.Top - this.Height -30);
+                        newY = Math.Min(activeRect.bottom + caretPoint.Y + 1,
+                            SystemInformation.VirtualScreen.Height + SystemInformation.VirtualScreen.Top - this.Height -
+                            30);
                     }
                     else
                     {
@@ -2548,14 +2636,16 @@ namespace ClipAngel
                             baseWindow = guiInfo.hwndFocus;
                         else
                             baseWindow = hWindow;
-                        ClientToScreen(baseWindow, out point);
+                        ClientToScreen(baseWindow, out caretPoint);
                         GetWindowRect(baseWindow, out activeRect);
                         newX = Math.Max(0,
-                            Math.Min((activeRect.right - activeRect.left - this.Width) / 2 + point.X,
-                                SystemInformation.VirtualScreen.Width + SystemInformation.VirtualScreen.Left - this.Width));
+                            Math.Min((activeRect.right - activeRect.left - this.Width) / 2 + caretPoint.X,
+                                SystemInformation.VirtualScreen.Width + SystemInformation.VirtualScreen.Left -
+                                this.Width));
                         newY = Math.Max(0,
-                            Math.Min((activeRect.bottom - activeRect.top - this.Height) / 2 + point.Y,
-                                SystemInformation.VirtualScreen.Height + SystemInformation.VirtualScreen.Top - this.Height - 30));
+                            Math.Min((activeRect.bottom - activeRect.top - this.Height) / 2 + caretPoint.Y,
+                                SystemInformation.VirtualScreen.Height + SystemInformation.VirtualScreen.Top -
+                                this.Height - 30));
                     }
                 }
             }
@@ -2569,6 +2659,22 @@ namespace ClipAngel
             }
             SetForegroundWindow(this.Handle);
             //this.ResumeLayout();
+        }
+
+        private static GUITHREADINFO GetGuiInfo(IntPtr hWindow, out Point point)
+        {
+            int pid;
+            uint remoteThreadId = GetWindowThreadProcessId(hWindow, out pid);
+            var guiInfo = new GUITHREADINFO();
+            guiInfo.cbSize = (uint) Marshal.SizeOf(guiInfo);
+            GetGUIThreadInfo(remoteThreadId, out guiInfo);
+            point = new Point(0, 0);
+            ClientToScreen(guiInfo.hwndCaret, out point);
+            //AttachThreadInput(GetCurrentThreadId(), remoteThreadId, true);
+            //int Result = GetCaretPos(out point);
+            //AttachThreadInput(GetCurrentThreadId(), remoteThreadId, false);
+            // Screen.FromHandle(hwnd)
+            return guiInfo;
         }
 
         private void RestoreWindowIfMinimized(int newX = -1, int newY = -1)
@@ -3374,7 +3480,6 @@ namespace ClipAngel
 
         private void Main_Activated(object sender, EventArgs e)
         {
-            //Debug.WriteLine("Activated");
             if (Properties.Settings.Default.FastWindowOpen)
             {
                 RestoreWindowIfMinimized();
@@ -4274,8 +4379,7 @@ namespace ClipAngel
         private void copyLinkAdressToolStripMenuItem_Click(object sender, EventArgs e)
         {
             string href = lastClickedHtmlElement.GetAttribute("href");
-            Clipboard.Clear();
-            Clipboard.SetText(href, TextDataFormat.UnicodeText);
+            SetTextInClipboard(href);
         }
 
         private void selectAllToolStripMenuItem_Click(object sender, EventArgs e)
@@ -4383,8 +4487,11 @@ namespace ClipAngel
 
         private void richTextBox_Enter(object sender, EventArgs e)
         {
-            if (RowReader["type"].ToString() == "file" && richTextBox.SelectionLength == 0 &&
-                richTextBox.SelectionStart == 0)
+            if (true
+                && RowReader != null
+                && RowReader["type"].ToString() == "file" 
+                && richTextBox.SelectionLength == 0 
+                && richTextBox.SelectionStart == 0)
             {
                 var match = Regex.Match(richTextBox.Text, @"([^\\/:*?""<>|\r\n]+)[$<\r\n]", RegexOptions.Singleline);
                 if (match != null)
@@ -4448,7 +4555,7 @@ namespace ClipAngel
                     string clipWindow = "";
                     string clipApplication = "";
                     GetClipboardOwnerLockerInfo(true, out clipWindow, out clipApplication, out appPath);
-                    MessageBox.Show(this, String.Format(CurrentLangResourceManager.GetString("FailedToWriteClipboard"), clipWindow, clipApplication));
+                    Debug.WriteLine(String.Format(CurrentLangResourceManager.GetString("FailedToWriteClipboard"), clipWindow, clipApplication));
                 }
             ConnectClipboard();
             if (allowSelfCapture)
@@ -4672,6 +4779,8 @@ public sealed class KeyboardHook : IDisposable
         if (!RegisterHotKey(_window.Handle, _currentId, (uint)modifier, (uint)key))
         {
             string hotkeyTitle = HotkeyTitle(key, modifier);
+            //int ErrorCode = Marshal.GetLastWin32Error(); // 0 always
+            //string errorText = resourceManager.GetString("CouldNotRegisterHotkey") + " \"" + hotkeyTitle + "\": " + ErrorCode;
             string errorText = resourceManager.GetString("CouldNotRegisterHotkey") + " " + hotkeyTitle;
             //throw new InvalidOperationException(ErrorText);
             MessageBox.Show(errorText, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);

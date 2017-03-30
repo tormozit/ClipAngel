@@ -344,6 +344,15 @@ namespace ClipAngel.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Failed to read data in format &quot;{0}&quot; from clipboard..
+        /// </summary>
+        public static string FailedToReadFormatFromClipboard {
+            get {
+                return ResourceManager.GetString("FailedToReadFormatFromClipboard", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Failed to write clipboard. It is locked by window &quot;{0}&quot; application &quot;{1}&quot;.
         /// </summary>
         public static string FailedToWriteClipboard {

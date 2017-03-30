@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Threading;
 using System.Windows.Forms;
@@ -28,6 +29,65 @@ namespace ClipAngel
         //{
         //    MyEvent(sender, eventArgs);
         //}
+
+        [DllImport("user32.dll")]
+        private static extern bool ClientToScreen(IntPtr hWnd, ref Point lpPoint);
+
+        [DllImport("user32.dll")]
+        private static extern uint SendInput(uint nInputs, [MarshalAs(UnmanagedType.LPArray), In] INPUT[] pInputs, int cbSize);
+
+        internal struct INPUT
+        {
+            public UInt32 Type;
+            public MOUSEKEYBDHARDWAREINPUT Data;
+        }
+
+        [StructLayout(LayoutKind.Explicit)]
+        internal struct MOUSEKEYBDHARDWAREINPUT
+        {
+            [FieldOffset(0)]
+            public MOUSEINPUT Mouse;
+        }
+
+        internal struct MOUSEINPUT
+        {
+            public Int32 X;
+            public Int32 Y;
+            public UInt32 MouseData;
+            public UInt32 Flags;
+            public UInt32 Time;
+            public IntPtr ExtraInfo;
+        }
+
+        public static void ClickOnPoint(IntPtr wndHandle, Point clientPoint)
+        {
+            /// get screen coordinates
+            ClientToScreen(wndHandle, ref clientPoint);
+            ClickOnPoint(clientPoint);
+        }
+
+        // http://stackoverflow.com/questions/10355286/programmatically-mouse-click-in-another-window
+        public static void ClickOnPoint(Point clientPoint)
+        {
+            var oldPos = Cursor.Position;
+
+            /// set cursor on coords, and press mouse
+            Cursor.Position = new Point(clientPoint.X, clientPoint.Y);
+
+            var inputMouseDown = new INPUT();
+            inputMouseDown.Type = 0; /// input type mouse
+            inputMouseDown.Data.Mouse.Flags = 0x0002; /// left button down
+
+            var inputMouseUp = new INPUT();
+            inputMouseUp.Type = 0; /// input type mouse
+            inputMouseUp.Data.Mouse.Flags = 0x0004; /// left button up
+
+            var inputs = new INPUT[] {inputMouseDown, inputMouseUp};
+            SendInput((uint) inputs.Length, inputs, Marshal.SizeOf(typeof(INPUT)));
+
+            /// return mouse 
+            Cursor.Position = oldPos;
+        }
 
         static public EventWaitHandle GetPasteEventWaiter(int processID = 0)
         {
@@ -62,12 +122,13 @@ namespace ClipAngel
             ModifiersState mod = new ModifiersState();
             mod.ReleaseAll();
 
-            // Send CTLR+V
+            // Send CTRL+V
             const int KEYEVENTF_KEYUP = 0x0002; //Key up flag
             keybd_event((byte)VirtualKeyCode.CONTROL, 0x1D, 0, 0);
             keybd_event((byte)'V', 0x2f, 0, 0);
             keybd_event((byte)'V', 0x2f, KEYEVENTF_KEYUP, 0);
             keybd_event((byte)VirtualKeyCode.CONTROL, 0x1D, KEYEVENTF_KEYUP, 0);
+            //SendKeys.SendWait("^");
 
             //mod.RestoreState();
         }
@@ -77,12 +138,13 @@ namespace ClipAngel
             ModifiersState mod = new ModifiersState();
             mod.ReleaseAll();
 
-            // Send CTLR+C
+            // Send CTRL+C
             const int KEYEVENTF_KEYUP = 0x0002; //Key up flag
             keybd_event((byte)VirtualKeyCode.CONTROL, 0x1D, 0, 0);
             keybd_event((byte)'C', 0x2e, 0, 0);
             keybd_event((byte)'C', 0x2e, KEYEVENTF_KEYUP, 0);
             keybd_event((byte)VirtualKeyCode.CONTROL, 0x1D, KEYEVENTF_KEYUP, 0);
+            SendKeys.SendWait("^"); // Helps to wait event processing and data in clipboard
 
             //mod.RestoreState();
         }

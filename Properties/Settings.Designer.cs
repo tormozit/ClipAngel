@@ -416,5 +416,17 @@ namespace ClipAngel.Properties {
                 this["HistoryDepthDays"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool RestoreCaretPositionOnFocusReturn {
+            get {
+                return ((bool)(this["RestoreCaretPositionOnFocusReturn"]));
+            }
+            set {
+                this["RestoreCaretPositionOnFocusReturn"] = value;
+            }
+        }
     }
 }
