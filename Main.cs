@@ -4680,6 +4680,11 @@ namespace ClipAngel
         {
 
         }
+
+        private void supportToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Process.Start(Properties.Resources.Support);
+        }
     }
 }
 
