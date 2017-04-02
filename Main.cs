@@ -32,7 +32,13 @@ using static IconTools;
 
 namespace ClipAngel
 {
-    enum PasteMethod {Standart, PasteText, SendChars, Null };
+    enum PasteMethod
+    {
+        Standart,
+        PasteText,
+        SendChars,
+        Null
+    };
 
     public partial class Main : Form
     {
@@ -101,6 +107,7 @@ namespace ClipAngel
         private StringCollection ignoreModulesInClipCapture;
         static Dictionary<string, object> clipboardContents = new Dictionary<string, object>();
         private bool UsualClipboardMode = false;
+        private List<int> selectedClipsBeforeFilterApply = new List<int>();
 
         [DllImport("dwmapi", PreserveSig = true)]
         static extern int DwmSetWindowAttribute(IntPtr hWnd, int attr, ref int value, int attrLen);
@@ -337,7 +344,8 @@ namespace ClipAngel
                 {
                     Rectangle bounds1 = new Rectangle(Point.Empty, e.Item.Size);
                     bounds1 = new Rectangle(bounds1.Left, bounds1.Top, e.Item.Size.Width - 1, e.Item.Size.Height - 1);
-                    Rectangle bounds2 = new Rectangle(bounds1.Left + 1, bounds1.Top + 1, bounds1.Right - 1, bounds1.Bottom - 1);
+                    Rectangle bounds2 = new Rectangle(bounds1.Left + 1, bounds1.Top + 1, bounds1.Right - 1,
+                        bounds1.Bottom - 1);
                     e.Graphics.DrawRectangle(new Pen(Color.DeepSkyBlue), bounds1);
                     Brush brush = new SolidBrush(Color.FromArgb(255, 180, 240, 240));
                     e.Graphics.FillRectangle(brush, bounds2);
@@ -378,7 +386,8 @@ namespace ClipAngel
                 keyboardHook.RegisterHotKey(Modifiers, Key);
             if (ReadHotkeyFromText(Properties.Settings.Default.GlobalHotkeyPasteText, out Modifiers, out Key))
                 keyboardHook.RegisterHotKey(Modifiers, Key);
-            if (Properties.Settings.Default.CopyTextInAnyWindowOnCTRLF3 && ReadHotkeyFromText("Control + F3", out Modifiers, out Key))
+            if (Properties.Settings.Default.CopyTextInAnyWindowOnCTRLF3 &&
+                ReadHotkeyFromText("Control + F3", out Modifiers, out Key))
                 keyboardHook.RegisterHotKey(Modifiers, Key);
         }
 
@@ -488,7 +497,8 @@ namespace ClipAngel
                 }
                 catch
                 {
-                    Debug.WriteLine(String.Format(CurrentLangResourceManager.GetString("FailedToReadFormatFromClipboard"), format));
+                    Debug.WriteLine(
+                        String.Format(CurrentLangResourceManager.GetString("FailedToReadFormatFromClipboard"), format));
                     continue;
                 }
                 clipboardContents.Add(format, data);
@@ -526,7 +536,7 @@ namespace ClipAngel
             switch ((Msgs) m.Msg)
             {
                 case Msgs.WM_CLIPBOARDUPDATE:
-                    Debug.WriteLine("WindowProc WM_CLIPBOARDUPDATE: " + m.Msg, "WndProc");
+                    Debug.WriteLine("WM_CLIPBOARDUPDATE", "WndProc");
                     if (UsualClipboardMode)
                         UsualClipboardMode = false;
                     else
@@ -667,7 +677,8 @@ namespace ClipAngel
             }
         }
 
-        private void AfterRowLoad(bool FullTextLoad = false, int CurrentRowIndex = -1, int NewSelectionStart = -1,int NewSelectionLength = -1)
+        private void AfterRowLoad(bool FullTextLoad = false, int CurrentRowIndex = -1, int NewSelectionStart = -1,
+            int NewSelectionLength = -1)
         {
             DataRowView CurrentRowView;
             mshtml.IHTMLDocument2 htmlDoc;
@@ -742,10 +753,11 @@ namespace ClipAngel
                 numberFormat.NumberDecimalDigits = 0;
                 numberFormat.NumberGroupSeparator = " ";
                 if (!(RowReader["Size"] is DBNull))
-                    StripLabelSize.Text = ((int) RowReader["Size"]).ToString("N", numberFormat) + " " + MultiLangByteUnit();
+                    StripLabelSize.Text = ((int) RowReader["Size"]).ToString("N", numberFormat) + " " +
+                                          MultiLangByteUnit();
                 if (!(RowReader["Chars"] is DBNull))
                     StripLabelVisualSize.Text = ((int) RowReader["Chars"]).ToString("N", numberFormat) + " " +
-                                            MultiLangCharUnit();
+                                                MultiLangCharUnit();
                 string TypeEng = RowReader["Type"].ToString();
                 if (CurrentLangResourceManager.GetString(TypeEng) == null)
                     StripLabelType.Text = TypeEng;
@@ -757,7 +769,7 @@ namespace ClipAngel
                 richTextBox.Clear();
                 int fontsize = (int) richTextBox.Font.Size; // Size should be without digits after comma
                 richTextBox.SelectionTabs = new int[] {fontsize * 4, fontsize * 8, fontsize * 12, fontsize * 16};
-                    // Set tab size ~ 4
+                // Set tab size ~ 4
                 string shortText;
                 string endMarker;
                 Font markerFont;
@@ -836,7 +848,8 @@ namespace ClipAngel
                         //htmlTextBox.Document.Body.AppendChild(paragraph);
                         if (filterText.Length > 0)
                         {
-                            MarkRegExpMatchesInWebBrowser(htmlTextBox, Regex.Escape(filterText).Replace("%", ".*?"), Color.Red, true);
+                            MarkRegExpMatchesInWebBrowser(htmlTextBox, Regex.Escape(filterText).Replace("%", ".*?"),
+                                Color.Red, true);
                         }
                     }
                     else
@@ -847,12 +860,13 @@ namespace ClipAngel
                         if (TextWasCut)
                             endMarker = Environment.NewLine + endMarker;
                         richTextBox.AppendText(endMarker);
-                            // Do it first, else ending hyperlink will connect underline to it
+                        // Do it first, else ending hyperlink will connect underline to it
 
                         MarkLinksInRichTextBox(richTextBox, out TextLinkMatches);
                         if (filterText.Length > 0)
                         {
-                            MarkRegExpMatchesInRichTextBox(richTextBox, Regex.Escape(filterText).Replace("%", ".*?"), Color.Red, false, true, out FilterMatches);
+                            MarkRegExpMatchesInRichTextBox(richTextBox, Regex.Escape(filterText).Replace("%", ".*?"),
+                                Color.Red, false, true, out FilterMatches);
                         }
                     }
                 }
@@ -1039,7 +1053,8 @@ namespace ClipAngel
             MarkRegExpMatchesInRichTextBox(control, LinkPattern, Color.Blue, true, false, out matches);
         }
 
-        private void MarkRegExpMatchesInRichTextBox(RichTextBox control, string pattern, Color color, bool underline, bool bold, out MatchCollection matches)
+        private void MarkRegExpMatchesInRichTextBox(RichTextBox control, string pattern, Color color, bool underline,
+            bool bold, out MatchCollection matches)
         {
             matches = Regex.Matches(control.Text, pattern, RegexOptions.IgnoreCase | RegexOptions.Singleline);
             control.DeselectAll();
@@ -1111,7 +1126,8 @@ namespace ClipAngel
             UpdateClipBindingSource(true);
         }
 
-        private void UpdateClipBindingSource(bool forceRowLoad = false, int currentClipId = 0, bool keepTextSelectionIfIDChanged = false)
+        private void UpdateClipBindingSource(bool forceRowLoad = false, int currentClipId = 0,
+            bool keepTextSelectionIfIDChanged = false)
         {
             if (dataAdapter == null)
                 return;
@@ -1128,13 +1144,14 @@ namespace ClipAngel
                     {
                         if (selectedRow == null)
                             continue;
-                        DataRowView dataRow = (DataRowView)selectedRow.DataBoundItem;
-                        selectedClipIDs.Insert(0, (int)dataRow["Id"]);
+                        DataRowView dataRow = (DataRowView) selectedRow.DataBoundItem;
+                        selectedClipIDs.Insert(0, (int) dataRow["Id"]);
                     }
                 }
             }
 
             allowRowLoad = false;
+            bool oldFilterOn = filterOn;
             filterOn = false;
             string sqlFilter = "1 = 1";
             string filterValue = "";
@@ -1159,6 +1176,8 @@ namespace ClipAngel
                 sqlFilter += " AND " + filterValue;
                 filterOn = true;
             }
+            if (!oldFilterOn && filterOn)
+                selectedClipsBeforeFilterApply.Clear();
             string selectCommandText = "Select Id, Used, Title, Chars, Type, Favorite, ImageSample, AppPath From Clips";
             selectCommandText += " WHERE " + sqlFilter;
             selectCommandText += " ORDER BY Id desc";
@@ -1216,19 +1235,26 @@ namespace ClipAngel
             //AutoGotoLastRow = false;
         }
 
-        private void RestoreSelectedCurrentClip(bool forceRowLoad = false, int currentClipId = -1, bool clearSelection = true, bool keepTextSelectionIfIDChanged = false)
+        private void RestoreSelectedCurrentClip(bool forceRowLoad = false, int currentClipId = -1,
+            bool clearSelection = true, bool keepTextSelectionIfIDChanged = false)
         {
             if (false
                 //|| AutoGotoLastRow 
                 || currentClipId <= 0)
-
+            {
+                UpdateSelectedClipsHistory();
                 GotoLastRow();
+            }
             else if (currentClipId > 0)
             {
                 int newPosition = clipBindingSource.Find("Id", currentClipId);
-                clipBindingSource.Position = newPosition;
+                allowRowLoad = false;
+                clipBindingSource.Position = newPosition; // Calls SeletectionChanged in DataGridView
                 ////if (dataGridView.CurrentRow != null)
                 ////    dataGridView.CurrentCell = dataGridView.CurrentRow.Cells[0];
+                if (newPosition == -1)
+                    UpdateSelectedClipsHistory();
+                allowRowLoad = true;
                 SelectCurrentRow(forceRowLoad || newPosition == -1, true, clearSelection, keepTextSelectionIfIDChanged);
             }
         }
@@ -1349,6 +1375,9 @@ namespace ClipAngel
             if (iData.GetDataPresent(DataFormat_ClipboardViewerIgnore))
                 return;
             bool textFormatPresent = false;
+            byte[] binaryBuffer = new byte[0];
+            byte[] imageSampleBuffer = new byte[0];
+            Bitmap image = null;
             if (iData.GetDataPresent(DataFormats.UnicodeText))
             {
                 clipText = (string) iData.GetData(DataFormats.UnicodeText);
@@ -1377,7 +1406,10 @@ namespace ClipAngel
                     var rtfBox = new RichTextBox();
                     rtfBox.Rtf = richText;
                     clipText = rtfBox.Text;
-                    textFormatPresent = true;
+                    if (!String.IsNullOrEmpty(clipText))
+                    {
+                        textFormatPresent = true;
+                    }
                 }
             }
 
@@ -1392,7 +1424,18 @@ namespace ClipAngel
                         clipUrl = match.Groups[1].ToString();
                     if (!textFormatPresent)
                     {
-                        // It make take much time to parse big html, so we sacrifice text content
+                        // It may take much time to parse big html
+                        var htmlParser = new HtmlParser();
+                        var documentHtml = htmlParser.Parse(htmlText);
+                        string ImageUrl = documentHtml.Images[0].Source;
+                        using (WebClient webClient = new WebClient())
+                        {
+                            byte[] tempBuffer = webClient.DownloadData(ImageUrl);
+                            using (var ms = new MemoryStream(tempBuffer))
+                            {
+                                image = new Bitmap(ms);
+                            }
+                        }
                     }
                 }
             }
@@ -1426,14 +1469,12 @@ namespace ClipAngel
                 }
             }
 
-            byte[] binaryBuffer = new byte[0];
-            byte[] imageSampleBuffer = new byte[0];
             // http://www.cyberforum.ru/ado-net/thread832314.html
             if (iData.GetDataPresent(DataFormats.Bitmap) && htmlText == "")
                 // html text check to prevent crush from Excel clip
             {
                 clipType = "img";
-                Bitmap image = iData.GetData(DataFormats.Bitmap) as Bitmap;
+                image = iData.GetData(DataFormats.Bitmap) as Bitmap;
                 if (image == null)
                     // Happans while copying image in standart image viewer Windows 10
                     return;
@@ -1454,12 +1495,6 @@ namespace ClipAngel
                                 Image.GetPixelFormatSize(image.PixelFormat);
                 }
                 clipChars = image.Width * image.Height;
-                using (MemoryStream memoryStream = new MemoryStream())
-                {
-                    Image ImageSample = CopyRectImage(image, new Rectangle(0, 0, 100, 20));
-                    ImageSample.Save(memoryStream, ImageFormat.Png);
-                    imageSampleBuffer = memoryStream.ToArray();
-                }
                 // OCR
                 //try
                 //{
@@ -1474,6 +1509,13 @@ namespace ClipAngel
                 //{
                 //}
             }
+            if (image != null)
+                using (MemoryStream memoryStream = new MemoryStream())
+                {
+                    Image ImageSample = CopyRectImage(image, new Rectangle(0, 0, 100, 20));
+                    ImageSample.Save(memoryStream, ImageFormat.Png);
+                    imageSampleBuffer = memoryStream.ToArray();
+                }
 
             if (!String.IsNullOrEmpty(clipType))
             {
@@ -1847,7 +1889,8 @@ namespace ClipAngel
         //    }
         //}
 
-        private string CopyClipToClipboard(SQLiteDataReader rowReader = null, bool onlySelectedPlainText = false, bool allowSelfCapture = true)
+        private string CopyClipToClipboard(SQLiteDataReader rowReader = null, bool onlySelectedPlainText = false,
+            bool allowSelfCapture = true)
         {
             SaveFilterInLastUsedList();
             if (rowReader == null)
@@ -1956,7 +1999,8 @@ namespace ClipAngel
             return type == "rtf" || type == "text" || type == "html";
         }
 
-        private string SendPasteClip(DataGridViewRow currentViewRow = null, PasteMethod pasteMethod = PasteMethod.Standart, bool pasteDelimiter = false)
+        private string SendPasteClip(DataGridViewRow currentViewRow = null,
+            PasteMethod pasteMethod = PasteMethod.Standart, bool pasteDelimiter = false)
         {
             if (currentViewRow == null)
                 currentViewRow = dataGridView.CurrentRow;
@@ -1964,10 +2008,10 @@ namespace ClipAngel
                 return "";
             var dataRow = (DataRowView) currentViewRow.DataBoundItem;
             var rowReader = getRowReader((int) dataRow["id"]);
-            string type = (string)rowReader["type"];
+            string type = (string) rowReader["type"];
             if (pasteMethod == PasteMethod.Null)
             {
-                string textToPaste = (string)rowReader["Text"];
+                string textToPaste = (string) rowReader["Text"];
                 if (pasteDelimiter)
                     textToPaste = Environment.NewLine + textToPaste;
                 return textToPaste;
@@ -2002,7 +2046,7 @@ namespace ClipAngel
             //{
             if (currentViewRow.DataBoundItem != null)
             {
-                ((DataRowView)currentViewRow.DataBoundItem).Row["Used"] = true;
+                ((DataRowView) currentViewRow.DataBoundItem).Row["Used"] = true;
                 //PrepareTableGrid();
                 UpdateTableGridRowBackColor(currentViewRow);
             }
@@ -2015,7 +2059,7 @@ namespace ClipAngel
             int targetProcessId;
             string oldWindowSelectedText = lastWindowSelectedText;
             IntPtr oldChildWindow = lastChildWindow;
-            RECT oldChildWindowRect  = lastChildWindowRect;
+            RECT oldChildWindowRect = lastChildWindowRect;
             Point oldCaretPoint = lastCaretPoint;
             uint remoteThreadId = GetWindowThreadProcessId(lastActiveParentWindow, out targetProcessId);
             bool needElevation = targetProcessId != 0 && !UacHelper.IsProcessAccessible(targetProcessId);
@@ -2035,7 +2079,8 @@ namespace ClipAngel
             else
             {
                 SetForegroundWindow(lastActiveParentWindow);
-                Debug.WriteLine("Set foreground window " + lastActiveParentWindow + " " + GetWindowTitle(lastActiveParentWindow));
+                Debug.WriteLine("Set foreground window " + lastActiveParentWindow + " " +
+                                GetWindowTitle(lastActiveParentWindow));
             }
             int waitStep = 5;
             IntPtr hForegroundWindow = IntPtr.Zero;
@@ -2241,7 +2286,7 @@ namespace ClipAngel
         private void UpdateClipButtons()
         {
             toolStripButtonMarkFavorite.Checked = BoolFieldValue("Favorite");
-                // dataGridView.CurrentRow could be null here!
+            // dataGridView.CurrentRow could be null here!
         }
 
         private void ReadFilterText()
@@ -2330,7 +2375,8 @@ namespace ClipAngel
         [System.Runtime.InteropServices.DllImport("user32.dll")]
         static extern IntPtr GetOpenClipboardWindow();
 
-        static public void GetClipboardOwnerLockerInfo(bool Locker, out string window, out string application, out string appPath, bool replaceNullWithLastActive = true)
+        static public void GetClipboardOwnerLockerInfo(bool Locker, out string window, out string application,
+            out string appPath, bool replaceNullWithLastActive = true)
         {
             IntPtr hwnd;
             if (Locker)
@@ -2436,14 +2482,7 @@ namespace ClipAngel
             int count = 0;
             if (String.IsNullOrEmpty(agregateTextToPaste))
             {
-                bool pasteDelimiter = false;
-                count = dataGridView.SelectedRows.Count;
-                for (int i = count - 1; i >= 0; i--)
-                {
-                    DataGridViewRow selectedRow = dataGridView.SelectedRows[i];
-                    agregateTextToPaste += SendPasteClip(selectedRow, itemPasteMethod, pasteDelimiter);
-                    pasteDelimiter = true;
-                }
+                agregateTextToPaste = JoinOrPasteTextOfClips(itemPasteMethod, out count);
             }
             if (itemPasteMethod == PasteMethod.Null)
             {
@@ -2452,7 +2491,7 @@ namespace ClipAngel
             }
             if (String.IsNullOrEmpty(selectedText))
                 SetRowMark("Used", true, true);
-            if(true
+            if (true
                 && Properties.Settings.Default.MoveCopiedClipToTop
                 && String.IsNullOrEmpty(selectedText)
                 && count == 1)
@@ -2461,14 +2500,28 @@ namespace ClipAngel
                 //CaptureClipboardData();
             }
             else if (true
-                && pasteMethod == PasteMethod.PasteText
-                && !String.IsNullOrEmpty(selectedText))
+                     && pasteMethod == PasteMethod.PasteText
+                     && !String.IsNullOrEmpty(selectedText))
             {
                 // With multipaste works incorrect
                 CaptureClipboardData();
                 if (Properties.Settings.Default.MoveCopiedClipToTop)
                     RowShift(0);
             }
+        }
+
+        private string JoinOrPasteTextOfClips(PasteMethod itemPasteMethod, out int count)
+        {
+            string agregateTextToPaste = "";
+            bool pasteDelimiter = false;
+            count = dataGridView.SelectedRows.Count;
+            for (int i = count - 1; i >= 0; i--)
+            {
+                DataGridViewRow selectedRow = dataGridView.SelectedRows[i];
+                agregateTextToPaste += SendPasteClip(selectedRow, itemPasteMethod, pasteDelimiter);
+                pasteDelimiter = true;
+            }
+            return agregateTextToPaste;
         }
 
         private void dataGridView_SelectionChanged(object sender, EventArgs e)
@@ -2823,6 +2876,16 @@ namespace ClipAngel
             LoadClipIfChangedID(false, true, keepTextSelectionIfIDChanged);
         }
 
+        private void UpdateSelectedClipsHistory()
+        {
+            if (RowReader != null)
+            {
+                int oldID = (int) RowReader["id"];
+                if (!selectedClipsBeforeFilterApply.Contains(oldID))
+                    selectedClipsBeforeFilterApply.Add(oldID);
+            }
+        }
+
         private bool CurrentIDChanged()
         {
             return false
@@ -2834,7 +2897,8 @@ namespace ClipAngel
                         && (int) (dataGridView.CurrentRow.DataBoundItem as DataRowView)["ID"] == (int) RowReader["ID"]);
         }
 
-        void SelectCurrentRow(bool forceRowLoad = false, bool keepTextSelection = true, bool clearSelection = true, bool keepTextSelectionIfIDChanged = false)
+        void SelectCurrentRow(bool forceRowLoad = false, bool keepTextSelection = true, bool clearSelection = true,
+            bool keepTextSelectionIfIDChanged = false)
         {
             if (clearSelection)
             {
@@ -2853,7 +2917,8 @@ namespace ClipAngel
             LoadClipIfChangedID(forceRowLoad, keepTextSelection, keepTextSelectionIfIDChanged);
         }
 
-        private void LoadClipIfChangedID(bool forceRowLoad = false, bool keepTextSelection = true, bool keepTextSelectionIfIDChanged = false)
+        private void LoadClipIfChangedID(bool forceRowLoad = false, bool keepTextSelection = true,
+            bool keepTextSelectionIfIDChanged = false)
         {
             bool currentIDChanged = CurrentIDChanged();
             if (forceRowLoad || currentIDChanged)
@@ -2947,7 +3012,8 @@ namespace ClipAngel
                 _richTextBox.Font = dataGridView.RowsDefaultCellStyle.Font;
                 _richTextBox.Text = row.Cells["ColumnTitle"].Value.ToString();
                 MatchCollection tempMatches;
-                MarkRegExpMatchesInRichTextBox(_richTextBox, Regex.Escape(filterText).Replace("%", ".*?"), Color.Red, false, true, out tempMatches);
+                MarkRegExpMatchesInRichTextBox(_richTextBox, Regex.Escape(filterText).Replace("%", ".*?"), Color.Red,
+                    false, true, out tempMatches);
                 row.Cells["ColumnTitle"].Value = _richTextBox.Rtf;
             }
             if (dataGridView.Columns["ColumnTitle"].Visible)
@@ -3990,7 +4056,10 @@ namespace ClipAngel
             bool newEditMode = !EditMode;
             allowRowLoad = false;
             if (!newEditMode)
+            {
                 SaveClipText();
+                UpdateClipBindingSource();
+            }
             else
             {
                 if (clipType != "text")
@@ -3999,8 +4068,9 @@ namespace ClipAngel
                         (bool) RowReader["used"], (bool) RowReader["favorite"]);
                     GotoLastRow(true);
                 }
+                //else
+                //    UpdateClipBindingSource();
             }
-            UpdateClipBindingSource();
             allowRowLoad = true;
             EditMode = newEditMode;
             AfterRowLoad(true, -1);
@@ -4259,7 +4329,8 @@ namespace ClipAngel
                 return path;
             }
 
-            MessageBox.Show(this, CurrentLangResourceManager.GetString("NoSupportedTextCompareApplication"), Application.ProductName);
+            MessageBox.Show(this, CurrentLangResourceManager.GetString("NoSupportedTextCompareApplication"),
+                Application.ProductName);
             Process.Start("http://winmerge.org/");
             return "";
         }
@@ -4312,7 +4383,7 @@ namespace ClipAngel
                 ;
             if (e.KeyPressedCode == (int) Keys.Escape)
                 Close();
-            else if (e.KeyPressedCode == (int)Keys.Enter)
+            else if (e.KeyPressedCode == (int) Keys.Enter)
             {
                 ProcessEnterKeyDown(e.CtrlKeyPressed);
             }
@@ -4489,8 +4560,8 @@ namespace ClipAngel
         {
             if (true
                 && RowReader != null
-                && RowReader["type"].ToString() == "file" 
-                && richTextBox.SelectionLength == 0 
+                && RowReader["type"].ToString() == "file"
+                && richTextBox.SelectionLength == 0
                 && richTextBox.SelectionStart == 0)
             {
                 var match = Regex.Match(richTextBox.Text, @"([^\\/:*?""<>|\r\n]+)[$<\r\n]", RegexOptions.Singleline);
@@ -4515,7 +4586,9 @@ namespace ClipAngel
             IgnoreApplicationsClipCapture.Add(fullFilename);
             UpdateIgnoreModulesInClipCapture();
             string moduleName = Path.GetFileName(fullFilename);
-            MessageBox.Show(this, String.Format(CurrentLangResourceManager.GetString("ApplicationAddedToIgnoreList"), moduleName), AssemblyProduct);
+            MessageBox.Show(this,
+                String.Format(CurrentLangResourceManager.GetString("ApplicationAddedToIgnoreList"), moduleName),
+                AssemblyProduct);
         }
 
         private void copyFullFilenameToolStripMenuItem_Click(object sender, EventArgs e)
@@ -4535,19 +4608,22 @@ namespace ClipAngel
 
         void SetClipboardDataObject(IDataObject dto, bool allowSelfCapture = true)
         {
-            RemoveClipboardFormatListener(this.Handle); // If not doing this WM_CLIPBOARDUPDATE event will be raised 2 times (why?) if "copy"=true
+            RemoveClipboardFormatListener(this.Handle);
+                // If not doing this WM_CLIPBOARDUPDATE event will be raised 2 times (why?) if "copy"=true
             bool success = false;
             try
             {
-                Clipboard.SetDataObject(dto, true, 10, 10); // Very important to set second parameter to true to give immidiate access to buffer to other processes!
+                Clipboard.SetDataObject(dto, true, 10, 10);
+                    // Very important to set second parameter to true to give immidiate access to buffer to other processes!
                 success = true;
             }
             catch
-            { }
+            {
+            }
             if (!success)
                 try
                 {
-                    Clipboard.SetDataObject(dto, false, 10, 10); 
+                    Clipboard.SetDataObject(dto, false, 10, 10);
                 }
                 catch (Exception ex)
                 {
@@ -4555,7 +4631,8 @@ namespace ClipAngel
                     string clipWindow = "";
                     string clipApplication = "";
                     GetClipboardOwnerLockerInfo(true, out clipWindow, out clipApplication, out appPath);
-                    Debug.WriteLine(String.Format(CurrentLangResourceManager.GetString("FailedToWriteClipboard"), clipWindow, clipApplication));
+                    Debug.WriteLine(String.Format(CurrentLangResourceManager.GetString("FailedToWriteClipboard"),
+                        clipWindow, clipApplication));
                 }
             ConnectClipboard();
             if (allowSelfCapture)
@@ -4571,17 +4648,19 @@ namespace ClipAngel
         {
             if (dataGridView.Rows.Count > 1)
             {
-                DataRowView row1 = (DataRowView)dataGridView.Rows[0].DataBoundItem;
-                int id1 = (int)row1["id"];
-                DataRowView row2 = (DataRowView)dataGridView.Rows[1].DataBoundItem;
-                int id2 = (int)row2["id"];
+                DataRowView row1 = (DataRowView) dataGridView.Rows[0].DataBoundItem;
+                int id1 = (int) row1["id"];
+                DataRowView row2 = (DataRowView) dataGridView.Rows[1].DataBoundItem;
+                int id2 = (int) row2["id"];
                 CompareClipsbyID(id1, id2);
             }
         }
 
         private void deleteAllNonFavoriteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show(this, CurrentLangResourceManager.GetString("СonfirmDeleteAllNonFavorite"), CurrentLangResourceManager.GetString("Confirmation"), MessageBoxButtons.OKCancel);
+            DialogResult result = MessageBox.Show(this,
+                CurrentLangResourceManager.GetString("СonfirmDeleteAllNonFavorite"),
+                CurrentLangResourceManager.GetString("Confirmation"), MessageBoxButtons.OKCancel);
             if (result != DialogResult.OK)
                 return;
             allowRowLoad = false;
@@ -4604,8 +4683,8 @@ namespace ClipAngel
 
             string result =
                 ((regKey != null) && (regKey.GetValue("Content Type") != null))
-                ? regKey.GetValue("Content Type").ToString()
-                : "image/unknown";
+                    ? regKey.GetValue("Content Type").ToString()
+                    : "image/unknown";
             return result;
         }
 
@@ -4685,8 +4764,49 @@ namespace ClipAngel
         {
             Process.Start(Properties.Resources.Support);
         }
+
+        private void returnToPrevousSelectedClipToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int newSelectedID = 0;
+            if (selectedClipsBeforeFilterApply.Count > 0)
+            {
+                newSelectedID = selectedClipsBeforeFilterApply[selectedClipsBeforeFilterApply.Count - 1];
+                selectedClipsBeforeFilterApply.RemoveAt(selectedClipsBeforeFilterApply.Count - 1);
+            }
+            ClearFilter(newSelectedID);
+            dataGridView.Focus();
+        }
+
+        private void toolStripMenuItemClearFilters_Click(object sender, EventArgs e)
+        {
+            ClearFilter();
+            dataGridView.Focus();
+        }
+
+        private void mergeTextOfClipsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int count = 0;
+            string agregateTextToPaste = JoinOrPasteTextOfClips(PasteMethod.Null, out count);
+            AddClip(null, null, "", "", "text", agregateTextToPaste);
+            GotoLastRow(true);
+        }
+
+        private void comboBoxFilter_MouseHover(object sender, EventArgs e)
+        {
+            //// Antibug. Tooltip not shown
+            //ComponentResourceManager resources = new ComponentResourceManager(typeof(Main));
+            ////toolTipDynamic.Show(resources.GetString("comboBoxFilter.ToolTip"), comboBoxFilter);
+            //toolTipDynamic.Show(resources.GetString("comboBoxFilter.ToolTip"), TypeFilter);
+            Debug.WriteLine("tooltip");
+        }
+
+        private void comboBoxFilter_MouseEnter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
+
 
 public sealed class KeyboardHook : IDisposable
 {

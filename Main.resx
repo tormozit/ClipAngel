@@ -134,32 +134,14 @@
   <data name="toolStripBottom.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>None</value>
   </data>
-  <data name="toolStripButtonClearFilter.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIDSURBVDhPpZLrS5NhGMb3j4SWh0oRQVExD4gonkDpg4hG
-        YKxG6WBogkMZKgPNCEVJFBGdGETEvgwyO9DJE5syZw3PIlPEE9pgBCLZ5XvdMB8Ew8gXbl54nuf63dd9
-        0OGSnwCahxbPRNPAPMw9Xpg6ZmF46kZZ0xSKzJPIrhpDWsVnpBhGkKx3nAX8Pv7z1zg8OoY/cITdn4fw
-        bf/C0kYAN3Ma/w3gWfZL5kzTKBxjWyK2DftwI9tyMYCZKXbNHaD91bLYJrDXsYbrWfUKwJrPE9M2M1Oc
-        VzOOpHI7Jr376Hi9ogHqFIANO0/MmmmbmSmm9a8ze+I4MrNWAdjtoJgWcx+PSzg166yZZ8xM8XvXDix9
-        c4jIqFYAjoriBV9AhEPv1mH/sonogha0afbZMMZz+yreTGyhpusHwtNNCsA5U1zS4BLxzJIfg299qO32
-        Ir7UJtZfftyATqeT+8o2D8JSjQrAJblrncYL7ZJ2+bfaFnC/1S1NjL3diRat7qrO7wLRP3HjWsojBeCo
-        mDEo5mNjuweFGvjWg2EBhCbpkW78htSHHwRyNdmgAFzPEee2iFkzayy2OLXzT4gr6UdUnlXrullsxxQ+
-        kx0g8BTA3aZlButjSTyjODq/WcQcW/B/Je4OQhLvKQDnzN1mp0nnkvAhR8VuMzNrpm1mpjgkoVwB/v8D
-        TgDQASA1MVpwzwAAAABJRU5ErkJggg==
-</value>
-  </data>
   <data name="toolStripButtonClearFilter.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
   </data>
   <data name="toolStripButtonClearFilter.Size" type="System.Drawing.Size, System.Drawing">
     <value>23, 22</value>
   </data>
-  <data name="toolStripButtonClearFilter.Text" xml:space="preserve">
-    <value>X</value>
-  </data>
   <data name="toolStripButtonClearFilter.ToolTipText" xml:space="preserve">
-    <value>Clear filters</value>
+    <value>Clear filters (F7)</value>
   </data>
   <data name="toolStripButtonAutoSelectMatch.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
@@ -189,7 +171,7 @@
     <value>Find previuos match in clip text (SHIFT+F3)</value>
   </data>
   <data name="toolStripBottom.Location" type="System.Drawing.Point, System.Drawing">
-    <value>276, 395</value>
+    <value>275, 395</value>
   </data>
   <data name="toolStripBottom.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
     <value>Yes</value>
@@ -315,7 +297,7 @@ Submenu "List" has commands for quick selection</value>
     <value>159, 395</value>
   </data>
   <data name="comboBoxFilter.Size" type="System.Drawing.Size, System.Drawing">
-    <value>116, 23</value>
+    <value>112, 23</value>
   </data>
   <data name="comboBoxFilter.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -323,7 +305,8 @@ Submenu "List" has commands for quick selection</value>
   <data name="comboBoxFilter.ToolTip" xml:space="preserve">
     <value>Hot filter for clip text. 
 Use special char % for marking any sequence of chars. For example filter "po%o" will match "potato".
-List and text filter shares key input. Navigate in list right from here.</value>
+List and text filter shares key input. Navigate in list right from here.
+</value>
   </data>
   <data name="&gt;&gt;comboBoxFilter.Name" xml:space="preserve">
     <value>comboBoxFilter</value>
@@ -1227,15 +1210,6 @@ Used only in fast window open mode.</value>
   <data name="moveCopiedClipToTopToolStripMenuItem.Text" xml:space="preserve">
     <value>Move clip to top after copy/paste</value>
   </data>
-  <data name="toolStripMenuItemClearFilterAndSelectTop.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>F9</value>
-  </data>
-  <data name="toolStripMenuItemClearFilterAndSelectTop.Size" type="System.Drawing.Size, System.Drawing">
-    <value>250, 22</value>
-  </data>
-  <data name="toolStripMenuItemClearFilterAndSelectTop.Text" xml:space="preserve">
-    <value>Clear filters and select top</value>
-  </data>
   <data name="moveTopToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+Alt+Up</value>
   </data>
@@ -1349,6 +1323,42 @@ Used only in fast window open mode.</value>
   </data>
   <data name="showOnlyTextsToolStripMenuItem.Text" xml:space="preserve">
     <value>Show only texts</value>
+  </data>
+  <data name="toolStripMenuItem17.Size" type="System.Drawing.Size, System.Drawing">
+    <value>247, 6</value>
+  </data>
+  <data name="toolStripMenuItemClearFilters.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>F7</value>
+  </data>
+  <data name="toolStripMenuItemClearFilters.Size" type="System.Drawing.Size, System.Drawing">
+    <value>250, 22</value>
+  </data>
+  <data name="toolStripMenuItemClearFilters.Text" xml:space="preserve">
+    <value>Clear filters</value>
+  </data>
+  <data name="toolStripMenuItemClearFilters.ToolTipText" xml:space="preserve">
+    <value>Clear filters and select clip which was selected before filter apply</value>
+  </data>
+  <data name="returnToPrevousSelectedClipToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>F8</value>
+  </data>
+  <data name="returnToPrevousSelectedClipToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>250, 22</value>
+  </data>
+  <data name="returnToPrevousSelectedClipToolStripMenuItem.Text" xml:space="preserve">
+    <value>Clear filters and select prev</value>
+  </data>
+  <data name="returnToPrevousSelectedClipToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>Clear filters and select clip which was selected before filter apply</value>
+  </data>
+  <data name="toolStripMenuItemClearFilterAndSelectTop.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>F9</value>
+  </data>
+  <data name="toolStripMenuItemClearFilterAndSelectTop.Size" type="System.Drawing.Size, System.Drawing">
+    <value>250, 22</value>
+  </data>
+  <data name="toolStripMenuItemClearFilterAndSelectTop.Text" xml:space="preserve">
+    <value>Clear filters and select top</value>
   </data>
   <data name="listToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>37, 20</value>
@@ -1524,6 +1534,15 @@ Changes in temp file are not synchronized with clip!</value>
     <value>Save data to temp file for text or image clip.
 Open system menu to open clip file in choosen application.
 Changes in temp file are not synchronized with clip!</value>
+  </data>
+  <data name="mergeTextOfClipsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>214, 22</value>
+  </data>
+  <data name="mergeTextOfClipsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Join text of clips</value>
+  </data>
+  <data name="mergeTextOfClipsToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>Join text of selected clips into new clip and select it</value>
   </data>
   <data name="textCompareToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>214, 22</value>
@@ -2289,7 +2308,7 @@ Url will be saved in current clip and will be copied to clipboard.</value>
     <value>True</value>
   </data>
   <metadata name="toolStripTop.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>626, 24</value>
+    <value>625, 29</value>
   </metadata>
   <data name="toolStripTop.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>None</value>
@@ -3357,12 +3376,6 @@ Changes in temp file are not synchronized with clip!
   <data name="&gt;&gt;moveCopiedClipToTopToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;toolStripMenuItemClearFilterAndSelectTop.Name" xml:space="preserve">
-    <value>toolStripMenuItemClearFilterAndSelectTop</value>
-  </data>
-  <data name="&gt;&gt;toolStripMenuItemClearFilterAndSelectTop.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;moveTopToolStripMenuItem.Name" xml:space="preserve">
     <value>moveTopToolStripMenuItem</value>
   </data>
@@ -3439,6 +3452,30 @@ Changes in temp file are not synchronized with clip!
     <value>showOnlyTextsToolStripMenuItem</value>
   </data>
   <data name="&gt;&gt;showOnlyTextsToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItem17.Name" xml:space="preserve">
+    <value>toolStripMenuItem17</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItem17.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItemClearFilters.Name" xml:space="preserve">
+    <value>toolStripMenuItemClearFilters</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItemClearFilters.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;returnToPrevousSelectedClipToolStripMenuItem.Name" xml:space="preserve">
+    <value>returnToPrevousSelectedClipToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;returnToPrevousSelectedClipToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItemClearFilterAndSelectTop.Name" xml:space="preserve">
+    <value>toolStripMenuItemClearFilterAndSelectTop</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItemClearFilterAndSelectTop.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;clipToolStripMenuItem.Name" xml:space="preserve">
@@ -3537,6 +3574,12 @@ Changes in temp file are not synchronized with clip!
   <data name="&gt;&gt;openWithToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;mergeTextOfClipsToolStripMenuItem.Name" xml:space="preserve">
+    <value>mergeTextOfClipsToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;mergeTextOfClipsToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;textCompareToolStripMenuItem.Name" xml:space="preserve">
     <value>textCompareToolStripMenuItem</value>
   </data>
@@ -3589,6 +3632,12 @@ Changes in temp file are not synchronized with clip!
     <value>helpToolStripMenuItem</value>
   </data>
   <data name="&gt;&gt;helpToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;supportToolStripMenuItem.Name" xml:space="preserve">
+    <value>supportToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;supportToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;aboutToolStripMenuItem1.Name" xml:space="preserve">
@@ -3836,12 +3885,6 @@ Changes in temp file are not synchronized with clip!
   </data>
   <data name="&gt;&gt;tableAdapterManager.Type" xml:space="preserve">
     <value>ClipAngel.dbDataSetTableAdapters.TableAdapterManager, dbDataSet.Designer.cs.dll, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;supportToolStripMenuItem.Name" xml:space="preserve">
-    <value>supportToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;supportToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>Main</value>
