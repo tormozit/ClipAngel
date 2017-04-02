@@ -306,16 +306,16 @@ Submenu "List" has commands for quick selection</value>
     <value>6</value>
   </data>
   <data name="comboBoxFilter.ToolTip" xml:space="preserve">
-    <value>Hot filter for clip text. 
+    <value>Hot filter for clip text. List and this filter shares key input.
+Edit filter right from list. Navigate in list right from filter.
 Use special char % for marking any sequence of chars. For example filter "po%o" will match "potato".
-List and text filter shares key input. Navigate in list right from here.
 </value>
   </data>
   <data name="&gt;&gt;comboBoxFilter.Name" xml:space="preserve">
     <value>comboBoxFilter</value>
   </data>
   <data name="&gt;&gt;comboBoxFilter.Type" xml:space="preserve">
-    <value>ClipAngel.Components.CueComboBox, ClipAngel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>ClipAngel.CueComboBox, ClipAngel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;comboBoxFilter.Parent" xml:space="preserve">
     <value>splitContainer1.Panel1</value>
@@ -1336,9 +1336,6 @@ Used only in fast window open mode.</value>
   <data name="toolStripMenuItemClearFilters.Text" xml:space="preserve">
     <value>Clear filters</value>
   </data>
-  <data name="toolStripMenuItemClearFilters.ToolTipText" xml:space="preserve">
-    <value>Clear filters and select clip which was selected before filter apply</value>
-  </data>
   <data name="returnToPrevousSelectedClipToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>F8</value>
   </data>
@@ -1346,10 +1343,10 @@ Used only in fast window open mode.</value>
     <value>250, 22</value>
   </data>
   <data name="returnToPrevousSelectedClipToolStripMenuItem.Text" xml:space="preserve">
-    <value>Clear filters and select prev</value>
+    <value>Clear filters and select prev.</value>
   </data>
   <data name="returnToPrevousSelectedClipToolStripMenuItem.ToolTipText" xml:space="preserve">
-    <value>Clear filters and select clip which was selected before filter apply</value>
+    <value>Clear filters and select clip which was selected before filter apply with change of selected clip</value>
   </data>
   <data name="toolStripMenuItemClearFilterAndSelectTop.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>F9</value>
@@ -1359,6 +1356,9 @@ Used only in fast window open mode.</value>
   </data>
   <data name="toolStripMenuItemClearFilterAndSelectTop.Text" xml:space="preserve">
     <value>Clear filters and select top</value>
+  </data>
+  <data name="toolStripMenuItemClearFilterAndSelectTop.ToolTipText" xml:space="preserve">
+    <value>Clear filters and select top clip</value>
   </data>
   <data name="listToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>37, 20</value>

@@ -278,7 +278,7 @@ namespace ClipAngel
             this.toolStripButtonFindPrevious = new System.Windows.Forms.ToolStripButton();
             this.MarkFilter = new System.Windows.Forms.ComboBox();
             this.TypeFilter = new System.Windows.Forms.ComboBox();
-            this.comboBoxFilter = new CueComboBox();
+            this.comboBoxFilter = new ClipAngel.CueComboBox();
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.AppImage = new System.Windows.Forms.DataGridViewImageColumn();
             this.TypeImg = new System.Windows.Forms.DataGridViewImageColumn();
