@@ -105,6 +105,9 @@
       <DependentUpon>AboutBox.cs</DependentUpon>
     </Compile>
     <Compile Include="Components\Attributes.cs" />
+    <Compile Include="Components\CueComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Components\Descriptors.cs" />
     <Compile Include="Components\IconTools.cs" />
     <Compile Include="Components\InputBox.cs" />

@@ -290,6 +290,9 @@ Submenu "List" has commands for quick selection</value>
   <data name="comboBoxFilter.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left, Right</value>
   </data>
+  <data name="comboBoxFilter.CueText" xml:space="preserve">
+    <value>Type filter in list</value>
+  </data>
   <data name="comboBoxFilter.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 9pt</value>
   </data>
@@ -312,7 +315,7 @@ List and text filter shares key input. Navigate in list right from here.
     <value>comboBoxFilter</value>
   </data>
   <data name="&gt;&gt;comboBoxFilter.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>ClipAngel.Components.CueComboBox, ClipAngel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;comboBoxFilter.Parent" xml:space="preserve">
     <value>splitContainer1.Panel1</value>
@@ -545,9 +548,6 @@ List and text filter shares key input. Navigate in list right from here.
   </data>
   <data name="dataGridView.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
-  </data>
-  <data name="dataGridView.ToolTip" xml:space="preserve">
-    <value>List and text filter shares key input. Edit text filter right from here.</value>
   </data>
   <data name="&gt;&gt;dataGridView.Name" xml:space="preserve">
     <value>dataGridView</value>

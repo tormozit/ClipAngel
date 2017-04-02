@@ -278,7 +278,7 @@ namespace ClipAngel
             this.toolStripButtonFindPrevious = new System.Windows.Forms.ToolStripButton();
             this.MarkFilter = new System.Windows.Forms.ComboBox();
             this.TypeFilter = new System.Windows.Forms.ComboBox();
-            this.comboBoxFilter = new System.Windows.Forms.ComboBox();
+            this.comboBoxFilter = new CueComboBox();
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.AppImage = new System.Windows.Forms.DataGridViewImageColumn();
             this.TypeImg = new System.Windows.Forms.DataGridViewImageColumn();
@@ -605,7 +605,7 @@ namespace ClipAngel
             this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView.StandardTab = true;
             this.dataGridView.TabStop = false;
-            this.toolTipDynamic.SetToolTip(this.dataGridView, resources.GetString("dataGridView.ToolTip"));
+            this.dataGridView.Tag = "";
             this.dataGridView.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView_CellFormatting);
             this.dataGridView.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView_CellMouseDown);
             this.dataGridView.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.dataGridView_RowPrePaint);
@@ -1802,7 +1802,6 @@ namespace ClipAngel
         private System.Windows.Forms.TextBox textBoxWindow;
         private System.Windows.Forms.StatusStrip statusStrip;
         private System.Windows.Forms.BindingSource clipBindingSource;
-        private System.Windows.Forms.ComboBox comboBoxFilter;
         private dbDataSet dbDataSet;
         private dbDataSetTableAdapters.ClipsTableAdapter clipsTableAdapter;
         private dbDataSetTableAdapters.TableAdapterManager tableAdapterManager;
@@ -1961,6 +1960,7 @@ namespace ClipAngel
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemClearFilters;
         private System.Windows.Forms.ToolStripButton toolStripButtonClearFilter;
         private System.Windows.Forms.ToolStripMenuItem mergeTextOfClipsToolStripMenuItem;
+        private CueComboBox comboBoxFilter;
     }
 }
 
