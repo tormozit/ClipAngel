@@ -204,8 +204,14 @@
     <EmbeddedResource Include="SettingsForm.ru.resx">
       <DependentUpon>SettingsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="VisibleUserSettings.resx" />
-    <EmbeddedResource Include="VisibleUserSettings.RU.resx" />
+    <EmbeddedResource Include="VisibleUserSettings.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>VisibleUserSettings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VisibleUserSettings.RU.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>VisibleUserSettings.RU.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <None Include="dbDataSet.xsc">
       <DependentUpon>dbDataSet.xsd</DependentUpon>
     </None>

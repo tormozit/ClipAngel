@@ -14,6 +14,7 @@ using System.Collections.Specialized;
 using System.Drawing.Imaging;
 using System.Globalization;
 using System.IO;
+using System.Linq.Expressions;
 using System.Security.Cryptography;
 using System.Resources;
 using System.Net;
@@ -1377,153 +1378,166 @@ namespace ClipAngel
             bool textFormatPresent = false;
             byte[] binaryBuffer = new byte[0];
             byte[] imageSampleBuffer = new byte[0];
-            Bitmap image = null;
-            if (iData.GetDataPresent(DataFormats.UnicodeText))
+            Bitmap bitmap = null;
+            try
             {
-                clipText = (string) iData.GetData(DataFormats.UnicodeText);
-                if (!String.IsNullOrEmpty(clipText))
+                if (iData.GetDataPresent(DataFormats.UnicodeText))
                 {
-                    clipType = "text";
-                    textFormatPresent = true;
-                }
-            }
-            if (!textFormatPresent && iData.GetDataPresent(DataFormats.Text))
-            {
-                clipText = (string) iData.GetData(DataFormats.Text);
-                if (!String.IsNullOrEmpty(clipText))
-                {
-                    clipType = "text";
-                    textFormatPresent = true;
-                }
-            }
-
-            if (iData.GetDataPresent(DataFormats.Rtf))
-            {
-                richText = (string) iData.GetData(DataFormats.Rtf);
-                clipType = "rtf";
-                if (!textFormatPresent)
-                {
-                    var rtfBox = new RichTextBox();
-                    rtfBox.Rtf = richText;
-                    clipText = rtfBox.Text;
+                    clipText = (string) iData.GetData(DataFormats.UnicodeText);
                     if (!String.IsNullOrEmpty(clipText))
                     {
+                        clipType = "text";
                         textFormatPresent = true;
                     }
                 }
-            }
-
-            if (iData.GetDataPresent(DataFormats.Html))
-            {
-                htmlText = (string) iData.GetData(DataFormats.Html);
-                if (!String.IsNullOrEmpty(htmlText))
+                if (!textFormatPresent && iData.GetDataPresent(DataFormats.Text))
                 {
-                    clipType = "html";
-                    Match match = Regex.Match(htmlText, "SourceURL:(" + LinkPattern + ")", RegexOptions.IgnoreCase);
-                    if (match.Captures.Count > 0)
-                        clipUrl = match.Groups[1].ToString();
+                    clipText = (string) iData.GetData(DataFormats.Text);
+                    if (!String.IsNullOrEmpty(clipText))
+                    {
+                        clipType = "text";
+                        textFormatPresent = true;
+                    }
+                }
+
+                if (iData.GetDataPresent(DataFormats.Rtf))
+                {
+                    richText = (string) iData.GetData(DataFormats.Rtf);
+                    clipType = "rtf";
                     if (!textFormatPresent)
                     {
-                        // It may take much time to parse big html
-                        var htmlParser = new HtmlParser();
-                        var documentHtml = htmlParser.Parse(htmlText);
-                        string ImageUrl = documentHtml.Images[0].Source;
-                        using (WebClient webClient = new WebClient())
+                        var rtfBox = new RichTextBox();
+                        rtfBox.Rtf = richText;
+                        clipText = rtfBox.Text;
+                        if (!String.IsNullOrEmpty(clipText))
                         {
-                            byte[] tempBuffer = webClient.DownloadData(ImageUrl);
-                            using (var ms = new MemoryStream(tempBuffer))
+                            textFormatPresent = true;
+                        }
+                    }
+                }
+
+                if (iData.GetDataPresent(DataFormats.Html))
+                {
+                    htmlText = (string) iData.GetData(DataFormats.Html);
+                    if (!String.IsNullOrEmpty(htmlText))
+                    {
+                        clipType = "html";
+                        Match match = Regex.Match(htmlText, "SourceURL:(" + LinkPattern + ")", RegexOptions.IgnoreCase);
+                        if (match.Captures.Count > 0)
+                            clipUrl = match.Groups[1].ToString();
+                        if (!textFormatPresent)
+                        {
+                            // It may take much time to parse big html
+                            var htmlParser = new HtmlParser();
+                            var documentHtml = htmlParser.Parse(htmlText);
+                            string ImageUrl = documentHtml.Images[0].Source;
+                            using (WebClient webClient = new WebClient())
                             {
-                                image = new Bitmap(ms);
+                                try
+                                {
+                                    byte[] tempBuffer = webClient.DownloadData(ImageUrl);
+                                    using (var ms = new MemoryStream(tempBuffer))
+                                    {
+                                        bitmap = new Bitmap(ms);
+                                    }
+                                }
+                                catch{}
                             }
                         }
                     }
                 }
-            }
 
-            //StringCollection UrlFormatNames = new StringCollection();
-            //UrlFormatNames.Add("text/x-moz-url-priv");
-            //UrlFormatNames.Add("msSourceUrl");
-            //foreach (string UrlFormatName in UrlFormatNames)
-            //    if (iData.GetDataPresent(UrlFormatName))
-            //    {
-            //        var ms = (MemoryStream)iData.GetData(UrlFormatName);
-            //        var sr = new StreamReader(ms, Encoding.Unicode, true);
-            //        Url = sr.ReadToEnd();
-            //        break;
-            //    }
+                //StringCollection UrlFormatNames = new StringCollection();
+                //UrlFormatNames.Add("text/x-moz-url-priv");
+                //UrlFormatNames.Add("msSourceUrl");
+                //foreach (string UrlFormatName in UrlFormatNames)
+                //    if (iData.GetDataPresent(UrlFormatName))
+                //    {
+                //        var ms = (MemoryStream)iData.GetData(UrlFormatName);
+                //        var sr = new StreamReader(ms, Encoding.Unicode, true);
+                //        Url = sr.ReadToEnd();
+                //        break;
+                //    }
 
-            if (iData.GetDataPresent(DataFormats.FileDrop))
-            {
-                string[] fileNameList = iData.GetData(DataFormats.FileDrop) as string[];
-                if (fileNameList != null)
+                if (iData.GetDataPresent(DataFormats.FileDrop))
                 {
-                    clipText = String.Join("\n", fileNameList);
-                    if (iData.GetDataPresent(DataFormats.FileDrop))
+                    string[] fileNameList = iData.GetData(DataFormats.FileDrop) as string[];
+                    if (fileNameList != null)
                     {
-                        clipType = "file";
+                        clipText = String.Join("\n", fileNameList);
+                        if (iData.GetDataPresent(DataFormats.FileDrop))
+                        {
+                            clipType = "file";
+                        }
+                    }
+                    else
+                    {
+                        // Coping Outlook task
                     }
                 }
-                else
+
+                // http://www.cyberforum.ru/ado-net/thread832314.html
+                if (iData.GetDataPresent(DataFormats.Bitmap) && htmlText == "")
+                    // html text check to prevent crush from Excel clip
                 {
-                    // Coping Outlook task
+                    clipType = "img";
+                    bitmap = iData.GetData(DataFormats.Bitmap) as Bitmap;
+                    if (bitmap == null)
+                        // Happans while copying image in standart image viewer Windows 10
+                        return;
+                    using (MemoryStream memoryStream = new MemoryStream())
+                    {
+                        bitmap.Save(memoryStream, ImageFormat.Png);
+                        binaryBuffer = memoryStream.ToArray();
+                    }
+                    if (clipText == "")
+                    {
+                        //clipText = CurrentLangResourceManager.GetString("Size") + ": " + image.Width + "x" + image.Height + "\n"
+                        //     + CurrentLangResourceManager.GetString("PixelFormat") + ": " + image.PixelFormat + "\n";
+
+                        clipText = bitmap.Width + " x " + bitmap.Height;
+                        if (!String.IsNullOrEmpty(clipWindow))
+                            clipText += ", " + clipWindow;
+                        clipText += ", " + CurrentLangResourceManager.GetString("PixelFormat") + ": " +
+                                    Image.GetPixelFormatSize(bitmap.PixelFormat);
+                    }
+                    clipChars = bitmap.Width * bitmap.Height;
+                    // OCR
+                    //try
+                    //{
+                    //    TesseractEngine ocr = new TesseractEngine("./tessdata", "eng", EngineMode.TesseractAndCube);
+                    //    string fileName = Path.GetTempFileName();
+                    //    image.Save(fileName);
+                    //    Pix pix = Pix.LoadFromFile(fileName);
+                    //    var result = ocr.Process(pix, PageSegMode.Auto);
+                    //    clipText = result.GetText();
+                    //}
+                    //catch (Exception e)
+                    //{
+                    //}
+                }
+                if (bitmap != null)
+                    using (MemoryStream memoryStream = new MemoryStream())
+                    {
+                        using (Image ImageSample = CopyRectImage(bitmap, new Rectangle(0, 0, 100, 20)))
+                        {
+                            ImageSample.Save(memoryStream, ImageFormat.Png);
+                            imageSampleBuffer = memoryStream.ToArray();
+                        }
+                    }
+
+                if (!String.IsNullOrEmpty(clipType))
+                {
+                    AddClip(binaryBuffer, imageSampleBuffer, htmlText, richText, clipType, clipText, clipApplication,
+                        clipWindow, clipUrl, clipChars, appPath);
+                    //UpdateClipBindingSource();
                 }
             }
-
-            // http://www.cyberforum.ru/ado-net/thread832314.html
-            if (iData.GetDataPresent(DataFormats.Bitmap) && htmlText == "")
-                // html text check to prevent crush from Excel clip
+            finally
             {
-                clipType = "img";
-                image = iData.GetData(DataFormats.Bitmap) as Bitmap;
-                if (image == null)
-                    // Happans while copying image in standart image viewer Windows 10
-                    return;
-                using (MemoryStream memoryStream = new MemoryStream())
-                {
-                    image.Save(memoryStream, ImageFormat.Png);
-                    binaryBuffer = memoryStream.ToArray();
-                }
-                if (clipText == "")
-                {
-                    //clipText = CurrentLangResourceManager.GetString("Size") + ": " + image.Width + "x" + image.Height + "\n"
-                    //     + CurrentLangResourceManager.GetString("PixelFormat") + ": " + image.PixelFormat + "\n";
-
-                    clipText = image.Width + " x " + image.Height;
-                    if (!String.IsNullOrEmpty(clipWindow))
-                        clipText += ", " + clipWindow;
-                    clipText += ", " + CurrentLangResourceManager.GetString("PixelFormat") + ": " +
-                                Image.GetPixelFormatSize(image.PixelFormat);
-                }
-                clipChars = image.Width * image.Height;
-                // OCR
-                //try
-                //{
-                //    TesseractEngine ocr = new TesseractEngine("./tessdata", "eng", EngineMode.TesseractAndCube);
-                //    string fileName = Path.GetTempFileName();
-                //    image.Save(fileName);
-                //    Pix pix = Pix.LoadFromFile(fileName);
-                //    var result = ocr.Process(pix, PageSegMode.Auto);
-                //    clipText = result.GetText();
-                //}
-                //catch (Exception e)
-                //{
-                //}
+                if (bitmap != null)
+                    bitmap.Dispose();
             }
-            if (image != null)
-                using (MemoryStream memoryStream = new MemoryStream())
-                {
-                    Image ImageSample = CopyRectImage(image, new Rectangle(0, 0, 100, 20));
-                    ImageSample.Save(memoryStream, ImageFormat.Png);
-                    imageSampleBuffer = memoryStream.ToArray();
-                }
-
-            if (!String.IsNullOrEmpty(clipType))
-            {
-                AddClip(binaryBuffer, imageSampleBuffer, htmlText, richText, clipType, clipText, clipApplication,
-                    clipWindow, clipUrl, clipChars, appPath);
-                //UpdateClipBindingSource();
-            }
-
         }
 
         int CountLines(string str, int position = 0)
@@ -3260,17 +3274,23 @@ namespace ClipAngel
                 new SolidBrush(dataGridView1.DefaultCellStyle.ForeColor), newCell.X + 3, newCell.Y + 3);
         }
 
-        public static Image CopyRectImage(Image image, Rectangle selection)
+        public static Bitmap CopyRectImage(Bitmap bitmap, Rectangle selection)
         {
             int newBottom = selection.Bottom;
-            if (selection.Bottom > image.Height)
-                newBottom = image.Height;
+            if (selection.Bottom > bitmap.Height)
+                newBottom = bitmap.Height;
             int newRight = selection.Right;
-            if (selection.Right > image.Width)
-                newRight = image.Width;
+            if (selection.Right > bitmap.Width)
+                newRight = bitmap.Width;
             // TODO check other borders
-            Bitmap RectImage = (image as Bitmap).Clone(
-                new Rectangle(selection.Left, selection.Top, newRight, newBottom), image.PixelFormat);
+            // Sometimes Clone() raises strange OutOfMemory exception http://www.codingdefined.com/2015/04/solved-bitmapclone-out-of-memory.html
+            //Bitmap RectImage = bitmap.Clone(
+            //    new Rectangle(selection.Left, selection.Top, newRight, newBottom), bitmap.PixelFormat);
+            Bitmap RectImage = new Bitmap(selection.Width, selection.Height);
+            using (Graphics gph = Graphics.FromImage(RectImage))
+            {
+                gph.DrawImage(bitmap, new Rectangle(0, 0, RectImage.Width, RectImage.Height), selection, GraphicsUnit.Pixel);
+            }
             return RectImage;
         }
 
