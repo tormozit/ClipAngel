@@ -173,7 +173,7 @@ Key press will be processed by the window. </value>
     <value>Fast window open</value>
   </data>
   <data name="FastWindowOpenDescription" xml:space="preserve">
-    <value>Uncheck it if you experience problems with window opening or closing</value>
+    <value>Fast window opening by using some tricks. Can lead to some minor problems in window opening/closing.</value>
   </data>
   <data name="GlobalHotkeyCompareLastClips" xml:space="preserve">
     <value>Hotkey to compare last clips</value>

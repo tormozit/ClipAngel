@@ -174,7 +174,7 @@
     <value>Быстрое открытие окна</value>
   </data>
   <data name="FastWindowOpenDescription" xml:space="preserve">
-    <value>Отключите, если испытываете проблемы с открытием или закрытием окна</value>
+    <value>Ускоренное открытие окна через применение некоторых трюков. Может приводить к некоторым проблемам открытия/закрытия окна.</value>
   </data>
   <data name="GlobalHotkeyCompareLastClips" xml:space="preserve">
     <value>Горячая клавиша сравнения последних клипов</value>

@@ -3497,8 +3497,9 @@ namespace ClipAngel
                 //string DirectLink = Refs[1].GetAttribute("href");
                 //wc.DownloadFile(DirectLink, TempFilename);
                 string UpdaterName = "ExternalUpdater.exe";
-                File.Copy(UpdaterName, tempFolder + "\\" + UpdaterName);
-                File.Copy("DotNetZip.dll", tempFolder + "\\DotNetZip.dll");
+                string exePath = Path.GetDirectoryName(Application.ExecutablePath);
+                File.Copy(exePath + "\\" + UpdaterName, tempFolder + "\\" + UpdaterName);
+                File.Copy(exePath + "\\" + "DotNetZip.dll", tempFolder + "\\DotNetZip.dll");
                 if (success)
                 {
                     Process.Start(tempFolder + "\\" + UpdaterName,
@@ -4139,9 +4140,12 @@ namespace ClipAngel
         {
             if (e.Button == MouseButtons.Right)
             {
-                dataGridView.Rows[e.RowIndex].Selected = true;
-                //dataGridView.CurrentCell = dataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex];
-                //dataGridView.Focus();
+                if (!dataGridView.Rows[e.RowIndex].Selected)
+                {
+                    //dataGridView.Rows[e.RowIndex].Selected = true;
+                    dataGridView.CurrentCell = dataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex];
+                    //dataGridView.Focus();
+                }
             }
         }
 
