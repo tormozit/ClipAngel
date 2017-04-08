@@ -161,6 +161,11 @@
     <Compile Include="SettingsForm.Designer.cs">
       <DependentUpon>SettingsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="VisibleUserSettings.RU.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VisibleUserSettings.RU.resx</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AboutBox.resx">
       <DependentUpon>AboutBox.cs</DependentUpon>
     </EmbeddedResource>
@@ -302,6 +307,9 @@
     <None Include="Picture\Dublicate.png" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Languages\EN\" />
+    <Folder Include="Languages\PL\" />
+    <Folder Include="Languages\RU\" />
     <Folder Include="Properties\DataSources\" />
   </ItemGroup>
   <ItemGroup>

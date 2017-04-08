@@ -428,5 +428,17 @@ namespace ClipAngel.Properties {
                 this["RestoreCaretPositionOnFocusReturn"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool IgnoreExclusiveFormatClipCapture {
+            get {
+                return ((bool)(this["IgnoreExclusiveFormatClipCapture"]));
+            }
+            set {
+                this["IgnoreExclusiveFormatClipCapture"] = value;
+            }
+        }
     }
 }

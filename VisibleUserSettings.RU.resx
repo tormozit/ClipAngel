@@ -233,6 +233,12 @@
   <data name="IgnoreApplicationsClipCaptureDescription" xml:space="preserve">
     <value>Клипы из этих приложений не будут захватываться</value>
   </data>
+  <data name="IgnoreExclusiveFormatClipCapture" xml:space="preserve">
+    <value>Не захватывать "Clipboard Viewer Ignore" формат</value>
+  </data>
+  <data name="IgnoreExclusiveFormatClipCaptureDescription" xml:space="preserve">
+    <value>Не захватывать клип с форматом "Clipboard Viewer Ignore". Этот формат обычно используется менеджерами паролей при копировании пароля в буфер обмена. Иногда может быть полезно временно выключить.</value>
+  </data>
   <data name="Language" xml:space="preserve">
     <value>Язык</value>
   </data>

@@ -387,8 +387,7 @@ namespace ClipAngel
                 keyboardHook.RegisterHotKey(Modifiers, Key);
             if (ReadHotkeyFromText(Properties.Settings.Default.GlobalHotkeyPasteText, out Modifiers, out Key))
                 keyboardHook.RegisterHotKey(Modifiers, Key);
-            if (Properties.Settings.Default.CopyTextInAnyWindowOnCTRLF3 &&
-                ReadHotkeyFromText("Control + F3", out Modifiers, out Key))
+            if (Properties.Settings.Default.CopyTextInAnyWindowOnCTRLF3 && ReadHotkeyFromText("Control + F3", out Modifiers, out Key))
                 keyboardHook.RegisterHotKey(Modifiers, Key);
         }
 
@@ -473,8 +472,8 @@ namespace ClipAngel
             {
                 keyboardHook.UnregisterHotKeys();
                 BackupClipboard();
-                Clipboard.Clear();
-                Paster.SendCopy();
+                //Clipboard.Clear();
+                Paster.SendCopy(false);
                 SendKeys.SendWait("^{F3}");
                 RegisterHotKeys();
                 RestoreClipboard();
@@ -944,8 +943,8 @@ namespace ClipAngel
                 tableLayoutPanelData.RowStyles[3].Height = 0;
             else
                 tableLayoutPanelData.RowStyles[3].Height = 25;
-            if (EditMode)
-                richTextBox.Focus();
+            if (EditMode && this.ContainsFocus)
+                richTextBox.Focus(); // Can activate this window, so we check that window has focus
             tableLayoutPanelData.ResumeLayout();
             if (autoSelectMatch)
                 SelectNextMatchInClipText();
@@ -1373,7 +1372,7 @@ namespace ClipAngel
                 MessageBox.Show(this, ex.ToString(), Application.ProductName);
                 return;
             }
-            if (iData.GetDataPresent(DataFormat_ClipboardViewerIgnore))
+            if (iData.GetDataPresent(DataFormat_ClipboardViewerIgnore) && Properties.Settings.Default.IgnoreExclusiveFormatClipCapture)
                 return;
             bool textFormatPresent = false;
             byte[] binaryBuffer = new byte[0];
@@ -2216,7 +2215,7 @@ namespace ClipAngel
             BackupClipboard();
             //Clipboard.Clear(); // Если не делать, то ошибка записи в буфер обмена потом возникает с большей вероятностью
             UsualClipboardMode = true;
-            Paster.SendCopy();
+            Paster.SendCopy(true);
             int waitStep = 10;
             for (int i = 0; i < 100; i += waitStep)
             {
@@ -2812,7 +2811,8 @@ namespace ClipAngel
                 pasteMethod = PasteMethod.PasteText;
             else
             {
-                if (!pasteENTERToolStripMenuItem.Enabled)
+                //if (!pasteENTERToolStripMenuItem.Enabled)
+                if (richTextBox.Focused && EditMode)
                     return true;
                 pasteMethod = PasteMethod.Standart;
             }
@@ -2942,6 +2942,7 @@ namespace ClipAngel
                     if (!keepTextSelectionIfIDChanged)
                         keepTextSelection = false;
                     EditMode = false;
+                    UpdateControlsStates();
                 }
                 int NewSelectionStart, NewSelectionLength;
                 if (keepTextSelection)
@@ -3763,6 +3764,9 @@ namespace ClipAngel
                 // After ShowInTaskbar change true->false all window properties are deleted. So we need to reset it.
                 ResetIsMainProperty();
             }
+            editClipTextToolStripMenuItem.Checked = EditMode;
+            toolStripMenuItemEditClipText.Checked = EditMode;
+            //pasteENTERToolStripMenuItem.Enabled = !EditMode;
         }
 
         private void toolStripMenuItemClearFilterAndSelectTop_Click(object sender, EventArgs e)
@@ -4069,12 +4073,12 @@ namespace ClipAngel
         {
             if (RowReader == null)
                 return;
+            bool newEditMode = !EditMode;
             string clipType = RowReader["type"].ToString();
             if (!IsTextType())
                 return;
             //selectionStart = richTextBox.SelectionStart;
             //selectionLength = richTextBox.SelectionLength;
-            bool newEditMode = !EditMode;
             allowRowLoad = false;
             if (!newEditMode)
             {
@@ -4095,9 +4099,7 @@ namespace ClipAngel
             allowRowLoad = true;
             EditMode = newEditMode;
             AfterRowLoad(true, -1);
-            editClipTextToolStripMenuItem.Checked = EditMode;
-            toolStripMenuItemEditClipText.Checked = EditMode;
-            pasteENTERToolStripMenuItem.Enabled = !EditMode;
+            UpdateControlsStates();
         }
 
         private void timerReconnect_Tick(object sender, EventArgs e)

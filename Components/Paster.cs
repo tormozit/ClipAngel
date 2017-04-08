@@ -133,7 +133,7 @@ namespace ClipAngel
             //mod.RestoreState();
         }
 
-        public static void SendCopy()
+        public static void SendCopy(bool waitForComplete = false)
         {
             ModifiersState mod = new ModifiersState();
             mod.ReleaseAll();
@@ -144,7 +144,8 @@ namespace ClipAngel
             keybd_event((byte)'C', 0x2e, 0, 0);
             keybd_event((byte)'C', 0x2e, KEYEVENTF_KEYUP, 0);
             keybd_event((byte)VirtualKeyCode.CONTROL, 0x1D, KEYEVENTF_KEYUP, 0);
-            SendKeys.SendWait("^"); // Helps to wait event processing and data in clipboard
+            if (waitForComplete)
+                SendKeys.SendWait("^"); // Helps to wait event processing and data in clipboard
 
             //mod.RestoreState();
         }

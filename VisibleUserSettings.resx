@@ -227,7 +227,13 @@ Key press will be processed by the window. </value>
     <value>Ignored applications in clip capture</value>
   </data>
   <data name="IgnoreApplicationsClipCaptureDescription" xml:space="preserve">
-    <value>Clips from this applications will be not be captured</value>
+    <value>Do not capture clips from this applications</value>
+  </data>
+  <data name="IgnoreExclusiveFormatClipCapture" xml:space="preserve">
+    <value>Do not capture "Clipboard Viewer Ignore" format</value>
+  </data>
+  <data name="IgnoreExclusiveFormatClipCaptureDescription" xml:space="preserve">
+    <value>Do not capture clip with "Clipboard Viewer Ignore" format present. This format is usually  used by password managers when copying passwords to clipboard. Sometimes it may be usefull to switch it OFF temporary.</value>
   </data>
   <data name="Language" xml:space="preserve">
     <value>Language</value>
