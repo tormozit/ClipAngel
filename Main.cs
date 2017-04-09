@@ -4102,7 +4102,6 @@ namespace ClipAngel
             allowRowLoad = false;
             if (!newEditMode)
             {
-                SaveClipText();
                 UpdateClipBindingSource();
             }
             else
