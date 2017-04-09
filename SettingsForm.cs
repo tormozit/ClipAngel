@@ -645,6 +645,10 @@ namespace ClipAngel
             Language = Properties.Settings.Default.Language;
             Autostart = Properties.Settings.Default.Autostart;
             TextCompareApplication = Properties.Settings.Default.TextCompareApplication;
+            TextEditor = Properties.Settings.Default.TextEditor;
+            RtfEditor = Properties.Settings.Default.RtfEditor;
+            HtmlEditor = Properties.Settings.Default.HtmlEditor;
+            ImageEditor = Properties.Settings.Default.ImageEditor;
             MaxClipSizeKB = Properties.Settings.Default.MaxClipSizeKB;
             GlobalHotkeyOpenLast = Properties.Settings.Default.GlobalHotkeyOpenLast;
             GlobalHotkeyOpenCurrent = Properties.Settings.Default.GlobalHotkeyOpenCurrent;
@@ -692,6 +696,10 @@ namespace ClipAngel
             Properties.Settings.Default.Font = DefaultFont;
             Properties.Settings.Default.Language = Language;
             Properties.Settings.Default.TextCompareApplication = TextCompareApplication;
+            Properties.Settings.Default.TextEditor = TextEditor;
+            Properties.Settings.Default.RtfEditor = RtfEditor;
+            Properties.Settings.Default.HtmlEditor = HtmlEditor;
+            Properties.Settings.Default.ImageEditor = ImageEditor;
             Properties.Settings.Default.MaxClipSizeKB = MaxClipSizeKB;
             Properties.Settings.Default.Font = DefaultFont;
             Properties.Settings.Default.ShowApplicationIconColumn = ShowApplicationIconColumn;
@@ -847,12 +855,32 @@ namespace ClipAngel
         [Editor(typeof(MyBoolEditor), typeof(UITypeEditor))]
         public bool UseFormattingInDublicateDetection { get; set; }
 
-        [GlobalizedCategory("Other")]
+        [GlobalizedCategory("Applications")]
         //[EditorAttribute(typeof(FileNameEditor), typeof(UITypeEditor))]
         [EditorAttribute(typeof(ApplicationPathEditor), typeof(UITypeEditor))]
         public string TextCompareApplication { get; set; }
 
-        [GlobalizedCategory("Other")]
+        [GlobalizedCategory("Applications")]
+        //[EditorAttribute(typeof(FileNameEditor), typeof(UITypeEditor))]
+        [EditorAttribute(typeof(ApplicationPathEditor), typeof(UITypeEditor))]
+        public string TextEditor { get; set; }
+
+        [GlobalizedCategory("Applications")]
+        //[EditorAttribute(typeof(FileNameEditor), typeof(UITypeEditor))]
+        [EditorAttribute(typeof(ApplicationPathEditor), typeof(UITypeEditor))]
+        public string HtmlEditor { get; set; }
+
+        [GlobalizedCategory("Applications")]
+        //[EditorAttribute(typeof(FileNameEditor), typeof(UITypeEditor))]
+        [EditorAttribute(typeof(ApplicationPathEditor), typeof(UITypeEditor))]
+        public string RtfEditor { get; set; }
+
+        [GlobalizedCategory("Applications")]
+        //[EditorAttribute(typeof(FileNameEditor), typeof(UITypeEditor))]
+        [EditorAttribute(typeof(ApplicationPathEditor), typeof(UITypeEditor))]
+        public string ImageEditor { get; set; }
+
+        [GlobalizedCategory("Applications")]
         [Editor(typeof(AppListEditor), typeof(UITypeEditor))]
         public StringCollection IgnoreApplicationsClipCapture { get; set; }
 

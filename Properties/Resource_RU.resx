@@ -243,4 +243,7 @@
   <data name="FailedToReadFormatFromClipboard" xml:space="preserve">
     <value>Не удалось прочитать данные формата "{0}" из буфера обмена.</value>
   </data>
+  <data name="Applications" xml:space="preserve">
+    <value>Приложения</value>
+  </data>
 </root>

@@ -440,5 +440,53 @@ namespace ClipAngel.Properties {
                 this["IgnoreExclusiveFormatClipCapture"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string TextEditor {
+            get {
+                return ((string)(this["TextEditor"]));
+            }
+            set {
+                this["TextEditor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string HtmlEditor {
+            get {
+                return ((string)(this["HtmlEditor"]));
+            }
+            set {
+                this["HtmlEditor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string ImageEditor {
+            get {
+                return ((string)(this["ImageEditor"]));
+            }
+            set {
+                this["ImageEditor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string RtfEditor {
+            get {
+                return ((string)(this["RtfEditor"]));
+            }
+            set {
+                this["RtfEditor"] = value;
+            }
+        }
     }
 }

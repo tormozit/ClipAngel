@@ -223,6 +223,12 @@ Key press will be processed by the window. </value>
   <data name="HistoryDepthNumberDescription" xml:space="preserve">
     <value>Maximum number of stored non favorite clips. Deletion is executed on start, every day, on settings apply. 0 - do not delete.</value>
   </data>
+  <data name="HtmlEditor" xml:space="preserve">
+    <value>HTML file editor application</value>
+  </data>
+  <data name="HtmlEditorDescription" xml:space="preserve">
+    <value>Used in "Open file" command for clip. Leave empty to use default OS application for edit HTML files.</value>
+  </data>
   <data name="IgnoreApplicationsClipCapture" xml:space="preserve">
     <value>Ignored applications in clip capture</value>
   </data>
@@ -234,6 +240,12 @@ Key press will be processed by the window. </value>
   </data>
   <data name="IgnoreExclusiveFormatClipCaptureDescription" xml:space="preserve">
     <value>Do not capture clip with "Clipboard Viewer Ignore" format present. This format is usually  used by password managers when copying passwords to clipboard. Sometimes it may be usefull to switch it OFF temporary.</value>
+  </data>
+  <data name="ImageEditor" xml:space="preserve">
+    <value>Image (PNG) file editor application</value>
+  </data>
+  <data name="ImageEditorDescription" xml:space="preserve">
+    <value>Used in "Open file" command for clip. Leave empty to use default OS application for edit image (PNG) files.</value>
   </data>
   <data name="Language" xml:space="preserve">
     <value>Language</value>
@@ -265,6 +277,12 @@ Key press will be processed by the window. </value>
   <data name="RestoreCaretPositionOnFocusReturnDescription" xml:space="preserve">
     <value>Enable this to try restore caret position after focus is returned to target window. This is usefull for textboxes which select all text after loosing focus</value>
   </data>
+  <data name="RtfEditor" xml:space="preserve">
+    <value>RTF file editor application</value>
+  </data>
+  <data name="RtfEditorDescription" xml:space="preserve">
+    <value>Used in "Open file" command for clip. Leave empty to use default OS application for edit RTF files.</value>
+  </data>
   <data name="ShowApplicationIconColumn" xml:space="preserve">
     <value>Show clip source icon column</value>
   </data>
@@ -281,8 +299,14 @@ Key press will be processed by the window. </value>
     <value>Text compare application</value>
   </data>
   <data name="TextCompareApplicationDescription" xml:space="preserve">
-    <value>Leave empty to use automatic search application, wich looks for Beyond Compare, ExamDiff Pro, 
+    <value>Leave empty to use automatic search application, which looks for Beyond Compare, ExamDiff Pro, 
 WinMerge, Araxis Merge, DiffMerge. Text compare command is %application% %file1% %file2%</value>
+  </data>
+  <data name="TextEditor" xml:space="preserve">
+    <value>Text (TXT) file editor application</value>
+  </data>
+  <data name="TextEditorDescription" xml:space="preserve">
+    <value>Used in "Open file" command for clip. Leave empty to use default OS application for edit text (TXT) files.</value>
   </data>
   <data name="UseFormattingInDublicateDetection" xml:space="preserve">
     <value>Use formatting in dublicate detection</value>

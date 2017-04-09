@@ -227,6 +227,12 @@
   <data name="HistoryDepthNumberDescription" xml:space="preserve">
     <value>Максимальное количество хранимых не любимых клипов. Удаление выполняется при старте, каждый день, при применении настроек. 0 - не удалять.</value>
   </data>
+  <data name="HtmlEditor" xml:space="preserve">
+    <value>Приложение открытия файлов HTML</value>
+  </data>
+  <data name="HtmlEditorDescription" xml:space="preserve">
+    <value>Используется в команде "Открыть файл" клипа. Оставьте пустым для использования назначенного в ОС приложения открытия файлов HTML.</value>
+  </data>
   <data name="IgnoreApplicationsClipCapture" xml:space="preserve">
     <value>Игнорируемые приложения в захвате клипов</value>
   </data>
@@ -238,6 +244,12 @@
   </data>
   <data name="IgnoreExclusiveFormatClipCaptureDescription" xml:space="preserve">
     <value>Не захватывать клип с форматом "Clipboard Viewer Ignore". Этот формат обычно используется менеджерами паролей при копировании пароля в буфер обмена. Иногда может быть полезно временно выключить.</value>
+  </data>
+  <data name="ImageEditor" xml:space="preserve">
+    <value>Приложение открытия файлов картинок (PNG)</value>
+  </data>
+  <data name="ImageEditorDescription" xml:space="preserve">
+    <value>Используется в команде "Открыть файл" клипа. Оставьте пустым для использования назначенного в ОС приложения открытия файлов картинок (PNG).</value>
   </data>
   <data name="Language" xml:space="preserve">
     <value>Язык</value>
@@ -263,6 +275,12 @@
   <data name="NumberOfClipsDescription" xml:space="preserve">
     <value>Текущее количество клипов в списке</value>
   </data>
+  <data name="RtfEditor" xml:space="preserve">
+    <value>Приложение открытия файлов RTF</value>
+  </data>
+  <data name="RtfEditorDescription" xml:space="preserve">
+    <value>Используется в команде "Открыть файл" клипа. Оставьте пустым для использования назначенного в ОС приложения открытия файлов RTF.</value>
+  </data>
   <data name="ShowApplicationIconColumn" xml:space="preserve">
     <value>Отображать колонку иконки источника клипа</value>
   </data>
@@ -281,6 +299,12 @@
   <data name="TextCompareApplicationDescription" xml:space="preserve">
     <value>Оставьте пустым для автоматического поиска программы, который поддерживает Beyond Compare, ExamDiff Pro, 
 WinMerge, Araxis Merge, DiffMerge. Для сравнения текстов используется команда %программа% %файл1% %файл2%</value>
+  </data>
+  <data name="TextEditor" xml:space="preserve">
+    <value>Приложение открытия файлов текста (TXT) </value>
+  </data>
+  <data name="TextEditorDescription" xml:space="preserve">
+    <value>Используется в команде "Открыть файл" клипа. Оставьте пустым для использования назначенного в ОС приложения открытия файлов текста (TXT).</value>
   </data>
   <data name="UseFormattingInDublicateDetection" xml:space="preserve">
     <value>Использовать оформление при поиске дублей</value>

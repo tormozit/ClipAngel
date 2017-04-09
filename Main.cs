@@ -3340,6 +3340,7 @@ namespace ClipAngel
                 DeleteOldClips();
                 DeleteExcessClips();
                 UpdateClipBindingSource(); // Needed to update ClipsNumber
+                Properties.Settings.Default.Save(); // Not all properties are saved here. For example ShowInTaskbar are not saved
             }
         }
 
@@ -3969,13 +3970,27 @@ namespace ClipAngel
 
         private void OpenClipFile(bool defaultAppMode = true)
         {
-            string tempFile = GetClipTempFile();
+            string fileEditor = "";
+            string tempFile = GetClipTempFile(out fileEditor);
             if (String.IsNullOrEmpty(tempFile))
                 return;
             try
             {
                 if (defaultAppMode)
-                    Process.Start(tempFile);
+                {
+                    string command;
+                    string argument = "";
+                    if (!String.IsNullOrEmpty(fileEditor))
+                    {
+                        command = fileEditor;
+                        argument = "\"" + tempFile + "\"";
+                    }
+                    else
+                    {
+                        command = tempFile;
+                    }
+                    Process.Start(command, argument);
+                }
                 else
                 {
                     var args = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.System), "shell32.dll");
@@ -3994,8 +4009,9 @@ namespace ClipAngel
             }
         }
 
-        private string GetClipTempFile()
+        private string GetClipTempFile(out string fileEditor)
         {
+            fileEditor = "";
             if (RowReader == null)
                 return "";
             string type = RowReader["type"].ToString();
@@ -4007,23 +4023,27 @@ namespace ClipAngel
                 MessageBox.Show(this, CurrentLangResourceManager.GetString("ClipFileAlreadyOpened"));
                 return "";
             }
-            if (type == "text" || type == "file")
+            if (type == "text" /*|| type == "file"*/)
             {
                 File.WriteAllText(tempFile, RowReader["text"].ToString(), Encoding.Default);
+                fileEditor = Properties.Settings.Default.TextEditor;
             }
             else if (type == "rtf")
             {
                 RichTextBox rtb = new RichTextBox();
                 rtb.Rtf = RowReader["richText"].ToString();
                 rtb.SaveFile(tempFile);
+                fileEditor = Properties.Settings.Default.RtfEditor;
             }
             else if (type == "html")
             {
                 File.WriteAllText(tempFile, GetHtmlFromHtmlClipText(), Encoding.Default);
+                fileEditor = Properties.Settings.Default.HtmlEditor;
             }
             else if (type == "img")
             {
                 ImageControl.Image.Save(tempFile);
+                fileEditor = Properties.Settings.Default.ImageEditor;
             }
             else if (type == "file")
             {
@@ -4719,7 +4739,8 @@ namespace ClipAngel
             string clipType = (string) RowReader["type"];
             if (clipType != "img")
                 return;
-            string tempFile = GetClipTempFile();
+            string junkVar;
+            string tempFile = GetClipTempFile(out junkVar);
             if (String.IsNullOrEmpty(tempFile))
                 return;
             // base on http://cropperplugins.codeplex.com/SourceControl/latest#Cropper.Plugins/ImageShack/Plugin.cs
