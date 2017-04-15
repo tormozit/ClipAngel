@@ -30,6 +30,7 @@ using WindowsInput.Native;
 using mshtml;
 //using Word = Microsoft.Office.Interop.Word;
 using static IconTools;
+using Timer = System.Windows.Forms.Timer;
 
 namespace ClipAngel
 {
@@ -750,9 +751,9 @@ namespace ClipAngel
                 textBoxWindow.Text = RowReader["Window"].ToString();
                 StripLabelCreated.Text = RowReader["Created"].ToString();
                 if (!(RowReader["Size"] is DBNull))
-                    StripLabelSize.Text = FormattedClipNumericPropery("Size", MultiLangByteUnit());
+                    StripLabelSize.Text = FormattedClipNumericPropery((int)RowReader["Size"], MultiLangByteUnit());
                 if (!(RowReader["Chars"] is DBNull))
-                    StripLabelVisualSize.Text = FormattedClipNumericPropery("Chars", MultiLangCharUnit());
+                    StripLabelVisualSize.Text = FormattedClipNumericPropery((int)RowReader["Chars"], MultiLangCharUnit());
                 string TypeEng = RowReader["Type"].ToString();
                 if (CurrentLangResourceManager.GetString(TypeEng) == null)
                     StripLabelType.Text = TypeEng;
@@ -950,14 +951,12 @@ namespace ClipAngel
                 SelectNextMatchInClipText();
         }
 
-        private string FormattedClipNumericPropery(string column, string unit, SQLiteDataReader rowReader = null)
+        private string FormattedClipNumericPropery(int number, string unit)
         {
-            if (rowReader == null)
-                rowReader = RowReader;
             NumberFormatInfo numberFormat = new CultureInfo(Locale).NumberFormat;
             numberFormat.NumberDecimalDigits = 0;
             numberFormat.NumberGroupSeparator = " ";
-            return ((int)rowReader[column]).ToString("N", numberFormat) + " " + unit;
+            return number.ToString("N", numberFormat) + " " + unit;
         }
 
         private string GetHtmlFromHtmlClipText()
@@ -1188,7 +1187,7 @@ namespace ClipAngel
             }
             if (!oldFilterOn && filterOn)
                 selectedClipsBeforeFilterApply.Clear();
-            string selectCommandText = "Select Id, Used, Title, Chars, Type, Favorite, ImageSample, AppPath From Clips";
+            string selectCommandText = "Select Id, Used, Title, Chars, Type, Favorite, ImageSample, AppPath, Size, Created From Clips";
             selectCommandText += " WHERE " + sqlFilter;
             selectCommandText += " ORDER BY Id desc";
             dataAdapter.SelectCommand.CommandText = selectCommandText;
@@ -3049,7 +3048,7 @@ namespace ClipAngel
             }
             if (image != null)
             {
-                row.Cells["TypeImg"].Value = image;
+                row.Cells["TypeImage"].Value = image;
             }
             row.Cells["ColumnTitle"].Value = dataRowView.Row["Title"].ToString();
             if (!String.IsNullOrEmpty(filterText) && dataGridView.Columns["ColumnTitle"].Visible)
@@ -4180,6 +4179,18 @@ namespace ClipAngel
                 if (hoverCell.Value != null)
                     hoverCell.ToolTipText = CurrentLangResourceManager.GetString("VisualWeightTooltip");
             }
+            //if (e.ColumnIndex == dataGridView.Columns["TypeImage"].Index)
+            //{
+            //    DataGridViewCell hoverCell = row.Cells[dataGridView.Columns["ColumnTitle"].Index];
+            //    DataRowView dataRowView = row.DataBoundItem as DataRowView;
+            //    string tooltipText = "";
+            //    if (!(dataRowView["Chars"] is DBNull))
+            //        tooltipText += FormattedClipNumericPropery((int)dataRowView["Chars"], MultiLangCharUnit()) + ", ";
+            //    if (!(dataRowView["Size"] is DBNull))
+            //        tooltipText += FormattedClipNumericPropery((int)dataRowView["Size"], MultiLangByteUnit()) + ", ";
+            //    tooltipText += dataRowView["Created"].ToString();
+            //    hoverCell.ToolTipText = tooltipText;
+            //}
         }
 
         private void timerApplyTextFiler_Tick(object sender, EventArgs e)
@@ -4892,6 +4903,62 @@ namespace ClipAngel
         private void comboBoxFilter_MouseEnter(object sender, EventArgs e)
         {
 
+        }
+
+        private void dataGridView_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            if (false
+                || e.ColumnIndex == dataGridView.Columns["AppImage"].Index
+                || e.ColumnIndex == dataGridView.Columns["TypeImage"].Index
+                || e.ColumnIndex == dataGridView.Columns["ColumnTitle"].Index
+                )
+            {
+                tooltipTimer.Start();
+            }
+        }
+
+        private void dataGridView_CellToolTipTextNeeded(object sender, DataGridViewCellToolTipTextNeededEventArgs e)
+        {
+
+        }
+
+        private void dataGridView_CellMouseLeave(object sender, DataGridViewCellEventArgs e)
+        {
+            Point pt = dataGridView.PointToClient(Cursor.Position);
+            int ColumnIndex = dataGridView.HitTest(pt.X, pt.Y).ColumnIndex;
+            if (true
+                && ColumnIndex != dataGridView.Columns["AppImage"].Index
+                && ColumnIndex != dataGridView.Columns["TypeImage"].Index
+                && ColumnIndex != dataGridView.Columns["ColumnTitle"].Index
+            )
+                tooltipTimer.Stop();
+                toolTipDynamic.Hide(this);
+        }
+
+        private void tooltipTimer_Tick(object sender, EventArgs e)
+        {
+            tooltipTimer.Stop();
+            Point pt = dataGridView.PointToClient(Cursor.Position);
+            int RowIndex = dataGridView.HitTest(pt.X, pt.Y).RowIndex;
+            if (RowIndex == -1)
+                return;
+            var row = dataGridView.Rows[RowIndex];
+            DataRowView dataRowView = row.DataBoundItem as DataRowView;
+            string tooltipText = "";
+            tooltipText += String.Format("{0:dd/MM HH:mm:ss}", (DateTime)dataRowView["Created"]);
+            if (!(dataRowView["Chars"] is DBNull))
+                tooltipText += ", " + FormattedClipNumericPropery((int)dataRowView["Chars"], MultiLangCharUnit());
+            if (!(dataRowView["Size"] is DBNull))
+                tooltipText += ", " + FormattedClipNumericPropery((int)dataRowView["Size"], MultiLangByteUnit());
+            //Rectangle cellRect = dataGridView.GetCellDisplayRectangle(e.ColumnIndex, e.RowIndex, false);
+            //toolTipDynamic.InitialDelay = 500;
+            //toolTipDynamic.AutoPopDelay = 500;
+            toolTipDynamic.Show(tooltipText,
+                          this,
+                          MousePosition.X - this.Left,
+                          //dataGridView.Location.Y + cellRect.Y + cellRect.Size.Height * 4,
+                          MousePosition.Y - this.Top + 25,
+                          5000);    // Duration: 5 seconds.
         }
     }
 }
