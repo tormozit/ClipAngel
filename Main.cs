@@ -749,15 +749,10 @@ namespace ClipAngel
                 textBoxApplication.Text = RowReader["Application"].ToString();
                 textBoxWindow.Text = RowReader["Window"].ToString();
                 StripLabelCreated.Text = RowReader["Created"].ToString();
-                NumberFormatInfo numberFormat = new CultureInfo(Locale).NumberFormat;
-                numberFormat.NumberDecimalDigits = 0;
-                numberFormat.NumberGroupSeparator = " ";
                 if (!(RowReader["Size"] is DBNull))
-                    StripLabelSize.Text = ((int) RowReader["Size"]).ToString("N", numberFormat) + " " +
-                                          MultiLangByteUnit();
+                    StripLabelSize.Text = FormattedClipNumericPropery("Size", MultiLangByteUnit());
                 if (!(RowReader["Chars"] is DBNull))
-                    StripLabelVisualSize.Text = ((int) RowReader["Chars"]).ToString("N", numberFormat) + " " +
-                                                MultiLangCharUnit();
+                    StripLabelVisualSize.Text = FormattedClipNumericPropery("Chars", MultiLangCharUnit());
                 string TypeEng = RowReader["Type"].ToString();
                 if (CurrentLangResourceManager.GetString(TypeEng) == null)
                     StripLabelType.Text = TypeEng;
@@ -795,6 +790,11 @@ namespace ClipAngel
                                    && !String.IsNullOrEmpty(htmlText);
                         if (htmlMode)
                         {
+                            // fix for 1C formatted document source, fragment has very small width of textbox
+                            string marker = "<DIV class=\"fullSize fdFieldMainContainer fd_AbsoluteFont fd_bkclr_v8_FieldBackColor fd_clr_v8_FieldTextColor\" style=\"";
+                            //bool temres = htmlText.Contains(marker); // For debug
+                            htmlText = htmlText.Replace(marker, marker + "width: 100%; ");
+
                             //while (this.htmlTextBox.ReadyState != WebBrowserReadyState.Complete)
                             //{
                             //    Application.DoEvents();
@@ -948,6 +948,16 @@ namespace ClipAngel
             tableLayoutPanelData.ResumeLayout();
             if (autoSelectMatch)
                 SelectNextMatchInClipText();
+        }
+
+        private string FormattedClipNumericPropery(string column, string unit, SQLiteDataReader rowReader = null)
+        {
+            if (rowReader == null)
+                rowReader = RowReader;
+            NumberFormatInfo numberFormat = new CultureInfo(Locale).NumberFormat;
+            numberFormat.NumberDecimalDigits = 0;
+            numberFormat.NumberGroupSeparator = " ";
+            return ((int)rowReader[column]).ToString("N", numberFormat) + " " + unit;
         }
 
         private string GetHtmlFromHtmlClipText()
@@ -1429,18 +1439,21 @@ namespace ClipAngel
                             // It may take much time to parse big html
                             var htmlParser = new HtmlParser();
                             var documentHtml = htmlParser.Parse(htmlText);
-                            string ImageUrl = documentHtml.Images[0].Source;
-                            using (WebClient webClient = new WebClient())
+                            if (documentHtml.Images.Length > 0)
                             {
-                                try
+                                string ImageUrl = documentHtml.Images[0].Source;
+                                using (WebClient webClient = new WebClient())
                                 {
-                                    byte[] tempBuffer = webClient.DownloadData(ImageUrl);
-                                    using (var ms = new MemoryStream(tempBuffer))
+                                    try
                                     {
-                                        bitmap = new Bitmap(ms);
+                                        byte[] tempBuffer = webClient.DownloadData(ImageUrl);
+                                        using (var ms = new MemoryStream(tempBuffer))
+                                        {
+                                            bitmap = new Bitmap(ms);
+                                        }
                                     }
+                                    catch { }
                                 }
-                                catch{}
                             }
                         }
                     }
@@ -2689,11 +2702,18 @@ namespace ClipAngel
                     if (caretPoint.Y > 0)
                     {
                         activeRect = guiInfo.rcCaret;
-                        newX = Math.Min(activeRect.right + caretPoint.X,
-                            SystemInformation.VirtualScreen.Width + SystemInformation.VirtualScreen.Left - this.Width);
-                        newY = Math.Min(activeRect.bottom + caretPoint.Y + 1,
-                            SystemInformation.VirtualScreen.Height + SystemInformation.VirtualScreen.Top - this.Height -
-                            30);
+
+                        // old way using virtual screen
+                        //newX = Math.Min(activeRect.right + caretPoint.X,
+                        //    SystemInformation.VirtualScreen.Width + SystemInformation.VirtualScreen.Left - this.Width);
+                        //newY = Math.Min(activeRect.bottom + caretPoint.Y + 1,
+                        //    SystemInformation.VirtualScreen.Height + SystemInformation.VirtualScreen.Top - this.Height -
+                        //    30);
+
+                        // new way using device screen
+                        Screen screen = Screen.FromPoint(caretPoint);
+                        newX = Math.Min(activeRect.right + caretPoint.X, screen.WorkingArea.Width + screen.WorkingArea.Left - this.Width);
+                        newY = Math.Min(activeRect.bottom + caretPoint.Y + 1, screen.WorkingArea.Height + screen.WorkingArea.Top - this.Height);
                     }
                     else
                     {
@@ -2704,14 +2724,25 @@ namespace ClipAngel
                             baseWindow = hWindow;
                         ClientToScreen(baseWindow, out caretPoint);
                         GetWindowRect(baseWindow, out activeRect);
+
+                        // old way using virtual screen
+                        //newX = Math.Max(0,
+                        //    Math.Min((activeRect.right - activeRect.left - this.Width) / 2 + caretPoint.X,
+                        //        SystemInformation.VirtualScreen.Width + SystemInformation.VirtualScreen.Left -
+                        //        this.Width));
+                        //newY = Math.Max(0,
+                        //    Math.Min((activeRect.bottom - activeRect.top - this.Height) / 2 + caretPoint.Y,
+                        //        SystemInformation.VirtualScreen.Height + SystemInformation.VirtualScreen.Top -
+                        //        this.Height - 30));
+
+                        // new way using device screen
+                        Screen screen = Screen.FromPoint(caretPoint);
                         newX = Math.Max(0,
                             Math.Min((activeRect.right - activeRect.left - this.Width) / 2 + caretPoint.X,
-                                SystemInformation.VirtualScreen.Width + SystemInformation.VirtualScreen.Left -
-                                this.Width));
+                                screen.WorkingArea.Width + screen.WorkingArea.Left - this.Width));
                         newY = Math.Max(0,
                             Math.Min((activeRect.bottom - activeRect.top - this.Height) / 2 + caretPoint.Y,
-                                SystemInformation.VirtualScreen.Height + SystemInformation.VirtualScreen.Top -
-                                this.Height - 30));
+                                screen.WorkingArea.Height + screen.WorkingArea.Top - this.Height));
                     }
                 }
             }
@@ -3377,7 +3408,7 @@ namespace ClipAngel
             // To refresh text in list
             MarkFilter.DisplayMember = "";
             MarkFilter.DisplayMember = "Text";
-
+            Properties.Settings.Default.RestoreCaretPositionOnFocusReturn = false; // disabled 
             dataGridView.RowsDefaultCellStyle.Font = Properties.Settings.Default.Font;
             ChooseTitleColumnDraw();
             dataGridView.Columns["appImage"].Visible = Properties.Settings.Default.ShowApplicationIconColumn;
@@ -4147,7 +4178,7 @@ namespace ClipAngel
             {
                 DataGridViewCell hoverCell = row.Cells[e.ColumnIndex];
                 if (hoverCell.Value != null)
-                    hoverCell.ToolTipText = CurrentLangResourceManager.GetString("VisualWeightTooltip"); // No effect
+                    hoverCell.ToolTipText = CurrentLangResourceManager.GetString("VisualWeightTooltip");
             }
         }
 
@@ -4369,6 +4400,18 @@ namespace ClipAngel
             }
 
             path = "C:\\Program Files\\SourceGear\\Common\\DiffMerge\\sgdm.exe";
+            if (File.Exists(path))
+            {
+                return path;
+            }
+
+            path = "C:\\Program Files (x86)\\KDiff3\\kdiff3.exe";
+            if (File.Exists(path))
+            {
+                return path;
+            }
+
+            path = "C:\\Program Files\\KDiff3\\KDiff3.exe";
             if (File.Exists(path))
             {
                 return path;
@@ -4653,8 +4696,8 @@ namespace ClipAngel
 
         void SetClipboardDataObject(IDataObject dto, bool allowSelfCapture = true)
         {
+            // If not doing this, WM_CLIPBOARDUPDATE event will be raised 2 times (why?) if "copy"=true
             RemoveClipboardFormatListener(this.Handle);
-                // If not doing this WM_CLIPBOARDUPDATE event will be raised 2 times (why?) if "copy"=true
             bool success = false;
             try
             {
