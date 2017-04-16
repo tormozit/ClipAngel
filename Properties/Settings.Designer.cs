@@ -488,5 +488,17 @@ namespace ClipAngel.Properties {
                 this["RtfEditor"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string ClipTempFileFolder {
+            get {
+                return ((string)(this["ClipTempFileFolder"]));
+            }
+            set {
+                this["ClipTempFileFolder"] = value;
+            }
+        }
     }
 }

@@ -147,6 +147,12 @@
   <data name="ClipListSimpleDrawDescription" xml:space="preserve">
     <value>Список клипов будет рисоваться быстро без выделения найденных фрагментов в заголовках и без фрагментов картинок.</value>
   </data>
+  <data name="ClipTempFileFolder" xml:space="preserve">
+    <value>Каталог временных файлов клипов</value>
+  </data>
+  <data name="ClipTempFileFolderDescription" xml:space="preserve">
+    <value>Каталог для сохранения временных файлов клипов. Оставьте пустым для использования стандартного каталога временных файлов. Обычно может быть полезен в портабельном режиме.</value>
+  </data>
   <data name="CopyTextInAnyWindowOnCTRLF3" xml:space="preserve">
     <value>Копировать текст из любого окна по Control+F3</value>
   </data>

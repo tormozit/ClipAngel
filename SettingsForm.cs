@@ -632,6 +632,7 @@ namespace ClipAngel
         public VisibleUserSettings(Main Owner)
         {
             this.Owner = Owner;
+            ClipTempFileFolder = Properties.Settings.Default.ClipTempFileFolder;
             IgnoreExclusiveFormatClipCapture = Properties.Settings.Default.IgnoreExclusiveFormatClipCapture;
             //RestoreCaretPositionOnFocusReturn = Properties.Settings.Default.RestoreCaretPositionOnFocusReturn;
             GlobalHotkeyPasteText = Properties.Settings.Default.GlobalHotkeyPasteText;
@@ -684,6 +685,7 @@ namespace ClipAngel
 
         public void Apply(bool PortableMode = false)
         {
+            Properties.Settings.Default.ClipTempFileFolder = ClipTempFileFolder;
             Properties.Settings.Default.IgnoreExclusiveFormatClipCapture = IgnoreExclusiveFormatClipCapture;
             //Properties.Settings.Default.RestoreCaretPositionOnFocusReturn = RestoreCaretPositionOnFocusReturn;
             Properties.Settings.Default.GlobalHotkeyPasteText = GlobalHotkeyPasteText;
@@ -854,6 +856,10 @@ namespace ClipAngel
         [GlobalizedCategory("Other")]
         [Editor(typeof(MyBoolEditor), typeof(UITypeEditor))]
         public bool UseFormattingInDublicateDetection { get; set; }
+
+        [GlobalizedCategory("Other")]
+        [EditorAttribute(typeof(FolderNameEditor), typeof(UITypeEditor))]
+        public string ClipTempFileFolder { get; set; }
 
         [GlobalizedCategory("Applications")]
         //[EditorAttribute(typeof(FileNameEditor), typeof(UITypeEditor))]

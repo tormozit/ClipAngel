@@ -147,6 +147,12 @@
   <data name="ClipListSimpleDrawDescription" xml:space="preserve">
     <value>Clip list will be drawn fast without highlighting filter matches and picture samples</value>
   </data>
+  <data name="ClipTempFileFolder" xml:space="preserve">
+    <value>Folder for clip temp files</value>
+  </data>
+  <data name="ClipTempFileFolderDescription" xml:space="preserve">
+    <value>Folder for saving temp files of clips. Leave empty to use standart temp folder. Usually can be usefull in portable mode.</value>
+  </data>
   <data name="CopyTextInAnyWindowOnCTRLF3" xml:space="preserve">
     <value>Copy text from any window by Control+F3</value>
   </data>

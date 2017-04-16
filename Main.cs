@@ -110,6 +110,7 @@ namespace ClipAngel
         static Dictionary<string, object> clipboardContents = new Dictionary<string, object>();
         private bool UsualClipboardMode = false;
         private List<int> selectedClipsBeforeFilterApply = new List<int>();
+        private Point lastMousePoint;
 
         [DllImport("dwmapi", PreserveSig = true)]
         static extern int DwmSetWindowAttribute(IntPtr hWnd, int attr, ref int value, int attrLen);
@@ -4097,7 +4098,10 @@ namespace ClipAngel
                 extension = "png";
             else
                 extension = "dat";
-            string tempFile = Path.GetTempPath() + "Clip " + rowReader["id"] + " " + suffix + "." + extension;
+            string tempFolder = Properties.Settings.Default.ClipTempFileFolder + "\\";
+            if (!Directory.Exists(tempFolder))
+                tempFolder = Path.GetTempPath();
+            string tempFile = tempFolder + "Clip " + rowReader["id"] + " " + suffix + "." + extension;
             try
             {
                 using (new StreamWriter(tempFile))
@@ -4913,13 +4917,9 @@ namespace ClipAngel
                 || e.ColumnIndex == dataGridView.Columns["ColumnTitle"].Index
                 )
             {
+                lastMousePoint = new Point(MousePosition.X, MousePosition.Y);
                 tooltipTimer.Start();
             }
-        }
-
-        private void dataGridView_CellToolTipTextNeeded(object sender, DataGridViewCellToolTipTextNeededEventArgs e)
-        {
-
         }
 
         private void dataGridView_CellMouseLeave(object sender, DataGridViewCellEventArgs e)
@@ -4931,8 +4931,10 @@ namespace ClipAngel
                 && ColumnIndex != dataGridView.Columns["TypeImage"].Index
                 && ColumnIndex != dataGridView.Columns["ColumnTitle"].Index
             )
+            {
                 tooltipTimer.Stop();
                 toolTipDynamic.Hide(this);
+            }
         }
 
         private void tooltipTimer_Tick(object sender, EventArgs e)
@@ -4951,14 +4953,11 @@ namespace ClipAngel
             if (!(dataRowView["Size"] is DBNull))
                 tooltipText += ", " + FormattedClipNumericPropery((int)dataRowView["Size"], MultiLangByteUnit());
             //Rectangle cellRect = dataGridView.GetCellDisplayRectangle(e.ColumnIndex, e.RowIndex, false);
-            //toolTipDynamic.InitialDelay = 500;
-            //toolTipDynamic.AutoPopDelay = 500;
-            toolTipDynamic.Show(tooltipText,
-                          this,
+            toolTipDynamic.Show(tooltipText, this,
                           MousePosition.X - this.Left,
                           //dataGridView.Location.Y + cellRect.Y + cellRect.Size.Height * 4,
                           MousePosition.Y - this.Top + 25,
-                          5000);    // Duration: 5 seconds.
+                          3000);
         }
     }
 }
