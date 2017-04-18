@@ -200,20 +200,20 @@
   </data>
   <data name="GlobalHotkeyOpenCurrentDescription" xml:space="preserve">
     <value>Эта горячая клавиша при нажатии в любой программе откроет окно Clip Angel 
-без изменений в фильтре и выборе клипа.</value>
+без изменений в фильтре и выборе клипа. Повторное нажатие закроет окно.</value>
   </data>
   <data name="GlobalHotkeyOpenFavorites" xml:space="preserve">
     <value>Горячая клавиша открытия окна любимых</value>
   </data>
   <data name="GlobalHotkeyOpenFavoritesDescription" xml:space="preserve">
-    <value>Эта горячая клавиша при нажатии в любой программе откроет окно Clip Angel с отобором только любимых</value>
+    <value>Эта горячая клавиша при нажатии в любой программе откроет окно Clip Angel с отобором только любимых. Повторное нажатие закроет окно.</value>
   </data>
   <data name="GlobalHotkeyOpenLast" xml:space="preserve">
     <value>Горячая клавиша открытия окна со сбросом</value>
   </data>
   <data name="GlobalHotkeyOpenLastDescription" xml:space="preserve">
     <value>Эта горячая клавиша при нажатии в любой программе откроет окно Clip Angel, 
-сбросит фильтры и выберет последний захваченный клип.</value>
+сбросит фильтры и выберет последний захваченный клип. Повторное нажатие закроет окно.</value>
   </data>
   <data name="GlobalHotkeyPasteText" xml:space="preserve">
     <value>Горячая клавиша вставки простого текста</value>
@@ -304,7 +304,7 @@
   </data>
   <data name="TextCompareApplicationDescription" xml:space="preserve">
     <value>Оставьте пустым для автоматического поиска программы, который поддерживает Beyond Compare, ExamDiff Pro, 
-WinMerge, Araxis Merge, DiffMerge. Для сравнения текстов используется команда %программа% %файл1% %файл2%</value>
+WinMerge, Araxis Merge, DiffMerge, Kdiff3. Для сравнения текстов используется команда %программа% %файл1% %файл2%</value>
   </data>
   <data name="TextEditor" xml:space="preserve">
     <value>Приложение открытия файлов текста (TXT) </value>

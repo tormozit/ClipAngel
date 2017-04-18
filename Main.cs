@@ -793,9 +793,9 @@ namespace ClipAngel
                         if (htmlMode)
                         {
                             // fix for 1C formatted document source, fragment has very small width of textbox
-                            string marker = "<DIV class=\"fullSize fdFieldMainContainer fd_AbsoluteFont fd_bkclr_v8_FieldBackColor fd_clr_v8_FieldTextColor\" style=\"";
-                            //bool temres = htmlText.Contains(marker); // For debug
-                            htmlText = htmlText.Replace(marker, marker + "width: 100%; ");
+                            string marker = "<DIV class=\"fullSize fdFieldMainContainer";
+                            string replacement = "<DIV style=\"width: 100%\" class=\"fullSize fdFieldMainContainer";
+                            htmlText = htmlText.Replace(marker, replacement);
 
                             //while (this.htmlTextBox.ReadyState != WebBrowserReadyState.Complete)
                             //{
@@ -4024,9 +4024,18 @@ namespace ClipAngel
                 }
                 else
                 {
+                    // http://stackoverflow.com/questions/4726441/how-can-i-show-the-open-with-file-dialog
+
+                    // Not reliable
                     var args = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.System), "shell32.dll");
-                    args += ",OpenAs_RunDLL " + tempFile;
+                    args += ",OpenAs_RunDLL \"" + tempFile + "\"";
                     Process.Start("rundll32.exe", args);
+
+                    //// Not reliable
+                    //var processInfo = new ProcessStartInfo(tempFile);
+                    //processInfo.Verb = "openas";
+                    //processInfo.ErrorDialog = true;
+                    //Process.Start(processInfo);
                 }
                 //if (deleteAfterOpen)
                 //{
@@ -4039,6 +4048,31 @@ namespace ClipAngel
                 // ignored
             }
         }
+
+        [Serializable]
+        public struct ShellExecuteInfo
+        {
+            public int Size;
+            public uint Mask;
+            public IntPtr hwnd;
+            public string Verb;
+            public string File;
+            public string Parameters;
+            public string Directory;
+            public uint Show;
+            public IntPtr InstApp;
+            public IntPtr IDList;
+            public string Class;
+            public IntPtr hkeyClass;
+            public uint HotKey;
+            public IntPtr Icon;
+            public IntPtr Monitor;
+        }
+
+        // Code For OpenWithDialog Box
+        [DllImport("shell32.dll", SetLastError = true)]
+        extern public static bool
+               ShellExecuteEx(ref ShellExecuteInfo lpExecInfo);
 
         private string GetClipTempFile(out string fileEditor)
         {
@@ -4098,9 +4132,11 @@ namespace ClipAngel
                 extension = "png";
             else
                 extension = "dat";
-            string tempFolder = Properties.Settings.Default.ClipTempFileFolder + "\\";
+            string tempFolder = Properties.Settings.Default.ClipTempFileFolder;
             if (!Directory.Exists(tempFolder))
                 tempFolder = Path.GetTempPath();
+            if (!tempFolder.EndsWith("\\"))
+                tempFolder += "\\";
             string tempFile = tempFolder + "Clip " + rowReader["id"] + " " + suffix + "." + extension;
             try
             {
@@ -4944,10 +4980,11 @@ namespace ClipAngel
             int RowIndex = dataGridView.HitTest(pt.X, pt.Y).RowIndex;
             if (RowIndex == -1)
                 return;
-            var row = dataGridView.Rows[RowIndex];
+            DataGridViewRow row = dataGridView.Rows[RowIndex];
             DataRowView dataRowView = row.DataBoundItem as DataRowView;
             string tooltipText = "";
-            tooltipText += String.Format("{0:dd/MM HH:mm:ss}", (DateTime)dataRowView["Created"]);
+            if (!(dataRowView["Created"] is DBNull))
+                tooltipText += String.Format("{0:dd/MM HH:mm:ss}", (DateTime)dataRowView["Created"]);
             if (!(dataRowView["Chars"] is DBNull))
                 tooltipText += ", " + FormattedClipNumericPropery((int)dataRowView["Chars"], MultiLangCharUnit());
             if (!(dataRowView["Size"] is DBNull))

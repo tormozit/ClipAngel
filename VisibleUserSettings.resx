@@ -197,19 +197,19 @@ Key press will be processed by the window. </value>
     <value>Hotkey to open window with no changes</value>
   </data>
   <data name="GlobalHotkeyOpenCurrentDescription" xml:space="preserve">
-    <value>Use this hot key in any program to open Clip Angel window with no changes in filter and clip selection</value>
+    <value>Use this hot key in any program to open Clip Angel window with no changes in filter and clip selection. Press again to close the window.</value>
   </data>
   <data name="GlobalHotkeyOpenFavorites" xml:space="preserve">
     <value>Hotkey to open window with favorites</value>
   </data>
   <data name="GlobalHotkeyOpenFavoritesDescription" xml:space="preserve">
-    <value>Use this hot key in any program to show Clip Angel window with favorites only filter</value>
+    <value>Use this hot key in any program to show Clip Angel window with favorites only filter. Press again to close the window.</value>
   </data>
   <data name="GlobalHotkeyOpenLast" xml:space="preserve">
     <value>Hotkey to open window with reset</value>
   </data>
   <data name="GlobalHotkeyOpenLastDescription" xml:space="preserve">
-    <value>Use this hot key in any program to open Clip Angel window, clear filters and select last captured clip</value>
+    <value>Use this hot key in any program to open Clip Angel window, clear filters and select last captured clip. Press again to close the window.</value>
   </data>
   <data name="GlobalHotkeyPasteText" xml:space="preserve">
     <value>Hotkey to paste plain text</value>
@@ -306,7 +306,7 @@ Key press will be processed by the window. </value>
   </data>
   <data name="TextCompareApplicationDescription" xml:space="preserve">
     <value>Leave empty to use automatic search application, which looks for Beyond Compare, ExamDiff Pro, 
-WinMerge, Araxis Merge, DiffMerge. Text compare command is %application% %file1% %file2%</value>
+WinMerge, Araxis Merge, DiffMerge, Kdiff3. Text compare command is %application% %file1% %file2%</value>
   </data>
   <data name="TextEditor" xml:space="preserve">
     <value>Text (TXT) file editor application</value>
