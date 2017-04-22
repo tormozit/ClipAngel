@@ -273,13 +273,13 @@ namespace ClipAngel
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.toolStripBottom = new System.Windows.Forms.ToolStrip();
             this.toolStripButtonClearFilter = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButtonFindNext = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButtonFindPrevious = new System.Windows.Forms.ToolStripButton();
             this.toolStripFindSettings = new System.Windows.Forms.ToolStripDropDownButton();
             this.toolStripButtonAutoSelectMatch = new System.Windows.Forms.ToolStripMenuItem();
             this.caseSensetiveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.everyWordIndependentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.meandsAnySequenceOfCharsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripButtonFindNext = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonFindPrevious = new System.Windows.Forms.ToolStripButton();
             this.MarkFilter = new System.Windows.Forms.ComboBox();
             this.TypeFilter = new System.Windows.Forms.ComboBox();
             this.comboBoxFilter = new ClipAngel.CueComboBox();
@@ -497,9 +497,9 @@ namespace ClipAngel
             this.toolStripBottom.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.toolStripBottom.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButtonClearFilter,
+            this.toolStripFindSettings,
             this.toolStripButtonFindNext,
-            this.toolStripButtonFindPrevious,
-            this.toolStripFindSettings});
+            this.toolStripButtonFindPrevious});
             this.toolStripBottom.Name = "toolStripBottom";
             // 
             // toolStripButtonClearFilter
@@ -510,22 +510,6 @@ namespace ClipAngel
             this.toolStripButtonClearFilter.Name = "toolStripButtonClearFilter";
             this.toolStripButtonClearFilter.Click += new System.EventHandler(this.ClearFilter_Click);
             // 
-            // toolStripButtonFindNext
-            // 
-            this.toolStripButtonFindNext.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonFindNext.Image = global::ClipAngel.Properties.Resources.FindNext;
-            resources.ApplyResources(this.toolStripButtonFindNext, "toolStripButtonFindNext");
-            this.toolStripButtonFindNext.Name = "toolStripButtonFindNext";
-            this.toolStripButtonFindNext.Click += new System.EventHandler(this.buttonFindNext_Click);
-            // 
-            // toolStripButtonFindPrevious
-            // 
-            this.toolStripButtonFindPrevious.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonFindPrevious.Image = global::ClipAngel.Properties.Resources.FindPrevious;
-            resources.ApplyResources(this.toolStripButtonFindPrevious, "toolStripButtonFindPrevious");
-            this.toolStripButtonFindPrevious.Name = "toolStripButtonFindPrevious";
-            this.toolStripButtonFindPrevious.Click += new System.EventHandler(this.buttonFindPrevious_Click);
-            // 
             // toolStripFindSettings
             // 
             this.toolStripFindSettings.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -534,9 +518,10 @@ namespace ClipAngel
             this.caseSensetiveToolStripMenuItem,
             this.everyWordIndependentToolStripMenuItem,
             this.meandsAnySequenceOfCharsToolStripMenuItem});
-            this.toolStripFindSettings.Image = global::ClipAngel.Properties.Resources.Autoselect_first_match;
+            this.toolStripFindSettings.Image = global::ClipAngel.Properties.Resources.FindOptions;
             resources.ApplyResources(this.toolStripFindSettings, "toolStripFindSettings");
             this.toolStripFindSettings.Name = "toolStripFindSettings";
+            this.toolStripFindSettings.Click += new System.EventHandler(this.toolStripFindSettings_Click);
             // 
             // toolStripButtonAutoSelectMatch
             // 
@@ -558,6 +543,22 @@ namespace ClipAngel
             // 
             this.meandsAnySequenceOfCharsToolStripMenuItem.Name = "meandsAnySequenceOfCharsToolStripMenuItem";
             resources.ApplyResources(this.meandsAnySequenceOfCharsToolStripMenuItem, "meandsAnySequenceOfCharsToolStripMenuItem");
+            // 
+            // toolStripButtonFindNext
+            // 
+            this.toolStripButtonFindNext.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonFindNext.Image = global::ClipAngel.Properties.Resources.FindNext;
+            resources.ApplyResources(this.toolStripButtonFindNext, "toolStripButtonFindNext");
+            this.toolStripButtonFindNext.Name = "toolStripButtonFindNext";
+            this.toolStripButtonFindNext.Click += new System.EventHandler(this.buttonFindNext_Click);
+            // 
+            // toolStripButtonFindPrevious
+            // 
+            this.toolStripButtonFindPrevious.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonFindPrevious.Image = global::ClipAngel.Properties.Resources.FindPrevious;
+            resources.ApplyResources(this.toolStripButtonFindPrevious, "toolStripButtonFindPrevious");
+            this.toolStripButtonFindPrevious.Name = "toolStripButtonFindPrevious";
+            this.toolStripButtonFindPrevious.Click += new System.EventHandler(this.buttonFindPrevious_Click);
             // 
             // MarkFilter
             // 

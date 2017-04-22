@@ -422,6 +422,16 @@ namespace ClipAngel.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap FindOptions {
+            get {
+                object obj = ResourceManager.GetObject("FindOptions", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap FindPrevious {
             get {
                 object obj = ResourceManager.GetObject("FindPrevious", resourceCulture);

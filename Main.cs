@@ -5002,6 +5002,11 @@ namespace ClipAngel
                           MousePosition.Y - this.Top + 25,
                           3000);
         }
+
+        private void toolStripFindSettings_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

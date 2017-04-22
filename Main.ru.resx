@@ -133,9 +133,6 @@
   <data name="toolStripButtonFindPrevious.ToolTipText" xml:space="preserve">
     <value>Найти предыдущее в тексте клипа (SHIFT+F3)</value>
   </data>
-  <data name="toolStripBottom.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="MarkFilter.ToolTip" xml:space="preserve">
     <value>Показывать только клипы с такими пометками. 
 Подменю "Список" содержит команды для быстрого выбора.</value>
@@ -147,13 +144,16 @@
   <data name="comboBoxFilter.CueText" xml:space="preserve">
     <value>Ввод в списке</value>
   </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="comboBoxFilter.Size" type="System.Drawing.Size, System.Drawing">
+    <value>110, 23</value>
+  </data>
   <data name="comboBoxFilter.ToolTip" xml:space="preserve">
     <value>Горячий фильтр по тексту клипов. Список и этот фильтр разделяют нажатия клавиш. 
 Редактируйте фильтр прямо в списке. Перемещайтесь по списку прямо из фильтра. 
 Используйте спец. символ % для обозначения любой последовательности символов. Например фильтр "кар%а" найдет "картошка".
 </value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="toolStripMenuItem2.Size" type="System.Drawing.Size, System.Drawing">
     <value>273, 22</value>
   </data>
@@ -242,15 +242,6 @@
   <data name="contextMenuStripDataGrid.Size" type="System.Drawing.Size, System.Drawing">
     <value>274, 202</value>
   </data>
-  <data name="contextMenuStripDataGrid.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="dataGridView.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="splitContainer1.Panel1.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="pictureBoxSource.ToolTip" xml:space="preserve">
     <value>Иконка приложения, из которого клип был скопирован</value>
   </data>
@@ -262,9 +253,6 @@
   </data>
   <data name="contextMenuUrl.Size" type="System.Drawing.Size, System.Drawing">
     <value>198, 26</value>
-  </data>
-  <data name="contextMenuUrl.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="urlTextBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>2, 343</value>
@@ -305,14 +293,8 @@
   <data name="contextMenuStripRtf.Size" type="System.Drawing.Size, System.Drawing">
     <value>239, 92</value>
   </data>
-  <data name="contextMenuStripRtf.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="richTextBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>433, 93</value>
-  </data>
-  <data name="richTextBox.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="htmlMenuItemOpenLink.Size" type="System.Drawing.Size, System.Drawing">
     <value>238, 22</value>
@@ -344,17 +326,11 @@
   <data name="contextMenuStripHtml.Size" type="System.Drawing.Size, System.Drawing">
     <value>239, 92</value>
   </data>
-  <data name="contextMenuStripHtml.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="htmlTextBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 100</value>
   </data>
   <data name="htmlTextBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>431, 91</value>
-  </data>
-  <data name="htmlTextBox.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="ImageControl.Location" type="System.Drawing.Point, System.Drawing">
     <value>2, 196</value>
@@ -362,14 +338,8 @@
   <data name="ImageControl.Size" type="System.Drawing.Size, System.Drawing">
     <value>433, 143</value>
   </data>
-  <data name="ImageControl.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="tableLayoutPanelData.Size" type="System.Drawing.Size, System.Drawing">
     <value>437, 368</value>
-  </data>
-  <data name="tableLayoutPanelData.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="stripLabelPosition.Size" type="System.Drawing.Size, System.Drawing">
     <value>141, 17</value>
@@ -392,9 +362,6 @@
   <data name="statusStrip.Size" type="System.Drawing.Size, System.Drawing">
     <value>441, 22</value>
   </data>
-  <data name="statusStrip.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="copyFullFilenameToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>246, 22</value>
   </data>
@@ -409,9 +376,6 @@
   </data>
   <data name="contextMenuStripApplication.Size" type="System.Drawing.Size, System.Drawing">
     <value>247, 48</value>
-  </data>
-  <data name="contextMenuStripApplication.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="textBoxApplication.Location" type="System.Drawing.Point, System.Drawing">
     <value>354, 3</value>
@@ -428,23 +392,14 @@
   <data name="contextMenuWindowTitle.Size" type="System.Drawing.Size, System.Drawing">
     <value>198, 26</value>
   </data>
-  <data name="contextMenuWindowTitle.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="textBoxWindow.Size" type="System.Drawing.Size, System.Drawing">
     <value>326, 20</value>
   </data>
   <data name="textBoxWindow.ToolTip" xml:space="preserve">
     <value>Заголовок окна откуда клип был скопирован</value>
   </data>
-  <data name="splitContainer1.Panel2.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="splitContainer1.Size" type="System.Drawing.Size, System.Drawing">
     <value>815, 420</value>
-  </data>
-  <data name="splitContainer1.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="toolStripMenuItemSwitchFocus.Size" type="System.Drawing.Size, System.Drawing">
     <value>287, 22</value>
@@ -889,9 +844,6 @@
   <data name="MainMenu.Size" type="System.Drawing.Size, System.Drawing">
     <value>815, 24</value>
   </data>
-  <data name="MainMenu.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="openFavoritesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>243, 22</value>
   </data>
@@ -930,9 +882,6 @@
   </data>
   <data name="contextMenuStripNotifyIcon.Size" type="System.Drawing.Size, System.Drawing">
     <value>244, 114</value>
-  </data>
-  <data name="contextMenuStripNotifyIcon.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="notifyIcon.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1553,9 +1502,6 @@
   <data name="buttonUpdate.ToolTipText" xml:space="preserve">
     <value>Обновить программу на новую версию</value>
   </data>
-  <data name="toolStripTop.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>815, 444</value>
   </data>
@@ -2096,11 +2042,5 @@
         wAAAAf/////AAAAB/////8AAAAH/////4AAAA//////gAAAD/////+AAAAP/////8AAAB//////4AAAP
         //////gAAA///////AAAH//////+AAA///////+AAP///////+AD/////////////////////////w==
 </value>
-  </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>Inherit</value>
-  </data>
-  <data name="$this.ToolTip" xml:space="preserve">
-    <value />
   </data>
 </root>

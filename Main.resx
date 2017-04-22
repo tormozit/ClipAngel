@@ -143,24 +143,6 @@
   <data name="toolStripButtonClearFilter.ToolTipText" xml:space="preserve">
     <value>Clear filters (F7)</value>
   </data>
-  <data name="toolStripButtonFindNext.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="toolStripButtonFindNext.Size" type="System.Drawing.Size, System.Drawing">
-    <value>23, 22</value>
-  </data>
-  <data name="toolStripButtonFindNext.ToolTipText" xml:space="preserve">
-    <value>Find next match in clip text (F3)</value>
-  </data>
-  <data name="toolStripButtonFindPrevious.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="toolStripButtonFindPrevious.Size" type="System.Drawing.Size, System.Drawing">
-    <value>23, 22</value>
-  </data>
-  <data name="toolStripButtonFindPrevious.ToolTipText" xml:space="preserve">
-    <value>Find previuos match in clip text (SHIFT+F3)</value>
-  </data>
   <data name="toolStripButtonAutoSelectMatch.Size" type="System.Drawing.Size, System.Drawing">
     <value>205, 22</value>
   </data>
@@ -200,14 +182,32 @@
   <data name="toolStripFindSettings.ToolTipText" xml:space="preserve">
     <value>Find settings</value>
   </data>
+  <data name="toolStripButtonFindNext.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="toolStripButtonFindNext.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 22</value>
+  </data>
+  <data name="toolStripButtonFindNext.ToolTipText" xml:space="preserve">
+    <value>Find next match in clip text (F3)</value>
+  </data>
+  <data name="toolStripButtonFindPrevious.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="toolStripButtonFindPrevious.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 22</value>
+  </data>
+  <data name="toolStripButtonFindPrevious.ToolTipText" xml:space="preserve">
+    <value>Find previuos match in clip text (SHIFT+F3)</value>
+  </data>
   <data name="toolStripBottom.Location" type="System.Drawing.Point, System.Drawing">
-    <value>238, 327</value>
+    <value>269, 395</value>
   </data>
   <data name="toolStripBottom.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
     <value>Yes</value>
   </data>
   <data name="toolStripBottom.Size" type="System.Drawing.Size, System.Drawing">
-    <value>132, 25</value>
+    <value>101, 25</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="toolStripBottom.TabIndex" type="System.Int32, mscorlib">
@@ -247,7 +247,7 @@
     <value>img</value>
   </data>
   <data name="MarkFilter.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 327</value>
+    <value>3, 395</value>
   </data>
   <data name="MarkFilter.Size" type="System.Drawing.Size, System.Drawing">
     <value>78, 23</value>
@@ -293,7 +293,7 @@ Submenu "List" has commands for quick selection</value>
     <value>img</value>
   </data>
   <data name="TypeFilter.Location" type="System.Drawing.Point, System.Drawing">
-    <value>84, 327</value>
+    <value>84, 395</value>
   </data>
   <data name="TypeFilter.Size" type="System.Drawing.Size, System.Drawing">
     <value>72, 23</value>
@@ -327,10 +327,10 @@ Submenu "List" has commands for quick selection</value>
     <value>Segoe UI, 9pt</value>
   </data>
   <data name="comboBoxFilter.Location" type="System.Drawing.Point, System.Drawing">
-    <value>159, 327</value>
+    <value>159, 395</value>
   </data>
   <data name="comboBoxFilter.Size" type="System.Drawing.Size, System.Drawing">
-    <value>112, 23</value>
+    <value>110, 23</value>
   </data>
   <data name="comboBoxFilter.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -592,7 +592,7 @@ Use special char % for marking any sequence of chars. For example filter "po%o" 
     <value>1, 0</value>
   </data>
   <data name="dataGridView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>369, 325</value>
+    <value>369, 393</value>
   </data>
   <data name="dataGridView.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -688,7 +688,7 @@ Use special char % for marking any sequence of chars. For example filter "po%o" 
     <value>Tahoma, 9pt</value>
   </data>
   <data name="urlTextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>2, 276</value>
+    <value>2, 345</value>
   </data>
   <data name="urlTextBox.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
@@ -697,7 +697,7 @@ Use special char % for marking any sequence of chars. For example filter "po%o" 
     <value>False</value>
   </data>
   <data name="urlTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>408, 23</value>
+    <value>408, 22</value>
   </data>
   <data name="urlTextBox.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -776,7 +776,7 @@ Use special char % for marking any sequence of chars. For example filter "po%o" 
     <value>2, 2, 2, 2</value>
   </data>
   <data name="richTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>408, 74</value>
+    <value>408, 94</value>
   </data>
   <data name="richTextBox.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -843,13 +843,13 @@ Use special char % for marking any sequence of chars. For example filter "po%o" 
     <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="htmlTextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 81</value>
+    <value>3, 101</value>
   </data>
   <data name="htmlTextBox.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>20, 20</value>
   </data>
   <data name="htmlTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>406, 72</value>
+    <value>406, 92</value>
   </data>
   <data name="htmlTextBox.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
@@ -873,13 +873,13 @@ Use special char % for marking any sequence of chars. For example filter "po%o" 
     <value>NoControl</value>
   </data>
   <data name="ImageControl.Location" type="System.Drawing.Point, System.Drawing">
-    <value>2, 158</value>
+    <value>2, 198</value>
   </data>
   <data name="ImageControl.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
   </data>
   <data name="ImageControl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>408, 114</value>
+    <value>408, 143</value>
   </data>
   <data name="ImageControl.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>Zoom</value>
@@ -909,7 +909,7 @@ Use special char % for marking any sequence of chars. For example filter "po%o" 
     <value>4</value>
   </data>
   <data name="tableLayoutPanelData.Size" type="System.Drawing.Size, System.Drawing">
-    <value>412, 301</value>
+    <value>412, 369</value>
   </data>
   <data name="tableLayoutPanelData.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -1017,7 +1017,7 @@ Use special char % for marking any sequence of chars. For example filter "po%o" 
     <value>Created time</value>
   </data>
   <data name="statusStrip.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 330</value>
+    <value>0, 398</value>
   </data>
   <data name="statusStrip.Size" type="System.Drawing.Size, System.Drawing">
     <value>416, 22</value>
@@ -1155,7 +1155,7 @@ Use special char % for marking any sequence of chars. For example filter "po%o" 
     <value>1</value>
   </data>
   <data name="splitContainer1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>790, 352</value>
+    <value>790, 420</value>
   </data>
   <data name="splitContainer1.SplitterDistance" type="System.Int32, mscorlib">
     <value>370</value>
@@ -2551,7 +2551,7 @@ Changes in temp file are not synchronized with clip!
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>790, 376</value>
+    <value>790, 444</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -3103,18 +3103,6 @@ Changes in temp file are not synchronized with clip!
   <data name="&gt;&gt;toolStripButtonClearFilter.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;toolStripButtonFindNext.Name" xml:space="preserve">
-    <value>toolStripButtonFindNext</value>
-  </data>
-  <data name="&gt;&gt;toolStripButtonFindNext.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripButtonFindPrevious.Name" xml:space="preserve">
-    <value>toolStripButtonFindPrevious</value>
-  </data>
-  <data name="&gt;&gt;toolStripButtonFindPrevious.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;toolStripFindSettings.Name" xml:space="preserve">
     <value>toolStripFindSettings</value>
   </data>
@@ -3144,6 +3132,18 @@ Changes in temp file are not synchronized with clip!
   </data>
   <data name="&gt;&gt;meandsAnySequenceOfCharsToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripButtonFindNext.Name" xml:space="preserve">
+    <value>toolStripButtonFindNext</value>
+  </data>
+  <data name="&gt;&gt;toolStripButtonFindNext.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripButtonFindPrevious.Name" xml:space="preserve">
+    <value>toolStripButtonFindPrevious</value>
+  </data>
+  <data name="&gt;&gt;toolStripButtonFindPrevious.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;AppImage.Name" xml:space="preserve">
     <value>AppImage</value>
