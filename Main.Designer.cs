@@ -273,9 +273,13 @@ namespace ClipAngel
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.toolStripBottom = new System.Windows.Forms.ToolStrip();
             this.toolStripButtonClearFilter = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButtonAutoSelectMatch = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonFindNext = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonFindPrevious = new System.Windows.Forms.ToolStripButton();
+            this.toolStripFindSettings = new System.Windows.Forms.ToolStripDropDownButton();
+            this.toolStripButtonAutoSelectMatch = new System.Windows.Forms.ToolStripMenuItem();
+            this.caseSensetiveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.everyWordIndependentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.meandsAnySequenceOfCharsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MarkFilter = new System.Windows.Forms.ComboBox();
             this.TypeFilter = new System.Windows.Forms.ComboBox();
             this.comboBoxFilter = new ClipAngel.CueComboBox();
@@ -436,9 +440,9 @@ namespace ClipAngel
             this.dataGridViewImageColumn4 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewRichTextBoxColumn2 = new ClipAngel.DataGridViewRichTextBoxColumn();
             this.dataGridViewImageColumn5 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.tooltipTimer = new System.Windows.Forms.Timer(this.components);
             this.clipsTableAdapter = new ClipAngel.dbDataSetTableAdapters.ClipsTableAdapter();
             this.tableAdapterManager = new ClipAngel.dbDataSetTableAdapters.TableAdapterManager();
-            this.tooltipTimer = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -493,9 +497,9 @@ namespace ClipAngel
             this.toolStripBottom.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.toolStripBottom.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButtonClearFilter,
-            this.toolStripButtonAutoSelectMatch,
             this.toolStripButtonFindNext,
-            this.toolStripButtonFindPrevious});
+            this.toolStripButtonFindPrevious,
+            this.toolStripFindSettings});
             this.toolStripBottom.Name = "toolStripBottom";
             // 
             // toolStripButtonClearFilter
@@ -505,14 +509,6 @@ namespace ClipAngel
             resources.ApplyResources(this.toolStripButtonClearFilter, "toolStripButtonClearFilter");
             this.toolStripButtonClearFilter.Name = "toolStripButtonClearFilter";
             this.toolStripButtonClearFilter.Click += new System.EventHandler(this.ClearFilter_Click);
-            // 
-            // toolStripButtonAutoSelectMatch
-            // 
-            this.toolStripButtonAutoSelectMatch.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonAutoSelectMatch.Image = global::ClipAngel.Properties.Resources.Autoselect_first_match;
-            resources.ApplyResources(this.toolStripButtonAutoSelectMatch, "toolStripButtonAutoSelectMatch");
-            this.toolStripButtonAutoSelectMatch.Name = "toolStripButtonAutoSelectMatch";
-            this.toolStripButtonAutoSelectMatch.Click += new System.EventHandler(this.buttonAutoSelectMatch_Click);
             // 
             // toolStripButtonFindNext
             // 
@@ -529,6 +525,39 @@ namespace ClipAngel
             resources.ApplyResources(this.toolStripButtonFindPrevious, "toolStripButtonFindPrevious");
             this.toolStripButtonFindPrevious.Name = "toolStripButtonFindPrevious";
             this.toolStripButtonFindPrevious.Click += new System.EventHandler(this.buttonFindPrevious_Click);
+            // 
+            // toolStripFindSettings
+            // 
+            this.toolStripFindSettings.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripFindSettings.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButtonAutoSelectMatch,
+            this.caseSensetiveToolStripMenuItem,
+            this.everyWordIndependentToolStripMenuItem,
+            this.meandsAnySequenceOfCharsToolStripMenuItem});
+            this.toolStripFindSettings.Image = global::ClipAngel.Properties.Resources.Autoselect_first_match;
+            resources.ApplyResources(this.toolStripFindSettings, "toolStripFindSettings");
+            this.toolStripFindSettings.Name = "toolStripFindSettings";
+            // 
+            // toolStripButtonAutoSelectMatch
+            // 
+            this.toolStripButtonAutoSelectMatch.Name = "toolStripButtonAutoSelectMatch";
+            resources.ApplyResources(this.toolStripButtonAutoSelectMatch, "toolStripButtonAutoSelectMatch");
+            this.toolStripButtonAutoSelectMatch.Click += new System.EventHandler(this.buttonAutoSelectMatch_Click);
+            // 
+            // caseSensetiveToolStripMenuItem
+            // 
+            this.caseSensetiveToolStripMenuItem.Name = "caseSensetiveToolStripMenuItem";
+            resources.ApplyResources(this.caseSensetiveToolStripMenuItem, "caseSensetiveToolStripMenuItem");
+            // 
+            // everyWordIndependentToolStripMenuItem
+            // 
+            this.everyWordIndependentToolStripMenuItem.Name = "everyWordIndependentToolStripMenuItem";
+            resources.ApplyResources(this.everyWordIndependentToolStripMenuItem, "everyWordIndependentToolStripMenuItem");
+            // 
+            // meandsAnySequenceOfCharsToolStripMenuItem
+            // 
+            this.meandsAnySequenceOfCharsToolStripMenuItem.Name = "meandsAnySequenceOfCharsToolStripMenuItem";
+            resources.ApplyResources(this.meandsAnySequenceOfCharsToolStripMenuItem, "meandsAnySequenceOfCharsToolStripMenuItem");
             // 
             // MarkFilter
             // 
@@ -1766,6 +1795,11 @@ namespace ClipAngel
             this.dataGridViewImageColumn5.Name = "dataGridViewImageColumn5";
             this.dataGridViewImageColumn5.ReadOnly = true;
             // 
+            // tooltipTimer
+            // 
+            this.tooltipTimer.Interval = 50;
+            this.tooltipTimer.Tick += new System.EventHandler(this.tooltipTimer_Tick);
+            // 
             // clipsTableAdapter
             // 
             this.clipsTableAdapter.ClearBeforeFill = true;
@@ -1775,11 +1809,6 @@ namespace ClipAngel
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.ClipsTableAdapter = this.clipsTableAdapter;
             this.tableAdapterManager.UpdateOrder = ClipAngel.dbDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            // 
-            // tooltipTimer
-            // 
-            this.tooltipTimer.Interval = 50;
-            this.tooltipTimer.Tick += new System.EventHandler(this.tooltipTimer_Tick);
             // 
             // Main
             // 
@@ -1951,7 +1980,6 @@ namespace ClipAngel
         private System.Windows.Forms.ToolStrip toolStripBottom;
         private System.Windows.Forms.ToolStripButton toolStripButtonFindPrevious;
         private System.Windows.Forms.ToolStripButton toolStripButtonFindNext;
-        private System.Windows.Forms.ToolStripButton toolStripButtonAutoSelectMatch;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem13;
         private System.Windows.Forms.ToolStripMenuItem showOnlyImagesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem showOnlyFilesToolStripMenuItem;
@@ -2001,6 +2029,11 @@ namespace ClipAngel
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn favoriteDataGridViewCheckBoxColumn;
         private System.Windows.Forms.Timer tooltipTimer;
+        private System.Windows.Forms.ToolStripDropDownButton toolStripFindSettings;
+        private System.Windows.Forms.ToolStripMenuItem toolStripButtonAutoSelectMatch;
+        private System.Windows.Forms.ToolStripMenuItem caseSensetiveToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem everyWordIndependentToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem meandsAnySequenceOfCharsToolStripMenuItem;
     }
 }
 

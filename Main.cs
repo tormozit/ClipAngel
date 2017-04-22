@@ -111,6 +111,7 @@ namespace ClipAngel
         private bool UsualClipboardMode = false;
         private List<int> selectedClipsBeforeFilterApply = new List<int>();
         private Point lastMousePoint;
+        private int maxWindowCoordForHiddenState = -10000;
 
         [DllImport("dwmapi", PreserveSig = true)]
         static extern int DwmSetWindowAttribute(IntPtr hWnd, int attr, ref int value, int attrLen);
@@ -135,6 +136,7 @@ namespace ClipAngel
         {
             this.UserSettingsPath = UserSettingsPath;
             this.PortableMode = PortableMode;
+
             //// Disable window animation on minimize and restore. Failed
             //const int DWMWA_TRANSITIONS_FORCEDISABLED = 3;
             //int value = 1;  // TRUE to disable
@@ -143,6 +145,7 @@ namespace ClipAngel
 
             UpdateCurrentCulture(); // Antibug. Before bug it was not required
             InitializeComponent();
+            toolStripFindSettings.DropDownDirection = ToolStripDropDownDirection.AboveLeft;
             dele = new WinEventDelegate(WinEventProc);
             HookChangeActiveWindow = SetWinEventHook(EVENT_SYSTEM_FOREGROUND, EVENT_SYSTEM_FOREGROUND, IntPtr.Zero, dele,
                 0, 0, WINEVENT_OUTOFCONTEXT);
@@ -359,7 +362,7 @@ namespace ClipAngel
 
         private void UpdateWindowTitle(bool forced = false)
         {
-            if ((this.Top < 0 || !this.Visible) && !forced)
+            if ((this.Top <= maxWindowCoordForHiddenState || !this.Visible) && !forced)
                 return;
             string windowText = "";
             if (lastActiveParentWindow != null)
@@ -417,7 +420,7 @@ namespace ClipAngel
             string hotkeyTitle = KeyboardHook.HotkeyTitle(e.Key, e.Modifier);
             if (hotkeyTitle == Properties.Settings.Default.GlobalHotkeyOpenLast)
             {
-                if (this.ContainsFocus && this.Top >= 0 && MarkFilter.SelectedValue.ToString() != "favorite")
+                if (this.ContainsFocus && this.Top > maxWindowCoordForHiddenState && MarkFilter.SelectedValue.ToString() != "favorite")
                     this.Close();
                 else
                 {
@@ -427,7 +430,7 @@ namespace ClipAngel
             }
             else if (hotkeyTitle == Properties.Settings.Default.GlobalHotkeyOpenCurrent)
             {
-                if (this.ContainsFocus && this.Top >= 0 && MarkFilter.SelectedValue.ToString() != "favorite")
+                if (this.ContainsFocus && this.Top > maxWindowCoordForHiddenState && MarkFilter.SelectedValue.ToString() != "favorite")
                     this.Close();
                 else
                 {
@@ -437,7 +440,7 @@ namespace ClipAngel
             }
             else if (hotkeyTitle == Properties.Settings.Default.GlobalHotkeyOpenFavorites)
             {
-                if (this.ContainsFocus && this.Top >= 0 && MarkFilter.SelectedValue.ToString() == "favorite")
+                if (this.ContainsFocus && this.Top > maxWindowCoordForHiddenState && MarkFilter.SelectedValue.ToString() == "favorite")
                     this.Close();
                 else
                 {
@@ -1320,7 +1323,7 @@ namespace ClipAngel
                     if (!lastActSet)
                         //SetForegroundWindow(IntPtr.Zero); // This way focus was not lost!
                         SetActiveWindow(IntPtr.Zero);
-                    this.Top = -10000;
+                    this.Top = maxWindowCoordForHiddenState;
                 }
                 else
                 {
@@ -2595,7 +2598,7 @@ namespace ClipAngel
                 //    this.ShowInTaskbar = false;
                 //    //notifyIcon.Visible = true;
                 //}
-                if (this.Top >= 0)
+                if (this.Top > maxWindowCoordForHiddenState)
                     factualTop = this.Top;
             }
         }
@@ -2678,7 +2681,10 @@ namespace ClipAngel
             //sw.Start();
             //this.SuspendLayout();
             if (this.ContainsFocus)
+            {
+                RestoreWindowIfMinimized();
                 return;
+            }
             int newX = -1;
             int newY = -1;
             // https://www.codeproject.com/Articles/34520/Getting-Caret-Position-Inside-Any-Application
@@ -2774,35 +2780,35 @@ namespace ClipAngel
             return guiInfo;
         }
 
-        private void RestoreWindowIfMinimized(int newX = -1, int newY = -1)
+        private void RestoreWindowIfMinimized(int newX = -12345, int newY = -12345)
         {
             this.FormBorderStyle = FormBorderStyle.Sizable;
             if (!allowVisible)
             {
+                // executed only in first call of process life
                 allowVisible = true;
                 Show();
             }
             UpdateWindowTitle(true);
-            if (newX == -1)
+            if (newX == -12345)
             {
-                if (this.Left >= 0)
+                if (this.Left > maxWindowCoordForHiddenState)
                     newX = this.Left;
                 else
                     newX = this.RestoreBounds.X;
             }
-            if (newY == -1)
+            if (newY == -12345)
             {
-                if (this.Top >= 0)
+                if (this.Top > maxWindowCoordForHiddenState)
                     newY = this.Top;
                 else
                     newY = this.RestoreBounds.Y;
             }
             if (Properties.Settings.Default.FastWindowOpen)
             {
-                if (Properties.Settings.Default.FastWindowOpen)
-                    if (newY < 0)
-                        newY = factualTop;
-                if (newX > 0)
+                if (newY <= maxWindowCoordForHiddenState)
+                    newY = factualTop;
+                if (newX > maxWindowCoordForHiddenState)
                     MoveWindow(this.Handle, newX, newY, this.Width, this.Height, true);
             }
             else
