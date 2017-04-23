@@ -123,6 +123,12 @@
   <data name="AutoCheckUpdateDescription" xml:space="preserve">
     <value>Автоматически проверять обновления при старте программы и каждый день</value>
   </data>
+  <data name="AutoSelectMatch" xml:space="preserve">
+    <value>Автовыделение вхождения</value>
+  </data>
+  <data name="AutoSelectMatchDescription" xml:space="preserve">
+    <value>Автовыделение первого вхождения фильтра в тексте  клипа</value>
+  </data>
   <data name="Autostart" xml:space="preserve">
     <value>Автозапуск программы при входе пользователя</value>
   </data>
@@ -269,6 +275,14 @@
   <data name="MaxClipSizeKBDescription" xml:space="preserve">
     <value>Клипы больше этого размера не будут добавляться в список</value>
   </data>
+  <data name="MonospacedFont" xml:space="preserve">
+    <value>Моноширинный шрифт</value>
+  </data>
+  <data name="MonospacedFontDescription" xml:space="preserve">
+    <value>Моноширинный шрифт в поле просмотра текста.
+Может быть переопределен родным оформлением RTF.
+Не применимо к родному оформлению HTML.</value>
+  </data>
   <data name="MoveCopiedClipToTop" xml:space="preserve">
     <value>Перемещать скопированный клип наверх</value>
   </data>
@@ -287,11 +301,36 @@
   <data name="RtfEditorDescription" xml:space="preserve">
     <value>Используется в команде "Открыть файл" клипа. Оставьте пустым для использования назначенного в ОС приложения открытия файлов RTF.</value>
   </data>
+  <data name="SearchCaseSensitive" xml:space="preserve">
+    <value>Искать с учетом регистра букв</value>
+  </data>
+  <data name="SearchCaseSensitiveDescription" xml:space="preserve">
+    <value>Искать с учетом регистра букв фильтра. Например "Кар" найдет "Картошка", но не найдет "картошка".</value>
+  </data>
+  <data name="SearchWildcards" xml:space="preserve">
+    <value>Искать "%" как любую строку</value>
+  </data>
+  <data name="SearchWildcardsDescription" xml:space="preserve">
+    <value>Использовать спец. символ % в фильтре для обозначения любой последовательности символов. 
+Например фильтр "кар%а" найдет "картошка".</value>
+  </data>
+  <data name="SearchWordsIndependently" xml:space="preserve">
+    <value>Искать слова независимо</value>
+  </data>
+  <data name="SearchWordsIndependentlyDescription" xml:space="preserve">
+    <value>Находить вхождение каждого слова фильтра независимо. Например "карто веб" найдет "Наш вебсайт продает картошку".</value>
+  </data>
   <data name="ShowApplicationIconColumn" xml:space="preserve">
     <value>Отображать колонку иконки источника клипа</value>
   </data>
   <data name="ShowApplicationIconColumnDescription" xml:space="preserve">
     <value>Показать столбец со значком приложения, из которого был скопирован клип</value>
+  </data>
+  <data name="ShowNativeTextFormatting" xml:space="preserve">
+    <value>Родное оформление</value>
+  </data>
+  <data name="ShowNativeTextFormattingDescription" xml:space="preserve">
+    <value>Показывать родное оформление текста клипа (CLTR+N)</value>
   </data>
   <data name="ShowSizeColumn" xml:space="preserve">
     <value>Отображать колонку визуального веса клипа</value>
@@ -329,5 +368,12 @@ WinMerge, Araxis Merge, DiffMerge, Kdiff3. Для сравнения текст�
   </data>
   <data name="WindowAutoPositionDescription" xml:space="preserve">
     <value>Если возможно, окно будет открываться около места ввода текста, иначе по центру активного окна</value>
+  </data>
+  <data name="WordWrap" xml:space="preserve">
+    <value>Перенос слов</value>
+  </data>
+  <data name="WordWrapDescription" xml:space="preserve">
+    <value>Перенос слов в поле просмотра текста (CTRL+W).
+Не применимо к родному оформлению HTML.</value>
   </data>
 </root>

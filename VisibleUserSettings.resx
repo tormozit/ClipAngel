@@ -123,6 +123,12 @@
   <data name="AutoCheckUpdateDescription" xml:space="preserve">
     <value>Autocheck for update on program start and every day</value>
   </data>
+  <data name="AutoSelectMatch" xml:space="preserve">
+    <value>Autoselect first match</value>
+  </data>
+  <data name="AutoSelectMatchDescription" xml:space="preserve">
+    <value>Autoselection of first match of filter in clip text. </value>
+  </data>
   <data name="Autostart" xml:space="preserve">
     <value>Autostart program on user logon</value>
   </data>
@@ -265,6 +271,14 @@ Key press will be processed by the window. </value>
   <data name="MaxClipSizeKBDescription" xml:space="preserve">
     <value>Clips greater this size will not be captured</value>
   </data>
+  <data name="MonospacedFont" xml:space="preserve">
+    <value>Monospaced font</value>
+  </data>
+  <data name="MonospacedFontDescription" xml:space="preserve">
+    <value>Monospaced font in clip text field. 
+Could be overloaded by RTF native formatting.
+Not appliable to HTML native formatting.</value>
+  </data>
   <data name="MoveCopiedClipToTop" xml:space="preserve">
     <value>Move copied in list clip to top</value>
   </data>
@@ -289,11 +303,35 @@ Key press will be processed by the window. </value>
   <data name="RtfEditorDescription" xml:space="preserve">
     <value>Used in "Open file" command for clip. Leave empty to use default OS application for edit RTF files.</value>
   </data>
+  <data name="SearchCaseSensitive" xml:space="preserve">
+    <value>Search case sensitive</value>
+  </data>
+  <data name="SearchCaseSensitiveDescription" xml:space="preserve">
+    <value>Search filter case sensitive. For example "Pot" will match "Potato", but not "potato". </value>
+  </data>
+  <data name="SearchWildcards" xml:space="preserve">
+    <value>Search "%" as any char sequence</value>
+  </data>
+  <data name="SearchWildcardsDescription" xml:space="preserve">
+    <value>Search char "%" from filter as any char sequence. For example filter "po%o" will match "potato". </value>
+  </data>
+  <data name="SearchWordsIndependently" xml:space="preserve">
+    <value>Search independent words</value>
+  </data>
+  <data name="SearchWordsIndependentlyDescription" xml:space="preserve">
+    <value>Search every word from filter independently. For example "pot web" will match "Our website sells potato". </value>
+  </data>
   <data name="ShowApplicationIconColumn" xml:space="preserve">
     <value>Show clip source icon column</value>
   </data>
   <data name="ShowApplicationIconColumnDescription" xml:space="preserve">
     <value>Show column with icon from application where clip was copied</value>
+  </data>
+  <data name="ShowNativeTextFormatting" xml:space="preserve">
+    <value>Show native text formatting</value>
+  </data>
+  <data name="ShowNativeTextFormattingDescription" xml:space="preserve">
+    <value>Show native text formatting for RTF and HTML clips (CLTR+N)</value>
   </data>
   <data name="ShowSizeColumn" xml:space="preserve">
     <value>Show visual clip weight column</value>
@@ -331,5 +369,12 @@ WinMerge, Araxis Merge, DiffMerge, Kdiff3. Text compare command is %application%
   </data>
   <data name="WindowAutoPositionDescription" xml:space="preserve">
     <value>If possible, window will open near text caret (input), else will place in center of active window</value>
+  </data>
+  <data name="WordWrap" xml:space="preserve">
+    <value>Word wrap</value>
+  </data>
+  <data name="WordWrapDescription" xml:space="preserve">
+    <value>Word wrap in clip text field (CTRL+W).
+Not appliable to HTML native formatting.</value>
   </data>
 </root>

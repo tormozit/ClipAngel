@@ -632,6 +632,13 @@ namespace ClipAngel
         public VisibleUserSettings(Main Owner)
         {
             this.Owner = Owner;
+            MonospacedFont = Properties.Settings.Default.MonospacedFont;
+            WordWrap = Properties.Settings.Default.WordWrap;
+            ShowNativeTextFormatting = Properties.Settings.Default.ShowNativeTextFormatting;
+            SearchWordsIndependently = Properties.Settings.Default.SearchWordsIndependently;
+            SearchWildcards = Properties.Settings.Default.SearchWildcards;
+            AutoSelectMatch = Properties.Settings.Default.AutoSelectMatch;
+            SearchCaseSensitive = Properties.Settings.Default.SearchCaseSensitive;
             ClipTempFileFolder = Properties.Settings.Default.ClipTempFileFolder;
             IgnoreExclusiveFormatClipCapture = Properties.Settings.Default.IgnoreExclusiveFormatClipCapture;
             //RestoreCaretPositionOnFocusReturn = Properties.Settings.Default.RestoreCaretPositionOnFocusReturn;
@@ -685,6 +692,13 @@ namespace ClipAngel
 
         public void Apply(bool PortableMode = false)
         {
+            Properties.Settings.Default.MonospacedFont = MonospacedFont;
+            Properties.Settings.Default.WordWrap = WordWrap;
+            Properties.Settings.Default.ShowNativeTextFormatting = ShowNativeTextFormatting;
+            Properties.Settings.Default.SearchWordsIndependently = SearchWordsIndependently;
+            Properties.Settings.Default.SearchWildcards = SearchWildcards;
+            Properties.Settings.Default.AutoSelectMatch = AutoSelectMatch;
+            Properties.Settings.Default.SearchCaseSensitive = SearchCaseSensitive;
             Properties.Settings.Default.ClipTempFileFolder = ClipTempFileFolder;
             Properties.Settings.Default.IgnoreExclusiveFormatClipCapture = IgnoreExclusiveFormatClipCapture;
             //Properties.Settings.Default.RestoreCaretPositionOnFocusReturn = RestoreCaretPositionOnFocusReturn;
@@ -889,6 +903,34 @@ namespace ClipAngel
         [GlobalizedCategory("Applications")]
         [Editor(typeof(AppListEditor), typeof(UITypeEditor))]
         public StringCollection IgnoreApplicationsClipCapture { get; set; }
+
+        [GlobalizedCategory("Search")]
+        [Editor(typeof(MyBoolEditor), typeof(UITypeEditor))]
+        public bool AutoSelectMatch { get; set; }
+
+        [GlobalizedCategory("Search")]
+        [Editor(typeof(MyBoolEditor), typeof(UITypeEditor))]
+        public bool SearchWildcards { get; set; }
+
+        [GlobalizedCategory("Search")]
+        [Editor(typeof(MyBoolEditor), typeof(UITypeEditor))]
+        public bool SearchWordsIndependently { get; set; }
+
+        [GlobalizedCategory("Search")]
+        [Editor(typeof(MyBoolEditor), typeof(UITypeEditor))]
+        public bool SearchCaseSensitive { get; set; }
+
+        [GlobalizedCategory("Other")]
+        [Editor(typeof(MyBoolEditor), typeof(UITypeEditor))]
+        public bool ShowNativeTextFormatting { get; set; }
+
+        [GlobalizedCategory("Other")]
+        [Editor(typeof(MyBoolEditor), typeof(UITypeEditor))]
+        public bool WordWrap { get; set; }
+
+        [GlobalizedCategory("Other")]
+        [Editor(typeof(MyBoolEditor), typeof(UITypeEditor))]
+        public bool MonospacedFont { get; set; }
 
     }
 }

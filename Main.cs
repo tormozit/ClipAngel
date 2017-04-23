@@ -145,7 +145,7 @@ namespace ClipAngel
 
             UpdateCurrentCulture(); // Antibug. Before bug it was not required
             InitializeComponent();
-            toolStripFindSettings.DropDownDirection = ToolStripDropDownDirection.AboveLeft;
+            toolStripSearchOptions.DropDownDirection = ToolStripDropDownDirection.AboveRight;
             dele = new WinEventDelegate(WinEventProc);
             HookChangeActiveWindow = SetWinEventHook(EVENT_SYSTEM_FOREGROUND, EVENT_SYSTEM_FOREGROUND, IntPtr.Zero, dele,
                 0, 0, WINEVENT_OUTOFCONTEXT);
@@ -853,8 +853,7 @@ namespace ClipAngel
                         //htmlTextBox.Document.Body.AppendChild(paragraph);
                         if (filterText.Length > 0)
                         {
-                            MarkRegExpMatchesInWebBrowser(htmlTextBox, Regex.Escape(filterText).Replace("%", ".*?"),
-                                Color.Red, true);
+                            MarkRegExpMatchesInWebBrowser(htmlTextBox, RegexpPattern(), Color.Red, true);
                         }
                     }
                     else
@@ -870,8 +869,7 @@ namespace ClipAngel
                         MarkLinksInRichTextBox(richTextBox, out TextLinkMatches);
                         if (filterText.Length > 0)
                         {
-                            MarkRegExpMatchesInRichTextBox(richTextBox, Regex.Escape(filterText).Replace("%", ".*?"),
-                                Color.Red, false, true, out FilterMatches);
+                            MarkRegExpMatchesInRichTextBox(richTextBox, RegexpPattern(), Color.Red, false, true, out FilterMatches);
                         }
                     }
                 }
@@ -1069,7 +1067,10 @@ namespace ClipAngel
         private void MarkRegExpMatchesInRichTextBox(RichTextBox control, string pattern, Color color, bool underline,
             bool bold, out MatchCollection matches)
         {
-            matches = Regex.Matches(control.Text, pattern, RegexOptions.IgnoreCase | RegexOptions.Singleline);
+            RegexOptions options = RegexOptions.Singleline;
+            if (!Properties.Settings.Default.SearchCaseSensitive)
+                options = options | RegexOptions.IgnoreCase;
+            matches = Regex.Matches(control.Text, pattern, options);
             control.DeselectAll();
             int maxMarked = 50; // prevent slow down
             foreach (Match match in matches)
@@ -1129,7 +1130,6 @@ namespace ClipAngel
         {
             if (AllowFilterProcessing)
                 timerApplyTextFiler.Start();
-
         }
 
         private void TextFilterApply()
@@ -1162,7 +1162,6 @@ namespace ClipAngel
                     }
                 }
             }
-
             allowRowLoad = false;
             bool oldFilterOn = filterOn;
             filterOn = false;
@@ -1170,7 +1169,23 @@ namespace ClipAngel
             string filterValue = "";
             if (!String.IsNullOrEmpty(filterText))
             {
-                sqlFilter += " AND UPPER(Text) Like UPPER('%" + filterText + "%')";
+                string[] array;
+                string filterTextTemp = filterText;
+                filterTextTemp = filterTextTemp.Replace("_", "\\_");
+                filterTextTemp = filterTextTemp.Replace("\\", "\\\\");
+                if (!Properties.Settings.Default.SearchWildcards)
+                    filterTextTemp = filterTextTemp.Replace("%", "\\%");
+                if (Properties.Settings.Default.SearchWordsIndependently)
+                    array = filterTextTemp.Split(new[] { " " }, StringSplitOptions.RemoveEmptyEntries);
+                else
+                    array = new string[1] { filterTextTemp };
+                foreach (var word in array)
+                {
+                    if (Properties.Settings.Default.SearchCaseSensitive)
+                        sqlFilter += " AND Text Like '%" + word + "%' ESCAPE '\\'";
+                    else
+                        sqlFilter += " AND UPPER(Text) Like UPPER('%" + word + "%') ESCAPE '\\'";
+                }
                 filterOn = true;
             }
             if (TypeFilter.SelectedValue as string != "allTypes")
@@ -1194,6 +1209,10 @@ namespace ClipAngel
             string selectCommandText = "Select Id, Used, Title, Chars, Type, Favorite, ImageSample, AppPath, Size, Created From Clips";
             selectCommandText += " WHERE " + sqlFilter;
             selectCommandText += " ORDER BY Id desc";
+            if (Properties.Settings.Default.SearchCaseSensitive)
+                selectCommandText = "PRAGMA case_sensitive_like = 1; " + selectCommandText;
+            else
+                selectCommandText = "PRAGMA case_sensitive_like = 0; " + selectCommandText;
             dataAdapter.SelectCommand.CommandText = selectCommandText;
 
             DataTable table = new DataTable();
@@ -3064,8 +3083,7 @@ namespace ClipAngel
                 _richTextBox.Font = dataGridView.RowsDefaultCellStyle.Font;
                 _richTextBox.Text = row.Cells["ColumnTitle"].Value.ToString();
                 MatchCollection tempMatches;
-                MarkRegExpMatchesInRichTextBox(_richTextBox, Regex.Escape(filterText).Replace("%", ".*?"), Color.Red,
-                    false, true, out tempMatches);
+                MarkRegExpMatchesInRichTextBox(_richTextBox, RegexpPattern(), Color.Red, false, true, out tempMatches);
                 row.Cells["ColumnTitle"].Value = _richTextBox.Rtf;
             }
             if (dataGridView.Columns["ColumnTitle"].Visible)
@@ -3091,6 +3109,26 @@ namespace ClipAngel
                     row.Cells["AppImage"].Value = bitmap;
             }
             UpdateTableGridRowBackColor(row);
+        }
+
+        private string RegexpPattern()
+        {
+            string result = filterText;
+            string[] array;
+            if (Properties.Settings.Default.SearchWordsIndependently)
+                array = result.Split(new[] { " " }, StringSplitOptions.RemoveEmptyEntries);
+            else
+                array = new string[1] {result};
+            result = "";
+            foreach (var word in array)
+            {
+                if (result != "")
+                    result += "|";
+                result += Regex.Escape(word);
+            }
+            if (Properties.Settings.Default.SearchWildcards)
+                result = result.Replace("%", ".*?");
+            return result;
         }
 
         static public Bitmap ApplicationIcon(string filePath, bool original = true)
@@ -3405,6 +3443,19 @@ namespace ClipAngel
             // To refresh text in list
             TypeFilter.DisplayMember = "";
             TypeFilter.DisplayMember = "Text";
+            VisibleUserSettings allSettings = new VisibleUserSettings(this);
+            toolStripButtonAutoSelectMatch.ToolTipText = allSettings.GetProperties().Find("AutoSelectMatch", true).Description;
+            toolStripMenuItemSearchCaseSensitive.ToolTipText = allSettings.GetProperties().Find("SearchCaseSensitive", true).Description;
+            toolStripMenuItemSearchWordsIndependently.ToolTipText = allSettings.GetProperties().Find("SearchWordsIndependently", true).Description;
+            toolStripMenuItemSearchWildcards.ToolTipText = allSettings.GetProperties().Find("SearchWildcards", true).Description;
+            moveCopiedClipToTopToolStripButton.ToolTipText = allSettings.GetProperties().Find("MoveCopiedClipToTop", true).Description;
+            moveCopiedClipToTopToolStripMenuItem.ToolTipText = allSettings.GetProperties().Find("MoveCopiedClipToTop", true).Description;
+            textFormattingToolStripMenuItem.ToolTipText = allSettings.GetProperties().Find("ShowNativeTextFormatting", true).Description;
+            toolStripButtonTextFormatting.ToolTipText = allSettings.GetProperties().Find("ShowNativeTextFormatting", true).Description;
+            toolStripButtonMonospacedFont.ToolTipText = allSettings.GetProperties().Find("MonospacedFont", true).Description;
+            monospacedFontToolStripMenuItem.ToolTipText = allSettings.GetProperties().Find("MonospacedFont", true).Description;
+            wordWrapToolStripMenuItem.ToolTipText = allSettings.GetProperties().Find("WordWrap", true).Description;
+            toolStripButtonWordWrap.ToolTipText = allSettings.GetProperties().Find("WordWrap", true).Description;
 
             BindingList<ListItemNameText> comboItemsMarks = (BindingList<ListItemNameText>) MarkFilter.DataSource;
             foreach (ListItemNameText item in comboItemsMarks)
@@ -3773,15 +3824,11 @@ namespace ClipAngel
             CopyClipToClipboard(null, false, Properties.Settings.Default.MoveCopiedClipToTop);
         }
 
-        private void toolStripButtonSelectTopClipOnShow_Click(object sender, EventArgs e)
-        {
-            Properties.Settings.Default.SelectTopClipOnOpen = !Properties.Settings.Default.SelectTopClipOnOpen;
-            UpdateControlsStates();
-        }
-
         private void UpdateControlsStates()
         {
-            moveCopiedClipToTopToolStripMenuItem.Checked = Properties.Settings.Default.MoveCopiedClipToTop;
+            toolStripMenuItemSearchCaseSensitive.Checked = Properties.Settings.Default.SearchCaseSensitive;
+            toolStripMenuItemSearchWordsIndependently.Checked = Properties.Settings.Default.SearchWordsIndependently;
+            toolStripMenuItemSearchWildcards.Checked = Properties.Settings.Default.SearchWildcards;
             moveCopiedClipToTopToolStripButton.Checked = Properties.Settings.Default.MoveCopiedClipToTop;
             toolStripButtonAutoSelectMatch.Checked = Properties.Settings.Default.AutoSelectMatch;
             trayMenuItemMonitoringClipboard.Checked = MonitoringClipboard;
@@ -4663,12 +4710,6 @@ namespace ClipAngel
             OpenLinkInRichTextBox(richTextBox, TextLinkMatches);
         }
 
-        private void buttonAutoSelectMatch_Click(object sender, EventArgs e)
-        {
-            Properties.Settings.Default.AutoSelectMatch = !Properties.Settings.Default.AutoSelectMatch;
-            UpdateControlsStates();
-        }
-
         private void toolStripMenuItemShowAllTypes_Click(object sender, EventArgs e)
         {
             TypeFilter.SelectedValue = "allTypes";
@@ -5003,9 +5044,31 @@ namespace ClipAngel
                           3000);
         }
 
-        private void toolStripFindSettings_Click(object sender, EventArgs e)
+        private void toolStripButtonAutoSelectMatch_Click(object sender, EventArgs e)
         {
+            Properties.Settings.Default.AutoSelectMatch = !Properties.Settings.Default.AutoSelectMatch;
+            UpdateControlsStates();
+        }
 
+        private void caseSensetiveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.SearchCaseSensitive = !Properties.Settings.Default.SearchCaseSensitive;
+            UpdateControlsStates();
+            TextFilterApply();
+        }
+
+        private void everyWordIndependentToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.SearchWordsIndependently = !Properties.Settings.Default.SearchWordsIndependently;
+            UpdateControlsStates();
+            TextFilterApply();
+        }
+
+        private void meandsAnySequenceOfCharsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.SearchWildcards = !Properties.Settings.Default.SearchWildcards;
+            UpdateControlsStates();
+            TextFilterApply();
         }
     }
 }

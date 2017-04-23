@@ -246,4 +246,7 @@
   <data name="Applications" xml:space="preserve">
     <value>Приложения</value>
   </data>
+  <data name="Search" xml:space="preserve">
+    <value>Поиск</value>
+  </data>
 </root>

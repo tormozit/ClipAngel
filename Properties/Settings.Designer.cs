@@ -500,5 +500,41 @@ namespace ClipAngel.Properties {
                 this["ClipTempFileFolder"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool SearchCaseSensitive {
+            get {
+                return ((bool)(this["SearchCaseSensitive"]));
+            }
+            set {
+                this["SearchCaseSensitive"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool SearchWordsIndependently {
+            get {
+                return ((bool)(this["SearchWordsIndependently"]));
+            }
+            set {
+                this["SearchWordsIndependently"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool SearchWildcards {
+            get {
+                return ((bool)(this["SearchWildcards"]));
+            }
+            set {
+                this["SearchWildcards"] = value;
+            }
+        }
     }
 }

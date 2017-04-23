@@ -120,12 +120,30 @@
   <data name="toolStripButtonClearFilter.ToolTipText" xml:space="preserve">
     <value>Очистить фильтры (F7)</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="toolStripButtonAutoSelectMatch.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
-    <value>Yes</value>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="toolStripButtonAutoSelectMatch.Size" type="System.Drawing.Size, System.Drawing">
+    <value>222, 22</value>
   </data>
-  <data name="toolStripButtonAutoSelectMatch.ToolTipText" xml:space="preserve">
-    <value>Автовыделение первого вхождения фильтра в тексте  клипа</value>
+  <data name="toolStripButtonAutoSelectMatch.Text" xml:space="preserve">
+    <value>Автовыделение вхождения</value>
+  </data>
+  <data name="toolStripMenuItemSearchCaseSensitive.Size" type="System.Drawing.Size, System.Drawing">
+    <value>222, 22</value>
+  </data>
+  <data name="toolStripMenuItemSearchCaseSensitive.Text" xml:space="preserve">
+    <value>Учитывать регистр букв</value>
+  </data>
+  <data name="toolStripMenuItemSearchWordsIndependently.Size" type="System.Drawing.Size, System.Drawing">
+    <value>222, 22</value>
+  </data>
+  <data name="toolStripMenuItemSearchWordsIndependently.Text" xml:space="preserve">
+    <value>Независимые слова</value>
+  </data>
+  <data name="toolStripMenuItemSearchWildcards.Size" type="System.Drawing.Size, System.Drawing">
+    <value>222, 22</value>
+  </data>
+  <data name="toolStripMenuItemSearchWildcards.Text" xml:space="preserve">
+    <value>"%" - любая строка</value>
   </data>
   <data name="toolStripButtonFindNext.ToolTipText" xml:space="preserve">
     <value>Найти следующее в тексте клипа (F3)</value>
@@ -144,14 +162,9 @@
   <data name="comboBoxFilter.CueText" xml:space="preserve">
     <value>Ввод в списке</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="comboBoxFilter.Size" type="System.Drawing.Size, System.Drawing">
-    <value>110, 23</value>
-  </data>
   <data name="comboBoxFilter.ToolTip" xml:space="preserve">
     <value>Горячий фильтр по тексту клипов. Список и этот фильтр разделяют нажатия клавиш. 
 Редактируйте фильтр прямо в списке. Перемещайтесь по списку прямо из фильтра. 
-Используйте спец. символ % для обозначения любой последовательности символов. Например фильтр "кар%а" найдет "картошка".
 </value>
   </data>
   <data name="toolStripMenuItem2.Size" type="System.Drawing.Size, System.Drawing">
@@ -474,9 +487,6 @@
   <data name="moveCopiedClipToTopToolStripMenuItem.Text" xml:space="preserve">
     <value>Перемещать клип наверх при вставке</value>
   </data>
-  <data name="moveCopiedClipToTopToolStripMenuItem.ToolTipText" xml:space="preserve">
-    <value>Перемещать клип наверх после копирования/вставки</value>
-  </data>
   <data name="moveTopToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>289, 22</value>
   </data>
@@ -664,30 +674,17 @@
   <data name="textFormattingToolStripMenuItem.Text" xml:space="preserve">
     <value>Родное оформление</value>
   </data>
-  <data name="textFormattingToolStripMenuItem.ToolTipText" xml:space="preserve">
-    <value>Показывает родное оформление текста клипа</value>
-  </data>
   <data name="wordWrapToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>238, 22</value>
   </data>
   <data name="wordWrapToolStripMenuItem.Text" xml:space="preserve">
     <value>Перенос слов</value>
   </data>
-  <data name="wordWrapToolStripMenuItem.ToolTipText" xml:space="preserve">
-    <value>Перенос слов в поле просмотра текста (CTRL+W).
-Не применимо к родному оформлению HTML.
-</value>
-  </data>
   <data name="monospacedFontToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>238, 22</value>
   </data>
   <data name="monospacedFontToolStripMenuItem.Text" xml:space="preserve">
     <value>Моноширинный шрифт</value>
-  </data>
-  <data name="monospacedFontToolStripMenuItem.ToolTipText" xml:space="preserve">
-    <value>Моноширинный шрифт в поле просмотра текста.
-Может быть переопределен родным оформлением RTF.
-Не применимо к родному оформлению HTML.</value>
   </data>
   <data name="setFavouriteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>238, 22</value>
@@ -1424,23 +1421,8 @@
   <data name="toolStripButtonTextFormatting.Text" xml:space="preserve">
     <value />
   </data>
-  <data name="toolStripButtonTextFormatting.ToolTipText" xml:space="preserve">
-    <value>Показывать родное оформление текста клипа</value>
-  </data>
   <data name="toolStripButtonWordWrap.Text" xml:space="preserve">
     <value />
-  </data>
-  <data name="toolStripButtonWordWrap.ToolTipText" xml:space="preserve">
-    <value>Перенос слов в поле просмотра текста (CTRL+W).
-Не применимо к родному оформлению HTML.</value>
-  </data>
-  <data name="toolStripButtonMonospacedFont.ToolTipText" xml:space="preserve">
-    <value>Моноширинный шрифт в поле просмотра текста.
-Может быть переопределен родным оформлением RTF.
-Не применимо к родному оформлению HTML.</value>
-  </data>
-  <data name="moveCopiedClipToTopToolStripButton.ToolTipText" xml:space="preserve">
-    <value>Перемещать клип наверх после копирования/вставки</value>
   </data>
   <data name="toolStripButtonReturnToPrevous.ToolTipText" xml:space="preserve">
     <value>Очистить фильтры и выбрать клип, выбранный перед применением фильтра 
