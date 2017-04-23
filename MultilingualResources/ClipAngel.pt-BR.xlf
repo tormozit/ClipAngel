@@ -1,0 +1,1615 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
+  <file datatype="xml" source-language="en" target-language="pt-BR" original="CLIPANGEL/HOTKEYEDITORFORM.RESX" tool-id="MultilingualAppToolkit" product-name="n/a" product-version="n/a" build-num="n/a">
+    <header>
+      <tool tool-id="MultilingualAppToolkit" tool-name="Multilingual App Toolkit" tool-version="4.0.1795.0" tool-company="Microsoft" />
+    </header>
+    <body>
+      <group id="CLIPANGEL/HOTKEYEDITORFORM.RESX" datatype="resx">
+        <trans-unit id="buttonOK.Location" translate="yes" extype="System.Drawing.Point, System.Drawing" xml:space="preserve">
+          <source>69, 43</source>
+          <target state="needs-review-translation">69, 43</target>
+        </trans-unit>
+        <trans-unit id="buttonCancel.Text" translate="yes" xml:space="preserve">
+          <source>Cancel</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Cancelar</target>
+        </trans-unit>
+        <trans-unit id="buttonCancel.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
+          <source>75, 23</source>
+          <target state="needs-review-translation">75, 23</target>
+        </trans-unit>
+        <trans-unit id="$this.ClientSize" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
+          <source>237, 78</source>
+          <target state="needs-review-translation">237, 78</target>
+        </trans-unit>
+        <trans-unit id="buttonCancel.Anchor" translate="yes" extype="System.Windows.Forms.AnchorStyles, System.Windows.Forms" xml:space="preserve">
+          <source>Bottom, Right</source>
+          <target state="needs-review-translation">Bottom, Right</target>
+        </trans-unit>
+        <trans-unit id="buttonCancel.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
+          <source>6</source>
+          <target state="needs-review-translation">6</target>
+        </trans-unit>
+        <trans-unit id="HotkeyTextbox.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
+          <source>213, 20</source>
+          <target state="needs-review-translation">213, 20</target>
+        </trans-unit>
+        <trans-unit id="buttonOK.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
+          <source>7</source>
+          <target state="needs-review-translation">7</target>
+        </trans-unit>
+        <trans-unit id="HotkeyTextbox.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
+          <source>5</source>
+          <target state="needs-review-translation">5</target>
+        </trans-unit>
+        <trans-unit id="buttonCancel.ImeMode" translate="yes" extype="System.Windows.Forms.ImeMode, System.Windows.Forms" xml:space="preserve">
+          <source>NoControl</source>
+          <target state="needs-review-translation">NoControl</target>
+        </trans-unit>
+        <trans-unit id="HotkeyTextbox.Anchor" translate="yes" extype="System.Windows.Forms.AnchorStyles, System.Windows.Forms" xml:space="preserve">
+          <source>Top, Bottom, Left, Right</source>
+          <target state="needs-review-translation">Top, Bottom, Left, Right</target>
+        </trans-unit>
+        <trans-unit id="$this.StartPosition" translate="yes" extype="System.Windows.Forms.FormStartPosition, System.Windows.Forms" xml:space="preserve">
+          <source>CenterParent</source>
+          <target state="needs-review-translation">CenterParent</target>
+        </trans-unit>
+        <trans-unit id="buttonCancel.Location" translate="yes" extype="System.Drawing.Point, System.Drawing" xml:space="preserve">
+          <source>150, 43</source>
+          <target state="needs-review-translation">150, 43</target>
+        </trans-unit>
+        <trans-unit id="buttonOK.Text" translate="yes" xml:space="preserve">
+          <source>OK</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">OK</target>
+        </trans-unit>
+        <trans-unit id="HotkeyTextbox.Location" translate="yes" extype="System.Drawing.Point, System.Drawing" xml:space="preserve">
+          <source>12, 12</source>
+          <target state="needs-review-translation">12, 12</target>
+        </trans-unit>
+        <trans-unit id="buttonOK.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
+          <source>75, 23</source>
+          <target state="needs-review-translation">75, 23</target>
+        </trans-unit>
+        <trans-unit id="buttonOK.ImeMode" translate="yes" extype="System.Windows.Forms.ImeMode, System.Windows.Forms" xml:space="preserve">
+          <source>NoControl</source>
+          <target state="needs-review-translation">NoControl</target>
+        </trans-unit>
+        <trans-unit id="$this.AutoScaleDimensions" translate="yes" extype="System.Drawing.SizeF, System.Drawing" xml:space="preserve">
+          <source>6, 13</source>
+          <target state="needs-review-translation">6, 13</target>
+        </trans-unit>
+        <trans-unit id="$this.Text" translate="yes" xml:space="preserve">
+          <source>Edit hotkey</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Editar o hotkey</target>
+        </trans-unit>
+        <trans-unit id="buttonOK.Anchor" translate="yes" extype="System.Windows.Forms.AnchorStyles, System.Windows.Forms" xml:space="preserve">
+          <source>Bottom, Right</source>
+          <target state="needs-review-translation">Bottom, Right</target>
+        </trans-unit>
+        <trans-unit id="$this.Localizable" translate="yes" extype="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" extradata="metadata" xml:space="preserve">
+          <source>True</source>
+          <target state="needs-review-translation">True</target>
+        </trans-unit>
+        <trans-unit id="$this.Language" translate="yes" extype="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" extradata="metadata" xml:space="preserve">
+          <source>ru</source>
+          <target state="needs-review-translation">ru</target>
+        </trans-unit>
+      </group>
+    </body>
+  </file>
+  <file datatype="xml" source-language="en" target-language="pt-BR" original="CLIPANGEL/PROPERTIES/RESOURCE_RU.RESX" tool-id="MultilingualAppToolkit" product-name="n/a" product-version="n/a" build-num="n/a">
+    <header>
+      <tool tool-id="MultilingualAppToolkit" tool-name="Multilingual App Toolkit" tool-version="4.0.1795.0" tool-company="Microsoft" />
+    </header>
+    <body>
+      <group id="CLIPANGEL/PROPERTIES/RESOURCE_RU.RESX" datatype="resx">
+        <trans-unit id="allTypes" translate="yes" xml:space="preserve">
+          <source>все типы</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">ВСЕ ТИПЫ</target>
+        </trans-unit>
+        <trans-unit id="ByteUnit" translate="yes" xml:space="preserve">
+          <source>Б</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Б</target>
+        </trans-unit>
+        <trans-unit id="CharUnit" translate="yes" xml:space="preserve">
+          <source>С</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">С</target>
+        </trans-unit>
+        <trans-unit id="EndMarker" translate="yes" xml:space="preserve">
+          <source>КОНЕЦ</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">КОНЕЦ</target>
+        </trans-unit>
+        <trans-unit id="file" translate="yes" xml:space="preserve">
+          <source>файл</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">ФАЙЛ</target>
+        </trans-unit>
+        <trans-unit id="img" translate="yes" xml:space="preserve">
+          <source>карт</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">КАРТ</target>
+        </trans-unit>
+        <trans-unit id="text" translate="yes" xml:space="preserve">
+          <source>текст</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">ТЕКСТ</target>
+        </trans-unit>
+        <trans-unit id="HelpPage" translate="yes" xml:space="preserve">
+          <source>https://sourceforge.net/p/clip-angel/wikirus/%D0%9E%D1%81%D0%BD%D0%BE%D0%B2%D0%BD%D0%BE%D0%B9/</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">https://sourceforge.net/p/clip-Angel/wikirus/%D0%9e%D1%81%D0%BD%D0%BE%D0%B2%D0%BD%D0%BE%D0%B9/</target>
+        </trans-unit>
+        <trans-unit id="NextClip" translate="yes" xml:space="preserve">
+          <source>Следующий клип</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">СЛЕДУЮЩИЙ КЛИП</target>
+        </trans-unit>
+        <trans-unit id="allMarks" translate="yes" xml:space="preserve">
+          <source>все метки</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">ВСЕ МЕТКИ</target>
+        </trans-unit>
+        <trans-unit id="favorite" translate="yes" xml:space="preserve">
+          <source>любимые</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">ЛЮБИМЫЕ</target>
+        </trans-unit>
+        <trans-unit id="used" translate="yes" xml:space="preserve">
+          <source>полезные</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">ПОЛЕЗНЫЕ</target>
+        </trans-unit>
+        <trans-unit id="LangRestart" translate="yes" xml:space="preserve">
+          <source>Для полной смены языка возможно потребуется перезапуск программы</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">ДЛЯ ПОЛНОЙ СМЕНЫ ЯЗЫКА ВОЗМОЖНО ПОТРЕБУЕТСЯ ПЕРЕЗАПУСК ПРОГРАММЫ</target>
+        </trans-unit>
+        <trans-unit id="UpdateTo" translate="yes" xml:space="preserve">
+          <source>Обновить на</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">ОБНОВИТЬ НА</target>
+        </trans-unit>
+        <trans-unit id="PixelFormat" translate="yes" xml:space="preserve">
+          <source>Пиксель</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">ПИКСЕЛЬ</target>
+        </trans-unit>
+        <trans-unit id="Size" translate="yes" xml:space="preserve">
+          <source>Размер</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">РАЗМЕР</target>
+        </trans-unit>
+        <trans-unit id="CutMarker" translate="yes" xml:space="preserve">
+          <source>Показать остальной текст</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">ПОКАЗАТЬ ОСТАЛЬНОЙ ТЕКСТ</target>
+        </trans-unit>
+        <trans-unit id="NewVersionAvailable" translate="yes" xml:space="preserve">
+          <source>Новая версия доступна. Для обновления нажмите кнопку в верхней командной панели.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">НОВАЯ ВЕРСИЯ ДОСТУПНА. ДЛЯ ОБНОВЛЕНИЯ НАЖМИТЕ КНОПКУ В ВЕРХНЕЙ КОМАНДНОЙ ПАНЕЛИ.</target>
+        </trans-unit>
+        <trans-unit id="YouLatestVersion" translate="yes" xml:space="preserve">
+          <source>Вы используете последнюю версию</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">ВЫ ИСПОЛЬЗУЕТЕ ПОСЛЕДНЮЮ ВЕРСИЮ</target>
+        </trans-unit>
+        <trans-unit id="CantPasteInElevatedWindow" translate="yes" xml:space="preserve">
+          <source>Невозможно вставить в окно, имеющее более высокие привилегии. Попробуйте запустить программу от имени администратора.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">НЕВОЗМОЖНО ВСТАВИТЬ В ОКНО, ИМЕЮЩЕЕ БОЛЕЕ ВЫСОКИЕ ПРИВИЛЕГИИ. ПОПРОБУЙТЕ ЗАПУСТИТЬ ПРОГРАММУ ОТ ИМЕНИ АДМИНИСТРАТОРА.</target>
+        </trans-unit>
+        <trans-unit id="EditClipTitle" translate="yes" xml:space="preserve">
+          <source>Изменение заголовка клипа</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">ИЗМЕНЕНИЕ ЗАГОЛОВКА КЛИПА</target>
+        </trans-unit>
+        <trans-unit id="HowUseAutoTitle" translate="yes" xml:space="preserve">
+          <source>Очистите строку для использования автозаголовка</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">ОЧИСТИТЕ СТРОКУ ДЛЯ ИСПОЛЬЗОВАНИЯ АВТОЗАГОЛОВКА</target>
+        </trans-unit>
+        <trans-unit id="VisualWeightTooltip" translate="yes" xml:space="preserve">
+          <source>Визуальный вес клипа (количество цифр в числе, отражающем визуальный размер клипа)</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">ВИЗУАЛЬНЫЙ ВЕС КЛИПА (КОЛИЧЕСТВО ЦИФР В ЧИСЛЕ, ОТРАЖАЮЩЕМ ВИЗУАЛЬНЫЙ РАЗМЕР КЛИПА)</target>
+        </trans-unit>
+        <trans-unit id="KiloByteUnit" translate="yes" xml:space="preserve">
+          <source>КБ</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">КБ</target>
+        </trans-unit>
+        <trans-unit id="MegaByteUnit" translate="yes" xml:space="preserve">
+          <source>МБ</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">МБ</target>
+        </trans-unit>
+        <trans-unit id="QuestionResetSettings" translate="yes" xml:space="preserve">
+          <source>Вы действительно хотите сбросить все настройки в значения по умолчанию?</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">ВЫ ДЕЙСТВИТЕЛЬНО ХОТИТЕ СБРОСИТЬ ВСЕ НАСТРОЙКИ В ЗНАЧЕНИЯ ПО УМОЛЧАНИЮ?</target>
+        </trans-unit>
+        <trans-unit id="HistoryOfChanges" translate="yes" xml:space="preserve">
+          <source>https://sourceforge.net/p/clip-angel/blogrus/</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">https://sourceforge.net/p/clip-Angel/blogrus/</target>
+        </trans-unit>
+        <trans-unit id="ActivatedExistedProcess" translate="yes" xml:space="preserve">
+          <source>Активирован уже запущенный экземпляр приложения</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">АКТИВИРОВАН УЖЕ ЗАПУЩЕННЫЙ ЭКЗЕМПЛЯР ПРИЛОЖЕНИЯ</target>
+        </trans-unit>
+        <trans-unit id="CouldNotRegisterHotkey" translate="yes" xml:space="preserve">
+          <source>Не удалось зарегистрировать глобальное сочетание клавиш</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">НЕ УДАЛОСЬ ЗАРЕГИСТРИРОВАТЬ ГЛОБАЛЬНОЕ СОЧЕТАНИЕ КЛАВИШ</target>
+        </trans-unit>
+        <trans-unit id="ClipFileAlreadyOpened" translate="yes" xml:space="preserve">
+          <source>Файл клипа уже открыт и заблокирован</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">ФАЙЛ КЛИПА УЖЕ ОТКРЫТ И ЗАБЛОКИРОВАН</target>
+        </trans-unit>
+        <trans-unit id="HistoryDepthNumber" translate="yes" xml:space="preserve">
+          <source>Количество хранимых клипов</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">КОЛИЧЕСТВО ХРАНИМЫХ КЛИПОВ</target>
+        </trans-unit>
+        <trans-unit id="Hotkeys" translate="yes" xml:space="preserve">
+          <source>Горячие клавиши</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">ГОРЯЧИЕ КЛАВИШИ</target>
+        </trans-unit>
+        <trans-unit id="Info" translate="yes" xml:space="preserve">
+          <source>Информация</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">ИНФОРМАЦИЯ</target>
+        </trans-unit>
+        <trans-unit id="Other" translate="yes" xml:space="preserve">
+          <source>Другое</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">ДРУГОЕ</target>
+        </trans-unit>
+        <trans-unit id="Special" translate="yes" xml:space="preserve">
+          <source>Специальные</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">СПЕЦИАЛЬНЫЕ</target>
+        </trans-unit>
+        <trans-unit id="ApplicationAddedToIgnoreList" translate="yes" xml:space="preserve">
+          <source>Приложение "{0}" добавлено в список игнорирования, который можно отредактировать из диалога "Настройки".</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">ПРИЛОЖЕНИЕ "{0}" ДОБАВЛЕНО В COMPLETA ИГНОРИРОВАНИЯ, КОТОРЫЙ МОЖНО ОТРЕДАКТИРОВАТЬ ИЗ ДИАЛОГА "НАСТРОЙКИ".</target>
+        </trans-unit>
+        <trans-unit id="NoSupportedTextCompareApplication" translate="yes" xml:space="preserve">
+          <source>Не найдено поддерживаемое приложение для сравнения текстов. Сейчас откроем вебсайт, чтобы скачать бесплатное.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">НЕ НАЙДЕНО ПОДДЕРЖИВАЕМОЕ APLICATIVO ДЛЯ СРАВНЕНИЯ ТЕКСТОВ. СЕЙЧАС ОТКРОЕМ ВЕБСАЙТ, ЧТОБЫ DOWNLOAD БЕСПЛАТНОЕ.</target>
+        </trans-unit>
+        <trans-unit id="СonfirmDeleteAllNonFavorite" translate="yes" xml:space="preserve">
+          <source>Вы действительно хотите удалить все не любимые клипы?</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">ВЫ ДЕЙСТВИТЕЛЬНО ХОТИТЕ УДАЛИТЬ ВСЕ НЕ ЛЮБИМЫЕ КЛИПЫ?</target>
+        </trans-unit>
+        <trans-unit id="FailedToWriteClipboard" translate="yes" xml:space="preserve">
+          <source>Не удалось записать в буфер обмена. Он заблокирован окном "{0}" приложения "{1}"</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">НЕ УДАЛОСЬ ЗАПИСАТЬ В БУФЕР ОБМЕНА. ОН ЗАБЛОКИРОВАН ОКНОМ "{0}" ПРИЛОЖЕНИЯ "{1}"</target>
+        </trans-unit>
+        <trans-unit id="Donate" translate="yes" xml:space="preserve">
+          <source>http://yasobe.ru/na/clipangel</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">http://yasobe.ru/na/clipangel</target>
+        </trans-unit>
+        <trans-unit id="Confirmation" translate="yes" xml:space="preserve">
+          <source>Подтверждение</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">ПОДТВЕРЖДЕНИЕ</target>
+        </trans-unit>
+        <trans-unit id="FailedToReadFormatFromClipboard" translate="yes" xml:space="preserve">
+          <source>Не удалось прочитать данные формата "{0}" из буфера обмена.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">НЕ УДАЛОСЬ ПРОЧИТАТЬ ДАННЫЕ ФОРМАТА "{0}" ИЗ БУФЕРА ОБМЕНА.</target>
+        </trans-unit>
+        <trans-unit id="Applications" translate="yes" xml:space="preserve">
+          <source>Приложения</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">ПРИЛОЖЕНИЯ</target>
+        </trans-unit>
+        <trans-unit id="Search" translate="yes" xml:space="preserve">
+          <source>Поиск</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">ПОИСК</target>
+        </trans-unit>
+      </group>
+    </body>
+  </file>
+  <file datatype="xml" source-language="en" target-language="pt-BR" original="CLIPANGEL/SETTINGSFORM.RESX" tool-id="MultilingualAppToolkit" product-name="n/a" product-version="n/a" build-num="n/a">
+    <header>
+      <tool tool-id="MultilingualAppToolkit" tool-name="Multilingual App Toolkit" tool-version="4.0.1795.0" tool-company="Microsoft" />
+    </header>
+    <body>
+      <group id="CLIPANGEL/SETTINGSFORM.RESX" datatype="resx">
+        <trans-unit id="buttonReset.Anchor" translate="yes" extype="System.Windows.Forms.AnchorStyles, System.Windows.Forms" xml:space="preserve">
+          <source>Bottom, Right</source>
+          <target state="needs-review-translation">Bottom, Right</target>
+        </trans-unit>
+        <trans-unit id="buttonReset.ImeMode" translate="yes" extype="System.Windows.Forms.ImeMode, System.Windows.Forms" xml:space="preserve">
+          <source>NoControl</source>
+          <target state="needs-review-translation">NoControl</target>
+        </trans-unit>
+        <trans-unit id="buttonReset.Location" translate="yes" extype="System.Drawing.Point, System.Drawing" xml:space="preserve">
+          <source>202, 496</source>
+          <target state="needs-review-translation">202, 496</target>
+        </trans-unit>
+        <trans-unit id="buttonReset.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
+          <source>153, 23</source>
+          <target state="needs-review-translation">153, 23</target>
+        </trans-unit>
+        <trans-unit id="buttonReset.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
+          <source>14</source>
+          <target state="needs-review-translation">14</target>
+        </trans-unit>
+        <trans-unit id="buttonReset.Text" translate="yes" xml:space="preserve">
+          <source>Reset to defaults</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Redefinir para os padrões</target>
+        </trans-unit>
+        <trans-unit id="buttonCancel.Anchor" translate="yes" extype="System.Windows.Forms.AnchorStyles, System.Windows.Forms" xml:space="preserve">
+          <source>Bottom, Right</source>
+          <target state="needs-review-translation">Bottom, Right</target>
+        </trans-unit>
+        <trans-unit id="buttonCancel.ImeMode" translate="yes" extype="System.Windows.Forms.ImeMode, System.Windows.Forms" xml:space="preserve">
+          <source>NoControl</source>
+          <target state="needs-review-translation">NoControl</target>
+        </trans-unit>
+        <trans-unit id="buttonCancel.Location" translate="yes" extype="System.Drawing.Point, System.Drawing" xml:space="preserve">
+          <source>442, 496</source>
+          <target state="needs-review-translation">442, 496</target>
+        </trans-unit>
+        <trans-unit id="buttonCancel.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
+          <source>75, 23</source>
+          <target state="needs-review-translation">75, 23</target>
+        </trans-unit>
+        <trans-unit id="buttonCancel.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
+          <source>12</source>
+          <target state="needs-review-translation">12</target>
+        </trans-unit>
+        <trans-unit id="buttonCancel.Text" translate="yes" xml:space="preserve">
+          <source>Cancel</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Cancelar</target>
+        </trans-unit>
+        <trans-unit id="buttonOK.Anchor" translate="yes" extype="System.Windows.Forms.AnchorStyles, System.Windows.Forms" xml:space="preserve">
+          <source>Bottom, Right</source>
+          <target state="needs-review-translation">Bottom, Right</target>
+        </trans-unit>
+        <trans-unit id="buttonOK.ImeMode" translate="yes" extype="System.Windows.Forms.ImeMode, System.Windows.Forms" xml:space="preserve">
+          <source>NoControl</source>
+          <target state="needs-review-translation">NoControl</target>
+        </trans-unit>
+        <trans-unit id="buttonOK.Location" translate="yes" extype="System.Drawing.Point, System.Drawing" xml:space="preserve">
+          <source>361, 496</source>
+          <target state="needs-review-translation">361, 496</target>
+        </trans-unit>
+        <trans-unit id="buttonOK.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
+          <source>75, 23</source>
+          <target state="needs-review-translation">75, 23</target>
+        </trans-unit>
+        <trans-unit id="buttonOK.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
+          <source>13</source>
+          <target state="needs-review-translation">13</target>
+        </trans-unit>
+        <trans-unit id="buttonOK.Text" translate="yes" xml:space="preserve">
+          <source>OK</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">OK</target>
+        </trans-unit>
+        <trans-unit id="buttonClearFilter.Anchor" translate="yes" extype="System.Windows.Forms.AnchorStyles, System.Windows.Forms" xml:space="preserve">
+          <source>Top, Right</source>
+          <target state="needs-review-translation">Top, Right</target>
+        </trans-unit>
+        <trans-unit id="buttonClearFilter.ImeMode" translate="yes" extype="System.Windows.Forms.ImeMode, System.Windows.Forms" xml:space="preserve">
+          <source>NoControl</source>
+          <target state="needs-review-translation">NoControl</target>
+        </trans-unit>
+        <trans-unit id="buttonClearFilter.Location" translate="yes" extype="System.Drawing.Point, System.Drawing" xml:space="preserve">
+          <source>497, 1</source>
+          <target state="needs-review-translation">497, 1</target>
+        </trans-unit>
+        <trans-unit id="buttonClearFilter.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
+          <source>21, 23</source>
+          <target state="needs-review-translation">21, 23</target>
+        </trans-unit>
+        <trans-unit id="buttonClearFilter.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
+          <source>18</source>
+          <target state="needs-review-translation">18</target>
+        </trans-unit>
+        <trans-unit id="buttonClearFilter.Text" translate="yes" xml:space="preserve">
+          <source>X</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">N</target>
+        </trans-unit>
+        <trans-unit id="buttonClearFilter.ToolTip" translate="yes" xml:space="preserve">
+          <source>Clear filter</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Limpar filtro</target>
+        </trans-unit>
+        <trans-unit id="label1.Anchor" translate="yes" extype="System.Windows.Forms.AnchorStyles, System.Windows.Forms" xml:space="preserve">
+          <source>Top, Right</source>
+          <target state="needs-review-translation">Top, Right</target>
+        </trans-unit>
+        <trans-unit id="label1.ImeMode" translate="yes" extype="System.Windows.Forms.ImeMode, System.Windows.Forms" xml:space="preserve">
+          <source>NoControl</source>
+          <target state="needs-review-translation">NoControl</target>
+        </trans-unit>
+        <trans-unit id="label1.Location" translate="yes" extype="System.Drawing.Point, System.Drawing" xml:space="preserve">
+          <source>337, 6</source>
+          <target state="needs-review-translation">337, 6</target>
+        </trans-unit>
+        <trans-unit id="label1.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
+          <source>50, 13</source>
+          <target state="needs-review-translation">50, 13</target>
+        </trans-unit>
+        <trans-unit id="label1.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
+          <source>20</source>
+          <target state="needs-review-translation">20</target>
+        </trans-unit>
+        <trans-unit id="label1.Text" translate="yes" xml:space="preserve">
+          <source>Filter:</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Filtro:</target>
+        </trans-unit>
+        <trans-unit id="textBoxFilter.Anchor" translate="yes" extype="System.Windows.Forms.AnchorStyles, System.Windows.Forms" xml:space="preserve">
+          <source>Top, Right</source>
+          <target state="needs-review-translation">Top, Right</target>
+        </trans-unit>
+        <trans-unit id="textBoxFilter.Location" translate="yes" extype="System.Drawing.Point, System.Drawing" xml:space="preserve">
+          <source>393, 3</source>
+          <target state="needs-review-translation">393, 3</target>
+        </trans-unit>
+        <trans-unit id="textBoxFilter.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
+          <source>102, 20</source>
+          <target state="needs-review-translation">102, 20</target>
+        </trans-unit>
+        <trans-unit id="textBoxFilter.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
+          <source>21</source>
+          <target state="needs-review-translation">21</target>
+        </trans-unit>
+        <trans-unit id="textBoxFilter.ToolTip" translate="yes" xml:space="preserve">
+          <source>Hot filter by name and description of property</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Filtro quente pelo nome e descrição da propriedade</target>
+        </trans-unit>
+        <trans-unit id="propertyGrid1.Anchor" translate="yes" extype="System.Windows.Forms.AnchorStyles, System.Windows.Forms" xml:space="preserve">
+          <source>Top, Bottom, Left, Right</source>
+          <target state="needs-review-translation">Top, Bottom, Left, Right</target>
+        </trans-unit>
+        <trans-unit id="propertyGrid1.Location" translate="yes" extype="System.Drawing.Point, System.Drawing" xml:space="preserve">
+          <source>4, 3</source>
+          <target state="needs-review-translation">4, 3</target>
+        </trans-unit>
+        <trans-unit id="propertyGrid1.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
+          <source>513, 487</source>
+          <target state="needs-review-translation">513, 487</target>
+        </trans-unit>
+        <trans-unit id="propertyGrid1.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
+          <source>17</source>
+          <target state="needs-review-translation">17</target>
+        </trans-unit>
+        <trans-unit id="copyToolStripMenuItem.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
+          <source>102, 22</source>
+          <target state="needs-review-translation">102, 22</target>
+        </trans-unit>
+        <trans-unit id="copyToolStripMenuItem.Text" translate="yes" xml:space="preserve">
+          <source>Copy</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Copia</target>
+        </trans-unit>
+        <trans-unit id="contexMenuLabel.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
+          <source>103, 26</source>
+          <target state="needs-review-translation">103, 26</target>
+        </trans-unit>
+        <trans-unit id="gridContextMenuCopy.ShortcutKeys" translate="yes" extype="System.Windows.Forms.Keys, System.Windows.Forms" xml:space="preserve">
+          <source>Ctrl+C</source>
+          <target state="needs-review-translation">Ctrl+C</target>
+        </trans-unit>
+        <trans-unit id="gridContextMenuCopy.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
+          <source>144, 22</source>
+          <target state="needs-review-translation">144, 22</target>
+        </trans-unit>
+        <trans-unit id="gridContextMenuCopy.Text" translate="yes" xml:space="preserve">
+          <source>Copy</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Copia</target>
+        </trans-unit>
+        <trans-unit id="contexMenuGrid.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
+          <source>145, 26</source>
+          <target state="needs-review-translation">145, 26</target>
+        </trans-unit>
+        <trans-unit id="$this.AutoScaleDimensions" translate="yes" extype="System.Drawing.SizeF, System.Drawing" xml:space="preserve">
+          <source>6, 13</source>
+          <target state="needs-review-translation">6, 13</target>
+        </trans-unit>
+        <trans-unit id="$this.ClientSize" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
+          <source>522, 524</source>
+          <target state="needs-review-translation">522, 524</target>
+        </trans-unit>
+        <trans-unit id="$this.StartPosition" translate="yes" extype="System.Windows.Forms.FormStartPosition, System.Windows.Forms" xml:space="preserve">
+          <source>CenterParent</source>
+          <target state="needs-review-translation">CenterParent</target>
+        </trans-unit>
+        <trans-unit id="$this.Text" translate="yes" xml:space="preserve">
+          <source>Settings</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Configurações</target>
+        </trans-unit>
+        <trans-unit id="buttonReset.GenerateMember" translate="yes" extype="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" extradata="metadata" xml:space="preserve">
+          <source>False</source>
+          <target state="needs-review-translation">False</target>
+        </trans-unit>
+        <trans-unit id="toolTip1.TrayLocation" translate="yes" extype="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" extradata="metadata" xml:space="preserve">
+          <source>17, 17</source>
+          <target state="needs-review-translation">17, 17</target>
+        </trans-unit>
+        <trans-unit id="contexMenuLabel.TrayLocation" translate="yes" extype="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" extradata="metadata" xml:space="preserve">
+          <source>114, 17</source>
+          <target state="needs-review-translation">114, 17</target>
+        </trans-unit>
+        <trans-unit id="contexMenuGrid.TrayLocation" translate="yes" extype="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" extradata="metadata" xml:space="preserve">
+          <source>262, 17</source>
+          <target state="needs-review-translation">262, 17</target>
+        </trans-unit>
+        <trans-unit id="$this.Localizable" translate="yes" extype="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" extradata="metadata" xml:space="preserve">
+          <source>True</source>
+          <target state="needs-review-translation">True</target>
+        </trans-unit>
+        <trans-unit id="$this.TrayHeight" translate="yes" extype="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" extradata="metadata" xml:space="preserve">
+          <source>46</source>
+          <target state="needs-review-translation">46</target>
+        </trans-unit>
+      </group>
+    </body>
+  </file>
+  <file datatype="xml" source-language="en" target-language="pt-BR" original="CLIPANGEL/VISIBLEUSERSETTINGS.RESX" tool-id="MultilingualAppToolkit" product-name="n/a" product-version="n/a" build-num="n/a">
+    <header>
+      <tool tool-id="MultilingualAppToolkit" tool-name="Multilingual App Toolkit" tool-version="4.0.1795.0" tool-company="Microsoft" />
+    </header>
+    <body>
+      <group id="CLIPANGEL/VISIBLEUSERSETTINGS.RESX" datatype="resx">
+        <trans-unit id="AutoCheckUpdate" translate="yes" xml:space="preserve">
+          <source>Autocheck for program update</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">AutoCheck para atualização do programa</target>
+        </trans-unit>
+        <trans-unit id="AutoCheckUpdateDescription" translate="yes" xml:space="preserve">
+          <source>Autocheck for update on program start and every day</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">AutoCheck para atualização no início do programa e todos os dias</target>
+        </trans-unit>
+        <trans-unit id="AutoSelectMatch" translate="yes" xml:space="preserve">
+          <source>Autoselect first match</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Primeira partida Autoselect</target>
+        </trans-unit>
+        <trans-unit id="AutoSelectMatchDescription" translate="yes" xml:space="preserve">
+          <source>Autoselection of first match of filter in clip text. </source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Seleção automática da primeira partida do filtro no texto do clip. </target>
+        </trans-unit>
+        <trans-unit id="Autostart" translate="yes" xml:space="preserve">
+          <source>Autostart program on user logon</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Programa AutoStart no logon do usuário</target>
+        </trans-unit>
+        <trans-unit id="AutostartDescription" translate="yes" xml:space="preserve">
+          <source></source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion"></target>
+        </trans-unit>
+        <trans-unit id="AutostartPath" translate="yes" xml:space="preserve">
+          <source>Application autostart command line</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Linha de comando do aplicativo autostart</target>
+        </trans-unit>
+        <trans-unit id="AutostartPathDescription" translate="yes" xml:space="preserve">
+          <source>Click OK to update this command from current start path</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Okey clique para atualizar este comando do atual caminho de início</target>
+        </trans-unit>
+        <trans-unit id="ClearFiltersOnClose" translate="yes" xml:space="preserve">
+          <source>Clear filters on main window close</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Limpar filtros na janela principal fechar</target>
+        </trans-unit>
+        <trans-unit id="ClearFiltersOnCloseDescription" translate="yes" xml:space="preserve">
+          <source></source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion"></target>
+        </trans-unit>
+        <trans-unit id="ClipListSimpleDraw" translate="yes" xml:space="preserve">
+          <source>Fast and simple list draw</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Sorteio da lista rápida e simples</target>
+        </trans-unit>
+        <trans-unit id="ClipListSimpleDrawDescription" translate="yes" xml:space="preserve">
+          <source>Clip list will be drawn fast without highlighting filter matches and picture samples</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Lista de clip será desenhada rápido sem realce correspondências de filtro e amostras de imagens</target>
+        </trans-unit>
+        <trans-unit id="ClipTempFileFolder" translate="yes" xml:space="preserve">
+          <source>Folder for clip temp files</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Pasta de arquivos temporários do clip</target>
+        </trans-unit>
+        <trans-unit id="ClipTempFileFolderDescription" translate="yes" xml:space="preserve">
+          <source>Folder for saving temp files of clips. Leave empty to use standart temp folder. Usually can be usefull in portable mode.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Pasta para guardar arquivos temporários de clipes. Deixe vazio para usar a pasta temp standart. Geralmente pode ser útil no modo portátil.</target>
+        </trans-unit>
+        <trans-unit id="CopyTextInAnyWindowOnCTRLF3" translate="yes" xml:space="preserve">
+          <source>Copy text from any window by Control+F3</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Copiar o texto de qualquer janela por Ctrl + F3</target>
+        </trans-unit>
+        <trans-unit id="CopyTextInAnyWindowOnCTRLF3Description" translate="yes" xml:space="preserve">
+          <source>Copy selected text from any window when Control+F3 is pressed. This hotkey usually is used in text editors to search selected string. 
+Key press will be processed by the window. </source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Copie texto selecionado de qualquer janela premindo Ctrl + F3. Esta tecla de atalho é usada normalmente em editores de texto para procurar a sequência de caracteres selecionada. 
+Chave imprensa será processada pela janela. </target>
+        </trans-unit>
+        <trans-unit id="CurrentPath" translate="yes" xml:space="preserve">
+          <source>Application current start path</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Caminho do aplicativo atual início</target>
+        </trans-unit>
+        <trans-unit id="DatabaseSize" translate="yes" xml:space="preserve">
+          <source>Database size MB</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Tamanho de banco de dados MB</target>
+        </trans-unit>
+        <trans-unit id="DatabaseSizeDescription" translate="yes" xml:space="preserve">
+          <source></source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion"></target>
+        </trans-unit>
+        <trans-unit id="DefaultFont" translate="yes" xml:space="preserve">
+          <source>Default font</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Fonte padrão</target>
+        </trans-unit>
+        <trans-unit id="DefaultFontDescription" translate="yes" xml:space="preserve">
+          <source>Font for clip list and default for clip text. Double click to change it.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Fonte para a lista de clip e padrão para texto de clip. Dê um duplo clique para mudá-lo.</target>
+        </trans-unit>
+        <trans-unit id="FastWindowOpen" translate="yes" xml:space="preserve">
+          <source>Fast window open</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Rápido janela aberta</target>
+        </trans-unit>
+        <trans-unit id="FastWindowOpenDescription" translate="yes" xml:space="preserve">
+          <source>Fast window opening by using some tricks. Can lead to some minor problems in window opening/closing.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Abertura rápida usando alguns truques. Pode levar a problemas menores na janela de abertura/fecho.</target>
+        </trans-unit>
+        <trans-unit id="GlobalHotkeyCompareLastClips" translate="yes" xml:space="preserve">
+          <source>Hotkey to compare last clips</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Tecla de atalho para comparar os últimos clipes</target>
+        </trans-unit>
+        <trans-unit id="GlobalHotkeyCompareLastClipsDescription" translate="yes" xml:space="preserve">
+          <source>Use this hot key in any program to launch application for comparing last 2 clips</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Use esta tecla de atalho em qualquer programa para lançar o aplicativo para comparar os últimos 2 clipes</target>
+        </trans-unit>
+        <trans-unit id="GlobalHotkeyIncrementalPaste" translate="yes" xml:space="preserve">
+          <source>Hotkey to incremental paste</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Tecla de atalho para colar incremental</target>
+        </trans-unit>
+        <trans-unit id="GlobalHotkeyIncrementalPasteDescription" translate="yes" xml:space="preserve">
+          <source>Use this hot key in any program to paste current clip from Clip Angel list and select next clip which will be shown in tray tooltip</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Use esta tecla de atalho em qualquer programa para colar clipe atual lista de Clip anjo e selecione próximo clipe que será mostrado na bandeja de dica de ferramenta</target>
+        </trans-unit>
+        <trans-unit id="GlobalHotkeyOpenCurrent" translate="yes" xml:space="preserve">
+          <source>Hotkey to open window with no changes</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Tecla de atalho para abrir a janela sem alterações</target>
+        </trans-unit>
+        <trans-unit id="GlobalHotkeyOpenCurrentDescription" translate="yes" xml:space="preserve">
+          <source>Use this hot key in any program to open Clip Angel window with no changes in filter and clip selection. Press again to close the window.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Use esta tecla de atalho em qualquer programa para abrir a janela de anjo clipe sem alterações na seleção de filtro e clip. Pressione novamente para fechar a janela.</target>
+        </trans-unit>
+        <trans-unit id="GlobalHotkeyOpenFavorites" translate="yes" xml:space="preserve">
+          <source>Hotkey to open window with favorites</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Tecla de atalho para abrir a janela com os favoritos</target>
+        </trans-unit>
+        <trans-unit id="GlobalHotkeyOpenFavoritesDescription" translate="yes" xml:space="preserve">
+          <source>Use this hot key in any program to show Clip Angel window with favorites only filter. Press again to close the window.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Use esta tecla de atalho em qualquer programa para mostrar a janela de anjo clipe com filtro único favoritos. Pressione novamente para fechar a janela.</target>
+        </trans-unit>
+        <trans-unit id="GlobalHotkeyOpenLast" translate="yes" xml:space="preserve">
+          <source>Hotkey to open window with reset</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Tecla de atalho para abrir a janela com reset</target>
+        </trans-unit>
+        <trans-unit id="GlobalHotkeyOpenLastDescription" translate="yes" xml:space="preserve">
+          <source>Use this hot key in any program to open Clip Angel window, clear filters and select last captured clip. Press again to close the window.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Use esta tecla de atalho em qualquer programa para abrir janela do clipe anjo, limpar filtros e selecione o último clipe capturado. Pressione novamente para fechar a janela.</target>
+        </trans-unit>
+        <trans-unit id="GlobalHotkeyPasteText" translate="yes" xml:space="preserve">
+          <source>Hotkey to paste plain text</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Tecla de atalho para colar texto sem formatação</target>
+        </trans-unit>
+        <trans-unit id="GlobalHotkeyPasteTextDescription" translate="yes" xml:space="preserve">
+          <source>Use this hot key in any program to paste last captured clip as plain text</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Use esta tecla de atalho em qualquer programa para colar o último clipe capturado como texto sem formatação</target>
+        </trans-unit>
+        <trans-unit id="HistoryDepthDays" translate="yes" xml:space="preserve">
+          <source>History depth days</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Dias de profundidade de história</target>
+        </trans-unit>
+        <trans-unit id="HistoryDepthDaysDescription" translate="yes" xml:space="preserve">
+          <source>Maximum number of days non favorite clips are stored. Deletion is executed on start, every day, on settings apply. 0 - do not delete.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Número máximo de dias clipes favoritos não são armazenados. Exclusão é executado em Iniciar, todos os dias, nas configurações se aplicam. 0 - não exclua.</target>
+        </trans-unit>
+        <trans-unit id="HistoryDepthNumber" translate="yes" xml:space="preserve">
+          <source>History depth number</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Número de profundidade de história</target>
+        </trans-unit>
+        <trans-unit id="HistoryDepthNumberDescription" translate="yes" xml:space="preserve">
+          <source>Maximum number of stored non favorite clips. Deletion is executed on start, every day, on settings apply. 0 - do not delete.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Número máximo de clipes não favoritos armazenados. Exclusão é executado em Iniciar, todos os dias, nas configurações se aplicam. 0 - não exclua.</target>
+        </trans-unit>
+        <trans-unit id="HtmlEditor" translate="yes" xml:space="preserve">
+          <source>HTML file editor application</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Aplicativo de editor de arquivo HTML</target>
+        </trans-unit>
+        <trans-unit id="HtmlEditorDescription" translate="yes" xml:space="preserve">
+          <source>Used in "Open file" command for clip. Leave empty to use default OS application for edit HTML files.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Usado no comando "Abrir arquivo" para clipe. Deixe em branco para usar o aplicativo do sistema operacional padrão para editar arquivos HTML.</target>
+        </trans-unit>
+        <trans-unit id="IgnoreApplicationsClipCapture" translate="yes" xml:space="preserve">
+          <source>Ignored applications in clip capture</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Aplicações ignoradas na captura do clipe</target>
+        </trans-unit>
+        <trans-unit id="IgnoreApplicationsClipCaptureDescription" translate="yes" xml:space="preserve">
+          <source>Do not capture clips from this applications</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Não capturar clipes deste aplicativos</target>
+        </trans-unit>
+        <trans-unit id="IgnoreExclusiveFormatClipCapture" translate="yes" xml:space="preserve">
+          <source>Do not capture "Clipboard Viewer Ignore" format</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Não capturar o formato "Ignorar Visualizador de área de transferência"</target>
+        </trans-unit>
+        <trans-unit id="IgnoreExclusiveFormatClipCaptureDescription" translate="yes" xml:space="preserve">
+          <source>Do not capture clip with "Clipboard Viewer Ignore" format present. This format is usually  used by password managers when copying passwords to clipboard. Sometimes it may be usefull to switch it OFF temporary.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Não capture clip com formato de "Ignorar Visualizador de área de transferência" presente. Este formato é geralmente utilizado por gerenciadores de senha ao copiar senhas para área de transferência. Às vezes pode ser útil para desligá-lo temporário.</target>
+        </trans-unit>
+        <trans-unit id="ImageEditor" translate="yes" xml:space="preserve">
+          <source>Image (PNG) file editor application</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Aplicativo de editor de arquivo de imagem (PNG)</target>
+        </trans-unit>
+        <trans-unit id="ImageEditorDescription" translate="yes" xml:space="preserve">
+          <source>Used in "Open file" command for clip. Leave empty to use default OS application for edit image (PNG) files.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Usado no comando "Abrir arquivo" para clipe. Deixe em branco para usar o aplicativo do sistema operacional padrão para editar arquivos de imagem (PNG).</target>
+        </trans-unit>
+        <trans-unit id="Language" translate="yes" xml:space="preserve">
+          <source>Language</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Idioma</target>
+        </trans-unit>
+        <trans-unit id="LanguageDescription" translate="yes" xml:space="preserve">
+          <source>User interface language</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Idioma da interface do usuário</target>
+        </trans-unit>
+        <trans-unit id="MaxClipSizeKB" translate="yes" xml:space="preserve">
+          <source>Max clip size KB</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Tamanho máximo do clip KB</target>
+        </trans-unit>
+        <trans-unit id="MaxClipSizeKBDescription" translate="yes" xml:space="preserve">
+          <source>Clips greater this size will not be captured</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Clipes de maior que deste tamanho não será capturado</target>
+        </trans-unit>
+        <trans-unit id="MonospacedFont" translate="yes" xml:space="preserve">
+          <source>Monospaced font</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Fonte monoespaçada</target>
+        </trans-unit>
+        <trans-unit id="MonospacedFontDescription" translate="yes" xml:space="preserve">
+          <source>Monospaced font in clip text field. 
+Could be overloaded by RTF native formatting.
+Not appliable to HTML native formatting.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Fonte mono-espaçada no campo de texto do clip. 
+Pode ser sobrecarregado por RTF formatação nativa. 
+Não aplicável à formatação nativa do HTML.</target>
+        </trans-unit>
+        <trans-unit id="MoveCopiedClipToTop" translate="yes" xml:space="preserve">
+          <source>Move copied in list clip to top</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Mover copiado no clipe da lista para o topo</target>
+        </trans-unit>
+        <trans-unit id="MoveCopiedClipToTopDescription" translate="yes" xml:space="preserve">
+          <source>Move copied in list or fully pasted clip to top of list</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Mexer copiada na lista ou clip totalmente colado ao topo da lista</target>
+        </trans-unit>
+        <trans-unit id="NumberOfClips" translate="yes" xml:space="preserve">
+          <source>Number of clips</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Número de clipes</target>
+        </trans-unit>
+        <trans-unit id="NumberOfClipsDescription" translate="yes" xml:space="preserve">
+          <source>Current number of clips in database</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Número atual de clips no banco de dados</target>
+        </trans-unit>
+        <trans-unit id="RestoreCaretPositionOnFocusReturn" translate="yes" xml:space="preserve">
+          <source>Restore caret position on focus return</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Restaurar a posição do acento circunflexo em foco retorno</target>
+        </trans-unit>
+        <trans-unit id="RestoreCaretPositionOnFocusReturnDescription" translate="yes" xml:space="preserve">
+          <source>Enable this to try restore caret position after focus is returned to target window. This is usefull for textboxes which select all text after loosing focus</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Habilite a tentar restaurar a posição do cursor depois de foco é retornado para a janela de destino. Isto é útil para caixas de texto que selecionar todo o texto depois de perder o foco</target>
+        </trans-unit>
+        <trans-unit id="RtfEditor" translate="yes" xml:space="preserve">
+          <source>RTF file editor application</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Aplicativo de editor de arquivos RTF</target>
+        </trans-unit>
+        <trans-unit id="RtfEditorDescription" translate="yes" xml:space="preserve">
+          <source>Used in "Open file" command for clip. Leave empty to use default OS application for edit RTF files.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Usado no comando "Abrir arquivo" para clipe. Deixe em branco para usar o aplicativo do sistema operacional padrão para editar arquivos RTF.</target>
+        </trans-unit>
+        <trans-unit id="SearchCaseSensitive" translate="yes" xml:space="preserve">
+          <source>Search case sensitive</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Pesquisa diferencia maiusculas de minúsculas</target>
+        </trans-unit>
+        <trans-unit id="SearchCaseSensitiveDescription" translate="yes" xml:space="preserve">
+          <source>Search filter case sensitive. For example "Pot" will match "Potato", but not "potato". </source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Filtro de pesquisa diferencia maiusculas de minúsculas. Por exemplo "Pot" corresponderá a "Batata", mas não "batata". </target>
+        </trans-unit>
+        <trans-unit id="SearchWildcards" translate="yes" xml:space="preserve">
+          <source>Search "%" as any char sequence</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Pesquisa "%" como qualquer sequência de char</target>
+        </trans-unit>
+        <trans-unit id="SearchWildcardsDescription" translate="yes" xml:space="preserve">
+          <source>Search char "%" from filter as any char sequence. For example filter "po%o" will match "potato". </source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Char de pesquisa "%" do filtro como qualquer sequência de char. Por exemplo filtro "po %o" corresponderá a "batata". </target>
+        </trans-unit>
+        <trans-unit id="SearchWordsIndependently" translate="yes" xml:space="preserve">
+          <source>Search independent words</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Palavras de pesquisa independentes</target>
+        </trans-unit>
+        <trans-unit id="SearchWordsIndependentlyDescription" translate="yes" xml:space="preserve">
+          <source>Search every word from filter independently. For example "pot web" will match "Our website sells potato". </source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Cada palavra do filtro de pesquisa independente. Por exemplo, "web pot" corresponderá "nosso site vende batata". </target>
+        </trans-unit>
+        <trans-unit id="ShowApplicationIconColumn" translate="yes" xml:space="preserve">
+          <source>Show clip source icon column</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Mostrar a coluna da fonte de ícone clip</target>
+        </trans-unit>
+        <trans-unit id="ShowApplicationIconColumnDescription" translate="yes" xml:space="preserve">
+          <source>Show column with icon from application where clip was copied</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Mostrar a coluna com o ícone do aplicativo onde o clipe foi copiado</target>
+        </trans-unit>
+        <trans-unit id="ShowNativeTextFormatting" translate="yes" xml:space="preserve">
+          <source>Show native text formatting</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Mostrar a formatação de texto nativo</target>
+        </trans-unit>
+        <trans-unit id="ShowNativeTextFormattingDescription" translate="yes" xml:space="preserve">
+          <source>Show native text formatting for RTF and HTML clips (CLTR+N)</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Mostrar texto nativo formatação RTF e HTML clipes (CLTR + N)</target>
+        </trans-unit>
+        <trans-unit id="ShowSizeColumn" translate="yes" xml:space="preserve">
+          <source>Show visual clip weight column</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Mostrar coluna de peso visual clip</target>
+        </trans-unit>
+        <trans-unit id="ShowSizeColumnDescription" translate="yes" xml:space="preserve">
+          <source>Column will show visual weight (number of digits in visual size) of clip</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Coluna mostrará o peso visual (número de dígitos em tamanho visual) do clipe</target>
+        </trans-unit>
+        <trans-unit id="TextCompareApplication" translate="yes" xml:space="preserve">
+          <source>Text compare application</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Aplicativo de comparação de texto</target>
+        </trans-unit>
+        <trans-unit id="TextCompareApplicationDescription" translate="yes" xml:space="preserve">
+          <source>Leave empty to use automatic search application, which looks for Beyond Compare, ExamDiff Pro, 
+WinMerge, Araxis Merge, DiffMerge, Kdiff3. Text compare command is %application% %file1% %file2%</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Deixe em branco para usar o aplicativo de busca automática, que olha para o Beyond Compare, ExamDiff Pro, 
+WinMerge Araxis Merge, DiffMerge, o Kdiff3. Comando de comparar texto é aplicação % % % arquivo1% % % arquivo2</target>
+        </trans-unit>
+        <trans-unit id="TextEditor" translate="yes" xml:space="preserve">
+          <source>Text (TXT) file editor application</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Aplicativo de editor de arquivos de texto (TXT)</target>
+        </trans-unit>
+        <trans-unit id="TextEditorDescription" translate="yes" xml:space="preserve">
+          <source>Used in "Open file" command for clip. Leave empty to use default OS application for edit text (TXT) files.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Usado no comando "Abrir arquivo" para clipe. Deixe em branco para usar o aplicativo do sistema operacional padrão para editar arquivos de texto (TXT).</target>
+        </trans-unit>
+        <trans-unit id="UseFormattingInDublicateDetection" translate="yes" xml:space="preserve">
+          <source>Use formatting in dublicate detection</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Usar formatação em dublicate deteção</target>
+        </trans-unit>
+        <trans-unit id="UseFormattingInDublicateDetectionDescription" translate="yes" xml:space="preserve">
+          <source>Use native text formatting in dublicate detection. Else only plain text will be used for detecting dublicate of text clip</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Use nativo em dublicate deteção de formatação de texto. Mais apenas texto sem formatação será usado para detectar dublicate de clipe de texto</target>
+        </trans-unit>
+        <trans-unit id="UserSettingsPath" translate="yes" xml:space="preserve">
+          <source>User settings path</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Caminho de configurações do usuário</target>
+        </trans-unit>
+        <trans-unit id="UserSettingsPathDescription" translate="yes" xml:space="preserve">
+          <source>Files with user settings and database are here</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Arquivos com as configurações do usuário e banco de dados são aqui</target>
+        </trans-unit>
+        <trans-unit id="WindowAutoPosition" translate="yes" xml:space="preserve">
+          <source>Window auto position on open</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Posição de auto janela em aberto</target>
+        </trans-unit>
+        <trans-unit id="WindowAutoPositionDescription" translate="yes" xml:space="preserve">
+          <source>If possible, window will open near text caret (input), else will place in center of active window</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Se possível, a janela abrirá perto do cursor de texto (entrada), outra para colocar no centro da janela ativa</target>
+        </trans-unit>
+        <trans-unit id="WordWrap" translate="yes" xml:space="preserve">
+          <source>Word wrap</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Quebra de linha</target>
+        </trans-unit>
+        <trans-unit id="WordWrapDescription" translate="yes" xml:space="preserve">
+          <source>Word wrap in clip text field (CTRL+W).
+Not appliable to HTML native formatting.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Quebra de linha no campo de texto de clip (CTRL + W). 
+Não aplicável à formatação nativa do HTML.</target>
+        </trans-unit>
+      </group>
+    </body>
+  </file>
+  <file datatype="xml" source-language="en" target-language="pt-BR" original="CLIPANGEL/APPLISTEDITORFORM.RESX" tool-id="MultilingualAppToolkit" product-name="n/a" product-version="n/a" build-num="n/a">
+    <header>
+      <tool tool-id="MultilingualAppToolkit" tool-name="Multilingual App Toolkit" tool-version="4.0.1795.0" tool-company="Microsoft" />
+    </header>
+    <body>
+      <group id="CLIPANGEL/APPLISTEDITORFORM.RESX" datatype="resx">
+        <trans-unit id="buttonDeleteSelected.ToolTip" translate="yes" xml:space="preserve">
+          <source></source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion"></target>
+        </trans-unit>
+        <trans-unit id="buttonSelectClipboardOwner.Text" translate="yes" xml:space="preserve">
+          <source>Select clipboard owner</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Selecione o proprietário da área de transferência</target>
+        </trans-unit>
+        <trans-unit id="buttonOK.Location" translate="yes" extype="System.Drawing.Point, System.Drawing" xml:space="preserve">
+          <source>531, 382</source>
+          <target state="needs-review-translation">531, 382</target>
+        </trans-unit>
+        <trans-unit id="splitContainer1.Location" translate="yes" extype="System.Drawing.Point, System.Drawing" xml:space="preserve">
+          <source>12, 70</source>
+          <target state="needs-review-translation">12, 70</target>
+        </trans-unit>
+        <trans-unit id="buttonRefresh.Location" translate="yes" extype="System.Drawing.Point, System.Drawing" xml:space="preserve">
+          <source>427, 41</source>
+          <target state="needs-review-translation">427, 41</target>
+        </trans-unit>
+        <trans-unit id="buttonCancel.ImeMode" translate="yes" extype="System.Windows.Forms.ImeMode, System.Windows.Forms" xml:space="preserve">
+          <source>NoControl</source>
+          <target state="needs-review-translation">NoControl</target>
+        </trans-unit>
+        <trans-unit id="buttonDeleteSelected.TextImageRelation" translate="yes" extype="System.Windows.Forms.TextImageRelation, System.Windows.Forms" xml:space="preserve">
+          <source>ImageBeforeText</source>
+          <target state="needs-review-translation">ImageBeforeText</target>
+        </trans-unit>
+        <trans-unit id="buttonAddByFile.Text" translate="yes" xml:space="preserve">
+          <source>Add application by file</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Adicionar aplicativo por arquivo</target>
+        </trans-unit>
+        <trans-unit id="buttonAdd.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
+          <source>139, 23</source>
+          <target state="needs-review-translation">139, 23</target>
+        </trans-unit>
+        <trans-unit id="buttonOK.Anchor" translate="yes" extype="System.Windows.Forms.AnchorStyles, System.Windows.Forms" xml:space="preserve">
+          <source>Bottom, Right</source>
+          <target state="needs-review-translation">Bottom, Right</target>
+        </trans-unit>
+        <trans-unit id="buttonAddByFile.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
+          <source>8</source>
+          <target state="needs-review-translation">8</target>
+        </trans-unit>
+        <trans-unit id="buttonAdd.ToolTip" translate="yes" xml:space="preserve">
+          <source>Add selected running applications</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Adicionar aplicativos em execução selecionados</target>
+        </trans-unit>
+        <trans-unit id="$this.ClientSize" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
+          <source>699, 417</source>
+          <target state="needs-review-translation">699, 417</target>
+        </trans-unit>
+        <trans-unit id="buttonSelectClipboardOwner.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
+          <source>156, 23</source>
+          <target state="needs-review-translation">156, 23</target>
+        </trans-unit>
+        <trans-unit id="buttonCancel.Text" translate="yes" xml:space="preserve">
+          <source>Cancel</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Cancelar</target>
+        </trans-unit>
+        <trans-unit id="$this.Text" translate="yes" xml:space="preserve">
+          <source>Application list editor</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Editor de lista de aplicação</target>
+        </trans-unit>
+        <trans-unit id="buttonSelectTargetApplication.Location" translate="yes" extype="System.Drawing.Point, System.Drawing" xml:space="preserve">
+          <source>531, 41</source>
+          <target state="needs-review-translation">531, 41</target>
+        </trans-unit>
+        <trans-unit id="buttonAddByFile.Location" translate="yes" extype="System.Drawing.Point, System.Drawing" xml:space="preserve">
+          <source>12, 12</source>
+          <target state="needs-review-translation">12, 12</target>
+        </trans-unit>
+        <trans-unit id="SelectedListApplication.Width" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
+          <source>270</source>
+          <target state="needs-review-translation">270</target>
+        </trans-unit>
+        <trans-unit id="listViewRunningList.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
+          <source>333, 281</source>
+          <target state="needs-review-translation">333, 281</target>
+        </trans-unit>
+        <trans-unit id="splitContainer1.Anchor" translate="yes" extype="System.Windows.Forms.AnchorStyles, System.Windows.Forms" xml:space="preserve">
+          <source>Top, Bottom, Left, Right</source>
+          <target state="needs-review-translation">Top, Bottom, Left, Right</target>
+        </trans-unit>
+        <trans-unit id="splitContainer1.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
+          <source>675, 304</source>
+          <target state="needs-review-translation">675, 304</target>
+        </trans-unit>
+        <trans-unit id="label2.AutoSize" translate="yes" extype="System.Boolean, mscorlib" xml:space="preserve">
+          <source>True</source>
+          <target state="needs-review-translation">True</target>
+        </trans-unit>
+        <trans-unit id="SelectedListModule.Text" translate="yes" xml:space="preserve">
+          <source>Module</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Módulo</target>
+        </trans-unit>
+        <trans-unit id="splitContainer1.SplitterDistance" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
+          <source>335</source>
+          <target state="needs-review-translation">335</target>
+        </trans-unit>
+        <trans-unit id="listViewChosenList.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
+          <source>1</source>
+          <target state="needs-review-translation">1</target>
+        </trans-unit>
+        <trans-unit id="buttonSelectTargetApplication.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
+          <source>156, 23</source>
+          <target state="needs-review-translation">156, 23</target>
+        </trans-unit>
+        <trans-unit id="RunningListApplication.Text" translate="yes" xml:space="preserve">
+          <source>Path</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Caminho</target>
+        </trans-unit>
+        <trans-unit id="RunningListApplication.Width" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
+          <source>268</source>
+          <target state="needs-review-translation">268</target>
+        </trans-unit>
+        <trans-unit id="listViewChosenList.Anchor" translate="yes" extype="System.Windows.Forms.AnchorStyles, System.Windows.Forms" xml:space="preserve">
+          <source>Top, Bottom, Left, Right</source>
+          <target state="needs-review-translation">Top, Bottom, Left, Right</target>
+        </trans-unit>
+        <trans-unit id="buttonOK.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
+          <source>7</source>
+          <target state="needs-review-translation">7</target>
+        </trans-unit>
+        <trans-unit id="$this.AutoScaleDimensions" translate="yes" extype="System.Drawing.SizeF, System.Drawing" xml:space="preserve">
+          <source>6, 13</source>
+          <target state="needs-review-translation">6, 13</target>
+        </trans-unit>
+        <trans-unit id="buttonAdd.Text" translate="yes" xml:space="preserve">
+          <source>Add selected applications</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Adicionar aplicativos selecionados</target>
+        </trans-unit>
+        <trans-unit id="buttonAdd.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
+          <source>11</source>
+          <target state="needs-review-translation">11</target>
+        </trans-unit>
+        <trans-unit id="label1.Location" translate="yes" extype="System.Drawing.Point, System.Drawing" xml:space="preserve">
+          <source>3, 5</source>
+          <target state="needs-review-translation">3, 5</target>
+        </trans-unit>
+        <trans-unit id="buttonCancel.Anchor" translate="yes" extype="System.Windows.Forms.AnchorStyles, System.Windows.Forms" xml:space="preserve">
+          <source>Bottom, Right</source>
+          <target state="needs-review-translation">Bottom, Right</target>
+        </trans-unit>
+        <trans-unit id="buttonSelectTargetApplication.ToolTip" translate="yes" xml:space="preserve">
+          <source>Select in running applications current target application</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Selecione na execução de aplicativos atual aplicativo de destino</target>
+        </trans-unit>
+        <trans-unit id="buttonOK.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
+          <source>75, 23</source>
+          <target state="needs-review-translation">75, 23</target>
+        </trans-unit>
+        <trans-unit id="SelectedListApplication.Text" translate="yes" xml:space="preserve">
+          <source>Path</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Caminho</target>
+        </trans-unit>
+        <trans-unit id="buttonRefresh.Text" translate="yes" xml:space="preserve">
+          <source>Refresh</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Atualizar</target>
+        </trans-unit>
+        <trans-unit id="label2.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
+          <source>98, 13</source>
+          <target state="needs-review-translation">98, 13</target>
+        </trans-unit>
+        <trans-unit id="buttonCancel.Location" translate="yes" extype="System.Drawing.Point, System.Drawing" xml:space="preserve">
+          <source>612, 382</source>
+          <target state="needs-review-translation">612, 382</target>
+        </trans-unit>
+        <trans-unit id="$this.StartPosition" translate="yes" extype="System.Windows.Forms.FormStartPosition, System.Windows.Forms" xml:space="preserve">
+          <source>CenterParent</source>
+          <target state="needs-review-translation">CenterParent</target>
+        </trans-unit>
+        <trans-unit id="listViewChosenList.ToolTip" translate="yes" xml:space="preserve">
+          <source></source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion"></target>
+        </trans-unit>
+        <trans-unit id="buttonSelectClipboardOwner.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
+          <source>8</source>
+          <target state="needs-review-translation">8</target>
+        </trans-unit>
+        <trans-unit id="buttonDeleteSelected.Text" translate="yes" xml:space="preserve">
+          <source>Delete selected applications</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Excluir aplicativos selecionados</target>
+        </trans-unit>
+        <trans-unit id="label1.ToolTip" translate="yes" xml:space="preserve">
+          <source></source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion"></target>
+        </trans-unit>
+        <trans-unit id="buttonDeleteSelected.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
+          <source>161, 23</source>
+          <target state="needs-review-translation">161, 23</target>
+        </trans-unit>
+        <trans-unit id="buttonCancel.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
+          <source>75, 23</source>
+          <target state="needs-review-translation">75, 23</target>
+        </trans-unit>
+        <trans-unit id="buttonDeleteSelected.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
+          <source>8</source>
+          <target state="needs-review-translation">8</target>
+        </trans-unit>
+        <trans-unit id="buttonCancel.ToolTip" translate="yes" xml:space="preserve">
+          <source></source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion"></target>
+        </trans-unit>
+        <trans-unit id="listViewChosenList.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
+          <source>333, 281</source>
+          <target state="needs-review-translation">333, 281</target>
+        </trans-unit>
+        <trans-unit id="buttonAddByFile.ToolTip" translate="yes" xml:space="preserve">
+          <source>Open file selection dialog and add selected application</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Abra a caixa de diálogo de seleção de arquivo e adicionar o aplicativo selecionado</target>
+        </trans-unit>
+        <trans-unit id="label1.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
+          <source>1</source>
+          <target state="needs-review-translation">1</target>
+        </trans-unit>
+        <trans-unit id="buttonSelectTargetApplication.Enabled" translate="yes" extype="System.Boolean, mscorlib" xml:space="preserve">
+          <source>False</source>
+          <target state="needs-review-translation">False</target>
+        </trans-unit>
+        <trans-unit id="label2.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
+          <source>1</source>
+          <target state="needs-review-translation">1</target>
+        </trans-unit>
+        <trans-unit id="listViewRunningList.Anchor" translate="yes" extype="System.Windows.Forms.AnchorStyles, System.Windows.Forms" xml:space="preserve">
+          <source>Top, Bottom, Left, Right</source>
+          <target state="needs-review-translation">Top, Bottom, Left, Right</target>
+        </trans-unit>
+        <trans-unit id="buttonOK.ImeMode" translate="yes" extype="System.Windows.Forms.ImeMode, System.Windows.Forms" xml:space="preserve">
+          <source>NoControl</source>
+          <target state="needs-review-translation">NoControl</target>
+        </trans-unit>
+        <trans-unit id="buttonSelectTargetApplication.Text" translate="yes" xml:space="preserve">
+          <source>Select target application</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Selecione o aplicativo de destino</target>
+        </trans-unit>
+        <trans-unit id="buttonAdd.Anchor" translate="yes" extype="System.Windows.Forms.AnchorStyles, System.Windows.Forms" xml:space="preserve">
+          <source>Top</source>
+          <target state="needs-review-translation">Top</target>
+        </trans-unit>
+        <trans-unit id="buttonSelectTargetApplication.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
+          <source>8</source>
+          <target state="needs-review-translation">8</target>
+        </trans-unit>
+        <trans-unit id="label2.Text" translate="yes" xml:space="preserve">
+          <source>Chosen apllications</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Escolhido apllications</target>
+        </trans-unit>
+        <trans-unit id="listViewRunningList.ToolTip" translate="yes" xml:space="preserve">
+          <source></source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion"></target>
+        </trans-unit>
+        <trans-unit id="label2.ToolTip" translate="yes" xml:space="preserve">
+          <source></source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion"></target>
+        </trans-unit>
+        <trans-unit id="buttonRefresh.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
+          <source>79, 23</source>
+          <target state="needs-review-translation">79, 23</target>
+        </trans-unit>
+        <trans-unit id="buttonRefresh.Anchor" translate="yes" extype="System.Windows.Forms.AnchorStyles, System.Windows.Forms" xml:space="preserve">
+          <source>Top</source>
+          <target state="needs-review-translation">Top</target>
+        </trans-unit>
+        <trans-unit id="buttonSelectClipboardOwner.Anchor" translate="yes" extype="System.Windows.Forms.AnchorStyles, System.Windows.Forms" xml:space="preserve">
+          <source>Top, Right</source>
+          <target state="needs-review-translation">Top, Right</target>
+        </trans-unit>
+        <trans-unit id="listViewRunningList.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
+          <source>0</source>
+          <target state="needs-review-translation">0</target>
+        </trans-unit>
+        <trans-unit id="buttonCancel.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
+          <source>6</source>
+          <target state="needs-review-translation">6</target>
+        </trans-unit>
+        <trans-unit id="listViewRunningList.Location" translate="yes" extype="System.Drawing.Point, System.Drawing" xml:space="preserve">
+          <source>2, 23</source>
+          <target state="needs-review-translation">2, 23</target>
+        </trans-unit>
+        <trans-unit id="label1.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
+          <source>102, 13</source>
+          <target state="needs-review-translation">102, 13</target>
+        </trans-unit>
+        <trans-unit id="splitContainer1.Panel2.ToolTip" translate="yes" xml:space="preserve">
+          <source></source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion"></target>
+        </trans-unit>
+        <trans-unit id="label1.Text" translate="yes" xml:space="preserve">
+          <source>Running apllications</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Executando apllications</target>
+        </trans-unit>
+        <trans-unit id="$this.ToolTip" translate="yes" xml:space="preserve">
+          <source></source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion"></target>
+        </trans-unit>
+        <trans-unit id="buttonRefresh.ToolTip" translate="yes" xml:space="preserve">
+          <source>Refresh running applications list</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Atualizar a lista de aplicativos de corrida</target>
+        </trans-unit>
+        <trans-unit id="listViewChosenList.Location" translate="yes" extype="System.Drawing.Point, System.Drawing" xml:space="preserve">
+          <source>0, 23</source>
+          <target state="needs-review-translation">0, 23</target>
+        </trans-unit>
+        <trans-unit id="label2.Location" translate="yes" extype="System.Drawing.Point, System.Drawing" xml:space="preserve">
+          <source>3, 5</source>
+          <target state="needs-review-translation">3, 5</target>
+        </trans-unit>
+        <trans-unit id="buttonSelectClipboardOwner.ToolTip" translate="yes" xml:space="preserve">
+          <source>Select clipboard owner in running applications current </source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Selecione o proprietário da área de transferência na execução de aplicativos atuais </target>
+        </trans-unit>
+        <trans-unit id="buttonRefresh.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
+          <source>12</source>
+          <target state="needs-review-translation">12</target>
+        </trans-unit>
+        <trans-unit id="buttonAddByFile.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
+          <source>161, 23</source>
+          <target state="needs-review-translation">161, 23</target>
+        </trans-unit>
+        <trans-unit id="buttonSelectClipboardOwner.Location" translate="yes" extype="System.Drawing.Point, System.Drawing" xml:space="preserve">
+          <source>531, 12</source>
+          <target state="needs-review-translation">531, 12</target>
+        </trans-unit>
+        <trans-unit id="splitContainer1.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
+          <source>10</source>
+          <target state="needs-review-translation">10</target>
+        </trans-unit>
+        <trans-unit id="splitContainer1.ToolTip" translate="yes" xml:space="preserve">
+          <source></source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion"></target>
+        </trans-unit>
+        <trans-unit id="RunningListModule.Text" translate="yes" xml:space="preserve">
+          <source>Module</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Módulo</target>
+        </trans-unit>
+        <trans-unit id="buttonSelectTargetApplication.Anchor" translate="yes" extype="System.Windows.Forms.AnchorStyles, System.Windows.Forms" xml:space="preserve">
+          <source>Top, Right</source>
+          <target state="needs-review-translation">Top, Right</target>
+        </trans-unit>
+        <trans-unit id="buttonAdd.Location" translate="yes" extype="System.Drawing.Point, System.Drawing" xml:space="preserve">
+          <source>282, 41</source>
+          <target state="needs-review-translation">282, 41</target>
+        </trans-unit>
+        <trans-unit id="splitContainer1.Panel1.ToolTip" translate="yes" xml:space="preserve">
+          <source></source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion"></target>
+        </trans-unit>
+        <trans-unit id="buttonDeleteSelected.Location" translate="yes" extype="System.Drawing.Point, System.Drawing" xml:space="preserve">
+          <source>12, 41</source>
+          <target state="needs-review-translation">12, 41</target>
+        </trans-unit>
+        <trans-unit id="buttonOK.Text" translate="yes" xml:space="preserve">
+          <source>OK</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">OK</target>
+        </trans-unit>
+        <trans-unit id="buttonOK.ToolTip" translate="yes" xml:space="preserve">
+          <source></source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion"></target>
+        </trans-unit>
+        <trans-unit id="label1.AutoSize" translate="yes" extype="System.Boolean, mscorlib" xml:space="preserve">
+          <source>True</source>
+          <target state="needs-review-translation">True</target>
+        </trans-unit>
+        <trans-unit id="$this.Localizable" translate="yes" extype="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" extradata="metadata" xml:space="preserve">
+          <source>True</source>
+          <target state="needs-review-translation">True</target>
+        </trans-unit>
+        <trans-unit id="toolTip1.TrayLocation" translate="yes" extype="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" extradata="metadata" xml:space="preserve">
+          <source>17, 17</source>
+          <target state="needs-review-translation">17, 17</target>
+        </trans-unit>
+        <trans-unit id="$this.Language" translate="yes" extype="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" extradata="metadata" xml:space="preserve">
+          <source>ru</source>
+          <target state="needs-review-translation">ru</target>
+        </trans-unit>
+      </group>
+    </body>
+  </file>
+  <file datatype="xml" source-language="en" target-language="pt-BR" original="CLIPANGEL/PROPERTIES/RESOURCES.RESX" tool-id="MultilingualAppToolkit" product-name="n/a" product-version="n/a" build-num="n/a">
+    <header>
+      <tool tool-id="MultilingualAppToolkit" tool-name="Multilingual App Toolkit" tool-version="4.0.1795.0" tool-company="Microsoft" />
+    </header>
+    <body>
+      <group id="CLIPANGEL/PROPERTIES/RESOURCES.RESX" datatype="resx">
+        <trans-unit id="merge" translate="yes" extype="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+          <source>..\Picture\merge.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</source>
+          <target state="needs-review-translation">..\Picture\merge.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</target>
+        </trans-unit>
+        <trans-unit id="Paste" translate="yes" extype="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+          <source>..\Picture\Paste.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</source>
+          <target state="needs-review-translation">..\Picture\Paste.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</target>
+        </trans-unit>
+        <trans-unit id="delete" translate="yes" extype="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+          <source>..\Picture\delete.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</source>
+          <target state="needs-review-translation">..\Picture\delete.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</target>
+        </trans-unit>
+        <trans-unit id="CutMarker" translate="yes" xml:space="preserve">
+          <source>Show rest of text</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Mostrar o resto do texto</target>
+        </trans-unit>
+        <trans-unit id="text" translate="yes" xml:space="preserve">
+          <source>text</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">texto</target>
+        </trans-unit>
+        <trans-unit id="Filter" translate="yes" extype="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+          <source>..\Picture\Filter.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</source>
+          <target state="needs-review-translation">..\Picture\Filter.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</target>
+        </trans-unit>
+        <trans-unit id="HistoryOfChanges" translate="yes" xml:space="preserve">
+          <source>https://sourceforge.net/p/clip-angel/blog</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">https://sourceforge.net/p/clip-Angel/blog</target>
+        </trans-unit>
+        <trans-unit id="clear2" translate="yes" extype="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+          <source>..\Picture\clear2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</source>
+          <target state="needs-review-translation">..\Picture\clear2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</target>
+        </trans-unit>
+        <trans-unit id="OpenFile" translate="yes" extype="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+          <source>..\Picture\OpenFile.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</source>
+          <target state="needs-review-translation">..\Picture\OpenFile.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</target>
+        </trans-unit>
+        <trans-unit id="LangRestart" translate="yes" xml:space="preserve">
+          <source>For full language change you may need to restart program</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Para a mudança de idioma completo, você pode precisar reiniciar o programa</target>
+        </trans-unit>
+        <trans-unit id="upload" translate="yes" extype="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+          <source>..\Picture\upload.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</source>
+          <target state="needs-review-translation">..\Picture\upload.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</target>
+        </trans-unit>
+        <trans-unit id="Confirmation" translate="yes" xml:space="preserve">
+          <source>Confirmation</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Confirmação</target>
+        </trans-unit>
+        <trans-unit id="Support" translate="yes" xml:space="preserve">
+          <source>https://sourceforge.net/p/clip-angel/tickets/new/</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">https://sourceforge.net/p/clip-Angel/tickets/New/</target>
+        </trans-unit>
+        <trans-unit id="FindNext" translate="yes" extype="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+          <source>..\Picture\FindNext.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</source>
+          <target state="needs-review-translation">..\Picture\FindNext.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</target>
+        </trans-unit>
+        <trans-unit id="allTypes" translate="yes" xml:space="preserve">
+          <source>all types</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">todos os tipos</target>
+        </trans-unit>
+        <trans-unit id="dbTemplate" translate="yes" extype="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+          <source>..\DB\db.sqlite;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</source>
+          <target state="needs-review-translation">..\DB\db.sqlite;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</target>
+        </trans-unit>
+        <trans-unit id="CantPasteInElevatedWindow" translate="yes" xml:space="preserve">
+          <source>Unable to paste into window having higher priviledges. Try run program as administrator.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Não é possível colar na janela tendo privilégios mais elevados. Tente executar o programa como administrador.</target>
+        </trans-unit>
+        <trans-unit id="VisualWeightTooltip" translate="yes" xml:space="preserve">
+          <source>Visual clip weight (number of digits in number representing visual clip size)</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Peso Visual clip (número de dígitos no número que representa o tamanho visual do clipe)</target>
+        </trans-unit>
+        <trans-unit id="ClearFilter" translate="yes" extype="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+          <source>..\Picture\ClearFilter.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</source>
+          <target state="needs-review-translation">..\Picture\ClearFilter.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</target>
+        </trans-unit>
+        <trans-unit id="UnmarkFavorite" translate="yes" extype="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+          <source>..\Picture\Reset favorite.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</source>
+          <target state="needs-review-translation">..\Picture\Reset favorite.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</target>
+        </trans-unit>
+        <trans-unit id="EndMarker" translate="yes" xml:space="preserve">
+          <source>END</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">FINALIZAR</target>
+        </trans-unit>
+        <trans-unit id="up" translate="yes" extype="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+          <source>..\Picture\up.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</source>
+          <target state="needs-review-translation">..\Picture\up.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</target>
+        </trans-unit>
+        <trans-unit id="Donate" translate="yes" xml:space="preserve">
+          <source>https://www.paypal.me/tormozit/500</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">https://www.paypal.me/tormozit/500</target>
+        </trans-unit>
+        <trans-unit id="MegaByteUnit" translate="yes" xml:space="preserve">
+          <source>MB</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">MB</target>
+        </trans-unit>
+        <trans-unit id="Size" translate="yes" xml:space="preserve">
+          <source>Size</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Tamanho</target>
+        </trans-unit>
+        <trans-unit id="TypeText" translate="yes" extype="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+          <source>..\Picture\TypeText.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</source>
+          <target state="needs-review-translation">..\Picture\TypeText.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</target>
+        </trans-unit>
+        <trans-unit id="NextClip" translate="yes" xml:space="preserve">
+          <source>Next сlip</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Próxima сlip</target>
+        </trans-unit>
+        <trans-unit id="NoSupportedTextCompareApplication" translate="yes" xml:space="preserve">
+          <source>No supported text compare application was found. Now we open website to get free one.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Nenhum aplicativo de comparação de texto suporte foi encontrado. Agora vamos abrir o site para obter um livre.</target>
+        </trans-unit>
+        <trans-unit id="Alien_64x64" translate="yes" extype="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+          <source>..\Picture\Alien-64x64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</source>
+          <target state="needs-review-translation">..\Picture\Alien-64x64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</target>
+        </trans-unit>
+        <trans-unit id="clear1" translate="yes" extype="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+          <source>..\Picture\clear1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</source>
+          <target state="needs-review-translation">..\Picture\clear1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</target>
+        </trans-unit>
+        <trans-unit id="NewVersionAvailable" translate="yes" xml:space="preserve">
+          <source>New version is available. To update use button is top command bar.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Nova versão está disponível. Para atualizar o uso botão é comando top bar.</target>
+        </trans-unit>
+        <trans-unit id="ApplicationAddedToIgnoreList" translate="yes" xml:space="preserve">
+          <source>Application "{0}" added to ignore list, wich can be edited in Settings window</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Aplicativo "{0}" adicionado para ignorar a lista, pode ser editado no janela de configurações</target>
+        </trans-unit>
+        <trans-unit id="CharUnit" translate="yes" xml:space="preserve">
+          <source>С</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">С</target>
+        </trans-unit>
+        <trans-unit id="Top2" translate="yes" extype="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+          <source>..\Picture\Top2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</source>
+          <target state="needs-review-translation">..\Picture\Top2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</target>
+        </trans-unit>
+        <trans-unit id="EditClipTitle" translate="yes" xml:space="preserve">
+          <source>Edit clip title</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Edite o título do clipe</target>
+        </trans-unit>
+        <trans-unit id="Autoselect first match" translate="yes" extype="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+          <source>..\Picture\Autoselect first match.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</source>
+          <target state="needs-review-translation">..\Picture\Autoselect first match.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</target>
+        </trans-unit>
+        <trans-unit id="favorite" translate="yes" xml:space="preserve">
+          <source>favorite</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">favorito</target>
+        </trans-unit>
+        <trans-unit id="keyboard" translate="yes" extype="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+          <source>..\Picture\keyboard.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</source>
+          <target state="needs-review-translation">..\Picture\keyboard.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</target>
+        </trans-unit>
+        <trans-unit id="TextFormatting" translate="yes" extype="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+          <source>..\Picture\TextFormatting.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</source>
+          <target state="needs-review-translation">..\Picture\TextFormatting.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</target>
+        </trans-unit>
+        <trans-unit id="copy" translate="yes" extype="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+          <source>..\Picture\copy.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</source>
+          <target state="needs-review-translation">..\Picture\copy.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</target>
+        </trans-unit>
+        <trans-unit id="TypeHtml" translate="yes" extype="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+          <source>..\Picture\TypeHtml.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</source>
+          <target state="needs-review-translation">..\Picture\TypeHtml.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</target>
+        </trans-unit>
+        <trans-unit id="FindPrevious" translate="yes" extype="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+          <source>..\Picture\FindPrevious.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</source>
+          <target state="needs-review-translation">..\Picture\FindPrevious.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</target>
+        </trans-unit>
+        <trans-unit id="ActivatedExistedProcess" translate="yes" xml:space="preserve">
+          <source>Activated already running instance of the application</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Ativado já executando a instância do aplicativo</target>
+        </trans-unit>
+        <trans-unit id="UpdateTo" translate="yes" xml:space="preserve">
+          <source>Update to</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Atualizar para</target>
+        </trans-unit>
+        <trans-unit id="used" translate="yes" xml:space="preserve">
+          <source>used</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">usado</target>
+        </trans-unit>
+        <trans-unit id="file" translate="yes" xml:space="preserve">
+          <source>file</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">arquivo</target>
+        </trans-unit>
+        <trans-unit id="DBShortFilename" translate="yes" xml:space="preserve">
+          <source>db.sqlite</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">DB.sqlite</target>
+        </trans-unit>
+        <trans-unit id="FailedToReadFormatFromClipboard" translate="yes" xml:space="preserve">
+          <source>Failed to read data in format "{0}" from clipboard.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Falha ao ler dados no formato "{0}" da área de transferência.</target>
+        </trans-unit>
+        <trans-unit id="TopMostWindow" translate="yes" extype="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+          <source>..\Picture\TopMostWindow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</source>
+          <target state="needs-review-translation">..\Picture\TopMostWindow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</target>
+        </trans-unit>
+        <trans-unit id="ByteUnit" translate="yes" xml:space="preserve">
+          <source>B</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">B</target>
+        </trans-unit>
+        <trans-unit id="HelpPage" translate="yes" xml:space="preserve">
+          <source>https://sourceforge.net/p/clip-angel/wiki/Description/</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">https://sourceforge.net/p/clip-Angel/wiki/Description/</target>
+        </trans-unit>
+        <trans-unit id="QuestionResetSettings" translate="yes" xml:space="preserve">
+          <source>Are you sure want to reset settings to default values?</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Está certeza quer redefinir configurações para valores padrão?</target>
+        </trans-unit>
+        <trans-unit id="Version" translate="yes" xml:space="preserve">
+          <source>1.22</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">1.22</target>
+        </trans-unit>
+        <trans-unit id="eye" translate="yes" extype="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+          <source>..\Picture\eye.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</source>
+          <target state="needs-review-translation">..\Picture\eye.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</target>
+        </trans-unit>
+        <trans-unit id="CouldNotRegisterHotkey" translate="yes" xml:space="preserve">
+          <source>Couldn’t register the global hot key</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Não pude registrar a tecla de atalho global</target>
+        </trans-unit>
+        <trans-unit id="Dublicate" translate="yes" extype="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+          <source>..\Picture\Dublicate.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</source>
+          <target state="needs-review-translation">..\Picture\Dublicate.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</target>
+        </trans-unit>
+        <trans-unit id="YouLatestVersion" translate="yes" xml:space="preserve">
+          <source>You are using the latest version</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Você está usando a versão mais recente</target>
+        </trans-unit>
+        <trans-unit id="Back" translate="yes" extype="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+          <source>..\Picture\Back.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</source>
+          <target state="needs-review-translation">..\Picture\Back.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</target>
+        </trans-unit>
+        <trans-unit id="HowUseAutoTitle" translate="yes" xml:space="preserve">
+          <source>Clear string to use auto title</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Clara cadeia de caracteres para usar o título de auto</target>
+        </trans-unit>
+        <trans-unit id="PixelFormat" translate="yes" xml:space="preserve">
+          <source>Pixel</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Pixel</target>
+        </trans-unit>
+        <trans-unit id="translate" translate="yes" extype="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+          <source>..\Picture\translate.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</source>
+          <target state="needs-review-translation">..\Picture\translate.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</target>
+        </trans-unit>
+        <trans-unit id="TypeImg" translate="yes" extype="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+          <source>..\Picture\TypeImg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</source>
+          <target state="needs-review-translation">..\Picture\TypeImg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</target>
+        </trans-unit>
+        <trans-unit id="Website" translate="yes" xml:space="preserve">
+          <source>https://sourceforge.net/projects/clip-angel</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">https://sourceforge.net/projects/clip-Angel</target>
+        </trans-unit>
+        <trans-unit id="MoveCopiedClipToTop" translate="yes" extype="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+          <source>..\Picture\MoveCopiedClipToTop.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</source>
+          <target state="needs-review-translation">..\Picture\MoveCopiedClipToTop.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</target>
+        </trans-unit>
+        <trans-unit id="TypeFile" translate="yes" extype="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+          <source>..\Picture\TypeFile.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</source>
+          <target state="needs-review-translation">..\Picture\TypeFile.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</target>
+        </trans-unit>
+        <trans-unit id="ClipFileAlreadyOpened" translate="yes" xml:space="preserve">
+          <source>Clip file already opened and blocked</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Clip arquivo já aberto e bloqueado</target>
+        </trans-unit>
+        <trans-unit id="down" translate="yes" extype="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+          <source>..\Picture\down.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</source>
+          <target state="needs-review-translation">..\Picture\down.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</target>
+        </trans-unit>
+        <trans-unit id="Email" translate="yes" xml:space="preserve">
+          <source>tormozit@gmail.com</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">tormozit@gmail.com</target>
+        </trans-unit>
+        <trans-unit id="Open with" translate="yes" extype="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+          <source>..\Picture\Open with.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</source>
+          <target state="needs-review-translation">..\Picture\Open with.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</target>
+        </trans-unit>
+        <trans-unit id="FailedToWriteClipboard" translate="yes" xml:space="preserve">
+          <source>Failed to write clipboard. It is locked by window "{0}" application "{1}"</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Falha ao gravar a área de transferência. Está trancada pelo aplicativo de janela "{0}" "{1}"</target>
+        </trans-unit>
+        <trans-unit id="WordWrap" translate="yes" extype="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+          <source>..\Picture\word wrap.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</source>
+          <target state="needs-review-translation">..\Picture\word wrap.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</target>
+        </trans-unit>
+        <trans-unit id="allMarks" translate="yes" xml:space="preserve">
+          <source>all marks</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">todas as marcas</target>
+        </trans-unit>
+        <trans-unit id="img" translate="yes" xml:space="preserve">
+          <source>img</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">img</target>
+        </trans-unit>
+        <trans-unit id="DownloadPage" translate="yes" xml:space="preserve">
+          <source>https://sourceforge.net/projects/clip-angel/files/latest/download</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">https://sourceforge.net/projects/clip-Angel/files/latest/download</target>
+        </trans-unit>
+        <trans-unit id="TypeRtf" translate="yes" extype="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+          <source>..\Picture\TypeRtf.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</source>
+          <target state="needs-review-translation">..\Picture\TypeRtf.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</target>
+        </trans-unit>
+        <trans-unit id="Top1" translate="yes" extype="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+          <source>..\Picture\Top1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</source>
+          <target state="needs-review-translation">..\Picture\Top1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</target>
+        </trans-unit>
+        <trans-unit id="Compare" translate="yes" extype="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+          <source>..\Picture\Compare.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</source>
+          <target state="needs-review-translation">..\Picture\Compare.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</target>
+        </trans-unit>
+        <trans-unit id="СonfirmDeleteAllNonFavorite" translate="yes" xml:space="preserve">
+          <source>Are you sure want to delete all non favorite clips?</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">É claro que deseja excluir todos os clipes não favoritos?</target>
+        </trans-unit>
+        <trans-unit id="KiloByteUnit" translate="yes" xml:space="preserve">
+          <source>KB</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">KB</target>
+        </trans-unit>
+        <trans-unit id="alien" translate="yes" extype="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+          <source>..\Picture\alien.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</source>
+          <target state="needs-review-translation">..\Picture\alien.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</target>
+        </trans-unit>
+        <trans-unit id="MarkFavorite" translate="yes" extype="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+          <source>..\Picture\Set favorite.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</source>
+          <target state="needs-review-translation">..\Picture\Set favorite.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</target>
+        </trans-unit>
+        <trans-unit id="FixedWidthFont" translate="yes" extype="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+          <source>..\Picture\FixedWidthFont.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</source>
+          <target state="needs-review-translation">..\Picture\FixedWidthFont.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</target>
+        </trans-unit>
+        <trans-unit id="Edit" translate="yes" extype="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+          <source>..\Picture\Edit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</source>
+          <target state="needs-review-translation">..\Picture\Edit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</target>
+        </trans-unit>
+        <trans-unit id="FindOptions" translate="yes" extype="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+          <source>..\Picture\FindOptions.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</source>
+          <target state="needs-review-translation">..\Picture\FindOptions.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</target>
+        </trans-unit>
+        <trans-unit id="Search" translate="yes" xml:space="preserve">
+          <source>Search</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Pesquisar</target>
+        </trans-unit>
+      </group>
+    </body>
+  </file>
+</xliff>

@@ -1,0 +1,380 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AutoCheckUpdate" xml:space="preserve">
+    <value>Autocheck for program update</value>
+  </data>
+  <data name="AutoCheckUpdateDescription" xml:space="preserve">
+    <value>Autocheck for update on program start and every day</value>
+  </data>
+  <data name="AutoSelectMatch" xml:space="preserve">
+    <value>Autoselect first match</value>
+  </data>
+  <data name="AutoSelectMatchDescription" xml:space="preserve">
+    <value>Autoselection of first match of filter in clip text. </value>
+  </data>
+  <data name="Autostart" xml:space="preserve">
+    <value>Autostart program on user logon</value>
+  </data>
+  <data name="AutostartDescription" xml:space="preserve">
+    <value />
+  </data>
+  <data name="AutostartPath" xml:space="preserve">
+    <value>Application autostart command line</value>
+  </data>
+  <data name="AutostartPathDescription" xml:space="preserve">
+    <value>Click OK to update this command from current start path</value>
+  </data>
+  <data name="ClearFiltersOnClose" xml:space="preserve">
+    <value>Clear filters on main window close</value>
+  </data>
+  <data name="ClearFiltersOnCloseDescription" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ClipListSimpleDraw" xml:space="preserve">
+    <value>Fast and simple list draw</value>
+  </data>
+  <data name="ClipListSimpleDrawDescription" xml:space="preserve">
+    <value>Clip list will be drawn fast without highlighting filter matches and picture samples</value>
+  </data>
+  <data name="ClipTempFileFolder" xml:space="preserve">
+    <value>Folder for clip temp files</value>
+  </data>
+  <data name="ClipTempFileFolderDescription" xml:space="preserve">
+    <value>Folder for saving temp files of clips. Leave empty to use standart temp folder. Usually can be usefull in portable mode.</value>
+  </data>
+  <data name="CopyTextInAnyWindowOnCTRLF3" xml:space="preserve">
+    <value>Copy text from any window by Control+F3</value>
+  </data>
+  <data name="CopyTextInAnyWindowOnCTRLF3Description" xml:space="preserve">
+    <value>Copy selected text from any window when Control+F3 is pressed. This hotkey usually is used in text editors to search selected string. 
+Key press will be processed by the window. </value>
+  </data>
+  <data name="CurrentPath" xml:space="preserve">
+    <value>Application current start path</value>
+  </data>
+  <data name="DatabaseSize" xml:space="preserve">
+    <value>Database size MB</value>
+  </data>
+  <data name="DatabaseSizeDescription" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DefaultFont" xml:space="preserve">
+    <value>Default font</value>
+  </data>
+  <data name="DefaultFontDescription" xml:space="preserve">
+    <value>Font for clip list and default for clip text. Double click to change it.</value>
+  </data>
+  <data name="FastWindowOpen" xml:space="preserve">
+    <value>Fast window open</value>
+  </data>
+  <data name="FastWindowOpenDescription" xml:space="preserve">
+    <value>Fast window opening by using some tricks. Can lead to some minor problems in window opening/closing.</value>
+  </data>
+  <data name="GlobalHotkeyCompareLastClips" xml:space="preserve">
+    <value>Hotkey to compare last clips</value>
+  </data>
+  <data name="GlobalHotkeyCompareLastClipsDescription" xml:space="preserve">
+    <value>Use this hot key in any program to launch application for comparing last 2 clips</value>
+  </data>
+  <data name="GlobalHotkeyIncrementalPaste" xml:space="preserve">
+    <value>Hotkey to incremental paste</value>
+  </data>
+  <data name="GlobalHotkeyIncrementalPasteDescription" xml:space="preserve">
+    <value>Use this hot key in any program to paste current clip from Clip Angel list and select next clip which will be shown in tray tooltip</value>
+  </data>
+  <data name="GlobalHotkeyOpenCurrent" xml:space="preserve">
+    <value>Hotkey to open window with no changes</value>
+  </data>
+  <data name="GlobalHotkeyOpenCurrentDescription" xml:space="preserve">
+    <value>Use this hot key in any program to open Clip Angel window with no changes in filter and clip selection. Press again to close the window.</value>
+  </data>
+  <data name="GlobalHotkeyOpenFavorites" xml:space="preserve">
+    <value>Hotkey to open window with favorites</value>
+  </data>
+  <data name="GlobalHotkeyOpenFavoritesDescription" xml:space="preserve">
+    <value>Use this hot key in any program to show Clip Angel window with favorites only filter. Press again to close the window.</value>
+  </data>
+  <data name="GlobalHotkeyOpenLast" xml:space="preserve">
+    <value>Hotkey to open window with reset</value>
+  </data>
+  <data name="GlobalHotkeyOpenLastDescription" xml:space="preserve">
+    <value>Use this hot key in any program to open Clip Angel window, clear filters and select last captured clip. Press again to close the window.</value>
+  </data>
+  <data name="GlobalHotkeyPasteText" xml:space="preserve">
+    <value>Hotkey to paste plain text</value>
+  </data>
+  <data name="GlobalHotkeyPasteTextDescription" xml:space="preserve">
+    <value>Use this hot key in any program to paste last captured clip as plain text</value>
+  </data>
+  <data name="HistoryDepthDays" xml:space="preserve">
+    <value>History depth days</value>
+  </data>
+  <data name="HistoryDepthDaysDescription" xml:space="preserve">
+    <value>Maximum number of days non favorite clips are stored. Deletion is executed on start, every day, on settings apply. 0 - do not delete.</value>
+  </data>
+  <data name="HistoryDepthNumber" xml:space="preserve">
+    <value>History depth number</value>
+  </data>
+  <data name="HistoryDepthNumberDescription" xml:space="preserve">
+    <value>Maximum number of stored non favorite clips. Deletion is executed on start, every day, on settings apply. 0 - do not delete.</value>
+  </data>
+  <data name="HtmlEditor" xml:space="preserve">
+    <value>HTML file editor application</value>
+  </data>
+  <data name="HtmlEditorDescription" xml:space="preserve">
+    <value>Used in "Open file" command for clip. Leave empty to use default OS application for edit HTML files.</value>
+  </data>
+  <data name="IgnoreApplicationsClipCapture" xml:space="preserve">
+    <value>Ignored applications in clip capture</value>
+  </data>
+  <data name="IgnoreApplicationsClipCaptureDescription" xml:space="preserve">
+    <value>Do not capture clips from this applications</value>
+  </data>
+  <data name="IgnoreExclusiveFormatClipCapture" xml:space="preserve">
+    <value>Do not capture "Clipboard Viewer Ignore" format</value>
+  </data>
+  <data name="IgnoreExclusiveFormatClipCaptureDescription" xml:space="preserve">
+    <value>Do not capture clip with "Clipboard Viewer Ignore" format present. This format is usually  used by password managers when copying passwords to clipboard. Sometimes it may be usefull to switch it OFF temporary.</value>
+  </data>
+  <data name="ImageEditor" xml:space="preserve">
+    <value>Image (PNG) file editor application</value>
+  </data>
+  <data name="ImageEditorDescription" xml:space="preserve">
+    <value>Used in "Open file" command for clip. Leave empty to use default OS application for edit image (PNG) files.</value>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="LanguageDescription" xml:space="preserve">
+    <value>User interface language</value>
+  </data>
+  <data name="MaxClipSizeKB" xml:space="preserve">
+    <value>Max clip size KB</value>
+  </data>
+  <data name="MaxClipSizeKBDescription" xml:space="preserve">
+    <value>Clips greater this size will not be captured</value>
+  </data>
+  <data name="MonospacedFont" xml:space="preserve">
+    <value>Monospaced font</value>
+  </data>
+  <data name="MonospacedFontDescription" xml:space="preserve">
+    <value>Monospaced font in clip text field. 
+Could be overloaded by RTF native formatting.
+Not appliable to HTML native formatting.</value>
+  </data>
+  <data name="MoveCopiedClipToTop" xml:space="preserve">
+    <value>Move copied in list clip to top</value>
+  </data>
+  <data name="MoveCopiedClipToTopDescription" xml:space="preserve">
+    <value>Move copied in list or fully pasted clip to top of list</value>
+  </data>
+  <data name="NumberOfClips" xml:space="preserve">
+    <value>Number of clips</value>
+  </data>
+  <data name="NumberOfClipsDescription" xml:space="preserve">
+    <value>Current number of clips in database</value>
+  </data>
+  <data name="RestoreCaretPositionOnFocusReturn" xml:space="preserve">
+    <value>Restore caret position on focus return</value>
+  </data>
+  <data name="RestoreCaretPositionOnFocusReturnDescription" xml:space="preserve">
+    <value>Enable this to try restore caret position after focus is returned to target window. This is usefull for textboxes which select all text after loosing focus</value>
+  </data>
+  <data name="RtfEditor" xml:space="preserve">
+    <value>RTF file editor application</value>
+  </data>
+  <data name="RtfEditorDescription" xml:space="preserve">
+    <value>Used in "Open file" command for clip. Leave empty to use default OS application for edit RTF files.</value>
+  </data>
+  <data name="SearchCaseSensitive" xml:space="preserve">
+    <value>Search case sensitive</value>
+  </data>
+  <data name="SearchCaseSensitiveDescription" xml:space="preserve">
+    <value>Search filter case sensitive. For example "Pot" will match "Potato", but not "potato". </value>
+  </data>
+  <data name="SearchWildcards" xml:space="preserve">
+    <value>Search "%" as any char sequence</value>
+  </data>
+  <data name="SearchWildcardsDescription" xml:space="preserve">
+    <value>Search char "%" from filter as any char sequence. For example filter "po%o" will match "potato". </value>
+  </data>
+  <data name="SearchWordsIndependently" xml:space="preserve">
+    <value>Search independent words</value>
+  </data>
+  <data name="SearchWordsIndependentlyDescription" xml:space="preserve">
+    <value>Search every word from filter independently. For example "pot web" will match "Our website sells potato". </value>
+  </data>
+  <data name="ShowApplicationIconColumn" xml:space="preserve">
+    <value>Show clip source icon column</value>
+  </data>
+  <data name="ShowApplicationIconColumnDescription" xml:space="preserve">
+    <value>Show column with icon from application where clip was copied</value>
+  </data>
+  <data name="ShowNativeTextFormatting" xml:space="preserve">
+    <value>Show native text formatting</value>
+  </data>
+  <data name="ShowNativeTextFormattingDescription" xml:space="preserve">
+    <value>Show native text formatting for RTF and HTML clips (CLTR+N)</value>
+  </data>
+  <data name="ShowSizeColumn" xml:space="preserve">
+    <value>Show visual clip weight column</value>
+  </data>
+  <data name="ShowSizeColumnDescription" xml:space="preserve">
+    <value>Column will show visual weight (number of digits in visual size) of clip</value>
+  </data>
+  <data name="TextCompareApplication" xml:space="preserve">
+    <value>Text compare application</value>
+  </data>
+  <data name="TextCompareApplicationDescription" xml:space="preserve">
+    <value>Leave empty to use automatic search application, which looks for Beyond Compare, ExamDiff Pro, 
+WinMerge, Araxis Merge, DiffMerge, Kdiff3. Text compare command is %application% %file1% %file2%</value>
+  </data>
+  <data name="TextEditor" xml:space="preserve">
+    <value>Text (TXT) file editor application</value>
+  </data>
+  <data name="TextEditorDescription" xml:space="preserve">
+    <value>Used in "Open file" command for clip. Leave empty to use default OS application for edit text (TXT) files.</value>
+  </data>
+  <data name="UseFormattingInDublicateDetection" xml:space="preserve">
+    <value>Use formatting in dublicate detection</value>
+  </data>
+  <data name="UseFormattingInDublicateDetectionDescription" xml:space="preserve">
+    <value>Use native text formatting in dublicate detection. Else only plain text will be used for detecting dublicate of text clip</value>
+  </data>
+  <data name="UserSettingsPath" xml:space="preserve">
+    <value>User settings path</value>
+  </data>
+  <data name="UserSettingsPathDescription" xml:space="preserve">
+    <value>Files with user settings and database are here</value>
+  </data>
+  <data name="WindowAutoPosition" xml:space="preserve">
+    <value>Window auto position on open</value>
+  </data>
+  <data name="WindowAutoPositionDescription" xml:space="preserve">
+    <value>If possible, window will open near text caret (input), else will place in center of active window</value>
+  </data>
+  <data name="WordWrap" xml:space="preserve">
+    <value>Word wrap</value>
+  </data>
+  <data name="WordWrapDescription" xml:space="preserve">
+    <value>Word wrap in clip text field (CTRL+W).
+Not appliable to HTML native formatting.</value>
+  </data>
+</root>

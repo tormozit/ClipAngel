@@ -117,136 +117,115 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="allTypes" xml:space="preserve">
-    <value>все типы</value>
+  <data name="&gt;&gt;HotkeyTextbox.Name" xml:space="preserve">
+    <value>HotkeyTextbox</value>
   </data>
-  <data name="ByteUnit" xml:space="preserve">
-    <value>Б</value>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="buttonOK.Location" type="System.Drawing.Point, System.Drawing">
+    <value>69, 43</value>
   </data>
-  <data name="CharUnit" xml:space="preserve">
-    <value>С</value>
+  <data name="buttonCancel.Text" xml:space="preserve">
+    <value>Cancel</value>
   </data>
-  <data name="EndMarker" xml:space="preserve">
-    <value>КОНЕЦ</value>
+  <data name="&gt;&gt;HotkeyTextbox.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
-  <data name="file" xml:space="preserve">
-    <value>файл</value>
+  <data name="buttonCancel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
   </data>
-  <data name="img" xml:space="preserve">
-    <value>карт</value>
+  <data name="&gt;&gt;HotkeyTextbox.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
-  <data name="text" xml:space="preserve">
-    <value>текст</value>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="HelpPage" xml:space="preserve">
-    <value>https://sourceforge.net/p/clip-angel/wikirus/%D0%9E%D1%81%D0%BD%D0%BE%D0%B2%D0%BD%D0%BE%D0%B9/</value>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>237, 78</value>
   </data>
-  <data name="NextClip" xml:space="preserve">
-    <value>Следующий клип</value>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>HotkeyEditorForm</value>
   </data>
-  <data name="allMarks" xml:space="preserve">
-    <value>все метки</value>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="buttonCancel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
   </data>
-  <data name="favorite" xml:space="preserve">
-    <value>любимые</value>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="buttonCancel.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
   </data>
-  <data name="used" xml:space="preserve">
-    <value>полезные</value>
+  <data name="HotkeyTextbox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>213, 20</value>
   </data>
-  <data name="LangRestart" xml:space="preserve">
-    <value>Для полной смены языка возможно потребуется перезапуск программы</value>
+  <data name="buttonOK.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
   </data>
-  <data name="UpdateTo" xml:space="preserve">
-    <value>Обновить на</value>
+  <data name="&gt;&gt;buttonCancel.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
-  <data name="PixelFormat" xml:space="preserve">
-    <value>Пиксель</value>
+  <data name="HotkeyTextbox.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
   </data>
-  <data name="Size" xml:space="preserve">
-    <value>Размер</value>
+  <data name="&gt;&gt;buttonOK.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="CutMarker" xml:space="preserve">
-    <value>Показать остальной текст</value>
+  <data name="&gt;&gt;buttonCancel.Name" xml:space="preserve">
+    <value>buttonCancel</value>
   </data>
-  <data name="NewVersionAvailable" xml:space="preserve">
-    <value>Новая версия доступна. Для обновления нажмите кнопку в верхней командной панели.</value>
+  <data name="buttonCancel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="YouLatestVersion" xml:space="preserve">
-    <value>Вы используете последнюю версию</value>
+  <data name="HotkeyTextbox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
   </data>
-  <data name="CantPasteInElevatedWindow" xml:space="preserve">
-    <value>Невозможно вставить в окно, имеющее более высокие привилегии. Попробуйте запустить программу от имени администратора.</value>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterParent</value>
   </data>
-  <data name="EditClipTitle" xml:space="preserve">
-    <value>Изменение заголовка клипа</value>
+  <data name="buttonCancel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>150, 43</value>
   </data>
-  <data name="HowUseAutoTitle" xml:space="preserve">
-    <value>Очистите строку для использования автозаголовка</value>
+  <data name="buttonOK.Text" xml:space="preserve">
+    <value>OK</value>
   </data>
-  <data name="VisualWeightTooltip" xml:space="preserve">
-    <value>Визуальный вес клипа (количество цифр в числе, отражающем визуальный размер клипа)</value>
+  <data name="&gt;&gt;buttonOK.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
-  <data name="KiloByteUnit" xml:space="preserve">
-    <value>КБ</value>
+  <data name="&gt;&gt;HotkeyTextbox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="MegaByteUnit" xml:space="preserve">
-    <value>МБ</value>
+  <data name="HotkeyTextbox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 12</value>
   </data>
-  <data name="QuestionResetSettings" xml:space="preserve">
-    <value>Вы действительно хотите сбросить все настройки в значения по умолчанию?</value>
+  <data name="&gt;&gt;buttonOK.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
-  <data name="HistoryOfChanges" xml:space="preserve">
-    <value>https://sourceforge.net/p/clip-angel/blogrus/</value>
+  <data name="&gt;&gt;buttonCancel.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
-  <data name="ActivatedExistedProcess" xml:space="preserve">
-    <value>Активирован уже запущенный экземпляр приложения</value>
+  <data name="buttonOK.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
   </data>
-  <data name="CouldNotRegisterHotkey" xml:space="preserve">
-    <value>Не удалось зарегистрировать глобальное сочетание клавиш</value>
+  <data name="&gt;&gt;buttonCancel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="ClipFileAlreadyOpened" xml:space="preserve">
-    <value>Файл клипа уже открыт и заблокирован</value>
+  <data name="buttonOK.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="HistoryDepthNumber" xml:space="preserve">
-    <value>Количество хранимых клипов</value>
+  <data name="&gt;&gt;buttonOK.Name" xml:space="preserve">
+    <value>buttonOK</value>
   </data>
-  <data name="Hotkeys" xml:space="preserve">
-    <value>Горячие клавиши</value>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
   </data>
-  <data name="Info" xml:space="preserve">
-    <value>Информация</value>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Edit hotkey</value>
   </data>
-  <data name="Other" xml:space="preserve">
-    <value>Другое</value>
+  <data name="buttonOK.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
   </data>
-  <data name="Special" xml:space="preserve">
-    <value>Специальные</value>
-  </data>
-  <data name="ApplicationAddedToIgnoreList" xml:space="preserve">
-    <value>Приложение "{0}" добавлено в список игнорирования, который можно отредактировать из диалога "Настройки".</value>
-  </data>
-  <data name="NoSupportedTextCompareApplication" xml:space="preserve">
-    <value>Не найдено поддерживаемое приложение для сравнения текстов. Сейчас откроем вебсайт, чтобы скачать бесплатное.</value>
-  </data>
-  <data name="СonfirmDeleteAllNonFavorite" xml:space="preserve">
-    <value>Вы действительно хотите удалить все не любимые клипы?</value>
-  </data>
-  <data name="FailedToWriteClipboard" xml:space="preserve">
-    <value>Не удалось записать в буфер обмена. Он заблокирован окном "{0}" приложения "{1}"</value>
-  </data>
-  <data name="Donate" xml:space="preserve">
-    <value>http://yasobe.ru/na/clipangel</value>
-  </data>
-  <data name="Confirmation" xml:space="preserve">
-    <value>Подтверждение</value>
-  </data>
-  <data name="FailedToReadFormatFromClipboard" xml:space="preserve">
-    <value>Не удалось прочитать данные формата "{0}" из буфера обмена.</value>
-  </data>
-  <data name="Applications" xml:space="preserve">
-    <value>Приложения</value>
-  </data>
-  <data name="Search" xml:space="preserve">
-    <value>Поиск</value>
-  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>ru</value>
+  </metadata>
 </root>

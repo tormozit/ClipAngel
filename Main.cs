@@ -3618,20 +3618,29 @@ namespace ClipAngel
             //    MessageBox.Show(this, CurrentLangResourceManager.GetString("LangRestart"), Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
             //}
             ResourceManager LangResourceManager;
-            if (String.Compare(Locale, "ru", true) == 0)
-                LangResourceManager = Properties.Resource_RU.ResourceManager;
-            else
+            //if (String.Compare(Locale, "ru", true) == 0)
+            //    LangResourceManager = Properties.Resource_RU.ResourceManager;
+            //else
                 LangResourceManager = Properties.Resources.ResourceManager;
             return LangResourceManager;
         }
 
         static public string getCurrentLocale()
         {
+            // Bad luck trying to use Multilang tool http://stackoverflow.com/questions/38117969/convert-resx-to-xliff-format-failed
             string locale;
             if (Properties.Settings.Default.Language == "Default")
                 locale = Application.CurrentCulture.TwoLetterISOLanguageName;
             else if (Properties.Settings.Default.Language == "Russian")
                 locale = "ru";
+            else if (Properties.Settings.Default.Language == "Polish")
+                locale = "pl";
+            else if (Properties.Settings.Default.Language == "Spain")
+                locale = "sp";
+            else if (Properties.Settings.Default.Language == "German")
+                locale = "de";
+            else if (Properties.Settings.Default.Language == "Portuguese-Brazil")
+                locale = "pt-BR";
             else
                 locale = "en";
             return locale;
