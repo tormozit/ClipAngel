@@ -16,25 +16,25 @@
     <value>MiddleRight</value>
   </data>
   <data name="moveCopiedClipToTopToolStripMenuItem.Text" xml:space="preserve">
-    <value>Mover o clipe ao topo depois de copiar/colar</value>
+    <value>Spostare clip in alto dopo il copia/incolla</value>
   </data>
   <data name="statusStrip.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>416, 22</value>
   </data>
   <data name="toolStripMenuItemOpenFile.ToolTipText" xml:space="preserve">
-    <value>Salve dados em arquivo temporário para clipe de texto ou imagem. Arquivo de clipe de 
-aberto em padrão de aplicação. 
-Alterações no arquivo temp não estão sincronizadas com o clipe! 
+    <value>Salvare i dati in file temp per clip di testo o immagine. 
+Open file clip di default dell'applicazione. 
+Modifiche in file temp non vengono sincronizzate con clip! 
 </value>
   </data>
   <data name="fileToolStripMenuItem1.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>63, 20</value>
   </data>
   <data name="pasteENTERToolStripMenuItem.Text" xml:space="preserve">
-    <value>Colar (entrar)</value>
+    <value>Incolla (entrare)</value>
   </data>
   <data name="toolStripButtonClearFilter.ToolTipText" xml:space="preserve">
-    <value>Limpar filtros (F7)</value>
+    <value>Cancella filtri (F7)</value>
   </data>
   <data name="toolStripButtonTextFormatting.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>23, 22</value>
@@ -43,16 +43,16 @@ Alterações no arquivo temp não estão sincronizadas com o clipe!
     <value>209, 22</value>
   </data>
   <data name="toolStripButtonAutoSelectMatch.Text" xml:space="preserve">
-    <value>Primeira partida Autoselect </value>
+    <value>Autoselect prima partita </value>
   </data>
   <data name="showAllTypesToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>250, 22</value>
   </data>
   <data name="toolStripMenuItem10.ToolTipText" xml:space="preserve">
-    <value>Comparar o texto selecionados 2 clipes ou clipe atual com prevoiusly clipe selecionado por este comando</value>
+    <value>Confrontare il testo di 2 clip selezionato o clip corrente con clip selezionato prevoiusly da questo comando</value>
   </data>
   <data name="htmlMenuItemCopyLinkAdress.Text" xml:space="preserve">
-    <value>Copie o endereço do link</value>
+    <value>Copia indirizzo collegamento</value>
   </data>
   <data name="TypeFilter.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>72, 23</value>
@@ -61,28 +61,28 @@ Alterações no arquivo temp não estão sincronizadas com o clipe!
     <value>VisualWeight</value>
   </data>
   <data name="toolStripButtonTopMostWindow.Text" xml:space="preserve">
-    <value>Janela sempre no topo</value>
+    <value>Finestra sempre in primo piano</value>
   </data>
   <data name="MarkFilter.Anchor" xml:space="preserve" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
   </data>
   <data name="SizeDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
-    <value>Tamanho</value>
+    <value>Dimensioni</value>
   </data>
   <data name="wordWrapToolStripMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+W</value>
   </data>
   <data name="StripLabelCreated.ToolTipText" xml:space="preserve">
-    <value>Hora criada</value>
+    <value>Ora di creazione</value>
   </data>
   <data name="deleteToolStripMenuItem1.Text" xml:space="preserve">
-    <value>Excluir</value>
+    <value>Elimina</value>
   </data>
   <data name="toolStripMenuItem3.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>211, 22</value>
   </data>
   <data name="toolStripMenuItemSwitchFocus.ToolTipText" xml:space="preserve">
-    <value>Alternar o foco entre texto lista e clip. Se o foco está em outro lugar, lista será ativada.</value>
+    <value>Spostare lo stato attivo tra testo elenco e clip. Se lo stato attivo è in altro luogo, elenco verrà attivato.</value>
   </data>
   <data name="copyToClipboardToolStripMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+C</value>
@@ -94,38 +94,38 @@ Alterações no arquivo temp não estão sincronizadas com o clipe!
     <value>Tipo</value>
   </data>
   <data name="deleteAllNonFavoriteToolStripMenuItem.ToolTipText" xml:space="preserve">
-    <value>Excluir todos os clipes não favoritos</value>
+    <value>Eliminare tutte le clip non preferite</value>
   </data>
   <data name="toolStripMenuItem14.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Alt+Q</value>
   </data>
   <data name="TypeFilter.ToolTip" xml:space="preserve">
-    <value>Mostre somente clipes deste tipos. 
-o submenu "Lista" tem comandos para seleção rápida</value>
+    <value>Visualizza solo i clip di questo tipo. 
+Sottomenu "Elenco" dispone di comandi per la selezione rapida</value>
   </data>
   <data name="editClipTextToolStripMenuItem.ToolTipText" xml:space="preserve">
-    <value>Editar texto de clip como texto sem formatação</value>
+    <value>Modificare clip testo come testo normale</value>
   </data>
   <data name="showInTaskbarToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>212, 22</value>
   </data>
   <data name="textBoxApplication.Text" xml:space="preserve">
-    <value>Aplicativo</value>
+    <value>Applicazione</value>
   </data>
   <data name="copyFullFilenameToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>171, 22</value>
   </data>
   <data name="trayMenuItemMonitoringClipboard.ToolTipText" xml:space="preserve">
-    <value>Capturar as alterações na área de transferência</value>
+    <value>Acquisire le modifiche negli Appunti</value>
   </data>
   <data name="urlTextBox.Font" xml:space="preserve" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 9pt</value>
   </data>
   <data name="pasteTextCTRLENTERToolStripMenuItem.Text" xml:space="preserve">
-    <value>Colar o texto (CTRL + ENTER)</value>
+    <value>Incollare il testo (CTRL + INVIO)</value>
   </data>
   <data name="changeClipTitleToolStripMenuItem.ToolTipText" xml:space="preserve">
-    <value>Edite o título do clipe</value>
+    <value>Modificare il titolo della clip</value>
   </data>
   <data name="changeClipTitleToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>214, 22</value>
@@ -134,10 +134,10 @@ o submenu "Lista" tem comandos para seleção rápida</value>
     <value>211, 22</value>
   </data>
   <data name="toolStripWindowTitleCopyAll.Text" xml:space="preserve">
-    <value>Copiar todo o texto</value>
+    <value>Copiare tutto il testo</value>
   </data>
   <data name="windowAlwaysOnTopToolStripMenuItem.ToolTipText" xml:space="preserve">
-    <value>Janela sempre no modo top</value>
+    <value>Finestra sempre in modalità top</value>
   </data>
   <data name="splitContainer1.SplitterDistance" xml:space="preserve" type="System.Int32, mscorlib">
     <value>370</value>
@@ -170,10 +170,10 @@ o submenu "Lista" tem comandos para seleção rápida</value>
     <value>Ctrl+T</value>
   </data>
   <data name="openWithToolStripMenuItem.Text" xml:space="preserve">
-    <value>Abrir arquivo com...</value>
+    <value>Aprire il file con...</value>
   </data>
   <data name="copyFullFilenameToolStripMenuItem.Text" xml:space="preserve">
-    <value>Copie o nome do arquivo completo</value>
+    <value>Copiare il nome completo del file</value>
   </data>
   <data name="AppImage.HeaderText" xml:space="preserve">
     <value>AppImage</value>
@@ -197,10 +197,10 @@ o submenu "Lista" tem comandos para seleção rápida</value>
     <value>Del</value>
   </data>
   <data name="moveDownToolStripMenuItem.ToolTipText" xml:space="preserve">
-    <value>Mover clipe atual um step-down</value>
+    <value>Spostare clip corrente uno step-down</value>
   </data>
   <data name="titleDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
-    <value>Título</value>
+    <value>Titolo</value>
   </data>
   <data name="ImageSample.HeaderText" xml:space="preserve">
     <value>ImageSample</value>
@@ -209,26 +209,26 @@ o submenu "Lista" tem comandos para seleção rápida</value>
     <value>178, 22</value>
   </data>
   <data name="rtfMenuItemSelectAll.Text" xml:space="preserve">
-    <value>Selecionar todos</value>
+    <value>Seleziona tutti</value>
   </data>
   <data name="StripLabelSize.ToolTipText" xml:space="preserve">
-    <value>Tamanho total de todos os tipos de dados do clip em bytes</value>
+    <value>Dimensione totale di tutti i tipi di dati del filmato in byte</value>
   </data>
   <data name="StripLabelCreated.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>110, 17</value>
   </data>
   <data name="uploadImageToWebToolStripMenuItem.ToolTipText" xml:space="preserve">
-    <value>Upload clip de imagem para imagem de Hospedagem de site. 
-Url será salvo no clipe atual e será copiado para a área de transferência.</value>
+    <value>Caricare immagine clip in sito di image hosting. 
+Url verrà salvato in clip corrente e verrà copiato negli Appunti.</value>
   </data>
   <data name="nextMatchToolStripMenuItem.Text" xml:space="preserve">
-    <value>Localizar próxima</value>
+    <value>Trova successivo</value>
   </data>
   <data name="toolStripButtonReturnToPrevous.ToolTipText" xml:space="preserve">
-    <value>Limpar filtros e selecione clipe que foi selecionado antes de filtro aplicam com mudança de clipe selecionado</value>
+    <value>Pulisci i campi e selezionare clip che è stata selezionata prima di filtro si applicano con cambiamento della clip selezionata</value>
   </data>
   <data name="supportToolStripMenuItem.ToolTipText" xml:space="preserve">
-    <value>Envie o recurso de relatório ou pedido de bug</value>
+    <value>Invia bug report o richiesta funzionalità</value>
   </data>
   <data name="MainMenu.Text" xml:space="preserve">
     <value>menuStrip1</value>
@@ -243,7 +243,7 @@ Url será salvo no clipe atual e será copiado para a área de transferência.</
     <value>Alt+W</value>
   </data>
   <data name="toolStripButtonMarkFavorite.ToolTipText" xml:space="preserve">
-    <value>Clip é favorito</value>
+    <value>È clip preferiti</value>
   </data>
   <data name="toolStripMenuItem11.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>211, 22</value>
@@ -255,19 +255,19 @@ Url será salvo no clipe atual e será copiado para a área de transferência.</
     <value></value>
   </data>
   <data name="showOnlyTextsToolStripMenuItem.Text" xml:space="preserve">
-    <value>Mostrar apenas textos</value>
+    <value>Visualizza soltanto i testi</value>
   </data>
   <data name="toolStripMenuItem1.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>92, 22</value>
   </data>
   <data name="checkUpdateToolStripMenuItem.Text" xml:space="preserve">
-    <value>Verificação de atualização</value>
+    <value>Verifica aggiornamento</value>
   </data>
   <data name="sendPasteToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>209, 22</value>
   </data>
   <data name="showOnlyImagesToolStripMenuItem.Text" xml:space="preserve">
-    <value>Mostrar apenas imagens</value>
+    <value>Visualizza solo le immagini</value>
   </data>
   <data name="showOnlyImagesToolStripMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Alt+2</value>
@@ -285,13 +285,13 @@ Url será salvo no clipe atual e será copiado para a área de transferência.</
     <value>False</value>
   </data>
   <data name="showOnlyUsedToolStripMenuItem.Text" xml:space="preserve">
-    <value>Mostrar apenas usado</value>
+    <value>Visualizza solo usato</value>
   </data>
   <data name="StripLabelType.ToolTipText" xml:space="preserve">
     <value>Tipo</value>
   </data>
   <data name="showAllMarksToolStripMenuItem.Text" xml:space="preserve">
-    <value>Mostrar todas as marcas</value>
+    <value>Visualizza tutti i marchi</value>
   </data>
   <data name="htmlTextBox.MinimumSize" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>20, 20</value>
@@ -333,13 +333,13 @@ Url será salvo no clipe atual e será copiado para a área de transferência.</
     <value></value>
   </data>
   <data name="moveTopToolStripMenuItem.Text" xml:space="preserve">
-    <value>Mover a parte superior</value>
+    <value>Spostare in alto</value>
   </data>
   <data name="ImageControl.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
     <value>8</value>
   </data>
   <data name="editClipTextToolStripMenuItem.Text" xml:space="preserve">
-    <value>Edite texto</value>
+    <value>Modifica testo</value>
   </data>
   <data name="deleteAllNonFavoriteToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>250, 22</value>
@@ -351,22 +351,22 @@ Url será salvo no clipe atual e será copiado para a área de transferência.</
     <value>Ctrl+A</value>
   </data>
   <data name="toolStripMenuItemSearchWildcards.Text" xml:space="preserve">
-    <value>"%" como qualquer sequência de char</value>
+    <value>"%" come qualsiasi sequenza di char</value>
   </data>
   <data name="StripLabelSize.AutoSize" xml:space="preserve" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
   <data name="deleteToolStripMenuItem.Text" xml:space="preserve">
-    <value>Recortar</value>
+    <value>Ritaglia</value>
   </data>
   <data name="showAllTypesToolStripMenuItem.Text" xml:space="preserve">
-    <value>Mostrar todos os tipos</value>
+    <value>Mostra tutti i tipi</value>
   </data>
   <data name="mergeTextOfClipsToolStripMenuItem.Text" xml:space="preserve">
-    <value>Junte-se texto de clipes</value>
+    <value>Iscriviti a testo di clip</value>
   </data>
   <data name="copyToClipboardToolStripMenuItem.Text" xml:space="preserve">
-    <value>Copiar para área de transferência</value>
+    <value>Copia negli Appunti</value>
   </data>
   <data name="dataGridViewImageColumn1.MinimumWidth" xml:space="preserve" type="System.Int32, mscorlib">
     <value>18</value>
@@ -378,13 +378,13 @@ Url será salvo no clipe atual e será copiado para a área de transferência.</
     <value>214, 22</value>
   </data>
   <data name="textCompareToolStripMenuItem.Text" xml:space="preserve">
-    <value>Comparação de texto</value>
+    <value>Confrontare testo</value>
   </data>
   <data name="ImageControl.ImeMode" xml:space="preserve" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="pasteTextCTRLENTERToolStripMenuItem.ToolTipText" xml:space="preserve">
-    <value>Colar na janela ativa como texto sem formatação de texto selecionado do texto clip ou agregado de clipes selecionados.</value>
+    <value>Incollare nella finestra attiva come testo normale selezionato testo testo clip o agregated delle clip selezionate.</value>
   </data>
   <data name="showOnlyUsedToolStripMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+3</value>
@@ -411,7 +411,7 @@ Url será salvo no clipe atual e será copiado para a área de transferência.</
     <value>18</value>
   </data>
   <data name="toolStripMenuItemOpenFile.Text" xml:space="preserve">
-    <value>Arquivo aberto clip</value>
+    <value>File Apri clip</value>
   </data>
   <data name="$this.AutoScaleDimensions" xml:space="preserve" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
@@ -435,7 +435,7 @@ Url será salvo no clipe atual e será copiado para a área de transferência.</
     <value>True</value>
   </data>
   <data name="toolStripMenuItemPasteChars.Text" xml:space="preserve">
-    <value>Simular a entrada de char</value>
+    <value>Simulare l'input di char</value>
   </data>
   <data name="supportToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>178, 22</value>
@@ -444,7 +444,7 @@ Url será salvo no clipe atual e será copiado para a área de transferência.</
     <value>None</value>
   </data>
   <data name="urlTextBox.ToolTip" xml:space="preserve">
-    <value>Partir deste URL clipe foi copiado</value>
+    <value>Da questo URL è stato copiato clip</value>
   </data>
   <data name="comboBoxFilter.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
     <value>6</value>
@@ -456,9 +456,9 @@ Url será salvo no clipe atual e será copiado para a área de transferência.</
     <value>790, 24</value>
   </data>
   <data name="openWithToolStripMenuItem.ToolTipText" xml:space="preserve">
-    <value>Salve dados em arquivo temporário para clipe de texto ou imagem. 
-Open system menu para abrir arquivo de clipe no aplicativo escolhido. 
-Alterações no arquivo temp não estão sincronizadas com o clipe!</value>
+    <value>Salvare i dati in file temp per clip di testo o immagine. 
+Open system menu per aprire il file clip in applicazione scelto. 
+Modifiche in file temp non vengono sincronizzate con clip!</value>
   </data>
   <data name="textBoxApplication.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
     <value>2</value>
@@ -470,7 +470,7 @@ Alterações no arquivo temp não estão sincronizadas com o clipe!</value>
     <value>MiddleRight</value>
   </data>
   <data name="comboBoxFilter.CueText" xml:space="preserve">
-    <value>Filtro de tipo na lista</value>
+    <value>Tipo filtro nell'elenco</value>
   </data>
   <data name="toolStripMenuItem11.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+F4</value>
@@ -482,16 +482,16 @@ Alterações no arquivo temp não estão sincronizadas com o clipe!</value>
     <value>210, 92</value>
   </data>
   <data name="showInTaskbarToolStripMenuItem.Text" xml:space="preserve">
-    <value>Mostrar na barra de tarefas</value>
+    <value>Visualizza nella barra delle applicazioni</value>
   </data>
   <data name="toolStripMenuItemMonitoringClipboard.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>212, 22</value>
   </data>
   <data name="textBoxWindow.ToolTip" xml:space="preserve">
-    <value>Título de janela que copiou o clipe</value>
+    <value>Titolo della finestra che copiato clip</value>
   </data>
   <data name="toolStripMenuItem3.ToolTipText" xml:space="preserve">
-    <value>Colar na janela ativa como texto sem formatação de texto selecionado do texto clip ou agregado de clipes selecionados. 
+    <value>Incollare nella finestra attiva come testo normale selezionato testo testo clip o agregated delle clip selezionate. 
 </value>
   </data>
   <data name="buttonUpdate.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
@@ -501,13 +501,13 @@ Alterações no arquivo temp não estão sincronizadas com o clipe!</value>
     <value>40, 20</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Clip-anjo</value>
+    <value>Angelo di clip</value>
   </data>
   <data name="buttonUpdate.ImageTransparentColor" xml:space="preserve" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
   </data>
   <data name="exitToolStripMenuItem.Text" xml:space="preserve">
-    <value>Saída</value>
+    <value>Esci</value>
   </data>
   <data name="toolStripButtonTextFormatting.ImageTransparentColor" xml:space="preserve" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
@@ -519,7 +519,7 @@ Alterações no arquivo temp não estão sincronizadas com o clipe!</value>
     <value>toolStrip2</value>
   </data>
   <data name="toolStripMenuItem11.ToolTipText" xml:space="preserve">
-    <value>Salve dados em arquivo temporário para clipe de texto ou imagem.</value>
+    <value>Salvare i dati in file temp per clip di testo o immagine.</value>
   </data>
   <data name="ImageControl.Anchor" xml:space="preserve" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
@@ -528,16 +528,16 @@ Alterações no arquivo temp não estão sincronizadas com o clipe!</value>
     <value>214, 22</value>
   </data>
   <data name="StripLabelSize.Text" xml:space="preserve">
-    <value>Tamanho</value>
+    <value>Dimensioni</value>
   </data>
   <data name="showAllMarksToolStripMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+1</value>
   </data>
   <data name="MarkFilter.Items2" xml:space="preserve">
-    <value>arquivo</value>
+    <value>file</value>
   </data>
   <data name="textCompareToolStripMenuItem.ToolTipText" xml:space="preserve">
-    <value>Comparar o texto selecionados 2 clipes ou clipe atual com prevoiusly clipe selecionado por este comando
+    <value>Confrontare il testo di 2 clip selezionato o clip corrente con clip selezionato prevoiusly da questo comando
 </value>
   </data>
   <data name="textBoxApplication.Anchor" xml:space="preserve" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
@@ -556,19 +556,19 @@ Alterações no arquivo temp não estão sincronizadas com o clipe!</value>
     <value>209, 22</value>
   </data>
   <data name="MarkFilter.Items" xml:space="preserve">
-    <value>tudo</value>
+    <value>tutti</value>
   </data>
   <data name="toolStripButtonMarkFavorite.ImageTransparentColor" xml:space="preserve" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
   </data>
   <data name="StripLabelVisualSize.ToolTipText" xml:space="preserve">
-    <value>Visual tamanho: número de caracteres ou pixels</value>
+    <value>Dimensione visiva: numero di caratteri o pixel</value>
   </data>
   <data name="fToolStripMenuItem.Text" xml:space="preserve">
-    <value>Ajuda</value>
+    <value>?</value>
   </data>
   <data name="toolStripMenuItem7.Text" xml:space="preserve">
-    <value>Simular a entrada de char</value>
+    <value>Simulare l'input di char</value>
   </data>
   <data name="fToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>44, 20</value>
@@ -580,7 +580,7 @@ Alterações no arquivo temp não estão sincronizadas com o clipe!</value>
     <value>23, 22</value>
   </data>
   <data name="toolStripUrlCopyAll.Text" xml:space="preserve">
-    <value>Copiar todo o texto</value>
+    <value>Copiare tutto il testo</value>
   </data>
   <data name="htmlTextBox.Location" xml:space="preserve" type="System.Drawing.Point, System.Drawing">
     <value>3, 101</value>
@@ -589,16 +589,16 @@ Alterações no arquivo temp não estão sincronizadas com o clipe!</value>
     <value></value>
   </data>
   <data name="deleteToolStripMenuItem1.ToolTipText" xml:space="preserve">
-    <value>Excluir clipes selecionados da história</value>
+    <value>Eliminare i clip selezionati dalla storia</value>
   </data>
   <data name="supportToolStripMenuItem.Text" xml:space="preserve">
-    <value>Enviar bug ou recurso</value>
+    <value>Invia bug o funzionalità</value>
   </data>
   <data name="toolStripMenuItemSearchCaseSensitive.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>209, 22</value>
   </data>
   <data name="returnToPrevousSelectedClipToolStripMenuItem.Text" xml:space="preserve">
-    <value>Limpar filtros e selecione anterior.</value>
+    <value>Pulisci i campi e selezionare Prev.</value>
   </data>
   <data name="contextMenuStripApplication.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>172, 48</value>
@@ -622,10 +622,10 @@ Alterações no arquivo temp não estão sincronizadas com o clipe!</value>
     <value>ColumnTitle</value>
   </data>
   <data name="settingsToolStripMenuItem.Text" xml:space="preserve">
-    <value>Configurações</value>
+    <value>impostazioni</value>
   </data>
   <data name="moveUpToolStripMenuItem.Text" xml:space="preserve">
-    <value>Mover para cima</value>
+    <value>Sposta su</value>
   </data>
   <data name="showOnlyFavoriteToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>250, 22</value>
@@ -634,16 +634,16 @@ Alterações no arquivo temp não estão sincronizadas com o clipe!</value>
     <value>Magenta</value>
   </data>
   <data name="toolStripButtonOpenWith.ToolTipText" xml:space="preserve">
-    <value>Salve dados em arquivo temporário para clipe de texto ou imagem. 
-Open system menu para abrir arquivo de clipe no aplicativo escolhido. 
-Alterações no arquivo temp não estão sincronizadas com o clipe! 
+    <value>Salvare i dati in file temp per clip di testo o immagine. 
+Open system menu per aprire il file clip in applicazione scelto. 
+Modifiche in file temp non vengono sincronizzate con clip! 
 </value>
   </data>
   <data name="htmlTextBox.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
     <value>10</value>
   </data>
   <data name="charsDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
-    <value>Os caracteres</value>
+    <value>Chars</value>
   </data>
   <data name="toolStripButtonClearFilter.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>23, 22</value>
@@ -655,7 +655,7 @@ Alterações no arquivo temp não estão sincronizadas com o clipe!
     <value>2, 2, 2, 2</value>
   </data>
   <data name="moveUpToolStripMenuItem.ToolTipText" xml:space="preserve">
-    <value>Mover clipe atual um agir</value>
+    <value>Spostare clip corrente uno intensificare</value>
   </data>
   <data name="rtfMenuItemSelectAll.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>209, 22</value>
@@ -664,7 +664,7 @@ Alterações no arquivo temp não estão sincronizadas com o clipe!
     <value>209, 22</value>
   </data>
   <data name="TypeFilter.Items" xml:space="preserve">
-    <value>tudo</value>
+    <value>tutti</value>
   </data>
   <data name="toolStripButtonFindPrevious.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>23, 22</value>
@@ -679,7 +679,7 @@ Alterações no arquivo temp não estão sincronizadas com o clipe!
     <value>187, 22</value>
   </data>
   <data name="pasteENTERToolStripMenuItem.ToolTipText" xml:space="preserve">
-    <value>Colar em clipes de janela ativo selecionada. Também realizada por duplo clique.</value>
+    <value>Incollare clip attiva finestra selezionata. Eseguita anche con un doppio click.</value>
   </data>
   <data name="moveUpToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>250, 22</value>
@@ -688,13 +688,13 @@ Alterações no arquivo temp não estão sincronizadas com o clipe!
     <value></value>
   </data>
   <data name="showOnlyFilesToolStripMenuItem.Text" xml:space="preserve">
-    <value>Mostrar apenas os arquivos</value>
+    <value>Visualizzare solo i file</value>
   </data>
   <data name="toolStripSearchOptions.ToolTipText" xml:space="preserve">
-    <value>Opções de Pesquisa</value>
+    <value>Opzioni ricerca</value>
   </data>
   <data name="setFavouriteToolStripMenuItem.Text" xml:space="preserve">
-    <value>Marcar como favorito</value>
+    <value>Segna come preferito</value>
   </data>
   <data name="textFormattingToolStripMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+N</value>
@@ -1247,10 +1247,10 @@ Alterações no arquivo temp não estão sincronizadas com o clipe!
     <value>214, 22</value>
   </data>
   <data name="stripLabelPosition.Text" xml:space="preserve">
-    <value>Posição</value>
+    <value>Posizione</value>
   </data>
   <data name="settingsToolStripMenuItem1.Text" xml:space="preserve">
-    <value>Configurações</value>
+    <value>impostazioni</value>
   </data>
   <data name="toolStripSearchOptions.ImageTransparentColor" xml:space="preserve" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
@@ -1262,19 +1262,19 @@ Alterações no arquivo temp não estão sincronizadas com o clipe!
     <value>Top, Bottom, Left, Right</value>
   </data>
   <data name="toolStripMenuItemClearFilterAndSelectTop.ToolTipText" xml:space="preserve">
-    <value>Limpar os filtros e selecione clip top</value>
+    <value>Cancellare i filtri e selezionare clip top</value>
   </data>
   <data name="showOnlyFilesToolStripMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Alt+3</value>
   </data>
   <data name="toolStripMenuItemEditClipText.Text" xml:space="preserve">
-    <value>Editar texto de clip</value>
+    <value>Modificare il testo di clip</value>
   </data>
   <data name="ImageControl.Location" xml:space="preserve" type="System.Drawing.Point, System.Drawing">
     <value>2, 198</value>
   </data>
   <data name="rtfMenuItemOpenLink.Text" xml:space="preserve">
-    <value>Abrir link (ALT + clique)</value>
+    <value>Apri il link (ALT + click)</value>
   </data>
   <data name="toolStripTop.Text" xml:space="preserve">
     <value>toolStrip1</value>
@@ -1283,7 +1283,7 @@ Alterações no arquivo temp não estão sincronizadas com o clipe!
     <value>140, 26</value>
   </data>
   <data name="toolStripMenuItem7.ToolTipText" xml:space="preserve">
-    <value>Simule em entrada de char janela ativa do texto selecionado de texto clip ou agregado de clipes selecionados.</value>
+    <value>Simulare in ingresso char finestra attiva del testo selezionato del testo clip o agregated delle clip selezionate.</value>
   </data>
   <data name="MarkFilter.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
     <value>12</value>
@@ -1292,7 +1292,7 @@ Alterações no arquivo temp não estão sincronizadas com o clipe!
     <value>211, 22</value>
   </data>
   <data name="toolStripMenuItem12.Text" xml:space="preserve">
-    <value>Edite o título do clipe</value>
+    <value>Modificare il titolo della clip</value>
   </data>
   <data name="toolStripMenuItemSearchWildcards.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>209, 22</value>
@@ -1301,9 +1301,9 @@ Alterações no arquivo temp não estão sincronizadas com o clipe!
     <value>Center</value>
   </data>
   <data name="showInTaskbarToolStripMenuItem.ToolTipText" xml:space="preserve">
-    <value>Quando, janela sempre aparecerá na barra de tarefas. 
-Quando fora, janela sempre ficará oculta na barra de tarefas. Modo de 
-usado apenas em rápido janela aberta.</value>
+    <value>Quando, finestra sempre appare nella barra delle applicazioni. 
+Quando OFF, finestra sarà sempre nascosto nella barra delle applicazioni. Modalità di 
+usato solo in veloce finestra aperta.</value>
   </data>
   <data name="toolStripMenuItemSwitchFocus.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>212, 22</value>
@@ -1312,13 +1312,13 @@ usado apenas em rápido janela aberta.</value>
     <value>Magenta</value>
   </data>
   <data name="toolStripMenuItemPasteChars.ToolTipText" xml:space="preserve">
-    <value>Simule em entrada de char janela ativa do texto selecionado de texto clip ou agregado de clipes selecionados.</value>
+    <value>Simulare in ingresso char finestra attiva del testo selezionato del testo clip o agregated delle clip selezionate.</value>
   </data>
   <data name="toolStripMenuItem9.Text" xml:space="preserve">
-    <value>Limpar área de transferência</value>
+    <value>Cancella Appunti</value>
   </data>
   <data name="StripLabelCreated.Text" xml:space="preserve">
-    <value>Criado</value>
+    <value>Creato</value>
   </data>
   <data name="statusStrip.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
     <value>4</value>
@@ -1327,10 +1327,10 @@ usado apenas em rápido janela aberta.</value>
     <value>2</value>
   </data>
   <data name="monospacedFontToolStripMenuItem.Text" xml:space="preserve">
-    <value>Fonte monoespaçada</value>
+    <value>Carattere a spaziatura fissa</value>
   </data>
   <data name="fileToolStripMenuItem1.Text" xml:space="preserve">
-    <value>Janela</value>
+    <value>Finestra</value>
   </data>
   <data name="splitContainer1.Dock" xml:space="preserve" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -1342,12 +1342,12 @@ usado apenas em rápido janela aberta.</value>
     <value>214, 22</value>
   </data>
   <data name="toolStripMenuItem16.ToolTipText" xml:space="preserve">
-    <value>Salve dados em arquivo temporário para clipe de texto ou imagem. Arquivo de clipe de 
-aberto em padrão de aplicação. 
-Alterações no arquivo temp não estão sincronizadas com o clipe!</value>
+    <value>Salvare i dati in file temp per clip di testo o immagine. 
+Open file clip di default dell'applicazione. 
+Modifiche in file temp non vengono sincronizzate con clip!</value>
   </data>
   <data name="toolStripMenuItem14.Text" xml:space="preserve">
-    <value>Marcar como favorito</value>
+    <value>Segna come preferito</value>
   </data>
   <data name="toolStripBottom.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
     <value>13</value>
@@ -1362,7 +1362,7 @@ Alterações no arquivo temp não estão sincronizadas com o clipe!</value>
     <value>Del</value>
   </data>
   <data name="windowAlwaysOnTopToolStripMenuItem.Text" xml:space="preserve">
-    <value>Sempre visível</value>
+    <value>Sempre in primo piano</value>
   </data>
   <data name="toolStripMenuItem5.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>247, 6</value>
@@ -1371,7 +1371,7 @@ Alterações no arquivo temp não estão sincronizadas com o clipe!</value>
     <value>MiddleRight</value>
   </data>
   <data name="textBoxApplication.ToolTip" xml:space="preserve">
-    <value>Aplicativo que copiou o clipe</value>
+    <value>Applicazione che copiato clip</value>
   </data>
   <data name="moveTopToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>250, 22</value>
@@ -1401,28 +1401,28 @@ Alterações no arquivo temp não estão sincronizadas com o clipe!</value>
     <value>F2</value>
   </data>
   <data name="previousMatchToolStripMenuItem.Text" xml:space="preserve">
-    <value>Localizar anterior</value>
+    <value>Trova precedente</value>
   </data>
   <data name="toolStripMenuItem8.ToolTipText" xml:space="preserve">
-    <value>Excluir clipes selecionados da lista</value>
+    <value>Eliminare i clip selezionati dall'elenco</value>
   </data>
   <data name="contextMenuStripRtf.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>210, 92</value>
   </data>
   <data name="toolStripMenuItemSetFocusClipText.Text" xml:space="preserve">
-    <value>Definir o foco para o texto de clip (TAB)</value>
+    <value>Impostare lo stato attivo al testo clip (scheda)</value>
   </data>
   <data name="comboBoxFilter.Anchor" xml:space="preserve" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left, Right</value>
   </data>
   <data name="textBoxWindow.Text" xml:space="preserve">
-    <value>Janela</value>
+    <value>Finestra</value>
   </data>
   <data name="openWithToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>214, 22</value>
   </data>
   <data name="toolStripMenuItemMonitoringClipboard.Text" xml:space="preserve">
-    <value>Monitoramento da área de transferência</value>
+    <value>Appunti di monitoraggio</value>
   </data>
   <data name="сдуфкClipboardToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>212, 22</value>
@@ -1446,10 +1446,10 @@ Alterações no arquivo temp não estão sincronizadas com o clipe!</value>
     <value>101, 25</value>
   </data>
   <data name="ignoreApplicationInCaptureToolStripMenuItem.Text" xml:space="preserve">
-    <value>Ignorar a aplicação</value>
+    <value>Applicazione di ignorare</value>
   </data>
   <data name="historyToolStripMenuItem.Text" xml:space="preserve">
-    <value>Histórico de alterações do</value>
+    <value>Cronologia delle modifiche</value>
   </data>
   <data name="dataGridView.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1467,22 +1467,22 @@ Alterações no arquivo temp não estão sincronizadas com o clipe!</value>
     <value>2, 2, 2, 2</value>
   </data>
   <data name="toolStripButtonTopMostWindow.ToolTipText" xml:space="preserve">
-    <value>Janela sempre no modo top</value>
+    <value>Finestra sempre in modalità top</value>
   </data>
   <data name="returnToPrevousSelectedClipToolStripMenuItem.ToolTipText" xml:space="preserve">
-    <value>Limpar filtros e selecione clipe que foi selecionado antes de filtro aplicam com mudança de clipe selecionado</value>
+    <value>Pulisci i campi e selezionare clip che è stata selezionata prima di filtro si applicano con cambiamento della clip selezionata</value>
   </data>
   <data name="wordWrapToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>214, 22</value>
   </data>
   <data name="usedDataGridViewCheckBoxColumn.HeaderText" xml:space="preserve">
-    <value>Usado</value>
+    <value>Utilizzato</value>
   </data>
   <data name="comboBoxFilter.Location" xml:space="preserve" type="System.Drawing.Point, System.Drawing">
     <value>159, 395</value>
   </data>
   <data name="toolStripButtonFindPrevious.ToolTipText" xml:space="preserve">
-    <value>Anterior para corresponderem em texto clip (SHIFT + F3)</value>
+    <value>Trovare previuos corrispondono nel testo clip (MAIUSC + F3)</value>
   </data>
   <data name="toolStripMenuItem10.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>211, 22</value>
@@ -1500,13 +1500,13 @@ Alterações no arquivo temp não estão sincronizadas com o clipe!</value>
     <value>Zoom</value>
   </data>
   <data name="toolStripMenuItemSearchCaseSensitive.Text" xml:space="preserve">
-    <value>Maiusculas e minúsculas</value>
+    <value>Maiuscole/minuscole</value>
   </data>
   <data name="notifyIcon.Text" xml:space="preserve">
-    <value>Clip-anjo</value>
+    <value>Angelo di clip</value>
   </data>
   <data name="nextMatchToolStripMenuItem.ToolTipText" xml:space="preserve">
-    <value>Encontrar o próximo jogo no texto clip (F3)</value>
+    <value>Trovare la corrispondenza successiva nel testo clip (F3)</value>
   </data>
   <data name="ColumnTitle.HeaderText" xml:space="preserve">
     <value>ColumnTitle</value>
@@ -1515,16 +1515,16 @@ Alterações no arquivo temp não estão sincronizadas com o clipe!</value>
     <value>18</value>
   </data>
   <data name="toolStripApplicationCopyAll.Text" xml:space="preserve">
-    <value>Copiar todo o texto</value>
+    <value>Copiare tutto il testo</value>
   </data>
   <data name="toolStripButtonClearFilterAndSelectTop.ToolTipText" xml:space="preserve">
-    <value>Limpar filtros e seleсt top (F9)</value>
+    <value>Cancella filtri e seleсt top (F9)</value>
   </data>
   <data name="listToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>37, 20</value>
   </data>
   <data name="toolStripMenuItemCompareLastClips.Text" xml:space="preserve">
-    <value>Compare os últimos clipes</value>
+    <value>Confronta le ultime clip</value>
   </data>
   <data name="copyToolStripMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+C</value>
@@ -1533,10 +1533,10 @@ Alterações no arquivo temp não estão sincronizadas com o clipe!</value>
     <value>Ctrl+2</value>
   </data>
   <data name="toolStripMenuItem10.Text" xml:space="preserve">
-    <value>Comparação de texto</value>
+    <value>Confrontare testo</value>
   </data>
   <data name="toolStripMenuItemClearFilters.Text" xml:space="preserve">
-    <value>Limpar filtros</value>
+    <value>Cancella filtri</value>
   </data>
   <data name="pictureBoxSource.ImeMode" xml:space="preserve" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -1554,25 +1554,25 @@ Alterações no arquivo temp não estão sincronizadas com o clipe!</value>
     <value>F4</value>
   </data>
   <data name="toolStripMenuItem2.ToolTipText" xml:space="preserve">
-    <value>Colar em clipes de janela ativo selecionada. Também realizada por duplo clique.</value>
+    <value>Incollare clip attiva finestra selezionata. Eseguita anche con un doppio click.</value>
   </data>
   <data name="toolStripBottom.Location" xml:space="preserve" type="System.Drawing.Point, System.Drawing">
     <value>269, 395</value>
   </data>
   <data name="favoriteDataGridViewCheckBoxColumn.HeaderText" xml:space="preserve">
-    <value>Favorito</value>
+    <value>Preferito</value>
   </data>
   <data name="translateToolStripMenuItem.Text" xml:space="preserve">
-    <value>Traduzir Texto</value>
+    <value>Traduci testo</value>
   </data>
   <data name="toolStripMenuItem1.Text" xml:space="preserve">
-    <value>Saída</value>
+    <value>Esci</value>
   </data>
   <data name="tableLayoutPanelData.ColumnCount" xml:space="preserve" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
   <data name="previousMatchToolStripMenuItem.ToolTipText" xml:space="preserve">
-    <value>Anterior para corresponderem em texto clip (SHIFT + F3)</value>
+    <value>Trovare previuos corrispondono nel testo clip (MAIUSC + F3)</value>
   </data>
   <data name="setFavouriteToolStripMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Alt+Q</value>
@@ -1590,7 +1590,7 @@ Alterações no arquivo temp não estão sincronizadas com o clipe!</value>
     <value>187, 22</value>
   </data>
   <data name="pictureBoxSource.ToolTip" xml:space="preserve">
-    <value>Ícone do aplicativo que foi copiado clip</value>
+    <value>Icona dell'applicazione che è stato copiato clip</value>
   </data>
   <data name="resetFavouriteToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>214, 22</value>
@@ -1599,32 +1599,32 @@ Alterações no arquivo temp não estão sincronizadas com o clipe!</value>
     <value>23, 22</value>
   </data>
   <data name="moveDownToolStripMenuItem.Text" xml:space="preserve">
-    <value>Mover para baixo</value>
+    <value>Sposta giù</value>
   </data>
   <data name="TypeFilter.Font" xml:space="preserve" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 9pt</value>
   </data>
   <data name="MarkFilter.ToolTip" xml:space="preserve">
-    <value>Mostre somente clipes desta marca. 
-o submenu "Lista" tem comandos para seleção rápida</value>
+    <value>Visualizza solo i clip di questo segna. 
+Sottomenu "Elenco" dispone di comandi per la selezione rapida</value>
   </data>
   <data name="helpToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>178, 22</value>
   </data>
   <data name="htmlMenuItemOpenLink.Text" xml:space="preserve">
-    <value>Abrir link (ALT + clique)</value>
+    <value>Apri il link (ALT + clic)</value>
   </data>
   <data name="toolStripMenuItem11.Text" xml:space="preserve">
-    <value>Arquivo aberto clip</value>
+    <value>File Apri clip</value>
   </data>
   <data name="toolStripMenuItem8.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>214, 22</value>
   </data>
   <data name="moveTopToolStripMenuItem.ToolTipText" xml:space="preserve">
-    <value>Mover o clipe atual para o topo</value>
+    <value>Spostare clip corrente verso l'alto</value>
   </data>
   <data name="copyToClipboardToolStripMenuItem.ToolTipText" xml:space="preserve">
-    <value>Clipe atual de copiar para área de transferência</value>
+    <value>Clip corrente copia negli Appunti</value>
   </data>
   <data name="htmlMenuItemCopyLinkAdress.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>209, 22</value>
@@ -1636,7 +1636,7 @@ o submenu "Lista" tem comandos para seleção rápida</value>
     <value></value>
   </data>
   <data name="toolStripMenuItem6.Text" xml:space="preserve">
-    <value>Colar o texto (CTRL + ENTER)</value>
+    <value>Incollare il testo (CTRL + ENTER)</value>
   </data>
   <data name="moveUpToolStripMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+Up</value>
@@ -1669,13 +1669,13 @@ o submenu "Lista" tem comandos para seleção rápida</value>
     <value></value>
   </data>
   <data name="toolStripMenuItemSwitchFocus.Text" xml:space="preserve">
-    <value>Alternar foco lista/texto</value>
+    <value>Interruttore focus elenco/testo</value>
   </data>
   <data name="pictureBoxSource.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
   <data name="setFavouriteToolStripMenuItem.ToolTipText" xml:space="preserve">
-    <value>Marca selecionada clipes como favorito</value>
+    <value>Segna il clip selezionato come preferito</value>
   </data>
   <data name="richTextBox.Text" xml:space="preserve">
     <value></value>
@@ -1696,7 +1696,7 @@ o submenu "Lista" tem comandos para seleção rápida</value>
     <value>False</value>
   </data>
   <data name="toolStripButtonWordWrap.Text" xml:space="preserve">
-    <value>Quebra de linha</value>
+    <value>Ritorno a capo automatico</value>
   </data>
   <data name="richTextBox.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
     <value>2</value>
@@ -1708,7 +1708,7 @@ o submenu "Lista" tem comandos para seleção rápida</value>
     <value>TypeImg</value>
   </data>
   <data name="toolStripMenuItem15.Text" xml:space="preserve">
-    <value>Colar o texto (CTRL + ENTER)</value>
+    <value>Incollare il testo (CTRL + ENTER)</value>
   </data>
   <data name="splitContainer1.Panel1.ToolTip" xml:space="preserve">
     <value></value>
@@ -1729,28 +1729,28 @@ o submenu "Lista" tem comandos para seleção rápida</value>
     <value>23, 22</value>
   </data>
   <data name="sendPasteToolStripMenuItem.Text" xml:space="preserve">
-    <value>Colar original (ENTER)</value>
+    <value>Pasta originale (invio)</value>
   </data>
   <data name="exitToolStripMenuItem.ToolTipText" xml:space="preserve">
-    <value>Sair do programa</value>
+    <value>Uscire dal programma</value>
   </data>
   <data name="toolStripMenuItem8.Text" xml:space="preserve">
-    <value>Excluir</value>
+    <value>Elimina</value>
   </data>
   <data name="resetFavouriteToolStripMenuItem.Text" xml:space="preserve">
-    <value>Desmarcar como favorito</value>
+    <value>Deseleziona come preferito</value>
   </data>
   <data name="exitToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>212, 22</value>
   </data>
   <data name="buttonUpdate.Text" xml:space="preserve">
-    <value>Atualizar para</value>
+    <value>Aggiornamento a</value>
   </data>
   <data name="TypeImage.Width" xml:space="preserve" type="System.Int32, mscorlib">
     <value>17</value>
   </data>
   <data name="toolStripMenuItemClearFilterAndSelectTop.Text" xml:space="preserve">
-    <value>Limpar filtros e selecione top</value>
+    <value>Pulisci i campi e selezionare top</value>
   </data>
   <data name="aboutToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>52, 20</value>
@@ -1759,7 +1759,7 @@ o submenu "Lista" tem comandos para seleção rápida</value>
     <value></value>
   </data>
   <data name="uploadImageToWebToolStripMenuItem.Text" xml:space="preserve">
-    <value>Upload de imagem para web</value>
+    <value>Caricare immagine web</value>
   </data>
   <data name="urlTextBox.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
     <value>11</value>
@@ -1786,7 +1786,7 @@ o submenu "Lista" tem comandos para seleção rápida</value>
     <value>78, 23</value>
   </data>
   <data name="pasteAsTextToolStripMenuItem.Text" xml:space="preserve">
-    <value>Colar o texto (CTRL + ENTER)</value>
+    <value>Incollare il testo (CTRL + INVIO)</value>
   </data>
   <data name="toolStripButtonFindNext.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>23, 22</value>
@@ -2339,7 +2339,7 @@ o submenu "Lista" tem comandos para seleção rápida</value>
     <value>178, 22</value>
   </data>
   <data name="toolStripMenuItem14.ToolTipText" xml:space="preserve">
-    <value>Marca selecionada clipes como favorito</value>
+    <value>Segna il clip selezionato come preferito</value>
   </data>
   <data name="contextMenuStripDataGrid.ToolTip" xml:space="preserve">
     <value></value>
@@ -2351,7 +2351,7 @@ o submenu "Lista" tem comandos para seleção rápida</value>
     <value>0, 398</value>
   </data>
   <data name="aboutToolStripMenuItem1.Text" xml:space="preserve">
-    <value>Sobre</value>
+    <value>Informazioni su</value>
   </data>
   <data name="toolStripBottom.ToolTip" xml:space="preserve">
     <value></value>
@@ -2360,13 +2360,13 @@ o submenu "Lista" tem comandos para seleção rápida</value>
     <value>Magenta</value>
   </data>
   <data name="clipToolStripMenuItem.Text" xml:space="preserve">
-    <value>Recortar</value>
+    <value>Ritaglia</value>
   </data>
   <data name="htmlTextBox.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>406, 92</value>
   </data>
   <data name="toolStripMenuItem2.Text" xml:space="preserve">
-    <value>Colar (entrar)</value>
+    <value>Incolla (entrare)</value>
   </data>
   <data name="toolStripSearchOptions.Text" xml:space="preserve">
     <value>toolStripDropDownButton1</value>
@@ -2375,7 +2375,7 @@ o submenu "Lista" tem comandos para seleção rápida</value>
     <value>2, 2</value>
   </data>
   <data name="changeClipTitleToolStripMenuItem.Text" xml:space="preserve">
-    <value>Editar título</value>
+    <value>Modificare il titolo</value>
   </data>
   <data name="buttonUpdate.Image" xml:space="preserve" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2393,13 +2393,13 @@ o submenu "Lista" tem comandos para seleção rápida</value>
 </value>
   </data>
   <data name="checkUpdateToolStripMenuItem.ToolTipText" xml:space="preserve">
-    <value>Confira atualização é chamada cada início e então todos os dias. Este comando permite chamá-lo agora.</value>
+    <value>Verifica aggiornamento viene chiamato ogni inizio e poi ogni giorno. Questo comando permette di chiamarlo in questo momento.</value>
   </data>
   <data name="exitToolStripMenuItem1.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>187, 22</value>
   </data>
   <data name="toolStripMenuItem4.Text" xml:space="preserve">
-    <value>Excluir</value>
+    <value>Elimina</value>
   </data>
   <data name="contextMenuStripNotifyIcon.ToolTip" xml:space="preserve">
     <value></value>
@@ -2408,7 +2408,7 @@ o submenu "Lista" tem comandos para seleção rápida</value>
     <value>329, 3</value>
   </data>
   <data name="toolStripMenuItemSearchWordsIndependently.Text" xml:space="preserve">
-    <value>Palavras independentes</value>
+    <value>Parole indipendenti</value>
   </data>
   <data name="toolStripButtonFindNext.ImageTransparentColor" xml:space="preserve" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
@@ -2429,7 +2429,7 @@ o submenu "Lista" tem comandos para seleção rápida</value>
     <value>Segoe UI, 9pt</value>
   </data>
   <data name="deleteAllNonFavoriteToolStripMenuItem.Text" xml:space="preserve">
-    <value>Apagar tudo não favorito</value>
+    <value>Eliminare tutti i non preferito</value>
   </data>
   <data name="ImageControl.ToolTip" xml:space="preserve">
     <value></value>
@@ -2444,20 +2444,20 @@ o submenu "Lista" tem comandos para seleção rápida</value>
     <value>209, 22</value>
   </data>
   <data name="comboBoxFilter.ToolTip" xml:space="preserve">
-    <value>Filtro quente para texto de clip. Lista e este filtro compartilha entrada chave. 
-Editar Filtro direita da lista. Navegue na direita lista de filtro.</value>
+    <value>Filtro caldo per testo clip. Elenco e questo filtro condivide ingresso chiave. 
+Modifica filtro fin dall'elenco. Navigare nella lista di destra dal filtro.</value>
   </data>
   <data name="listToolStripMenuItem.Text" xml:space="preserve">
-    <value>Lista</value>
+    <value>Elenco</value>
   </data>
   <data name="splitContainer1.ToolTip" xml:space="preserve">
     <value></value>
   </data>
   <data name="resetFavouriteToolStripMenuItem.ToolTipText" xml:space="preserve">
-    <value>Desmarcar o clipes selecionados como favorito</value>
+    <value>Deseleziona i clip selezionati come Preferiti</value>
   </data>
   <data name="fileToolStripMenuItem.Text" xml:space="preserve">
-    <value>Arquivo</value>
+    <value>File</value>
   </data>
   <data name="VisualWeight.MinimumWidth" xml:space="preserve" type="System.Int32, mscorlib">
     <value>9</value>
@@ -2466,10 +2466,10 @@ Editar Filtro direita da lista. Navegue na direita lista de filtro.</value>
     <value></value>
   </data>
   <data name="stripLabelPosition.ToolTipText" xml:space="preserve">
-    <value>Posição de texto  &lt;offset&gt; (&lt;line&gt;:&lt;column&gt;): &lt;length&gt; </value>
+    <value>Posizione testo  &lt;offset&gt; (&lt;line&gt;:&lt;column&gt;): &lt;length&gt; </value>
   </data>
   <data name="toolStripMenuItemCompareLastClips.ToolTipText" xml:space="preserve">
-    <value>Comparar o texto dos últimos clipes</value>
+    <value>Confrontare il testo dell'ultima clip</value>
   </data>
   <data name="windowAlwaysOnTopToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>212, 22</value>
@@ -2499,14 +2499,14 @@ Editar Filtro direita da lista. Navegue na direita lista de filtro.</value>
     <value></value>
   </data>
   <data name="toolStripMenuItem6.ToolTipText" xml:space="preserve">
-    <value>Colar na janela ativa como texto sem formatação de texto selecionado do texto clip ou agregado de clipes selecionados. 
+    <value>Incollare nella finestra attiva come testo normale selezionato testo testo clip o agregated delle clip selezionate. 
 </value>
   </data>
   <data name="toolStripMenuItemEditClipText.ToolTipText" xml:space="preserve">
-    <value>Editar texto de clip como texto sem formatação (F4)</value>
+    <value>Modificare clip testo come testo normale (F4)</value>
   </data>
   <data name="showOnlyFavoriteToolStripMenuItem.Text" xml:space="preserve">
-    <value>Mostrar apenas favoritos</value>
+    <value>Visualizza preferito solo</value>
   </data>
   <data name="nextMatchToolStripMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>F3</value>
@@ -2521,7 +2521,7 @@ Editar Filtro direita da lista. Navegue na direita lista de filtro.</value>
     <value>Top, Bottom, Left, Right</value>
   </data>
   <data name="toolStripMenuItem15.ToolTipText" xml:space="preserve">
-    <value>Colar na janela ativa como texto sem formatação de texto selecionado do texto clip ou agregado de clipes selecionados. 
+    <value>Incollare nella finestra attiva come testo normale selezionato testo testo clip o agregated delle clip selezionate. 
 </value>
   </data>
   <data name="MarkFilter.Items3" xml:space="preserve">
@@ -2531,10 +2531,10 @@ Editar Filtro direita da lista. Navegue na direita lista de filtro.</value>
     <value>139, 22</value>
   </data>
   <data name="MarkFilter.Items1" xml:space="preserve">
-    <value>texto</value>
+    <value>testo</value>
   </data>
   <data name="exitToolStripMenuItem1.Text" xml:space="preserve">
-    <value>Saída</value>
+    <value>Esci</value>
   </data>
   <data name="trayMenuItemMonitoringClipboard.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>187, 22</value>
@@ -2543,13 +2543,13 @@ Editar Filtro direita da lista. Navegue na direita lista de filtro.</value>
     <value>False</value>
   </data>
   <data name="buttonUpdate.ToolTipText" xml:space="preserve">
-    <value>Programa de atualização para nova versão</value>
+    <value>Programma di aggiornamento alla nuova versione</value>
   </data>
   <data name="TypeFilter.Items1" xml:space="preserve">
-    <value>texto</value>
+    <value>testo</value>
   </data>
   <data name="TypeFilter.Items2" xml:space="preserve">
-    <value>arquivo</value>
+    <value>file</value>
   </data>
   <data name="TypeFilter.Items3" xml:space="preserve">
     <value>img</value>
@@ -2570,10 +2570,10 @@ Editar Filtro direita da lista. Navegue na direita lista de filtro.</value>
     <value>No</value>
   </data>
   <data name="openFavoritesToolStripMenuItem.Text" xml:space="preserve">
-    <value>Clipes favoritos abertos</value>
+    <value>Open clip preferiti</value>
   </data>
   <data name="trayMenuItemMonitoringClipboard.Text" xml:space="preserve">
-    <value>Monitoramento da área de transferência</value>
+    <value>Appunti di monitoraggio</value>
   </data>
   <data name="TypeFilter.Anchor" xml:space="preserve" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
@@ -2582,7 +2582,7 @@ Editar Filtro direita da lista. Navegue na direita lista de filtro.</value>
     <value>790, 420</value>
   </data>
   <data name="toolStripButtonTextFormatting.Text" xml:space="preserve">
-    <value>Nativo de formatação</value>
+    <value>Nativo di formattazione</value>
   </data>
   <data name="comboBoxFilter.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>110, 23</value>
@@ -2597,20 +2597,20 @@ Editar Filtro direita da lista. Navegue na direita lista de filtro.</value>
     <value>211, 22</value>
   </data>
   <data name="textFormattingToolStripMenuItem.Text" xml:space="preserve">
-    <value>Nativo de formatação</value>
+    <value>Nativo di formattazione</value>
   </data>
   <data name="TypeImage.HeaderText" xml:space="preserve">
     <value>TypeImg</value>
   </data>
   <data name="сдуфкClipboardToolStripMenuItem.Text" xml:space="preserve">
-    <value>Limpar área de transferência</value>
+    <value>Cancella Appunti</value>
   </data>
   <data name="settingsToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>61, 20</value>
   </data>
   <data name="ignoreApplicationInCaptureToolStripMenuItem.ToolTipText" xml:space="preserve">
-    <value>Ignore a aplicação na captura de clipe. Aplicativo será 
-adicionado à lista de ignorar, pode ser editado no janela de configurações.</value>
+    <value>Ignorare l'applicazione nell'acquisizione di clip. Applicazione sarà 
+aggiunto alla lista ignora, possa essere modificati nella finestra delle impostazioni.</value>
   </data>
   <data name="toolStripButtonOpenWith.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>23, 22</value>
@@ -2643,7 +2643,7 @@ adicionado à lista de ignorar, pode ser editado no janela de configurações.</
     <value>250, 22</value>
   </data>
   <data name="toolStripMenuItemMonitoringClipboard.ToolTipText" xml:space="preserve">
-    <value>Capturar as alterações na área de transferência</value>
+    <value>Acquisire le modifiche negli Appunti</value>
   </data>
   <data name="imageSampleDataGridViewImageColumn.HeaderText" xml:space="preserve">
     <value>ImageSample</value>
@@ -2652,40 +2652,40 @@ adicionado à lista de ignorar, pode ser editado no janela de configurações.</
     <value>None</value>
   </data>
   <data name="toolStripButtonFindNext.ToolTipText" xml:space="preserve">
-    <value>Encontrar o próximo jogo no texto clip (F3)</value>
+    <value>Trovare la corrispondenza successiva nel testo clip (F3)</value>
   </data>
   <data name="toolStripButtonMonospacedFont.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>23, 22</value>
   </data>
   <data name="toolStripMenuItem3.Text" xml:space="preserve">
-    <value>Colar o texto (CTRL + ENTER)</value>
+    <value>Incollare il testo (CTRL + INVIO)</value>
   </data>
   <data name="pictureBoxSource.SizeMode" xml:space="preserve" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>CenterImage</value>
   </data>
   <data name="htmlMenuItemSelectAll.Text" xml:space="preserve">
-    <value>Selecionar todos</value>
+    <value>Seleziona tutti</value>
   </data>
   <data name="moveCopiedClipToTopToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>250, 22</value>
   </data>
   <data name="helpToolStripMenuItem.Text" xml:space="preserve">
-    <value>Ajuda</value>
+    <value>?</value>
   </data>
   <data name="mergeTextOfClipsToolStripMenuItem.ToolTipText" xml:space="preserve">
-    <value>Junte-se a texto de clipes selecionados em novo clipe e selecioná-lo</value>
+    <value>Unire testo delle clip selezionate in nuova clip e selezionarlo</value>
   </data>
   <data name="translateToolStripMenuItem.ToolTipText" xml:space="preserve">
-    <value>Traduzir texto clip ou sua parte selecionada</value>
+    <value>Tradurre testo clip o sua parte selezionata</value>
   </data>
   <data name="toolStripButtonOpenWith.ImageTransparentColor" xml:space="preserve" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
   </data>
   <data name="CreatedDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
-    <value>Criado</value>
+    <value>Creato</value>
   </data>
   <data name="wordWrapToolStripMenuItem.Text" xml:space="preserve">
-    <value>Quebra de linha</value>
+    <value>Ritorno a capo automatico</value>
   </data>
   <data name="textFormattingToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>214, 22</value>
@@ -2697,7 +2697,7 @@ adicionado à lista de ignorar, pode ser editado no janela de configurações.</
     <value>ID</value>
   </data>
   <data name="toolStripMenuItem16.Text" xml:space="preserve">
-    <value>Abrir arquivo</value>
+    <value>Apri file</value>
   </data>
   <data name="toolStripButtonWordWrap.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>23, 22</value>
@@ -2706,7 +2706,7 @@ adicionado à lista de ignorar, pode ser editado no janela de configurações.</
     <value>408, 22</value>
   </data>
   <data name="aboutToolStripMenuItem.Text" xml:space="preserve">
-    <value>Sobre</value>
+    <value>Informazioni su</value>
   </data>
   <metadata name="ImageSample.UserAddedColumn" xml:space="preserve" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

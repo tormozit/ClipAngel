@@ -628,7 +628,7 @@ namespace ClipAngel
     class VisibleUserSettings : GlobalizedObject
     {
         public Form Owner;
-        public static List<string> langList = new List<string> { "Default", "English", "Russian", "Polish", "Spain", "German", "Portuguese-Brazil" };
+        public static List<string> langList = new List<string> { "Default", "Chinese", "English", "German", "Italian", "Polish", "Portuguese-Brazil", "Russian", "Spain" };
         public VisibleUserSettings(Main Owner)
         {
             this.Owner = Owner;

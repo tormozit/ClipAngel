@@ -1,0 +1,275 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AutoCheckUpdate" xml:space="preserve">
+    <value>AutoCheck für Programm-update</value>
+  </data>
+  <data name="AutoCheckUpdateDescription" xml:space="preserve">
+    <value>AutoCheck für Update auf Programmstart und jeden Tag</value>
+  </data>
+  <data name="AutoSelectMatch" xml:space="preserve">
+    <value>AutoSelect-Hinspiel</value>
+  </data>
+  <data name="AutoSelectMatchDescription" xml:space="preserve">
+    <value>Autoselection der ersten Übereinstimmung des Filters im Clip Text. </value>
+  </data>
+  <data name="Autostart" xml:space="preserve">
+    <value>Autostart Programm auf Benutzeranmeldung</value>
+  </data>
+  <data name="AutostartDescription" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="AutostartPath" xml:space="preserve">
+    <value>Anwendung Autostart-Befehlszeile</value>
+  </data>
+  <data name="AutostartPathDescription" xml:space="preserve">
+    <value>Klicken Sie auf OK, um diesen Befehl Start Strombahn aktualisieren</value>
+  </data>
+  <data name="ClearFiltersOnClose" xml:space="preserve">
+    <value>Klare Filter auf Haupt-Fenster schließen</value>
+  </data>
+  <data name="ClearFiltersOnCloseDescription" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="ClipListSimpleDraw" xml:space="preserve">
+    <value>Schnelle und einfache Liste Unentschieden</value>
+  </data>
+  <data name="ClipListSimpleDrawDescription" xml:space="preserve">
+    <value>Clip-Liste wird schnell ohne Hervorhebung Filter Spiele und Bild Proben gezeichnet werden</value>
+  </data>
+  <data name="ClipTempFileFolder" xml:space="preserve">
+    <value>Ordner für temporäre Clipdateien</value>
+  </data>
+  <data name="ClipTempFileFolderDescription" xml:space="preserve">
+    <value>Ordner zum Speichern von temporären Dateien des Clips. Verwenden Sie Standard-temp-Ordner leer lassen. In der Regel kann im portablen Modus nützlich sein.</value>
+  </data>
+  <data name="CopyTextInAnyWindowOnCTRLF3" xml:space="preserve">
+    <value>Kopieren Sie Text aus jedem Fenster von Control + F3</value>
+  </data>
+  <data name="CopyTextInAnyWindowOnCTRLF3Description" xml:space="preserve">
+    <value>Kopieren Sie markierten Text aus jedem Fenster, wenn Kontrolle + F3 gedrückt wird. Dieser Hotkey wird in der Regel in Text-Editoren verwendet, um ausgewählte Zeichenfolge zu suchen. 
+Taste drücken wird am Fenster verarbeitet werden. </value>
+  </data>
+  <data name="CurrentPath" xml:space="preserve">
+    <value>Anwendung aktueller Startpfad</value>
+  </data>
+  <data name="DatabaseSize" xml:space="preserve">
+    <value>Datenbankgröße MB</value>
+  </data>
+  <data name="DatabaseSizeDescription" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="DefaultFont" xml:space="preserve">
+    <value>Standard-Schriftart</value>
+  </data>
+  <data name="DefaultFontDescription" xml:space="preserve">
+    <value>Schriftart für Clip-Liste und Standard für Clip-Text. Doppelklicken Sie, um es zu ändern.</value>
+  </data>
+  <data name="FastWindowOpen" xml:space="preserve">
+    <value>Schnell Fenster geöffnet</value>
+  </data>
+  <data name="FastWindowOpenDescription" xml:space="preserve">
+    <value>Schnell Fenster öffnen mit einigen Tricks. Führen zu einige kleinere Probleme im Fenster öffnen/schließen.</value>
+  </data>
+  <data name="GlobalHotkeyCompareLastClips" xml:space="preserve">
+    <value>Hotkey zum letzten Clips vergleichen</value>
+  </data>
+  <data name="GlobalHotkeyCompareLastClipsDescription" xml:space="preserve">
+    <value>Verwenden Sie diese Tastenkombination in einem beliebigen Programm Anwendung für den Vergleich der letzten 2 Clips starten</value>
+  </data>
+  <data name="GlobalHotkeyIncrementalPaste" xml:space="preserve">
+    <value>Hotkey zu inkrementellen einfügen</value>
+  </data>
+  <data name="GlobalHotkeyIncrementalPasteDescription" xml:space="preserve">
+    <value>Verwenden Sie diese Tastenkombination in jedem Programm, um aktuelle Clip Clip Angel Liste einfügen und wählen nächsten Clip, der im Fach Tooltip angezeigt werden</value>
+  </data>
+  <data name="GlobalHotkeyOpenCurrent" xml:space="preserve">
+    <value>Tastenkombination um Fenster zu öffnen, ohne Änderungen</value>
+  </data>
+  <data name="GlobalHotkeyOpenCurrentDescription" xml:space="preserve">
+    <value>Verwenden Sie diese Tastenkombination in einem beliebigen Programm Clip Engel Fenster ohne Änderungen im Filter und Clip-Auswahl zu öffnen. Drücken Sie erneut, um das Fenster zu schließen.</value>
+  </data>
+  <data name="GlobalHotkeyOpenFavorites" xml:space="preserve">
+    <value>Tastenkombination um Fenster mit Favoriten öffnen</value>
+  </data>
+  <data name="GlobalHotkeyOpenFavoritesDescription" xml:space="preserve">
+    <value>Verwenden Sie diese Tastenkombination in einem beliebigen Programm Clip Engel Fenster mit Favoriten nur Filter anzeigen. Drücken Sie erneut, um das Fenster zu schließen.</value>
+  </data>
+  <data name="GlobalHotkeyOpenLast" xml:space="preserve">
+    <value>Tastenkombination um Fenster mit reset</value>
+  </data>
+  <data name="GlobalHotkeyOpenLastDescription" xml:space="preserve">
+    <value>Verwenden Sie diese Tastenkombination in einem beliebigen Programm Clip Engel Fenster öffnen, löschen Sie Filter und wählen letzten aufgenommenen Clips. Drücken Sie erneut, um das Fenster zu schließen.</value>
+  </data>
+  <data name="GlobalHotkeyPasteText" xml:space="preserve">
+    <value>Hotkey zum nur-Text Einfügen</value>
+  </data>
+  <data name="GlobalHotkeyPasteTextDescription" xml:space="preserve">
+    <value>Verwenden Sie diese Tastenkombination in einem beliebigen Programm letzten aufgenommenen Clips als unformatierten Text Einfügen</value>
+  </data>
+  <data name="HistoryDepthDays" xml:space="preserve">
+    <value>Geschichte Tiefe Tage</value>
+  </data>
+  <data name="HistoryDepthDaysDescription" xml:space="preserve">
+    <value>Maximale Anzahl von Tagen, die nicht Lieblings-Clips gespeichert sind. Löschung ist auf der Startseite täglich ausgeführt, auf Einstellungen gelten. 0 - löschen nicht.</value>
+  </data>
+  <data name="HistoryDepthNumber" xml:space="preserve">
+    <value>Geschichte Tiefe Anzahl</value>
+  </data>
+  <data name="HistoryDepthNumberDescription" xml:space="preserve">
+    <value>Maximale Anzahl von gespeicherten nicht Lieblings-Clips. Löschung ist auf der Startseite täglich ausgeführt, auf Einstellungen gelten. 0 - löschen nicht.</value>
+  </data>
+  <data name="HtmlEditor" xml:space="preserve">
+    <value>HTML-Datei-Editor-Anwendung</value>
+  </data>
+  <data name="HtmlEditorDescription" xml:space="preserve">
+    <value>Im "Datei öffnen" Befehl verwendet für Clip. Lassen Sie leer, um OS Standardanwendung bearbeiten HTML-Dateien verwenden.</value>
+  </data>
+  <data name="IgnoreApplicationsClipCapture" xml:space="preserve">
+    <value>Ignorierte Anwendungen in Clip-capture</value>
+  </data>
+  <data name="IgnoreApplicationsClipCaptureDescription" xml:space="preserve">
+    <value>Erfassen Sie Clips aus dieser Anwendungen nicht</value>
+  </data>
+  <data name="IgnoreExclusiveFormatClipCapture" xml:space="preserve">
+    <value>Erfassen Sie nicht "Zwischenablage-Viewer ignorieren" format</value>
+  </data>
+  <data name="IgnoreExclusiveFormatClipCaptureDescription" xml:space="preserve">
+    <value>Clip mit "Zwischenablage-Viewer ignorieren" Format vorliegenden nicht aufnehmen. Dieses Format wird in der Regel durch Passwort-Manager verwendet, wenn Passwörter in die Zwischenablage zu kopieren. Manchmal kann es nützlich es temporär ausgeschaltet sein.</value>
+  </data>
+  <data name="ImageEditor" xml:space="preserve">
+    <value>Bild (PNG) Datei-Editor-Anwendung</value>
+  </data>
+  <data name="ImageEditorDescription" xml:space="preserve">
+    <value>Im "Datei öffnen" Befehl verwendet für Clip. Verwenden Sie Standard-OS-Anwendung für bearbeiten Bild (PNG) Dateien leer lassen.</value>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>Sprache</value>
+  </data>
+  <data name="LanguageDescription" xml:space="preserve">
+    <value>Sprache der Benutzeroberfläche</value>
+  </data>
+  <data name="MaxClipSizeKB" xml:space="preserve">
+    <value>Max-Clip-Größe KB</value>
+  </data>
+  <data name="MaxClipSizeKBDescription" xml:space="preserve">
+    <value>Clips mehr dieser Größe nicht erfasst werden</value>
+  </data>
+  <data name="MonospacedFont" xml:space="preserve">
+    <value>Monospaced Schrift</value>
+  </data>
+  <data name="MonospacedFontDescription" xml:space="preserve">
+    <value>Monospaced Schrift im Textfeld "Clip". 
+Könnte von RTF-Formatierung native überladen werden. 
+Nicht montiert, die HTML-Formatierung native.</value>
+  </data>
+  <data name="MoveCopiedClipToTop" xml:space="preserve">
+    <value>Kopierte Liste Clip nach oben verschieben</value>
+  </data>
+  <data name="MoveCopiedClipToTopDescription" xml:space="preserve">
+    <value>Zum Anfang der Liste verschieben Sie kopierte Liste oder vollständig eingefügten clip</value>
+  </data>
+  <data name="NumberOfClips" xml:space="preserve">
+    <value>Anzahl der clips</value>
+  </data>
+  <data name="NumberOfClipsDescription" xml:space="preserve">
+    <value>Aktuelle Anzahl der Clips in Datenbank</value>
+  </data>
+  <data name="RestoreCaretPositionOnFocusReturn" xml:space="preserve">
+    <value>Position der Einfügemarke auf Fokus zurück wiederherstellen</value>
+  </data>
+  <data name="RestoreCaretPositionOnFocusReturnDescription" xml:space="preserve">
+    <value>Aktivieren Sie dies versuchen, Caret-Position wiederherzustellen, nachdem Fokus an Zielfenster zurückgegeben wird. Dies ist nützlich für Textboxen die gesamten Text auswählen nach verlieren Fokus</value>
+  </data>
+  <data name="RtfEditor" xml:space="preserve">
+    <value>RTF-Datei-Editor-Anwendung</value>
+  </data>
+  <data name="RtfEditorDescription" xml:space="preserve">
+    <value>Im "Datei öffnen" Befehl verwendet für Clip. Verwenden Sie Standard-OS-Anwendung für RTF-Dateien bearbeiten leer lassen.</value>
+  </data>
+  <data name="SearchCaseSensitive" xml:space="preserve">
+    <value>Suche Groß-/Kleinschreibung</value>
+  </data>
+  <data name="SearchCaseSensitiveDescription" xml:space="preserve">
+    <value>Der Suchfilter ist Groß-/Kleinschreibung beachtet. Zum Beispiel wird "Topf" "Kartoffel", aber nicht "Kartoffel" entsprechen. </value>
+  </data>
+  <data name="SearchWildcards" xml:space="preserve">
+    <value>Suche "%" als jeder Char-Sequenz</value>
+  </data>
+  <data name="SearchWildcardsDescription" xml:space="preserve">
+    <value>Suche Zeichen "%" von Filter als jeder Char-Sequenz. Filter "po %o" wird beispielsweise "Kartoffel" entsprechen. </value>
+  </data>
+  <data name="SearchWordsIndependently" xml:space="preserve">
+    <value>Unabhängige Suchbegriffe</value>
+  </data>
+  <data name="SearchWordsIndependentlyDescription" xml:space="preserve">
+    <value>Suchen Sie jedes Wort von Filter unabhängig. Z. B. wird "Topf Web" match "unserer Website Kartoffel" verkauft". </value>
+  </data>
+  <data name="ShowApplicationIconColumn" xml:space="preserve">
+    <value>Show-Clip Spalte "Quelle-Symbol"</value>
+  </data>
+  <data name="ShowApplicationIconColumnDescription" xml:space="preserve">
+    <value>Anzeigen-Spalte mit Symbol aus Anwendung dem Clip kopiert wurden.</value>
+  </data>
+  <data name="ShowNativeTextFormatting" xml:space="preserve">
+    <value>Native-Text-Formatierung anzeigen</value>
+  </data>
+  <data name="ShowNativeTextFormattingDescription" xml:space="preserve">
+    <value>Zeigen Sie native Textformatierung für RTF und HTML-Clips (CLTR + N)</value>
+  </data>
+  <data name="ShowSizeColumn" xml:space="preserve">
+    <value>Visuelle Clip Gewichtungsspalte anzeigen</value>
+  </data>
+  <data name="ShowSizeColumnDescription" xml:space="preserve">
+    <value>Spalte wird visuelle Gewicht (Anzahl der Ziffern in der visuellen Größe) des Clips angezeigt.</value>
+  </data>
+  <data name="TextCompareApplication" xml:space="preserve">
+    <value>Textvergleich Anwendung</value>
+  </data>
+  <data name="TextCompareApplicationDescription" xml:space="preserve">
+    <value>Lassen Sie automatische Suche Anwendung, die sucht nach Beyond Compare, ExamDiff Pro, 
+, WinMerge, Araxis Merge, DiffMerge Kdiff3 leer. Textbefehl vergleichen ist % Anwendung % %c Datei1 % %c Datei2 %</value>
+  </data>
+  <data name="TextEditor" xml:space="preserve">
+    <value>Text (TXT) Datei-Editor-Anwendung</value>
+  </data>
+  <data name="TextEditorDescription" xml:space="preserve">
+    <value>Im "Datei öffnen" Befehl verwendet für Clip. Verwenden Sie Standard-OS-Anwendung bearbeiten Textdateien (TXT) leer lassen.</value>
+  </data>
+  <data name="UseFormattingInDublicateDetection" xml:space="preserve">
+    <value>Einsatz in Urheberrechtschutz Erkennung Formatierung</value>
+  </data>
+  <data name="UseFormattingInDublicateDetectionDescription" xml:space="preserve">
+    <value>Verwenden Sie native Textformatierung in Urheberrechtschutz Erkennung. Sonst wird nur Klartext verwendet werden, für die Erkennung von Urheberrechtschutz Textclip</value>
+  </data>
+  <data name="UserSettingsPath" xml:space="preserve">
+    <value>Benutzer Einstellungen Weg</value>
+  </data>
+  <data name="UserSettingsPathDescription" xml:space="preserve">
+    <value>Dateien mit Benutzer-Einstellungen und Datenbank sind hier</value>
+  </data>
+  <data name="WindowAutoPosition" xml:space="preserve">
+    <value>Auto Fensterposition auf Öffnen</value>
+  </data>
+  <data name="WindowAutoPositionDescription" xml:space="preserve">
+    <value>Wenn möglich, wird Fenster öffnet sich in der Nähe von Text Caret (Eingang), sonst im Zentrum des aktiven Fensters</value>
+  </data>
+  <data name="WordWrap" xml:space="preserve">
+    <value>Zeilenumbruch</value>
+  </data>
+  <data name="WordWrapDescription" xml:space="preserve">
+    <value>Zeilenumbruch in Textfeld Clip (Strg + W). 
+Nicht montiert, die HTML-Formatierung native.</value>
+  </data>
+</root>

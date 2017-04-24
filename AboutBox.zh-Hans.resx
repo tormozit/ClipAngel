@@ -31,7 +31,7 @@
     <value>MiddleLeft</value>
   </data>
   <data name="linkLabelEmail.Text" xml:space="preserve">
-    <value>Email</value>
+    <value>电子邮件</value>
   </data>
   <data name="logoPictureBox.Dock" xml:space="preserve" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -67,10 +67,10 @@
     <value>MiddleLeft</value>
   </data>
   <data name="labelCopyright.Text" xml:space="preserve">
-    <value>Direitos autorais</value>
+    <value>版权所有</value>
   </data>
   <data name="labelVersion.Text" xml:space="preserve">
-    <value>Versão</value>
+    <value>版本</value>
   </data>
   <data name="labelVersion.Anchor" xml:space="preserve" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
@@ -79,10 +79,10 @@
     <value>24</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Sobre</value>
+    <value>关于</value>
   </data>
   <data name="okButton.Text" xml:space="preserve">
-    <value>&amp;OK</value>
+    <value>确定(&amp;O)</value>
   </data>
   <data name="textBoxDescription.Margin" xml:space="preserve" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>6, 3, 3, 3</value>
@@ -156,13 +156,13 @@
     <value>Both</value>
   </data>
   <data name="linkLabelWebSite.Text" xml:space="preserve">
-    <value>Site</value>
+    <value>网站</value>
   </data>
   <data name="linkLabel1.AutoSize" xml:space="preserve" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="textBoxDescription.Text" xml:space="preserve">
-    <value>Este programa captura muitos objetos de transferência e permite que o usuário selecione e cole um em qualquer programa.</value>
+    <value>此程序捕获许多剪贴板对象，并允许用户选择和粘贴在任何程序中的一个。</value>
   </data>
   <data name="labelAuthor.TextAlign" xml:space="preserve" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
@@ -186,7 +186,7 @@
     <value>2</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>Freeware (GPL 3)</value>
+    <value>免费软件 (GPL3)</value>
   </data>
   <data name="linkLabel1.Anchor" xml:space="preserve" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
@@ -222,7 +222,7 @@
     <value>MiddleLeft</value>
   </data>
   <data name="linkLabel1.Text" xml:space="preserve">
-    <value>Doar</value>
+    <value>捐赠</value>
   </data>
   <data name="labelAuthor.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
     <value>22</value>
@@ -240,7 +240,7 @@
     <value>Top, Bottom, Left, Right</value>
   </data>
   <data name="labelAuthor.Text" xml:space="preserve">
-    <value>Autor: Tormozit (Starykh Sergey), Rússia</value>
+    <value>作者︰ Tormozit (Sergey Starykh) 俄罗斯</value>
   </data>
   <data name="label1.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>304, 15</value>
@@ -282,7 +282,7 @@
     <value>0, 17</value>
   </data>
   <data name="labelProductName.Text" xml:space="preserve">
-    <value>Produto</value>
+    <value>产品</value>
   </data>
   <data name="linkLabel1.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
     <value>28</value>

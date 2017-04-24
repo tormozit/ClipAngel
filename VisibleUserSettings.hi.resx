@@ -1,0 +1,275 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AutoCheckUpdate" xml:space="preserve">
+    <value>Autocheck प्रोग्राम अद्यतन के लिए</value>
+  </data>
+  <data name="AutoCheckUpdateDescription" xml:space="preserve">
+    <value>Autocheck प्रोग्राम प्रारंभ और हर दिन पर अद्यतन के लिए</value>
+  </data>
+  <data name="AutoSelectMatch" xml:space="preserve">
+    <value>स्वतःचयन करें पहला मैच</value>
+  </data>
+  <data name="AutoSelectMatchDescription" xml:space="preserve">
+    <value>क्लिप पाठ में फ़िल्टर का पहला मैच का Autoselection. </value>
+  </data>
+  <data name="Autostart" xml:space="preserve">
+    <value>उपयोगकर्ता लॉगऑन पर Autostart कार्यक्रम</value>
+  </data>
+  <data name="AutostartDescription" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="AutostartPath" xml:space="preserve">
+    <value>अनुप्रयोग autostart आदेश पंक्ति</value>
+  </data>
+  <data name="AutostartPathDescription" xml:space="preserve">
+    <value>यह आदेश वर्तमान प्रारंभ पथ से अद्यतन करने के लिए ठीक क्लिक करें</value>
+  </data>
+  <data name="ClearFiltersOnClose" xml:space="preserve">
+    <value>फ़िल्टर्स साफ़ मुख्य विंडो पर बंद करें</value>
+  </data>
+  <data name="ClearFiltersOnCloseDescription" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="ClipListSimpleDraw" xml:space="preserve">
+    <value>तेजी से और सरल सूची ड्रा</value>
+  </data>
+  <data name="ClipListSimpleDrawDescription" xml:space="preserve">
+    <value>क्लिप सूची तेजी से फ़िल्टर मेल और चित्र नमूने हाइलाइट किए बिना तैयार हो जाएगा</value>
+  </data>
+  <data name="ClipTempFileFolder" xml:space="preserve">
+    <value>क्लिप अस्थायी फ़ाइलों के लिए फ़ोल्डर</value>
+  </data>
+  <data name="ClipTempFileFolderDescription" xml:space="preserve">
+    <value>क्लिप्स के अस्थायी फ़ाइलों को सहेजने के लिए फ़ोल्डर। Standart temp फ़ोल्डर का उपयोग करने के लिए रिक्त छोड़ दें। आमतौर पर पोर्टेबल मोड में उपयोगी हो सकता है।</value>
+  </data>
+  <data name="CopyTextInAnyWindowOnCTRLF3" xml:space="preserve">
+    <value>नियंत्रण + F3 द्वारा किसी भी खिड़की से पाठ की प्रतिलिपि बनाएँ</value>
+  </data>
+  <data name="CopyTextInAnyWindowOnCTRLF3Description" xml:space="preserve">
+    <value>नियंत्रण + F3 दबाया जाता है, जब किसी भी खिड़की से चयनित पाठ की प्रतिलिपि बनाएँ। इस हॉटकी आमतौर पर चयनित स्ट्रिंग खोजने के लिए पाठ संपादकों में प्रयोग किया जाता है। 
+कुंजी दबाएँ विंडो द्वारा संसाधित किया जाएगा। </value>
+  </data>
+  <data name="CurrentPath" xml:space="preserve">
+    <value>अनुप्रयोग वर्तमान प्रारंभ पथ</value>
+  </data>
+  <data name="DatabaseSize" xml:space="preserve">
+    <value>डेटाबेस आकार MB</value>
+  </data>
+  <data name="DatabaseSizeDescription" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="DefaultFont" xml:space="preserve">
+    <value>डिफ़ॉल्ट फ़ॉन्ट</value>
+  </data>
+  <data name="DefaultFontDescription" xml:space="preserve">
+    <value>क्लिप सूची और क्लिप पाठ के लिए डिफ़ॉल्ट के लिए फ़ॉन्ट। यह बदलने के लिए डबल क्लिक करें।</value>
+  </data>
+  <data name="FastWindowOpen" xml:space="preserve">
+    <value>तेजी से खिड़की खुली</value>
+  </data>
+  <data name="FastWindowOpenDescription" xml:space="preserve">
+    <value>तेजी से खिड़की खोलने के कुछ गुर का उपयोग करके। विंडो खोलने/में कुछ मामूली समस्याओं के लिए नेतृत्व कर सकते हैं।</value>
+  </data>
+  <data name="GlobalHotkeyCompareLastClips" xml:space="preserve">
+    <value>हॉटकी पिछले क्लिप की तुलना करने के लिए</value>
+  </data>
+  <data name="GlobalHotkeyCompareLastClipsDescription" xml:space="preserve">
+    <value>पिछले 2 क्लिप की तुलना के लिए अनुप्रयोग लॉन्च करने के लिए किसी भी प्रोग्राम में इस गर्म कुंजी का उपयोग करें</value>
+  </data>
+  <data name="GlobalHotkeyIncrementalPaste" xml:space="preserve">
+    <value>हॉटकी वृद्धिशील पेस्ट करने के लिए</value>
+  </data>
+  <data name="GlobalHotkeyIncrementalPasteDescription" xml:space="preserve">
+    <value>वर्तमान क्लिप से क्लिप परी सूची चिपकाएँ और जो ट्रे tooltip में दिखाया जाएगा अगले क्लिप का चयन करें करने के लिए किसी भी प्रोग्राम में इस गर्म कुंजी का उपयोग करें</value>
+  </data>
+  <data name="GlobalHotkeyOpenCurrent" xml:space="preserve">
+    <value>हॉटकी के साथ कोई परिवर्तन विंडो खोलने के लिए</value>
+  </data>
+  <data name="GlobalHotkeyOpenCurrentDescription" xml:space="preserve">
+    <value>फ़िल्टर और क्लिप चयन में कोई बदलाव नहीं के साथ क्लिप दूत विंडो खोलने के लिए किसी भी प्रोग्राम में इस गर्म कुंजी का उपयोग करें। विंडो को बंद करने के लिए फिर से दबाएँ।</value>
+  </data>
+  <data name="GlobalHotkeyOpenFavorites" xml:space="preserve">
+    <value>हॉटकी के साथ पसंदीदा विंडो खोलने के लिए</value>
+  </data>
+  <data name="GlobalHotkeyOpenFavoritesDescription" xml:space="preserve">
+    <value>क्लिप दूत विंडो पसंद केवल फ़िल्टर के साथ दिखाने के लिए किसी भी प्रोग्राम में इस गर्म कुंजी का उपयोग करें। विंडो को बंद करने के लिए फिर से दबाएँ।</value>
+  </data>
+  <data name="GlobalHotkeyOpenLast" xml:space="preserve">
+    <value>हॉटकी के साथ रीसेट करें विंडो खोलने के लिए</value>
+  </data>
+  <data name="GlobalHotkeyOpenLastDescription" xml:space="preserve">
+    <value>क्लिप दूत विंडो खोलने, फ़िल्टर्स साफ़ करें और पिछले कैप्चर की गई क्लिप का चयन करें करने के लिए किसी भी प्रोग्राम में इस गर्म कुंजी का उपयोग करें। विंडो को बंद करने के लिए फिर से दबाएँ।</value>
+  </data>
+  <data name="GlobalHotkeyPasteText" xml:space="preserve">
+    <value>हॉटकी सादा पाठ चिपकाने के लिए</value>
+  </data>
+  <data name="GlobalHotkeyPasteTextDescription" xml:space="preserve">
+    <value>सादा पाठ के रूप में अंतिम कैप्चर की गई क्लिप को चिपकाएँ करने के लिए किसी भी प्रोग्राम में इस गर्म कुंजी का उपयोग करें</value>
+  </data>
+  <data name="HistoryDepthDays" xml:space="preserve">
+    <value>इतिहास गहराई दिन</value>
+  </data>
+  <data name="HistoryDepthDaysDescription" xml:space="preserve">
+    <value>गैर पसंदीदा क्लिप संग्रहित हैं दिनों की अधिकतम संख्या। हटाना प्रारंभ करें पर, हर दिन मार डाला है, पर सेटिंग्स लागू करें। 0 - न हटाएँ।</value>
+  </data>
+  <data name="HistoryDepthNumber" xml:space="preserve">
+    <value>इतिहास गहराई संख्या</value>
+  </data>
+  <data name="HistoryDepthNumberDescription" xml:space="preserve">
+    <value>संग्रहीत गैर पसंदीदा क्लिप की अधिकतम संख्या। हटाना प्रारंभ करें पर, हर दिन मार डाला है, पर सेटिंग्स लागू करें। 0 - न हटाएँ।</value>
+  </data>
+  <data name="HtmlEditor" xml:space="preserve">
+    <value>HTML फ़ाइल संपादक अनुप्रयोग</value>
+  </data>
+  <data name="HtmlEditorDescription" xml:space="preserve">
+    <value>"फ़ाइल खोलें" आदेश में क्लिप के लिए इस्तेमाल किया। संपादन HTML फ़ाइलों के लिए डिफ़ॉल्ट ओएस अनुप्रयोग का उपयोग करने के लिए रिक्त छोड़ दें।</value>
+  </data>
+  <data name="IgnoreApplicationsClipCapture" xml:space="preserve">
+    <value>ध्यान न दिए गए आवेदन में क्लिप पर कब्जा</value>
+  </data>
+  <data name="IgnoreApplicationsClipCaptureDescription" xml:space="preserve">
+    <value>इस अनुप्रयोग से क्लिप पर कब्जा नहीं</value>
+  </data>
+  <data name="IgnoreExclusiveFormatClipCapture" xml:space="preserve">
+    <value>कैप्चर स्वरूप "क्लिपबोर्ड व्यूअर पर ध्यान न दें" नहीं</value>
+  </data>
+  <data name="IgnoreExclusiveFormatClipCaptureDescription" xml:space="preserve">
+    <value>स्वरूप मौजूद "क्लिपबोर्ड व्यूअर पर ध्यान न दें" के साथ क्लिप कैप्चर न करें। इस स्वरूप क्लिपबोर्ड करने के लिए पासवर्ड की प्रतिलिपि बनाते समय पासवर्ड प्रबंधकों द्वारा आमतौर पर उपयोग किया जाता है। कभी कभी यह इसे अस्थायी बंद स्विच करने के लिए उपयोगी हो सकता है।</value>
+  </data>
+  <data name="ImageEditor" xml:space="preserve">
+    <value>छवि (PNG) फ़ाइल संपादक अनुप्रयोग</value>
+  </data>
+  <data name="ImageEditorDescription" xml:space="preserve">
+    <value>"फ़ाइल खोलें" आदेश में क्लिप के लिए इस्तेमाल किया। संपादित करें छवि (PNG) फ़ाइलों के लिए डिफ़ॉल्ट ओएस अनुप्रयोग का उपयोग करने के लिए रिक्त छोड़ दें।</value>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>भाषा</value>
+  </data>
+  <data name="LanguageDescription" xml:space="preserve">
+    <value>उपयोगकर्ता इंटरफ़ेस भाषा</value>
+  </data>
+  <data name="MaxClipSizeKB" xml:space="preserve">
+    <value>अधिकतम क्लिप आकार KB</value>
+  </data>
+  <data name="MaxClipSizeKBDescription" xml:space="preserve">
+    <value>अधिक से अधिक इस आकार नहीं कैप्चर करना होगा क्लिप</value>
+  </data>
+  <data name="MonospacedFont" xml:space="preserve">
+    <value>Monospaced फ़ॉन्ट</value>
+  </data>
+  <data name="MonospacedFontDescription" xml:space="preserve">
+    <value>Monospaced क्लिप पाठ फ़ील्ड में फ़ॉन्ट। 
+RTF मूल स्वरूपण द्वारा अतिभारित किया जा सकता है। 
+नहीं HTML मूल स्वरूपण करने के लिए appliable.</value>
+  </data>
+  <data name="MoveCopiedClipToTop" xml:space="preserve">
+    <value>शीर्ष करने के लिए सूची क्लिप में प्रतिलिपि बनाए गए कदम</value>
+  </data>
+  <data name="MoveCopiedClipToTopDescription" xml:space="preserve">
+    <value>सूची के शीर्ष करने के लिए प्रतिलिपि बनाई गई सूची या पूरी तरह से चिपकाई गई क्लिप में ले जाएँ</value>
+  </data>
+  <data name="NumberOfClips" xml:space="preserve">
+    <value>क्लिप की संख्या</value>
+  </data>
+  <data name="NumberOfClipsDescription" xml:space="preserve">
+    <value>वर्तमान डेटाबेस में क्लिप्स की संख्या</value>
+  </data>
+  <data name="RestoreCaretPositionOnFocusReturn" xml:space="preserve">
+    <value>ध्यान वापसी पर कैरेट स्थिति को पुनर्स्थापित करें</value>
+  </data>
+  <data name="RestoreCaretPositionOnFocusReturnDescription" xml:space="preserve">
+    <value>यह प्रयास करने के लिए लक्ष्य विंडो ध्यान दिया जाता है के बाद कैरेट स्थिति को बहाल करने के लिए सक्षम करें। यह जो ध्यान खोने के बाद सभी पाठ का चयन करें पाठ बॉक्सेज़ के लिए उपयोगी है</value>
+  </data>
+  <data name="RtfEditor" xml:space="preserve">
+    <value>RTF फ़ाइल संपादक अनुप्रयोग</value>
+  </data>
+  <data name="RtfEditorDescription" xml:space="preserve">
+    <value>"फ़ाइल खोलें" आदेश में क्लिप के लिए इस्तेमाल किया। संपादन RTF फ़ाइलों के लिए डिफ़ॉल्ट ओएस अनुप्रयोग का उपयोग करने के लिए रिक्त छोड़ दें।</value>
+  </data>
+  <data name="SearchCaseSensitive" xml:space="preserve">
+    <value>केस संवेदी खोज</value>
+  </data>
+  <data name="SearchCaseSensitiveDescription" xml:space="preserve">
+    <value>केस संवेदी खोज फ़िल्टर। उदाहरण के लिए "पॉट" "आलू", लेकिन नहीं "आलू" मैच होगा। </value>
+  </data>
+  <data name="SearchWildcards" xml:space="preserve">
+    <value>खोज किसी भी वर्ण अनुक्रम के रूप में "%"</value>
+  </data>
+  <data name="SearchWildcardsDescription" xml:space="preserve">
+    <value>खोज फ़िल्टर किसी भी वर्ण अनुक्रम के रूप में से "%" वर्ण। उदाहरण के लिए फ़िल्टर "पो %o" "आलू" मैच होगा। </value>
+  </data>
+  <data name="SearchWordsIndependently" xml:space="preserve">
+    <value>खोज स्वतंत्र शब्द</value>
+  </data>
+  <data name="SearchWordsIndependentlyDescription" xml:space="preserve">
+    <value>फ़िल्टर से हर शब्द स्वतंत्र रूप से खोज। उदाहरण के लिए "पॉट वेब" "हमारी वेबसाइट आलू बेचता है" से मेल खाएगी। </value>
+  </data>
+  <data name="ShowApplicationIconColumn" xml:space="preserve">
+    <value>क्लिप स्रोत स्तंभ चिह्न दिखाएँ</value>
+  </data>
+  <data name="ShowApplicationIconColumnDescription" xml:space="preserve">
+    <value>जहाँ क्लिप की प्रतिलिपि बनाई गई आवेदन से आइकन के साथ स्तंभ दिखाएँ</value>
+  </data>
+  <data name="ShowNativeTextFormatting" xml:space="preserve">
+    <value>मूल पाठ स्वरूपण दिखाएँ</value>
+  </data>
+  <data name="ShowNativeTextFormattingDescription" xml:space="preserve">
+    <value>मूल पाठ स्वरूपण के लिए RTF और HTML क्लिप (CLTR + N) दिखाएँ</value>
+  </data>
+  <data name="ShowSizeColumn" xml:space="preserve">
+    <value>दृश्य क्लिप वजन स्तंभ दिखाएँ</value>
+  </data>
+  <data name="ShowSizeColumnDescription" xml:space="preserve">
+    <value>क्लिप के दृश्य वजन (दृश्य आकार में अंकों की संख्या) स्तंभ दिखाई देंगे</value>
+  </data>
+  <data name="TextCompareApplication" xml:space="preserve">
+    <value>पाठ तुलना करें आवेदन</value>
+  </data>
+  <data name="TextCompareApplicationDescription" xml:space="preserve">
+    <value>स्वत: खोज अनुप्रयोग, जो लग रहा है से परे की तुलना, ExamDiff प्रो, 
+के लिए WinMerge, Araxis मर्ज, DiffMerge, Kdiff3 का उपयोग करने के लिए रिक्त छोड़ दें। पाठ तुलना करें आदेश है % आवेदन % % file1 % % file2%</value>
+  </data>
+  <data name="TextEditor" xml:space="preserve">
+    <value>पाठ (TXT) फ़ाइल संपादक अनुप्रयोग</value>
+  </data>
+  <data name="TextEditorDescription" xml:space="preserve">
+    <value>"फ़ाइल खोलें" आदेश में क्लिप के लिए इस्तेमाल किया। संपादन पाठ (TXT) फ़ाइलों के लिए डिफ़ॉल्ट ओएस अनुप्रयोग का उपयोग करने के लिए रिक्त छोड़ दें।</value>
+  </data>
+  <data name="UseFormattingInDublicateDetection" xml:space="preserve">
+    <value>Dublicate डिटेक्शन में स्वरूपण का उपयोग करें</value>
+  </data>
+  <data name="UseFormattingInDublicateDetectionDescription" xml:space="preserve">
+    <value>मूल पाठ dublicate डिटेक्शन में स्वरूपण का उपयोग करें। और केवल सादा पाठ dublicate पाठ क्लिप का पता लगाने के लिए इस्तेमाल किया जाएगा</value>
+  </data>
+  <data name="UserSettingsPath" xml:space="preserve">
+    <value>उपयोगकर्ता पथ सेटिंग</value>
+  </data>
+  <data name="UserSettingsPathDescription" xml:space="preserve">
+    <value>उपयोगकर्ता सेटिंग्स और डेटाबेस के साथ फ़ाइलें यहाँ हैं</value>
+  </data>
+  <data name="WindowAutoPosition" xml:space="preserve">
+    <value>विंडो स्वत: खुलने पर स्थिति</value>
+  </data>
+  <data name="WindowAutoPositionDescription" xml:space="preserve">
+    <value>यदि संभव हो तो, विंडो पाठ कैरेट (इनपुट) के पास खुल जाएगा, और सक्रिय विंडो के केंद्र में जगह होगी</value>
+  </data>
+  <data name="WordWrap" xml:space="preserve">
+    <value>वर्ड रेप</value>
+  </data>
+  <data name="WordWrapDescription" xml:space="preserve">
+    <value>क्लिप पाठ फ़ील्ड (CTRL + W) में शब्द लपेटें। 
+नहीं HTML मूल स्वरूपण करने के लिए appliable.</value>
+  </data>
+</root>

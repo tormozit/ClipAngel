@@ -28,7 +28,7 @@
     <value>14</value>
   </data>
   <data name="buttonReset.Text" xml:space="preserve">
-    <value>Redefinir para os padrões</value>
+    <value>डिफ़ॉल्ट पर रीसेट करें</value>
   </data>
   <data name="buttonCancel.Anchor" xml:space="preserve" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
@@ -46,7 +46,7 @@
     <value>12</value>
   </data>
   <data name="buttonCancel.Text" xml:space="preserve">
-    <value>Cancelar</value>
+    <value>रद्द करें</value>
   </data>
   <data name="buttonOK.Anchor" xml:space="preserve" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
@@ -64,7 +64,7 @@
     <value>13</value>
   </data>
   <data name="buttonOK.Text" xml:space="preserve">
-    <value>OK</value>
+    <value>ठीक</value>
   </data>
   <data name="buttonClearFilter.Anchor" xml:space="preserve" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -82,10 +82,10 @@
     <value>18</value>
   </data>
   <data name="buttonClearFilter.Text" xml:space="preserve">
-    <value>N</value>
+    <value>X</value>
   </data>
   <data name="buttonClearFilter.ToolTip" xml:space="preserve">
-    <value>Limpar filtro</value>
+    <value>फ़िल्टर साफ़ करें</value>
   </data>
   <data name="label1.Anchor" xml:space="preserve" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -103,7 +103,7 @@
     <value>20</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>Filtro:</value>
+    <value>फ़िल्टर करें:</value>
   </data>
   <data name="textBoxFilter.Anchor" xml:space="preserve" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -118,7 +118,7 @@
     <value>21</value>
   </data>
   <data name="textBoxFilter.ToolTip" xml:space="preserve">
-    <value>Filtro quente pelo nome e descrição da propriedade</value>
+    <value>गर्म फ़िल्टर द्वारा गुण का नाम और वर्णन</value>
   </data>
   <data name="propertyGrid1.Anchor" xml:space="preserve" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
@@ -136,7 +136,7 @@
     <value>102, 22</value>
   </data>
   <data name="copyToolStripMenuItem.Text" xml:space="preserve">
-    <value>Copia</value>
+    <value>प्रतिलिपि बनाएँ</value>
   </data>
   <data name="contexMenuLabel.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>103, 26</value>
@@ -148,7 +148,7 @@
     <value>144, 22</value>
   </data>
   <data name="gridContextMenuCopy.Text" xml:space="preserve">
-    <value>Copia</value>
+    <value>प्रतिलिपि बनाएँ</value>
   </data>
   <data name="contexMenuGrid.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>145, 26</value>
@@ -163,7 +163,7 @@
     <value>CenterParent</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Configurações</value>
+    <value>सेटिंग्‍स</value>
   </data>
   <metadata name="buttonReset.GenerateMember" xml:space="preserve" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>

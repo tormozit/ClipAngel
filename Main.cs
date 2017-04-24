@@ -772,7 +772,7 @@ namespace ClipAngel
                 // Set tab size ~ 4
                 string shortText;
                 string endMarker;
-                Font markerFont;
+                Font markerFont = richTextBox.Font;
                 Color markerColor;
                 if (!FullTextLoad && MaxTextViewSize < fullText.Length)
                 {
@@ -782,7 +782,7 @@ namespace ClipAngel
                     shortText = fullText.Substring(0, MaxTextViewSize);
                     richTextBox.Text = shortText;
                     endMarker = MultiLangCutMarker();
-                    markerFont = new Font(richTextBox.SelectionFont, FontStyle.Underline);
+                    markerFont = new Font(markerFont, FontStyle.Underline);
                     TextWasCut = true;
                     markerColor = Color.Blue;
                 }
@@ -836,7 +836,6 @@ namespace ClipAngel
                     else
                         richTextBox.Text = fullText;
                     endMarker = MultiLangEndMarker();
-                    markerFont = richTextBox.SelectionFont;
                     TextWasCut = false;
                     markerColor = Color.Green;
                 }
@@ -1440,10 +1439,7 @@ namespace ClipAngel
                         var rtfBox = new RichTextBox();
                         rtfBox.Rtf = richText;
                         clipText = rtfBox.Text;
-                        if (!String.IsNullOrEmpty(clipText))
-                        {
-                            textFormatPresent = true;
-                        }
+                        textFormatPresent = true;
                     }
                 }
 
@@ -1456,7 +1452,7 @@ namespace ClipAngel
                         Match match = Regex.Match(htmlText, "SourceURL:(" + LinkPattern + ")", RegexOptions.IgnoreCase);
                         if (match.Captures.Count > 0)
                             clipUrl = match.Groups[1].ToString();
-                        if (!textFormatPresent)
+                        if (String.IsNullOrWhiteSpace(clipText))
                         {
                             // It may take much time to parse big html
                             var htmlParser = new HtmlParser();
@@ -2678,7 +2674,7 @@ namespace ClipAngel
         {
             foreach (Form form in Application.OpenForms)
             {
-                if (form.Modal)
+                if (form.Modal && form.Visible)
                 {
                     form.Activate();
                     return;
@@ -3631,16 +3627,20 @@ namespace ClipAngel
             string locale;
             if (Properties.Settings.Default.Language == "Default")
                 locale = Application.CurrentCulture.TwoLetterISOLanguageName;
-            else if (Properties.Settings.Default.Language == "Russian")
-                locale = "ru";
-            else if (Properties.Settings.Default.Language == "Polish")
-                locale = "pl";
-            else if (Properties.Settings.Default.Language == "Spain")
-                locale = "sp";
+            else if (Properties.Settings.Default.Language == "Chinese")
+                locale = "zh-CN";
             else if (Properties.Settings.Default.Language == "German")
                 locale = "de";
+            else if (Properties.Settings.Default.Language == "Italian")
+                locale = "it";
+            else if (Properties.Settings.Default.Language == "Polish")
+                locale = "pl";
             else if (Properties.Settings.Default.Language == "Portuguese-Brazil")
                 locale = "pt-BR";
+            else if (Properties.Settings.Default.Language == "Spain")
+                locale = "es";
+            else if (Properties.Settings.Default.Language == "Russian")
+                locale = "ru";
             else
                 locale = "en";
             return locale;

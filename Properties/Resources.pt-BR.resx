@@ -1,110 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
-  <!-- 
-    Microsoft ResX Schema 
-    
-    Version 2.0
-    
-    The primary goals of this format is to allow a simple XML format 
-    that is mostly human readable. The generation and parsing of the 
-    various data types are done through the TypeConverter classes 
-    associated with the data types.
-    
-    Example:
-    
-    ... ado.net/XML headers & schema ...
-    <resheader name="resmimetype">text/microsoft-resx</resheader>
-    <resheader name="version">2.0</resheader>
-    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
-    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
-    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
-    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
-    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
-        <value>[base64 mime encoded serialized .NET Framework object]</value>
-    </data>
-    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
-        <comment>This is a comment</comment>
-    </data>
-                
-    There are any number of "resheader" rows that contain simple 
-    name/value pairs.
-    
-    Each data row contains a name, and value. The row also contains a 
-    type or mimetype. Type corresponds to a .NET class that support 
-    text/value conversion through the TypeConverter architecture. 
-    Classes that don't support this are serialized and stored with the 
-    mimetype set.
-    
-    The mimetype is used for serialized objects, and tells the 
-    ResXResourceReader how to depersist the object. This is currently not 
-    extensible. For a given mimetype the value must be set accordingly:
-    
-    Note - application/x-microsoft.net.object.binary.base64 is the format 
-    that the ResXResourceWriter will generate, however the reader can 
-    read any of the formats listed below.
-    
-    mimetype: application/x-microsoft.net.object.binary.base64
-    value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
-            : and then encoded with base64 encoding.
-    
-    mimetype: application/x-microsoft.net.object.soap.base64
-    value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
-            : and then encoded with base64 encoding.
-
-    mimetype: application/x-microsoft.net.object.bytearray.base64
-    value   : The object must be serialized into a byte array 
-            : using a System.ComponentModel.TypeConverter
-            : and then encoded with base64 encoding.
-    -->
-  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
-    <xsd:element name="root" msdata:IsDataSet="true">
-      <xsd:complexType>
-        <xsd:choice maxOccurs="unbounded">
-          <xsd:element name="metadata">
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" />
-              </xsd:sequence>
-              <xsd:attribute name="name" use="required" type="xsd:string" />
-              <xsd:attribute name="type" type="xsd:string" />
-              <xsd:attribute name="mimetype" type="xsd:string" />
-              <xsd:attribute ref="xml:space" />
-            </xsd:complexType>
-          </xsd:element>
-          <xsd:element name="assembly">
-            <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string" />
-              <xsd:attribute name="name" type="xsd:string" />
-            </xsd:complexType>
-          </xsd:element>
-          <xsd:element name="data">
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
-              </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-              <xsd:attribute ref="xml:space" />
-            </xsd:complexType>
-          </xsd:element>
-          <xsd:element name="resheader">
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-              </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" />
-            </xsd:complexType>
-          </xsd:element>
-        </xsd:choice>
-      </xsd:complexType>
-    </xsd:element>
-  </xsd:schema>
   <resheader name="resmimetype">
     <value>text/microsoft-resx</value>
   </resheader>
@@ -117,71 +12,70 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="merge" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="merge" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\merge.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Paste" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="Paste" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\Paste.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="delete" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="delete" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\delete.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="CutMarker" xml:space="preserve">
-    <value>Show rest of text</value>
+    <value>Mostrar o resto do texto</value>
   </data>
   <data name="text" xml:space="preserve">
-    <value>text</value>
+    <value>texto</value>
   </data>
-  <data name="Filter" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="Filter" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\Filter.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="HistoryOfChanges" xml:space="preserve">
-    <value>https://sourceforge.net/p/clip-angel/blog</value>
+    <value>https://sourceforge.net/p/clip-Angel/blog</value>
   </data>
-  <data name="clear2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="clear2" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\clear2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="OpenFile" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="OpenFile" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\OpenFile.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="LangRestart" xml:space="preserve">
-    <value>For full language change you may need to restart program</value>
+    <value>Para a mudança de idioma completo, você pode precisar reiniciar o programa</value>
   </data>
-  <data name="upload" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="upload" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\upload.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Confirmation" xml:space="preserve">
-    <value>Confirmation</value>
+    <value>Confirmação</value>
   </data>
   <data name="Support" xml:space="preserve">
-    <value>https://sourceforge.net/p/clip-angel/tickets/new/</value>
+    <value>https://sourceforge.net/p/clip-Angel/tickets/New/</value>
   </data>
-  <data name="FindNext" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="FindNext" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\FindNext.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="allTypes" xml:space="preserve">
-    <value>all types</value>
+    <value>todos os tipos</value>
   </data>
-  <data name="dbTemplate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="dbTemplate" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\DB\db.sqlite;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="CantPasteInElevatedWindow" xml:space="preserve">
-    <value>Unable to paste into window having higher priviledges. Try run program as administrator.</value>
+    <value>Não é possível colar na janela tendo privilégios mais elevados. Tente executar o programa como administrador.</value>
   </data>
   <data name="VisualWeightTooltip" xml:space="preserve">
-    <value>Visual clip weight (number of digits in number representing visual clip size)</value>
+    <value>Peso Visual clip (número de dígitos no número que representa o tamanho visual do clipe)</value>
   </data>
-  <data name="ClearFilter" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="ClearFilter" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\ClearFilter.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="UnmarkFavorite" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="UnmarkFavorite" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\Reset favorite.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="EndMarker" xml:space="preserve">
-    <value>END</value>
+    <value>FINALIZAR</value>
   </data>
-  <data name="up" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="up" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\up.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Donate" xml:space="preserve">
@@ -191,186 +85,186 @@
     <value>MB</value>
   </data>
   <data name="Size" xml:space="preserve">
-    <value>Size</value>
+    <value>Tamanho</value>
   </data>
-  <data name="TypeText" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="TypeText" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\TypeText.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="NextClip" xml:space="preserve">
-    <value>Next сlip</value>
+    <value>Próxima сlip</value>
   </data>
   <data name="NoSupportedTextCompareApplication" xml:space="preserve">
-    <value>No supported text compare application was found. Now we open website to get free one.</value>
+    <value>Nenhum aplicativo de comparação de texto suporte foi encontrado. Agora vamos abrir o site para obter um livre.</value>
   </data>
-  <data name="Alien_64x64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="Alien_64x64" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\Alien-64x64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="clear1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="clear1" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\clear1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="NewVersionAvailable" xml:space="preserve">
-    <value>New version is available. To update use button is top command bar.</value>
+    <value>Nova versão está disponível. Para atualizar o uso botão é comando top bar.</value>
   </data>
   <data name="ApplicationAddedToIgnoreList" xml:space="preserve">
-    <value>Application "{0}" added to ignore list, wich can be edited in Settings window</value>
+    <value>Aplicativo "{0}" adicionado para ignorar a lista, pode ser editado no janela de configurações</value>
   </data>
   <data name="CharUnit" xml:space="preserve">
     <value>С</value>
   </data>
-  <data name="Top2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="Top2" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\Top2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="EditClipTitle" xml:space="preserve">
-    <value>Edit clip title</value>
+    <value>Edite o título do clipe</value>
   </data>
-  <data name="Autoselect first match" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="Autoselect first match" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\Autoselect first match.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="favorite" xml:space="preserve">
-    <value>favorite</value>
+    <value>favorito</value>
   </data>
-  <data name="keyboard" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="keyboard" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\keyboard.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="TextFormatting" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="TextFormatting" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\TextFormatting.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="copy" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="copy" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\copy.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="TypeHtml" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="TypeHtml" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\TypeHtml.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="FindPrevious" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="FindPrevious" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\FindPrevious.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ActivatedExistedProcess" xml:space="preserve">
-    <value>Activated already running instance of the application</value>
+    <value>Ativado já executando a instância do aplicativo</value>
   </data>
   <data name="UpdateTo" xml:space="preserve">
-    <value>Update to</value>
+    <value>Atualizar para</value>
   </data>
   <data name="used" xml:space="preserve">
-    <value>used</value>
+    <value>usado</value>
   </data>
   <data name="file" xml:space="preserve">
-    <value>file</value>
+    <value>arquivo</value>
   </data>
   <data name="DBShortFilename" xml:space="preserve">
-    <value>db.sqlite</value>
+    <value>DB.sqlite</value>
   </data>
   <data name="FailedToReadFormatFromClipboard" xml:space="preserve">
-    <value>Failed to read data in format "{0}" from clipboard.</value>
+    <value>Falha ao ler dados no formato "{0}" da área de transferência.</value>
   </data>
-  <data name="TopMostWindow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="TopMostWindow" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\TopMostWindow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ByteUnit" xml:space="preserve">
     <value>B</value>
   </data>
   <data name="HelpPage" xml:space="preserve">
-    <value>https://sourceforge.net/p/clip-angel/wiki/Description/</value>
+    <value>https://sourceforge.net/p/clip-Angel/wiki/Description/</value>
   </data>
   <data name="QuestionResetSettings" xml:space="preserve">
-    <value>Are you sure want to reset settings to default values?</value>
+    <value>Está certeza quer redefinir configurações para valores padrão?</value>
   </data>
   <data name="Version" xml:space="preserve">
     <value>1.22</value>
   </data>
-  <data name="eye" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="eye" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\eye.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="CouldNotRegisterHotkey" xml:space="preserve">
-    <value>Couldn’t register the global hot key</value>
+    <value>Não pude registrar a tecla de atalho global</value>
   </data>
-  <data name="Dublicate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="Dublicate" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\Dublicate.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="YouLatestVersion" xml:space="preserve">
-    <value>You are using the latest version</value>
+    <value>Você está usando a versão mais recente</value>
   </data>
-  <data name="Back" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="Back" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\Back.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="HowUseAutoTitle" xml:space="preserve">
-    <value>Clear string to use auto title</value>
+    <value>Clara cadeia de caracteres para usar o título de auto</value>
   </data>
   <data name="PixelFormat" xml:space="preserve">
     <value>Pixel</value>
   </data>
-  <data name="translate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="translate" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\translate.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="TypeImg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="TypeImg" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\TypeImg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Website" xml:space="preserve">
-    <value>https://sourceforge.net/projects/clip-angel</value>
+    <value>https://sourceforge.net/projects/clip-Angel</value>
   </data>
-  <data name="MoveCopiedClipToTop" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="MoveCopiedClipToTop" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\MoveCopiedClipToTop.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="TypeFile" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="TypeFile" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\TypeFile.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ClipFileAlreadyOpened" xml:space="preserve">
-    <value>Clip file already opened and blocked</value>
+    <value>Clip arquivo já aberto e bloqueado</value>
   </data>
-  <data name="down" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="down" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\down.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Email" xml:space="preserve">
     <value>tormozit@gmail.com</value>
   </data>
-  <data name="Open with" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="Open with" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\Open with.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="FailedToWriteClipboard" xml:space="preserve">
-    <value>Failed to write clipboard. It is locked by window "{0}" application "{1}"</value>
+    <value>Falha ao gravar a área de transferência. Está trancada pelo aplicativo de janela "{0}" "{1}"</value>
   </data>
-  <data name="WordWrap" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="WordWrap" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\word wrap.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="allMarks" xml:space="preserve">
-    <value>all marks</value>
+    <value>todas as marcas</value>
   </data>
   <data name="img" xml:space="preserve">
     <value>img</value>
   </data>
   <data name="DownloadPage" xml:space="preserve">
-    <value>https://sourceforge.net/projects/clip-angel/files/latest/download</value>
+    <value>https://sourceforge.net/projects/clip-Angel/files/latest/download</value>
   </data>
-  <data name="TypeRtf" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="TypeRtf" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\TypeRtf.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Top1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="Top1" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\Top1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Compare" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="Compare" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\Compare.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="СonfirmDeleteAllNonFavorite" xml:space="preserve">
-    <value>Are you sure want to delete all non favorite clips?</value>
+    <value>É claro que deseja excluir todos os clipes não favoritos?</value>
   </data>
   <data name="KiloByteUnit" xml:space="preserve">
     <value>KB</value>
   </data>
-  <data name="alien" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="alien" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\alien.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="MarkFavorite" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="MarkFavorite" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\Set favorite.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="FixedWidthFont" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="FixedWidthFont" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\FixedWidthFont.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Edit" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="Edit" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\Edit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="FindOptions" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="FindOptions" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\FindOptions.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Search" xml:space="preserve">
-    <value>Search</value>
+    <value>Pesquisar</value>
   </data>
 </root>

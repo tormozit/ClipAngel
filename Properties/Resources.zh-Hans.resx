@@ -22,16 +22,16 @@
     <value>..\Picture\delete.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="CutMarker" xml:space="preserve">
-    <value>Pokaż resztę tekstu</value>
+    <value>显示其余文本</value>
   </data>
   <data name="text" xml:space="preserve">
-    <value>tekst</value>
+    <value>短信</value>
   </data>
   <data name="Filter" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\Filter.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="HistoryOfChanges" xml:space="preserve">
-    <value>https://sourceforge.net/p/Clip-Angel/blog</value>
+    <value>https://sourceforge.net/p/clip-angel/blog</value>
   </data>
   <data name="clear2" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\clear2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -40,31 +40,31 @@
     <value>..\Picture\OpenFile.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="LangRestart" xml:space="preserve">
-    <value>Zmiany pełną języka może być konieczne ponowne uruchomienie programu</value>
+    <value>完整的语言更改为您可能需要重新启动程序</value>
   </data>
   <data name="upload" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\upload.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Confirmation" xml:space="preserve">
-    <value>Potwierdzenie</value>
+    <value>确认</value>
   </data>
   <data name="Support" xml:space="preserve">
-    <value>https://sourceforge.net/p/Clip-Angel/Tickets/New/</value>
+    <value>https://sourceforge.net/p/clip-angel/tickets/new/</value>
   </data>
   <data name="FindNext" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\FindNext.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="allTypes" xml:space="preserve">
-    <value>wszystkie typy</value>
+    <value>所有类型</value>
   </data>
   <data name="dbTemplate" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\DB\db.sqlite;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="CantPasteInElevatedWindow" xml:space="preserve">
-    <value>Nie można wkleić do okna posiadające wyższe uprawnienia. Spróbuj uruchomić program jako administrator.</value>
+    <value>无法粘贴到窗口具有更高的权限。请尝试以管理员身份运行程序。</value>
   </data>
   <data name="VisualWeightTooltip" xml:space="preserve">
-    <value>Visual klip Waga (liczba cyfr w liczbę reprezentującą rozmiar wizualne klip)</value>
+    <value>视觉的剪辑重量 （表示视觉剪辑的大小的数字中的数字个数）</value>
   </data>
   <data name="ClearFilter" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\ClearFilter.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -73,28 +73,28 @@
     <value>..\Picture\Reset favorite.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="EndMarker" xml:space="preserve">
-    <value>KONIEC</value>
+    <value>结束</value>
   </data>
   <data name="up" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\up.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Donate" xml:space="preserve">
-    <value>https://www.PayPal.me/tormozit/500</value>
+    <value>https://www.paypal.me/tormozit/500</value>
   </data>
   <data name="MegaByteUnit" xml:space="preserve">
     <value>MB</value>
   </data>
   <data name="Size" xml:space="preserve">
-    <value>Rozmiar</value>
+    <value>大小</value>
   </data>
   <data name="TypeText" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\TypeText.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="NextClip" xml:space="preserve">
-    <value>Następny сlip</value>
+    <value>下一个 сlip</value>
   </data>
   <data name="NoSupportedTextCompareApplication" xml:space="preserve">
-    <value>Żadna aplikacja Porównaj obsługiwanych tekst został znaleziony. Teraz możemy otworzyć stronę internetową, aby uzyskać wolny jeden.</value>
+    <value>没有支持的文本比较应用程序被发现。现在我们打开网站，获取自由一个。</value>
   </data>
   <data name="Alien_64x64" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\Alien-64x64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -103,10 +103,10 @@
     <value>..\Picture\clear1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="NewVersionAvailable" xml:space="preserve">
-    <value>Dostępna jest nowa wersja. Aby zaktualizować przycisk jest pasek poleceń top.</value>
+    <value>新的版本是可用的。更新使用按钮是 top 命令栏。</value>
   </data>
   <data name="ApplicationAddedToIgnoreList" xml:space="preserve">
-    <value>Aplikacja "{0}" dodane do Ignoruj listy, które można edytować w oknie Ustawienia</value>
+    <value>应用程序"{0}"添加到忽略列表，哪可以在设置窗口中编辑</value>
   </data>
   <data name="CharUnit" xml:space="preserve">
     <value>С</value>
@@ -115,13 +115,13 @@
     <value>..\Picture\Top2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="EditClipTitle" xml:space="preserve">
-    <value>Edytuj tytuł klipu</value>
+    <value>编辑剪辑标题</value>
   </data>
   <data name="Autoselect first match" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\Autoselect first match.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="favorite" xml:space="preserve">
-    <value>ulubione</value>
+    <value>收藏夹</value>
   </data>
   <data name="keyboard" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\keyboard.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -139,22 +139,22 @@
     <value>..\Picture\FindPrevious.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ActivatedExistedProcess" xml:space="preserve">
-    <value>Aktywowany, już uruchomione wystąpienie aplikacji</value>
+    <value>激活已经运行的应用程序实例</value>
   </data>
   <data name="UpdateTo" xml:space="preserve">
-    <value>Aktualizacja do</value>
+    <value>更新至</value>
   </data>
   <data name="used" xml:space="preserve">
-    <value>używane</value>
+    <value>已使用</value>
   </data>
   <data name="file" xml:space="preserve">
-    <value>plik</value>
+    <value>文件</value>
   </data>
   <data name="DBShortFilename" xml:space="preserve">
-    <value>DB.sqlite</value>
+    <value>db.sqlite</value>
   </data>
   <data name="FailedToReadFormatFromClipboard" xml:space="preserve">
-    <value>Nie można odczytać danych w formacie "{0}" ze schowka.</value>
+    <value>从剪贴板读取格式"{0}"的数据失败。</value>
   </data>
   <data name="TopMostWindow" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\TopMostWindow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -163,10 +163,10 @@
     <value>B</value>
   </data>
   <data name="HelpPage" xml:space="preserve">
-    <value>https://sourceforge.net/p/Clip-Angel/wiki/Description/</value>
+    <value>https://sourceforge.net/p/clip-angel/wiki/Description/</value>
   </data>
   <data name="QuestionResetSettings" xml:space="preserve">
-    <value>Czy na pewno chcesz zresetować ustawienia do wartości domyślnych?</value>
+    <value>是否确实要将设置重置为默认值？</value>
   </data>
   <data name="Version" xml:space="preserve">
     <value>1.22</value>
@@ -175,22 +175,22 @@
     <value>..\Picture\eye.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="CouldNotRegisterHotkey" xml:space="preserve">
-    <value>Nie mogłem zarejestrować klucz globalny gorący</value>
+    <value>不能注册全局热键</value>
   </data>
   <data name="Dublicate" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\Dublicate.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="YouLatestVersion" xml:space="preserve">
-    <value>Używasz najnowszej wersji</value>
+    <value>您正在使用最新版本</value>
   </data>
   <data name="Back" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\Back.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="HowUseAutoTitle" xml:space="preserve">
-    <value>Jasne, ciąg do posługiwania się tytułem auto</value>
+    <value>明确要使用自动标题的字符串</value>
   </data>
   <data name="PixelFormat" xml:space="preserve">
-    <value>Piksel</value>
+    <value>像素</value>
   </data>
   <data name="translate" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\translate.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -199,7 +199,7 @@
     <value>..\Picture\TypeImg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Website" xml:space="preserve">
-    <value>https://sourceforge.net/projects/Clip-Angel</value>
+    <value>https://sourceforge.net/projects/clip-angel</value>
   </data>
   <data name="MoveCopiedClipToTop" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\MoveCopiedClipToTop.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -208,7 +208,7 @@
     <value>..\Picture\TypeFile.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ClipFileAlreadyOpened" xml:space="preserve">
-    <value>Plik CLIP już otwarte i zablokowany</value>
+    <value>剪辑文件已经打开阻止</value>
   </data>
   <data name="down" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\down.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -220,19 +220,19 @@
     <value>..\Picture\Open with.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="FailedToWriteClipboard" xml:space="preserve">
-    <value>Nie można zapisać Schowka. Jest on zablokowany przez okno "{0}" aplikacji "{1}"</value>
+    <value>未能写入剪贴板。它是由窗口"{0}"应用程序"{1}"锁</value>
   </data>
   <data name="WordWrap" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\word wrap.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="allMarks" xml:space="preserve">
-    <value>wszystkie znaki</value>
+    <value>所有标记</value>
   </data>
   <data name="img" xml:space="preserve">
     <value>img</value>
   </data>
   <data name="DownloadPage" xml:space="preserve">
-    <value>https://sourceforge.net/projects/Clip-Angel/Files/Latest/Download</value>
+    <value>https://sourceforge.net/projects/clip-angel/files/latest/download</value>
   </data>
   <data name="TypeRtf" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\TypeRtf.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -244,7 +244,7 @@
     <value>..\Picture\Compare.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="СonfirmDeleteAllNonFavorite" xml:space="preserve">
-    <value>Czy na pewno chcesz usunąć wszystkie nie ulubione klipy?</value>
+    <value>您确实要删除所有非最喜爱的剪辑？</value>
   </data>
   <data name="KiloByteUnit" xml:space="preserve">
     <value>KB</value>
@@ -265,6 +265,6 @@
     <value>..\Picture\FindOptions.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Search" xml:space="preserve">
-    <value>Wyszukaj</value>
+    <value>搜索</value>
   </data>
 </root>

@@ -1,0 +1,275 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AutoCheckUpdate" xml:space="preserve">
+    <value>Autocheck para actualización del programa</value>
+  </data>
+  <data name="AutoCheckUpdateDescription" xml:space="preserve">
+    <value>Autocheck para actualización en el inicio del programa y todos los días</value>
+  </data>
+  <data name="AutoSelectMatch" xml:space="preserve">
+    <value>Primer partido de la selección automática</value>
+  </data>
+  <data name="AutoSelectMatchDescription" xml:space="preserve">
+    <value>Selección automática del primer partido de filtro de texto del clip. </value>
+  </data>
+  <data name="Autostart" xml:space="preserve">
+    <value>Programa de AutoStart en Inicio de sesión de usuario</value>
+  </data>
+  <data name="AutostartDescription" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="AutostartPath" xml:space="preserve">
+    <value>Línea de comandos de autostart de aplicación</value>
+  </data>
+  <data name="AutostartPathDescription" xml:space="preserve">
+    <value>Haga clic en Aceptar para actualizar este comando de inicio camino</value>
+  </data>
+  <data name="ClearFiltersOnClose" xml:space="preserve">
+    <value>Restablecer los filtros en la ventana principal de cierre</value>
+  </data>
+  <data name="ClearFiltersOnCloseDescription" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="ClipListSimpleDraw" xml:space="preserve">
+    <value>Sorteo de la lista rápida y sencilla</value>
+  </data>
+  <data name="ClipListSimpleDrawDescription" xml:space="preserve">
+    <value>Listado se sacarán rápido sin destacar coincidencias de filtro y muestras de fotografía</value>
+  </data>
+  <data name="ClipTempFileFolder" xml:space="preserve">
+    <value>Carpeta para los archivos temp de clip</value>
+  </data>
+  <data name="ClipTempFileFolderDescription" xml:space="preserve">
+    <value>Carpeta para guardar archivos temporales de clips. Deje en blanco para utilizar carpeta temp standart. Generalmente puede ser útil en modo portable.</value>
+  </data>
+  <data name="CopyTextInAnyWindowOnCTRLF3" xml:space="preserve">
+    <value>Copiar texto desde cualquier ventana de Control + F3</value>
+  </data>
+  <data name="CopyTextInAnyWindowOnCTRLF3Description" xml:space="preserve">
+    <value>Copiar texto seleccionado desde cualquier ventana cuando se presiona Control + F3. Esta combinación de teclas se utiliza generalmente en editores de texto para buscar cadena seleccionada. Prensa 
+clave será procesado por la ventana. </value>
+  </data>
+  <data name="CurrentPath" xml:space="preserve">
+    <value>Ruta de inicio actual de aplicación</value>
+  </data>
+  <data name="DatabaseSize" xml:space="preserve">
+    <value>Tamaño de la base de datos MB</value>
+  </data>
+  <data name="DatabaseSizeDescription" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="DefaultFont" xml:space="preserve">
+    <value>Fuente predeterminada</value>
+  </data>
+  <data name="DefaultFontDescription" xml:space="preserve">
+    <value>Fuente de listado y predeterminado para el texto del clip. Haga doble clic para cambiarlo.</value>
+  </data>
+  <data name="FastWindowOpen" xml:space="preserve">
+    <value>Rápida ventana abierta</value>
+  </data>
+  <data name="FastWindowOpenDescription" xml:space="preserve">
+    <value>Ventana rápida mediante el uso de algunos trucos. Puede conducir a algunos problemas menores en apertura y cierre de la ventana.</value>
+  </data>
+  <data name="GlobalHotkeyCompareLastClips" xml:space="preserve">
+    <value>Teclas de acceso rápido para comparar los últimos clips</value>
+  </data>
+  <data name="GlobalHotkeyCompareLastClipsDescription" xml:space="preserve">
+    <value>Use esta tecla de acceso rápido en cualquier programa para lanzar aplicación para comparar 2 últimos clips</value>
+  </data>
+  <data name="GlobalHotkeyIncrementalPaste" xml:space="preserve">
+    <value>Combinación de teclas para pegar incremental</value>
+  </data>
+  <data name="GlobalHotkeyIncrementalPasteDescription" xml:space="preserve">
+    <value>Use esta tecla de acceso rápido en cualquier programa para pegar el clip actual de lista de Angel Clip y seleccione clip siguiente que aparecerá en la descripción de la bandeja</value>
+  </data>
+  <data name="GlobalHotkeyOpenCurrent" xml:space="preserve">
+    <value>Combinación de teclas para abrir la ventana sin cambios</value>
+  </data>
+  <data name="GlobalHotkeyOpenCurrentDescription" xml:space="preserve">
+    <value>Utilice esta tecla en cualquier programa para abrir la ventana Clip Angel sin cambios en la selección de filtro y clip. Pulse de nuevo para cerrar la ventana.</value>
+  </data>
+  <data name="GlobalHotkeyOpenFavorites" xml:space="preserve">
+    <value>Teclas de acceso rápido para abrir ventana con favoritos</value>
+  </data>
+  <data name="GlobalHotkeyOpenFavoritesDescription" xml:space="preserve">
+    <value>Utilice esta tecla en cualquier programa para mostrar la ventana Clip Angel con filtro único favoritos. Pulse de nuevo para cerrar la ventana.</value>
+  </data>
+  <data name="GlobalHotkeyOpenLast" xml:space="preserve">
+    <value>Teclas de acceso rápido para abrir ventana con reset</value>
+  </data>
+  <data name="GlobalHotkeyOpenLastDescription" xml:space="preserve">
+    <value>Use esta tecla de acceso rápido en cualquier programa para abrir la ventana Clip Angel, borrar filtros y seleccionar último clip capturado. Pulse de nuevo para cerrar la ventana.</value>
+  </data>
+  <data name="GlobalHotkeyPasteText" xml:space="preserve">
+    <value>Combinación de teclas para pegar texto sin formato</value>
+  </data>
+  <data name="GlobalHotkeyPasteTextDescription" xml:space="preserve">
+    <value>Use esta tecla de acceso rápido en cualquier programa para pegar el último clip capturado como texto sin formato</value>
+  </data>
+  <data name="HistoryDepthDays" xml:space="preserve">
+    <value>Días de profundidad de historia</value>
+  </data>
+  <data name="HistoryDepthDaysDescription" xml:space="preserve">
+    <value>Número máximo de días clips favoritos no se almacenan. Eliminación se ejecuta en Inicio, todos los días, en configuración se aplican. 0 - no borrar.</value>
+  </data>
+  <data name="HistoryDepthNumber" xml:space="preserve">
+    <value>Número de profundidad de historia</value>
+  </data>
+  <data name="HistoryDepthNumberDescription" xml:space="preserve">
+    <value>Número máximo de clips no favoritos almacenados. Eliminación se ejecuta en Inicio, todos los días, en configuración se aplican. 0 - no borrar.</value>
+  </data>
+  <data name="HtmlEditor" xml:space="preserve">
+    <value>Aplicación de editor de archivos HTML</value>
+  </data>
+  <data name="HtmlEditorDescription" xml:space="preserve">
+    <value>Utilizado en comando "Open file" para el clip. Deje en blanco para aplicación de sistema operativo por defecto para editar los archivos HTML.</value>
+  </data>
+  <data name="IgnoreApplicationsClipCapture" xml:space="preserve">
+    <value>Aplicaciones ignoradas en la captura del clip</value>
+  </data>
+  <data name="IgnoreApplicationsClipCaptureDescription" xml:space="preserve">
+    <value>No capturar clips de esta aplicaciones</value>
+  </data>
+  <data name="IgnoreExclusiveFormatClipCapture" xml:space="preserve">
+    <value>No captan formato "Visor de Portapapeles, ignorar"</value>
+  </data>
+  <data name="IgnoreExclusiveFormatClipCaptureDescription" xml:space="preserve">
+    <value>No captan el clip con el "Visor de Portapapeles, ignorar" formato actual. Este formato normalmente es usado por administradores de contraseñas al copiar contraseña al portapapeles. A veces puede ser útil para cambiar de temporal.</value>
+  </data>
+  <data name="ImageEditor" xml:space="preserve">
+    <value>Aplicación de editor de archivo de imagen (PNG)</value>
+  </data>
+  <data name="ImageEditorDescription" xml:space="preserve">
+    <value>Utilizado en comando "Open file" para el clip. Deje en blanco para aplicación de sistema operativo por defecto para editar archivos de imagen (PNG).</value>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>Idioma</value>
+  </data>
+  <data name="LanguageDescription" xml:space="preserve">
+    <value>Idioma de la interfaz de usuario</value>
+  </data>
+  <data name="MaxClipSizeKB" xml:space="preserve">
+    <value>Tamaño máximo del clip KB</value>
+  </data>
+  <data name="MaxClipSizeKBDescription" xml:space="preserve">
+    <value>Clips más de que este tamaño no será capturado</value>
+  </data>
+  <data name="MonospacedFont" xml:space="preserve">
+    <value>Fuente de espacio sencillo</value>
+  </data>
+  <data name="MonospacedFontDescription" xml:space="preserve">
+    <value>Fuente de espacio sencillo en el campo de texto del clip. 
+Podría ser sobrecargado por RTF formato nativo. 
+No aplicable a HTML de formato nativo.</value>
+  </data>
+  <data name="MoveCopiedClipToTop" xml:space="preserve">
+    <value>Mover el copiado en el clip de la lista hacia arriba</value>
+  </data>
+  <data name="MoveCopiedClipToTopDescription" xml:space="preserve">
+    <value>Movimiento copiado en lista o clip totalmente pegado a la parte superior de la lista</value>
+  </data>
+  <data name="NumberOfClips" xml:space="preserve">
+    <value>Número de clips</value>
+  </data>
+  <data name="NumberOfClipsDescription" xml:space="preserve">
+    <value>Número actual de los clips en la base de datos</value>
+  </data>
+  <data name="RestoreCaretPositionOnFocusReturn" xml:space="preserve">
+    <value>Restaurar posición cursor sobre enfoque retorno</value>
+  </data>
+  <data name="RestoreCaretPositionOnFocusReturnDescription" xml:space="preserve">
+    <value>Habilitarla tratar de restaurar la posición de cursor después de foco se vuelve a la ventana de destino. Esto es útil para cuadros de texto que seleccione todo el texto después de perder el foco</value>
+  </data>
+  <data name="RtfEditor" xml:space="preserve">
+    <value>Aplicación de editor de archivos RTF</value>
+  </data>
+  <data name="RtfEditorDescription" xml:space="preserve">
+    <value>Utilizado en comando "Open file" para el clip. Deje en blanco para aplicación de sistema operativo por defecto para editar archivos RTF.</value>
+  </data>
+  <data name="SearchCaseSensitive" xml:space="preserve">
+    <value>Búsqueda de mayúsculas y minúsculas</value>
+  </data>
+  <data name="SearchCaseSensitiveDescription" xml:space="preserve">
+    <value>Filtro de búsqueda distingue mayúsculas de minúsculas. Por ejemplo "Pote" coincidirá con "Papa" y no "patata". </value>
+  </data>
+  <data name="SearchWildcards" xml:space="preserve">
+    <value>Búsqueda de '%' como cualquier secuencia de caracteres</value>
+  </data>
+  <data name="SearchWildcardsDescription" xml:space="preserve">
+    <value>Char de búsqueda '%' de filtro como cualquier secuencia de caracteres. Por ejemplo filtro "po %o" coincidirá con "patata". </value>
+  </data>
+  <data name="SearchWordsIndependently" xml:space="preserve">
+    <value>Búsqueda de palabras independientes</value>
+  </data>
+  <data name="SearchWordsIndependentlyDescription" xml:space="preserve">
+    <value>Buscar cada palabra de filtro independiente. Por ejemplo "web de pote" coincidirá con "nuestro sitio web vende patata". </value>
+  </data>
+  <data name="ShowApplicationIconColumn" xml:space="preserve">
+    <value>Ver clip fuente icono columna</value>
+  </data>
+  <data name="ShowApplicationIconColumnDescription" xml:space="preserve">
+    <value>Mostrar columna con el icono de la aplicación donde fue copiado el clip</value>
+  </data>
+  <data name="ShowNativeTextFormatting" xml:space="preserve">
+    <value>Mostrar formato de texto nativo</value>
+  </data>
+  <data name="ShowNativeTextFormattingDescription" xml:space="preserve">
+    <value>Mostrar texto nativo formato RTF y HTML clips (CLTR + N)</value>
+  </data>
+  <data name="ShowSizeColumn" xml:space="preserve">
+    <value>Ver clip visual peso columna</value>
+  </data>
+  <data name="ShowSizeColumnDescription" xml:space="preserve">
+    <value>Columna mostrará peso visual (número de dígitos en tamaño visual) del clip de</value>
+  </data>
+  <data name="TextCompareApplication" xml:space="preserve">
+    <value>Aplicación de comparación de texto</value>
+  </data>
+  <data name="TextCompareApplicationDescription" xml:space="preserve">
+    <value>Deje en blanco para utilizar la aplicación de búsqueda automática, que busca más allá de comparar, ExamDiff Pro, 
+WinMerge, Araxis Merge, DiffMerge, Kdiff3. Comparación de texto comando es % Condition archivo1% % % de archivo2</value>
+  </data>
+  <data name="TextEditor" xml:space="preserve">
+    <value>Aplicación de editor de archivos de texto (TXT)</value>
+  </data>
+  <data name="TextEditorDescription" xml:space="preserve">
+    <value>Utilizado en comando "Open file" para el clip. Deje en blanco para aplicación de sistema operativo por defecto para editar archivos de texto (TXT).</value>
+  </data>
+  <data name="UseFormattingInDublicateDetection" xml:space="preserve">
+    <value>Uso de formato en la detección de dublicate</value>
+  </data>
+  <data name="UseFormattingInDublicateDetectionDescription" xml:space="preserve">
+    <value>Utilice el formato de detección de dublicate de texto nativo. Otro sólo texto se utilizarán para la detección de dublicate de clip de texto</value>
+  </data>
+  <data name="UserSettingsPath" xml:space="preserve">
+    <value>Ruta de configuración de usuario</value>
+  </data>
+  <data name="UserSettingsPathDescription" xml:space="preserve">
+    <value>Archivos de configuración de usuario y la base de datos están aquí</value>
+  </data>
+  <data name="WindowAutoPosition" xml:space="preserve">
+    <value>Posición automática de la ventana en abierto</value>
+  </data>
+  <data name="WindowAutoPositionDescription" xml:space="preserve">
+    <value>Si es posible, ventana abrirá cerca de intercalación de texto (input), otra se coloque en el centro de la ventana activa</value>
+  </data>
+  <data name="WordWrap" xml:space="preserve">
+    <value>Ajuste automático de línea</value>
+  </data>
+  <data name="WordWrapDescription" xml:space="preserve">
+    <value>Envoltura de la palabra en el campo de texto del clip (CTRL + W). 
+No aplicable a HTML de formato nativo.</value>
+  </data>
+</root>

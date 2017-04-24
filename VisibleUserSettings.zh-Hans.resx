@@ -1,0 +1,275 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AutoCheckUpdate" xml:space="preserve">
+    <value>程序更新为限</value>
+  </data>
+  <data name="AutoCheckUpdateDescription" xml:space="preserve">
+    <value>更新程序开始和每天限</value>
+  </data>
+  <data name="AutoSelectMatch" xml:space="preserve">
+    <value>自动选择第一个匹配项</value>
+  </data>
+  <data name="AutoSelectMatchDescription" xml:space="preserve">
+    <value>Autoselection 的第一场比赛中剪辑文本筛选器。</value>
+  </data>
+  <data name="Autostart" xml:space="preserve">
+    <value>在用户登录时自动启动程序</value>
+  </data>
+  <data name="AutostartDescription" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="AutostartPath" xml:space="preserve">
+    <value>应用程序自动启动命令行</value>
+  </data>
+  <data name="AutostartPathDescription" xml:space="preserve">
+    <value>单击确定以更新此命令从当前开始路径</value>
+  </data>
+  <data name="ClearFiltersOnClose" xml:space="preserve">
+    <value>清除筛选器在主窗口关闭</value>
+  </data>
+  <data name="ClearFiltersOnCloseDescription" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="ClipListSimpleDraw" xml:space="preserve">
+    <value>快速和简单列表平局</value>
+  </data>
+  <data name="ClipListSimpleDrawDescription" xml:space="preserve">
+    <value>剪辑名单快没有突出显示匹配的筛选器和图片样品</value>
+  </data>
+  <data name="ClipTempFileFolder" xml:space="preserve">
+    <value>剪辑临时文件的文件夹</value>
+  </data>
+  <data name="ClipTempFileFolderDescription" xml:space="preserve">
+    <value>用于保存临时文件的剪辑的文件夹。留空以使用非标准 temp 文件夹。便携式模式通常可有用。</value>
+  </data>
+  <data name="CopyTextInAnyWindowOnCTRLF3" xml:space="preserve">
+    <value>从控制 + F3 的任何窗口中复制文本</value>
+  </data>
+  <data name="CopyTextInAnyWindowOnCTRLF3Description" xml:space="preserve">
+    <value>将选定的文本复制从任何窗口，当按下控制 + F3。此热键通常用于在文本编辑器中搜索选定的字符串。
+关键新闻将由窗口处理。</value>
+  </data>
+  <data name="CurrentPath" xml:space="preserve">
+    <value>应用程序当前的启动路径</value>
+  </data>
+  <data name="DatabaseSize" xml:space="preserve">
+    <value>数据库大小 MB</value>
+  </data>
+  <data name="DatabaseSizeDescription" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="DefaultFont" xml:space="preserve">
+    <value>默认字体</value>
+  </data>
+  <data name="DefaultFontDescription" xml:space="preserve">
+    <value>剪辑列表和剪辑文本的默认字体。双击要更改它。</value>
+  </data>
+  <data name="FastWindowOpen" xml:space="preserve">
+    <value>快速打开的窗口</value>
+  </data>
+  <data name="FastWindowOpenDescription" xml:space="preserve">
+    <value>快速的窗口打开，通过使用一些技巧。可以导致在窗口打开/关闭一些小问题。</value>
+  </data>
+  <data name="GlobalHotkeyCompareLastClips" xml:space="preserve">
+    <value>比较最后剪辑的热键</value>
+  </data>
+  <data name="GlobalHotkeyCompareLastClipsDescription" xml:space="preserve">
+    <value>在任何程序中使用此热键启动应用程序比较最后 2 剪辑</value>
+  </data>
+  <data name="GlobalHotkeyIncrementalPaste" xml:space="preserve">
+    <value>对增量粘贴热键</value>
+  </data>
+  <data name="GlobalHotkeyIncrementalPasteDescription" xml:space="preserve">
+    <value>在任何程序中使用此热键粘贴当前剪辑从剪辑天使列表中，选择将托盘工具提示中显示的下一个剪辑</value>
+  </data>
+  <data name="GlobalHotkeyOpenCurrent" xml:space="preserve">
+    <value>打开窗口并无变动的热键</value>
+  </data>
+  <data name="GlobalHotkeyOpenCurrentDescription" xml:space="preserve">
+    <value>在任何程序中使用此热键打开剪辑天使窗口与筛选器和剪辑选择没有变化。再次按下关闭窗口。</value>
+  </data>
+  <data name="GlobalHotkeyOpenFavorites" xml:space="preserve">
+    <value>打开收藏夹窗口的热键</value>
+  </data>
+  <data name="GlobalHotkeyOpenFavoritesDescription" xml:space="preserve">
+    <value>在任何程序中，可以使用此热键显示剪辑天使窗口与收藏夹唯一的过滤器。再次按下关闭窗口。</value>
+  </data>
+  <data name="GlobalHotkeyOpenLast" xml:space="preserve">
+    <value>使用重置打开窗口的热键</value>
+  </data>
+  <data name="GlobalHotkeyOpenLastDescription" xml:space="preserve">
+    <value>在任何程序中，可以使用此热键打开剪辑天使窗口、 清除筛选器，然后选择最后一个捕获的剪辑。再次按下关闭窗口。</value>
+  </data>
+  <data name="GlobalHotkeyPasteText" xml:space="preserve">
+    <value>将纯文本粘贴的热键</value>
+  </data>
+  <data name="GlobalHotkeyPasteTextDescription" xml:space="preserve">
+    <value>在任何程序中使用此热键将粘贴为纯文本的最后一个捕获的剪辑</value>
+  </data>
+  <data name="HistoryDepthDays" xml:space="preserve">
+    <value>历史深度天</value>
+  </data>
+  <data name="HistoryDepthDaysDescription" xml:space="preserve">
+    <value>非最喜爱的剪辑存储的天数的最大数目。每一天开始，执行删除，设置申请。0-请不要删除。</value>
+  </data>
+  <data name="HistoryDepthNumber" xml:space="preserve">
+    <value>历史深度数</value>
+  </data>
+  <data name="HistoryDepthNumberDescription" xml:space="preserve">
+    <value>存储非最喜爱的剪辑的最大数目。每一天开始，执行删除，设置申请。0-请不要删除。</value>
+  </data>
+  <data name="HtmlEditor" xml:space="preserve">
+    <value>HTML 文件编辑器应用程序</value>
+  </data>
+  <data name="HtmlEditorDescription" xml:space="preserve">
+    <value>在"打开文件"命令中用于剪辑。请留空的编辑 HTML 文件使用默认 OS 的应用程序。</value>
+  </data>
+  <data name="IgnoreApplicationsClipCapture" xml:space="preserve">
+    <value>忽略在剪辑捕获中的应用</value>
+  </data>
+  <data name="IgnoreApplicationsClipCaptureDescription" xml:space="preserve">
+    <value>不捕获此应用程序的剪辑</value>
+  </data>
+  <data name="IgnoreExclusiveFormatClipCapture" xml:space="preserve">
+    <value>不捕获"剪贴板查看器忽略"格式</value>
+  </data>
+  <data name="IgnoreExclusiveFormatClipCaptureDescription" xml:space="preserve">
+    <value>不捕获剪辑与目前的"剪贴板查看器忽略"格式。这种格式通常经理使用的密码时将密码复制到剪贴板。有时它可能有用，把它关掉临时。</value>
+  </data>
+  <data name="ImageEditor" xml:space="preserve">
+    <value>图像 (PNG) 文件编辑器中的应用</value>
+  </data>
+  <data name="ImageEditorDescription" xml:space="preserve">
+    <value>在"打开文件"命令中用于剪辑。留空以使用默认操作系统应用程序中编辑图像 (PNG) 文件。</value>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>语言</value>
+  </data>
+  <data name="LanguageDescription" xml:space="preserve">
+    <value>用户界面语言</value>
+  </data>
+  <data name="MaxClipSizeKB" xml:space="preserve">
+    <value>最大夹大小 KB</value>
+  </data>
+  <data name="MaxClipSizeKBDescription" xml:space="preserve">
+    <value>剪辑更多这种规模不会被捕获</value>
+  </data>
+  <data name="MonospacedFont" xml:space="preserve">
+    <value>等宽字体</value>
+  </data>
+  <data name="MonospacedFontDescription" xml:space="preserve">
+    <value>在剪辑文本字段中的等宽字体。
+可以重载的 RTF 本机格式。
+不适用到 HTML 本机格式。</value>
+  </data>
+  <data name="MoveCopiedClipToTop" xml:space="preserve">
+    <value>将复制在列表剪辑移至顶部</value>
+  </data>
+  <data name="MoveCopiedClipToTopDescription" xml:space="preserve">
+    <value>将复制在列表或完全粘贴的剪辑移到列表的顶部</value>
+  </data>
+  <data name="NumberOfClips" xml:space="preserve">
+    <value>剪辑的数目</value>
+  </data>
+  <data name="NumberOfClipsDescription" xml:space="preserve">
+    <value>在数据库中的剪辑的当前数目</value>
+  </data>
+  <data name="RestoreCaretPositionOnFocusReturn" xml:space="preserve">
+    <value>恢复对焦点返回插入符号位置</value>
+  </data>
+  <data name="RestoreCaretPositionOnFocusReturnDescription" xml:space="preserve">
+    <value>启用此尝试后焦点返回到目标窗口还原插入符号位置。这是有用的为失去焦点后，选择所有文本的文本框</value>
+  </data>
+  <data name="RtfEditor" xml:space="preserve">
+    <value>RTF 文件编辑器应用程序</value>
+  </data>
+  <data name="RtfEditorDescription" xml:space="preserve">
+    <value>在"打开文件"命令中用于剪辑。请留空的编辑 RTF 文件使用默认 OS 的应用程序。</value>
+  </data>
+  <data name="SearchCaseSensitive" xml:space="preserve">
+    <value>搜索区分大小写</value>
+  </data>
+  <data name="SearchCaseSensitiveDescription" xml:space="preserve">
+    <value>区分大小写的搜索筛选器。例如"锅"将匹配"土豆"，但不是"土豆"。</value>
+  </data>
+  <data name="SearchWildcards" xml:space="preserve">
+    <value>搜索"%"作为任何字符序列</value>
+  </data>
+  <data name="SearchWildcardsDescription" xml:space="preserve">
+    <value>搜索字符"%"从筛选器作为任何字符序列。例如"po %o"筛选器将匹配"土豆"。</value>
+  </data>
+  <data name="SearchWordsIndependently" xml:space="preserve">
+    <value>独立的搜索词</value>
+  </data>
+  <data name="SearchWordsIndependentlyDescription" xml:space="preserve">
+    <value>独立搜索筛选器的每个单词。例如"锅 web"将匹配"我们的网站卖马铃薯"。</value>
+  </data>
+  <data name="ShowApplicationIconColumn" xml:space="preserve">
+    <value>显示剪辑源图标列</value>
+  </data>
+  <data name="ShowApplicationIconColumnDescription" xml:space="preserve">
+    <value>从剪辑复制的位置的应用程序图标的显示列</value>
+  </data>
+  <data name="ShowNativeTextFormatting" xml:space="preserve">
+    <value>显示本机文本格式</value>
+  </data>
+  <data name="ShowNativeTextFormattingDescription" xml:space="preserve">
+    <value>显示本机文本格式的 RTF 和 HTML 剪辑 (中国肝移植注册 + N)</value>
+  </data>
+  <data name="ShowSizeColumn" xml:space="preserve">
+    <value>显示视觉剪辑权重列</value>
+  </data>
+  <data name="ShowSizeColumnDescription" xml:space="preserve">
+    <value>列将显示剪辑的视觉的重量 （视觉大小中的数字个数）</value>
+  </data>
+  <data name="TextCompareApplication" xml:space="preserve">
+    <value>文本比较中的应用</value>
+  </data>
+  <data name="TextCompareApplicationDescription" xml:space="preserve">
+    <value>留空以使用自动搜索应用程序，它会寻找超越比较，ExamDiff Pro， 
+WinMerge，轴合并，DiffMerge，Kdiff3。文本比较命令是应用程序 %%%1 file1 %%1 file2%</value>
+  </data>
+  <data name="TextEditor" xml:space="preserve">
+    <value>文本 (TXT) 文件编辑器应用程序</value>
+  </data>
+  <data name="TextEditorDescription" xml:space="preserve">
+    <value>在"打开文件"命令中用于剪辑。请留空要用于编辑文本 (TXT) 文件的默认 OS 的应用程序。</value>
+  </data>
+  <data name="UseFormattingInDublicateDetection" xml:space="preserve">
+    <value>使用 dublicate 检测中的格式设置</value>
+  </data>
+  <data name="UseFormattingInDublicateDetectionDescription" xml:space="preserve">
+    <value>使用本机中的文本格式 dublicate 检测。只有纯文本还将用于检测 dublicate 文本剪辑</value>
+  </data>
+  <data name="UserSettingsPath" xml:space="preserve">
+    <value>用户设置路径</value>
+  </data>
+  <data name="UserSettingsPathDescription" xml:space="preserve">
+    <value>用户设置与数据库文件在这儿</value>
+  </data>
+  <data name="WindowAutoPosition" xml:space="preserve">
+    <value>在打开的窗口自动位置</value>
+  </data>
+  <data name="WindowAutoPositionDescription" xml:space="preserve">
+    <value>如果可能的话，窗口将会打开附近文本插入符号 （输入），否则会在中心的活动窗口</value>
+  </data>
+  <data name="WordWrap" xml:space="preserve">
+    <value>自动换行</value>
+  </data>
+  <data name="WordWrapDescription" xml:space="preserve">
+    <value>自动换行的剪辑文本字段 (CTRL + W)。
+不适用到 HTML 本机格式。</value>
+  </data>
+</root>

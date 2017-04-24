@@ -22,16 +22,16 @@
     <value>..\Picture\delete.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="CutMarker" xml:space="preserve">
-    <value>Pokaż resztę tekstu</value>
+    <value>Rest des Textes zeigen</value>
   </data>
   <data name="text" xml:space="preserve">
-    <value>tekst</value>
+    <value>Text</value>
   </data>
   <data name="Filter" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\Filter.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="HistoryOfChanges" xml:space="preserve">
-    <value>https://sourceforge.net/p/Clip-Angel/blog</value>
+    <value>https://sourceforge.net/p/Clip-Angel/Blog</value>
   </data>
   <data name="clear2" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\clear2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -40,13 +40,13 @@
     <value>..\Picture\OpenFile.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="LangRestart" xml:space="preserve">
-    <value>Zmiany pełną języka może być konieczne ponowne uruchomienie programu</value>
+    <value>Für volle Sprachwandel musst du möglicherweise Programm neu starten</value>
   </data>
   <data name="upload" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\upload.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Confirmation" xml:space="preserve">
-    <value>Potwierdzenie</value>
+    <value>Bestätigung</value>
   </data>
   <data name="Support" xml:space="preserve">
     <value>https://sourceforge.net/p/Clip-Angel/Tickets/New/</value>
@@ -55,16 +55,16 @@
     <value>..\Picture\FindNext.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="allTypes" xml:space="preserve">
-    <value>wszystkie typy</value>
+    <value>alle Typen</value>
   </data>
   <data name="dbTemplate" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\DB\db.sqlite;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="CantPasteInElevatedWindow" xml:space="preserve">
-    <value>Nie można wkleić do okna posiadające wyższe uprawnienia. Spróbuj uruchomić program jako administrator.</value>
+    <value>Nicht in der Lage, in Fenster mit höheren Priviledges einzufügen. Versuchen Sie das Programm als Administrator ausführen.</value>
   </data>
   <data name="VisualWeightTooltip" xml:space="preserve">
-    <value>Visual klip Waga (liczba cyfr w liczbę reprezentującą rozmiar wizualne klip)</value>
+    <value>Visuelle Clip Gewicht (Anzahl der Ziffern in der Zahl, die für visuelle Clip-Größe)</value>
   </data>
   <data name="ClearFilter" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\ClearFilter.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -73,7 +73,7 @@
     <value>..\Picture\Reset favorite.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="EndMarker" xml:space="preserve">
-    <value>KONIEC</value>
+    <value>ENDE</value>
   </data>
   <data name="up" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\up.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -85,16 +85,16 @@
     <value>MB</value>
   </data>
   <data name="Size" xml:space="preserve">
-    <value>Rozmiar</value>
+    <value>Größe</value>
   </data>
   <data name="TypeText" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\TypeText.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="NextClip" xml:space="preserve">
-    <value>Następny сlip</value>
+    <value>Nächste сlip</value>
   </data>
   <data name="NoSupportedTextCompareApplication" xml:space="preserve">
-    <value>Żadna aplikacja Porównaj obsługiwanych tekst został znaleziony. Teraz możemy otworzyć stronę internetową, aby uzyskać wolny jeden.</value>
+    <value>Keine unterstützten Text vergleichen Anwendung fand. Jetzt öffnen wir die Webseite um kostenlos zu bekommen.</value>
   </data>
   <data name="Alien_64x64" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\Alien-64x64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -103,10 +103,10 @@
     <value>..\Picture\clear1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="NewVersionAvailable" xml:space="preserve">
-    <value>Dostępna jest nowa wersja. Aby zaktualizować przycisk jest pasek poleceń top.</value>
+    <value>Neue Version ist verfügbar. Um Gebrauch zu aktualisieren ist Taste Befehl Top Bar.</value>
   </data>
   <data name="ApplicationAddedToIgnoreList" xml:space="preserve">
-    <value>Aplikacja "{0}" dodane do Ignoruj listy, które można edytować w oknie Ustawienia</value>
+    <value>Anwendung "{0}" hinzugefügt, um Liste, welche zu ignorieren kann im Fenster "Einstellungen" bearbeitet werden</value>
   </data>
   <data name="CharUnit" xml:space="preserve">
     <value>С</value>
@@ -115,13 +115,13 @@
     <value>..\Picture\Top2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="EditClipTitle" xml:space="preserve">
-    <value>Edytuj tytuł klipu</value>
+    <value>Clip-Titel bearbeiten</value>
   </data>
   <data name="Autoselect first match" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\Autoselect first match.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="favorite" xml:space="preserve">
-    <value>ulubione</value>
+    <value>Favorit</value>
   </data>
   <data name="keyboard" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\keyboard.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -139,22 +139,22 @@
     <value>..\Picture\FindPrevious.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ActivatedExistedProcess" xml:space="preserve">
-    <value>Aktywowany, już uruchomione wystąpienie aplikacji</value>
+    <value>Bereits laufenden Instanz der Anwendung aktiviert</value>
   </data>
   <data name="UpdateTo" xml:space="preserve">
-    <value>Aktualizacja do</value>
+    <value>Aktualisieren Sie auf</value>
   </data>
   <data name="used" xml:space="preserve">
-    <value>używane</value>
+    <value>belegt</value>
   </data>
   <data name="file" xml:space="preserve">
-    <value>plik</value>
+    <value>Datei</value>
   </data>
   <data name="DBShortFilename" xml:space="preserve">
-    <value>DB.sqlite</value>
+    <value>DB.SQLite</value>
   </data>
   <data name="FailedToReadFormatFromClipboard" xml:space="preserve">
-    <value>Nie można odczytać danych w formacie "{0}" ze schowka.</value>
+    <value>Fehler beim Lesen von Daten im Format "{0}" aus der Zwischenablage.</value>
   </data>
   <data name="TopMostWindow" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\TopMostWindow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -163,10 +163,10 @@
     <value>B</value>
   </data>
   <data name="HelpPage" xml:space="preserve">
-    <value>https://sourceforge.net/p/Clip-Angel/wiki/Description/</value>
+    <value>https://sourceforge.net/p/Clip-Angel/Wiki/Description/</value>
   </data>
   <data name="QuestionResetSettings" xml:space="preserve">
-    <value>Czy na pewno chcesz zresetować ustawienia do wartości domyślnych?</value>
+    <value>Sind Sie Einstellungen auf die Standardwerte zurücksetzen möchten?</value>
   </data>
   <data name="Version" xml:space="preserve">
     <value>1.22</value>
@@ -175,22 +175,22 @@
     <value>..\Picture\eye.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="CouldNotRegisterHotkey" xml:space="preserve">
-    <value>Nie mogłem zarejestrować klucz globalny gorący</value>
+    <value>Konnte nicht die globale hot Key registrieren</value>
   </data>
   <data name="Dublicate" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\Dublicate.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="YouLatestVersion" xml:space="preserve">
-    <value>Używasz najnowszej wersji</value>
+    <value>Sie verwenden die neueste version</value>
   </data>
   <data name="Back" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\Back.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="HowUseAutoTitle" xml:space="preserve">
-    <value>Jasne, ciąg do posługiwania się tytułem auto</value>
+    <value>Eindeutige Zeichenfolge, die Auto Titel verwendet</value>
   </data>
   <data name="PixelFormat" xml:space="preserve">
-    <value>Piksel</value>
+    <value>Pixel</value>
   </data>
   <data name="translate" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\translate.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -208,7 +208,7 @@
     <value>..\Picture\TypeFile.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ClipFileAlreadyOpened" xml:space="preserve">
-    <value>Plik CLIP już otwarte i zablokowany</value>
+    <value>Clip-Datei bereits geöffnet und blockiert</value>
   </data>
   <data name="down" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\down.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -220,16 +220,16 @@
     <value>..\Picture\Open with.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="FailedToWriteClipboard" xml:space="preserve">
-    <value>Nie można zapisać Schowka. Jest on zablokowany przez okno "{0}" aplikacji "{1}"</value>
+    <value>Fehler beim Schreiben der Zwischenablage. Es ist vom Fenster "{0}" Anwendung "{1}" gesperrt.</value>
   </data>
   <data name="WordWrap" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\word wrap.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="allMarks" xml:space="preserve">
-    <value>wszystkie znaki</value>
+    <value>alle Marken</value>
   </data>
   <data name="img" xml:space="preserve">
-    <value>img</value>
+    <value>IMG</value>
   </data>
   <data name="DownloadPage" xml:space="preserve">
     <value>https://sourceforge.net/projects/Clip-Angel/Files/Latest/Download</value>
@@ -244,7 +244,7 @@
     <value>..\Picture\Compare.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="СonfirmDeleteAllNonFavorite" xml:space="preserve">
-    <value>Czy na pewno chcesz usunąć wszystkie nie ulubione klipy?</value>
+    <value>Sind Sie sicher, dass alle nicht Lieblings Clips löschen möchten?</value>
   </data>
   <data name="KiloByteUnit" xml:space="preserve">
     <value>KB</value>
@@ -265,6 +265,6 @@
     <value>..\Picture\FindOptions.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Search" xml:space="preserve">
-    <value>Wyszukaj</value>
+    <value>Suchen</value>
   </data>
 </root>

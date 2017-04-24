@@ -16,7 +16,7 @@
     <value>69, 43</value>
   </data>
   <data name="buttonCancel.Text" xml:space="preserve">
-    <value>Cancelar</value>
+    <value>रद्द करें</value>
   </data>
   <data name="buttonCancel.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
@@ -52,7 +52,7 @@
     <value>150, 43</value>
   </data>
   <data name="buttonOK.Text" xml:space="preserve">
-    <value>OK</value>
+    <value>ठीक</value>
   </data>
   <data name="HotkeyTextbox.Location" xml:space="preserve" type="System.Drawing.Point, System.Drawing">
     <value>12, 12</value>
@@ -67,7 +67,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Editar o hotkey</value>
+    <value>हॉटकी संपादित करें</value>
   </data>
   <data name="buttonOK.Anchor" xml:space="preserve" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>

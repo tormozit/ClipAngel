@@ -16,7 +16,7 @@
     <value></value>
   </data>
   <data name="buttonSelectClipboardOwner.Text" xml:space="preserve">
-    <value>Wybierz właściciela schowka</value>
+    <value>Seleccione propietario de Portapapeles</value>
   </data>
   <data name="buttonOK.Location" xml:space="preserve" type="System.Drawing.Point, System.Drawing">
     <value>531, 382</value>
@@ -34,7 +34,7 @@
     <value>ImageBeforeText</value>
   </data>
   <data name="buttonAddByFile.Text" xml:space="preserve">
-    <value>Dodawanie aplikacji przez plik</value>
+    <value>Añadir aplicación por archivo</value>
   </data>
   <data name="buttonAdd.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>139, 23</value>
@@ -46,7 +46,7 @@
     <value>8</value>
   </data>
   <data name="buttonAdd.ToolTip" xml:space="preserve">
-    <value>Dodaj wybrane aplikacje uruchomione</value>
+    <value>Añadir las aplicaciones en ejecución</value>
   </data>
   <data name="$this.ClientSize" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>699, 417</value>
@@ -55,10 +55,10 @@
     <value>156, 23</value>
   </data>
   <data name="buttonCancel.Text" xml:space="preserve">
-    <value>Anuluj</value>
+    <value>Cancelar</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Edytor listy aplikacji</value>
+    <value>Editor de lista de aplicaciones</value>
   </data>
   <data name="buttonSelectTargetApplication.Location" xml:space="preserve" type="System.Drawing.Point, System.Drawing">
     <value>531, 41</value>
@@ -82,7 +82,7 @@
     <value>True</value>
   </data>
   <data name="SelectedListModule.Text" xml:space="preserve">
-    <value>Moduł</value>
+    <value>Módulo</value>
   </data>
   <data name="splitContainer1.SplitterDistance" xml:space="preserve" type="System.Int32, mscorlib">
     <value>335</value>
@@ -94,7 +94,7 @@
     <value>156, 23</value>
   </data>
   <data name="RunningListApplication.Text" xml:space="preserve">
-    <value>Ścieżka</value>
+    <value>Ruta de acceso</value>
   </data>
   <data name="RunningListApplication.Width" xml:space="preserve" type="System.Int32, mscorlib">
     <value>268</value>
@@ -109,7 +109,7 @@
     <value>6, 13</value>
   </data>
   <data name="buttonAdd.Text" xml:space="preserve">
-    <value>Dodaj wybrane aplikacje</value>
+    <value>Añadir aplicaciones seleccionadas</value>
   </data>
   <data name="buttonAdd.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
     <value>11</value>
@@ -121,16 +121,16 @@
     <value>Bottom, Right</value>
   </data>
   <data name="buttonSelectTargetApplication.ToolTip" xml:space="preserve">
-    <value>Wybierz Uruchamianie aplikacji bieżącej aplikacji docelowej</value>
+    <value>Seleccione en el funcionamiento de aplicaciones de aplicación de destino actual</value>
   </data>
   <data name="buttonOK.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
   </data>
   <data name="SelectedListApplication.Text" xml:space="preserve">
-    <value>Ścieżka</value>
+    <value>Ruta de acceso</value>
   </data>
   <data name="buttonRefresh.Text" xml:space="preserve">
-    <value>Odśwież</value>
+    <value>Actualizar</value>
   </data>
   <data name="label2.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>98, 13</value>
@@ -148,7 +148,7 @@
     <value>8</value>
   </data>
   <data name="buttonDeleteSelected.Text" xml:space="preserve">
-    <value>Usuń wybrane aplikacje</value>
+    <value>Eliminar aplicaciones seleccionadas</value>
   </data>
   <data name="label1.ToolTip" xml:space="preserve">
     <value></value>
@@ -169,7 +169,7 @@
     <value>333, 281</value>
   </data>
   <data name="buttonAddByFile.ToolTip" xml:space="preserve">
-    <value>Otwiera okno dialogowe wyboru pliku i dodanie wybranych aplikacji</value>
+    <value>Abrir diálogo de selección de archivo y añadir la aplicación seleccionada</value>
   </data>
   <data name="label1.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
     <value>1</value>
@@ -187,7 +187,7 @@
     <value>NoControl</value>
   </data>
   <data name="buttonSelectTargetApplication.Text" xml:space="preserve">
-    <value>Wybierz aplikację docelową</value>
+    <value>Seleccione la aplicación de destino</value>
   </data>
   <data name="buttonAdd.Anchor" xml:space="preserve" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top</value>
@@ -196,7 +196,7 @@
     <value>8</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
-    <value>Wybranych zastosowaniach</value>
+    <value>Apllications elegido</value>
   </data>
   <data name="listViewRunningList.ToolTip" xml:space="preserve">
     <value></value>
@@ -229,13 +229,13 @@
     <value></value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>Systemem apllications</value>
+    <value>Apllications corriente</value>
   </data>
   <data name="$this.ToolTip" xml:space="preserve">
     <value></value>
   </data>
   <data name="buttonRefresh.ToolTip" xml:space="preserve">
-    <value>Odśwież listę uruchomionych aplikacji</value>
+    <value>Actualizar Listado aplicaciones</value>
   </data>
   <data name="listViewChosenList.Location" xml:space="preserve" type="System.Drawing.Point, System.Drawing">
     <value>0, 23</value>
@@ -244,7 +244,7 @@
     <value>3, 5</value>
   </data>
   <data name="buttonSelectClipboardOwner.ToolTip" xml:space="preserve">
-    <value>Wybierz schowka właściciela w prowadzeniu bieżącej aplikacji </value>
+    <value>Propietario, seleccione portapapeles en aplicaciones actuales </value>
   </data>
   <data name="buttonRefresh.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
     <value>12</value>
@@ -262,7 +262,7 @@
     <value></value>
   </data>
   <data name="RunningListModule.Text" xml:space="preserve">
-    <value>Moduł</value>
+    <value>Módulo</value>
   </data>
   <data name="buttonSelectTargetApplication.Anchor" xml:space="preserve" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -277,7 +277,7 @@
     <value>12, 41</value>
   </data>
   <data name="buttonOK.Text" xml:space="preserve">
-    <value>OK</value>
+    <value>Aceptar</value>
   </data>
   <data name="buttonOK.ToolTip" xml:space="preserve">
     <value></value>
