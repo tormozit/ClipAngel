@@ -1172,6 +1172,7 @@ namespace ClipAngel
                 string filterTextTemp = filterText;
                 filterTextTemp = filterTextTemp.Replace("_", "\\_");
                 filterTextTemp = filterTextTemp.Replace("\\", "\\\\");
+                filterTextTemp = filterTextTemp.Replace("'", "''");
                 if (!Properties.Settings.Default.SearchWildcards)
                     filterTextTemp = filterTextTemp.Replace("%", "\\%");
                 if (Properties.Settings.Default.SearchWordsIndependently)

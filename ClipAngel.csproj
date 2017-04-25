@@ -165,7 +165,13 @@
     <EmbeddedResource Include="AboutBox.de.resx">
       <DependentUpon>AboutBox.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AboutBox.el.resx">
+      <DependentUpon>AboutBox.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AboutBox.es.resx">
+      <DependentUpon>AboutBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AboutBox.fr.resx">
       <DependentUpon>AboutBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AboutBox.hi.resx">
@@ -192,7 +198,13 @@
     <EmbeddedResource Include="AppListEditorForm.de.resx">
       <DependentUpon>AppListEditorForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AppListEditorForm.el.resx">
+      <DependentUpon>AppListEditorForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AppListEditorForm.es.resx">
+      <DependentUpon>AppListEditorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppListEditorForm.fr.resx">
       <DependentUpon>AppListEditorForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AppListEditorForm.hi.resx">
@@ -219,7 +231,13 @@
     <EmbeddedResource Include="HotkeyEditorForm.de.resx">
       <DependentUpon>HotkeyEditorForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="HotkeyEditorForm.el.resx">
+      <DependentUpon>HotkeyEditorForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="HotkeyEditorForm.es.resx">
+      <DependentUpon>HotkeyEditorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HotkeyEditorForm.fr.resx">
       <DependentUpon>HotkeyEditorForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HotkeyEditorForm.hi.resx">
@@ -246,7 +264,13 @@
     <EmbeddedResource Include="Main.de.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Main.el.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Main.es.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main.fr.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main.hi.resx">
@@ -269,7 +293,9 @@
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.de.resx" />
+    <EmbeddedResource Include="Properties\Resources.el.resx" />
     <EmbeddedResource Include="Properties\Resources.es.resx" />
+    <EmbeddedResource Include="Properties\Resources.fr.resx" />
     <EmbeddedResource Include="Properties\Resources.hi.resx" />
     <EmbeddedResource Include="Properties\Resources.it.resx" />
     <EmbeddedResource Include="Properties\Resources.pl.resx" />
@@ -288,7 +314,13 @@
     <EmbeddedResource Include="SettingsForm.de.resx">
       <DependentUpon>SettingsForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SettingsForm.el.resx">
+      <DependentUpon>SettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SettingsForm.es.resx">
+      <DependentUpon>SettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SettingsForm.fr.resx">
       <DependentUpon>SettingsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SettingsForm.hi.resx">
@@ -314,7 +346,9 @@
       <DependentUpon>SettingsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VisibleUserSettings.de.resx" />
+    <EmbeddedResource Include="VisibleUserSettings.el.resx" />
     <EmbeddedResource Include="VisibleUserSettings.es.resx" />
+    <EmbeddedResource Include="VisibleUserSettings.fr.resx" />
     <EmbeddedResource Include="VisibleUserSettings.hi.resx" />
     <EmbeddedResource Include="VisibleUserSettings.it.resx" />
     <EmbeddedResource Include="VisibleUserSettings.pl.resx" />
@@ -473,7 +507,9 @@
   </ItemGroup>
   <ItemGroup>
     <XliffResource Include="MultilingualResources\ClipAngel.de.xlf" />
+    <XliffResource Include="MultilingualResources\ClipAngel.el.xlf" />
     <XliffResource Include="MultilingualResources\ClipAngel.es.xlf" />
+    <XliffResource Include="MultilingualResources\ClipAngel.fr.xlf" />
     <XliffResource Include="MultilingualResources\ClipAngel.hi.xlf" />
     <XliffResource Include="MultilingualResources\ClipAngel.it.xlf" />
     <XliffResource Include="MultilingualResources\ClipAngel.pl.xlf" />
