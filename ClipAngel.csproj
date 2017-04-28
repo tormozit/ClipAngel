@@ -452,9 +452,6 @@
     <None Include="Picture\Dublicate.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Languages\EN\" />
-    <Folder Include="Languages\PL\" />
-    <Folder Include="Languages\RU\" />
     <Folder Include="Properties\DataSources\" />
   </ItemGroup>
   <ItemGroup>

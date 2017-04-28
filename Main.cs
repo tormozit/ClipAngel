@@ -1775,6 +1775,8 @@ namespace ClipAngel
                 counter++;
                 dataGridView.Rows.Remove(selectedRow);
                 ClipsNumber--;
+                if (counter == 999) // SQLITE_MAX_VARIABLE_NUMBER, which defaults to 999, but can be lowered at runtime
+                    break;
             }
             sql += ")";
             command.CommandText = sql;
@@ -3850,15 +3852,15 @@ namespace ClipAngel
             wordWrapToolStripMenuItem.Checked = Properties.Settings.Default.WordWrap;
             toolStripButtonWordWrap.Checked = Properties.Settings.Default.WordWrap;
             richTextBox.WordWrap = wordWrapToolStripMenuItem.Checked;
-            showInTaskbarToolStripMenuItem.Enabled = Properties.Settings.Default.FastWindowOpen;
+            //showInTaskbarToolStripMenuItem.Enabled = Properties.Settings.Default.FastWindowOpen;
             showInTaskbarToolStripMenuItem.Checked = Properties.Settings.Default.ShowInTaskBar;
             //dataGridView.Columns["VisualWeight"].Visible = Properties.Settings.Default.ShowVisualWeightColumn;
-            if (Properties.Settings.Default.FastWindowOpen)
-            {
+            //if (Properties.Settings.Default.FastWindowOpen)
+            //{
                 this.ShowInTaskbar = Properties.Settings.Default.ShowInTaskBar;
                 // After ShowInTaskbar change true->false all window properties are deleted. So we need to reset it.
                 ResetIsMainProperty();
-            }
+            //}
             editClipTextToolStripMenuItem.Checked = EditMode;
             toolStripMenuItemEditClipText.Checked = EditMode;
             //pasteENTERToolStripMenuItem.Enabled = !EditMode;

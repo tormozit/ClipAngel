@@ -251,9 +251,6 @@ Url वर्तमान क्लिप में सहेजे जाएँ
   <data name="StripLabelType.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>35, 17</value>
   </data>
-  <data name="htmlTextBox.ToolTip" xml:space="preserve">
-    <value></value>
-  </data>
   <data name="showOnlyTextsToolStripMenuItem.Text" xml:space="preserve">
     <value>केवल पाठ दिखाएँ</value>
   </data>
@@ -329,9 +326,6 @@ Url वर्तमान क्लिप में सहेजे जाएँ
   <data name="richTextBox.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>408, 94</value>
   </data>
-  <data name="richTextBox.ToolTip" xml:space="preserve">
-    <value></value>
-  </data>
   <data name="moveTopToolStripMenuItem.Text" xml:space="preserve">
     <value>शीर्ष पर ले जाएँ</value>
   </data>
@@ -343,9 +337,6 @@ Url वर्तमान क्लिप में सहेजे जाएँ
   </data>
   <data name="deleteAllNonFavoriteToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>250, 22</value>
-  </data>
-  <data name="contextMenuUrl.ToolTip" xml:space="preserve">
-    <value></value>
   </data>
   <data name="rtfMenuItemSelectAll.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+A</value>
@@ -400,9 +391,6 @@ Url वर्तमान क्लिप में सहेजे जाएँ
   </data>
   <data name="tableLayoutPanelData.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>412, 369</value>
-  </data>
-  <data name="tableLayoutPanelData.ToolTip" xml:space="preserve">
-    <value></value>
   </data>
   <data name="previousMatchToolStripMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Shift+F3</value>
@@ -585,9 +573,6 @@ Url वर्तमान क्लिप में सहेजे जाएँ
   <data name="htmlTextBox.Location" xml:space="preserve" type="System.Drawing.Point, System.Drawing">
     <value>3, 101</value>
   </data>
-  <data name="toolStripTop.ToolTip" xml:space="preserve">
-    <value></value>
-  </data>
   <data name="deleteToolStripMenuItem1.ToolTipText" xml:space="preserve">
     <value>चयनित क्लिप से इतिहास हटाएँ</value>
   </data>
@@ -683,9 +668,6 @@ Url वर्तमान क्लिप में सहेजे जाएँ
   </data>
   <data name="moveUpToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>250, 22</value>
-  </data>
-  <data name="contextMenuStripRtf.ToolTip" xml:space="preserve">
-    <value></value>
   </data>
   <data name="showOnlyFilesToolStripMenuItem.Text" xml:space="preserve">
     <value>केवल फ़ाइलें दिखाएँ</value>
@@ -1388,9 +1370,6 @@ Url वर्तमान क्लिप में सहेजे जाएँ
   <data name="pasteENTERToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>214, 22</value>
   </data>
-  <data name="contextMenuStripHtml.ToolTip" xml:space="preserve">
-    <value></value>
-  </data>
   <data name="tableLayoutPanelData.Margin" xml:space="preserve" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
   </data>
@@ -1432,9 +1411,6 @@ Url वर्तमान क्लिप में सहेजे जाएँ
   </data>
   <data name="stripLabelPosition.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>116, 17</value>
-  </data>
-  <data name="dataGridView.ToolTip" xml:space="preserve">
-    <value></value>
   </data>
   <data name="toolStripMenuItem12.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>211, 22</value>
@@ -1665,9 +1641,6 @@ Url वर्तमान क्लिप में सहेजे जाएँ
   <data name="stripLabelPosition.AutoSize" xml:space="preserve" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="MainMenu.ToolTip" xml:space="preserve">
-    <value></value>
-  </data>
   <data name="toolStripMenuItemSwitchFocus.Text" xml:space="preserve">
     <value>स्विच फोकस सूची/पाठ</value>
   </data>
@@ -1754,9 +1727,6 @@ Url वर्तमान क्लिप में सहेजे जाएँ
   </data>
   <data name="aboutToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>52, 20</value>
-  </data>
-  <data name="contextMenuWindowTitle.ToolTip" xml:space="preserve">
-    <value></value>
   </data>
   <data name="uploadImageToWebToolStripMenuItem.Text" xml:space="preserve">
     <value>वेब के लिए छवि अपलोड करें</value>
@@ -2341,9 +2311,6 @@ Url वर्तमान क्लिप में सहेजे जाएँ
   <data name="toolStripMenuItem14.ToolTipText" xml:space="preserve">
     <value>चयनित क्लिप पसंदीदा के रूप में चिह्नित करें</value>
   </data>
-  <data name="contextMenuStripDataGrid.ToolTip" xml:space="preserve">
-    <value></value>
-  </data>
   <data name="showAllMarksToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>250, 22</value>
   </data>
@@ -2352,9 +2319,6 @@ Url वर्तमान क्लिप में सहेजे जाएँ
   </data>
   <data name="aboutToolStripMenuItem1.Text" xml:space="preserve">
     <value>इसके बारे में</value>
-  </data>
-  <data name="toolStripBottom.ToolTip" xml:space="preserve">
-    <value></value>
   </data>
   <data name="toolStripButtonWordWrap.ImageTransparentColor" xml:space="preserve" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
@@ -2401,9 +2365,6 @@ Url वर्तमान क्लिप में सहेजे जाएँ
   <data name="toolStripMenuItem4.Text" xml:space="preserve">
     <value>हटायें</value>
   </data>
-  <data name="contextMenuStripNotifyIcon.ToolTip" xml:space="preserve">
-    <value></value>
-  </data>
   <data name="textBoxApplication.Location" xml:space="preserve" type="System.Drawing.Point, System.Drawing">
     <value>329, 3</value>
   </data>
@@ -2430,9 +2391,6 @@ Url वर्तमान क्लिप में सहेजे जाएँ
   </data>
   <data name="deleteAllNonFavoriteToolStripMenuItem.Text" xml:space="preserve">
     <value>सभी गैर पसंदीदा हटाएँ</value>
-  </data>
-  <data name="ImageControl.ToolTip" xml:space="preserve">
-    <value></value>
   </data>
   <data name="toolStripButtonReturnToPrevous.ImageTransparentColor" xml:space="preserve" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
@@ -2461,9 +2419,6 @@ Url वर्तमान क्लिप में सहेजे जाएँ
   </data>
   <data name="VisualWeight.MinimumWidth" xml:space="preserve" type="System.Int32, mscorlib">
     <value>9</value>
-  </data>
-  <data name="statusStrip.ToolTip" xml:space="preserve">
-    <value></value>
   </data>
   <data name="stripLabelPosition.ToolTipText" xml:space="preserve">
     <value>पाठ की स्थिति  &lt;offset&gt; (&lt;line&gt;:&lt;column&gt;): &lt;length&gt; </value>
@@ -2494,9 +2449,6 @@ Url वर्तमान क्लिप में सहेजे जाएँ
   </data>
   <data name="StripLabelType.Text" xml:space="preserve">
     <value>प्रकार</value>
-  </data>
-  <data name="contextMenuStripApplication.ToolTip" xml:space="preserve">
-    <value></value>
   </data>
   <data name="toolStripMenuItem6.ToolTipText" xml:space="preserve">
     <value>सक्रिय विंडो में सादा पाठ चयनित क्लिप या agregated चयनित क्लिप्स के पाठ के पाठ के रूप में चिपकाएँ। 

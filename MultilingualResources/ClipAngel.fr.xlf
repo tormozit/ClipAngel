@@ -1964,10 +1964,6 @@ Changes in temp file are not synchronized with clip!
           <source>Alt+Q</source>
           <target state="needs-review-translation">Alt+Q</target>
         </trans-unit>
-        <trans-unit id="ImageControl.ToolTip" translate="yes" xml:space="preserve">
-          <source></source>
-          <target state="new"></target>
-        </trans-unit>
         <trans-unit id="TypeFilter.ToolTip" translate="yes" xml:space="preserve">
           <source>Show only clips of this types. 
 Submenu "List" has commands for quick selection</source>
@@ -2160,10 +2156,6 @@ Url will be saved in current clip and will be copied to clipboard.</target>
           <source>35, 17</source>
           <target state="needs-review-translation">35, 17</target>
         </trans-unit>
-        <trans-unit id="htmlTextBox.ToolTip" translate="yes" xml:space="preserve">
-          <source></source>
-          <target state="new"></target>
-        </trans-unit>
         <trans-unit id="showOnlyTextsToolStripMenuItem.Text" translate="yes" xml:space="preserve">
           <source>Show only texts</source>
           <target state="new">Show only texts</target>
@@ -2216,10 +2208,6 @@ Url will be saved in current clip and will be copied to clipboard.</target>
           <source>Show all marks</source>
           <target state="new">Show all marks</target>
         </trans-unit>
-        <trans-unit id="contextMenuUrl.ToolTip" translate="yes" xml:space="preserve">
-          <source></source>
-          <target state="new"></target>
-        </trans-unit>
         <trans-unit id="htmlTextBox.MinimumSize" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
           <source>20, 20</source>
           <target state="needs-review-translation">20, 20</target>
@@ -2267,10 +2255,6 @@ Url will be saved in current clip and will be copied to clipboard.</target>
         <trans-unit id="richTextBox.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
           <source>408, 94</source>
           <target state="needs-review-translation">408, 94</target>
-        </trans-unit>
-        <trans-unit id="richTextBox.ToolTip" translate="yes" xml:space="preserve">
-          <source></source>
-          <target state="new"></target>
         </trans-unit>
         <trans-unit id="ImageControl.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
           <source>8</source>
@@ -2606,10 +2590,6 @@ Changes in temp file are not synchronized with clip!</target>
           <source>3, 101</source>
           <target state="needs-review-translation">3, 101</target>
         </trans-unit>
-        <trans-unit id="toolStripTop.ToolTip" translate="yes" xml:space="preserve">
-          <source></source>
-          <target state="new"></target>
-        </trans-unit>
         <trans-unit id="deleteToolStripMenuItem1.ToolTipText" translate="yes" xml:space="preserve">
           <source>Delete selected clips from history</source>
           <target state="new">Delete selected clips from history</target>
@@ -2653,10 +2633,6 @@ Changes in temp file are not synchronized with clip!</target>
         <trans-unit id="showOnlyFavoriteToolStripMenuItem.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
           <source>250, 22</source>
           <target state="needs-review-translation">250, 22</target>
-        </trans-unit>
-        <trans-unit id="tableLayoutPanelData.ToolTip" translate="yes" xml:space="preserve">
-          <source></source>
-          <target state="new"></target>
         </trans-unit>
         <trans-unit id="toolStripButtonOpenWith.ToolTipText" translate="yes" xml:space="preserve">
           <source>Save data to temp file for text or image clip.
@@ -2743,14 +2719,6 @@ Changes in temp file are not synchronized with clip!
         <trans-unit id="moveUpToolStripMenuItem.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
           <source>250, 22</source>
           <target state="needs-review-translation">250, 22</target>
-        </trans-unit>
-        <trans-unit id="contextMenuStripHtml.ToolTip" translate="yes" xml:space="preserve">
-          <source></source>
-          <target state="new"></target>
-        </trans-unit>
-        <trans-unit id="contextMenuStripRtf.ToolTip" translate="yes" xml:space="preserve">
-          <source></source>
-          <target state="new"></target>
         </trans-unit>
         <trans-unit id="showOnlyFilesToolStripMenuItem.Text" translate="yes" xml:space="preserve">
           <source>Show only files</source>
@@ -5188,10 +5156,6 @@ Used only in fast window open mode.</target>
           <source>6, 25</source>
           <target state="needs-review-translation">6, 25</target>
         </trans-unit>
-        <trans-unit id="dataGridView.ToolTip" translate="yes" xml:space="preserve">
-          <source></source>
-          <target state="new"></target>
-        </trans-unit>
         <trans-unit id="toolStripMenuItem12.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
           <source>211, 22</source>
           <target state="needs-review-translation">211, 22</target>
@@ -5490,10 +5454,6 @@ Submenu "List" has commands for quick selection</target>
           <source>False</source>
           <target state="needs-review-translation">False</target>
         </trans-unit>
-        <trans-unit id="contextMenuStripDataGrid.ToolTip" translate="yes" xml:space="preserve">
-          <source></source>
-          <target state="new"></target>
-        </trans-unit>
         <trans-unit id="moveTopToolStripMenuItem.ShortcutKeys" translate="yes" extype="System.Windows.Forms.Keys, System.Windows.Forms" xml:space="preserve">
           <source>Ctrl+Alt+Up</source>
           <target state="needs-review-translation">Ctrl+Alt+Up</target>
@@ -5505,10 +5465,6 @@ Submenu "List" has commands for quick selection</target>
         <trans-unit id="stripLabelPosition.AutoSize" translate="yes" extype="System.Boolean, mscorlib" xml:space="preserve">
           <source>False</source>
           <target state="needs-review-translation">False</target>
-        </trans-unit>
-        <trans-unit id="MainMenu.ToolTip" translate="yes" xml:space="preserve">
-          <source></source>
-          <target state="new"></target>
         </trans-unit>
         <trans-unit id="setFavouriteToolStripMenuItem.ToolTipText" translate="yes" xml:space="preserve">
           <source>Mark selected clips as favorite</source>
@@ -5610,10 +5566,6 @@ Submenu "List" has commands for quick selection</target>
           <source>52, 20</source>
           <target state="needs-review-translation">52, 20</target>
         </trans-unit>
-        <trans-unit id="contextMenuWindowTitle.ToolTip" translate="yes" xml:space="preserve">
-          <source></source>
-          <target state="new"></target>
-        </trans-unit>
         <trans-unit id="uploadImageToWebToolStripMenuItem.Text" translate="yes" xml:space="preserve">
           <source>Upload image to web</source>
           <target state="new">Upload image to web</target>
@@ -5690,10 +5642,6 @@ Submenu "List" has commands for quick selection</target>
           <source>About</source>
           <target state="new">About</target>
         </trans-unit>
-        <trans-unit id="toolStripBottom.ToolTip" translate="yes" xml:space="preserve">
-          <source></source>
-          <target state="new"></target>
-        </trans-unit>
         <trans-unit id="toolStripMenuItemCompareLastClips.ToolTipText" translate="yes" xml:space="preserve">
           <source>Compare text of last clips</source>
           <target state="new">Compare text of last clips</target>
@@ -5728,17 +5676,17 @@ Submenu "List" has commands for quick selection</target>
         </trans-unit>
         <trans-unit id="buttonUpdate.Image" translate="yes" extype="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64" xml:space="preserve">
           <source>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAAgNJREFUOE+lkutLk2EYxvePhJaHShFBUTEPiCieQOmDiEZgrEbpYGiCQxkqA80I
-        RUkUEZ0YRMS+DDI70MkTmzJnDc8iU8QT2mAEItnle90wHwTDyBduXnie5/rd133Q4ZKfAJqHFs9E08A8
-        zD1emDpmYXjqRlnTFIrMk8iuGkNaxWekGEaQrHecBfw+/vPXODw6hj9whN2fh/Bt/8LSRgA3cxr/DeBZ
-        9kvmTNMoHGNbIrYN+3Aj23IxgJkpds0doP3VstgmsNexhutZ9QrAms8T0zYzU5xXM46kcjsmvfvoeL2i
-        AeoUgA07T8yaaZuZKab1rzN74jgys1YB2O2gmBZzH49LODXrrJlnzEzxe9cOLH1ziMioVgCOiuIFX0CE
-        Q+/WYf+yieiCFrRp9tkwxnP7Kt5MbKGm6wfC000KwDlTXNLgEvHMkh+Db32o7fYivtQm1l9+3IBOp5P7
-        yjYPwlKNCsAluWudxgvtknb5t9oWcL/VLU2Mvd2JFq3uqs7vAtE/ceNayiMF4KiYMSjmY2O7B4Ua+NaD
-        YQGEJumRbvyG1IcfBHI12aAAXM8R57aIWTNrLLY4tfNPiCvpR1SeVeu6WWzHFD6THSDwFMDdpmUG62NJ
-        PKM4Or9ZxBxb8H8l7g5CEu8pAOfM3WanSeeS8CFHxW4zM2umbWamOCShXAH+/wNOANABIDUxWnDPAAAA
-        AElFTkSuQmCC
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIDSURBVDhPpZLrS5NhGMb3j4SWh0oRQVExD4gonkDpg4hG
+        YKxG6WBogkMZKgPNCEVJFBGdGETEvgwyO9DJE5syZw3PIlPEE9pgBCLZ5XvdMB8Ew8gXbl54nuf63dd9
+        0OGSnwCahxbPRNPAPMw9Xpg6ZmF46kZZ0xSKzJPIrhpDWsVnpBhGkKx3nAX8Pv7z1zg8OoY/cITdn4fw
+        bf/C0kYAN3Ma/w3gWfZL5kzTKBxjWyK2DftwI9tyMYCZKXbNHaD91bLYJrDXsYbrWfUKwJrPE9M2M1Oc
+        VzOOpHI7Jr376Hi9ogHqFIANO0/MmmmbmSmm9a8ze+I4MrNWAdjtoJgWcx+PSzg166yZZ8xM8XvXDix9
+        c4jIqFYAjoriBV9AhEPv1mH/sonogha0afbZMMZz+yreTGyhpusHwtNNCsA5U1zS4BLxzJIfg299qO32
+        Ir7UJtZfftyATqeT+8o2D8JSjQrAJblrncYL7ZJ2+bfaFnC/1S1NjL3diRat7qrO7wLRP3HjWsojBeCo
+        mDEo5mNjuweFGvjWg2EBhCbpkW78htSHHwRyNdmgAFzPEee2iFkzayy2OLXzT4gr6UdUnlXrullsxxQ+
+        kx0g8BTA3aZlButjSTyjODq/WcQcW/B/Je4OQhLvKQDnzN1mp0nnkvAhR8VuMzNrpm1mpjgkoVwB/v8D
+        TgDQASA1MVpwzwAAAABJRU5ErkJggg==
 </source>
           <target state="needs-review-translation">
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
@@ -5753,6 +5701,7 @@ Submenu "List" has commands for quick selection</target>
         PKM4Or9ZxBxb8H8l7g5CEu8pAOfM3WanSeeS8CFHxW4zM2umbWamOCShXAH+/wNOANABIDUxWnDPAAAA
         AElFTkSuQmCC
 </target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="toolStripMenuItemCompareLastClips.Text" translate="yes" xml:space="preserve">
           <source>Compare last clips</source>
@@ -5773,10 +5722,6 @@ Submenu "List" has commands for quick selection</target>
         <trans-unit id="toolStripMenuItem4.Text" translate="yes" xml:space="preserve">
           <source>Delete</source>
           <target state="new">Delete</target>
-        </trans-unit>
-        <trans-unit id="contextMenuStripNotifyIcon.ToolTip" translate="yes" xml:space="preserve">
-          <source></source>
-          <target state="new"></target>
         </trans-unit>
         <trans-unit id="textBoxApplication.Location" translate="yes" extype="System.Drawing.Point, System.Drawing" xml:space="preserve">
           <source>329, 3</source>
@@ -5868,10 +5813,6 @@ Edit filter right from list. Navigate in list right from filter.</target>
           <source>File</source>
           <target state="new">File</target>
         </trans-unit>
-        <trans-unit id="statusStrip.ToolTip" translate="yes" xml:space="preserve">
-          <source></source>
-          <target state="new"></target>
-        </trans-unit>
         <trans-unit id="stripLabelPosition.ToolTipText" translate="yes" xml:space="preserve">
           <source>Text postion <it id="1" pos="open">&lt;offset&gt;</it>(<it id="2" pos="open">&lt;line&gt;</it>:<it id="3" pos="open">&lt;column&gt;</it>):<it id="4" pos="open">&lt;length&gt;</it></source>
           <target state="new">Text postion <it id="1" pos="open">&lt;offset&gt;</it>(<it id="2" pos="open">&lt;line&gt;</it>:<it id="3" pos="open">&lt;column&gt;</it>):<it id="4" pos="open">&lt;length&gt;</it></target>
@@ -5917,10 +5858,6 @@ Edit filter right from list. Navigate in list right from filter.</target>
         <trans-unit id="StripLabelType.Text" translate="yes" xml:space="preserve">
           <source>Type</source>
           <target state="new">Type</target>
-        </trans-unit>
-        <trans-unit id="contextMenuStripApplication.ToolTip" translate="yes" xml:space="preserve">
-          <source></source>
-          <target state="new"></target>
         </trans-unit>
         <trans-unit id="toolStripMenuItem6.ToolTipText" translate="yes" xml:space="preserve">
           <source>Paste in active window as plain text selected text of clip or agregated text of selected clips.
