@@ -373,4 +373,10 @@
   <data name="СonfirmDeleteAllNonFavorite" xml:space="preserve">
     <value>Вы действительно хотите удалить все не любимые клипы?</value>
   </data>
+  <data name="LastClipWasMultiCaptured" xml:space="preserve">
+    <value>Последний клип был захвачен дважды до сравнения</value>
+  </data>
+  <data name="ClipWasNotCaptured" xml:space="preserve">
+    <value>Скопированный клип не был захвачен (слишком большой размер {0}KB &gt; {1}KB)</value>
+  </data>
 </root>

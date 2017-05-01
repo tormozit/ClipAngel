@@ -1450,6 +1450,7 @@ namespace ClipAngel
             this.mergeTextOfClipsToolStripMenuItem.Image = global::ClipAngel.Properties.Resources.merge;
             this.mergeTextOfClipsToolStripMenuItem.Name = "mergeTextOfClipsToolStripMenuItem";
             resources.ApplyResources(this.mergeTextOfClipsToolStripMenuItem, "mergeTextOfClipsToolStripMenuItem");
+            this.mergeTextOfClipsToolStripMenuItem.Click += new System.EventHandler(this.mergeTextOfClipsToolStripMenuItem_Click);
             // 
             // textCompareToolStripMenuItem
             // 

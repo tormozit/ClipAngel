@@ -373,4 +373,10 @@
   <data name="Search" xml:space="preserve">
     <value>Search</value>
   </data>
+  <data name="LastClipWasMultiCaptured" xml:space="preserve">
+    <value>Last clip was captured twice before compare</value>
+  </data>
+  <data name="ClipWasNotCaptured" xml:space="preserve">
+    <value>Copied clip was not captured (too big size {0}KB &gt; {1}KB)</value>
+  </data>
 </root>

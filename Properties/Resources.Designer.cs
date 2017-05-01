@@ -203,6 +203,15 @@ namespace ClipAngel.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Copied clip was not captured (too big size {0}KB &gt; {1}KB).
+        /// </summary>
+        public static string ClipWasNotCaptured {
+            get {
+                return ResourceManager.GetString("ClipWasNotCaptured", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         public static System.Drawing.Bitmap Compare {
@@ -510,6 +519,15 @@ namespace ClipAngel.Properties {
         public static string LangRestart {
             get {
                 return ResourceManager.GetString("LangRestart", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Last clip was captured twice before compare.
+        /// </summary>
+        public static string LastClipWasMultiCaptured {
+            get {
+                return ResourceManager.GetString("LastClipWasMultiCaptured", resourceCulture);
             }
         }
         

@@ -1216,9 +1216,10 @@ Edit filter right from list. Navigate in list right from filter.</value>
     <value>Show in taskbar</value>
   </data>
   <data name="showInTaskbarToolStripMenuItem.ToolTipText" xml:space="preserve">
-    <value>When ON, window will always be shown in taskbar.
-When OFF, window will always be hidden in taskbar.
-Used only in fast window open mode.</value>
+    <value>When OFF, window will always be hidden in taskbar.
+When ON and "Fast window open" ON, window will always be shown in taskbar.
+When ON and "Fast window open" OFF, window will be shown in taskbar if visible.
+</value>
   </data>
   <data name="toolStripMenuItemMonitoringClipboard.Size" type="System.Drawing.Size, System.Drawing">
     <value>212, 22</value>

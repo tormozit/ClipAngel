@@ -112,6 +112,9 @@ namespace ClipAngel
         private List<int> selectedClipsBeforeFilterApply = new List<int>();
         private Point lastMousePoint;
         private int maxWindowCoordForHiddenState = -10000;
+        private Color[] _wordColors = new Color[] { Color.Red, Color.DeepPink, Color.DarkOrange };
+        private DateTime _lastCaptureMoment = DateTime.Now;
+        private bool lastClipWasMultiCaptured = false;
 
         [DllImport("dwmapi", PreserveSig = true)]
         static extern int DwmSetWindowAttribute(IntPtr hWnd, int attr, ref int value, int attrLen);
@@ -461,7 +464,7 @@ namespace ClipAngel
                 clipBindingSource.MoveNext();
                 DataRow CurrentDataRow = ((DataRowView) clipBindingSource.Current).Row;
                 notifyIcon.Visible = true;
-                notifyIcon.ShowBalloonTip(2000, CurrentLangResourceManager.GetString("NextClip"),
+                notifyIcon.ShowBalloonTip(3000, CurrentLangResourceManager.GetString("NextClip"),
                     CurrentDataRow["Title"].ToString(), ToolTipIcon.Info);
                 AllowHotkeyProcess = true;
             }
@@ -852,7 +855,7 @@ namespace ClipAngel
                         //htmlTextBox.Document.Body.AppendChild(paragraph);
                         if (filterText.Length > 0)
                         {
-                            MarkRegExpMatchesInWebBrowser(htmlTextBox, RegexpPattern(), Color.Red, true);
+                            MarkRegExpMatchesInWebBrowser(htmlTextBox, RegexpPattern(), true);
                         }
                     }
                     else
@@ -1076,6 +1079,17 @@ namespace ClipAngel
             {
                 control.SelectionStart = match.Index;
                 control.SelectionLength = match.Length;
+                if (match.Groups.Count > 2)
+                {
+                    for (int counter=1; counter < match.Groups.Count; counter++)
+                    {
+                        if (match.Groups[counter].Success)
+                        {
+                            color = _wordColors[(counter - 1) % _wordColors.Length];
+                            break;
+                        }
+                    }
+                }
                 control.SelectionColor = color;
                 FontStyle newstyle = control.SelectionFont.Style;
                 if (bold)
@@ -1093,29 +1107,46 @@ namespace ClipAngel
             control.SelectionFont = new Font(control.SelectionFont, FontStyle.Regular);
         }
 
-        private void MarkRegExpMatchesInWebBrowser(WebBrowser control, string pattern, Color color, bool bold)
+        private void MarkRegExpMatchesInWebBrowser(WebBrowser control, string pattern, bool bold = false)
         {
             mshtml.IHTMLDocument2 htmlDoc = (mshtml.IHTMLDocument2) htmlTextBox.Document.DomDocument;
-            int boundingTop = 0;
             mshtml.IHTMLBodyElement body = htmlDoc.body as mshtml.IHTMLBodyElement;
-            mshtml.IHTMLTxtRange range = body.createTextRange();
+            int boundingTop = 0;
+            int colorIndex = 0;
             int maxMarked = 50; // prevent slow down
-            while (range.findText(filterText))
+            int searchFlags = 0;
+            if (Properties.Settings.Default.SearchCaseSensitive)
+                searchFlags = 4;
+            string[] array;
+            if (Properties.Settings.Default.SearchWordsIndependently)
+                array = filterText.Split(new[] { " " }, StringSplitOptions.RemoveEmptyEntries);
+            else
+                array = new string[1] { filterText };
+            foreach (var word in array)
             {
-                range.execCommand("ForeColor", false, ColorTranslator.ToHtml(color));
-                if (bold)
-                    range.execCommand("Bold", true);
-                mshtml.IHTMLTextRangeMetrics metrics = (mshtml.IHTMLTextRangeMetrics) range;
-                if (boundingTop == 0 || boundingTop > metrics.boundingTop)
+                mshtml.IHTMLTxtRange range = body.createTextRange();
+                if (colorIndex >= array.Length)
+                    colorIndex = 0;
+                Color wordColor = _wordColors[colorIndex];
+                colorIndex++;
+                while (range.findText(word, 1, searchFlags))
                 {
-                    boundingTop = metrics.boundingTop;
-                    range.scrollIntoView();
+                    range.execCommand("ForeColor", false, ColorTranslator.ToHtml(wordColor));
+                    if (bold)
+                        range.execCommand("Bold", true);
+                    mshtml.IHTMLTextRangeMetrics metrics = (mshtml.IHTMLTextRangeMetrics) range;
+                    if (boundingTop == 0 || boundingTop > metrics.boundingTop)
+                    {
+                        boundingTop = metrics.boundingTop;
+                        range.scrollIntoView();
+                    }
+                    range.collapse(false);
+                    maxMarked--;
+                    if (maxMarked < 0)
+                        break;
                 }
-                range.collapse(false);
-                maxMarked--;
-                if (maxMarked < 0)
-                    break;
             }
+
         }
 
         private void RichText_Click(object sender, EventArgs e)
@@ -1603,13 +1634,16 @@ namespace ClipAngel
             int byteSize = plainText.Length * 2; // dirty
             if (chars == 0)
                 chars = plainText.Length;
-            LastId = LastId + 1;
             if (binaryBuffer != null)
                 byteSize += binaryBuffer.Length;
             byteSize += htmlText.Length * 2; // dirty
             byteSize += richText.Length * 2; // dirty
             if (byteSize > Properties.Settings.Default.MaxClipSizeKB * 1000)
+            {
+                string message = String.Format(CurrentLangResourceManager.GetString("ClipWasNotCaptured"), (int)(byteSize / 1024), Properties.Settings.Default.MaxClipSizeKB);
+                notifyIcon.ShowBalloonTip(2000, Application.ProductName, message, ToolTipIcon.Info);
                 return;
+            }
             DateTime created = DateTime.Now;
             string clipTitle = TextClipTitle(plainText);
             MD5 md5 = new MD5CryptoServiceProvider();
@@ -1630,10 +1664,11 @@ namespace ClipAngel
                 md5.TransformFinalBlock(binaryType, 0, binaryType.Length);
             }
             string hash = Convert.ToBase64String(md5.Hash);
-            string sql = "SELECT Id, Title, Used, Favorite FROM Clips Where Hash = @Hash";
+            string sql = "SELECT Id, Title, Used, Favorite, Created FROM Clips Where Hash = @Hash";
             SQLiteCommand commandSelect = new SQLiteCommand(sql, m_dbConnection);
             commandSelect.Parameters.AddWithValue("@Hash", hash);
             int oldCurrentClipId = 0;
+            lastClipWasMultiCaptured = false;
             using (SQLiteDataReader reader = commandSelect.ExecuteReader())
             {
                 if (reader.Read())
@@ -1644,11 +1679,20 @@ namespace ClipAngel
                     sql = "DELETE FROM Clips Where Id = @Id";
                     SQLiteCommand commandDelete = new SQLiteCommand(sql, m_dbConnection);
                     oldCurrentClipId = reader.GetInt32(reader.GetOrdinal("Id"));
+                    if (true
+                        && oldCurrentClipId == LastId 
+                        && (false
+                            || _lastCaptureMoment == null
+                            || (DateTime.Now - _lastCaptureMoment).Milliseconds > 50) // Protection from automated repeated copy. For example PuntoSwitcher does so.
+                            )
+                    {
+                        lastClipWasMultiCaptured = true;
+                    }
                     commandDelete.Parameters.AddWithValue("@Id", oldCurrentClipId);
                     commandDelete.ExecuteNonQuery();
                 }
             }
-
+            LastId = LastId + 1;
             sql = "insert into Clips (Id, Title, Text, Application, Window, Created, Type, Binary, ImageSample, Size, Chars, RichText, HtmlText, Used, Favorite, Url, Hash, appPath) "
                   +
                   "values (@Id, @Title, @Text, @Application, @Window, @Created, @Type, @Binary, @ImageSample, @Size, @Chars, @RichText, @HtmlText, @Used, @Favorite, @Url, @Hash, @appPath)";
@@ -1716,6 +1760,7 @@ namespace ClipAngel
             )
                 ShowForPaste(false, true);
             //}
+            _lastCaptureMoment = DateTime.Now;
         }
 
         private void DeleteExcessClips()
@@ -3123,7 +3168,7 @@ namespace ClipAngel
             {
                 if (result != "")
                     result += "|";
-                result += Regex.Escape(word);
+                result += "(" + Regex.Escape(word) + ")";
             }
             if (Properties.Settings.Default.SearchWildcards)
                 result = result.Replace("%", ".*?");
@@ -3731,14 +3776,7 @@ namespace ClipAngel
         private void SelectNextMatchInClipText()
         {
             if (htmlMode)
-            {
-                mshtml.IHTMLTxtRange range = GetHtmlCurrentTextRangeOrAllDocument();
-                range.collapse(false);
-                if (range.findText(filterText, 1000000000, 0))
-                {
-                    range.@select();
-                }
-            }
+                SelectNextMatchInWebBrowser(1);
             else
             {
                 RichTextBox control = richTextBox;
@@ -3762,6 +3800,58 @@ namespace ClipAngel
             }
         }
 
+        private void SelectNextMatchInWebBrowser(int direction)
+        {
+            mshtml.IHTMLDocument2 htmlDoc = (mshtml.IHTMLDocument2) htmlTextBox.Document.DomDocument;
+            mshtml.IHTMLBodyElement body = htmlDoc.body as mshtml.IHTMLBodyElement;
+            mshtml.IHTMLTxtRange currentRange = GetHtmlCurrentTextRangeOrAllDocument();
+            mshtml.IHTMLTxtRange nearestMatch = null;
+            int searchFlags = 0;
+            if (Properties.Settings.Default.SearchCaseSensitive)
+                searchFlags = 4;
+            string[] array;
+            if (Properties.Settings.Default.SearchWordsIndependently)
+                array = filterText.Split(new[] {" "}, StringSplitOptions.RemoveEmptyEntries);
+            else
+                array = new string[1] {filterText};
+            foreach (var word in array)
+            {
+                mshtml.IHTMLTxtRange range = body.createTextRange();
+                if (direction > 0)
+                    range.setEndPoint("StartToEnd", currentRange);
+                else
+                    range.setEndPoint("EndToStart", currentRange);
+                if (range.findText(word, direction, searchFlags))
+                {
+                    if (false
+                        || nearestMatch == null
+                        || (true
+                            && direction > 0
+                            && (false
+                                ||
+                                (nearestMatch as IHTMLTextRangeMetrics).boundingTop > (range as IHTMLTextRangeMetrics).boundingTop
+                                || (true
+                                    && (nearestMatch as IHTMLTextRangeMetrics).boundingTop == (range as IHTMLTextRangeMetrics).boundingTop
+                                    && (nearestMatch as IHTMLTextRangeMetrics).boundingLeft > (range as IHTMLTextRangeMetrics).boundingLeft)))
+                        || (true
+                            && direction < 0
+                            && (false
+                                || (nearestMatch as IHTMLTextRangeMetrics).boundingTop < (range as IHTMLTextRangeMetrics).boundingTop
+                                || (true
+                                    && (nearestMatch as IHTMLTextRangeMetrics).boundingTop == (range as IHTMLTextRangeMetrics).boundingTop
+                                    && (nearestMatch as IHTMLTextRangeMetrics).boundingLeft < (range as IHTMLTextRangeMetrics).boundingLeft))))
+                    {
+                        nearestMatch = range;
+                    }
+                }
+            }
+            if (nearestMatch != null)
+            {
+                nearestMatch.scrollIntoView();
+                nearestMatch.@select();
+            }
+        }
+
         private mshtml.IHTMLTxtRange GetHtmlCurrentTextRangeOrAllDocument(bool onlySelection = false)
         {
             mshtml.IHTMLDocument2 htmlDoc = (mshtml.IHTMLDocument2) htmlTextBox.Document.DomDocument;
@@ -3782,14 +3872,7 @@ namespace ClipAngel
             if (TextWasCut)
                 AfterRowLoad(true);
             if (htmlMode)
-            {
-                mshtml.IHTMLTxtRange range = GetHtmlCurrentTextRangeOrAllDocument();
-                range.collapse(true);
-                if (range.findText(filterText, -1, 0))
-                {
-                    range.select();
-                }
-            }
+                SelectNextMatchInWebBrowser(-1);
             else
             {
                 RichTextBox control = richTextBox;
@@ -4846,6 +4929,8 @@ namespace ClipAngel
         {
             if (dataGridView.Rows.Count > 1)
             {
+                if (lastClipWasMultiCaptured)
+                    notifyIcon.ShowBalloonTip(2000, Application.ProductName, CurrentLangResourceManager.GetString("LastClipWasMultiCaptured"), ToolTipIcon.Info);
                 DataRowView row1 = (DataRowView) dataGridView.Rows[0].DataBoundItem;
                 int id1 = (int) row1["id"];
                 DataRowView row2 = (DataRowView) dataGridView.Rows[1].DataBoundItem;

@@ -443,6 +443,14 @@
           <source>Search</source>
           <target state="new">Search</target>
         </trans-unit>
+        <trans-unit id="LastClipWasMultiCaptured" translate="yes" xml:space="preserve">
+          <source>Last clip was captured twice before compare</source>
+          <target state="new">Last clip was captured twice before compare</target>
+        </trans-unit>
+        <trans-unit id="ClipWasNotCaptured" translate="yes" xml:space="preserve">
+          <source>Copied clip was not captured (too big size {0}KB &gt; {1}KB)</source>
+          <target state="new">Copied clip was not captured (too big size {0}KB &gt; {1}KB)</target>
+        </trans-unit>
       </group>
     </body>
   </file>
@@ -3887,12 +3895,14 @@ Changes in temp file are not synchronized with clip!
           <target state="needs-review-translation">Center</target>
         </trans-unit>
         <trans-unit id="showInTaskbarToolStripMenuItem.ToolTipText" translate="yes" xml:space="preserve">
-          <source>When ON, window will always be shown in taskbar.
-When OFF, window will always be hidden in taskbar.
-Used only in fast window open mode.</source>
-          <target state="new">When ON, window will always be shown in taskbar.
-When OFF, window will always be hidden in taskbar.
-Used only in fast window open mode.</target>
+          <source>When OFF, window will always be hidden in taskbar.
+When ON and "Fast window open" ON, window will always be shown in taskbar.
+When ON and "Fast window open" OFF, window will be shown in taskbar if visible.
+</source>
+          <target state="new">When OFF, window will always be hidden in taskbar.
+When ON and "Fast window open" ON, window will always be shown in taskbar.
+When ON and "Fast window open" OFF, window will be shown in taskbar if visible.
+</target>
         </trans-unit>
         <trans-unit id="toolStripMenuItemSwitchFocus.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
           <source>212, 22</source>
@@ -6244,6 +6254,10 @@ added to ignore list, wich can be edited in Settings window.</target>
         <trans-unit id="clipsTableAdapter.TrayLocation" translate="yes" extype="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" extradata="metadata" xml:space="preserve">
           <source>946, 26</source>
           <target state="needs-review-translation">946, 26</target>
+        </trans-unit>
+        <trans-unit id="$this.Language" translate="yes" xml:space="preserve" extype="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" extradata="metadata">
+          <source>ru</source>
+          <target state="needs-review-translation">ru</target>
         </trans-unit>
       </group>
     </body>

@@ -666,9 +666,7 @@ namespace ClipAngel
             WindowAutoPosition = Properties.Settings.Default.WindowAutoPosition;
             MoveCopiedClipToTop = Properties.Settings.Default.MoveCopiedClipToTop;
             //ShowSizeColumn = Properties.Settings.Default.ShowVisualWeightColumn;
-            //ClipListSimpleDraw = Properties.Settings.Default.ClipListSimpleDraw;
             AutoCheckUpdate = Properties.Settings.Default.AutoCheckForUpdate;
-            //ClearFiltersOnClose = Properties.Settings.Default.ClearFiltersOnClose;
             ShowApplicationIconColumn = Properties.Settings.Default.ShowApplicationIconColumn;
 
             NumberOfClips = Owner.ClipsNumber.ToString();
@@ -719,9 +717,7 @@ namespace ClipAngel
             Properties.Settings.Default.MaxClipSizeKB = MaxClipSizeKB;
             Properties.Settings.Default.Font = DefaultFont;
             Properties.Settings.Default.ShowApplicationIconColumn = ShowApplicationIconColumn;
-            //Properties.Settings.Default.ClearFiltersOnClose = ClearFiltersOnClose;
             Properties.Settings.Default.AutoCheckForUpdate = AutoCheckUpdate;
-            //Properties.Settings.Default.ClipListSimpleDraw = ClipListSimpleDraw;
             Properties.Settings.Default.MoveCopiedClipToTop = MoveCopiedClipToTop;
             //Properties.Settings.Default.ShowVisualWeightColumn = ShowSizeColumn;
             Properties.Settings.Default.WindowAutoPosition = WindowAutoPosition;
