@@ -379,4 +379,7 @@
   <data name="ClipWasNotCaptured" xml:space="preserve">
     <value>Скопированный клип не был захвачен (слишком большой размер {0}KB &gt; {1}KB)</value>
   </data>
+  <data name="PastedLastClip" xml:space="preserve">
+    <value>Вставленный клип - последний</value>
+  </data>
 </root>

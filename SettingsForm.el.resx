@@ -42,6 +42,9 @@
   <data name="buttonCancel.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
     <value>12</value>
   </data>
+  <data name="buttonCancel.Text" xml:space="preserve">
+    <value>Άκυρο</value>
+  </data>
   <data name="buttonOK.Anchor" xml:space="preserve" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
   </data>
@@ -56,6 +59,9 @@
   </data>
   <data name="buttonOK.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
     <value>13</value>
+  </data>
+  <data name="buttonOK.Text" xml:space="preserve">
+    <value>OK</value>
   </data>
   <data name="buttonClearFilter.Anchor" xml:space="preserve" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -72,6 +78,12 @@
   <data name="buttonClearFilter.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
     <value>18</value>
   </data>
+  <data name="buttonClearFilter.Text" xml:space="preserve">
+    <value>X</value>
+  </data>
+  <data name="buttonClearFilter.ToolTip" xml:space="preserve">
+    <value>Εκκαθάριση φίλτρου</value>
+  </data>
   <data name="label1.Anchor" xml:space="preserve" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
   </data>
@@ -86,6 +98,9 @@
   </data>
   <data name="label1.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
     <value>20</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Φίλτρο:</value>
   </data>
   <data name="textBoxFilter.Anchor" xml:space="preserve" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -114,6 +129,9 @@
   <data name="copyToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>102, 22</value>
   </data>
+  <data name="copyToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Αντιγραφή...</value>
+  </data>
   <data name="contexMenuLabel.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>103, 26</value>
   </data>
@@ -122,6 +140,9 @@
   </data>
   <data name="gridContextMenuCopy.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>144, 22</value>
+  </data>
+  <data name="gridContextMenuCopy.Text" xml:space="preserve">
+    <value>&amp;Αντιγραφή...</value>
   </data>
   <data name="contexMenuGrid.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>145, 26</value>
@@ -134,6 +155,9 @@
   </data>
   <data name="$this.StartPosition" xml:space="preserve" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterParent</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Ρυθμίσεις</value>
   </data>
   <metadata name="buttonReset.GenerateMember" xml:space="preserve" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>

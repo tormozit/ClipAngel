@@ -15,6 +15,7 @@ using System.Drawing.Imaging;
 using System.Globalization;
 using System.IO;
 using System.Linq.Expressions;
+using System.Media;
 using System.Security.Cryptography;
 using System.Resources;
 using System.Net;
@@ -115,6 +116,7 @@ namespace ClipAngel
         private Color[] _wordColors = new Color[] { Color.Red, Color.DeepPink, Color.DarkOrange };
         private DateTime _lastCaptureMoment = DateTime.Now;
         private bool lastClipWasMultiCaptured = false;
+        private Point _LastMousePoint;
 
         [DllImport("dwmapi", PreserveSig = true)]
         static extern int DwmSetWindowAttribute(IntPtr hWnd, int attr, ref int value, int attrLen);
@@ -461,11 +463,16 @@ namespace ClipAngel
                     keybd_event((byte) VirtualKeyCode.CONTROL, 0x1D, 0, 0);
                 if ((e.Modifier & EnumModifierKeys.Shift) != 0)
                     keybd_event((byte) VirtualKeyCode.SHIFT, 0x2A, 0, 0);
-                clipBindingSource.MoveNext();
+                DataRow oldCurrentDataRow = ((DataRowView) clipBindingSource.Current).Row;
+                clipBindingSource.MovePrevious();
                 DataRow CurrentDataRow = ((DataRowView) clipBindingSource.Current).Row;
                 notifyIcon.Visible = true;
-                notifyIcon.ShowBalloonTip(3000, CurrentLangResourceManager.GetString("NextClip"),
-                    CurrentDataRow["Title"].ToString(), ToolTipIcon.Info);
+                string messageText;
+                if (oldCurrentDataRow == CurrentDataRow)
+                    messageText = CurrentLangResourceManager.GetString("PastedLastClip");
+                else
+                    messageText = CurrentDataRow["Title"].ToString();
+                notifyIcon.ShowBalloonTip(3000, CurrentLangResourceManager.GetString("NextClip"), messageText, ToolTipIcon.Info);
                 AllowHotkeyProcess = true;
             }
             else if (hotkeyTitle == Properties.Settings.Default.GlobalHotkeyCompareLastClips)
@@ -1644,6 +1651,8 @@ namespace ClipAngel
                 notifyIcon.ShowBalloonTip(2000, Application.ProductName, message, ToolTipIcon.Info);
                 return;
             }
+            if (Properties.Settings.Default.PlaySoundOnClipCapture)
+                SystemSounds.Beep.Play();
             DateTime created = DateTime.Now;
             string clipTitle = TextClipTitle(plainText);
             MD5 md5 = new MD5CryptoServiceProvider();
@@ -1985,6 +1994,16 @@ namespace ClipAngel
             bool allowSelfCapture = true)
         {
             SaveFilterInLastUsedList();
+            string clipText;
+            var dto = ClipDataObject(rowReader, onlySelectedPlainText, out clipText);
+            //if (!Properties.Settings.Default.MoveCopiedClipToTop)
+            //    CaptureClipboard = false;
+            SetClipboardDataObject(dto, allowSelfCapture);
+            return clipText;
+        }
+
+        private DataObject ClipDataObject(SQLiteDataReader rowReader, bool onlySelectedPlainText, out string clipText)
+        {
             if (rowReader == null)
                 rowReader = RowReader;
 
@@ -1993,7 +2012,7 @@ namespace ClipAngel
             object richText = rowReader["RichText"];
             object htmlText = rowReader["HtmlText"];
             byte[] binary = rowReader["Binary"] as byte[];
-            string clipText = (string) rowReader["Text"];
+            clipText = (string) rowReader["Text"];
             if (rowReader == RowReader)
             {
                 string selectedText = GetSelectedText(onlySelectedPlainText);
@@ -2042,10 +2061,7 @@ namespace ClipAngel
                 //ms.Position = 0;
                 //dto.SetData("DeviceIndependentBitmap", ms2);
             }
-            //if (!Properties.Settings.Default.MoveCopiedClipToTop)
-            //    CaptureClipboard = false;
-            SetClipboardDataObject(dto, allowSelfCapture);
-            return clipText;
+            return dto;
         }
 
         private string GetSelectedText(bool onlySelectedPlainText = true)
@@ -3683,10 +3699,16 @@ namespace ClipAngel
                 locale = "it";
             else if (Properties.Settings.Default.Language == "Polish")
                 locale = "pl";
-            else if (Properties.Settings.Default.Language == "Portuguese-Brazil")
+            else if (Properties.Settings.Default.Language == "PortugueseBrazil")
                 locale = "pt-BR";
             else if (Properties.Settings.Default.Language == "Spain")
                 locale = "es";
+            else if (Properties.Settings.Default.Language == "Hindi")
+                locale = "hi";
+            else if (Properties.Settings.Default.Language == "French")
+                locale = "fr";
+            else if (Properties.Settings.Default.Language == "Greek")
+                locale = "el";
             else if (Properties.Settings.Default.Language == "Russian")
                 locale = "ru";
             else
@@ -4222,14 +4244,15 @@ namespace ClipAngel
         extern public static bool
                ShellExecuteEx(ref ShellExecuteInfo lpExecInfo);
 
-        private string GetClipTempFile(out string fileEditor)
+        private string GetClipTempFile(out string fileEditor, SQLiteDataReader rowReader = null)
         {
             fileEditor = "";
-            if (RowReader == null)
+            if (rowReader == null)
+                rowReader = RowReader;
+            if (rowReader == null)
                 return "";
             string type = RowReader["type"].ToString();
             //string TempFile = Path.GetTempFileName();
-            SQLiteDataReader rowReader = RowReader;
             string tempFile = clipTempFile(rowReader, "copy");
             if (tempFile == "")
             {
@@ -4238,7 +4261,7 @@ namespace ClipAngel
             }
             if (type == "text" /*|| type == "file"*/)
             {
-                File.WriteAllText(tempFile, RowReader["text"].ToString(), Encoding.Default);
+                File.WriteAllText(tempFile, rowReader["text"].ToString(), Encoding.Default);
                 fileEditor = Properties.Settings.Default.TextEditor;
             }
             else if (type == "rtf")
@@ -5167,6 +5190,49 @@ namespace ClipAngel
             UpdateControlsStates();
             TextFilterApply();
         }
+
+        private void dataGridView_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (_LastMousePoint != e.Location)
+            {
+                _LastMousePoint = e.Location;
+                if (e.Button == MouseButtons.Left)
+                {
+                    DataGridView.HitTestInfo info = dataGridView.HitTest(e.X, e.Y);
+                    if (info.RowIndex >= 0)
+                    {
+                        if (info.RowIndex >= 0 && info.ColumnIndex >= 0)
+                        {
+                            int maxRowsDrag = 100;
+                            StringCollection fileNameCollection = new StringCollection();
+                            DataObject dto = new DataObject();
+                            int count = 0;
+                            string agregateTextToPaste = JoinOrPasteTextOfClips(PasteMethod.Null, out count);
+                            SetTextInClipboardDataObject(dto, agregateTextToPaste);
+                            foreach (DataGridViewRow selectedRow in dataGridView.SelectedRows)
+                            {
+                                DataRowView dataRowView = (DataRowView)selectedRow.DataBoundItem;
+                                SQLiteDataReader RowReader = getRowReader((int)dataRowView["id"]);
+                                string clipText;
+                                ClipDataObject(RowReader, false, out clipText);
+                                if (RowReader["type"].ToString() != "file")
+                                {
+                                    string junkVar;
+                                    string filename = GetClipTempFile(out junkVar, RowReader);
+                                    fileNameCollection.Add(filename);
+                                }
+                                maxRowsDrag--;
+                                if (maxRowsDrag == 0)
+                                    break;
+                            }
+                            dto.SetFileDropList(fileNameCollection);
+                            dataGridView.DoDragDrop(dto, DragDropEffects.Copy);
+                        }
+                    }
+                }
+            }
+        }
+
     }
 }
 

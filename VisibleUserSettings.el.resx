@@ -12,4 +12,22 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AutostartDescription" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="ClearFiltersOnCloseDescription" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="DatabaseSizeDescription" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="DefaultFont" xml:space="preserve">
+    <value>Προεπιλεγμένη γραμματοσειρά:</value>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>Γλώσσα</value>
+  </data>
+  <data name="WordWrap" xml:space="preserve">
+    <value>&amp;Αναδίπλωση λέξεων</value>
+  </data>
 </root>

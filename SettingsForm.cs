@@ -8,6 +8,7 @@ using System.IO;
 using System.Reflection;
 using System.Configuration;
 using System.Diagnostics;
+using System.Globalization;
 using System.Linq;
 using System.Windows.Forms;
 using System.Windows.Forms.Design;
@@ -160,17 +161,78 @@ namespace ClipAngel
         }
     }
 
-    class LangConverter : TypeConverter
+    class LanguageConverter : StringConverter
     {
+        public static Dictionary<string, string> langList = new Dictionary<string, string>
+        {
+            { "Default", "Default"},
+            { "English", "English (by Tormozit)"},
+            { "Chinese", "Chinese (by machine)"},
+            { "French", "French (by machine)"},
+            { "German", "German (by machine)"},
+            { "Greek", "Greek (by machine)"},
+            { "Hindi", "Hindi (by machine)"},
+            { "Italian", "Italian (by machine)"},
+            { "Polish", "Polish (by machine)"},
+            { "PortugueseBrazil", "Portuguese-Brazil (by Nelson Carvalho)"},
+            { "Russian", "Russian (by Tormozit)"},
+            { "Spain", "Spain (by machine)"}
+        };
+
         public override bool GetStandardValuesSupported(ITypeDescriptorContext context)
         {
             return true;
         }
+
         public override StandardValuesCollection GetStandardValues(ITypeDescriptorContext context)
         {
-            return new StandardValuesCollection(VisibleUserSettings.langList);
+            List<string> list = new List <string>();
+            foreach (KeyValuePair<string, string> pair in langList)
+            {
+                list.Add(pair.Key);
+            }
+            return new StandardValuesCollection(list);
+        }
+
+        public override bool CanConvertTo(ITypeDescriptorContext context,
+            Type destType)
+        {
+            return destType == typeof(string);
+        }
+
+        public override object ConvertTo(ITypeDescriptorContext context,
+            CultureInfo culture,
+            object value, Type destType)
+        {
+            if (destType == typeof(String))
+            {
+                if (langList.ContainsKey((string)value))
+                    return langList[(string)value];
+                else
+                    return "Default";
+            }
+            return base.ConvertTo(context, culture, value, destType);
+        }
+
+        public override bool CanConvertFrom(ITypeDescriptorContext context,
+            Type srcType)
+        {
+            return srcType == typeof(string);
+        }
+
+        public override object ConvertFrom(ITypeDescriptorContext context,
+            CultureInfo culture,
+            object value)
+        {
+            foreach (KeyValuePair<string, string> pair in langList)
+            {
+                if ((string)pair.Value == (string)value)
+                    return pair.Key;
+            }
+            return "Default";
         }
     }
+
     public class MyBoolEditor : UITypeEditor
     {
         public override bool GetPaintValueSupported
@@ -623,15 +685,17 @@ namespace ClipAngel
         {
             if (m_PropertyDescriptors.Contains(property)) m_PropertyDescriptors.Remove(property);
         }
+
     }
 
     class VisibleUserSettings : GlobalizedObject
     {
         public Form Owner;
-        public static List<string> langList = new List<string> { "Default", "Chinese", "English", "German", "Italian", "Polish", "Portuguese-Brazil", "Russian", "Spain" };
+
         public VisibleUserSettings(Main Owner)
         {
             this.Owner = Owner;
+            PlaySoundOnClipCapture = Properties.Settings.Default.PlaySoundOnClipCapture;
             MonospacedFont = Properties.Settings.Default.MonospacedFont;
             WordWrap = Properties.Settings.Default.WordWrap;
             ShowNativeTextFormatting = Properties.Settings.Default.ShowNativeTextFormatting;
@@ -665,7 +729,6 @@ namespace ClipAngel
             GlobalHotkeyCompareLastClips = Properties.Settings.Default.GlobalHotkeyCompareLastClips;
             WindowAutoPosition = Properties.Settings.Default.WindowAutoPosition;
             MoveCopiedClipToTop = Properties.Settings.Default.MoveCopiedClipToTop;
-            //ShowSizeColumn = Properties.Settings.Default.ShowVisualWeightColumn;
             AutoCheckUpdate = Properties.Settings.Default.AutoCheckForUpdate;
             ShowApplicationIconColumn = Properties.Settings.Default.ShowApplicationIconColumn;
 
@@ -690,6 +753,7 @@ namespace ClipAngel
 
         public void Apply(bool PortableMode = false)
         {
+            Properties.Settings.Default.PlaySoundOnClipCapture = PlaySoundOnClipCapture;
             Properties.Settings.Default.MonospacedFont = MonospacedFont;
             Properties.Settings.Default.WordWrap = WordWrap;
             Properties.Settings.Default.ShowNativeTextFormatting = ShowNativeTextFormatting;
@@ -719,7 +783,6 @@ namespace ClipAngel
             Properties.Settings.Default.ShowApplicationIconColumn = ShowApplicationIconColumn;
             Properties.Settings.Default.AutoCheckForUpdate = AutoCheckUpdate;
             Properties.Settings.Default.MoveCopiedClipToTop = MoveCopiedClipToTop;
-            //Properties.Settings.Default.ShowVisualWeightColumn = ShowSizeColumn;
             Properties.Settings.Default.WindowAutoPosition = WindowAutoPosition;
             Properties.Settings.Default.GlobalHotkeyOpenLast = GlobalHotkeyOpenLast;
             Properties.Settings.Default.GlobalHotkeyOpenCurrent = GlobalHotkeyOpenCurrent;
@@ -777,10 +840,6 @@ namespace ClipAngel
         [Editor(typeof(MyBoolEditor), typeof(UITypeEditor))]
         public bool ShowApplicationIconColumn { get; set; }
 
-       //[GlobalizedCategory("Other")]
-        //[Editor(typeof(MyBoolEditor), typeof(UITypeEditor))]
-        //public bool ClearFiltersOnClose { get; set; }
-
         [GlobalizedCategory("Other")]
         [Editor(typeof(MyBoolEditor), typeof(UITypeEditor))]
         public bool AutoCheckUpdate { get; set; }
@@ -788,14 +847,6 @@ namespace ClipAngel
         [GlobalizedCategory("Other")]
         [Editor(typeof(MyBoolEditor), typeof(UITypeEditor))]
         public bool FastWindowOpen { get; set; }
-
-        //[GlobalizedCategory("Other")]
-        //[Editor(typeof(MyBoolEditor), typeof(UITypeEditor))]
-        //public bool ClipListSimpleDraw { get; set; }
-
-        //[GlobalizedCategory("Other")]
-        //[Editor(typeof(MyBoolEditor), typeof(UITypeEditor))]
-        //public bool ShowSizeColumn { get; set; }
 
         [GlobalizedCategory("Other")]
         [Editor(typeof(MyBoolEditor), typeof(UITypeEditor))]
@@ -856,7 +907,7 @@ namespace ClipAngel
         public Font DefaultFont { get; set; }
 
         [GlobalizedCategory("Other")]
-        [TypeConverter(typeof(LangConverter))]
+        [TypeConverter(typeof(LanguageConverter))]
         public string Language { get; set; }
 
         [GlobalizedCategory("Other")]
@@ -928,5 +979,8 @@ namespace ClipAngel
         [Editor(typeof(MyBoolEditor), typeof(UITypeEditor))]
         public bool MonospacedFont { get; set; }
 
+        [GlobalizedCategory("Other")]
+        [Editor(typeof(MyBoolEditor), typeof(UITypeEditor))]
+        public bool PlaySoundOnClipCapture { get; set; }
     }
 }

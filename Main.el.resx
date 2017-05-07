@@ -39,17 +39,29 @@
   <data name="MarkFilter.Anchor" xml:space="preserve" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
   </data>
+  <data name="SizeDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+    <value>Μέγεθος</value>
+  </data>
   <data name="wordWrapToolStripMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+W</value>
   </data>
+  <data name="deleteToolStripMenuItem1.Text" xml:space="preserve">
+    <value>Διαγραφή</value>
+  </data>
   <data name="toolStripMenuItem3.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>211, 22</value>
+  </data>
+  <data name="typeDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+    <value>Τύπος</value>
   </data>
   <data name="showAllMarksToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>250, 22</value>
   </data>
   <data name="toolStripMenuItem14.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Alt+Q</value>
+  </data>
+  <data name="usedDataGridViewCheckBoxColumn.HeaderText" xml:space="preserve">
+    <value>Χρήση</value>
   </data>
   <data name="showInTaskbarToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>212, 22</value>
@@ -111,8 +123,17 @@
   <data name="moveDownToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>250, 22</value>
   </data>
+  <data name="titleDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+    <value>Τίτλος</value>
+  </data>
+  <data name="rtfMenuItemSelectAll.Text" xml:space="preserve">
+    <value>Επιλογή</value>
+  </data>
   <data name="StripLabelCreated.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>110, 17</value>
+  </data>
+  <data name="MainMenu.Text" xml:space="preserve">
+    <value>menuStrip1</value>
   </data>
   <data name="pictureBoxSource.Location" xml:space="preserve" type="System.Drawing.Point, System.Drawing">
     <value>1, 3</value>
@@ -143,6 +164,9 @@
   </data>
   <data name="StripLabelVisualSize.AutoSize" xml:space="preserve" type="System.Boolean, mscorlib">
     <value>False</value>
+  </data>
+  <data name="StripLabelType.ToolTipText" xml:space="preserve">
+    <value>Τύπος</value>
   </data>
   <data name="htmlTextBox.MinimumSize" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>20, 20</value>
@@ -183,6 +207,9 @@
   <data name="ImageControl.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
     <value>8</value>
   </data>
+  <data name="editClipTextToolStripMenuItem.Text" xml:space="preserve">
+    <value>Επεξεργασία κείμενου</value>
+  </data>
   <data name="deleteAllNonFavoriteToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>250, 22</value>
   </data>
@@ -197,6 +224,15 @@
   </data>
   <data name="StripLabelSize.AutoSize" xml:space="preserve" type="System.Boolean, mscorlib">
     <value>False</value>
+  </data>
+  <data name="deleteToolStripMenuItem.Text" xml:space="preserve">
+    <value>Αποκοπή</value>
+  </data>
+  <data name="showAllTypesToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Εμφάνιση όλων των τύπων</value>
+  </data>
+  <data name="copyToClipboardToolStripMenuItem.Text" xml:space="preserve">
+    <value>Αντιγραφή στο Πρόχειρο</value>
   </data>
   <data name="textCompareToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>214, 22</value>
@@ -230,6 +266,9 @@
   </data>
   <data name="VisualWeight.Width" xml:space="preserve" type="System.Int32, mscorlib">
     <value>9</value>
+  </data>
+  <data name="htmlMenuItemSelectAll.Text" xml:space="preserve">
+    <value>Επιλογή</value>
   </data>
   <data name="moveDownToolStripMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+Down</value>
@@ -282,8 +321,14 @@
   <data name="buttonUpdate.ImageTransparentColor" xml:space="preserve" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
   </data>
+  <data name="exitToolStripMenuItem.Text" xml:space="preserve">
+    <value>Έξοδος</value>
+  </data>
   <data name="copyToClipboardToolStripMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+C</value>
+  </data>
+  <data name="splitContainer1.Panel2.ToolTip" xml:space="preserve">
+    <value></value>
   </data>
   <data name="aboutToolStripMenuItem1.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>178, 22</value>
@@ -293,6 +338,9 @@
   </data>
   <data name="ignoreApplicationInCaptureToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>214, 22</value>
+  </data>
+  <data name="StripLabelSize.Text" xml:space="preserve">
+    <value>Μέγεθος</value>
   </data>
   <data name="showAllMarksToolStripMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+1</value>
@@ -309,8 +357,14 @@
   <data name="toolStripMenuItemSetFocusClipText.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>212, 22</value>
   </data>
+  <data name="MarkFilter.Items" xml:space="preserve">
+    <value>όλα</value>
+  </data>
   <data name="toolStripButtonMarkFavorite.ImageTransparentColor" xml:space="preserve" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
+  </data>
+  <data name="fToolStripMenuItem.Text" xml:space="preserve">
+    <value>Βοήθεια</value>
   </data>
   <data name="fToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>44, 20</value>
@@ -339,6 +393,12 @@
   <data name="toolStripButtonClearFilter.ImageTransparentColor" xml:space="preserve" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
   </data>
+  <data name="settingsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Ρυθμίσεις</value>
+  </data>
+  <data name="moveUpToolStripMenuItem.Text" xml:space="preserve">
+    <value>Μετακίνηση επάνω</value>
+  </data>
   <data name="showOnlyFavoriteToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>250, 22</value>
   </data>
@@ -363,6 +423,9 @@
   <data name="copyToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>209, 22</value>
   </data>
+  <data name="TypeFilter.Items" xml:space="preserve">
+    <value>όλα</value>
+  </data>
   <data name="$this.ClientSize" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>790, 444</value>
   </data>
@@ -377,6 +440,9 @@
   </data>
   <data name="moveUpToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>250, 22</value>
+  </data>
+  <data name="toolStripSearchOptions.ToolTipText" xml:space="preserve">
+    <value>&amp;Επιλογές αναζήτησης...</value>
   </data>
   <data name="textFormattingToolStripMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+N</value>
@@ -925,6 +991,9 @@
   <data name="сдуфкClipboardToolStripMenuItem.ImageScaling" xml:space="preserve" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
     <value>None</value>
   </data>
+  <data name="stripLabelPosition.Text" xml:space="preserve">
+    <value>Θέση</value>
+  </data>
   <data name="toolStripSearchOptions.ImageTransparentColor" xml:space="preserve" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
   </data>
@@ -943,6 +1012,12 @@
   <data name="ImageControl.Location" xml:space="preserve" type="System.Drawing.Point, System.Drawing">
     <value>2, 198</value>
   </data>
+  <data name="toolStripMenuItemClearFilters.Text" xml:space="preserve">
+    <value>Απαλοιφή φίλτρων</value>
+  </data>
+  <data name="toolStripTop.Text" xml:space="preserve">
+    <value>toolStrip1</value>
+  </data>
   <data name="contextMenuWindowTitle.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>140, 26</value>
   </data>
@@ -958,11 +1033,20 @@
   <data name="toolStripButtonClearFilterAndSelectTop.ImageTransparentColor" xml:space="preserve" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
   </data>
+  <data name="toolStripMenuItem8.Text" xml:space="preserve">
+    <value>Διαγραφή</value>
+  </data>
   <data name="CreatedDataGridViewTextBoxColumn.Visible" xml:space="preserve" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
+  <data name="toolStripMenuItem9.Text" xml:space="preserve">
+    <value>Απαλοιφή προχείρου</value>
+  </data>
   <data name="dataGridViewImageColumn2.Width" xml:space="preserve" type="System.Int32, mscorlib">
     <value>17</value>
+  </data>
+  <data name="StripLabelCreated.Text" xml:space="preserve">
+    <value>Δημιουργήθηκε</value>
   </data>
   <data name="$this.Icon" xml:space="preserve" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1508,6 +1592,9 @@
   <data name="comboBoxFilter.Anchor" xml:space="preserve" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left, Right</value>
   </data>
+  <data name="fileToolStripMenuItem1.Text" xml:space="preserve">
+    <value>Παράθυρο</value>
+  </data>
   <data name="statusStrip.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
@@ -1538,6 +1625,9 @@
   <data name="toolStripMenuItem4.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Del</value>
   </data>
+  <data name="windowAlwaysOnTopToolStripMenuItem.Text" xml:space="preserve">
+    <value>Πάντα σε πρώτο πλάνο</value>
+  </data>
   <data name="windowAlwaysOnTopToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>212, 22</value>
   </data>
@@ -1546,6 +1636,9 @@
   </data>
   <data name="StripLabelType.TextAlign" xml:space="preserve" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleRight</value>
+  </data>
+  <data name="idDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+    <value>Αναγνωριστικό</value>
   </data>
   <data name="moveTopToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>250, 22</value>
@@ -1565,11 +1658,20 @@
   <data name="tableLayoutPanelData.Margin" xml:space="preserve" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
   </data>
+  <data name="statusStrip.Text" xml:space="preserve">
+    <value>statusStrip</value>
+  </data>
   <data name="changeClipTitleToolStripMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>F2</value>
   </data>
+  <data name="previousMatchToolStripMenuItem.Text" xml:space="preserve">
+    <value>Εύρεση προηγούμενου</value>
+  </data>
   <data name="contextMenuStripRtf.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>210, 92</value>
+  </data>
+  <data name="textBoxWindow.Text" xml:space="preserve">
+    <value>Παράθυρο</value>
   </data>
   <data name="toolStripMenuItem11.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+F4</value>
@@ -1658,6 +1760,9 @@
   <data name="copyToolStripMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+C</value>
   </data>
+  <data name="TypeFilter.Items2" xml:space="preserve">
+    <value>αρχείο</value>
+  </data>
   <data name="showOnlyFavoriteToolStripMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+2</value>
   </data>
@@ -1670,6 +1775,9 @@
   <data name="nextMatchToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>214, 22</value>
   </data>
+  <data name="copyToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Αντιγραφή...</value>
+  </data>
   <data name="editClipTextToolStripMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>F4</value>
   </data>
@@ -1681,6 +1789,12 @@
   </data>
   <data name="toolStripBottom.Location" xml:space="preserve" type="System.Drawing.Point, System.Drawing">
     <value>269, 395</value>
+  </data>
+  <data name="favoriteDataGridViewCheckBoxColumn.HeaderText" xml:space="preserve">
+    <value>Αγαπημένο</value>
+  </data>
+  <data name="toolStripMenuItem1.Text" xml:space="preserve">
+    <value>Έξοδος</value>
   </data>
   <data name="tableLayoutPanelData.ColumnCount" xml:space="preserve" type="System.Int32, mscorlib">
     <value>1</value>
@@ -1696,6 +1810,9 @@
   </data>
   <data name="StripLabelCreated.AutoSize" xml:space="preserve" type="System.Boolean, mscorlib">
     <value>False</value>
+  </data>
+  <data name="textBoxApplication.Text" xml:space="preserve">
+    <value>Εφαρμογή</value>
   </data>
   <data name="toolStripMenuItemCompareLastClips.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>187, 22</value>
@@ -1721,6 +1838,9 @@
   <data name="toolStripButtonMonospacedFont.ImageTransparentColor" xml:space="preserve" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
   </data>
+  <data name="$this.ToolTip" xml:space="preserve">
+    <value></value>
+  </data>
   <data name="pictureBoxSource.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
@@ -1745,6 +1865,9 @@
   <data name="stripLabelPosition.AutoSize" xml:space="preserve" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
+  <data name="richTextBox.Text" xml:space="preserve">
+    <value></value>
+  </data>
   <data name="toolStripMenuItemClearFilterAndSelectTop.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>F9</value>
   </data>
@@ -1754,11 +1877,17 @@
   <data name="buttonUpdate.Visible" xml:space="preserve" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
+  <data name="toolStripButtonWordWrap.Text" xml:space="preserve">
+    <value>&amp;Αναδίπλωση λέξεων</value>
+  </data>
   <data name="richTextBox.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
   <data name="urlTextBox.Anchor" xml:space="preserve" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="splitContainer1.Panel1.ToolTip" xml:space="preserve">
+    <value></value>
   </data>
   <data name="toolStripBottom.Dock" xml:space="preserve" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>None</value>
@@ -1796,6 +1925,9 @@
   <data name="toolStripMenuItem4.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>209, 22</value>
   </data>
+  <data name="urlTextBox.Text" xml:space="preserve">
+    <value></value>
+  </data>
   <data name="htmlMenuItemSelectAll.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>209, 22</value>
   </data>
@@ -1807,6 +1939,9 @@
   </data>
   <data name="toolStripButtonFindNext.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>23, 22</value>
+  </data>
+  <data name="CreatedDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+    <value>Δημιουργήθηκε</value>
   </data>
   <data name="MainMenu.Location" xml:space="preserve" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
@@ -1822,6 +1957,12 @@
   </data>
   <data name="statusStrip.Location" xml:space="preserve" type="System.Drawing.Point, System.Drawing">
     <value>0, 398</value>
+  </data>
+  <data name="aboutToolStripMenuItem1.Text" xml:space="preserve">
+    <value>Πληροφορίες</value>
+  </data>
+  <data name="clipToolStripMenuItem.Text" xml:space="preserve">
+    <value>Αποκοπή</value>
   </data>
   <data name="textBoxWindow.Location" xml:space="preserve" type="System.Drawing.Point, System.Drawing">
     <value>22, 3</value>
@@ -1847,8 +1988,14 @@
         AElFTkSuQmCC
 </value>
   </data>
+  <data name="aboutToolStripMenuItem.Text" xml:space="preserve">
+    <value>Πληροφορίες</value>
+  </data>
   <data name="exitToolStripMenuItem1.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>187, 22</value>
+  </data>
+  <data name="toolStripMenuItem4.Text" xml:space="preserve">
+    <value>Διαγραφή</value>
   </data>
   <data name="textBoxApplication.Location" xml:space="preserve" type="System.Drawing.Point, System.Drawing">
     <value>329, 3</value>
@@ -1895,6 +2042,18 @@
   <data name="statusStrip.Anchor" xml:space="preserve" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left, Right</value>
   </data>
+  <data name="listToolStripMenuItem.Text" xml:space="preserve">
+    <value>Λίστα</value>
+  </data>
+  <data name="splitContainer1.ToolTip" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="exitToolStripMenuItem1.Text" xml:space="preserve">
+    <value>Έξοδος</value>
+  </data>
+  <data name="fileToolStripMenuItem.Text" xml:space="preserve">
+    <value>Αρχείο</value>
+  </data>
   <data name="ImageSample.Visible" xml:space="preserve" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
@@ -1903,6 +2062,12 @@
   </data>
   <data name="StripLabelVisualSize.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>70, 17</value>
+  </data>
+  <data name="moveDownToolStripMenuItem.Text" xml:space="preserve">
+    <value>Μετακίνηση κάτω</value>
+  </data>
+  <data name="StripLabelType.Text" xml:space="preserve">
+    <value>Τύπος</value>
   </data>
   <data name="nextMatchToolStripMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>F3</value>
@@ -1916,8 +2081,20 @@
   <data name="htmlTextBox.Anchor" xml:space="preserve" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
+  <data name="MarkFilter.Items2" xml:space="preserve">
+    <value>αρχείο</value>
+  </data>
+  <data name="MarkFilter.Items1" xml:space="preserve">
+    <value>κείμενο</value>
+  </data>
   <data name="trayMenuItemMonitoringClipboard.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>187, 22</value>
+  </data>
+  <data name="settingsToolStripMenuItem1.Text" xml:space="preserve">
+    <value>Ρυθμίσεις</value>
+  </data>
+  <data name="TypeFilter.Items1" xml:space="preserve">
+    <value>κείμενο</value>
   </data>
   <data name="MarkFilter.Location" xml:space="preserve" type="System.Drawing.Point, System.Drawing">
     <value>3, 395</value>
@@ -1945,6 +2122,9 @@
   </data>
   <data name="richTextBox.Anchor" xml:space="preserve" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="сдуфкClipboardToolStripMenuItem.Text" xml:space="preserve">
+    <value>Απαλοιφή προχείρου</value>
   </data>
   <data name="showOnlyTextsToolStripMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Alt+4</value>
@@ -1979,11 +2159,20 @@
   <data name="htmlTextBox.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>406, 92</value>
   </data>
+  <data name="toolStripMenuItemSearchCaseSensitive.Text" xml:space="preserve">
+    <value>&amp;Διάκριση πεζών-κεφαλαίων</value>
+  </data>
   <data name="moveCopiedClipToTopToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>250, 22</value>
   </data>
+  <data name="helpToolStripMenuItem.Text" xml:space="preserve">
+    <value>Βοήθεια</value>
+  </data>
   <data name="toolStripButtonOpenWith.ImageTransparentColor" xml:space="preserve" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
+  </data>
+  <data name="wordWrapToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Αναδίπλωση λέξεων</value>
   </data>
   <data name="comboBoxFilter.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
     <value>6</value>
@@ -1994,11 +2183,17 @@
   <data name="AppImage.MinimumWidth" xml:space="preserve" type="System.Int32, mscorlib">
     <value>18</value>
   </data>
+  <data name="toolStripMenuItem16.Text" xml:space="preserve">
+    <value>Άνοιγμα αρχείου</value>
+  </data>
   <data name="toolStripButtonWordWrap.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>23, 22</value>
   </data>
   <data name="urlTextBox.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>408, 22</value>
+  </data>
+  <data name="nextMatchToolStripMenuItem.Text" xml:space="preserve">
+    <value>Εύρεση επόμενου</value>
   </data>
   <metadata name="ImageSample.UserAddedColumn" xml:space="preserve" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

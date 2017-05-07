@@ -30,6 +30,9 @@
   <data name="labelProductName.TextAlign" xml:space="preserve" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
   </data>
+  <data name="linkLabelEmail.Text" xml:space="preserve">
+    <value>Ηλεκτρονικό ταχυδρομείο</value>
+  </data>
   <data name="logoPictureBox.Dock" xml:space="preserve" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
@@ -63,11 +66,23 @@
   <data name="linkLabelEmail.TextAlign" xml:space="preserve" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
   </data>
+  <data name="labelCopyright.Text" xml:space="preserve">
+    <value>&amp;Πνευματικά δικαιώματα:</value>
+  </data>
+  <data name="labelVersion.Text" xml:space="preserve">
+    <value>Έκδοση:</value>
+  </data>
   <data name="labelVersion.Anchor" xml:space="preserve" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
   <data name="okButton.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
     <value>24</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Πληροφορίες</value>
+  </data>
+  <data name="okButton.Text" xml:space="preserve">
+    <value>&amp;OK</value>
   </data>
   <data name="textBoxDescription.Margin" xml:space="preserve" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>6, 3, 3, 3</value>
@@ -139,6 +154,9 @@
   </data>
   <data name="textBoxDescription.ScrollBars" xml:space="preserve" type="System.Windows.Forms.ScrollBars, System.Windows.Forms">
     <value>Both</value>
+  </data>
+  <data name="linkLabelWebSite.Text" xml:space="preserve">
+    <value> Τοποθεσία Web</value>
   </data>
   <data name="linkLabel1.AutoSize" xml:space="preserve" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -250,6 +268,9 @@
   </data>
   <data name="labelCopyright.MaximumSize" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>0, 17</value>
+  </data>
+  <data name="labelProductName.Text" xml:space="preserve">
+    <value>Προϊόν</value>
   </data>
   <data name="linkLabel1.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
     <value>28</value>

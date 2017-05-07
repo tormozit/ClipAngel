@@ -283,7 +283,7 @@ namespace ClipAngel
             this.MarkFilter = new System.Windows.Forms.ComboBox();
             this.TypeFilter = new System.Windows.Forms.ComboBox();
             this.comboBoxFilter = new ClipAngel.CueComboBox();
-            this.dataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridView = new ClipAngel.MyDataGridView();
             this.AppImage = new System.Windows.Forms.DataGridViewImageColumn();
             this.TypeImage = new System.Windows.Forms.DataGridViewImageColumn();
             this.TitleSimple = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -619,6 +619,7 @@ namespace ClipAngel
             // 
             // dataGridView
             // 
+            this.dataGridView.AllowDrop = true;
             this.dataGridView.AllowUserToAddRows = false;
             this.dataGridView.AllowUserToDeleteRows = false;
             this.dataGridView.AllowUserToResizeColumns = false;
@@ -665,6 +666,7 @@ namespace ClipAngel
             this.dataGridView.DoubleClick += new System.EventHandler(this.dataGridView_DoubleClick);
             this.dataGridView.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dataGridView_KeyDown);
             this.dataGridView.MouseHover += new System.EventHandler(this.dataGridView_MouseHover);
+            this.dataGridView.MouseMove += new System.Windows.Forms.MouseEventHandler(this.dataGridView_MouseMove);
             // 
             // AppImage
             // 
@@ -1879,8 +1881,6 @@ namespace ClipAngel
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dataGridView;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.TextBox textBoxApplication;
         private System.Windows.Forms.TextBox textBoxWindow;
@@ -2053,6 +2053,7 @@ namespace ClipAngel
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemSearchCaseSensitive;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemSearchWordsIndependently;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemSearchWildcards;
+        private MyDataGridView dataGridView;
     }
 }
 

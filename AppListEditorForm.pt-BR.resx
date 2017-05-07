@@ -46,7 +46,7 @@
     <value>8</value>
   </data>
   <data name="buttonAdd.ToolTip" xml:space="preserve">
-    <value>Adicionar aplicativos em execução selecionados</value>
+    <value>Adicionar aplicativos selecionados em execução</value>
   </data>
   <data name="$this.ClientSize" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>699, 417</value>
@@ -94,7 +94,7 @@
     <value>156, 23</value>
   </data>
   <data name="RunningListApplication.Text" xml:space="preserve">
-    <value>Caminho</value>
+    <value>Diretório</value>
   </data>
   <data name="RunningListApplication.Width" xml:space="preserve" type="System.Int32, mscorlib">
     <value>268</value>
@@ -127,7 +127,7 @@
     <value>75, 23</value>
   </data>
   <data name="SelectedListApplication.Text" xml:space="preserve">
-    <value>Caminho</value>
+    <value>Diretório</value>
   </data>
   <data name="buttonRefresh.Text" xml:space="preserve">
     <value>Atualizar</value>
@@ -196,7 +196,7 @@
     <value>8</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
-    <value>Escolhido apllications</value>
+    <value>Aplicações escolhidas</value>
   </data>
   <data name="listViewRunningList.ToolTip" xml:space="preserve">
     <value></value>
@@ -229,13 +229,13 @@
     <value></value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>Executando apllications</value>
+    <value>Aplicações em execução</value>
   </data>
   <data name="$this.ToolTip" xml:space="preserve">
     <value></value>
   </data>
   <data name="buttonRefresh.ToolTip" xml:space="preserve">
-    <value>Atualizar a lista de aplicativos de corrida</value>
+    <value>Atualizar a lista de aplicativos em execução</value>
   </data>
   <data name="listViewChosenList.Location" xml:space="preserve" type="System.Drawing.Point, System.Drawing">
     <value>0, 23</value>

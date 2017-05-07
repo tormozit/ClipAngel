@@ -14,6 +14,11 @@ namespace ExternalUpdater
     {
         static void Main(string[] args)
         {
+            if (args.Length < 4)
+            {
+                Console.WriteLine("This is internal Clip Angel application for update function.");
+                return;
+            }
             string ZipFileName = args[0];
             string TargetPath = args[1];
             string ExeName = args[2];

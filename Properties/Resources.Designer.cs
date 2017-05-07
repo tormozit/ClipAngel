@@ -628,6 +628,15 @@ namespace ClipAngel.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Just pasted clip is the last.
+        /// </summary>
+        public static string PastedLastClip {
+            get {
+                return ResourceManager.GetString("PastedLastClip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Pixel.
         /// </summary>
         public static string PixelFormat {

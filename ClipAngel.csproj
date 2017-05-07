@@ -117,6 +117,9 @@
     <Compile Include="Components\Descriptors.cs" />
     <Compile Include="Components\IconTools.cs" />
     <Compile Include="Components\InputBox.cs" />
+    <Compile Include="Components\MyDataGridView.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Components\Paster.cs" />
     <Compile Include="Components\PortableSettingsProvider .cs" />
     <Compile Include="Components\DataGridViewRichTextBoxColumn.cs" />

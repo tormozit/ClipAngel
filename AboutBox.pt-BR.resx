@@ -31,7 +31,7 @@
     <value>MiddleLeft</value>
   </data>
   <data name="linkLabelEmail.Text" xml:space="preserve">
-    <value>Email</value>
+    <value>E-mail</value>
   </data>
   <data name="logoPictureBox.Dock" xml:space="preserve" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>

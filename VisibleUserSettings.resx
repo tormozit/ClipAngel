@@ -194,10 +194,10 @@ Key press will be processed by the window. </value>
     <value>Use this hot key in any program to launch application for comparing last 2 clips</value>
   </data>
   <data name="GlobalHotkeyIncrementalPaste" xml:space="preserve">
-    <value>Hotkey to incremental paste</value>
+    <value>Hotkey to paste and select next</value>
   </data>
   <data name="GlobalHotkeyIncrementalPasteDescription" xml:space="preserve">
-    <value>Use this hot key in any program to paste current clip from Clip Angel list and select next clip which will be shown in tray tooltip</value>
+    <value>Use this hot key in any program to paste current clip from Clip Angel list and select next/upper clip which will be shown in tray tooltip</value>
   </data>
   <data name="GlobalHotkeyOpenCurrent" xml:space="preserve">
     <value>Hotkey to open window with no changes</value>
@@ -290,6 +290,12 @@ Not appliable to HTML native formatting.</value>
   </data>
   <data name="NumberOfClipsDescription" xml:space="preserve">
     <value>Current number of clips in database</value>
+  </data>
+  <data name="PlaySoundOnClipCapture" xml:space="preserve">
+    <value>Play sound on clip capture</value>
+  </data>
+  <data name="PlaySoundOnClipCaptureDescription" xml:space="preserve">
+    <value>Playing standard Windows sound when clip is successfully captured. Can be annoying</value>
   </data>
   <data name="RestoreCaretPositionOnFocusReturn" xml:space="preserve">
     <value>Restore caret position on focus return</value>

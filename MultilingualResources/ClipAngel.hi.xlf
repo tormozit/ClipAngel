@@ -443,12 +443,14 @@ Key press will be processed by the window. </source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">पिछले 2 क्लिप की तुलना के लिए अनुप्रयोग लॉन्च करने के लिए किसी भी प्रोग्राम में इस गर्म कुंजी का उपयोग करें</target>
         </trans-unit>
         <trans-unit id="GlobalHotkeyIncrementalPaste" translate="yes" xml:space="preserve">
-          <source>Hotkey to incremental paste</source>
+          <source>Hotkey to paste and select next</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">हॉटकी वृद्धिशील पेस्ट करने के लिए</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="GlobalHotkeyIncrementalPasteDescription" translate="yes" xml:space="preserve">
-          <source>Use this hot key in any program to paste current clip from Clip Angel list and select next clip which will be shown in tray tooltip</source>
+          <source>Use this hot key in any program to paste current clip from Clip Angel list and select next/upper clip which will be shown in tray tooltip</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">वर्तमान क्लिप से क्लिप परी सूची चिपकाएँ और जो ट्रे tooltip में दिखाया जाएगा अगले क्लिप का चयन करें करने के लिए किसी भी प्रोग्राम में इस गर्म कुंजी का उपयोग करें</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="GlobalHotkeyOpenCurrent" translate="yes" xml:space="preserve">
           <source>Hotkey to open window with no changes</source>
@@ -689,6 +691,14 @@ WinMerge, Araxis Merge, DiffMerge, Kdiff3. Text compare command is %application%
 Not appliable to HTML native formatting.</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">क्लिप पाठ फ़ील्ड (CTRL + W) में शब्द लपेटें। 
 नहीं HTML मूल स्वरूपण करने के लिए appliable.</target>
+        </trans-unit>
+        <trans-unit id="PlaySoundOnClipCapture" translate="yes" xml:space="preserve">
+          <source>Play sound on clip capture</source>
+          <target state="new">Play sound on clip capture</target>
+        </trans-unit>
+        <trans-unit id="PlaySoundOnClipCaptureDescription" translate="yes" xml:space="preserve">
+          <source>Playing standard Windows sound when clip is successfully captured. Can be annoying</source>
+          <target state="new">Playing standard Windows sound when clip is successfully captured. Can be annoying</target>
         </trans-unit>
       </group>
     </body>
@@ -1432,6 +1442,10 @@ Not appliable to HTML native formatting.</source>
         <trans-unit id="ClipWasNotCaptured" translate="yes" xml:space="preserve">
           <source>Copied clip was not captured (too big size {0}KB &gt; {1}KB)</source>
           <target state="new">Copied clip was not captured (too big size {0}KB &gt; {1}KB)</target>
+        </trans-unit>
+        <trans-unit id="PastedLastClip" translate="yes" xml:space="preserve">
+          <source>Just pasted clip is the last</source>
+          <target state="new">Just pasted clip is the last</target>
         </trans-unit>
       </group>
     </body>

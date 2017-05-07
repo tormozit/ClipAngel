@@ -206,12 +206,14 @@ clave será procesado por la ventana. </target>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Use esta tecla de acceso rápido en cualquier programa para lanzar aplicación para comparar 2 últimos clips</target>
         </trans-unit>
         <trans-unit id="GlobalHotkeyIncrementalPaste" translate="yes" xml:space="preserve">
-          <source>Hotkey to incremental paste</source>
+          <source>Hotkey to paste and select next</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Combinación de teclas para pegar incremental</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="GlobalHotkeyIncrementalPasteDescription" translate="yes" xml:space="preserve">
-          <source>Use this hot key in any program to paste current clip from Clip Angel list and select next clip which will be shown in tray tooltip</source>
+          <source>Use this hot key in any program to paste current clip from Clip Angel list and select next/upper clip which will be shown in tray tooltip</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Use esta tecla de acceso rápido en cualquier programa para pegar el clip actual de lista de Angel Clip y seleccione clip siguiente que aparecerá en la descripción de la bandeja</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="GlobalHotkeyOpenCurrent" translate="yes" xml:space="preserve">
           <source>Hotkey to open window with no changes</source>
@@ -452,6 +454,14 @@ WinMerge, Araxis Merge, DiffMerge, Kdiff3. Comparación de texto comando es % Co
 Not appliable to HTML native formatting.</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Envoltura de la palabra en el campo de texto del clip (CTRL + W). 
 No aplicable a HTML de formato nativo.</target>
+        </trans-unit>
+        <trans-unit id="PlaySoundOnClipCapture" translate="yes" xml:space="preserve">
+          <source>Play sound on clip capture</source>
+          <target state="new">Play sound on clip capture</target>
+        </trans-unit>
+        <trans-unit id="PlaySoundOnClipCaptureDescription" translate="yes" xml:space="preserve">
+          <source>Playing standard Windows sound when clip is successfully captured. Can be annoying</source>
+          <target state="new">Playing standard Windows sound when clip is successfully captured. Can be annoying</target>
         </trans-unit>
       </group>
     </body>
@@ -1432,6 +1442,10 @@ No aplicable a HTML de formato nativo.</target>
         <trans-unit id="ClipWasNotCaptured" translate="yes" xml:space="preserve">
           <source>Copied clip was not captured (too big size {0}KB &gt; {1}KB)</source>
           <target state="new">Copied clip was not captured (too big size {0}KB &gt; {1}KB)</target>
+        </trans-unit>
+        <trans-unit id="PastedLastClip" translate="yes" xml:space="preserve">
+          <source>Just pasted clip is the last</source>
+          <target state="new">Just pasted clip is the last</target>
         </trans-unit>
       </group>
     </body>

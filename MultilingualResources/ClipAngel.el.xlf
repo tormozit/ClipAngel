@@ -12,7 +12,7 @@
         </trans-unit>
         <trans-unit id="buttonCancel.Text" translate="yes" xml:space="preserve">
           <source>Cancel</source>
-          <target state="new">Cancel</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Άκυρο</target>
         </trans-unit>
         <trans-unit id="buttonCancel.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
           <source>75, 23</source>
@@ -60,7 +60,7 @@
         </trans-unit>
         <trans-unit id="buttonOK.Text" translate="yes" xml:space="preserve">
           <source>OK</source>
-          <target state="new">OK</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">OK</target>
         </trans-unit>
         <trans-unit id="HotkeyTextbox.Location" translate="yes" extype="System.Drawing.Point, System.Drawing" xml:space="preserve">
           <source>12, 12</source>
@@ -121,7 +121,7 @@
         </trans-unit>
         <trans-unit id="text" translate="yes" xml:space="preserve">
           <source>text</source>
-          <target state="new">text</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">κείμενο</target>
         </trans-unit>
         <trans-unit id="Filter" translate="yes" extype="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
           <source>..\Picture\Filter.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</source>
@@ -149,7 +149,7 @@
         </trans-unit>
         <trans-unit id="Confirmation" translate="yes" xml:space="preserve">
           <source>Confirmation</source>
-          <target state="new">Confirmation</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Επιβεβαίωση</target>
         </trans-unit>
         <trans-unit id="Support" translate="yes" xml:space="preserve">
           <source>https://sourceforge.net/p/clip-angel/tickets/new/</source>
@@ -185,7 +185,7 @@
         </trans-unit>
         <trans-unit id="EndMarker" translate="yes" xml:space="preserve">
           <source>END</source>
-          <target state="new">END</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ΤΕΛΟΣ</target>
         </trans-unit>
         <trans-unit id="up" translate="yes" extype="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
           <source>..\Picture\up.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</source>
@@ -197,11 +197,11 @@
         </trans-unit>
         <trans-unit id="MegaByteUnit" translate="yes" xml:space="preserve">
           <source>MB</source>
-          <target state="new">MB</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">MB</target>
         </trans-unit>
         <trans-unit id="Size" translate="yes" xml:space="preserve">
           <source>Size</source>
-          <target state="new">Size</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Μέγεθος</target>
         </trans-unit>
         <trans-unit id="TypeText" translate="yes" extype="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
           <source>..\Picture\TypeText.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</source>
@@ -249,7 +249,7 @@
         </trans-unit>
         <trans-unit id="favorite" translate="yes" xml:space="preserve">
           <source>favorite</source>
-          <target state="new">favorite</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">αγαπημένο</target>
         </trans-unit>
         <trans-unit id="keyboard" translate="yes" extype="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
           <source>..\Picture\keyboard.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</source>
@@ -281,11 +281,11 @@
         </trans-unit>
         <trans-unit id="used" translate="yes" xml:space="preserve">
           <source>used</source>
-          <target state="new">used</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">σε χρήση</target>
         </trans-unit>
         <trans-unit id="file" translate="yes" xml:space="preserve">
           <source>file</source>
-          <target state="new">file</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">αρχείο</target>
         </trans-unit>
         <trans-unit id="DBShortFilename" translate="yes" xml:space="preserve">
           <source>db.sqlite</source>
@@ -301,7 +301,7 @@
         </trans-unit>
         <trans-unit id="ByteUnit" translate="yes" xml:space="preserve">
           <source>B</source>
-          <target state="new">B</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Γ</target>
         </trans-unit>
         <trans-unit id="HelpPage" translate="yes" xml:space="preserve">
           <source>https://sourceforge.net/p/clip-angel/wiki/Description/</source>
@@ -341,7 +341,7 @@
         </trans-unit>
         <trans-unit id="PixelFormat" translate="yes" xml:space="preserve">
           <source>Pixel</source>
-          <target state="new">Pixel</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Pixel</target>
         </trans-unit>
         <trans-unit id="translate" translate="yes" extype="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
           <source>..\Picture\translate.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</source>
@@ -417,7 +417,7 @@
         </trans-unit>
         <trans-unit id="KiloByteUnit" translate="yes" xml:space="preserve">
           <source>KB</source>
-          <target state="new">KB</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">KB</target>
         </trans-unit>
         <trans-unit id="alien" translate="yes" extype="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
           <source>..\Picture\alien.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</source>
@@ -441,7 +441,7 @@
         </trans-unit>
         <trans-unit id="Search" translate="yes" xml:space="preserve">
           <source>Search</source>
-          <target state="new">Search</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Αναζήτηση</target>
         </trans-unit>
         <trans-unit id="LastClipWasMultiCaptured" translate="yes" xml:space="preserve">
           <source>Last clip was captured twice before compare</source>
@@ -450,6 +450,10 @@
         <trans-unit id="ClipWasNotCaptured" translate="yes" xml:space="preserve">
           <source>Copied clip was not captured (too big size {0}KB &gt; {1}KB)</source>
           <target state="new">Copied clip was not captured (too big size {0}KB &gt; {1}KB)</target>
+        </trans-unit>
+        <trans-unit id="PastedLastClip" translate="yes" xml:space="preserve">
+          <source>Just pasted clip is the last</source>
+          <target state="new">Just pasted clip is the last</target>
         </trans-unit>
       </group>
     </body>
@@ -506,7 +510,7 @@
         </trans-unit>
         <trans-unit id="buttonCancel.Text" translate="yes" xml:space="preserve">
           <source>Cancel</source>
-          <target state="new">Cancel</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Άκυρο</target>
         </trans-unit>
         <trans-unit id="buttonOK.Anchor" translate="yes" extype="System.Windows.Forms.AnchorStyles, System.Windows.Forms" xml:space="preserve">
           <source>Bottom, Right</source>
@@ -530,7 +534,7 @@
         </trans-unit>
         <trans-unit id="buttonOK.Text" translate="yes" xml:space="preserve">
           <source>OK</source>
-          <target state="new">OK</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">OK</target>
         </trans-unit>
         <trans-unit id="buttonClearFilter.Anchor" translate="yes" extype="System.Windows.Forms.AnchorStyles, System.Windows.Forms" xml:space="preserve">
           <source>Top, Right</source>
@@ -554,11 +558,11 @@
         </trans-unit>
         <trans-unit id="buttonClearFilter.Text" translate="yes" xml:space="preserve">
           <source>X</source>
-          <target state="new">X</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">X</target>
         </trans-unit>
         <trans-unit id="buttonClearFilter.ToolTip" translate="yes" xml:space="preserve">
           <source>Clear filter</source>
-          <target state="new">Clear filter</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Εκκαθάριση φίλτρου</target>
         </trans-unit>
         <trans-unit id="label1.Anchor" translate="yes" extype="System.Windows.Forms.AnchorStyles, System.Windows.Forms" xml:space="preserve">
           <source>Top, Right</source>
@@ -582,7 +586,7 @@
         </trans-unit>
         <trans-unit id="label1.Text" translate="yes" xml:space="preserve">
           <source>Filter:</source>
-          <target state="new">Filter:</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Φίλτρο:</target>
         </trans-unit>
         <trans-unit id="textBoxFilter.Anchor" translate="yes" extype="System.Windows.Forms.AnchorStyles, System.Windows.Forms" xml:space="preserve">
           <source>Top, Right</source>
@@ -626,7 +630,7 @@
         </trans-unit>
         <trans-unit id="copyToolStripMenuItem.Text" translate="yes" xml:space="preserve">
           <source>Copy</source>
-          <target state="new">Copy</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">&amp;Αντιγραφή...</target>
         </trans-unit>
         <trans-unit id="contexMenuLabel.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
           <source>103, 26</source>
@@ -642,7 +646,7 @@
         </trans-unit>
         <trans-unit id="gridContextMenuCopy.Text" translate="yes" xml:space="preserve">
           <source>Copy</source>
-          <target state="new">Copy</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">&amp;Αντιγραφή...</target>
         </trans-unit>
         <trans-unit id="contexMenuGrid.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
           <source>145, 26</source>
@@ -662,7 +666,7 @@
         </trans-unit>
         <trans-unit id="$this.Text" translate="yes" xml:space="preserve">
           <source>Settings</source>
-          <target state="new">Settings</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Ρυθμίσεις</target>
         </trans-unit>
         <trans-unit id="buttonReset.GenerateMember" translate="yes" extype="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" extradata="metadata" xml:space="preserve">
           <source>False</source>
@@ -719,7 +723,7 @@
         </trans-unit>
         <trans-unit id="AutostartDescription" translate="yes" xml:space="preserve">
           <source></source>
-          <target state="new"></target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion"></target>
         </trans-unit>
         <trans-unit id="AutostartPath" translate="yes" xml:space="preserve">
           <source>Application autostart command line</source>
@@ -735,7 +739,7 @@
         </trans-unit>
         <trans-unit id="ClearFiltersOnCloseDescription" translate="yes" xml:space="preserve">
           <source></source>
-          <target state="new"></target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion"></target>
         </trans-unit>
         <trans-unit id="ClipListSimpleDraw" translate="yes" xml:space="preserve">
           <source>Fast and simple list draw</source>
@@ -773,11 +777,11 @@ Key press will be processed by the window. </target>
         </trans-unit>
         <trans-unit id="DatabaseSizeDescription" translate="yes" xml:space="preserve">
           <source></source>
-          <target state="new"></target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion"></target>
         </trans-unit>
         <trans-unit id="DefaultFont" translate="yes" xml:space="preserve">
           <source>Default font</source>
-          <target state="new">Default font</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Προεπιλεγμένη γραμματοσειρά:</target>
         </trans-unit>
         <trans-unit id="DefaultFontDescription" translate="yes" xml:space="preserve">
           <source>Font for clip list and default for clip text. Double click to change it.</source>
@@ -800,12 +804,12 @@ Key press will be processed by the window. </target>
           <target state="new">Use this hot key in any program to launch application for comparing last 2 clips</target>
         </trans-unit>
         <trans-unit id="GlobalHotkeyIncrementalPaste" translate="yes" xml:space="preserve">
-          <source>Hotkey to incremental paste</source>
-          <target state="new">Hotkey to incremental paste</target>
+          <source>Hotkey to paste and select next</source>
+          <target state="new">Hotkey to paste and select next</target>
         </trans-unit>
         <trans-unit id="GlobalHotkeyIncrementalPasteDescription" translate="yes" xml:space="preserve">
-          <source>Use this hot key in any program to paste current clip from Clip Angel list and select next clip which will be shown in tray tooltip</source>
-          <target state="new">Use this hot key in any program to paste current clip from Clip Angel list and select next clip which will be shown in tray tooltip</target>
+          <source>Use this hot key in any program to paste current clip from Clip Angel list and select next/upper clip which will be shown in tray tooltip</source>
+          <target state="new">Use this hot key in any program to paste current clip from Clip Angel list and select next/upper clip which will be shown in tray tooltip</target>
         </trans-unit>
         <trans-unit id="GlobalHotkeyOpenCurrent" translate="yes" xml:space="preserve">
           <source>Hotkey to open window with no changes</source>
@@ -889,7 +893,7 @@ Key press will be processed by the window. </target>
         </trans-unit>
         <trans-unit id="Language" translate="yes" xml:space="preserve">
           <source>Language</source>
-          <target state="new">Language</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Γλώσσα</target>
         </trans-unit>
         <trans-unit id="LanguageDescription" translate="yes" xml:space="preserve">
           <source>User interface language</source>
@@ -1039,13 +1043,21 @@ WinMerge, Araxis Merge, DiffMerge, Kdiff3. Text compare command is %application%
         </trans-unit>
         <trans-unit id="WordWrap" translate="yes" xml:space="preserve">
           <source>Word wrap</source>
-          <target state="new">Word wrap</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">&amp;Αναδίπλωση λέξεων</target>
         </trans-unit>
         <trans-unit id="WordWrapDescription" translate="yes" xml:space="preserve">
           <source>Word wrap in clip text field (CTRL+W).
 Not appliable to HTML native formatting.</source>
           <target state="new">Word wrap in clip text field (CTRL+W).
 Not appliable to HTML native formatting.</target>
+        </trans-unit>
+        <trans-unit id="PlaySoundOnClipCapture" translate="yes" xml:space="preserve">
+          <source>Play sound on clip capture</source>
+          <target state="new">Play sound on clip capture</target>
+        </trans-unit>
+        <trans-unit id="PlaySoundOnClipCaptureDescription" translate="yes" xml:space="preserve">
+          <source>Playing standard Windows sound when clip is successfully captured. Can be annoying</source>
+          <target state="new">Playing standard Windows sound when clip is successfully captured. Can be annoying</target>
         </trans-unit>
       </group>
     </body>
@@ -1058,7 +1070,7 @@ Not appliable to HTML native formatting.</target>
       <group id="CLIPANGEL/APPLISTEDITORFORM.RESX" datatype="resx">
         <trans-unit id="buttonDeleteSelected.ToolTip" translate="yes" xml:space="preserve">
           <source></source>
-          <target state="new"></target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion"></target>
         </trans-unit>
         <trans-unit id="buttonSelectClipboardOwner.Text" translate="yes" xml:space="preserve">
           <source>Select clipboard owner</source>
@@ -1114,7 +1126,7 @@ Not appliable to HTML native formatting.</target>
         </trans-unit>
         <trans-unit id="buttonCancel.Text" translate="yes" xml:space="preserve">
           <source>Cancel</source>
-          <target state="new">Cancel</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Άκυρο</target>
         </trans-unit>
         <trans-unit id="$this.Text" translate="yes" xml:space="preserve">
           <source>Application list editor</source>
@@ -1150,7 +1162,7 @@ Not appliable to HTML native formatting.</target>
         </trans-unit>
         <trans-unit id="SelectedListModule.Text" translate="yes" xml:space="preserve">
           <source>Module</source>
-          <target state="new">Module</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Λειτουργική μονάδα</target>
         </trans-unit>
         <trans-unit id="splitContainer1.SplitterDistance" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
           <source>335</source>
@@ -1166,7 +1178,7 @@ Not appliable to HTML native formatting.</target>
         </trans-unit>
         <trans-unit id="RunningListApplication.Text" translate="yes" xml:space="preserve">
           <source>Path</source>
-          <target state="new">Path</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Διαδρομή</target>
         </trans-unit>
         <trans-unit id="RunningListApplication.Width" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
           <source>268</source>
@@ -1210,11 +1222,11 @@ Not appliable to HTML native formatting.</target>
         </trans-unit>
         <trans-unit id="SelectedListApplication.Text" translate="yes" xml:space="preserve">
           <source>Path</source>
-          <target state="new">Path</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Διαδρομή</target>
         </trans-unit>
         <trans-unit id="buttonRefresh.Text" translate="yes" xml:space="preserve">
           <source>Refresh</source>
-          <target state="new">Refresh</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Ανανέωση</target>
         </trans-unit>
         <trans-unit id="label2.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
           <source>98, 13</source>
@@ -1230,7 +1242,7 @@ Not appliable to HTML native formatting.</target>
         </trans-unit>
         <trans-unit id="listViewChosenList.ToolTip" translate="yes" xml:space="preserve">
           <source></source>
-          <target state="new"></target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion"></target>
         </trans-unit>
         <trans-unit id="buttonSelectClipboardOwner.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
           <source>8</source>
@@ -1242,7 +1254,7 @@ Not appliable to HTML native formatting.</target>
         </trans-unit>
         <trans-unit id="label1.ToolTip" translate="yes" xml:space="preserve">
           <source></source>
-          <target state="new"></target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion"></target>
         </trans-unit>
         <trans-unit id="buttonDeleteSelected.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
           <source>161, 23</source>
@@ -1258,7 +1270,7 @@ Not appliable to HTML native formatting.</target>
         </trans-unit>
         <trans-unit id="buttonCancel.ToolTip" translate="yes" xml:space="preserve">
           <source></source>
-          <target state="new"></target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion"></target>
         </trans-unit>
         <trans-unit id="listViewChosenList.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
           <source>333, 281</source>
@@ -1306,11 +1318,11 @@ Not appliable to HTML native formatting.</target>
         </trans-unit>
         <trans-unit id="listViewRunningList.ToolTip" translate="yes" xml:space="preserve">
           <source></source>
-          <target state="new"></target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion"></target>
         </trans-unit>
         <trans-unit id="label2.ToolTip" translate="yes" xml:space="preserve">
           <source></source>
-          <target state="new"></target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion"></target>
         </trans-unit>
         <trans-unit id="buttonRefresh.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
           <source>79, 23</source>
@@ -1342,7 +1354,7 @@ Not appliable to HTML native formatting.</target>
         </trans-unit>
         <trans-unit id="splitContainer1.Panel2.ToolTip" translate="yes" xml:space="preserve">
           <source></source>
-          <target state="new"></target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion"></target>
         </trans-unit>
         <trans-unit id="label1.Text" translate="yes" xml:space="preserve">
           <source>Running apllications</source>
@@ -1350,7 +1362,7 @@ Not appliable to HTML native formatting.</target>
         </trans-unit>
         <trans-unit id="$this.ToolTip" translate="yes" xml:space="preserve">
           <source></source>
-          <target state="new"></target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion"></target>
         </trans-unit>
         <trans-unit id="buttonRefresh.ToolTip" translate="yes" xml:space="preserve">
           <source>Refresh running applications list</source>
@@ -1386,11 +1398,11 @@ Not appliable to HTML native formatting.</target>
         </trans-unit>
         <trans-unit id="splitContainer1.ToolTip" translate="yes" xml:space="preserve">
           <source></source>
-          <target state="new"></target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion"></target>
         </trans-unit>
         <trans-unit id="RunningListModule.Text" translate="yes" xml:space="preserve">
           <source>Module</source>
-          <target state="new">Module</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Λειτουργική μονάδα</target>
         </trans-unit>
         <trans-unit id="buttonSelectTargetApplication.Anchor" translate="yes" extype="System.Windows.Forms.AnchorStyles, System.Windows.Forms" xml:space="preserve">
           <source>Top, Right</source>
@@ -1402,7 +1414,7 @@ Not appliable to HTML native formatting.</target>
         </trans-unit>
         <trans-unit id="splitContainer1.Panel1.ToolTip" translate="yes" xml:space="preserve">
           <source></source>
-          <target state="new"></target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion"></target>
         </trans-unit>
         <trans-unit id="buttonDeleteSelected.Location" translate="yes" extype="System.Drawing.Point, System.Drawing" xml:space="preserve">
           <source>12, 41</source>
@@ -1410,11 +1422,11 @@ Not appliable to HTML native formatting.</target>
         </trans-unit>
         <trans-unit id="buttonOK.Text" translate="yes" xml:space="preserve">
           <source>OK</source>
-          <target state="new">OK</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">OK</target>
         </trans-unit>
         <trans-unit id="buttonOK.ToolTip" translate="yes" xml:space="preserve">
           <source></source>
-          <target state="new"></target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion"></target>
         </trans-unit>
         <trans-unit id="label1.AutoSize" translate="yes" extype="System.Boolean, mscorlib" xml:space="preserve">
           <source>True</source>
@@ -1467,7 +1479,7 @@ Not appliable to HTML native formatting.</target>
         </trans-unit>
         <trans-unit id="linkLabelEmail.Text" translate="yes" xml:space="preserve">
           <source>Email</source>
-          <target state="new">Email</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Ηλεκτρονικό ταχυδρομείο</target>
         </trans-unit>
         <trans-unit id="logoPictureBox.Dock" translate="yes" extype="System.Windows.Forms.DockStyle, System.Windows.Forms" xml:space="preserve">
           <source>Fill</source>
@@ -1515,11 +1527,11 @@ Not appliable to HTML native formatting.</target>
         </trans-unit>
         <trans-unit id="labelCopyright.Text" translate="yes" xml:space="preserve">
           <source>Copyright</source>
-          <target state="new">Copyright</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">&amp;Πνευματικά δικαιώματα:</target>
         </trans-unit>
         <trans-unit id="labelVersion.Text" translate="yes" xml:space="preserve">
           <source>Version</source>
-          <target state="new">Version</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Έκδοση:</target>
         </trans-unit>
         <trans-unit id="labelVersion.Anchor" translate="yes" extype="System.Windows.Forms.AnchorStyles, System.Windows.Forms" xml:space="preserve">
           <source>Top, Bottom, Left, Right</source>
@@ -1531,11 +1543,11 @@ Not appliable to HTML native formatting.</target>
         </trans-unit>
         <trans-unit id="$this.Text" translate="yes" xml:space="preserve">
           <source>About</source>
-          <target state="new">About</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Πληροφορίες</target>
         </trans-unit>
         <trans-unit id="okButton.Text" translate="yes" xml:space="preserve">
           <source>&amp;OK</source>
-          <target state="new">&amp;OK</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">&amp;OK</target>
         </trans-unit>
         <trans-unit id="textBoxDescription.Margin" translate="yes" extype="System.Windows.Forms.Padding, System.Windows.Forms" xml:space="preserve">
           <source>6, 3, 3, 3</source>
@@ -1643,7 +1655,7 @@ Not appliable to HTML native formatting.</target>
         </trans-unit>
         <trans-unit id="linkLabelWebSite.Text" translate="yes" xml:space="preserve">
           <source>Website</source>
-          <target state="new">Website</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion"> Τοποθεσία Web</target>
         </trans-unit>
         <trans-unit id="linkLabel1.AutoSize" translate="yes" extype="System.Boolean, mscorlib" xml:space="preserve">
           <source>True</source>
@@ -1811,7 +1823,7 @@ Not appliable to HTML native formatting.</target>
         </trans-unit>
         <trans-unit id="labelProductName.Text" translate="yes" xml:space="preserve">
           <source>Product</source>
-          <target state="new">Product</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Προϊόν</target>
         </trans-unit>
         <trans-unit id="linkLabel1.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
           <source>28</source>
@@ -1930,7 +1942,7 @@ Changes in temp file are not synchronized with clip!
         </trans-unit>
         <trans-unit id="SizeDataGridViewTextBoxColumn.HeaderText" translate="yes" xml:space="preserve">
           <source>Size</source>
-          <target state="new">Size</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Μέγεθος</target>
         </trans-unit>
         <trans-unit id="wordWrapToolStripMenuItem.ShortcutKeys" translate="yes" extype="System.Windows.Forms.Keys, System.Windows.Forms" xml:space="preserve">
           <source>Ctrl+W</source>
@@ -1946,7 +1958,7 @@ Changes in temp file are not synchronized with clip!
         </trans-unit>
         <trans-unit id="deleteToolStripMenuItem1.Text" translate="yes" xml:space="preserve">
           <source>Delete</source>
-          <target state="new">Delete</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Διαγραφή</target>
         </trans-unit>
         <trans-unit id="toolStripMenuItem3.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
           <source>211, 22</source>
@@ -1958,7 +1970,7 @@ Changes in temp file are not synchronized with clip!
         </trans-unit>
         <trans-unit id="typeDataGridViewTextBoxColumn.HeaderText" translate="yes" xml:space="preserve">
           <source>Type</source>
-          <target state="new">Type</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Τύπος</target>
         </trans-unit>
         <trans-unit id="showAllMarksToolStripMenuItem.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
           <source>250, 22</source>
@@ -1980,7 +1992,7 @@ Submenu "List" has commands for quick selection</target>
         </trans-unit>
         <trans-unit id="usedDataGridViewCheckBoxColumn.HeaderText" translate="yes" xml:space="preserve">
           <source>Used</source>
-          <target state="new">Used</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Χρήση</target>
         </trans-unit>
         <trans-unit id="showInTaskbarToolStripMenuItem.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
           <source>212, 22</source>
@@ -2112,7 +2124,7 @@ Submenu "List" has commands for quick selection</target>
         </trans-unit>
         <trans-unit id="titleDataGridViewTextBoxColumn.HeaderText" translate="yes" xml:space="preserve">
           <source>Title</source>
-          <target state="new">Title</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Τίτλος</target>
         </trans-unit>
         <trans-unit id="ImageSample.HeaderText" translate="yes" xml:space="preserve">
           <source>ImageSample</source>
@@ -2120,7 +2132,7 @@ Submenu "List" has commands for quick selection</target>
         </trans-unit>
         <trans-unit id="rtfMenuItemSelectAll.Text" translate="yes" xml:space="preserve">
           <source>Select all</source>
-          <target state="new">Select all</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Επιλογή</target>
         </trans-unit>
         <trans-unit id="StripLabelSize.ToolTipText" translate="yes" xml:space="preserve">
           <source>Total size of all data types of clip in bytes</source>
@@ -2142,7 +2154,7 @@ Url will be saved in current clip and will be copied to clipboard.</target>
         </trans-unit>
         <trans-unit id="MainMenu.Text" translate="yes" xml:space="preserve">
           <source>menuStrip1</source>
-          <target state="new">menuStrip1</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">menuStrip1</target>
         </trans-unit>
         <trans-unit id="htmlMenuItemCopyLinkAdress.Text" translate="yes" xml:space="preserve">
           <source>Copy link adress</source>
@@ -2210,7 +2222,7 @@ Url will be saved in current clip and will be copied to clipboard.</target>
         </trans-unit>
         <trans-unit id="StripLabelType.ToolTipText" translate="yes" xml:space="preserve">
           <source>Type</source>
-          <target state="new">Type</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Τύπος</target>
         </trans-unit>
         <trans-unit id="showAllMarksToolStripMenuItem.Text" translate="yes" xml:space="preserve">
           <source>Show all marks</source>
@@ -2270,7 +2282,7 @@ Url will be saved in current clip and will be copied to clipboard.</target>
         </trans-unit>
         <trans-unit id="editClipTextToolStripMenuItem.Text" translate="yes" xml:space="preserve">
           <source>Edit text</source>
-          <target state="new">Edit text</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Επεξεργασία κείμενου</target>
         </trans-unit>
         <trans-unit id="deleteAllNonFavoriteToolStripMenuItem.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
           <source>250, 22</source>
@@ -2304,11 +2316,11 @@ Url will be saved in current clip and will be copied to clipboard.</target>
         </trans-unit>
         <trans-unit id="deleteToolStripMenuItem.Text" translate="yes" xml:space="preserve">
           <source>Clip</source>
-          <target state="new">Clip</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Αποκοπή</target>
         </trans-unit>
         <trans-unit id="showAllTypesToolStripMenuItem.Text" translate="yes" xml:space="preserve">
           <source>Show all types</source>
-          <target state="new">Show all types</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">&amp;Εμφάνιση όλων των τύπων</target>
         </trans-unit>
         <trans-unit id="mergeTextOfClipsToolStripMenuItem.Text" translate="yes" xml:space="preserve">
           <source>Join text of clips</source>
@@ -2316,7 +2328,7 @@ Url will be saved in current clip and will be copied to clipboard.</target>
         </trans-unit>
         <trans-unit id="copyToClipboardToolStripMenuItem.Text" translate="yes" xml:space="preserve">
           <source>Copy to clipboard</source>
-          <target state="new">Copy to clipboard</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Αντιγραφή στο Πρόχειρο</target>
         </trans-unit>
         <trans-unit id="supportToolStripMenuItem.ToolTipText" translate="yes" xml:space="preserve">
           <source>Send bug report or request feature</source>
@@ -2380,7 +2392,7 @@ Url will be saved in current clip and will be copied to clipboard.</target>
         </trans-unit>
         <trans-unit id="htmlMenuItemSelectAll.Text" translate="yes" xml:space="preserve">
           <source>Select all</source>
-          <target state="new">Select all</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Επιλογή</target>
         </trans-unit>
         <trans-unit id="moveDownToolStripMenuItem.ShortcutKeys" translate="yes" extype="System.Windows.Forms.Keys, System.Windows.Forms" xml:space="preserve">
           <source>Ctrl+Down</source>
@@ -2496,7 +2508,7 @@ Changes in temp file are not synchronized with clip!</target>
         </trans-unit>
         <trans-unit id="exitToolStripMenuItem.Text" translate="yes" xml:space="preserve">
           <source>Exit</source>
-          <target state="new">Exit</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Έξοδος</target>
         </trans-unit>
         <trans-unit id="copyToClipboardToolStripMenuItem.ShortcutKeys" translate="yes" extype="System.Windows.Forms.Keys, System.Windows.Forms" xml:space="preserve">
           <source>Ctrl+C</source>
@@ -2504,7 +2516,7 @@ Changes in temp file are not synchronized with clip!</target>
         </trans-unit>
         <trans-unit id="splitContainer1.Panel2.ToolTip" translate="yes" xml:space="preserve">
           <source></source>
-          <target state="new"></target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion"></target>
         </trans-unit>
         <trans-unit id="aboutToolStripMenuItem1.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
           <source>178, 22</source>
@@ -2524,7 +2536,7 @@ Changes in temp file are not synchronized with clip!</target>
         </trans-unit>
         <trans-unit id="StripLabelSize.Text" translate="yes" xml:space="preserve">
           <source>Size</source>
-          <target state="new">Size</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Μέγεθος</target>
         </trans-unit>
         <trans-unit id="showAllMarksToolStripMenuItem.ShortcutKeys" translate="yes" extype="System.Windows.Forms.Keys, System.Windows.Forms" xml:space="preserve">
           <source>Ctrl+1</source>
@@ -2556,7 +2568,7 @@ Changes in temp file are not synchronized with clip!</target>
         </trans-unit>
         <trans-unit id="MarkFilter.Items" translate="yes" xml:space="preserve">
           <source>all</source>
-          <target state="new">all</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">όλα</target>
         </trans-unit>
         <trans-unit id="toolStripButtonMarkFavorite.ImageTransparentColor" translate="yes" extype="System.Drawing.Color, System.Drawing" xml:space="preserve">
           <source>Magenta</source>
@@ -2572,7 +2584,7 @@ Changes in temp file are not synchronized with clip!</target>
         </trans-unit>
         <trans-unit id="fToolStripMenuItem.Text" translate="yes" xml:space="preserve">
           <source>Help</source>
-          <target state="new">Help</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Βοήθεια</target>
         </trans-unit>
         <trans-unit id="fToolStripMenuItem.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
           <source>44, 20</source>
@@ -2632,11 +2644,11 @@ Changes in temp file are not synchronized with clip!</target>
         </trans-unit>
         <trans-unit id="settingsToolStripMenuItem.Text" translate="yes" xml:space="preserve">
           <source>Settings</source>
-          <target state="new">Settings</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Ρυθμίσεις</target>
         </trans-unit>
         <trans-unit id="moveUpToolStripMenuItem.Text" translate="yes" xml:space="preserve">
           <source>Move up</source>
-          <target state="new">Move up</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Μετακίνηση επάνω</target>
         </trans-unit>
         <trans-unit id="showOnlyFavoriteToolStripMenuItem.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
           <source>250, 22</source>
@@ -2702,7 +2714,7 @@ Changes in temp file are not synchronized with clip!
         </trans-unit>
         <trans-unit id="TypeFilter.Items" translate="yes" xml:space="preserve">
           <source>all</source>
-          <target state="new">all</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">όλα</target>
         </trans-unit>
         <trans-unit id="$this.ClientSize" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
           <source>790, 444</source>
@@ -2734,7 +2746,7 @@ Changes in temp file are not synchronized with clip!
         </trans-unit>
         <trans-unit id="toolStripSearchOptions.ToolTipText" translate="yes" xml:space="preserve">
           <source>Search Options</source>
-          <target state="new">Search Options</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">&amp;Επιλογές αναζήτησης...</target>
         </trans-unit>
         <trans-unit id="setFavouriteToolStripMenuItem.Text" translate="yes" xml:space="preserve">
           <source>Mark as favorite</source>
@@ -3828,7 +3840,7 @@ Changes in temp file are not synchronized with clip!
         </trans-unit>
         <trans-unit id="stripLabelPosition.Text" translate="yes" xml:space="preserve">
           <source>Position</source>
-          <target state="new">Position</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Θέση</target>
         </trans-unit>
         <trans-unit id="toolStripSearchOptions.ImageTransparentColor" translate="yes" extype="System.Drawing.Color, System.Drawing" xml:space="preserve">
           <source>Magenta</source>
@@ -3864,11 +3876,11 @@ Changes in temp file are not synchronized with clip!
         </trans-unit>
         <trans-unit id="toolStripMenuItemClearFilters.Text" translate="yes" xml:space="preserve">
           <source>Clear filters</source>
-          <target state="new">Clear filters</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Απαλοιφή φίλτρων</target>
         </trans-unit>
         <trans-unit id="toolStripTop.Text" translate="yes" xml:space="preserve">
           <source>toolStrip1</source>
-          <target state="new">toolStrip1</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">toolStrip1</target>
         </trans-unit>
         <trans-unit id="contextMenuWindowTitle.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
           <source>140, 26</source>
@@ -3914,7 +3926,7 @@ When ON and "Fast window open" OFF, window will be shown in taskbar if visible.
         </trans-unit>
         <trans-unit id="toolStripMenuItem8.Text" translate="yes" xml:space="preserve">
           <source>Delete</source>
-          <target state="new">Delete</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Διαγραφή</target>
         </trans-unit>
         <trans-unit id="toolStripMenuItemPasteChars.ToolTipText" translate="yes" xml:space="preserve">
           <source>Simulate in active window char input of selected text of clip or agregated text of selected clips.</source>
@@ -3926,7 +3938,7 @@ When ON and "Fast window open" OFF, window will be shown in taskbar if visible.
         </trans-unit>
         <trans-unit id="toolStripMenuItem9.Text" translate="yes" xml:space="preserve">
           <source>Clear clipboard</source>
-          <target state="new">Clear clipboard</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Απαλοιφή προχείρου</target>
         </trans-unit>
         <trans-unit id="dataGridViewImageColumn2.Width" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
           <source>17</source>
@@ -3934,7 +3946,7 @@ When ON and "Fast window open" OFF, window will be shown in taskbar if visible.
         </trans-unit>
         <trans-unit id="StripLabelCreated.Text" translate="yes" xml:space="preserve">
           <source>Created</source>
-          <target state="new">Created</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Δημιουργήθηκε</target>
         </trans-unit>
         <trans-unit id="$this.Icon" translate="yes" extype="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64" xml:space="preserve">
           <source>
@@ -5020,7 +5032,7 @@ When ON and "Fast window open" OFF, window will be shown in taskbar if visible.
         </trans-unit>
         <trans-unit id="fileToolStripMenuItem1.Text" translate="yes" xml:space="preserve">
           <source>Window</source>
-          <target state="new">Window</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Παράθυρο</target>
         </trans-unit>
         <trans-unit id="statusStrip.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
           <source>4</source>
@@ -5072,7 +5084,7 @@ When ON and "Fast window open" OFF, window will be shown in taskbar if visible.
         </trans-unit>
         <trans-unit id="windowAlwaysOnTopToolStripMenuItem.Text" translate="yes" xml:space="preserve">
           <source>Always on top</source>
-          <target state="new">Always on top</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Πάντα σε πρώτο πλάνο</target>
         </trans-unit>
         <trans-unit id="windowAlwaysOnTopToolStripMenuItem.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
           <source>212, 22</source>
@@ -5088,7 +5100,7 @@ When ON and "Fast window open" OFF, window will be shown in taskbar if visible.
         </trans-unit>
         <trans-unit id="idDataGridViewTextBoxColumn.HeaderText" translate="yes" xml:space="preserve">
           <source>Id</source>
-          <target state="new">Id</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Αναγνωριστικό</target>
         </trans-unit>
         <trans-unit id="moveTopToolStripMenuItem.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
           <source>250, 22</source>
@@ -5116,7 +5128,7 @@ When ON and "Fast window open" OFF, window will be shown in taskbar if visible.
         </trans-unit>
         <trans-unit id="statusStrip.Text" translate="yes" xml:space="preserve">
           <source>statusStrip</source>
-          <target state="new">statusStrip</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">statusStrip</target>
         </trans-unit>
         <trans-unit id="changeClipTitleToolStripMenuItem.ShortcutKeys" translate="yes" extype="System.Windows.Forms.Keys, System.Windows.Forms" xml:space="preserve">
           <source>F2</source>
@@ -5124,7 +5136,7 @@ When ON and "Fast window open" OFF, window will be shown in taskbar if visible.
         </trans-unit>
         <trans-unit id="previousMatchToolStripMenuItem.Text" translate="yes" xml:space="preserve">
           <source>Find previous</source>
-          <target state="new">Find previous</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Εύρεση προηγούμενου</target>
         </trans-unit>
         <trans-unit id="toolStripMenuItem8.ToolTipText" translate="yes" xml:space="preserve">
           <source>Delete selected clips from list</source>
@@ -5140,7 +5152,7 @@ When ON and "Fast window open" OFF, window will be shown in taskbar if visible.
         </trans-unit>
         <trans-unit id="textBoxWindow.Text" translate="yes" xml:space="preserve">
           <source>Window</source>
-          <target state="new">Window</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Παράθυρο</target>
         </trans-unit>
         <trans-unit id="toolStripMenuItem11.ShortcutKeys" translate="yes" extype="System.Windows.Forms.Keys, System.Windows.Forms" xml:space="preserve">
           <source>Ctrl+F4</source>
@@ -5296,7 +5308,7 @@ When ON and "Fast window open" OFF, window will be shown in taskbar if visible.
         </trans-unit>
         <trans-unit id="TypeFilter.Items2" translate="yes" xml:space="preserve">
           <source>file</source>
-          <target state="new">file</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">αρχείο</target>
         </trans-unit>
         <trans-unit id="showOnlyFavoriteToolStripMenuItem.ShortcutKeys" translate="yes" extype="System.Windows.Forms.Keys, System.Windows.Forms" xml:space="preserve">
           <source>Ctrl+2</source>
@@ -5320,7 +5332,7 @@ When ON and "Fast window open" OFF, window will be shown in taskbar if visible.
         </trans-unit>
         <trans-unit id="copyToolStripMenuItem.Text" translate="yes" xml:space="preserve">
           <source>Copy</source>
-          <target state="new">Copy</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">&amp;Αντιγραφή...</target>
         </trans-unit>
         <trans-unit id="editClipTextToolStripMenuItem.ShortcutKeys" translate="yes" extype="System.Windows.Forms.Keys, System.Windows.Forms" xml:space="preserve">
           <source>F4</source>
@@ -5340,7 +5352,7 @@ When ON and "Fast window open" OFF, window will be shown in taskbar if visible.
         </trans-unit>
         <trans-unit id="favoriteDataGridViewCheckBoxColumn.HeaderText" translate="yes" xml:space="preserve">
           <source>Favorite</source>
-          <target state="new">Favorite</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Αγαπημένο</target>
         </trans-unit>
         <trans-unit id="translateToolStripMenuItem.Text" translate="yes" xml:space="preserve">
           <source>Translate text</source>
@@ -5348,7 +5360,7 @@ When ON and "Fast window open" OFF, window will be shown in taskbar if visible.
         </trans-unit>
         <trans-unit id="toolStripMenuItem1.Text" translate="yes" xml:space="preserve">
           <source>Exit</source>
-          <target state="new">Exit</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Έξοδος</target>
         </trans-unit>
         <trans-unit id="tableLayoutPanelData.ColumnCount" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
           <source>1</source>
@@ -5376,7 +5388,7 @@ When ON and "Fast window open" OFF, window will be shown in taskbar if visible.
         </trans-unit>
         <trans-unit id="textBoxApplication.Text" translate="yes" xml:space="preserve">
           <source>Application</source>
-          <target state="new">Application</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Εφαρμογή</target>
         </trans-unit>
         <trans-unit id="toolStripMenuItemCompareLastClips.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
           <source>187, 22</source>
@@ -5434,7 +5446,7 @@ Submenu "List" has commands for quick selection</target>
         </trans-unit>
         <trans-unit id="$this.ToolTip" translate="yes" xml:space="preserve">
           <source></source>
-          <target state="new"></target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion"></target>
         </trans-unit>
         <trans-unit id="toolStripMenuItem6.Text" translate="yes" xml:space="preserve">
           <source>Paste text (CTRL+ ENTER)</source>
@@ -5482,7 +5494,7 @@ Submenu "List" has commands for quick selection</target>
         </trans-unit>
         <trans-unit id="richTextBox.Text" translate="yes" xml:space="preserve">
           <source></source>
-          <target state="new"></target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion"></target>
         </trans-unit>
         <trans-unit id="toolStripMenuItemClearFilterAndSelectTop.ShortcutKeys" translate="yes" extype="System.Windows.Forms.Keys, System.Windows.Forms" xml:space="preserve">
           <source>F9</source>
@@ -5502,7 +5514,7 @@ Submenu "List" has commands for quick selection</target>
         </trans-unit>
         <trans-unit id="toolStripButtonWordWrap.Text" translate="yes" xml:space="preserve">
           <source>Word wrap</source>
-          <target state="new">Word wrap</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">&amp;Αναδίπλωση λέξεων</target>
         </trans-unit>
         <trans-unit id="richTextBox.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
           <source>2</source>
@@ -5518,7 +5530,7 @@ Submenu "List" has commands for quick selection</target>
         </trans-unit>
         <trans-unit id="splitContainer1.Panel1.ToolTip" translate="yes" xml:space="preserve">
           <source></source>
-          <target state="new"></target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion"></target>
         </trans-unit>
         <trans-unit id="toolStripBottom.Dock" translate="yes" extype="System.Windows.Forms.DockStyle, System.Windows.Forms" xml:space="preserve">
           <source>None</source>
@@ -5594,7 +5606,7 @@ Submenu "List" has commands for quick selection</target>
         </trans-unit>
         <trans-unit id="urlTextBox.Text" translate="yes" xml:space="preserve">
           <source></source>
-          <target state="new"></target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion"></target>
         </trans-unit>
         <trans-unit id="toolStripMenuItemMonitoringClipboard.ToolTipText" translate="yes" xml:space="preserve">
           <source>Capture changes in clipboard</source>
@@ -5618,7 +5630,7 @@ Submenu "List" has commands for quick selection</target>
         </trans-unit>
         <trans-unit id="CreatedDataGridViewTextBoxColumn.HeaderText" translate="yes" xml:space="preserve">
           <source>Created</source>
-          <target state="new">Created</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Δημιουργήθηκε</target>
         </trans-unit>
         <trans-unit id="MainMenu.Location" translate="yes" extype="System.Drawing.Point, System.Drawing" xml:space="preserve">
           <source>0, 0</source>
@@ -5650,7 +5662,7 @@ Submenu "List" has commands for quick selection</target>
         </trans-unit>
         <trans-unit id="aboutToolStripMenuItem1.Text" translate="yes" xml:space="preserve">
           <source>About</source>
-          <target state="new">About</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Πληροφορίες</target>
         </trans-unit>
         <trans-unit id="toolStripMenuItemCompareLastClips.ToolTipText" translate="yes" xml:space="preserve">
           <source>Compare text of last clips</source>
@@ -5658,7 +5670,7 @@ Submenu "List" has commands for quick selection</target>
         </trans-unit>
         <trans-unit id="clipToolStripMenuItem.Text" translate="yes" xml:space="preserve">
           <source>Clip</source>
-          <target state="new">Clip</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Αποκοπή</target>
         </trans-unit>
         <trans-unit id="textBoxWindow.Location" translate="yes" extype="System.Drawing.Point, System.Drawing" xml:space="preserve">
           <source>22, 3</source>
@@ -5723,7 +5735,7 @@ Submenu "List" has commands for quick selection</target>
         </trans-unit>
         <trans-unit id="aboutToolStripMenuItem.Text" translate="yes" xml:space="preserve">
           <source>About</source>
-          <target state="new">About</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Πληροφορίες</target>
         </trans-unit>
         <trans-unit id="exitToolStripMenuItem1.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
           <source>187, 22</source>
@@ -5731,7 +5743,7 @@ Submenu "List" has commands for quick selection</target>
         </trans-unit>
         <trans-unit id="toolStripMenuItem4.Text" translate="yes" xml:space="preserve">
           <source>Delete</source>
-          <target state="new">Delete</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Διαγραφή</target>
         </trans-unit>
         <trans-unit id="textBoxApplication.Location" translate="yes" extype="System.Drawing.Point, System.Drawing" xml:space="preserve">
           <source>329, 3</source>
@@ -5805,15 +5817,15 @@ Edit filter right from list. Navigate in list right from filter.</target>
         </trans-unit>
         <trans-unit id="listToolStripMenuItem.Text" translate="yes" xml:space="preserve">
           <source>List</source>
-          <target state="new">List</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Λίστα</target>
         </trans-unit>
         <trans-unit id="splitContainer1.ToolTip" translate="yes" xml:space="preserve">
           <source></source>
-          <target state="new"></target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion"></target>
         </trans-unit>
         <trans-unit id="exitToolStripMenuItem1.Text" translate="yes" xml:space="preserve">
           <source>Exit</source>
-          <target state="new">Exit</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Έξοδος</target>
         </trans-unit>
         <trans-unit id="toolStripMenuItem3.Text" translate="yes" xml:space="preserve">
           <source>Paste  text (CTRL+ENTER)</source>
@@ -5821,7 +5833,7 @@ Edit filter right from list. Navigate in list right from filter.</target>
         </trans-unit>
         <trans-unit id="fileToolStripMenuItem.Text" translate="yes" xml:space="preserve">
           <source>File</source>
-          <target state="new">File</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Αρχείο</target>
         </trans-unit>
         <trans-unit id="stripLabelPosition.ToolTipText" translate="yes" xml:space="preserve">
           <source>Text postion <it id="1" pos="open">&lt;offset&gt;</it>(<it id="2" pos="open">&lt;line&gt;</it>:<it id="3" pos="open">&lt;column&gt;</it>):<it id="4" pos="open">&lt;length&gt;</it></source>
@@ -5859,7 +5871,7 @@ Edit filter right from list. Navigate in list right from filter.</target>
         </trans-unit>
         <trans-unit id="moveDownToolStripMenuItem.Text" translate="yes" xml:space="preserve">
           <source>Move down</source>
-          <target state="new">Move down</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Μετακίνηση κάτω</target>
         </trans-unit>
         <trans-unit id="dataGridViewImageColumn4.HeaderText" translate="yes" xml:space="preserve">
           <source>ImageSample</source>
@@ -5867,7 +5879,7 @@ Edit filter right from list. Navigate in list right from filter.</target>
         </trans-unit>
         <trans-unit id="StripLabelType.Text" translate="yes" xml:space="preserve">
           <source>Type</source>
-          <target state="new">Type</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Τύπος</target>
         </trans-unit>
         <trans-unit id="toolStripMenuItem6.ToolTipText" translate="yes" xml:space="preserve">
           <source>Paste in active window as plain text selected text of clip or agregated text of selected clips.
@@ -5907,11 +5919,11 @@ Edit filter right from list. Navigate in list right from filter.</target>
         </trans-unit>
         <trans-unit id="MarkFilter.Items2" translate="yes" xml:space="preserve">
           <source>file</source>
-          <target state="new">file</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">αρχείο</target>
         </trans-unit>
         <trans-unit id="MarkFilter.Items1" translate="yes" xml:space="preserve">
           <source>text</source>
-          <target state="new">text</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">κείμενο</target>
         </trans-unit>
         <trans-unit id="trayMenuItemMonitoringClipboard.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
           <source>187, 22</source>
@@ -5923,7 +5935,7 @@ Edit filter right from list. Navigate in list right from filter.</target>
         </trans-unit>
         <trans-unit id="settingsToolStripMenuItem1.Text" translate="yes" xml:space="preserve">
           <source>Settings</source>
-          <target state="new">Settings</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Ρυθμίσεις</target>
         </trans-unit>
         <trans-unit id="toolStripMenuItemSearchWordsIndependently.Text" translate="yes" xml:space="preserve">
           <source>Independent words</source>
@@ -5931,7 +5943,7 @@ Edit filter right from list. Navigate in list right from filter.</target>
         </trans-unit>
         <trans-unit id="TypeFilter.Items1" translate="yes" xml:space="preserve">
           <source>text</source>
-          <target state="new">text</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">κείμενο</target>
         </trans-unit>
         <trans-unit id="MarkFilter.Location" translate="yes" extype="System.Drawing.Point, System.Drawing" xml:space="preserve">
           <source>3, 395</source>
@@ -5999,7 +6011,7 @@ Edit filter right from list. Navigate in list right from filter.</target>
         </trans-unit>
         <trans-unit id="сдуфкClipboardToolStripMenuItem.Text" translate="yes" xml:space="preserve">
           <source>Clear clipboard</source>
-          <target state="new">Clear clipboard</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Απαλοιφή προχείρου</target>
         </trans-unit>
         <trans-unit id="ignoreApplicationInCaptureToolStripMenuItem.ToolTipText" translate="yes" xml:space="preserve">
           <source>Ignore application in clip capture. Application will be 
@@ -6065,7 +6077,7 @@ added to ignore list, wich can be edited in Settings window.</target>
         </trans-unit>
         <trans-unit id="toolStripMenuItemSearchCaseSensitive.Text" translate="yes" xml:space="preserve">
           <source>Case sensitive</source>
-          <target state="new">Case sensitive</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">&amp;Διάκριση πεζών-κεφαλαίων</target>
         </trans-unit>
         <trans-unit id="moveCopiedClipToTopToolStripMenuItem.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
           <source>250, 22</source>
@@ -6073,7 +6085,7 @@ added to ignore list, wich can be edited in Settings window.</target>
         </trans-unit>
         <trans-unit id="helpToolStripMenuItem.Text" translate="yes" xml:space="preserve">
           <source>Help</source>
-          <target state="new">Help</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Βοήθεια</target>
         </trans-unit>
         <trans-unit id="mergeTextOfClipsToolStripMenuItem.ToolTipText" translate="yes" xml:space="preserve">
           <source>Join text of selected clips into new clip and select it</source>
@@ -6093,7 +6105,7 @@ added to ignore list, wich can be edited in Settings window.</target>
         </trans-unit>
         <trans-unit id="wordWrapToolStripMenuItem.Text" translate="yes" xml:space="preserve">
           <source>Word wrap</source>
-          <target state="new">Word wrap</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">&amp;Αναδίπλωση λέξεων</target>
         </trans-unit>
         <trans-unit id="comboBoxFilter.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
           <source>6</source>
@@ -6109,7 +6121,7 @@ added to ignore list, wich can be edited in Settings window.</target>
         </trans-unit>
         <trans-unit id="toolStripMenuItem16.Text" translate="yes" xml:space="preserve">
           <source>Open file</source>
-          <target state="new">Open file</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Άνοιγμα αρχείου</target>
         </trans-unit>
         <trans-unit id="dataGridViewImageColumn5.HeaderText" translate="yes" xml:space="preserve">
           <source>VisualWeight</source>
@@ -6125,7 +6137,7 @@ added to ignore list, wich can be edited in Settings window.</target>
         </trans-unit>
         <trans-unit id="nextMatchToolStripMenuItem.Text" translate="yes" xml:space="preserve">
           <source>Find next</source>
-          <target state="new">Find next</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Εύρεση επόμενου</target>
         </trans-unit>
         <trans-unit id="ImageSample.UserAddedColumn" translate="yes" extype="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" extradata="metadata" xml:space="preserve">
           <source>True</source>

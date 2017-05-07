@@ -199,7 +199,7 @@
   </data>
   <data name="GlobalHotkeyIncrementalPasteDescription" xml:space="preserve">
     <value>Эта горячая клавиша при нажатии в любой программе вставит текущий клип из списка Clip Angel, 
-перейдет к следующему клипу в списке и покажет его во всплывающей подсказке</value>
+перейдет к следующему/верхнему клипу в списке и покажет его во всплывающей подсказке</value>
   </data>
   <data name="GlobalHotkeyOpenCurrent" xml:space="preserve">
     <value>Горячая клавиша открытия окна без изменений</value>
@@ -294,6 +294,12 @@
   </data>
   <data name="NumberOfClipsDescription" xml:space="preserve">
     <value>Текущее количество клипов в списке</value>
+  </data>
+  <data name="PlaySoundOnClipCapture" xml:space="preserve">
+    <value>Проигрывать звук при захвате клипа</value>
+  </data>
+  <data name="PlaySoundOnClipCaptureDescription" xml:space="preserve">
+    <value>Проигрывать стандартный звук Windows при успешном захвате клипа. Может быть надоедливо.</value>
   </data>
   <data name="RtfEditor" xml:space="preserve">
     <value>Приложение открытия файлов RTF</value>

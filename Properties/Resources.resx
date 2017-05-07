@@ -379,4 +379,7 @@
   <data name="ClipWasNotCaptured" xml:space="preserve">
     <value>Copied clip was not captured (too big size {0}KB &gt; {1}KB)</value>
   </data>
+  <data name="PastedLastClip" xml:space="preserve">
+    <value>Just pasted clip is the last</value>
+  </data>
 </root>

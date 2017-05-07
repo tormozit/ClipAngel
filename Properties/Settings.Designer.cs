@@ -536,5 +536,17 @@ namespace ClipAngel.Properties {
                 this["SearchWildcards"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool PlaySoundOnClipCapture {
+            get {
+                return ((bool)(this["PlaySoundOnClipCapture"]));
+            }
+            set {
+                this["PlaySoundOnClipCapture"] = value;
+            }
+        }
     }
 }

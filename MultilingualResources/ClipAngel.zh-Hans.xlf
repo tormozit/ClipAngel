@@ -837,6 +837,10 @@
           <source>Copied clip was not captured (too big size {0}KB &gt; {1}KB)</source>
           <target state="new">Copied clip was not captured (too big size {0}KB &gt; {1}KB)</target>
         </trans-unit>
+        <trans-unit id="PastedLastClip" translate="yes" xml:space="preserve">
+          <source>Just pasted clip is the last</source>
+          <target state="new">Just pasted clip is the last</target>
+        </trans-unit>
       </group>
     </body>
   </file>
@@ -1186,12 +1190,14 @@ Key press will be processed by the window. </source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">在任何程序中使用此热键启动应用程序比较最后 2 剪辑</target>
         </trans-unit>
         <trans-unit id="GlobalHotkeyIncrementalPaste" translate="yes" xml:space="preserve">
-          <source>Hotkey to incremental paste</source>
+          <source>Hotkey to paste and select next</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">对增量粘贴热键</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="GlobalHotkeyIncrementalPasteDescription" translate="yes" xml:space="preserve">
-          <source>Use this hot key in any program to paste current clip from Clip Angel list and select next clip which will be shown in tray tooltip</source>
+          <source>Use this hot key in any program to paste current clip from Clip Angel list and select next/upper clip which will be shown in tray tooltip</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">在任何程序中使用此热键粘贴当前剪辑从剪辑天使列表中，选择将托盘工具提示中显示的下一个剪辑</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="GlobalHotkeyOpenCurrent" translate="yes" xml:space="preserve">
           <source>Hotkey to open window with no changes</source>
@@ -1432,6 +1438,14 @@ WinMerge，轴合并，DiffMerge，Kdiff3。文本比较命令是应用程序 %%
 Not appliable to HTML native formatting.</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">自动换行的剪辑文本字段 (CTRL + W)。
 不适用到 HTML 本机格式。</target>
+        </trans-unit>
+        <trans-unit id="PlaySoundOnClipCapture" translate="yes" xml:space="preserve">
+          <source>Play sound on clip capture</source>
+          <target state="new">Play sound on clip capture</target>
+        </trans-unit>
+        <trans-unit id="PlaySoundOnClipCaptureDescription" translate="yes" xml:space="preserve">
+          <source>Playing standard Windows sound when clip is successfully captured. Can be annoying</source>
+          <target state="new">Playing standard Windows sound when clip is successfully captured. Can be annoying</target>
         </trans-unit>
       </group>
     </body>

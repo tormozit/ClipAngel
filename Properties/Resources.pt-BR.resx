@@ -61,7 +61,7 @@
     <value>..\DB\db.sqlite;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="CantPasteInElevatedWindow" xml:space="preserve">
-    <value>Não é possível colar na janela tendo privilégios mais elevados. Tente executar o programa como administrador.</value>
+    <value>Não é possível colar na janela de privilégios mais elevados. Tente executar o programa como administrador.</value>
   </data>
   <data name="VisualWeightTooltip" xml:space="preserve">
     <value>Peso Visual clip (número de dígitos no número que representa o tamanho visual do clipe)</value>
@@ -103,7 +103,7 @@
     <value>..\Picture\clear1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="NewVersionAvailable" xml:space="preserve">
-    <value>Nova versão está disponível. Para atualizar o uso botão é comando top bar.</value>
+    <value>Nova versão está disponível. Para atualizar, o botão de uso é o da barra de comando superior.</value>
   </data>
   <data name="ApplicationAddedToIgnoreList" xml:space="preserve">
     <value>Aplicativo "{0}" adicionado para ignorar a lista, pode ser editado no janela de configurações</value>
@@ -139,7 +139,7 @@
     <value>..\Picture\FindPrevious.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ActivatedExistedProcess" xml:space="preserve">
-    <value>Ativado já executando a instância do aplicativo</value>
+    <value>Já há uma instância do aplicativo em execução</value>
   </data>
   <data name="UpdateTo" xml:space="preserve">
     <value>Atualizar para</value>
@@ -166,7 +166,7 @@
     <value>https://sourceforge.net/p/clip-Angel/wiki/Description/</value>
   </data>
   <data name="QuestionResetSettings" xml:space="preserve">
-    <value>Está certeza quer redefinir configurações para valores padrão?</value>
+    <value>Tem certeza que quer redefinir as configurações para os valores padrão?</value>
   </data>
   <data name="Version" xml:space="preserve">
     <value>1.22</value>
@@ -175,7 +175,7 @@
     <value>..\Picture\eye.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="CouldNotRegisterHotkey" xml:space="preserve">
-    <value>Não pude registrar a tecla de atalho global</value>
+    <value>Não foi possível registrar a tecla de atalho global</value>
   </data>
   <data name="Dublicate" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\Dublicate.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -187,7 +187,7 @@
     <value>..\Picture\Back.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="HowUseAutoTitle" xml:space="preserve">
-    <value>Clara cadeia de caracteres para usar o título de auto</value>
+    <value>Limpe os caracteres para usar o auto-título</value>
   </data>
   <data name="PixelFormat" xml:space="preserve">
     <value>Pixel</value>
@@ -208,7 +208,7 @@
     <value>..\Picture\TypeFile.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ClipFileAlreadyOpened" xml:space="preserve">
-    <value>Clip arquivo já aberto e bloqueado</value>
+    <value>Arquivo Clip já está aberto e bloqueado</value>
   </data>
   <data name="down" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\down.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -220,7 +220,7 @@
     <value>..\Picture\Open with.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="FailedToWriteClipboard" xml:space="preserve">
-    <value>Falha ao gravar a área de transferência. Está trancada pelo aplicativo de janela "{0}" "{1}"</value>
+    <value>Falha ao gravar à área de transferência. Está bloqueado pelo aplicativo de janela "{0}" "{1}"</value>
   </data>
   <data name="WordWrap" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\word wrap.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -244,7 +244,7 @@
     <value>..\Picture\Compare.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="СonfirmDeleteAllNonFavorite" xml:space="preserve">
-    <value>É claro que deseja excluir todos os clipes não favoritos?</value>
+    <value>Está certo que deseja excluir todos os clipes não favoritos?</value>
   </data>
   <data name="KiloByteUnit" xml:space="preserve">
     <value>KB</value>
