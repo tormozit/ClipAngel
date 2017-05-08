@@ -173,7 +173,7 @@ Key press will be processed by the window. </value>
     <value>Database file</value>
   </data>
   <data name="DatabaseFileDescription" xml:space="preserve">
-    <value>You can change database filename to switch to other clipboard history. Leave blank to use standart database file "db.sqlite" in user settings folder.</value>
+    <value>You can change database filename to switch to other clipboard history. Leave blank to use standart database file "db.sqlite" in application user settings folder.</value>
   </data>
   <data name="DatabaseSize" xml:space="preserve">
     <value>Database size MB</value>
@@ -371,10 +371,10 @@ WinMerge, Araxis Merge, DiffMerge, Kdiff3. Text compare command is %application%
     <value>Use native text formatting in dublicate detection. Else only plain text will be used for detecting dublicate of text clip</value>
   </data>
   <data name="UserSettingsPath" xml:space="preserve">
-    <value>User settings path</value>
+    <value>Application user settings path</value>
   </data>
   <data name="UserSettingsPathDescription" xml:space="preserve">
-    <value>Files with user settings and database are here</value>
+    <value>Files with user settings and default database file are here</value>
   </data>
   <data name="WindowAutoPosition" xml:space="preserve">
     <value>Window auto position on open</value>

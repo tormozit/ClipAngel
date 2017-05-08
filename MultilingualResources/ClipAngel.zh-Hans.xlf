@@ -1414,12 +1414,14 @@ WinMerge，轴合并，DiffMerge，Kdiff3。文本比较命令是应用程序 %%
           <target state="needs-review-translation" state-qualifier="mt-suggestion">使用本机中的文本格式 dublicate 检测。只有纯文本还将用于检测 dublicate 文本剪辑</target>
         </trans-unit>
         <trans-unit id="UserSettingsPath" translate="yes" xml:space="preserve">
-          <source>User settings path</source>
+          <source>Application user settings path</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">用户设置路径</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="UserSettingsPathDescription" translate="yes" xml:space="preserve">
-          <source>Files with user settings and database are here</source>
+          <source>Files with user settings and default database file are here</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">用户设置与数据库文件在这儿</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="WindowAutoPosition" translate="yes" xml:space="preserve">
           <source>Window auto position on open</source>
@@ -1452,8 +1454,8 @@ Not appliable to HTML native formatting.</source>
           <target state="new">Database file</target>
         </trans-unit>
         <trans-unit id="DatabaseFileDescription" translate="yes" xml:space="preserve">
-          <source>You can change database filename to switch to other clipboard history. Leave blank to use standart database file "db.sqlite" in user settings folder.</source>
-          <target state="new">You can change database filename to switch to other clipboard history. Leave blank to use standart database file "db.sqlite" in user settings folder.</target>
+          <source>You can change database filename to switch to other clipboard history. Leave blank to use standart database file "db.sqlite" in application user settings folder.</source>
+          <target state="new">You can change database filename to switch to other clipboard history. Leave blank to use standart database file "db.sqlite" in application user settings folder.</target>
         </trans-unit>
       </group>
     </body>

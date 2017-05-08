@@ -430,12 +430,14 @@ WinMerge Araxis Merge, DiffMerge, o Kdiff3. Comando de comparar texto é aplica�
           <target state="translated">Usado na detecção de duplicado na formatação de texto. Mas será usado apenas em texto sem formatação para detectar de clipe de texto duplicado</target>
         </trans-unit>
         <trans-unit id="UserSettingsPath" translate="yes" xml:space="preserve">
-          <source>User settings path</source>
+          <source>Application user settings path</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Caminho de configurações do usuário</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="UserSettingsPathDescription" translate="yes" xml:space="preserve">
-          <source>Files with user settings and database are here</source>
-          <target state="translated">Arquivos com as configurações do usuário e banco de dados são salvos aqui</target>
+          <source>Files with user settings and default database file are here</source>
+          <target state="needs-review-translation">Arquivos com as configurações do usuário e banco de dados são salvos aqui</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="WindowAutoPosition" translate="yes" xml:space="preserve">
           <source>Window auto position on open</source>
@@ -468,8 +470,8 @@ Não aplicável à formatação nativa do HTML.</target>
           <target state="new">Database file</target>
         </trans-unit>
         <trans-unit id="DatabaseFileDescription" translate="yes" xml:space="preserve">
-          <source>You can change database filename to switch to other clipboard history. Leave blank to use standart database file "db.sqlite" in user settings folder.</source>
-          <target state="new">You can change database filename to switch to other clipboard history. Leave blank to use standart database file "db.sqlite" in user settings folder.</target>
+          <source>You can change database filename to switch to other clipboard history. Leave blank to use standart database file "db.sqlite" in application user settings folder.</source>
+          <target state="new">You can change database filename to switch to other clipboard history. Leave blank to use standart database file "db.sqlite" in application user settings folder.</target>
         </trans-unit>
       </group>
     </body>
