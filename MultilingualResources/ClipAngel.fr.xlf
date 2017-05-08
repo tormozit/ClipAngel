@@ -1444,6 +1444,14 @@ Not appliable to HTML native formatting.</target>
           <source>Playing standard Windows sound when clip is successfully captured. Can be annoying</source>
           <target state="new">Playing standard Windows sound when clip is successfully captured. Can be annoying</target>
         </trans-unit>
+        <trans-unit id="DatabaseFile" translate="yes" xml:space="preserve">
+          <source>Database file</source>
+          <target state="new">Database file</target>
+        </trans-unit>
+        <trans-unit id="DatabaseFileDescription" translate="yes" xml:space="preserve">
+          <source>You can change database filename to switch to other clipboard history. Leave blank to use standart database file "db.sqlite" in user settings folder.</source>
+          <target state="new">You can change database filename to switch to other clipboard history. Leave blank to use standart database file "db.sqlite" in user settings folder.</target>
+        </trans-unit>
       </group>
     </body>
   </file>

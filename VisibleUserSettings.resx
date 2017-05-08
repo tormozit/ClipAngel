@@ -169,6 +169,12 @@ Key press will be processed by the window. </value>
   <data name="CurrentPath" xml:space="preserve">
     <value>Application current start path</value>
   </data>
+  <data name="DatabaseFile" xml:space="preserve">
+    <value>Database file</value>
+  </data>
+  <data name="DatabaseFileDescription" xml:space="preserve">
+    <value>You can change database filename to switch to other clipboard history. Leave blank to use standart database file "db.sqlite" in user settings folder.</value>
+  </data>
   <data name="DatabaseSize" xml:space="preserve">
     <value>Database size MB</value>
   </data>

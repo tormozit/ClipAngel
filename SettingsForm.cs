@@ -247,6 +247,16 @@ namespace ClipAngel
         }
     }
 
+    public class DatabaseFileNameEditor : FileNameEditor
+    {
+        protected override void InitializeDialog(OpenFileDialog openFileDialog)
+        {
+            base.InitializeDialog(openFileDialog);
+            openFileDialog.CheckFileExists = false;
+            openFileDialog.Filter = "Clip Angel database|*.db|All|*.*";
+        }
+    }
+
     public class ApplicationPathEditor : UITypeEditor
     {
         private OpenFileDialog ofd;
@@ -695,6 +705,7 @@ namespace ClipAngel
         public VisibleUserSettings(Main Owner)
         {
             this.Owner = Owner;
+            DatabaseFile = Properties.Settings.Default.DatabaseFile;
             PlaySoundOnClipCapture = Properties.Settings.Default.PlaySoundOnClipCapture;
             MonospacedFont = Properties.Settings.Default.MonospacedFont;
             WordWrap = Properties.Settings.Default.WordWrap;
@@ -753,6 +764,7 @@ namespace ClipAngel
 
         public void Apply(bool PortableMode = false)
         {
+            Properties.Settings.Default.DatabaseFile = DatabaseFile;
             Properties.Settings.Default.PlaySoundOnClipCapture = PlaySoundOnClipCapture;
             Properties.Settings.Default.MonospacedFont = MonospacedFont;
             Properties.Settings.Default.WordWrap = WordWrap;
@@ -982,5 +994,9 @@ namespace ClipAngel
         [GlobalizedCategory("Other")]
         [Editor(typeof(MyBoolEditor), typeof(UITypeEditor))]
         public bool PlaySoundOnClipCapture { get; set; }
+
+        [GlobalizedCategory("Other")]
+        [EditorAttribute(typeof(DatabaseFileNameEditor), typeof(UITypeEditor))]
+        public string DatabaseFile { get; set; }
     }
 }

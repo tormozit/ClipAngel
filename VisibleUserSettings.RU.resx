@@ -170,6 +170,12 @@
   <data name="CurrentPath" xml:space="preserve">
     <value>Команда текущего запуска программы</value>
   </data>
+  <data name="DatabaseFile" xml:space="preserve">
+    <value>Файл базы данных</value>
+  </data>
+  <data name="DatabaseFileDescription" xml:space="preserve">
+    <value>Вы можете изменить имя файла базы данных, чтобы переключиться на другую историю буфера обмена. Оставьте пустым, чтобы использовать стандартный файл "db.sqlite" в каталоге настроек программы.</value>
+  </data>
   <data name="DatabaseSize" xml:space="preserve">
     <value>Размер базы данных MB</value>
   </data>

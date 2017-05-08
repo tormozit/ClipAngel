@@ -382,4 +382,10 @@
   <data name="PastedLastClip" xml:space="preserve">
     <value>Вставленный клип - последний</value>
   </data>
+  <data name="DatabaseFile" xml:space="preserve">
+    <value>Файл базы данных</value>
+  </data>
+  <data name="DatabaseFileDescription" xml:space="preserve">
+    <value>Вы можете изменить файл базы данных, чтобы переключиться на другую историю буфера обмена. Оставьте пустым, чтобы испольновать стандартный файл базы данных "db.sqlite" в каталоге настроек программы.</value>
+  </data>
 </root>

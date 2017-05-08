@@ -196,9 +196,9 @@ namespace ClipAngel
             MarkFilter.SelectedIndex = 0;
 
             BindingList<ListItemNameText> _comboItemsMarks = new BindingList<ListItemNameText>();
-            _comboItemsMarks.Add(new ListItemNameText {Name = "allMarks"});
-            _comboItemsMarks.Add(new ListItemNameText {Name = "favorite"});
-            _comboItemsMarks.Add(new ListItemNameText {Name = "used"});
+            _comboItemsMarks.Add(new ListItemNameText { Name = "allMarks" });
+            _comboItemsMarks.Add(new ListItemNameText { Name = "favorite" });
+            _comboItemsMarks.Add(new ListItemNameText { Name = "used" });
             MarkFilter.DataSource = _comboItemsMarks;
             MarkFilter.DisplayMember = "Text";
             MarkFilter.ValueMember = "Name";
@@ -225,7 +225,37 @@ namespace ClipAngel
             {
                 Directory.CreateDirectory(UserSettingsPath);
             }
-            DbFileName = UserSettingsPath + "\\" + Properties.Resources.DBShortFilename;
+            OpenDatabase();
+            ConnectClipboard();
+            if (StartMinimized)
+            {
+                //StartMinimized = false;
+                //Close();
+            }
+            else
+            {
+                //UpdateControlsStates(); //
+                //RestoreWindowIfMinimized();
+                allowVisible = true;
+            }
+            if (Properties.Settings.Default.MainWindowSize.Width > 0)
+                this.Size = Properties.Settings.Default.MainWindowSize;
+            timerDaily.Interval = 1;
+            timerDaily.Start();
+            timerReconnect.Interval = (1000 * 5); // 5 seconds
+            timerReconnect.Start();
+            this.ActiveControl = dataGridView;
+            ResetIsMainProperty();
+
+            LoadSettings();
+        }
+
+        private void OpenDatabase()
+        {
+            if (!String.IsNullOrWhiteSpace(Properties.Settings.Default.DatabaseFile))
+                DbFileName = Properties.Settings.Default.DatabaseFile;
+            else
+                DbFileName = UserSettingsPath + "\\" + Properties.Resources.DBShortFilename;
             ConnectionString = "data source=" + DbFileName + ";";
             string Reputation = "Magic67234784";
             if (!File.Exists(DbFileName))
@@ -297,28 +327,6 @@ namespace ClipAngel
             dataAdapter = new SQLiteDataAdapter("", ConnectionString);
             //dataGridView.DataSource = clipBindingSource;
             UpdateClipBindingSource();
-            ConnectClipboard();
-            if (StartMinimized)
-            {
-                //StartMinimized = false;
-                //Close();
-            }
-            else
-            {
-                //UpdateControlsStates(); //
-                //RestoreWindowIfMinimized();
-                allowVisible = true;
-            }
-            if (Properties.Settings.Default.MainWindowSize.Width > 0)
-                this.Size = Properties.Settings.Default.MainWindowSize;
-            timerDaily.Interval = 1;
-            timerDaily.Start();
-            timerReconnect.Interval = (1000 * 5); // 5 seconds
-            timerReconnect.Start();
-            this.ActiveControl = dataGridView;
-            ResetIsMainProperty();
-
-            LoadSettings();
         }
 
         private void ResetIsMainProperty()
@@ -333,6 +341,7 @@ namespace ClipAngel
         public void WinEventProc(IntPtr hWinEventHook, uint eventType, IntPtr hwnd, int idObject, int idChild,
             uint dwEventThread, uint dwmsEventTime)
         {
+            // http://stackoverflow.com/a/10280800/4085971
             int targetProcessId;
             uint remoteThreadId = GetWindowThreadProcessId(hwnd, out targetProcessId);
             if (targetProcessId != Process.GetCurrentProcess().Id)
@@ -3466,9 +3475,12 @@ namespace ClipAngel
         private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SettingsForm settingsFormForm = new SettingsForm(this);
+            string oldDatabaseFile = Properties.Settings.Default.DatabaseFile;
             settingsFormForm.ShowDialog(this);
             if (settingsFormForm.DialogResult == DialogResult.OK)
             {
+                if (oldDatabaseFile != Properties.Settings.Default.DatabaseFile)
+                    OpenDatabase();
                 LoadSettings();
                 keyboardHook.UnregisterHotKeys();
                 RegisterHotKeys();
