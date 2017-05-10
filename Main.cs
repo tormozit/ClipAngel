@@ -342,6 +342,13 @@ namespace ClipAngel
             uint dwEventThread, uint dwmsEventTime)
         {
             // http://stackoverflow.com/a/10280800/4085971
+            int targetProcessId = UpdateLastActiveParentWindow(hwnd);
+        }
+
+        private int UpdateLastActiveParentWindow(IntPtr hwnd)
+        {
+            if (hwnd == IntPtr.Zero)
+                hwnd = GetForegroundWindow();
             int targetProcessId;
             uint remoteThreadId = GetWindowThreadProcessId(hwnd, out targetProcessId);
             if (targetProcessId != Process.GetCurrentProcess().Id)
@@ -353,6 +360,7 @@ namespace ClipAngel
                 lastWindowSelectedText = null;
                 UpdateWindowTitle();
             }
+            return targetProcessId;
         }
 
         private class MyToolStripRenderer : ToolStripProfessionalRenderer
@@ -2777,7 +2785,7 @@ namespace ClipAngel
             int newY = -1;
             // https://www.codeproject.com/Articles/34520/Getting-Caret-Position-Inside-Any-Application
             // http://stackoverflow.com/questions/31055249/is-it-possible-to-get-caret-position-in-word-to-update-faster
-            //IntPtr hWindow = GetForegroundWindow();
+            UpdateLastActiveParentWindow(IntPtr.Zero); // sometimes lastActiveParentWindow is not equal GetForegroundWindow()
             IntPtr hWindow = lastActiveParentWindow;
             if (hWindow != IntPtr.Zero)
             {
