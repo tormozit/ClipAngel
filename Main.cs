@@ -1617,8 +1617,16 @@ namespace ClipAngel
                                 if (true
                                     && ColorDifference(basePixel, bitmap.GetPixel(x + 2, y + 1)) > diffTreshold
                                     && ColorDifference(basePixel, bitmap.GetPixel(x + 1, y + 2)) > diffTreshold
-                                    && ColorDifference(basePixel, bitmap.GetPixel(x + 2, y)) < diffTreshold
-                                    && ColorDifference(basePixel, bitmap.GetPixel(x, y + 2)) < diffTreshold)
+                                    && (false
+                                        || (true
+                                            && ColorDifference(bitmap.GetPixel(x + 2, y + 1), bitmap.GetPixel(x + 2, y + 2)) > diffTreshold
+                                            && ColorDifference(bitmap.GetPixel(x + 2, y + 1), bitmap.GetPixel(x + 2, y)) > diffTreshold)
+                                        || (true
+                                            && ColorDifference(bitmap.GetPixel(x + 1, y + 2), bitmap.GetPixel(x, y + 2)) > diffTreshold
+                                            && ColorDifference(bitmap.GetPixel(x + 1, y + 2), bitmap.GetPixel(x + 2, y + 2)) > diffTreshold)
+                                        || (true
+                                            && ColorDifference(bitmap.GetPixel(x + 2, y + 1), bitmap.GetPixel(x + 2, y)) > diffTreshold
+                                            && ColorDifference(bitmap.GetPixel(x + 1, y + 2), bitmap.GetPixel(x, y + 2)) > diffTreshold)))
                                 {
                                     bestX = Math.Min(x, bitmap.Width - fragmentWidth - 1);
                                     bestY = Math.Min(y, bitmap.Height - fragmentHeight - 1);
