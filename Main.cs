@@ -3533,7 +3533,10 @@ namespace ClipAngel
             if (settingsFormForm.DialogResult == DialogResult.OK)
             {
                 if (oldDatabaseFile != Properties.Settings.Default.DatabaseFile)
+                {
+                    CloseDatabase();
                     OpenDatabase();
+                }
                 LoadSettings();
                 keyboardHook.UnregisterHotKeys();
                 RegisterHotKeys();
@@ -3783,9 +3786,25 @@ namespace ClipAngel
 
         private void Main_FormClosed(object sender, FormClosedEventArgs e)
         {
+            this.Visible = false;
             //Properties.Settings.Default.Save(); // Not all properties were saved here. For example ShowInTaskbar was not saved
             RemoveClipboardFormatListener(this.Handle);
             UnhookWinEvent(HookChangeActiveWindow);
+            CloseDatabase();
+        }
+
+        private void CloseDatabase()
+        {
+            if (RowReader != null)
+                RowReader = null;
+            m_dbConnection.Close();
+
+            // Shrink database to really delete deleted clips
+            m_dbConnection.Open();
+            string sql = "vacuum";
+            SQLiteCommand command = new SQLiteCommand(sql, m_dbConnection);
+            command.ExecuteNonQuery();
+            m_dbConnection.Close();
         }
 
         private void exitToolStripMenuItem1_Click(object sender, EventArgs e)

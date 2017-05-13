@@ -572,7 +572,7 @@ Edit filter right from list. Navigate in list right from filter.</value>
     <value>Delete</value>
   </data>
   <data name="deleteToolStripMenuItem1.ToolTipText" xml:space="preserve">
-    <value>Delete selected clips from history</value>
+    <value>Delete selected clips from list. Real deletion is performed on database close.</value>
   </data>
   <data name="contextMenuStripDataGrid.Size" type="System.Drawing.Size, System.Drawing">
     <value>212, 202</value>
@@ -1303,7 +1303,7 @@ When ON and "Fast window open" OFF, window will be shown in taskbar if visible.
     <value>Delete all non favorite</value>
   </data>
   <data name="deleteAllNonFavoriteToolStripMenuItem.ToolTipText" xml:space="preserve">
-    <value>Delete all non favorite clips</value>
+    <value>Delete all non favorite clips from list. Real deletion is performed on database close.</value>
   </data>
   <data name="toolStripMenuItem5.Size" type="System.Drawing.Size, System.Drawing">
     <value>247, 6</value>
@@ -1453,7 +1453,7 @@ When ON and "Fast window open" OFF, window will be shown in taskbar if visible.
     <value>Delete</value>
   </data>
   <data name="toolStripMenuItem8.ToolTipText" xml:space="preserve">
-    <value>Delete selected clips from list</value>
+    <value>Delete selected clips from list. Real deletion is performed on database close.</value>
   </data>
   <data name="changeClipTitleToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>F2</value>
@@ -2523,7 +2523,7 @@ Changes in temp file are not synchronized with clip!
     <value>True</value>
   </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>63</value>
+    <value>84</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>

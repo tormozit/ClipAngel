@@ -1985,8 +1985,8 @@ Changes in temp file are not synchronized with clip!
           <target state="needs-review-translation">250, 22</target>
         </trans-unit>
         <trans-unit id="deleteAllNonFavoriteToolStripMenuItem.ToolTipText" translate="yes" xml:space="preserve">
-          <source>Delete all non favorite clips</source>
-          <target state="new">Delete all non favorite clips</target>
+          <source>Delete all non favorite clips from list. Real deletion is performed on database close.</source>
+          <target state="new">Delete all non favorite clips from list. Real deletion is performed on database close.</target>
         </trans-unit>
         <trans-unit id="toolStripMenuItem14.ShortcutKeys" translate="yes" extype="System.Windows.Forms.Keys, System.Windows.Forms" xml:space="preserve">
           <source>Alt+Q</source>
@@ -2619,8 +2619,8 @@ Changes in temp file are not synchronized with clip!</target>
           <target state="needs-review-translation">3, 101</target>
         </trans-unit>
         <trans-unit id="deleteToolStripMenuItem1.ToolTipText" translate="yes" xml:space="preserve">
-          <source>Delete selected clips from history</source>
-          <target state="new">Delete selected clips from history</target>
+          <source>Delete selected clips from list. Real deletion is performed on database close.</source>
+          <target state="new">Delete selected clips from list. Real deletion is performed on database close.</target>
         </trans-unit>
         <trans-unit id="toolStripMenuItemSearchCaseSensitive.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
           <source>209, 22</source>
@@ -5147,8 +5147,8 @@ When ON and "Fast window open" OFF, window will be shown in taskbar if visible.
           <target state="needs-review-translation" state-qualifier="tm-suggestion">Rechercher précédent</target>
         </trans-unit>
         <trans-unit id="toolStripMenuItem8.ToolTipText" translate="yes" xml:space="preserve">
-          <source>Delete selected clips from list</source>
-          <target state="new">Delete selected clips from list</target>
+          <source>Delete selected clips from list. Real deletion is performed on database close.</source>
+          <target state="new">Delete selected clips from list. Real deletion is performed on database close.</target>
         </trans-unit>
         <trans-unit id="contextMenuStripRtf.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
           <source>210, 92</source>
@@ -6224,8 +6224,9 @@ added to ignore list, wich can be edited in Settings window.</target>
           <target state="needs-review-translation">727, 30</target>
         </trans-unit>
         <trans-unit id="$this.TrayHeight" translate="yes" extype="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" extradata="metadata" xml:space="preserve">
-          <source>63</source>
+          <source>84</source>
           <target state="needs-review-translation">63</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="contextMenuStripDataGrid.TrayLocation" translate="yes" extype="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" extradata="metadata" xml:space="preserve">
           <source>-2, 26</source>

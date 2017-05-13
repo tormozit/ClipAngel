@@ -1996,8 +1996,9 @@ Open-Clip-Datei in Verzug Anwendung.
           <target state="needs-review-translation" state-qualifier="tm-suggestion">Typ</target>
         </trans-unit>
         <trans-unit id="deleteAllNonFavoriteToolStripMenuItem.ToolTipText" translate="yes" xml:space="preserve">
-          <source>Delete all non favorite clips</source>
+          <source>Delete all non favorite clips from list. Real deletion is performed on database close.</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Löschen Sie alle nicht Lieblings-clips</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="toolStripMenuItem14.ShortcutKeys" translate="yes" extype="System.Windows.Forms.Keys, System.Windows.Forms" xml:space="preserve">
           <source>Alt+Q</source>
@@ -2640,8 +2641,9 @@ Open-System-Menü, Clip-Datei in der gewählten Anwendung zu öffnen.
           <target state="needs-review-translation">3, 101</target>
         </trans-unit>
         <trans-unit id="deleteToolStripMenuItem1.ToolTipText" translate="yes" xml:space="preserve">
-          <source>Delete selected clips from history</source>
+          <source>Delete selected clips from list. Real deletion is performed on database close.</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Löschen ausgewählter Clips aus der Geschichte</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="supportToolStripMenuItem.Text" translate="yes" xml:space="preserve">
           <source>Send bug or feature</source>
@@ -4082,8 +4084,9 @@ Open-Clip-Datei in Verzug Anwendung.
           <target state="needs-review-translation" state-qualifier="tm-suggestion">Vorheriges suchen</target>
         </trans-unit>
         <trans-unit id="toolStripMenuItem8.ToolTipText" translate="yes" xml:space="preserve">
-          <source>Delete selected clips from list</source>
+          <source>Delete selected clips from list. Real deletion is performed on database close.</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Ausgewählte Clips aus Liste löschen</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="contextMenuStripRtf.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
           <source>210, 92</source>
@@ -6231,8 +6234,9 @@ Werden hinzugefügt, um die Liste zu ignorieren, welche bearbeitet werden im Fen
           <target state="needs-review-translation">727, 30</target>
         </trans-unit>
         <trans-unit id="$this.TrayHeight" translate="yes" extype="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" xml:space="preserve" extradata="metadata">
-          <source>63</source>
+          <source>84</source>
           <target state="needs-review-translation">63</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="contextMenuStripDataGrid.TrayLocation" translate="yes" extype="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" xml:space="preserve" extradata="metadata">
           <source>-2, 26</source>
