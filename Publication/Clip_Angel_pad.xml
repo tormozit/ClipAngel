@@ -1,0 +1,267 @@
+<XML_DIZ_INFO>
+  <MASTER_PAD_VERSION_INFO>
+    <MASTER_PAD_VERSION>4.0</MASTER_PAD_VERSION>
+    <MASTER_PAD_EDITOR>AppVisor 1.0.43</MASTER_PAD_EDITOR>
+    <MASTER_PAD_EDITOR_URL>http://publisher.appvisor.com</MASTER_PAD_EDITOR_URL>
+    <MASTER_PAD_INFO>Portable Application Description, or PAD(TM) 2004 Association of Software Professionals (ASP)http://www.asp-shareware.org/pad is a data set standard and specification that is commercialsoftware publishers to disseminate certified information about their software application. The PAD format is copyright of the ASP and cannot be used without the formal licensing and permission of both the Association of Software Professionals and its agent AppVisor.com.</MASTER_PAD_INFO>
+    <CERTIFIED>No</CERTIFIED>
+    <CERTIFICATE_ID></CERTIFICATE_ID>
+    <CERTIFICATE_LICENSE></CERTIFICATE_LICENSE>
+  </MASTER_PAD_VERSION_INFO>
+  <RoboSoft>
+    <Company_UIN>CMP-A40095E3DA8E</Company_UIN>
+    <Product_UIN>APP-D4005A55AB8E</Product_UIN>
+    <Publish_on_CD>N</Publish_on_CD>
+    <NewsFeed_Search_String></NewsFeed_Search_String>
+    <Search_String>Clip Angel</Search_String>
+    <Press_Release_Search_String></Press_Release_Search_String>
+    <Backlink></Backlink>
+    <Comments_For_Reviewer></Comments_For_Reviewer>
+    <Search_String_Unique>Clip Angel</Search_String_Unique>
+    <Search_Engine_Search_String></Search_Engine_Search_String>
+    <Web_Directories_Search_String></Web_Directories_Search_String>
+    <Company_Description></Company_Description>
+  </RoboSoft>
+  <Company_Info>
+    <PublisherID>pid-7400533b198e</PublisherID>
+    <BrandID>bid-a40095e3da8e</BrandID>
+    <Company_Name>Tormozit</Company_Name>
+    <Country>Russian Federation</Country>
+    <State_Province></State_Province>
+    <City_Town>Moscow</City_Town>
+    <Zip_Postal_Code></Zip_Postal_Code>
+    <Address_1>secret place</Address_1>
+    <Address_2></Address_2>
+    <Company_WebSite_URL>https://sourceforge.net/projects/clip-angel</Company_WebSite_URL>
+    <Contact_Info>
+      <Contact_First_Name>Sergey</Contact_First_Name>
+      <Contact_Last_Name>Starykh</Contact_Last_Name>
+      <Contact_Email>tormozit@gmail.com</Contact_Email>
+      <Author_First_Name>Sergey</Author_First_Name>
+      <Author_Last_Name>Starykh</Author_Last_Name>
+      <Author_Email>tormozit@gmail.com</Author_Email>
+      <Contact_Phone></Contact_Phone>
+    </Contact_Info>
+    <Support_Info>
+      <Sales_Email>tormozit@gmail.com</Sales_Email>
+      <Support_Email>tormozit@gmail.com</Support_Email>
+      <General_Email>tormozit@gmail.com</General_Email>
+      <Sales_Phone></Sales_Phone>
+      <Support_Phone></Support_Phone>
+      <General_Phone></General_Phone>
+      <Fax_Phone></Fax_Phone>
+    </Support_Info>
+    <GooglePlusPage></GooglePlusPage>
+    <LinkedinPage></LinkedinPage>
+    <TwitterCompanyPage></TwitterCompanyPage>
+    <FacebookCompanyPage></FacebookCompanyPage>
+  </Company_Info>
+  <Program_Info>
+    <AppID>app-d4005a55ab8e</AppID>
+    <Program_Name>Clip Angel</Program_Name>
+    <Program_Version>1.23</Program_Version>
+    <Program_Release_Month>05</Program_Release_Month>
+    <Program_Release_Day>08</Program_Release_Day>
+    <Program_Release_Year>2017</Program_Release_Year>
+    <Program_Cost_Dollars>0</Program_Cost_Dollars>
+    <Program_Type>Freeware</Program_Type>
+    <Program_Category_Class>System Utilities::Clipboard Tools</Program_Category_Class>
+    <Program_Specific_Category></Program_Specific_Category>
+    <Program_Categories></Program_Categories>
+    <Program_Release_Status>Major Update</Program_Release_Status>
+    <Program_Install_Support>No Install Support</Program_Install_Support>
+    <Program_Target_Platform>Windows</Program_Target_Platform>
+    <Program_OS_Support>Win2000,WinXP,Win7 x32,Win7 x64,Windows 8,Windows 10,WinServer,WinOther,Windows2000,Windows2003,Windows Server 2000,Windows Server 2003,Windows Server 2008,Windows Server 2008r2,Windows Server 2012,Windows Tablet PC Edition 2005,Windows Media Center Edition 2005,WinVista,Windows Vista Starter,Windows Vista Home Basic,Windows Vista Home Premium,Windows Vista Business,Windows Vista Enterprise,Windows Vista Ultimate,WinVista x64,Windows Vista Home Basic x64,Windows Vista Home Premium x64,Windows Vista Business x64,Windows Vista Enterprise x64,Windows Vista Ultimate x64</Program_OS_Support>
+    <Program_Language>English,ChineseSimplified,French,German,Greek,Hindi,Italian,Polish,Portuguese,Russian,Spanish</Program_Language>
+    <Program_Change_Info></Program_Change_Info>
+    <Program_System_Requirements>.Net Framework 4.52+ (Windows Vista+/Server 2008+)</Program_System_Requirements>
+    <Limitations>N</Limitations>
+    <Awards></Awards>
+    <File_Info>
+      <File_Size_Bytes>100352</File_Size_Bytes>
+      <File_Size_K>98</File_Size_K>
+      <File_Size_MB>0.10</File_Size_MB>
+    </File_Info>
+    <Expire_Info>
+      <Has_Expire_Info>N</Has_Expire_Info>
+      <Expire_Count></Expire_Count>
+      <Expire_Based_On></Expire_Based_On>
+      <Expire_Year></Expire_Year>
+      <Expire_Other_Info></Expire_Other_Info>
+      <Expire_Month></Expire_Month>
+      <Expire_Day></Expire_Day>
+    </Expire_Info>
+    <FacebookFanPage></FacebookFanPage>
+    <VideoLink1URL></VideoLink1URL>
+    <VideoLink2URL></VideoLink2URL>
+    <Includes_JAVA_VM></Includes_JAVA_VM>
+    <Includes_DirectX></Includes_DirectX>
+    <Includes_VB_Runtime></Includes_VB_Runtime>
+    <GooglePlusFanPage></GooglePlusFanPage>
+  </Program_Info>
+  <Web_Info>
+    <Application_URLs>
+      <Application_Info_URL>https://sourceforge.net/projects/clip-angel</Application_Info_URL>
+      <Application_Order_URL></Application_Order_URL>
+      <Application_Screenshot_URL>http://infostart.ru/upload/iblock/1f7/1f7c88c99ab487080e639ef1a7413035.png</Application_Screenshot_URL>
+      <Application_Icon_URL>https://a.fsdn.com/allura/p/clip-angel/icon?1494311961</Application_Icon_URL>
+      <Application_XML_File_URL>http://repository.appvisor.com/app-d4005a55ab8e/site-01/Clip_Angel_pad.xml</Application_XML_File_URL>
+    </Application_URLs>
+    <Download_URLs>
+      <Primary_Download_URL>https://sourceforge.net/projects/clip-angel/files/latest/download</Primary_Download_URL>
+      <Secondary_Download_URL></Secondary_Download_URL>
+      <Additional_Download_URL_1></Additional_Download_URL_1>
+      <Additional_Download_URL_2></Additional_Download_URL_2>
+    </Download_URLs>
+  </Web_Info>
+  <Program_Descriptions>
+    <English>
+      <Keywords>clipboard manager</Keywords>
+      <Char_Desc_45>Clipboard history capture and paste tool</Char_Desc_45>
+      <Char_Desc_80>Clipboard history capture and paste tool</Char_Desc_80>
+      <Char_Desc_250>This program belongs to class 'Clipboard Manager'. It captures many clipboard objects and allows user to select and paste one in any program. Inspired by analogs: ClipDiary, Ditto, AceText. Main priorities: usability, compatibility, reliability.</Char_Desc_250>
+      <Char_Desc_450>This program belongs to class 'Clipboard Manager'. It captures many clipboard objects and allows user to select and paste one in any program. Inspired by analogs: ClipDiary, Ditto, AceText. Main priorities: usability, compatibility, reliability.</Char_Desc_450>
+      <Char_Desc_2000>Features
+    Supports clipboard formats: text, html, rtf, file, image
+    Captures data of supported types copied to clipboard (clips)
+    Captures sender window title and process name for clip
+    Shows source URL for HTML clip
+    Filter by marks 'Used (Pasted)' and 'Favorite' with keyboard shortcuts
+    Filter by clip type
+    Hot (as you type) text filter for clip list
+    Stores last used for paste text filters
+    Marking used (pasted) clips
+    Marking filter matches in text
+    Marking hyperlinks in text and Alt+click to open them
+    Marking END of clip text
+    Marking filter matches in list
+    Allows to paste clip as original or plain text selected or all
+    Repeated external copy of any previous clip raises it to top of list
+    Settings 'Max clip size KB' and 'History depth number'
+    Setting 'Hotkey to open window with reset'
+    Multilanguage UI (Russian, English)
+    Searching back and forward filter text in text
+    Ability to delete and move clips in list
+    Text filter and clip list share key presses, no need to change focus
+    History is stored encrypted on disk
+    Setting 'Hotkey to incremental paste'
+    Switch 'word wrap'
+    Switch 'move just pasted clip to top'
+    Switch 'show column with short visible size of clip'
+    Command 'Edit clip title'
+    Edit clip text mode
+    Commands 'Mark/Unmark favorite' for clips
+    Support for format 'Clipboard Viewer Ignore' to respect password copy privacy
+    Auto and manual check for new version and one click update
+    Portable mode
+    Auto position window on open near text input
+    Switch 'Always on top' for window
+    Command to open clip as file
+    Command to simulate char input (for windows isolated from clipboard)
+    Support for sending paste and input to elevated windows
+    and more</Char_Desc_2000>
+    </English>
+  </Program_Descriptions>
+  <Permissions>
+    <Distribution_Permissions>GPL3</Distribution_Permissions>
+    <EULA></EULA>
+  </Permissions>
+  <Affiliates>
+    <Affiliates_Regsoft_Order_Page></Affiliates_Regsoft_Order_Page>
+    <Affiliates_Regnow_Order_Page></Affiliates_Regnow_Order_Page>
+    <Affiliates_Regsoft_Vendor_ID></Affiliates_Regsoft_Vendor_ID>
+    <Affiliates_Regnow_Vendor_ID></Affiliates_Regnow_Vendor_ID>
+    <Affiliates_Regsoft_Product_ID></Affiliates_Regsoft_Product_ID>
+    <Affiliates_Regnow_Product_ID></Affiliates_Regnow_Product_ID>
+    <Affiliates_FORM></Affiliates_FORM>
+    <Affiliates_FORM_VER></Affiliates_FORM_VER>
+    <Affiliates_VERSION></Affiliates_VERSION>
+    <Affiliates_URL></Affiliates_URL>
+    <Affiliates_Information_Page></Affiliates_Information_Page>
+    <Affiliates_Avangate_Order_Page></Affiliates_Avangate_Order_Page>
+    <Affiliates_Avangate_Vendor_ID></Affiliates_Avangate_Vendor_ID>
+    <Affiliates_Avangate_Product_ID></Affiliates_Avangate_Product_ID>
+    <Affiliates_Avangate_Maximum_Commission_Rate></Affiliates_Avangate_Maximum_Commission_Rate>
+    <Affiliates_BMTMicro_Order_Page></Affiliates_BMTMicro_Order_Page>
+    <Affiliates_BMTMicro_Vendor_ID></Affiliates_BMTMicro_Vendor_ID>
+    <Affiliates_BMTMicro_Product_ID></Affiliates_BMTMicro_Product_ID>
+    <Affiliates_BMTMicro_Maximum_Commission_Rate></Affiliates_BMTMicro_Maximum_Commission_Rate>
+    <Affiliates_eSellerate_Order_Page></Affiliates_eSellerate_Order_Page>
+    <Affiliates_eSellerate_Vendor_ID></Affiliates_eSellerate_Vendor_ID>
+    <Affiliates_eSellerate_Product_ID></Affiliates_eSellerate_Product_ID>
+    <Affiliates_eSellerate_Maximum_Commission_Rate></Affiliates_eSellerate_Maximum_Commission_Rate>
+    <Affiliates_Kagi_Order_Page></Affiliates_Kagi_Order_Page>
+    <Affiliates_Kagi_Vendor_ID></Affiliates_Kagi_Vendor_ID>
+    <Affiliates_Kagi_Product_ID></Affiliates_Kagi_Product_ID>
+    <Affiliates_Kagi_Maximum_Commission_Rate></Affiliates_Kagi_Maximum_Commission_Rate>
+    <Affiliates_Order1_Order_Page></Affiliates_Order1_Order_Page>
+    <Affiliates_Order1_Vendor_ID></Affiliates_Order1_Vendor_ID>
+    <Affiliates_Order1_Product_ID></Affiliates_Order1_Product_ID>
+    <Affiliates_Order1_Maximum_Commission_Rate></Affiliates_Order1_Maximum_Commission_Rate>
+    <Affiliates_Regnet_Order_Page></Affiliates_Regnet_Order_Page>
+    <Affiliates_Regnet_Vendor_ID></Affiliates_Regnet_Vendor_ID>
+    <Affiliates_Regnet_Product_ID></Affiliates_Regnet_Product_ID>
+    <Affiliates_Regnet_Maximum_Commission_Rate></Affiliates_Regnet_Maximum_Commission_Rate>
+    <Affiliates_Regnow_Maximum_Commission_Rate></Affiliates_Regnow_Maximum_Commission_Rate>
+    <Affiliates_Regsoft_Maximum_Commission_Rate></Affiliates_Regsoft_Maximum_Commission_Rate>
+    <Affiliates_ShareIt_Order_Page></Affiliates_ShareIt_Order_Page>
+    <Affiliates_ShareIt_Vendor_ID></Affiliates_ShareIt_Vendor_ID>
+    <Affiliates_ShareIt_Product_ID></Affiliates_ShareIt_Product_ID>
+    <Affiliates_ShareIt_Maximum_Commission_Rate></Affiliates_ShareIt_Maximum_Commission_Rate>
+    <Affiliates_SWReg_Order_Page></Affiliates_SWReg_Order_Page>
+    <Affiliates_SWReg_Vendor_ID></Affiliates_SWReg_Vendor_ID>
+    <Affiliates_SWReg_Product_ID></Affiliates_SWReg_Product_ID>
+    <Affiliates_SWReg_Maximum_Commission_Rate></Affiliates_SWReg_Maximum_Commission_Rate>
+  </Affiliates>
+  <NewsFeed>
+    <NewsFeed_FORM></NewsFeed_FORM>
+    <NewsFeed_VERSION></NewsFeed_VERSION>
+    <NewsFeed_URL></NewsFeed_URL>
+    <NewsFeed_DESCRIPTION></NewsFeed_DESCRIPTION>
+    <NewsFeed_Feed_URL></NewsFeed_Feed_URL>
+    <NewsFeed_Type></NewsFeed_Type>
+    <NewsFeed_Site_URL></NewsFeed_Site_URL>
+    <NewsFeed_Author_First_Name>Sergey</NewsFeed_Author_First_Name>
+    <NewsFeed_Author_Last_Name>Starykh</NewsFeed_Author_Last_Name>
+    <NewsFeed_Author_Email>tormozit@gmail.com</NewsFeed_Author_Email>
+    <NewsFeed_Language></NewsFeed_Language>
+    <NewsFeed_Title></NewsFeed_Title>
+    <NewsFeed_Description_70></NewsFeed_Description_70>
+    <NewsFeed_Description_250></NewsFeed_Description_250>
+    <NewsFeed_Purpose></NewsFeed_Purpose>
+    <NewsFeed_Site_Name></NewsFeed_Site_Name>
+  </NewsFeed>
+  <Press_Release>
+    <Press_Release></Press_Release>
+    <Headline></Headline>
+    <Summary></Summary>
+    <Press_Release_Plain></Press_Release_Plain>
+  </Press_Release>
+  <Site>
+    <Site_FORM></Site_FORM>
+    <Site_VERSION></Site_VERSION>
+    <Site_URL></Site_URL>
+    <Site_DESCRIPTION></Site_DESCRIPTION>
+    <Site_Site_Title></Site_Site_Title>
+    <Site_Site_URL></Site_Site_URL>
+    <Site_Keywords></Site_Keywords>
+    <Site_Description_100></Site_Description_100>
+    <Site_Description_250></Site_Description_250>
+    <Site_Description_450></Site_Description_450>
+    <Site_Contact_First_Name>Sergey</Site_Contact_First_Name>
+    <Site_Contact_Last_Name>Starykh</Site_Contact_Last_Name>
+    <Site_Contact_Email>tormozit@gmail.com</Site_Contact_Email>
+  </Site>
+  <Download_Link_Points_To_Non_Binary_File>TRUE</Download_Link_Points_To_Non_Binary_File>
+  <Dynamic_PAD>
+    <General>
+      <DP_Pad_Enabled>TRUE</DP_Pad_Enabled>
+      <DP_AtFormFill_Enabled>TRUE</DP_AtFormFill_Enabled>
+      <DP_Distributive_Enabled>TRUE</DP_Distributive_Enabled>
+      <DP_Script_Base_URL>http://repository.appvisor.com/</DP_Script_Base_URL>
+      <DP_Pad_Mask>Clip_Angel_pad.xml</DP_Pad_Mask>
+      <DP_Distributive_Primary_URL>https://sourceforge.net/projects/clip-angel/files/latest/download</DP_Distributive_Primary_URL>
+      <DP_Distributive_Mask>Clip_Angel_pad.exe</DP_Distributive_Mask>
+    </General>
+  </Dynamic_PAD>
+</XML_DIZ_INFO>

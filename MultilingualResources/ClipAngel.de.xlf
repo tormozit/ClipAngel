@@ -12,7 +12,7 @@
         </trans-unit>
         <trans-unit id="buttonCancel.Text" translate="yes" xml:space="preserve">
           <source>Cancel</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Abbrechen</target>
+          <target state="translated">Abbrechen</target>
         </trans-unit>
         <trans-unit id="buttonCancel.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
           <source>75, 23</source>
@@ -60,7 +60,7 @@
         </trans-unit>
         <trans-unit id="buttonOK.Text" translate="yes" xml:space="preserve">
           <source>OK</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">OK</target>
+          <target state="translated">OK</target>
         </trans-unit>
         <trans-unit id="HotkeyTextbox.Location" translate="yes" extype="System.Drawing.Point, System.Drawing" xml:space="preserve">
           <source>12, 12</source>
@@ -297,7 +297,7 @@ Taste drücken wird am Fenster verarbeitet werden. </target>
         </trans-unit>
         <trans-unit id="Language" translate="yes" xml:space="preserve">
           <source>Language</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Sprache</target>
+          <target state="translated">Sprache</target>
         </trans-unit>
         <trans-unit id="LanguageDescription" translate="yes" xml:space="preserve">
           <source>User interface language</source>
@@ -365,7 +365,7 @@ Nicht montiert, die HTML-Formatierung native.</target>
         </trans-unit>
         <trans-unit id="SearchWildcards" translate="yes" xml:space="preserve">
           <source>Search "%" as any char sequence</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Suche "%" als jeder Char-Sequenz</target>
+          <target state="translated">Suche "%" als jeder Char-Sequenz</target>
         </trans-unit>
         <trans-unit id="SearchWildcardsDescription" translate="yes" xml:space="preserve">
           <source>Search char "%" from filter as any char sequence. For example filter "po%o" will match "potato". </source>
@@ -389,37 +389,39 @@ Nicht montiert, die HTML-Formatierung native.</target>
         </trans-unit>
         <trans-unit id="ShowNativeTextFormatting" translate="yes" xml:space="preserve">
           <source>Show native text formatting</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Native-Text-Formatierung anzeigen</target>
+          <target state="translated">Native-Text-Formatierung anzeigen</target>
         </trans-unit>
         <trans-unit id="ShowNativeTextFormattingDescription" translate="yes" xml:space="preserve">
           <source>Show native text formatting for RTF and HTML clips (CLTR+N)</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Zeigen Sie native Textformatierung für RTF und HTML-Clips (CLTR + N)</target>
+          <target state="translated">Native Textformatierung für RTF und HTML-Clips zeigen (CLTR + N)</target>
         </trans-unit>
         <trans-unit id="ShowSizeColumn" translate="yes" xml:space="preserve">
           <source>Show visual clip weight column</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Visuelle Clip Gewichtungsspalte anzeigen</target>
+          <target state="translated">Spalte des Gewichts von Visuellen Clips zeigen</target>
         </trans-unit>
         <trans-unit id="ShowSizeColumnDescription" translate="yes" xml:space="preserve">
           <source>Column will show visual weight (number of digits in visual size) of clip</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Spalte wird visuelle Gewicht (Anzahl der Ziffern in der visuellen Größe) des Clips angezeigt.</target>
+          <target state="translated">Spalte wird visuelle Gewicht (Anzahl der Ziffern in der visuellen Größe) des Clips zeigen.</target>
         </trans-unit>
         <trans-unit id="TextCompareApplication" translate="yes" xml:space="preserve">
           <source>Text compare application</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Textvergleich Anwendung</target>
+          <target state="translated">Textvergleich Anwendung</target>
         </trans-unit>
         <trans-unit id="TextCompareApplicationDescription" translate="yes" xml:space="preserve">
           <source>Leave empty to use automatic search application, which looks for Beyond Compare, ExamDiff Pro, 
 WinMerge, Araxis Merge, DiffMerge, Kdiff3. Text compare command is %application% %file1% %file2%</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Lassen Sie automatische Suche Anwendung, die sucht nach Beyond Compare, ExamDiff Pro, 
-, WinMerge, Araxis Merge, DiffMerge Kdiff3 leer. Textbefehl vergleichen ist % Anwendung % %c Datei1 % %c Datei2 %</target>
+          <target state="translated">Lassen Sie leer, um automatische Suche zu verwenden, die sucht nach Beyond Compare, ExamDiff Pro, 
+WinMerge, Araxis Merge, DiffMerge, Kdiff3. Befehl für Textvergleich ist %application% %file1% %file2%
+
+</target>
         </trans-unit>
         <trans-unit id="TextEditor" translate="yes" xml:space="preserve">
           <source>Text (TXT) file editor application</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Text (TXT) Datei-Editor-Anwendung</target>
+          <target state="translated">Text (TXT) Datei Editor Anwendung</target>
         </trans-unit>
         <trans-unit id="TextEditorDescription" translate="yes" xml:space="preserve">
           <source>Used in "Open file" command for clip. Leave empty to use default OS application for edit text (TXT) files.</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Im "Datei öffnen" Befehl verwendet für Clip. Verwenden Sie Standard-OS-Anwendung bearbeiten Textdateien (TXT) leer lassen.</target>
+          <target state="translated">Wird im "Datei öffnen" Befehl für Clip verwendet. Lassen Sie leer, um Standard OS Anwendung als Textdatei (TXT) Editor zu verwenden.</target>
         </trans-unit>
         <trans-unit id="UseFormattingInDublicateDetection" translate="yes" xml:space="preserve">
           <source>Use formatting in dublicate detection</source>
@@ -427,7 +429,7 @@ WinMerge, Araxis Merge, DiffMerge, Kdiff3. Text compare command is %application%
         </trans-unit>
         <trans-unit id="UseFormattingInDublicateDetectionDescription" translate="yes" xml:space="preserve">
           <source>Use native text formatting in dublicate detection. Else only plain text will be used for detecting dublicate of text clip</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Verwenden Sie native Textformatierung in Urheberrechtschutz Erkennung. Sonst wird nur Klartext verwendet werden, für die Erkennung von Urheberrechtschutz Textclip</target>
+          <target state="translated">Verwenden Sie native Textformatierung in Duplikat Erkennung. Sonst wird nur plain text verwendet werden, für die Erkennung von Duplikaten in Textclip</target>
         </trans-unit>
         <trans-unit id="UserSettingsPath" translate="yes" xml:space="preserve">
           <source>Application user settings path</source>
@@ -540,7 +542,7 @@ Nicht montiert, die HTML-Formatierung native.</target>
         </trans-unit>
         <trans-unit id="buttonCancel.Text" translate="yes" xml:space="preserve">
           <source>Cancel</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Abbrechen</target>
+          <target state="translated">Abbrechen</target>
         </trans-unit>
         <trans-unit id="$this.Text" translate="yes" xml:space="preserve">
           <source>Application list editor</source>
@@ -1540,7 +1542,7 @@ Nicht montiert, die HTML-Formatierung native.</target>
         </trans-unit>
         <trans-unit id="labelCopyright.Text" translate="yes" xml:space="preserve">
           <source>Copyright</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Copyright</target>
+          <target state="translated">Copyright</target>
         </trans-unit>
         <trans-unit id="labelVersion.Text" translate="yes" xml:space="preserve">
           <source>Version</source>
@@ -1556,11 +1558,11 @@ Nicht montiert, die HTML-Formatierung native.</target>
         </trans-unit>
         <trans-unit id="$this.Text" translate="yes" xml:space="preserve">
           <source>About</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Info</target>
+          <target state="translated">Info</target>
         </trans-unit>
         <trans-unit id="okButton.Text" translate="yes" xml:space="preserve">
           <source>&amp;OK</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">&amp;OK</target>
+          <target state="translated" state-qualifier="tm-suggestion">&amp;OK</target>
         </trans-unit>
         <trans-unit id="textBoxDescription.Margin" translate="yes" extype="System.Windows.Forms.Padding, System.Windows.Forms" xml:space="preserve">
           <source>6, 3, 3, 3</source>
@@ -2251,11 +2253,11 @@ Url wird im aktuellen Clip gespeichert und in die Zwischenablage kopiert werden.
         </trans-unit>
         <trans-unit id="StripLabelType.ToolTipText" translate="yes" xml:space="preserve">
           <source>Type</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Typ</target>
+          <target state="translated">Typ</target>
         </trans-unit>
         <trans-unit id="showAllMarksToolStripMenuItem.Text" translate="yes" xml:space="preserve">
           <source>Show all marks</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Zeige alle Marken</target>
+          <target state="translated">Alle Vermerke zeigen</target>
         </trans-unit>
         <trans-unit id="htmlTextBox.MinimumSize" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
           <source>20, 20</source>
@@ -4355,7 +4357,7 @@ Untermenü "Liste" enthält Befehle zur schnellen Auswahl</target>
         </trans-unit>
         <trans-unit id="htmlMenuItemOpenLink.Text" translate="yes" xml:space="preserve">
           <source>Open link (ALT+click)</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Link öffnen (ALT + Klick)</target>
+          <target state="translated">Link öffnen (ALT + Klick)</target>
         </trans-unit>
         <trans-unit id="toolStripMenuItem11.Text" translate="yes" xml:space="preserve">
           <source>Open clip file</source>
@@ -4387,7 +4389,7 @@ Untermenü "Liste" enthält Befehle zur schnellen Auswahl</target>
         </trans-unit>
         <trans-unit id="toolStripMenuItem6.Text" translate="yes" xml:space="preserve">
           <source>Paste text (CTRL+ ENTER)</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Text Einfügen (STRG + ENTER)</target>
+          <target state="translated">Text Einfügen (STRG + ENTER)</target>
         </trans-unit>
         <trans-unit id="moveUpToolStripMenuItem.ShortcutKeys" translate="yes" extype="System.Windows.Forms.Keys, System.Windows.Forms" xml:space="preserve">
           <source>Ctrl+Up</source>
@@ -4507,15 +4509,15 @@ Untermenü "Liste" enthält Befehle zur schnellen Auswahl</target>
         </trans-unit>
         <trans-unit id="sendPasteToolStripMenuItem.Text" translate="yes" xml:space="preserve">
           <source>Paste original (ENTER)</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Einfügen-Original (ENTER)</target>
+          <target state="translated">Original Einfügen (ENTER)</target>
         </trans-unit>
         <trans-unit id="exitToolStripMenuItem.ToolTipText" translate="yes" xml:space="preserve">
           <source>Exit the program</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Beenden Sie das Programm</target>
+          <target state="translated">Das Programm Beenden</target>
         </trans-unit>
         <trans-unit id="toolStripMenuItem8.Text" translate="yes" xml:space="preserve">
           <source>Delete</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Löschen</target>
+          <target state="translated">Löschen</target>
         </trans-unit>
         <trans-unit id="resetFavouriteToolStripMenuItem.Text" translate="yes" xml:space="preserve">
           <source>Unmark as favorite</source>
@@ -4563,7 +4565,7 @@ Untermenü "Liste" enthält Befehle zur schnellen Auswahl</target>
         </trans-unit>
         <trans-unit id="urlTextBox.Text" translate="yes" xml:space="preserve">
           <source></source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion"></target>
+          <target state="translated" state-qualifier="mt-suggestion"></target>
         </trans-unit>
         <trans-unit id="htmlMenuItemSelectAll.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
           <source>209, 22</source>
@@ -4579,7 +4581,7 @@ Untermenü "Liste" enthält Befehle zur schnellen Auswahl</target>
         </trans-unit>
         <trans-unit id="pasteAsTextToolStripMenuItem.Text" translate="yes" xml:space="preserve">
           <source>Paste  text (CTRL+ENTER)</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Text Einfügen (STRG + ENTER)</target>
+          <target state="translated">Text Einfügen (STRG + ENTER)</target>
         </trans-unit>
         <trans-unit id="toolStripButtonFindNext.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
           <source>23, 22</source>
@@ -5673,7 +5675,7 @@ Untermenü "Liste" enthält Befehle zur schnellen Auswahl</target>
         </trans-unit>
         <trans-unit id="toolStripMenuItem14.ToolTipText" translate="yes" xml:space="preserve">
           <source>Mark selected clips as favorite</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Ausgewählte Clips als Favorit markieren</target>
+          <target state="translated">Ausgewählte Clips als Favorit markieren</target>
         </trans-unit>
         <trans-unit id="showAllMarksToolStripMenuItem.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
           <source>250, 22</source>
@@ -6086,7 +6088,7 @@ Werden hinzugefügt, um die Liste zu ignorieren, welche bearbeitet werden im Fen
         </trans-unit>
         <trans-unit id="toolStripMenuItem3.Text" translate="yes" xml:space="preserve">
           <source>Paste  text (CTRL+ENTER)</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Text Einfügen (STRG + ENTER)</target>
+          <target state="translated">Text Einfügen (STRG + ENTER)</target>
         </trans-unit>
         <trans-unit id="pictureBoxSource.SizeMode" translate="yes" extype="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms" xml:space="preserve">
           <source>CenterImage</source>

@@ -226,32 +226,34 @@ Nicht montiert, die HTML-Formatierung native.</value>
     <value>Native-Text-Formatierung anzeigen</value>
   </data>
   <data name="ShowNativeTextFormattingDescription" xml:space="preserve">
-    <value>Zeigen Sie native Textformatierung für RTF und HTML-Clips (CLTR + N)</value>
+    <value>Native Textformatierung für RTF und HTML-Clips zeigen (CLTR + N)</value>
   </data>
   <data name="ShowSizeColumn" xml:space="preserve">
-    <value>Visuelle Clip Gewichtungsspalte anzeigen</value>
+    <value>Spalte des Gewichts von Visuellen Clips zeigen</value>
   </data>
   <data name="ShowSizeColumnDescription" xml:space="preserve">
-    <value>Spalte wird visuelle Gewicht (Anzahl der Ziffern in der visuellen Größe) des Clips angezeigt.</value>
+    <value>Spalte wird visuelle Gewicht (Anzahl der Ziffern in der visuellen Größe) des Clips zeigen.</value>
   </data>
   <data name="TextCompareApplication" xml:space="preserve">
     <value>Textvergleich Anwendung</value>
   </data>
   <data name="TextCompareApplicationDescription" xml:space="preserve">
-    <value>Lassen Sie automatische Suche Anwendung, die sucht nach Beyond Compare, ExamDiff Pro, 
-, WinMerge, Araxis Merge, DiffMerge Kdiff3 leer. Textbefehl vergleichen ist % Anwendung % %c Datei1 % %c Datei2 %</value>
+    <value>Lassen Sie leer, um automatische Suche zu verwenden, die sucht nach Beyond Compare, ExamDiff Pro, 
+WinMerge, Araxis Merge, DiffMerge, Kdiff3. Befehl für Textvergleich ist %application% %file1% %file2%
+
+</value>
   </data>
   <data name="TextEditor" xml:space="preserve">
-    <value>Text (TXT) Datei-Editor-Anwendung</value>
+    <value>Text (TXT) Datei Editor Anwendung</value>
   </data>
   <data name="TextEditorDescription" xml:space="preserve">
-    <value>Im "Datei öffnen" Befehl verwendet für Clip. Verwenden Sie Standard-OS-Anwendung bearbeiten Textdateien (TXT) leer lassen.</value>
+    <value>Wird im "Datei öffnen" Befehl für Clip verwendet. Lassen Sie leer, um Standard OS Anwendung als Textdatei (TXT) Editor zu verwenden.</value>
   </data>
   <data name="UseFormattingInDublicateDetection" xml:space="preserve">
     <value>Einsatz in Urheberrechtschutz Erkennung Formatierung</value>
   </data>
   <data name="UseFormattingInDublicateDetectionDescription" xml:space="preserve">
-    <value>Verwenden Sie native Textformatierung in Urheberrechtschutz Erkennung. Sonst wird nur Klartext verwendet werden, für die Erkennung von Urheberrechtschutz Textclip</value>
+    <value>Verwenden Sie native Textformatierung in Duplikat Erkennung. Sonst wird nur plain text verwendet werden, für die Erkennung von Duplikaten in Textclip</value>
   </data>
   <data name="UserSettingsPath" xml:space="preserve">
     <value>Benutzer Einstellungen Weg</value>

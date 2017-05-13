@@ -288,7 +288,7 @@ Url wird im aktuellen Clip gespeichert und in die Zwischenablage kopiert werden.
     <value>Typ</value>
   </data>
   <data name="showAllMarksToolStripMenuItem.Text" xml:space="preserve">
-    <value>Zeige alle Marken</value>
+    <value>Alle Vermerke zeigen</value>
   </data>
   <data name="htmlTextBox.MinimumSize" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>20, 20</value>
@@ -1702,10 +1702,10 @@ Untermenü "Liste" enthält Befehle zur schnellen Auswahl</value>
     <value>23, 22</value>
   </data>
   <data name="sendPasteToolStripMenuItem.Text" xml:space="preserve">
-    <value>Einfügen-Original (ENTER)</value>
+    <value>Original Einfügen (ENTER)</value>
   </data>
   <data name="exitToolStripMenuItem.ToolTipText" xml:space="preserve">
-    <value>Beenden Sie das Programm</value>
+    <value>Das Programm Beenden</value>
   </data>
   <data name="toolStripMenuItem8.Text" xml:space="preserve">
     <value>Löschen</value>

@@ -78,7 +78,7 @@ namespace ClipAngel
         static private IntPtr lastActiveParentWindow;
         static private IntPtr lastChildWindow;
         static private RECT lastChildWindowRect;
-        static private string lastWindowSelectedText;
+        //static private string lastWindowSelectedText;
         static Point lastCaretPoint;
         private IntPtr HookChangeActiveWindow;
         private bool AllowFilterProcessing = true;
@@ -357,7 +357,7 @@ namespace ClipAngel
                 lastChildWindow = IntPtr.Zero;
                 lastChildWindowRect = new RECT();
                 lastCaretPoint = new Point();
-                lastWindowSelectedText = null;
+                //lastWindowSelectedText = null;
                 UpdateWindowTitle();
             }
             return targetProcessId;
@@ -1605,7 +1605,29 @@ namespace ClipAngel
                 if (bitmap != null)
                     using (MemoryStream memoryStream = new MemoryStream())
                     {
-                        using (Image ImageSample = CopyRectImage(bitmap, new Rectangle(0, 0, 100, 20)))
+                        int fragmentWidth = 100;
+                        int fragmentHeight = 20;
+                        int bestX = 0, bestY = 0;
+
+                        for (int x = 1; x < Math.Min(bitmap.Width, 1000) - fragmentWidth - 1; x++)
+                        {
+                            for (int y = 1; y < Math.Min(bitmap.Height, 1000) - fragmentHeight - 1; y++)
+                            {
+                                Color basePixel = bitmap.GetPixel(x, y);
+                                if (true
+                                    && basePixel != bitmap.GetPixel(x + 1, y)
+                                    && basePixel != bitmap.GetPixel(x, y + 1))
+                                {
+                                    bestX = x;
+                                    bestY = y;
+                                    break;
+                                }
+                            }
+                            if (bestX > 0)
+                                break;
+                        }
+
+                        using (Image ImageSample = CopyRectImage(bitmap, new Rectangle(bestX, bestY, fragmentWidth, fragmentHeight)))
                         {
                             ImageSample.Save(memoryStream, ImageFormat.Png);
                             imageSampleBuffer = memoryStream.ToArray();
@@ -2182,7 +2204,7 @@ namespace ClipAngel
         private bool SendPaste(PasteMethod pasteMethod = PasteMethod.Standart)
         {
             int targetProcessId;
-            string oldWindowSelectedText = lastWindowSelectedText;
+            //string oldWindowSelectedText = lastWindowSelectedText;
             IntPtr oldChildWindow = lastChildWindow;
             RECT oldChildWindowRect = lastChildWindowRect;
             Point oldCaretPoint = lastCaretPoint;
@@ -2233,19 +2255,34 @@ namespace ClipAngel
                 GetWindowRect(oldChildWindow, out newRect);
                 if (newRect.Equals(oldChildWindowRect))
                 {
-                    if (guiInfo.hwndFocus != oldChildWindow)
-                    {
-                        // Adress text box of IE11
-                        Paster.ClickOnPoint(oldChildWindow, oldCaretPoint);
-                    }
-                    else
-                    {
-                        string newActiveWindowSelectedText = getActiveWindowSelectedText();
-                        if (newActiveWindowSelectedText != oldWindowSelectedText && oldWindowSelectedText == "")
-                        {
-                            Paster.ClickOnPoint(oldChildWindow, oldCaretPoint);
-                        }
-                    }
+                    //if (guiInfo.hwndFocus != oldChildWindow)
+                    //{
+                    //    // Adress text box of IE11
+                    //    Paster.ClickOnPoint(oldChildWindow, oldCaretPoint);
+                    //}
+                    //else
+                    //{
+                    //    //string newActiveWindowSelectedText = getActiveWindowSelectedText();
+                    //    //if (newActiveWindowSelectedText != oldWindowSelectedText && oldWindowSelectedText == "")
+                    //    //{
+                    //        Paster.ClickOnPoint(oldChildWindow, oldCaretPoint);
+                    //    //}
+                    //}
+
+                    //AttachThreadInput(GetCurrentThreadId(), remoteThreadId, true);
+                    //Point PosBeforeChange;
+                    //GetCaretPos(out PosBeforeChange);
+                    //Point currentPos;
+                    //int result = SetCaretPos(lastCaretPoint.X, lastCaretPoint.Y);
+                    //int ErrorCode = Marshal.GetLastWin32Error(); // Always return 5 - Access denied
+                    //for (int i = 0; i < 500; i += waitStep)
+                    //{
+                    //    GetCaretPos(out currentPos);
+                    //    if (PosBeforeChange != currentPos)
+                    //        break;
+                    //    Thread.Sleep(waitStep);
+                    //}
+                    //AttachThreadInput(GetCurrentThreadId(), remoteThreadId, false);
                 }
             }
 
@@ -2721,8 +2758,10 @@ namespace ClipAngel
         //[return: MarshalAs(UnmanagedType.Bool)]
         //private static extern bool GetClientRect(IntPtr hWnd, ref RECT rect);
 
-        [DllImport("user32")]
+        [DllImport("user32", SetLastError = true)]
         private extern static int GetCaretPos(out Point p);
+        [DllImport("user32", SetLastError = true)]
+        private extern static int SetCaretPos(int x, int y);
 
         [StructLayout(LayoutKind.Sequential)]
         public struct GUITHREADINFO
@@ -2794,9 +2833,15 @@ namespace ClipAngel
                 if (caretPoint.Y > 0 && Properties.Settings.Default.RestoreCaretPositionOnFocusReturn)
                 {
                     lastChildWindow = guiInfo.hwndFocus;
-                    lastWindowSelectedText = getActiveWindowSelectedText();
+                    //lastWindowSelectedText = getActiveWindowSelectedText();
                     GetWindowRect(lastChildWindow, out lastChildWindowRect);
                     lastCaretPoint = new Point(guiInfo.rcCaret.left, guiInfo.rcCaret.top);
+
+                    //int pid;
+                    //uint remoteThreadId = GetWindowThreadProcessId(hWindow, out pid);
+                    //AttachThreadInput(GetCurrentThreadId(), remoteThreadId, true);
+                    //int Result = GetCaretPos(out lastCaretPoint);
+                    //AttachThreadInput(GetCurrentThreadId(), remoteThreadId, false);
                 }
                 if (Properties.Settings.Default.WindowAutoPosition)
                 {
@@ -3545,7 +3590,7 @@ namespace ClipAngel
             // To refresh text in list
             MarkFilter.DisplayMember = "";
             MarkFilter.DisplayMember = "Text";
-            Properties.Settings.Default.RestoreCaretPositionOnFocusReturn = false; // disabled 
+            Properties.Settings.Default.RestoreCaretPositionOnFocusReturn = false; // disabled
             dataGridView.RowsDefaultCellStyle.Font = Properties.Settings.Default.Font;
             ChooseTitleColumnDraw();
             dataGridView.Columns["appImage"].Visible = Properties.Settings.Default.ShowApplicationIconColumn;
@@ -4974,9 +5019,9 @@ namespace ClipAngel
             {
                 if (lastClipWasMultiCaptured)
                     notifyIcon.ShowBalloonTip(2000, Application.ProductName, CurrentLangResourceManager.GetString("LastClipWasMultiCaptured"), ToolTipIcon.Info);
-                DataRowView row1 = (DataRowView) dataGridView.Rows[0].DataBoundItem;
+                DataRowView row1 = (DataRowView) dataGridView.Rows[1].DataBoundItem;
                 int id1 = (int) row1["id"];
-                DataRowView row2 = (DataRowView) dataGridView.Rows[1].DataBoundItem;
+                DataRowView row2 = (DataRowView) dataGridView.Rows[0].DataBoundItem;
                 int id2 = (int) row2["id"];
                 CompareClipsbyID(id1, id2);
             }
