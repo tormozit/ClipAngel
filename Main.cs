@@ -1608,15 +1608,17 @@ namespace ClipAngel
                         int fragmentWidth = 100;
                         int fragmentHeight = 20;
                         int bestX = 0, bestY = 0;
-
-                        for (int x = 1; x < Math.Min(bitmap.Width, 1000) - 1; x++)
+                        int diffTreshold = 30;
+                        for (int x = 0; x < Math.Min(bitmap.Width, 1000) - 2; x++)
                         {
-                            for (int y = 1; y < Math.Min(bitmap.Height, 1000) - 1; y++)
+                            for (int y = 0; y < Math.Min(bitmap.Height, 1000) - 2; y++)
                             {
                                 Color basePixel = bitmap.GetPixel(x, y);
                                 if (true
-                                    && basePixel != bitmap.GetPixel(x + 1, y)
-                                    && basePixel != bitmap.GetPixel(x, y + 1))
+                                    && ColorDifference(basePixel, bitmap.GetPixel(x + 2, y + 1)) > diffTreshold
+                                    && ColorDifference(basePixel, bitmap.GetPixel(x + 1, y + 2)) > diffTreshold
+                                    && ColorDifference(basePixel, bitmap.GetPixel(x + 2, y)) < diffTreshold
+                                    && ColorDifference(basePixel, bitmap.GetPixel(x, y + 2)) < diffTreshold)
                                 {
                                     bestX = Math.Min(x, bitmap.Width - fragmentWidth - 1);
                                     bestY = Math.Min(y, bitmap.Height - fragmentHeight - 1);
@@ -1646,6 +1648,15 @@ namespace ClipAngel
                 if (bitmap != null)
                     bitmap.Dispose();
             }
+        }
+
+        int ColorDifference(Color Color1, Color Color2)
+        {
+            int result = 0;
+            result += Math.Abs(Color1.B - Color2.B);
+            result += Math.Abs(Color1.G - Color2.G);
+            result += Math.Abs(Color1.R - Color2.R);
+            return result;
         }
 
         int CountLines(string str, int position = 0)
