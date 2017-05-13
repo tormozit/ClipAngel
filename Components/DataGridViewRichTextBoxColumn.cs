@@ -175,6 +175,8 @@ namespace ClipAngel
             if (SampleCell.Value != null)
             {
                 Image sample = (Image) SampleCell.Value;
+                Pen borderPen = new Pen(Color.Green);
+                graphics.DrawLine(borderPen, cellBounds.Left + textWitdh + horizontalSpaceTextImage - 2, cellBounds.Top + 1, cellBounds.Left + textWitdh + horizontalSpaceTextImage - 2, cellBounds.Bottom - 1);
                 graphics.DrawImage(sample, cellBounds.Left + textWitdh + horizontalSpaceTextImage, cellBounds.Top + 1);
             }
         }

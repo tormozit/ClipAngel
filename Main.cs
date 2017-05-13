@@ -1609,17 +1609,17 @@ namespace ClipAngel
                         int fragmentHeight = 20;
                         int bestX = 0, bestY = 0;
 
-                        for (int x = 1; x < Math.Min(bitmap.Width, 1000) - fragmentWidth - 1; x++)
+                        for (int x = 1; x < Math.Min(bitmap.Width, 1000) - 1; x++)
                         {
-                            for (int y = 1; y < Math.Min(bitmap.Height, 1000) - fragmentHeight - 1; y++)
+                            for (int y = 1; y < Math.Min(bitmap.Height, 1000) - 1; y++)
                             {
                                 Color basePixel = bitmap.GetPixel(x, y);
                                 if (true
                                     && basePixel != bitmap.GetPixel(x + 1, y)
                                     && basePixel != bitmap.GetPixel(x, y + 1))
                                 {
-                                    bestX = x;
-                                    bestY = y;
+                                    bestX = Math.Min(x, bitmap.Width - fragmentWidth - 1);
+                                    bestY = Math.Min(y, bitmap.Height - fragmentHeight - 1);
                                     break;
                                 }
                             }
