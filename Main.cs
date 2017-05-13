@@ -1609,7 +1609,7 @@ namespace ClipAngel
                         int fragmentHeight = 20;
                         int bestX = -1, bestY = -1;
                         int goodX = -1, goodY = -1;
-                        int diffTreshold = 20;
+                        int diffTreshold = 25;
                         for (int x = 0; x < Math.Min(bitmap.Width, 1000) - 2; x++)
                         {
                             for (int y = 0; y < Math.Min(bitmap.Height, 1000) - 2; y++)
