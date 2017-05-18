@@ -670,14 +670,20 @@ Edit filter right from list. Navigate in list right from filter.</value>
   <metadata name="contextMenuUrl.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>1177, 0</value>
   </metadata>
+  <data name="contextMenuUrlOpenLink.Size" type="System.Drawing.Size, System.Drawing">
+    <value>188, 22</value>
+  </data>
+  <data name="contextMenuUrlOpenLink.Text" xml:space="preserve">
+    <value>Open link (ALT+click)</value>
+  </data>
   <data name="toolStripUrlCopyAll.Size" type="System.Drawing.Size, System.Drawing">
-    <value>139, 22</value>
+    <value>188, 22</value>
   </data>
   <data name="toolStripUrlCopyAll.Text" xml:space="preserve">
     <value>Copy all text</value>
   </data>
   <data name="contextMenuUrl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>140, 26</value>
+    <value>189, 70</value>
   </data>
   <data name="&gt;&gt;contextMenuUrl.Name" xml:space="preserve">
     <value>contextMenuUrl</value>
@@ -728,25 +734,25 @@ Edit filter right from list. Navigate in list right from filter.</value>
     <value>600, 2</value>
   </metadata>
   <data name="rtfMenuItemOpenLink.Size" type="System.Drawing.Size, System.Drawing">
-    <value>209, 22</value>
+    <value>206, 22</value>
   </data>
   <data name="rtfMenuItemOpenLink.Text" xml:space="preserve">
-    <value>Open link (ALT + click)</value>
+    <value>Open link (ALT+click)</value>
   </data>
   <data name="copyToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+C</value>
   </data>
   <data name="copyToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>209, 22</value>
+    <value>206, 22</value>
   </data>
   <data name="copyToolStripMenuItem.Text" xml:space="preserve">
     <value>Copy</value>
   </data>
   <data name="toolStripMenuItem6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>209, 22</value>
+    <value>206, 22</value>
   </data>
   <data name="toolStripMenuItem6.Text" xml:space="preserve">
-    <value>Paste text (CTRL+ ENTER)</value>
+    <value>Paste text (CTRL+ENTER)</value>
   </data>
   <data name="toolStripMenuItem6.ToolTipText" xml:space="preserve">
     <value>Paste in active window as plain text selected text of clip or agregated text of selected clips.
@@ -756,13 +762,13 @@ Edit filter right from list. Navigate in list right from filter.</value>
     <value>Ctrl+A</value>
   </data>
   <data name="rtfMenuItemSelectAll.Size" type="System.Drawing.Size, System.Drawing">
-    <value>209, 22</value>
+    <value>206, 22</value>
   </data>
   <data name="rtfMenuItemSelectAll.Text" xml:space="preserve">
     <value>Select all</value>
   </data>
   <data name="contextMenuStripRtf.Size" type="System.Drawing.Size, System.Drawing">
-    <value>210, 92</value>
+    <value>207, 92</value>
   </data>
   <data name="&gt;&gt;contextMenuStripRtf.Name" xml:space="preserve">
     <value>contextMenuStripRtf</value>
@@ -3278,6 +3284,12 @@ Changes in temp file are not synchronized with clip!
   </data>
   <data name="&gt;&gt;dbDataSet.Type" xml:space="preserve">
     <value>ClipAngel.dbDataSet, dbDataSet.Designer.cs.dll, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;contextMenuUrlOpenLink.Name" xml:space="preserve">
+    <value>contextMenuUrlOpenLink</value>
+  </data>
+  <data name="&gt;&gt;contextMenuUrlOpenLink.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;toolStripUrlCopyAll.Name" xml:space="preserve">
     <value>toolStripUrlCopyAll</value>

@@ -2918,15 +2918,6 @@ namespace ClipAngel
                     if (caretPoint.Y > 0)
                     {
                         activeRect = guiInfo.rcCaret;
-
-                        // old way using virtual screen
-                        //newX = Math.Min(activeRect.right + caretPoint.X,
-                        //    SystemInformation.VirtualScreen.Width + SystemInformation.VirtualScreen.Left - this.Width);
-                        //newY = Math.Min(activeRect.bottom + caretPoint.Y + 1,
-                        //    SystemInformation.VirtualScreen.Height + SystemInformation.VirtualScreen.Top - this.Height -
-                        //    30);
-
-                        // new way using device screen
                         Screen screen = Screen.FromPoint(caretPoint);
                         newX = Math.Min(activeRect.right + caretPoint.X, screen.WorkingArea.Width + screen.WorkingArea.Left - this.Width);
                         newY = Math.Min(activeRect.bottom + caretPoint.Y + 1, screen.WorkingArea.Height + screen.WorkingArea.Top - this.Height);
@@ -2940,23 +2931,11 @@ namespace ClipAngel
                             baseWindow = hWindow;
                         ClientToScreen(baseWindow, out caretPoint);
                         GetWindowRect(baseWindow, out activeRect);
-
-                        // old way using virtual screen
-                        //newX = Math.Max(0,
-                        //    Math.Min((activeRect.right - activeRect.left - this.Width) / 2 + caretPoint.X,
-                        //        SystemInformation.VirtualScreen.Width + SystemInformation.VirtualScreen.Left -
-                        //        this.Width));
-                        //newY = Math.Max(0,
-                        //    Math.Min((activeRect.bottom - activeRect.top - this.Height) / 2 + caretPoint.Y,
-                        //        SystemInformation.VirtualScreen.Height + SystemInformation.VirtualScreen.Top -
-                        //        this.Height - 30));
-
-                        // new way using device screen
                         Screen screen = Screen.FromPoint(caretPoint);
-                        newX = Math.Max(0,
+                        newX = Math.Max(screen.Bounds.Left,
                             Math.Min((activeRect.right - activeRect.left - this.Width) / 2 + caretPoint.X,
                                 screen.WorkingArea.Width + screen.WorkingArea.Left - this.Width));
-                        newY = Math.Max(0,
+                        newY = Math.Max(screen.Bounds.Top,
                             Math.Min((activeRect.bottom - activeRect.top - this.Height) / 2 + caretPoint.Y,
                                 screen.WorkingArea.Height + screen.WorkingArea.Top - this.Height));
                     }
@@ -3715,7 +3694,7 @@ namespace ClipAngel
                     //documentHtml.close();
                     //string lastVersion = getElementsByTagAndClassName(htmlDoc, "a", "sfdl ")[0].innerText;
 
-                    Match match = Regex.Match(lastVersion, @"Clip Angel (.*).zip");
+                    Match match = Regex.Match(lastVersion, @"Clip\s*Angel (.*).zip");
                     if (match == null)
                         return;
                     ActualVersion = match.Groups[1].Value;
@@ -5386,6 +5365,10 @@ namespace ClipAngel
             }
         }
 
+        private void contextMenuUrlOpenLink_Click(object sender, EventArgs e)
+        {
+            Process.Start(urlTextBox.Text);
+        }
     }
 }
 

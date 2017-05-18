@@ -2073,8 +2073,9 @@ o submenu "Lista" tem comandos para seleção rápida</target>
           <target state="needs-review-translation">22, 3</target>
         </trans-unit>
         <trans-unit id="rtfMenuItemOpenLink.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
-          <source>209, 22</source>
+          <source>206, 22</source>
           <target state="needs-review-translation">209, 22</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="statusStrip.AutoSize" translate="yes" extype="System.Boolean, mscorlib" xml:space="preserve">
           <source>False</source>
@@ -2623,8 +2624,9 @@ Alterações no arquivo temporário não são sincronizadas com o clipe!</target
           <target state="needs-review-translation">44, 20</target>
         </trans-unit>
         <trans-unit id="toolStripUrlCopyAll.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
-          <source>139, 22</source>
+          <source>188, 22</source>
           <target state="needs-review-translation">139, 22</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="toolStripButtonClearFilterAndSelectTop.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
           <source>23, 22</source>
@@ -2734,12 +2736,14 @@ Alterações no arquivo temp não são sincronizadas com o clipe!
           <target state="translated">Mover clipe atual para cima</target>
         </trans-unit>
         <trans-unit id="rtfMenuItemSelectAll.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
-          <source>209, 22</source>
+          <source>206, 22</source>
           <target state="needs-review-translation">209, 22</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="copyToolStripMenuItem.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
-          <source>209, 22</source>
+          <source>206, 22</source>
           <target state="needs-review-translation">209, 22</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="TypeFilter.Items" translate="yes" xml:space="preserve">
           <source>all</source>
@@ -3908,8 +3912,9 @@ Alterações no arquivo temp não são sincronizadas com o clipe!
           <target state="needs-review-translation">2, 198</target>
         </trans-unit>
         <trans-unit id="rtfMenuItemOpenLink.Text" translate="yes" xml:space="preserve">
-          <source>Open link (ALT + click)</source>
+          <source>Open link (ALT+click)</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Abrir link (ALT + clique)</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="toolStripTop.Text" translate="yes" xml:space="preserve">
           <source>toolStrip1</source>
@@ -4087,8 +4092,9 @@ Alterações no arquivo temporário não são sincronizadas com o clipe!</target
           <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="contextMenuStripRtf.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
-          <source>210, 92</source>
+          <source>207, 92</source>
           <target state="needs-review-translation">210, 92</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="toolStripMenuItemSetFocusClipText.Text" translate="yes" xml:space="preserve">
           <source>Set focus to clip text (TAB)</source>
@@ -4115,8 +4121,9 @@ Alterações no arquivo temporário não são sincronizadas com o clipe!</target
           <target state="needs-review-translation">212, 22</target>
         </trans-unit>
         <trans-unit id="contextMenuUrl.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
-          <source>140, 26</source>
+          <source>189, 70</source>
           <target state="needs-review-translation">140, 26</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="stripLabelPosition.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
           <source>116, 17</source>
@@ -4389,8 +4396,9 @@ O submenu "Lista" tem comandos para seleção rápida</target>
           <target state="needs-review-translation" state-qualifier="mt-suggestion"></target>
         </trans-unit>
         <trans-unit id="toolStripMenuItem6.Text" translate="yes" xml:space="preserve">
-          <source>Paste text (CTRL+ ENTER)</source>
+          <source>Paste text (CTRL+ENTER)</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Colar o texto (CTRL + ENTER)</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="moveUpToolStripMenuItem.ShortcutKeys" translate="yes" extype="System.Windows.Forms.Keys, System.Windows.Forms" xml:space="preserve">
           <source>Ctrl+Up</source>
@@ -5804,8 +5812,9 @@ O submenu "Lista" tem comandos para seleção rápida</target>
           <target state="needs-review-translation">29, 22</target>
         </trans-unit>
         <trans-unit id="toolStripMenuItem6.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
-          <source>209, 22</source>
+          <source>206, 22</source>
           <target state="needs-review-translation">209, 22</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="comboBoxFilter.ToolTip" translate="yes" xml:space="preserve">
           <source>Hot filter for clip text. List and this filter shares key input.
@@ -6287,6 +6296,15 @@ adicionado à lista de ignorar, que pode ser editado na janela de configuraçõe
         <trans-unit id="$this.Language" translate="yes" xml:space="preserve" extype="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" extradata="metadata">
           <source>ru</source>
           <target state="needs-review-translation">ru</target>
+        </trans-unit>
+        <trans-unit id="contextMenuUrlOpenLink.Size" translate="yes" xml:space="preserve" extype="System.Drawing.Size, System.Drawing">
+          <source>188, 22</source>
+          <target state="needs-review-translation">194, 22</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
+        </trans-unit>
+        <trans-unit id="contextMenuUrlOpenLink.Text" translate="yes" xml:space="preserve">
+          <source>Open link (ALT+click)</source>
+          <target state="new">Open link (ALT+click)</target>
         </trans-unit>
       </group>
     </body>

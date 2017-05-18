@@ -2306,4 +2306,7 @@
   <metadata name="$this.Language" xml:space="preserve" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>ru</value>
   </metadata>
+  <data name="contextMenuUrlOpenLink.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>194, 22</value>
+  </data>
 </root>

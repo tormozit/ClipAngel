@@ -315,6 +315,7 @@ namespace ClipAngel
             this.tableLayoutPanelData = new System.Windows.Forms.TableLayoutPanel();
             this.urlTextBox = new System.Windows.Forms.RichTextBox();
             this.contextMenuUrl = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.contextMenuUrlOpenLink = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripUrlCopyAll = new System.Windows.Forms.ToolStripMenuItem();
             this.richTextBox = new System.Windows.Forms.RichTextBox();
             this.contextMenuStripRtf = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -897,9 +898,16 @@ namespace ClipAngel
             // contextMenuUrl
             // 
             this.contextMenuUrl.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.contextMenuUrlOpenLink,
             this.toolStripUrlCopyAll});
             this.contextMenuUrl.Name = "contextMenuUrl";
             resources.ApplyResources(this.contextMenuUrl, "contextMenuUrl");
+            // 
+            // contextMenuUrlOpenLink
+            // 
+            this.contextMenuUrlOpenLink.Name = "contextMenuUrlOpenLink";
+            resources.ApplyResources(this.contextMenuUrlOpenLink, "contextMenuUrlOpenLink");
+            this.contextMenuUrlOpenLink.Click += new System.EventHandler(this.contextMenuUrlOpenLink_Click);
             // 
             // toolStripUrlCopyAll
             // 
@@ -2054,6 +2062,7 @@ namespace ClipAngel
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemSearchWordsIndependently;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemSearchWildcards;
         private MyDataGridView dataGridView;
+        private System.Windows.Forms.ToolStripMenuItem contextMenuUrlOpenLink;
     }
 }
 

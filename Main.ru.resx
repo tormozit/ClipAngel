@@ -273,14 +273,20 @@
   <data name="pictureBoxSource.ToolTip" xml:space="preserve">
     <value>Иконка приложения, из которого клип был скопирован</value>
   </data>
+  <data name="contextMenuUrlOpenLink.Size" type="System.Drawing.Size, System.Drawing">
+    <value>229, 22</value>
+  </data>
+  <data name="contextMenuUrlOpenLink.Text" xml:space="preserve">
+    <value>Открыть ссылку (ALT+клик)</value>
+  </data>
   <data name="toolStripUrlCopyAll.Size" type="System.Drawing.Size, System.Drawing">
-    <value>197, 22</value>
+    <value>229, 22</value>
   </data>
   <data name="toolStripUrlCopyAll.Text" xml:space="preserve">
     <value>Копировать весь текст</value>
   </data>
   <data name="contextMenuUrl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>198, 26</value>
+    <value>230, 48</value>
   </data>
   <data name="contextMenuUrl.ToolTip" xml:space="preserve">
     <value />
@@ -295,34 +301,34 @@
     <value>Из web страницы с таким адресом клип был скопирован</value>
   </data>
   <data name="rtfMenuItemOpenLink.Size" type="System.Drawing.Size, System.Drawing">
-    <value>238, 22</value>
+    <value>235, 22</value>
   </data>
   <data name="rtfMenuItemOpenLink.Text" xml:space="preserve">
     <value>Открыть ссылку (ALT+клик)</value>
   </data>
   <data name="copyToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>238, 22</value>
+    <value>235, 22</value>
   </data>
   <data name="copyToolStripMenuItem.Text" xml:space="preserve">
     <value>Копировать</value>
   </data>
   <data name="toolStripMenuItem6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>238, 22</value>
+    <value>235, 22</value>
   </data>
   <data name="toolStripMenuItem6.Text" xml:space="preserve">
-    <value>Вставить текст (CTRL+ ENTER)</value>
+    <value>Вставить текст (CTRL+ENTER)</value>
   </data>
   <data name="toolStripMenuItem6.ToolTipText" xml:space="preserve">
     <value>Вставить в активное окно в виде простого текста выделенный текст клипа или агрегированный текст выделенных клипов.</value>
   </data>
   <data name="rtfMenuItemSelectAll.Size" type="System.Drawing.Size, System.Drawing">
-    <value>238, 22</value>
+    <value>235, 22</value>
   </data>
   <data name="rtfMenuItemSelectAll.Text" xml:space="preserve">
     <value>Выделить все</value>
   </data>
   <data name="contextMenuStripRtf.Size" type="System.Drawing.Size, System.Drawing">
-    <value>239, 92</value>
+    <value>236, 92</value>
   </data>
   <data name="contextMenuStripRtf.ToolTip" xml:space="preserve">
     <value />
