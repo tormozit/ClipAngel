@@ -4190,8 +4190,9 @@ Changes in temp file are not synchronized with clip!</source>
           <target state="needs-review-translation">250, 22</target>
         </trans-unit>
         <trans-unit id="contextMenuStripDataGrid.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
-          <source>212, 202</source>
+          <source>212, 246</source>
           <target state="needs-review-translation">212, 202</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="TypeFilter.Location" translate="yes" extype="System.Drawing.Point, System.Drawing" xml:space="preserve">
           <source>84, 395</source>
@@ -6069,8 +6070,9 @@ added to ignore list, wich can be edited in Settings window.</source>
           <target state="needs-review-translation">23, 22</target>
         </trans-unit>
         <trans-unit id="toolStripMenuItem3.Text" translate="yes" xml:space="preserve">
-          <source>Paste  text (CTRL+ENTER)</source>
+          <source>Paste text (CTRL+ENTER)</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">粘贴文本 (CTRL + ENTER)</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="pictureBoxSource.SizeMode" translate="yes" extype="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms" xml:space="preserve">
           <source>CenterImage</source>
@@ -6291,10 +6293,22 @@ added to ignore list, wich can be edited in Settings window.</source>
           <target state="needs-review-translation">214, 22</target>
         </trans-unit>
         <trans-unit id="pasteFileToolStripMenuItem.Text" translate="yes" xml:space="preserve">
-          <source>Paste file (SHIFT+ENTER)</source>
-          <target state="new">Paste file (SHIFT+ENTER)</target>
+          <source>Paste file</source>
+          <target state="new">Paste file</target>
         </trans-unit>
         <trans-unit id="pasteFileToolStripMenuItem.ToolTipText" translate="yes" xml:space="preserve">
+          <source>Paste in active window selected clips as files </source>
+          <target state="new">Paste in active window selected clips as files </target>
+        </trans-unit>
+        <trans-unit id="toolStripMenuItem18.Size" translate="yes" xml:space="preserve" extype="System.Drawing.Size, System.Drawing">
+          <source>211, 22</source>
+          <target state="needs-review-translation">211, 22</target>
+        </trans-unit>
+        <trans-unit id="toolStripMenuItem18.Text" translate="yes" xml:space="preserve">
+          <source>Paste file</source>
+          <target state="new">Paste file</target>
+        </trans-unit>
+        <trans-unit id="toolStripMenuItem18.ToolTipText" translate="yes" xml:space="preserve">
           <source>Paste in active window selected clips as files </source>
           <target state="new">Paste in active window selected clips as files </target>
         </trans-unit>

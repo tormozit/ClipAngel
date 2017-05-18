@@ -2744,4 +2744,7 @@ agregado ignorar lista, cual se puede editar en la ventana de configuración.</v
   <data name="pasteFileToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>214, 22</value>
   </data>
+  <data name="toolStripMenuItem18.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>211, 22</value>
+  </data>
 </root>
