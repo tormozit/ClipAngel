@@ -302,6 +302,7 @@ namespace ClipAngel
             this.contextMenuStripDataGrid = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem18 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem7 = new System.Windows.Forms.ToolStripMenuItem();
             this.copyToClipboardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem12 = new System.Windows.Forms.ToolStripMenuItem();
@@ -374,7 +375,8 @@ namespace ClipAngel
             this.toolStripMenuItemClearFilterAndSelectTop = new System.Windows.Forms.ToolStripMenuItem();
             this.clipToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pasteENTERToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pasteTextCTRLENTERToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pasteTextToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pasteFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemPasteChars = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem8 = new System.Windows.Forms.ToolStripMenuItem();
             this.changeClipTitleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -784,6 +786,7 @@ namespace ClipAngel
             this.contextMenuStripDataGrid.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem2,
             this.toolStripMenuItem3,
+            this.toolStripMenuItem18,
             this.toolStripMenuItem7,
             this.copyToClipboardToolStripMenuItem,
             this.toolStripMenuItem12,
@@ -807,6 +810,13 @@ namespace ClipAngel
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
             resources.ApplyResources(this.toolStripMenuItem3, "toolStripMenuItem3");
             this.toolStripMenuItem3.Click += new System.EventHandler(this.pasteAsTextToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem18
+            // 
+            this.toolStripMenuItem18.Image = global::ClipAngel.Properties.Resources.Paste;
+            this.toolStripMenuItem18.Name = "toolStripMenuItem18";
+            resources.ApplyResources(this.toolStripMenuItem18, "toolStripMenuItem18");
+            this.toolStripMenuItem18.Click += new System.EventHandler(this.pasteFileToolStripMenuItem_Click);
             // 
             // toolStripMenuItem7
             // 
@@ -1329,7 +1339,8 @@ namespace ClipAngel
             // 
             this.clipToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.pasteENTERToolStripMenuItem,
-            this.pasteTextCTRLENTERToolStripMenuItem,
+            this.pasteTextToolStripMenuItem,
+            this.pasteFileToolStripMenuItem,
             this.toolStripMenuItemPasteChars,
             this.toolStripMenuItem8,
             this.changeClipTitleToolStripMenuItem,
@@ -1358,12 +1369,19 @@ namespace ClipAngel
             resources.ApplyResources(this.pasteENTERToolStripMenuItem, "pasteENTERToolStripMenuItem");
             this.pasteENTERToolStripMenuItem.Click += new System.EventHandler(this.pasteOriginalToolStripMenuItem_Click);
             // 
-            // pasteTextCTRLENTERToolStripMenuItem
+            // pasteTextToolStripMenuItem
             // 
-            this.pasteTextCTRLENTERToolStripMenuItem.Image = global::ClipAngel.Properties.Resources.Paste;
-            this.pasteTextCTRLENTERToolStripMenuItem.Name = "pasteTextCTRLENTERToolStripMenuItem";
-            resources.ApplyResources(this.pasteTextCTRLENTERToolStripMenuItem, "pasteTextCTRLENTERToolStripMenuItem");
-            this.pasteTextCTRLENTERToolStripMenuItem.Click += new System.EventHandler(this.pasteAsTextToolStripMenuItem_Click);
+            this.pasteTextToolStripMenuItem.Image = global::ClipAngel.Properties.Resources.Paste;
+            this.pasteTextToolStripMenuItem.Name = "pasteTextToolStripMenuItem";
+            resources.ApplyResources(this.pasteTextToolStripMenuItem, "pasteTextToolStripMenuItem");
+            this.pasteTextToolStripMenuItem.Click += new System.EventHandler(this.pasteAsTextToolStripMenuItem_Click);
+            // 
+            // pasteFileToolStripMenuItem
+            // 
+            this.pasteFileToolStripMenuItem.Image = global::ClipAngel.Properties.Resources.Paste;
+            this.pasteFileToolStripMenuItem.Name = "pasteFileToolStripMenuItem";
+            resources.ApplyResources(this.pasteFileToolStripMenuItem, "pasteFileToolStripMenuItem");
+            this.pasteFileToolStripMenuItem.Click += new System.EventHandler(this.pasteFileToolStripMenuItem_Click);
             // 
             // toolStripMenuItemPasteChars
             // 
@@ -1923,7 +1941,7 @@ namespace ClipAngel
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem clipToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pasteENTERToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem pasteTextCTRLENTERToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pasteTextToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem1;
         private System.Windows.Forms.ToolTip toolTipDynamic;
         private System.Windows.Forms.ComboBox TypeFilter;
@@ -2063,6 +2081,8 @@ namespace ClipAngel
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemSearchWildcards;
         private MyDataGridView dataGridView;
         private System.Windows.Forms.ToolStripMenuItem contextMenuUrlOpenLink;
+        private System.Windows.Forms.ToolStripMenuItem pasteFileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem18;
     }
 }
 

@@ -121,9 +121,6 @@ o submenu "Lista" tem comandos para seleção rápida</value>
   <data name="urlTextBox.Font" xml:space="preserve" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 9pt</value>
   </data>
-  <data name="pasteTextCTRLENTERToolStripMenuItem.Text" xml:space="preserve">
-    <value>Colar o texto (CTRL + ENTER)</value>
-  </data>
   <data name="changeClipTitleToolStripMenuItem.ToolTipText" xml:space="preserve">
     <value>Edite o título do clipe</value>
   </data>
@@ -373,9 +370,6 @@ Url será salva no clipe atual e será copiada à área de transferência.</valu
   </data>
   <data name="ImageControl.ImeMode" xml:space="preserve" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
-  </data>
-  <data name="pasteTextCTRLENTERToolStripMenuItem.ToolTipText" xml:space="preserve">
-    <value>Colar na janela ativa como texto sem formatação o texto selecionado do clip ou agregue dos clipes selecionados.</value>
   </data>
   <data name="showOnlyUsedToolStripMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+3</value>
@@ -1225,9 +1219,6 @@ Alterações no arquivo temp não são sincronizadas com o clipe!
   <data name="сдуфкClipboardToolStripMenuItem.ImageScaling" xml:space="preserve" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
     <value>None</value>
   </data>
-  <data name="pasteTextCTRLENTERToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
-    <value>214, 22</value>
-  </data>
   <data name="stripLabelPosition.Text" xml:space="preserve">
     <value>Posição</value>
   </data>
@@ -1608,9 +1599,6 @@ O submenu "Lista" tem comandos para seleção rápida</value>
   <data name="toolStripButtonMonospacedFont.ImageTransparentColor" xml:space="preserve" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
   </data>
-  <data name="$this.ToolTip" xml:space="preserve">
-    <value></value>
-  </data>
   <data name="toolStripMenuItem6.Text" xml:space="preserve">
     <value>Colar o texto (CTRL + ENTER)</value>
   </data>
@@ -1628,9 +1616,6 @@ O submenu "Lista" tem comandos para seleção rápida</value>
   </data>
   <data name="idDataGridViewTextBoxColumn.Visible" xml:space="preserve" type="System.Boolean, mscorlib">
     <value>False</value>
-  </data>
-  <data name="splitContainer1.Panel2.ToolTip" xml:space="preserve">
-    <value></value>
   </data>
   <data name="moveTopToolStripMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+Alt+Up</value>
@@ -1682,9 +1667,6 @@ O submenu "Lista" tem comandos para seleção rápida</value>
   </data>
   <data name="toolStripMenuItem15.Text" xml:space="preserve">
     <value>Colar o texto (CTRL + ENTER)</value>
-  </data>
-  <data name="splitContainer1.Panel1.ToolTip" xml:space="preserve">
-    <value></value>
   </data>
   <data name="toolStripBottom.Dock" xml:space="preserve" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>None</value>
@@ -2408,9 +2390,6 @@ Editar Filtro à direita da lista. Navegue na lista a partir do filtro.</value>
   <data name="listToolStripMenuItem.Text" xml:space="preserve">
     <value>Lista</value>
   </data>
-  <data name="splitContainer1.ToolTip" xml:space="preserve">
-    <value></value>
-  </data>
   <data name="resetFavouriteToolStripMenuItem.ToolTipText" xml:space="preserve">
     <value>Desmarcar o clipes selecionados como favorito</value>
   </data>
@@ -2756,10 +2735,13 @@ adicionado à lista de ignorar, que pode ser editado na janela de configuraçõe
   <metadata name="clipsTableAdapter.TrayLocation" xml:space="preserve" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>946, 26</value>
   </metadata>
-  <metadata name="$this.Language" xml:space="preserve" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>ru</value>
-  </metadata>
   <data name="contextMenuUrlOpenLink.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>194, 22</value>
+  </data>
+  <data name="pasteTextToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>214, 22</value>
+  </data>
+  <data name="pasteFileToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>214, 22</value>
   </data>
 </root>

@@ -40,6 +40,7 @@ namespace ClipAngel
         Standart,
         PasteText,
         SendChars,
+        File,
         Null
     };
 
@@ -2245,7 +2246,7 @@ namespace ClipAngel
                     Thread.Sleep(multipasteDelay);
                 }
             }
-            CopyClipToClipboard(rowReader, pasteMethod != PasteMethod.Standart, false);
+            CopyClipToClipboard(rowReader, pasteMethod != PasteMethod.Standart && pasteMethod != PasteMethod.File, false);
             if (SendPaste(pasteMethod))
                 return "";
 
@@ -2699,27 +2700,39 @@ namespace ClipAngel
         private void SendPasteOfSelectedTextOrSelectedClips(PasteMethod pasteMethod = PasteMethod.Standart)
         {
             string agregateTextToPaste = "";
-            PasteMethod itemPasteMethod;
+            string agregateFileListToPaste = "";
             string selectedText = "";
-            if (pasteMethod == PasteMethod.Standart)
-                itemPasteMethod = pasteMethod;
+            PasteMethod itemPasteMethod;
+            int count = 0;
+            if (pasteMethod == PasteMethod.File)
+            {
+                DataObject dto = new DataObject();
+                SetClipFilesInDataObject(dto);
+                SetClipboardDataObject(dto, false);
+                SendPaste();
+            }
             else
             {
-                itemPasteMethod = PasteMethod.Null;
-                selectedText = GetSelectedText();
-                if (!String.IsNullOrEmpty(selectedText))
-                    agregateTextToPaste = selectedText;
+                if (pasteMethod == PasteMethod.Standart)
+                    itemPasteMethod = pasteMethod;
+                else
+                {
+                    itemPasteMethod = PasteMethod.Null;
+                    selectedText = GetSelectedText();
+                    if (!String.IsNullOrEmpty(selectedText))
+                        agregateTextToPaste = selectedText;
+                }
+                if (itemPasteMethod == PasteMethod.Null)
+                {
+                    if (String.IsNullOrEmpty(agregateTextToPaste))
+                    {
+                        agregateTextToPaste = JoinOrPasteTextOfClips(itemPasteMethod, out count);
+                    }
+                    SetTextInClipboard(agregateTextToPaste, false);
+                    SendPaste(pasteMethod);
+                }
             }
-            int count = 0;
-            if (String.IsNullOrEmpty(agregateTextToPaste))
-            {
-                agregateTextToPaste = JoinOrPasteTextOfClips(itemPasteMethod, out count);
-            }
-            if (itemPasteMethod == PasteMethod.Null)
-            {
-                SetTextInClipboard(agregateTextToPaste, false);
-                SendPaste(pasteMethod);
-            }
+
             if (String.IsNullOrEmpty(selectedText))
                 SetRowMark("Used", true, true);
             if (true
@@ -2933,11 +2946,9 @@ namespace ClipAngel
                         GetWindowRect(baseWindow, out activeRect);
                         Screen screen = Screen.FromPoint(caretPoint);
                         newX = Math.Max(screen.Bounds.Left,
-                            Math.Min((activeRect.right - activeRect.left - this.Width) / 2 + caretPoint.X,
-                                screen.WorkingArea.Width + screen.WorkingArea.Left - this.Width));
+                            Math.Min((activeRect.right - activeRect.left - this.Width) / 2 + caretPoint.X, screen.WorkingArea.Width + screen.WorkingArea.Left - this.Width));
                         newY = Math.Max(screen.Bounds.Top,
-                            Math.Min((activeRect.bottom - activeRect.top - this.Height) / 2 + caretPoint.Y,
-                                screen.WorkingArea.Height + screen.WorkingArea.Top - this.Height));
+                            Math.Min((activeRect.bottom - activeRect.top - this.Height) / 2 + caretPoint.Y, screen.WorkingArea.Height + screen.WorkingArea.Top - this.Height));
                     }
                 }
             }
@@ -5335,29 +5346,11 @@ namespace ClipAngel
                     {
                         if (info.RowIndex >= 0 && info.ColumnIndex >= 0)
                         {
-                            int maxRowsDrag = 100;
-                            StringCollection fileNameCollection = new StringCollection();
                             DataObject dto = new DataObject();
                             int count = 0;
                             string agregateTextToPaste = JoinOrPasteTextOfClips(PasteMethod.Null, out count);
                             SetTextInClipboardDataObject(dto, agregateTextToPaste);
-                            foreach (DataGridViewRow selectedRow in dataGridView.SelectedRows)
-                            {
-                                DataRowView dataRowView = (DataRowView)selectedRow.DataBoundItem;
-                                SQLiteDataReader RowReader = getRowReader((int)dataRowView["id"]);
-                                string clipText;
-                                ClipDataObject(RowReader, false, out clipText);
-                                if (RowReader["type"].ToString() != "file")
-                                {
-                                    string junkVar;
-                                    string filename = GetClipTempFile(out junkVar, RowReader);
-                                    fileNameCollection.Add(filename);
-                                }
-                                maxRowsDrag--;
-                                if (maxRowsDrag == 0)
-                                    break;
-                            }
-                            dto.SetFileDropList(fileNameCollection);
+                            SetClipFilesInDataObject(dto);
                             dataGridView.DoDragDrop(dto, DragDropEffects.Copy);
                         }
                     }
@@ -5365,9 +5358,41 @@ namespace ClipAngel
             }
         }
 
+        private void SetClipFilesInDataObject(DataObject dto, int maxRowsDrag = 100)
+        {
+            StringCollection fileNameCollection = new StringCollection();
+            foreach (DataGridViewRow selectedRow in dataGridView.SelectedRows)
+            {
+                DataRowView dataRowView = (DataRowView) selectedRow.DataBoundItem;
+                SQLiteDataReader RowReader = getRowReader((int) dataRowView["id"]);
+                string clipText;
+                ClipDataObject(RowReader, false, out clipText);
+                if (RowReader["type"].ToString() != "file")
+                {
+                    string junkVar;
+                    string filename = GetClipTempFile(out junkVar, RowReader);
+                    fileNameCollection.Add(filename);
+                }
+                maxRowsDrag--;
+                if (maxRowsDrag == 0)
+                    break;
+            }
+            dto.SetFileDropList(fileNameCollection);
+        }
+
         private void contextMenuUrlOpenLink_Click(object sender, EventArgs e)
         {
             Process.Start(urlTextBox.Text);
+        }
+
+        private void pasteFileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SendPasteOfSelectedTextOrSelectedClips(PasteMethod.File);
+        }
+
+        private void toolStripMenuItem18_Click(object sender, EventArgs e)
+        {
+            SendPasteOfSelectedTextOrSelectedClips(PasteMethod.File);
         }
     }
 }

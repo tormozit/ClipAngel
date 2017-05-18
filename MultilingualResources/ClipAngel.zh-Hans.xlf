@@ -697,7 +697,7 @@
           <target state="needs-review-translation" state-qualifier="mt-suggestion">是否确实要将设置重置为默认值？</target>
         </trans-unit>
         <trans-unit id="Version" translate="yes" xml:space="preserve">
-          <source>1.24</source>
+          <source>1.25</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">1.22</target>
           <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
@@ -2032,10 +2032,6 @@ Submenu "List" has commands for quick selection</source>
           <source>Tahoma, 9pt</source>
           <target state="needs-review-translation">Tahoma, 9pt</target>
         </trans-unit>
-        <trans-unit id="pasteTextCTRLENTERToolStripMenuItem.Text" translate="yes" xml:space="preserve">
-          <source>Paste text (CTRL+ENTER)</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">粘贴文本 (CTRL + ENTER)</target>
-        </trans-unit>
         <trans-unit id="changeClipTitleToolStripMenuItem.ToolTipText" translate="yes" xml:space="preserve">
           <source>Edit clip title</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">编辑剪辑标题</target>
@@ -2370,10 +2366,6 @@ Url 将被保存在当前剪辑和将被复制到剪贴板。</target>
         <trans-unit id="ImageControl.ImeMode" translate="yes" extype="System.Windows.Forms.ImeMode, System.Windows.Forms" xml:space="preserve">
           <source>NoControl</source>
           <target state="needs-review-translation">NoControl</target>
-        </trans-unit>
-        <trans-unit id="pasteTextCTRLENTERToolStripMenuItem.ToolTipText" translate="yes" xml:space="preserve">
-          <source>Paste in active window as plain text selected text of clip or agregated text of selected clips.</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">在活动窗口中粘贴为纯文本选定文本剪辑或 agregated 文本的选定的剪辑。</target>
         </trans-unit>
         <trans-unit id="showOnlyUsedToolStripMenuItem.ShortcutKeys" translate="yes" extype="System.Windows.Forms.Keys, System.Windows.Forms" xml:space="preserve">
           <source>Ctrl+3</source>
@@ -3871,10 +3863,6 @@ Changes in temp file are not synchronized with clip!
           <source>None</source>
           <target state="needs-review-translation">None</target>
         </trans-unit>
-        <trans-unit id="pasteTextCTRLENTERToolStripMenuItem.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
-          <source>214, 22</source>
-          <target state="needs-review-translation">214, 22</target>
-        </trans-unit>
         <trans-unit id="stripLabelPosition.Text" translate="yes" xml:space="preserve">
           <source>Position</source>
           <target state="needs-review-translation" state-qualifier="tm-suggestion">定位</target>
@@ -4121,7 +4109,7 @@ Changes in temp file are not synchronized with clip!</source>
           <target state="needs-review-translation">212, 22</target>
         </trans-unit>
         <trans-unit id="contextMenuUrl.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
-          <source>189, 70</source>
+          <source>189, 48</source>
           <target state="needs-review-translation">140, 26</target>
           <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
@@ -4391,10 +4379,6 @@ Submenu "List" has commands for quick selection</source>
           <source>Magenta</source>
           <target state="needs-review-translation">Magenta</target>
         </trans-unit>
-        <trans-unit id="$this.ToolTip" translate="yes" xml:space="preserve">
-          <source></source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion"></target>
-        </trans-unit>
         <trans-unit id="toolStripMenuItem6.Text" translate="yes" xml:space="preserve">
           <source>Paste text (CTRL+ENTER)</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">粘贴文本 (CTRL + ENTER)</target>
@@ -4419,10 +4403,6 @@ Submenu "List" has commands for quick selection</source>
         <trans-unit id="idDataGridViewTextBoxColumn.Visible" translate="yes" extype="System.Boolean, mscorlib" xml:space="preserve">
           <source>False</source>
           <target state="needs-review-translation">False</target>
-        </trans-unit>
-        <trans-unit id="splitContainer1.Panel2.ToolTip" translate="yes" xml:space="preserve">
-          <source></source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion"></target>
         </trans-unit>
         <trans-unit id="moveTopToolStripMenuItem.ShortcutKeys" translate="yes" extype="System.Windows.Forms.Keys, System.Windows.Forms" xml:space="preserve">
           <source>Ctrl+Alt+Up</source>
@@ -4491,10 +4471,6 @@ Submenu "List" has commands for quick selection</source>
         <trans-unit id="toolStripMenuItem15.Text" translate="yes" xml:space="preserve">
           <source>Paste text (CTRL+ ENTER)</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">粘贴文本 (CTRL + ENTER)</target>
-        </trans-unit>
-        <trans-unit id="splitContainer1.Panel1.ToolTip" translate="yes" xml:space="preserve">
-          <source></source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion"></target>
         </trans-unit>
         <trans-unit id="toolStripBottom.Dock" translate="yes" extype="System.Windows.Forms.DockStyle, System.Windows.Forms" xml:space="preserve">
           <source>None</source>
@@ -5826,10 +5802,6 @@ Edit filter right from list. Navigate in list right from filter.</source>
           <source>List</source>
           <target state="needs-review-translation" state-qualifier="tm-suggestion">列表</target>
         </trans-unit>
-        <trans-unit id="splitContainer1.ToolTip" translate="yes" xml:space="preserve">
-          <source></source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion"></target>
-        </trans-unit>
         <trans-unit id="resetFavouriteToolStripMenuItem.ToolTipText" translate="yes" xml:space="preserve">
           <source>Unmark selected clips as favorite</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">取消标记选定的剪辑作为最喜欢</target>
@@ -6293,10 +6265,6 @@ added to ignore list, wich can be edited in Settings window.</source>
           <source>946, 26</source>
           <target state="needs-review-translation">946, 26</target>
         </trans-unit>
-        <trans-unit id="$this.Language" translate="yes" xml:space="preserve" extype="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" extradata="metadata">
-          <source>ru</source>
-          <target state="needs-review-translation">ru</target>
-        </trans-unit>
         <trans-unit id="contextMenuUrlOpenLink.Size" translate="yes" xml:space="preserve" extype="System.Drawing.Size, System.Drawing">
           <source>188, 22</source>
           <target state="needs-review-translation">194, 22</target>
@@ -6305,6 +6273,30 @@ added to ignore list, wich can be edited in Settings window.</source>
         <trans-unit id="contextMenuUrlOpenLink.Text" translate="yes" xml:space="preserve">
           <source>Open link (ALT+click)</source>
           <target state="new">Open link (ALT+click)</target>
+        </trans-unit>
+        <trans-unit id="pasteTextToolStripMenuItem.Size" translate="yes" xml:space="preserve" extype="System.Drawing.Size, System.Drawing">
+          <source>214, 22</source>
+          <target state="needs-review-translation">214, 22</target>
+        </trans-unit>
+        <trans-unit id="pasteTextToolStripMenuItem.Text" translate="yes" xml:space="preserve">
+          <source>Paste text (CTRL+ENTER)</source>
+          <target state="new">Paste text (CTRL+ENTER)</target>
+        </trans-unit>
+        <trans-unit id="pasteTextToolStripMenuItem.ToolTipText" translate="yes" xml:space="preserve">
+          <source>Paste in active window as plain text selected text of clip or agregated text of selected clips.</source>
+          <target state="new">Paste in active window as plain text selected text of clip or agregated text of selected clips.</target>
+        </trans-unit>
+        <trans-unit id="pasteFileToolStripMenuItem.Size" translate="yes" xml:space="preserve" extype="System.Drawing.Size, System.Drawing">
+          <source>214, 22</source>
+          <target state="needs-review-translation">214, 22</target>
+        </trans-unit>
+        <trans-unit id="pasteFileToolStripMenuItem.Text" translate="yes" xml:space="preserve">
+          <source>Paste file (SHIFT+ENTER)</source>
+          <target state="new">Paste file (SHIFT+ENTER)</target>
+        </trans-unit>
+        <trans-unit id="pasteFileToolStripMenuItem.ToolTipText" translate="yes" xml:space="preserve">
+          <source>Paste in active window selected clips as files </source>
+          <target state="new">Paste in active window selected clips as files </target>
         </trans-unit>
       </group>
     </body>

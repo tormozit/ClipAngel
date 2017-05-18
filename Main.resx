@@ -490,11 +490,20 @@ Edit filter right from list. Navigate in list right from filter.</value>
     <value>211, 22</value>
   </data>
   <data name="toolStripMenuItem3.Text" xml:space="preserve">
-    <value>Paste  text (CTRL+ENTER)</value>
+    <value>Paste text (CTRL+ENTER)</value>
   </data>
   <data name="toolStripMenuItem3.ToolTipText" xml:space="preserve">
     <value>Paste in active window as plain text selected text of clip or agregated text of selected clips.
 </value>
+  </data>
+  <data name="toolStripMenuItem18.Size" type="System.Drawing.Size, System.Drawing">
+    <value>211, 22</value>
+  </data>
+  <data name="toolStripMenuItem18.Text" xml:space="preserve">
+    <value>Paste file</value>
+  </data>
+  <data name="toolStripMenuItem18.ToolTipText" xml:space="preserve">
+    <value>Paste in active window selected clips as files </value>
   </data>
   <data name="toolStripMenuItem7.Size" type="System.Drawing.Size, System.Drawing">
     <value>211, 22</value>
@@ -575,7 +584,7 @@ Edit filter right from list. Navigate in list right from filter.</value>
     <value>Delete selected clips from list. Real deletion is performed on database close.</value>
   </data>
   <data name="contextMenuStripDataGrid.Size" type="System.Drawing.Size, System.Drawing">
-    <value>212, 202</value>
+    <value>212, 246</value>
   </data>
   <data name="&gt;&gt;contextMenuStripDataGrid.Name" xml:space="preserve">
     <value>contextMenuStripDataGrid</value>
@@ -683,7 +692,7 @@ Edit filter right from list. Navigate in list right from filter.</value>
     <value>Copy all text</value>
   </data>
   <data name="contextMenuUrl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>189, 70</value>
+    <value>189, 48</value>
   </data>
   <data name="&gt;&gt;contextMenuUrl.Name" xml:space="preserve">
     <value>contextMenuUrl</value>
@@ -934,7 +943,7 @@ Edit filter right from list. Navigate in list right from filter.</value>
     <value>1</value>
   </data>
   <data name="tableLayoutPanelData.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="urlTextBox" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="richTextBox" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="htmlTextBox" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="ImageControl" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,100" /&gt;&lt;Rows Styles="Percent,28,57143,Percent,28,57143,Percent,42,85715,Absolute,25" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="urlTextBox" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="richTextBox" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="htmlTextBox" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="ImageControl" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,100" /&gt;&lt;Rows Styles="Percent,28,57143,Percent,28,57143,Percent,42,85715,Absolute,25" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <metadata name="statusStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>5, -1</value>
@@ -1431,14 +1440,23 @@ When ON and "Fast window open" OFF, window will be shown in taskbar if visible.
   <data name="pasteENTERToolStripMenuItem.ToolTipText" xml:space="preserve">
     <value>Paste in active window selected clips. Also performed by double click.</value>
   </data>
-  <data name="pasteTextCTRLENTERToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="pasteTextToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>214, 22</value>
   </data>
-  <data name="pasteTextCTRLENTERToolStripMenuItem.Text" xml:space="preserve">
+  <data name="pasteTextToolStripMenuItem.Text" xml:space="preserve">
     <value>Paste text (CTRL+ENTER)</value>
   </data>
-  <data name="pasteTextCTRLENTERToolStripMenuItem.ToolTipText" xml:space="preserve">
+  <data name="pasteTextToolStripMenuItem.ToolTipText" xml:space="preserve">
     <value>Paste in active window as plain text selected text of clip or agregated text of selected clips.</value>
+  </data>
+  <data name="pasteFileToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>214, 22</value>
+  </data>
+  <data name="pasteFileToolStripMenuItem.Text" xml:space="preserve">
+    <value>Paste file</value>
+  </data>
+  <data name="pasteFileToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>Paste in active window selected clips as files </value>
   </data>
   <data name="toolStripMenuItemPasteChars.Size" type="System.Drawing.Size, System.Drawing">
     <value>214, 22</value>
@@ -3231,6 +3249,12 @@ Changes in temp file are not synchronized with clip!
   <data name="&gt;&gt;toolStripMenuItem3.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;toolStripMenuItem18.Name" xml:space="preserve">
+    <value>toolStripMenuItem18</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItem18.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;toolStripMenuItem7.Name" xml:space="preserve">
     <value>toolStripMenuItem7</value>
   </data>
@@ -3573,10 +3597,16 @@ Changes in temp file are not synchronized with clip!
   <data name="&gt;&gt;pasteENTERToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;pasteTextCTRLENTERToolStripMenuItem.Name" xml:space="preserve">
-    <value>pasteTextCTRLENTERToolStripMenuItem</value>
+  <data name="&gt;&gt;pasteTextToolStripMenuItem.Name" xml:space="preserve">
+    <value>pasteTextToolStripMenuItem</value>
   </data>
-  <data name="&gt;&gt;pasteTextCTRLENTERToolStripMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;pasteTextToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pasteFileToolStripMenuItem.Name" xml:space="preserve">
+    <value>pasteFileToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;pasteFileToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;toolStripMenuItemPasteChars.Name" xml:space="preserve">
