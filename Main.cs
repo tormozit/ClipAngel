@@ -2722,12 +2722,12 @@ namespace ClipAngel
                     if (!String.IsNullOrEmpty(selectedText))
                         agregateTextToPaste = selectedText;
                 }
+                if (String.IsNullOrEmpty(agregateTextToPaste))
+                {
+                    agregateTextToPaste = JoinOrPasteTextOfClips(itemPasteMethod, out count);
+                }
                 if (itemPasteMethod == PasteMethod.Null)
                 {
-                    if (String.IsNullOrEmpty(agregateTextToPaste))
-                    {
-                        agregateTextToPaste = JoinOrPasteTextOfClips(itemPasteMethod, out count);
-                    }
                     SetTextInClipboard(agregateTextToPaste, false);
                     SendPaste(pasteMethod);
                 }
