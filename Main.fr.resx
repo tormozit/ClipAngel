@@ -1739,9 +1739,6 @@
   <data name="contextMenuStripDataGrid.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>212, 202</value>
   </data>
-  <data name="ImageControl.SizeMode" xml:space="preserve" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
-    <value>Zoom</value>
-  </data>
   <data name="tableLayoutPanelData.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
@@ -2300,4 +2297,43 @@
   <data name="toolStripMenuItem18.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>211, 22</value>
   </data>
+  <data name="toolStripMenuItem18.Visible" xml:space="preserve" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="pasteFileToolStripMenuItem.Visible" xml:space="preserve" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="filterByDateToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>250, 22</value>
+  </data>
+  <data name="monthCalendar1.Location" xml:space="preserve" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="monthCalendar1.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="monthCalendar1.Visible" xml:space="preserve" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="monthCalendar1.CalendarDimensions" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>2, 2</value>
+  </data>
+  <data name="monthCalendar1.ImeMode" xml:space="preserve" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="originalSizeToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>150, 22</value>
+  </data>
+  <data name="fitFromInsideToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>150, 22</value>
+  </data>
+  <data name="contextMenuPictureBox.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>151, 48</value>
+  </data>
+  <metadata name="contextMenuPictureBox.TrayLocation" xml:space="preserve" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>274, 57</value>
+  </metadata>
+  <metadata name="$this.Language" xml:space="preserve" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>ru</value>
+  </metadata>
 </root>

@@ -146,6 +146,16 @@ namespace ClipAngel.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap calendar {
+            get {
+                object obj = ResourceManager.GetObject("calendar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Unable to paste into window having higher priviledges. Try run program as administrator..
         /// </summary>
         public static string CantPasteInElevatedWindow {
@@ -203,7 +213,7 @@ namespace ClipAngel.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Copied clip was not captured (too big size {0}KB &gt; {1}KB).
+        ///   Looks up a localized string similar to Copied clip ({2}) was not captured (too big size {0}KB &gt; {1}KB).
         /// </summary>
         public static string ClipWasNotCaptured {
             get {
@@ -881,6 +891,15 @@ namespace ClipAngel.Properties {
         public static string YouLatestVersion {
             get {
                 return ResourceManager.GetString("YouLatestVersion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Zoom.
+        /// </summary>
+        public static string Zoom {
+            get {
+                return ResourceManager.GetString("Zoom", resourceCulture);
             }
         }
         

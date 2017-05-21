@@ -130,8 +130,8 @@
   <data name="CutMarker" xml:space="preserve">
     <value>Show rest of text</value>
   </data>
-  <data name="text" xml:space="preserve">
-    <value>text</value>
+  <data name="Edit" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Picture\Edit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Filter" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\Filter.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -154,11 +154,11 @@
   <data name="Confirmation" xml:space="preserve">
     <value>Confirmation</value>
   </data>
-  <data name="Support" xml:space="preserve">
-    <value>https://sourceforge.net/p/clip-angel/tickets/new/</value>
-  </data>
   <data name="FindNext" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\FindNext.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ClipWasNotCaptured" xml:space="preserve">
+    <value>Copied clip ({2}) was not captured (too big size {0}KB &gt; {1}KB)</value>
   </data>
   <data name="allTypes" xml:space="preserve">
     <value>all types</value>
@@ -187,14 +187,14 @@
   <data name="Donate" xml:space="preserve">
     <value>https://www.paypal.me/tormozit/500</value>
   </data>
-  <data name="MegaByteUnit" xml:space="preserve">
-    <value>MB</value>
-  </data>
   <data name="Size" xml:space="preserve">
     <value>Size</value>
   </data>
   <data name="TypeText" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\TypeText.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TypeFile" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Picture\TypeFile.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="NextClip" xml:space="preserve">
     <value>Next сlip</value>
@@ -207,6 +207,9 @@
   </data>
   <data name="clear1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\clear1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="WordWrap" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Picture\word wrap.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="NewVersionAvailable" xml:space="preserve">
     <value>New version is available. To update use button is top command bar.</value>
@@ -232,8 +235,14 @@
   <data name="keyboard" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\keyboard.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="TextFormatting" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Picture\TextFormatting.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="HelpPage" xml:space="preserve">
+    <value>https://sourceforge.net/p/clip-angel/wiki/Description/</value>
+  </data>
+  <data name="PastedLastClip" xml:space="preserve">
+    <value>Just pasted clip is the last</value>
+  </data>
+  <data name="Compare" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Picture\Compare.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="copy" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\copy.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -268,9 +277,6 @@
   <data name="ByteUnit" xml:space="preserve">
     <value>B</value>
   </data>
-  <data name="HelpPage" xml:space="preserve">
-    <value>https://sourceforge.net/p/clip-angel/wiki/Description/</value>
-  </data>
   <data name="QuestionResetSettings" xml:space="preserve">
     <value>Are you sure want to reset settings to default values?</value>
   </data>
@@ -292,14 +298,14 @@
   <data name="Back" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\Back.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="LastClipWasMultiCaptured" xml:space="preserve">
+    <value>Last clip was captured twice before compare</value>
+  </data>
   <data name="HowUseAutoTitle" xml:space="preserve">
     <value>Clear string to use auto title</value>
   </data>
   <data name="PixelFormat" xml:space="preserve">
     <value>Pixel</value>
-  </data>
-  <data name="translate" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Picture\translate.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="TypeImg" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\TypeImg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -310,11 +316,14 @@
   <data name="MoveCopiedClipToTop" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\MoveCopiedClipToTop.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="TypeFile" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Picture\TypeFile.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="FindOptions" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Picture\FindOptions.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ClipFileAlreadyOpened" xml:space="preserve">
-    <value>Clip file already opened and blocked</value>
+  <data name="Support" xml:space="preserve">
+    <value>https://sourceforge.net/p/clip-angel/tickets/new/</value>
+  </data>
+  <data name="TextFormatting" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Picture\TextFormatting.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="down" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\down.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -328,8 +337,8 @@
   <data name="FailedToWriteClipboard" xml:space="preserve">
     <value>Failed to write clipboard. It is locked by window "{0}" application "{1}"</value>
   </data>
-  <data name="WordWrap" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Picture\word wrap.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="translate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Picture\translate.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="allMarks" xml:space="preserve">
     <value>all marks</value>
@@ -346,8 +355,11 @@
   <data name="Top1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\Top1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Compare" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Picture\Compare.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="text" xml:space="preserve">
+    <value>text</value>
+  </data>
+  <data name="FixedWidthFont" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Picture\FixedWidthFont.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="СonfirmDeleteAllNonFavorite" xml:space="preserve">
     <value>Are you sure want to delete all non favorite clips?</value>
@@ -358,28 +370,22 @@
   <data name="alien" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\alien.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="MarkFavorite" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Picture\Set favorite.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="FixedWidthFont" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Picture\FixedWidthFont.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Edit" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Picture\Edit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="FindOptions" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Picture\FindOptions.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Search" xml:space="preserve">
     <value>Search</value>
   </data>
-  <data name="LastClipWasMultiCaptured" xml:space="preserve">
-    <value>Last clip was captured twice before compare</value>
+  <data name="MarkFavorite" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Picture\Set favorite.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ClipWasNotCaptured" xml:space="preserve">
-    <value>Copied clip was not captured (too big size {0}KB &gt; {1}KB)</value>
+  <data name="ClipFileAlreadyOpened" xml:space="preserve">
+    <value>Clip file already opened and blocked</value>
   </data>
-  <data name="PastedLastClip" xml:space="preserve">
-    <value>Just pasted clip is the last</value>
+  <data name="MegaByteUnit" xml:space="preserve">
+    <value>MB</value>
+  </data>
+  <data name="calendar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Picture\calendar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Zoom" xml:space="preserve">
+    <value>Zoom</value>
   </data>
 </root>

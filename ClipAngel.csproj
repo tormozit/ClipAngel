@@ -124,6 +124,9 @@
     <Compile Include="Components\PortableSettingsProvider .cs" />
     <Compile Include="Components\DataGridViewRichTextBoxColumn.cs" />
     <Compile Include="Components\UacHelper.cs" />
+    <Compile Include="Components\ZoomablePictureBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="dbDataSet.cs">
       <DependentUpon>dbDataSet.xsd</DependentUpon>
     </Compile>
@@ -348,14 +351,38 @@
     <EmbeddedResource Include="SettingsForm.zh-Hans.resx">
       <DependentUpon>SettingsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="VisibleUserSettings.de.resx" />
-    <EmbeddedResource Include="VisibleUserSettings.el.resx" />
-    <EmbeddedResource Include="VisibleUserSettings.es.resx" />
-    <EmbeddedResource Include="VisibleUserSettings.fr.resx" />
-    <EmbeddedResource Include="VisibleUserSettings.hi.resx" />
-    <EmbeddedResource Include="VisibleUserSettings.it.resx" />
-    <EmbeddedResource Include="VisibleUserSettings.pl.resx" />
-    <EmbeddedResource Include="VisibleUserSettings.pt-BR.resx" />
+    <EmbeddedResource Include="VisibleUserSettings.de.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>VisibleUserSettings.de.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VisibleUserSettings.el.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>VisibleUserSettings.el.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VisibleUserSettings.es.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>VisibleUserSettings.es.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VisibleUserSettings.fr.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>VisibleUserSettings.fr.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VisibleUserSettings.hi.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>VisibleUserSettings.hi.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VisibleUserSettings.it.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>VisibleUserSettings.it.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VisibleUserSettings.pl.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>VisibleUserSettings.pl.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VisibleUserSettings.pt-BR.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>VisibleUserSettings.pt-BR.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="VisibleUserSettings.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>VisibleUserSettings.Designer.cs</LastGenOutput>
@@ -364,7 +391,10 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>VisibleUserSettings.RU.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="VisibleUserSettings.zh-Hans.resx" />
+    <EmbeddedResource Include="VisibleUserSettings.zh-Hans.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>VisibleUserSettings.zh-Hans.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <None Include="dbDataSet.xsc">
       <DependentUpon>dbDataSet.xsd</DependentUpon>
     </None>
@@ -515,6 +545,9 @@
     <XliffResource Include="MultilingualResources\ClipAngel.pl.xlf" />
     <XliffResource Include="MultilingualResources\ClipAngel.pt-BR.xlf" />
     <XliffResource Include="MultilingualResources\ClipAngel.zh-Hans.xlf" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Picture\calendar.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Multilingual App Toolkit\Microsoft.Multilingual.ResxResources.targets" Label="MultilingualAppToolkit" Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\Multilingual App Toolkit\v$(MultilingualAppToolkitVersion)\Microsoft.Multilingual.ResxResources.targets')" />
