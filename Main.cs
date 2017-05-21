@@ -577,7 +577,7 @@ namespace ClipAngel
                     else if (!captureTimer.Enabled)
                     {
                         captureTimer.Tick += delegate { CaptureClipboardData(); };
-                        captureTimer.Interval = 100;
+                        captureTimer.Interval = 50;
                         captureTimer.Start();
                     }
                     break;
@@ -1649,7 +1649,7 @@ namespace ClipAngel
                         clipWindow, clipUrl, clipCharsImage, appPath, false, false, htmlText == "");
                     imageSampleBuffer = new byte[0];
                 }
-                if (bitmap == null || htmlText != "")
+                if (clipType != "")
                 {
                     // Non image clip
                     AddClip(new byte[0], imageSampleBuffer, htmlText, richText, clipType, clipText, clipApplication,
@@ -1833,7 +1833,7 @@ namespace ClipAngel
                         && oldCurrentClipId == LastId 
                         && (false
                             || _lastCaptureMoment == null
-                            || (DateTime.Now - _lastCaptureMoment).Milliseconds > 100) // Protection from automated repeated copy. For example PuntoSwitcher does so.
+                            || (DateTime.Now - _lastCaptureMoment).Milliseconds > 50) // Protection from automated repeated copy. For example PuntoSwitcher does so.
                             )
                     {
                         lastClipWasMultiCaptured = true;
