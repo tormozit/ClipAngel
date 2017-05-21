@@ -62,7 +62,7 @@ namespace ClipAngel
         bool AllowHotkeyProcess = true;
         bool EditMode = false;
         SQLiteDataReader RowReader;
-        static string LinkPattern = "\\b(https?|ftp|file)://[-A-Z0-9+&@#/%?=~_|!:,.;]*[A-Z0-9+&@#/%=~_|]";
+        static string LinkPattern = "\\b(https?|ftp|file)://[-A-Z0-9+&@#\\\\/%?=~_|!:,.;]*[A-Z0-9+&@#/%=~_|]";
         int LastId = 0;
         MatchCollection TextLinkMatches;
         MatchCollection UrlLinkMatches;
@@ -1590,7 +1590,7 @@ namespace ClipAngel
                 int clipCharsImage = 0;
                 // http://www.cyberforum.ru/ado-net/thread832314.html
                 // html text check to prevent crush from too big generated Excel image
-                if (iData.GetDataPresent(DataFormats.Bitmap) && htmlText.Length < 100000)
+                if (iData.GetDataPresent(DataFormats.Bitmap) && !String.IsNullOrEmpty(htmlText) && htmlText.Length < 100000)
                 {
                     //clipType = "img";
                     bitmap = iData.GetData(DataFormats.Bitmap) as Bitmap;
@@ -1642,9 +1642,9 @@ namespace ClipAngel
                 {
                     // Image clip
                     AddClip(binaryBuffer, imageSampleBuffer, "", "", "img", clipTextImage, clipApplication,
-                        clipWindow, clipUrl, clipCharsImage, appPath, false, false, htmlText == "");
+                        clipWindow, clipUrl, clipCharsImage, appPath, false, false, String.IsNullOrEmpty(htmlText));
                 }
-                if (bitmap == null || htmlText != "")
+                if (bitmap == null || !String.IsNullOrEmpty(htmlText))
                 {
                     // Non image clip
                     AddClip(new byte[0], new byte[0], htmlText, richText, clipType, clipText, clipApplication,
