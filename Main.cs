@@ -1526,7 +1526,11 @@ namespace ClipAngel
                 if (iData.GetDataPresent(DataFormats.Html))
                 {
                     htmlText = (string) iData.GetData(DataFormats.Html);
-                    if (!String.IsNullOrEmpty(htmlText))
+                    if (String.IsNullOrEmpty(htmlText))
+                    {
+                        htmlText = "";
+                    }
+                    else
                     {
                         clipType = "html";
                         Match match = Regex.Match(htmlText, "SourceURL:(" + LinkPattern + ")", RegexOptions.IgnoreCase);
@@ -1590,39 +1594,39 @@ namespace ClipAngel
                 int clipCharsImage = 0;
                 // http://www.cyberforum.ru/ado-net/thread832314.html
                 // html text check to prevent crush from too big generated Excel image
-                if (iData.GetDataPresent(DataFormats.Bitmap) && !String.IsNullOrEmpty(htmlText) && htmlText.Length < 100000)
+                if (iData.GetDataPresent(DataFormats.Bitmap) && htmlText.Length < 100000)
                 {
                     //clipType = "img";
                     bitmap = iData.GetData(DataFormats.Bitmap) as Bitmap;
-                    if (bitmap == null)
-                        // Happens while copying image in standart image viewer Windows 10
-                        return;
-                    using (MemoryStream memoryStream = new MemoryStream())
+                    if (bitmap != null) // NUll happens while copying image in standart image viewer Windows 10
                     {
-                        bitmap.Save(memoryStream, ImageFormat.Png);
-                        binaryBuffer = memoryStream.ToArray();
+                        using (MemoryStream memoryStream = new MemoryStream())
+                        {
+                            bitmap.Save(memoryStream, ImageFormat.Png);
+                            binaryBuffer = memoryStream.ToArray();
+                        }
+                        //clipTextImage = CurrentLangResourceManager.GetString("Size") + ": " + image.Width + "x" + image.Height + "\n"
+                        //     + CurrentLangResourceManager.GetString("PixelFormat") + ": " + image.PixelFormat + "\n";
+                        clipTextImage = bitmap.Width + " x " + bitmap.Height;
+                        if (!String.IsNullOrEmpty(clipWindow))
+                            clipTextImage += ", " + clipWindow;
+                        clipTextImage += ", " + CurrentLangResourceManager.GetString("PixelFormat") + ": " +
+                                         Image.GetPixelFormatSize(bitmap.PixelFormat);
+                        clipCharsImage = bitmap.Width * bitmap.Height;
+                        // OCR
+                        //try
+                        //{
+                        //    TesseractEngine ocr = new TesseractEngine("./tessdata", "eng", EngineMode.TesseractAndCube);
+                        //    string fileName = Path.GetTempFileName();
+                        //    image.Save(fileName);
+                        //    Pix pix = Pix.LoadFromFile(fileName);
+                        //    var result = ocr.Process(pix, PageSegMode.Auto);
+                        //    clipText = result.GetText();
+                        //}
+                        //catch (Exception e)
+                        //{
+                        //}
                     }
-                    //clipTextImage = CurrentLangResourceManager.GetString("Size") + ": " + image.Width + "x" + image.Height + "\n"
-                    //     + CurrentLangResourceManager.GetString("PixelFormat") + ": " + image.PixelFormat + "\n";
-                    clipTextImage = bitmap.Width + " x " + bitmap.Height;
-                    if (!String.IsNullOrEmpty(clipWindow))
-                        clipTextImage += ", " + clipWindow;
-                    clipTextImage += ", " + CurrentLangResourceManager.GetString("PixelFormat") + ": " +
-                                Image.GetPixelFormatSize(bitmap.PixelFormat);
-                    clipCharsImage = bitmap.Width * bitmap.Height;
-                    // OCR
-                    //try
-                    //{
-                    //    TesseractEngine ocr = new TesseractEngine("./tessdata", "eng", EngineMode.TesseractAndCube);
-                    //    string fileName = Path.GetTempFileName();
-                    //    image.Save(fileName);
-                    //    Pix pix = Pix.LoadFromFile(fileName);
-                    //    var result = ocr.Process(pix, PageSegMode.Auto);
-                    //    clipText = result.GetText();
-                    //}
-                    //catch (Exception e)
-                    //{
-                    //}
                 }
                 if (bitmap != null)
                     using (MemoryStream memoryStream = new MemoryStream())
@@ -1638,16 +1642,17 @@ namespace ClipAngel
                     }
 
                 // Split Image+Html clip into 2: Image and Html 
-                if (bitmap != null)
+                if (clipTextImage != "")
                 {
                     // Image clip
                     AddClip(binaryBuffer, imageSampleBuffer, "", "", "img", clipTextImage, clipApplication,
-                        clipWindow, clipUrl, clipCharsImage, appPath, false, false, String.IsNullOrEmpty(htmlText));
+                        clipWindow, clipUrl, clipCharsImage, appPath, false, false, htmlText == "");
+                    imageSampleBuffer = new byte[0];
                 }
-                if (bitmap == null || !String.IsNullOrEmpty(htmlText))
+                if (bitmap == null || htmlText != "")
                 {
                     // Non image clip
-                    AddClip(new byte[0], new byte[0], htmlText, richText, clipType, clipText, clipApplication,
+                    AddClip(new byte[0], imageSampleBuffer, htmlText, richText, clipType, clipText, clipApplication,
                         clipWindow, clipUrl, clipChars, appPath, false, false, true);
                 }
             }
