@@ -161,6 +161,7 @@ namespace ClipAngel
             keyboardHook = new KeyboardHook(CurrentLangResourceManager);
             keyboardHook.KeyPressed += new EventHandler<KeyPressedEventArgs>(hook_KeyPressed);
             ImageControl.MouseWheel += new MouseEventHandler(ImageControl_MouseWheel);
+            captureTimer.Tick += delegate { CaptureClipboardData(); };
             RegisterHotKeys();
             toolStripTop.Renderer = new MyToolStripRenderer();
             toolStripBottom.Renderer = new MyToolStripRenderer();
@@ -576,7 +577,6 @@ namespace ClipAngel
                         UsualClipboardMode = false;
                     else if (!captureTimer.Enabled)
                     {
-                        captureTimer.Tick += delegate { CaptureClipboardData(); };
                         captureTimer.Interval = 50;
                         captureTimer.Start();
                     }
