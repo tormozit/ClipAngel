@@ -1647,7 +1647,8 @@ namespace ClipAngel
                     // Image clip
                     AddClip(binaryBuffer, imageSampleBuffer, "", "", "img", clipTextImage, clipApplication,
                         clipWindow, clipUrl, clipCharsImage, appPath, false, false, htmlText == "");
-                    imageSampleBuffer = new byte[0];
+                    if (!String.IsNullOrWhiteSpace(clipText))
+                        imageSampleBuffer = new byte[0];
                 }
                 if (clipType != "")
                 {
