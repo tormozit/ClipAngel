@@ -172,7 +172,7 @@ namespace ClipAngel
             OuterPanel.Cursor = System.Windows.Forms.Cursors.NoMove2D;
             OuterPanel.AutoScroll = true;
             OuterPanel.MouseEnter += new EventHandler(PicBox_MouseEnter);
-            PicBox.MouseEnter += new EventHandler(PicBox_MouseEnter);
+            //PicBox.MouseEnter += new EventHandler(PicBox_MouseEnter); // It will steal focus without reason. It's very bad
             PicBox.DoubleClick += new EventHandler(PicBox_DoubleClick);
             PicBox.MouseDown += new MouseEventHandler(PicBox_MouseDown);
             PicBox.MouseMove += new MouseEventHandler(PicBox_MouseMove);

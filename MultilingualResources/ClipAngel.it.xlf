@@ -1313,7 +1313,7 @@ Non applicabile a HTML di formattazione nativa.</target>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Sei sicuro di voler ripristinare le impostazioni ai valori predefiniti?</target>
         </trans-unit>
         <trans-unit id="Version" translate="yes" xml:space="preserve">
-          <source>1.25</source>
+          <source>1.26</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">1.22</target>
           <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
