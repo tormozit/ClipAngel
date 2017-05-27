@@ -173,7 +173,7 @@ namespace ClipAngel
             { "Greek", "Greek (by machine)"},
             { "Hindi", "Hindi (by machine)"},
             { "Italian", "Italian (by machine)"},
-            { "Polish", "Polish (by machine)"},
+            { "Polish", "Polish (by Galileusz)"},
             { "PortugueseBrazil", "Portuguese-Brazil (by Nelson Carvalho)"},
             { "Russian", "Russian (by Tormozit)"},
             { "Spain", "Spain (by machine)"}

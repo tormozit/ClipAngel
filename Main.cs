@@ -14,6 +14,7 @@ using System.Collections.Specialized;
 using System.Drawing.Imaging;
 using System.Globalization;
 using System.IO;
+using System.Linq;
 using System.Linq.Expressions;
 using System.Media;
 using System.Security.Cryptography;
@@ -62,7 +63,6 @@ namespace ClipAngel
         bool AllowHotkeyProcess = true;
         bool EditMode = false;
         SQLiteDataReader RowReader;
-        static string LinkPattern = "\\b(https?|ftp|file)://[-A-Z0-9+&@#\\\\/%?=~_|!:,.;]*[A-Z0-9+&@#/%=~_|]";
         int LastId = 0;
         MatchCollection TextLinkMatches;
         MatchCollection UrlLinkMatches;
@@ -120,6 +120,20 @@ namespace ClipAngel
         private bool lastClipWasMultiCaptured = false;
         private Point _LastMousePoint;
         private Timer captureTimer = new Timer();
+        private Thread updateDBThread;
+        private bool stopUpdateDBThread = false;
+        private static string timePattern = "\\b[012]?\\d:[0-5]?\\d:[0-5]?\\d\\b";
+        private static string datePattern = "\\b(?:19|20)?[0-9]{2}[\\-/.][0-9]{2}[\\-/.](?:19|20)?[0-9]{2}\\b";
+        static private Dictionary<string, string> TextPatterns = new Dictionary<string, string>
+        {
+            {"time", "((" + datePattern + "\\s"+ timePattern + ")|(?:(" + timePattern + "\\s)?"+ datePattern + ")|(?:"+ timePattern + "))"},
+            {"email", "(\\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}\\b)"},
+            //{"number", "(?:[\\s\n\r\\(<>\\[]|^)([-+]?[0-9]+\\.?[0-9]+)(?:[;\\s\\)<>\\]%]|,\\B|$)"},
+            {"number", "((?:(?:\\s|^)[-])?\\b[0-9]+\\.?[0-9]+)\\b"},
+            {"phone", "(?:[\\s\\(]|^)(\\+?\\b\\d?(\\d[ \\-\\(\\)]{0,2}){7,19}\\b)"},
+            {"url", "(\\b(?:https?|ftp|file)://[-A-Z0-9+&@#\\\\/%?=~_|!:,.;]*[A-Z0-9+&@#/%=~_|])"}
+        };
+        static string LinkPattern = TextPatterns["url"];
 
         [DllImport("dwmapi", PreserveSig = true)]
         static extern int DwmSetWindowAttribute(IntPtr hWnd, int attr, ref int value, int attrLen);
@@ -191,8 +205,12 @@ namespace ClipAngel
                 new ListItemNameText {Name = "allTypes"},
                 new ListItemNameText {Name = "img"},
                 new ListItemNameText {Name = "file"},
-                new ListItemNameText {Name = "text"}
+                new ListItemNameText {Name = "text"},
             };
+            foreach (KeyValuePair<string, string> pair in TextPatterns)
+            {
+                _comboItemsTypes.Add(new ListItemNameText { Name = "text_" + pair.Key});
+            }
             TypeFilter.DataSource = _comboItemsTypes;
             TypeFilter.DisplayMember = "Text";
             TypeFilter.ValueMember = "Name";
@@ -318,6 +336,35 @@ namespace ClipAngel
                 Debug.WriteLine(ex.Message);
             }
 
+            string fieldsNeedUpdateText = "", fieldsNeedSelectText = "";
+            StringCollection patternNamesNeedUpdate = new StringCollection();
+            SQLiteCommand commandUpdate = new SQLiteCommand("", m_dbConnection);
+            foreach (KeyValuePair<string, string> pair in TextPatterns)
+            {
+                string fieldName = "Contain_" + pair.Key;
+                command = new SQLiteCommand(String.Format("ALTER TABLE Clips ADD COLUMN {0} BOOLEAN", fieldName), m_dbConnection);
+                commandUpdate.Parameters.AddWithValue(pair.Key, false);
+                try
+                {
+                    command.ExecuteNonQuery();
+                }
+                catch
+                {
+                    continue; // Comment to debug updateDB
+                }
+                if (fieldsNeedUpdateText.Length > 0)
+                    fieldsNeedUpdateText += ", ";
+                fieldsNeedUpdateText += fieldName + " = @" + pair.Key;
+                fieldsNeedSelectText += ", " + fieldName;
+                patternNamesNeedUpdate.Add(pair.Key);
+            }
+            if (patternNamesNeedUpdate.Count > 0)
+            {
+                ThreadStart work = delegate {UpdateNewDBFieldsBackground(commandUpdate, fieldsNeedUpdateText, fieldsNeedSelectText, patternNamesNeedUpdate);};
+                updateDBThread = new Thread(work);
+                updateDBThread.Start();
+            }
+
             // http://blog.tigrangasparian.com/2012/02/09/getting-started-with-sqlite-in-c-part-one/
             //sql = "CREATE TABLE Clips (Title VARCHAR(50), Text VARCHAR(0), Data BLOB, Size INT, Type VARCHAR(10), Created DATETIME, Application VARCHAR(50), Window VARCHAR(100))";
             //command = new SQLiteCommand(sql, m_dbConnection);
@@ -331,6 +378,33 @@ namespace ClipAngel
             dataAdapter = new SQLiteDataAdapter("", ConnectionString);
             //dataGridView.DataSource = clipBindingSource;
             UpdateClipBindingSource();
+        }
+
+        private void UpdateNewDBFieldsBackground(SQLiteCommand commandUpdate, string fieldsNeedUpdateText, string fieldsNeedSelectText, StringCollection patternNamesNeedUpdate)
+        {
+            commandUpdate.CommandText = "UPDATE Clips SET " + fieldsNeedUpdateText + " WHERE Id = @Id";
+            commandUpdate.Parameters.AddWithValue("Id", 0);
+            SQLiteCommand commandSelect = new SQLiteCommand("", m_dbConnection);
+            commandSelect.CommandText = "SELECT Id, Text " + fieldsNeedSelectText + " FROM Clips";
+            using (SQLiteDataReader reader = commandSelect.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    if (stopUpdateDBThread)
+                        return;
+                    int ClipId = reader.GetInt32(reader.GetOrdinal("Id"));
+                    string plainText = reader.GetString(reader.GetOrdinal("Text"));
+                    commandUpdate.Parameters["id"].Value = ClipId;
+                    bool needWrite = false;
+                    foreach (string patternName in patternNamesNeedUpdate)
+                    {
+                        needWrite = Regex.IsMatch(plainText, TextPatterns[patternName], RegexOptions.IgnoreCase);
+                        commandUpdate.Parameters[patternName].Value = needWrite;
+                    }
+                    if (needWrite)
+                        commandUpdate.ExecuteNonQuery();
+                }
+            }
         }
 
         private void ResetIsMainProperty()
@@ -722,7 +796,8 @@ namespace ClipAngel
             DataRowView CurrentRowView;
             mshtml.IHTMLDocument2 htmlDoc;
             string clipType;
-            bool autoSelectMatch = (filterText.Length > 0 && Properties.Settings.Default.AutoSelectMatch);
+            string textPattern = RegexpPattern();
+            bool autoSelectMatch = (textPattern.Length > 0 && Properties.Settings.Default.AutoSelectMatch);
             FullTextLoad = FullTextLoad || EditMode;
             richTextBox.ReadOnly = !EditMode;
             RowReader = null;
@@ -881,9 +956,9 @@ namespace ClipAngel
                         //paragraph.Style = markerColor.ToString();
                         //paragraph.Style = markerFont.ToString();
                         //htmlTextBox.Document.Body.AppendChild(paragraph);
-                        if (filterText.Length > 0)
+                        if (textPattern.Length > 0)
                         {
-                            MarkRegExpMatchesInWebBrowser(htmlTextBox, RegexpPattern(), true);
+                            MarkRegExpMatchesInWebBrowser(htmlTextBox, textPattern, !String.IsNullOrEmpty(filterText));
                         }
                     }
                     else
@@ -897,9 +972,9 @@ namespace ClipAngel
                         // Do it first, else ending hyperlink will connect underline to it
 
                         MarkLinksInRichTextBox(richTextBox, out TextLinkMatches);
-                        if (filterText.Length > 0)
+                        if (textPattern.Length > 0)
                         {
-                            MarkRegExpMatchesInRichTextBox(richTextBox, RegexpPattern(), Color.Red, false, true, out FilterMatches);
+                            MarkRegExpMatchesInRichTextBox(richTextBox, textPattern, Color.Red, false, !String.IsNullOrEmpty(filterText), out FilterMatches);
                         }
                     }
                 }
@@ -1116,11 +1191,11 @@ namespace ClipAngel
             int maxMarked = 50; // prevent slow down
             foreach (Match match in matches)
             {
-                control.SelectionStart = match.Index;
-                control.SelectionLength = match.Length;
-                if (match.Groups.Count > 2)
+                control.SelectionStart = match.Groups[1].Index;
+                control.SelectionLength = match.Groups[1].Length;
+                if (match.Groups.Count > 3)
                 {
-                    for (int counter=1; counter < match.Groups.Count; counter++)
+                    for (int counter=2; counter < match.Groups.Count; counter++)
                     {
                         if (match.Groups[counter].Success)
                         {
@@ -1204,7 +1279,6 @@ namespace ClipAngel
         private void TextFilterApply()
         {
             ReadFilterText();
-            ChooseTitleColumnDraw();
             UpdateClipBindingSource(true);
         }
 
@@ -1261,11 +1335,17 @@ namespace ClipAngel
             if (TypeFilter.SelectedValue as string != "allTypes")
             {
                 filterValue = TypeFilter.SelectedValue as string;
-                if (filterValue == "text")
-                    filterValue = "'html','rtf','text'";
+                bool isText = filterValue.Contains("text");
+                string filterValueText;
+                if (isText)
+                    filterValueText = "'html','rtf','text'";
                 else
-                    filterValue = "'" + filterValue + "'";
-                sqlFilter += " AND type IN (" + filterValue + ")";
+                    filterValueText = "'" + filterValue + "'";
+                sqlFilter += " AND type IN (" + filterValueText + ")";
+                if (isText && filterValue != "text")
+                {
+                    sqlFilter += String.Format(" AND Contain_{0}", filterValue.Substring("text_".Length));
+                }
                 filterOn = true;
             }
             if (MarkFilter.SelectedValue as string != "allMarks")
@@ -1385,7 +1465,6 @@ namespace ClipAngel
                 TypeFilter.SelectedIndex = 0;
                 MarkFilter.SelectedIndex = 0;
                 AllowFilterProcessing = true;
-                ChooseTitleColumnDraw();
                 //UpdateClipBindingSource(false, CurrentClipID);
                 UpdateClipBindingSource(true, CurrentClipID); // To repaint text
             }
@@ -1818,6 +1897,7 @@ namespace ClipAngel
             string sql = "SELECT Id, Title, Used, Favorite, Created FROM Clips Where Hash = @Hash";
             SQLiteCommand commandSelect = new SQLiteCommand(sql, m_dbConnection);
             commandSelect.Parameters.AddWithValue("@Hash", hash);
+
             int oldCurrentClipId = 0;
             lastClipWasMultiCaptured = false;
             using (SQLiteDataReader reader = commandSelect.ExecuteReader())
@@ -1844,11 +1924,8 @@ namespace ClipAngel
                 }
             }
             LastId = LastId + 1;
-            sql = "insert into Clips (Id, Title, Text, Application, Window, Created, Type, Binary, ImageSample, Size, Chars, RichText, HtmlText, Used, Favorite, Url, Hash, appPath) "
-                  +
-                  "values (@Id, @Title, @Text, @Application, @Window, @Created, @Type, @Binary, @ImageSample, @Size, @Chars, @RichText, @HtmlText, @Used, @Favorite, @Url, @Hash, @appPath)";
 
-            SQLiteCommand commandInsert = new SQLiteCommand(sql, m_dbConnection);
+            SQLiteCommand commandInsert = new SQLiteCommand("", m_dbConnection);
             commandInsert.Parameters.AddWithValue("@Id", LastId);
             commandInsert.Parameters.AddWithValue("@Title", clipTitle);
             commandInsert.Parameters.AddWithValue("@Text", plainText);
@@ -1867,6 +1944,18 @@ namespace ClipAngel
             commandInsert.Parameters.AddWithValue("@Favorite", favorite);
             commandInsert.Parameters.AddWithValue("@Hash", hash);
             commandInsert.Parameters.AddWithValue("@appPath", appPath);
+            string intoFieldsText = "", intoParamsText = "";
+            foreach (KeyValuePair<string, string> pair in TextPatterns)
+            {
+                commandInsert.Parameters.AddWithValue("@Contain_" + pair.Key, Regex.IsMatch(plainText, pair.Value, RegexOptions.IgnoreCase));
+                intoFieldsText += ", Contain_" + pair.Key;
+                intoParamsText += ", @Contain_" + pair.Key;
+            }
+            sql = "insert into Clips (Id, Title, Text, Application, Window, Created, Type, Binary, ImageSample, Size, Chars, RichText, HtmlText, Used, Favorite, Url, Hash, appPath"
+                  + intoFieldsText + ") "
+                  + "values (@Id, @Title, @Text, @Application, @Window, @Created, @Type, @Binary, @ImageSample, @Size, @Chars, @RichText, @HtmlText, @Used, @Favorite, @Url, @Hash, @appPath"
+                  + intoParamsText + ")";
+            commandInsert.CommandText = sql;
             commandInsert.ExecuteNonQuery();
 
             //dbDataSet.ClipsDataTable ClipsTable = (dbDataSet.ClipsDataTable)clipBindingSource.DataSource;
@@ -2965,8 +3054,8 @@ namespace ClipAngel
                     {
                         activeRect = guiInfo.rcCaret;
                         Screen screen = Screen.FromPoint(caretPoint);
-                        newX = Math.Min(activeRect.right + caretPoint.X, screen.WorkingArea.Width + screen.WorkingArea.Left - this.Width);
-                        newY = Math.Min(activeRect.bottom + caretPoint.Y + 1, screen.WorkingArea.Height + screen.WorkingArea.Top - this.Height);
+                        newX = Math.Max(screen.Bounds.Left, Math.Min(activeRect.right + caretPoint.X, screen.WorkingArea.Width + screen.WorkingArea.Left - this.Width));
+                        newY = Math.Max(screen.Bounds.Top, Math.Min(activeRect.bottom + caretPoint.Y + 1, screen.WorkingArea.Height + screen.WorkingArea.Top - this.Height));
                     }
                     else
                     {
@@ -3291,31 +3380,29 @@ namespace ClipAngel
                 row.Cells["TypeImage"].Value = image;
             }
             row.Cells["ColumnTitle"].Value = dataRowView.Row["Title"].ToString();
-            if (!String.IsNullOrEmpty(filterText) && dataGridView.Columns["ColumnTitle"].Visible)
+
+            string textPattern = RegexpPatternFromTextFilter();
+            if (!String.IsNullOrEmpty(textPattern))
             {
                 _richTextBox.Clear();
                 _richTextBox.Font = dataGridView.RowsDefaultCellStyle.Font;
                 _richTextBox.Text = row.Cells["ColumnTitle"].Value.ToString();
                 MatchCollection tempMatches;
-                MarkRegExpMatchesInRichTextBox(_richTextBox, RegexpPattern(), Color.Red, false, true, out tempMatches);
+                MarkRegExpMatchesInRichTextBox(_richTextBox, textPattern, Color.Red, false, true, out tempMatches);
                 row.Cells["ColumnTitle"].Value = _richTextBox.Rtf;
             }
-            if (dataGridView.Columns["ColumnTitle"].Visible)
-            {
-                var imageSampleBuffer = dataRowView["ImageSample"];
-                if (imageSampleBuffer != DBNull.Value)
-                    if ((imageSampleBuffer as byte[]).Length > 0)
-                    {
-                        Image imageSample = GetImageFromBinary((byte[]) imageSampleBuffer);
-                        row.Cells["imageSample"].Value = ChangeImageOpacity(imageSample, 0.8f);
-                        ////string str = BitConverter.ToString((byte[])imageSampleBuffer, 0).Replace("-", string.Empty);
-                        ////string imgString = @"{\pict\pngblip\picw" + imageSample.Width + @"\pich" + imageSample.Height + @"\picwgoal" + imageSample.Width + @"\pichgoal" + imageSample.Height + @"\bin " + str + "}";
-                        //string imgString = GetEmbedImageString((Bitmap)imageSample, 0, 18);
-                        //_richTextBox.SelectionStart = _richTextBox.TextLength;
-                        //_richTextBox.SelectedRtf = imgString;
-                    }
-
-            }
+            var imageSampleBuffer = dataRowView["ImageSample"];
+            if (imageSampleBuffer != DBNull.Value)
+                if ((imageSampleBuffer as byte[]).Length > 0)
+                {
+                    Image imageSample = GetImageFromBinary((byte[]) imageSampleBuffer);
+                    row.Cells["imageSample"].Value = ChangeImageOpacity(imageSample, 0.8f);
+                    ////string str = BitConverter.ToString((byte[])imageSampleBuffer, 0).Replace("-", string.Empty);
+                    ////string imgString = @"{\pict\pngblip\picw" + imageSample.Width + @"\pich" + imageSample.Height + @"\picwgoal" + imageSample.Width + @"\pichgoal" + imageSample.Height + @"\bin " + str + "}";
+                    //string imgString = GetEmbedImageString((Bitmap)imageSample, 0, 18);
+                    //_richTextBox.SelectionStart = _richTextBox.TextLength;
+                    //_richTextBox.SelectedRtf = imgString;
+                }
             if (dataGridView.Columns["AppImage"].Visible)
             {
                 var bitmap = ApplicationIcon(dataRowView["appPath"].ToString(), false);
@@ -3326,6 +3413,20 @@ namespace ClipAngel
         }
 
         private string RegexpPattern()
+        {
+            string textPattern = "";
+            if (!String.IsNullOrEmpty(filterText))
+                textPattern = RegexpPatternFromTextFilter();
+            else
+            {
+                string filterValue = TypeFilter.SelectedValue as string;
+                if (filterValue.Contains("text") && filterValue != "text")
+                    textPattern = TextPatterns[filterValue.Substring("text_".Length)];
+            }
+            return textPattern;
+        }
+
+        private string RegexpPatternFromTextFilter()
         {
             string result = filterText;
             string[] array;
@@ -3342,7 +3443,7 @@ namespace ClipAngel
             }
             if (Properties.Settings.Default.SearchWildcards)
                 result = result.Replace("%", ".*?");
-            return result;
+            return "(" + result + ")";
         }
 
         static public Bitmap ApplicationIcon(string filePath, bool original = true)
@@ -3687,7 +3788,6 @@ namespace ClipAngel
             MarkFilter.DisplayMember = "Text";
             Properties.Settings.Default.RestoreCaretPositionOnFocusReturn = false; // disabled
             dataGridView.RowsDefaultCellStyle.Font = Properties.Settings.Default.Font;
-            ChooseTitleColumnDraw();
             dataGridView.Columns["appImage"].Visible = Properties.Settings.Default.ShowApplicationIconColumn;
             AfterRowLoad();
             this.ResumeLayout();
@@ -3701,15 +3801,6 @@ namespace ClipAngel
                 {
                     ignoreModulesInClipCapture.Add(Path.GetFileNameWithoutExtension(fullFilename).ToLower());
                 }
-        }
-
-        private void ChooseTitleColumnDraw()
-        {
-            bool ResultSimpleDraw;
-            //ResultSimpleDraw = Properties.Settings.Default.ClipListSimpleDraw;
-            ResultSimpleDraw = false;
-            dataGridView.Columns["TitleSimple"].Visible = ResultSimpleDraw;
-            dataGridView.Columns["ColumnTitle"].Visible = !ResultSimpleDraw;
         }
 
         public async void CheckUpdate(bool UserRequest = false)
@@ -3887,6 +3978,9 @@ namespace ClipAngel
 
         private void CloseDatabase()
         {
+            stopUpdateDBThread = true;
+            updateDBThread.Join();
+
             if (RowReader != null)
                 RowReader = null;
             m_dbConnection.Close();
@@ -3957,7 +4051,7 @@ namespace ClipAngel
         {
             if (AllowFilterProcessing)
             {
-                UpdateClipBindingSource();
+                UpdateClipBindingSource(true);
             }
         }
 
@@ -3989,8 +4083,8 @@ namespace ClipAngel
                             && match.Index == 0
                         ))
                     {
-                        control.SelectionStart = match.Index;
-                        control.SelectionLength = match.Length;
+                        control.SelectionStart = match.Groups[1].Index;
+                        control.SelectionLength = match.Groups[1].Length;
                         control.HideSelection = false;
                         break;
                     }
@@ -4080,7 +4174,7 @@ namespace ClipAngel
                 foreach (Match match in FilterMatches)
                 {
                     if (false
-                        || control.SelectionStart > match.Index
+                        || control.SelectionStart > match.Groups[1].Index
                         || (true
                             && control.SelectionLength == 0
                             && match.Index == 0
@@ -4091,8 +4185,8 @@ namespace ClipAngel
                 }
                 if (prevMatch != null)
                 {
-                    control.SelectionStart = prevMatch.Index;
-                    control.SelectionLength = prevMatch.Length;
+                    control.SelectionStart = prevMatch.Groups[1].Index;
+                    control.SelectionLength = prevMatch.Groups[1].Length;
                     control.HideSelection = false;
                 }
             }
@@ -5486,6 +5580,7 @@ namespace ClipAngel
         {
             ImageControl.ZoomOriginalSize();
         }
+
     }
 }
 

@@ -1605,9 +1605,6 @@ Untermenü "Liste" enthält Befehle zur schnellen Auswahl</value>
   <data name="contextMenuStripNotifyIcon.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>188, 114</value>
   </data>
-  <data name="TitleSimple.HeaderText" xml:space="preserve">
-    <value>TitleSimple</value>
-  </data>
   <data name="urlTextBox.Location" xml:space="preserve" type="System.Drawing.Point, System.Drawing">
     <value>2, 345</value>
   </data>
@@ -2639,9 +2636,6 @@ Werden hinzugefügt, um die Liste zu ignorieren, welche bearbeitet werden im Fen
   <metadata name="ImageSample.UserAddedColumn" xml:space="preserve" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="TitleSimple.UserAddedColumn" xml:space="preserve" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <metadata name="CreatedDataGridViewTextBoxColumn.UserAddedColumn" xml:space="preserve" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -2779,8 +2773,5 @@ Werden hinzugefügt, um die Liste zu ignorieren, welche bearbeitet werden im Fen
   </data>
   <metadata name="contextMenuPictureBox.TrayLocation" xml:space="preserve" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>274, 57</value>
-  </metadata>
-  <metadata name="$this.Language" xml:space="preserve" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>ru</value>
   </metadata>
 </root>

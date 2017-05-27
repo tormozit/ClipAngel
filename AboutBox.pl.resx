@@ -67,7 +67,7 @@
     <value>MiddleLeft</value>
   </data>
   <data name="labelCopyright.Text" xml:space="preserve">
-    <value>Copyright</value>
+    <value>Prawa autorskie</value>
   </data>
   <data name="labelVersion.Text" xml:space="preserve">
     <value>Wersja</value>
@@ -79,7 +79,7 @@
     <value>24</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>informacje</value>
+    <value>O Clip Angel</value>
   </data>
   <data name="okButton.Text" xml:space="preserve">
     <value>&amp;OK</value>
@@ -156,13 +156,13 @@
     <value>Both</value>
   </data>
   <data name="linkLabelWebSite.Text" xml:space="preserve">
-    <value>Witryna sieci Web</value>
+    <value>Strona internetowa</value>
   </data>
   <data name="linkLabel1.AutoSize" xml:space="preserve" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="textBoxDescription.Text" xml:space="preserve">
-    <value>Ten program rejestruje wiele obiektów do schowka i pozwala użytkownikowi wybrać i wkleić w dowolnym programie.</value>
+    <value>Ten program przechwytuje wiele obiektów ze schowka i pozwala użytkownikowi wybrać i wkleić je w dowolnym programie.</value>
   </data>
   <data name="labelAuthor.TextAlign" xml:space="preserve" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
@@ -222,7 +222,7 @@
     <value>MiddleLeft</value>
   </data>
   <data name="linkLabel1.Text" xml:space="preserve">
-    <value>Darować</value>
+    <value>Darowizna</value>
   </data>
   <data name="labelAuthor.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
     <value>22</value>
@@ -282,7 +282,7 @@
     <value>0, 17</value>
   </data>
   <data name="labelProductName.Text" xml:space="preserve">
-    <value>Iloczyn</value>
+    <value>Produkt</value>
   </data>
   <data name="linkLabel1.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
     <value>28</value>

@@ -314,7 +314,7 @@
     <value>Очистите строку для использования автозаголовка</value>
   </data>
   <data name="img" xml:space="preserve">
-    <value>карт</value>
+    <value>картин</value>
   </data>
   <data name="Info" xml:space="preserve">
     <value>Информация</value>
@@ -390,5 +390,20 @@
   </data>
   <data name="Zoom" xml:space="preserve">
     <value>Увеличение</value>
+  </data>
+  <data name="text_time" xml:space="preserve">
+    <value>время</value>
+  </data>
+  <data name="text_email" xml:space="preserve">
+    <value>email</value>
+  </data>
+  <data name="text_number" xml:space="preserve">
+    <value>число</value>
+  </data>
+  <data name="text_phone" xml:space="preserve">
+    <value>телефон</value>
+  </data>
+  <data name="text_url" xml:space="preserve">
+    <value>url</value>
   </data>
 </root>

@@ -28,7 +28,7 @@
     <value>14</value>
   </data>
   <data name="buttonReset.Text" xml:space="preserve">
-    <value>Przywróć wartości domyślne</value>
+    <value>Przywróć ustawienia domyślne</value>
   </data>
   <data name="buttonCancel.Anchor" xml:space="preserve" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
@@ -82,7 +82,7 @@
     <value>18</value>
   </data>
   <data name="buttonClearFilter.Text" xml:space="preserve">
-    <value>A</value>
+    <value>X</value>
   </data>
   <data name="buttonClearFilter.ToolTip" xml:space="preserve">
     <value>Wyczyść filtr</value>
@@ -118,7 +118,7 @@
     <value>21</value>
   </data>
   <data name="textBoxFilter.ToolTip" xml:space="preserve">
-    <value>Hot filtr przez nazwę i opis właściwości</value>
+    <value>Szybki filtr poprzez nazwę i opis właściwości</value>
   </data>
   <data name="propertyGrid1.Anchor" xml:space="preserve" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
