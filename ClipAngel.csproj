@@ -168,11 +168,6 @@
     <Compile Include="SettingsForm.Designer.cs">
       <DependentUpon>SettingsForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="VisibleUserSettings.RU.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>VisibleUserSettings.RU.resx</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="AboutBox.de.resx">
       <DependentUpon>AboutBox.cs</DependentUpon>
     </EmbeddedResource>

@@ -3057,8 +3057,8 @@ namespace ClipAngel
                     {
                         activeRect = guiInfo.rcCaret;
                         Screen screen = Screen.FromPoint(caretPoint);
-                        newX = Math.Max(screen.Bounds.Left, Math.Min(activeRect.right + caretPoint.X, screen.WorkingArea.Width + screen.WorkingArea.Left - this.Width));
-                        newY = Math.Max(screen.Bounds.Top, Math.Min(activeRect.bottom + caretPoint.Y + 1, screen.WorkingArea.Height + screen.WorkingArea.Top - this.Height));
+                        newX = Math.Max(screen.WorkingArea.Left, Math.Min(activeRect.right + caretPoint.X, screen.WorkingArea.Width + screen.WorkingArea.Left - this.Width));
+                        newY = Math.Max(screen.WorkingArea.Top, Math.Min(activeRect.bottom + caretPoint.Y + 1, screen.WorkingArea.Height + screen.WorkingArea.Top - this.Height));
                     }
                     else
                     {
@@ -3070,9 +3070,9 @@ namespace ClipAngel
                         ClientToScreen(baseWindow, out caretPoint);
                         GetWindowRect(baseWindow, out activeRect);
                         Screen screen = Screen.FromPoint(caretPoint);
-                        newX = Math.Max(screen.Bounds.Left,
+                        newX = Math.Max(screen.WorkingArea.Left,
                             Math.Min((activeRect.right - activeRect.left - this.Width) / 2 + caretPoint.X, screen.WorkingArea.Width + screen.WorkingArea.Left - this.Width));
-                        newY = Math.Max(screen.Bounds.Top,
+                        newY = Math.Max(screen.WorkingArea.Top,
                             Math.Min((activeRect.bottom - activeRect.top - this.Height) / 2 + caretPoint.Y, screen.WorkingArea.Height + screen.WorkingArea.Top - this.Height));
                     }
                 }

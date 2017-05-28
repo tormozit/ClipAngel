@@ -1293,8 +1293,10 @@ Key press will be processed by the window. </target>
           <target state="new">Do not capture "Clipboard Viewer Ignore" format</target>
         </trans-unit>
         <trans-unit id="IgnoreExclusiveFormatClipCaptureDescription" translate="yes" xml:space="preserve">
-          <source>Do not capture clip with "Clipboard Viewer Ignore" format present. This format is usually  used by password managers when copying passwords to clipboard. Sometimes it may be usefull to switch it OFF temporary.</source>
-          <target state="new">Do not capture clip with "Clipboard Viewer Ignore" format present. This format is usually  used by password managers when copying passwords to clipboard. Sometimes it may be usefull to switch it OFF temporary.</target>
+          <source>Do not capture clip with "Clipboard Viewer Ignore" format present. 
+This format is usually  used by password managers when copying passwords to clipboard. Sometimes it may be usefull to switch it OFF temporary.</source>
+          <target state="new">Do not capture clip with "Clipboard Viewer Ignore" format present. 
+This format is usually  used by password managers when copying passwords to clipboard. Sometimes it may be usefull to switch it OFF temporary.</target>
         </trans-unit>
         <trans-unit id="ImageEditor" translate="yes" xml:space="preserve">
           <source>Image (PNG) file editor application</source>
@@ -1477,8 +1479,10 @@ Not appliable to HTML native formatting.</target>
           <target state="new">Database file</target>
         </trans-unit>
         <trans-unit id="DatabaseFileDescription" translate="yes" xml:space="preserve">
-          <source>You can change database filename to switch to other clipboard history. Leave blank to use standart database file "db.sqlite" in application user settings folder.</source>
-          <target state="new">You can change database filename to switch to other clipboard history. Leave blank to use standart database file "db.sqlite" in application user settings folder.</target>
+          <source>You can change database filename to switch to other clipboard history. 
+Leave blank to use standart database file "db.sqlite" in application user settings folder.</source>
+          <target state="new">You can change database filename to switch to other clipboard history. 
+Leave blank to use standart database file "db.sqlite" in application user settings folder.</target>
         </trans-unit>
       </group>
     </body>

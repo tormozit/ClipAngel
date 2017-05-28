@@ -285,8 +285,10 @@ Nie dotyczy natywnego formatowania HTML.</target>
           <target state="translated">Nie przechwytuj formatu "Ignoruj Podgląd Schowka".</target>
         </trans-unit>
         <trans-unit id="IgnoreExclusiveFormatClipCaptureDescription" translate="yes" xml:space="preserve">
-          <source>Do not capture clip with "Clipboard Viewer Ignore" format present. This format is usually  used by password managers when copying passwords to clipboard. Sometimes it may be usefull to switch it OFF temporary.</source>
-          <target state="translated">Nie przechwytuje klipu z nadanym formatem "Ignoruj Podgląd Schowka". Format ten jest zazwyczaj używany przez menedżery haseł podczas kopiowania haseł do schowka. Czasami może być użyteczne, aby wyłączyć to tymczasowo.</target>
+          <source>Do not capture clip with "Clipboard Viewer Ignore" format present. 
+This format is usually  used by password managers when copying passwords to clipboard. Sometimes it may be usefull to switch it OFF temporary.</source>
+          <target state="needs-review-translation">Nie przechwytuje klipu z nadanym formatem "Ignoruj Podgląd Schowka". Format ten jest zazwyczaj używany przez menedżery haseł podczas kopiowania haseł do schowka. Czasami może być użyteczne, aby wyłączyć to tymczasowo.</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="ImageEditor" translate="yes" xml:space="preserve">
           <source>Image (PNG) file editor application</source>
@@ -475,8 +477,10 @@ Nie dotyczy natywnego formatowania HTML.</target>
           <target state="translated">Plik bazy danych</target>
         </trans-unit>
         <trans-unit id="DatabaseFileDescription" translate="yes" xml:space="preserve">
-          <source>You can change database filename to switch to other clipboard history. Leave blank to use standart database file "db.sqlite" in application user settings folder.</source>
-          <target state="translated">Możesz zmienić nazwę bazy danych, aby przełączyć się na inną historię schowka. Pozostaw puste, aby użyć standartowego pliku bazy danych "db.sqlite" w folderze ustawień użytkownika aplikacji.</target>
+          <source>You can change database filename to switch to other clipboard history. 
+Leave blank to use standart database file "db.sqlite" in application user settings folder.</source>
+          <target state="needs-review-translation">Możesz zmienić nazwę bazy danych, aby przełączyć się na inną historię schowka. Pozostaw puste, aby użyć standartowego pliku bazy danych "db.sqlite" w folderze ustawień użytkownika aplikacji.</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
       </group>
     </body>
