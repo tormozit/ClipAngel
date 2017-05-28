@@ -3978,17 +3978,18 @@ namespace ClipAngel
 
         private void CloseDatabase()
         {
-            stopUpdateDBThread = true;
-            updateDBThread.Join();
-
+            if (updateDBThread != null)
+            {
+                stopUpdateDBThread = true;
+                updateDBThread.Join();
+            }
             if (RowReader != null)
                 RowReader = null;
             m_dbConnection.Close();
 
             // Shrink database to really delete deleted clips
             m_dbConnection.Open();
-            string sql = "vacuum";
-            SQLiteCommand command = new SQLiteCommand(sql, m_dbConnection);
+            SQLiteCommand command = new SQLiteCommand("vacuum", m_dbConnection);
             command.ExecuteNonQuery();
             m_dbConnection.Close();
         }
