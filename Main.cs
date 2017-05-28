@@ -1082,7 +1082,10 @@ namespace ClipAngel
             string htmlClipText = RowReader["htmlText"].ToString();
             if (String.IsNullOrEmpty(htmlClipText))
                 return "";
-            return htmlClipText.Substring(htmlClipText.IndexOf("<html", StringComparison.OrdinalIgnoreCase));
+            int indexOfHtlTag = htmlClipText.IndexOf("<html", StringComparison.OrdinalIgnoreCase);
+            if (indexOfHtlTag < 0)
+                return "";
+            return htmlClipText.Substring(indexOfHtlTag);
         }
 
         private void RestoreTextSelection(int NewSelectionStart = -1, int NewSelectionLength = -1)
