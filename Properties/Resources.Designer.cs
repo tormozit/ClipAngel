@@ -701,7 +701,7 @@ namespace ClipAngel.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to email.
+        ///   Looks up a localized string similar to *email.
         /// </summary>
         public static string text_email {
             get {
@@ -710,7 +710,7 @@ namespace ClipAngel.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to number.
+        ///   Looks up a localized string similar to *number.
         /// </summary>
         public static string text_number {
             get {
@@ -719,7 +719,7 @@ namespace ClipAngel.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to phone.
+        ///   Looks up a localized string similar to *phone.
         /// </summary>
         public static string text_phone {
             get {
@@ -728,7 +728,7 @@ namespace ClipAngel.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to time.
+        ///   Looks up a localized string similar to *time.
         /// </summary>
         public static string text_time {
             get {
@@ -737,7 +737,7 @@ namespace ClipAngel.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to url.
+        ///   Looks up a localized string similar to *url.
         /// </summary>
         public static string text_url {
             get {

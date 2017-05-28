@@ -389,18 +389,18 @@
     <value>Zoom</value>
   </data>
   <data name="text_time" xml:space="preserve">
-    <value>time</value>
+    <value>*time</value>
   </data>
   <data name="text_email" xml:space="preserve">
-    <value>email</value>
+    <value>*email</value>
   </data>
   <data name="text_number" xml:space="preserve">
-    <value>number</value>
+    <value>*number</value>
   </data>
   <data name="text_phone" xml:space="preserve">
-    <value>phone</value>
+    <value>*phone</value>
   </data>
   <data name="text_url" xml:space="preserve">
-    <value>url</value>
+    <value>*url</value>
   </data>
 </root>

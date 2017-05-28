@@ -392,18 +392,18 @@
     <value>Увеличение</value>
   </data>
   <data name="text_time" xml:space="preserve">
-    <value>время</value>
+    <value>*время</value>
   </data>
   <data name="text_email" xml:space="preserve">
-    <value>email</value>
+    <value>*email</value>
   </data>
   <data name="text_number" xml:space="preserve">
-    <value>число</value>
+    <value>*число</value>
   </data>
   <data name="text_phone" xml:space="preserve">
-    <value>телефон</value>
+    <value>*телефон</value>
   </data>
   <data name="text_url" xml:space="preserve">
-    <value>url</value>
+    <value>*url</value>
   </data>
 </root>

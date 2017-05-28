@@ -1466,24 +1466,24 @@ Non applicabile a HTML di formattazione nativa.</target>
           <target state="new">Zoom</target>
         </trans-unit>
         <trans-unit id="text_email" translate="yes" xml:space="preserve">
-          <source>email</source>
-          <target state="new">email</target>
+          <source>*email</source>
+          <target state="new">*email</target>
         </trans-unit>
         <trans-unit id="text_number" translate="yes" xml:space="preserve">
-          <source>number</source>
-          <target state="new">number</target>
+          <source>*number</source>
+          <target state="new">*number</target>
         </trans-unit>
         <trans-unit id="text_phone" translate="yes" xml:space="preserve">
-          <source>phone</source>
-          <target state="new">phone</target>
+          <source>*phone</source>
+          <target state="new">*phone</target>
         </trans-unit>
         <trans-unit id="text_url" translate="yes" xml:space="preserve">
-          <source>url</source>
-          <target state="new">url</target>
+          <source>*url</source>
+          <target state="new">*url</target>
         </trans-unit>
         <trans-unit id="text_time" translate="yes" xml:space="preserve">
-          <source>time</source>
-          <target state="new">time</target>
+          <source>*time</source>
+          <target state="new">*time</target>
         </trans-unit>
       </group>
     </body>
