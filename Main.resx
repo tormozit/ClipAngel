@@ -1320,19 +1320,19 @@ When ON and "Fast window open" OFF, window will be shown in taskbar if visible.
     <value>Window</value>
   </data>
   <data name="moveCopiedClipToTopToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>250, 22</value>
+    <value>237, 22</value>
   </data>
   <data name="moveCopiedClipToTopToolStripMenuItem.Text" xml:space="preserve">
-    <value>Move clip to top after copy/paste</value>
+    <value>Move to top after use</value>
   </data>
   <data name="moveTopToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+Alt+Up</value>
   </data>
   <data name="moveTopToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>250, 22</value>
+    <value>237, 22</value>
   </data>
   <data name="moveTopToolStripMenuItem.Text" xml:space="preserve">
-    <value>Move top</value>
+    <value>Move to top</value>
   </data>
   <data name="moveTopToolStripMenuItem.ToolTipText" xml:space="preserve">
     <value>Move current clip to top</value>
@@ -1341,7 +1341,7 @@ When ON and "Fast window open" OFF, window will be shown in taskbar if visible.
     <value>Ctrl+Up</value>
   </data>
   <data name="moveUpToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>250, 22</value>
+    <value>237, 22</value>
   </data>
   <data name="moveUpToolStripMenuItem.Text" xml:space="preserve">
     <value>Move up</value>
@@ -1353,7 +1353,7 @@ When ON and "Fast window open" OFF, window will be shown in taskbar if visible.
     <value>Ctrl+Down</value>
   </data>
   <data name="moveDownToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>250, 22</value>
+    <value>237, 22</value>
   </data>
   <data name="moveDownToolStripMenuItem.Text" xml:space="preserve">
     <value>Move down</value>
@@ -1362,7 +1362,7 @@ When ON and "Fast window open" OFF, window will be shown in taskbar if visible.
     <value>Move current clip one step down</value>
   </data>
   <data name="filterByDateToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>250, 22</value>
+    <value>237, 22</value>
   </data>
   <data name="filterByDateToolStripMenuItem.Text" xml:space="preserve">
     <value>Filter by date</value>
@@ -1371,7 +1371,7 @@ When ON and "Fast window open" OFF, window will be shown in taskbar if visible.
     <value>Set filter by clip created date</value>
   </data>
   <data name="deleteAllNonFavoriteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>250, 22</value>
+    <value>237, 22</value>
   </data>
   <data name="deleteAllNonFavoriteToolStripMenuItem.Text" xml:space="preserve">
     <value>Delete all non favorite</value>
@@ -1380,13 +1380,13 @@ When ON and "Fast window open" OFF, window will be shown in taskbar if visible.
     <value>Delete all non favorite clips from list. Real deletion is performed on database close.</value>
   </data>
   <data name="toolStripMenuItem5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>247, 6</value>
+    <value>234, 6</value>
   </data>
   <data name="showAllMarksToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+1</value>
   </data>
   <data name="showAllMarksToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>250, 22</value>
+    <value>237, 22</value>
   </data>
   <data name="showAllMarksToolStripMenuItem.Text" xml:space="preserve">
     <value>Show all marks</value>
@@ -1395,7 +1395,7 @@ When ON and "Fast window open" OFF, window will be shown in taskbar if visible.
     <value>Ctrl+2</value>
   </data>
   <data name="showOnlyFavoriteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>250, 22</value>
+    <value>237, 22</value>
   </data>
   <data name="showOnlyFavoriteToolStripMenuItem.Text" xml:space="preserve">
     <value>Show only favorite</value>
@@ -1404,19 +1404,19 @@ When ON and "Fast window open" OFF, window will be shown in taskbar if visible.
     <value>Ctrl+3</value>
   </data>
   <data name="showOnlyUsedToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>250, 22</value>
+    <value>237, 22</value>
   </data>
   <data name="showOnlyUsedToolStripMenuItem.Text" xml:space="preserve">
     <value>Show only used</value>
   </data>
   <data name="toolStripMenuItem13.Size" type="System.Drawing.Size, System.Drawing">
-    <value>247, 6</value>
+    <value>234, 6</value>
   </data>
   <data name="showAllTypesToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Alt+1</value>
   </data>
   <data name="showAllTypesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>250, 22</value>
+    <value>237, 22</value>
   </data>
   <data name="showAllTypesToolStripMenuItem.Text" xml:space="preserve">
     <value>Show all types</value>
@@ -1425,7 +1425,7 @@ When ON and "Fast window open" OFF, window will be shown in taskbar if visible.
     <value>Alt+2</value>
   </data>
   <data name="showOnlyImagesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>250, 22</value>
+    <value>237, 22</value>
   </data>
   <data name="showOnlyImagesToolStripMenuItem.Text" xml:space="preserve">
     <value>Show only images</value>
@@ -1434,7 +1434,7 @@ When ON and "Fast window open" OFF, window will be shown in taskbar if visible.
     <value>Alt+3</value>
   </data>
   <data name="showOnlyFilesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>250, 22</value>
+    <value>237, 22</value>
   </data>
   <data name="showOnlyFilesToolStripMenuItem.Text" xml:space="preserve">
     <value>Show only files</value>
@@ -1443,19 +1443,19 @@ When ON and "Fast window open" OFF, window will be shown in taskbar if visible.
     <value>Alt+4</value>
   </data>
   <data name="showOnlyTextsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>250, 22</value>
+    <value>237, 22</value>
   </data>
   <data name="showOnlyTextsToolStripMenuItem.Text" xml:space="preserve">
     <value>Show only texts</value>
   </data>
   <data name="toolStripMenuItem17.Size" type="System.Drawing.Size, System.Drawing">
-    <value>247, 6</value>
+    <value>234, 6</value>
   </data>
   <data name="toolStripMenuItemClearFilters.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>F7</value>
   </data>
   <data name="toolStripMenuItemClearFilters.Size" type="System.Drawing.Size, System.Drawing">
-    <value>250, 22</value>
+    <value>237, 22</value>
   </data>
   <data name="toolStripMenuItemClearFilters.Text" xml:space="preserve">
     <value>Clear filters</value>
@@ -1464,7 +1464,7 @@ When ON and "Fast window open" OFF, window will be shown in taskbar if visible.
     <value>F8</value>
   </data>
   <data name="returnToPrevousSelectedClipToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>250, 22</value>
+    <value>237, 22</value>
   </data>
   <data name="returnToPrevousSelectedClipToolStripMenuItem.Text" xml:space="preserve">
     <value>Clear filters and select prev.</value>
@@ -1476,7 +1476,7 @@ When ON and "Fast window open" OFF, window will be shown in taskbar if visible.
     <value>F9</value>
   </data>
   <data name="toolStripMenuItemClearFilterAndSelectTop.Size" type="System.Drawing.Size, System.Drawing">
-    <value>250, 22</value>
+    <value>237, 22</value>
   </data>
   <data name="toolStripMenuItemClearFilterAndSelectTop.Text" xml:space="preserve">
     <value>Clear filters and select top</value>
@@ -2464,11 +2464,17 @@ Url will be saved in current clip and will be copied to clipboard.</value>
   <data name="toolStripButtonMonospacedFont.Size" type="System.Drawing.Size, System.Drawing">
     <value>23, 22</value>
   </data>
+  <data name="toolStripButtonMonospacedFont.Text" xml:space="preserve">
+    <value>Monospaced font</value>
+  </data>
   <data name="moveCopiedClipToTopToolStripButton.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
   </data>
   <data name="moveCopiedClipToTopToolStripButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>23, 22</value>
+  </data>
+  <data name="moveCopiedClipToTopToolStripButton.Text" xml:space="preserve">
+    <value>Move to top after use</value>
   </data>
   <data name="toolStripButtonReturnToPrevous.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>

@@ -4221,6 +4221,7 @@ namespace ClipAngel
             toolStripMenuItemSearchWordsIndependently.Checked = Properties.Settings.Default.SearchWordsIndependently;
             toolStripMenuItemSearchWildcards.Checked = Properties.Settings.Default.SearchWildcards;
             moveCopiedClipToTopToolStripButton.Checked = Properties.Settings.Default.MoveCopiedClipToTop;
+            moveCopiedClipToTopToolStripMenuItem.Checked = Properties.Settings.Default.MoveCopiedClipToTop;
             toolStripButtonAutoSelectMatch.Checked = Properties.Settings.Default.AutoSelectMatch;
             trayMenuItemMonitoringClipboard.Checked = MonitoringClipboard;
             toolStripMenuItemMonitoringClipboard.Checked = MonitoringClipboard;
