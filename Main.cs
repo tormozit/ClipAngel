@@ -122,7 +122,7 @@ namespace ClipAngel
         private Timer captureTimer = new Timer();
         private Thread updateDBThread;
         private bool stopUpdateDBThread = false;
-        private static string timePattern = "\\b[012]?\\d:[0-5]?\\d:[0-5]?\\d\\b";
+        private static string timePattern = "\\b[012]?\\d:[0-5]?\\d(?::[0-5]?\\d)?\\b";
         private static string datePattern = "\\b(?:19|20)?[0-9]{2}[\\-/.][0-9]{2}[\\-/.](?:19|20)?[0-9]{2}\\b";
         static private Dictionary<string, string> TextPatterns = new Dictionary<string, string>
         {
