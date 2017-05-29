@@ -3906,10 +3906,11 @@ namespace ClipAngel
                 File.Copy(exePath + "\\" + "DotNetZip.dll", tempFolder + "\\DotNetZip.dll");
                 if (success)
                 {
-                    Process.Start(tempFolder + "\\" + UpdaterName,
-                        "\"" + tempFilenameZip + "\" \"" + Application.StartupPath + "\" \"" +
-                        Application.ExecutablePath
-                        + "\" " + Process.GetCurrentProcess().Id);
+                    string ExeParam = "";
+                    if (PortableMode)
+                        ExeParam = "/p";
+                    Process.Start(tempFolder + "\\" + UpdaterName, "\"" + tempFilenameZip + "\" \"" + Application.StartupPath + "\" \""
+                        + Application.ExecutablePath + "\" \"" + ExeParam + "\" " + Process.GetCurrentProcess().Id);
                     exitToolStripMenuItem_Click();
                 }
             }

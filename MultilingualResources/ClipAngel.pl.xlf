@@ -1322,8 +1322,8 @@ Leave blank to use standart database file "db.sqlite" in application user settin
           <target state="translated">Czy na pewno chcesz zresetować ustawienia do wartości domyślnych?</target>
         </trans-unit>
         <trans-unit id="Version" translate="yes" xml:space="preserve">
-          <source>1.27</source>
-          <target state="translated">1.27</target>
+          <source>1.28</source>
+          <target state="needs-review-translation">1.27</target>
           <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="eye" translate="yes" extype="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
