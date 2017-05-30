@@ -862,7 +862,7 @@ namespace ClipAngel
                 }
                 textBoxApplication.Text = RowReader["Application"].ToString();
                 textBoxWindow.Text = RowReader["Window"].ToString();
-                StripLabelCreated.Text = RowReader["Created"].ToString();
+                StripLabelCreated.Text = ((DateTime) RowReader["Created"]).ToString();
                 if (!(RowReader["Size"] is DBNull))
                     StripLabelSize.Text = FormattedClipNumericPropery((int)RowReader["Size"], MultiLangByteUnit());
                 if (!(RowReader["Chars"] is DBNull))
@@ -1366,7 +1366,9 @@ namespace ClipAngel
             }
             if (!oldFilterOn && filterOn)
                 selectedClipsBeforeFilterApply.Clear();
-            string selectCommandText = "Select Id, Used, Title, Chars, Type, Favorite, ImageSample, AppPath, Size, Created From Clips";
+            // Dublicated code 8gfd8843
+            //string selectCommandText = "Select Id, Used, Title, Chars, Type, Favorite, ImageSample, AppPath, Size, Created From Clips";
+            string selectCommandText = "Select Id, NULL AS Used, NULL AS Title, NULL AS Chars, NULL AS Type, NULL AS Favorite, NULL AS ImageSample, NULL AS AppPath, NULL AS Size, NULL AS Created From Clips";
             selectCommandText += " WHERE " + sqlFilter;
             selectCommandText += " ORDER BY Id desc";
             if (Properties.Settings.Default.SearchCaseSensitive)
@@ -3346,10 +3348,57 @@ namespace ClipAngel
             //    PrepareRow(row);
             //}
             //dataGridView.Update();
+
+        }
+
+        private void LoadVisibleRows()
+        {
+            var visibleRowsCount = dataGridView.DisplayedRowCount(true);
+            var firstDisplayedRowIndex = dataGridView.FirstDisplayedCell.RowIndex;
+            var lastvibileRowIndex = Math.Min(firstDisplayedRowIndex + visibleRowsCount - 1 + 1, dataGridView.RowCount - 1);
+            SQLiteCommand command = new SQLiteCommand(m_dbConnection);
+            string queryText = "";
+            for (int rowIndex = firstDisplayedRowIndex; rowIndex <= lastvibileRowIndex; rowIndex++)
+            {
+                DataRowView drv = (dataGridView.Rows[rowIndex].DataBoundItem as DataRowView);
+                if (!String.IsNullOrEmpty(drv["type"].ToString()))
+                    continue;
+                if (!String.IsNullOrEmpty(queryText))
+                {
+                    queryText += "\n\rUNION ALL\n\r";
+                }
+                int rowId = (int)drv["id"];
+                // Dublicated code 8gfd8843
+                queryText += "Select " + rowIndex + " AS _Index, Id, Used, Title, Chars, Type, Favorite, ImageSample, AppPath, Size, Created From Clips WHERE Id = " + rowId;
+            }
+            if (String.IsNullOrEmpty(queryText))
+                return;
+            command.CommandText += queryText;
+            using (SQLiteDataReader reader = command.ExecuteReader())
+            {
+                DataTable table = (DataTable)clipBindingSource.DataSource;
+                while (reader.Read())
+                {
+                    int rowIndex = reader.GetInt32(reader.GetOrdinal("_Index"));
+                    //foreach (var VARIABLE in table.Columns)
+                    //{
+                    //}
+                    table.Rows[rowIndex]["Used"] = reader.GetBoolean(reader.GetOrdinal("used"));
+                    table.Rows[rowIndex]["Title"] = reader.GetString(reader.GetOrdinal("Title"));
+                    table.Rows[rowIndex]["Chars"] = reader.GetInt32(reader.GetOrdinal("Chars"));
+                    table.Rows[rowIndex]["Type"] = reader.GetString(reader.GetOrdinal("Type"));
+                    table.Rows[rowIndex]["Favorite"] = reader.GetBoolean(reader.GetOrdinal("Favorite"));
+                    table.Rows[rowIndex]["ImageSample"] = reader.GetValue(reader.GetOrdinal("ImageSample"));
+                    table.Rows[rowIndex]["AppPath"] = reader.GetValue(reader.GetOrdinal("AppPath"));
+                    table.Rows[rowIndex]["Size"] = reader.GetInt32(reader.GetOrdinal("Size"));
+                    table.Rows[rowIndex]["Created"] = reader.GetDateTime(reader.GetOrdinal("Created"));
+                }
+            }
         }
 
         private void PrepareRow(DataGridViewRow row = null)
         {
+            LoadVisibleRows();
             if (row == null)
                 row = dataGridView.CurrentRow;
             DataRowView dataRowView = (DataRowView) row.DataBoundItem;
