@@ -520,7 +520,7 @@ namespace ClipAngel
             string hotkeyTitle = KeyboardHook.HotkeyTitle(e.Key, e.Modifier);
             if (hotkeyTitle == Properties.Settings.Default.GlobalHotkeyOpenLast)
             {
-                if (this.ContainsFocus && this.Top > maxWindowCoordForHiddenState && MarkFilter.SelectedValue.ToString() != "favorite")
+                if (this.Visible && this.ContainsFocus && this.Top > maxWindowCoordForHiddenState && MarkFilter.SelectedValue.ToString() != "favorite") // Sometimes it can cotain focus but be not visible!
                     this.Close();
                 else
                 {
@@ -530,7 +530,7 @@ namespace ClipAngel
             }
             else if (hotkeyTitle == Properties.Settings.Default.GlobalHotkeyOpenCurrent)
             {
-                if (this.ContainsFocus && this.Top > maxWindowCoordForHiddenState && MarkFilter.SelectedValue.ToString() != "favorite")
+                if (this.Visible && this.ContainsFocus && this.Top > maxWindowCoordForHiddenState && MarkFilter.SelectedValue.ToString() != "favorite")
                     this.Close();
                 else
                 {
@@ -540,7 +540,7 @@ namespace ClipAngel
             }
             else if (hotkeyTitle == Properties.Settings.Default.GlobalHotkeyOpenFavorites)
             {
-                if (this.ContainsFocus && this.Top > maxWindowCoordForHiddenState && MarkFilter.SelectedValue.ToString() == "favorite")
+                if (this.Visible && this.ContainsFocus && this.Top > maxWindowCoordForHiddenState && MarkFilter.SelectedValue.ToString() == "favorite")
                     this.Close();
                 else
                 {
@@ -1052,7 +1052,7 @@ namespace ClipAngel
                 tableLayoutPanelData.RowStyles[3].Height = 0;
             else
                 tableLayoutPanelData.RowStyles[3].Height = 25;
-            if (EditMode && this.ContainsFocus)
+            if (EditMode && this.Visible && this.ContainsFocus)
                 richTextBox.Focus(); // Can activate this window, so we check that window has focus
             tableLayoutPanelData.ResumeLayout();
             if (autoSelectMatch)
@@ -3024,7 +3024,7 @@ namespace ClipAngel
             //Stopwatch sw = new Stopwatch();
             //sw.Start();
             //this.SuspendLayout();
-            if (this.ContainsFocus)
+            if (this.Visible && this.ContainsFocus)
             {
                 RestoreWindowIfMinimized();
                 return;
