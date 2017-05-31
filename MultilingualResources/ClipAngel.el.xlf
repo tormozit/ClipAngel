@@ -483,6 +483,10 @@
           <source>*time</source>
           <target state="new">*time</target>
         </trans-unit>
+        <trans-unit id="NoActiveWindow" translate="yes" xml:space="preserve">
+          <source>no target window</source>
+          <target state="new">no target window</target>
+        </trans-unit>
       </group>
     </body>
   </file>

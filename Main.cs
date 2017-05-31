@@ -464,11 +464,23 @@ namespace ClipAngel
         {
             if ((this.Top <= maxWindowCoordForHiddenState || !this.Visible) && !forced)
                 return;
-            string windowText = "";
+            string targetTitle = "<" + CurrentLangResourceManager.GetString("NoActiveWindow") + ">";
             if (lastActiveParentWindow != null)
-                windowText = GetWindowTitle(lastActiveParentWindow);
-            Debug.WriteLine("Active window " + lastActiveParentWindow + " " + windowText);
-            this.Text = Application.ProductName + " " + Properties.Resources.Version + " >> " + windowText;
+            {
+                targetTitle = "?";
+                int pid;
+                GetWindowThreadProcessId(lastActiveParentWindow, out pid);
+                Process proc = Process.GetProcessById(pid);
+                if (proc != null)
+                {
+                    targetTitle = proc.ProcessName;
+                }
+                string windowText = GetWindowTitle(lastActiveParentWindow);
+                if (windowText != "")
+                    targetTitle  += " / " + windowText;
+            }
+            Debug.WriteLine("Active window " + lastActiveParentWindow + " " + targetTitle);
+            this.Text = Application.ProductName + " " + Properties.Resources.Version + " >> " + targetTitle;
         }
 
         public static T ParseEnum<T>(string value)

@@ -1493,6 +1493,10 @@ Leave blank to use standart database file "db.sqlite" in application user settin
           <source>*time</source>
           <target state="new">*time</target>
         </trans-unit>
+        <trans-unit id="NoActiveWindow" translate="yes" xml:space="preserve">
+          <source>no target window</source>
+          <target state="new">no target window</target>
+        </trans-unit>
       </group>
     </body>
   </file>

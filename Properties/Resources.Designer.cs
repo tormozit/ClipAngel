@@ -599,6 +599,15 @@ namespace ClipAngel.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to no target window.
+        /// </summary>
+        public static string NoActiveWindow {
+            get {
+                return ResourceManager.GetString("NoActiveWindow", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to No supported text compare application was found. Now we open website to get free one..
         /// </summary>
         public static string NoSupportedTextCompareApplication {
