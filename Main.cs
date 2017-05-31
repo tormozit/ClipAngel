@@ -3387,11 +3387,11 @@ namespace ClipAngel
                     table.Rows[rowIndex]["Title"] = reader.GetString(reader.GetOrdinal("Title"));
                     table.Rows[rowIndex]["Chars"] = reader.GetInt32(reader.GetOrdinal("Chars"));
                     table.Rows[rowIndex]["Type"] = reader.GetString(reader.GetOrdinal("Type"));
-                    table.Rows[rowIndex]["Favorite"] = reader.GetBoolean(reader.GetOrdinal("Favorite"));
+                    table.Rows[rowIndex]["Favorite"] = reader.IsDBNull(reader.GetOrdinal("Favorite")) ? false : reader.GetBoolean(reader.GetOrdinal("Favorite"));
                     table.Rows[rowIndex]["ImageSample"] = reader.GetValue(reader.GetOrdinal("ImageSample"));
                     table.Rows[rowIndex]["AppPath"] = reader.GetValue(reader.GetOrdinal("AppPath"));
                     table.Rows[rowIndex]["Size"] = reader.GetInt32(reader.GetOrdinal("Size"));
-                    table.Rows[rowIndex]["Created"] = reader.GetDateTime(reader.GetOrdinal("Created"));
+                    table.Rows[rowIndex]["Created"] = reader.IsDBNull(reader.GetOrdinal("Created")) ? new DateTime() : reader.GetDateTime(reader.GetOrdinal("Created"));
                 }
             }
         }
