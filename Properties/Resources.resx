@@ -406,4 +406,7 @@
   <data name="NoActiveWindow" xml:space="preserve">
     <value>no target window</value>
   </data>
+  <data name="ErrorReadingClipboard" xml:space="preserve">
+    <value>Clip was not captured due to clipboard read error</value>
+  </data>
 </root>

@@ -705,6 +705,8 @@ namespace ClipAngel
         public VisibleUserSettings(Main Owner)
         {
             this.Owner = Owner;
+            MaxCellsToCaptureFormattedText = Properties.Settings.Default.MaxCellsToCaptureFormattedText;
+            MaxCellsToCaptureImage = Properties.Settings.Default.MaxCellsToCaptureImage;
             DatabaseFile = Properties.Settings.Default.DatabaseFile;
             PlaySoundOnClipCapture = Properties.Settings.Default.PlaySoundOnClipCapture;
             MonospacedFont = Properties.Settings.Default.MonospacedFont;
@@ -764,6 +766,8 @@ namespace ClipAngel
 
         public void Apply(bool PortableMode = false)
         {
+            Properties.Settings.Default.MaxCellsToCaptureImage = MaxCellsToCaptureImage;
+            Properties.Settings.Default.MaxCellsToCaptureFormattedText = MaxCellsToCaptureFormattedText;
             Properties.Settings.Default.DatabaseFile = DatabaseFile;
             Properties.Settings.Default.PlaySoundOnClipCapture = PlaySoundOnClipCapture;
             Properties.Settings.Default.MonospacedFont = MonospacedFont;
@@ -914,6 +918,12 @@ namespace ClipAngel
 
         [GlobalizedCategory("Other")]
         public int HistoryDepthDays { get; set; }
+
+        [GlobalizedCategory("Other")]
+        public int MaxCellsToCaptureFormattedText { get; set; }
+
+        [GlobalizedCategory("Other")]
+        public int MaxCellsToCaptureImage { get; set; }
 
         [GlobalizedCategory("Other")]
         public Font DefaultFont { get; set; }

@@ -409,4 +409,7 @@
   <data name="NoActiveWindow" xml:space="preserve">
     <value>нет целевого окна</value>
   </data>
+  <data name="ErrorReadingClipboard" xml:space="preserve">
+    <value>Клип не был захвачен из-за ошибки чтения буфера обмена</value>
+  </data>
 </root>

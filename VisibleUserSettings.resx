@@ -273,6 +273,20 @@ This format is usually  used by password managers when copying passwords to clip
   <data name="LanguageDescription" xml:space="preserve">
     <value>User interface language</value>
   </data>
+  <data name="MaxCellsToCaptureFormattedText" xml:space="preserve">
+    <value>Max cells to capture formatted text</value>
+  </data>
+  <data name="MaxCellsToCaptureFormattedTextDescription" xml:space="preserve">
+    <value>When capturing clip from cells (Excel), capture generated formatted text if number of cells is lower than this. 0 - do not capture. 
+Generation of formatted text consumes CPU. If you experience high CPU load, set lower value.</value>
+  </data>
+  <data name="MaxCellsToCaptureImage" xml:space="preserve">
+    <value>Max cells to capture image</value>
+  </data>
+  <data name="MaxCellsToCaptureImageDescription" xml:space="preserve">
+    <value>When capturing clip from cells (Excel), capture generated image if number of cells is lower than this. 0 - do not capture. 
+Generation of image consumes CPU. If you experience high CPU load, set lower value.</value>
+  </data>
   <data name="MaxClipSizeKB" xml:space="preserve">
     <value>Max clip size KB</value>
   </data>

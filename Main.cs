@@ -68,6 +68,7 @@ namespace ClipAngel
         MatchCollection UrlLinkMatches;
         MatchCollection FilterMatches;
         string DataFormat_ClipboardViewerIgnore = "Clipboard Viewer Ignore";
+        string DataFormat_Csv = "Csv";
         string ActualVersion;
         //DateTime lastAutorunUpdateCheck;
         int MaxTextViewSize = 5000;
@@ -467,17 +468,14 @@ namespace ClipAngel
             string targetTitle = "<" + CurrentLangResourceManager.GetString("NoActiveWindow") + ">";
             if (lastActiveParentWindow != null)
             {
-                targetTitle = "?";
+                targetTitle = GetWindowTitle(lastActiveParentWindow);
                 int pid;
                 GetWindowThreadProcessId(lastActiveParentWindow, out pid);
                 Process proc = Process.GetProcessById(pid);
                 if (proc != null)
                 {
-                    targetTitle = proc.ProcessName;
+                    targetTitle += " [" + proc.ProcessName + "]";
                 }
-                string windowText = GetWindowTitle(lastActiveParentWindow);
-                if (windowText != "")
-                    targetTitle  += " / " + windowText;
             }
             Debug.WriteLine("Active window " + lastActiveParentWindow + " " + targetTitle);
             this.Text = Application.ProductName + " " + Properties.Resources.Version + " >> " + targetTitle;
@@ -1568,15 +1566,12 @@ namespace ClipAngel
             {
                 iData = Clipboard.GetDataObject();
             }
-            catch (ExternalException externEx)
-            {
-                // Copying a field definition in Access 2002 causes this sometimes?
-                Debug.WriteLine("Clipboard.GetDataObject(): InteropServices.ExternalException: {0}", externEx.Message);
-                return;
-            }
             catch (Exception ex)
             {
-                MessageBox.Show(this, ex.ToString(), Application.ProductName);
+                // Copying a field definition in Access 2002 causes this sometimes or Excel big clips
+                Debug.WriteLine(String.Format("Clipboard.GetDataObject(): InteropServices.ExternalException: {0}", ex.Message));
+                string Message = CurrentLangResourceManager.GetString("ErrorReadingClipboard") + ": " + ex.Message;
+                notifyIcon.ShowBalloonTip(2000, Application.ProductName, Message, ToolTipIcon.Info);
                 return;
             }
             if (iData.GetDataPresent(DataFormat_ClipboardViewerIgnore) && Properties.Settings.Default.IgnoreExclusiveFormatClipCapture)
@@ -1584,6 +1579,7 @@ namespace ClipAngel
             bool textFormatPresent = false;
             byte[] binaryBuffer = new byte[0];
             byte[] imageSampleBuffer = new byte[0];
+            int NumberOfCells = 0;
             Bitmap bitmap = null;
             try
             {
@@ -1605,21 +1601,25 @@ namespace ClipAngel
                         textFormatPresent = true;
                     }
                 }
-
-                if (iData.GetDataPresent(DataFormats.Rtf))
+                if (iData.GetDataPresent(DataFormat_Csv))
                 {
-                    richText = (string) iData.GetData(DataFormats.Rtf);
-                    clipType = "rtf";
-                    if (!textFormatPresent)
+                    using(MemoryStream ms = (MemoryStream) iData.GetData(DataFormat_Csv))
                     {
-                        var rtfBox = new RichTextBox();
-                        rtfBox.Rtf = richText;
-                        clipText = rtfBox.Text;
-                        textFormatPresent = true;
+                        if (ms!=null && ms.Length > 0)
+                        {
+                            byte[] buffer = new byte[ms.Length];
+                            ms.Read(buffer, 0, (int) ms.Length);
+                            string Csv = Encoding.Default.GetString(buffer);
+                            NumberOfCells = Regex.Matches(Csv, "\n|;").Count;
+                        }
                     }
                 }
 
-                if (iData.GetDataPresent(DataFormats.Html))
+                if (true
+                    && iData.GetDataPresent(DataFormats.Html)
+                    && (false
+                        || NumberOfCells == 0
+                        || Properties.Settings.Default.MaxCellsToCaptureFormattedText > NumberOfCells))
                 {
                     htmlText = (string) iData.GetData(DataFormats.Html);
                     if (String.IsNullOrEmpty(htmlText))
@@ -1669,6 +1669,24 @@ namespace ClipAngel
                 //        break;
                 //    }
 
+                if (true
+                    && iData.GetDataPresent(DataFormats.Rtf)
+                    && clipType != "html"
+                    && (false
+                        || NumberOfCells == 0
+                        || Properties.Settings.Default.MaxCellsToCaptureFormattedText > NumberOfCells))
+                {
+                    richText = (string)iData.GetData(DataFormats.Rtf);
+                    clipType = "rtf";
+                    if (!textFormatPresent)
+                    {
+                        var rtfBox = new RichTextBox();
+                        rtfBox.Rtf = richText;
+                        clipText = rtfBox.Text;
+                        textFormatPresent = true;
+                    }
+                }
+
                 if (iData.GetDataPresent(DataFormats.FileDrop))
                 {
                     string[] fileNameList = iData.GetData(DataFormats.FileDrop) as string[];
@@ -1690,7 +1708,11 @@ namespace ClipAngel
                 int clipCharsImage = 0;
                 // http://www.cyberforum.ru/ado-net/thread832314.html
                 // html text check to prevent crush from too big generated Excel image
-                if (iData.GetDataPresent(DataFormats.Bitmap) && htmlText.Length < 100000)
+                if (true
+                    && iData.GetDataPresent(DataFormats.Bitmap)
+                    && (false
+                        || NumberOfCells == 0
+                        || Properties.Settings.Default.MaxCellsToCaptureImage > NumberOfCells))
                 {
                     //clipType = "img";
                     bitmap = iData.GetData(DataFormats.Bitmap) as Bitmap;
@@ -2021,14 +2043,26 @@ namespace ClipAngel
             _lastCaptureMoment = DateTime.Now;
         }
 
+        private void DeleteOldClips()
+        {
+            if (Properties.Settings.Default.HistoryDepthDays == 0)
+                return;
+            SQLiteCommand command = new SQLiteCommand(m_dbConnection);
+            command.CommandText = "Delete From Clips where (NOT Favorite OR Favorite IS NULL) AND Created < date('now','-" + Properties.Settings.Default.HistoryDepthDays + " day')";
+            //commandInsert.Parameters.AddWithValue("Number", Properties.Settings.Default.HistoryDepthDays);
+            //command.Parameters.AddWithValue("CurDate", DateTime.Now);
+            command.ExecuteNonQuery();
+        }
+
         private void DeleteExcessClips()
         {
+            if (Properties.Settings.Default.HistoryDepthNumber == 0)
+                return;
             SQLiteCommand command = new SQLiteCommand(m_dbConnection);
             int numberOfClipsToDelete = ClipsNumber - Properties.Settings.Default.HistoryDepthNumber;
             if (numberOfClipsToDelete > 0)
             {
-                command.CommandText =
-                    "Delete From Clips where (NOT Favorite OR Favorite IS NULL) AND Id IN (Select ID From Clips ORDER BY ID Limit @Number)";
+                command.CommandText = "Delete From Clips where (NOT Favorite OR Favorite IS NULL) AND Id IN (Select ID From Clips ORDER BY ID Limit @Number)";
                 command.Parameters.AddWithValue("Number", numberOfClipsToDelete);
                 command.ExecuteNonQuery();
                 //ClipsNumber -= numberOfClipsToDelete;
@@ -3392,18 +3426,19 @@ namespace ClipAngel
                 while (reader.Read())
                 {
                     int rowIndex = reader.GetInt32(reader.GetOrdinal("_Index"));
+                    DataRowView row = (dataGridView.Rows[rowIndex].DataBoundItem as DataRowView);
                     //foreach (var VARIABLE in table.Columns)
                     //{
                     //}
-                    table.Rows[rowIndex]["Used"] = reader.GetBoolean(reader.GetOrdinal("used"));
-                    table.Rows[rowIndex]["Title"] = reader.GetString(reader.GetOrdinal("Title"));
-                    table.Rows[rowIndex]["Chars"] = reader.GetInt32(reader.GetOrdinal("Chars"));
-                    table.Rows[rowIndex]["Type"] = reader.GetString(reader.GetOrdinal("Type"));
-                    table.Rows[rowIndex]["Favorite"] = reader.IsDBNull(reader.GetOrdinal("Favorite")) ? false : reader.GetBoolean(reader.GetOrdinal("Favorite"));
-                    table.Rows[rowIndex]["ImageSample"] = reader.GetValue(reader.GetOrdinal("ImageSample"));
-                    table.Rows[rowIndex]["AppPath"] = reader.GetValue(reader.GetOrdinal("AppPath"));
-                    table.Rows[rowIndex]["Size"] = reader.GetInt32(reader.GetOrdinal("Size"));
-                    table.Rows[rowIndex]["Created"] = reader.IsDBNull(reader.GetOrdinal("Created")) ? new DateTime() : reader.GetDateTime(reader.GetOrdinal("Created"));
+                    row["Used"] = reader.GetBoolean(reader.GetOrdinal("used"));
+                    row["Title"] = reader.GetString(reader.GetOrdinal("Title"));
+                    row["Chars"] = reader.GetInt32(reader.GetOrdinal("Chars"));
+                    row["Type"] = reader.GetString(reader.GetOrdinal("Type"));
+                    row["Favorite"] = reader.IsDBNull(reader.GetOrdinal("Favorite")) ? false : reader.GetBoolean(reader.GetOrdinal("Favorite"));
+                    row["ImageSample"] = reader.GetValue(reader.GetOrdinal("ImageSample"));
+                    row["AppPath"] = reader.GetValue(reader.GetOrdinal("AppPath"));
+                    row["Size"] = reader.GetInt32(reader.GetOrdinal("Size"));
+                    row["Created"] = reader.IsDBNull(reader.GetOrdinal("Created")) ? new DateTime() : reader.GetDateTime(reader.GetOrdinal("Created"));
                 }
             }
         }
@@ -3417,7 +3452,7 @@ namespace ClipAngel
             int shortSize = dataRowView.Row["Chars"].ToString().Length;
             if (shortSize > 2)
                 row.Cells["VisualWeight"].Value = shortSize;
-            string clipType = (string) dataRowView.Row["Type"];
+            string clipType = dataRowView.Row["Type"].ToString();
             Bitmap image = null;
             switch (clipType)
             {
@@ -3920,20 +3955,6 @@ namespace ClipAngel
             {
                 if (UserRequest)
                     throw;
-            }
-        }
-
-        private void DeleteOldClips()
-        {
-            if (Properties.Settings.Default.HistoryDepthDays > 0)
-            {
-                SQLiteCommand command = new SQLiteCommand(m_dbConnection);
-                command.CommandText =
-                    "Delete From Clips where (NOT Favorite OR Favorite IS NULL) AND Created < date('now','-" +
-                    Properties.Settings.Default.HistoryDepthDays + " day')";
-                //commandInsert.Parameters.AddWithValue("Number", Properties.Settings.Default.HistoryDepthDays);
-                //command.Parameters.AddWithValue("CurDate", DateTime.Now);
-                command.ExecuteNonQuery();
             }
         }
 

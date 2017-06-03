@@ -560,5 +560,29 @@ namespace ClipAngel.Properties {
                 this["DatabaseFile"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("10000")]
+        public int MaxCellsToCaptureFormattedText {
+            get {
+                return ((int)(this["MaxCellsToCaptureFormattedText"]));
+            }
+            set {
+                this["MaxCellsToCaptureFormattedText"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("2000")]
+        public int MaxCellsToCaptureImage {
+            get {
+                return ((int)(this["MaxCellsToCaptureImage"]));
+            }
+            set {
+                this["MaxCellsToCaptureImage"] = value;
+            }
+        }
     }
 }

@@ -481,6 +481,26 @@ Leave blank to use standart database file "db.sqlite" in application user settin
           <target state="new">You can change database filename to switch to other clipboard history. 
 Leave blank to use standart database file "db.sqlite" in application user settings folder.</target>
         </trans-unit>
+        <trans-unit id="MaxCellsToCaptureFormattedText" translate="yes" xml:space="preserve">
+          <source>Max cells to capture formatted text</source>
+          <target state="new">Max cells to capture formatted text</target>
+        </trans-unit>
+        <trans-unit id="MaxCellsToCaptureFormattedTextDescription" translate="yes" xml:space="preserve">
+          <source>When capturing clip from cells (Excel), capture generated formatted text if number of cells is lower than this. 0 - do not capture. 
+Generation of formatted text consumes CPU. If you experience high CPU load, set lower value.</source>
+          <target state="new">When capturing clip from cells (Excel), capture generated formatted text if number of cells is lower than this. 0 - do not capture. 
+Generation of formatted text consumes CPU. If you experience high CPU load, set lower value.</target>
+        </trans-unit>
+        <trans-unit id="MaxCellsToCaptureImage" translate="yes" xml:space="preserve">
+          <source>Max cells to capture image</source>
+          <target state="new">Max cells to capture image</target>
+        </trans-unit>
+        <trans-unit id="MaxCellsToCaptureImageDescription" translate="yes" xml:space="preserve">
+          <source>When capturing clip from cells (Excel), capture generated image if number of cells is lower than this. 0 - do not capture. 
+Generation of image consumes CPU. If you experience high CPU load, set lower value.</source>
+          <target state="new">When capturing clip from cells (Excel), capture generated image if number of cells is lower than this. 0 - do not capture. 
+Generation of image consumes CPU. If you experience high CPU load, set lower value.</target>
+        </trans-unit>
       </group>
     </body>
   </file>
@@ -1496,6 +1516,10 @@ Leave blank to use standart database file "db.sqlite" in application user settin
         <trans-unit id="NoActiveWindow" translate="yes" xml:space="preserve">
           <source>no target window</source>
           <target state="new">no target window</target>
+        </trans-unit>
+        <trans-unit id="ErrorReadingClipboard" translate="yes" xml:space="preserve">
+          <source>Clip was not captured due to clipboard read error</source>
+          <target state="new">Clip was not captured due to clipboard read error</target>
         </trans-unit>
       </group>
     </body>

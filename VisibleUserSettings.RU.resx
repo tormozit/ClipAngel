@@ -282,6 +282,20 @@
   <data name="LanguageDescription" xml:space="preserve">
     <value>Язык пользовательского интерфейса</value>
   </data>
+  <data name="MaxCellsToCaptureFormattedText" xml:space="preserve">
+    <value>Количество ячеек для захвата текста с оформлением</value>
+  </data>
+  <data name="MaxCellsToCaptureFormattedTextDescription" xml:space="preserve">
+    <value>При захвате клипа из ячеек (Excel), захватывать генерируемый текст с оформлением, если количество ячеек меньше этого значения. 0 - не захватывать. 
+Генерация текста с оформлением нагружает CPU. Если вы сталкиваетесь с высокой загрузкой CPU, установите меньшее значение.</value>
+  </data>
+  <data name="MaxCellsToCaptureImage" xml:space="preserve">
+    <value>Количество ячеек для захвата картинки</value>
+  </data>
+  <data name="MaxCellsToCaptureImageDescription" xml:space="preserve">
+    <value>При захвате клипа из ячеек (Excel), захватывать генерируемую картинку, если количество ячеек меньше этого значения. 0 - не захватывать. 
+Генерация картинки нагружает CPU. Если вы сталкиваетесь с высокой загрузкой CPU, установите меньшее значение.</value>
+  </data>
   <data name="MaxClipSizeKB" xml:space="preserve">
     <value>Макс. размер  клипа KB</value>
   </data>
