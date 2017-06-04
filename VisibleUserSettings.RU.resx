@@ -283,7 +283,7 @@
     <value>Язык пользовательского интерфейса</value>
   </data>
   <data name="MaxCellsToCaptureFormattedText" xml:space="preserve">
-    <value>Количество ячеек для захвата текста с оформлением</value>
+    <value>Количество ячеек для захвата оформления</value>
   </data>
   <data name="MaxCellsToCaptureFormattedTextDescription" xml:space="preserve">
     <value>При захвате клипа из ячеек (Excel), захватывать генерируемый текст с оформлением, если количество ячеек меньше этого значения. 0 - не захватывать. 
