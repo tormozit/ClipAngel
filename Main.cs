@@ -2955,34 +2955,38 @@ namespace ClipAngel
                     LoadClipIfChangedID();
                 SaveFilterInLastUsedList();
             }
-            allowProcessDataGridSelectionChanged = false;
-            if (true
-                && selectedRangeStart >= 0
-                && dataGridView.CurrentRow != null
-                && (Control.ModifierKeys & Keys.Shift) != 0)
+            if (dataGridView.Focused || comboBoxFilter.Focused)
             {
-                // Make natural (2 directions) order of range selected rows
-                int lastIndex = dataGridView.CurrentRow.Index;
-                int firstIndex = selectedRangeStart;
-                int step;
-                if (firstIndex > lastIndex)
-                    step = -1;
-                else
-                    step = +1;
-                for (int i = firstIndex; i != lastIndex + step; i += step)
+                allowProcessDataGridSelectionChanged = false;
+                if (true
+                    && selectedRangeStart >= 0
+                    && dataGridView.CurrentRow != null
+                    && (ModifierKeys & Keys.Shift) != 0)
                 {
-                    dataGridView.Rows[i].Selected = false;
-                    dataGridView.Rows[i].Selected = true;
+                    // Make natural (2 directions) order of range selected rows
+                    int lastIndex = dataGridView.CurrentRow.Index;
+                    int firstIndex = selectedRangeStart;
+                    int step;
+                    if (firstIndex > lastIndex)
+                        step = -1;
+                    else
+                        step = +1;
+                    for (int i = firstIndex; i != lastIndex + step; i += step)
+                    {
+                        dataGridView.Rows[i].Selected = false;
+                        dataGridView.Rows[i].Selected = true;
+                    }
                 }
+                if ((ModifierKeys & Keys.Shift) == 0)
+                {
+                    if (dataGridView.CurrentRow == null)
+                        selectedRangeStart = -1;
+                    else
+                        selectedRangeStart = dataGridView.CurrentRow.Index;
+                }
+                allowProcessDataGridSelectionChanged = true;
+                
             }
-            if ((Control.ModifierKeys & Keys.Shift) == 0)
-            {
-                if (dataGridView.CurrentRow == null)
-                    selectedRangeStart = -1;
-                else
-                    selectedRangeStart = dataGridView.CurrentRow.Index;
-            }
-            allowProcessDataGridSelectionChanged = true;
         }
 
         private void SaveClipText()
