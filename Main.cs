@@ -123,6 +123,8 @@ namespace ClipAngel
         private Timer captureTimer = new Timer();
         private Thread updateDBThread;
         private bool stopUpdateDBThread = false;
+        private int selectedRangeStart = -1;
+        private bool allowProcessDataGridSelectionChanged = true;
         private static string timePattern = "\\b[012]?\\d:[0-5]?\\d(?::[0-5]?\\d)?\\b";
         private static string datePattern = "\\b(?:19|20)?[0-9]{2}[\\-/.][0-9]{2}[\\-/.](?:19|20)?[0-9]{2}\\b";
         static private Dictionary<string, string> TextPatterns = new Dictionary<string, string>
@@ -2943,6 +2945,8 @@ namespace ClipAngel
 
         private void dataGridView_SelectionChanged(object sender, EventArgs e)
         {
+            if (!allowProcessDataGridSelectionChanged)
+                return;
             if (allowRowLoad)
             {
                 if (EditMode)
@@ -2951,6 +2955,34 @@ namespace ClipAngel
                     LoadClipIfChangedID();
                 SaveFilterInLastUsedList();
             }
+            allowProcessDataGridSelectionChanged = false;
+            if (true
+                && selectedRangeStart >= 0
+                && dataGridView.CurrentRow != null
+                && (Control.ModifierKeys & Keys.Shift) != 0)
+            {
+                // Make natural (2 directions) order of range selected rows
+                int lastIndex = dataGridView.CurrentRow.Index;
+                int firstIndex = selectedRangeStart;
+                int step;
+                if (firstIndex > lastIndex)
+                    step = -1;
+                else
+                    step = +1;
+                for (int i = firstIndex; i != lastIndex + step; i += step)
+                {
+                    dataGridView.Rows[i].Selected = false;
+                    dataGridView.Rows[i].Selected = true;
+                }
+            }
+            if ((Control.ModifierKeys & Keys.Shift) == 0)
+            {
+                if (dataGridView.CurrentRow == null)
+                    selectedRangeStart = -1;
+                else
+                    selectedRangeStart = dataGridView.CurrentRow.Index;
+            }
+            allowProcessDataGridSelectionChanged = true;
         }
 
         private void SaveClipText()
@@ -5669,6 +5701,13 @@ namespace ClipAngel
             ImageControl.ZoomOriginalSize();
         }
 
+        private void dataGridView_MouseClick(object sender, MouseEventArgs e)
+        {
+        }
+
+        private void dataGridView_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+        }
     }
 }
 

@@ -697,7 +697,7 @@
           <target state="needs-review-translation" state-qualifier="mt-suggestion">是否确实要将设置重置为默认值？</target>
         </trans-unit>
         <trans-unit id="Version" translate="yes" xml:space="preserve">
-          <source>1.28</source>
+          <source>1.29</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">1.22</target>
           <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
