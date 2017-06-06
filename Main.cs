@@ -1210,11 +1210,12 @@ namespace ClipAngel
                 control.SelectionLength = match.Groups[1].Length;
                 if (match.Groups.Count > 3)
                 {
-                    for (int counter=2; counter < match.Groups.Count; counter++)
+                    int startGroup = 2;
+                    for (int counter = startGroup; counter < match.Groups.Count; counter++)
                     {
                         if (match.Groups[counter].Success)
                         {
-                            color = _wordColors[(counter - 1) % _wordColors.Length];
+                            color = _wordColors[(counter - startGroup) % _wordColors.Length];
                             break;
                         }
                     }
