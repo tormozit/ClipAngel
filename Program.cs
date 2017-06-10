@@ -112,15 +112,6 @@ namespace ClipAngel
 
         static bool IsSingleInstance(string MutexName)
         {
-            //try
-            //{
-            //    Mutex.OpenExisting(MutexName);
-            //}
-            //catch
-            //{
-            //    MyMutex = new Mutex(true, MutexName);
-            //    return true;
-            //}
             MyMutex = new Mutex(true, MutexName);
             if (MyMutex.WaitOne(0, false))
                 return true;

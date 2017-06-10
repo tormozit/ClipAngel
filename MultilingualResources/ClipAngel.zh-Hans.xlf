@@ -697,7 +697,7 @@
           <target state="needs-review-translation" state-qualifier="mt-suggestion">是否确实要将设置重置为默认值？</target>
         </trans-unit>
         <trans-unit id="Version" translate="yes" xml:space="preserve">
-          <source>1.29</source>
+          <source>Version</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">1.22</target>
           <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
@@ -876,6 +876,18 @@
         <trans-unit id="ErrorReadingClipboard" translate="yes" xml:space="preserve">
           <source>Clip was not captured due to clipboard read error</source>
           <target state="new">Clip was not captured due to clipboard read error</target>
+        </trans-unit>
+        <trans-unit id="VersionValue" translate="yes" xml:space="preserve">
+          <source>1.29</source>
+          <target state="new">1.29</target>
+        </trans-unit>
+        <trans-unit id="TargetProcess" translate="yes" xml:space="preserve">
+          <source>Target process</source>
+          <target state="new">Target process</target>
+        </trans-unit>
+        <trans-unit id="TargetWindow" translate="yes" xml:space="preserve">
+          <source>Target window</source>
+          <target state="new">Target window</target>
         </trans-unit>
       </group>
     </body>

@@ -710,6 +710,24 @@ namespace ClipAngel.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Target process.
+        /// </summary>
+        public static string TargetProcess {
+            get {
+                return ResourceManager.GetString("TargetProcess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Target window.
+        /// </summary>
+        public static string TargetWindow {
+            get {
+                return ResourceManager.GetString("TargetWindow", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to text.
         /// </summary>
         public static string text {
@@ -912,11 +930,20 @@ namespace ClipAngel.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 1.29.
+        ///   Looks up a localized string similar to Version.
         /// </summary>
         public static string Version {
             get {
                 return ResourceManager.GetString("Version", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 1.29.
+        /// </summary>
+        public static string VersionValue {
+            get {
+                return ResourceManager.GetString("VersionValue", resourceCulture);
             }
         }
         

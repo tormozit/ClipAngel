@@ -280,7 +280,7 @@
   <data name="QuestionResetSettings" xml:space="preserve">
     <value>Are you sure want to reset settings to default values?</value>
   </data>
-  <data name="Version" xml:space="preserve">
+  <data name="VersionValue" xml:space="preserve">
     <value>1.29</value>
   </data>
   <data name="eye" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -408,5 +408,14 @@
   </data>
   <data name="ErrorReadingClipboard" xml:space="preserve">
     <value>Clip was not captured due to clipboard read error</value>
+  </data>
+  <data name="TargetProcess" xml:space="preserve">
+    <value>Target process</value>
+  </data>
+  <data name="TargetWindow" xml:space="preserve">
+    <value>Target window</value>
+  </data>
+  <data name="Version" xml:space="preserve">
+    <value>Version</value>
   </data>
 </root>

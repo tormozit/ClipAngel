@@ -16,7 +16,7 @@ namespace ClipAngel
         {
             cultureManager1.UICulture = new CultureInfo((Owner as Main).Locale);
             this.labelProductName.Text = (Owner as Main).AssemblyProduct;
-            this.labelVersion.Text = Properties.Resources.Version;
+            this.labelVersion.Text = Properties.Resources.VersionValue;
             this.labelCopyright.Text = (Owner as Main).AssemblyCopyright;
         }
 

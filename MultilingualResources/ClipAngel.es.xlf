@@ -1339,7 +1339,7 @@ Generation of image consumes CPU. If you experience high CPU load, set lower val
           <target state="needs-review-translation" state-qualifier="mt-suggestion">¿Está seguro de que desea restablecer la configuración a sus valores predeterminados?</target>
         </trans-unit>
         <trans-unit id="Version" translate="yes" xml:space="preserve">
-          <source>1.29</source>
+          <source>Version</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">1.22</target>
           <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
@@ -1518,6 +1518,18 @@ Generation of image consumes CPU. If you experience high CPU load, set lower val
         <trans-unit id="ErrorReadingClipboard" translate="yes" xml:space="preserve">
           <source>Clip was not captured due to clipboard read error</source>
           <target state="new">Clip was not captured due to clipboard read error</target>
+        </trans-unit>
+        <trans-unit id="VersionValue" translate="yes" xml:space="preserve">
+          <source>1.29</source>
+          <target state="new">1.29</target>
+        </trans-unit>
+        <trans-unit id="TargetProcess" translate="yes" xml:space="preserve">
+          <source>Target process</source>
+          <target state="new">Target process</target>
+        </trans-unit>
+        <trans-unit id="TargetWindow" translate="yes" xml:space="preserve">
+          <source>Target window</source>
+          <target state="new">Target window</target>
         </trans-unit>
       </group>
     </body>

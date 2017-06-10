@@ -312,8 +312,8 @@
           <target state="new">Are you sure want to reset settings to default values?</target>
         </trans-unit>
         <trans-unit id="Version" translate="yes" xml:space="preserve">
-          <source>1.29</source>
-          <target state="new">1.29</target>
+          <source>Version</source>
+          <target state="new">Version</target>
         </trans-unit>
         <trans-unit id="eye" translate="yes" extype="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
           <source>..\Picture\eye.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</source>
@@ -490,6 +490,18 @@
         <trans-unit id="ErrorReadingClipboard" translate="yes" xml:space="preserve">
           <source>Clip was not captured due to clipboard read error</source>
           <target state="new">Clip was not captured due to clipboard read error</target>
+        </trans-unit>
+        <trans-unit id="VersionValue" translate="yes" xml:space="preserve">
+          <source>1.29</source>
+          <target state="new">1.29</target>
+        </trans-unit>
+        <trans-unit id="TargetProcess" translate="yes" xml:space="preserve">
+          <source>Target process</source>
+          <target state="new">Target process</target>
+        </trans-unit>
+        <trans-unit id="TargetWindow" translate="yes" xml:space="preserve">
+          <source>Target window</source>
+          <target state="new">Target window</target>
         </trans-unit>
       </group>
     </body>

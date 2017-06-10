@@ -68,7 +68,7 @@ namespace ClipAngel
         MatchCollection UrlLinkMatches;
         MatchCollection FilterMatches;
         string DataFormat_ClipboardViewerIgnore = "Clipboard Viewer Ignore";
-        string DataFormat_Csv = "Csv";
+        string DataFormat_XMLSpreadSheet = "XML SpreadSheet";
         string ActualVersion;
         //DateTime lastAutorunUpdateCheck;
         int MaxTextViewSize = 5000;
@@ -125,6 +125,10 @@ namespace ClipAngel
         private bool stopUpdateDBThread = false;
         private int selectedRangeStart = -1;
         private bool allowProcessDataGridSelectionChanged = true;
+        private Point PreviousCursor;
+        private bool titleToolTipShown = false;
+        private ToolTip titleToolTip = new ToolTip();
+        private Timer titleToolTipBeforeTimer = new Timer();
         private static string timePattern = "\\b[012]?\\d:[0-5]?\\d(?::[0-5]?\\d)?\\b";
         private static string datePattern = "\\b(?:19|20)?[0-9]{2}[\\-/.][0-9]{2}[\\-/.](?:19|20)?[0-9]{2}\\b";
         static private Dictionary<string, string> TextPatterns = new Dictionary<string, string>
@@ -170,6 +174,22 @@ namespace ClipAngel
 
             UpdateCurrentCulture(); // Antibug. Before bug it was not required
             InitializeComponent();
+
+            // Title tooltip
+            titleToolTip.AutoPopDelay = 3000;
+            titleToolTipBeforeTimer.Interval = 500;
+            titleToolTipBeforeTimer.Tick += delegate (object sender, EventArgs e)
+            {
+                titleToolTipBeforeTimer.Stop();
+                string text = Application.ProductName + String.Format(" <{0}> >> <{1}> [<{2}>]", CurrentLangResourceManager.GetString("Version"), CurrentLangResourceManager.GetString("TargetWindow"),
+                                  CurrentLangResourceManager.GetString("TargetProcess"));
+                titleToolTip.Show(text, this, this.PointToClient(Cursor.Position), titleToolTip.AutoPopDelay);
+                titleToolTipShown = true;
+            };
+            GlobalMouseHandler gmh = new GlobalMouseHandler();
+            gmh.TheMouseMoved += new MouseMovedEvent(gmh_TheMouseMoved);
+            Application.AddMessageFilter(gmh);
+
             toolStripSearchOptions.DropDownDirection = ToolStripDropDownDirection.AboveRight;
             dele = new WinEventDelegate(WinEventProc);
             HookChangeActiveWindow = SetWinEventHook(EVENT_SYSTEM_FOREGROUND, EVENT_SYSTEM_FOREGROUND, IntPtr.Zero, dele,
@@ -273,6 +293,40 @@ namespace ClipAngel
             ResetIsMainProperty();
 
             LoadSettings();
+        }
+
+        // Mouse moved in window working area
+        void gmh_TheMouseMoved() 
+        {
+            titleToolTipBeforeTimer.Stop();
+            titleToolTip.Hide(this);
+            titleToolTipShown = false;
+        }
+
+        public delegate void MouseMovedEvent();
+
+        public class GlobalMouseHandler : IMessageFilter
+        {
+            private const int WM_MOUSEMOVE = 0x0200;
+
+            public event MouseMovedEvent TheMouseMoved;
+
+            #region IMessageFilter Members
+
+            public bool PreFilterMessage(ref Message m)
+            {
+                if (m.Msg == WM_MOUSEMOVE)
+                {
+                    if (TheMouseMoved != null)
+                    {
+                        TheMouseMoved();
+                    }
+                }
+                // Always allow message to continue to the next filter control
+                return false;
+            }
+
+            #endregion
         }
 
         private void OpenDatabase()
@@ -480,7 +534,7 @@ namespace ClipAngel
                 }
             }
             Debug.WriteLine("Active window " + lastActiveParentWindow + " " + targetTitle);
-            this.Text = Application.ProductName + " " + Properties.Resources.Version + " >> " + targetTitle;
+            this.Text = Application.ProductName + " " + Properties.Resources.VersionValue + " >> " + targetTitle;
         }
 
         public static T ParseEnum<T>(string value)
@@ -667,6 +721,19 @@ namespace ClipAngel
                         captureTimer.Start();
                     }
                     break;
+                case Msgs.WM_NCMOUSEMOVE:
+                    if (PreviousCursor != Cursor.Position)
+                    {
+                        titleToolTipBeforeTimer.Stop();
+                        titleToolTip.Hide(this);
+                    }
+                    if (m.WParam == new IntPtr(0x0002)) // HT_CAPTION
+                    {
+                        if (!titleToolTipShown)
+                            titleToolTipBeforeTimer.Start();
+                    }
+                    PreviousCursor = Cursor.Position;
+                    return;
                 default:
                     base.WndProc(ref m);
                     break;
@@ -1298,18 +1365,16 @@ namespace ClipAngel
             UpdateClipBindingSource(true);
         }
 
-        private void UpdateClipBindingSource(bool forceRowLoad = false, int currentClipId = 0,
-            bool keepTextSelectionIfIDChanged = false)
+        private void UpdateClipBindingSource(bool forceRowLoad = false, int currentClipId = 0, bool keepTextSelectionIfIDChanged = false, List<int> selectedClipIDs = null)
         {
             if (dataAdapter == null)
                 return;
             if (EditMode)
                 SaveClipText();
-            List<int> selectedClipIDs = null;
             if (currentClipId == 0 && clipBindingSource.Current != null)
             {
                 currentClipId = (int) (clipBindingSource.Current as DataRowView).Row["Id"];
-                if (dataGridView.SelectedRows.Count > 1)
+                if (dataGridView.SelectedRows.Count > 1 && selectedClipIDs == null)
                 {
                     selectedClipIDs = new List<int>();
                     foreach (DataGridViewRow selectedRow in dataGridView.SelectedRows)
@@ -1426,6 +1491,8 @@ namespace ClipAngel
             {
                 allowRowLoad = false;
                 dataGridView.ClearSelection();
+                allowRowLoad = true;
+                RestoreSelectedCurrentClip(forceRowLoad, currentClipId, false, keepTextSelectionIfIDChanged);
                 if (selectedClipIDs != null)
                 {
                     foreach (int selectedID in selectedClipIDs)
@@ -1435,8 +1502,6 @@ namespace ClipAngel
                             dataGridView.Rows[newIndex].Selected = true;
                     }
                 }
-                allowRowLoad = true;
-                RestoreSelectedCurrentClip(forceRowLoad, currentClipId, false, keepTextSelectionIfIDChanged);
             }
             allowRowLoad = true;
             //AutoGotoLastRow = false;
@@ -1604,16 +1669,29 @@ namespace ClipAngel
                         textFormatPresent = true;
                     }
                 }
-                if (iData.GetDataPresent(DataFormat_Csv))
+                if (iData.GetDataPresent(DataFormat_XMLSpreadSheet))
                 {
-                    using(MemoryStream ms = (MemoryStream) iData.GetData(DataFormat_Csv))
+                    object data = iData.GetData(DataFormat_XMLSpreadSheet);
+                    if (data.GetType() == typeof(MemoryStream))
                     {
-                        if (ms!=null && ms.Length > 0)
+                        // Excel
+                        using (MemoryStream ms = (MemoryStream)data)
                         {
-                            byte[] buffer = new byte[ms.Length];
-                            ms.Read(buffer, 0, (int) ms.Length);
-                            string Csv = Encoding.Default.GetString(buffer);
-                            NumberOfCells = Regex.Matches(Csv, "\n|;").Count;
+                            if (ms!=null && ms.Length > 0)
+                            {
+                                byte[] buffer = new byte[ms.Length];
+                                ms.Read(buffer, 0, (int) ms.Length);
+                                string xmlSheet = Encoding.Default.GetString(buffer);
+                                Match match = Regex.Match(xmlSheet, "ExpandedColumnCount=\"(\\d+)\"");
+                                int NumberOfColumns = 1;
+                                if (match.Success)
+                                    NumberOfColumns = Convert.ToInt32(match.Groups[1].Value);
+                                match = Regex.Match(xmlSheet, "ExpandedRowCount=\"(\\d+)\"");
+                                int NumberOfRows = 1;
+                                if (match.Success)
+                                    NumberOfRows = Convert.ToInt32(match.Groups[1].Value);
+                                NumberOfCells = NumberOfRows * NumberOfColumns;
+                            }
                         }
                     }
                 }
@@ -2959,6 +3037,7 @@ namespace ClipAngel
             if (dataGridView.Focused || comboBoxFilter.Focused)
             {
                 allowProcessDataGridSelectionChanged = false;
+                dataGridView.SuspendLayout();
                 if (true
                     && selectedRangeStart >= 0
                     && dataGridView.CurrentRow != null
@@ -2978,6 +3057,7 @@ namespace ClipAngel
                         dataGridView.Rows[i].Selected = true;
                     }
                 }
+                dataGridView.ResumeLayout();
                 if ((ModifierKeys & Keys.Shift) == 0)
                 {
                     if (dataGridView.CurrentRow == null)
@@ -2986,7 +3066,6 @@ namespace ClipAngel
                         selectedRangeStart = dataGridView.CurrentRow.Index;
                 }
                 allowProcessDataGridSelectionChanged = true;
-                
             }
         }
 
@@ -3969,7 +4048,7 @@ namespace ClipAngel
                     if (match == null)
                         return;
                     ActualVersion = match.Groups[1].Value;
-                    if (ActualVersion != Properties.Resources.Version)
+                    if (ActualVersion != Properties.Resources.VersionValue)
                     {
                         buttonUpdate.Visible = true;
                         toolStripUpdateToSeparator.Visible = true;
@@ -4495,53 +4574,73 @@ namespace ClipAngel
             RowShift(-1);
         }
 
-        // indexShift - 0 - TOP
-        //              -1 - UP
-        //              1 - DWON
-        private void RowShift(int indexShift)
+        // shiftType - 0 - TOP
+        //            -1 - UP
+        //             1 - DOWN
+        private void RowShift(int shiftType)
         {
             if (dataGridView.CurrentRow == null)
                 return;
-            int currentRowIndex = dataGridView.CurrentRow.Index;
-            if (false
-                || indexShift <= 0 && currentRowIndex == 0
-                || indexShift > 0 && currentRowIndex == dataGridView.RowCount
-            )
-                return;
             int newID;
-            if (indexShift != 0)
+            int newCurrentID = 0;
+            int currentRowIndex = dataGridView.CurrentRow.Index;
+            List<int> seletedRowIndexes = new List<int>();
+            foreach (DataGridViewRow selectedRow in dataGridView.SelectedRows)
             {
-                DataRow nearDataRow = ((DataRowView) clipBindingSource[currentRowIndex + indexShift]).Row;
-                newID = (int) nearDataRow["ID"];
+                seletedRowIndexes.Add(selectedRow.Index);
             }
+            IOrderedEnumerable<int> SortedRowIndexes;
+            if (shiftType < 0)
+                SortedRowIndexes = seletedRowIndexes.OrderBy(i=>i);
             else
+                SortedRowIndexes = seletedRowIndexes.OrderByDescending(i => i);
+            List<int> selectedClipIDs = new List<int>();
+            foreach (int selectedRowIndex in SortedRowIndexes.ToList())
             {
-                LastId++;
-                newID = LastId;
-                //indexShift = -currentRowIndex - 1;
-            }
-            DataRow currentDataRow = ((DataRowView) clipBindingSource[currentRowIndex]).Row;
-            int oldID = (int) currentDataRow["ID"];
-            int tempID = LastId + 1;
-            string sql = "Update Clips set Id=@NewId where Id=@Id";
-            SQLiteCommand command = new SQLiteCommand(sql, m_dbConnection);
-            if (newID != tempID)
-            {
-                command.Parameters.AddWithValue("@Id", newID);
-                command.Parameters.AddWithValue("@NewID", tempID);
+                if (false
+                    || shiftType <= 0 && selectedRowIndex == 0
+                    || shiftType > 0 && selectedRowIndex == dataGridView.RowCount
+                )
+                {
+                    return;
+                }
+                DataRow selectedDataRow = ((DataRowView)clipBindingSource[selectedRowIndex]).Row;
+                int oldID = (int)selectedDataRow["ID"];
+                //DataRowView dataRow = (DataRowView)selectedRow.DataBoundItem;
+                if (shiftType != 0)
+                {
+                    DataRow exchangeDataRow = ((DataRowView)clipBindingSource[selectedRowIndex + shiftType]).Row;
+                    newID = (int)exchangeDataRow["ID"];
+                }
+                else
+                {
+                    LastId++;
+                    newID = LastId;
+                    //indexShift = -currentRowIndex - 1;
+                }
+                if (currentRowIndex == selectedRowIndex)
+                    newCurrentID = newID;
+                int tempID = LastId + 1;
+                string sql = "Update Clips set Id=@NewId where Id=@Id";
+                SQLiteCommand command = new SQLiteCommand(sql, m_dbConnection);
+                if (newID != tempID)
+                {
+                    command.Parameters.AddWithValue("@Id", newID);
+                    command.Parameters.AddWithValue("@NewID", tempID);
+                    command.ExecuteNonQuery();
+                }
+                command.Parameters.AddWithValue("@Id", oldID);
+                command.Parameters.AddWithValue("@NewID", newID);
                 command.ExecuteNonQuery();
+                if (newID != tempID)
+                {
+                    command.Parameters.AddWithValue("@Id", tempID);
+                    command.Parameters.AddWithValue("@NewID", oldID);
+                    command.ExecuteNonQuery();
+                }
+                selectedClipIDs.Add(newID);
             }
-            command.Parameters.AddWithValue("@Id", oldID);
-            command.Parameters.AddWithValue("@NewID", newID);
-            command.ExecuteNonQuery();
-            if (newID != tempID)
-            {
-                command.Parameters.AddWithValue("@Id", tempID);
-                command.Parameters.AddWithValue("@NewID", oldID);
-                command.ExecuteNonQuery();
-            }
-            //clipBindingSource.Position = currentRowIndex + indexShift;
-            UpdateClipBindingSource(false, newID, true);
+            UpdateClipBindingSource(false, newCurrentID, true, selectedClipIDs);
         }
 
         private void moveDownToolStripMenuItem_Click(object sender, EventArgs e)
@@ -5713,6 +5812,7 @@ namespace ClipAngel
         private void dataGridView_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
         }
+
     }
 }
 
