@@ -181,8 +181,8 @@ namespace ClipAngel
             titleToolTipBeforeTimer.Tick += delegate (object sender, EventArgs e)
             {
                 titleToolTipBeforeTimer.Stop();
-                string text = Application.ProductName + String.Format(" <{0}> >> <{1}> [<{2}>]", CurrentLangResourceManager.GetString("Version"), CurrentLangResourceManager.GetString("TargetWindow"),
-                                  CurrentLangResourceManager.GetString("TargetProcess"));
+                string text = Application.ProductName + String.Format(" <{0}> >> <{1}> [<{2}>]", CurrentLangResourceManager.GetString("Version"), 
+                    CurrentLangResourceManager.GetString("TargetWindow"), CurrentLangResourceManager.GetString("TargetApp"));
                 titleToolTip.Show(text, this, this.PointToClient(Cursor.Position), titleToolTip.AutoPopDelay);
                 titleToolTipShown = true;
             };

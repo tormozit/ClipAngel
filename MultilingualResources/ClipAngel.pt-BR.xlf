@@ -1523,13 +1523,13 @@ Generation of image consumes CPU. If you experience high CPU load, set lower val
           <source>1.29</source>
           <target state="new">1.29</target>
         </trans-unit>
-        <trans-unit id="TargetProcess" translate="yes" xml:space="preserve">
-          <source>Target process</source>
-          <target state="new">Target process</target>
-        </trans-unit>
         <trans-unit id="TargetWindow" translate="yes" xml:space="preserve">
           <source>Target window</source>
           <target state="new">Target window</target>
+        </trans-unit>
+        <trans-unit id="TargetApp" translate="yes" xml:space="preserve">
+          <source>Target application</source>
+          <target state="new">Target application</target>
         </trans-unit>
       </group>
     </body>
@@ -2208,8 +2208,9 @@ o submenu "Lista" tem comandos para seleção rápida</target>
           <target state="needs-review-translation">Del</target>
         </trans-unit>
         <trans-unit id="moveDownToolStripMenuItem.ToolTipText" translate="yes" xml:space="preserve">
-          <source>Move current clip one step down</source>
-          <target state="translated">Mover clipe atual uma linha abaixo</target>
+          <source>Move selected clips one step down</source>
+          <target state="needs-review-translation">Mover clipe atual uma linha abaixo</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="titleDataGridViewTextBoxColumn.HeaderText" translate="yes" xml:space="preserve">
           <source>Title</source>
@@ -2810,8 +2811,9 @@ Alterações no arquivo temp não são sincronizadas com o clipe!
           <target state="needs-review-translation">2, 2, 2, 2</target>
         </trans-unit>
         <trans-unit id="moveUpToolStripMenuItem.ToolTipText" translate="yes" xml:space="preserve">
-          <source>Move current clip one step up</source>
-          <target state="translated">Mover clipe atual para cima</target>
+          <source>Move selected clips one step up</source>
+          <target state="needs-review-translation">Mover clipe atual para cima</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="rtfMenuItemSelectAll.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
           <source>206, 22</source>
@@ -4455,8 +4457,9 @@ O submenu "Lista" tem comandos para seleção rápida</target>
           <target state="needs-review-translation">214, 22</target>
         </trans-unit>
         <trans-unit id="moveTopToolStripMenuItem.ToolTipText" translate="yes" xml:space="preserve">
-          <source>Move current clip to top</source>
+          <source>Move selected clips to top</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Mover o clipe atual para o topo</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="copyToClipboardToolStripMenuItem.ToolTipText" translate="yes" xml:space="preserve">
           <source>Copy current clip to clipboard</source>

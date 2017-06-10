@@ -710,11 +710,11 @@ namespace ClipAngel.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Target process.
+        ///   Looks up a localized string similar to Target application.
         /// </summary>
-        public static string TargetProcess {
+        public static string TargetApp {
             get {
-                return ResourceManager.GetString("TargetProcess", resourceCulture);
+                return ResourceManager.GetString("TargetApp", resourceCulture);
             }
         }
         

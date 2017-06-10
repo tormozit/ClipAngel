@@ -412,8 +412,8 @@
   <data name="ErrorReadingClipboard" xml:space="preserve">
     <value>Клип не был захвачен из-за ошибки чтения буфера обмена</value>
   </data>
-  <data name="TargetProcess" xml:space="preserve">
-    <value>Целевой процесс</value>
+  <data name="TargetApp" xml:space="preserve">
+    <value>Целевое приложение</value>
   </data>
   <data name="TargetWindow" xml:space="preserve">
     <value>Целевое окно</value>

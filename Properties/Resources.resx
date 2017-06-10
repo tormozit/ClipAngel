@@ -409,8 +409,8 @@
   <data name="ErrorReadingClipboard" xml:space="preserve">
     <value>Clip was not captured due to clipboard read error</value>
   </data>
-  <data name="TargetProcess" xml:space="preserve">
-    <value>Target process</value>
+  <data name="TargetApp" xml:space="preserve">
+    <value>Target application</value>
   </data>
   <data name="TargetWindow" xml:space="preserve">
     <value>Target window</value>
