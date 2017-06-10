@@ -1647,7 +1647,8 @@ namespace ClipAngel
             bool textFormatPresent = false;
             byte[] binaryBuffer = new byte[0];
             byte[] imageSampleBuffer = new byte[0];
-            int NumberOfCells = 0;
+            int NumberOfFilledCells = 0;
+            int NumberOfImageCells = 0;
             Bitmap bitmap = null;
             try
             {
@@ -1690,7 +1691,8 @@ namespace ClipAngel
                                 int NumberOfRows = 1;
                                 if (match.Success)
                                     NumberOfRows = Convert.ToInt32(match.Groups[1].Value);
-                                NumberOfCells = NumberOfRows * NumberOfColumns;
+                                NumberOfImageCells = NumberOfRows * NumberOfColumns;
+                                NumberOfFilledCells = Regex.Matches(xmlSheet, "<Row>").Count;
                             }
                         }
                     }
@@ -1699,8 +1701,8 @@ namespace ClipAngel
                 if (true
                     && iData.GetDataPresent(DataFormats.Html)
                     && (false
-                        || NumberOfCells == 0
-                        || Properties.Settings.Default.MaxCellsToCaptureFormattedText > NumberOfCells))
+                        || NumberOfFilledCells == 0
+                        || Properties.Settings.Default.MaxCellsToCaptureFormattedText > NumberOfFilledCells))
                 {
                     htmlText = (string) iData.GetData(DataFormats.Html);
                     if (String.IsNullOrEmpty(htmlText))
@@ -1754,8 +1756,8 @@ namespace ClipAngel
                     && iData.GetDataPresent(DataFormats.Rtf)
                     && clipType != "html"
                     && (false
-                        || NumberOfCells == 0
-                        || Properties.Settings.Default.MaxCellsToCaptureFormattedText > NumberOfCells))
+                        || NumberOfFilledCells == 0
+                        || Properties.Settings.Default.MaxCellsToCaptureFormattedText > NumberOfFilledCells))
                 {
                     richText = (string)iData.GetData(DataFormats.Rtf);
                     clipType = "rtf";
@@ -1792,8 +1794,8 @@ namespace ClipAngel
                 if (true
                     && iData.GetDataPresent(DataFormats.Bitmap)
                     && (false
-                        || NumberOfCells == 0
-                        || Properties.Settings.Default.MaxCellsToCaptureImage > NumberOfCells))
+                        || NumberOfImageCells == 0
+                        || Properties.Settings.Default.MaxCellsToCaptureImage > NumberOfImageCells))
                 {
                     //clipType = "img";
                     bitmap = iData.GetData(DataFormats.Bitmap) as Bitmap;
