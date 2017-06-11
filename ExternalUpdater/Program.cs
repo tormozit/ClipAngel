@@ -16,7 +16,7 @@ namespace ExternalUpdater
         {
             if (args.Length < 5)
             {
-                Console.WriteLine("This is internal Clip Angel application for update function.");
+                Console.WriteLine("This is internal ClipAngel application for update function.");
                 return;
             }
             string ZipFileName = args[0];
@@ -36,7 +36,14 @@ namespace ExternalUpdater
             if (MainProcess != null)
                 MainProcess.WaitForExit();
             ZipFile zip = new ZipFile(ZipFileName);
-            zip.ExtractAll(TargetPath, ExtractExistingFileAction.OverwriteSilently);
+            //zip.ExtractAll(TargetPath, ExtractExistingFileAction.OverwriteSilently);
+            foreach (ZipEntry element in zip.Entries)
+            {
+                if (!element.FileName.StartsWith("UserSettings/", StringComparison.InvariantCultureIgnoreCase)) // Preserve user settings from being accidentally rewritten
+                {
+                    zip.ExtractSelectedEntries(element.FileName, null, TargetPath, ExtractExistingFileAction.OverwriteSilently);
+                }
+            }
             zip.Dispose();
             Process.Start(ExeName, ExeParam);
             //Directory.Delete(Path.GetDirectoryName(ZipFileName), true); // Impossible to delete self files

@@ -13,11 +13,11 @@
     <Product_UIN>APP-D4005A55AB8E</Product_UIN>
     <Publish_on_CD>N</Publish_on_CD>
     <NewsFeed_Search_String></NewsFeed_Search_String>
-    <Search_String>Clip Angel</Search_String>
+    <Search_String>ClipAngel</Search_String>
     <Press_Release_Search_String></Press_Release_Search_String>
     <Backlink></Backlink>
     <Comments_For_Reviewer></Comments_For_Reviewer>
-    <Search_String_Unique>Clip Angel</Search_String_Unique>
+    <Search_String_Unique>ClipAngel</Search_String_Unique>
     <Search_Engine_Search_String></Search_Engine_Search_String>
     <Web_Directories_Search_String></Web_Directories_Search_String>
     <Company_Description></Company_Description>
@@ -58,10 +58,10 @@
   </Company_Info>
   <Program_Info>
     <AppID>app-d4005a55ab8e</AppID>
-    <Program_Name>Clip Angel</Program_Name>
-    <Program_Version>1.23</Program_Version>
-    <Program_Release_Month>05</Program_Release_Month>
-    <Program_Release_Day>08</Program_Release_Day>
+    <Program_Name>ClipAngel</Program_Name>
+    <Program_Version>1.28</Program_Version>
+    <Program_Release_Month>06</Program_Release_Month>
+    <Program_Release_Day>04</Program_Release_Day>
     <Program_Release_Year>2017</Program_Release_Year>
     <Program_Cost_Dollars>0</Program_Cost_Dollars>
     <Program_Type>Freeware</Program_Type>
@@ -71,16 +71,16 @@
     <Program_Release_Status>Major Update</Program_Release_Status>
     <Program_Install_Support>No Install Support</Program_Install_Support>
     <Program_Target_Platform>Windows</Program_Target_Platform>
-    <Program_OS_Support>Win2000,WinXP,Win7 x32,Win7 x64,Windows 8,Windows 10,WinServer,WinOther,Windows2000,Windows2003,Windows Server 2000,Windows Server 2003,Windows Server 2008,Windows Server 2008r2,Windows Server 2012,Windows Tablet PC Edition 2005,Windows Media Center Edition 2005,WinVista,Windows Vista Starter,Windows Vista Home Basic,Windows Vista Home Premium,Windows Vista Business,Windows Vista Enterprise,Windows Vista Ultimate,WinVista x64,Windows Vista Home Basic x64,Windows Vista Home Premium x64,Windows Vista Business x64,Windows Vista Enterprise x64,Windows Vista Ultimate x64</Program_OS_Support>
+    <Program_OS_Support>Win7 x32,Win7 x64,Windows 8,Windows 10,WinServer,Windows Server 2008,Windows Server 2008r2,Windows Server 2012,WinVista,Windows Vista Starter,Windows Vista Home Basic,Windows Vista Home Premium,Windows Vista Business,Windows Vista Enterprise,Windows Vista Ultimate,WinVista x64,Windows Vista Home Basic x64,Windows Vista Home Premium x64,Windows Vista Business x64,Windows Vista Enterprise x64,Windows Vista Ultimate x64</Program_OS_Support>
     <Program_Language>English,ChineseSimplified,French,German,Greek,Hindi,Italian,Polish,Portuguese,Russian,Spanish</Program_Language>
     <Program_Change_Info></Program_Change_Info>
     <Program_System_Requirements>.Net Framework 4.52+ (Windows Vista+/Server 2008+)</Program_System_Requirements>
     <Limitations>N</Limitations>
     <Awards></Awards>
     <File_Info>
-      <File_Size_Bytes>100352</File_Size_Bytes>
-      <File_Size_K>98</File_Size_K>
-      <File_Size_MB>0.10</File_Size_MB>
+      <File_Size_Bytes>3000000</File_Size_Bytes>
+      <File_Size_K>3000</File_Size_K>
+      <File_Size_MB>3</File_Size_MB>
     </File_Info>
     <Expire_Info>
       <Has_Expire_Info>N</Has_Expire_Info>
