@@ -563,12 +563,12 @@ RTF मूल स्वरूपण द्वारा अतिभारित 
 नहीं HTML मूल स्वरूपण करने के लिए appliable.</target>
         </trans-unit>
         <trans-unit id="MoveCopiedClipToTop" translate="yes" xml:space="preserve">
-          <source>Move clip to top after use</source>
+          <source>Move clips to top after use</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">शीर्ष करने के लिए सूची क्लिप में प्रतिलिपि बनाए गए कदम</target>
           <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="MoveCopiedClipToTopDescription" translate="yes" xml:space="preserve">
-          <source>Move copied from list or fully pasted clip to top of list</source>
+          <source>Move copied from list or fully pasted clips to top of list</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">सूची के शीर्ष करने के लिए प्रतिलिपि बनाई गई सूची या पूरी तरह से चिपकाई गई क्लिप में ले जाएँ</target>
           <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>

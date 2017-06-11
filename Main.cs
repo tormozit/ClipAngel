@@ -117,9 +117,11 @@ namespace ClipAngel
         private Point lastMousePoint;
         private int maxWindowCoordForHiddenState = -10000;
         private Color[] _wordColors = new Color[] { Color.Red, Color.DeepPink, Color.DarkOrange };
-        private DateTime _lastCaptureMoment = DateTime.Now;
+        private DateTime lastCaptureMoment = DateTime.Now;
+        private DateTime lastPasteMoment = DateTime.Now;
+        private Dictionary <int, DateTime> lastPastedClips = new Dictionary<int, DateTime>();
         private bool lastClipWasMultiCaptured = false;
-        private Point _LastMousePoint;
+        private Point LastMousePoint;
         private Timer captureTimer = new Timer();
         private Thread updateDBThread;
         private bool stopUpdateDBThread = false;
@@ -1495,12 +1497,17 @@ namespace ClipAngel
                 RestoreSelectedCurrentClip(forceRowLoad, currentClipId, false, keepTextSelectionIfIDChanged);
                 if (selectedClipIDs != null)
                 {
+                    allowProcessDataGridSelectionChanged = false;
                     foreach (int selectedID in selectedClipIDs)
                     {
                         int newIndex = clipBindingSource.Find("Id", selectedID);
                         if (newIndex >= 0)
+                        {
+                            dataGridView.Rows[newIndex].Selected = false;
                             dataGridView.Rows[newIndex].Selected = true;
+                        }
                     }
+                    allowProcessDataGridSelectionChanged = true;
                 }
             }
             allowRowLoad = true;
@@ -1521,11 +1528,14 @@ namespace ClipAngel
             {
                 int newPosition = clipBindingSource.Find("Id", currentClipId);
                 allowRowLoad = false;
-                clipBindingSource.Position = newPosition; // Calls SeletectionChanged in DataGridView
-                ////if (dataGridView.CurrentRow != null)
-                ////    dataGridView.CurrentCell = dataGridView.CurrentRow.Cells[0];
                 if (newPosition == -1)
                     UpdateSelectedClipsHistory();
+                else
+                {
+                    // Calls SelectionChanged in DataGridView. Resets selectedRows!
+                    clipBindingSource.Position = newPosition; 
+                    //dataGridView.CurrentCell = dataGridView.Rows[newPosition].Cells[0];
+                }
                 allowRowLoad = true;
                 SelectCurrentRow(forceRowLoad || newPosition == -1, true, clearSelection, keepTextSelectionIfIDChanged);
             }
@@ -1739,18 +1749,6 @@ namespace ClipAngel
                         }
                     }
                 }
-
-                //StringCollection UrlFormatNames = new StringCollection();
-                //UrlFormatNames.Add("text/x-moz-url-priv");
-                //UrlFormatNames.Add("msSourceUrl");
-                //foreach (string UrlFormatName in UrlFormatNames)
-                //    if (iData.GetDataPresent(UrlFormatName))
-                //    {
-                //        var ms = (MemoryStream)iData.GetData(UrlFormatName);
-                //        var sr = new StreamReader(ms, Encoding.Unicode, true);
-                //        Url = sr.ReadToEnd();
-                //        break;
-                //    }
 
                 if (true
                     && iData.GetDataPresent(DataFormats.Rtf)
@@ -1974,6 +1972,8 @@ namespace ClipAngel
         void AddClip(byte[] binaryBuffer = null, byte[] imageSampleBuffer = null, string htmlText = "", string richText = "", string typeText = "text", string plainText = "",
             string applicationText = "", string windowText = "", string url = "", int chars = 0, string appPath = "", bool used = false, bool favorite = false, bool updateList = true)
         {
+            DateTime dtNow = DateTime.Now;
+            int msFromLastCapture = DateDiffMilliseconds(lastCaptureMoment);
             if (plainText == null)
                 plainText = "";
             if (richText == null)
@@ -2026,23 +2026,27 @@ namespace ClipAngel
             {
                 if (reader.Read())
                 {
+                    oldCurrentClipId = reader.GetInt32(reader.GetOrdinal("Id"));
+                    if (true
+                        && lastPastedClips.ContainsKey(oldCurrentClipId)
+                        && DateDiffMilliseconds(lastPastedClips[oldCurrentClipId], dtNow) < 1000) // Protection from automated return copy after we send paste. For example Word does so for html paste.
+                    {
+                        return;
+                    }
                     used = GetNullableBoolFromSqlReader(reader, "Used");
                     favorite = GetNullableBoolFromSqlReader(reader, "Favorite");
                     clipTitle = reader.GetString(reader.GetOrdinal("Title"));
                     sql = "DELETE FROM Clips Where Id = @Id";
                     SQLiteCommand commandDelete = new SQLiteCommand(sql, m_dbConnection);
-                    oldCurrentClipId = reader.GetInt32(reader.GetOrdinal("Id"));
                     if (true
                         && oldCurrentClipId == LastId 
-                        && (false
-                            || _lastCaptureMoment == null
-                            || (DateTime.Now - _lastCaptureMoment).Milliseconds > 50) // Protection from automated repeated copy. For example PuntoSwitcher does so.
-                            )
+                        && msFromLastCapture > 100) // Protection from automated repeated copy. For example PuntoSwitcher does so.
                     {
                         lastClipWasMultiCaptured = true;
                     }
                     commandDelete.Parameters.AddWithValue("@Id", oldCurrentClipId);
                     commandDelete.ExecuteNonQuery();
+                    RegisterClipIdChange(oldCurrentClipId, LastId + 1);
                 }
             }
             LastId = LastId + 1;
@@ -2123,7 +2127,17 @@ namespace ClipAngel
             )
                 ShowForPaste(false, true);
             //}
-            _lastCaptureMoment = DateTime.Now;
+            lastCaptureMoment = DateTime.Now;
+        }
+
+        // dt2 - null or DateTime
+        private int DateDiffMilliseconds(DateTime dt1, object dt2 = null)
+        {
+            if (dt2 == null)
+                dt2 = DateTime.Now;
+            TimeSpan span = (DateTime) dt2 - dt1;
+            int ms = (int)span.TotalMilliseconds;
+            return ms;
         }
 
         private void DeleteOldClips()
@@ -2356,8 +2370,7 @@ namespace ClipAngel
         //    }
         //}
 
-        private string CopyClipToClipboard(SQLiteDataReader rowReader = null, bool onlySelectedPlainText = false,
-            bool allowSelfCapture = true)
+        private string CopyClipToClipboard(SQLiteDataReader rowReader = null, bool onlySelectedPlainText = false, bool allowSelfCapture = true)
         {
             SaveFilterInLastUsedList();
             string clipText;
@@ -2668,6 +2681,7 @@ namespace ClipAngel
                     EventWaitHandle pasteEvent = Paster.GetPasteEventWaiter();
                     pasteEvent.Set();
                 }
+                lastPasteMoment = DateTime.Now;
             }
             else
             {
@@ -2732,7 +2746,7 @@ namespace ClipAngel
             return hForegroundWindow;
         }
 
-        private void SetRowMark(string fieldName, bool newValue = true, bool allSelected = false)
+        private void SetRowMark(string fieldName, bool newValue = true, bool allSelected = false, bool addToLastPasted = false)
         {
             string sql = "Update Clips set " + fieldName + "=@Value where Id IN(null";
             SQLiteCommand command = new SQLiteCommand("", m_dbConnection);
@@ -2757,6 +2771,12 @@ namespace ClipAngel
                 counter++;
                 dataRow[fieldName] = newValue;
                 UpdateTableGridRowBackColor(selectedRow);
+                if (addToLastPasted)
+                {
+                    lastPastedClips[(int)dataRow["Id"]] = DateTime.Now;
+                    if (lastPastedClips.Count > 100)
+                        lastPastedClips.Remove(lastPastedClips.Aggregate((l, r) => l.Value < r.Value ? l : r).Key);
+                }
             }
             sql += ")";
             command.CommandText = sql;
@@ -2990,13 +3010,16 @@ namespace ClipAngel
             }
 
             if (String.IsNullOrEmpty(selectedText))
-                SetRowMark("Used", true, true);
+            {
+                SetRowMark("Used", true, true, true);
+            }
             if (true
                 && Properties.Settings.Default.MoveCopiedClipToTop
                 && String.IsNullOrEmpty(selectedText)
-                && count == 1)
+                //&& count == 1
+                )
             {
-                RowShift(0);
+                MoveSelectedRows(0);
                 //CaptureClipboardData();
             }
             else if (true
@@ -3006,7 +3029,7 @@ namespace ClipAngel
                 // With multipaste works incorrect
                 CaptureClipboardData();
                 if (Properties.Settings.Default.MoveCopiedClipToTop)
-                    RowShift(0);
+                    MoveSelectedRows(0);
             }
         }
 
@@ -4573,13 +4596,13 @@ namespace ClipAngel
 
         private void moveUpToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            RowShift(-1);
+            MoveSelectedRows(-1);
         }
 
         // shiftType - 0 - TOP
         //            -1 - UP
         //             1 - DOWN
-        private void RowShift(int shiftType)
+        private void MoveSelectedRows(int shiftType)
         {
             if (dataGridView.CurrentRow == null)
                 return;
@@ -4587,28 +4610,29 @@ namespace ClipAngel
             int newCurrentID = 0;
             int currentRowIndex = dataGridView.CurrentRow.Index;
             List<int> seletedRowIndexes = new List<int>();
+            int counter = 0;
+            Dictionary<int, int> order = new Dictionary<int, int>();
             foreach (DataGridViewRow selectedRow in dataGridView.SelectedRows)
             {
                 seletedRowIndexes.Add(selectedRow.Index);
+                order.Add(counter, selectedRow.Index);
+                counter++;
+            }
+            if (false
+                || shiftType <= 0 && seletedRowIndexes.Contains(0)
+                || shiftType > 0 && seletedRowIndexes.Contains(dataGridView.RowCount - 1))
+            {
+                return;
             }
             IOrderedEnumerable<int> SortedRowIndexes;
             if (shiftType < 0)
                 SortedRowIndexes = seletedRowIndexes.OrderBy(i=>i);
             else
                 SortedRowIndexes = seletedRowIndexes.OrderByDescending(i => i);
-            List<int> selectedClipIDs = new List<int>();
             foreach (int selectedRowIndex in SortedRowIndexes.ToList())
             {
-                if (false
-                    || shiftType <= 0 && selectedRowIndex == 0
-                    || shiftType > 0 && selectedRowIndex == dataGridView.RowCount
-                )
-                {
-                    return;
-                }
                 DataRow selectedDataRow = ((DataRowView)clipBindingSource[selectedRowIndex]).Row;
                 int oldID = (int)selectedDataRow["ID"];
-                //DataRowView dataRow = (DataRowView)selectedRow.DataBoundItem;
                 if (shiftType != 0)
                 {
                     DataRow exchangeDataRow = ((DataRowView)clipBindingSource[selectedRowIndex + shiftType]).Row;
@@ -4618,7 +4642,6 @@ namespace ClipAngel
                 {
                     LastId++;
                     newID = LastId;
-                    //indexShift = -currentRowIndex - 1;
                 }
                 if (currentRowIndex == selectedRowIndex)
                     newCurrentID = newID;
@@ -4640,14 +4663,27 @@ namespace ClipAngel
                     command.Parameters.AddWithValue("@NewID", oldID);
                     command.ExecuteNonQuery();
                 }
-                selectedClipIDs.Add(newID);
+                order[order.FirstOrDefault(x => x.Value == selectedRowIndex).Key] = newID;
+                RegisterClipIdChange(oldID, newID);
             }
-            UpdateClipBindingSource(false, newCurrentID, true, selectedClipIDs);
+            List <int> ids = order.Select(d => d.Value).ToList();
+            ids.Reverse();
+            UpdateClipBindingSource(false, newCurrentID, true, ids);
+        }
+
+        private void RegisterClipIdChange(int oldID, int newID)
+        {
+            if (lastPastedClips.ContainsKey(oldID))
+            {
+                var value = lastPastedClips[oldID];
+                lastPastedClips.Remove(oldID);
+                lastPastedClips[newID] = value;
+            }
         }
 
         private void moveDownToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            RowShift(1);
+            MoveSelectedRows(1);
         }
 
         private void historyToolStripMenuItem_Click(object sender, EventArgs e)
@@ -5300,7 +5336,7 @@ namespace ClipAngel
 
         private void moveTopToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            RowShift(0);
+            MoveSelectedRows(0);
         }
 
         private void clearClipboardToolStripMenuItem_Click(object sender, EventArgs e)
@@ -5703,9 +5739,9 @@ namespace ClipAngel
 
         private void dataGridView_MouseMove(object sender, MouseEventArgs e)
         {
-            if (_LastMousePoint != e.Location)
+            if (LastMousePoint != e.Location)
             {
-                _LastMousePoint = e.Location;
+                LastMousePoint = e.Location;
                 if (e.Button == MouseButtons.Left)
                 {
                     DataGridView.HitTestInfo info = dataGridView.HitTest(e.X, e.Y);

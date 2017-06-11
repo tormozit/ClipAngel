@@ -311,10 +311,10 @@
 Не применимо к родному оформлению HTML.</value>
   </data>
   <data name="MoveCopiedClipToTop" xml:space="preserve">
-    <value>Перемещать клип наверх после использования</value>
+    <value>Перемещать клипы наверх после использования</value>
   </data>
   <data name="MoveCopiedClipToTopDescription" xml:space="preserve">
-    <value>Перемещать клип наверх списка после копирования в списке или полной вставки</value>
+    <value>Перемещать клипы наверх списка после копирования в списке или полной вставки</value>
   </data>
   <data name="NumberOfClips" xml:space="preserve">
     <value>Количество клипов</value>

@@ -326,12 +326,12 @@ Könnte von RTF-Formatierung native überladen werden.
 Nicht montiert, die HTML-Formatierung native.</target>
         </trans-unit>
         <trans-unit id="MoveCopiedClipToTop" translate="yes" xml:space="preserve">
-          <source>Move clip to top after use</source>
+          <source>Move clips to top after use</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Kopierte Liste Clip nach oben verschieben</target>
           <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="MoveCopiedClipToTopDescription" translate="yes" xml:space="preserve">
-          <source>Move copied from list or fully pasted clip to top of list</source>
+          <source>Move copied from list or fully pasted clips to top of list</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Zum Anfang der Liste verschieben Sie kopierte Liste oder vollständig eingefügten clip</target>
           <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>

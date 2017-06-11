@@ -1355,12 +1355,12 @@ Could be overloaded by RTF native formatting.
 Not appliable to HTML native formatting.</target>
         </trans-unit>
         <trans-unit id="MoveCopiedClipToTop" translate="yes" xml:space="preserve">
-          <source>Move clip to top after use</source>
-          <target state="new">Move clip to top after use</target>
+          <source>Move clips to top after use</source>
+          <target state="new">Move clips to top after use</target>
         </trans-unit>
         <trans-unit id="MoveCopiedClipToTopDescription" translate="yes" xml:space="preserve">
-          <source>Move copied from list or fully pasted clip to top of list</source>
-          <target state="new">Move copied from list or fully pasted clip to top of list</target>
+          <source>Move copied from list or fully pasted clips to top of list</source>
+          <target state="new">Move copied from list or fully pasted clips to top of list</target>
         </trans-unit>
         <trans-unit id="NumberOfClips" translate="yes" xml:space="preserve">
           <source>Number of clips</source>

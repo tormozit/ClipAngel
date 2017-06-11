@@ -302,10 +302,10 @@ Could be overloaded by RTF native formatting.
 Not appliable to HTML native formatting.</value>
   </data>
   <data name="MoveCopiedClipToTop" xml:space="preserve">
-    <value>Move clip to top after use</value>
+    <value>Move clips to top after use</value>
   </data>
   <data name="MoveCopiedClipToTopDescription" xml:space="preserve">
-    <value>Move copied from list or fully pasted clip to top of list</value>
+    <value>Move copied from list or fully pasted clips to top of list</value>
   </data>
   <data name="NumberOfClips" xml:space="preserve">
     <value>Number of clips</value>
