@@ -189,7 +189,7 @@ namespace ClipAngel
                 titleToolTipShown = true;
             };
             GlobalMouseHandler gmh = new GlobalMouseHandler();
-            gmh.TheMouseMoved += new MouseMovedEvent(gmh_TheMouseMoved);
+            gmh.TheMouseMoved += new MouseMovedEvent(HideTitleTooltip);
             Application.AddMessageFilter(gmh);
 
             toolStripSearchOptions.DropDownDirection = ToolStripDropDownDirection.AboveRight;
@@ -298,7 +298,7 @@ namespace ClipAngel
         }
 
         // Mouse moved in window working area
-        void gmh_TheMouseMoved() 
+        void HideTitleTooltip() 
         {
             titleToolTipBeforeTimer.Stop();
             titleToolTip.Hide(this);
@@ -735,6 +735,11 @@ namespace ClipAngel
                             titleToolTipBeforeTimer.Start();
                     }
                     PreviousCursor = Cursor.Position;
+                    return;
+                case Msgs.WM_MOVE:
+                    titleToolTipShown = true;
+                    titleToolTipBeforeTimer.Stop();
+                    titleToolTip.Hide(this);
                     return;
                 default:
                     base.WndProc(ref m);
@@ -5851,6 +5856,9 @@ namespace ClipAngel
         {
         }
 
+        private void Main_Resize(object sender, EventArgs e)
+        {
+        }
     }
 }
 
