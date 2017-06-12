@@ -337,7 +337,7 @@ namespace ClipAngel
                 DbFileName = Properties.Settings.Default.DatabaseFile;
             else
                 DbFileName = UserSettingsPath + "\\" + Properties.Resources.DBShortFilename;
-            ConnectionString = "data source=" + DbFileName + ";";
+            ConnectionString = "data source=" + DbFileName + ";journal_mode=OFF;"; // journal_mode=OFF - Disabled transactions
             string Reputation = "Magic67234784";
             if (!File.Exists(DbFileName))
             {
@@ -3545,12 +3545,13 @@ namespace ClipAngel
 
         private void LoadVisibleRows()
         {
+            int bufferSize = 50;
             var visibleRowsCount = dataGridView.DisplayedRowCount(true);
-            var firstDisplayedRowIndex = dataGridView.FirstDisplayedCell.RowIndex;
-            var lastvibileRowIndex = Math.Min(firstDisplayedRowIndex + visibleRowsCount - 1 + 1, dataGridView.RowCount - 1);
+            var firstLoadedRowIndex = Math.Max(dataGridView.FirstDisplayedCell.RowIndex - bufferSize, 0);
+            var lastLoadedRowIndex = Math.Min(firstLoadedRowIndex + visibleRowsCount + bufferSize, dataGridView.RowCount - 1);
             SQLiteCommand command = new SQLiteCommand(m_dbConnection);
             string queryText = "";
-            for (int rowIndex = firstDisplayedRowIndex; rowIndex <= lastvibileRowIndex; rowIndex++)
+            for (int rowIndex = firstLoadedRowIndex; rowIndex <= lastLoadedRowIndex; rowIndex++)
             {
                 DataRowView drv = (dataGridView.Rows[rowIndex].DataBoundItem as DataRowView);
                 if (!String.IsNullOrEmpty(drv["type"].ToString()))
