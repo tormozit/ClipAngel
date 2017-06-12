@@ -956,9 +956,9 @@ namespace ClipAngel
                 string TypeEng = RowReader["Type"].ToString();
                 StripLabelType.Text = LocalTypeName(TypeEng);
                 stripLabelPosition.Text = "1";
+                richTextBox.Clear();
                 // to prevent autoscrolling during marking
                 richTextBox.HideSelection = true;
-                richTextBox.Clear();
                 int fontsize = (int) richTextBox.Font.Size; // Size should be without digits after comma
                 richTextBox.SelectionTabs = new int[] {fontsize * 4, fontsize * 8, fontsize * 12, fontsize * 16};
                 // Set tab size ~ 4
@@ -1193,10 +1193,16 @@ namespace ClipAngel
             }
             else
             {
-                richTextBox.SelectionStart = NewSelectionStart;
-                richTextBox.SelectionLength = NewSelectionLength;
-                richTextBox.HideSelection = false;
+                SetRichTextboxSelection(NewSelectionStart, NewSelectionLength);
             }
+        }
+
+        private void SetRichTextboxSelection(int NewSelectionStart, int NewSelectionLength)
+        {
+            richTextBox.SelectionStart = NewSelectionStart;
+            richTextBox.SelectionLength = NewSelectionLength;
+            if (richTextBox.SelectionStart > 0 || richTextBox.SelectionLength > 0)
+                richTextBox.HideSelection = false; // slow
         }
 
         private void UpdateSelectionPosition()
@@ -3545,10 +3551,24 @@ namespace ClipAngel
 
         private void LoadVisibleRows()
         {
+            int visibleRowsCount = dataGridView.DisplayedRowCount(true);
+            int firstDisplayedRowIndex = dataGridView.FirstDisplayedCell.RowIndex;
+            int lastDisplayedRowIndex = Math.Min(firstDisplayedRowIndex + visibleRowsCount, dataGridView.RowCount - 1);
+            bool needLoad = false;
+            for (int rowIndex = firstDisplayedRowIndex; rowIndex <= lastDisplayedRowIndex; rowIndex++)
+            {
+                DataRowView drv = (dataGridView.Rows[rowIndex].DataBoundItem as DataRowView);
+                if (String.IsNullOrEmpty(drv["type"].ToString()))
+                {
+                    needLoad = true;
+                    break;
+                }
+            }
+            if (!needLoad)
+                return;
             int bufferSize = 50;
-            var visibleRowsCount = dataGridView.DisplayedRowCount(true);
-            var firstLoadedRowIndex = Math.Max(dataGridView.FirstDisplayedCell.RowIndex - bufferSize, 0);
-            var lastLoadedRowIndex = Math.Min(firstLoadedRowIndex + visibleRowsCount + bufferSize, dataGridView.RowCount - 1);
+            int firstLoadedRowIndex = Math.Max(firstDisplayedRowIndex - bufferSize, 0);
+            int lastLoadedRowIndex = Math.Min(lastDisplayedRowIndex + bufferSize, dataGridView.RowCount - 1);
             SQLiteCommand command = new SQLiteCommand(m_dbConnection);
             string queryText = "";
             for (int rowIndex = firstLoadedRowIndex; rowIndex <= lastLoadedRowIndex; rowIndex++)
@@ -5423,8 +5443,7 @@ namespace ClipAngel
                 var match = Regex.Match(richTextBox.Text, @"([^\\/:*?""<>|\r\n]+)[$<\r\n]", RegexOptions.Singleline);
                 if (match != null)
                 {
-                    richTextBox.SelectionStart = match.Groups[1].Index;
-                    richTextBox.SelectionLength = match.Groups[1].Length;
+                    SetRichTextboxSelection(match.Groups[1].Index, match.Groups[1].Length);
                 }
             }
         }
