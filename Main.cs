@@ -3566,6 +3566,11 @@ namespace ClipAngel
             }
             if (!needLoad)
                 return;
+            LoadDataboundItems(firstDisplayedRowIndex, lastDisplayedRowIndex);
+        }
+
+        private void LoadDataboundItems(int firstDisplayedRowIndex, int lastDisplayedRowIndex)
+        {
             int bufferSize = 50;
             int firstLoadedRowIndex = Math.Max(firstDisplayedRowIndex - bufferSize, 0);
             int lastLoadedRowIndex = Math.Min(lastDisplayedRowIndex + bufferSize, dataGridView.RowCount - 1);
@@ -3580,7 +3585,7 @@ namespace ClipAngel
                 {
                     queryText += "\n\rUNION ALL\n\r";
                 }
-                int rowId = (int)drv["id"];
+                int rowId = (int) drv["id"];
                 // Dublicated code 8gfd8843
                 queryText += "Select " + rowIndex + " AS _Index, Id, Used, Title, Chars, Type, Favorite, ImageSample, AppPath, Size, Created From Clips WHERE Id = " + rowId;
             }
@@ -3589,7 +3594,7 @@ namespace ClipAngel
             command.CommandText += queryText;
             using (SQLiteDataReader reader = command.ExecuteReader())
             {
-                DataTable table = (DataTable)clipBindingSource.DataSource;
+                DataTable table = (DataTable) clipBindingSource.DataSource;
                 while (reader.Read())
                 {
                     int rowIndex = reader.GetInt32(reader.GetOrdinal("_Index"));
@@ -3973,8 +3978,11 @@ namespace ClipAngel
         private bool BoolFieldValue(string fieldName, DataRowView dataRowView = null)
         {
             if (dataRowView == null)
+            {
                 //dataRowView = (DataRowView)(dataGridView.CurrentRow.DataBoundItem);
                 dataRowView = (DataRowView) (clipBindingSource.Current);
+                dataRowView[fieldName] = RowReader[fieldName]; // DataBoundItem can be not read yet
+            }
             bool favVal = false;
             if (dataRowView != null)
             {
