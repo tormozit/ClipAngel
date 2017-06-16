@@ -2214,6 +2214,8 @@ namespace ClipAngel
             foreach (DataGridViewRow selectedRow in dataGridView.SelectedRows)
             {
                 DataRowView dataRow = (DataRowView) selectedRow.DataBoundItem;
+                if ((bool)dataRow["Favorite"])
+                    continue;
                 string parameterName = "@Id" + counter;
                 sql += "," + parameterName;
                 command.Parameters.Add(parameterName, DbType.Int32).Value = dataRow["Id"];
@@ -4529,7 +4531,7 @@ namespace ClipAngel
                         newTitle = inputResult.Text;
                     command.Parameters.AddWithValue("@Title", newTitle);
                     command.ExecuteNonQuery();
-                    UpdateClipBindingSource();
+                    UpdateClipBindingSource(true);
                 }
             }
         }
