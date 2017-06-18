@@ -619,7 +619,7 @@ namespace ClipAngel
             else if (hotkeyTitle == Properties.Settings.Default.GlobalHotkeyIncrementalPaste)
             {
                 AllowHotkeyProcess = false;
-                SendPasteClip();
+                SendPasteClipExpress(null, PasteMethod.Standart, false, true);
                 if ((e.Modifier & EnumModifierKeys.Alt) != 0)
                     keybd_event((byte) VirtualKeyCode.MENU, 0x38, 0, 0); // LEFT
                 if ((e.Modifier & EnumModifierKeys.Control) != 0)
@@ -644,7 +644,7 @@ namespace ClipAngel
             }
             else if (hotkeyTitle == Properties.Settings.Default.GlobalHotkeyPasteText)
             {
-                SendPasteClip(dataGridView.Rows[0], PasteMethod.PasteText);
+                SendPasteClipExpress(dataGridView.Rows[0], PasteMethod.PasteText);
             }
             else if (hotkeyTitle == "Control + F3")
             {
@@ -2499,8 +2499,8 @@ namespace ClipAngel
             return type == "rtf" || type == "text" || type == "html";
         }
 
-        private string SendPasteClip(DataGridViewRow currentViewRow = null,
-            PasteMethod pasteMethod = PasteMethod.Standart, bool pasteDelimiter = false)
+        // Does not respect MoveCopiedClipToTop
+        private string SendPasteClipExpress(DataGridViewRow currentViewRow = null, PasteMethod pasteMethod = PasteMethod.Standart, bool pasteDelimiter = false, bool updateDB = false)
         {
             if (currentViewRow == null)
                 currentViewRow = dataGridView.CurrentRow;
@@ -2533,7 +2533,8 @@ namespace ClipAngel
             if (SendPaste(pasteMethod))
                 return "";
 
-            //SetRowMark("Used");
+            if (updateDB)
+                SetRowMark("Used", true, false, true);
             //if (false
             //    || Properties.Settings.Default.MoveCopiedClipToTop 
             //    || (true 
@@ -3054,7 +3055,7 @@ namespace ClipAngel
             for (int i = count - 1; i >= 0; i--)
             {
                 DataGridViewRow selectedRow = dataGridView.SelectedRows[i];
-                agregateTextToPaste += SendPasteClip(selectedRow, itemPasteMethod, pasteDelimiter);
+                agregateTextToPaste += SendPasteClipExpress(selectedRow, itemPasteMethod, pasteDelimiter);
                 pasteDelimiter = true;
             }
             return agregateTextToPaste;
@@ -3983,7 +3984,8 @@ namespace ClipAngel
             {
                 //dataRowView = (DataRowView)(dataGridView.CurrentRow.DataBoundItem);
                 dataRowView = (DataRowView) (clipBindingSource.Current);
-                dataRowView[fieldName] = RowReader[fieldName]; // DataBoundItem can be not read yet
+                if (dataRowView != null && RowReader != null)
+                    dataRowView[fieldName] = RowReader[fieldName]; // DataBoundItem can be not read yet
             }
             bool favVal = false;
             if (dataRowView != null)
@@ -5831,11 +5833,6 @@ namespace ClipAngel
         }
 
         private void pasteFileToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            SendPasteOfSelectedTextOrSelectedClips(PasteMethod.File);
-        }
-
-        private void toolStripMenuItem18_Click(object sender, EventArgs e)
         {
             SendPasteOfSelectedTextOrSelectedClips(PasteMethod.File);
         }
