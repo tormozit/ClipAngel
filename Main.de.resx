@@ -2789,4 +2789,10 @@ Werden hinzugefügt, um die Liste zu ignorieren, welche bearbeitet werden im Fen
   <data name="sortByToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>237, 22</value>
   </data>
+  <data name="$this.ImeMode" xml:space="preserve" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="sortingToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>237, 22</value>
+  </data>
 </root>

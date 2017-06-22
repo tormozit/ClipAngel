@@ -6506,44 +6506,55 @@ adicionado à lista de ignorar, que pode ser editado na janela de configuraçõe
           <target state="needs-review-translation">234, 6</target>
         </trans-unit>
         <trans-unit id="sortByDefaultToolStripMenuItem.Size" translate="yes" xml:space="preserve" extype="System.Drawing.Size, System.Drawing">
-          <source>237, 22</source>
+          <source>183, 22</source>
           <target state="needs-review-translation">237, 22</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="sortByDefaultToolStripMenuItem.Text" translate="yes" xml:space="preserve">
           <source>Sort by default</source>
           <target state="new">Sort by default</target>
         </trans-unit>
         <trans-unit id="sortByVisualSizeToolStripMenuItem.Size" translate="yes" xml:space="preserve" extype="System.Drawing.Size, System.Drawing">
-          <source>237, 22</source>
+          <source>183, 22</source>
           <target state="needs-review-translation">237, 22</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="sortByVisualSizeToolStripMenuItem.Text" translate="yes" xml:space="preserve">
           <source>Sort by visual size</source>
           <target state="new">Sort by visual size</target>
         </trans-unit>
         <trans-unit id="sortByToolStripMenuItem.Size" translate="yes" xml:space="preserve" extype="System.Drawing.Size, System.Drawing">
-          <source>237, 22</source>
+          <source>183, 22</source>
           <target state="needs-review-translation">237, 22</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="sortByToolStripMenuItem.Text" translate="yes" xml:space="preserve">
           <source>Sort by creation date</source>
           <target state="new">Sort by creation date</target>
         </trans-unit>
-        <trans-unit id="sortByDefaultToolStripMenuItem.ToolTipText" translate="yes" xml:space="preserve">
-          <source>Sort list by default clip order</source>
-          <target state="new">Sort list by default clip order</target>
-        </trans-unit>
         <trans-unit id="sortByVisualSizeToolStripMenuItem.ToolTipText" translate="yes" xml:space="preserve">
-          <source>Sort list by visual size of clip. Usefull for removing big texts which slows down text filter. 
+          <source>Usefull for removing big texts which slows down text filter. 
 Sorting is kept until clip capture.</source>
-          <target state="new">Sort list by visual size of clip. Usefull for removing big texts which slows down text filter. 
+          <target state="new">Usefull for removing big texts which slows down text filter. 
 Sorting is kept until clip capture.</target>
         </trans-unit>
         <trans-unit id="sortByToolStripMenuItem.ToolTipText" translate="yes" xml:space="preserve">
-          <source>Sort list by clip creation date. 
+          <source>
 Sorting is kept until clip capture.</source>
-          <target state="new">Sort list by clip creation date. 
+          <target state="new">
 Sorting is kept until clip capture.</target>
+        </trans-unit>
+        <trans-unit id="$this.ImeMode" translate="yes" xml:space="preserve" extype="System.Windows.Forms.ImeMode, System.Windows.Forms">
+          <source>NoControl</source>
+          <target state="needs-review-translation">NoControl</target>
+        </trans-unit>
+        <trans-unit id="sortingToolStripMenuItem.Size" translate="yes" xml:space="preserve" extype="System.Drawing.Size, System.Drawing">
+          <source>237, 22</source>
+          <target state="needs-review-translation">237, 22</target>
+        </trans-unit>
+        <trans-unit id="sortingToolStripMenuItem.Text" translate="yes" xml:space="preserve">
+          <source>Sorting</source>
+          <target state="new">Sorting</target>
         </trans-unit>
       </group>
     </body>
