@@ -131,6 +131,7 @@ namespace ClipAngel
         private bool titleToolTipShown = false;
         private ToolTip titleToolTip = new ToolTip();
         private Timer titleToolTipBeforeTimer = new Timer();
+        string sortField = "Id";
         private static string timePattern = "\\b[012]?\\d:[0-5]?\\d(?::[0-5]?\\d)?\\b";
         private static string datePattern = "\\b(?:19|20)?[0-9]{2}[\\-/.][0-9]{2}[\\-/.](?:19|20)?[0-9]{2}\\b";
         static private Dictionary<string, string> TextPatterns = new Dictionary<string, string>
@@ -1380,6 +1381,8 @@ namespace ClipAngel
 
         private void UpdateClipBindingSource(bool forceRowLoad = false, int currentClipId = 0, bool keepTextSelectionIfIDChanged = false, List<int> selectedClipIDs = null)
         {
+            if (!(this.Visible && this.ContainsFocus))
+                sortField = "Id";
             if (dataAdapter == null)
                 return;
             if (EditMode)
@@ -1461,7 +1464,7 @@ namespace ClipAngel
             //string selectCommandText = "Select Id, Used, Title, Chars, Type, Favorite, ImageSample, AppPath, Size, Created From Clips";
             string selectCommandText = "Select Id, NULL AS Used, NULL AS Title, NULL AS Chars, NULL AS Type, NULL AS Favorite, NULL AS ImageSample, NULL AS AppPath, NULL AS Size, NULL AS Created From Clips";
             selectCommandText += " WHERE " + sqlFilter;
-            selectCommandText += " ORDER BY Id desc";
+            selectCommandText += " ORDER BY " + sortField + " desc";
             if (Properties.Settings.Default.SearchCaseSensitive)
                 selectCommandText = "PRAGMA case_sensitive_like = 1; " + selectCommandText;
             else
@@ -5885,6 +5888,25 @@ namespace ClipAngel
 
         private void Main_Resize(object sender, EventArgs e)
         {
+        }
+
+        private void sortByDefaultToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            sortField = "Clips.Id";
+            UpdateClipBindingSource();
+        }
+
+        private void sortByVisualSizeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //sortField = "Chars"; // not working
+            sortField = "Clips.Chars";
+            UpdateClipBindingSource();
+        }
+
+        private void sortByToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            sortField = "Clips.Created";
+            UpdateClipBindingSource();
         }
     }
 }
