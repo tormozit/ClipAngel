@@ -5903,9 +5903,15 @@ namespace ClipAngel
             UpdateClipBindingSource();
         }
 
-        private void sortByToolStripMenuItem_Click(object sender, EventArgs e)
+        private void sortByCreationDateToolStripMenuItem_Click(object sender, EventArgs e)
         {
             sortField = "Clips.Created";
+            UpdateClipBindingSource();
+        }
+
+        private void toolStripMenuItem20_Click(object sender, EventArgs e)
+        {
+            sortField = "Clips.Size";
             UpdateClipBindingSource();
         }
     }
