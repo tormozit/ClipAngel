@@ -4074,6 +4074,7 @@ namespace ClipAngel
             MarkFilter.DisplayMember = "Text";
             Properties.Settings.Default.RestoreCaretPositionOnFocusReturn = false; // disabled
             dataGridView.RowsDefaultCellStyle.Font = Properties.Settings.Default.Font;
+            dataGridView.Columns["ColumnCreated"].DefaultCellStyle.Format = "HH:mmm:ss dd.MM";
             UpdateColumnsSet();
             AfterRowLoad();
             this.ResumeLayout();

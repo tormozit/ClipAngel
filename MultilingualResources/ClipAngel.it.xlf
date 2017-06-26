@@ -2477,6 +2477,7 @@ Url verrà salvato in clip corrente e verrà copiato negli Appunti.</target>
         <trans-unit id="tableLayoutPanelData.LayoutSettings" translate="yes" extype="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms" xml:space="preserve">
           <source><bpt id="1">&lt;TableLayoutSettings&gt;</bpt><bpt id="2">&lt;Controls&gt;</bpt><bpt id="3">&lt;Control Name="urlTextBox" Row="3" RowSpan="1" Column="0" ColumnSpan="1"&gt;</bpt><ept id="3">&lt;/Control&gt;</ept><bpt id="4">&lt;Control Name="richTextBox" Row="0" RowSpan="1" Column="0" ColumnSpan="1"&gt;</bpt><ept id="4">&lt;/Control&gt;</ept><bpt id="5">&lt;Control Name="htmlTextBox" Row="1" RowSpan="1" Column="0" ColumnSpan="1"&gt;</bpt><ept id="5">&lt;/Control&gt;</ept><bpt id="6">&lt;Control Name="ImageControl" Row="2" RowSpan="1" Column="0" ColumnSpan="1"&gt;</bpt><ept id="6">&lt;/Control&gt;</ept><ept id="2">&lt;/Controls&gt;</ept><bpt id="7">&lt;Columns Styles="Percent,100"&gt;</bpt><ept id="7">&lt;/Columns&gt;</ept><bpt id="8">&lt;Rows Styles="Percent,28,57143,Percent,28,57143,Percent,42,85715,Absolute,25"&gt;</bpt><ept id="8">&lt;/Rows&gt;</ept><ept id="1">&lt;/TableLayoutSettings&gt;</ept></source>
           <target state="needs-review-translation"><bpt id="1">&lt;TableLayoutSettings&gt;</bpt><bpt id="2">&lt;Controls&gt;</bpt><bpt id="3">&lt;Control Name="urlTextBox" Row="3" RowSpan="1" Column="0" ColumnSpan="1"&gt;</bpt><ept id="3">&lt;/Control&gt;</ept><bpt id="4">&lt;Control Name="richTextBox" Row="0" RowSpan="1" Column="0" ColumnSpan="1"&gt;</bpt><ept id="4">&lt;/Control&gt;</ept><bpt id="5">&lt;Control Name="htmlTextBox" Row="1" RowSpan="1" Column="0" ColumnSpan="1"&gt;</bpt><ept id="5">&lt;/Control&gt;</ept><bpt id="6">&lt;Control Name="ImageControl" Row="2" RowSpan="1" Column="0" ColumnSpan="1"&gt;</bpt><ept id="6">&lt;/Control&gt;</ept><ept id="2">&lt;/Controls&gt;</ept><bpt id="7">&lt;Columns Styles="Percent,100"&gt;</bpt><ept id="7">&lt;/Columns&gt;</ept><bpt id="8">&lt;Rows Styles="Percent,28,57143,Percent,28,57143,Percent,42,85715,Absolute,25"&gt;</bpt><ept id="8">&lt;/Rows&gt;</ept><ept id="1">&lt;/TableLayoutSettings&gt;</ept></target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="tableLayoutPanelData.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
           <source>412, 369</source>
@@ -6483,26 +6484,6 @@ aggiunto alla lista ignora, possa essere modificati nella finestra delle imposta
           <source>Move to top after use</source>
           <target state="new">Move to top after use</target>
         </trans-unit>
-        <trans-unit id="splitContainer1.Panel2.ToolTip" translate="yes" xml:space="preserve">
-          <source></source>
-          <target state="new"></target>
-        </trans-unit>
-        <trans-unit id="$this.ToolTip" translate="yes" xml:space="preserve">
-          <source></source>
-          <target state="new"></target>
-        </trans-unit>
-        <trans-unit id="splitContainer1.Panel1.ToolTip" translate="yes" xml:space="preserve">
-          <source></source>
-          <target state="new"></target>
-        </trans-unit>
-        <trans-unit id="splitContainer1.ToolTip" translate="yes" xml:space="preserve">
-          <source></source>
-          <target state="new"></target>
-        </trans-unit>
-        <trans-unit id="$this.Language" translate="yes" xml:space="preserve" extype="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" extradata="metadata">
-          <source>ru</source>
-          <target state="needs-review-translation">ru</target>
-        </trans-unit>
         <trans-unit id="toolStripMenuItem19.Size" translate="yes" xml:space="preserve" extype="System.Drawing.Size, System.Drawing">
           <source>234, 6</source>
           <target state="needs-review-translation">234, 6</target>
@@ -6609,7 +6590,7 @@ Sorting is kept until clip capture.</target>
           <target state="needs-review-translation">True</target>
         </trans-unit>
         <trans-unit id="ColumnCreated.Width" translate="yes" xml:space="preserve" extype="System.Int32, mscorlib">
-          <source>106</source>
+          <source>78</source>
           <target state="needs-review-translation">110</target>
           <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>

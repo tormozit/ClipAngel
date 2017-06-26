@@ -451,7 +451,7 @@ Edit filter right from list. Navigate in list right from filter.</value>
     <value>False</value>
   </data>
   <data name="ColumnCreated.Width" type="System.Int32, mscorlib">
-    <value>106</value>
+    <value>80</value>
   </data>
   <data name="charsDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
     <value>Chars</value>

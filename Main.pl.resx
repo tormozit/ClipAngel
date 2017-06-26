@@ -2797,9 +2797,6 @@ Edytuje odpowiedni filtr z listy. Przechodzi na odpowiednią listę z filtru.</v
   <data name="toolStripMenuItem12.ToolTipText" xml:space="preserve">
     <value>Edytuje tytuł klipu</value>
   </data>
-  <metadata name="$this.Language" xml:space="preserve" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>ru</value>
-  </metadata>
   <data name="toolStripMenuItem19.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>234, 6</value>
   </data>
