@@ -744,6 +744,7 @@ namespace ClipAngel
             MoveCopiedClipToTop = Properties.Settings.Default.MoveCopiedClipToTop;
             AutoCheckUpdate = Properties.Settings.Default.AutoCheckForUpdate;
             ShowApplicationIconColumn = Properties.Settings.Default.ShowApplicationIconColumn;
+            ShowSecondaryColumns = Properties.Settings.Default.ShowSecondaryColumns;
 
             NumberOfClips = Owner.ClipsNumber.ToString();
             UserSettingsPath = Owner.UserSettingsPath;
@@ -797,6 +798,7 @@ namespace ClipAngel
             Properties.Settings.Default.MaxClipSizeKB = MaxClipSizeKB;
             Properties.Settings.Default.Font = DefaultFont;
             Properties.Settings.Default.ShowApplicationIconColumn = ShowApplicationIconColumn;
+            Properties.Settings.Default.ShowSecondaryColumns = ShowSecondaryColumns;
             Properties.Settings.Default.AutoCheckForUpdate = AutoCheckUpdate;
             Properties.Settings.Default.MoveCopiedClipToTop = MoveCopiedClipToTop;
             Properties.Settings.Default.WindowAutoPosition = WindowAutoPosition;
@@ -855,6 +857,10 @@ namespace ClipAngel
         [GlobalizedCategory("Other")]
         [Editor(typeof(MyBoolEditor), typeof(UITypeEditor))]
         public bool ShowApplicationIconColumn { get; set; }
+
+        [GlobalizedCategory("Other")]
+        [Editor(typeof(MyBoolEditor), typeof(UITypeEditor))]
+        public bool ShowSecondaryColumns { get; set; }
 
         [GlobalizedCategory("Other")]
         [Editor(typeof(MyBoolEditor), typeof(UITypeEditor))]

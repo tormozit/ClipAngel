@@ -4061,6 +4061,8 @@ namespace ClipAngel
             monospacedFontToolStripMenuItem.ToolTipText = allSettings.GetProperties().Find("MonospacedFont", true).Description;
             wordWrapToolStripMenuItem.ToolTipText = allSettings.GetProperties().Find("WordWrap", true).Description;
             toolStripButtonWordWrap.ToolTipText = allSettings.GetProperties().Find("WordWrap", true).Description;
+            toolStripButtonSecondaryColumns.ToolTipText = allSettings.GetProperties().Find("ShowSecondaryColumns", true).Description;
+            toolStripMenuItemSecondaryColumns.ToolTipText = allSettings.GetProperties().Find("ShowSecondaryColumns", true).Description;
 
             BindingList<ListItemNameText> comboItemsMarks = (BindingList<ListItemNameText>) MarkFilter.DataSource;
             foreach (ListItemNameText item in comboItemsMarks)
@@ -4072,9 +4074,16 @@ namespace ClipAngel
             MarkFilter.DisplayMember = "Text";
             Properties.Settings.Default.RestoreCaretPositionOnFocusReturn = false; // disabled
             dataGridView.RowsDefaultCellStyle.Font = Properties.Settings.Default.Font;
-            dataGridView.Columns["appImage"].Visible = Properties.Settings.Default.ShowApplicationIconColumn;
+            UpdateColumnsSet();
             AfterRowLoad();
             this.ResumeLayout();
+        }
+
+        private void UpdateColumnsSet()
+        {
+            dataGridView.Columns["appImage"].Visible = Properties.Settings.Default.ShowApplicationIconColumn;
+            //dataGridView.Columns["VisualWeight"].Visible = Properties.Settings.Default.ShowVisualWeightColumn;
+            dataGridView.Columns["ColumnCreated"].Visible = Properties.Settings.Default.ShowSecondaryColumns;
         }
 
         private void UpdateIgnoreModulesInClipCapture()
@@ -4485,6 +4494,8 @@ namespace ClipAngel
 
         private void UpdateControlsStates()
         {
+            toolStripMenuItemSecondaryColumns.Checked = Properties.Settings.Default.ShowSecondaryColumns;
+            toolStripButtonSecondaryColumns.Checked = Properties.Settings.Default.ShowSecondaryColumns;
             toolStripMenuItemSearchCaseSensitive.Checked = Properties.Settings.Default.SearchCaseSensitive;
             toolStripMenuItemSearchWordsIndependently.Checked = Properties.Settings.Default.SearchWordsIndependently;
             toolStripMenuItemSearchWildcards.Checked = Properties.Settings.Default.SearchWildcards;
@@ -4502,7 +4513,6 @@ namespace ClipAngel
             richTextBox.WordWrap = wordWrapToolStripMenuItem.Checked;
             //showInTaskbarToolStripMenuItem.Enabled = Properties.Settings.Default.FastWindowOpen;
             showInTaskbarToolStripMenuItem.Checked = Properties.Settings.Default.ShowInTaskBar;
-            //dataGridView.Columns["VisualWeight"].Visible = Properties.Settings.Default.ShowVisualWeightColumn;
             //if (Properties.Settings.Default.FastWindowOpen)
             //{
                 this.ShowInTaskbar = Properties.Settings.Default.ShowInTaskBar;
@@ -5916,6 +5926,20 @@ namespace ClipAngel
         {
             sortField = "Clips.Size";
             UpdateClipBindingSource();
+        }
+
+        private void toolStripButtonSecondaryColumns_Click(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.ShowSecondaryColumns = !Properties.Settings.Default.ShowSecondaryColumns;
+            UpdateControlsStates();
+            UpdateColumnsSet();
+        }
+
+        private void toolStripMenuItemSecondaryColumns_Click(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.ShowSecondaryColumns = !Properties.Settings.Default.ShowSecondaryColumns;
+            UpdateControlsStates();
+            UpdateColumnsSet();
         }
     }
 }

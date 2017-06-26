@@ -1030,9 +1030,6 @@
   <data name="toolStripMenuItem8.Text" xml:space="preserve">
     <value>Διαγραφή</value>
   </data>
-  <data name="CreatedDataGridViewTextBoxColumn.Visible" xml:space="preserve" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <data name="toolStripMenuItem9.Text" xml:space="preserve">
     <value>Απαλοιφή προχείρου</value>
   </data>
@@ -1925,9 +1922,6 @@
   <data name="toolStripButtonFindNext.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>23, 22</value>
   </data>
-  <data name="CreatedDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
-    <value>Δημιουργήθηκε</value>
-  </data>
   <data name="MainMenu.Location" xml:space="preserve" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
@@ -2180,9 +2174,6 @@
   <metadata name="ImageSample.UserAddedColumn" xml:space="preserve" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="CreatedDataGridViewTextBoxColumn.UserAddedColumn" xml:space="preserve" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <metadata name="contextMenuStripHtml.TrayLocation" xml:space="preserve" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>451, 2</value>
   </metadata>
@@ -2338,5 +2329,32 @@
   </data>
   <data name="toolStripMenuItem20.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>183, 22</value>
+  </data>
+  <data name="toolStripMenuItemSecondaryColumns.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>237, 22</value>
+  </data>
+  <data name="toolStripMenuItem22.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>234, 6</value>
+  </data>
+  <data name="toolStripButtonReturnToPrevous.Visible" xml:space="preserve" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="toolStripButtonSecondaryColumns.ImageTransparentColor" xml:space="preserve" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="toolStripButtonSecondaryColumns.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>23, 22</value>
+  </data>
+  <data name="ColumnCreated.Visible" xml:space="preserve" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <metadata name="ColumnCreated.UserAddedColumn" xml:space="preserve" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="ColumnCreated.Width" xml:space="preserve" type="System.Int32, mscorlib">
+    <value>110</value>
+  </data>
+  <data name="toolStripButtonOpenWith.Visible" xml:space="preserve" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
 </root>

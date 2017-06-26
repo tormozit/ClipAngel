@@ -736,6 +736,14 @@ Generation of image consumes CPU. If you experience high CPU load, set lower val
           <target state="new">When capturing clip from cells (Excel), capture generated image if number of cells is lower than this. 0 - do not capture. 
 Generation of image consumes CPU. If you experience high CPU load, set lower value.</target>
         </trans-unit>
+        <trans-unit id="ShowSecondaryColumns" translate="yes" xml:space="preserve">
+          <source>Show secondary columns</source>
+          <target state="new">Show secondary columns</target>
+        </trans-unit>
+        <trans-unit id="ShowSecondaryColumnsDescription" translate="yes" xml:space="preserve">
+          <source>Show secondary columns in list</source>
+          <target state="new">Show secondary columns in list</target>
+        </trans-unit>
       </group>
     </body>
   </file>
@@ -1520,8 +1528,8 @@ Generation of image consumes CPU. If you experience high CPU load, set lower val
           <target state="new">Clip was not captured due to clipboard read error</target>
         </trans-unit>
         <trans-unit id="VersionValue" translate="yes" xml:space="preserve">
-          <source>1.31</source>
-          <target state="new">1.31</target>
+          <source>1.32</source>
+          <target state="new">1.32</target>
         </trans-unit>
         <trans-unit id="TargetWindow" translate="yes" xml:space="preserve">
           <source>Target window</source>
@@ -1530,6 +1538,10 @@ Generation of image consumes CPU. If you experience high CPU load, set lower val
         <trans-unit id="TargetApp" translate="yes" xml:space="preserve">
           <source>Target application</source>
           <target state="new">Target application</target>
+        </trans-unit>
+        <trans-unit id="Columns" translate="yes" xml:space="preserve" extype="System.Resources.ResXFileRef, System.Windows.Forms">
+          <source>..\Picture\Columns.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</source>
+          <target state="needs-review-translation">..\Picture\Columns.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</target>
         </trans-unit>
       </group>
     </body>
@@ -4306,8 +4318,9 @@ Modifiche in file temp non vengono sincronizzate con clip!</target>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Trovare la corrispondenza successiva nel testo clip (F3)</target>
         </trans-unit>
         <trans-unit id="ColumnTitle.HeaderText" translate="yes" xml:space="preserve">
-          <source>ColumnTitle</source>
+          <source>Title</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">ColumnTitle</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="AppImage.Width" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
           <source>18</source>
@@ -5967,8 +5980,9 @@ Modifica filtro fin dall'elenco. Navigare nella lista di destra dal filtro.</tar
           <target state="needs-review-translation">F3</target>
         </trans-unit>
         <trans-unit id="toolStripTop.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
-          <source>276, 25</source>
+          <source>253, 25</source>
           <target state="needs-review-translation">276, 25</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="toolStripMenuItem15.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
           <source>209, 22</source>
@@ -6003,10 +6017,6 @@ Modifica filtro fin dall'elenco. Navigare nella lista di destra dal filtro.</tar
         <trans-unit id="trayMenuItemMonitoringClipboard.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
           <source>187, 22</source>
           <target state="needs-review-translation">187, 22</target>
-        </trans-unit>
-        <trans-unit id="CreatedDataGridViewTextBoxColumn.Visible" translate="yes" extype="System.Boolean, mscorlib" xml:space="preserve">
-          <source>False</source>
-          <target state="needs-review-translation">False</target>
         </trans-unit>
         <trans-unit id="buttonUpdate.ToolTipText" translate="yes" xml:space="preserve">
           <source>Update program to new version</source>
@@ -6198,10 +6208,6 @@ aggiunto alla lista ignora, possa essere modificati nella finestra delle imposta
           <source>Magenta</source>
           <target state="needs-review-translation">Magenta</target>
         </trans-unit>
-        <trans-unit id="CreatedDataGridViewTextBoxColumn.HeaderText" translate="yes" xml:space="preserve">
-          <source>Created</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Creato</target>
-        </trans-unit>
         <trans-unit id="wordWrapToolStripMenuItem.Text" translate="yes" xml:space="preserve">
           <source>Word wrap</source>
           <target state="needs-review-translation" state-qualifier="tm-suggestion">Ritorno a capo automatico</target>
@@ -6235,10 +6241,6 @@ aggiunto alla lista ignora, possa essere modificati nella finestra delle imposta
           <target state="needs-review-translation" state-qualifier="tm-suggestion">Informazioni su</target>
         </trans-unit>
         <trans-unit id="ImageSample.UserAddedColumn" translate="yes" extype="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" xml:space="preserve" extradata="metadata">
-          <source>True</source>
-          <target state="needs-review-translation">True</target>
-        </trans-unit>
-        <trans-unit id="CreatedDataGridViewTextBoxColumn.UserAddedColumn" translate="yes" extype="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" xml:space="preserve" extradata="metadata">
           <source>True</source>
           <target state="needs-review-translation">True</target>
         </trans-unit>
@@ -6565,6 +6567,55 @@ Sorting is kept until clip capture.</target>
 Sorting is kept until clip capture.</source>
           <target state="new">Usefull for removing big clips which remarkably influence database size. 
 Sorting is kept until clip capture.</target>
+        </trans-unit>
+        <trans-unit id="toolStripMenuItemSecondaryColumns.Size" translate="yes" xml:space="preserve" extype="System.Drawing.Size, System.Drawing">
+          <source>237, 22</source>
+          <target state="needs-review-translation">237, 22</target>
+        </trans-unit>
+        <trans-unit id="toolStripMenuItemSecondaryColumns.Text" translate="yes" xml:space="preserve">
+          <source>Secondary columns</source>
+          <target state="new">Secondary columns</target>
+        </trans-unit>
+        <trans-unit id="toolStripMenuItem22.Size" translate="yes" xml:space="preserve" extype="System.Drawing.Size, System.Drawing">
+          <source>234, 6</source>
+          <target state="needs-review-translation">234, 6</target>
+        </trans-unit>
+        <trans-unit id="toolStripButtonReturnToPrevous.Visible" translate="yes" xml:space="preserve" extype="System.Boolean, mscorlib">
+          <source>False</source>
+          <target state="needs-review-translation">False</target>
+        </trans-unit>
+        <trans-unit id="toolStripButtonSecondaryColumns.ImageTransparentColor" translate="yes" xml:space="preserve" extype="System.Drawing.Color, System.Drawing">
+          <source>Magenta</source>
+          <target state="needs-review-translation">Magenta</target>
+        </trans-unit>
+        <trans-unit id="toolStripButtonSecondaryColumns.Size" translate="yes" xml:space="preserve" extype="System.Drawing.Size, System.Drawing">
+          <source>23, 22</source>
+          <target state="needs-review-translation">23, 22</target>
+        </trans-unit>
+        <trans-unit id="toolStripButtonSecondaryColumns.Text" translate="yes" xml:space="preserve">
+          <source>Secondary columns</source>
+          <target state="new">Secondary columns</target>
+        </trans-unit>
+        <trans-unit id="ColumnCreated.HeaderText" translate="yes" xml:space="preserve">
+          <source>Created</source>
+          <target state="new">Created</target>
+        </trans-unit>
+        <trans-unit id="ColumnCreated.Visible" translate="yes" xml:space="preserve" extype="System.Boolean, mscorlib">
+          <source>False</source>
+          <target state="needs-review-translation">False</target>
+        </trans-unit>
+        <trans-unit id="ColumnCreated.UserAddedColumn" translate="yes" xml:space="preserve" extype="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" extradata="metadata">
+          <source>True</source>
+          <target state="needs-review-translation">True</target>
+        </trans-unit>
+        <trans-unit id="ColumnCreated.Width" translate="yes" xml:space="preserve" extype="System.Int32, mscorlib">
+          <source>106</source>
+          <target state="needs-review-translation">110</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
+        </trans-unit>
+        <trans-unit id="toolStripButtonOpenWith.Visible" translate="yes" xml:space="preserve" extype="System.Boolean, mscorlib">
+          <source>False</source>
+          <target state="needs-review-translation">False</target>
         </trans-unit>
       </group>
     </body>

@@ -224,6 +224,16 @@ namespace ClipAngel.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap Columns {
+            get {
+                object obj = ResourceManager.GetObject("Columns", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap Compare {
             get {
                 object obj = ResourceManager.GetObject("Compare", resourceCulture);
@@ -939,7 +949,7 @@ namespace ClipAngel.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 1.31.
+        ///   Looks up a localized string similar to 1.32.
         /// </summary>
         public static string VersionValue {
             get {

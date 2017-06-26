@@ -361,6 +361,12 @@ Not appliable to HTML native formatting.</value>
   <data name="ShowNativeTextFormattingDescription" xml:space="preserve">
     <value>Show native text formatting for RTF and HTML clips (CLTR+N)</value>
   </data>
+  <data name="ShowSecondaryColumns" xml:space="preserve">
+    <value>Show secondary columns</value>
+  </data>
+  <data name="ShowSecondaryColumnsDescription" xml:space="preserve">
+    <value>Show secondary columns in list</value>
+  </data>
   <data name="ShowSizeColumn" xml:space="preserve">
     <value>Show visual clip weight column</value>
   </data>

@@ -584,5 +584,17 @@ namespace ClipAngel.Properties {
                 this["MaxCellsToCaptureImage"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool ShowSecondaryColumns {
+            get {
+                return ((bool)(this["ShowSecondaryColumns"]));
+            }
+            set {
+                this["ShowSecondaryColumns"] = value;
+            }
+        }
     }
 }

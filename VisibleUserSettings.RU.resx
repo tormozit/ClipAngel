@@ -354,10 +354,10 @@
     <value>Находить вхождение каждого слова фильтра независимо. Например "карто веб" найдет "Наш вебсайт продает картошку".</value>
   </data>
   <data name="ShowApplicationIconColumn" xml:space="preserve">
-    <value>Отображать колонку иконки источника клипа</value>
+    <value>Показывать колонку иконки источника клипа</value>
   </data>
   <data name="ShowApplicationIconColumnDescription" xml:space="preserve">
-    <value>Показать столбец со значком приложения, из которого был скопирован клип</value>
+    <value>Показывать в списке клипов столбец со значком приложения, из которого был скопирован клип</value>
   </data>
   <data name="ShowNativeTextFormatting" xml:space="preserve">
     <value>Родное оформление</value>
@@ -365,8 +365,14 @@
   <data name="ShowNativeTextFormattingDescription" xml:space="preserve">
     <value>Показывать родное оформление текста клипа (CLTR+N)</value>
   </data>
+  <data name="ShowSecondaryColumns" xml:space="preserve">
+    <value>Показывать дополнительные колонки</value>
+  </data>
+  <data name="ShowSecondaryColumnsDescription" xml:space="preserve">
+    <value>Показывать дополнительные колонки в списке клипов</value>
+  </data>
   <data name="ShowSizeColumn" xml:space="preserve">
-    <value>Отображать колонку визуального веса клипа</value>
+    <value>Показывать колонку визуального веса клипа</value>
   </data>
   <data name="ShowSizeColumnDescription" xml:space="preserve">
     <value>Колонка будет показывать визуальный вес (количество цифр в визуальном размере) клипа</value>

@@ -565,6 +565,12 @@
   <data name="fileToolStripMenuItem1.Text" xml:space="preserve">
     <value>Окно</value>
   </data>
+  <data name="toolStripMenuItemSecondaryColumns.Size" type="System.Drawing.Size, System.Drawing">
+    <value>289, 22</value>
+  </data>
+  <data name="toolStripMenuItemSecondaryColumns.Text" xml:space="preserve">
+    <value>Дополнительные колонки</value>
+  </data>
   <data name="moveCopiedClipToTopToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>289, 22</value>
   </data>
@@ -573,6 +579,9 @@
   </data>
   <data name="moveCopiedClipToTopToolStripMenuItem.ToolTipText" xml:space="preserve">
     <value>Перемещать клип наверх после его копирования/вставки</value>
+  </data>
+  <data name="toolStripMenuItem22.Size" type="System.Drawing.Size, System.Drawing">
+    <value>286, 6</value>
   </data>
   <data name="moveTopToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>289, 22</value>
@@ -1604,6 +1613,9 @@
 Открывает стандартный диалог выбора приложения для открытия файла.
 Изменения временного файла не синхронизируются с клипом!</value>
   </data>
+  <data name="toolStripButtonSecondaryColumns.Text" xml:space="preserve">
+    <value>Дополнительные колонки</value>
+  </data>
   <data name="toolStripButtonTopMostWindow.Text" xml:space="preserve">
     <value />
   </data>
@@ -2177,6 +2189,10 @@
         wAAAAf/////AAAAB/////8AAAAH/////4AAAA//////gAAAD/////+AAAAP/////8AAAB//////4AAAP
         //////gAAA///////AAAH//////+AAA///////+AAP///////+AD/////////////////////////w==
 </value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>Inherit</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ClipAngel</value>
