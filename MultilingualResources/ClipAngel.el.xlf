@@ -6568,7 +6568,7 @@ Sorting is kept until clip capture.</target>
           <target state="needs-review-translation">True</target>
         </trans-unit>
         <trans-unit id="ColumnCreated.Width" translate="yes" xml:space="preserve" extype="System.Int32, mscorlib">
-          <source>78</source>
+          <source>80</source>
           <target state="needs-review-translation">110</target>
           <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
