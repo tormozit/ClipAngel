@@ -2220,7 +2220,7 @@ namespace ClipAngel
             foreach (DataGridViewRow selectedRow in dataGridView.SelectedRows)
             {
                 DataRowView dataRow = (DataRowView) selectedRow.DataBoundItem;
-                if ((bool)dataRow["Favorite"])
+                if (dataRow["Favorite"] != DBNull.Value && (bool)dataRow["Favorite"])
                     continue;
                 string parameterName = "@Id" + counter;
                 sql += "," + parameterName;
