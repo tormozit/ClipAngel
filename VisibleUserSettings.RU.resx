@@ -340,6 +340,12 @@
   <data name="SearchCaseSensitiveDescription" xml:space="preserve">
     <value>Искать с учетом регистра букв фильтра. Например "Кар" найдет "Картошка", но не найдет "картошка".</value>
   </data>
+  <data name="SearchIgnoreBigTexts" xml:space="preserve">
+    <value>Искать игнорируя большие тексты</value>
+  </data>
+  <data name="SearchIgnoreBigTextsDescription" xml:space="preserve">
+    <value>Искать игнорируя большие (визуальный размер &gt; 99 999 символов) текстовые клипы. Это ускорит поиск.</value>
+  </data>
   <data name="SearchWildcards" xml:space="preserve">
     <value>Искать "%" как любую строку</value>
   </data>

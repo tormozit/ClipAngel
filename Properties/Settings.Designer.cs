@@ -596,5 +596,17 @@ namespace ClipAngel.Properties {
                 this["ShowSecondaryColumns"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool SearchIgnoreBigTexts {
+            get {
+                return ((bool)(this["SearchIgnoreBigTexts"]));
+            }
+            set {
+                this["SearchIgnoreBigTexts"] = value;
+            }
+        }
     }
 }

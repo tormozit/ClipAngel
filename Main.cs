@@ -1428,6 +1428,8 @@ namespace ClipAngel
                         sqlFilter += " AND UPPER(Text) Like UPPER('%" + word + "%') ESCAPE '\\'";
                 }
                 filterOn = true;
+                if (Properties.Settings.Default.SearchIgnoreBigTexts)
+                    sqlFilter += " AND Chars < 100000";
             }
             if (TypeFilter.SelectedValue as string != "allTypes")
             {
@@ -4500,6 +4502,7 @@ namespace ClipAngel
             toolStripMenuItemSearchCaseSensitive.Checked = Properties.Settings.Default.SearchCaseSensitive;
             toolStripMenuItemSearchWordsIndependently.Checked = Properties.Settings.Default.SearchWordsIndependently;
             toolStripMenuItemSearchWildcards.Checked = Properties.Settings.Default.SearchWildcards;
+            ignoreBigTextsToolStripMenuItem.Checked = Properties.Settings.Default.SearchIgnoreBigTexts;
             moveCopiedClipToTopToolStripButton.Checked = Properties.Settings.Default.MoveCopiedClipToTop;
             moveCopiedClipToTopToolStripMenuItem.Checked = Properties.Settings.Default.MoveCopiedClipToTop;
             toolStripButtonAutoSelectMatch.Checked = Properties.Settings.Default.AutoSelectMatch;
@@ -5751,7 +5754,7 @@ namespace ClipAngel
             DataRowView dataRowView = row.DataBoundItem as DataRowView;
             string tooltipText = "";
             if (!(dataRowView["Created"] is DBNull))
-                tooltipText += String.Format("{0:dd/MM HH:mm:ss}", (DateTime)dataRowView["Created"]);
+                tooltipText += String.Format("{0:" + dataGridView.Columns["ColumnCreated"].DefaultCellStyle.Format + "}", (DateTime)dataRowView["Created"]);
             if (!(dataRowView["Chars"] is DBNull))
                 tooltipText += ", " + FormattedClipNumericPropery((int)dataRowView["Chars"], MultiLangCharUnit());
             if (!(dataRowView["Size"] is DBNull))
@@ -5941,6 +5944,13 @@ namespace ClipAngel
             Properties.Settings.Default.ShowSecondaryColumns = !Properties.Settings.Default.ShowSecondaryColumns;
             UpdateControlsStates();
             UpdateColumnsSet();
+        }
+
+        private void ignoreBigTextClipsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.SearchIgnoreBigTexts = !Properties.Settings.Default.SearchIgnoreBigTexts;
+            UpdateControlsStates();
+            TextFilterApply();
         }
     }
 }

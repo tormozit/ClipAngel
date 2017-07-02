@@ -337,6 +337,12 @@ Not appliable to HTML native formatting.</value>
   <data name="SearchCaseSensitiveDescription" xml:space="preserve">
     <value>Search filter case sensitive. For example "Pot" will match "Potato", but not "potato". </value>
   </data>
+  <data name="SearchIgnoreBigTexts" xml:space="preserve">
+    <value>Search with ignore big texts</value>
+  </data>
+  <data name="SearchIgnoreBigTextsDescription" xml:space="preserve">
+    <value>Search with ignore big (visual size &gt; 99 999 chars) text clips. It will speed up search.</value>
+  </data>
   <data name="SearchWildcards" xml:space="preserve">
     <value>Search "%" as any char sequence</value>
   </data>

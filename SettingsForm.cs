@@ -716,6 +716,7 @@ namespace ClipAngel
             SearchWildcards = Properties.Settings.Default.SearchWildcards;
             AutoSelectMatch = Properties.Settings.Default.AutoSelectMatch;
             SearchCaseSensitive = Properties.Settings.Default.SearchCaseSensitive;
+            SearchIgnoreBigTexts = Properties.Settings.Default.SearchIgnoreBigTexts;
             ClipTempFileFolder = Properties.Settings.Default.ClipTempFileFolder;
             IgnoreExclusiveFormatClipCapture = Properties.Settings.Default.IgnoreExclusiveFormatClipCapture;
             //RestoreCaretPositionOnFocusReturn = Properties.Settings.Default.RestoreCaretPositionOnFocusReturn;
@@ -778,6 +779,7 @@ namespace ClipAngel
             Properties.Settings.Default.SearchWildcards = SearchWildcards;
             Properties.Settings.Default.AutoSelectMatch = AutoSelectMatch;
             Properties.Settings.Default.SearchCaseSensitive = SearchCaseSensitive;
+            Properties.Settings.Default.SearchIgnoreBigTexts = SearchIgnoreBigTexts;
             Properties.Settings.Default.ClipTempFileFolder = ClipTempFileFolder;
             Properties.Settings.Default.IgnoreExclusiveFormatClipCapture = IgnoreExclusiveFormatClipCapture;
             //Properties.Settings.Default.RestoreCaretPositionOnFocusReturn = RestoreCaretPositionOnFocusReturn;
@@ -994,6 +996,10 @@ namespace ClipAngel
         [GlobalizedCategory("Search")]
         [Editor(typeof(MyBoolEditor), typeof(UITypeEditor))]
         public bool SearchCaseSensitive { get; set; }
+
+        [GlobalizedCategory("Search")]
+        [Editor(typeof(MyBoolEditor), typeof(UITypeEditor))]
+        public bool SearchIgnoreBigTexts { get; set; }
 
         [GlobalizedCategory("Other")]
         [Editor(typeof(MyBoolEditor), typeof(UITypeEditor))]
