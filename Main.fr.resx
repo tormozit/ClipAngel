@@ -2844,73 +2844,16 @@ Le tri est conservé jusqu'à la capture du clip.</value>
   <data name="toolStripButtonOpenWith.Visible" xml:space="preserve" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="ImageControl.ToolTip" xml:space="preserve">
-    <value>Démarrage automatique de ClipAngel lors de la connexion de l'utilisateur</value>
-  </data>
-  <data name="htmlTextBox.ToolTip" xml:space="preserve">
-    <value>Démarrage automatique de ClipAngel lors de la connexion de l'utilisateur</value>
-  </data>
-  <data name="contextMenuUrl.ToolTip" xml:space="preserve">
-    <value>Démarrage automatique de ClipAngel lors de la connexion de l'utilisateur</value>
-  </data>
-  <data name="richTextBox.ToolTip" xml:space="preserve">
-    <value>Démarrage automatique de ClipAngel lors de la connexion de l'utilisateur</value>
-  </data>
   <data name="splitContainer1.Panel2.ToolTip" xml:space="preserve">
-    <value>Démarrage automatique de ClipAngel lors de la connexion de l'utilisateur</value>
-  </data>
-  <data name="toolStripTop.ToolTip" xml:space="preserve">
-    <value>Démarrage automatique de ClipAngel lors de la connexion de l'utilisateur</value>
-  </data>
-  <data name="contextMenuPictureBox.ToolTip" xml:space="preserve">
-    <value>Démarrage automatique de ClipAngel lors de la connexion de l'utilisateur</value>
-  </data>
-  <data name="contextMenuStripHtml.ToolTip" xml:space="preserve">
-    <value>Démarrage automatique de ClipAngel lors de la connexion de l'utilisateur</value>
-  </data>
-  <data name="contextMenuStripRtf.ToolTip" xml:space="preserve">
-    <value>Démarrage automatique de ClipAngel lors de la connexion de l'utilisateur</value>
-  </data>
-  <data name="monthCalendar1.ToolTip" xml:space="preserve">
-    <value>Démarrage automatique de ClipAngel lors de la connexion de l'utilisateur</value>
-  </data>
-  <data name="ignoreBigTextClipsToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
-    <value>209, 22</value>
-  </data>
-  <data name="dataGridView.ToolTip" xml:space="preserve">
-    <value>Démarrage automatique de ClipAngel lors de la connexion de l'utilisateur</value>
-  </data>
-  <data name="contextMenuStripNotifyIcon.ToolTip" xml:space="preserve">
-    <value>Démarrage automatique de ClipAngel lors de la connexion de l'utilisateur</value>
-  </data>
-  <data name="tableLayoutPanelData.ToolTip" xml:space="preserve">
     <value>Démarrage automatique de ClipAngel lors de la connexion de l'utilisateur</value>
   </data>
   <data name="$this.ToolTip" xml:space="preserve">
     <value>Démarrage automatique de ClipAngel lors de la connexion de l'utilisateur</value>
   </data>
-  <data name="contextMenuStripDataGrid.ToolTip" xml:space="preserve">
-    <value>Démarrage automatique de ClipAngel lors de la connexion de l'utilisateur</value>
-  </data>
-  <data name="MainMenu.ToolTip" xml:space="preserve">
-    <value>Démarrage automatique de ClipAngel lors de la connexion de l'utilisateur</value>
-  </data>
   <data name="splitContainer1.Panel1.ToolTip" xml:space="preserve">
     <value>Démarrage automatique de ClipAngel lors de la connexion de l'utilisateur</value>
   </data>
-  <data name="contextMenuWindowTitle.ToolTip" xml:space="preserve">
-    <value>Démarrage automatique de ClipAngel lors de la connexion de l'utilisateur</value>
-  </data>
-  <data name="toolStripBottom.ToolTip" xml:space="preserve">
-    <value>Démarrage automatique de ClipAngel lors de la connexion de l'utilisateur</value>
-  </data>
   <data name="splitContainer1.ToolTip" xml:space="preserve">
-    <value>Démarrage automatique de ClipAngel lors de la connexion de l'utilisateur</value>
-  </data>
-  <data name="statusStrip.ToolTip" xml:space="preserve">
-    <value>Démarrage automatique de ClipAngel lors de la connexion de l'utilisateur</value>
-  </data>
-  <data name="contextMenuStripApplication.ToolTip" xml:space="preserve">
     <value>Démarrage automatique de ClipAngel lors de la connexion de l'utilisateur</value>
   </data>
   <metadata name="$this.Language" xml:space="preserve" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">

@@ -152,7 +152,7 @@
     <value>Игнорировать большие тексты</value>
   </data>
   <data name="ignoreBigTextsToolStripMenuItem.ToolTipText" xml:space="preserve">
-    <value>Искать игнорируя большие (визуальный размер &gt; 99 999 символов) текстовые клипы. Это ускорит поиск.</value>
+    <value>Игнорировать большие (&gt; 99 999 символов) текстовые клипы для ускорения поиска.</value>
   </data>
   <data name="toolStripSearchOptions.ToolTipText" xml:space="preserve">
     <value>Опции поиска</value>

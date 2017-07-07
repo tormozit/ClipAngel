@@ -4242,6 +4242,7 @@ Cambios en el archivo temporal no se sincronizan con el clip!</target>
         <trans-unit id="toolStripBottom.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
           <source>101, 25</source>
           <target state="needs-review-translation">101, 25</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="ignoreApplicationInCaptureToolStripMenuItem.Text" translate="yes" xml:space="preserve">
           <source>Ignore application</source>
@@ -4394,6 +4395,7 @@ Cambios en el archivo temporal no se sincronizan con el clip!</target>
         <trans-unit id="toolStripBottom.Location" translate="yes" extype="System.Drawing.Point, System.Drawing" xml:space="preserve">
           <source>269, 395</source>
           <target state="needs-review-translation">269, 395</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="favoriteDataGridViewCheckBoxColumn.HeaderText" translate="yes" xml:space="preserve">
           <source>Favorite</source>
@@ -6606,7 +6608,40 @@ Sorting is kept until clip capture.</target>
           <source>False</source>
           <target state="needs-review-translation">False</target>
         </trans-unit>
-        <trans-unit id="ImageControl.ToolTip" translate="yes" xml:space="preserve">
+        <trans-unit id="splitContainer1.Panel2.ToolTip" translate="yes" xml:space="preserve">
+          <source></source>
+          <target state="new"></target>
+        </trans-unit>
+        <trans-unit id="$this.ToolTip" translate="yes" xml:space="preserve">
+          <source></source>
+          <target state="new"></target>
+        </trans-unit>
+        <trans-unit id="splitContainer1.Panel1.ToolTip" translate="yes" xml:space="preserve">
+          <source></source>
+          <target state="new"></target>
+        </trans-unit>
+        <trans-unit id="splitContainer1.ToolTip" translate="yes" xml:space="preserve">
+          <source></source>
+          <target state="new"></target>
+        </trans-unit>
+        <trans-unit id="$this.Language" translate="yes" xml:space="preserve" extype="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" extradata="metadata">
+          <source>ru</source>
+          <target state="needs-review-translation">ru</target>
+        </trans-unit>
+        <trans-unit id="ignoreBigTextsToolStripMenuItem.Size" translate="yes" xml:space="preserve" extype="System.Drawing.Size, System.Drawing">
+          <source>209, 22</source>
+          <target state="needs-review-translation">246, 22</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
+        </trans-unit>
+        <trans-unit id="ignoreBigTextsToolStripMenuItem.Text" translate="yes" xml:space="preserve">
+          <source>Ingore big texts</source>
+          <target state="new">Ingore big texts</target>
+        </trans-unit>
+        <trans-unit id="ignoreBigTextsToolStripMenuItem.ToolTipText" translate="yes" xml:space="preserve">
+          <source>Ingore big (&gt; 99 999 chars) text clips to speed up search,</source>
+          <target state="new">Ingore big (&gt; 99 999 chars) text clips to speed up search,</target>
+        </trans-unit>
+        <trans-unit id="statusStrip.ToolTip" translate="yes" xml:space="preserve">
           <source></source>
           <target state="new"></target>
         </trans-unit>
@@ -6614,15 +6649,7 @@ Sorting is kept until clip capture.</target>
           <source></source>
           <target state="new"></target>
         </trans-unit>
-        <trans-unit id="contextMenuUrl.ToolTip" translate="yes" xml:space="preserve">
-          <source></source>
-          <target state="new"></target>
-        </trans-unit>
         <trans-unit id="richTextBox.ToolTip" translate="yes" xml:space="preserve">
-          <source></source>
-          <target state="new"></target>
-        </trans-unit>
-        <trans-unit id="splitContainer1.Panel2.ToolTip" translate="yes" xml:space="preserve">
           <source></source>
           <target state="new"></target>
         </trans-unit>
@@ -6634,27 +6661,15 @@ Sorting is kept until clip capture.</target>
           <source></source>
           <target state="new"></target>
         </trans-unit>
-        <trans-unit id="contextMenuStripHtml.ToolTip" translate="yes" xml:space="preserve">
-          <source></source>
-          <target state="new"></target>
-        </trans-unit>
         <trans-unit id="contextMenuStripRtf.ToolTip" translate="yes" xml:space="preserve">
           <source></source>
           <target state="new"></target>
         </trans-unit>
-        <trans-unit id="monthCalendar1.ToolTip" translate="yes" xml:space="preserve">
+        <trans-unit id="contextMenuStripHtml.ToolTip" translate="yes" xml:space="preserve">
           <source></source>
           <target state="new"></target>
-        </trans-unit>
-        <trans-unit id="ignoreBigTextClipsToolStripMenuItem.Size" translate="yes" xml:space="preserve" extype="System.Drawing.Size, System.Drawing">
-          <source>209, 22</source>
-          <target state="needs-review-translation">209, 22</target>
         </trans-unit>
         <trans-unit id="dataGridView.ToolTip" translate="yes" xml:space="preserve">
-          <source></source>
-          <target state="new"></target>
-        </trans-unit>
-        <trans-unit id="contextMenuStripNotifyIcon.ToolTip" translate="yes" xml:space="preserve">
           <source></source>
           <target state="new"></target>
         </trans-unit>
@@ -6662,19 +6677,11 @@ Sorting is kept until clip capture.</target>
           <source></source>
           <target state="new"></target>
         </trans-unit>
-        <trans-unit id="$this.ToolTip" translate="yes" xml:space="preserve">
-          <source></source>
-          <target state="new"></target>
-        </trans-unit>
-        <trans-unit id="contextMenuStripDataGrid.ToolTip" translate="yes" xml:space="preserve">
-          <source></source>
-          <target state="new"></target>
-        </trans-unit>
         <trans-unit id="MainMenu.ToolTip" translate="yes" xml:space="preserve">
           <source></source>
           <target state="new"></target>
         </trans-unit>
-        <trans-unit id="splitContainer1.Panel1.ToolTip" translate="yes" xml:space="preserve">
+        <trans-unit id="contextMenuUrl.ToolTip" translate="yes" xml:space="preserve">
           <source></source>
           <target state="new"></target>
         </trans-unit>
@@ -6682,37 +6689,29 @@ Sorting is kept until clip capture.</target>
           <source></source>
           <target state="new"></target>
         </trans-unit>
+        <trans-unit id="contextMenuStripDataGrid.ToolTip" translate="yes" xml:space="preserve">
+          <source></source>
+          <target state="new"></target>
+        </trans-unit>
         <trans-unit id="toolStripBottom.ToolTip" translate="yes" xml:space="preserve">
           <source></source>
           <target state="new"></target>
         </trans-unit>
-        <trans-unit id="ignoreBigTextClipsToolStripMenuItem.Text" translate="yes" xml:space="preserve">
-          <source>Ignore big text clips</source>
-          <target state="new">Ignore big text clips</target>
-        </trans-unit>
-        <trans-unit id="splitContainer1.ToolTip" translate="yes" xml:space="preserve">
+        <trans-unit id="contextMenuStripNotifyIcon.ToolTip" translate="yes" xml:space="preserve">
           <source></source>
           <target state="new"></target>
         </trans-unit>
-        <trans-unit id="statusStrip.ToolTip" translate="yes" xml:space="preserve">
+        <trans-unit id="ImageControl.ToolTip" translate="yes" xml:space="preserve">
+          <source></source>
+          <target state="new"></target>
+        </trans-unit>
+        <trans-unit id="monthCalendar1.ToolTip" translate="yes" xml:space="preserve">
           <source></source>
           <target state="new"></target>
         </trans-unit>
         <trans-unit id="contextMenuStripApplication.ToolTip" translate="yes" xml:space="preserve">
           <source></source>
           <target state="new"></target>
-        </trans-unit>
-        <trans-unit id="ignoreBigTextClipsToolStripMenuItem.ToolTipText" translate="yes" xml:space="preserve">
-          <source>Ignore big (visual size &gt;99 999 chars) text clips. It will speed up filtering.</source>
-          <target state="new">Ignore big (visual size &gt;99 999 chars) text clips. It will speed up filtering.</target>
-        </trans-unit>
-        <trans-unit id="$this.Language" translate="yes" xml:space="preserve" extype="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" extradata="metadata">
-          <source>ru</source>
-          <target state="needs-review-translation">ru</target>
-        </trans-unit>
-        <trans-unit id="ignoreBigTextsToolStripMenuItem.Size" translate="yes" xml:space="preserve" extype="System.Drawing.Size, System.Drawing">
-          <source>246, 22</source>
-          <target state="needs-review-translation">246, 22</target>
         </trans-unit>
       </group>
     </body>
