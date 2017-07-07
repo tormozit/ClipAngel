@@ -22,7 +22,9 @@
     <value>416, 22</value>
   </data>
   <data name="toolStripMenuItemOpenFile.ToolTipText" xml:space="preserve">
-    <value>Zapisuje dane do pliku tymczasowego dla klipu tekstowego lub obrazu.</value>
+    <value>Zapisuje dane do pliku tymczasowego dla klipu tekstowego lub obrazu. 
+Otwiera plik klipu w domyślnej aplikacji. 
+Zmiany w pliku tymczasowym nie są synchronizowane z klipem! </value>
   </data>
   <data name="fileToolStripMenuItem1.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>63, 20</value>
@@ -46,7 +48,7 @@
     <value>250, 22</value>
   </data>
   <data name="toolStripMenuItem10.ToolTipText" xml:space="preserve">
-    <value>Porównuje tekst z 2 zaznaczonych klipów lub bieżący klip z poprzednio zazznaczonym klipem</value>
+    <value>Porównuje tekst z 2 zaznaczonych klipów lub bieżący klip z poprzednio zazznaczonym klipem przez to polecenie</value>
   </data>
   <data name="htmlMenuItemCopyLinkAdress.Text" xml:space="preserve">
     <value>Kopiuj adres linku</value>
@@ -91,7 +93,7 @@
     <value>Typ</value>
   </data>
   <data name="deleteAllNonFavoriteToolStripMenuItem.ToolTipText" xml:space="preserve">
-    <value>Kopiowanie tekstu z dowolnego okna poprzez Control + F3</value>
+    <value>Usuwa wszystkie nie ulubione klipy z listy. Rzeczywiste usunięcie jest przeprowadzane po zamknięciu bazy danych.</value>
   </data>
   <data name="toolStripMenuItem14.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Alt+Q</value>
@@ -516,7 +518,7 @@ Zmiany w pliku tymczasowym nie są synchronizowane z klipem!</value>
     <value>plik</value>
   </data>
   <data name="textCompareToolStripMenuItem.ToolTipText" xml:space="preserve">
-    <value>Porównuje tekst z 2 zaznaczonych klipów lub bieżący klip z poprzednio zaznaczonym klipem
+    <value>Porównuje tekst z 2 zaznaczonych klipów lub bieżący klip z poprzednio zaznaczonym klipem przez to polecenie
 </value>
   </data>
   <data name="textBoxApplication.Anchor" xml:space="preserve" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
@@ -640,7 +642,7 @@ Zmiany w pliku tymczasowym nie są synchronizowane z klipem!
     <value>209, 22</value>
   </data>
   <data name="TypeFilter.Items" xml:space="preserve">
-    <value>wszystkio</value>
+    <value>wszystko</value>
   </data>
   <data name="toolStripButtonFindPrevious.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>23, 22</value>
@@ -2528,7 +2530,8 @@ Edytuje odpowiedni filtr z listy. Przechodzi na odpowiednią listę z filtru.</v
     <value>61, 20</value>
   </data>
   <data name="ignoreApplicationInCaptureToolStripMenuItem.ToolTipText" xml:space="preserve">
-    <value>Użyj tego skrótu w dowolnym programie aby wkleić bieżący klip z listy Clip Angel i wybrać następny/wyższy klip, który pojawi się w zasobniku podpowiedzi</value>
+    <value>Ignoruje aplikacjię podczas przechytywania klipu. Aplikacja będzie 
+dodana do listy ignorowanych, która może być edytowana w oknie Ustawień.</value>
   </data>
   <data name="toolStripButtonOpenWith.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>23, 22</value>
@@ -2594,7 +2597,7 @@ Edytuje odpowiedni filtr z listy. Przechodzi na odpowiednią listę z filtru.</v
     <value>Dołącza tekst wybranego klipu do nowego klipu i zaznacza go</value>
   </data>
   <data name="translateToolStripMenuItem.ToolTipText" xml:space="preserve">
-    <value>Tłumaczy klip tekstowy lub jego wybraną części</value>
+    <value>Tłumaczy klip tekstowy lub jego wybraną część</value>
   </data>
   <data name="toolStripButtonOpenWith.ImageTransparentColor" xml:space="preserve" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
@@ -2717,7 +2720,7 @@ Edytuje odpowiedni filtr z listy. Przechodzi na odpowiednią listę z filtru.</v
     <value>194, 22</value>
   </data>
   <data name="contextMenuUrlOpenLink.Text" xml:space="preserve">
-    <value>Open link (ALT+click)</value>
+    <value>Otwórz link (ALT+kliknięcie)</value>
   </data>
   <data name="pasteTextToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>214, 22</value>
@@ -2797,26 +2800,62 @@ Edytuje odpowiedni filtr z listy. Przechodzi na odpowiednią listę z filtru.</v
   <data name="toolStripMenuItem12.ToolTipText" xml:space="preserve">
     <value>Edytuje tytuł klipu</value>
   </data>
+  <data name="toolStripButtonMonospacedFont.Text" xml:space="preserve">
+    <value>Czcionka o stałej szerokości</value>
+  </data>
+  <data name="moveCopiedClipToTopToolStripButton.Text" xml:space="preserve">
+    <value>Przenieś na sam szczyt po użyciu</value>
+  </data>
   <data name="toolStripMenuItem19.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>234, 6</value>
   </data>
   <data name="sortByDefaultToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>237, 22</value>
   </data>
+  <data name="sortByDefaultToolStripMenuItem.Text" xml:space="preserve">
+    <value>Sortuj domyślnie</value>
+  </data>
   <data name="sortByVisualSizeToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>237, 22</value>
+  </data>
+  <data name="sortByVisualSizeToolStripMenuItem.Text" xml:space="preserve">
+    <value>Sortuj według wielkości wizualnej</value>
   </data>
   <data name="sortByToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>237, 22</value>
   </data>
+  <data name="sortByToolStripMenuItem.Text" xml:space="preserve">
+    <value>Sortuj według daty utworzenia</value>
+  </data>
+  <data name="sortByVisualSizeToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>Przydatne do usuwania dużych tekstów, które spowalniają filtr tekstowy. 
+Sortowanie jest przechowywane aż do przechwycenia klipu.</value>
+  </data>
+  <data name="sortByToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>
+Sortowanie jest przechowywane aż do przechwycenia klipu.</value>
+  </data>
   <data name="sortingToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>237, 22</value>
+  </data>
+  <data name="sortingToolStripMenuItem.Text" xml:space="preserve">
+    <value>Sortuj</value>
   </data>
   <data name="toolStripMenuItem20.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>183, 22</value>
   </data>
+  <data name="toolStripMenuItem20.Text" xml:space="preserve">
+    <value>Sortuj według rozmiaru w bajtach</value>
+  </data>
+  <data name="toolStripMenuItem20.ToolTipText" xml:space="preserve">
+    <value>Przydatne do usuwania dużych klipów, które mają znaczący wpływ na rozmiar bazy danych. 
+Sortowanie jest przechowywane aż do przechwycenia klipu.</value>
+  </data>
   <data name="toolStripMenuItemSecondaryColumns.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>237, 22</value>
+  </data>
+  <data name="toolStripMenuItemSecondaryColumns.Text" xml:space="preserve">
+    <value>Drugorzędne kolumny</value>
   </data>
   <data name="toolStripMenuItem22.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>234, 6</value>
@@ -2830,6 +2869,12 @@ Edytuje odpowiedni filtr z listy. Przechodzi na odpowiednią listę z filtru.</v
   <data name="toolStripButtonSecondaryColumns.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>23, 22</value>
   </data>
+  <data name="toolStripButtonSecondaryColumns.Text" xml:space="preserve">
+    <value>Drugorzędne kolumny</value>
+  </data>
+  <data name="ColumnCreated.HeaderText" xml:space="preserve">
+    <value>Utworzono</value>
+  </data>
   <data name="ColumnCreated.Visible" xml:space="preserve" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
@@ -2842,8 +2887,74 @@ Edytuje odpowiedni filtr z listy. Przechodzi na odpowiednią listę z filtru.</v
   <data name="toolStripButtonOpenWith.Visible" xml:space="preserve" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
+  <data name="ImageControl.ToolTip" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="htmlTextBox.ToolTip" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="contextMenuUrl.ToolTip" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="richTextBox.ToolTip" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="splitContainer1.Panel2.ToolTip" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="toolStripTop.ToolTip" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="contextMenuPictureBox.ToolTip" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="contextMenuStripHtml.ToolTip" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="contextMenuStripRtf.ToolTip" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="monthCalendar1.ToolTip" xml:space="preserve">
+    <value></value>
+  </data>
   <data name="ignoreBigTextClipsToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>209, 22</value>
+  </data>
+  <data name="dataGridView.ToolTip" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="contextMenuStripNotifyIcon.ToolTip" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="tableLayoutPanelData.ToolTip" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="$this.ToolTip" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="contextMenuStripDataGrid.ToolTip" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="MainMenu.ToolTip" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="splitContainer1.Panel1.ToolTip" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="contextMenuWindowTitle.ToolTip" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="toolStripBottom.ToolTip" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="splitContainer1.ToolTip" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="statusStrip.ToolTip" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="contextMenuStripApplication.ToolTip" xml:space="preserve">
+    <value></value>
   </data>
   <metadata name="$this.Language" xml:space="preserve" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>ru</value>

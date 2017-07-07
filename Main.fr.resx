@@ -15,11 +15,22 @@
   <data name="StripLabelCreated.TextAlign" xml:space="preserve" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleRight</value>
   </data>
+  <data name="moveCopiedClipToTopToolStripMenuItem.Text" xml:space="preserve">
+    <value>Déplacé vers le haut après coller</value>
+  </data>
   <data name="toolStripMenuItem13.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>247, 6</value>
   </data>
   <data name="statusStrip.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>416, 22</value>
+  </data>
+  <data name="toolStripMenuItemOpenFile.ToolTipText" xml:space="preserve">
+    <value>Sauver les données dans un fichier temporaire pour un clip texte ou image.
+Ouvrir le fichier clip dans l'application par défaut.
+Les modifications apportées au fichier temporaire ne sont pas synchronisées avec le clip!</value>
+  </data>
+  <data name="pasteENTERToolStripMenuItem.Text" xml:space="preserve">
+    <value>Coller (ENTRÉE)</value>
   </data>
   <data name="toolStripButtonTextFormatting.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>23, 22</value>
@@ -27,11 +38,23 @@
   <data name="toolStripButtonAutoSelectMatch.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>209, 22</value>
   </data>
+  <data name="toolStripButtonAutoSelectMatch.Text" xml:space="preserve">
+    <value>Auto selection premier résultat</value>
+  </data>
   <data name="showAllTypesToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>250, 22</value>
   </data>
+  <data name="toolStripMenuItem10.ToolTipText" xml:space="preserve">
+    <value>Comparez le texte des 2 clips sélectionnés ou du clip actuel avec un clip précédent par cette commande</value>
+  </data>
   <data name="TypeFilter.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>72, 23</value>
+  </data>
+  <data name="VisualWeight.HeaderText" xml:space="preserve">
+    <value>Voir taille</value>
+  </data>
+  <data name="toolStripButtonTopMostWindow.Text" xml:space="preserve">
+    <value>Fenêtre toujours devant</value>
   </data>
   <data name="MarkFilter.Anchor" xml:space="preserve" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
@@ -42,6 +65,9 @@
   <data name="wordWrapToolStripMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+W</value>
   </data>
+  <data name="buttonUpdate.ToolTipText" xml:space="preserve">
+    <value>Mise à jour vers nouvelle version</value>
+  </data>
   <data name="StripLabelCreated.ToolTipText" xml:space="preserve">
     <value>Heure de création</value>
   </data>
@@ -51,14 +77,24 @@
   <data name="toolStripMenuItem3.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>211, 22</value>
   </data>
+  <data name="toolStripMenuItemSwitchFocus.ToolTipText" xml:space="preserve">
+    <value>Basculer focus entre la liste et le texte du clip. Si le focus est mis ailleurs, la liste sera activée.</value>
+  </data>
   <data name="typeDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
     <value>Type</value>
   </data>
   <data name="showAllMarksToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>250, 22</value>
   </data>
+  <data name="deleteAllNonFavoriteToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>Supprime tous les clips sauf favoris de la liste. La suppression est effectuée lors de la fermeture de la base de données.</value>
+  </data>
   <data name="toolStripMenuItem14.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Alt+Q</value>
+  </data>
+  <data name="TypeFilter.ToolTip" xml:space="preserve">
+    <value>Afficher uniquement les clips de ce type. 
+Sous-menu "Liste" a des commandes pour une sélection rapide	</value>
   </data>
   <data name="usedDataGridViewCheckBoxColumn.HeaderText" xml:space="preserve">
     <value>Utilisé</value>
@@ -66,8 +102,14 @@
   <data name="showInTaskbarToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>212, 22</value>
   </data>
+  <data name="toolStripButtonClearFilter.ToolTipText" xml:space="preserve">
+    <value>Effacer les filtres (F7)</value>
+  </data>
   <data name="copyFullFilenameToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>171, 22</value>
+  </data>
+  <data name="trayMenuItemMonitoringClipboard.ToolTipText" xml:space="preserve">
+    <value>Modifier capture dans presse-papiers</value>
   </data>
   <data name="historyToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>178, 22</value>
@@ -75,8 +117,17 @@
   <data name="urlTextBox.Font" xml:space="preserve" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 9pt</value>
   </data>
+  <data name="changeClipTitleToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>Editer titre Clip</value>
+  </data>
   <data name="copyToClipboardToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>211, 22</value>
+  </data>
+  <data name="toolStripWindowTitleCopyAll.Text" xml:space="preserve">
+    <value>Copier tout le texte</value>
+  </data>
+  <data name="windowAlwaysOnTopToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>En mode fenêtre toujours devant</value>
   </data>
   <data name="splitContainer1.SplitterDistance" xml:space="preserve" type="System.Int32, mscorlib">
     <value>370</value>
@@ -90,6 +141,9 @@
   <data name="favoriteDataGridViewCheckBoxColumn.Visible" xml:space="preserve" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
+  <data name="resetFavouriteToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>Retirer clips sélectionnés des favoris</value>
+  </data>
   <data name="rtfMenuItemOpenLink.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>209, 22</value>
   </data>
@@ -101,6 +155,15 @@
   </data>
   <data name="toolStripApplicationCopyAll.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>171, 22</value>
+  </data>
+  <data name="openWithToolStripMenuItem.Text" xml:space="preserve">
+    <value>Ouvrir le fichier avec ...</value>
+  </data>
+  <data name="copyFullFilenameToolStripMenuItem.Text" xml:space="preserve">
+    <value>Copier le nom de fichier</value>
+  </data>
+  <data name="toolStripMenuItem14.ToolTipText" xml:space="preserve">
+    <value>Marquer clips sélectionnés dans favoris</value>
   </data>
   <data name="toolStripBottom.Anchor" xml:space="preserve" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
@@ -123,17 +186,33 @@
   <data name="moveDownToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>250, 22</value>
   </data>
+  <data name="moveDownToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>Déplacer clips vers le bas</value>
+  </data>
   <data name="titleDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
-    <value>Fonction</value>
+    <value>Titre</value>
   </data>
   <data name="rtfMenuItemSelectAll.Text" xml:space="preserve">
     <value>Sélectionner tout</value>
   </data>
+  <data name="StripLabelSize.ToolTipText" xml:space="preserve">
+    <value>Taille totale de tous les clips en octets</value>
+  </data>
   <data name="StripLabelCreated.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>110, 17</value>
   </data>
+  <data name="uploadImageToWebToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>Envoyer le clip image vers un hébergement d'images. 
+L'URL sera enregistrée dans le clip actuel et sera copiée dans le presse-papiers.</value>
+  </data>
+  <data name="toolStripButtonReturnToPrevous.ToolTipText" xml:space="preserve">
+    <value>Effacer les filtres et prendre le clip qui a été sélectionné avant que le filtre ne s'applique avec le changement du clip sélectionné	</value>
+  </data>
   <data name="MainMenu.Text" xml:space="preserve">
     <value>menuStrip1</value>
+  </data>
+  <data name="htmlMenuItemCopyLinkAdress.Text" xml:space="preserve">
+    <value>Copier l'adresse du lien</value>
   </data>
   <data name="pictureBoxSource.Location" xml:space="preserve" type="System.Drawing.Point, System.Drawing">
     <value>1, 3</value>
@@ -141,14 +220,26 @@
   <data name="resetFavouriteToolStripMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Alt+W</value>
   </data>
+  <data name="toolStripButtonMarkFavorite.ToolTipText" xml:space="preserve">
+    <value>C'est un clip favori</value>
+  </data>
   <data name="StripLabelType.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>35, 17</value>
+  </data>
+  <data name="showOnlyTextsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Montrer que les textes</value>
   </data>
   <data name="toolStripMenuItem1.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>92, 22</value>
   </data>
+  <data name="checkUpdateToolStripMenuItem.Text" xml:space="preserve">
+    <value>Vérifier la mise à jour</value>
+  </data>
   <data name="sendPasteToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>209, 22</value>
+  </data>
+  <data name="showOnlyImagesToolStripMenuItem.Text" xml:space="preserve">
+    <value>Montrer que les images</value>
   </data>
   <data name="showOnlyImagesToolStripMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Alt+2</value>
@@ -165,8 +256,14 @@
   <data name="StripLabelVisualSize.AutoSize" xml:space="preserve" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
+  <data name="showOnlyUsedToolStripMenuItem.Text" xml:space="preserve">
+    <value>Montrer que "utilisé"</value>
+  </data>
   <data name="StripLabelType.ToolTipText" xml:space="preserve">
     <value>Type</value>
+  </data>
+  <data name="showAllMarksToolStripMenuItem.Text" xml:space="preserve">
+    <value>Montrer tous les clips</value>
   </data>
   <data name="htmlTextBox.MinimumSize" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>20, 20</value>
@@ -208,7 +305,7 @@
     <value>8</value>
   </data>
   <data name="editClipTextToolStripMenuItem.Text" xml:space="preserve">
-    <value>Modifier le texte…</value>
+    <value>Editer texte…</value>
   </data>
   <data name="deleteAllNonFavoriteToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>250, 22</value>
@@ -222,20 +319,36 @@
   <data name="toolStripMenuItemSearchWordsIndependently.Font" xml:space="preserve" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 9pt</value>
   </data>
+  <data name="toolStripMenuItemSearchWildcards.Text" xml:space="preserve">
+    <value>"%" Comme toutes séquences de caractères</value>
+  </data>
+  <data name="toolStripMenuItem3.ToolTipText" xml:space="preserve">
+    <value>Coller dans la fenêtre active en texte brut, texte sélectionné du clip ou texte agrégé des clips sélectionnés.
+</value>
+  </data>
   <data name="StripLabelSize.AutoSize" xml:space="preserve" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
   <data name="deleteToolStripMenuItem.Text" xml:space="preserve">
-    <value>Découper</value>
+    <value>Clip</value>
   </data>
   <data name="showAllTypesToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Afficher tous les types</value>
   </data>
+  <data name="mergeTextOfClipsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Joindre le texte des clips</value>
+  </data>
   <data name="copyToClipboardToolStripMenuItem.Text" xml:space="preserve">
-    <value>Copier dans le Presse-papiers</value>
+    <value>Copier dans Presse-papiers</value>
+  </data>
+  <data name="supportToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>Envoyer rapport bug ou demander fonction</value>
   </data>
   <data name="textCompareToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>214, 22</value>
+  </data>
+  <data name="textCompareToolStripMenuItem.Text" xml:space="preserve">
+    <value>Comparer texte</value>
   </data>
   <data name="dataGridViewImageColumn1.MinimumWidth" xml:space="preserve" type="System.Int32, mscorlib">
     <value>18</value>
@@ -258,6 +371,9 @@
   <data name="previousMatchToolStripMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Shift+F3</value>
   </data>
+  <data name="toolStripMenuItemOpenFile.Text" xml:space="preserve">
+    <value>Ouvrir le fichier clip</value>
+  </data>
   <data name="$this.AutoScaleDimensions" xml:space="preserve" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
   </data>
@@ -279,17 +395,28 @@
   <data name="notifyIcon.Visible" xml:space="preserve" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="toolStripMenuItemPasteChars.Text" xml:space="preserve">
+    <value>Simuler l'entrée de caractère</value>
+  </data>
   <data name="supportToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>178, 22</value>
   </data>
   <data name="deleteToolStripMenuItem1.ImageScaling" xml:space="preserve" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
     <value>None</value>
   </data>
+  <data name="urlTextBox.ToolTip" xml:space="preserve">
+    <value>Depuis ce clip , l'URL a été copié</value>
+  </data>
   <data name="toolStripMenuItem12.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>F2</value>
   </data>
   <data name="MainMenu.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>790, 24</value>
+  </data>
+  <data name="openWithToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>Sauver dans un fichier temporaire les clips texte ou image.
+Ouvrir le menu pour ouvrir le fichier clip dans l'application choisie.
+Les modifications au fichier temporaire ne sont pas synchronisées avec le clip!</value>
   </data>
   <data name="textBoxApplication.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
     <value>2</value>
@@ -303,14 +430,29 @@
   <data name="toolStripTop.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
+  <data name="comboBoxFilter.CueText" xml:space="preserve">
+    <value>Type de filtre dans liste</value>
+  </data>
+  <data name="supportToolStripMenuItem.Text" xml:space="preserve">
+    <value>Envoyer bug ou suggestion</value>
+  </data>
+  <data name="htmlMenuItemOpenLink.Text" xml:space="preserve">
+    <value>Ouvrir le lien (ALT+click)</value>
+  </data>
   <data name="toolStripMenuItem16.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+F4</value>
   </data>
   <data name="contextMenuStripHtml.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>210, 92</value>
   </data>
+  <data name="showInTaskbarToolStripMenuItem.Text" xml:space="preserve">
+    <value>Voir dans barre des tâches</value>
+  </data>
   <data name="toolStripMenuItemMonitoringClipboard.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>212, 22</value>
+  </data>
+  <data name="textBoxWindow.ToolTip" xml:space="preserve">
+    <value>Titre de la fenêtre qui a copié le clip	</value>
   </data>
   <data name="buttonUpdate.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>63, 22</value>
@@ -330,6 +472,11 @@
   <data name="aboutToolStripMenuItem1.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>178, 22</value>
   </data>
+  <data name="toolStripMenuItem11.ToolTipText" xml:space="preserve">
+    <value>Sauver les données dans un fichier temporaire pour un clip texte ou image.
+Ouvrir le fichier clip dans l'application par défaut.
+Les modifications apportées au fichier temporaire ne sont pas synchronisées avec le clip!</value>
+  </data>
   <data name="ImageControl.Anchor" xml:space="preserve" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
@@ -341,6 +488,11 @@
   </data>
   <data name="showAllMarksToolStripMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+1</value>
+  </data>
+  <data name="toolStripMenuItem16.ToolTipText" xml:space="preserve">
+    <value>Sauver les données dans un fichier temporaire pour un clip texte ou image.
+Ouvrir le fichier clip dans l'application par défaut.
+Les modifications apportées au fichier temporaire ne sont pas synchronisées avec le clip!</value>
   </data>
   <data name="textBoxApplication.Anchor" xml:space="preserve" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -360,6 +512,12 @@
   <data name="toolStripButtonMarkFavorite.ImageTransparentColor" xml:space="preserve" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
   </data>
+  <data name="StripLabelVisualSize.ToolTipText" xml:space="preserve">
+    <value>Taille: nombre de caractères ou de pixels</value>
+  </data>
+  <data name="checkUpdateToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>Vérifier mise à jour à chaque démarrage et puis tous les jours. Cette commande permet de le faire maintenant.</value>
+  </data>
   <data name="fToolStripMenuItem.Text" xml:space="preserve">
     <value>Aide</value>
   </data>
@@ -372,11 +530,23 @@
   <data name="toolStripButtonClearFilterAndSelectTop.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>23, 22</value>
   </data>
+  <data name="monospacedFontToolStripMenuItem.Text" xml:space="preserve">
+    <value>Police monospacée</value>
+  </data>
+  <data name="openFavoritesToolStripMenuItem.Text" xml:space="preserve">
+    <value>Ouvrir vos clips favoris</value>
+  </data>
   <data name="htmlTextBox.Location" xml:space="preserve" type="System.Drawing.Point, System.Drawing">
     <value>3, 101</value>
   </data>
+  <data name="deleteToolStripMenuItem1.ToolTipText" xml:space="preserve">
+    <value>Supprimer les clips sélectionnés de la liste. La suppression est effectuée lors de la fermeture de la base de données.</value>
+  </data>
   <data name="toolStripMenuItemSearchCaseSensitive.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>209, 22</value>
+  </data>
+  <data name="returnToPrevousSelectedClipToolStripMenuItem.Text" xml:space="preserve">
+    <value>Efface filtre et sélection du précédent.</value>
   </data>
   <data name="contextMenuStripApplication.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>172, 48</value>
@@ -399,8 +569,19 @@
   <data name="showOnlyFavoriteToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>250, 22</value>
   </data>
+  <data name="toolStripButtonOpenWith.ToolTipText" xml:space="preserve">
+    <value>Sauver dans un fichier temporaire les clips texte ou image.
+Ouvrir le menu pour ouvrir le fichier clip dans l'application choisie.
+Les modifications du fichier temporaire ne sont pas synchronisées!</value>
+  </data>
+  <data name="pasteAsTextToolStripMenuItem.Text" xml:space="preserve">
+    <value>Coller du texte (CTRL+ENTRER)</value>
+  </data>
   <data name="htmlTextBox.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
     <value>10</value>
+  </data>
+  <data name="charsDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+    <value>Entrée caractère</value>
   </data>
   <data name="toolStripButtonClearFilter.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>23, 22</value>
@@ -414,8 +595,17 @@
   <data name="toolStripMenuItem7.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>211, 22</value>
   </data>
+  <data name="toolStripButtonFindNext.ToolTipText" xml:space="preserve">
+    <value>Résultat suiv. dans clip texte (F3)</value>
+  </data>
+  <data name="moveUpToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>Déplacer clips sélect. vers le haut</value>
+  </data>
   <data name="rtfMenuItemSelectAll.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>209, 22</value>
+  </data>
+  <data name="toolStripUrlCopyAll.Text" xml:space="preserve">
+    <value>Copier tout le texte</value>
   </data>
   <data name="copyToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>209, 22</value>
@@ -435,11 +625,20 @@
   <data name="toolStripButtonFindPrevious.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>23, 22</value>
   </data>
+  <data name="pasteENTERToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>Coller les clips sélectionnés dans la fenêtre active. Également effectué par double clic.</value>
+  </data>
   <data name="moveUpToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>250, 22</value>
   </data>
+  <data name="showOnlyFilesToolStripMenuItem.Text" xml:space="preserve">
+    <value>Montrer que fichiers</value>
+  </data>
   <data name="toolStripSearchOptions.ToolTipText" xml:space="preserve">
     <value>&amp;Options de recherche...</value>
+  </data>
+  <data name="setFavouriteToolStripMenuItem.Text" xml:space="preserve">
+    <value>Marquer comme favori</value>
   </data>
   <data name="textFormattingToolStripMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+N</value>
@@ -1006,8 +1205,14 @@
   <data name="showOnlyFilesToolStripMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Alt+3</value>
   </data>
+  <data name="toolStripMenuItemEditClipText.Text" xml:space="preserve">
+    <value>Editer clip texte</value>
+  </data>
   <data name="ImageControl.Location" xml:space="preserve" type="System.Drawing.Point, System.Drawing">
     <value>2, 198</value>
+  </data>
+  <data name="rtfMenuItemOpenLink.Text" xml:space="preserve">
+    <value>Ouvrir le lien (ALT+click)</value>
   </data>
   <data name="toolStripMenuItemClearFilters.Text" xml:space="preserve">
     <value>Effacer les filtres</value>
@@ -1018,14 +1223,25 @@
   <data name="contextMenuWindowTitle.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>140, 26</value>
   </data>
+  <data name="toolStripMenuItem7.ToolTipText" xml:space="preserve">
+    <value>Simuler l'entrée caractère de la fenêtre active au texte sélectionné du clip ou du texte agrégé des clips sélectionnés.</value>
+  </data>
   <data name="toolStripBottom.Text" xml:space="preserve">
     <value>toolStrip2</value>
   </data>
   <data name="toolStripMenuItem14.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>211, 22</value>
   </data>
+  <data name="toolStripMenuItem12.Text" xml:space="preserve">
+    <value>Editer titre</value>
+  </data>
   <data name="pictureBoxSource.BackgroundImageLayout" xml:space="preserve" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Center</value>
+  </data>
+  <data name="showInTaskbarToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>Lorsque OFF, la fenêtre sera toujours cachée dans la barre des tâches.
+Lorsque ON et "Fenêtre rapide ouverte" ON, la fenêtre sera toujours affichée dans la barre des tâches.
+Lorsque ON et "Fenêtre rapide ouverte" OFF, la fenêtre sera affichée dans la barre des tâches et visible.</value>
   </data>
   <data name="toolStripMenuItemSwitchFocus.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>212, 22</value>
@@ -1035,6 +1251,9 @@
   </data>
   <data name="toolStripMenuItem8.Text" xml:space="preserve">
     <value>Supprimer</value>
+  </data>
+  <data name="toolStripMenuItemPasteChars.ToolTipText" xml:space="preserve">
+    <value>Simuler l'entrée caractère de la fenêtre active au texte sélectionné du clip ou du texte agrégé des clips sélectionnés.</value>
   </data>
   <data name="toolStripMenuItem9.Text" xml:space="preserve">
     <value>Effacer le Presse-papiers</value>
@@ -1607,6 +1826,12 @@
   <data name="pictureBoxSource.SizeMode" xml:space="preserve" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>CenterImage</value>
   </data>
+  <data name="toolStripMenuItem2.ToolTipText" xml:space="preserve">
+    <value>Coller les clips sélectionnés dans la fenêtre active. Également effectué par double clic.</value>
+  </data>
+  <data name="toolStripMenuItem14.Text" xml:space="preserve">
+    <value>Marquer comme favori</value>
+  </data>
   <data name="toolStripBottom.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
     <value>13</value>
   </data>
@@ -1623,7 +1848,7 @@
     <value>Del</value>
   </data>
   <data name="windowAlwaysOnTopToolStripMenuItem.Text" xml:space="preserve">
-    <value>Toujours visible</value>
+    <value>Toujours Devant</value>
   </data>
   <data name="windowAlwaysOnTopToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>212, 22</value>
@@ -1662,10 +1887,16 @@
     <value>F2</value>
   </data>
   <data name="previousMatchToolStripMenuItem.Text" xml:space="preserve">
-    <value>Rechercher précédent</value>
+    <value>Recherche précédente</value>
+  </data>
+  <data name="toolStripMenuItem8.ToolTipText" xml:space="preserve">
+    <value>Supprimer les clips sélectionnés non favoris de la liste. La suppression est effectuée lors de la fermeture de la base de données.	</value>
   </data>
   <data name="contextMenuStripRtf.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>210, 92</value>
+  </data>
+  <data name="toolStripMenuItemSetFocusClipText.Text" xml:space="preserve">
+    <value>Configurer focus vers clips texte (TAB)</value>
   </data>
   <data name="textBoxWindow.Text" xml:space="preserve">
     <value>Fenêtre</value>
@@ -1700,6 +1931,9 @@
   <data name="toolStripBottom.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>101, 25</value>
   </data>
+  <data name="historyToolStripMenuItem.Text" xml:space="preserve">
+    <value>Historique des modifications</value>
+  </data>
   <data name="dataGridView.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
@@ -1712,6 +1946,12 @@
   <data name="textBoxWindow.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>301, 20</value>
   </data>
+  <data name="toolStripButtonTopMostWindow.ToolTipText" xml:space="preserve">
+    <value>En mode fenêtre toujours devant</value>
+  </data>
+  <data name="returnToPrevousSelectedClipToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>Effacer les filtres et prendre le clip qui a été sélectionné avant que le filtre ne s'applique avec le changement du clip sélectionné	</value>
+  </data>
   <data name="wordWrapToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>214, 22</value>
   </data>
@@ -1720,6 +1960,9 @@
   </data>
   <data name="comboBoxFilter.Location" xml:space="preserve" type="System.Drawing.Point, System.Drawing">
     <value>159, 395</value>
+  </data>
+  <data name="toolStripButtonFindPrevious.ToolTipText" xml:space="preserve">
+    <value>Résultat précéd. dans clip texte (SHIFT+F3)</value>
   </data>
   <data name="toolStripMenuItem10.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>211, 22</value>
@@ -1739,11 +1982,23 @@
   <data name="tableLayoutPanelData.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
+  <data name="nextMatchToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>Résultat suiv. dans le clip texte (F3)</value>
+  </data>
+  <data name="ColumnTitle.HeaderText" xml:space="preserve">
+    <value>Titre</value>
+  </data>
   <data name="AppImage.Width" xml:space="preserve" type="System.Int32, mscorlib">
     <value>18</value>
   </data>
+  <data name="toolStripApplicationCopyAll.Text" xml:space="preserve">
+    <value>Copier tout le texte</value>
+  </data>
   <data name="ImageControl.Margin" xml:space="preserve" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
+  </data>
+  <data name="toolStripButtonClearFilterAndSelectTop.ToolTipText" xml:space="preserve">
+    <value>Effacer filtres et sélect. haut (F9)</value>
   </data>
   <data name="listToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>37, 20</value>
@@ -1759,6 +2014,9 @@
   </data>
   <data name="showOnlyFavoriteToolStripMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+2</value>
+  </data>
+  <data name="toolStripMenuItem10.Text" xml:space="preserve">
+    <value>Comparer texte</value>
   </data>
   <data name="pictureBoxSource.ImeMode" xml:space="preserve" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -1787,6 +2045,9 @@
   <data name="favoriteDataGridViewCheckBoxColumn.HeaderText" xml:space="preserve">
     <value>Favori</value>
   </data>
+  <data name="translateToolStripMenuItem.Text" xml:space="preserve">
+    <value>Traduire le texte</value>
+  </data>
   <data name="toolStripMenuItem1.Text" xml:space="preserve">
     <value>Quitter</value>
   </data>
@@ -1795,6 +2056,9 @@
   </data>
   <data name="showOnlyImagesToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>250, 22</value>
+  </data>
+  <data name="previousMatchToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>Résultat Précéd. dans clip texte (SHIFT+F3)</value>
   </data>
   <data name="setFavouriteToolStripMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Alt+Q</value>
@@ -1811,6 +2075,9 @@
   <data name="toolStripMenuItemCompareLastClips.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>187, 22</value>
   </data>
+  <data name="pictureBoxSource.ToolTip" xml:space="preserve">
+    <value>Icône de l’application qui a été copié le clip</value>
+  </data>
   <data name="resetFavouriteToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>214, 22</value>
   </data>
@@ -1820,17 +2087,33 @@
   <data name="TypeFilter.Font" xml:space="preserve" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 9pt</value>
   </data>
+  <data name="MarkFilter.ToolTip" xml:space="preserve">
+    <value>Montrer que les clips de cette marque. 
+Le sous-menu "Liste" comporte des commandes pour une sélection rapide</value>
+  </data>
   <data name="helpToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>178, 22</value>
   </data>
+  <data name="toolStripMenuItem11.Text" xml:space="preserve">
+    <value>Ouvrir le fichier</value>
+  </data>
   <data name="toolStripMenuItem8.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>214, 22</value>
+  </data>
+  <data name="moveTopToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>Déplacer clips sélect. vers haut</value>
+  </data>
+  <data name="copyToClipboardToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>Copier clip actuel dans presse-papiers</value>
   </data>
   <data name="htmlMenuItemCopyLinkAdress.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>209, 22</value>
   </data>
   <data name="toolStripButtonMonospacedFont.ImageTransparentColor" xml:space="preserve" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
+  </data>
+  <data name="toolStripMenuItem6.Text" xml:space="preserve">
+    <value>Coller texte(CTRL+ENTRER)</value>
   </data>
   <data name="pictureBoxSource.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
     <value>5</value>
@@ -1856,6 +2139,9 @@
   <data name="stripLabelPosition.AutoSize" xml:space="preserve" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
+  <data name="setFavouriteToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>Marquer clips sélect. dans favoris</value>
+  </data>
   <data name="richTextBox.Text" xml:space="preserve">
     <value></value>
   </data>
@@ -1869,7 +2155,7 @@
     <value>False</value>
   </data>
   <data name="toolStripButtonWordWrap.Text" xml:space="preserve">
-    <value>Retour automatique à la ligne</value>
+    <value>Retour à la ligne</value>
   </data>
   <data name="richTextBox.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
     <value>2</value>
@@ -1895,14 +2181,32 @@
   <data name="toolStripWindowTitleCopyAll.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>139, 22</value>
   </data>
+  <data name="sendPasteToolStripMenuItem.Text" xml:space="preserve">
+    <value>Coller original(ENTRER)	</value>
+  </data>
+  <data name="exitToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>Quitter le programme</value>
+  </data>
+  <data name="resetFavouriteToolStripMenuItem.Text" xml:space="preserve">
+    <value>Retirer comme favori</value>
+  </data>
   <data name="exitToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>212, 22</value>
+  </data>
+  <data name="buttonUpdate.Text" xml:space="preserve">
+    <value>Mise à jour vers</value>
   </data>
   <data name="TypeImage.Width" xml:space="preserve" type="System.Int32, mscorlib">
     <value>17</value>
   </data>
+  <data name="toolStripMenuItemClearFilterAndSelectTop.Text" xml:space="preserve">
+    <value>Effacer filtres et sélect. en haut	</value>
+  </data>
   <data name="aboutToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>52, 20</value>
+  </data>
+  <data name="uploadImageToWebToolStripMenuItem.Text" xml:space="preserve">
+    <value>Envoyer l'image sur le Web</value>
   </data>
   <data name="urlTextBox.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
     <value>11</value>
@@ -1915,6 +2219,9 @@
   </data>
   <data name="urlTextBox.Text" xml:space="preserve">
     <value></value>
+  </data>
+  <data name="toolStripMenuItemMonitoringClipboard.ToolTipText" xml:space="preserve">
+    <value>Capture modifié dans presse-papier</value>
   </data>
   <data name="htmlMenuItemSelectAll.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>209, 22</value>
@@ -1937,8 +2244,14 @@
   <data name="TypeFilter.Location" xml:space="preserve" type="System.Drawing.Point, System.Drawing">
     <value>84, 395</value>
   </data>
+  <data name="toolStripMenuItem7.Text" xml:space="preserve">
+    <value>Simuler l'entrée de caractère</value>
+  </data>
   <data name="urlTextBox.Multiline" xml:space="preserve" type="System.Boolean, mscorlib">
     <value>False</value>
+  </data>
+  <data name="toolStripMenuItemClearFilterAndSelectTop.ToolTipText" xml:space="preserve">
+    <value>Effacer filtres et sélect. clip au-dessus</value>
   </data>
   <data name="statusStrip.Location" xml:space="preserve" type="System.Drawing.Point, System.Drawing">
     <value>0, 398</value>
@@ -1946,17 +2259,26 @@
   <data name="aboutToolStripMenuItem1.Text" xml:space="preserve">
     <value>À propos de</value>
   </data>
+  <data name="toolStripMenuItemCompareLastClips.ToolTipText" xml:space="preserve">
+    <value>Comparer texte des derniers clips</value>
+  </data>
   <data name="clipToolStripMenuItem.Text" xml:space="preserve">
-    <value>Découper</value>
+    <value>Clip</value>
   </data>
   <data name="textBoxWindow.Location" xml:space="preserve" type="System.Drawing.Point, System.Drawing">
     <value>22, 3</value>
+  </data>
+  <data name="toolStripMenuItem2.Text" xml:space="preserve">
+    <value>Coller (ENTRÉE)</value>
   </data>
   <data name="richTextBox.Location" xml:space="preserve" type="System.Drawing.Point, System.Drawing">
     <value>2, 2</value>
   </data>
   <data name="toolStripMenuItemEditClipText.ImageTransparentColor" xml:space="preserve" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
+  </data>
+  <data name="changeClipTitleToolStripMenuItem.Text" xml:space="preserve">
+    <value>Editer titre</value>
   </data>
   <data name="buttonUpdate.Image" xml:space="preserve" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1972,6 +2294,12 @@
         PKM4Or9ZxBxb8H8l7g5CEu8pAOfM3WanSeeS8CFHxW4zM2umbWamOCShXAH+/wNOANABIDUxWnDPAAAA
         AElFTkSuQmCC
 </value>
+  </data>
+  <data name="toolStripMenuItemCompareLastClips.Text" xml:space="preserve">
+    <value>Comparer les derniers clips	</value>
+  </data>
+  <data name="moveTopToolStripMenuItem.Text" xml:space="preserve">
+    <value>Déplacer vers le haut</value>
   </data>
   <data name="aboutToolStripMenuItem.Text" xml:space="preserve">
     <value>À propos de</value>
@@ -2024,6 +2352,10 @@
   <data name="toolStripMenuItem6.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>209, 22</value>
   </data>
+  <data name="comboBoxFilter.ToolTip" xml:space="preserve">
+    <value>Filtre pour le texte du clip. Liste et partage ce filtre entrée clé.
+Editer le filtre directement dans la liste. Naviguez dans la liste directement à partir du filtre.	</value>
+  </data>
   <data name="statusStrip.Anchor" xml:space="preserve" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left, Right</value>
   </data>
@@ -2033,11 +2365,26 @@
   <data name="exitToolStripMenuItem1.Text" xml:space="preserve">
     <value>Quitter</value>
   </data>
+  <data name="toolStripMenuItem3.Text" xml:space="preserve">
+    <value>Coller le texte(CTRL+ENTRER)</value>
+  </data>
   <data name="fileToolStripMenuItem.Text" xml:space="preserve">
     <value>Fichier</value>
   </data>
+  <data name="deleteAllNonFavoriteToolStripMenuItem.Text" xml:space="preserve">
+    <value>Supprimer tout sauf favoris	</value>
+  </data>
+  <data name="textCompareToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>Comparez le texte des 2 clips sélectionnés ou du clip actuel avec un clip précédent par cette commande</value>
+  </data>
+  <data name="textFormattingToolStripMenuItem.Text" xml:space="preserve">
+    <value>Mise en forme native</value>
+  </data>
   <data name="ImageSample.Visible" xml:space="preserve" type="System.Boolean, mscorlib">
     <value>False</value>
+  </data>
+  <data name="toolStripMenuItemMonitoringClipboard.Text" xml:space="preserve">
+    <value>Surveillance presse-papier</value>
   </data>
   <data name="toolStripMenuItem17.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>247, 6</value>
@@ -2051,6 +2398,12 @@
   <data name="StripLabelType.Text" xml:space="preserve">
     <value>Type</value>
   </data>
+  <data name="toolStripMenuItem6.ToolTipText" xml:space="preserve">
+    <value>Coller dans la fenêtre active en texte brut, texte sélectionné du clip ou texte agrégé des clips sélectionnés.</value>
+  </data>
+  <data name="toolStripMenuItemEditClipText.ToolTipText" xml:space="preserve">
+    <value>Editer texte clip sous texte brut (F4)</value>
+  </data>
   <data name="nextMatchToolStripMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>F3</value>
   </data>
@@ -2062,6 +2415,10 @@
   </data>
   <data name="htmlTextBox.Anchor" xml:space="preserve" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="toolStripMenuItem15.ToolTipText" xml:space="preserve">
+    <value>Coller dans la fenêtre active en texte brut, texte sélectionné du clip ou texte agrégé des clips sélectionnés.
+</value>
   </data>
   <data name="MarkFilter.Items3" xml:space="preserve">
     <value>img</value>
@@ -2075,8 +2432,14 @@
   <data name="trayMenuItemMonitoringClipboard.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>187, 22</value>
   </data>
+  <data name="StripLabelVisualSize.Text" xml:space="preserve">
+    <value>VisualSize</value>
+  </data>
   <data name="settingsToolStripMenuItem1.Text" xml:space="preserve">
     <value>Paramètres</value>
+  </data>
+  <data name="toolStripMenuItemSearchWordsIndependently.Text" xml:space="preserve">
+    <value>Mots indépendants</value>
   </data>
   <data name="TypeFilter.Items1" xml:space="preserve">
     <value>texte</value>
@@ -2090,11 +2453,23 @@
   <data name="MainMenu.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
+  <data name="textBoxApplication.ToolTip" xml:space="preserve">
+    <value>Application qui a copié le clip</value>
+  </data>
   <data name="usedDataGridViewCheckBoxColumn.Visible" xml:space="preserve" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
+  <data name="trayMenuItemMonitoringClipboard.Text" xml:space="preserve">
+    <value>Surveillance presse-papier</value>
+  </data>
   <data name="TypeFilter.Anchor" xml:space="preserve" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
+  </data>
+  <data name="ignoreApplicationInCaptureToolStripMenuItem.Text" xml:space="preserve">
+    <value>Ignorer application</value>
+  </data>
+  <data name="toolStripButtonTextFormatting.Text" xml:space="preserve">
+    <value>Mise en forme native</value>
   </data>
   <data name="comboBoxFilter.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>110, 23</value>
@@ -2105,6 +2480,9 @@
   <data name="toolStripButtonFindPrevious.ImageTransparentColor" xml:space="preserve" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
   </data>
+  <data name="toolStripMenuItem15.Text" xml:space="preserve">
+    <value>Coller texte(CTRL+ENTRER)</value>
+  </data>
   <data name="toolStripMenuItem2.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>211, 22</value>
   </data>
@@ -2112,7 +2490,11 @@
     <value>Top, Bottom, Left, Right</value>
   </data>
   <data name="сдуфкClipboardToolStripMenuItem.Text" xml:space="preserve">
-    <value>Effacer le Presse-papiers</value>
+    <value>Efface Presse-papier</value>
+  </data>
+  <data name="ignoreApplicationInCaptureToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>Ignorer l'application dans la capture de clip. La demande sera 
+Ajouté à la liste ignorée, qui peut être éditée dans la fenêtre Paramètres.</value>
   </data>
   <data name="showOnlyTextsToolStripMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Alt+4</value>
@@ -2132,6 +2514,9 @@
   <data name="toolStripMenuItemClearFilterAndSelectTop.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>250, 22</value>
   </data>
+  <data name="toolStripMenuItemSwitchFocus.Text" xml:space="preserve">
+    <value>Bascule liste /texte</value>
+  </data>
   <data name="windowAlwaysOnTopToolStripMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+T</value>
   </data>
@@ -2141,6 +2526,9 @@
   <data name="toolStripMenuItemOpenFile.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>28, 25</value>
   </data>
+  <data name="editClipTextToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>Editer clip texte en texte brut</value>
+  </data>
   <data name="urlTextBox.Margin" xml:space="preserve" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
   </data>
@@ -2148,7 +2536,7 @@
     <value>406, 92</value>
   </data>
   <data name="toolStripMenuItemSearchCaseSensitive.Text" xml:space="preserve">
-    <value>Respect de la casse</value>
+    <value>Sensible à la casse</value>
   </data>
   <data name="moveCopiedClipToTopToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>250, 22</value>
@@ -2156,11 +2544,20 @@
   <data name="helpToolStripMenuItem.Text" xml:space="preserve">
     <value>Aide</value>
   </data>
+  <data name="mergeTextOfClipsToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>Joindre le texte des clips sélect. dans un nouveau clip et sélect.</value>
+  </data>
+  <data name="translateToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>Traduire le texte du clip ou sa partie sélectionnée</value>
+  </data>
   <data name="toolStripButtonOpenWith.ImageTransparentColor" xml:space="preserve" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
   </data>
+  <data name="showOnlyFavoriteToolStripMenuItem.Text" xml:space="preserve">
+    <value>Montrer favoris seul</value>
+  </data>
   <data name="wordWrapToolStripMenuItem.Text" xml:space="preserve">
-    <value>Retour automatique à la ligne</value>
+    <value>Retour à la ligne</value>
   </data>
   <data name="comboBoxFilter.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
     <value>6</value>
@@ -2174,6 +2571,9 @@
   <data name="toolStripMenuItem16.Text" xml:space="preserve">
     <value>Ouvrir le fichier</value>
   </data>
+  <data name="dataGridViewImageColumn5.HeaderText" xml:space="preserve">
+    <value>Voir taille</value>
+  </data>
   <data name="toolStripButtonWordWrap.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>23, 22</value>
   </data>
@@ -2181,7 +2581,7 @@
     <value>408, 22</value>
   </data>
   <data name="nextMatchToolStripMenuItem.Text" xml:space="preserve">
-    <value>Suivant</value>
+    <value>Recherche Suiv.</value>
   </data>
   <metadata name="ImageSample.UserAddedColumn" xml:space="preserve" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -2276,14 +2676,35 @@
   <data name="contextMenuUrlOpenLink.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>194, 22</value>
   </data>
+  <data name="contextMenuUrlOpenLink.Text" xml:space="preserve">
+    <value>Ouvrir le lien (ALT+click)</value>
+  </data>
   <data name="pasteTextToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>214, 22</value>
+  </data>
+  <data name="pasteTextToolStripMenuItem.Text" xml:space="preserve">
+    <value>Coller texte(CTRL+ENTRER)</value>
+  </data>
+  <data name="pasteTextToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>Coller dans fenêtre active comme texte brut sélectionné texte de clip ou texte agrégé des clips sélectionnés.</value>
   </data>
   <data name="pasteFileToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>214, 22</value>
   </data>
+  <data name="pasteFileToolStripMenuItem.Text" xml:space="preserve">
+    <value>Coller le fichier</value>
+  </data>
+  <data name="pasteFileToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>Coller dans la fenêtre active les clips sélectionnés en tant que fichier</value>
+  </data>
   <data name="toolStripMenuItem18.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>211, 22</value>
+  </data>
+  <data name="toolStripMenuItem18.Text" xml:space="preserve">
+    <value>Coller le fichier</value>
+  </data>
+  <data name="toolStripMenuItem18.ToolTipText" xml:space="preserve">
+    <value>Coller dans la fenêtre active les clips sélectionnés en tant que fichier</value>
   </data>
   <data name="toolStripMenuItem18.Visible" xml:space="preserve" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -2293,6 +2714,9 @@
   </data>
   <data name="filterByDateToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>250, 22</value>
+  </data>
+  <data name="filterByDateToolStripMenuItem.Text" xml:space="preserve">
+    <value>Filtrer par date</value>
   </data>
   <data name="monthCalendar1.Location" xml:space="preserve" type="System.Drawing.Point, System.Drawing">
     <value>3, 3</value>
@@ -2309,11 +2733,20 @@
   <data name="monthCalendar1.ImeMode" xml:space="preserve" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
+  <data name="filterByDateToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>Définir filtre par date création du clip</value>
+  </data>
   <data name="originalSizeToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>150, 22</value>
   </data>
+  <data name="originalSizeToolStripMenuItem.Text" xml:space="preserve">
+    <value>Taille original</value>
+  </data>
   <data name="fitFromInsideToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>150, 22</value>
+  </data>
+  <data name="fitFromInsideToolStripMenuItem.Text" xml:space="preserve">
+    <value>Ajuster à l’intérieur</value>
   </data>
   <data name="contextMenuPictureBox.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>151, 48</value>
@@ -2321,26 +2754,65 @@
   <metadata name="contextMenuPictureBox.TrayLocation" xml:space="preserve" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>274, 57</value>
   </metadata>
+  <data name="toolStripMenuItem12.ToolTipText" xml:space="preserve">
+    <value>Editer titre Clip</value>
+  </data>
+  <data name="toolStripButtonMonospacedFont.Text" xml:space="preserve">
+    <value>Police monospacée</value>
+  </data>
+  <data name="moveCopiedClipToTopToolStripButton.Text" xml:space="preserve">
+    <value>Déplacer en haut après coller</value>
+  </data>
   <data name="toolStripMenuItem19.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>234, 6</value>
   </data>
   <data name="sortByDefaultToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>237, 22</value>
   </data>
+  <data name="sortByDefaultToolStripMenuItem.Text" xml:space="preserve">
+    <value>Tri par défaut</value>
+  </data>
   <data name="sortByVisualSizeToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>237, 22</value>
+  </data>
+  <data name="sortByVisualSizeToolStripMenuItem.Text" xml:space="preserve">
+    <value>Trier par taille</value>
   </data>
   <data name="sortByToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>237, 22</value>
   </data>
+  <data name="sortByToolStripMenuItem.Text" xml:space="preserve">
+    <value>Trier par date création</value>
+  </data>
+  <data name="sortByVisualSizeToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>Utile pour supprimer de gros textes qui ralentissent le filtre de texte. 
+Le tri est conservé jusqu'à la capture du clip.</value>
+  </data>
+  <data name="sortByToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>
+Le tri est conservé jusqu'à la capture du clip.</value>
+  </data>
   <data name="sortingToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>237, 22</value>
+  </data>
+  <data name="sortingToolStripMenuItem.Text" xml:space="preserve">
+    <value>Tri</value>
   </data>
   <data name="toolStripMenuItem20.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>183, 22</value>
   </data>
+  <data name="toolStripMenuItem20.Text" xml:space="preserve">
+    <value>Trier par taille en octets</value>
+  </data>
+  <data name="toolStripMenuItem20.ToolTipText" xml:space="preserve">
+    <value>Utile pour enlever de gros clips qui augmente la taille de la base de données. 
+Le tri est conservé jusqu'à la capture du clip.</value>
+  </data>
   <data name="toolStripMenuItemSecondaryColumns.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>237, 22</value>
+  </data>
+  <data name="toolStripMenuItemSecondaryColumns.Text" xml:space="preserve">
+    <value>Colonne secondaire</value>
   </data>
   <data name="toolStripMenuItem22.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>234, 6</value>
@@ -2354,6 +2826,12 @@
   <data name="toolStripButtonSecondaryColumns.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>23, 22</value>
   </data>
+  <data name="toolStripButtonSecondaryColumns.Text" xml:space="preserve">
+    <value>Colonne secondaire</value>
+  </data>
+  <data name="ColumnCreated.HeaderText" xml:space="preserve">
+    <value>Créé</value>
+  </data>
   <data name="ColumnCreated.Visible" xml:space="preserve" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
@@ -2366,8 +2844,74 @@
   <data name="toolStripButtonOpenWith.Visible" xml:space="preserve" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
+  <data name="ImageControl.ToolTip" xml:space="preserve">
+    <value>Démarrage automatique de ClipAngel lors de la connexion de l'utilisateur</value>
+  </data>
+  <data name="htmlTextBox.ToolTip" xml:space="preserve">
+    <value>Démarrage automatique de ClipAngel lors de la connexion de l'utilisateur</value>
+  </data>
+  <data name="contextMenuUrl.ToolTip" xml:space="preserve">
+    <value>Démarrage automatique de ClipAngel lors de la connexion de l'utilisateur</value>
+  </data>
+  <data name="richTextBox.ToolTip" xml:space="preserve">
+    <value>Démarrage automatique de ClipAngel lors de la connexion de l'utilisateur</value>
+  </data>
+  <data name="splitContainer1.Panel2.ToolTip" xml:space="preserve">
+    <value>Démarrage automatique de ClipAngel lors de la connexion de l'utilisateur</value>
+  </data>
+  <data name="toolStripTop.ToolTip" xml:space="preserve">
+    <value>Démarrage automatique de ClipAngel lors de la connexion de l'utilisateur</value>
+  </data>
+  <data name="contextMenuPictureBox.ToolTip" xml:space="preserve">
+    <value>Démarrage automatique de ClipAngel lors de la connexion de l'utilisateur</value>
+  </data>
+  <data name="contextMenuStripHtml.ToolTip" xml:space="preserve">
+    <value>Démarrage automatique de ClipAngel lors de la connexion de l'utilisateur</value>
+  </data>
+  <data name="contextMenuStripRtf.ToolTip" xml:space="preserve">
+    <value>Démarrage automatique de ClipAngel lors de la connexion de l'utilisateur</value>
+  </data>
+  <data name="monthCalendar1.ToolTip" xml:space="preserve">
+    <value>Démarrage automatique de ClipAngel lors de la connexion de l'utilisateur</value>
+  </data>
   <data name="ignoreBigTextClipsToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>209, 22</value>
+  </data>
+  <data name="dataGridView.ToolTip" xml:space="preserve">
+    <value>Démarrage automatique de ClipAngel lors de la connexion de l'utilisateur</value>
+  </data>
+  <data name="contextMenuStripNotifyIcon.ToolTip" xml:space="preserve">
+    <value>Démarrage automatique de ClipAngel lors de la connexion de l'utilisateur</value>
+  </data>
+  <data name="tableLayoutPanelData.ToolTip" xml:space="preserve">
+    <value>Démarrage automatique de ClipAngel lors de la connexion de l'utilisateur</value>
+  </data>
+  <data name="$this.ToolTip" xml:space="preserve">
+    <value>Démarrage automatique de ClipAngel lors de la connexion de l'utilisateur</value>
+  </data>
+  <data name="contextMenuStripDataGrid.ToolTip" xml:space="preserve">
+    <value>Démarrage automatique de ClipAngel lors de la connexion de l'utilisateur</value>
+  </data>
+  <data name="MainMenu.ToolTip" xml:space="preserve">
+    <value>Démarrage automatique de ClipAngel lors de la connexion de l'utilisateur</value>
+  </data>
+  <data name="splitContainer1.Panel1.ToolTip" xml:space="preserve">
+    <value>Démarrage automatique de ClipAngel lors de la connexion de l'utilisateur</value>
+  </data>
+  <data name="contextMenuWindowTitle.ToolTip" xml:space="preserve">
+    <value>Démarrage automatique de ClipAngel lors de la connexion de l'utilisateur</value>
+  </data>
+  <data name="toolStripBottom.ToolTip" xml:space="preserve">
+    <value>Démarrage automatique de ClipAngel lors de la connexion de l'utilisateur</value>
+  </data>
+  <data name="splitContainer1.ToolTip" xml:space="preserve">
+    <value>Démarrage automatique de ClipAngel lors de la connexion de l'utilisateur</value>
+  </data>
+  <data name="statusStrip.ToolTip" xml:space="preserve">
+    <value>Démarrage automatique de ClipAngel lors de la connexion de l'utilisateur</value>
+  </data>
+  <data name="contextMenuStripApplication.ToolTip" xml:space="preserve">
+    <value>Démarrage automatique de ClipAngel lors de la connexion de l'utilisateur</value>
   </data>
   <metadata name="$this.Language" xml:space="preserve" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>ru</value>

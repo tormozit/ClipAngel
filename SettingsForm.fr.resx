@@ -28,7 +28,7 @@
     <value>14</value>
   </data>
   <data name="buttonReset.Text" xml:space="preserve">
-    <value>Rétablir les paramètres par défaut</value>
+    <value>Paramètres par défaut</value>
   </data>
   <data name="buttonCancel.Anchor" xml:space="preserve" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
@@ -82,7 +82,7 @@
     <value>18</value>
   </data>
   <data name="buttonClearFilter.Text" xml:space="preserve">
-    <value>Q</value>
+    <value>X</value>
   </data>
   <data name="buttonClearFilter.ToolTip" xml:space="preserve">
     <value>Effacer le filtre</value>
@@ -103,7 +103,7 @@
     <value>20</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>Filter :</value>
+    <value>Filtre:</value>
   </data>
   <data name="textBoxFilter.Anchor" xml:space="preserve" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -116,6 +116,9 @@
   </data>
   <data name="textBoxFilter.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
     <value>21</value>
+  </data>
+  <data name="textBoxFilter.ToolTip" xml:space="preserve">
+    <value>Filtrer par nom et description</value>
   </data>
   <data name="propertyGrid1.Anchor" xml:space="preserve" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>

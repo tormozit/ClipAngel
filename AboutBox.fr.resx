@@ -31,7 +31,7 @@
     <value>MiddleLeft</value>
   </data>
   <data name="linkLabelEmail.Text" xml:space="preserve">
-    <value>Courrier électronique</value>
+    <value>Email</value>
   </data>
   <data name="logoPictureBox.Dock" xml:space="preserve" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -161,6 +161,9 @@
   <data name="linkLabel1.AutoSize" xml:space="preserve" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="textBoxDescription.Text" xml:space="preserve">
+    <value>Ce programme est un gestionnaire presse-papier et permet à l'utilisateur de sélectionner et de coller une copie/clip dans les logiciels.</value>
+  </data>
   <data name="labelAuthor.TextAlign" xml:space="preserve" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
   </data>
@@ -215,6 +218,9 @@
   <data name="labelVersion.TextAlign" xml:space="preserve" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
   </data>
+  <data name="linkLabel1.Text" xml:space="preserve">
+    <value>Faire un don</value>
+  </data>
   <data name="labelAuthor.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
     <value>22</value>
   </data>
@@ -229,6 +235,9 @@
   </data>
   <data name="textBoxDescription.Anchor" xml:space="preserve" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="labelAuthor.Text" xml:space="preserve">
+    <value>Auteur: Tormozit (Starykh Sergey), Russie</value>
   </data>
   <data name="label1.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>304, 15</value>
@@ -270,7 +279,7 @@
     <value>0, 17</value>
   </data>
   <data name="labelProductName.Text" xml:space="preserve">
-    <value>produit</value>
+    <value>Produit</value>
   </data>
   <data name="linkLabel1.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
     <value>28</value>

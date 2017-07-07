@@ -21,6 +21,9 @@
   <data name="delete" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\delete.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="CutMarker" xml:space="preserve">
+    <value>Voir reste du texte</value>
+  </data>
   <data name="text" xml:space="preserve">
     <value>texte</value>
   </data>
@@ -33,6 +36,9 @@
   <data name="OpenFile" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\OpenFile.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="LangRestart" xml:space="preserve">
+    <value>Pour changer de langue, vous devrez peut-être redémarrer le programme</value>
+  </data>
   <data name="upload" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\upload.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -42,8 +48,17 @@
   <data name="FindNext" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\FindNext.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="allTypes" xml:space="preserve">
+    <value>tous types</value>
+  </data>
   <data name="dbTemplate" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\DB\db.sqlite;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="CantPasteInElevatedWindow" xml:space="preserve">
+    <value>Impossible de coller dans la fenêtre ayant des privilèges plus élevés. Essayez d'exécuter le programme en tant qu'administrateur.</value>
+  </data>
+  <data name="VisualWeightTooltip" xml:space="preserve">
+    <value>Taille du clip (un nombre affiche la taille de la copie)</value>
   </data>
   <data name="ClearFilter" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\ClearFilter.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -66,14 +81,29 @@
   <data name="TypeText" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\TypeText.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="NextClip" xml:space="preserve">
+    <value>Сlip suiv.	</value>
+  </data>
+  <data name="NoSupportedTextCompareApplication" xml:space="preserve">
+    <value>L'application comparaison de texte n'a pas été trouvé. Maintenant, nous allons ouvrir un site Web pour l'obtenir gratuitement.</value>
+  </data>
   <data name="Alien_64x64" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\Alien-64x64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="clear1" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\clear1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="NewVersionAvailable" xml:space="preserve">
+    <value>Nouvelle version disponible. Le bouton mise à jour est dans barre de commande supérieure.</value>
+  </data>
+  <data name="ApplicationAddedToIgnoreList" xml:space="preserve">
+    <value>Ajouté Application "{0}" pour ignorer les copies dans liste, peut être édité dans les Paramètres</value>
+  </data>
   <data name="Top2" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\Top2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="EditClipTitle" xml:space="preserve">
+    <value>Editer titre Clip</value>
   </data>
   <data name="Autoselect first match" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\Autoselect first match.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -96,11 +126,20 @@
   <data name="FindPrevious" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\FindPrevious.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="ActivatedExistedProcess" xml:space="preserve">
+    <value>Activé déjà : application en cours d'exécution	</value>
+  </data>
+  <data name="UpdateTo" xml:space="preserve">
+    <value>Mise à jour vers</value>
+  </data>
   <data name="used" xml:space="preserve">
     <value>utilisé</value>
   </data>
   <data name="file" xml:space="preserve">
     <value>fichier</value>
+  </data>
+  <data name="FailedToReadFormatFromClipboard" xml:space="preserve">
+    <value>Impossible de lire les données au format "{0}" du presse-papier.</value>
   </data>
   <data name="TopMostWindow" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\TopMostWindow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -108,14 +147,29 @@
   <data name="ByteUnit" xml:space="preserve">
     <value>B</value>
   </data>
+  <data name="QuestionResetSettings" xml:space="preserve">
+    <value>Êtes-vous sûr de réinitialiser les paramètres par défaut?</value>
+  </data>
+  <data name="Version" xml:space="preserve">
+    <value>Version :</value>
+  </data>
   <data name="eye" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\eye.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CouldNotRegisterHotkey" xml:space="preserve">
+    <value>N’a pas pu enregistrer le raccourci clavier</value>
   </data>
   <data name="Dublicate" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\Dublicate.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="YouLatestVersion" xml:space="preserve">
+    <value>Vous utilisez la dernière version</value>
+  </data>
   <data name="Back" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\Back.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HowUseAutoTitle" xml:space="preserve">
+    <value>Chaîne claire pour utiliser titre automatique</value>
   </data>
   <data name="PixelFormat" xml:space="preserve">
     <value>Pixel</value>
@@ -132,14 +186,23 @@
   <data name="TypeFile" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\TypeFile.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="ClipFileAlreadyOpened" xml:space="preserve">
+    <value>Le fichier Clip est déjà ouvert et bloqué</value>
+  </data>
   <data name="down" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\down.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Open with" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\Open with.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="FailedToWriteClipboard" xml:space="preserve">
+    <value>Échec d'écriture du presse-papiers. Il est verrouillé par fenêtre "{0}" application "{1}"</value>
+  </data>
   <data name="WordWrap" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\word wrap.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="allMarks" xml:space="preserve">
+    <value>tous marques</value>
   </data>
   <data name="img" xml:space="preserve">
     <value>img</value>
@@ -152,6 +215,9 @@
   </data>
   <data name="Compare" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\Compare.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="СonfirmDeleteAllNonFavorite" xml:space="preserve">
+    <value>Êtes-vous sûr de vouloir supprimer tous les clips sauf les favoris?</value>
   </data>
   <data name="KiloByteUnit" xml:space="preserve">
     <value>Ko</value>
@@ -174,8 +240,38 @@
   <data name="Search" xml:space="preserve">
     <value>Rechercher</value>
   </data>
+  <data name="LastClipWasMultiCaptured" xml:space="preserve">
+    <value>Le dernier clip a été capturé deux fois avant de comparer</value>
+  </data>
+  <data name="ClipWasNotCaptured" xml:space="preserve">
+    <value>Clip copié ({2}) N'a pas été capturé (taille trop grande {0}KB &gt; {1}KB)</value>
+  </data>
+  <data name="PastedLastClip" xml:space="preserve">
+    <value>Le clip collé est le dernier</value>
+  </data>
   <data name="calendar" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\calendar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="text_number" xml:space="preserve">
+    <value>*nombre	</value>
+  </data>
+  <data name="text_phone" xml:space="preserve">
+    <value>*téléphone</value>
+  </data>
+  <data name="text_time" xml:space="preserve">
+    <value>*heure</value>
+  </data>
+  <data name="NoActiveWindow" xml:space="preserve">
+    <value>Pas de fenêtre cible</value>
+  </data>
+  <data name="ErrorReadingClipboard" xml:space="preserve">
+    <value>Le clip n'a pas été capturé en raison de l'erreur de lecture du presse-papiers</value>
+  </data>
+  <data name="TargetWindow" xml:space="preserve">
+    <value>Fenêtre cible</value>
+  </data>
+  <data name="TargetApp" xml:space="preserve">
+    <value>Application cible</value>
   </data>
   <data name="Columns" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\Columns.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

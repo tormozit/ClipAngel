@@ -37,7 +37,7 @@
     <value>Kliknij przycisk OK, aby zaktualizować to polecenie z bieżącą ścieżką startową</value>
   </data>
   <data name="ClearFiltersOnClose" xml:space="preserve">
-    <value>Wyczyść filtry i wybierz poprzedni</value>
+    <value>Wyczyść filtry przy zamknięciu okna głównego</value>
   </data>
   <data name="ClearFiltersOnCloseDescription" xml:space="preserve">
     <value></value>
@@ -52,13 +52,13 @@
     <value>Folder plików tymczasowych klipów</value>
   </data>
   <data name="ClipTempFileFolderDescription" xml:space="preserve">
-    <value>Automatycznie sprawdza aktualizację programu przy starcie i każdego dnia</value>
+    <value>Folder do zapisywania plików tymczasowych klipów. Pozostaw puste, aby użyć standardowego folderu plików tymczasowych. Zazwyczaj może być użyteczne w trybie przenośnym.</value>
   </data>
   <data name="CopyTextInAnyWindowOnCTRLF3" xml:space="preserve">
-    <value>Autozaznaczanie pierwszego dopasowania filtra w klipie tekstowym. </value>
+    <value>Kopiowanie tekstu z dowolnego okna poprzez Control + F3</value>
   </data>
   <data name="CopyTextInAnyWindowOnCTRLF3Description" xml:space="preserve">
-    <value>Kopiuje zaznaczony tekst z dowolnego okna po naciśnięciu Control + F3. Ten skrót klawiaturowy używany jest zazwyczaj w edytorach tekstu do wyszukiwania zaznaczonego ciągu. Naciśnięty klawisz będzie przetworzony przez okno. </value>
+    <value>Edycja skrótu</value>
   </data>
   <data name="CurrentPath" xml:space="preserve">
     <value>Bieżąca ścieżka startowa aplikacji</value>
@@ -70,9 +70,7 @@
     <value></value>
   </data>
   <data name="DefaultFont" xml:space="preserve">
-    <value>Czcionka o stałej szerokości w polu tekstowym klipu. 
-Może być przeładowane przez natywne formatowanie RTF. 
-Nie dotyczy natywnego formatowania HTML.</value>
+    <value>Domyślna czcionka</value>
   </data>
   <data name="DefaultFontDescription" xml:space="preserve">
     <value>Czcionka dla listy klipów i domyślnie dla tekstu w klipie. Kliknij dwukrotnie, aby ją zmienić.</value>
@@ -96,7 +94,7 @@ Nie dotyczy natywnego formatowania HTML.</value>
     <value>Użyj tego skrótu w dowolnym programie aby wkleić bieżący klip z listy Clip Angel i wybrać następny/wyższy klip, który pojawi się w zasobniku podpowiedzi</value>
   </data>
   <data name="GlobalHotkeyOpenCurrent" xml:space="preserve">
-    <value>Skrót dla otworcia okna bez żadnych zmian</value>
+    <value>Skrót dla otwarcia okna bez żadnych zmian</value>
   </data>
   <data name="GlobalHotkeyOpenCurrentDescription" xml:space="preserve">
     <value>Użyj tego skrótu w dowolnym programie, aby otworzyć okno Clip Angel bez zmian w filtrze i wyboru klipu. Naciśnij ponownie, aby zamknąć okno.</value>
@@ -168,9 +166,7 @@ Nie dotyczy natywnego formatowania HTML.</value>
     <value>Klipy większe od tego rozmiaru nie zostaną przechwycone</value>
   </data>
   <data name="MonospacedFont" xml:space="preserve">
-    <value>Czcionka o stałej szerokości w polu tekstowym klipu. 
-Może być przeładowane przez natywne formatowanie RTF. 
-Nie dotyczy natywnego formatowania HTML.</value>
+    <value>Czcionka o stałej szerokości znaków</value>
   </data>
   <data name="MonospacedFontDescription" xml:space="preserve">
     <value>Czcionka o stałej szerokości w polu tekstowym klipu. 
@@ -286,5 +282,25 @@ Nie dotyczy natywnego formatowania HTML.</value>
   </data>
   <data name="DatabaseFileDescription" xml:space="preserve">
     <value>Możesz zmienić nazwę bazy danych, aby przełączyć się na inną historię schowka. Pozostaw puste, aby użyć standartowego pliku bazy danych "db.sqlite" w folderze ustawień użytkownika aplikacji.</value>
+  </data>
+  <data name="MaxCellsToCaptureFormattedText" xml:space="preserve">
+    <value>Maksymalna liczba komórek do przechwytywania sformatowanego tekstu</value>
+  </data>
+  <data name="MaxCellsToCaptureFormattedTextDescription" xml:space="preserve">
+    <value>Podczas przechwytywania klipu z komórek (Excel), przechwytywanie wygeneruje sformatowany tekst, jeśli liczba komórek jest niższa niż ta wartość. 0 - nie przechwytuj.
+Generowanie sformatowanego tekstu zużywa moc procesora. Jeśli masz duże obciążenie procesora, ustaw najniższą wartość.</value>
+  </data>
+  <data name="MaxCellsToCaptureImage" xml:space="preserve">
+    <value>Maksymalna liczba komórek do przechwytywania obrazu</value>
+  </data>
+  <data name="MaxCellsToCaptureImageDescription" xml:space="preserve">
+    <value>Podczas przechwytywania klipu z komórek (Excel), przechwytywanie wygeneruje obraz, jeśli liczba komórek jest niższa niż ta wartość. 0 - nie przechwytuj.
+Generowanie obrazu zużywa moc procesora. Jeśli masz duże obciążenie procesora, ustaw najniższą wartość.</value>
+  </data>
+  <data name="ShowSecondaryColumns" xml:space="preserve">
+    <value>Pokaż drugorzędne kolumny</value>
+  </data>
+  <data name="ShowSecondaryColumnsDescription" xml:space="preserve">
+    <value>Pokazuje drugorzędne kolumny na liście</value>
   </data>
 </root>

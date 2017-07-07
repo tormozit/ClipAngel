@@ -94,7 +94,7 @@
     <value>Następny сlip</value>
   </data>
   <data name="NoSupportedTextCompareApplication" xml:space="preserve">
-    <value>Żadna aplikacja do porównywania tekstu nie została odnaleziona. Teraz zostanie otworzona strona internetowa, aby otrzymać jedeną darmową.</value>
+    <value>Żadna aplikacja do porównywania tekstu nie została odnaleziona. Teraz zostanie otworzona strona internetowa, aby otrzymać jedną darmową.</value>
   </data>
   <data name="Alien_64x64" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\Alien-64x64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -103,7 +103,7 @@
     <value>..\Picture\clear1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="NewVersionAvailable" xml:space="preserve">
-    <value>Dostępna jest nowa wersja. Aby zaktualizować użyj przycisku na górnym paseku poleceń.</value>
+    <value>Dostępna jest nowa wersja. Aby zaktualizować użyj przycisku na górnym pasku poleceń.</value>
   </data>
   <data name="ApplicationAddedToIgnoreList" xml:space="preserve">
     <value>Aplikacja "{0}" dodana do listy ignorowanych, którą można edytować w oknie Ustawień</value>
@@ -169,7 +169,7 @@
     <value>Czy na pewno chcesz zresetować ustawienia do wartości domyślnych?</value>
   </data>
   <data name="Version" xml:space="preserve">
-    <value>1.27</value>
+    <value>1.32</value>
   </data>
   <data name="eye" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\eye.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -281,6 +281,33 @@
   </data>
   <data name="Zoom" xml:space="preserve">
     <value>Powiększenie</value>
+  </data>
+  <data name="text_email" xml:space="preserve">
+    <value>*e-mail</value>
+  </data>
+  <data name="text_number" xml:space="preserve">
+    <value>*numer</value>
+  </data>
+  <data name="text_phone" xml:space="preserve">
+    <value>*telefon</value>
+  </data>
+  <data name="text_url" xml:space="preserve">
+    <value>*adres url</value>
+  </data>
+  <data name="text_time" xml:space="preserve">
+    <value>*czas</value>
+  </data>
+  <data name="NoActiveWindow" xml:space="preserve">
+    <value>brak okna docelowego</value>
+  </data>
+  <data name="ErrorReadingClipboard" xml:space="preserve">
+    <value>Klip nie został przechwycony ze względu na błąd odczytu schowka</value>
+  </data>
+  <data name="TargetWindow" xml:space="preserve">
+    <value>Docelowe okno</value>
+  </data>
+  <data name="TargetApp" xml:space="preserve">
+    <value>Docelowa aplikacja</value>
   </data>
   <data name="Columns" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\Columns.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

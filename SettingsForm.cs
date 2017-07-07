@@ -168,7 +168,7 @@ namespace ClipAngel
             { "Default", "Default"},
             { "English", "English (by Tormozit)"},
             { "Chinese", "Chinese (by machine)"},
-            { "French", "French (by machine)"},
+            { "French", "French (by François M.)"},
             { "German", "German (by machine)"},
             { "Greek", "Greek (by machine)"},
             { "Hindi", "Hindi (by machine)"},

@@ -16,7 +16,7 @@
     <value></value>
   </data>
   <data name="buttonSelectClipboardOwner.Text" xml:space="preserve">
-    <value>Szybki filtr poprzez nazwę i opis właściwości</value>
+    <value>Wybierz właściciela schowka</value>
   </data>
   <data name="buttonOK.Location" xml:space="preserve" type="System.Drawing.Point, System.Drawing">
     <value>531, 382</value>
