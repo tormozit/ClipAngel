@@ -12,6 +12,7 @@ using System.Globalization;
 using System.Linq;
 using System.Windows.Forms;
 using System.Windows.Forms.Design;
+using System.Management;
 using GlobalizedPropertyGrid;
 using Microsoft.Win32;
 
@@ -40,6 +41,7 @@ namespace ClipAngel
 
         private void Settings_Load(object sender = null, EventArgs e = null)
         {
+            (propertyGrid1.SelectedObject as VisibleUserSettings).Load((Owner as Main).PortableMode);
             propertyGrid1.SetLabelColumnWidth(300);
             RequeryRows();
         }
@@ -700,11 +702,15 @@ namespace ClipAngel
 
     class VisibleUserSettings : GlobalizedObject
     {
-        public Form Owner;
+        public Main Owner;
 
         public VisibleUserSettings(Main Owner)
         {
             this.Owner = Owner;
+        }
+
+        public void Load(bool PortableMode = false)
+        {
             MaxCellsToCaptureFormattedText = Properties.Settings.Default.MaxCellsToCaptureFormattedText;
             MaxCellsToCaptureImage = Properties.Settings.Default.MaxCellsToCaptureImage;
             DatabaseFile = Properties.Settings.Default.DatabaseFile;
@@ -751,15 +757,22 @@ namespace ClipAngel
             UserSettingsPath = Owner.UserSettingsPath;
             DatabaseSize = ((new FileInfo(Owner.DbFileName)).Length / (1024 * 1024)).ToString();
 
-            CurrentPath = Application.ExecutablePath;
+            //// Too much time ~100ms
+            //string wmiQuery = string.Format("select CommandLine from Win32_Process where ProcessID={0}", Process.GetCurrentProcess().Id);
+            //ManagementObjectSearcher searcher = new ManagementObjectSearcher(wmiQuery);
+            //ManagementObjectCollection retObjectCollection = searcher.Get();
+            //foreach (ManagementObject process in retObjectCollection)
+            //    CurrentPath = process["CommandLine"].ToString();
+            CurrentPath = "\"" + Application.ExecutablePath + "\"";
+            if (PortableMode)
+                CurrentPath += " /p";
+
             RegistryKey reg;
             reg = Registry.CurrentUser.CreateSubKey("Software\\Microsoft\\Windows\\CurrentVersion\\Run\\");
             string Keyname = Application.ProductName;
-
             try
             {
                 AutostartPath = reg.GetValue(Keyname).ToString();
-
             }
             catch
             {
@@ -818,7 +831,7 @@ namespace ClipAngel
             {
                 if (Autostart)
                 {
-                    string CommandLine = Application.ExecutablePath + " /m";
+                    string CommandLine = "\"" + Application.ExecutablePath + "\"" + " /m";
                     if (PortableMode)
                         CommandLine += " /p";
                     reg.SetValue(Keyname, CommandLine);

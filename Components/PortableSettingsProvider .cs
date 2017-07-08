@@ -7,6 +7,7 @@ using System.Windows.Forms;
 using System.Collections.Specialized;
 using System.Xml;
 using System.IO;
+using System.Text.RegularExpressions;
 
 
 public class PortableSettingsProvider : SettingsProvider
@@ -149,7 +150,7 @@ public class PortableSettingsProvider : SettingsProvider
             }
             else
             {
-                ret = SettingsXML.SelectSingleNode(SETTINGSROOT + "/" + Environment.MachineName + "/" + setting.Name).InnerText;
+                ret = SettingsXML.SelectSingleNode(SETTINGSROOT + "/" + MachineName() + "/" + setting.Name).InnerText;
             }
         }
 
@@ -185,7 +186,7 @@ public class PortableSettingsProvider : SettingsProvider
             }
             else
             {
-                SettingNode = (XmlElement)SettingsXML.SelectSingleNode(SETTINGSROOT + "/" + Environment.MachineName + "/" + propVal.Name);
+                SettingNode = (XmlElement)SettingsXML.SelectSingleNode(SETTINGSROOT + "/" + MachineName() + "/" + propVal.Name);
             }
         }
         catch (Exception)
@@ -214,17 +215,17 @@ public class PortableSettingsProvider : SettingsProvider
                 try
                 {
 
-                    MachineNode = (XmlElement)SettingsXML.SelectSingleNode(SETTINGSROOT + "/" + Environment.MachineName);
+                    MachineNode = (XmlElement)SettingsXML.SelectSingleNode(SETTINGSROOT + "/" + MachineName());
                 }
                 catch (Exception)
                 {
-                    MachineNode = SettingsXML.CreateElement(Environment.MachineName);
+                    MachineNode = SettingsXML.CreateElement(MachineName());
                     SettingsXML.SelectSingleNode(SETTINGSROOT).AppendChild(MachineNode);
                 }
 
                 if (MachineNode == null)
                 {
-                    MachineNode = SettingsXML.CreateElement(Environment.MachineName);
+                    MachineNode = SettingsXML.CreateElement(MachineName());
                     SettingsXML.SelectSingleNode(SETTINGSROOT).AppendChild(MachineNode);
                 }
 
@@ -233,6 +234,14 @@ public class PortableSettingsProvider : SettingsProvider
                 MachineNode.AppendChild(SettingNode);
             }
         }
+    }
+
+    private static string MachineName()
+    {
+        string name = Environment.MachineName;
+        if (Regex.IsMatch(name.Substring(0, 1), "\\d"))
+            name = "_" + name;
+        return name; // computer name can begins from digit which is forbidden in XML node name
     }
 
     private bool IsRoaming(SettingsProperty prop)
