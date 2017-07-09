@@ -205,7 +205,7 @@
     <value>Вставить текст (CTRL+ENTER)</value>
   </data>
   <data name="toolStripMenuItem3.ToolTipText" xml:space="preserve">
-    <value>Вставить в активное окно выделенный простой текст клипа или имя файла графического клипа или агрегированный текст выделенных клипов.</value>
+    <value>Вставить в активное окно выделенный простой текст клипа или имя файла графического клипа или агрегированный простой текст выделенных клипов.</value>
   </data>
   <data name="toolStripMenuItem18.Size" type="System.Drawing.Size, System.Drawing">
     <value>273, 22</value>
@@ -280,7 +280,7 @@
     <value>Удалить выделенные клипы из списка. Настоящее удаление выполняется при закрытии базы данных.</value>
   </data>
   <data name="contextMenuStripDataGrid.Size" type="System.Drawing.Size, System.Drawing">
-    <value>274, 224</value>
+    <value>274, 246</value>
   </data>
   <data name="contextMenuStripDataGrid.ToolTip" xml:space="preserve">
     <value />
@@ -783,7 +783,7 @@
     <value>Вставить текст (CTRL+ENTER)</value>
   </data>
   <data name="pasteTextToolStripMenuItem.ToolTipText" xml:space="preserve">
-    <value>Вставить в активное окно выделенный простой текст клипа или имя файла графического клипа или агрегированный текст выделенных клипов.</value>
+    <value>Вставить в активное окно выделенный простой текст клипа или имя файла графического клипа или агрегированный простой текст выделенных клипов.</value>
   </data>
   <data name="pasteFileToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>235, 22</value>
