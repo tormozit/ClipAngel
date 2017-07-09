@@ -2413,6 +2413,11 @@ namespace ClipAngel
             object htmlText = rowReader["HtmlText"];
             byte[] binary = rowReader["Binary"] as byte[];
             clipText = (string) rowReader["Text"];
+            if (type == "img" && onlySelectedPlainText)
+            {
+                string fileEditor = "";
+                clipText = GetClipTempFile(out fileEditor, rowReader);
+            }
             if (rowReader == RowReader)
             {
                 string selectedText = GetSelectedText(onlySelectedPlainText);
@@ -2420,7 +2425,7 @@ namespace ClipAngel
                     clipText = selectedText;
             }
             DataObject dto = new DataObject();
-            if (IsTextType() || type == "file")
+            if (IsTextType(type) || type == "file" || onlySelectedPlainText)
             {
                 SetTextInClipboardDataObject(dto, clipText);
             }
@@ -2520,22 +2525,25 @@ namespace ClipAngel
             if (pasteMethod == PasteMethod.Null)
             {
                 string textToPaste = (string) rowReader["Text"];
+                if (type == "img")
+                {
+                    string fileEditor = "";
+                    textToPaste = GetClipTempFile(out fileEditor, rowReader);
+                }
                 if (pasteDelimiter)
                     textToPaste = Environment.NewLine + textToPaste;
                 return textToPaste;
             }
-            if (true
-                && pasteDelimiter
-                && IsTextType(type))
+            if (pasteDelimiter && pasteMethod == PasteMethod.Standart)
             {
-                if (pasteMethod == PasteMethod.Standart)
-                {
-                    int multipasteDelay = 50;
-                    Thread.Sleep(multipasteDelay);
+                int multipasteDelay = 50;
+                Thread.Sleep(multipasteDelay);
+                //if (IsTextType(type))
+                //{
                     SetTextInClipboard(Environment.NewLine + Environment.NewLine, false);
                     SendPaste(pasteMethod);
                     Thread.Sleep(multipasteDelay);
-                }
+                //}
             }
             CopyClipToClipboard(rowReader, pasteMethod != PasteMethod.Standart && pasteMethod != PasteMethod.File, false);
             if (SendPaste(pasteMethod))
@@ -3024,7 +3032,7 @@ namespace ClipAngel
                 {
                     agregateTextToPaste = JoinOrPasteTextOfClips(itemPasteMethod, out count);
                 }
-                if (itemPasteMethod == PasteMethod.Null)
+                if (itemPasteMethod == PasteMethod.Null && !String.IsNullOrEmpty(agregateTextToPaste))
                 {
                     SetTextInClipboard(agregateTextToPaste, false);
                     SendPaste(pasteMethod);
