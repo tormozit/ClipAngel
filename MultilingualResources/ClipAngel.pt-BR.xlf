@@ -448,8 +448,9 @@ WinMerge Araxis Merge, DiffMerge, o Kdiff3. Comando de comparar texto é aplica�
           <target state="translated">Posição da janela na abertura</target>
         </trans-unit>
         <trans-unit id="WindowAutoPositionDescription" translate="yes" xml:space="preserve">
-          <source>If possible, window will open near text caret (input), else will place in center of active window</source>
-          <target state="translated">Se possível, a janela abrirá perto do cursor de texto (entrada), caso contrário abrirá no centro da janela ativa</target>
+          <source>If possible, window will open near text caret (input), otherwise will place in center of active window</source>
+          <target state="needs-review-translation">Se possível, a janela abrirá perto do cursor de texto (entrada), caso contrário abrirá no centro da janela ativa</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="WordWrap" translate="yes" xml:space="preserve">
           <source>Word wrap</source>

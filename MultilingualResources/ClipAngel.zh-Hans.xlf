@@ -1484,8 +1484,9 @@ WinMerge，轴合并，DiffMerge，Kdiff3。文本比较命令是应用程序 %%
           <target state="needs-review-translation" state-qualifier="mt-suggestion">在打开的窗口自动位置</target>
         </trans-unit>
         <trans-unit id="WindowAutoPositionDescription" translate="yes" xml:space="preserve">
-          <source>If possible, window will open near text caret (input), else will place in center of active window</source>
+          <source>If possible, window will open near text caret (input), otherwise will place in center of active window</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">如果可能的话，窗口将会打开附近文本插入符号 （输入），否则会在中心的活动窗口</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="WordWrap" translate="yes" xml:space="preserve">
           <source>Word wrap</source>

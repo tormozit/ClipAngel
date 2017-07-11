@@ -1092,8 +1092,8 @@ WinMerge, Araxis Merge, DiffMerge, Kdiff3. Text compare command is %application%
           <target state="new">Window auto position on open</target>
         </trans-unit>
         <trans-unit id="WindowAutoPositionDescription" translate="yes" xml:space="preserve">
-          <source>If possible, window will open near text caret (input), else will place in center of active window</source>
-          <target state="new">If possible, window will open near text caret (input), else will place in center of active window</target>
+          <source>If possible, window will open near text caret (input), otherwise will place in center of active window</source>
+          <target state="new">If possible, window will open near text caret (input), otherwise will place in center of active window</target>
         </trans-unit>
         <trans-unit id="WordWrap" translate="yes" xml:space="preserve">
           <source>Word wrap</source>

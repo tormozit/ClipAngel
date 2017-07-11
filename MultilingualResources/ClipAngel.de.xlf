@@ -450,8 +450,9 @@ WinMerge, Araxis Merge, DiffMerge, Kdiff3. Befehl für Textvergleich ist %applic
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Auto Fensterposition auf Öffnen</target>
         </trans-unit>
         <trans-unit id="WindowAutoPositionDescription" translate="yes" xml:space="preserve">
-          <source>If possible, window will open near text caret (input), else will place in center of active window</source>
+          <source>If possible, window will open near text caret (input), otherwise will place in center of active window</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Wenn möglich, wird Fenster öffnet sich in der Nähe von Text Caret (Eingang), sonst im Zentrum des aktiven Fensters</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="WordWrap" translate="yes" xml:space="preserve">
           <source>Word wrap</source>

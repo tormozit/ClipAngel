@@ -447,8 +447,9 @@ WinMerge, Araxis Merge, DiffMerge, Kdiff3. Text compare command is %application%
           <target state="translated">Autopozycjonowanie okna przy otwarciu</target>
         </trans-unit>
         <trans-unit id="WindowAutoPositionDescription" translate="yes" xml:space="preserve">
-          <source>If possible, window will open near text caret (input), else will place in center of active window</source>
-          <target state="translated">Jeśli to możliwe, okno zostanie otwarte w pobliżu karetki tekstowej (wejście), w innym wypadku będzie umieszczone w centrum aktywnego okna</target>
+          <source>If possible, window will open near text caret (input), otherwise will place in center of active window</source>
+          <target state="needs-review-translation">Jeśli to możliwe, okno zostanie otwarte w pobliżu karetki tekstowej (wejście), w innym wypadku będzie umieszczone w centrum aktywnego okna</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="WordWrap" translate="yes" xml:space="preserve">
           <source>Word wrap</source>
