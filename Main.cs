@@ -3246,8 +3246,6 @@ namespace ClipAngel
                 RestoreWindowIfMinimized();
                 return;
             }
-            int newX = -1;
-            int newY = -1;
             // https://www.codeproject.com/Articles/34520/Getting-Caret-Position-Inside-Any-Application
             // http://stackoverflow.com/questions/31055249/is-it-possible-to-get-caret-position-in-word-to-update-faster
             UpdateLastActiveParentWindow(IntPtr.Zero); // sometimes lastActiveParentWindow is not equal GetForegroundWindow()
@@ -3271,6 +3269,8 @@ namespace ClipAngel
                 }
                 if (Properties.Settings.Default.WindowAutoPosition)
                 {
+                    int newX = -1;
+                    int newY = -1;
                     RECT activeRect;
                     if (caretPoint.Y > 0)
                     {
@@ -3294,9 +3294,9 @@ namespace ClipAngel
                         newY = Math.Max(screen.WorkingArea.Top,
                             Math.Min((activeRect.bottom - activeRect.top - this.Height) / 2 + caretPoint.Y, screen.WorkingArea.Height + screen.WorkingArea.Top - this.Height));
                     }
+                    RestoreWindowIfMinimized(newX, newY);
                 }
             }
-            RestoreWindowIfMinimized(newX, newY);
             //sw.Stop();
             //Debug.WriteLine("autoposition duration" + sw.ElapsedMilliseconds.ToString());
             if (!Properties.Settings.Default.FastWindowOpen)
