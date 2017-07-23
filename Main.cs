@@ -4859,7 +4859,7 @@ namespace ClipAngel
             }
             if (type == "text" /*|| type == "file"*/)
             {
-                File.WriteAllText(tempFile, rowReader["text"].ToString(), Encoding.Default);
+                File.WriteAllText(tempFile, rowReader["text"].ToString(), Encoding.UTF8);
                 fileEditor = Properties.Settings.Default.TextEditor;
             }
             else if (type == "rtf")
@@ -4871,7 +4871,7 @@ namespace ClipAngel
             }
             else if (type == "html")
             {
-                File.WriteAllText(tempFile, GetHtmlFromHtmlClipText(), Encoding.Default);
+                File.WriteAllText(tempFile, GetHtmlFromHtmlClipText(), Encoding.UTF8);
                 fileEditor = Properties.Settings.Default.HtmlEditor;
             }
             else if (type == "img")
@@ -5169,9 +5169,9 @@ namespace ClipAngel
             if (!IsTextType(type2) && type2 != "file")
                 return;
             string filename1 = clipTempFile(rowReader1, "comp");
-            File.WriteAllText(filename1, rowReader1["text"].ToString(), Encoding.Default);
+            File.WriteAllText(filename1, rowReader1["text"].ToString(), Encoding.UTF8);
             string filename2 = clipTempFile(rowReader2, "comp");
-            File.WriteAllText(filename2, rowReader2["text"].ToString(), Encoding.Default);
+            File.WriteAllText(filename2, rowReader2["text"].ToString(), Encoding.UTF8);
             Process.Start(comparatorName, String.Format("\"{0}\" \"{1}\"", filename1, filename2));
         }
 
