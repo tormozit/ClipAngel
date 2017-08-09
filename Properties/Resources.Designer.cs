@@ -515,6 +515,15 @@ namespace ClipAngel.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to html.
+        /// </summary>
+        public static string html {
+            get {
+                return ResourceManager.GetString("html", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to img.
         /// </summary>
         public static string img {
@@ -689,6 +698,15 @@ namespace ClipAngel.Properties {
         public static string QuestionResetSettings {
             get {
                 return ResourceManager.GetString("QuestionResetSettings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to rtf.
+        /// </summary>
+        public static string rtf {
+            get {
+                return ResourceManager.GetString("rtf", resourceCulture);
             }
         }
         
@@ -949,7 +967,7 @@ namespace ClipAngel.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 1.35.
+        ///   Looks up a localized string similar to 1.36.
         /// </summary>
         public static string VersionValue {
             get {

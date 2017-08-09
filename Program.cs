@@ -28,7 +28,9 @@ namespace ClipAngel
             {
                 parentPID = Int32.Parse(args[1]);
                 string elevatedMutexName = "ClipAngelElevatedMutex" + parentPID;
-                MyMutex = new Mutex(false, elevatedMutexName);
+                MyMutex = new Mutex(true, elevatedMutexName);
+                if (!MyMutex.WaitOne(0, false))
+                    return;
                 Process parentProcess;
                 try
                 {

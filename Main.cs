@@ -232,6 +232,8 @@ namespace ClipAngel
                 new ListItemNameText {Name = "img"},
                 new ListItemNameText {Name = "file"},
                 new ListItemNameText {Name = "text"},
+                new ListItemNameText {Name = "rtf"},
+                new ListItemNameText {Name = "html"},
             };
             foreach (KeyValuePair<string, string> pair in TextPatterns)
             {
@@ -4375,9 +4377,12 @@ namespace ClipAngel
                             && match.Index == 0
                         ))
                     {
+                        allowTextPositionChangeUpdate = false;
                         control.SelectionStart = match.Groups[1].Index;
                         control.SelectionLength = match.Groups[1].Length;
                         control.HideSelection = false;
+                        allowTextPositionChangeUpdate = true;
+                        UpdateSelectionPosition();
                         break;
                     }
                 }
@@ -5958,6 +5963,24 @@ namespace ClipAngel
         {
             Properties.Settings.Default.SearchIgnoreBigTexts = !Properties.Settings.Default.SearchIgnoreBigTexts;
             UpdateControlsStates();
+            TextFilterApply();
+        }
+
+        private void addSelectedTextInFilterToolStripMenu_Click(object sender, EventArgs e)
+        {
+            AllowFilterProcessing = false;
+            if (!String.IsNullOrWhiteSpace(comboBoxFilter.Text))
+                comboBoxFilter.Text += " ";
+            comboBoxFilter.Text += GetSelectedText();
+            AllowFilterProcessing = true;
+            TextFilterApply();
+        }
+
+        private void setSelectedTextInFilterToolStripMenu_Click(object sender, EventArgs e)
+        {
+            AllowFilterProcessing = false;
+            comboBoxFilter.Text = richTextBox.SelectedText;
+            AllowFilterProcessing = true;
             TextFilterApply();
         }
     }
