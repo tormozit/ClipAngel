@@ -145,8 +145,8 @@ namespace ClipAngel
         };
         static string LinkPattern = TextPatterns["url"];
 
-        [DllImport("dwmapi", PreserveSig = true)]
-        static extern int DwmSetWindowAttribute(IntPtr hWnd, int attr, ref int value, int attrLen);
+        //[DllImport("dwmapi", PreserveSig = true)]
+        //static extern int DwmSetWindowAttribute(IntPtr hWnd, int attr, ref int value, int attrLen);
 
         const int WS_EX_NOACTIVATE = 0x08000000;
         //const int WS_EX_TOPMOST = 0x00000008;
@@ -835,12 +835,15 @@ namespace ClipAngel
 
 
         [DllImport("user32.dll", SetLastError = true)]
+        [return: MarshalAs(UnmanagedType.Bool)]
         private static extern bool AddClipboardFormatListener(IntPtr hwnd);
 
         [DllImport("user32.dll", SetLastError = true)]
+        [return: MarshalAs(UnmanagedType.Bool)]
         private static extern bool RemoveClipboardFormatListener(IntPtr hwnd);
 
         [DllImport("user32.dll", SetLastError = true)]
+        [return: MarshalAs(UnmanagedType.Bool)]
         static extern bool SetProp(IntPtr hWnd, string lpString, IntPtr hData);
 
         private void Main_Load(object sender, EventArgs e)
@@ -1753,6 +1756,7 @@ namespace ClipAngel
                                 string ImageUrl = documentHtml.Images[0].Source;
                                 using (WebClient webClient = new WebClient())
                                 {
+                                    webClient.Proxy.Credentials = CredentialCache.DefaultCredentials;
                                     try
                                     {
                                         byte[] tempBuffer = webClient.DownloadData(ImageUrl);
@@ -2253,6 +2257,7 @@ namespace ClipAngel
         static extern IntPtr GetActiveWindow();
 
         [DllImport("user32.dll")]
+        [return: MarshalAs(UnmanagedType.Bool)]
         static extern bool SetForegroundWindow(IntPtr hWnd);
 
         [DllImport("User32.dll")]
@@ -2272,21 +2277,28 @@ namespace ClipAngel
             WinEventDelegate lpfnWinEventProc, uint idProcess, uint idThread, uint dwFlags);
 
         [DllImport("user32.dll")]
-        static extern int UnhookWinEvent(IntPtr hWinEventHook);
+        [return: MarshalAs(UnmanagedType.Bool)]
+        static extern bool UnhookWinEvent(IntPtr hWinEventHook);
 
         [DllImport("User32.dll")]
+        [return: MarshalAs(UnmanagedType.Bool)]
         static extern bool PostMessage(IntPtr hWnd, int msg, int wParam, int lParam);
 
         [DllImport("User32.dll")]
         static extern short GetAsyncKeyState(Keys vKey);
 
         [DllImport("user32.dll")]
+        [return: MarshalAs(UnmanagedType.Bool)]
         static extern bool EnableWindow(IntPtr hwnd, bool bEnable);
 
-        [DllImport("user32.dll")]
-        static extern int GetWindowText(IntPtr hWnd, StringBuilder text, int count);
+        [DllImport("user32.dll", CharSet = CharSet.Unicode)]
+        static extern int GetWindowText(IntPtr hWnd, [MarshalAs(UnmanagedType.LPWStr)] StringBuilder text, int count);
+
+        [DllImport("user32.dll", SetLastError = true)]
+        static extern int GetWindowTextLength(IntPtr hWnd);
 
         [DllImport("user32.dll")]
+        [return: MarshalAs(UnmanagedType.Bool)]
         static extern bool AttachThreadInput(uint idAttach, uint idAttachTo, bool fAttach);
 
         [DllImport("kernel32.dll")]
@@ -2321,7 +2333,7 @@ namespace ClipAngel
         // http://stackoverflow.com/questions/37291533/change-keyboard-layout-from-c-sharp-code-with-net-4-5-2
         internal sealed class KeyboardLayout
         {
-            [DllImport("user32.dll")]
+            [DllImport("user32.dll", CharSet = CharSet.Unicode)]
             static extern uint LoadKeyboardLayout(StringBuilder pwszKLID, uint flags);
 
             [DllImport("user32.dll")]
@@ -2884,9 +2896,8 @@ namespace ClipAngel
         [DllImport("kernel32.dll")]
         public static extern IntPtr OpenProcess(uint processAccess, bool bInheritHandle, int processId);
 
-        [DllImport("psapi.dll")]
-        static extern uint GetModuleFileNameEx(IntPtr hProcess, IntPtr hModule, [Out] StringBuilder lpBaseName,
-            [In] [MarshalAs(UnmanagedType.U4)] int nSize);
+        [DllImport("psapi.dll", CharSet = CharSet.Unicode)]
+        static extern uint GetModuleFileNameEx(IntPtr hProcess, IntPtr hModule, [Out] StringBuilder lpBaseName, [In] [MarshalAs(UnmanagedType.U4)] int nSize);
 
         [DllImport("kernel32.dll", SetLastError = true)]
         [return: MarshalAs(UnmanagedType.Bool)]
@@ -2902,9 +2913,10 @@ namespace ClipAngel
                 // Not enough priviledges. Need to call it elevated
                 return null;
             }
-            const int lengthSb = 4000;
+            const int lengthSb = 1000; // Dirty
             var sb = new StringBuilder(lengthSb);
             string result = null;
+            // Possibly there is no such fuction in Windows 7 https://stackoverflow.com/a/321343/4085971
             if (GetModuleFileNameEx(processHandle, IntPtr.Zero, sb, lengthSb) > 0)
             {
                 result = sb.ToString();
@@ -2913,7 +2925,7 @@ namespace ClipAngel
             return result;
         }
 
-        [System.Runtime.InteropServices.DllImport("user32.dll")]
+        [DllImport("user32.dll")]
         static extern IntPtr GetOpenClipboardWindow();
 
         static public void GetClipboardOwnerLockerInfo(bool Locker, out string window, out string application,
@@ -2981,8 +2993,9 @@ namespace ClipAngel
 
         private static string GetWindowTitle(IntPtr hwnd)
         {
-            const int nChars = 256;
-            StringBuilder buff = new StringBuilder(nChars);
+            //const int nChars = 256;
+            int nChars = GetWindowTextLength(hwnd);
+            StringBuilder buff = new StringBuilder(nChars + 1);
             string windowTitle = "";
             if (GetWindowText(hwnd, buff, nChars) > 0)
             {
@@ -3173,10 +3186,12 @@ namespace ClipAngel
         }
 
         [DllImport("user32.dll", EntryPoint = "GetGUIThreadInfo")]
+        [return: MarshalAs(UnmanagedType.Bool)]
         public static extern bool GetGUIThreadInfo(uint tId, out GUITHREADINFO threadInfo);
 
         [DllImport("user32.dll")]
-        public static extern bool ClientToScreen(IntPtr hWnd, out Point position);
+        [return: MarshalAs(UnmanagedType.Bool)]
+        public static extern bool ClientToScreen(IntPtr hWnd, out System.Drawing.Point position);
 
         [DllImport("user32.dll")]
         [return: MarshalAs(UnmanagedType.Bool)]
@@ -3187,7 +3202,7 @@ namespace ClipAngel
         //private static extern bool GetClientRect(IntPtr hWnd, ref RECT rect);
 
         [DllImport("user32", SetLastError = true)]
-        private extern static int GetCaretPos(out Point p);
+        private extern static int GetCaretPos(out System.Drawing.Point p);
         [DllImport("user32", SetLastError = true)]
         private extern static int SetCaretPos(int x, int y);
 
@@ -3216,6 +3231,7 @@ namespace ClipAngel
         }
 
         [DllImport("user32.dll", SetLastError = true)]
+        [return: MarshalAs(UnmanagedType.Bool)]
         internal static extern bool MoveWindow(IntPtr hwnd, int X, int Y, int nWidth, int nHeight, bool bRepaint);
 
         private void ShowForPaste(bool onlyFavorites = false, bool clearFiltersAndGoToTop = false)
@@ -3865,21 +3881,20 @@ namespace ClipAngel
         const int MM_ANISOTROPIC = 8;
 
         [DllImport("gdiplus.dll")]
-        private static extern uint GdipEmfToWmfBits(IntPtr _hEmf, uint _bufferSize,
-            byte[] _buffer, int _mappingMode, EmfToWmfBitsFlags _flags);
+        private static extern uint GdipEmfToWmfBits(IntPtr _hEmf, uint _bufferSize, byte[] _buffer, int _mappingMode, EmfToWmfBitsFlags _flags);
 
         [DllImport("gdi32.dll")]
-        private static extern IntPtr SetMetaFileBitsEx(uint _bufferSize,
-            byte[] _buffer);
+        private static extern IntPtr SetMetaFileBitsEx(uint _bufferSize, byte[] _buffer);
 
         [DllImport("gdi32.dll")]
-        private static extern IntPtr CopyMetaFile(IntPtr hWmf,
-            string filename);
+        private static extern IntPtr CopyMetaFile(IntPtr hWmf, string filename);
 
         [DllImport("gdi32.dll")]
+        [return: MarshalAs(UnmanagedType.Bool)]
         private static extern bool DeleteMetaFile(IntPtr hWmf);
 
         [DllImport("gdi32.dll")]
+        [return: MarshalAs(UnmanagedType.Bool)]
         private static extern bool DeleteEnhMetaFile(IntPtr hEmf);
 
         public static string GetEmbedImageString(Bitmap image, int width = 0, int height = 0)
@@ -4117,9 +4132,10 @@ namespace ClipAngel
             toolStripUpdateToSeparator.Visible = false;
             try
             {
-                using (WebClient wc = new WebClient())
+                using (WebClient webClient = new WebClient())
                 {
-                    string HtmlSource = await wc.DownloadStringTaskAsync(Properties.Resources.Website);
+                    webClient.Proxy.Credentials = CredentialCache.DefaultCredentials;
+                    string HtmlSource = await webClient.DownloadStringTaskAsync(Properties.Resources.Website);
 
                     // AngileSharp
                     var htmlParser = new HtmlParser();
@@ -4167,15 +4183,16 @@ namespace ClipAngel
 
         private void RunUpdate()
         {
-            using (WebClient wc = new WebClient())
+            using (WebClient webClient = new WebClient())
             {
+                webClient.Proxy.Credentials = CredentialCache.DefaultCredentials;
                 string tempFolder = Path.GetTempPath() + Guid.NewGuid();
                 Directory.CreateDirectory(tempFolder);
                 string tempFilenameZip = tempFolder + "\\NewVersion" + ".zip";
                 bool success = true;
                 //try
                 //{
-                wc.DownloadFile(Properties.Resources.DownloadPage, tempFilenameZip);
+                webClient.DownloadFile(Properties.Resources.DownloadPage, tempFilenameZip);
                 //}
                 //catch (Exception ex)
                 //{
@@ -4843,9 +4860,9 @@ namespace ClipAngel
         }
 
         // Code For OpenWithDialog Box
-        [DllImport("shell32.dll", SetLastError = true)]
-        extern public static bool
-               ShellExecuteEx(ref ShellExecuteInfo lpExecInfo);
+        [DllImport("shell32.dll", SetLastError = true, CharSet = CharSet.Unicode)]
+        [return: MarshalAs(UnmanagedType.Bool)]
+        static extern bool ShellExecuteEx(ref ShellExecuteInfo lpExecInfo);
 
         private string GetClipTempFile(out string fileEditor, SQLiteDataReader rowReader = null)
         {
@@ -5993,9 +6010,12 @@ public sealed class KeyboardHook : IDisposable
 
     // Registers a hot key with Windows.
     [DllImport("user32.dll")]
+    [return: MarshalAs(UnmanagedType.Bool)]
     private static extern bool RegisterHotKey(IntPtr hWnd, int id, uint fsModifiers, uint vk);
+
     // Unregisters the hot key with Windows.
     [DllImport("user32.dll")]
+    [return: MarshalAs(UnmanagedType.Bool)]
     private static extern bool UnregisterHotKey(IntPtr hWnd, int id);
 
     private ResourceManager resourceManager;
