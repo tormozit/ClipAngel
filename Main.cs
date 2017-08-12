@@ -5583,15 +5583,19 @@ namespace ClipAngel
 
         private void toolStripMenuItemCompareLastClips_Click(object sender = null, EventArgs e = null)
         {
-            if (dataGridView.Rows.Count > 1)
+            if (lastClipWasMultiCaptured)
+                notifyIcon.ShowBalloonTip(2000, Application.ProductName, CurrentLangResourceManager.GetString("LastClipWasMultiCaptured"), ToolTipIcon.Info);
+            string sql = "SELECT Id FROM Clips ORDER BY Id Desc Limit 2";
+            SQLiteCommand commandSelect = new SQLiteCommand(sql, m_dbConnection);
+            using (SQLiteDataReader reader = commandSelect.ExecuteReader())
             {
-                if (lastClipWasMultiCaptured)
-                    notifyIcon.ShowBalloonTip(2000, Application.ProductName, CurrentLangResourceManager.GetString("LastClipWasMultiCaptured"), ToolTipIcon.Info);
-                DataRowView row1 = (DataRowView) dataGridView.Rows[1].DataBoundItem;
-                int id1 = (int) row1["id"];
-                DataRowView row2 = (DataRowView) dataGridView.Rows[0].DataBoundItem;
-                int id2 = (int) row2["id"];
-                CompareClipsByID(id1, id2);
+                int id1 = 0, id2 = 0;
+                if (reader.Read())
+                    id1 = (int)reader["Id"];
+                if (reader.Read())
+                    id2 = (int)reader["Id"];
+                if (id2 > 0 && id1 > 0)
+                    CompareClipsByID(id1, id2);
             }
         }
 
