@@ -2994,8 +2994,8 @@ namespace ClipAngel
         private static string GetWindowTitle(IntPtr hwnd)
         {
             //const int nChars = 256;
-            int nChars = GetWindowTextLength(hwnd);
-            StringBuilder buff = new StringBuilder(nChars + 1);
+            int nChars = GetWindowTextLength(hwnd) + 1;
+            StringBuilder buff = new StringBuilder(nChars);
             string windowTitle = "";
             if (GetWindowText(hwnd, buff, nChars) > 0)
             {
