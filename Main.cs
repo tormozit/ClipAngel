@@ -892,15 +892,6 @@ namespace ClipAngel
             bool autoSelectMatch = (textPattern.Length > 0 && Properties.Settings.Default.AutoSelectMatch);
             FullTextLoad = FullTextLoad || EditMode;
             richTextBox.ReadOnly = !EditMode;
-            RowReader = null;
-            if (CurrentRowIndex == -1)
-            {
-                CurrentRowView = clipBindingSource.Current as DataRowView;
-            }
-            else
-            {
-                CurrentRowView = clipBindingSource[CurrentRowIndex] as DataRowView;
-            }
             FilterMatches = null;
             if (Properties.Settings.Default.MonospacedFont)
                 richTextBox.Font = new Font(FontFamily.GenericMonospace, Properties.Settings.Default.Font.Size);
@@ -936,10 +927,9 @@ namespace ClipAngel
             StripLabelVisualSize.Text = "";
             StripLabelType.Text = "";
             stripLabelPosition.Text = "";
-            if (CurrentRowView != null)
+            LoadRowReader();
+            if (RowReader != null)
             {
-                DataRow CurrentRow = CurrentRowView.Row;
-                RowReader = getRowReader((int) CurrentRow["Id"]);
                 clipType = RowReader["type"].ToString();
                 string fullText = RowReader["Text"].ToString();
                 string fullRTF = RowReader["richText"].ToString();
@@ -1149,6 +1139,24 @@ namespace ClipAngel
             tableLayoutPanelData.ResumeLayout();
             if (autoSelectMatch)
                 SelectNextMatchInClipText();
+        }
+
+        protected virtual void LoadRowReader(int CurrentRowIndex = -1)
+        {
+            DataRowView CurrentRowView;
+            RowReader = null;
+            if (CurrentRowIndex == -1)
+            {
+                CurrentRowView = clipBindingSource.Current as DataRowView;
+            }
+            else
+            {
+                CurrentRowView = clipBindingSource[CurrentRowIndex] as DataRowView;
+            }
+            if (CurrentRowView == null)
+                return;
+            DataRow CurrentRow = CurrentRowView.Row;
+            RowReader = getRowReader((int) CurrentRow["Id"]);
         }
 
         private string LocalTypeName(string TypeEng)
@@ -2833,7 +2841,10 @@ namespace ClipAngel
             if (allSelected)
                 UpdateClipBindingSource(true);
             else
+            {
+                LoadRowReader();
                 UpdateClipButtons();
+            }
         }
 
         private void UpdateClipButtons()
