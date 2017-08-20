@@ -2300,9 +2300,9 @@ namespace ClipAngel
         static extern bool EnableWindow(IntPtr hwnd, bool bEnable);
 
         [DllImport("user32.dll", CharSet = CharSet.Unicode)]
-        static extern int GetWindowText(IntPtr hWnd, [MarshalAs(UnmanagedType.LPWStr)] StringBuilder text, int count);
+        static extern int GetWindowText(IntPtr hWnd, StringBuilder text, int count);
 
-        [DllImport("user32.dll", SetLastError = true)]
+        [DllImport("user32.dll", CharSet = CharSet.Unicode, SetLastError = true)]
         static extern int GetWindowTextLength(IntPtr hWnd);
 
         [DllImport("user32.dll")]
@@ -3004,8 +3004,7 @@ namespace ClipAngel
 
         private static string GetWindowTitle(IntPtr hwnd)
         {
-            //const int nChars = 256;
-            int nChars = GetWindowTextLength(hwnd) + 1;
+            int nChars = (GetWindowTextLength(hwnd) + 1) * 2; // Multiply 2 is made for possible fix of crash https://sourceforge.net/p/clip-angel/tickets/20/
             StringBuilder buff = new StringBuilder(nChars);
             string windowTitle = "";
             if (GetWindowText(hwnd, buff, nChars) > 0)
