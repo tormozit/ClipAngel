@@ -1731,7 +1731,7 @@ namespace ClipAngel
                                 if (match.Success)
                                     NumberOfRows = Convert.ToInt32(match.Groups[1].Value);
                                 NumberOfImageCells = NumberOfRows * NumberOfColumns;
-                                NumberOfFilledCells = Regex.Matches(xmlSheet, "<Row>").Count;
+                                NumberOfFilledCells = Regex.Matches(xmlSheet, "<Row").Count;
                             }
                         }
                     }
