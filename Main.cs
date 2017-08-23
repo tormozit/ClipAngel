@@ -3004,7 +3004,7 @@ namespace ClipAngel
 
         private static string GetWindowTitle(IntPtr hwnd)
         {
-            int nChars = (GetWindowTextLength(hwnd) + 1) * 2; // Multiply 2 is made for possible fix of crash https://sourceforge.net/p/clip-angel/tickets/20/
+            int nChars = Math.Max(1024, GetWindowTextLength(hwnd) + 1); // crash https://sourceforge.net/p/clip-angel/tickets/20/
             StringBuilder buff = new StringBuilder(nChars);
             string windowTitle = "";
             if (GetWindowText(hwnd, buff, nChars) > 0)
