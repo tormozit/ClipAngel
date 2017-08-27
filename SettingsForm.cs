@@ -711,6 +711,7 @@ namespace ClipAngel
 
         public void Load(bool PortableMode = false)
         {
+            ReadWindowTitles = Properties.Settings.Default.ReadWindowTitles;
             MaxCellsToCaptureFormattedText = Properties.Settings.Default.MaxCellsToCaptureFormattedText;
             MaxCellsToCaptureImage = Properties.Settings.Default.MaxCellsToCaptureImage;
             DatabaseFile = Properties.Settings.Default.DatabaseFile;
@@ -781,6 +782,7 @@ namespace ClipAngel
 
         public void Apply(bool PortableMode = false)
         {
+            Properties.Settings.Default.ReadWindowTitles = ReadWindowTitles;
             Properties.Settings.Default.MaxCellsToCaptureImage = MaxCellsToCaptureImage;
             Properties.Settings.Default.MaxCellsToCaptureFormattedText = MaxCellsToCaptureFormattedText;
             Properties.Settings.Default.DatabaseFile = DatabaseFile;
@@ -945,6 +947,10 @@ namespace ClipAngel
 
         [GlobalizedCategory("Other")]
         public int MaxCellsToCaptureImage { get; set; }
+
+        [GlobalizedCategory("Other")]
+        [Editor(typeof(MyBoolEditor), typeof(UITypeEditor))]
+        public bool ReadWindowTitles { get; set; }
 
         [GlobalizedCategory("Other")]
         public Font DefaultFont { get; set; }

@@ -328,6 +328,12 @@
   <data name="PlaySoundOnClipCaptureDescription" xml:space="preserve">
     <value>Проигрывать стандартный звук Windows при успешном захвате клипа. Может быть надоедливо.</value>
   </data>
+  <data name="ReadWindowTitles" xml:space="preserve">
+    <value>Читать заголовки окон</value>
+  </data>
+  <data name="ReadWindowTitlesDescription" xml:space="preserve">
+    <value>Читать заголовки окон источников клипов. Отключение этой настройки может помочь избежать сбоев программы на некоторых системах.</value>
+  </data>
   <data name="RtfEditor" xml:space="preserve">
     <value>Приложение открытия файлов RTF</value>
   </data>

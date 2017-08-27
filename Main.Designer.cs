@@ -1627,7 +1627,7 @@ namespace ClipAngel
             // 
             // openWithToolStripMenuItem
             // 
-            this.openWithToolStripMenuItem.Image = global::ClipAngel.Properties.Resources.Open_with;
+            this.openWithToolStripMenuItem.Image = global::ClipAngel.Properties.Resources.OpenWith;
             this.openWithToolStripMenuItem.Name = "openWithToolStripMenuItem";
             resources.ApplyResources(this.openWithToolStripMenuItem, "openWithToolStripMenuItem");
             this.openWithToolStripMenuItem.Click += new System.EventHandler(this.openWithToolStripMenuItem_Click);
@@ -1915,7 +1915,7 @@ namespace ClipAngel
             // toolStripButtonOpenWith
             // 
             this.toolStripButtonOpenWith.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonOpenWith.Image = global::ClipAngel.Properties.Resources.Open_with;
+            this.toolStripButtonOpenWith.Image = global::ClipAngel.Properties.Resources.OpenWith;
             resources.ApplyResources(this.toolStripButtonOpenWith, "toolStripButtonOpenWith");
             this.toolStripButtonOpenWith.Name = "toolStripButtonOpenWith";
             this.toolStripButtonOpenWith.Click += new System.EventHandler(this.openWithToolStripMenuItem_Click);

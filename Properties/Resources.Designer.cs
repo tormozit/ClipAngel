@@ -119,9 +119,9 @@ namespace ClipAngel.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap Autoselect_first_match {
+        public static System.Drawing.Bitmap AutoselectFirstMatch {
             get {
-                object obj = ResourceManager.GetObject("Autoselect first match", resourceCulture);
+                object obj = ResourceManager.GetObject("AutoselectFirstMatch", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -647,9 +647,9 @@ namespace ClipAngel.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap Open_with {
+        public static System.Drawing.Bitmap OpenFile {
             get {
-                object obj = ResourceManager.GetObject("Open with", resourceCulture);
+                object obj = ResourceManager.GetObject("OpenFile", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -657,9 +657,9 @@ namespace ClipAngel.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap OpenFile {
+        public static System.Drawing.Bitmap OpenWith {
             get {
-                object obj = ResourceManager.GetObject("OpenFile", resourceCulture);
+                object obj = ResourceManager.GetObject("OpenWith", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -885,7 +885,7 @@ namespace ClipAngel
         private void AfterRowLoad(bool FullTextLoad = false, int CurrentRowIndex = -1, int NewSelectionStart = -1,
             int NewSelectionLength = -1)
         {
-            DataRowView CurrentRowView;
+            //DataRowView CurrentRowView;
             mshtml.IHTMLDocument2 htmlDoc;
             string clipType;
             string textPattern = RegexpPattern();
@@ -3004,12 +3004,15 @@ namespace ClipAngel
 
         private static string GetWindowTitle(IntPtr hwnd)
         {
-            int nChars = Math.Max(1024, GetWindowTextLength(hwnd) + 1); // crash https://sourceforge.net/p/clip-angel/tickets/20/
-            StringBuilder buff = new StringBuilder(nChars);
             string windowTitle = "";
-            if (GetWindowText(hwnd, buff, nChars) > 0)
+            if (Properties.Settings.Default.ReadWindowTitles)
             {
-                windowTitle = buff.ToString();
+                int nChars = Math.Max(1024, GetWindowTextLength(hwnd) + 1); // crash https://sourceforge.net/p/clip-angel/tickets/20/
+                StringBuilder buff = new StringBuilder(nChars);
+                if (GetWindowText(hwnd, buff, nChars) > 0)
+                {
+                    windowTitle = buff.ToString();
+                }
             }
             return windowTitle;
         }

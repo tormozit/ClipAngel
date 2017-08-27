@@ -319,6 +319,12 @@ Not appliable to HTML native formatting.</value>
   <data name="PlaySoundOnClipCaptureDescription" xml:space="preserve">
     <value>Playing standard Windows sound when clip is successfully captured. Can be annoying</value>
   </data>
+  <data name="ReadWindowTitles" xml:space="preserve">
+    <value>Read window titles</value>
+  </data>
+  <data name="ReadWindowTitlesDescription" xml:space="preserve">
+    <value>Read window titles from clip sources. Uncheck this setting to avoid crashes of program on some systems.</value>
+  </data>
   <data name="RestoreCaretPositionOnFocusReturn" xml:space="preserve">
     <value>Restore caret position on focus return</value>
   </data>

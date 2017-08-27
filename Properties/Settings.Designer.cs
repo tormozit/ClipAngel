@@ -608,5 +608,17 @@ namespace ClipAngel.Properties {
                 this["SearchIgnoreBigTexts"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool ReadWindowTitles {
+            get {
+                return ((bool)(this["ReadWindowTitles"]));
+            }
+            set {
+                this["ReadWindowTitles"] = value;
+            }
+        }
     }
 }
