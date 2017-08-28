@@ -1709,6 +1709,34 @@ namespace ClipAngel
                         textFormatPresent = true;
                     }
                 }
+                string Moxel1C8 = "1C:Moxcel8 Document";
+                if (iData.GetDataPresent(Moxel1C8))
+                {
+                    object data = iData.GetData(Moxel1C8);
+                    if (data.GetType() == typeof(MemoryStream))
+                    {
+                        // Excel
+                        using (MemoryStream ms = (MemoryStream)data)
+                        {
+                            if (ms != null && ms.Length > 0)
+                            {
+                                byte[] buffer = new byte[ms.Length];
+                                ms.Read(buffer, 0, (int)ms.Length);
+                                string xmlSheet = Encoding.UTF8.GetString(buffer);
+                                Match match = Regex.Match(xmlSheet, "\\{0,0\\},\\d+,\\d+,(\\d+),\\d+,\\d+,(\\d+),\\d+");
+                                int NumberOfColumns = 1;
+                                int NumberOfRows = 1;
+                                if (match.Success)
+                                {
+                                    NumberOfColumns = Convert.ToInt32(match.Groups[1].Value);
+                                    NumberOfRows = Convert.ToInt32(match.Groups[2].Value);
+                                }
+                                NumberOfImageCells = NumberOfRows * NumberOfColumns;
+                                NumberOfFilledCells = NumberOfImageCells;
+                            }
+                        }
+                    }
+                }
                 if (iData.GetDataPresent(DataFormat_XMLSpreadSheet))
                 {
                     object data = iData.GetData(DataFormat_XMLSpreadSheet);
@@ -1717,10 +1745,10 @@ namespace ClipAngel
                         // Excel
                         using (MemoryStream ms = (MemoryStream)data)
                         {
-                            if (ms!=null && ms.Length > 0)
+                            if (ms != null && ms.Length > 0)
                             {
                                 byte[] buffer = new byte[ms.Length];
-                                ms.Read(buffer, 0, (int) ms.Length);
+                                ms.Read(buffer, 0, (int)ms.Length);
                                 string xmlSheet = Encoding.Default.GetString(buffer);
                                 Match match = Regex.Match(xmlSheet, "ExpandedColumnCount=\"(\\d+)\"");
                                 int NumberOfColumns = 1;
@@ -1736,7 +1764,6 @@ namespace ClipAngel
                         }
                     }
                 }
-
                 if (true
                     && iData.GetDataPresent(DataFormats.Html)
                     && (false
