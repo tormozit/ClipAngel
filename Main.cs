@@ -2642,15 +2642,15 @@ namespace ClipAngel
             {
                 this.Close();
             }
-            else
-            {
+            //else
+            //{
                 SetForegroundWindow(lastActiveParentWindow);
                 Debug.WriteLine("Set foreground window " + lastActiveParentWindow + " " +
                                 GetWindowTitle(lastActiveParentWindow));
-            }
+            //}
             int waitStep = 5;
             IntPtr hForegroundWindow = IntPtr.Zero;
-            for (int i = 0; i < 500; i += waitStep)
+            for (int i = 0; i < 200; i += waitStep)
             {
                 hForegroundWindow = GetForegroundWindow();
                 if (hForegroundWindow != IntPtr.Zero)
@@ -2659,51 +2659,51 @@ namespace ClipAngel
             }
             Debug.WriteLine("Get foreground window " + hForegroundWindow + " " + GetWindowTitle(hForegroundWindow));
 
-            if (oldChildWindow != IntPtr.Zero && Properties.Settings.Default.RestoreCaretPositionOnFocusReturn)
-            {
-                Point point;
-                RECT newRect;
-                GUITHREADINFO guiInfo = new GUITHREADINFO();
-                for (int i = 0; i < 500; i += waitStep)
-                {
-                    guiInfo = GetGuiInfo(lastActiveParentWindow, out point);
-                    if (guiInfo.hwndFocus == oldChildWindow)
-                        break;
-                    Thread.Sleep(waitStep);
-                }
-                GetWindowRect(oldChildWindow, out newRect);
-                if (newRect.Equals(oldChildWindowRect))
-                {
-                    //if (guiInfo.hwndFocus != oldChildWindow)
-                    //{
-                    //    // Adress text box of IE11
-                    //    Paster.ClickOnPoint(oldChildWindow, oldCaretPoint);
-                    //}
-                    //else
-                    //{
-                    //    //string newActiveWindowSelectedText = getActiveWindowSelectedText();
-                    //    //if (newActiveWindowSelectedText != oldWindowSelectedText && oldWindowSelectedText == "")
-                    //    //{
-                    //        Paster.ClickOnPoint(oldChildWindow, oldCaretPoint);
-                    //    //}
-                    //}
+            //if (oldChildWindow != IntPtr.Zero && Properties.Settings.Default.RestoreCaretPositionOnFocusReturn)
+            //{
+            //    Point point;
+            //    RECT newRect;
+            //    GUITHREADINFO guiInfo = new GUITHREADINFO();
+            //    for (int i = 0; i < 500; i += waitStep)
+            //    {
+            //        guiInfo = GetGuiInfo(lastActiveParentWindow, out point);
+            //        if (guiInfo.hwndFocus == oldChildWindow)
+            //            break;
+            //        Thread.Sleep(waitStep);
+            //    }
+            //    GetWindowRect(oldChildWindow, out newRect);
+            //    if (newRect.Equals(oldChildWindowRect))
+            //    {
+            //        if (guiInfo.hwndFocus != oldChildWindow)
+            //        {
+            //            // Adress text box of IE11
+            //            Paster.ClickOnPoint(oldChildWindow, oldCaretPoint);
+            //        }
+            //        else
+            //        {
+            //            //string newActiveWindowSelectedText = getActiveWindowSelectedText();
+            //            //if (newActiveWindowSelectedText != oldWindowSelectedText && oldWindowSelectedText == "")
+            //            //{
+            //            Paster.ClickOnPoint(oldChildWindow, oldCaretPoint);
+            //            //}
+            //        }
 
-                    //AttachThreadInput(GetCurrentThreadId(), remoteThreadId, true);
-                    //Point PosBeforeChange;
-                    //GetCaretPos(out PosBeforeChange);
-                    //Point currentPos;
-                    //int result = SetCaretPos(lastCaretPoint.X, lastCaretPoint.Y);
-                    //int ErrorCode = Marshal.GetLastWin32Error(); // Always return 5 - Access denied
-                    //for (int i = 0; i < 500; i += waitStep)
-                    //{
-                    //    GetCaretPos(out currentPos);
-                    //    if (PosBeforeChange != currentPos)
-                    //        break;
-                    //    Thread.Sleep(waitStep);
-                    //}
-                    //AttachThreadInput(GetCurrentThreadId(), remoteThreadId, false);
-                }
-            }
+            //        AttachThreadInput(GetCurrentThreadId(), remoteThreadId, true);
+            //        Point PosBeforeChange;
+            //        GetCaretPos(out PosBeforeChange);
+            //        Point currentPos;
+            //        int result = SetCaretPos(lastCaretPoint.X, lastCaretPoint.Y);
+            //        int ErrorCode = Marshal.GetLastWin32Error(); // Always return 5 - Access denied
+            //        for (int i = 0; i < 500; i += waitStep)
+            //        {
+            //            GetCaretPos(out currentPos);
+            //            if (PosBeforeChange != currentPos)
+            //                break;
+            //            Thread.Sleep(waitStep);
+            //        }
+            //        AttachThreadInput(GetCurrentThreadId(), remoteThreadId, false);
+            //    }
+            //}
 
             var curproc = Process.GetCurrentProcess();
             if (needElevation)
