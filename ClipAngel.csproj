@@ -506,7 +506,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\DataSources\" />
-    <Folder Include="Publication\" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
