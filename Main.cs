@@ -2970,6 +2970,11 @@ namespace ClipAngel
             out string appPath, bool replaceNullWithLastActive = true)
         {
             IntPtr hwnd;
+            window = "";
+            application = "";
+            appPath = "";
+            if (!Properties.Settings.Default.ReadWindowTitles)
+                return;
             if (Locker)
                 hwnd = GetOpenClipboardWindow();
             else
@@ -2980,9 +2985,6 @@ namespace ClipAngel
                     hwnd = lastActiveParentWindow;
                 else
                 {
-                    window = null;
-                    application = null;
-                    appPath = null;
                     return;
                 }
             }
@@ -5591,7 +5593,7 @@ namespace ClipAngel
             try
             {
                 Clipboard.SetDataObject(dto, true, 10, 10);
-                    // Very important to set second parameter to true to give immidiate access to buffer to other processes!
+                    // Very important to set second parameter to TRUE to give immidiate access to buffer to other processes!
                 success = true;
             }
             catch

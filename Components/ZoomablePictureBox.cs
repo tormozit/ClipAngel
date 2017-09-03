@@ -18,7 +18,7 @@ namespace ClipAngel
         private Container components = null;
         private string m_sPicName = "";
         private PictureBoxSizeMode zoomMode;
-        public event EventHandler DoubleClick;
+        public new event EventHandler DoubleClick;
         public event EventHandler ZoomChanged;
 
         private double ZoomDelta = 1.1;   // = 10% smaller or larger
