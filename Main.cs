@@ -3162,7 +3162,7 @@ namespace ClipAngel
                 {
                     // Make natural (2 directions) order of range selected rows
                     int lastIndex = dataGridView.CurrentRow.Index;
-                    int firstIndex = selectedRangeStart;
+                    int firstIndex = Math.Min(selectedRangeStart, dataGridView.RowCount - 1);
                     int step;
                     if (firstIndex > lastIndex)
                         step = -1;
