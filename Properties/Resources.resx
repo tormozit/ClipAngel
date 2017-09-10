@@ -427,4 +427,7 @@
   <data name="rtf" xml:space="preserve">
     <value>rtf</value>
   </data>
+  <data name="FilteredStatusText" xml:space="preserve">
+    <value>Filtered {0}</value>
+  </data>
 </root>

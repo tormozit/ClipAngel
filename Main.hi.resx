@@ -2831,4 +2831,13 @@ Url वर्तमान क्लिप में सहेजे जाएँ
   <data name="toolStripMenuItem23.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>203, 6</value>
   </data>
+  <data name="stripLabelFiltered.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>50, 17</value>
+  </data>
+  <metadata name="cultureManager2.TrayLocation" xml:space="preserve" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>455, 57</value>
+  </metadata>
+  <data name="toolStripBottom.AutoSize" xml:space="preserve" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
 </root>

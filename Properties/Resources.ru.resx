@@ -421,4 +421,7 @@
   <data name="Version" xml:space="preserve">
     <value>Версия</value>
   </data>
+  <data name="FilteredStatusText" xml:space="preserve">
+    <value>Отобрано {0}</value>
+  </data>
 </root>

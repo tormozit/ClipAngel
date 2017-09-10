@@ -1490,7 +1490,12 @@ namespace ClipAngel
             table.Locale = CultureInfo.InvariantCulture;
             dataAdapter.Fill(table);
             clipBindingSource.DataSource = table;
-
+            stripLabelPosition.Spring = false;
+            stripLabelPosition.Width = 50;
+            stripLabelFiltered.Visible = filterOn;
+            if (filterOn)
+                stripLabelFiltered.Text = String.Format(CurrentLangResourceManager.GetString("FilteredStatusText"), table.Rows.Count);
+            stripLabelPosition.Spring = true;
             PrepareTableGrid(); // Long
             if (filterOn)
             {
@@ -2973,8 +2978,8 @@ namespace ClipAngel
             window = "";
             application = "";
             appPath = "";
-            if (!Properties.Settings.Default.ReadWindowTitles)
-                return;
+            //if (!Properties.Settings.Default.ReadWindowTitles)
+            //    return;
             if (Locker)
                 hwnd = GetOpenClipboardWindow();
             else
@@ -5944,6 +5949,10 @@ namespace ClipAngel
             monthCalendar1.Hide();
             periodFilterOn = true;
             UpdateClipBindingSource();
+
+            // Turn on secodnary columns
+            if (!Properties.Settings.Default.ShowSecondaryColumns)
+                toolStripMenuItemSecondaryColumns_Click();
         }
 
         private void monthCalendar1_Leave(object sender, EventArgs e)
@@ -6015,7 +6024,7 @@ namespace ClipAngel
             UpdateColumnsSet();
         }
 
-        private void toolStripMenuItemSecondaryColumns_Click(object sender, EventArgs e)
+        private void toolStripMenuItemSecondaryColumns_Click(object sender = null, EventArgs e = null)
         {
             Properties.Settings.Default.ShowSecondaryColumns = !Properties.Settings.Default.ShowSecondaryColumns;
             UpdateControlsStates();

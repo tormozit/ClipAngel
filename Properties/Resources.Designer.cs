@@ -448,6 +448,15 @@ namespace ClipAngel.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Filtered {0}.
+        /// </summary>
+        public static string FilteredStatusText {
+            get {
+                return ResourceManager.GetString("FilteredStatusText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         public static System.Drawing.Bitmap FindNext {
