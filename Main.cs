@@ -2647,12 +2647,12 @@ namespace ClipAngel
             {
                 this.Close();
             }
-            //else
-            //{
+            else
+            {
                 SetForegroundWindow(lastActiveParentWindow);
                 Debug.WriteLine("Set foreground window " + lastActiveParentWindow + " " +
                                 GetWindowTitle(lastActiveParentWindow));
-            //}
+            }
             int waitStep = 5;
             IntPtr hForegroundWindow = IntPtr.Zero;
             for (int i = 0; i < 200; i += waitStep)
@@ -5597,27 +5597,32 @@ namespace ClipAngel
             bool success = false;
             try
             {
-                Clipboard.SetDataObject(dto, true, 10, 10);
+                Clipboard.SetDataObject(dto, true, 10, 20);
                     // Very important to set second parameter to TRUE to give immidiate access to buffer to other processes!
                 success = true;
             }
             catch
             {
+                string appPath = "";
+                string clipWindow = "";
+                string clipApplication = "";
+                GetClipboardOwnerLockerInfo(true, out clipWindow, out clipApplication, out appPath);
+                Debug.WriteLine(String.Format(CurrentLangResourceManager.GetString("FailedToWriteClipboard"),
+                    clipWindow, clipApplication));
             }
-            if (!success)
-                try
-                {
-                    Clipboard.SetDataObject(dto, false, 10, 10);
-                }
-                catch (Exception ex)
-                {
-                    string appPath = "";
-                    string clipWindow = "";
-                    string clipApplication = "";
-                    GetClipboardOwnerLockerInfo(true, out clipWindow, out clipApplication, out appPath);
-                    Debug.WriteLine(String.Format(CurrentLangResourceManager.GetString("FailedToWriteClipboard"),
-                        clipWindow, clipApplication));
-                }
+            //if (!success)
+            //    try
+            //    {
+            //        Clipboard.SetDataObject(dto, false, 10, 20);
+            //    }
+            //    catch (Exception ex)
+            //    {
+            //        string appPath = "";
+            //        string clipWindow = "";
+            //        string clipApplication = "";
+            //        GetClipboardOwnerLockerInfo(true, out clipWindow, out clipApplication, out appPath);
+            //        Debug.WriteLine(String.Format(CurrentLangResourceManager.GetString("FailedToWriteClipboard"), clipWindow, clipApplication));
+            //    }
             ConnectClipboard();
             if (allowSelfCapture)
                 CaptureClipboardData();
