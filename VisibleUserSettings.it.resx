@@ -13,263 +13,310 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AutoCheckUpdate" xml:space="preserve">
-    <value>AutoCheck per aggiornamento del programma</value>
+    <value>Controllo automatico aggiornamenti</value>
   </data>
   <data name="AutoCheckUpdateDescription" xml:space="preserve">
-    <value>AutoCheck per aggiornamento: avvio del programma e ogni giorno</value>
+    <value>Controllo aggionamenti: ad avvio del programma e ogni giorno</value>
   </data>
   <data name="AutoSelectMatch" xml:space="preserve">
-    <value>Autoselect prima partita</value>
+    <value>Selezione automatica prima occorrenza</value>
   </data>
   <data name="AutoSelectMatchDescription" xml:space="preserve">
-    <value>Selezione automatica della prima partita del filtro nel testo di clip. </value>
+    <value>Selezione automatica prima occorrenza filtro nel testo catturato. </value>
   </data>
   <data name="Autostart" xml:space="preserve">
-    <value>Programma di avvio automatico su accesso utente</value>
+    <value>Avvio automatico programma ad accesso utente</value>
   </data>
   <data name="AutostartDescription" xml:space="preserve">
     <value></value>
   </data>
   <data name="AutostartPath" xml:space="preserve">
-    <value>Riga di comando autostart applicazione</value>
+    <value>Riga di comando avvio automatico applicazione</value>
   </data>
   <data name="AutostartPathDescription" xml:space="preserve">
-    <value>Fare clic su OK per aggiornare questo comando dal percorso corrente di avvio</value>
+    <value>Fai clic su OK per aggiornare questo comando dal percorso attuale di avvio</value>
   </data>
   <data name="ClearFiltersOnClose" xml:space="preserve">
-    <value>Cancella filtri sulla finestra principale di chiudere</value>
+    <value>Cancella filtri alla chiusura della finestra principale</value>
   </data>
   <data name="ClearFiltersOnCloseDescription" xml:space="preserve">
     <value></value>
   </data>
   <data name="ClipListSimpleDraw" xml:space="preserve">
-    <value>Veloce e semplice elenco sorteggio</value>
+    <value>Disegno elenco veloce e semplice</value>
   </data>
   <data name="ClipListSimpleDrawDescription" xml:space="preserve">
-    <value>Elenco di clip verrà disegnata velocemente senza evidenziando corrispondenze con i filtri e i campioni foto</value>
+    <value>L'elenco delle catture verrà disegnato velocemente senza evidenziare le corrispondenze con i filtri e le immagini campione</value>
   </data>
   <data name="ClipTempFileFolder" xml:space="preserve">
-    <value>Cartella per i file temp di clip</value>
+    <value>Cartella per i file temporanei delle catture</value>
   </data>
   <data name="ClipTempFileFolderDescription" xml:space="preserve">
-    <value>Cartella per il salvataggio dei file temporanei di clip. Lasciare vuoto per utilizzare la cartella temp standart. Di solito può essere utile in modalità portatile.</value>
+    <value>Cartella per il salvataggio dei file temporanei delle catture. Lascia vuoto per usare la cartella temporanea standard. Di solito può essere utile in modalità portatile.</value>
   </data>
   <data name="CopyTextInAnyWindowOnCTRLF3" xml:space="preserve">
-    <value>Copiare testo da qualsiasi finestra di controllo + F3</value>
+    <value>Copia testo da qualsiasi finestra con CTRL+F3</value>
   </data>
   <data name="CopyTextInAnyWindowOnCTRLF3Description" xml:space="preserve">
-    <value>Copiare il testo selezionato da qualsiasi finestra quando si preme CTRL + F3. Questo tasto di scelta rapida viene solitamente utilizzato negli editor di testo per cercare la stringa selezionata. 
-Chiave stampa sarà trattato dalla finestra. </value>
+    <value>Copia il testo selezionato in qualsiasi finestra quando si preme CTRL+F3. Questo tasto di scelta rapida viene solitamente utilizzato negli editor di testo per cercare la stringa selezionata. 
+La pressione del tasto verrà gestita dalla finestra. </value>
   </data>
   <data name="CurrentPath" xml:space="preserve">
-    <value>Percorso corrente di avvio applicazione</value>
+    <value>Percorso attuale avvio applicazione</value>
   </data>
   <data name="DatabaseSize" xml:space="preserve">
-    <value>Dimensione database MB</value>
+    <value>Dimensione database (MB)</value>
   </data>
   <data name="DatabaseSizeDescription" xml:space="preserve">
     <value></value>
   </data>
   <data name="DefaultFont" xml:space="preserve">
-    <value>Carattere predefinito</value>
+    <value>Font predefinita</value>
   </data>
   <data name="DefaultFontDescription" xml:space="preserve">
-    <value>Tipo di carattere per elenco di clip e predefinito per il testo di clip. Fare doppio clic per modificarlo.</value>
+    <value>Font per elenco tagli e predefinita per la cattura testo. Fai doppio clic per modificarla.</value>
   </data>
   <data name="FastWindowOpen" xml:space="preserve">
-    <value>Veloce finestra aperta</value>
+    <value>Apertura veloce finestra</value>
   </data>
   <data name="FastWindowOpenDescription" xml:space="preserve">
-    <value>Veloce finestra apertura utilizzando alcuni trucchi. Può portare ad alcuni problemi minori in finestra di apertura/chiusura.</value>
+    <value>Apertura veloce finestra usando alcuni trucchi. Può portare ad alcuni problemi minori nell'apertura/chiusura della finestra.</value>
   </data>
   <data name="GlobalHotkeyCompareLastClips" xml:space="preserve">
-    <value>Hotkey per confrontare le ultime clip</value>
+    <value>Tasto scelta rapida per confrontare le ultime catture</value>
   </data>
   <data name="GlobalHotkeyCompareLastClipsDescription" xml:space="preserve">
-    <value>Utilizzare questo tasto di scelta rapida in qualsiasi programma di avvio applicazione per confrontare le ultime 2 clip</value>
+    <value>Usa questo tasto di scelta rapida in qualsiasi programma per eseguire l'applicazione per confrontare le ultime 2 catture</value>
   </data>
   <data name="GlobalHotkeyIncrementalPaste" xml:space="preserve">
-    <value>Tasti di scelta rapida per incollare incrementale</value>
+    <value>Tasto di scelta rapida per incollare e selezionare il successivo</value>
   </data>
   <data name="GlobalHotkeyIncrementalPasteDescription" xml:space="preserve">
-    <value>Utilizzare questo tasto di scelta rapida in qualsiasi programma per incollare clip corrente dall'elenco di Clip Angel e selezionare clip successivo che verrà mostrato nel vassoio tooltip</value>
+    <value>Usa questo tasto di scelta rapida in qualsiasi programma per incollare la cattura attuale da Clip Angel e selezionare la cattura successiva che verrà visualizzata nella barra di sistema</value>
   </data>
   <data name="GlobalHotkeyOpenCurrent" xml:space="preserve">
-    <value>Tasti di scelta rapida per aprire la finestra senza modifiche</value>
+    <value>Tasto di scelta rapida per aprire la finestra senza modifiche</value>
   </data>
   <data name="GlobalHotkeyOpenCurrentDescription" xml:space="preserve">
-    <value>Utilizzare questo tasto di scelta rapida in qualsiasi programma per aprire la finestra Clip Angelo con nessun cambiamento nella selezione filtro e clip. Premere nuovamente per chiudere la finestra.</value>
+    <value>Usa questo tasto di scelta rapida in qualsiasi programma per aprire la finestra Clip Angel senza nessuna modifica nella selezione filtro e cattura. Premi nuovamente per chiudere la finestra.</value>
   </data>
   <data name="GlobalHotkeyOpenFavorites" xml:space="preserve">
-    <value>Tasti di scelta rapida per aprire la finestra con i favoriti</value>
+    <value>Tasto di scelta rapida per aprire la finestra con i preferiti</value>
   </data>
   <data name="GlobalHotkeyOpenFavoritesDescription" xml:space="preserve">
-    <value>Utilizzare questo tasto di scelta rapida in qualsiasi programma per visualizzare Clip Angelo finestra con filtro solo preferiti. Premere nuovamente per chiudere la finestra.</value>
+    <value>Usa questo tasto di scelta rapida in qualsiasi programma per visualizzare la finestra di Clip Angel con il filtro solo preferiti. Premi nuovamente per chiudere la finestra.</value>
   </data>
   <data name="GlobalHotkeyOpenLast" xml:space="preserve">
-    <value>Tasti di scelta rapida per aprire la finestra con reset</value>
+    <value>Tasto di scelta rapida per aprire la finestra con ripristino</value>
   </data>
   <data name="GlobalHotkeyOpenLastDescription" xml:space="preserve">
-    <value>Utilizzare questo tasto di scelta rapida in qualsiasi programma per aprire finestra Clip Angelo, cancellare i filtri e selezionare ultimo clip registrato. Premere nuovamente per chiudere la finestra.</value>
+    <value>Usa questo tasto di scelta rapida in qualsiasi programma per aprire la finestra di Clip Angel, azzerare i filtri e selezionare l'ultima cattura. Premi nuovamente per chiudere la finestra.</value>
   </data>
   <data name="GlobalHotkeyPasteText" xml:space="preserve">
-    <value>Tasti di scelta rapida per incollare testo normale</value>
+    <value>Tasto di scelta rapida per incollare testo normale</value>
   </data>
   <data name="GlobalHotkeyPasteTextDescription" xml:space="preserve">
-    <value>Utilizzare questo tasto di scelta rapida in qualsiasi programma per incollare ultimo clip registrato come testo normale</value>
+    <value>Usa questo tasto di scelta rapida in qualsiasi programma per incollare ultimo cattura come testo normale</value>
   </data>
   <data name="HistoryDepthDays" xml:space="preserve">
-    <value>Giorni di profondità di storia</value>
+    <value>N. giorni mantenimento cronologia</value>
   </data>
   <data name="HistoryDepthDaysDescription" xml:space="preserve">
-    <value>Numero massimo di giorni clip preferiti non vengono memorizzati. L'eliminazione viene eseguita su start, tutti i giorni, su impostazioni si applicano. 0 - non eliminare.</value>
+    <value>Numero massimo giorni memroizzazione catture non preferite. L'eliminazione viene eseguita su all'avvio, tutti i giorni, in base alle impostazioni. Valore=0 - non eliminare.</value>
   </data>
   <data name="HistoryDepthNumber" xml:space="preserve">
-    <value>Numero di profondità di storia</value>
+    <value>Numero mantenimento cronologia</value>
   </data>
   <data name="HistoryDepthNumberDescription" xml:space="preserve">
-    <value>Numero massimo di clip non preferiti memorizzati. L'eliminazione viene eseguita su start, tutti i giorni, su impostazioni si applicano. 0 - non eliminare.</value>
+    <value>Numero massimo di catture non preferiti memorizzati. L'eliminazione viene eseguita all'avvio, tutti i giorni, in abse alle impostazioni. Valore=0 - non eliminare.</value>
   </data>
   <data name="HtmlEditor" xml:space="preserve">
-    <value>Applicazione di editor di file HTML</value>
+    <value>Editor file HTML</value>
   </data>
   <data name="HtmlEditorDescription" xml:space="preserve">
-    <value>Utilizzato nel comando "Apri file" per clip. Lasciare vuoto per utilizzare default OS applicazione per modificare i file HTML.</value>
+    <value>Usato nel comando "Apri file" per le catture. Lascia vuoto per utilizzare l'applicazione predefinita del SO per modificare i file HTML.</value>
   </data>
   <data name="IgnoreApplicationsClipCapture" xml:space="preserve">
-    <value>Applicazioni ignorate nell'acquisizione di clip</value>
+    <value>Applicazioni ignorate nella cattura</value>
   </data>
   <data name="IgnoreApplicationsClipCaptureDescription" xml:space="preserve">
-    <value>Non catturare clip da questo applicazioni</value>
+    <value>Non catturare da queste applicazioni</value>
   </data>
   <data name="IgnoreExclusiveFormatClipCapture" xml:space="preserve">
-    <value>Non "Ignora il Visualizzatore Appunti" formato di cattura</value>
+    <value>Non catturare formato "Ignora Visualizzatore Appunti"</value>
   </data>
   <data name="IgnoreExclusiveFormatClipCaptureDescription" xml:space="preserve">
-    <value>Non acquisire clip con "Ignora il Visualizzatore Appunti" formato presente. Questo formato è solitamente utilizzato dai gestori di password quando si copiano le password negli Appunti. A volte può essere utile per disattivarlo temporaneamente.</value>
+    <value>Non acquisire con formato "Ignora Visualizzatore Appunti" presente. 
+Questo formato è solitamente usato dai gestori di password quando si copiano le password negli Appunti. A volte può essere utile disattivarlo temporaneamente.</value>
   </data>
   <data name="ImageEditor" xml:space="preserve">
-    <value>Applicazione di editor di file immagine (PNG)</value>
+    <value>Editor file immagine (PNG)</value>
   </data>
   <data name="ImageEditorDescription" xml:space="preserve">
-    <value>Utilizzato nel comando "Apri file" per clip. Lasciare vuoto per utilizzare default OS applicazione per modificare i file di immagine (PNG).</value>
+    <value>Usato nel comando "Apri file" per le catture. Lascia vuoto per utilizzare l'applicazione predefinita del SO per modificare i file immgine (PNG).</value>
   </data>
   <data name="Language" xml:space="preserve">
     <value>lingua</value>
   </data>
   <data name="LanguageDescription" xml:space="preserve">
-    <value>Lingua dell'interfaccia utente</value>
+    <value>Lingua interfaccia utente</value>
   </data>
   <data name="MaxClipSizeKB" xml:space="preserve">
-    <value>Dimensione di max clip KB</value>
+    <value>Dimensione max cattura (KB)</value>
   </data>
   <data name="MaxClipSizeKBDescription" xml:space="preserve">
-    <value>Clip maggiore di che questa dimensione non verrà acquisita</value>
+    <value>Non verrà effettuata la cattura con dimensione superiore a questo valore</value>
   </data>
   <data name="MonospacedFont" xml:space="preserve">
     <value>Carattere a spaziatura fissa</value>
   </data>
   <data name="MonospacedFontDescription" xml:space="preserve">
-    <value>Carattere a spaziatura fissa nel campo di testo di clip. 
-Potrebbe essere sovraccaricato da RTF formattazione nativa. 
-Non applicabile a HTML di formattazione nativa.</value>
+    <value>Carattere a spaziatura fissa nel campo testo della cattura. 
+Potrebbe essere sovraccaricato dalla formattazione nativa RTF. 
+Non applicabile alla formattazione nativa HTML.</value>
   </data>
   <data name="MoveCopiedClipToTop" xml:space="preserve">
-    <value>Spostare copiato nella clip elenco verso l'alto</value>
+    <value>Sposta catture in alto dopo l'uso</value>
   </data>
   <data name="MoveCopiedClipToTopDescription" xml:space="preserve">
-    <value>Spostare copiato nell'elenco o clip completamente incollato in cima alla lista</value>
+    <value>Sposta cattura dall'lelenco o catture complete in alto nell'elenco</value>
   </data>
   <data name="NumberOfClips" xml:space="preserve">
-    <value>Numero di clip</value>
+    <value>Numero delle catture</value>
   </data>
   <data name="NumberOfClipsDescription" xml:space="preserve">
-    <value>Attuale numero di clip nel database</value>
+    <value>Attuale numero di catture nel database</value>
   </data>
   <data name="RestoreCaretPositionOnFocusReturn" xml:space="preserve">
-    <value>Ripristinare la posizione del cursore sulla messa a fuoco di ritorno</value>
+    <value>Ripristina la posizione del cursore al ritorno del focus</value>
   </data>
   <data name="RestoreCaretPositionOnFocusReturnDescription" xml:space="preserve">
-    <value>Abilitare questo provare a ripristinare la posizione del cursore dopo lo stato attivo viene restituito alla finestra di destinazione. Questo è utile per caselle di testo che selezionare tutto il testo dopo la perdita di messa a fuoco</value>
+    <value>Abilita questo provare a ripristinare la posizione del cursore dopo il ritorno alla finestra destinazione. Questo è utile per caselle di testo che selezionanoe tutto il testo dopo la perdita del focus</value>
   </data>
   <data name="RtfEditor" xml:space="preserve">
-    <value>Applicazione di editor di file RTF</value>
+    <value>Editor file RTF</value>
   </data>
   <data name="RtfEditorDescription" xml:space="preserve">
-    <value>Utilizzato nel comando "Apri file" per clip. Lasciare vuoto per utilizzare default OS applicazione per modificare i file RTF.</value>
+    <value>Usato nel comando "Apri file" per le catture. Lascia vuoto per utilizzare l'applicazione predefinita del SO per modificare i file RTF.</value>
   </data>
   <data name="SearchCaseSensitive" xml:space="preserve">
-    <value>Ricerca tra maiuscole e minuscole</value>
+    <value>Ricerca sensibile maiuscole e minuscole</value>
   </data>
   <data name="SearchCaseSensitiveDescription" xml:space="preserve">
-    <value>Filtro di ricerca tra maiuscole e minuscole. Ad esempio "Pot" corrisponderà a "Patata", ma non "patata". </value>
+    <value>Filtro di ricerca sensibile a maiuscole e minuscole. Ad esempio "Patt" corrisponderà a "Patata", ma non a "patata". </value>
   </data>
   <data name="SearchWildcards" xml:space="preserve">
-    <value>Cerca "%" come qualsiasi sequenza di char</value>
+    <value>Cerca "%" come qualsiasi sequenza di caratteri</value>
   </data>
   <data name="SearchWildcardsDescription" xml:space="preserve">
-    <value>Char di ricerca "%" dal filtro come qualsiasi sequenza di char. Ad esempio filtro "po %o" corrisponderà a "patata". </value>
+    <value>Il carattere di ricerca "%" dal filtro come qualsiasi sequenza di caratteri. Ad esempio filtro "pat%a" corrisponderà a "patata". </value>
   </data>
   <data name="SearchWordsIndependently" xml:space="preserve">
     <value>Ricerca parole indipendenti</value>
   </data>
   <data name="SearchWordsIndependentlyDescription" xml:space="preserve">
-    <value>Cerca ogni parola da filtro in modo indipendente. Ad esempio "pentola web" corrisponderà a "nostro sito vende patate". </value>
+    <value>Cerca ogni parola da filtro in modo indipendente. Ad esempio "pentole web" corrisponderà a "nostro sito vende pentole". </value>
   </data>
   <data name="ShowApplicationIconColumn" xml:space="preserve">
-    <value>Visualizza clip sorgente icona colonna</value>
+    <value>Visualizza icona colonna sorgente cattura</value>
   </data>
   <data name="ShowApplicationIconColumnDescription" xml:space="preserve">
-    <value>Visualizza la colonna con l'icona di applicazione dove è stato copiato clip</value>
+    <value>Visualizza la colonna con l'icona dell'applicazione da cui è stata effettuata la cattura</value>
   </data>
   <data name="ShowNativeTextFormatting" xml:space="preserve">
-    <value>Visualizzare la formattazione del testo nativo</value>
+    <value>Visualizza la formattazione nativa del testo</value>
   </data>
   <data name="ShowNativeTextFormattingDescription" xml:space="preserve">
-    <value>Visualizza testo nativo formattazione per clip RTF e HTML (CTRL + N)</value>
+    <value>Visualizza la formattazione nativa del testo per catture RTF e HTML (CTRL+N)</value>
   </data>
   <data name="ShowSizeColumn" xml:space="preserve">
-    <value>Visualizza visual clip Peso colonna</value>
+    <value>Visualizza colonna Peso visivo cattura</value>
   </data>
   <data name="ShowSizeColumnDescription" xml:space="preserve">
-    <value>Colonna mostrerà peso visivo (numero di cifre nella dimensione visiva) del filmato</value>
+    <value>La colonna visualizzerà il peso visivo (numero di cifre nella dimensione visiva) della cattura</value>
   </data>
   <data name="TextCompareApplication" xml:space="preserve">
-    <value>Confrontare testo applicazione</value>
+    <value>Applicazione confronto testo</value>
   </data>
   <data name="TextCompareApplicationDescription" xml:space="preserve">
-    <value>Lasciare vuoto per utilizzare ricerca automatica applicazione, che sembra per Beyond Compare, ExamDiff Pro, 
-, WinMerge, Araxis Merge, DiffMerge, Kdiff3. Comando di testo Confronta è applicazione di % % % file1% % % file2</value>
+    <value>Lascia vuoto per usare la ricerca automatica applicazione, che cerca Beyond Compare, ExamDiff Pro, 
+, WinMerge, Araxis Merge, DiffMerge, Kdiff3. Il comando per il confronto testo è %application% %file1% %file2%
+</value>
   </data>
   <data name="TextEditor" xml:space="preserve">
-    <value>Applicazione di editor di file di testo (TXT)</value>
+    <value>Editor file di testo (TXT)</value>
   </data>
   <data name="TextEditorDescription" xml:space="preserve">
-    <value>Utilizzato nel comando "Apri file" per clip. Lasciare vuoto per utilizzare default OS applicazione per modificare i file di testo (TXT).</value>
+    <value>Usato nel comando "Apri file" per le catture. Lascia vuoto per usare l'applicazione predefinita del S.O. per modificare i file di testo (TXT).</value>
   </data>
   <data name="UseFormattingInDublicateDetection" xml:space="preserve">
-    <value>Utilizzo della formattazione nella rilevazione di dublicate</value>
+    <value>Usa formattazione nella ricerca duplicati</value>
   </data>
   <data name="UseFormattingInDublicateDetectionDescription" xml:space="preserve">
-    <value>Utilizzare formattazione in dublicate rilevamento nativo del testo. Altrimenti verrà utilizzato solo il testo normale per il rilevamento dublicate di clip di testo</value>
+    <value>Usa la formattazione nella ricerca dei duplicati. Altrimenti verrà usato solo il testo normale per la ricerca dei duplicati nelle catture di testo</value>
   </data>
   <data name="UserSettingsPath" xml:space="preserve">
-    <value>Percorso delle impostazioni utente</value>
+    <value>Percorso impostazioni utente applicazione</value>
   </data>
   <data name="UserSettingsPathDescription" xml:space="preserve">
-    <value>I file con le impostazioni utente e database sono qui</value>
+    <value>Percorso dei file con le impostazioni utente e database</value>
   </data>
   <data name="WindowAutoPosition" xml:space="preserve">
-    <value>Posizione auto finestra all'apertura</value>
+    <value>Auto posizionamento finestra all'apertura</value>
   </data>
   <data name="WindowAutoPositionDescription" xml:space="preserve">
-    <value>Se possibile, finestra si aprirà nei pressi del punto di inserimento testo (input), altrimenti sarà posto nel centro della finestra attiva</value>
+    <value>Se possibile, la finestra si aprirà nei pressi del punto di inserimento testo (input), altrimenti sarà posta nel centro della finestra attiva</value>
   </data>
   <data name="WordWrap" xml:space="preserve">
     <value>Ritorno a capo automatico</value>
   </data>
   <data name="WordWrapDescription" xml:space="preserve">
-    <value>Ritorno a capo nel campo di testo clip (CTRL + W). 
-Non applicabile a HTML di formattazione nativa.</value>
+    <value>Ritorno a capo nel campo di testo cattura (CTRL+W). 
+Non applicabile alla formattazione nativa HTML.</value>
+  </data>
+  <data name="PlaySoundOnClipCapture" xml:space="preserve">
+    <value>Riproduci suono alla cattura</value>
+  </data>
+  <data name="PlaySoundOnClipCaptureDescription" xml:space="preserve">
+    <value>Riproduce un suono standard di Windows quando la cattura è stata effettuata. Può essere noioso</value>
+  </data>
+  <data name="DatabaseFile" xml:space="preserve">
+    <value>File database</value>
+  </data>
+  <data name="DatabaseFileDescription" xml:space="preserve">
+    <value>Puoi modificare il nome file del database per passare ad altre cronologie Appunti. 
+lascia vuoto per usare il nome file database standard "db.sqlite" nella cartella impostazioni utente applicazione.</value>
+  </data>
+  <data name="MaxCellsToCaptureFormattedText" xml:space="preserve">
+    <value>N. max celle da catturare testo formattato</value>
+  </data>
+  <data name="MaxCellsToCaptureFormattedTextDescription" xml:space="preserve">
+    <value>Quando catturi dalle celle (Excel), la cattura genera testo formattato se il numero delle celle è minore di questo valore. Valore=0 - non catturare. 
+La generazione di testo formattato consuma risorse della CPU. Se verifichi problemi di elevato carico CPU, imposta un valore più basso.</value>
+  </data>
+  <data name="MaxCellsToCaptureImage" xml:space="preserve">
+    <value>N. max celle per catturare l'immagine</value>
+  </data>
+  <data name="MaxCellsToCaptureImageDescription" xml:space="preserve">
+    <value>Quando catturi dalle celle (Excel), la cattura genera un'immagine se il numero delle celle è minore di questo valore. Valore=0 - non catturare. 
+La generazione dell'immagine consuma risorse della CPU. Se verifichi problemi di elevato carico CPU, imposta un valore più basso.</value>
+  </data>
+  <data name="ShowSecondaryColumns" xml:space="preserve">
+    <value>Visualizza colonne secondarie</value>
+  </data>
+  <data name="ShowSecondaryColumnsDescription" xml:space="preserve">
+    <value>Visualizza colonne secondarie nell'elenco</value>
+  </data>
+  <data name="SearchIgnoreBigTexts" xml:space="preserve">
+    <value>Ricerca ignorando i testi grandi</value>
+  </data>
+  <data name="SearchIgnoreBigTextsDescription" xml:space="preserve">
+    <value>Ricerca ignorando i tagli di testi grandi (dimensione visuale &gt; 99 999 caratteri). Incrementerà la velocità della ricerca.</value>
+  </data>
+  <data name="ReadWindowTitles" xml:space="preserve">
+    <value>Leggi titoli finestre</value>
+  </data>
+  <data name="ReadWindowTitlesDescription" xml:space="preserve">
+    <value>Legge i titoli finestri dalla sorgente di cattura. Deseleziona questa impostazione per evitare crash del programma in alcuni sistemi.</value>
   </data>
 </root>

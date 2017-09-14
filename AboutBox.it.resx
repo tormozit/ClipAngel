@@ -31,7 +31,7 @@
     <value>MiddleLeft</value>
   </data>
   <data name="linkLabelEmail.Text" xml:space="preserve">
-    <value>E-mail</value>
+    <value>Email</value>
   </data>
   <data name="logoPictureBox.Dock" xml:space="preserve" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -79,7 +79,7 @@
     <value>24</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Informazioni su</value>
+    <value>Informazioni sul programma</value>
   </data>
   <data name="okButton.Text" xml:space="preserve">
     <value>&amp;OK</value>
@@ -162,7 +162,7 @@
     <value>True</value>
   </data>
   <data name="textBoxDescription.Text" xml:space="preserve">
-    <value>Questo programma acquisisce molti appunti oggetti e permette di selezionare e incollare uno in qualsiasi programma.</value>
+    <value>Questo programma cattura molti oggetti degli Appunti e permette di selezionare e incollare uno in qualsiasi programma.</value>
   </data>
   <data name="labelAuthor.TextAlign" xml:space="preserve" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
@@ -222,7 +222,7 @@
     <value>MiddleLeft</value>
   </data>
   <data name="linkLabel1.Text" xml:space="preserve">
-    <value>Donare</value>
+    <value>Dona</value>
   </data>
   <data name="labelAuthor.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
     <value>22</value>
@@ -282,7 +282,7 @@
     <value>0, 17</value>
   </data>
   <data name="labelProductName.Text" xml:space="preserve">
-    <value>Product</value>
+    <value>Prodotto</value>
   </data>
   <data name="linkLabel1.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
     <value>28</value>

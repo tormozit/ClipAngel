@@ -118,7 +118,7 @@
     <value>21</value>
   </data>
   <data name="textBoxFilter.ToolTip" xml:space="preserve">
-    <value>Caldo Filtra per nome e la descrizione della proprietà</value>
+    <value>Filtro per nome e descrizione della proprietà</value>
   </data>
   <data name="propertyGrid1.Anchor" xml:space="preserve" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
@@ -163,7 +163,7 @@
     <value>CenterParent</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>impostazioni</value>
+    <value>Impostazioni</value>
   </data>
   <metadata name="buttonReset.GenerateMember" xml:space="preserve" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>

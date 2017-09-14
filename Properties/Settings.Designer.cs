@@ -620,5 +620,17 @@ namespace ClipAngel.Properties {
                 this["ReadWindowTitles"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool ShowTipsOnStart {
+            get {
+                return ((bool)(this["ShowTipsOnStart"]));
+            }
+            set {
+                this["ShowTipsOnStart"] = value;
+            }
+        }
     }
 }

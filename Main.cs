@@ -852,6 +852,11 @@ namespace ClipAngel
             // So we do not use it and make everything in constructor
             UpdateControlsStates(); //
             RestoreWindowIfMinimized();
+            if (this.Visible && Properties.Settings.Default.ShowTipsOnStart)
+            {
+                Tips form = new Tips();
+                form.ShowDialog();
+            }
         }
 
         // To hide on start
