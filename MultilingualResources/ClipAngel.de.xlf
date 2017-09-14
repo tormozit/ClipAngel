@@ -6893,15 +6893,11 @@ Sorting is kept until clip capture.</target>
           <source>Tip</source>
           <target state="new">Tip</target>
         </trans-unit>
-        <trans-unit id="$this.Language" translate="yes" xml:space="preserve" extype="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" extradata="metadata">
-          <source>ru</source>
-          <target state="needs-review-translation">ru</target>
-        </trans-unit>
         <trans-unit id="$this.Localizable" translate="yes" xml:space="preserve" extype="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" extradata="metadata">
           <source>True</source>
           <target state="needs-review-translation">True</target>
         </trans-unit>
-        <trans-unit id="$this.Icon" translate="yes" xml:space="preserve" extype="System.Drawing.Icon, System.Drawing">
+        <trans-unit id="$this.Icon" translate="yes" xml:space="preserve" extype="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
           <source>
         AAABAAQAEBAAAAEAIABoBAAARgAAACAgAAABACAAqBAAAK4EAAAwMAAAAQAgAKglAABWFQAAQEAAAAEA
         IAAoQgAA/joAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACgR
