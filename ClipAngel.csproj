@@ -377,6 +377,27 @@
     <EmbeddedResource Include="SettingsForm.zh-Hans.resx">
       <DependentUpon>SettingsForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Tips.de.resx">
+      <DependentUpon>Tips.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tips.es.resx">
+      <DependentUpon>Tips.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tips.fr.resx">
+      <DependentUpon>Tips.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tips.it.resx">
+      <DependentUpon>Tips.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tips.ko.resx">
+      <DependentUpon>Tips.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tips.pl.resx">
+      <DependentUpon>Tips.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tips.pt-BR.resx">
+      <DependentUpon>Tips.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Tips.resx">
       <DependentUpon>Tips.cs</DependentUpon>
     </EmbeddedResource>

@@ -45,11 +45,12 @@
             // 
             resources.ApplyResources(this.labelTip, "labelTip");
             this.labelTip.Name = "labelTip";
+            this.labelTip.Click += new System.EventHandler(this.labelTip_Click);
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::ClipAngel.Properties.Resources.Tip_32;
             resources.ApplyResources(this.pictureBox1, "pictureBox1");
+            this.pictureBox1.Image = global::ClipAngel.Properties.Resources.Tip_32;
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.TabStop = false;
             // 

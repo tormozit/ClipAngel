@@ -6858,8 +6858,8 @@ Sortowanie jest przechowywane aż do przechwycenia klipu.</target>
           <target state="needs-review-translation">1</target>
         </trans-unit>
         <trans-unit id="labelTip.Text" translate="yes" xml:space="preserve">
-          <source>Use global hotkey <it id="1" pos="open">&lt;Hotkey&gt;</it> to open ClipAngel window from any program. Then select needed clip and double click or press ENTER on it. The clip will be pasted into original window.</source>
-          <target state="new">Use global hotkey <it id="1" pos="open">&lt;Hotkey&gt;</it> to open ClipAngel window from any program. Then select needed clip and double click or press ENTER on it. The clip will be pasted into original window.</target>
+          <source>Use hotkey <it id="1" pos="open">&lt;Hotkey&gt;</it> to open ClipAngel from any program. Then select and paste desired clip by double click or ENTER.</source>
+          <target state="new">Use hotkey <it id="1" pos="open">&lt;Hotkey&gt;</it> to open ClipAngel from any program. Then select and paste desired clip by double click or ENTER.</target>
         </trans-unit>
         <trans-unit id="pictureBox1.Location" translate="yes" xml:space="preserve" extype="System.Drawing.Point, System.Drawing">
           <source>169, 12</source>
@@ -7968,6 +7968,11 @@ Sortowanie jest przechowywane aż do przechwycenia klipu.</target>
         wAAAAf/////AAAAB/////8AAAAH/////4AAAA//////gAAAD/////+AAAAP/////8AAAB//////4AAAP
         //////gAAA///////AAAH//////+AAA///////+AAP///////+AD/////////////////////////w==
 </target>
+        </trans-unit>
+        <trans-unit id="$this.Language" translate="yes" xml:space="preserve" extype="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" extradata="metadata">
+          <source>pt-BR</source>
+          <target state="needs-review-translation">ru</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
       </group>
     </body>

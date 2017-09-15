@@ -35,5 +35,10 @@ namespace ClipAngel
                 this.Close();
             }
         }
+
+        private void labelTip_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
