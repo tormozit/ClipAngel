@@ -1087,7 +1087,8 @@ namespace ClipAngel
                 if (!autoSelectMatch)
                     RestoreTextSelection(NewSelectionStart, NewSelectionLength);
                 allowTextPositionChangeUpdate = true;
-                UpdateSelectionPosition();
+                if (autoSelectMatch)
+                    UpdateSelectionPosition();
             }
             tableLayoutPanelData.SuspendLayout();
             UpdateClipButtons();
@@ -1213,8 +1214,6 @@ namespace ClipAngel
                 range.moveEnd("character", NewSelectionLength);
                 range.@select();
                 range.scrollIntoView();
-                if (NewSelectionStart == 0)
-                    selectionStart = 0;
             }
             else
             {
@@ -1228,6 +1227,7 @@ namespace ClipAngel
             richTextBox.SelectionLength = NewSelectionLength;
             if (richTextBox.SelectionStart > 0 || richTextBox.SelectionLength > 0)
                 richTextBox.HideSelection = false; // slow
+            richTextBox.ScrollToCaret();
         }
 
         private void UpdateSelectionPosition()
