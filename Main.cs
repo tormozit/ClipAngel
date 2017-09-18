@@ -1213,6 +1213,8 @@ namespace ClipAngel
                 range.moveEnd("character", NewSelectionLength);
                 range.@select();
                 range.scrollIntoView();
+                if (NewSelectionStart == 0)
+                    selectionStart = 0;
             }
             else
             {
