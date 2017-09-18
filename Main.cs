@@ -77,9 +77,10 @@ namespace ClipAngel
         WinEventDelegate dele = null;
         private const uint WINEVENT_OUTOFCONTEXT = 0;
         private const uint EVENT_SYSTEM_FOREGROUND = 3;
-        static private IntPtr lastActiveParentWindow;
-        static private IntPtr lastChildWindow;
-        static private RECT lastChildWindowRect;
+        private static IntPtr preLastActiveParentWindow;
+        private static IntPtr lastActiveParentWindow;
+        private static IntPtr lastChildWindow;
+        private static RECT lastChildWindowRect;
         //static private string lastWindowSelectedText;
         static Point lastCaretPoint;
         private IntPtr HookChangeActiveWindow;
@@ -489,10 +490,12 @@ namespace ClipAngel
         {
             if (hwnd == IntPtr.Zero)
                 hwnd = GetForegroundWindow();
+                
             int targetProcessId;
             uint remoteThreadId = GetWindowThreadProcessId(hwnd, out targetProcessId);
-            if (targetProcessId != Process.GetCurrentProcess().Id)
+            if (targetProcessId != Process.GetCurrentProcess().Id && lastActiveParentWindow != hwnd)
             {
+                //preLastActiveParentWindow = lastActiveParentWindow; // In case with Explorer tray click it will not help
                 lastActiveParentWindow = hwnd;
                 lastChildWindow = IntPtr.Zero;
                 lastChildWindowRect = new RECT();
@@ -6065,6 +6068,16 @@ namespace ClipAngel
             comboBoxFilter.Text = richTextBox.SelectedText;
             AllowFilterProcessing = true;
             TextFilterApply();
+        }
+
+        private void openLastClipsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ShowForPaste(false, true);
+        }
+
+        private void openWindowToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ShowForPaste(false, false);
         }
     }
 }

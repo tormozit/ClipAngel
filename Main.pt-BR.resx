@@ -2840,4 +2840,10 @@ adicionado à lista de ignorar, que pode ser editado na janela de configuraçõe
   <data name="toolStripBottom.AutoSize" xml:space="preserve" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
+  <data name="openWindowToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>187, 22</value>
+  </data>
+  <data name="openLastClipsToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>187, 22</value>
+  </data>
 </root>
