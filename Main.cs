@@ -73,7 +73,7 @@ namespace ClipAngel
         //DateTime lastAutorunUpdateCheck;
         int MaxTextViewSize = 5000;
         bool TextWasCut;
-        KeyboardHook keyboardHook;
+        public KeyboardHook keyboardHook;
         WinEventDelegate dele = null;
         private const uint WINEVENT_OUTOFCONTEXT = 0;
         private const uint EVENT_SYSTEM_FOREGROUND = 3;
@@ -547,7 +547,7 @@ namespace ClipAngel
             return (T) Enum.Parse(typeof(T), value, true);
         }
 
-        private void RegisterHotKeys()
+        public void RegisterHotKeys()
         {
             EnumModifierKeys Modifiers;
             Keys Key;
@@ -663,6 +663,7 @@ namespace ClipAngel
             {
                 //int a = 0;
             }
+
         }
 
         public void BackupClipboard()
@@ -3290,7 +3291,7 @@ namespace ClipAngel
         {
             foreach (Form form in Application.OpenForms)
             {
-                if (form.Modal && form.Visible)
+                if (form.Modal && form.Visible && form.CanFocus)
                 {
                     form.Activate();
                     return;

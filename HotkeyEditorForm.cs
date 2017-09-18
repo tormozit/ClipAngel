@@ -49,5 +49,15 @@ namespace ClipAngel
             e.Handled = true;
             e.SuppressKeyPress = true; // Anti beep
         }
+
+        private void HotkeyEditorForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            ((Main)Owner).RegisterHotKeys();
+        }
+
+        private void HotkeyEditorForm_Load(object sender, EventArgs e)
+        {
+            ((Main)Owner).keyboardHook.UnregisterHotKeys();
+        }
     }
 }

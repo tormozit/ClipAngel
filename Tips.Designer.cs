@@ -45,6 +45,7 @@
             // 
             resources.ApplyResources(this.labelTip, "labelTip");
             this.labelTip.Name = "labelTip";
+            this.labelTip.Click += new System.EventHandler(this.labelTip_Click);
             // 
             // pictureBox1
             // 

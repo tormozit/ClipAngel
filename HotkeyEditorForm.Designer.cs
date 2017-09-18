@@ -70,6 +70,8 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.HotkeyEditorForm_FormClosed);
+            this.Load += new System.EventHandler(this.HotkeyEditorForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

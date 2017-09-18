@@ -335,7 +335,8 @@ namespace ClipAngel
                 {
                     ofd = new HotkeyEditorForm();
                     ofd.HotkeyTextbox.Text = value.ToString();
-                    if (ofd.ShowDialog((((ObjectWrapper)context.Instance).SelectedObject as VisibleUserSettings).Owner) == DialogResult.OK)
+                    Form owner = (((ObjectWrapper) context.Instance).SelectedObject as VisibleUserSettings).Owner;
+                    if (ofd.ShowDialog(owner) == DialogResult.OK)
                     {
                         return ofd.HotkeyTextbox.Text;
                     }
