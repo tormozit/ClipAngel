@@ -632,5 +632,17 @@ namespace ClipAngel.Properties {
                 this["ShowTipsOnStart"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool MonitoringClipboard {
+            get {
+                return ((bool)(this["MonitoringClipboard"]));
+            }
+            set {
+                this["MonitoringClipboard"] = value;
+            }
+        }
     }
 }

@@ -424,4 +424,7 @@
   <data name="FilteredStatusText" xml:space="preserve">
     <value>Отобрано {0}</value>
   </data>
+  <data name="NoCapture" xml:space="preserve">
+    <value>Без захвата</value>
+  </data>
 </root>

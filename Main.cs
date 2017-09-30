@@ -99,7 +99,6 @@ namespace ClipAngel
         static Dictionary<string, Bitmap> originalIconCache = new Dictionary<string, Bitmap>();
         static Dictionary<string, Bitmap> brightIconCache = new Dictionary<string, Bitmap>();
         private bool allowTextPositionChangeUpdate = false;
-        private bool MonitoringClipboard = true;
         private int _lastSelectedForCompareId;
         const int ClipTitleLength = 70;
         int factualTop = 0;
@@ -542,7 +541,13 @@ namespace ClipAngel
                 }
             }
             Debug.WriteLine("Active window " + lastActiveParentWindow + " " + targetTitle);
-            this.Text = Application.ProductName + " " + Properties.Resources.VersionValue + " >> " + targetTitle;
+            string newTitle = Application.ProductName + " " + Properties.Resources.VersionValue;
+            if (!Properties.Settings.Default.MonitoringClipboard)
+            {
+                newTitle += " [" + CurrentLangResourceManager.GetString("NoCapture") + "]";
+            }
+            this.Text = newTitle + " >> " + targetTitle;
+            notifyIcon.Text = newTitle;
         }
 
         public static T ParseEnum<T>(string value)
@@ -876,7 +881,7 @@ namespace ClipAngel
 
         private void ConnectClipboard()
         {
-            if (!MonitoringClipboard)
+            if (!Properties.Settings.Default.MonitoringClipboard)
                 return;
             if (!AddClipboardFormatListener(this.Handle))
             {
@@ -4123,6 +4128,7 @@ namespace ClipAngel
             cultureManager1.UICulture = Thread.CurrentThread.CurrentUICulture;
 
             UpdateWindowTitle(true);
+            UpdateNotifyIcon();
 
             UpdateIgnoreModulesInClipCapture();
             BindingList<ListItemNameText> comboItemsTypes = (BindingList<ListItemNameText>) TypeFilter.DataSource;
@@ -4594,8 +4600,8 @@ namespace ClipAngel
             moveCopiedClipToTopToolStripButton.Checked = Properties.Settings.Default.MoveCopiedClipToTop;
             moveCopiedClipToTopToolStripMenuItem.Checked = Properties.Settings.Default.MoveCopiedClipToTop;
             toolStripButtonAutoSelectMatch.Checked = Properties.Settings.Default.AutoSelectMatch;
-            trayMenuItemMonitoringClipboard.Checked = MonitoringClipboard;
-            toolStripMenuItemMonitoringClipboard.Checked = MonitoringClipboard;
+            trayMenuItemMonitoringClipboard.Checked = Properties.Settings.Default.MonitoringClipboard;
+            toolStripMenuItemMonitoringClipboard.Checked = Properties.Settings.Default.MonitoringClipboard;
             toolStripButtonTextFormatting.Checked = Properties.Settings.Default.ShowNativeTextFormatting;
             textFormattingToolStripMenuItem.Checked = Properties.Settings.Default.ShowNativeTextFormatting;
             toolStripButtonMonospacedFont.Checked = Properties.Settings.Default.MonospacedFont;
@@ -5174,12 +5180,28 @@ namespace ClipAngel
 
         private void SwitchMonitoringClipboard()
         {
-            MonitoringClipboard = !MonitoringClipboard;
-            if (MonitoringClipboard)
+            Properties.Settings.Default.MonitoringClipboard = !Properties.Settings.Default.MonitoringClipboard;
+            if (Properties.Settings.Default.MonitoringClipboard)
                 ConnectClipboard();
             else
                 RemoveClipboardFormatListener(this.Handle);
             UpdateControlsStates();
+            UpdateWindowTitle();
+            UpdateNotifyIcon();
+        }
+
+        private void UpdateNotifyIcon()
+        {
+            Icon icon;
+            if (!Properties.Settings.Default.MonitoringClipboard)
+            {
+                icon = Properties.Resources.alienNoCapture;
+            }
+            else
+            {
+                icon = Properties.Resources.alien;
+            }
+            notifyIcon.Icon = icon;
         }
 
         private void translateToolStripMenuItem_Click(object sender, EventArgs e)

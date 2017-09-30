@@ -90,6 +90,16 @@ namespace ClipAngel.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        public static System.Drawing.Icon alienNoCapture {
+            get {
+                object obj = ResourceManager.GetObject("alienNoCapture", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to all marks.
         /// </summary>
         public static string allMarks {
@@ -645,6 +655,15 @@ namespace ClipAngel.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to No capture.
+        /// </summary>
+        public static string NoCapture {
+            get {
+                return ResourceManager.GetString("NoCapture", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to No supported text compare application was found. Now we open website to get free one..
         /// </summary>
         public static string NoSupportedTextCompareApplication {
@@ -986,7 +1005,7 @@ namespace ClipAngel.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 1.39.
+        ///   Looks up a localized string similar to 1.40.
         /// </summary>
         public static string VersionValue {
             get {
