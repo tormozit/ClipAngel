@@ -236,6 +236,12 @@
   <data name="GlobalHotkeyPasteTextDescription" xml:space="preserve">
     <value>Эта горячая клавиша при нажатии в любой программе вставит последний захваченный клип в виде простого текста</value>
   </data>
+  <data name="GlobalHotkeySwitchMonitoring" xml:space="preserve">
+    <value>Горячая клавиша переключения слежения за буфером</value>
+  </data>
+  <data name="GlobalHotkeySwitchMonitoringDescription" xml:space="preserve">
+    <value>Эта горячая клавиша при нажатии в любой программе переключит слежение за буфером обмена (захват изменений) в ClipAngel</value>
+  </data>
   <data name="HistoryDepthDays" xml:space="preserve">
     <value>Глубина истории клипов по дням</value>
   </data>

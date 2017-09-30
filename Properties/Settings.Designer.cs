@@ -644,5 +644,17 @@ namespace ClipAngel.Properties {
                 this["MonitoringClipboard"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("No")]
+        public string GlobalHotkeySwitchMonitoring {
+            get {
+                return ((string)(this["GlobalHotkeySwitchMonitoring"]));
+            }
+            set {
+                this["GlobalHotkeySwitchMonitoring"] = value;
+            }
+        }
     }
 }

@@ -427,4 +427,10 @@
   <data name="NoCapture" xml:space="preserve">
     <value>Без захвата</value>
   </data>
+  <data name="MonitoringOFF" xml:space="preserve">
+    <value>Слежение за буфером обмена Включено</value>
+  </data>
+  <data name="MonitoringON" xml:space="preserve">
+    <value>Слежение за буфером обмена ВЫключено</value>
+  </data>
 </root>

@@ -184,8 +184,8 @@ namespace ClipAngel
             titleToolTipBeforeTimer.Tick += delegate (object sender, EventArgs e)
             {
                 titleToolTipBeforeTimer.Stop();
-                string text = Application.ProductName + String.Format(" <{0}> >> <{1}> [<{2}>]", CurrentLangResourceManager.GetString("Version"), 
-                    CurrentLangResourceManager.GetString("TargetWindow"), CurrentLangResourceManager.GetString("TargetApp"));
+                string text = Application.ProductName + String.Format(" <{0}> >> <{1}> [<{2}>]", Properties.Resources.Version, Properties.Resources.TargetWindow,
+                    Properties.Resources.TargetApp);
                 titleToolTip.Show(text, this, this.PointToClient(Cursor.Position), titleToolTip.AutoPopDelay);
                 titleToolTipShown = true;
             };
@@ -528,7 +528,7 @@ namespace ClipAngel
         {
             if ((this.Top <= maxWindowCoordForHiddenState || !this.Visible) && !forced)
                 return;
-            string targetTitle = "<" + CurrentLangResourceManager.GetString("NoActiveWindow") + ">";
+            string targetTitle = "<" + Properties.Resources.NoActiveWindow + ">";
             if (lastActiveParentWindow != null)
             {
                 targetTitle = GetWindowTitle(lastActiveParentWindow);
@@ -544,7 +544,7 @@ namespace ClipAngel
             string newTitle = Application.ProductName + " " + Properties.Resources.VersionValue;
             if (!Properties.Settings.Default.MonitoringClipboard)
             {
-                newTitle += " [" + CurrentLangResourceManager.GetString("NoCapture") + "]";
+                newTitle += " [" + Properties.Resources.NoCapture + "]";
             }
             this.Text = newTitle + " >> " + targetTitle;
             notifyIcon.Text = newTitle;
@@ -570,6 +570,8 @@ namespace ClipAngel
             if (ReadHotkeyFromText(Properties.Settings.Default.GlobalHotkeyCompareLastClips, out Modifiers, out Key))
                 keyboardHook.RegisterHotKey(Modifiers, Key);
             if (ReadHotkeyFromText(Properties.Settings.Default.GlobalHotkeyPasteText, out Modifiers, out Key))
+                keyboardHook.RegisterHotKey(Modifiers, Key);
+            if (ReadHotkeyFromText(Properties.Settings.Default.GlobalHotkeySwitchMonitoring, out Modifiers, out Key))
                 keyboardHook.RegisterHotKey(Modifiers, Key);
             if (Properties.Settings.Default.CopyTextInAnyWindowOnCTRLF3 && ReadHotkeyFromText("Control + F3", out Modifiers, out Key))
                 keyboardHook.RegisterHotKey(Modifiers, Key);
@@ -643,10 +645,10 @@ namespace ClipAngel
                 notifyIcon.Visible = true;
                 string messageText;
                 if (oldCurrentDataRow == CurrentDataRow)
-                    messageText = CurrentLangResourceManager.GetString("PastedLastClip");
+                    messageText = Properties.Resources.PastedLastClip;
                 else
                     messageText = CurrentDataRow["Title"].ToString();
-                notifyIcon.ShowBalloonTip(3000, CurrentLangResourceManager.GetString("NextClip"), messageText, ToolTipIcon.Info);
+                notifyIcon.ShowBalloonTip(3000, Properties.Resources.NextClip, messageText, ToolTipIcon.Info);
                 AllowHotkeyProcess = true;
             }
             else if (hotkeyTitle == Properties.Settings.Default.GlobalHotkeyCompareLastClips)
@@ -656,6 +658,10 @@ namespace ClipAngel
             else if (hotkeyTitle == Properties.Settings.Default.GlobalHotkeyPasteText)
             {
                 SendPasteClipExpress(dataGridView.Rows[0], PasteMethod.PasteText);
+            }
+            else if (hotkeyTitle == Properties.Settings.Default.GlobalHotkeySwitchMonitoring)
+            {
+                SwitchMonitoringClipboard(true);
             }
             else if (hotkeyTitle == "Control + F3")
             {
@@ -687,8 +693,7 @@ namespace ClipAngel
                 }
                 catch
                 {
-                    Debug.WriteLine(
-                        String.Format(CurrentLangResourceManager.GetString("FailedToReadFormatFromClipboard"), format));
+                    Debug.WriteLine(String.Format(Properties.Resources.FailedToReadFormatFromClipboard, format));
                     continue;
                 }
                 clipboardContents.Add(format, data);
@@ -1272,32 +1277,32 @@ namespace ClipAngel
 
         private string MultiLangEndMarker()
         {
-            return "<" + CurrentLangResourceManager.GetString("EndMarker") + ">";
+            return "<" + Properties.Resources.EndMarker + ">";
         }
 
         private string MultiLangCutMarker()
         {
-            return "<" + CurrentLangResourceManager.GetString("CutMarker") + ">";
+            return "<" + Properties.Resources.CutMarker + ">";
         }
 
         private string MultiLangCharUnit()
         {
-            return CurrentLangResourceManager.GetString("CharUnit");
+            return Properties.Resources.CharUnit;
         }
 
         private string MultiLangByteUnit()
         {
-            return CurrentLangResourceManager.GetString("ByteUnit");
+            return Properties.Resources.ByteUnit;
         }
 
         private string MultiLangKiloByteUnit()
         {
-            return CurrentLangResourceManager.GetString("KiloByteUnit");
+            return Properties.Resources.KiloByteUnit;
         }
 
         private string MultiLangMegaByteUnit()
         {
-            return CurrentLangResourceManager.GetString("MegaByteUnit");
+            return Properties.Resources.MegaByteUnit;
         }
 
         private void MarkLinksInRichTextBox(RichTextBox control, out MatchCollection matches)
@@ -1510,7 +1515,7 @@ namespace ClipAngel
             stripLabelPosition.Width = 50;
             stripLabelFiltered.Visible = filterOn;
             if (filterOn)
-                stripLabelFiltered.Text = String.Format(CurrentLangResourceManager.GetString("FilteredStatusText"), table.Rows.Count);
+                stripLabelFiltered.Text = String.Format(Properties.Resources.FilteredStatusText, table.Rows.Count);
             stripLabelPosition.Spring = true;
             PrepareTableGrid(); // Long
             if (filterOn)
@@ -1698,7 +1703,7 @@ namespace ClipAngel
             {
                 // Copying a field definition in Access 2002 causes this sometimes or Excel big clips
                 Debug.WriteLine(String.Format("Clipboard.GetDataObject(): InteropServices.ExternalException: {0}", ex.Message));
-                string Message = CurrentLangResourceManager.GetString("ErrorReadingClipboard") + ": " + ex.Message;
+                string Message = Properties.Resources.ErrorReadingClipboard + ": " + ex.Message;
                 notifyIcon.ShowBalloonTip(2000, Application.ProductName, Message, ToolTipIcon.Info);
                 return;
             }
@@ -1882,13 +1887,12 @@ namespace ClipAngel
                             bitmap.Save(memoryStream, ImageFormat.Png);
                             binaryBuffer = memoryStream.ToArray();
                         }
-                        //clipTextImage = CurrentLangResourceManager.GetString("Size") + ": " + image.Width + "x" + image.Height + "\n"
-                        //     + CurrentLangResourceManager.GetString("PixelFormat") + ": " + image.PixelFormat + "\n";
+                        //clipTextImage = Properties.Resources.Size + ": " + image.Width + "x" + image.Height + "\n"
+                        //     + Properties.Resources.PixelFormat + ": " + image.PixelFormat + "\n";
                         clipTextImage = bitmap.Width + " x " + bitmap.Height;
                         if (!String.IsNullOrEmpty(clipWindow))
                             clipTextImage += ", " + clipWindow;
-                        clipTextImage += ", " + CurrentLangResourceManager.GetString("PixelFormat") + ": " +
-                                         Image.GetPixelFormatSize(bitmap.PixelFormat);
+                        clipTextImage += ", " + Properties.Resources.PixelFormat + ": " + Image.GetPixelFormatSize(bitmap.PixelFormat);
                         clipCharsImage = bitmap.Width * bitmap.Height;
                         // OCR
                         //try
@@ -2067,7 +2071,7 @@ namespace ClipAngel
             byteSize += richText.Length * 2; // dirty
             if (byteSize > Properties.Settings.Default.MaxClipSizeKB * 1000)
             {
-                string message = String.Format(CurrentLangResourceManager.GetString("ClipWasNotCaptured"), (int)(byteSize / 1024), Properties.Settings.Default.MaxClipSizeKB,
+                string message = String.Format(Properties.Resources.ClipWasNotCaptured, (int)(byteSize / 1024), Properties.Settings.Default.MaxClipSizeKB,
                     LocalTypeName(typeText));
                 notifyIcon.ShowBalloonTip(2000, Application.ProductName, message, ToolTipIcon.Info);
                 return;
@@ -2827,8 +2831,7 @@ namespace ClipAngel
 
         private void ShowElevationFail()
         {
-            MessageBox.Show(this, CurrentLangResourceManager.GetString("CantPasteInElevatedWindow"),
-                Application.ProductName);
+            MessageBox.Show(this, Properties.Resources.CantPasteInElevatedWindow, Application.ProductName);
         }
 
         [DllImport("user32.dll", SetLastError = true)]
@@ -4224,17 +4227,15 @@ namespace ClipAngel
                         buttonUpdate.Visible = true;
                         toolStripUpdateToSeparator.Visible = true;
                         buttonUpdate.ForeColor = Color.Blue;
-                        buttonUpdate.Text = CurrentLangResourceManager.GetString("UpdateTo") + " " + ActualVersion;
+                        buttonUpdate.Text = Properties.Resources.UpdateTo + " " + ActualVersion;
                         if (UserRequest)
                         {
-                            MessageBox.Show(this, CurrentLangResourceManager.GetString("NewVersionAvailable"),
-                                Application.ProductName);
+                            MessageBox.Show(this, Properties.Resources.NewVersionAvailable, Application.ProductName);
                         }
                     }
                     else if (UserRequest)
                     {
-                        MessageBox.Show(this, CurrentLangResourceManager.GetString("YouLatestVersion"),
-                            Application.ProductName);
+                        MessageBox.Show(this, Properties.Resources.YouLatestVersion, Application.ProductName);
                     }
                 }
             }
@@ -4300,7 +4301,7 @@ namespace ClipAngel
             //    && CurrentLangResourceManager != null
             //    && String.Compare(Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName, Locale, true) != 0)
             //{
-            //    MessageBox.Show(this, CurrentLangResourceManager.GetString("LangRestart"), Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //    MessageBox.Show(this, Properties.Resources.LangRestart, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
             //}
             ResourceManager LangResourceManager;
             //if (String.Compare(Locale, "ru", true) == 0)
@@ -4581,7 +4582,7 @@ namespace ClipAngel
 
         private void helpToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Process.Start(CurrentLangResourceManager.GetString("HelpPage"));
+            Process.Start(Properties.Resources.HelpPage);
         }
 
         private void copyClipToolStripMenuItem_Click(object sender, EventArgs e)
@@ -4633,8 +4634,7 @@ namespace ClipAngel
             if (dataGridView.CurrentRow != null)
             {
                 string oldTitle = RowReader["Title"] as string;
-                InputBoxResult inputResult = InputBox.Show(CurrentLangResourceManager.GetString("HowUseAutoTitle"),
-                    CurrentLangResourceManager.GetString("EditClipTitle"), oldTitle, this);
+                InputBoxResult inputResult = InputBox.Show(Properties.Resources.HowUseAutoTitle, Properties.Resources.EditClipTitle, oldTitle, this);
                 if (inputResult.ReturnCode == DialogResult.OK)
                 {
                     string sql = "Update Clips set Title=@Title where Id=@Id";
@@ -4840,7 +4840,7 @@ namespace ClipAngel
 
         private void historyToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Process.Start(CurrentLangResourceManager.GetString("HistoryOfChanges")); // Returns 0. Why?
+            Process.Start(Properties.Resources.HistoryOfChanges); // Returns 0. Why?
         }
 
         private void toolStripMenuItemPasteChars_Click(object sender, EventArgs e)
@@ -4940,7 +4940,7 @@ namespace ClipAngel
             string tempFile = clipTempFile(rowReader, "copy");
             if (tempFile == "")
             {
-                MessageBox.Show(this, CurrentLangResourceManager.GetString("ClipFileAlreadyOpened"));
+                MessageBox.Show(this, Properties.Resources.ClipFileAlreadyOpened);
                 return "";
             }
             if (type == "text" /*|| type == "file"*/)
@@ -5060,7 +5060,7 @@ namespace ClipAngel
             //    if (hitInfo.ColumnIndex == dataGridView.Columns["VisualWeight"].Index)
             //    {
             //        DataGridViewCell hoverCell = dataGridView.Rows[hitInfo.RowIndex].Cells[hitInfo.ColumnIndex];
-            //        hoverCell.ToolTipText = CurrentLangResourceManager.GetString("VisualWeightTooltip"); // No effect
+            //        hoverCell.ToolTipText = Properties.Resources.VisualWeightTooltip; // No effect
             //    }
             //}
         }
@@ -5072,7 +5072,7 @@ namespace ClipAngel
             {
                 DataGridViewCell hoverCell = row.Cells[e.ColumnIndex];
                 if (hoverCell.Value != null)
-                    hoverCell.ToolTipText = CurrentLangResourceManager.GetString("VisualWeightTooltip");
+                    hoverCell.ToolTipText = Properties.Resources.VisualWeightTooltip;
             }
             //if (e.ColumnIndex == dataGridView.Columns["TypeImage"].Index)
             //{
@@ -5146,7 +5146,7 @@ namespace ClipAngel
             {
                 //double zoomFactor = Math.Min((double) ImageControl.ClientSize.Width / ImageControl.Image.Width, (double) ImageControl.ClientSize.Height / ImageControl.Image.Height);
                 double zoomFactor = ImageControl.ZoomFactor();
-                newText = CurrentLangResourceManager.GetString("Zoom") + ": " + zoomFactor.ToString("0.00");
+                newText = Properties.Resources.Zoom + ": " + zoomFactor.ToString("0.00");
             }
             else
             {
@@ -5178,7 +5178,7 @@ namespace ClipAngel
             SwitchMonitoringClipboard();
         }
 
-        private void SwitchMonitoringClipboard()
+        private void SwitchMonitoringClipboard(bool showToolTip = false)
         {
             Properties.Settings.Default.MonitoringClipboard = !Properties.Settings.Default.MonitoringClipboard;
             if (Properties.Settings.Default.MonitoringClipboard)
@@ -5188,6 +5188,15 @@ namespace ClipAngel
             UpdateControlsStates();
             UpdateWindowTitle();
             UpdateNotifyIcon();
+            if (showToolTip)
+            {
+                string text;
+                if (Properties.Settings.Default.MonitoringClipboard)
+                    text = Properties.Resources.MonitoringON;
+                else
+                    text = Properties.Resources.MonitoringOFF;
+                notifyIcon.ShowBalloonTip(2000, Application.ProductName, text, ToolTipIcon.Info);
+            }
         }
 
         private void UpdateNotifyIcon()
@@ -5353,8 +5362,7 @@ namespace ClipAngel
                 return path;
             }
 
-            MessageBox.Show(this, CurrentLangResourceManager.GetString("NoSupportedTextCompareApplication"),
-                Application.ProductName);
+            MessageBox.Show(this, Properties.Resources.NoSupportedTextCompareApplication, Application.ProductName);
             Process.Start("http://winmerge.org/");
             return "";
         }
@@ -5604,8 +5612,7 @@ namespace ClipAngel
             UpdateIgnoreModulesInClipCapture();
             string moduleName = Path.GetFileName(fullFilename);
             MessageBox.Show(this,
-                String.Format(CurrentLangResourceManager.GetString("ApplicationAddedToIgnoreList"), moduleName),
-                AssemblyProduct);
+                String.Format(Properties.Resources.ApplicationAddedToIgnoreList, moduleName), AssemblyProduct);
         }
 
         private void copyFullFilenameToolStripMenuItem_Click(object sender, EventArgs e)
@@ -5640,8 +5647,7 @@ namespace ClipAngel
                 string clipWindow = "";
                 string clipApplication = "";
                 GetClipboardOwnerLockerInfo(true, out clipWindow, out clipApplication, out appPath);
-                Debug.WriteLine(String.Format(CurrentLangResourceManager.GetString("FailedToWriteClipboard"),
-                    clipWindow, clipApplication));
+                Debug.WriteLine(String.Format(Properties.Resources.FailedToWriteClipboard, clipWindow, clipApplication));
             }
             //if (!success)
             //    try
@@ -5654,7 +5660,7 @@ namespace ClipAngel
             //        string clipWindow = "";
             //        string clipApplication = "";
             //        GetClipboardOwnerLockerInfo(true, out clipWindow, out clipApplication, out appPath);
-            //        Debug.WriteLine(String.Format(CurrentLangResourceManager.GetString("FailedToWriteClipboard"), clipWindow, clipApplication));
+            //        Debug.WriteLine(String.Format(Properties.Resources.FailedToWriteClipboard, clipWindow, clipApplication));
             //    }
             ConnectClipboard();
             if (allowSelfCapture)
@@ -5669,7 +5675,7 @@ namespace ClipAngel
         private void toolStripMenuItemCompareLastClips_Click(object sender = null, EventArgs e = null)
         {
             if (lastClipWasMultiCaptured)
-                notifyIcon.ShowBalloonTip(2000, Application.ProductName, CurrentLangResourceManager.GetString("LastClipWasMultiCaptured"), ToolTipIcon.Info);
+                notifyIcon.ShowBalloonTip(2000, Application.ProductName, Properties.Resources.LastClipWasMultiCaptured, ToolTipIcon.Info);
             string sql = "SELECT Id FROM Clips ORDER BY Id Desc Limit 2";
             SQLiteCommand commandSelect = new SQLiteCommand(sql, m_dbConnection);
             using (SQLiteDataReader reader = commandSelect.ExecuteReader())
@@ -5686,9 +5692,7 @@ namespace ClipAngel
 
         private void deleteAllNonFavoriteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show(this,
-                CurrentLangResourceManager.GetString("СonfirmDeleteAllNonFavorite"),
-                CurrentLangResourceManager.GetString("Confirmation"), MessageBoxButtons.OKCancel);
+            DialogResult result = MessageBox.Show(this, Properties.Resources.СonfirmDeleteAllNonFavorite, Properties.Resources.Confirmation, MessageBoxButtons.OKCancel);
             if (result != DialogResult.OK)
                 return;
             allowRowLoad = false;

@@ -210,25 +210,31 @@ Leave blank to use standart database file "db.sqlite" in application user settin
     <value>Hotkey to open window with no changes</value>
   </data>
   <data name="GlobalHotkeyOpenCurrentDescription" xml:space="preserve">
-    <value>Use this hot key in any program to open Clip Angel window with no changes in filter and clip selection. Press again to close the window.</value>
+    <value>Use this hot key in any program to open ClipAngel window with no changes in filter and clip selection. Press again to close the window.</value>
   </data>
   <data name="GlobalHotkeyOpenFavorites" xml:space="preserve">
     <value>Hotkey to open window with favorites</value>
   </data>
   <data name="GlobalHotkeyOpenFavoritesDescription" xml:space="preserve">
-    <value>Use this hot key in any program to show Clip Angel window with favorites only filter. Press again to close the window.</value>
+    <value>Use this hot key in any program to show ClipAngel window with favorites only filter. Press again to close the window.</value>
   </data>
   <data name="GlobalHotkeyOpenLast" xml:space="preserve">
     <value>Hotkey to open window with reset</value>
   </data>
   <data name="GlobalHotkeyOpenLastDescription" xml:space="preserve">
-    <value>Use this hot key in any program to open Clip Angel window, clear filters and select last captured clip. Press again to close the window.</value>
+    <value>Use this hot key in any program to open ClipAngel window, clear filters and select last captured clip. Press again to close the window.</value>
   </data>
   <data name="GlobalHotkeyPasteText" xml:space="preserve">
     <value>Hotkey to paste plain text</value>
   </data>
   <data name="GlobalHotkeyPasteTextDescription" xml:space="preserve">
     <value>Use this hot key in any program to paste last captured clip as plain text</value>
+  </data>
+  <data name="GlobalHotkeySwitchMonitoring" xml:space="preserve">
+    <value>Hotkey to switch clipboard monitoring</value>
+  </data>
+  <data name="GlobalHotkeySwitchMonitoringDescription" xml:space="preserve">
+    <value>Use this hot key in any program to switch clipboard monitoring (capturing changes) by ClipAngel</value>
   </data>
   <data name="HistoryDepthDays" xml:space="preserve">
     <value>History depth days</value>

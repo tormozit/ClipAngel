@@ -527,6 +527,14 @@
           <source>..\Picture\alien - no capture .ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</source>
           <target state="needs-review-translation">..\Picture\alien - no capture .ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</target>
         </trans-unit>
+        <trans-unit id="MonitoringOFF" translate="yes" xml:space="preserve">
+          <source>Clipboard monitoring now is OFF</source>
+          <target state="new">Clipboard monitoring now is OFF</target>
+        </trans-unit>
+        <trans-unit id="MonitoringON" translate="yes" xml:space="preserve">
+          <source>Clipboard monitoring now is ON</source>
+          <target state="new">Clipboard monitoring now is ON</target>
+        </trans-unit>
       </group>
     </body>
   </file>
@@ -888,24 +896,24 @@ Key press will be processed by the window. </target>
           <target state="new">Hotkey to open window with no changes</target>
         </trans-unit>
         <trans-unit id="GlobalHotkeyOpenCurrentDescription" translate="yes" xml:space="preserve">
-          <source>Use this hot key in any program to open Clip Angel window with no changes in filter and clip selection. Press again to close the window.</source>
-          <target state="new">Use this hot key in any program to open Clip Angel window with no changes in filter and clip selection. Press again to close the window.</target>
+          <source>Use this hot key in any program to open ClipAngel window with no changes in filter and clip selection. Press again to close the window.</source>
+          <target state="new">Use this hot key in any program to open ClipAngel window with no changes in filter and clip selection. Press again to close the window.</target>
         </trans-unit>
         <trans-unit id="GlobalHotkeyOpenFavorites" translate="yes" xml:space="preserve">
           <source>Hotkey to open window with favorites</source>
           <target state="new">Hotkey to open window with favorites</target>
         </trans-unit>
         <trans-unit id="GlobalHotkeyOpenFavoritesDescription" translate="yes" xml:space="preserve">
-          <source>Use this hot key in any program to show Clip Angel window with favorites only filter. Press again to close the window.</source>
-          <target state="new">Use this hot key in any program to show Clip Angel window with favorites only filter. Press again to close the window.</target>
+          <source>Use this hot key in any program to show ClipAngel window with favorites only filter. Press again to close the window.</source>
+          <target state="new">Use this hot key in any program to show ClipAngel window with favorites only filter. Press again to close the window.</target>
         </trans-unit>
         <trans-unit id="GlobalHotkeyOpenLast" translate="yes" xml:space="preserve">
           <source>Hotkey to open window with reset</source>
           <target state="new">Hotkey to open window with reset</target>
         </trans-unit>
         <trans-unit id="GlobalHotkeyOpenLastDescription" translate="yes" xml:space="preserve">
-          <source>Use this hot key in any program to open Clip Angel window, clear filters and select last captured clip. Press again to close the window.</source>
-          <target state="new">Use this hot key in any program to open Clip Angel window, clear filters and select last captured clip. Press again to close the window.</target>
+          <source>Use this hot key in any program to open ClipAngel window, clear filters and select last captured clip. Press again to close the window.</source>
+          <target state="new">Use this hot key in any program to open ClipAngel window, clear filters and select last captured clip. Press again to close the window.</target>
         </trans-unit>
         <trans-unit id="GlobalHotkeyPasteText" translate="yes" xml:space="preserve">
           <source>Hotkey to paste plain text</source>
@@ -1186,6 +1194,14 @@ Generation of image consumes CPU. If you experience high CPU load, set lower val
         <trans-unit id="ReadWindowTitlesDescription" translate="yes" xml:space="preserve">
           <source>Read window titles from clip sources. Uncheck this setting to avoid crashes of program on some systems.</source>
           <target state="new">Read window titles from clip sources. Uncheck this setting to avoid crashes of program on some systems.</target>
+        </trans-unit>
+        <trans-unit id="GlobalHotkeySwitchMonitoring" translate="yes" xml:space="preserve">
+          <source>Hotkey to switch clipboard monitoring</source>
+          <target state="new">Hotkey to switch clipboard monitoring</target>
+        </trans-unit>
+        <trans-unit id="GlobalHotkeySwitchMonitoringDescription" translate="yes" xml:space="preserve">
+          <source>Use this hot key in any program to switch clipboard monitoring (capturing changes) by ClipAngel</source>
+          <target state="new">Use this hot key in any program to switch clipboard monitoring (capturing changes) by ClipAngel</target>
         </trans-unit>
       </group>
     </body>

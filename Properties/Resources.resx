@@ -439,4 +439,10 @@
   <data name="alienNoCapture" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\alien - no capture .ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="MonitoringOFF" xml:space="preserve">
+    <value>Clipboard monitoring now is OFF</value>
+  </data>
+  <data name="MonitoringON" xml:space="preserve">
+    <value>Clipboard monitoring now is ON</value>
+  </data>
 </root>

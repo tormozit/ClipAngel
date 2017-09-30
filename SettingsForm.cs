@@ -107,7 +107,7 @@ namespace ClipAngel
 
         private void buttonReset_Click(object sender, EventArgs e)
         {
-            string question = (Owner as Main).CurrentLangResourceManager.GetString("QuestionResetSettings");
+            string question = Properties.Resources.QuestionResetSettings;
             if (DialogResult.Yes == MessageBox.Show(question, Application.ProductName, MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation))
             {
                 //Properties.Settings.Default.Reset(); // Not working, it seem reason is type System.Collections.Specialized.StringCollection
@@ -712,6 +712,7 @@ namespace ClipAngel
 
         public void Load(bool PortableMode = false)
         {
+            GlobalHotkeySwitchMonitoring = Properties.Settings.Default.GlobalHotkeySwitchMonitoring;
             ReadWindowTitles = Properties.Settings.Default.ReadWindowTitles;
             MaxCellsToCaptureFormattedText = Properties.Settings.Default.MaxCellsToCaptureFormattedText;
             MaxCellsToCaptureImage = Properties.Settings.Default.MaxCellsToCaptureImage;
@@ -783,6 +784,7 @@ namespace ClipAngel
 
         public void Apply(bool PortableMode = false)
         {
+            Properties.Settings.Default.GlobalHotkeySwitchMonitoring = GlobalHotkeySwitchMonitoring;
             Properties.Settings.Default.ReadWindowTitles = ReadWindowTitles;
             Properties.Settings.Default.MaxCellsToCaptureImage = MaxCellsToCaptureImage;
             Properties.Settings.Default.MaxCellsToCaptureFormattedText = MaxCellsToCaptureFormattedText;
@@ -931,6 +933,11 @@ namespace ClipAngel
         public string GlobalHotkeyPasteText { get; set; }
 
         [GlobalizedCategory("Hotkeys")]
+        [TypeConverterAttribute(typeof(HotkeyConverter))]
+        [EditorAttribute(typeof(HotkeyEditor), typeof(UITypeEditor))]
+        public string GlobalHotkeySwitchMonitoring { get; set; }
+
+       [GlobalizedCategory("Hotkeys")]
         [Editor(typeof(MyBoolEditor), typeof(UITypeEditor))]
         public bool CopyTextInAnyWindowOnCTRLF3 { get; set; }
 

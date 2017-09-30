@@ -618,6 +618,24 @@ namespace ClipAngel.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Clipboard monitoring now is OFF.
+        /// </summary>
+        public static string MonitoringOFF {
+            get {
+                return ResourceManager.GetString("MonitoringOFF", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Clipboard monitoring now is ON.
+        /// </summary>
+        public static string MonitoringON {
+            get {
+                return ResourceManager.GetString("MonitoringON", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         public static System.Drawing.Bitmap MoveCopiedClipToTop {
