@@ -249,12 +249,6 @@ WinMerge, Araxis Merge, DiffMerge, Kdiff3. Befehl für Textvergleich ist %applic
   <data name="TextEditorDescription" xml:space="preserve">
     <value>Wird im "Datei öffnen" Befehl für Clip verwendet. Lassen Sie leer, um Standard OS Anwendung als Textdatei (TXT) Editor zu verwenden.</value>
   </data>
-  <data name="UseFormattingInDublicateDetection" xml:space="preserve">
-    <value>Einsatz in Urheberrechtschutz Erkennung Formatierung</value>
-  </data>
-  <data name="UseFormattingInDublicateDetectionDescription" xml:space="preserve">
-    <value>Verwenden Sie native Textformatierung in Duplikat Erkennung. Sonst wird nur plain text verwendet werden, für die Erkennung von Duplikaten in Textclip</value>
-  </data>
   <data name="UserSettingsPath" xml:space="preserve">
     <value>Benutzer Einstellungen Weg</value>
   </data>

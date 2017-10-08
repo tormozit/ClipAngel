@@ -730,7 +730,7 @@ namespace ClipAngel
             IgnoreExclusiveFormatClipCapture = Properties.Settings.Default.IgnoreExclusiveFormatClipCapture;
             //RestoreCaretPositionOnFocusReturn = Properties.Settings.Default.RestoreCaretPositionOnFocusReturn;
             GlobalHotkeyPasteText = Properties.Settings.Default.GlobalHotkeyPasteText;
-            UseFormattingInDublicateDetection = Properties.Settings.Default.UseFormattingInDublicateDetection;
+            UseFormattingInDuplicateDetection = Properties.Settings.Default.UseFormattingInDuplicateDetection;
             IgnoreApplicationsClipCapture = Properties.Settings.Default.IgnoreApplicationsClipCapture;
             CopyTextInAnyWindowOnCTRLF3 = Properties.Settings.Default.CopyTextInAnyWindowOnCTRLF3;
             FastWindowOpen = Properties.Settings.Default.FastWindowOpen;
@@ -802,7 +802,7 @@ namespace ClipAngel
             Properties.Settings.Default.IgnoreExclusiveFormatClipCapture = IgnoreExclusiveFormatClipCapture;
             //Properties.Settings.Default.RestoreCaretPositionOnFocusReturn = RestoreCaretPositionOnFocusReturn;
             Properties.Settings.Default.GlobalHotkeyPasteText = GlobalHotkeyPasteText;
-            Properties.Settings.Default.UseFormattingInDublicateDetection = UseFormattingInDublicateDetection;
+            Properties.Settings.Default.UseFormattingInDuplicateDetection = UseFormattingInDuplicateDetection;
             Properties.Settings.Default.IgnoreApplicationsClipCapture = IgnoreApplicationsClipCapture;
             Properties.Settings.Default.CopyTextInAnyWindowOnCTRLF3 = CopyTextInAnyWindowOnCTRLF3;
             Properties.Settings.Default.FastWindowOpen = FastWindowOpen;
@@ -973,7 +973,7 @@ namespace ClipAngel
 
         [GlobalizedCategory("Other")]
         [Editor(typeof(MyBoolEditor), typeof(UITypeEditor))]
-        public bool UseFormattingInDublicateDetection { get; set; }
+        public bool UseFormattingInDuplicateDetection { get; set; }
 
         [GlobalizedCategory("Other")]
         [EditorAttribute(typeof(FolderNameEditor), typeof(UITypeEditor))]

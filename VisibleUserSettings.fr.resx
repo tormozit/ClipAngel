@@ -248,12 +248,6 @@ WinMerge, Araxis Merge, DiffMerge, Kdiff3. La commande de comparaison de texte e
   <data name="TextEditorDescription" xml:space="preserve">
     <value>Utilisé dans la commande "Ouvrir le fichier" pour le clip. Laissez vide pour utiliser l'application par défaut pour éditer un fichier texte (TXT).</value>
   </data>
-  <data name="UseFormattingInDublicateDetection" xml:space="preserve">
-    <value>Utiliser format pour détecter doublon</value>
-  </data>
-  <data name="UseFormattingInDublicateDetectionDescription" xml:space="preserve">
-    <value>Utiliser le formatage du texte natif dans la détection en double. Sinon, le texte simple sera utilisé pour détecter le double du clip texte.</value>
-  </data>
   <data name="UserSettingsPath" xml:space="preserve">
     <value>Chemin paramètres utilisateur</value>
   </data>

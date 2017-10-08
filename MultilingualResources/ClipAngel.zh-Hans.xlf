@@ -866,8 +866,8 @@
           <target state="new">Clip was not captured due to clipboard read error</target>
         </trans-unit>
         <trans-unit id="VersionValue" translate="yes" xml:space="preserve">
-          <source>1.40</source>
-          <target state="new">1.40</target>
+          <source>1.41</source>
+          <target state="new">1.41</target>
         </trans-unit>
         <trans-unit id="TargetWindow" translate="yes" xml:space="preserve">
           <source>Target window</source>
@@ -1492,14 +1492,6 @@ WinMerge，轴合并，DiffMerge，Kdiff3。文本比较命令是应用程序 %%
           <source>Used in "Open file" command for clip. Leave empty to use default OS application for edit text (TXT) files.</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">在"打开文件"命令中用于剪辑。请留空要用于编辑文本 (TXT) 文件的默认 OS 的应用程序。</target>
         </trans-unit>
-        <trans-unit id="UseFormattingInDublicateDetection" translate="yes" xml:space="preserve">
-          <source>Use formatting in dublicate detection</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">使用 dublicate 检测中的格式设置</target>
-        </trans-unit>
-        <trans-unit id="UseFormattingInDublicateDetectionDescription" translate="yes" xml:space="preserve">
-          <source>Use native text formatting in dublicate detection. Else only plain text will be used for detecting dublicate of text clip</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">使用本机中的文本格式 dublicate 检测。只有纯文本还将用于检测 dublicate 文本剪辑</target>
-        </trans-unit>
         <trans-unit id="UserSettingsPath" translate="yes" xml:space="preserve">
           <source>Application user settings path</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">用户设置路径</target>
@@ -1598,6 +1590,14 @@ Generation of image consumes CPU. If you experience high CPU load, set lower val
         <trans-unit id="GlobalHotkeySwitchMonitoringDescription" translate="yes" xml:space="preserve">
           <source>Use this hot key in any program to switch clipboard monitoring (capturing changes) by ClipAngel</source>
           <target state="new">Use this hot key in any program to switch clipboard monitoring (capturing changes) by ClipAngel</target>
+        </trans-unit>
+        <trans-unit id="UseFormattingInDuplicateDetection" translate="yes" xml:space="preserve">
+          <source>Use formatting in duplicate detection</source>
+          <target state="new">Use formatting in duplicate detection</target>
+        </trans-unit>
+        <trans-unit id="UseFormattingInDuplicateDetectionDescription" translate="yes" xml:space="preserve">
+          <source>Use native text formatting in duplicate detection. Else only plain text will be used for detecting duplicate of text clip</source>
+          <target state="new">Use native text formatting in duplicate detection. Else only plain text will be used for detecting duplicate of text clip</target>
         </trans-unit>
       </group>
     </body>

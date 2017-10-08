@@ -424,14 +424,6 @@ WinMerge Araxis Merge, DiffMerge, o Kdiff3. Comando de comparar texto é aplica�
           <source>Used in "Open file" command for clip. Leave empty to use default OS application for edit text (TXT) files.</source>
           <target state="translated">Usado no comando "Abrir arquivo" para clipe. Deixe em branco para usar o aplicativo padrão do sistema operacional para editar arquivos de texto (TXT).</target>
         </trans-unit>
-        <trans-unit id="UseFormattingInDublicateDetection" translate="yes" xml:space="preserve">
-          <source>Use formatting in dublicate detection</source>
-          <target state="translated">Usar formatação na detecção de duplicado</target>
-        </trans-unit>
-        <trans-unit id="UseFormattingInDublicateDetectionDescription" translate="yes" xml:space="preserve">
-          <source>Use native text formatting in dublicate detection. Else only plain text will be used for detecting dublicate of text clip</source>
-          <target state="translated">Usado na detecção de duplicado na formatação de texto. Mas será usado apenas em texto sem formatação para detectar de clipe de texto duplicado</target>
-        </trans-unit>
         <trans-unit id="UserSettingsPath" translate="yes" xml:space="preserve">
           <source>Application user settings path</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Caminho de configurações do usuário</target>
@@ -530,6 +522,14 @@ Generation of image consumes CPU. If you experience high CPU load, set lower val
         <trans-unit id="GlobalHotkeySwitchMonitoringDescription" translate="yes" xml:space="preserve">
           <source>Use this hot key in any program to switch clipboard monitoring (capturing changes) by ClipAngel</source>
           <target state="new">Use this hot key in any program to switch clipboard monitoring (capturing changes) by ClipAngel</target>
+        </trans-unit>
+        <trans-unit id="UseFormattingInDuplicateDetection" translate="yes" xml:space="preserve">
+          <source>Use formatting in duplicate detection</source>
+          <target state="new">Use formatting in duplicate detection</target>
+        </trans-unit>
+        <trans-unit id="UseFormattingInDuplicateDetectionDescription" translate="yes" xml:space="preserve">
+          <source>Use native text formatting in duplicate detection. Else only plain text will be used for detecting duplicate of text clip</source>
+          <target state="new">Use native text formatting in duplicate detection. Else only plain text will be used for detecting duplicate of text clip</target>
         </trans-unit>
       </group>
     </body>
@@ -1544,8 +1544,8 @@ Generation of image consumes CPU. If you experience high CPU load, set lower val
           <target state="new">Clip was not captured due to clipboard read error</target>
         </trans-unit>
         <trans-unit id="VersionValue" translate="yes" xml:space="preserve">
-          <source>1.40</source>
-          <target state="new">1.40</target>
+          <source>1.41</source>
+          <target state="new">1.41</target>
         </trans-unit>
         <trans-unit id="TargetWindow" translate="yes" xml:space="preserve">
           <source>Target window</source>

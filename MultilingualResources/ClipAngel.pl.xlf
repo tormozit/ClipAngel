@@ -423,14 +423,6 @@ WinMerge, Araxis Merge, DiffMerge, Kdiff3. Text compare command is %application%
           <source>Used in "Open file" command for clip. Leave empty to use default OS application for edit text (TXT) files.</source>
           <target state="translated">Używane przez polecenie "Otwórz plik" dla klipu. Pozostaw puste, aby użyć domyślnej aplikacji systemowej do edycji plików tekstowych (TXT).</target>
         </trans-unit>
-        <trans-unit id="UseFormattingInDublicateDetection" translate="yes" xml:space="preserve">
-          <source>Use formatting in dublicate detection</source>
-          <target state="translated">Użyj formatowania w wykrywaniu duplikatów</target>
-        </trans-unit>
-        <trans-unit id="UseFormattingInDublicateDetectionDescription" translate="yes" xml:space="preserve">
-          <source>Use native text formatting in dublicate detection. Else only plain text will be used for detecting dublicate of text clip</source>
-          <target state="translated">Używa natywnego formatowania tekstu w wykrywaniu duplikatów. W przeciwnym razie tylko zwykły tekst będzie użyty do wykrywania duplikatów klipu tekstowego</target>
-        </trans-unit>
         <trans-unit id="UserSettingsPath" translate="yes" xml:space="preserve">
           <source>Application user settings path</source>
           <target state="translated">Ścieżka ustawień użytkownika aplikacji</target>
@@ -529,6 +521,14 @@ Generowanie obrazu zużywa moc procesora. Jeśli masz duże obciążenie proceso
         <trans-unit id="GlobalHotkeySwitchMonitoringDescription" translate="yes" xml:space="preserve">
           <source>Use this hot key in any program to switch clipboard monitoring (capturing changes) by ClipAngel</source>
           <target state="new">Use this hot key in any program to switch clipboard monitoring (capturing changes) by ClipAngel</target>
+        </trans-unit>
+        <trans-unit id="UseFormattingInDuplicateDetection" translate="yes" xml:space="preserve">
+          <source>Use formatting in duplicate detection</source>
+          <target state="new">Use formatting in duplicate detection</target>
+        </trans-unit>
+        <trans-unit id="UseFormattingInDuplicateDetectionDescription" translate="yes" xml:space="preserve">
+          <source>Use native text formatting in duplicate detection. Else only plain text will be used for detecting duplicate of text clip</source>
+          <target state="new">Use native text formatting in duplicate detection. Else only plain text will be used for detecting duplicate of text clip</target>
         </trans-unit>
       </group>
     </body>
@@ -1543,8 +1543,8 @@ Generowanie obrazu zużywa moc procesora. Jeśli masz duże obciążenie proceso
           <target state="translated">Klip nie został przechwycony ze względu na błąd odczytu schowka</target>
         </trans-unit>
         <trans-unit id="VersionValue" translate="yes" xml:space="preserve">
-          <source>1.40</source>
-          <target state="new">1.40</target>
+          <source>1.41</source>
+          <target state="new">1.41</target>
         </trans-unit>
         <trans-unit id="TargetWindow" translate="yes" xml:space="preserve">
           <source>Target window</source>

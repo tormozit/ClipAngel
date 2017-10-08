@@ -92,7 +92,7 @@
     <Setting Name="IgnoreApplicationsClipCapture" Type="System.Collections.Specialized.StringCollection" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="UseFormattingInDublicateDetection" Type="System.Boolean" Scope="User">
+    <Setting Name="UseFormattingInDuplicateDetection" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="GlobalHotkeyPasteText" Type="System.String" Scope="User">

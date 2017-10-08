@@ -384,12 +384,12 @@ namespace ClipAngel.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool UseFormattingInDublicateDetection {
+        public bool UseFormattingInDuplicateDetection {
             get {
-                return ((bool)(this["UseFormattingInDublicateDetection"]));
+                return ((bool)(this["UseFormattingInDuplicateDetection"]));
             }
             set {
-                this["UseFormattingInDublicateDetection"] = value;
+                this["UseFormattingInDuplicateDetection"] = value;
             }
         }
         

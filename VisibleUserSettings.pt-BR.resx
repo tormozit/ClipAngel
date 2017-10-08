@@ -247,12 +247,6 @@ WinMerge Araxis Merge, DiffMerge, o Kdiff3. Comando de comparar texto é aplica�
   <data name="TextEditorDescription" xml:space="preserve">
     <value>Usado no comando "Abrir arquivo" para clipe. Deixe em branco para usar o aplicativo padrão do sistema operacional para editar arquivos de texto (TXT).</value>
   </data>
-  <data name="UseFormattingInDublicateDetection" xml:space="preserve">
-    <value>Usar formatação na detecção de duplicado</value>
-  </data>
-  <data name="UseFormattingInDublicateDetectionDescription" xml:space="preserve">
-    <value>Usado na detecção de duplicado na formatação de texto. Mas será usado apenas em texto sem formatação para detectar de clipe de texto duplicado</value>
-  </data>
   <data name="UserSettingsPath" xml:space="preserve">
     <value>Caminho de configurações do usuário</value>
   </data>

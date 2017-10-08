@@ -601,7 +601,7 @@ namespace ClipAngel
             string hotkeyTitle = KeyboardHook.HotkeyTitle(e.Key, e.Modifier);
             if (hotkeyTitle == Properties.Settings.Default.GlobalHotkeyOpenLast)
             {
-                if (this.Visible && this.ContainsFocus && this.Top > maxWindowCoordForHiddenState && MarkFilter.SelectedValue.ToString() != "favorite") // Sometimes it can cotain focus but be not visible!
+                if (IsVisible() && this.ContainsFocus && MarkFilter.SelectedValue.ToString() != "favorite") // Sometimes it can cotain focus but be not visible!
                     this.Close();
                 else
                 {
@@ -611,7 +611,7 @@ namespace ClipAngel
             }
             else if (hotkeyTitle == Properties.Settings.Default.GlobalHotkeyOpenCurrent)
             {
-                if (this.Visible && this.ContainsFocus && this.Top > maxWindowCoordForHiddenState && MarkFilter.SelectedValue.ToString() != "favorite")
+                if (IsVisible() && this.ContainsFocus && MarkFilter.SelectedValue.ToString() != "favorite")
                     this.Close();
                 else
                 {
@@ -621,7 +621,7 @@ namespace ClipAngel
             }
             else if (hotkeyTitle == Properties.Settings.Default.GlobalHotkeyOpenFavorites)
             {
-                if (this.Visible && this.ContainsFocus && this.Top > maxWindowCoordForHiddenState && MarkFilter.SelectedValue.ToString() == "favorite")
+                if (IsVisible() && this.ContainsFocus && MarkFilter.SelectedValue.ToString() == "favorite")
                     this.Close();
                 else
                 {
@@ -2085,7 +2085,7 @@ namespace ClipAngel
                 md5.TransformBlock(binaryBuffer, 0, binaryBuffer.Length, binaryBuffer, 0);
             byte[] binaryText = Encoding.Unicode.GetBytes(plainText);
             md5.TransformBlock(binaryText, 0, binaryText.Length, binaryText, 0);
-            if (Properties.Settings.Default.UseFormattingInDublicateDetection || String.IsNullOrEmpty(plainText))
+            if (Properties.Settings.Default.UseFormattingInDuplicateDetection || String.IsNullOrEmpty(plainText))
             {
                 byte[] binaryRichText = Encoding.Unicode.GetBytes(richText);
                 md5.TransformBlock(binaryRichText, 0, binaryRichText.Length, binaryRichText, 0);
@@ -3247,8 +3247,16 @@ namespace ClipAngel
         {
             if (e.Button == MouseButtons.Left)
             {
-                ShowForPaste();
+                if (IsVisible())
+                    this.Close();
+                else
+                    ShowForPaste();
             }
+        }
+
+        private bool IsVisible()
+        {
+            return this.Visible && this.Top > maxWindowCoordForHiddenState;
         }
 
         [DllImport("user32.dll", EntryPoint = "GetGUIThreadInfo")]
@@ -3334,8 +3342,8 @@ namespace ClipAngel
             // http://stackoverflow.com/questions/31055249/is-it-possible-to-get-caret-position-in-word-to-update-faster
             UpdateLastActiveParentWindow(IntPtr.Zero); // sometimes lastActiveParentWindow is not equal GetForegroundWindow()
             IntPtr hWindow = lastActiveParentWindow;
-            int newX = -1;
-            int newY = -1;
+            int newX = -12345;
+            int newY = -12345;
             if (hWindow != IntPtr.Zero)
             {
                 Point caretPoint;

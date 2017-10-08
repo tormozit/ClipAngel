@@ -480,8 +480,8 @@
           <target state="translated">Le clip n'a pas été capturé en raison de l'erreur de lecture du presse-papiers</target>
         </trans-unit>
         <trans-unit id="VersionValue" translate="yes" xml:space="preserve">
-          <source>1.40</source>
-          <target state="new">1.40</target>
+          <source>1.41</source>
+          <target state="new">1.41</target>
         </trans-unit>
         <trans-unit id="TargetWindow" translate="yes" xml:space="preserve">
           <source>Target window</source>
@@ -1488,14 +1488,6 @@ WinMerge, Araxis Merge, DiffMerge, Kdiff3. La commande de comparaison de texte e
           <source>Used in "Open file" command for clip. Leave empty to use default OS application for edit text (TXT) files.</source>
           <target state="translated">Utilisé dans la commande "Ouvrir le fichier" pour le clip. Laissez vide pour utiliser l'application par défaut pour éditer un fichier texte (TXT).</target>
         </trans-unit>
-        <trans-unit id="UseFormattingInDublicateDetection" translate="yes" xml:space="preserve">
-          <source>Use formatting in dublicate detection</source>
-          <target state="translated">Utiliser format pour détecter doublon</target>
-        </trans-unit>
-        <trans-unit id="UseFormattingInDublicateDetectionDescription" translate="yes" xml:space="preserve">
-          <source>Use native text formatting in dublicate detection. Else only plain text will be used for detecting dublicate of text clip</source>
-          <target state="translated">Utiliser le formatage du texte natif dans la détection en double. Sinon, le texte simple sera utilisé pour détecter le double du clip texte.</target>
-        </trans-unit>
         <trans-unit id="UserSettingsPath" translate="yes" xml:space="preserve">
           <source>Application user settings path</source>
           <target state="translated">Chemin paramètres utilisateur</target>
@@ -1592,6 +1584,14 @@ La génération d'image consomme CPU. Si vous rencontrez une charge CPU élevée
         <trans-unit id="GlobalHotkeySwitchMonitoringDescription" translate="yes" xml:space="preserve">
           <source>Use this hot key in any program to switch clipboard monitoring (capturing changes) by ClipAngel</source>
           <target state="new">Use this hot key in any program to switch clipboard monitoring (capturing changes) by ClipAngel</target>
+        </trans-unit>
+        <trans-unit id="UseFormattingInDuplicateDetection" translate="yes" xml:space="preserve">
+          <source>Use formatting in duplicate detection</source>
+          <target state="new">Use formatting in duplicate detection</target>
+        </trans-unit>
+        <trans-unit id="UseFormattingInDuplicateDetectionDescription" translate="yes" xml:space="preserve">
+          <source>Use native text formatting in duplicate detection. Else only plain text will be used for detecting duplicate of text clip</source>
+          <target state="new">Use native text formatting in duplicate detection. Else only plain text will be used for detecting duplicate of text clip</target>
         </trans-unit>
       </group>
     </body>

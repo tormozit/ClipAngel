@@ -247,12 +247,6 @@ RTF मूल स्वरूपण द्वारा अतिभारित 
   <data name="TextEditorDescription" xml:space="preserve">
     <value>"फ़ाइल खोलें" आदेश में क्लिप के लिए इस्तेमाल किया। संपादन पाठ (TXT) फ़ाइलों के लिए डिफ़ॉल्ट ओएस अनुप्रयोग का उपयोग करने के लिए रिक्त छोड़ दें।</value>
   </data>
-  <data name="UseFormattingInDublicateDetection" xml:space="preserve">
-    <value>Dublicate डिटेक्शन में स्वरूपण का उपयोग करें</value>
-  </data>
-  <data name="UseFormattingInDublicateDetectionDescription" xml:space="preserve">
-    <value>मूल पाठ dublicate डिटेक्शन में स्वरूपण का उपयोग करें। और केवल सादा पाठ dublicate पाठ क्लिप का पता लगाने के लिए इस्तेमाल किया जाएगा</value>
-  </data>
   <data name="UserSettingsPath" xml:space="preserve">
     <value>उपयोगकर्ता पथ सेटिंग</value>
   </data>

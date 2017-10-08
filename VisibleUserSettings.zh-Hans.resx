@@ -247,12 +247,6 @@ WinMerge，轴合并，DiffMerge，Kdiff3。文本比较命令是应用程序 %%
   <data name="TextEditorDescription" xml:space="preserve">
     <value>在"打开文件"命令中用于剪辑。请留空要用于编辑文本 (TXT) 文件的默认 OS 的应用程序。</value>
   </data>
-  <data name="UseFormattingInDublicateDetection" xml:space="preserve">
-    <value>使用 dublicate 检测中的格式设置</value>
-  </data>
-  <data name="UseFormattingInDublicateDetectionDescription" xml:space="preserve">
-    <value>使用本机中的文本格式 dublicate 检测。只有纯文本还将用于检测 dublicate 文本剪辑</value>
-  </data>
   <data name="UserSettingsPath" xml:space="preserve">
     <value>用户设置路径</value>
   </data>

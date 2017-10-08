@@ -247,12 +247,6 @@ WinMerge, Araxis Merge, DiffMerge, Kdiff3. Comparación de texto comando es % Co
   <data name="TextEditorDescription" xml:space="preserve">
     <value>Utilizado en comando "Open file" para el clip. Deje en blanco para aplicación de sistema operativo por defecto para editar archivos de texto (TXT).</value>
   </data>
-  <data name="UseFormattingInDublicateDetection" xml:space="preserve">
-    <value>Uso de formato en la detección de dublicate</value>
-  </data>
-  <data name="UseFormattingInDublicateDetectionDescription" xml:space="preserve">
-    <value>Utilice el formato de detección de dublicate de texto nativo. Otro sólo texto se utilizarán para la detección de dublicate de clip de texto</value>
-  </data>
   <data name="UserSettingsPath" xml:space="preserve">
     <value>Ruta de configuración de usuario</value>
   </data>
