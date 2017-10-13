@@ -127,7 +127,7 @@
     <value>75, 23</value>
   </data>
   <data name="SelectedListApplication.Text" xml:space="preserve">
-    <value>Path</value>
+    <value>Percorso</value>
   </data>
   <data name="buttonRefresh.Text" xml:space="preserve">
     <value>Aggiorna</value>

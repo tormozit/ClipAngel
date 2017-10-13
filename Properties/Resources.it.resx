@@ -31,7 +31,7 @@
     <value>..\Picture\Filter.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="HistoryOfChanges" xml:space="preserve">
-    <value>https://sourceforge.net/p/clip-Angel/Blog</value>
+    <value>https://sourceforge.net/p/clip-angel/Blog</value>
   </data>
   <data name="clear2" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\clear2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -49,7 +49,7 @@
     <value>Conferma</value>
   </data>
   <data name="Support" xml:space="preserve">
-    <value>https://sourceforge.net/p/clip-Angel/Tickets/New/</value>
+    <value>https://sourceforge.net/p/clip-angel/Tickets/New/</value>
   </data>
   <data name="FindNext" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\FindNext.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -160,7 +160,7 @@
     <value>B</value>
   </data>
   <data name="HelpPage" xml:space="preserve">
-    <value>https://sourceforge.net/p/clip-Angel/wiki/Description/</value>
+    <value>https://sourceforge.net/p/clip-angel/wiki/Description/</value>
   </data>
   <data name="QuestionResetSettings" xml:space="preserve">
     <value>Sei sicuro di voler ripristinare le impostazioni ai valori predefiniti?</value>
@@ -196,7 +196,7 @@
     <value>..\Picture\TypeImg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Website" xml:space="preserve">
-    <value>https://sourceforge.net/projects/clip-Angel</value>
+    <value>https://sourceforge.net/projects/clip-angel</value>
   </data>
   <data name="MoveCopiedClipToTop" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\MoveCopiedClipToTop.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -226,7 +226,7 @@
     <value>img</value>
   </data>
   <data name="DownloadPage" xml:space="preserve">
-    <value>https://sourceforge.net/projects/clip-Angel/files/latest/download</value>
+    <value>https://sourceforge.net/projects/clip-angel/files/latest/download</value>
   </data>
   <data name="TypeRtf" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\TypeRtf.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -315,7 +315,16 @@
   <data name="Tip 32" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\Tip 32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="NoCapture" xml:space="preserve">
+    <value>Nessuna cattura</value>
+  </data>
   <data name="alienNoCapture" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\alien - no capture .ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MonitoringOFF" xml:space="preserve">
+    <value>Monitoraggio Appunti disattivato (OFF)</value>
+  </data>
+  <data name="MonitoringON" xml:space="preserve">
+    <value>Monitoraggio Appunti attivato (ON)</value>
   </data>
 </root>

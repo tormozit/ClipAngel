@@ -483,7 +483,7 @@ Le modifiche nel file temporaneo non verranno sincronizzate con la cattura!</val
     <value>40, 20</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Angelo di clip</value>
+    <value>Clip Angel</value>
   </data>
   <data name="buttonUpdate.ImageTransparentColor" xml:space="preserve" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
@@ -2957,7 +2957,79 @@ L'ordinamento è mantenuto fino alla cattura del taglio.</value>
   <data name="openWindowToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>187, 22</value>
   </data>
+  <data name="statusStrip.ToolTip" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="htmlTextBox.ToolTip" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="richTextBox.ToolTip" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="openWindowToolStripMenuItem.Text" xml:space="preserve">
+    <value>Apri finestra</value>
+  </data>
   <data name="openLastClipsToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>187, 22</value>
+  </data>
+  <data name="contextMenuPictureBox.ToolTip" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="contextMenuStripRtf.ToolTip" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="contextMenuStripHtml.ToolTip" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="splitContainer1.ToolTip" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="dataGridView.ToolTip" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="ImageControl.ToolTip" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="tableLayoutPanelData.ToolTip" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="openLastClipsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Apri ultimo taglio</value>
+  </data>
+  <data name="$this.ToolTip" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="splitContainer1.Panel2.ToolTip" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="MainMenu.ToolTip" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="contextMenuUrl.ToolTip" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="splitContainer1.Panel1.ToolTip" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="contextMenuWindowTitle.ToolTip" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="contextMenuStripDataGrid.ToolTip" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="toolStripBottom.ToolTip" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="contextMenuStripNotifyIcon.ToolTip" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="toolStripTop.ToolTip" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="monthCalendar1.ToolTip" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="contextMenuStripApplication.ToolTip" xml:space="preserve">
+    <value></value>
   </data>
 </root>

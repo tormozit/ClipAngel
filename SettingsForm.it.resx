@@ -82,7 +82,7 @@
     <value>18</value>
   </data>
   <data name="buttonClearFilter.Text" xml:space="preserve">
-    <value>N</value>
+    <value>X</value>
   </data>
   <data name="buttonClearFilter.ToolTip" xml:space="preserve">
     <value>Cancella filtro</value>

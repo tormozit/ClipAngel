@@ -24,6 +24,9 @@
   <data name="DontShowTipsOnStart.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
+  <data name="DontShowTipsOnStart.Text" xml:space="preserve">
+    <value>Non visualizzare più questa finestra</value>
+  </data>
   <data name="labelTip.Font" xml:space="preserve" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 9.75pt</value>
   </data>
@@ -35,6 +38,9 @@
   </data>
   <data name="labelTip.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
     <value>1</value>
+  </data>
+  <data name="labelTip.Text" xml:space="preserve">
+    <value>Use la combinazione &lt;Hotkey&gt; Per aprire ClipAngel da qualsiasi programma. Quindi seelziona e incolla gli elementi desideraticon un doppio clic o INVIO.</value>
   </data>
   <data name="pictureBox1.Location" xml:space="preserve" type="System.Drawing.Point, System.Drawing">
     <value>142, 12</value>

@@ -193,7 +193,7 @@
         </trans-unit>
         <trans-unit id="buttonClearFilter.Text" translate="yes" xml:space="preserve">
           <source>X</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">N</target>
+          <target state="translated">X</target>
         </trans-unit>
         <trans-unit id="buttonClearFilter.ToolTip" translate="yes" xml:space="preserve">
           <source>Clear filter</source>
@@ -756,19 +756,19 @@ La generazione dell'immagine consuma risorse della CPU. Se verifichi problemi di
         </trans-unit>
         <trans-unit id="GlobalHotkeySwitchMonitoring" translate="yes" xml:space="preserve">
           <source>Hotkey to switch clipboard monitoring</source>
-          <target state="new">Hotkey to switch clipboard monitoring</target>
+          <target state="translated">Combinazione tasti per on/off monitoraggio appunti</target>
         </trans-unit>
         <trans-unit id="GlobalHotkeySwitchMonitoringDescription" translate="yes" xml:space="preserve">
           <source>Use this hot key in any program to switch clipboard monitoring (capturing changes) by ClipAngel</source>
-          <target state="new">Use this hot key in any program to switch clipboard monitoring (capturing changes) by ClipAngel</target>
+          <target state="translated">Usa questa combinazione di tasti in qualsiasi programma per attivare/disattivare il monitoraggio Appunti (cattura modifiche) di ClipAngel</target>
         </trans-unit>
         <trans-unit id="UseFormattingInDuplicateDetection" translate="yes" xml:space="preserve">
           <source>Use formatting in duplicate detection</source>
-          <target state="new">Use formatting in duplicate detection</target>
+          <target state="translated">Usa formattazione con rilevazione cattura duplicata</target>
         </trans-unit>
         <trans-unit id="UseFormattingInDuplicateDetectionDescription" translate="yes" xml:space="preserve">
           <source>Use native text formatting in duplicate detection. Else only plain text will be used for detecting duplicate of text clip</source>
-          <target state="new">Use native text formatting in duplicate detection. Else only plain text will be used for detecting duplicate of text clip</target>
+          <target state="translated">Usa il formato testo nativo quando viene rilvata una doppia cattura. Altrimentisemplice quando viene rilevata una cattura duplicata verrà usato il solo testo .</target>
         </trans-unit>
       </group>
     </body>
@@ -933,7 +933,7 @@ La generazione dell'immagine consuma risorse della CPU. Se verifichi problemi di
         </trans-unit>
         <trans-unit id="SelectedListApplication.Text" translate="yes" xml:space="preserve">
           <source>Path</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Path</target>
+          <target state="translated">Percorso</target>
         </trans-unit>
         <trans-unit id="buttonRefresh.Text" translate="yes" xml:space="preserve">
           <source>Refresh</source>
@@ -1190,7 +1190,7 @@ La generazione dell'immagine consuma risorse della CPU. Se verifichi problemi di
         </trans-unit>
         <trans-unit id="HistoryOfChanges" translate="yes" xml:space="preserve">
           <source>https://sourceforge.net/p/clip-angel/blog</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">https://sourceforge.net/p/clip-Angel/Blog</target>
+          <target state="translated">https://sourceforge.net/p/clip-angel/Blog</target>
         </trans-unit>
         <trans-unit id="clear2" translate="yes" extype="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
           <source>..\Picture\clear2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</source>
@@ -1214,7 +1214,7 @@ La generazione dell'immagine consuma risorse della CPU. Se verifichi problemi di
         </trans-unit>
         <trans-unit id="Support" translate="yes" xml:space="preserve">
           <source>https://sourceforge.net/p/clip-angel/tickets/new/</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">https://sourceforge.net/p/clip-Angel/Tickets/New/</target>
+          <target state="translated">https://sourceforge.net/p/clip-angel/Tickets/New/</target>
         </trans-unit>
         <trans-unit id="FindNext" translate="yes" extype="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
           <source>..\Picture\FindNext.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</source>
@@ -1362,7 +1362,7 @@ La generazione dell'immagine consuma risorse della CPU. Se verifichi problemi di
         </trans-unit>
         <trans-unit id="HelpPage" translate="yes" xml:space="preserve">
           <source>https://sourceforge.net/p/clip-angel/wiki/Description/</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">https://sourceforge.net/p/clip-Angel/wiki/Description/</target>
+          <target state="translated">https://sourceforge.net/p/clip-angel/wiki/Description/</target>
         </trans-unit>
         <trans-unit id="QuestionResetSettings" translate="yes" xml:space="preserve">
           <source>Are you sure want to reset settings to default values?</source>
@@ -1411,7 +1411,7 @@ La generazione dell'immagine consuma risorse della CPU. Se verifichi problemi di
         </trans-unit>
         <trans-unit id="Website" translate="yes" xml:space="preserve">
           <source>https://sourceforge.net/projects/clip-angel</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">https://sourceforge.net/projects/clip-Angel</target>
+          <target state="translated">https://sourceforge.net/projects/clip-angel</target>
         </trans-unit>
         <trans-unit id="MoveCopiedClipToTop" translate="yes" extype="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
           <source>..\Picture\MoveCopiedClipToTop.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</source>
@@ -1451,7 +1451,7 @@ La generazione dell'immagine consuma risorse della CPU. Se verifichi problemi di
         </trans-unit>
         <trans-unit id="DownloadPage" translate="yes" xml:space="preserve">
           <source>https://sourceforge.net/projects/clip-angel/files/latest/download</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">https://sourceforge.net/projects/clip-Angel/files/latest/download</target>
+          <target state="translated">https://sourceforge.net/projects/clip-angel/files/latest/download</target>
         </trans-unit>
         <trans-unit id="TypeRtf" translate="yes" extype="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
           <source>..\Picture\TypeRtf.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</source>
@@ -1587,7 +1587,7 @@ La generazione dell'immagine consuma risorse della CPU. Se verifichi problemi di
         </trans-unit>
         <trans-unit id="NoCapture" translate="yes" xml:space="preserve">
           <source>No capture</source>
-          <target state="new">No capture</target>
+          <target state="translated">Nessuna cattura</target>
         </trans-unit>
         <trans-unit id="alienNoCapture" translate="yes" xml:space="preserve" extype="System.Resources.ResXFileRef, System.Windows.Forms">
           <source>..\Picture\alien - no capture .ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</source>
@@ -1595,11 +1595,11 @@ La generazione dell'immagine consuma risorse della CPU. Se verifichi problemi di
         </trans-unit>
         <trans-unit id="MonitoringOFF" translate="yes" xml:space="preserve">
           <source>Clipboard monitoring now is OFF</source>
-          <target state="new">Clipboard monitoring now is OFF</target>
+          <target state="translated">Monitoraggio Appunti disattivato (OFF)</target>
         </trans-unit>
         <trans-unit id="MonitoringON" translate="yes" xml:space="preserve">
           <source>Clipboard monitoring now is ON</source>
-          <target state="new">Clipboard monitoring now is ON</target>
+          <target state="translated">Monitoraggio Appunti attivato (ON)</target>
         </trans-unit>
       </group>
     </body>
@@ -2674,7 +2674,7 @@ Le modifiche nel file temporaneo non verranno sincronizzate con la cattura!</tar
         </trans-unit>
         <trans-unit id="$this.Text" translate="yes" xml:space="preserve">
           <source>Clip Angel</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Angelo di clip</target>
+          <target state="translated">Clip Angel</target>
         </trans-unit>
         <trans-unit id="buttonUpdate.ImageTransparentColor" translate="yes" extype="System.Drawing.Color, System.Drawing" xml:space="preserve">
           <source>Magenta</source>
@@ -6755,19 +6755,19 @@ L'ordinamento è mantenuto fino alla cattura del taglio.</target>
         </trans-unit>
         <trans-unit id="statusStrip.ToolTip" translate="yes" xml:space="preserve">
           <source></source>
-          <target state="new"></target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion"></target>
         </trans-unit>
         <trans-unit id="htmlTextBox.ToolTip" translate="yes" xml:space="preserve">
           <source></source>
-          <target state="new"></target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion"></target>
         </trans-unit>
         <trans-unit id="richTextBox.ToolTip" translate="yes" xml:space="preserve">
           <source></source>
-          <target state="new"></target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion"></target>
         </trans-unit>
         <trans-unit id="openWindowToolStripMenuItem.Text" translate="yes" xml:space="preserve">
           <source>Open window</source>
-          <target state="new">Open window</target>
+          <target state="translated">Apri finestra</target>
         </trans-unit>
         <trans-unit id="openLastClipsToolStripMenuItem.Size" translate="yes" xml:space="preserve" extype="System.Drawing.Size, System.Drawing">
           <source>187, 22</source>
@@ -6775,83 +6775,83 @@ L'ordinamento è mantenuto fino alla cattura del taglio.</target>
         </trans-unit>
         <trans-unit id="contextMenuPictureBox.ToolTip" translate="yes" xml:space="preserve">
           <source></source>
-          <target state="new"></target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion"></target>
         </trans-unit>
         <trans-unit id="contextMenuStripRtf.ToolTip" translate="yes" xml:space="preserve">
           <source></source>
-          <target state="new"></target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion"></target>
         </trans-unit>
         <trans-unit id="contextMenuStripHtml.ToolTip" translate="yes" xml:space="preserve">
           <source></source>
-          <target state="new"></target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion"></target>
         </trans-unit>
         <trans-unit id="splitContainer1.ToolTip" translate="yes" xml:space="preserve">
           <source></source>
-          <target state="new"></target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion"></target>
         </trans-unit>
         <trans-unit id="dataGridView.ToolTip" translate="yes" xml:space="preserve">
           <source></source>
-          <target state="new"></target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion"></target>
         </trans-unit>
         <trans-unit id="ImageControl.ToolTip" translate="yes" xml:space="preserve">
           <source></source>
-          <target state="new"></target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion"></target>
         </trans-unit>
         <trans-unit id="tableLayoutPanelData.ToolTip" translate="yes" xml:space="preserve">
           <source></source>
-          <target state="new"></target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion"></target>
         </trans-unit>
         <trans-unit id="openLastClipsToolStripMenuItem.Text" translate="yes" xml:space="preserve">
           <source>Open last clips</source>
-          <target state="new">Open last clips</target>
+          <target state="translated">Apri ultimo taglio</target>
         </trans-unit>
         <trans-unit id="$this.ToolTip" translate="yes" xml:space="preserve">
           <source></source>
-          <target state="new"></target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion"></target>
         </trans-unit>
         <trans-unit id="splitContainer1.Panel2.ToolTip" translate="yes" xml:space="preserve">
           <source></source>
-          <target state="new"></target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion"></target>
         </trans-unit>
         <trans-unit id="MainMenu.ToolTip" translate="yes" xml:space="preserve">
           <source></source>
-          <target state="new"></target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion"></target>
         </trans-unit>
         <trans-unit id="contextMenuUrl.ToolTip" translate="yes" xml:space="preserve">
           <source></source>
-          <target state="new"></target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion"></target>
         </trans-unit>
         <trans-unit id="splitContainer1.Panel1.ToolTip" translate="yes" xml:space="preserve">
           <source></source>
-          <target state="new"></target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion"></target>
         </trans-unit>
         <trans-unit id="contextMenuWindowTitle.ToolTip" translate="yes" xml:space="preserve">
           <source></source>
-          <target state="new"></target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion"></target>
         </trans-unit>
         <trans-unit id="contextMenuStripDataGrid.ToolTip" translate="yes" xml:space="preserve">
           <source></source>
-          <target state="new"></target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion"></target>
         </trans-unit>
         <trans-unit id="toolStripBottom.ToolTip" translate="yes" xml:space="preserve">
           <source></source>
-          <target state="new"></target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion"></target>
         </trans-unit>
         <trans-unit id="contextMenuStripNotifyIcon.ToolTip" translate="yes" xml:space="preserve">
           <source></source>
-          <target state="new"></target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion"></target>
         </trans-unit>
         <trans-unit id="toolStripTop.ToolTip" translate="yes" xml:space="preserve">
           <source></source>
-          <target state="new"></target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion"></target>
         </trans-unit>
         <trans-unit id="monthCalendar1.ToolTip" translate="yes" xml:space="preserve">
           <source></source>
-          <target state="new"></target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion"></target>
         </trans-unit>
         <trans-unit id="contextMenuStripApplication.ToolTip" translate="yes" xml:space="preserve">
           <source></source>
-          <target state="new"></target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion"></target>
         </trans-unit>
       </group>
     </body>
@@ -6880,7 +6880,7 @@ L'ordinamento è mantenuto fino alla cattura del taglio.</target>
         </trans-unit>
         <trans-unit id="DontShowTipsOnStart.Text" translate="yes" xml:space="preserve">
           <source>Don't show this window again</source>
-          <target state="new">Don't show this window again</target>
+          <target state="translated">Non visualizzare più questa finestra</target>
         </trans-unit>
         <trans-unit id="labelTip.Font" translate="yes" xml:space="preserve" extype="System.Drawing.Font, System.Drawing">
           <source>Microsoft Sans Serif, 9.75pt</source>
@@ -6901,7 +6901,7 @@ L'ordinamento è mantenuto fino alla cattura del taglio.</target>
         </trans-unit>
         <trans-unit id="labelTip.Text" translate="yes" xml:space="preserve">
           <source>Use hotkey <it id="1" pos="open">&lt;Hotkey&gt;</it> to open ClipAngel from any program. Then select and paste desired clip by double click or ENTER.</source>
-          <target state="new">Use hotkey <it id="1" pos="open">&lt;Hotkey&gt;</it> to open ClipAngel from any program. Then select and paste desired clip by double click or ENTER.</target>
+          <target state="translated">Use la combinazione <it id="1" pos="open">&lt;Hotkey&gt;</it> Per aprire ClipAngel da qualsiasi programma. Quindi seelziona e incolla gli elementi desideraticon un doppio clic o INVIO.</target>
         </trans-unit>
         <trans-unit id="pictureBox1.Location" translate="yes" xml:space="preserve" extype="System.Drawing.Point, System.Drawing">
           <source>169, 12</source>

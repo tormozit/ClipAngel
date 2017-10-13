@@ -313,4 +313,16 @@ La generazione dell'immagine consuma risorse della CPU. Se verifichi problemi di
   <data name="ReadWindowTitlesDescription" xml:space="preserve">
     <value>Legge i titoli finestri dalla sorgente di cattura. Deseleziona questa impostazione per evitare crash del programma in alcuni sistemi.</value>
   </data>
+  <data name="GlobalHotkeySwitchMonitoring" xml:space="preserve">
+    <value>Combinazione tasti per on/off monitoraggio appunti</value>
+  </data>
+  <data name="GlobalHotkeySwitchMonitoringDescription" xml:space="preserve">
+    <value>Usa questa combinazione di tasti in qualsiasi programma per attivare/disattivare il monitoraggio Appunti (cattura modifiche) di ClipAngel</value>
+  </data>
+  <data name="UseFormattingInDuplicateDetection" xml:space="preserve">
+    <value>Usa formattazione con rilevazione cattura duplicata</value>
+  </data>
+  <data name="UseFormattingInDuplicateDetectionDescription" xml:space="preserve">
+    <value>Usa il formato testo nativo quando viene rilvata una doppia cattura. Altrimentisemplice quando viene rilevata una cattura duplicata verrà usato il solo testo .</value>
+  </data>
 </root>
