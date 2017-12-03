@@ -1081,7 +1081,6 @@ namespace ClipAngel
                 }
                 richTextBox.SelectionColor = new Color();
                 richTextBox.SelectionStart = 0;
-                //richTextBox.HideSelection = false; // slow
 
                 urlTextBox.HideSelection = true;
                 urlTextBox.Clear();
@@ -1094,11 +1093,11 @@ namespace ClipAngel
                     ImageControl.Image = image;
                     ImageControl.ZoomFitInside();
                 }
-                allowTextPositionChangeUpdate = true;
-                if (autoSelectMatch)
-                    UpdateSelectionPosition();
-                else
+                if (!autoSelectMatch)
                     RestoreTextSelection(NewSelectionStart, NewSelectionLength);
+                allowTextPositionChangeUpdate = true;
+                UpdateSelectionPosition();
+                richTextBox.HideSelection = false; // slow
             }
             tableLayoutPanelData.SuspendLayout();
             UpdateClipButtons();
@@ -1233,15 +1232,17 @@ namespace ClipAngel
 
         private void SetRichTextboxSelection(int NewSelectionStart, int NewSelectionLength)
         {
-            bool oldAllowTextPositionChangeUpdate = allowTextPositionChangeUpdate;
-            allowTextPositionChangeUpdate = false;
             richTextBox.SelectionStart = NewSelectionStart;
             richTextBox.SelectionLength = NewSelectionLength;
-            if (richTextBox.SelectionStart > 0 || richTextBox.SelectionLength > 0)
+            if (true
+                && richTextBox.HideSelection
+                && (false
+                    || richTextBox.SelectionStart > 0 
+                    || richTextBox.SelectionLength > 0))
+            {
                 richTextBox.HideSelection = false; // slow
+            }
             richTextBox.ScrollToCaret();
-            allowTextPositionChangeUpdate = oldAllowTextPositionChangeUpdate;
-            richTextBox_SelectionChanged();
         }
 
         private void UpdateSelectionPosition()
