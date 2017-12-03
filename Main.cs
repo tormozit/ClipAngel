@@ -2078,58 +2078,66 @@ namespace ClipAngel
             }
             if (Properties.Settings.Default.PlaySoundOnClipCapture)
                 SystemSounds.Beep.Play();
+            int oldCurrentClipId = 0;
+            lastClipWasMultiCaptured = false;
             DateTime created = DateTime.Now;
             string clipTitle = TextClipTitle(plainText);
-            MD5 md5 = new MD5CryptoServiceProvider();
-            if (binaryBuffer != null)
-                md5.TransformBlock(binaryBuffer, 0, binaryBuffer.Length, binaryBuffer, 0);
-            byte[] binaryText = Encoding.Unicode.GetBytes(plainText);
-            md5.TransformBlock(binaryText, 0, binaryText.Length, binaryText, 0);
-            if (Properties.Settings.Default.UseFormattingInDuplicateDetection || String.IsNullOrEmpty(plainText))
+            string hash;
+            string sql = "SELECT Id, Title, Used, Favorite, Created FROM Clips Where Hash = @Hash";
+            if (Properties.Settings.Default.ReplaceDuplicates)
             {
-                byte[] binaryRichText = Encoding.Unicode.GetBytes(richText);
-                md5.TransformBlock(binaryRichText, 0, binaryRichText.Length, binaryRichText, 0);
-                byte[] binaryHtml = Encoding.Unicode.GetBytes(htmlText);
-                md5.TransformFinalBlock(binaryHtml, 0, binaryHtml.Length);
+                MD5 md5 = new MD5CryptoServiceProvider();
+                if (binaryBuffer != null)
+                    md5.TransformBlock(binaryBuffer, 0, binaryBuffer.Length, binaryBuffer, 0);
+                byte[] binaryText = Encoding.Unicode.GetBytes(plainText);
+                md5.TransformBlock(binaryText, 0, binaryText.Length, binaryText, 0);
+                if (Properties.Settings.Default.UseFormattingInDuplicateDetection || String.IsNullOrEmpty(plainText))
+                {
+                    byte[] binaryRichText = Encoding.Unicode.GetBytes(richText);
+                    md5.TransformBlock(binaryRichText, 0, binaryRichText.Length, binaryRichText, 0);
+                    byte[] binaryHtml = Encoding.Unicode.GetBytes(htmlText);
+                    md5.TransformFinalBlock(binaryHtml, 0, binaryHtml.Length);
+                }
+                else
+                {
+                    byte[] binaryType = Encoding.Unicode.GetBytes(typeText);
+                    md5.TransformFinalBlock(binaryType, 0, binaryType.Length);
+                }
+                hash = Convert.ToBase64String(md5.Hash);
+                SQLiteCommand commandSelect = new SQLiteCommand(sql, m_dbConnection);
+                commandSelect.Parameters.AddWithValue("@Hash", hash);
+                using (SQLiteDataReader reader = commandSelect.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        oldCurrentClipId = reader.GetInt32(reader.GetOrdinal("Id"));
+                        if (true
+                            && lastPastedClips.ContainsKey(oldCurrentClipId)
+                            && DateDiffMilliseconds(lastPastedClips[oldCurrentClipId], dtNow) < 1000) // Protection from automated return copy after we send paste. For example Word does so for html paste.
+                        {
+                            return;
+                        }
+                        used = GetNullableBoolFromSqlReader(reader, "Used");
+                        favorite = GetNullableBoolFromSqlReader(reader, "Favorite");
+                        clipTitle = reader.GetString(reader.GetOrdinal("Title"));
+                        sql = "DELETE FROM Clips Where Id = @Id";
+                        SQLiteCommand commandDelete = new SQLiteCommand(sql, m_dbConnection);
+                        if (true
+                            && oldCurrentClipId == LastId
+                            && msFromLastCapture > 100) // Protection from automated repeated copy. For example PuntoSwitcher does so.
+                        {
+                            lastClipWasMultiCaptured = true;
+                        }
+                        commandDelete.Parameters.AddWithValue("@Id", oldCurrentClipId);
+                        commandDelete.ExecuteNonQuery();
+                        RegisterClipIdChange(oldCurrentClipId, LastId + 1);
+                    }
+                }
             }
             else
             {
-                byte[] binaryType = Encoding.Unicode.GetBytes(typeText);
-                md5.TransformFinalBlock(binaryType, 0, binaryType.Length);
-            }
-            string hash = Convert.ToBase64String(md5.Hash);
-            string sql = "SELECT Id, Title, Used, Favorite, Created FROM Clips Where Hash = @Hash";
-            SQLiteCommand commandSelect = new SQLiteCommand(sql, m_dbConnection);
-            commandSelect.Parameters.AddWithValue("@Hash", hash);
-
-            int oldCurrentClipId = 0;
-            lastClipWasMultiCaptured = false;
-            using (SQLiteDataReader reader = commandSelect.ExecuteReader())
-            {
-                if (reader.Read())
-                {
-                    oldCurrentClipId = reader.GetInt32(reader.GetOrdinal("Id"));
-                    if (true
-                        && lastPastedClips.ContainsKey(oldCurrentClipId)
-                        && DateDiffMilliseconds(lastPastedClips[oldCurrentClipId], dtNow) < 1000) // Protection from automated return copy after we send paste. For example Word does so for html paste.
-                    {
-                        return;
-                    }
-                    used = GetNullableBoolFromSqlReader(reader, "Used");
-                    favorite = GetNullableBoolFromSqlReader(reader, "Favorite");
-                    clipTitle = reader.GetString(reader.GetOrdinal("Title"));
-                    sql = "DELETE FROM Clips Where Id = @Id";
-                    SQLiteCommand commandDelete = new SQLiteCommand(sql, m_dbConnection);
-                    if (true
-                        && oldCurrentClipId == LastId 
-                        && msFromLastCapture > 100) // Protection from automated repeated copy. For example PuntoSwitcher does so.
-                    {
-                        lastClipWasMultiCaptured = true;
-                    }
-                    commandDelete.Parameters.AddWithValue("@Id", oldCurrentClipId);
-                    commandDelete.ExecuteNonQuery();
-                    RegisterClipIdChange(oldCurrentClipId, LastId + 1);
-                }
+                Guid g = Guid.NewGuid();
+                hash = Convert.ToBase64String(g.ToByteArray());
             }
             LastId = LastId + 1;
 

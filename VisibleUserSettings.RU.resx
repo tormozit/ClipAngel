@@ -340,6 +340,12 @@
   <data name="ReadWindowTitlesDescription" xml:space="preserve">
     <value>Читать заголовки окон источников клипов. Отключение этой настройки может помочь избежать сбоев программы на некоторых системах.</value>
   </data>
+  <data name="ReplaceDuplicates" xml:space="preserve">
+    <value>Заменять дубликаты</value>
+  </data>
+  <data name="ReplaceDuplicatesDescription" xml:space="preserve">
+    <value>Держать клипы уникальными по содержанию. Заменять существующий дубликат клипа вместо создания нового.</value>
+  </data>
   <data name="RtfEditor" xml:space="preserve">
     <value>Приложение открытия файлов RTF</value>
   </data>

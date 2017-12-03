@@ -530,6 +530,14 @@ Generowanie obrazu zużywa moc procesora. Jeśli masz duże obciążenie proceso
           <source>Use native text formatting in duplicate detection. Else only plain text will be used for detecting duplicate of text clip</source>
           <target state="new">Use native text formatting in duplicate detection. Else only plain text will be used for detecting duplicate of text clip</target>
         </trans-unit>
+        <trans-unit id="ReplaceDuplicates" translate="yes" xml:space="preserve">
+          <source>Replace duplicates</source>
+          <target state="new">Replace duplicates</target>
+        </trans-unit>
+        <trans-unit id="ReplaceDuplicatesDescription" translate="yes" xml:space="preserve">
+          <source>Keep clips unique by content. Update existing dublicate clip instead of creating new.</source>
+          <target state="new">Keep clips unique by content. Update existing dublicate clip instead of creating new.</target>
+        </trans-unit>
       </group>
     </body>
   </file>
@@ -1543,8 +1551,8 @@ Generowanie obrazu zużywa moc procesora. Jeśli masz duże obciążenie proceso
           <target state="translated">Klip nie został przechwycony ze względu na błąd odczytu schowka</target>
         </trans-unit>
         <trans-unit id="VersionValue" translate="yes" xml:space="preserve">
-          <source>1.41</source>
-          <target state="new">1.41</target>
+          <source>1.42</source>
+          <target state="new">1.42</target>
         </trans-unit>
         <trans-unit id="TargetWindow" translate="yes" xml:space="preserve">
           <source>Target window</source>

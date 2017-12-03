@@ -656,5 +656,17 @@ namespace ClipAngel.Properties {
                 this["GlobalHotkeySwitchMonitoring"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool ReplaceDuplicates {
+            get {
+                return ((bool)(this["ReplaceDuplicates"]));
+            }
+            set {
+                this["ReplaceDuplicates"] = value;
+            }
+        }
     }
 }

@@ -331,6 +331,12 @@ Not appliable to HTML native formatting.</value>
   <data name="ReadWindowTitlesDescription" xml:space="preserve">
     <value>Read window titles from clip sources. Uncheck this setting to avoid crashes of program on some systems.</value>
   </data>
+  <data name="ReplaceDuplicates" xml:space="preserve">
+    <value>Replace duplicates</value>
+  </data>
+  <data name="ReplaceDuplicatesDescription" xml:space="preserve">
+    <value>Keep clips unique by content. Update existing dublicate clip instead of creating new.</value>
+  </data>
   <data name="RestoreCaretPositionOnFocusReturn" xml:space="preserve">
     <value>Restore caret position on focus return</value>
   </data>
