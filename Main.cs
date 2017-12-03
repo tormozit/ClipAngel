@@ -1094,11 +1094,11 @@ namespace ClipAngel
                     ImageControl.Image = image;
                     ImageControl.ZoomFitInside();
                 }
-                if (!autoSelectMatch)
-                    RestoreTextSelection(NewSelectionStart, NewSelectionLength);
                 allowTextPositionChangeUpdate = true;
                 if (autoSelectMatch)
                     UpdateSelectionPosition();
+                else
+                    RestoreTextSelection(NewSelectionStart, NewSelectionLength);
             }
             tableLayoutPanelData.SuspendLayout();
             UpdateClipButtons();
@@ -1233,11 +1233,15 @@ namespace ClipAngel
 
         private void SetRichTextboxSelection(int NewSelectionStart, int NewSelectionLength)
         {
+            bool oldAllowTextPositionChangeUpdate = allowTextPositionChangeUpdate;
+            allowTextPositionChangeUpdate = false;
             richTextBox.SelectionStart = NewSelectionStart;
             richTextBox.SelectionLength = NewSelectionLength;
             if (richTextBox.SelectionStart > 0 || richTextBox.SelectionLength > 0)
                 richTextBox.HideSelection = false; // slow
             richTextBox.ScrollToCaret();
+            allowTextPositionChangeUpdate = oldAllowTextPositionChangeUpdate;
+            richTextBox_SelectionChanged();
         }
 
         private void UpdateSelectionPosition()
