@@ -1097,7 +1097,8 @@ namespace ClipAngel
                     RestoreTextSelection(NewSelectionStart, NewSelectionLength);
                 allowTextPositionChangeUpdate = true;
                 UpdateSelectionPosition();
-                richTextBox.HideSelection = false; // slow
+
+                //richTextBox.HideSelection = false; // slow
             }
             tableLayoutPanelData.SuspendLayout();
             UpdateClipButtons();
@@ -1234,15 +1235,9 @@ namespace ClipAngel
         {
             richTextBox.SelectionStart = NewSelectionStart;
             richTextBox.SelectionLength = NewSelectionLength;
-            if (true
-                && richTextBox.HideSelection
-                && (false
-                    || richTextBox.SelectionStart > 0 
-                    || richTextBox.SelectionLength > 0))
-            {
-                richTextBox.HideSelection = false; // slow
-            }
+            richTextBox.HideSelection = true; // slow // Without this exeption in ScrollToCaret can be thrown
             richTextBox.ScrollToCaret();
+            richTextBox.HideSelection = false; // slow
         }
 
         private void UpdateSelectionPosition()
