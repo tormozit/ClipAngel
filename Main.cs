@@ -1457,13 +1457,13 @@ namespace ClipAngel
                 foreach (var word in array)
                 {
                     if (Properties.Settings.Default.SearchCaseSensitive)
-                        sqlFilter += " AND Text Like '%" + word + "%' ESCAPE '\\'";
+                        sqlFilter += " AND (Text Like '%" + word + "%' ESCAPE '\\' OR Title Like '%" + word + "%' ESCAPE '\\')";
                     else
-                        sqlFilter += " AND UPPER(Text) Like UPPER('%" + word + "%') ESCAPE '\\'";
+                        sqlFilter += " AND (UPPER(Text) Like UPPER('%" + word + "%') ESCAPE '\\' OR UPPER(Title) Like UPPER('%" + word + "%') ESCAPE '\\')";
                 }
                 filterOn = true;
                 if (Properties.Settings.Default.SearchIgnoreBigTexts)
-                    sqlFilter += " AND Chars < 100000";
+                    sqlFilter += " AND (Chars < 100000 OR type = 'img')";
             }
             if (TypeFilter.SelectedValue as string != "allTypes")
             {
