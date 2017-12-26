@@ -1552,8 +1552,8 @@ Generation of image consumes CPU. If you experience high CPU load, set lower val
           <target state="new">Clip was not captured due to clipboard read error</target>
         </trans-unit>
         <trans-unit id="VersionValue" translate="yes" xml:space="preserve">
-          <source>1.44</source>
-          <target state="new">1.44</target>
+          <source>1.45</source>
+          <target state="new">1.45</target>
         </trans-unit>
         <trans-unit id="TargetWindow" translate="yes" xml:space="preserve">
           <source>Target window</source>

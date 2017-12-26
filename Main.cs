@@ -1639,14 +1639,20 @@ namespace ClipAngel
             if (e.CloseReason == CloseReason.UserClosing)
             {
                 //this.SuspendLayout();
+                bool lastActSet = false;
+                if (lastActiveParentWindow != null)
+                    lastActSet = SetForegroundWindow(lastActiveParentWindow);
+                if (!lastActSet)
+                    //SetForegroundWindow(IntPtr.Zero); // This way focus was not lost!
+                    SetActiveWindow(IntPtr.Zero);
                 if (Properties.Settings.Default.FastWindowOpen)
                 {
-                    bool lastActSet = false;
-                    if (lastActiveParentWindow != null)
-                        lastActSet = SetForegroundWindow(lastActiveParentWindow);
-                    if (!lastActSet)
-                        //SetForegroundWindow(IntPtr.Zero); // This way focus was not lost!
-                        SetActiveWindow(IntPtr.Zero);
+                    //bool lastActSet = false;
+                    //if (lastActiveParentWindow != null)
+                    //    lastActSet = SetForegroundWindow(lastActiveParentWindow);
+                    //if (!lastActSet)
+                    //    //SetForegroundWindow(IntPtr.Zero); // This way focus was not lost!
+                    //    SetActiveWindow(IntPtr.Zero);
                     this.Top = maxWindowCoordForHiddenState;
                 }
                 else
