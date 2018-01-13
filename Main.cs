@@ -39,7 +39,8 @@ namespace ClipAngel
     enum PasteMethod
     {
         Standart,
-        PasteText,
+        Text,
+        Line,
         SendChars,
         File,
         Null
@@ -657,7 +658,7 @@ namespace ClipAngel
             }
             else if (hotkeyTitle == Properties.Settings.Default.GlobalHotkeyPasteText)
             {
-                SendPasteClipExpress(dataGridView.Rows[0], PasteMethod.PasteText);
+                SendPasteClipExpress(dataGridView.Rows[0], PasteMethod.Text);
             }
             else if (hotkeyTitle == Properties.Settings.Default.GlobalHotkeySwitchMonitoring)
             {
@@ -3096,7 +3097,7 @@ namespace ClipAngel
 
         private void pasteAsTextToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            SendPasteOfSelectedTextOrSelectedClips(PasteMethod.PasteText);
+            SendPasteOfSelectedTextOrSelectedClips(PasteMethod.Text);
         }
 
         private void SendPasteOfSelectedTextOrSelectedClips(PasteMethod pasteMethod = PasteMethod.Standart)
@@ -3129,6 +3130,11 @@ namespace ClipAngel
                 }
                 if (itemPasteMethod == PasteMethod.Null && !String.IsNullOrEmpty(agregateTextToPaste))
                 {
+                    if (pasteMethod == PasteMethod.Line)
+                    {
+                        agregateTextToPaste = agregateTextToPaste.Trim();
+                        agregateTextToPaste = Regex.Replace(agregateTextToPaste, "\\s+", " ");
+                    }
                     SetTextInClipboard(agregateTextToPaste, false);
                     SendPaste(pasteMethod);
                 }
@@ -3148,7 +3154,7 @@ namespace ClipAngel
                 //CaptureClipboardData();
             }
             else if (true
-                     && pasteMethod == PasteMethod.PasteText
+                     && pasteMethod == PasteMethod.Text
                      && !String.IsNullOrEmpty(selectedText))
             {
                 // With multipaste works incorrect
@@ -3480,7 +3486,7 @@ namespace ClipAngel
             }
             if (e.KeyCode == Keys.Enter)
             {
-                if (ProcessEnterKeyDown(e.Control))
+                if (ProcessEnterKeyDown(e.Control, e.Shift))
                     return;
                 e.Handled = true;
             }
@@ -3491,11 +3497,13 @@ namespace ClipAngel
             }
         }
 
-        private bool ProcessEnterKeyDown(bool isControlPressed)
+        private bool ProcessEnterKeyDown(bool isControlPressed, bool isShiftPressed)
         {
             PasteMethod pasteMethod;
-            if (isControlPressed)
-                pasteMethod = PasteMethod.PasteText;
+            if (isControlPressed && !isShiftPressed)
+                pasteMethod = PasteMethod.Text;
+            else if (isControlPressed && isShiftPressed)
+                pasteMethod = PasteMethod.Line;
             else
             {
                 //if (!pasteENTERToolStripMenuItem.Enabled)
@@ -4229,8 +4237,8 @@ namespace ClipAngel
                     // AngileSharp
                     var htmlParser = new HtmlParser();
                     var documentHtml = htmlParser.Parse(HtmlSource);
-                    IHtmlCollection<IElement> Refs = documentHtml.GetElementsByClassName("sfdl");
-                    string lastVersion = Refs[0].TextContent;
+                    IHtmlCollection<IElement> Refs = documentHtml.GetElementsByClassName("button download big-text green ");
+                    string lastVersion = ((AngleSharp.Dom.Html.IHtmlElement)(Refs[0])).Title;
 
                     // unsuccess to make it by MSHTML
                     //// MsHTML
@@ -5439,7 +5447,7 @@ namespace ClipAngel
                 Close();
             else if (e.KeyPressedCode == (int) Keys.Enter)
             {
-                ProcessEnterKeyDown(e.CtrlKeyPressed);
+                ProcessEnterKeyDown(e.CtrlKeyPressed, e.ShiftKeyPressed);
             }
         }
 
@@ -6128,6 +6136,11 @@ namespace ClipAngel
         private void openWindowToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ShowForPaste(false, false);
+        }
+
+        private void pasteLineToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SendPasteOfSelectedTextOrSelectedClips(PasteMethod.Line);
         }
     }
 }
