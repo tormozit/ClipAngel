@@ -1371,7 +1371,7 @@ namespace ClipAngel
             foreach (var word in array)
             {
                 mshtml.IHTMLTxtRange range = body.createTextRange();
-                if (colorIndex >= array.Length)
+                if (colorIndex >= _wordColors.Length)
                     colorIndex = 0;
                 Color wordColor = _wordColors[colorIndex];
                 colorIndex++;
