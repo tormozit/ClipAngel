@@ -205,9 +205,6 @@ Il sottomenu "Elenco" dispone di comandi per la selezione rapida</value>
   <data name="checkUpdateToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>178, 22</value>
   </data>
-  <data name="rtfMenuItemSelectAll.Text" xml:space="preserve">
-    <value>Seleziona tutti</value>
-  </data>
   <data name="StripLabelSize.ToolTipText" xml:space="preserve">
     <value>Dimensione totale di tutti i tipi di dati delle cattura in byte</value>
   </data>
@@ -334,9 +331,6 @@ L'URL verrà salvata nella cattura attuale e verrà copiata negli Appunti.</valu
   </data>
   <data name="deleteAllNonFavoriteToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>250, 22</value>
-  </data>
-  <data name="rtfMenuItemSelectAll.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+A</value>
   </data>
   <data name="toolStripMenuItemSearchWildcards.Text" xml:space="preserve">
     <value>"%" come qualsiasi sequenza di caratteri</value>
@@ -635,9 +629,6 @@ Le modifiche nel file temporaneo non verranno sincronizzate con la cattura!
   </data>
   <data name="moveUpToolStripMenuItem.ToolTipText" xml:space="preserve">
     <value>Sposta catture selezionate uno step in alto</value>
-  </data>
-  <data name="rtfMenuItemSelectAll.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
-    <value>209, 22</value>
   </data>
   <data name="copyToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>209, 22</value>

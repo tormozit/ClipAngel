@@ -205,9 +205,6 @@ Submenu "Lista" dispone de comandos para la selección rápida</value>
   <data name="checkUpdateToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>178, 22</value>
   </data>
-  <data name="rtfMenuItemSelectAll.Text" xml:space="preserve">
-    <value>Seleccionar todo</value>
-  </data>
   <data name="StripLabelSize.ToolTipText" xml:space="preserve">
     <value>Tamaño total de todos los tipos de datos de clip en bytes</value>
   </data>
@@ -334,9 +331,6 @@ Url se guardará en el clip actual y se copiará en el portapapeles.</value>
   </data>
   <data name="deleteAllNonFavoriteToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>250, 22</value>
-  </data>
-  <data name="rtfMenuItemSelectAll.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+A</value>
   </data>
   <data name="toolStripMenuItemSearchWildcards.Text" xml:space="preserve">
     <value>'%' como cualquier secuencia de caracteres</value>
@@ -635,9 +629,6 @@ Cambios en el archivo temporal no se sincronizan con el clip!
   </data>
   <data name="moveUpToolStripMenuItem.ToolTipText" xml:space="preserve">
     <value>Mover el clip actual un paso arriba</value>
-  </data>
-  <data name="rtfMenuItemSelectAll.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
-    <value>209, 22</value>
   </data>
   <data name="copyToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>209, 22</value>

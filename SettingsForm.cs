@@ -259,6 +259,16 @@ namespace ClipAngel
         }
     }
 
+    public class SoundFileNameEditor : FileNameEditor
+    {
+        protected override void InitializeDialog(OpenFileDialog openFileDialog)
+        {
+            base.InitializeDialog(openFileDialog);
+            openFileDialog.CheckFileExists = true;
+            openFileDialog.Filter = "Sound file|*.wav|All|*.*";
+        }
+    }
+
     public class ApplicationPathEditor : UITypeEditor
     {
         private OpenFileDialog ofd;
@@ -1047,8 +1057,8 @@ namespace ClipAngel
         public bool MonospacedFont { get; set; }
 
         [GlobalizedCategory("Other")]
-        [Editor(typeof(MyBoolEditor), typeof(UITypeEditor))]
-        public bool PlaySoundOnClipCapture { get; set; }
+        [Editor(typeof(SoundFileNameEditor), typeof(UITypeEditor))]
+        public string PlaySoundOnClipCapture { get; set; }
 
         [GlobalizedCategory("Other")]
         [EditorAttribute(typeof(DatabaseFileNameEditor), typeof(UITypeEditor))]

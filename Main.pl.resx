@@ -204,9 +204,6 @@ Podmenu "Lista" ma komendy dla szybkiego wyboru</value>
   <data name="checkUpdateToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>178, 22</value>
   </data>
-  <data name="rtfMenuItemSelectAll.Text" xml:space="preserve">
-    <value>Zaznacz wszystko</value>
-  </data>
   <data name="StripLabelSize.ToolTipText" xml:space="preserve">
     <value>Całkowity rozmiar wszystkich typów danych klipu w bajtach</value>
   </data>
@@ -333,9 +330,6 @@ Adres Url zostanie zapisany w bieżącym klipie i zostanie skopiowany do schowka
   </data>
   <data name="deleteAllNonFavoriteToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>250, 22</value>
-  </data>
-  <data name="rtfMenuItemSelectAll.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+A</value>
   </data>
   <data name="toolStripMenuItemSearchWildcards.Text" xml:space="preserve">
     <value>"%", jako dowolna sekwencja znaków</value>
@@ -634,9 +628,6 @@ Zmiany w pliku tymczasowym nie są synchronizowane z klipem!
   </data>
   <data name="moveUpToolStripMenuItem.ToolTipText" xml:space="preserve">
     <value>Przenosi bieżący klip o jeden w górę listy</value>
-  </data>
-  <data name="rtfMenuItemSelectAll.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
-    <value>209, 22</value>
   </data>
   <data name="copyToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>209, 22</value>

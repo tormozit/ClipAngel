@@ -1551,8 +1551,8 @@ Generowanie obrazu zużywa moc procesora. Jeśli masz duże obciążenie proceso
           <target state="translated">Klip nie został przechwycony ze względu na błąd odczytu schowka</target>
         </trans-unit>
         <trans-unit id="VersionValue" translate="yes" xml:space="preserve">
-          <source>1.45</source>
-          <target state="new">1.45</target>
+          <source>1.46</source>
+          <target state="new">1.46</target>
         </trans-unit>
         <trans-unit id="TargetWindow" translate="yes" xml:space="preserve">
           <source>Target window</source>
@@ -2302,10 +2302,6 @@ Podmenu "Lista" ma komendy dla szybkiego wyboru</target>
           <source>178, 22</source>
           <target state="needs-review-translation">178, 22</target>
         </trans-unit>
-        <trans-unit id="rtfMenuItemSelectAll.Text" translate="yes" xml:space="preserve">
-          <source>Select all</source>
-          <target state="translated">Zaznacz wszystko</target>
-        </trans-unit>
         <trans-unit id="StripLabelSize.ToolTipText" translate="yes" xml:space="preserve">
           <source>Total size of all data types of clip in bytes</source>
           <target state="translated">Całkowity rozmiar wszystkich typów danych klipu w bajtach</target>
@@ -2484,10 +2480,6 @@ Adres Url zostanie zapisany w bieżącym klipie i zostanie skopiowany do schowka
           <target state="needs-review-translation">250, 22</target>
           <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
-        <trans-unit id="rtfMenuItemSelectAll.ShortcutKeys" translate="yes" extype="System.Windows.Forms.Keys, System.Windows.Forms" xml:space="preserve">
-          <source>Ctrl+A</source>
-          <target state="needs-review-translation">Ctrl+A</target>
-        </trans-unit>
         <trans-unit id="toolStripMenuItemSearchWildcards.Text" translate="yes" xml:space="preserve">
           <source>"%" as any char sequence</source>
           <target state="translated">"%", jako dowolna sekwencja znaków</target>
@@ -2656,7 +2648,7 @@ Zmiany w pliku tymczasowym nie są synchronizowane z klipem!</target>
           <target state="needs-review-translation">Ctrl+F4</target>
         </trans-unit>
         <trans-unit id="contextMenuStripHtml.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
-          <source>210, 142</source>
+          <source>210, 164</source>
           <target state="needs-review-translation">210, 92</target>
           <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
@@ -2901,11 +2893,6 @@ Zmiany w pliku tymczasowym nie są synchronizowane z klipem!
         <trans-unit id="moveUpToolStripMenuItem.ToolTipText" translate="yes" xml:space="preserve">
           <source>Move selected clips one step up</source>
           <target state="needs-review-translation">Przenosi bieżący klip o jeden w górę listy</target>
-          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
-        </trans-unit>
-        <trans-unit id="rtfMenuItemSelectAll.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
-          <source>206, 22</source>
-          <target state="needs-review-translation">209, 22</target>
           <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="copyToolStripMenuItem.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
@@ -4264,7 +4251,7 @@ Zmiany w pliku tymczasowym nie są synchronizowane z klipem!</target>
           <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="contextMenuStripRtf.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
-          <source>207, 142</source>
+          <source>207, 120</source>
           <target state="needs-review-translation">210, 92</target>
           <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
@@ -4382,7 +4369,7 @@ Zmiany w pliku tymczasowym nie są synchronizowane z klipem!</target>
           <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="contextMenuStripDataGrid.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
-          <source>222, 268</source>
+          <source>222, 246</source>
           <target state="needs-review-translation">212, 202</target>
           <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>

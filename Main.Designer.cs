@@ -325,7 +325,6 @@ namespace ClipAngel
             this.rtfMenuItemOpenLink = new System.Windows.Forms.ToolStripMenuItem();
             this.copyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem6 = new System.Windows.Forms.ToolStripMenuItem();
-            this.rtfMenuItemSelectAll = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem23 = new System.Windows.Forms.ToolStripSeparator();
             this.addSelectedTextInFilterToolStripMenuRtf = new System.Windows.Forms.ToolStripMenuItem();
             this.setSelectedTextInFilterToolStripMenuRtf = new System.Windows.Forms.ToolStripMenuItem();
@@ -991,7 +990,6 @@ namespace ClipAngel
             this.rtfMenuItemOpenLink,
             this.copyToolStripMenuItem,
             this.toolStripMenuItem6,
-            this.rtfMenuItemSelectAll,
             this.toolStripMenuItem23,
             this.addSelectedTextInFilterToolStripMenuRtf,
             this.setSelectedTextInFilterToolStripMenuRtf});
@@ -1016,12 +1014,6 @@ namespace ClipAngel
             this.toolStripMenuItem6.Name = "toolStripMenuItem6";
             resources.ApplyResources(this.toolStripMenuItem6, "toolStripMenuItem6");
             this.toolStripMenuItem6.Click += new System.EventHandler(this.pasteAsTextToolStripMenuItem_Click);
-            // 
-            // rtfMenuItemSelectAll
-            // 
-            this.rtfMenuItemSelectAll.Name = "rtfMenuItemSelectAll";
-            resources.ApplyResources(this.rtfMenuItemSelectAll, "rtfMenuItemSelectAll");
-            this.rtfMenuItemSelectAll.Click += new System.EventHandler(this.rtfMenuItemSelectAll_Click);
             // 
             // toolStripMenuItem23
             // 
@@ -2231,7 +2223,6 @@ namespace ClipAngel
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn5;
         private System.Windows.Forms.ContextMenuStrip contextMenuStripRtf;
         private System.Windows.Forms.ToolStripMenuItem rtfMenuItemOpenLink;
-        private System.Windows.Forms.ToolStripMenuItem rtfMenuItemSelectAll;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
         private DataGridViewRichTextBoxColumn dataGridViewRichTextBoxColumn1;
         private System.Windows.Forms.ToolStripMenuItem showInTaskbarToolStripMenuItem;

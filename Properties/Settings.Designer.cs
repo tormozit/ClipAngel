@@ -539,10 +539,10 @@ namespace ClipAngel.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool PlaySoundOnClipCapture {
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string PlaySoundOnClipCapture {
             get {
-                return ((bool)(this["PlaySoundOnClipCapture"]));
+                return ((string)(this["PlaySoundOnClipCapture"]));
             }
             set {
                 this["PlaySoundOnClipCapture"] = value;

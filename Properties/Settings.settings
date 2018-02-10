@@ -131,8 +131,8 @@
     <Setting Name="SearchWildcards" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
-    <Setting Name="PlaySoundOnClipCapture" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">False</Value>
+    <Setting Name="PlaySoundOnClipCapture" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
     </Setting>
     <Setting Name="DatabaseFile" Type="System.String" Scope="User">
       <Value Profile="(Default)" />

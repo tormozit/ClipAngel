@@ -123,9 +123,6 @@
   <data name="titleDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
     <value>Τίτλος</value>
   </data>
-  <data name="rtfMenuItemSelectAll.Text" xml:space="preserve">
-    <value>Επιλογή</value>
-  </data>
   <data name="StripLabelCreated.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>110, 17</value>
   </data>
@@ -212,9 +209,6 @@
   </data>
   <data name="MarkFilter.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
     <value>12</value>
-  </data>
-  <data name="rtfMenuItemSelectAll.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+A</value>
   </data>
   <data name="toolStripMenuItemSearchWordsIndependently.Font" xml:space="preserve" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 9pt</value>
@@ -410,9 +404,6 @@
   </data>
   <data name="toolStripMenuItem7.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>211, 22</value>
-  </data>
-  <data name="rtfMenuItemSelectAll.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
-    <value>209, 22</value>
   </data>
   <data name="copyToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>209, 22</value>

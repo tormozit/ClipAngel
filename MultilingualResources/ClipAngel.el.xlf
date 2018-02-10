@@ -480,8 +480,8 @@
           <target state="new">Clip was not captured due to clipboard read error</target>
         </trans-unit>
         <trans-unit id="VersionValue" translate="yes" xml:space="preserve">
-          <source>1.45</source>
-          <target state="new">1.45</target>
+          <source>1.46</source>
+          <target state="new">1.46</target>
         </trans-unit>
         <trans-unit id="TargetWindow" translate="yes" xml:space="preserve">
           <source>Target window</source>
@@ -2280,10 +2280,6 @@ Submenu "List" has commands for quick selection</target>
           <source>ImageSample</source>
           <target state="new">ImageSample</target>
         </trans-unit>
-        <trans-unit id="rtfMenuItemSelectAll.Text" translate="yes" xml:space="preserve">
-          <source>Select all</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Επιλογή</target>
-        </trans-unit>
         <trans-unit id="StripLabelSize.ToolTipText" translate="yes" xml:space="preserve">
           <source>Total size of all data types of clip in bytes</source>
           <target state="new">Total size of all data types of clip in bytes</target>
@@ -2447,10 +2443,6 @@ Url will be saved in current clip and will be copied to clipboard.</target>
         <trans-unit id="MarkFilter.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
           <source>12</source>
           <target state="needs-review-translation">12</target>
-        </trans-unit>
-        <trans-unit id="rtfMenuItemSelectAll.ShortcutKeys" translate="yes" extype="System.Windows.Forms.Keys, System.Windows.Forms" xml:space="preserve">
-          <source>Ctrl+A</source>
-          <target state="needs-review-translation">Ctrl+A</target>
         </trans-unit>
         <trans-unit id="toolStripMenuItemSearchWordsIndependently.Font" translate="yes" extype="System.Drawing.Font, System.Drawing" xml:space="preserve">
           <source>Segoe UI, 9pt</source>
@@ -2628,7 +2620,7 @@ Changes in temp file are not synchronized with clip!</target>
           <target state="needs-review-translation">Ctrl+F4</target>
         </trans-unit>
         <trans-unit id="contextMenuStripHtml.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
-          <source>210, 142</source>
+          <source>210, 164</source>
           <target state="needs-review-translation">210, 92</target>
           <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
@@ -2857,11 +2849,6 @@ Changes in temp file are not synchronized with clip!
         <trans-unit id="moveUpToolStripMenuItem.ToolTipText" translate="yes" xml:space="preserve">
           <source>Move selected clips one step up</source>
           <target state="new">Move selected clips one step up</target>
-        </trans-unit>
-        <trans-unit id="rtfMenuItemSelectAll.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
-          <source>206, 22</source>
-          <target state="needs-review-translation">209, 22</target>
-          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="toolStripUrlCopyAll.Text" translate="yes" xml:space="preserve">
           <source>Copy all text</source>
@@ -5308,7 +5295,7 @@ When ON and "Fast window open" OFF, window will be shown in taskbar if visible.
           <target state="new">Delete selected non favorite clips from list. Real deletion is performed on database close.</target>
         </trans-unit>
         <trans-unit id="contextMenuStripRtf.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
-          <source>207, 142</source>
+          <source>207, 120</source>
           <target state="needs-review-translation">210, 92</target>
           <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
@@ -5430,7 +5417,7 @@ When ON and "Fast window open" OFF, window will be shown in taskbar if visible.
           <target state="needs-review-translation">False</target>
         </trans-unit>
         <trans-unit id="contextMenuStripDataGrid.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
-          <source>222, 268</source>
+          <source>222, 246</source>
           <target state="needs-review-translation">212, 202</target>
           <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>

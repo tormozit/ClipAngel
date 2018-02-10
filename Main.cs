@@ -2083,8 +2083,18 @@ namespace ClipAngel
                 notifyIcon.ShowBalloonTip(2000, Application.ProductName, message, ToolTipIcon.Info);
                 return;
             }
-            if (Properties.Settings.Default.PlaySoundOnClipCapture)
-                SystemSounds.Beep.Play();
+            if (!String.IsNullOrEmpty(Properties.Settings.Default.PlaySoundOnClipCapture))
+            {
+                string soundFileName = Properties.Settings.Default.PlaySoundOnClipCapture;
+                System.Media.SoundPlayer player = new System.Media.SoundPlayer(soundFileName);
+                try
+                {
+                    player.Play();
+                }
+                catch
+                {
+                }
+            }
             int oldCurrentClipId = 0;
             lastClipWasMultiCaptured = false;
             DateTime created = DateTime.Now;
@@ -2545,6 +2555,11 @@ namespace ClipAngel
             }
             if (type == "img" && !onlySelectedPlainText)
             {
+                StringCollection fileNameCollection = new StringCollection();
+                string fileEditor = "";
+                string fileName = GetClipTempFile(out fileEditor, rowReader);
+                fileNameCollection.Add(fileName);
+                dto.SetFileDropList(fileNameCollection);
                 Image image = GetImageFromBinary(binary);
                 dto.SetImage(image);
                 //MemoryStream ms = new MemoryStream();
@@ -5152,6 +5167,11 @@ namespace ClipAngel
         {
             if (!allowTextPositionChangeUpdate)
                 return;
+            if (richTextBox.SelectionStart + richTextBox.SelectionLength > clipRichTextLength)
+            {
+                richTextBox.Select(richTextBox.SelectionStart, clipRichTextLength - richTextBox.SelectionStart);
+                return;
+            }
             selectionStart = richTextBox.SelectionStart;
             if (selectionStart > richTextBox.Text.Length)
                 selectionStart = richTextBox.Text.Length;
@@ -5524,14 +5544,6 @@ namespace ClipAngel
         {
             string href = lastClickedHtmlElement.GetAttribute("href");
             Process.Start(href);
-        }
-
-        private void rtfMenuItemSelectAll_Click(object sender, EventArgs e)
-        {
-            if (EditMode)
-                richTextBox.SelectAll();
-            else
-                richTextBox.Select(0, clipRichTextLength);
         }
 
         private void showInTaskbarToolStripMenuItem_Click(object sender, EventArgs e)

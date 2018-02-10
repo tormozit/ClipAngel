@@ -205,9 +205,6 @@
   <data name="checkUpdateToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>178, 22</value>
   </data>
-  <data name="rtfMenuItemSelectAll.Text" xml:space="preserve">
-    <value>सभी चुनें</value>
-  </data>
   <data name="StripLabelSize.ToolTipText" xml:space="preserve">
     <value>बाइट्स में क्लिप के सभी प्रकार के डेटा का कुल आकार</value>
   </data>
@@ -334,9 +331,6 @@ Url वर्तमान क्लिप में सहेजे जाएँ
   </data>
   <data name="deleteAllNonFavoriteToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>250, 22</value>
-  </data>
-  <data name="rtfMenuItemSelectAll.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+A</value>
   </data>
   <data name="toolStripMenuItemSearchWildcards.Text" xml:space="preserve">
     <value>किसी भी वर्ण अनुक्रम के रूप में "%"</value>
@@ -635,9 +629,6 @@ Url वर्तमान क्लिप में सहेजे जाएँ
   </data>
   <data name="moveUpToolStripMenuItem.ToolTipText" xml:space="preserve">
     <value>वर्तमान क्लिप एक कदम ऊपर ले जाएँ</value>
-  </data>
-  <data name="rtfMenuItemSelectAll.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
-    <value>209, 22</value>
   </data>
   <data name="copyToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>209, 22</value>
