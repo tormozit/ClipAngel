@@ -169,6 +169,11 @@ namespace ClipAngel
         {
             this.UserSettingsPath = UserSettingsPath;
             this.PortableMode = PortableMode;
+            if (Properties.Settings.Default.WindowPositionX != 0 || Properties.Settings.Default.WindowPositionY != 0)
+            {
+                this.Left = Properties.Settings.Default.WindowPositionX;
+                this.Top = Properties.Settings.Default.WindowPositionY;
+            }
 
             //// Disable window animation on minimize and restore. Failed
             //const int DWMWA_TRANSITIONS_FORCEDISABLED = 3;
@@ -4391,6 +4396,9 @@ namespace ClipAngel
         private void Main_FormClosed(object sender, FormClosedEventArgs e)
         {
             this.Visible = false;
+            Properties.Settings.Default.WindowPositionX = this.Left;
+            Properties.Settings.Default.WindowPositionY = this.Top;
+
             //Properties.Settings.Default.Save(); // Not all properties were saved here. For example ShowInTaskbar was not saved
             RemoveClipboardFormatListener(this.Handle);
             UnhookWinEvent(HookChangeActiveWindow);

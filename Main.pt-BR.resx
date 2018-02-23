@@ -2846,4 +2846,7 @@ adicionado à lista de ignorar, que pode ser editado na janela de configuraçõe
   <metadata name="cultureManager3.TrayLocation" xml:space="preserve" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>600, 57</value>
   </metadata>
+  <metadata name="cultureManager4.TrayLocation" xml:space="preserve" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>745, 57</value>
+  </metadata>
 </root>

@@ -1555,8 +1555,8 @@ Generation of image consumes CPU. If you experience high CPU load, set lower val
           <target state="new">Clip was not captured due to clipboard read error</target>
         </trans-unit>
         <trans-unit id="VersionValue" translate="yes" xml:space="preserve">
-          <source>1.46</source>
-          <target state="new">1.46</target>
+          <source>1.47</source>
+          <target state="new">1.47</target>
         </trans-unit>
         <trans-unit id="TargetWindow" translate="yes" xml:space="preserve">
           <source>Target window</source>
@@ -2653,7 +2653,7 @@ Open-System-Menü, Clip-Datei in der gewählten Anwendung zu öffnen.
           <target state="needs-review-translation">Ctrl+F4</target>
         </trans-unit>
         <trans-unit id="contextMenuStripHtml.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
-          <source>210, 164</source>
+          <source>210, 142</source>
           <target state="needs-review-translation">210, 92</target>
           <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
@@ -4188,8 +4188,9 @@ Open-Clip-Datei in Verzug Anwendung.
           <target state="needs-review-translation">None</target>
         </trans-unit>
         <trans-unit id="$this.StartPosition" translate="yes" extype="System.Windows.Forms.FormStartPosition, System.Windows.Forms" xml:space="preserve">
-          <source>CenterScreen</source>
+          <source>Manual</source>
           <target state="needs-review-translation">CenterScreen</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="toolStripMenuItem4.ShortcutKeys" translate="yes" extype="System.Windows.Forms.Keys, System.Windows.Forms" xml:space="preserve">
           <source>Del</source>
@@ -6824,6 +6825,10 @@ Sorting is kept until clip capture.</target>
         <trans-unit id="cultureManager3.TrayLocation" translate="yes" xml:space="preserve" extype="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" extradata="metadata">
           <source>600, 57</source>
           <target state="needs-review-translation">600, 57</target>
+        </trans-unit>
+        <trans-unit id="cultureManager4.TrayLocation" translate="yes" xml:space="preserve" extype="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" extradata="metadata">
+          <source>745, 57</source>
+          <target state="needs-review-translation">745, 57</target>
         </trans-unit>
       </group>
     </body>

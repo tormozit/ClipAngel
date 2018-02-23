@@ -269,7 +269,7 @@ namespace ClipAngel
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.toolStripBottom = new System.Windows.Forms.ToolStrip();
             this.toolStripButtonClearFilter = new System.Windows.Forms.ToolStripButton();
@@ -472,6 +472,7 @@ namespace ClipAngel
             this.dataGridViewImageColumn4 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewRichTextBoxColumn2 = new ClipAngel.DataGridViewRichTextBoxColumn();
             this.dataGridViewImageColumn5 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.cultureManager4 = new Infralution.Localization.CultureManager(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -746,8 +747,8 @@ namespace ClipAngel
             // 
             // VisualWeight
             // 
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Green;
-            this.VisualWeight.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Green;
+            this.VisualWeight.DefaultCellStyle = dataGridViewCellStyle2;
             resources.ApplyResources(this.VisualWeight, "VisualWeight");
             this.VisualWeight.Name = "VisualWeight";
             this.VisualWeight.ReadOnly = true;
@@ -2069,6 +2070,10 @@ namespace ClipAngel
             this.dataGridViewImageColumn5.Name = "dataGridViewImageColumn5";
             this.dataGridViewImageColumn5.ReadOnly = true;
             // 
+            // cultureManager4
+            // 
+            this.cultureManager4.ManagedControl = this;
+            // 
             // Main
             // 
             this.AllowDrop = true;
@@ -2322,6 +2327,7 @@ namespace ClipAngel
         private System.Windows.Forms.ToolStripMenuItem pasteLineToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem24;
         private Infralution.Localization.CultureManager cultureManager3;
+        private Infralution.Localization.CultureManager cultureManager4;
     }
 }
 

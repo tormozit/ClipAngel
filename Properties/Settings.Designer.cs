@@ -668,5 +668,29 @@ namespace ClipAngel.Properties {
                 this["ReplaceDuplicates"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int WindowPositionX {
+            get {
+                return ((int)(this["WindowPositionX"]));
+            }
+            set {
+                this["WindowPositionX"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int WindowPositionY {
+            get {
+                return ((int)(this["WindowPositionY"]));
+            }
+            set {
+                this["WindowPositionY"] = value;
+            }
+        }
     }
 }
