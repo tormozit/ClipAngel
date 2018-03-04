@@ -1555,8 +1555,8 @@ Generation of image consumes CPU. If you experience high CPU load, set lower val
           <target state="new">Clip was not captured due to clipboard read error</target>
         </trans-unit>
         <trans-unit id="VersionValue" translate="yes" xml:space="preserve">
-          <source>1.47</source>
-          <target state="new">1.47</target>
+          <source>1.48</source>
+          <target state="new">1.48</target>
         </trans-unit>
         <trans-unit id="TargetWindow" translate="yes" xml:space="preserve">
           <source>Target window</source>
@@ -6864,11 +6864,12 @@ Sorting is kept until clip capture.</target>
           <target state="needs-review-translation">Microsoft Sans Serif, 9.75pt</target>
         </trans-unit>
         <trans-unit id="labelTip.Location" translate="yes" xml:space="preserve" extype="System.Drawing.Point, System.Drawing">
-          <source>2, 64</source>
+          <source>2, 53</source>
           <target state="needs-review-translation">2, 64</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="labelTip.Size" translate="yes" xml:space="preserve" extype="System.Drawing.Size, System.Drawing">
-          <source>371, 71</source>
+          <source>371, 101</source>
           <target state="needs-review-translation">322, 71</target>
           <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
@@ -6877,8 +6878,12 @@ Sorting is kept until clip capture.</target>
           <target state="needs-review-translation">1</target>
         </trans-unit>
         <trans-unit id="labelTip.Text" translate="yes" xml:space="preserve">
-          <source>Use hotkey <it id="1" pos="open">&lt;Hotkey&gt;</it> to open ClipAngel from any program. Then select and paste desired clip by double click or ENTER.</source>
-          <target state="new">Use hotkey <it id="1" pos="open">&lt;Hotkey&gt;</it> to open ClipAngel from any program. Then select and paste desired clip by double click or ENTER.</target>
+          <source>Hotkey <it id="1" pos="open">&lt;Hotkey&gt;</it> opens ClipAngel from any program. Then select and paste desired clip by double click or ENTER.
+
+To launch program on user logon turn on autostart in settings.</source>
+          <target state="new">Hotkey <it id="1" pos="open">&lt;Hotkey&gt;</it> opens ClipAngel from any program. Then select and paste desired clip by double click or ENTER.
+
+To launch program on user logon turn on autostart in settings.</target>
         </trans-unit>
         <trans-unit id="pictureBox1.Location" translate="yes" xml:space="preserve" extype="System.Drawing.Point, System.Drawing">
           <source>169, 12</source>
@@ -7987,6 +7992,10 @@ Sorting is kept until clip capture.</target>
         wAAAAf/////AAAAB/////8AAAAH/////4AAAA//////gAAAD/////+AAAAP/////8AAAB//////4AAAP
         //////gAAA///////AAAH//////+AAA///////+AAP///////+AD/////////////////////////w==
 </target>
+        </trans-unit>
+        <trans-unit id="$this.Language" translate="yes" xml:space="preserve" extype="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" extradata="metadata">
+          <source>ru</source>
+          <target state="needs-review-translation">ru</target>
         </trans-unit>
       </group>
     </body>

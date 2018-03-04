@@ -2560,11 +2560,13 @@ namespace ClipAngel
             }
             if (type == "img" && !onlySelectedPlainText)
             {
-                StringCollection fileNameCollection = new StringCollection();
-                string fileEditor = "";
-                string fileName = GetClipTempFile(out fileEditor, rowReader);
-                fileNameCollection.Add(fileName);
-                dto.SetFileDropList(fileNameCollection);
+                //// This way many applications will prefer file instead of image format
+                //StringCollection fileNameCollection = new StringCollection();
+                //string fileEditor = "";
+                //string fileName = GetClipTempFile(out fileEditor, rowReader);
+                //fileNameCollection.Add(fileName);
+                //dto.SetFileDropList(fileNameCollection);
+
                 Image image = GetImageFromBinary(binary);
                 dto.SetImage(image);
                 //MemoryStream ms = new MemoryStream();
