@@ -480,8 +480,8 @@
           <target state="new">Clip was not captured due to clipboard read error</target>
         </trans-unit>
         <trans-unit id="VersionValue" translate="yes" xml:space="preserve">
-          <source>1.48</source>
-          <target state="new">1.48</target>
+          <source>1.49</source>
+          <target state="new">1.49</target>
         </trans-unit>
         <trans-unit id="TargetWindow" translate="yes" xml:space="preserve">
           <source>Target window</source>
@@ -912,16 +912,16 @@ Key press will be processed by the window. </target>
           <target state="new">Hotkey to open window with reset</target>
         </trans-unit>
         <trans-unit id="GlobalHotkeyOpenLastDescription" translate="yes" xml:space="preserve">
-          <source>Use this hot key in any program to open ClipAngel window, clear filters and select last captured clip. Press again to close the window.</source>
-          <target state="new">Use this hot key in any program to open ClipAngel window, clear filters and select last captured clip. Press again to close the window.</target>
+          <source>Use this hot key in any program to open ClipAngel window, clear filters and select last clip. Press again to close the window.</source>
+          <target state="new">Use this hot key in any program to open ClipAngel window, clear filters and select last clip. Press again to close the window.</target>
         </trans-unit>
         <trans-unit id="GlobalHotkeyPasteText" translate="yes" xml:space="preserve">
           <source>Hotkey to paste plain text</source>
           <target state="new">Hotkey to paste plain text</target>
         </trans-unit>
         <trans-unit id="GlobalHotkeyPasteTextDescription" translate="yes" xml:space="preserve">
-          <source>Use this hot key in any program to paste last captured clip as plain text</source>
-          <target state="new">Use this hot key in any program to paste last captured clip as plain text</target>
+          <source>Use this hot key in any program to paste last clip as plain text</source>
+          <target state="new">Use this hot key in any program to paste last clip as plain text</target>
         </trans-unit>
         <trans-unit id="HistoryDepthDays" translate="yes" xml:space="preserve">
           <source>History depth days</source>
@@ -1210,6 +1210,14 @@ Generation of image consumes CPU. If you experience high CPU load, set lower val
         <trans-unit id="ReplaceDuplicatesDescription" translate="yes" xml:space="preserve">
           <source>Keep clips unique by content. Update existing dublicate clip instead of creating new.</source>
           <target state="new">Keep clips unique by content. Update existing dublicate clip instead of creating new.</target>
+        </trans-unit>
+        <trans-unit id="GlobalHotkeySimulateInput" translate="yes" xml:space="preserve">
+          <source>Hotkey to simulate keyboard input</source>
+          <target state="new">Hotkey to simulate keyboard input</target>
+        </trans-unit>
+        <trans-unit id="GlobalHotkeySimulateInputDescription" translate="yes" xml:space="preserve">
+          <source>Use this hot key in any program to simulate keyboard input of last clip</source>
+          <target state="new">Use this hot key in any program to simulate keyboard input of last clip</target>
         </trans-unit>
       </group>
     </body>

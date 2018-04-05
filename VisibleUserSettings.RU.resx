@@ -228,13 +228,19 @@
   </data>
   <data name="GlobalHotkeyOpenLastDescription" xml:space="preserve">
     <value>Эта горячая клавиша при нажатии в любой программе откроет окно Clip Angel, 
-сбросит фильтры и выберет последний захваченный клип. Повторное нажатие закроет окно.</value>
+сбросит фильтры и выберет последний клип. Повторное нажатие закроет окно.</value>
   </data>
   <data name="GlobalHotkeyPasteText" xml:space="preserve">
     <value>Горячая клавиша вставки простого текста</value>
   </data>
   <data name="GlobalHotkeyPasteTextDescription" xml:space="preserve">
-    <value>Эта горячая клавиша при нажатии в любой программе вставит последний захваченный клип в виде простого текста</value>
+    <value>Эта горячая клавиша при нажатии в любой программе вставит последний клип в виде простого текста</value>
+  </data>
+  <data name="GlobalHotkeySimulateInput" xml:space="preserve">
+    <value>Горячая клавиша эмуляции ввода текста</value>
+  </data>
+  <data name="GlobalHotkeySimulateInputDescription" xml:space="preserve">
+    <value>Эта горячая клавиша при нажатии в любой программе эмулирует ввод текста последнего клипа</value>
   </data>
   <data name="GlobalHotkeySwitchMonitoring" xml:space="preserve">
     <value>Горячая клавиша переключения слежения за буфером</value>

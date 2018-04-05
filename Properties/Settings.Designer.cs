@@ -692,5 +692,17 @@ namespace ClipAngel.Properties {
                 this["WindowPositionY"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("No")]
+        public string GlobalHotkeySimulateInput {
+            get {
+                return ((string)(this["GlobalHotkeySimulateInput"]));
+            }
+            set {
+                this["GlobalHotkeySimulateInput"] = value;
+            }
+        }
     }
 }

@@ -222,13 +222,19 @@ Leave blank to use standart database file "db.sqlite" in application user settin
     <value>Hotkey to open window with reset</value>
   </data>
   <data name="GlobalHotkeyOpenLastDescription" xml:space="preserve">
-    <value>Use this hot key in any program to open ClipAngel window, clear filters and select last captured clip. Press again to close the window.</value>
+    <value>Use this hot key in any program to open ClipAngel window, clear filters and select last clip. Press again to close the window.</value>
   </data>
   <data name="GlobalHotkeyPasteText" xml:space="preserve">
     <value>Hotkey to paste plain text</value>
   </data>
   <data name="GlobalHotkeyPasteTextDescription" xml:space="preserve">
-    <value>Use this hot key in any program to paste last captured clip as plain text</value>
+    <value>Use this hot key in any program to paste last clip as plain text</value>
+  </data>
+  <data name="GlobalHotkeySimulateInput" xml:space="preserve">
+    <value>Hotkey to simulate keyboard input</value>
+  </data>
+  <data name="GlobalHotkeySimulateInputDescription" xml:space="preserve">
+    <value>Use this hot key in any program to simulate keyboard input of last clip</value>
   </data>
   <data name="GlobalHotkeySwitchMonitoring" xml:space="preserve">
     <value>Hotkey to switch clipboard monitoring</value>
