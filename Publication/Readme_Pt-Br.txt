@@ -5,5 +5,3 @@ Nenhuma outra ação é requerida, além dos requisitos do sistema para instalação d
 ClipAngelPortable.bat ou parâmetro / p - executado o programa no modo portátil, configurações e banco de dados padrão serão carregados / salvos no mesmo catálogo, onde o programa é iniciado.
 
 O parâmetro / m - executa o aplicativo no modo minimizado.
-
-Para liberar espaço em disco, você pode excluir catálogos com traduções de UI desnecessárias (nomeadas por localidades).

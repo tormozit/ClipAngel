@@ -741,6 +741,7 @@ namespace ClipAngel
             IgnoreExclusiveFormatClipCapture = Properties.Settings.Default.IgnoreExclusiveFormatClipCapture;
             //RestoreCaretPositionOnFocusReturn = Properties.Settings.Default.RestoreCaretPositionOnFocusReturn;
             GlobalHotkeyPasteText = Properties.Settings.Default.GlobalHotkeyPasteText;
+            GlobalHotkeySimulateInput = Properties.Settings.Default.GlobalHotkeySimulateInput;
             UseFormattingInDuplicateDetection = Properties.Settings.Default.UseFormattingInDuplicateDetection;
             IgnoreApplicationsClipCapture = Properties.Settings.Default.IgnoreApplicationsClipCapture;
             CopyTextInAnyWindowOnCTRLF3 = Properties.Settings.Default.CopyTextInAnyWindowOnCTRLF3;
@@ -814,6 +815,7 @@ namespace ClipAngel
             Properties.Settings.Default.IgnoreExclusiveFormatClipCapture = IgnoreExclusiveFormatClipCapture;
             //Properties.Settings.Default.RestoreCaretPositionOnFocusReturn = RestoreCaretPositionOnFocusReturn;
             Properties.Settings.Default.GlobalHotkeyPasteText = GlobalHotkeyPasteText;
+            Properties.Settings.Default.GlobalHotkeySimulateInput = GlobalHotkeySimulateInput;
             Properties.Settings.Default.UseFormattingInDuplicateDetection = UseFormattingInDuplicateDetection;
             Properties.Settings.Default.IgnoreApplicationsClipCapture = IgnoreApplicationsClipCapture;
             Properties.Settings.Default.CopyTextInAnyWindowOnCTRLF3 = CopyTextInAnyWindowOnCTRLF3;
@@ -943,6 +945,11 @@ namespace ClipAngel
         [TypeConverterAttribute(typeof(HotkeyConverter))]
         [EditorAttribute(typeof(HotkeyEditor), typeof(UITypeEditor))]
         public string GlobalHotkeyPasteText { get; set; }
+
+        [GlobalizedCategory("Hotkeys")]
+        [TypeConverterAttribute(typeof(HotkeyConverter))]
+        [EditorAttribute(typeof(HotkeyEditor), typeof(UITypeEditor))]
+        public string GlobalHotkeySimulateInput { get; set; }
 
         [GlobalizedCategory("Hotkeys")]
         [TypeConverterAttribute(typeof(HotkeyConverter))]

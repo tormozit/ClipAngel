@@ -577,6 +577,8 @@ namespace ClipAngel
                 keyboardHook.RegisterHotKey(Modifiers, Key);
             if (ReadHotkeyFromText(Properties.Settings.Default.GlobalHotkeyPasteText, out Modifiers, out Key))
                 keyboardHook.RegisterHotKey(Modifiers, Key);
+            if (ReadHotkeyFromText(Properties.Settings.Default.GlobalHotkeySimulateInput, out Modifiers, out Key))
+                keyboardHook.RegisterHotKey(Modifiers, Key);
             if (ReadHotkeyFromText(Properties.Settings.Default.GlobalHotkeySwitchMonitoring, out Modifiers, out Key))
                 keyboardHook.RegisterHotKey(Modifiers, Key);
             if (Properties.Settings.Default.CopyTextInAnyWindowOnCTRLF3 && ReadHotkeyFromText("Control + F3", out Modifiers, out Key))
@@ -664,6 +666,10 @@ namespace ClipAngel
             else if (hotkeyTitle == Properties.Settings.Default.GlobalHotkeyPasteText)
             {
                 SendPasteClipExpress(dataGridView.Rows[0], PasteMethod.Text);
+            }
+            else if (hotkeyTitle == Properties.Settings.Default.GlobalHotkeySimulateInput)
+            {
+                SendPasteClipExpress(dataGridView.Rows[0], PasteMethod.SendChars);
             }
             else if (hotkeyTitle == Properties.Settings.Default.GlobalHotkeySwitchMonitoring)
             {

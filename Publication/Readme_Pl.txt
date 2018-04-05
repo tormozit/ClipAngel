@@ -5,5 +5,3 @@
 ClipAngelPortable.bat lub parametr /p - uruchamia program w trybie przenośnym, ustawienia i standartowa baza danych będzie załadowana/zapisana w tym samym katalogu z którego startuje program.
 
 Parameter /m - uruchamia program w trybie zminilizowanym.
-
-Aby zwolnić miejsce na dysku, usuń katalogi z niepotrzebnymi tłumaczeniami interfejsów użytkownika (nazwane według skrótu kraju np. de, fr ...itd).

@@ -471,7 +471,7 @@ La pressione del tasto verrà gestita dalla finestra. </target>
           <target state="translated">Tasto di scelta rapida per aprire la finestra con ripristino</target>
         </trans-unit>
         <trans-unit id="GlobalHotkeyOpenLastDescription" translate="yes" xml:space="preserve">
-          <source>Use this hot key in any program to open ClipAngel window, clear filters and select last captured clip. Press again to close the window.</source>
+          <source>Use this hot key in any program to open ClipAngel window, clear filters and select last clip. Press again to close the window.</source>
           <target state="needs-review-translation">Usa questo tasto di scelta rapida in qualsiasi programma per aprire la finestra di Clip Angel, azzerare i filtri e selezionare l'ultima cattura. Premi nuovamente per chiudere la finestra.</target>
           <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
@@ -480,8 +480,9 @@ La pressione del tasto verrà gestita dalla finestra. </target>
           <target state="translated">Tasto di scelta rapida per incollare testo normale</target>
         </trans-unit>
         <trans-unit id="GlobalHotkeyPasteTextDescription" translate="yes" xml:space="preserve">
-          <source>Use this hot key in any program to paste last captured clip as plain text</source>
-          <target state="translated">Usa questo tasto di scelta rapida in qualsiasi programma per incollare ultimo cattura come testo normale</target>
+          <source>Use this hot key in any program to paste last clip as plain text</source>
+          <target state="needs-review-translation">Usa questo tasto di scelta rapida in qualsiasi programma per incollare ultimo cattura come testo normale</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="HistoryDepthDays" translate="yes" xml:space="preserve">
           <source>History depth days</source>
@@ -777,6 +778,14 @@ La generazione dell'immagine consuma risorse della CPU. Se verifichi problemi di
         <trans-unit id="ReplaceDuplicatesDescription" translate="yes" xml:space="preserve">
           <source>Keep clips unique by content. Update existing dublicate clip instead of creating new.</source>
           <target state="new">Keep clips unique by content. Update existing dublicate clip instead of creating new.</target>
+        </trans-unit>
+        <trans-unit id="GlobalHotkeySimulateInput" translate="yes" xml:space="preserve">
+          <source>Hotkey to simulate keyboard input</source>
+          <target state="new">Hotkey to simulate keyboard input</target>
+        </trans-unit>
+        <trans-unit id="GlobalHotkeySimulateInputDescription" translate="yes" xml:space="preserve">
+          <source>Use this hot key in any program to simulate keyboard input of last clip</source>
+          <target state="new">Use this hot key in any program to simulate keyboard input of last clip</target>
         </trans-unit>
       </group>
     </body>
@@ -1555,8 +1564,8 @@ La generazione dell'immagine consuma risorse della CPU. Se verifichi problemi di
           <target state="translated">La cattura non è stata effettuata a causa di un errore nella lettura degli Appunti</target>
         </trans-unit>
         <trans-unit id="VersionValue" translate="yes" xml:space="preserve">
-          <source>1.48</source>
-          <target state="new">1.48</target>
+          <source>1.49</source>
+          <target state="new">1.49</target>
         </trans-unit>
         <trans-unit id="TargetWindow" translate="yes" xml:space="preserve">
           <source>Target window</source>

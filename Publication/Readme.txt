@@ -6,6 +6,5 @@ ClipAngelPortable.bat or parameter /p - runs application in portable mode, setti
 
 Default global hotkey to open ClipAngel - ALT+V. You can change it and find other hotkeys in Settings window.
 
-Application does not modify Windows files or registry (except you check Autostart option). To free disk space you can delete catalogs with unneeded UI translations (named by locales).
-
+Application does not modify Windows files or registry (except you check Autostart option).
 Application has no digital signing. Therefore, if you have Smart Screen enabled, you must allow it to run the application.
