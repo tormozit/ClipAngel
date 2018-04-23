@@ -768,7 +768,7 @@ namespace ClipAngel
             ShowApplicationIconColumn = Properties.Settings.Default.ShowApplicationIconColumn;
             ShowSecondaryColumns = Properties.Settings.Default.ShowSecondaryColumns;
 
-            NumberOfClips = Owner.ClipsNumber.ToString();
+            NumberOfClips = Owner.ClipsCount().ToString();
             UserSettingsPath = Owner.UserSettingsPath;
             DatabaseSize = ((new FileInfo(Owner.DbFileName)).Length / (1024 * 1024)).ToString();
 

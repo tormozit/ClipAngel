@@ -52,7 +52,7 @@ namespace ClipAngel
         public ResourceManager CurrentLangResourceManager;
         public string Locale = "";
         public bool PortableMode = false;
-        public int ClipsNumber = 0;
+        //public int ClipsNumber = 0;
         public string UserSettingsPath;
         public string DbFileName;
         SQLiteConnection m_dbConnection;
@@ -1542,10 +1542,10 @@ namespace ClipAngel
                 toolStripButtonClearFilter.BackColor = DefaultBackColor;
                 //toolStripButtonClearFilter.Checked = false;
             }
+            //ClipsNumber = clipBindingSource.Count;
             if (LastId == 0)
             {
                 GotoLastRow();
-                ClipsNumber = clipBindingSource.Count;
                 DataRowView lastRow = (DataRowView) clipBindingSource.Current;
                 if (lastRow == null)
                 {
@@ -2232,7 +2232,7 @@ namespace ClipAngel
             //ClipsTable.Rows.InsertAt(NewRow, 0);
             //PrepareTableGrid();
 
-            ClipsNumber++;
+            //ClipsNumber++;
             //if (this.Visible)
             //{
             if (updateList)
@@ -2274,14 +2274,27 @@ namespace ClipAngel
             if (Properties.Settings.Default.HistoryDepthNumber == 0)
                 return;
             SQLiteCommand command = new SQLiteCommand(m_dbConnection);
-            int numberOfClipsToDelete = ClipsNumber - Properties.Settings.Default.HistoryDepthNumber;
+            int clipsCount = ClipsCount();
+            int numberOfClipsToDelete = clipsCount - Properties.Settings.Default.HistoryDepthNumber;
             if (numberOfClipsToDelete > 0)
             {
                 command.CommandText = "Delete From Clips where (NOT Favorite OR Favorite IS NULL) AND Id IN (Select ID From Clips ORDER BY ID Limit @Number)";
                 command.Parameters.AddWithValue("Number", numberOfClipsToDelete);
                 command.ExecuteNonQuery();
-                //ClipsNumber -= numberOfClipsToDelete;
             }
+        }
+
+        public int ClipsCount()
+        {
+            SQLiteCommand command = new SQLiteCommand(m_dbConnection);
+            command.CommandText = "Select Count(*) From Clips";
+            int clipsCount = 0;
+            using (SQLiteDataReader reader = command.ExecuteReader())
+            {
+                reader.Read();
+                clipsCount = unchecked((int)(long)reader[0]);
+            }
+            return clipsCount;
         }
 
         private static bool GetNullableBoolFromSqlReader(SQLiteDataReader reader, string columnName)
@@ -2331,7 +2344,7 @@ namespace ClipAngel
                 command.Parameters.Add(parameterName, DbType.Int32).Value = dataRow["Id"];
                 counter++;
                 dataGridView.Rows.Remove(selectedRow);
-                ClipsNumber--;
+                //ClipsNumber--;
                 if (counter == 999) // SQLITE_MAX_VARIABLE_NUMBER, which defaults to 999, but can be lowered at runtime
                     break;
             }
@@ -3631,6 +3644,7 @@ namespace ClipAngel
                    || !(true
                         && RowReader != null
                         && dataGridView.CurrentRow != null
+                        && dataGridView.CurrentRow.DataBoundItem != null
                         && (int) (dataGridView.CurrentRow.DataBoundItem as DataRowView)["ID"] == (int) RowReader["ID"]);
         }
 
@@ -4168,11 +4182,16 @@ namespace ClipAngel
                 LoadSettings();
                 keyboardHook.UnregisterHotKeys();
                 RegisterHotKeys();
-                DeleteOldClips();
-                DeleteExcessClips();
-                UpdateClipBindingSource(); // Needed to update ClipsNumber
+                AutodeleteClips();
                 Properties.Settings.Default.Save(); // Not all properties are saved here. For example ShowInTaskbar are not saved
             }
+        }
+
+        private void AutodeleteClips()
+        {
+            DeleteOldClips();
+            DeleteExcessClips();
+            UpdateClipBindingSource();
         }
 
         private class ListItemNameText
@@ -4802,8 +4821,7 @@ namespace ClipAngel
         private void timerDaily_Tick(object sender, EventArgs e)
         {
             CheckUpdate();
-            DeleteOldClips();
-            DeleteExcessClips();
+            AutodeleteClips();
             timerDaily.Interval = (1000 * 60 * 60 * 24); // 1 day
             timerDaily.Start();
         }
