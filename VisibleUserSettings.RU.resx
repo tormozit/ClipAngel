@@ -206,28 +206,28 @@
     <value>Горячая клавиша последовательной вставки</value>
   </data>
   <data name="GlobalHotkeyIncrementalPasteDescription" xml:space="preserve">
-    <value>Эта горячая клавиша при нажатии в любой программе вставит текущий клип из списка Clip Angel, 
+    <value>Эта горячая клавиша при нажатии в любой программе вставит текущий клип из списка ClipAngel, 
 перейдет к следующему/верхнему клипу в списке и покажет его во всплывающей подсказке</value>
   </data>
   <data name="GlobalHotkeyOpenCurrent" xml:space="preserve">
     <value>Горячая клавиша открытия окна без изменений</value>
   </data>
   <data name="GlobalHotkeyOpenCurrentDescription" xml:space="preserve">
-    <value>Эта горячая клавиша при нажатии в любой программе откроет окно Clip Angel 
+    <value>Эта горячая клавиша при нажатии в любой программе откроет окно ClipAngel 
 без изменений в фильтре и выборе клипа. Повторное нажатие закроет окно.</value>
   </data>
   <data name="GlobalHotkeyOpenFavorites" xml:space="preserve">
     <value>Горячая клавиша открытия окна любимых</value>
   </data>
   <data name="GlobalHotkeyOpenFavoritesDescription" xml:space="preserve">
-    <value>Эта горячая клавиша при нажатии в любой программе откроет окно Clip Angel с отобором только любимых. 
+    <value>Эта горячая клавиша при нажатии в любой программе откроет окно ClipAngel с отобором только любимых. 
 Повторное нажатие закроет окно.</value>
   </data>
   <data name="GlobalHotkeyOpenLast" xml:space="preserve">
     <value>Горячая клавиша открытия окна со сбросом</value>
   </data>
   <data name="GlobalHotkeyOpenLastDescription" xml:space="preserve">
-    <value>Эта горячая клавиша при нажатии в любой программе откроет окно Clip Angel, 
+    <value>Эта горячая клавиша при нажатии в любой программе откроет окно ClipAngel, 
 сбросит фильтры и выберет последний клип. Повторное нажатие закроет окно.</value>
   </data>
   <data name="GlobalHotkeyPasteText" xml:space="preserve">

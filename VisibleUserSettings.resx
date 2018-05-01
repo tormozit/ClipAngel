@@ -204,7 +204,7 @@ Leave blank to use standart database file "db.sqlite" in application user settin
     <value>Hotkey to paste and select next</value>
   </data>
   <data name="GlobalHotkeyIncrementalPasteDescription" xml:space="preserve">
-    <value>Use this hot key in any program to paste current clip from Clip Angel list and select next/upper clip which will be shown in tray tooltip</value>
+    <value>Use this hot key in any program to paste current clip from ClipAngel list and select next/upper clip which will be shown in tray tooltip</value>
   </data>
   <data name="GlobalHotkeyOpenCurrent" xml:space="preserve">
     <value>Hotkey to open window with no changes</value>

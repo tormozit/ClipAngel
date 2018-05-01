@@ -888,8 +888,8 @@ Key press will be processed by the window. </target>
           <target state="new">Hotkey to paste and select next</target>
         </trans-unit>
         <trans-unit id="GlobalHotkeyIncrementalPasteDescription" translate="yes" xml:space="preserve">
-          <source>Use this hot key in any program to paste current clip from Clip Angel list and select next/upper clip which will be shown in tray tooltip</source>
-          <target state="new">Use this hot key in any program to paste current clip from Clip Angel list and select next/upper clip which will be shown in tray tooltip</target>
+          <source>Use this hot key in any program to paste current clip from ClipAngel list and select next/upper clip which will be shown in tray tooltip</source>
+          <target state="new">Use this hot key in any program to paste current clip from ClipAngel list and select next/upper clip which will be shown in tray tooltip</target>
         </trans-unit>
         <trans-unit id="GlobalHotkeyOpenCurrent" translate="yes" xml:space="preserve">
           <source>Hotkey to open window with no changes</source>

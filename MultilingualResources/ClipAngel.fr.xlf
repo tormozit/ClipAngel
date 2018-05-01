@@ -1273,8 +1273,9 @@ Key press will be processed by the window. </source>
           <target state="translated">Raccourci pour coller et sélectionner la suivante</target>
         </trans-unit>
         <trans-unit id="GlobalHotkeyIncrementalPasteDescription" translate="yes" xml:space="preserve">
-          <source>Use this hot key in any program to paste current clip from Clip Angel list and select next/upper clip which will be shown in tray tooltip</source>
-          <target state="translated">Utiliser ce raccourci clavier dans les programmes pour coller le clip actuel de la liste ClipAngel et sélectionner le clip suivant/haut qui sera affiché dans l'info-bulle</target>
+          <source>Use this hot key in any program to paste current clip from ClipAngel list and select next/upper clip which will be shown in tray tooltip</source>
+          <target state="needs-review-translation">Utiliser ce raccourci clavier dans les programmes pour coller le clip actuel de la liste ClipAngel et sélectionner le clip suivant/haut qui sera affiché dans l'info-bulle</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="GlobalHotkeyOpenCurrent" translate="yes" xml:space="preserve">
           <source>Hotkey to open window with no changes</source>
