@@ -2080,13 +2080,10 @@ namespace ClipAngel
                 richText = "";
             if (htmlText == null)
                 htmlText = "";
-            int byteSize = plainText.Length * 2; // dirty
-            if (chars == 0)
-                chars = plainText.Length;
+            int byteSize = 0;
+            CalculateByteAndCharSizeOfClip(htmlText, richText, plainText, ref chars, ref byteSize);
             if (binaryBuffer != null)
                 byteSize += binaryBuffer.Length;
-            byteSize += htmlText.Length * 2; // dirty
-            byteSize += richText.Length * 2; // dirty
             if (byteSize > Properties.Settings.Default.MaxClipSizeKB * 1000)
             {
                 string message = String.Format(Properties.Resources.ClipWasNotCaptured, (int)(byteSize / 1024), Properties.Settings.Default.MaxClipSizeKB,
@@ -2246,6 +2243,15 @@ namespace ClipAngel
                 ShowForPaste(false, true);
             //}
             lastCaptureMoment = DateTime.Now;
+        }
+
+        private static void CalculateByteAndCharSizeOfClip(string htmlText, string richText, string plainText, ref int chars, ref int byteSize)
+        {
+            if (chars == 0)
+                chars = plainText.Length;
+            byteSize += plainText.Length * 2; // dirty
+            byteSize += htmlText.Length * 2; // dirty
+            byteSize += richText.Length * 2; // dirty
         }
 
         // dt2 - null or DateTime
@@ -2543,7 +2549,7 @@ namespace ClipAngel
             }
             if (rowReader == RowReader)
             {
-                string selectedText = GetSelectedText(onlySelectedPlainText);
+                string selectedText = GetSelectedTextOfClip(onlySelectedPlainText);
                 if (!String.IsNullOrEmpty(selectedText))
                     clipText = selectedText;
             }
@@ -2599,7 +2605,7 @@ namespace ClipAngel
             return dto;
         }
 
-        private string GetSelectedText(bool onlySelectedPlainText = true)
+        private string GetSelectedTextOfClip(bool onlySelectedPlainText = true)
         {
             string selectedText = "";
             mshtml.IHTMLTxtRange htmlSelection = GetHtmlCurrentTextRangeOrAllDocument(true);
@@ -3159,16 +3165,8 @@ namespace ClipAngel
                 if (pasteMethod == PasteMethod.Standart)
                     itemPasteMethod = pasteMethod;
                 else
-                {
                     itemPasteMethod = PasteMethod.Null;
-                    selectedText = GetSelectedText();
-                    if (!String.IsNullOrEmpty(selectedText))
-                        agregateTextToPaste = selectedText;
-                }
-                if (String.IsNullOrEmpty(agregateTextToPaste))
-                {
-                    agregateTextToPaste = JoinOrPasteTextOfClips(itemPasteMethod, out count);
-                }
+                agregateTextToPaste = GetSelectedTextOfClips(ref selectedText, itemPasteMethod);
                 if (itemPasteMethod == PasteMethod.Null && !String.IsNullOrEmpty(agregateTextToPaste))
                 {
                     if (pasteMethod == PasteMethod.Line)
@@ -3203,6 +3201,23 @@ namespace ClipAngel
                 if (Properties.Settings.Default.MoveCopiedClipToTop)
                     MoveSelectedRows(0);
             }
+        }
+
+        private string GetSelectedTextOfClips(ref string selectedText, PasteMethod itemPasteMethod = PasteMethod.Null)
+        {
+            string agregateTextToPaste = "";
+            int count;
+            if (itemPasteMethod == PasteMethod.Null)
+            {
+                selectedText = GetSelectedTextOfClip();
+                if (!String.IsNullOrEmpty(selectedText))
+                    agregateTextToPaste = selectedText;
+            }
+            if (String.IsNullOrEmpty(agregateTextToPaste))
+            {
+                agregateTextToPaste = JoinOrPasteTextOfClips(itemPasteMethod, out count);
+            }
+            return agregateTextToPaste;
         }
 
         private string JoinOrPasteTextOfClips(PasteMethod itemPasteMethod, out int count)
@@ -3268,17 +3283,24 @@ namespace ClipAngel
 
         private void SaveClipText()
         {
-            string sql = "Update Clips set Title = @Title, Text = @Text where Id = @Id";
+            int byteSize = 0;
+            int chars = 0;
+            string newText = richTextBox.Text;
+            CalculateByteAndCharSizeOfClip("", "", newText, ref chars, ref byteSize);
+            string sql = "Update Clips set Title = @Title, Text = @Text, Size = @Size, Chars = @Chars where Id = @Id";
             SQLiteCommand command = new SQLiteCommand(sql, m_dbConnection);
             command.Parameters.AddWithValue("@Id", RowReader["Id"]);
-            command.Parameters.AddWithValue("@Text", richTextBox.Text);
+            command.Parameters.AddWithValue("@Text", newText);
+            command.Parameters.AddWithValue("@Size", byteSize);
+            command.Parameters.AddWithValue("@chars", chars);
             string newTitle = "";
             if (RowReader["Title"].ToString() == TextClipTitle(RowReader["Text"].ToString()))
-                newTitle = TextClipTitle(richTextBox.Text);
+                newTitle = TextClipTitle(newText);
             else
                 newTitle = RowReader["Title"].ToString();
             command.Parameters.AddWithValue("@Title", newTitle);
             command.ExecuteNonQuery();
+
         }
 
         private void SaveClipUrl(string Url)
@@ -5202,7 +5224,7 @@ namespace ClipAngel
         {
             if (!allowTextPositionChangeUpdate)
                 return;
-            if (richTextBox.SelectionStart + richTextBox.SelectionLength > clipRichTextLength)
+            if (!EditMode && richTextBox.SelectionStart + richTextBox.SelectionLength > clipRichTextLength)
             {
                 richTextBox.Select(richTextBox.SelectionStart, clipRichTextLength - richTextBox.SelectionStart);
                 return;
@@ -6162,7 +6184,7 @@ namespace ClipAngel
             AllowFilterProcessing = false;
             if (!String.IsNullOrWhiteSpace(comboBoxFilter.Text))
                 comboBoxFilter.Text += " ";
-            comboBoxFilter.Text += GetSelectedText();
+            comboBoxFilter.Text += GetSelectedTextOfClip();
             AllowFilterProcessing = true;
             TextFilterApply();
         }
@@ -6188,6 +6210,26 @@ namespace ClipAngel
         private void pasteLineToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SendPasteOfSelectedTextOrSelectedClips(PasteMethod.Line);
+        }
+
+        private void pasteSpecialToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PasteSpecial SpecialPasteForm = new PasteSpecial();
+            string Dummy = "";
+            SpecialPasteForm.OriginalText = GetSelectedTextOfClips(ref Dummy);
+            DialogResult result = SpecialPasteForm.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                bool PasteIntoNewClip = SpecialPasteForm.PasteIntoNewClip;
+                SetTextInClipboard(SpecialPasteForm.ResultText, PasteIntoNewClip);
+                if (!PasteIntoNewClip)
+                    SendPaste(PasteMethod.Text);
+            }
+        }
+
+        private void htmlMenuItemCopy_Click(object sender, EventArgs e)
+        {
+            htmlTextBox.Document.ExecCommand("COPY", false, 0);
         }
     }
 }

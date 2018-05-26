@@ -223,7 +223,7 @@ namespace ClipAngel.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Copied clip ({2}) was not captured (too big size {0}KB &gt; {1}KB).
+        ///   Looks up a localized string similar to Copied clip ({2}) was not captured. Too big size {0}KB &gt; {1}KB (set in settings).
         /// </summary>
         public static string ClipWasNotCaptured {
             get {
@@ -1023,7 +1023,7 @@ namespace ClipAngel.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 1.50.
+        ///   Looks up a localized string similar to 1.51.
         /// </summary>
         public static string VersionValue {
             get {

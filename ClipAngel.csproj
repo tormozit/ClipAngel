@@ -183,6 +183,12 @@
     <Compile Include="SettingsForm.Designer.cs">
       <DependentUpon>SettingsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="PasteSpecial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PasteSpecial.Designer.cs">
+      <DependentUpon>PasteSpecial.cs</DependentUpon>
+    </Compile>
     <Compile Include="Tips.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -321,6 +327,9 @@
     <EmbeddedResource Include="Main.zh-Hans.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PasteSpecial.ru.resx">
+      <DependentUpon>PasteSpecial.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.de.resx" />
     <EmbeddedResource Include="Properties\Resources.el.resx" />
     <EmbeddedResource Include="Properties\Resources.es.resx" />
@@ -376,6 +385,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SettingsForm.zh-Hans.resx">
       <DependentUpon>SettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PasteSpecial.resx">
+      <DependentUpon>PasteSpecial.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Tips.de.resx">
       <DependentUpon>Tips.cs</DependentUpon>

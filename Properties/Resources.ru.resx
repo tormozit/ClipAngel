@@ -377,7 +377,7 @@
     <value>Последний клип был захвачен дважды до сравнения</value>
   </data>
   <data name="ClipWasNotCaptured" xml:space="preserve">
-    <value>Скопированный клип ({2}) не был захвачен (слишком большой размер {0}KB &gt; {1}KB)</value>
+    <value>Скопированный клип ({2}) не был захвачен. Слишком большой размер {0}KB &gt; {1}KB (задано в настройках)</value>
   </data>
   <data name="PastedLastClip" xml:space="preserve">
     <value>Вставленный клип - последний</value>
