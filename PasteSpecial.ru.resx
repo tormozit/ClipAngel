@@ -134,6 +134,9 @@
   <data name="AllUpper.Text" xml:space="preserve">
     <value>Все верхний </value>
   </data>
+  <data name="AllUpper.ToolTip" xml:space="preserve">
+    <value>Верхний регистр для всех букв</value>
+  </data>
   <data name="AllLowerCase.Size" type="System.Drawing.Size, System.Drawing">
     <value>88, 17</value>
   </data>
