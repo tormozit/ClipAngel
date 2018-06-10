@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
+using System.Globalization;
 
 namespace ClipAngel
 {
@@ -24,11 +25,12 @@ namespace ClipAngel
         private void UpdatePreview()
         {
             string text = OriginalText;
+            TextInfo textInfo = CultureInfo.CurrentCulture.TextInfo;
             if (AllLowerCase.Checked)
             {
                 text = text.ToLower();
             }
-            if (AllUpper.Checked)
+            if (AllUpperCase.Checked)
             {
                 text = text.ToUpper();
             }
@@ -38,7 +40,23 @@ namespace ClipAngel
                 var r = new Regex(@"(^[a-zа-яё])|\.\s+(.)", RegexOptions.ExplicitCapture); // Only english and russian letters supported
                 text = r.Replace(text, s => s.Value.ToUpper());
             }
-            if (ReplaceEOL.Checked)
+             if (UpperCamelCase.Checked)
+            {
+                text = textInfo.ToTitleCase(text);
+                text = Regex.Replace(text, @"\s", @"");
+            }
+             if (LowerCamelCase.Checked)
+            {
+                text = textInfo.ToTitleCase(text);
+                text = Char.ToLowerInvariant(text[0]) + text.Substring(1);
+                text = Regex.Replace(text, @"\s", @"");
+            }
+             if (FromCamelCase.Checked)
+            {
+                text = SplitCamelCase(text);
+                text = text.ToLower();
+            }
+           if (ReplaceEOL.Checked)
             {
                 text = Regex.Replace(text, @"\r|\n", " ");
             }
@@ -61,6 +79,11 @@ namespace ClipAngel
             {
                 text = text.Trim();
                 text = Regex.Replace(text, @"[ \f\t\v]+", " ");
+            }
+            if (NormalizeEndOfLines.Checked)
+            {
+                text = text.Trim();
+                text = Regex.Replace(text, @"[\n\r]+", Environment.NewLine);
             }
             richTextBox1.Text = text;
             ResultText = text;
@@ -120,5 +143,39 @@ namespace ClipAngel
         {
             UpdatePreview();
         }
+
+        private void UpperCamelCase_CheckedChanged(object sender, EventArgs e)
+        {
+            UpdatePreview();
+        }
+
+        private void LowerCamelCase_CheckedChanged(object sender, EventArgs e)
+        {
+            UpdatePreview();
+        }
+
+        private void NormalizeEndOfLines_CheckedChanged(object sender, EventArgs e)
+        {
+            UpdatePreview();
+        }
+
+        public static string SplitCamelCase(string input)
+        {
+            int i = 0;
+            return CultureInfo.CurrentCulture.TextInfo.ToTitleCase(string.Join(string.Empty, input
+                    .Select(c => new
+                    {
+                        Character = c.ToString(),
+                        Start = i++ == 0
+                                || (Char.IsUpper(input[i - 1])
+                                    && (!Char.IsUpper(input[i - 2])
+                                        || (i < input.Length && !Char.IsUpper(input[i]))))
+                    })
+                    .Select(x => x.Start ? " " + x.Character : x.Character)
+                    .ToArray()))
+                .Trim(); ;
+            ;
+        }
     }
 }
+

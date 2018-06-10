@@ -59,5 +59,10 @@ namespace ClipAngel
         {
             ((Main)Owner).keyboardHook.UnregisterHotKeys();
         }
+
+        private void buttonCancel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

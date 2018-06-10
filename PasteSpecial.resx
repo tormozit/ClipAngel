@@ -117,467 +117,621 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="&gt;&gt;richTextBox1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;AllLowerCase.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;NormalizeFreeSpace.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
+  <metadata name="toolTip1.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="ReplaceEOL.AutoSize" type="System.Boolean, mscorlib">
+  <data name="NormalizeFreeSpace.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="AllUpper.Size" type="System.Drawing.Size, System.Drawing">
-    <value>66, 17</value>
-  </data>
-  <data name="NormalizeFreeSpace.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
-  </data>
-  <data name="&gt;&gt;checkBoxReplaceTabWithSpaces.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;buttonOK.Name" xml:space="preserve">
-    <value>buttonOK</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="buttonCancel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="&gt;&gt;checkBoxReplaceTabWithSpaces.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;textBoxNumberOfSpacesInTab.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="buttonOK.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
+  <data name="NormalizeFreeSpace.Location" type="System.Drawing.Point, System.Drawing">
+    <value>192, 67</value>
   </data>
   <data name="NormalizeFreeSpace.Size" type="System.Drawing.Size, System.Drawing">
     <value>176, 17</value>
   </data>
-  <data name="ReplaceEOL.Text" xml:space="preserve">
-    <value>Replace end of line with space</value>
-  </data>
-  <data name="SentenceCase.TabIndex" type="System.Int32, mscorlib">
-    <value>19</value>
-  </data>
-  <data name="&gt;&gt;richTextBox1.Name" xml:space="preserve">
-    <value>richTextBox1</value>
-  </data>
-  <data name="&gt;&gt;buttonOK.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="SentenceCase.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 93</value>
-  </data>
-  <data name="&gt;&gt;ReplaceEOL.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;checkBoxReplaceTabWithSpaces.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Paste special</value>
-  </data>
-  <data name="ReplaceEOL.TabIndex" type="System.Int32, mscorlib">
+  <data name="NormalizeFreeSpace.TabIndex" type="System.Int32, mscorlib">
     <value>16</value>
-  </data>
-  <data name="&gt;&gt;SentenceCase.Name" xml:space="preserve">
-    <value>SentenceCase</value>
-  </data>
-  <data name="checkBoxPasteIntoNewClip.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="&gt;&gt;label1.Name" xml:space="preserve">
-    <value>label1</value>
-  </data>
-  <data name="richTextBox1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
-  </data>
-  <data name="&gt;&gt;groupBox1.Name" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="checkBoxPasteIntoNewClip.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
-  </data>
-  <data name="CaseNoChange.Size" type="System.Drawing.Size, System.Drawing">
-    <value>78, 17</value>
-  </data>
-  <data name="&gt;&gt;toolTip1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="buttonOK.Location" type="System.Drawing.Point, System.Drawing">
-    <value>228, 245</value>
-  </data>
-  <data name="&gt;&gt;SentenceCase.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="$this.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="&gt;&gt;buttonCancel.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="textBoxNumberOfSpacesInTab.Size" type="System.Drawing.Size, System.Drawing">
-    <value>18, 20</value>
-  </data>
-  <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
-    <value>20</value>
-  </data>
-  <data name="&gt;&gt;buttonCancel.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;checkBoxPasteIntoNewClip.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="AllLowerCase.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;AllLowerCase.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;buttonCancel.Name" xml:space="preserve">
-    <value>buttonCancel</value>
   </data>
   <data name="NormalizeFreeSpace.Text" xml:space="preserve">
     <value>Normalize non-printable symbols</value>
-  </data>
-  <data name="buttonOK.Text" xml:space="preserve">
-    <value>OK</value>
-  </data>
-  <data name="CaseNoChange.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 22</value>
-  </data>
-  <data name="checkBoxPasteIntoNewClip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>233, 17</value>
-  </data>
-  <data name="&gt;&gt;textBoxNumberOfSpacesInTab.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="textBoxNumberOfSpacesInTab.ToolTip" xml:space="preserve">
-    <value>Number of spaces in TAB</value>
-  </data>
-  <data name="&gt;&gt;SentenceCase.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="buttonOK.TabIndex" type="System.Int32, mscorlib">
-    <value>15</value>
-  </data>
-  <data name="&gt;&gt;textBoxNumberOfSpacesInTab.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;AllLowerCase.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 133</value>
-  </data>
-  <data name="&gt;&gt;checkBoxPasteIntoNewClip.Name" xml:space="preserve">
-    <value>checkBoxPasteIntoNewClip</value>
-  </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>PasteSpecial</value>
-  </data>
-  <data name="buttonCancel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
-  </data>
-  <data name="&gt;&gt;checkBoxReplaceTabWithSpaces.Name" xml:space="preserve">
-    <value>checkBoxReplaceTabWithSpaces</value>
-  </data>
-  <data name="&gt;&gt;richTextBox1.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="CaseNoChange.Text" xml:space="preserve">
-    <value>No change</value>
-  </data>
-  <data name="&gt;&gt;buttonCancel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="buttonOK.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
-  </data>
-  <data name="checkBoxReplaceTabWithSpaces.Location" type="System.Drawing.Point, System.Drawing">
-    <value>133, 43</value>
-  </data>
-  <data name="textBoxNumberOfSpacesInTab.Text" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;checkBoxPasteIntoNewClip.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;groupBox1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;checkBoxPasteIntoNewClip.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
-    <value>CenterParent</value>
-  </data>
-  <data name="buttonCancel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>309, 245</value>
-  </data>
-  <data name="AllUpper.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 45</value>
-  </data>
-  <data name="NormalizeFreeSpace.Location" type="System.Drawing.Point, System.Drawing">
-    <value>133, 66</value>
-  </data>
-  <data name="ReplaceEOL.Size" type="System.Drawing.Size, System.Drawing">
-    <value>172, 17</value>
-  </data>
-  <data name="richTextBox1.Text" xml:space="preserve">
-    <value />
-  </data>
-  <data name="checkBoxReplaceTabWithSpaces.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="&gt;&gt;NormalizeFreeSpace.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 10</value>
-  </data>
-  <data name="&gt;&gt;AllLowerCase.Name" xml:space="preserve">
-    <value>AllLowerCase</value>
-  </data>
-  <data name="richTextBox1.TabIndex" type="System.Int32, mscorlib">
-    <value>21</value>
-  </data>
-  <data name="groupBox1.ToolTip" xml:space="preserve">
-    <value>Change case of letters</value>
-  </data>
-  <data name="&gt;&gt;richTextBox1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;AllUpper.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="checkBoxReplaceTabWithSpaces.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
-  </data>
-  <data name="&gt;&gt;ReplaceEOL.Name" xml:space="preserve">
-    <value>ReplaceEOL</value>
-  </data>
-  <data name="label1.TabIndex" type="System.Int32, mscorlib">
-    <value>22</value>
-  </data>
-  <data name="SentenceCase.ToolTip" xml:space="preserve">
-    <value>Upper case for first letter in every sentence and lower case for other letters</value>
-  </data>
-  <data name="AllLowerCase.ToolTip" xml:space="preserve">
-    <value>Lower case for all letters</value>
-  </data>
-  <data name="buttonCancel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
-  </data>
-  <data name="ReplaceEOL.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="&gt;&gt;toolTip1.Name" xml:space="preserve">
-    <value>toolTip1</value>
-  </data>
-  <data name="&gt;&gt;ReplaceEOL.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="AllUpper.ToolTip" xml:space="preserve">
-    <value>Upper case for all letters</value>
-  </data>
-  <data name="AllLowerCase.Text" xml:space="preserve">
-    <value>All lower</value>
-  </data>
-  <data name="checkBoxPasteIntoNewClip.Text" xml:space="preserve">
-    <value>Paste into new clip instead of target window</value>
-  </data>
-  <data name="CaseNoChange.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="&gt;&gt;SentenceCase.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="AllLowerCase.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 69</value>
-  </data>
-  <data name="ReplaceEOL.Location" type="System.Drawing.Point, System.Drawing">
-    <value>133, 20</value>
-  </data>
-  <data name="buttonCancel.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="NormalizeFreeSpace.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="checkBoxReplaceTabWithSpaces.Text" xml:space="preserve">
-    <value>Replace TAB with spaces</value>
-  </data>
-  <data name="&gt;&gt;buttonOK.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="richTextBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 153</value>
-  </data>
-  <data name="&gt;&gt;buttonOK.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="richTextBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>377, 87</value>
-  </data>
-  <data name="AllUpper.Text" xml:space="preserve">
-    <value>All upper</value>
-  </data>
-  <data name="&gt;&gt;ReplaceEOL.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="checkBoxPasteIntoNewClip.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="buttonOK.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="buttonCancel.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
-  </data>
-  <data name="textBoxNumberOfSpacesInTab.TabIndex" type="System.Int32, mscorlib">
-    <value>23</value>
-  </data>
-  <data name="checkBoxReplaceTabWithSpaces.Size" type="System.Drawing.Size, System.Drawing">
-    <value>149, 17</value>
-  </data>
-  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>45, 13</value>
-  </data>
-  <data name="CaseNoChange.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="AllUpper.TabIndex" type="System.Int32, mscorlib">
-    <value>17</value>
-  </data>
-  <data name="&gt;&gt;CaseNoChange.Name" xml:space="preserve">
-    <value>CaseNoChange</value>
-  </data>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
-  </data>
-  <data name="buttonCancel.Text" xml:space="preserve">
-    <value>Cancel</value>
-  </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>Preview</value>
-  </data>
-  <data name="&gt;&gt;AllUpper.Name" xml:space="preserve">
-    <value>AllUpper</value>
-  </data>
-  <data name="richTextBox1.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="textBoxNumberOfSpacesInTab.Location" type="System.Drawing.Point, System.Drawing">
-    <value>365, 41</value>
-  </data>
-  <data name="checkBoxPasteIntoNewClip.Location" type="System.Drawing.Point, System.Drawing">
-    <value>133, 89</value>
-  </data>
-  <data name="SentenceCase.Size" type="System.Drawing.Size, System.Drawing">
-    <value>71, 17</value>
-  </data>
-  <data name="&gt;&gt;AllUpper.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;CaseNoChange.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;NormalizeFreeSpace.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="AllLowerCase.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 17</value>
-  </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>395, 280</value>
-  </data>
-  <data name="&gt;&gt;AllUpper.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;textBoxNumberOfSpacesInTab.Name" xml:space="preserve">
-    <value>textBoxNumberOfSpacesInTab</value>
   </data>
   <data name="NormalizeFreeSpace.ToolTip" xml:space="preserve">
     <value>Every sequence of non-printable symbols (except end of line) is replaced with one space.
 Trailing unprintable symbols are deleted.</value>
   </data>
-  <data name="label1.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>115, 119</value>
-  </data>
-  <data name="AllUpper.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="CaseNoChange.TabIndex" type="System.Int32, mscorlib">
-    <value>20</value>
-  </data>
-  <data name="&gt;&gt;CaseNoChange.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="&gt;&gt;NormalizeFreeSpace.Name" xml:space="preserve">
     <value>NormalizeFreeSpace</value>
+  </data>
+  <data name="&gt;&gt;NormalizeFreeSpace.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;NormalizeFreeSpace.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;NormalizeFreeSpace.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="AllUpperCase.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="AllUpperCase.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 45</value>
+  </data>
+  <data name="AllUpperCase.Size" type="System.Drawing.Size, System.Drawing">
+    <value>93, 17</value>
+  </data>
+  <data name="AllUpperCase.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="AllUpperCase.Text" xml:space="preserve">
+    <value>UPPER CASE</value>
+  </data>
+  <data name="AllUpperCase.ToolTip" xml:space="preserve">
+    <value>Upper case for all letters</value>
+  </data>
+  <data name="&gt;&gt;AllUpperCase.Name" xml:space="preserve">
+    <value>AllUpperCase</value>
+  </data>
+  <data name="&gt;&gt;AllUpperCase.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AllUpperCase.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;AllUpperCase.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="AllLowerCase.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="AllLowerCase.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 69</value>
+  </data>
+  <data name="AllLowerCase.Size" type="System.Drawing.Size, System.Drawing">
+    <value>76, 17</value>
   </data>
   <data name="AllLowerCase.TabIndex" type="System.Int32, mscorlib">
     <value>18</value>
   </data>
-  <data name="SentenceCase.Text" xml:space="preserve">
-    <value>Sentence</value>
+  <data name="AllLowerCase.Text" xml:space="preserve">
+    <value>lower case</value>
   </data>
-  <data name="&gt;&gt;CaseNoChange.Parent" xml:space="preserve">
+  <data name="AllLowerCase.ToolTip" xml:space="preserve">
+    <value>Lower case for all letters</value>
+  </data>
+  <data name="&gt;&gt;AllLowerCase.Name" xml:space="preserve">
+    <value>AllLowerCase</value>
+  </data>
+  <data name="&gt;&gt;AllLowerCase.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AllLowerCase.Parent" xml:space="preserve">
     <value>groupBox1</value>
   </data>
-  <data name="checkBoxReplaceTabWithSpaces.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>Case of letters</value>
-  </data>
-  <data name="buttonOK.ToolTip" xml:space="preserve">
-    <value />
+  <data name="&gt;&gt;AllLowerCase.ZOrder" xml:space="preserve">
+    <value>6</value>
   </data>
   <data name="SentenceCase.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="SentenceCase.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 93</value>
+  </data>
+  <data name="SentenceCase.Size" type="System.Drawing.Size, System.Drawing">
+    <value>97, 17</value>
+  </data>
+  <data name="SentenceCase.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="SentenceCase.Text" xml:space="preserve">
+    <value>Sentence case</value>
+  </data>
+  <data name="SentenceCase.ToolTip" xml:space="preserve">
+    <value>Upper case for first letter in every sentence and lower case for other letters</value>
+  </data>
+  <data name="&gt;&gt;SentenceCase.Name" xml:space="preserve">
+    <value>SentenceCase</value>
+  </data>
+  <data name="&gt;&gt;SentenceCase.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SentenceCase.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;SentenceCase.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;CaseNoChange.Name" xml:space="preserve">
+    <value>CaseNoChange</value>
+  </data>
+  <data name="&gt;&gt;CaseNoChange.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CaseNoChange.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;CaseNoChange.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;FromCamelCase.Name" xml:space="preserve">
+    <value>FromCamelCase</value>
+  </data>
+  <data name="&gt;&gt;FromCamelCase.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;FromCamelCase.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;FromCamelCase.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;LowerCamelCase.Name" xml:space="preserve">
+    <value>LowerCamelCase</value>
+  </data>
+  <data name="&gt;&gt;LowerCamelCase.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LowerCamelCase.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;LowerCamelCase.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;UpperCamelCase.Name" xml:space="preserve">
+    <value>UpperCamelCase</value>
+  </data>
+  <data name="&gt;&gt;UpperCamelCase.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;UpperCamelCase.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;UpperCamelCase.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 10</value>
+  </data>
+  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>174, 188</value>
+  </data>
+  <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Case of letters</value>
+  </data>
+  <data name="groupBox1.ToolTip" xml:space="preserve">
+    <value>Change case of letters</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Name" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
   <data name="&gt;&gt;groupBox1.Type" xml:space="preserve">
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <metadata name="toolTip1.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
+  <data name="&gt;&gt;groupBox1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="CaseNoChange.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="CaseNoChange.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 22</value>
+  </data>
+  <data name="CaseNoChange.Size" type="System.Drawing.Size, System.Drawing">
+    <value>78, 17</value>
+  </data>
+  <data name="CaseNoChange.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="CaseNoChange.Text" xml:space="preserve">
+    <value>No change</value>
+  </data>
+  <data name="&gt;&gt;CaseNoChange.Name" xml:space="preserve">
+    <value>CaseNoChange</value>
+  </data>
+  <data name="&gt;&gt;CaseNoChange.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CaseNoChange.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;CaseNoChange.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="FromCamelCase.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="FromCamelCase.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="FromCamelCase.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 161</value>
+  </data>
+  <data name="FromCamelCase.Size" type="System.Drawing.Size, System.Drawing">
+    <value>101, 17</value>
+  </data>
+  <data name="FromCamelCase.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="FromCamelCase.Text" xml:space="preserve">
+    <value>from CamelCase</value>
+  </data>
+  <data name="FromCamelCase.ToolTip" xml:space="preserve">
+    <value>Split words by capital letters and put them lower case.</value>
+  </data>
+  <data name="&gt;&gt;FromCamelCase.Name" xml:space="preserve">
+    <value>FromCamelCase</value>
+  </data>
+  <data name="&gt;&gt;FromCamelCase.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;FromCamelCase.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;FromCamelCase.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="LowerCamelCase.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LowerCamelCase.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LowerCamelCase.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 138</value>
+  </data>
+  <data name="LowerCamelCase.Size" type="System.Drawing.Size, System.Drawing">
+    <value>115, 17</value>
+  </data>
+  <data name="LowerCamelCase.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="LowerCamelCase.Text" xml:space="preserve">
+    <value>to lowerCamelCase</value>
+  </data>
+  <data name="LowerCamelCase.ToolTip" xml:space="preserve">
+    <value>Lower case for first letter in first word and upper case for first letter in other words. Delete all spaces.</value>
+  </data>
+  <data name="&gt;&gt;LowerCamelCase.Name" xml:space="preserve">
+    <value>LowerCamelCase</value>
+  </data>
+  <data name="&gt;&gt;LowerCamelCase.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LowerCamelCase.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;LowerCamelCase.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="UpperCamelCase.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="UpperCamelCase.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="UpperCamelCase.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 116</value>
+  </data>
+  <data name="UpperCamelCase.Size" type="System.Drawing.Size, System.Drawing">
+    <value>119, 17</value>
+  </data>
+  <data name="UpperCamelCase.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="UpperCamelCase.Text" xml:space="preserve">
+    <value>to UpperCamelCase</value>
+  </data>
+  <data name="UpperCamelCase.ToolTip" xml:space="preserve">
+    <value>Upper case for first letter in every word. Delete all spaces.</value>
+  </data>
+  <data name="&gt;&gt;UpperCamelCase.Name" xml:space="preserve">
+    <value>UpperCamelCase</value>
+  </data>
+  <data name="&gt;&gt;UpperCamelCase.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;UpperCamelCase.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;UpperCamelCase.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="textBoxNumberOfSpacesInTab.Location" type="System.Drawing.Point, System.Drawing">
+    <value>437, 41</value>
+  </data>
+  <data name="textBoxNumberOfSpacesInTab.Size" type="System.Drawing.Size, System.Drawing">
+    <value>18, 20</value>
+  </data>
+  <data name="textBoxNumberOfSpacesInTab.TabIndex" type="System.Int32, mscorlib">
+    <value>23</value>
+  </data>
+  <data name="textBoxNumberOfSpacesInTab.Text" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="textBoxNumberOfSpacesInTab.ToolTip" xml:space="preserve">
+    <value>Number of spaces in TAB</value>
+  </data>
+  <data name="&gt;&gt;textBoxNumberOfSpacesInTab.Name" xml:space="preserve">
+    <value>textBoxNumberOfSpacesInTab</value>
+  </data>
+  <data name="&gt;&gt;textBoxNumberOfSpacesInTab.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textBoxNumberOfSpacesInTab.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;textBoxNumberOfSpacesInTab.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="NormalizeEndOfLines.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="NormalizeEndOfLines.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="NormalizeEndOfLines.Location" type="System.Drawing.Point, System.Drawing">
+    <value>192, 90</value>
+  </data>
+  <data name="NormalizeEndOfLines.Size" type="System.Drawing.Size, System.Drawing">
+    <value>174, 17</value>
+  </data>
+  <data name="NormalizeEndOfLines.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="NormalizeEndOfLines.Text" xml:space="preserve">
+    <value>Normalize "end of line" symbols</value>
+  </data>
+  <data name="NormalizeEndOfLines.ToolTip" xml:space="preserve">
+    <value>Every sequence of symbols "end of line" is replaced with one "end of line".
+Trailing unprintable symbols are deleted.</value>
+  </data>
+  <data name="&gt;&gt;NormalizeEndOfLines.Name" xml:space="preserve">
+    <value>NormalizeEndOfLines</value>
+  </data>
+  <data name="&gt;&gt;NormalizeEndOfLines.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;NormalizeEndOfLines.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;NormalizeEndOfLines.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="buttonCancel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="buttonCancel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="buttonCancel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>380, 298</value>
+  </data>
+  <data name="buttonCancel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="buttonCancel.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="buttonCancel.Text" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="&gt;&gt;buttonCancel.Name" xml:space="preserve">
+    <value>buttonCancel</value>
+  </data>
+  <data name="&gt;&gt;buttonCancel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonCancel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;buttonCancel.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="buttonOK.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="buttonOK.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="buttonOK.Location" type="System.Drawing.Point, System.Drawing">
+    <value>299, 298</value>
+  </data>
+  <data name="buttonOK.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="buttonOK.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="buttonOK.Text" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="&gt;&gt;buttonOK.Name" xml:space="preserve">
+    <value>buttonOK</value>
+  </data>
+  <data name="&gt;&gt;buttonOK.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonOK.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;buttonOK.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="ReplaceEOL.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="ReplaceEOL.Location" type="System.Drawing.Point, System.Drawing">
+    <value>192, 21</value>
+  </data>
+  <data name="ReplaceEOL.Size" type="System.Drawing.Size, System.Drawing">
+    <value>217, 17</value>
+  </data>
+  <data name="ReplaceEOL.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="ReplaceEOL.Text" xml:space="preserve">
+    <value>Replace "end of line" symbol with space</value>
+  </data>
+  <data name="&gt;&gt;ReplaceEOL.Name" xml:space="preserve">
+    <value>ReplaceEOL</value>
+  </data>
+  <data name="&gt;&gt;ReplaceEOL.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ReplaceEOL.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;ReplaceEOL.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="checkBoxPasteIntoNewClip.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="checkBoxPasteIntoNewClip.Location" type="System.Drawing.Point, System.Drawing">
+    <value>192, 113</value>
+  </data>
+  <data name="checkBoxPasteIntoNewClip.Size" type="System.Drawing.Size, System.Drawing">
+    <value>233, 17</value>
+  </data>
+  <data name="checkBoxPasteIntoNewClip.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="checkBoxPasteIntoNewClip.Text" xml:space="preserve">
+    <value>Paste into new clip instead of target window</value>
+  </data>
+  <data name="&gt;&gt;checkBoxPasteIntoNewClip.Name" xml:space="preserve">
+    <value>checkBoxPasteIntoNewClip</value>
+  </data>
+  <data name="&gt;&gt;checkBoxPasteIntoNewClip.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;checkBoxPasteIntoNewClip.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;checkBoxPasteIntoNewClip.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="richTextBox1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="richTextBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 217</value>
+  </data>
+  <data name="richTextBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>444, 75</value>
+  </data>
+  <data name="richTextBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>21</value>
+  </data>
+  <data name="richTextBox1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;richTextBox1.Name" xml:space="preserve">
+    <value>richTextBox1</value>
+  </data>
+  <data name="&gt;&gt;richTextBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;richTextBox1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;richTextBox1.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 201</value>
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>45, 13</value>
+  </data>
+  <data name="label1.TabIndex" type="System.Int32, mscorlib">
+    <value>22</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Preview</value>
+  </data>
+  <data name="&gt;&gt;label1.Name" xml:space="preserve">
+    <value>label1</value>
+  </data>
+  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="checkBoxReplaceTabWithSpaces.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="checkBoxReplaceTabWithSpaces.Location" type="System.Drawing.Point, System.Drawing">
+    <value>192, 44</value>
+  </data>
+  <data name="checkBoxReplaceTabWithSpaces.Size" type="System.Drawing.Size, System.Drawing">
+    <value>149, 17</value>
+  </data>
+  <data name="checkBoxReplaceTabWithSpaces.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="checkBoxReplaceTabWithSpaces.Text" xml:space="preserve">
+    <value>Replace TAB with spaces</value>
+  </data>
+  <data name="&gt;&gt;checkBoxReplaceTabWithSpaces.Name" xml:space="preserve">
+    <value>checkBoxReplaceTabWithSpaces</value>
+  </data>
+  <data name="&gt;&gt;checkBoxReplaceTabWithSpaces.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;checkBoxReplaceTabWithSpaces.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;checkBoxReplaceTabWithSpaces.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>ru</value>
   </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>ru</value>
-  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>462, 327</value>
+  </data>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterParent</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Paste special</value>
+  </data>
+  <data name="&gt;&gt;toolTip1.Name" xml:space="preserve">
+    <value>toolTip1</value>
+  </data>
+  <data name="&gt;&gt;toolTip1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>PasteSpecial</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>

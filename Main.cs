@@ -78,7 +78,6 @@ namespace ClipAngel
         WinEventDelegate dele = null;
         private const uint WINEVENT_OUTOFCONTEXT = 0;
         private const uint EVENT_SYSTEM_FOREGROUND = 3;
-        private static IntPtr preLastActiveParentWindow;
         private static IntPtr lastActiveParentWindow;
         private static IntPtr lastChildWindow;
         private static RECT lastChildWindowRect;
@@ -1416,7 +1415,10 @@ namespace ClipAngel
         private void Filter_TextChanged(object sender, EventArgs e)
         {
             if (AllowFilterProcessing)
+            {
+                timerApplyTextFiler.Stop();
                 timerApplyTextFiler.Start();
+            }
         }
 
         private void TextFilterApply()
@@ -3152,7 +3154,6 @@ namespace ClipAngel
             string agregateTextToPaste = "";
             string selectedText = "";
             PasteMethod itemPasteMethod;
-            int count = 0;
             if (pasteMethod == PasteMethod.File)
             {
                 DataObject dto = new DataObject();
@@ -3186,7 +3187,6 @@ namespace ClipAngel
             if (true
                 && Properties.Settings.Default.MoveCopiedClipToTop
                 && String.IsNullOrEmpty(selectedText)
-                //&& count == 1
                 )
             {
                 MoveSelectedRows(0);
@@ -5733,12 +5733,12 @@ namespace ClipAngel
         {
             // If not doing this, WM_CLIPBOARDUPDATE event will be raised 2 times (why?) if "copy"=true
             RemoveClipboardFormatListener(this.Handle);
-            bool success = false;
+            //bool success = false;
             try
             {
                 Clipboard.SetDataObject(dto, true, 10, 20);
                     // Very important to set second parameter to TRUE to give immidiate access to buffer to other processes!
-                success = true;
+                //success = true;
             }
             catch
             {

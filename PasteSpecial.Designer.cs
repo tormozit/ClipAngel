@@ -32,12 +32,16 @@
             System.Windows.Forms.ToolTip toolTip1;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PasteSpecial));
             this.NormalizeFreeSpace = new System.Windows.Forms.CheckBox();
-            this.AllUpper = new System.Windows.Forms.RadioButton();
+            this.AllUpperCase = new System.Windows.Forms.RadioButton();
             this.AllLowerCase = new System.Windows.Forms.RadioButton();
             this.SentenceCase = new System.Windows.Forms.RadioButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.CaseNoChange = new System.Windows.Forms.RadioButton();
+            this.FromCamelCase = new System.Windows.Forms.RadioButton();
+            this.LowerCamelCase = new System.Windows.Forms.RadioButton();
+            this.UpperCamelCase = new System.Windows.Forms.RadioButton();
             this.textBoxNumberOfSpacesInTab = new System.Windows.Forms.TextBox();
+            this.NormalizeEndOfLines = new System.Windows.Forms.CheckBox();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.buttonOK = new System.Windows.Forms.Button();
             this.ReplaceEOL = new System.Windows.Forms.CheckBox();
@@ -61,13 +65,13 @@
             this.NormalizeFreeSpace.UseVisualStyleBackColor = true;
             this.NormalizeFreeSpace.CheckedChanged += new System.EventHandler(this.NormalizeFreeSpace_CheckedChanged);
             // 
-            // AllUpper
+            // AllUpperCase
             // 
-            resources.ApplyResources(this.AllUpper, "AllUpper");
-            this.AllUpper.Name = "AllUpper";
-            toolTip1.SetToolTip(this.AllUpper, resources.GetString("AllUpper.ToolTip"));
-            this.AllUpper.UseVisualStyleBackColor = true;
-            this.AllUpper.CheckedChanged += new System.EventHandler(this.AllUpper_CheckedChanged);
+            resources.ApplyResources(this.AllUpperCase, "AllUpperCase");
+            this.AllUpperCase.Name = "AllUpperCase";
+            toolTip1.SetToolTip(this.AllUpperCase, resources.GetString("AllUpperCase.ToolTip"));
+            this.AllUpperCase.UseVisualStyleBackColor = true;
+            this.AllUpperCase.CheckedChanged += new System.EventHandler(this.AllUpper_CheckedChanged);
             // 
             // AllLowerCase
             // 
@@ -87,11 +91,14 @@
             // 
             // groupBox1
             // 
-            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Controls.Add(this.CaseNoChange);
+            this.groupBox1.Controls.Add(this.FromCamelCase);
+            this.groupBox1.Controls.Add(this.LowerCamelCase);
+            this.groupBox1.Controls.Add(this.UpperCamelCase);
             this.groupBox1.Controls.Add(this.SentenceCase);
-            this.groupBox1.Controls.Add(this.AllUpper);
+            this.groupBox1.Controls.Add(this.AllUpperCase);
             this.groupBox1.Controls.Add(this.AllLowerCase);
+            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.TabStop = false;
             toolTip1.SetToolTip(this.groupBox1, resources.GetString("groupBox1.ToolTip"));
@@ -102,9 +109,32 @@
             this.CaseNoChange.Checked = true;
             this.CaseNoChange.Name = "CaseNoChange";
             this.CaseNoChange.TabStop = true;
-            toolTip1.SetToolTip(this.CaseNoChange, resources.GetString("CaseNoChange.ToolTip"));
             this.CaseNoChange.UseVisualStyleBackColor = true;
             this.CaseNoChange.CheckedChanged += new System.EventHandler(this.CaseNoChange_CheckedChanged);
+            // 
+            // FromCamelCase
+            // 
+            resources.ApplyResources(this.FromCamelCase, "FromCamelCase");
+            this.FromCamelCase.Name = "FromCamelCase";
+            toolTip1.SetToolTip(this.FromCamelCase, resources.GetString("FromCamelCase.ToolTip"));
+            this.FromCamelCase.UseVisualStyleBackColor = true;
+            this.FromCamelCase.CheckedChanged += new System.EventHandler(this.LowerCamelCase_CheckedChanged);
+            // 
+            // LowerCamelCase
+            // 
+            resources.ApplyResources(this.LowerCamelCase, "LowerCamelCase");
+            this.LowerCamelCase.Name = "LowerCamelCase";
+            toolTip1.SetToolTip(this.LowerCamelCase, resources.GetString("LowerCamelCase.ToolTip"));
+            this.LowerCamelCase.UseVisualStyleBackColor = true;
+            this.LowerCamelCase.CheckedChanged += new System.EventHandler(this.LowerCamelCase_CheckedChanged);
+            // 
+            // UpperCamelCase
+            // 
+            resources.ApplyResources(this.UpperCamelCase, "UpperCamelCase");
+            this.UpperCamelCase.Name = "UpperCamelCase";
+            toolTip1.SetToolTip(this.UpperCamelCase, resources.GetString("UpperCamelCase.ToolTip"));
+            this.UpperCamelCase.UseVisualStyleBackColor = true;
+            this.UpperCamelCase.CheckedChanged += new System.EventHandler(this.UpperCamelCase_CheckedChanged);
             // 
             // textBoxNumberOfSpacesInTab
             // 
@@ -113,12 +143,19 @@
             toolTip1.SetToolTip(this.textBoxNumberOfSpacesInTab, resources.GetString("textBoxNumberOfSpacesInTab.ToolTip"));
             this.textBoxNumberOfSpacesInTab.TextChanged += new System.EventHandler(this.textBoxNumberOfSpacesInTab_TextChanged);
             // 
+            // NormalizeEndOfLines
+            // 
+            resources.ApplyResources(this.NormalizeEndOfLines, "NormalizeEndOfLines");
+            this.NormalizeEndOfLines.Name = "NormalizeEndOfLines";
+            toolTip1.SetToolTip(this.NormalizeEndOfLines, resources.GetString("NormalizeEndOfLines.ToolTip"));
+            this.NormalizeEndOfLines.UseVisualStyleBackColor = true;
+            this.NormalizeEndOfLines.CheckedChanged += new System.EventHandler(this.NormalizeEndOfLines_CheckedChanged);
+            // 
             // buttonCancel
             // 
             resources.ApplyResources(this.buttonCancel, "buttonCancel");
             this.buttonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.buttonCancel.Name = "buttonCancel";
-            toolTip1.SetToolTip(this.buttonCancel, resources.GetString("buttonCancel.ToolTip"));
             this.buttonCancel.UseVisualStyleBackColor = true;
             // 
             // buttonOK
@@ -126,7 +163,6 @@
             resources.ApplyResources(this.buttonOK, "buttonOK");
             this.buttonOK.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.buttonOK.Name = "buttonOK";
-            toolTip1.SetToolTip(this.buttonOK, resources.GetString("buttonOK.ToolTip"));
             this.buttonOK.UseVisualStyleBackColor = true;
             this.buttonOK.Click += new System.EventHandler(this.buttonOK_Click);
             // 
@@ -134,7 +170,6 @@
             // 
             resources.ApplyResources(this.ReplaceEOL, "ReplaceEOL");
             this.ReplaceEOL.Name = "ReplaceEOL";
-            toolTip1.SetToolTip(this.ReplaceEOL, resources.GetString("ReplaceEOL.ToolTip"));
             this.ReplaceEOL.UseVisualStyleBackColor = true;
             this.ReplaceEOL.CheckedChanged += new System.EventHandler(this.checkBoxReplaceEOL_CheckedChanged);
             // 
@@ -142,7 +177,6 @@
             // 
             resources.ApplyResources(this.checkBoxPasteIntoNewClip, "checkBoxPasteIntoNewClip");
             this.checkBoxPasteIntoNewClip.Name = "checkBoxPasteIntoNewClip";
-            toolTip1.SetToolTip(this.checkBoxPasteIntoNewClip, resources.GetString("checkBoxPasteIntoNewClip.ToolTip"));
             this.checkBoxPasteIntoNewClip.UseVisualStyleBackColor = true;
             // 
             // richTextBox1
@@ -150,19 +184,16 @@
             resources.ApplyResources(this.richTextBox1, "richTextBox1");
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.ReadOnly = true;
-            toolTip1.SetToolTip(this.richTextBox1, resources.GetString("richTextBox1.ToolTip"));
             // 
             // label1
             // 
             resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
-            toolTip1.SetToolTip(this.label1, resources.GetString("label1.ToolTip"));
             // 
             // checkBoxReplaceTabWithSpaces
             // 
             resources.ApplyResources(this.checkBoxReplaceTabWithSpaces, "checkBoxReplaceTabWithSpaces");
             this.checkBoxReplaceTabWithSpaces.Name = "checkBoxReplaceTabWithSpaces";
-            toolTip1.SetToolTip(this.checkBoxReplaceTabWithSpaces, resources.GetString("checkBoxReplaceTabWithSpaces.ToolTip"));
             this.checkBoxReplaceTabWithSpaces.UseVisualStyleBackColor = true;
             this.checkBoxReplaceTabWithSpaces.CheckedChanged += new System.EventHandler(this.checkBoxReplaceTabWithSpaces_CheckedChanged);
             // 
@@ -177,6 +208,7 @@
             this.Controls.Add(this.checkBoxReplaceTabWithSpaces);
             this.Controls.Add(this.ReplaceEOL);
             this.Controls.Add(this.checkBoxPasteIntoNewClip);
+            this.Controls.Add(this.NormalizeEndOfLines);
             this.Controls.Add(this.NormalizeFreeSpace);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonOK);
@@ -185,7 +217,6 @@
             this.Name = "PasteSpecial";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
-            toolTip1.SetToolTip(this, resources.GetString("$this.ToolTip"));
             this.Load += new System.EventHandler(this.SpecialPaste_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -199,7 +230,7 @@
         private System.Windows.Forms.Button buttonCancel;
         private System.Windows.Forms.Button buttonOK;
         private System.Windows.Forms.CheckBox NormalizeFreeSpace;
-        private System.Windows.Forms.RadioButton AllUpper;
+        private System.Windows.Forms.RadioButton AllUpperCase;
         private System.Windows.Forms.RadioButton AllLowerCase;
         private System.Windows.Forms.RadioButton SentenceCase;
         private System.Windows.Forms.GroupBox groupBox1;
@@ -210,5 +241,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.CheckBox checkBoxReplaceTabWithSpaces;
         private System.Windows.Forms.TextBox textBoxNumberOfSpacesInTab;
+        private System.Windows.Forms.RadioButton LowerCamelCase;
+        private System.Windows.Forms.RadioButton UpperCamelCase;
+        private System.Windows.Forms.RadioButton FromCamelCase;
+        private System.Windows.Forms.CheckBox NormalizeEndOfLines;
     }
 }

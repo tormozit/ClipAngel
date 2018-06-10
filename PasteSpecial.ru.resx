@@ -118,39 +118,53 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="NormalizeFreeSpace.Location" type="System.Drawing.Point, System.Drawing">
+    <value>174, 67</value>
+  </data>
   <data name="NormalizeFreeSpace.Size" type="System.Drawing.Size, System.Drawing">
     <value>222, 17</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="NormalizeFreeSpace.TabIndex" type="System.Int32, mscorlib">
+    <value>23</value>
   </data>
   <data name="NormalizeFreeSpace.Text" xml:space="preserve">
     <value>Нормализовать непечатные символы </value>
   </data>
   <data name="NormalizeFreeSpace.ToolTip" xml:space="preserve">
-    <value>Каждая последовательность непечатных символов (кроме переноса строки) заменяется одним пробелом. 
+    <value>Каждая последовательность непечатных символов (кроме символа "перенос строки") заменяется одним пробелом. 
 Крайние непечатные символы удаляются. </value>
   </data>
-  <data name="AllUpper.Size" type="System.Drawing.Size, System.Drawing">
-    <value>91, 17</value>
+  <data name="AllUpperCase.Size" type="System.Drawing.Size, System.Drawing">
+    <value>129, 17</value>
   </data>
-  <data name="AllUpper.Text" xml:space="preserve">
-    <value>Все верхний </value>
+  <data name="AllUpperCase.Text" xml:space="preserve">
+    <value>ВЕРХНИЙ РЕГИСТР</value>
   </data>
-  <data name="AllUpper.ToolTip" xml:space="preserve">
-    <value>Верхний регистр для всех букв</value>
+  <data name="AllUpperCase.ToolTip" xml:space="preserve">
+    <value>Верхний регистр для всех букв
+</value>
   </data>
   <data name="AllLowerCase.Size" type="System.Drawing.Size, System.Drawing">
-    <value>88, 17</value>
+    <value>106, 17</value>
+  </data>
+  <data name="AllLowerCase.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
   </data>
   <data name="AllLowerCase.Text" xml:space="preserve">
-    <value>Все нижний </value>
+    <value>нижний регистр</value>
   </data>
   <data name="AllLowerCase.ToolTip" xml:space="preserve">
     <value>Нижний регистр для всех букв </value>
   </data>
   <data name="SentenceCase.Size" type="System.Drawing.Size, System.Drawing">
-    <value>98, 17</value>
+    <value>137, 17</value>
+  </data>
+  <data name="SentenceCase.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
   </data>
   <data name="SentenceCase.Text" xml:space="preserve">
-    <value>Предложения </value>
+    <value>Регистр предложения</value>
   </data>
   <data name="SentenceCase.ToolTip" xml:space="preserve">
     <value>Верхний регистр для первой буквы каждого предложения и нижний регистр для остальных букв.
@@ -159,11 +173,45 @@
   <data name="CaseNoChange.Size" type="System.Drawing.Size, System.Drawing">
     <value>82, 17</value>
   </data>
+  <data name="CaseNoChange.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
   <data name="CaseNoChange.Text" xml:space="preserve">
     <value>Не менять </value>
   </data>
   <data name="CaseNoChange.ToolTip" xml:space="preserve">
     <value />
+  </data>
+  <data name="FromCamelCase.Size" type="System.Drawing.Size, System.Drawing">
+    <value>143, 17</value>
+  </data>
+  <data name="FromCamelCase.Text" xml:space="preserve">
+    <value>из ЛюбогоВерблюжего</value>
+  </data>
+  <data name="FromCamelCase.ToolTip" xml:space="preserve">
+    <value>Разбить на слова по заглавным буквам и привести их к нижнему регистру</value>
+  </data>
+  <data name="LowerCamelCase.Size" type="System.Drawing.Size, System.Drawing">
+    <value>131, 17</value>
+  </data>
+  <data name="LowerCamelCase.Text" xml:space="preserve">
+    <value>в нижнийВерблюжий</value>
+  </data>
+  <data name="LowerCamelCase.ToolTip" xml:space="preserve">
+    <value>Первое слово в нижний регистр и все остальные слова с заглавной буквы. Удалить все пробелы.</value>
+  </data>
+  <data name="UpperCamelCase.Size" type="System.Drawing.Size, System.Drawing">
+    <value>135, 17</value>
+  </data>
+  <data name="UpperCamelCase.Text" xml:space="preserve">
+    <value>в ВерхнийВерблюжий</value>
+  </data>
+  <data name="UpperCamelCase.ToolTip" xml:space="preserve">
+    <value>Все слова с заглавной буквы. Удалить все пробелы.
+</value>
+  </data>
+  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>154, 188</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Регистр букв </value>
@@ -172,34 +220,80 @@
     <value>Изменение регистра букв </value>
   </data>
   <data name="textBoxNumberOfSpacesInTab.Location" type="System.Drawing.Point, System.Drawing">
-    <value>370, 41</value>
+    <value>420, 41</value>
+  </data>
+  <data name="textBoxNumberOfSpacesInTab.TabIndex" type="System.Int32, mscorlib">
+    <value>22</value>
   </data>
   <data name="textBoxNumberOfSpacesInTab.ToolTip" xml:space="preserve">
     <value>Количество пробелов на один символ табуляции</value>
   </data>
+  <data name="NormalizeEndOfLines.Location" type="System.Drawing.Point, System.Drawing">
+    <value>174, 90</value>
+  </data>
+  <data name="NormalizeEndOfLines.Size" type="System.Drawing.Size, System.Drawing">
+    <value>249, 17</value>
+  </data>
+  <data name="NormalizeEndOfLines.Text" xml:space="preserve">
+    <value>Нормализовать символы "перенос строки"</value>
+  </data>
+  <data name="NormalizeEndOfLines.ToolTip" xml:space="preserve">
+    <value>Каждая последовательность символов "перенос строки" заменяется на один "перенос строки".
+Крайние непечатные символы удаляются.</value>
+  </data>
+  <data name="buttonCancel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>363, 298</value>
+  </data>
+  <data name="buttonCancel.TabIndex" type="System.Int32, mscorlib">
+    <value>26</value>
+  </data>
+  <data name="buttonCancel.Text" xml:space="preserve">
+    <value>Отмена</value>
+  </data>
   <data name="buttonCancel.ToolTip" xml:space="preserve">
     <value />
+  </data>
+  <data name="buttonOK.Location" type="System.Drawing.Point, System.Drawing">
+    <value>282, 298</value>
+  </data>
+  <data name="buttonOK.TabIndex" type="System.Int32, mscorlib">
+    <value>25</value>
   </data>
   <data name="buttonOK.ToolTip" xml:space="preserve">
     <value />
   </data>
+  <data name="ReplaceEOL.Location" type="System.Drawing.Point, System.Drawing">
+    <value>174, 21</value>
+  </data>
   <data name="ReplaceEOL.Size" type="System.Drawing.Size, System.Drawing">
-    <value>216, 17</value>
+    <value>267, 17</value>
+  </data>
+  <data name="ReplaceEOL.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
   </data>
   <data name="ReplaceEOL.Text" xml:space="preserve">
-    <value>Заменить перенос строки на пробел </value>
+    <value>Заменить символ "перенос строки" на пробел </value>
   </data>
   <data name="ReplaceEOL.ToolTip" xml:space="preserve">
     <value />
   </data>
+  <data name="checkBoxPasteIntoNewClip.Location" type="System.Drawing.Point, System.Drawing">
+    <value>174, 113</value>
+  </data>
   <data name="checkBoxPasteIntoNewClip.Size" type="System.Drawing.Size, System.Drawing">
     <value>264, 17</value>
+  </data>
+  <data name="checkBoxPasteIntoNewClip.TabIndex" type="System.Int32, mscorlib">
+    <value>24</value>
   </data>
   <data name="checkBoxPasteIntoNewClip.Text" xml:space="preserve">
     <value>Вставить в новый клип вместо целевого окна </value>
   </data>
   <data name="checkBoxPasteIntoNewClip.ToolTip" xml:space="preserve">
     <value />
+  </data>
+  <data name="richTextBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>427, 76</value>
   </data>
   <data name="richTextBox1.ToolTip" xml:space="preserve">
     <value />
@@ -213,14 +307,23 @@
   <data name="label1.ToolTip" xml:space="preserve">
     <value />
   </data>
+  <data name="checkBoxReplaceTabWithSpaces.Location" type="System.Drawing.Point, System.Drawing">
+    <value>174, 44</value>
+  </data>
   <data name="checkBoxReplaceTabWithSpaces.Size" type="System.Drawing.Size, System.Drawing">
     <value>240, 17</value>
+  </data>
+  <data name="checkBoxReplaceTabWithSpaces.TabIndex" type="System.Int32, mscorlib">
+    <value>21</value>
   </data>
   <data name="checkBoxReplaceTabWithSpaces.Text" xml:space="preserve">
     <value>Заменить символ табуляции на пробелы  </value>
   </data>
   <data name="checkBoxReplaceTabWithSpaces.ToolTip" xml:space="preserve">
     <value />
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>445, 328</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Вставить  с параметрами </value>

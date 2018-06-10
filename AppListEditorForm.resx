@@ -127,8 +127,9 @@
   <data name="buttonOK.Location" type="System.Drawing.Point, System.Drawing">
     <value>531, 382</value>
   </data>
-  <data name="splitContainer1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 70</value>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="listViewRunningList.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
   </data>
   <data name="&gt;&gt;buttonAdd.Name" xml:space="preserve">
     <value>buttonAdd</value>
@@ -139,13 +140,12 @@
   <data name="&gt;&gt;buttonOK.Name" xml:space="preserve">
     <value>buttonOK</value>
   </data>
-  <data name="buttonRefresh.Location" type="System.Drawing.Point, System.Drawing">
-    <value>427, 41</value>
+  <data name="&gt;&gt;splitContainer1.Panel1.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="&gt;&gt;buttonDeleteSelected.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="buttonCancel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -189,12 +189,6 @@
   <data name="buttonAdd.ToolTip" xml:space="preserve">
     <value>Add selected running applications</value>
   </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>699, 417</value>
-  </data>
-  <data name="&gt;&gt;splitContainer1.Panel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="buttonSelectClipboardOwner.Size" type="System.Drawing.Size, System.Drawing">
     <value>156, 23</value>
   </data>
@@ -203,6 +197,9 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Application list editor</value>
+  </data>
+  <data name="RunningListApplication.Width" type="System.Int32, mscorlib">
+    <value>268</value>
   </data>
   <data name="buttonSelectTargetApplication.Location" type="System.Drawing.Point, System.Drawing">
     <value>531, 41</value>
@@ -219,6 +216,9 @@
   <data name="&gt;&gt;label1.Name" xml:space="preserve">
     <value>label1</value>
   </data>
+  <data name="buttonRefresh.Location" type="System.Drawing.Point, System.Drawing">
+    <value>427, 41</value>
+  </data>
   <data name="listViewRunningList.Size" type="System.Drawing.Size, System.Drawing">
     <value>333, 281</value>
   </data>
@@ -228,11 +228,14 @@
   <data name="splitContainer1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
-  <data name="&gt;&gt;buttonOK.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
   </data>
   <data name="&gt;&gt;RunningListApplication.Name" xml:space="preserve">
     <value>RunningListApplication</value>
+  </data>
+  <data name="&gt;&gt;buttonSelectTargetApplication.Name" xml:space="preserve">
+    <value>buttonSelectTargetApplication</value>
   </data>
   <data name="&gt;&gt;splitContainer1.Panel1.Parent" xml:space="preserve">
     <value>splitContainer1</value>
@@ -249,14 +252,17 @@
   <data name="&gt;&gt;splitContainer1.Name" xml:space="preserve">
     <value>splitContainer1</value>
   </data>
-  <data name="label2.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="&gt;&gt;splitContainer1.Panel1.Name" xml:space="preserve">
+    <value>splitContainer1.Panel1</value>
   </data>
   <data name="SelectedListModule.Text" xml:space="preserve">
     <value>Module</value>
   </data>
   <data name="splitContainer1.SplitterDistance" type="System.Int32, mscorlib">
     <value>335</value>
+  </data>
+  <data name="$this.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="&gt;&gt;listViewRunningList.Parent" xml:space="preserve">
     <value>splitContainer1.Panel2</value>
@@ -285,8 +291,8 @@
   <data name="RunningListApplication.Text" xml:space="preserve">
     <value>Path</value>
   </data>
-  <data name="RunningListApplication.Width" type="System.Int32, mscorlib">
-    <value>268</value>
+  <data name="buttonRefresh.Size" type="System.Drawing.Size, System.Drawing">
+    <value>79, 23</value>
   </data>
   <data name="&gt;&gt;listViewRunningList.Name" xml:space="preserve">
     <value>listViewRunningList</value>
@@ -297,14 +303,17 @@
   <data name="listViewChosenList.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
-  <data name="buttonOK.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+  <data name="&gt;&gt;buttonRefresh.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
+  <data name="label2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="buttonAdd.Text" xml:space="preserve">
     <value>Add selected applications</value>
+  </data>
+  <data name="buttonOK.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
   </data>
   <data name="buttonAdd.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -351,14 +360,17 @@
   <data name="SelectedListApplication.Text" xml:space="preserve">
     <value>Path</value>
   </data>
+  <data name="&gt;&gt;splitContainer1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitContainer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="buttonRefresh.Text" xml:space="preserve">
     <value>Refresh</value>
   </data>
   <data name="&gt;&gt;RunningListModule.Type" xml:space="preserve">
     <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>98, 13</value>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterParent</value>
   </data>
   <data name="&gt;&gt;buttonRefresh.Name" xml:space="preserve">
     <value>buttonRefresh</value>
@@ -366,14 +378,14 @@
   <data name="buttonCancel.Location" type="System.Drawing.Point, System.Drawing">
     <value>612, 382</value>
   </data>
-  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
-    <value>CenterParent</value>
+  <data name="&gt;&gt;RunningListModule.Name" xml:space="preserve">
+    <value>RunningListModule</value>
   </data>
   <data name="listViewChosenList.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="&gt;&gt;buttonRefresh.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="splitContainer1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 70</value>
   </data>
   <data name="&gt;&gt;splitContainer1.Panel2.Parent" xml:space="preserve">
     <value>splitContainer1</value>
@@ -395,12 +407,6 @@
   </data>
   <data name="buttonDeleteSelected.Text" xml:space="preserve">
     <value>Delete selected applications</value>
-  </data>
-  <data name="label1.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="&gt;&gt;RunningListModule.Name" xml:space="preserve">
-    <value>RunningListModule</value>
   </data>
   <data name="buttonDeleteSelected.Size" type="System.Drawing.Size, System.Drawing">
     <value>161, 23</value>
@@ -426,6 +432,9 @@
   <data name="buttonAddByFile.ToolTip" xml:space="preserve">
     <value>Open file selection dialog and add selected application</value>
   </data>
+  <data name="buttonSelectClipboardOwner.ToolTip" xml:space="preserve">
+    <value>Select clipboard owner in running applications current </value>
+  </data>
   <data name="label1.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
@@ -441,8 +450,8 @@
   <data name="&gt;&gt;buttonSelectTargetApplication.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="listViewRunningList.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
+  <data name="splitContainer1.Panel1.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="&gt;&gt;splitContainer1.Panel2.Name" xml:space="preserve">
     <value>splitContainer1.Panel2</value>
@@ -452,12 +461,6 @@
   </data>
   <data name="&gt;&gt;SelectedListApplication.Name" xml:space="preserve">
     <value>SelectedListApplication</value>
-  </data>
-  <data name="&gt;&gt;splitContainer1.Panel1.Name" xml:space="preserve">
-    <value>splitContainer1.Panel1</value>
-  </data>
-  <data name="buttonOK.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
   <data name="&gt;&gt;buttonCancel.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -486,8 +489,8 @@
   <data name="label2.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="buttonRefresh.Size" type="System.Drawing.Size, System.Drawing">
-    <value>79, 23</value>
+  <data name="&gt;&gt;buttonOK.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="buttonRefresh.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top</value>
@@ -495,8 +498,8 @@
   <data name="buttonSelectClipboardOwner.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
   </data>
-  <data name="listViewRunningList.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="buttonOK.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="buttonCancel.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -507,11 +510,11 @@
   <data name="&gt;&gt;buttonAdd.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
+  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>98, 13</value>
+  </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
     <value>102, 13</value>
-  </data>
-  <data name="splitContainer1.Panel2.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="&gt;&gt;SelectedListApplication.Type" xml:space="preserve">
     <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -522,14 +525,11 @@
   <data name="label1.Text" xml:space="preserve">
     <value>Running apllications</value>
   </data>
-  <data name="$this.ToolTip" xml:space="preserve">
-    <value />
+  <data name="&gt;&gt;splitContainer1.Panel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="buttonRefresh.ToolTip" xml:space="preserve">
     <value>Refresh running applications list</value>
-  </data>
-  <data name="&gt;&gt;splitContainer1.Panel1.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <data name="&gt;&gt;listViewChosenList.Parent" xml:space="preserve">
     <value>splitContainer1.Panel1</value>
@@ -546,8 +546,8 @@
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 5</value>
   </data>
-  <data name="buttonSelectClipboardOwner.ToolTip" xml:space="preserve">
-    <value>Select clipboard owner in running applications current </value>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>699, 417</value>
   </data>
   <data name="buttonRefresh.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
@@ -558,8 +558,8 @@
   <data name="buttonSelectClipboardOwner.Location" type="System.Drawing.Point, System.Drawing">
     <value>531, 12</value>
   </data>
-  <data name="&gt;&gt;splitContainer1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.SplitContainer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="label1.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="&gt;&gt;label1.Parent" xml:space="preserve">
     <value>splitContainer1.Panel2</value>
@@ -570,8 +570,8 @@
   <data name="splitContainer1.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
   </data>
-  <data name="&gt;&gt;buttonSelectTargetApplication.Name" xml:space="preserve">
-    <value>buttonSelectTargetApplication</value>
+  <data name="splitContainer1.Panel2.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="splitContainer1.ToolTip" xml:space="preserve">
     <value />
@@ -588,8 +588,8 @@
   <data name="buttonAdd.Location" type="System.Drawing.Point, System.Drawing">
     <value>282, 41</value>
   </data>
-  <data name="splitContainer1.Panel1.ToolTip" xml:space="preserve">
-    <value />
+  <data name="listViewRunningList.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="buttonDeleteSelected.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 41</value>
