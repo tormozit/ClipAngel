@@ -722,6 +722,7 @@ namespace ClipAngel
 
         public void Load(bool PortableMode = false)
         {
+            EncryptDatabaseForCurrentUser = Properties.Settings.Default.EncryptDatabaseForCurrentUser;
             ReplaceDuplicates = Properties.Settings.Default.ReplaceDuplicates;
             GlobalHotkeySwitchMonitoring = Properties.Settings.Default.GlobalHotkeySwitchMonitoring;
             ReadWindowTitles = Properties.Settings.Default.ReadWindowTitles;
@@ -796,6 +797,7 @@ namespace ClipAngel
 
         public void Apply(bool PortableMode = false)
         {
+            Properties.Settings.Default.EncryptDatabaseForCurrentUser = EncryptDatabaseForCurrentUser;
             Properties.Settings.Default.ReplaceDuplicates = ReplaceDuplicates;
             Properties.Settings.Default.GlobalHotkeySwitchMonitoring = GlobalHotkeySwitchMonitoring;
             Properties.Settings.Default.ReadWindowTitles = ReadWindowTitles;
@@ -997,6 +999,10 @@ namespace ClipAngel
         [GlobalizedCategory("Other")]
         [Editor(typeof(MyBoolEditor), typeof(UITypeEditor))]
         public bool ReplaceDuplicates { get; set; }
+
+        [GlobalizedCategory("Other")]
+        [Editor(typeof(MyBoolEditor), typeof(UITypeEditor))]
+        public bool EncryptDatabaseForCurrentUser { get; set; }
 
         [GlobalizedCategory("Other")]
         [EditorAttribute(typeof(FolderNameEditor), typeof(UITypeEditor))]

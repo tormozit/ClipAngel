@@ -4193,12 +4193,19 @@ namespace ClipAngel
         {
             SettingsForm settingsFormForm = new SettingsForm(this);
             string oldDatabaseFile = Properties.Settings.Default.DatabaseFile;
+            bool oldEncryptDatabaseForCurrentUser = Properties.Settings.Default.EncryptDatabaseForCurrentUser;
             settingsFormForm.ShowDialog(this);
             if (settingsFormForm.DialogResult == DialogResult.OK)
             {
-                if (oldDatabaseFile != Properties.Settings.Default.DatabaseFile)
+                if (false
+                    || oldDatabaseFile != Properties.Settings.Default.DatabaseFile
+                    || oldEncryptDatabaseForCurrentUser != Properties.Settings.Default.EncryptDatabaseForCurrentUser)
                 {
                     CloseDatabase();
+                    if (Properties.Settings.Default.EncryptDatabaseForCurrentUser)
+                        File.Encrypt(DbFileName);
+                    else
+                        File.Decrypt(DbFileName);
                     OpenDatabase();
                 }
                 LoadSettings();
@@ -6230,6 +6237,11 @@ namespace ClipAngel
         private void htmlMenuItemCopy_Click(object sender, EventArgs e)
         {
             htmlTextBox.Document.ExecCommand("COPY", false, 0);
+        }
+
+        private void gotoTopToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            GotoLastRow();
         }
     }
 }

@@ -704,5 +704,17 @@ namespace ClipAngel.Properties {
                 this["GlobalHotkeySimulateInput"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool EncryptDatabaseForCurrentUser {
+            get {
+                return ((bool)(this["EncryptDatabaseForCurrentUser"]));
+            }
+            set {
+                this["EncryptDatabaseForCurrentUser"] = value;
+            }
+        }
     }
 }
