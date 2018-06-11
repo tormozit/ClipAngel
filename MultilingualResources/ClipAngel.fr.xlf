@@ -8195,7 +8195,7 @@ To launch program on user logon turn on autostart in settings.</target>
           <target state="needs-review-translation">78, 17</target>
         </trans-unit>
         <trans-unit id="buttonOK.Location" translate="yes" xml:space="preserve" extype="System.Drawing.Point, System.Drawing">
-          <source>299, 298</source>
+          <source>282, 299</source>
           <target state="needs-review-translation">228, 245</target>
           <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
@@ -8266,7 +8266,7 @@ To launch program on user logon turn on autostart in settings.</target>
           <target state="needs-review-translation">CenterParent</target>
         </trans-unit>
         <trans-unit id="buttonCancel.Location" translate="yes" xml:space="preserve" extype="System.Drawing.Point, System.Drawing">
-          <source>380, 298</source>
+          <source>363, 299</source>
           <target state="needs-review-translation">309, 245</target>
           <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
@@ -8347,7 +8347,7 @@ To launch program on user logon turn on autostart in settings.</target>
           <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="richTextBox1.Size" translate="yes" xml:space="preserve" extype="System.Drawing.Size, System.Drawing">
-          <source>444, 75</source>
+          <source>427, 76</source>
           <target state="needs-review-translation">377, 87</target>
           <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
@@ -8392,7 +8392,7 @@ To launch program on user logon turn on autostart in settings.</target>
           <target state="new">Preview</target>
         </trans-unit>
         <trans-unit id="textBoxNumberOfSpacesInTab.Location" translate="yes" xml:space="preserve" extype="System.Drawing.Point, System.Drawing">
-          <source>437, 41</source>
+          <source>420, 44</source>
           <target state="needs-review-translation">365, 41</target>
           <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
@@ -8412,7 +8412,7 @@ To launch program on user logon turn on autostart in settings.</target>
           <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="$this.ClientSize" translate="yes" xml:space="preserve" extype="System.Drawing.Size, System.Drawing">
-          <source>462, 327</source>
+          <source>445, 328</source>
           <target state="needs-review-translation">395, 280</target>
           <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
@@ -8607,6 +8607,22 @@ Trailing unprintable symbols are deleted.</target>
         <trans-unit id="FromCamelCase.ToolTip" translate="yes" xml:space="preserve">
           <source>Split words by capital letters and put them lower case.</source>
           <target state="new">Split words by capital letters and put them lower case.</target>
+        </trans-unit>
+        <trans-unit id="buttonCancel.ToolTip" translate="yes" xml:space="preserve">
+          <source></source>
+          <target state="new"></target>
+        </trans-unit>
+        <trans-unit id="$this.ToolTip" translate="yes" xml:space="preserve">
+          <source></source>
+          <target state="new"></target>
+        </trans-unit>
+        <trans-unit id="label1.ToolTip" translate="yes" xml:space="preserve">
+          <source></source>
+          <target state="new"></target>
+        </trans-unit>
+        <trans-unit id="buttonOK.ToolTip" translate="yes" xml:space="preserve">
+          <source></source>
+          <target state="new"></target>
         </trans-unit>
       </group>
     </body>

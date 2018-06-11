@@ -119,7 +119,7 @@
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="NormalizeFreeSpace.Location" type="System.Drawing.Point, System.Drawing">
-    <value>174, 67</value>
+    <value>176, 67</value>
   </data>
   <data name="NormalizeFreeSpace.Size" type="System.Drawing.Size, System.Drawing">
     <value>222, 17</value>
@@ -170,6 +170,15 @@
     <value>Верхний регистр для первой буквы каждого предложения и нижний регистр для остальных букв.
  </value>
   </data>
+  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>160, 188</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Регистр букв </value>
+  </data>
+  <data name="groupBox1.ToolTip" xml:space="preserve">
+    <value>Изменение регистра букв </value>
+  </data>
   <data name="CaseNoChange.Size" type="System.Drawing.Size, System.Drawing">
     <value>82, 17</value>
   </data>
@@ -179,14 +188,11 @@
   <data name="CaseNoChange.Text" xml:space="preserve">
     <value>Не менять </value>
   </data>
-  <data name="CaseNoChange.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="FromCamelCase.Size" type="System.Drawing.Size, System.Drawing">
-    <value>143, 17</value>
+    <value>149, 17</value>
   </data>
   <data name="FromCamelCase.Text" xml:space="preserve">
-    <value>из ЛюбогоВерблюжего</value>
+    <value>из ЛюбогоВерблюжьего</value>
   </data>
   <data name="FromCamelCase.ToolTip" xml:space="preserve">
     <value>Разбить на слова по заглавным буквам и привести их к нижнему регистру</value>
@@ -210,15 +216,6 @@
     <value>Все слова с заглавной буквы. Удалить все пробелы.
 </value>
   </data>
-  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>154, 188</value>
-  </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>Регистр букв </value>
-  </data>
-  <data name="groupBox1.ToolTip" xml:space="preserve">
-    <value>Изменение регистра букв </value>
-  </data>
   <data name="textBoxNumberOfSpacesInTab.Location" type="System.Drawing.Point, System.Drawing">
     <value>420, 41</value>
   </data>
@@ -229,7 +226,7 @@
     <value>Количество пробелов на один символ табуляции</value>
   </data>
   <data name="NormalizeEndOfLines.Location" type="System.Drawing.Point, System.Drawing">
-    <value>174, 90</value>
+    <value>176, 90</value>
   </data>
   <data name="NormalizeEndOfLines.Size" type="System.Drawing.Size, System.Drawing">
     <value>249, 17</value>
@@ -250,20 +247,14 @@
   <data name="buttonCancel.Text" xml:space="preserve">
     <value>Отмена</value>
   </data>
-  <data name="buttonCancel.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="buttonOK.Location" type="System.Drawing.Point, System.Drawing">
     <value>282, 298</value>
   </data>
   <data name="buttonOK.TabIndex" type="System.Int32, mscorlib">
     <value>25</value>
   </data>
-  <data name="buttonOK.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="ReplaceEOL.Location" type="System.Drawing.Point, System.Drawing">
-    <value>174, 21</value>
+    <value>176, 21</value>
   </data>
   <data name="ReplaceEOL.Size" type="System.Drawing.Size, System.Drawing">
     <value>267, 17</value>
@@ -274,11 +265,8 @@
   <data name="ReplaceEOL.Text" xml:space="preserve">
     <value>Заменить символ "перенос строки" на пробел </value>
   </data>
-  <data name="ReplaceEOL.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="checkBoxPasteIntoNewClip.Location" type="System.Drawing.Point, System.Drawing">
-    <value>174, 113</value>
+    <value>176, 113</value>
   </data>
   <data name="checkBoxPasteIntoNewClip.Size" type="System.Drawing.Size, System.Drawing">
     <value>264, 17</value>
@@ -289,14 +277,8 @@
   <data name="checkBoxPasteIntoNewClip.Text" xml:space="preserve">
     <value>Вставить в новый клип вместо целевого окна </value>
   </data>
-  <data name="checkBoxPasteIntoNewClip.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="richTextBox1.Size" type="System.Drawing.Size, System.Drawing">
     <value>427, 76</value>
-  </data>
-  <data name="richTextBox1.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
     <value>85, 13</value>
@@ -304,11 +286,8 @@
   <data name="label1.Text" xml:space="preserve">
     <value>Предпросмотр </value>
   </data>
-  <data name="label1.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="checkBoxReplaceTabWithSpaces.Location" type="System.Drawing.Point, System.Drawing">
-    <value>174, 44</value>
+    <value>176, 44</value>
   </data>
   <data name="checkBoxReplaceTabWithSpaces.Size" type="System.Drawing.Size, System.Drawing">
     <value>240, 17</value>
@@ -319,16 +298,10 @@
   <data name="checkBoxReplaceTabWithSpaces.Text" xml:space="preserve">
     <value>Заменить символ табуляции на пробелы  </value>
   </data>
-  <data name="checkBoxReplaceTabWithSpaces.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>445, 328</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Вставить  с параметрами </value>
-  </data>
-  <data name="$this.ToolTip" xml:space="preserve">
-    <value />
   </data>
 </root>
