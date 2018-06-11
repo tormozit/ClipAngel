@@ -191,7 +191,7 @@
     <value>Шрифт списка клипов и по умолчанию для текста клипа</value>
   </data>
   <data name="EncryptDatabaseForCurrentUser" xml:space="preserve">
-    <value>Зашифровать базу данных для текущего пользователя</value>
+    <value>Шифровать базу данных для текущего пользователя</value>
   </data>
   <data name="EncryptDatabaseForCurrentUserDescription" xml:space="preserve">
     <value>Установит NTFS флаг шифрования файла базы данных. Только текущий пользователь Windows сможет его прочитать.</value>
