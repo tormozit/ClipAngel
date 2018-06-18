@@ -722,6 +722,7 @@ namespace ClipAngel
 
         public void Load(bool PortableMode = false)
         {
+            Max1CCodeSizeToColorize = Properties.Settings.Default.Max1CCodeSizeToColorize;
             EncryptDatabaseForCurrentUser = Properties.Settings.Default.EncryptDatabaseForCurrentUser;
             ReplaceDuplicates = Properties.Settings.Default.ReplaceDuplicates;
             GlobalHotkeySwitchMonitoring = Properties.Settings.Default.GlobalHotkeySwitchMonitoring;
@@ -797,6 +798,7 @@ namespace ClipAngel
 
         public void Apply(bool PortableMode = false)
         {
+            Properties.Settings.Default.Max1CCodeSizeToColorize = Max1CCodeSizeToColorize;
             Properties.Settings.Default.EncryptDatabaseForCurrentUser = EncryptDatabaseForCurrentUser;
             Properties.Settings.Default.ReplaceDuplicates = ReplaceDuplicates;
             Properties.Settings.Default.GlobalHotkeySwitchMonitoring = GlobalHotkeySwitchMonitoring;
@@ -976,6 +978,9 @@ namespace ClipAngel
 
         [GlobalizedCategory("Other")]
         public int MaxCellsToCaptureImage { get; set; }
+
+        [GlobalizedCategory("Other")]
+        public int Max1CCodeSizeToColorize { get; set; }
 
         [GlobalizedCategory("Other")]
         [Editor(typeof(MyBoolEditor), typeof(UITypeEditor))]

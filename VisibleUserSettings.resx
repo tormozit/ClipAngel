@@ -291,6 +291,12 @@ This format is usually  used by password managers when copying passwords to clip
   <data name="LanguageDescription" xml:space="preserve">
     <value>User interface language</value>
   </data>
+  <data name="Max1CCodeSizeToColorize" xml:space="preserve">
+    <value>Max 1C code size to colorize</value>
+  </data>
+  <data name="Max1CCodeSizeToColorizeDescription" xml:space="preserve">
+    <value>Max 1C (Russian programming platform) code size in chars to colorize syntax. 1C code capture is detected by focused window type. 0 - do not colorize</value>
+  </data>
   <data name="MaxCellsToCaptureFormattedText" xml:space="preserve">
     <value>Max cells to capture formatted text</value>
   </data>

@@ -150,7 +150,8 @@ namespace ClipAngel
             string clipWindow = "";
             string clipApplication = "";
             string appPath = "";
-            Main.GetClipboardOwnerLockerInfo(false, out clipWindow, out clipApplication, out appPath, false);
+            bool is1C = false;
+            Main.GetClipboardOwnerLockerInfo(false, out clipWindow, out clipApplication, out appPath, out is1C, false);
             ListViewItem[] items = listViewRunningList.Items.Find(appPath, true);
             if (items.Length > 0)
             {

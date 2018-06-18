@@ -716,5 +716,17 @@ namespace ClipAngel.Properties {
                 this["EncryptDatabaseForCurrentUser"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("10000")]
+        public int Max1CCodeSizeToColorize {
+            get {
+                return ((int)(this["Max1CCodeSizeToColorize"]));
+            }
+            set {
+                this["Max1CCodeSizeToColorize"] = value;
+            }
+        }
     }
 }

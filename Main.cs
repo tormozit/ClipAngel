@@ -26,6 +26,7 @@ using AngleSharp.Dom;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Web.UI.Design;
+using System.Windows.Automation;
 using System.Xml;
 using System.Xml.Linq;
 using WindowsInput.Native;
@@ -1712,7 +1713,8 @@ namespace ClipAngel
             string appPath = "";
             string clipWindow = "";
             string clipApplication = "";
-            GetClipboardOwnerLockerInfo(false, out clipWindow, out clipApplication, out appPath);
+            bool is1C = false;
+            GetClipboardOwnerLockerInfo(false, out clipWindow, out clipApplication, out appPath, out is1C);
             if (ignoreModulesInClipCapture.Contains(clipApplication.ToLower()))
                 return;
             try
@@ -1868,6 +1870,15 @@ namespace ClipAngel
                         rtfBox.Rtf = richText;
                         clipText = rtfBox.Text;
                         textFormatPresent = true;
+                    }
+                }
+                if (is1C && String.IsNullOrEmpty(richText) && String.IsNullOrEmpty(htmlText))
+                {
+                    SyntaxHighlighter syntax = new SyntaxHighlighter();
+                    if (Properties.Settings.Default.Max1CCodeSizeToColorize > clipText.Length)
+                    {
+                        htmlText = syntax.ProcessCode(clipText);
+                        clipType = "html";
                     }
                 }
 
@@ -3054,13 +3065,14 @@ namespace ClipAngel
         [DllImport("user32.dll")]
         static extern IntPtr GetOpenClipboardWindow();
 
-        static public void GetClipboardOwnerLockerInfo(bool Locker, out string window, out string application,
-            out string appPath, bool replaceNullWithLastActive = true)
+        static public void GetClipboardOwnerLockerInfo(bool Locker, out string windowTitle, out string application,
+            out string appPath, out bool is1CCode, bool replaceNullWithLastActive = true)
         {
             IntPtr hwnd;
-            window = "";
+            windowTitle = "";
             application = "";
             appPath = "";
+            is1CCode = false;
             //if (!Properties.Settings.Default.ReadWindowTitles)
             //    return;
             if (Locker)
@@ -3082,7 +3094,7 @@ namespace ClipAngel
             application = process1.ProcessName;
             appPath = GetProcessMainModuleFullName(processId);
             hwnd = process1.MainWindowHandle;
-            window = GetWindowTitle(hwnd);
+            windowTitle = GetWindowTitle(hwnd);
             //// We need top level window
             ////const uint GW_OWNER = 4;
             //while ((int)hwnd != 0)
@@ -3095,6 +3107,17 @@ namespace ClipAngel
             //    //    hwnd = hOwner;
             //    //}
             //}
+            if (hwnd != IntPtr.Zero)
+            {
+                AutomationElement mainWindow = AutomationElement.FromHandle(hwnd);
+                AutomationElement focusedControl = AutomationElement.FocusedElement;
+                is1CCode = true
+                       && String.Compare(application, "1cv8", true) == 0
+                       && focusedControl.Current.ControlType == ControlType.Document
+                       && (false
+                           || mainWindow.Current.Name.Contains(": Модуль")
+                           || mainWindow.Current.Name.Contains(": Форма"));
+            }
         }
 
         void sendKey(IntPtr hwnd, Keys keyCode, bool extended = false, bool down = true, bool up = true)
@@ -3850,15 +3873,16 @@ namespace ClipAngel
             row.Cells["ColumnTitle"].Value = dataRowView.Row["Title"].ToString();
 
             string textPattern = RegexpPatternFromTextFilter();
+            _richTextBox.Clear();
+            _richTextBox.Font = dataGridView.RowsDefaultCellStyle.Font;
+            _richTextBox.Text = row.Cells["ColumnTitle"].Value.ToString();
             if (!String.IsNullOrEmpty(textPattern))
             {
-                _richTextBox.Clear();
-                _richTextBox.Font = dataGridView.RowsDefaultCellStyle.Font;
-                _richTextBox.Text = row.Cells["ColumnTitle"].Value.ToString();
                 MatchCollection tempMatches;
                 MarkRegExpMatchesInRichTextBox(_richTextBox, textPattern, Color.Red, false, true, out tempMatches);
-                row.Cells["ColumnTitle"].Value = _richTextBox.Rtf;
             }
+            row.Cells["ColumnTitle"].Value = _richTextBox.Rtf;
+
             var imageSampleBuffer = dataRowView["ImageSample"];
             if (imageSampleBuffer != DBNull.Value)
                 if ((imageSampleBuffer as byte[]).Length > 0)
@@ -3911,7 +3935,9 @@ namespace ClipAngel
             }
             if (Properties.Settings.Default.SearchWildcards)
                 result = result.Replace("%", ".*?");
-            return "(" + result + ")";
+            if (!String.IsNullOrWhiteSpace(result))
+                result = "(" + result + ")";
+            return result;
         }
 
         static public Bitmap ApplicationIcon(string filePath, bool original = true)
@@ -5197,7 +5223,7 @@ namespace ClipAngel
             //}
         }
 
-        private void timerApplyTextFiler_Tick(object sender, EventArgs e)
+        private void timerApplyTextFiler_Tick(object sender = null, EventArgs e = null)
         {
             TextFilterApply();
             timerApplyTextFiler.Stop();
@@ -5752,7 +5778,8 @@ namespace ClipAngel
                 string appPath = "";
                 string clipWindow = "";
                 string clipApplication = "";
-                GetClipboardOwnerLockerInfo(true, out clipWindow, out clipApplication, out appPath);
+                bool is1C = false;
+                GetClipboardOwnerLockerInfo(true, out clipWindow, out clipApplication, out appPath, out is1C);
                 Debug.WriteLine(String.Format(Properties.Resources.FailedToWriteClipboard, clipWindow, clipApplication));
             }
             //if (!success)

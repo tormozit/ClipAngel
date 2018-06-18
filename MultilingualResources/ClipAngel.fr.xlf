@@ -481,8 +481,8 @@
           <target state="translated">Le clip n'a pas été capturé en raison de l'erreur de lecture du presse-papiers</target>
         </trans-unit>
         <trans-unit id="VersionValue" translate="yes" xml:space="preserve">
-          <source>1.52</source>
-          <target state="new">1.52</target>
+          <source>1.53</source>
+          <target state="new">1.53</target>
         </trans-unit>
         <trans-unit id="TargetWindow" translate="yes" xml:space="preserve">
           <source>Target window</source>
@@ -1620,6 +1620,14 @@ La génération d'image consomme CPU. Si vous rencontrez une charge CPU élevée
         <trans-unit id="EncryptDatabaseForCurrentUserDescription" translate="yes" xml:space="preserve">
           <source>Set NTFS encryption flag in database file. Only current Windows user will be able to read it.</source>
           <target state="new">Set NTFS encryption flag in database file. Only current Windows user will be able to read it.</target>
+        </trans-unit>
+        <trans-unit id="Max1CCodeSizeToColorize" translate="yes" xml:space="preserve">
+          <source>Max 1C code size to colorize</source>
+          <target state="new">Max 1C code size to colorize</target>
+        </trans-unit>
+        <trans-unit id="Max1CCodeSizeToColorizeDescription" translate="yes" xml:space="preserve">
+          <source>Max 1C (Russian programming platform) code size in chars to colorize syntax. 1C code capture is detected by focused window type. 0 - do not colorize</source>
+          <target state="new">Max 1C (Russian programming platform) code size in chars to colorize syntax. 1C code capture is detected by focused window type. 0 - do not colorize</target>
         </trans-unit>
       </group>
     </body>
@@ -8463,10 +8471,6 @@ Trailing unprintable symbols are deleted.</target>
           <source>True</source>
           <target state="needs-review-translation">True</target>
         </trans-unit>
-        <trans-unit id="$this.Language" translate="yes" xml:space="preserve" extype="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" extradata="metadata">
-          <source>ru</source>
-          <target state="needs-review-translation">ru</target>
-        </trans-unit>
         <trans-unit id="AllUpperCase.AutoSize" translate="yes" xml:space="preserve" extype="System.Boolean, mscorlib">
           <source>True</source>
           <target state="needs-review-translation">True</target>
@@ -8607,22 +8611,6 @@ Trailing unprintable symbols are deleted.</target>
         <trans-unit id="FromCamelCase.ToolTip" translate="yes" xml:space="preserve">
           <source>Split words by capital letters and put them lower case.</source>
           <target state="new">Split words by capital letters and put them lower case.</target>
-        </trans-unit>
-        <trans-unit id="buttonCancel.ToolTip" translate="yes" xml:space="preserve">
-          <source></source>
-          <target state="new"></target>
-        </trans-unit>
-        <trans-unit id="$this.ToolTip" translate="yes" xml:space="preserve">
-          <source></source>
-          <target state="new"></target>
-        </trans-unit>
-        <trans-unit id="label1.ToolTip" translate="yes" xml:space="preserve">
-          <source></source>
-          <target state="new"></target>
-        </trans-unit>
-        <trans-unit id="buttonOK.ToolTip" translate="yes" xml:space="preserve">
-          <source></source>
-          <target state="new"></target>
         </trans-unit>
       </group>
     </body>

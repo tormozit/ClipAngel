@@ -113,6 +113,8 @@
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
+    <Reference Include="UIAutomationClient" />
+    <Reference Include="UIAutomationTypes" />
     <Reference Include="WindowsInput, Version=1.0.4.0, Culture=neutral, PublicKeyToken=9b287f7dc5073cad, processorArchitecture=MSIL">
       <HintPath>packages\InputSimulator.1.0.4.0\lib\net20\WindowsInput.dll</HintPath>
       <Private>True</Private>
@@ -189,6 +191,7 @@
     <Compile Include="PasteSpecial.Designer.cs">
       <DependentUpon>PasteSpecial.cs</DependentUpon>
     </Compile>
+    <Compile Include="SyntaxHighlighter.cs" />
     <Compile Include="Tips.cs">
       <SubType>Form</SubType>
     </Compile>
