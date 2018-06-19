@@ -24,7 +24,7 @@ namespace ClipAngel
         private string StylePart()
         {
             return
-                @"pre
+            @"pre
             {
              font - family: Courier;
              color: #0000FF;

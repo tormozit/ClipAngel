@@ -1019,6 +1019,13 @@ namespace ClipAngel
                             string replacement = "<DIV style=\"width: 100%\" class=\"fullSize fdFieldMainContainer";
                             htmlText = htmlText.Replace(marker, replacement);
 
+                            string newStyle = " margin: 0;";
+                            if (Properties.Settings.Default.WordWrap)
+                            {
+                                newStyle += " word-wrap: break-word;";
+                            }
+                            htmlText = Regex.Replace(htmlText, "<body", "<body style=\"" + newStyle + "\" ", RegexOptions.IgnoreCase);
+
                             //while (this.htmlTextBox.ReadyState != WebBrowserReadyState.Complete)
                             //{
                             //    Application.DoEvents();
@@ -4713,6 +4720,8 @@ namespace ClipAngel
             allowTextPositionChangeUpdate = false;
             UpdateControlsStates();
             allowTextPositionChangeUpdate = true;
+            if (RowReader["type"].ToString() == "html")
+                AfterRowLoad();
             UpdateSelectionPosition();
         }
 
