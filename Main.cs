@@ -3116,14 +3116,15 @@ namespace ClipAngel
             //}
             if (hwnd != IntPtr.Zero)
             {
-                AutomationElement mainWindow = AutomationElement.FromHandle(hwnd);
+                //AutomationElement mainWindow = AutomationElement.FromHandle(hwnd); // Выбрасывает Automation.ElementNotAvailableException на окне ввода пароля 1С
                 AutomationElement focusedControl = AutomationElement.FocusedElement;
                 is1CCode = true
-                       && String.Compare(application, "1cv8", true) == 0
-                       && focusedControl.Current.ControlType == ControlType.Document
-                       && (false
-                           || mainWindow.Current.Name.Contains(": Модуль")
-                           || mainWindow.Current.Name.Contains(": Форма"));
+                    && String.Compare(application, "1cv8", true) == 0
+                    && focusedControl.Current.ControlType == ControlType.Document
+                    //&& (false // Такая проверка не найдет не максимизированные окна и модули большинства форм
+                    //    || mainWindow.Current.Name.Contains(": Модуль")
+                    //    || mainWindow.Current.Name.Contains(": Форма"))
+                    ;
             }
         }
 
