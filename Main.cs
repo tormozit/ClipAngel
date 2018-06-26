@@ -4654,6 +4654,8 @@ namespace ClipAngel
                                 for (int counter = 0; counter < fragments.Length / 2; counter++)
                                 {
                                     string engName = typeMap1C[fragments[counter * 2]];
+                                    if (!String.IsNullOrEmpty(moduleNameEng))
+                                        moduleNameEng += ".";
                                     moduleNameEng += engName;
                                     moduleNameEng += "." + fragments[counter * 2 + 1];
                                     if (engName == "Form")
@@ -4692,15 +4694,16 @@ namespace ClipAngel
                                 {
                                     moduleBPInfo = doc.CreateElement("moduleBPInfo", root.NamespaceURI);
                                     doc.ChildNodes[1].AppendChild(moduleBPInfo);
-                                    XmlElement id = doc.CreateElement("id");
+                                    XmlElement id = doc.CreateElement("id", root.NamespaceURI);
                                     moduleBPInfo.AppendChild(id);
-                                    XmlElement idType = doc.CreateElement("debugBaseData:type");
+                                    string namespace2 = "http://v8.1c.ru/8.3/debugger/debugBaseData";
+                                    XmlElement idType = doc.CreateElement("debugBaseData:type", namespace2);
                                     id.AppendChild(idType);
                                     idType.InnerText = "ConfigModule";
-                                    XmlElement idMDObject = doc.CreateElement("debugBaseData:MDObject");
+                                    XmlElement idMDObject = doc.CreateElement("debugBaseData:MDObject", namespace2);
                                     id.AppendChild(idMDObject);
                                     idMDObject.InnerText = moduleNameEng;
-                                    XmlElement idMDProperty = doc.CreateElement("debugBaseData:MDProperty");
+                                    XmlElement idMDProperty = doc.CreateElement("debugBaseData:MDProperty", namespace2);
                                     id.AppendChild(idMDProperty);
                                     idMDProperty.InnerText = moduleType;
                                 }
