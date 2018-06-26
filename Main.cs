@@ -34,6 +34,10 @@ using mshtml;
 //using Word = Microsoft.Office.Interop.Word;
 using static IconTools;
 using Timer = System.Windows.Forms.Timer;
+using System.Xml.XPath;
+using UIAutomationClient;
+using Microsoft.Test.Input;
+using System.Drawing;
 
 namespace ClipAngel
 {
@@ -142,9 +146,29 @@ namespace ClipAngel
             //{"number", "(?:[\\s\n\r\\(<>\\[]|^)([-+]?[0-9]+\\.?[0-9]+)(?:[;\\s\\)<>\\]%]|,\\B|$)"},
             {"number", "((?:(?:\\s|^)[-])?\\b[0-9]+\\.?[0-9]+)\\b"},
             {"phone", "(?:[\\s\\(]|^)(\\+?\\b\\d?(\\d[ \\-\\(\\)]{0,2}){7,19}\\b)"},
-            {"url", "(\\b(?:https?|ftp|file)://[-A-Z0-9+&@#\\\\/%?=~_|!:,.;]*[A-Z0-9+&@#/%=~_|])"}
+            {"url", "(\\b(?:https?|ftp|file)://[-A-Z0-9+&@#\\\\/%?=~_|!:,.;]*[A-Z0-9+&@#/%=~_|])"},
+            {"1CLine", @"(\{((?:[a-zа-яё_]+\.)*(?:Форма|Модуль|МодульУправляемогоПриложения|МодульОбычногоПриложения|МодульВнешнегоСоединения|МодульКоманды|МодульМенеджера))\((\d+)(?:,(\d+))?\)\})" }
         };
         static string LinkPattern = TextPatterns["url"];
+        static private Dictionary<string, string> typeMap1C = new Dictionary<string, string>
+        {
+            {"МодульУправляемогоПриложения", "ManagedApplicationModule"},
+            {"МодульОбычногоПриложения", "OrdinaryApplicationModule"},
+            {"МодульВнешнегоСоединения", "ExternalConnectionModule"},
+            {"МодульОбъекта", "ObjectModule"},
+            {"МодульМенеджера", "ManagerModule"},
+            {"МодульКоманды", "CommandModule"},
+            {"Модуль", "Module"},
+            {"Форма", "Form"},
+            {"ОбщаяФорма", "CommonForm"},
+            {"ОбщийМодуль", "CommonModule"},
+            {"Обработка", "DataProcessor"},
+            {"Отчет", "Report"},
+            {"Справочник", "Catalog"},
+            {"Документ", "Document"},
+            {"РегистрСведений", "InformationRegister"},
+            {"РегистрНакопления", "AccumulationRegister"},
+        };
 
         //[DllImport("dwmapi", PreserveSig = true)]
         //static extern int DwmSetWindowAttribute(IntPtr hWnd, int attr, ref int value, int attrLen);
@@ -1326,7 +1350,7 @@ namespace ClipAngel
 
         private void MarkLinksInRichTextBox(RichTextBox control, out MatchCollection matches)
         {
-            MarkRegExpMatchesInRichTextBox(control, LinkPattern, Color.Blue, true, false, out matches);
+            MarkRegExpMatchesInRichTextBox(control, "(" + LinkPattern + "|" + TextPatterns["1CLine"] + ")", Color.Blue, true, false, out matches);
         }
 
         private void MarkRegExpMatchesInRichTextBox(RichTextBox control, string pattern, Color color, bool underline,
@@ -1342,7 +1366,7 @@ namespace ClipAngel
             {
                 control.SelectionStart = match.Groups[1].Index;
                 control.SelectionLength = match.Groups[1].Length;
-                if (match.Groups.Count > 3)
+                if (match.Groups.Count > 3 && color == Color.Red)
                 {
                     int startGroup = 2;
                     for (int counter = startGroup; counter < match.Groups.Count; counter++)
@@ -1467,8 +1491,8 @@ namespace ClipAngel
             {
                 string[] array;
                 string filterTextTemp = filterText;
-                filterTextTemp = filterTextTemp.Replace("_", "\\_");
                 filterTextTemp = filterTextTemp.Replace("\\", "\\\\");
+                filterTextTemp = filterTextTemp.Replace("_", "\\_");
                 filterTextTemp = filterTextTemp.Replace("'", "''");
                 if (!Properties.Settings.Default.SearchWildcards)
                     filterTextTemp = filterTextTemp.Replace("%", "\\%");
@@ -2729,89 +2753,7 @@ namespace ClipAngel
 
         private bool SendPaste(PasteMethod pasteMethod = PasteMethod.Standart)
         {
-            int targetProcessId;
-            //string oldWindowSelectedText = lastWindowSelectedText;
-            IntPtr oldChildWindow = lastChildWindow;
-            RECT oldChildWindowRect = lastChildWindowRect;
-            Point oldCaretPoint = lastCaretPoint;
-            uint remoteThreadId = GetWindowThreadProcessId(lastActiveParentWindow, out targetProcessId);
-            bool needElevation = targetProcessId != 0 && !UacHelper.IsProcessAccessible(targetProcessId);
-            //if (needElevation && pasteMethod == PasteMethod.SendChars)
-            //{
-            //    ShowElevationFail();
-            //    return;
-            //}
-
-            // not reliable method
-            // Previous active window by z-order https://www.whitebyte.info/programming/how-to-get-main-window-handle-of-the-last-active-window
-
-            if (!this.TopMost)
-            {
-                this.Close();
-            }
-            else
-            {
-                SetForegroundWindow(lastActiveParentWindow);
-                Debug.WriteLine("Set foreground window " + lastActiveParentWindow + " " +
-                                GetWindowTitle(lastActiveParentWindow));
-            }
-            int waitStep = 5;
-            IntPtr hForegroundWindow = IntPtr.Zero;
-            for (int i = 0; i < 200; i += waitStep)
-            {
-                hForegroundWindow = GetForegroundWindow();
-                if (hForegroundWindow != IntPtr.Zero)
-                    break;
-                Thread.Sleep(waitStep);
-            }
-            Debug.WriteLine("Get foreground window " + hForegroundWindow + " " + GetWindowTitle(hForegroundWindow));
-
-            //if (oldChildWindow != IntPtr.Zero && Properties.Settings.Default.RestoreCaretPositionOnFocusReturn)
-            //{
-            //    Point point;
-            //    RECT newRect;
-            //    GUITHREADINFO guiInfo = new GUITHREADINFO();
-            //    for (int i = 0; i < 500; i += waitStep)
-            //    {
-            //        guiInfo = GetGuiInfo(lastActiveParentWindow, out point);
-            //        if (guiInfo.hwndFocus == oldChildWindow)
-            //            break;
-            //        Thread.Sleep(waitStep);
-            //    }
-            //    GetWindowRect(oldChildWindow, out newRect);
-            //    if (newRect.Equals(oldChildWindowRect))
-            //    {
-            //        if (guiInfo.hwndFocus != oldChildWindow)
-            //        {
-            //            // Adress text box of IE11
-            //            Paster.ClickOnPoint(oldChildWindow, oldCaretPoint);
-            //        }
-            //        else
-            //        {
-            //            //string newActiveWindowSelectedText = getActiveWindowSelectedText();
-            //            //if (newActiveWindowSelectedText != oldWindowSelectedText && oldWindowSelectedText == "")
-            //            //{
-            //            Paster.ClickOnPoint(oldChildWindow, oldCaretPoint);
-            //            //}
-            //        }
-
-            //        AttachThreadInput(GetCurrentThreadId(), remoteThreadId, true);
-            //        Point PosBeforeChange;
-            //        GetCaretPos(out PosBeforeChange);
-            //        Point currentPos;
-            //        int result = SetCaretPos(lastCaretPoint.X, lastCaretPoint.Y);
-            //        int ErrorCode = Marshal.GetLastWin32Error(); // Always return 5 - Access denied
-            //        for (int i = 0; i < 500; i += waitStep)
-            //        {
-            //            GetCaretPos(out currentPos);
-            //            if (PosBeforeChange != currentPos)
-            //                break;
-            //            Thread.Sleep(waitStep);
-            //        }
-            //        AttachThreadInput(GetCurrentThreadId(), remoteThreadId, false);
-            //    }
-            //}
-
+            bool needElevation = ActivateTargetWindow();
             var curproc = Process.GetCurrentProcess();
             if (needElevation)
             {
@@ -2882,6 +2824,92 @@ namespace ClipAngel
                 }
             }
             return false;
+        }
+
+        private bool ActivateTargetWindow()
+        {
+            int targetProcessId;
+            //string oldWindowSelectedText = lastWindowSelectedText;
+            //IntPtr oldChildWindow = lastChildWindow;
+            //RECT oldChildWindowRect = lastChildWindowRect;
+            //Point oldCaretPoint = lastCaretPoint;
+            uint remoteThreadId = GetWindowThreadProcessId(lastActiveParentWindow, out targetProcessId);
+            bool needElevation = targetProcessId != 0 && !UacHelper.IsProcessAccessible(targetProcessId);
+            //if (needElevation && pasteMethod == PasteMethod.SendChars)
+            //{
+            //    ShowElevationFail();
+            //    return;
+            //}
+
+            // not reliable method
+            // Previous active window by z-order https://www.whitebyte.info/programming/how-to-get-main-window-handle-of-the-last-active-window
+
+            if (!this.TopMost)
+            {
+                this.Close();
+            }
+            else
+            {
+                SetForegroundWindow(lastActiveParentWindow);
+                Debug.WriteLine("Set foreground window " + lastActiveParentWindow + " " + GetWindowTitle(lastActiveParentWindow));
+            }
+            int waitStep = 5;
+            IntPtr hForegroundWindow = IntPtr.Zero;
+            for (int i = 0; i < 200; i += waitStep)
+            {
+                hForegroundWindow = GetForegroundWindow();
+                if (hForegroundWindow != IntPtr.Zero)
+                    break;
+                Thread.Sleep(waitStep);
+            }
+            Debug.WriteLine("Get foreground window " + hForegroundWindow + " " + GetWindowTitle(hForegroundWindow));
+
+            //if (oldChildWindow != IntPtr.Zero && Properties.Settings.Default.RestoreCaretPositionOnFocusReturn)
+            //{
+            //    Point point;
+            //    RECT newRect;
+            //    GUITHREADINFO guiInfo = new GUITHREADINFO();
+            //    for (int i = 0; i < 500; i += waitStep)
+            //    {
+            //        guiInfo = GetGuiInfo(lastActiveParentWindow, out point);
+            //        if (guiInfo.hwndFocus == oldChildWindow)
+            //            break;
+            //        Thread.Sleep(waitStep);
+            //    }
+            //    GetWindowRect(oldChildWindow, out newRect);
+            //    if (newRect.Equals(oldChildWindowRect))
+            //    {
+            //        if (guiInfo.hwndFocus != oldChildWindow)
+            //        {
+            //            // Adress text box of IE11
+            //            Paster.ClickOnPoint(oldChildWindow, oldCaretPoint);
+            //        }
+            //        else
+            //        {
+            //            //string newActiveWindowSelectedText = getActiveWindowSelectedText();
+            //            //if (newActiveWindowSelectedText != oldWindowSelectedText && oldWindowSelectedText == "")
+            //            //{
+            //            Paster.ClickOnPoint(oldChildWindow, oldCaretPoint);
+            //            //}
+            //        }
+
+            //        AttachThreadInput(GetCurrentThreadId(), remoteThreadId, true);
+            //        Point PosBeforeChange;
+            //        GetCaretPos(out PosBeforeChange);
+            //        Point currentPos;
+            //        int result = SetCaretPos(lastCaretPoint.X, lastCaretPoint.Y);
+            //        int ErrorCode = Marshal.GetLastWin32Error(); // Always return 5 - Access denied
+            //        for (int i = 0; i < 500; i += waitStep)
+            //        {
+            //            GetCaretPos(out currentPos);
+            //            if (PosBeforeChange != currentPos)
+            //                break;
+            //            Thread.Sleep(waitStep);
+            //        }
+            //        AttachThreadInput(GetCurrentThreadId(), remoteThreadId, false);
+            //    }
+            //}
+            return needElevation;
         }
 
         private string getActiveWindowSelectedText()
@@ -3114,13 +3142,23 @@ namespace ClipAngel
             //    //    hwnd = hOwner;
             //    //}
             //}
-            if (hwnd != IntPtr.Zero)
+            if (true
+                && hwnd != IntPtr.Zero 
+                && String.Compare(application, "1cv8", true) == 0
+                )
             {
-                //AutomationElement mainWindow = AutomationElement.FromHandle(hwnd); // Выбрасывает Automation.ElementNotAvailableException на окне ввода пароля 1С
-                AutomationElement focusedControl = AutomationElement.FocusedElement;
+                var _automation = new CUIAutomation();
+                IUIAutomationElement focusedControl = null;
+                IUIAutomationElement mainWindow = null;
+                try
+                {
+                    focusedControl = _automation.GetFocusedElement();
+                }
+                catch
+                { };
                 is1CCode = true
-                    && String.Compare(application, "1cv8", true) == 0
-                    && focusedControl.Current.ControlType == ControlType.Document
+                    && focusedControl != null
+                    && focusedControl.CurrentLocalizedControlType == "документ" 
                     //&& (false // Такая проверка не найдет не максимизированные окна и модули большинства форм
                     //    || mainWindow.Current.Name.Contains(": Модуль")
                     //    || mainWindow.Current.Name.Contains(": Форма"))
@@ -4540,7 +4578,7 @@ namespace ClipAngel
                 e.Handled = true;
         }
 
-        private static void OpenLinkIfAltPressed(RichTextBox sender, EventArgs e, MatchCollection matches)
+        private void OpenLinkIfAltPressed(RichTextBox sender, EventArgs e, MatchCollection matches)
         {
             Keys mod = Control.ModifierKeys & Keys.Modifiers;
             bool altOnly = mod == Keys.Alt;
@@ -4548,13 +4586,273 @@ namespace ClipAngel
                 OpenLinkInRichTextBox(sender, matches);
         }
 
-        private static void OpenLinkInRichTextBox(RichTextBox sender, MatchCollection matches)
+        private void OpenLinkInRichTextBox(RichTextBox sender, MatchCollection matches)
         {
             foreach (Match match in matches)
             {
                 if (match.Index <= sender.SelectionStart && (match.Index + match.Length) >= sender.SelectionStart)
-                    Process.Start(match.Value);
+                    if (match.Groups[0].Success) // 1CCode
+                    {
+                        string appPath = "";
+                        string clipWindow = "";
+                        string clipApplication = "";
+                        bool is1C = false;
+                        GetClipboardOwnerLockerInfo(true, out clipWindow, out clipApplication, out appPath, out is1C);
+                        if (String.Compare(clipApplication, "1cv8", true) == 0)
+                        {
+                            string moduleName = match.Groups[4].ToString();
+                            string moduleNameEng = "";
+                            int lineNumber = Convert.ToInt32(match.Groups[5].ToString());
+                            ActivateTargetWindow();
+                            SendKeys.Send("%{F9}");
+                            SendKeys.Flush();
+                            bool success = false;
+                            object valuePattern = null;
+                            string tempFilename = Path.GetTempFileName();
+                            IUIAutomationElement tableElement = null;
+                            IUIAutomationElement UIWindow;
+                            CUIAutomation _automation = new CUIAutomation();
+                            IUIAutomationTreeWalker treeWalker = _automation.CreateTreeWalker(_automation.CreateTrueCondition());
+                            success = WaitWindowShow("Точки останова", out UIWindow, treeWalker);
+                            int maxWait = 2000;
+                            Stopwatch stopWatch = new Stopwatch();
+                            if (success)
+                            {
+                                tableElement = FindTable1C(UIWindow, treeWalker);
+                                SetFocusByClick(tableElement);
+                                if (IsRussianInputLanguage())
+                                    SendKeys.Send("^(ы)");
+                                else
+                                    SendKeys.Send("^(s)");
+                                success = WaitWindowShow("Сохранить точки останова в файл", out UIWindow, treeWalker);
+                            }
+                            if (success)
+                            {
+                                File.Delete(tempFilename);
+                                AutomationElement.FocusedElement.TryGetCurrentPattern(ValuePattern.Pattern, out valuePattern);
+                                ((ValuePattern)valuePattern).SetValue(tempFilename);
+                                tempFilename = tempFilename + ".xml";
+                                SendKeys.Send("{ENTER}");
+                                stopWatch.Restart();
+                                success = false;
+                                while (stopWatch.ElapsedMilliseconds < maxWait)
+                                {
+                                    if (File.Exists(tempFilename))
+                                    {
+                                        success = true;
+                                        break;
+                                    }
+                                    Thread.Sleep(50);
+                                }
+                            }
+                            if (success)
+                            {
+                                // DataProcessor.StandardTotalsManagement.Form.MainForm
+                                string[] fragments = moduleName.Split("."[0]);
+                                moduleNameEng = "";
+                                string moduleType = "Module";
+                                for (int counter = 0; counter < fragments.Length / 2; counter++)
+                                {
+                                    string engName = typeMap1C[fragments[counter * 2]];
+                                    moduleNameEng += engName;
+                                    moduleNameEng += "." + fragments[counter * 2 + 1];
+                                    if (engName == "Form")
+                                        moduleType = engName;
+                                }
+                                stopWatch.Start();
+                                success = false;
+                                string xml = "";
+                                while (stopWatch.ElapsedMilliseconds < maxWait)
+                                {
+                                    try
+                                    {
+                                        xml = File.ReadAllText(tempFilename);
+                                        break;
+                                    }
+                                    catch { }
+                                    ;
+                                    Thread.Sleep(50);
+                                }
+                                XmlDocument doc = new XmlDocument();
+                                doc.LoadXml(xml);
+                                XmlElement moduleBPInfo = null;
+                                XmlElement root = (XmlElement) doc.ChildNodes[1];
+                                foreach (XmlElement moduleBPInfoCycle in root.ChildNodes)
+                                {
+                                    XmlElement id = (XmlElement) moduleBPInfoCycle.GetElementsByTagName("id")[0];
+                                    if (true
+                                        && id.GetElementsByTagName("debugBaseData:MDObject")[0].InnerText == moduleNameEng
+                                        && id.GetElementsByTagName("debugBaseData:MDProperty")[0].InnerText == moduleType)
+                                    {
+                                        moduleBPInfo = moduleBPInfoCycle;
+                                        break;
+                                    }
+                                }
+                                if (moduleBPInfo == null)
+                                {
+                                    moduleBPInfo = doc.CreateElement("moduleBPInfo", root.NamespaceURI);
+                                    doc.ChildNodes[1].AppendChild(moduleBPInfo);
+                                    XmlElement id = doc.CreateElement("id");
+                                    moduleBPInfo.AppendChild(id);
+                                    XmlElement idType = doc.CreateElement("debugBaseData:type");
+                                    id.AppendChild(idType);
+                                    idType.InnerText = "ConfigModule";
+                                    XmlElement idMDObject = doc.CreateElement("debugBaseData:MDObject");
+                                    id.AppendChild(idMDObject);
+                                    idMDObject.InnerText = moduleNameEng;
+                                    XmlElement idMDProperty = doc.CreateElement("debugBaseData:MDProperty");
+                                    id.AppendChild(idMDProperty);
+                                    idMDProperty.InnerText = moduleType;
+                                }
+                                XmlElement bpInfo = doc.CreateElement("bpInfo", root.NamespaceURI);
+                                moduleBPInfo.AppendChild(bpInfo);
+                                XmlElement line = doc.CreateElement("line", root.NamespaceURI);
+                                line.InnerText = lineNumber.ToString();
+                                bpInfo.AppendChild(line);
+                                doc.Save(tempFilename);
+                                if (IsRussianInputLanguage())
+                                    SendKeys.Send("^(щ)");
+                                else
+                                    SendKeys.Send("^(o)");
+                                success = WaitWindowShow("Загрузить точки останова из файла", out UIWindow, treeWalker);
+                            }
+                            if (success)
+                            {
+                                AutomationElement.FocusedElement.TryGetCurrentPattern(ValuePattern.Pattern, out valuePattern);
+                                ((ValuePattern)valuePattern).SetValue(tempFilename);
+                                SendKeys.SendWait("{ENTER}");
+                                success = WaitWindowShow("Точки останова", out UIWindow, treeWalker);
+                                //int maxWait = 2000;
+                                //Stopwatch stopWatch = new Stopwatch();
+                                //stopWatch.Start();
+                                //success = false;
+                                //while (stopWatch.ElapsedMilliseconds < maxWait)
+                                //{
+                                //    if (File.Exists(tempFilename))
+                                //    {
+                                //        success = true;
+                                //        break;
+                                //    }
+                                //    Thread.Sleep(50);
+                                //}
+                            }
+                            if (success)
+                            {
+                                //tableElement = FindTable1C(UIWindow, treeWalker);
+                                IUIAutomationElement cell = treeWalker.GetFirstChildElement(tableElement);
+                                while (cell != null)
+                                {
+                                    if (cell.CurrentName == moduleName + " Имя модуля")
+                                    {
+                                        cell = treeWalker.GetNextSiblingElement(cell);
+                                        if (cell.CurrentName == lineNumber + " Строка")
+                                        {
+                                            SetFocusByClick(cell);
+                                            SetFocusByClick(cell);
+                                            //SendKeys.Send("{Enter}");
+                                            break;
+                                        }
+                                    }
+                                    cell = treeWalker.GetNextSiblingElement(cell);
+                                }
+                            }
+                        }
+                    }
+                    else // url
+                        Process.Start(match.Value);
             }
+        }
+
+        private static void SetFocusByClick(IUIAutomationElement tableElement)
+        {
+            //tableElement.SetFocus(); // exception - not implemented
+            //IUIAutomationInvokePattern invokePattern = tableElement.GetCurrentPattern(InvokePattern.Pattern));
+            //invokePattern.Invoke();
+            UIAutomationClient.tagPOINT tagPoint;
+            tableElement.GetClickablePoint(out tagPoint);
+            Mouse.MoveTo(new Point(tagPoint.x, tagPoint.y));
+            Mouse.Click(MouseButton.Left);
+        }
+
+        private static IUIAutomationElement FindTable1C(IUIAutomationElement child, IUIAutomationTreeWalker treeWalker)
+        {
+            IUIAutomationElement result = null;
+            child = treeWalker.GetFirstChildElement(child);
+            while (child != null)
+            {
+                if (child.CurrentLocalizedControlType == "таблицу")
+                    result = child;
+                else
+                    result = FindTable1C(child, treeWalker);
+                if (result != null)
+                    break;
+                child = treeWalker.GetNextSiblingElement(child);
+            }
+            return result;
+        }
+
+        private static bool IsRussianInputLanguage()
+        {
+            return String.Compare(InputLanguage.CurrentInputLanguage.Culture.TwoLetterISOLanguageName, "ru", StringComparison.InvariantCultureIgnoreCase) == 0;
+        }
+
+        public void InvokeAutomationElement(AutomationElement automationElement)
+        {
+            var invokePattern = automationElement.GetCurrentPattern(InvokePattern.Pattern) as InvokePattern;
+            invokePattern.Invoke();
+        }
+
+        private bool WaitWindowShow(string title, out IUIAutomationElement parent, IUIAutomationTreeWalker treeWalker = null)
+        {
+            parent = null;
+            bool success = false;
+            int maxWait = 2000;
+            Stopwatch stopWatch = new Stopwatch();
+            stopWatch.Start();
+            //while (stopWatch.ElapsedMilliseconds < maxWait)
+            //{
+            //    IntPtr hwnd = GetFocusWindow();
+            //    if (hwnd == IntPtr.Zero)
+            //        continue;
+            //    Debug.WriteLine(title + " VS " + GetWindowTitle(hwnd));
+            //    if (GetWindowTitle(hwnd) == title)
+            //    {
+            //        success = true;
+            //        break;
+            //    }
+            //    Thread.Sleep(50);
+            //}
+
+            CUIAutomation _automation = new CUIAutomation();
+            // https://msdn.microsoft.com/en-us/library/windows/desktop/ff625922(v=vs.85).aspx#WalkAncestors
+            if (treeWalker == null)
+                treeWalker = _automation.CreateTreeWalker(_automation.CreateTrueCondition());
+            IUIAutomationCacheRequest request = _automation.CreateCacheRequest();
+            while (stopWatch.ElapsedMilliseconds < maxWait)
+            {
+                parent = _automation.GetFocusedElementBuildCache(request);
+                while (parent != null)
+                {
+                    string name = "";
+                    try
+                    {
+                        name = parent.CurrentName;
+                    }
+                    catch
+                    {
+                        break;
+                    }
+                    if (name == title)
+                    {
+                        success = true;
+                        break;
+                    }
+                    //parent = parent.GetCachedParent(); // this way always null
+                    parent = treeWalker.GetParentElement(parent);
+                }
+                Thread.Sleep(50);
+            }
+            return success;
         }
 
         private void textBoxUrl_Click(object sender, EventArgs e)

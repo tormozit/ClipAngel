@@ -454,7 +454,6 @@ WinMerge, Araxis Merge, DiffMerge, Kdiff3. Для сравнения текст�
     <value>Перенос слов</value>
   </data>
   <data name="WordWrapDescription" xml:space="preserve">
-    <value>Перенос слов в поле просмотра текста (CTRL+W).
-Не применимо к родному оформлению HTML.</value>
+    <value>Перенос слов в поле просмотра текста (CTRL+W)</value>
   </data>
 </root>

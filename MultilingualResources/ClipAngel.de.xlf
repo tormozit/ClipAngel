@@ -451,10 +451,10 @@ WinMerge, Araxis Merge, DiffMerge, Kdiff3. Befehl für Textvergleich ist %applic
           <target state="needs-review-translation" state-qualifier="tm-suggestion">Zeilenumbruch</target>
         </trans-unit>
         <trans-unit id="WordWrapDescription" translate="yes" xml:space="preserve">
-          <source>Word wrap in clip text field (CTRL+W).
-Not appliable to HTML native formatting.</source>
+          <source>Word wrap in clip text field (CTRL+W)</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Zeilenumbruch in Textfeld Clip (Strg + W). 
 Nicht montiert, die HTML-Formatierung native.</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="PlaySoundOnClipCapture" translate="yes" xml:space="preserve">
           <source>Play sound on clip capture</source>
@@ -1580,8 +1580,8 @@ Generation of image consumes CPU. If you experience high CPU load, set lower val
           <target state="new">Clip was not captured due to clipboard read error</target>
         </trans-unit>
         <trans-unit id="VersionValue" translate="yes" xml:space="preserve">
-          <source>1.54</source>
-          <target state="new">1.54</target>
+          <source>1.55</source>
+          <target state="new">1.55</target>
         </trans-unit>
         <trans-unit id="TargetWindow" translate="yes" xml:space="preserve">
           <source>Target window</source>
@@ -1634,6 +1634,10 @@ Generation of image consumes CPU. If you experience high CPU load, set lower val
         <trans-unit id="MonitoringON" translate="yes" xml:space="preserve">
           <source>Clipboard monitoring now is ON</source>
           <target state="new">Clipboard monitoring now is ON</target>
+        </trans-unit>
+        <trans-unit id="text_1CLine" translate="yes" xml:space="preserve">
+          <source>*1C line</source>
+          <target state="new">*1C line</target>
         </trans-unit>
       </group>
     </body>

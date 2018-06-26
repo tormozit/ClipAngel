@@ -433,4 +433,7 @@
   <data name="MonitoringON" xml:space="preserve">
     <value>Слежение за буфером обмена Включено</value>
   </data>
+  <data name="text_1CLine" xml:space="preserve">
+    <value>*1C строка</value>
+  </data>
 </root>

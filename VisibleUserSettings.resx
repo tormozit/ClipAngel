@@ -450,7 +450,6 @@ WinMerge, Araxis Merge, DiffMerge, Kdiff3. Text compare command is %application%
     <value>Word wrap</value>
   </data>
   <data name="WordWrapDescription" xml:space="preserve">
-    <value>Word wrap in clip text field (CTRL+W).
-Not appliable to HTML native formatting.</value>
+    <value>Word wrap in clip text field (CTRL+W)</value>
   </data>
 </root>

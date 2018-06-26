@@ -688,10 +688,10 @@ WinMerge, Araxis Merge, DiffMerge, Kdiff3. Text compare command is %application%
           <target state="needs-review-translation" state-qualifier="tm-suggestion">Ritorno a capo automatico</target>
         </trans-unit>
         <trans-unit id="WordWrapDescription" translate="yes" xml:space="preserve">
-          <source>Word wrap in clip text field (CTRL+W).
-Not appliable to HTML native formatting.</source>
-          <target state="translated">Ritorno a capo nel campo di testo cattura (CTRL+W). 
+          <source>Word wrap in clip text field (CTRL+W)</source>
+          <target state="needs-review-translation">Ritorno a capo nel campo di testo cattura (CTRL+W). 
 Non applicabile alla formattazione nativa HTML.</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="PlaySoundOnClipCapture" translate="yes" xml:space="preserve">
           <source>Play sound on clip capture</source>
@@ -1582,8 +1582,8 @@ La generazione dell'immagine consuma risorse della CPU. Se verifichi problemi di
           <target state="translated">La cattura non è stata effettuata a causa di un errore nella lettura degli Appunti</target>
         </trans-unit>
         <trans-unit id="VersionValue" translate="yes" xml:space="preserve">
-          <source>1.54</source>
-          <target state="new">1.54</target>
+          <source>1.55</source>
+          <target state="new">1.55</target>
         </trans-unit>
         <trans-unit id="TargetWindow" translate="yes" xml:space="preserve">
           <source>Target window</source>
@@ -1636,6 +1636,10 @@ La generazione dell'immagine consuma risorse della CPU. Se verifichi problemi di
         <trans-unit id="MonitoringON" translate="yes" xml:space="preserve">
           <source>Clipboard monitoring now is ON</source>
           <target state="translated">Monitoraggio Appunti attivato (ON)</target>
+        </trans-unit>
+        <trans-unit id="text_1CLine" translate="yes" xml:space="preserve">
+          <source>*1C line</source>
+          <target state="new">*1C line</target>
         </trans-unit>
       </group>
     </body>

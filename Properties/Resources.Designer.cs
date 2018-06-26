@@ -811,6 +811,15 @@ namespace ClipAngel.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to *1C line.
+        /// </summary>
+        public static string text_1CLine {
+            get {
+                return ResourceManager.GetString("text_1CLine", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to *email.
         /// </summary>
         public static string text_email {
@@ -1023,7 +1032,7 @@ namespace ClipAngel.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 1.54.
+        ///   Looks up a localized string similar to 1.55.
         /// </summary>
         public static string VersionValue {
             get {
