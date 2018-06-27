@@ -4662,7 +4662,6 @@ namespace ClipAngel
                                         moduleType = engName;
                                 }
                                 stopWatch.Start();
-                                success = false;
                                 string xml = "";
                                 while (stopWatch.ElapsedMilliseconds < maxWait)
                                 {
