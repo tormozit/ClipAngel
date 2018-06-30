@@ -26,7 +26,6 @@ using AngleSharp.Dom;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Web.UI.Design;
-using System.Windows.Automation;
 using System.Xml;
 using System.Xml.Linq;
 using WindowsInput.Native;
@@ -38,6 +37,8 @@ using System.Xml.XPath;
 using UIAutomationClient;
 using Microsoft.Test.Input;
 using System.Drawing;
+using System.Windows.Automation;
+using TreeScope = UIAutomationClient.TreeScope;
 
 namespace ClipAngel
 {
@@ -160,8 +161,10 @@ namespace ClipAngel
             {"МодульКоманды", "CommandModule"},
             {"Модуль", "Module"},
             {"Форма", "Form"},
+            {"Команда", "Command"},
             {"ОбщаяФорма", "CommonForm"},
             {"ОбщийМодуль", "CommonModule"},
+            {"ОбщаяКоманда", "CommonCommand"},
             {"Обработка", "DataProcessor"},
             {"Отчет", "Report"},
             {"Справочник", "Catalog"},
@@ -1745,7 +1748,8 @@ namespace ClipAngel
             string clipWindow = "";
             string clipApplication = "";
             bool is1C = false;
-            GetClipboardOwnerLockerInfo(false, out clipWindow, out clipApplication, out appPath, out is1C);
+            IUIAutomationElement mainWindow;
+            GetClipboardOwnerLockerInfo(false, out clipWindow, out clipApplication, out appPath, out is1C, out mainWindow);
             if (ignoreModulesInClipCapture.Contains(clipApplication.ToLower()))
                 return;
             try
@@ -3101,13 +3105,14 @@ namespace ClipAngel
         static extern IntPtr GetOpenClipboardWindow();
 
         static public void GetClipboardOwnerLockerInfo(bool Locker, out string windowTitle, out string application,
-            out string appPath, out bool is1CCode, bool replaceNullWithLastActive = true)
+            out string appPath, out bool is1CCode, out IUIAutomationElement mainWindowAutomation, bool replaceNullWithLastActive = true)
         {
             IntPtr hwnd;
             windowTitle = "";
             application = "";
             appPath = "";
             is1CCode = false;
+            mainWindowAutomation = null;
             //if (!Properties.Settings.Default.ReadWindowTitles)
             //    return;
             if (Locker)
@@ -3149,7 +3154,6 @@ namespace ClipAngel
             {
                 var _automation = new CUIAutomation();
                 IUIAutomationElement focusedControl = null;
-                IUIAutomationElement mainWindow = null;
                 try
                 {
                     focusedControl = _automation.GetFocusedElement();
@@ -4597,44 +4601,50 @@ namespace ClipAngel
                         string clipWindow = "";
                         string clipApplication = "";
                         bool is1C = false;
-                        GetClipboardOwnerLockerInfo(true, out clipWindow, out clipApplication, out appPath, out is1C);
+                        IUIAutomationElement mainWindow;
+                        GetClipboardOwnerLockerInfo(true, out clipWindow, out clipApplication, out appPath, out is1C, out mainWindow);
                         if (String.Compare(clipApplication, "1cv8", true) == 0)
                         {
                             string moduleName = match.Groups[4].ToString();
-                            string moduleNameEng = "";
                             int lineNumber = Convert.ToInt32(match.Groups[5].ToString());
                             ActivateTargetWindow();
                             SendKeys.Send("%{F9}");
                             SendKeys.Flush();
                             bool success = false;
                             object valuePattern = null;
+                            int UIA_ValuePatternId = 10002;
                             string tempFilename = Path.GetTempFileName();
                             IUIAutomationElement tableElement = null;
-                            IUIAutomationElement UIWindow;
+                            IUIAutomationElement breakPointsWindow;
+                            IUIAutomationElement tempElement;
                             CUIAutomation _automation = new CUIAutomation();
                             IUIAutomationTreeWalker treeWalker = _automation.CreateTreeWalker(_automation.CreateTrueCondition());
-                            success = WaitWindowShow("Точки останова", out UIWindow, treeWalker);
+                            success = WaitWindowShow(null, "Точки останова", out breakPointsWindow, "V8NewLocalFrameBaseWnd", treeWalker);
                             int maxWait = 2000;
                             Stopwatch stopWatch = new Stopwatch();
                             if (success)
                             {
-                                tableElement = FindTable1C(UIWindow, treeWalker);
-                                SetFocusByClick(tableElement);
-                                if (IsRussianInputLanguage())
-                                    SendKeys.Send("^(ы)");
-                                else
-                                    SendKeys.Send("^(s)");
-                                success = WaitWindowShow("Сохранить точки останова в файл", out UIWindow, treeWalker);
+                                success = false;
+                                tableElement = FindTable1C(breakPointsWindow, treeWalker);
+                                if (tableElement != null)
+                                {
+                                    SetFocusByClick(tableElement);
+                                    if (IsRussianInputLanguage())
+                                        SendKeys.Send("^(ы)");
+                                    else
+                                        SendKeys.Send("^(s)");
+                                    success = WaitWindowShow(breakPointsWindow, "Сохранить точки останова в файл", out tempElement, "#32770", treeWalker);
+                                }
                             }
                             if (success)
                             {
+                                success = false;
                                 File.Delete(tempFilename);
-                                AutomationElement.FocusedElement.TryGetCurrentPattern(ValuePattern.Pattern, out valuePattern);
-                                ((ValuePattern)valuePattern).SetValue(tempFilename);
+                                valuePattern = _automation.GetFocusedElement().GetCurrentPattern(UIA_ValuePatternId);
+                                ((IUIAutomationValuePattern)valuePattern).SetValue(tempFilename);
                                 tempFilename = tempFilename + ".xml";
                                 SendKeys.Send("{ENTER}");
                                 stopWatch.Restart();
-                                success = false;
                                 while (stopWatch.ElapsedMilliseconds < maxWait)
                                 {
                                     if (File.Exists(tempFilename))
@@ -4647,20 +4657,26 @@ namespace ClipAngel
                             }
                             if (success)
                             {
+                                success = false;
                                 // DataProcessor.StandardTotalsManagement.Form.MainForm
                                 string[] fragments = moduleName.Split("."[0]);
-                                moduleNameEng = "";
-                                string moduleType = "Module";
-                                for (int counter = 0; counter < fragments.Length / 2; counter++)
+                                string MDObject = "";
+                                if (fragments.Length == 1)
                                 {
-                                    string engName = typeMap1C[fragments[counter * 2]];
-                                    if (!String.IsNullOrEmpty(moduleNameEng))
-                                        moduleNameEng += ".";
-                                    moduleNameEng += engName;
-                                    moduleNameEng += "." + fragments[counter * 2 + 1];
-                                    if (engName == "Form")
-                                        moduleType = engName;
+                                    MDObject = "Configuration._";
                                 }
+                                else
+                                {
+                                    for (int counter = 0; counter < fragments.Length / 2; counter++)
+                                    {
+                                        string engName = typeMap1C[fragments[counter * 2]];
+                                        if (!String.IsNullOrEmpty(MDObject))
+                                            MDObject += ".";
+                                        MDObject += engName;
+                                        MDObject += "." + fragments[counter * 2 + 1];
+                                    }
+                                }
+                                string MDProperty = typeMap1C[fragments[fragments.Length - 1]];
                                 stopWatch.Start();
                                 string xml = "";
                                 while (stopWatch.ElapsedMilliseconds < maxWait)
@@ -4674,88 +4690,97 @@ namespace ClipAngel
                                     ;
                                     Thread.Sleep(50);
                                 }
-                                XmlDocument doc = new XmlDocument();
-                                doc.LoadXml(xml);
-                                XmlElement moduleBPInfo = null;
-                                XmlElement root = (XmlElement) doc.ChildNodes[1];
-                                foreach (XmlElement moduleBPInfoCycle in root.ChildNodes)
+                                if (!String.IsNullOrEmpty(xml))
                                 {
-                                    XmlElement id = (XmlElement) moduleBPInfoCycle.GetElementsByTagName("id")[0];
-                                    if (true
-                                        && id.GetElementsByTagName("debugBaseData:MDObject")[0].InnerText == moduleNameEng
-                                        && id.GetElementsByTagName("debugBaseData:MDProperty")[0].InnerText == moduleType)
+
+                                    XmlDocument doc = new XmlDocument();
+                                    doc.LoadXml(xml);
+                                    XmlElement moduleBPInfo = null;
+                                    XmlElement root = (XmlElement)doc.ChildNodes[1];
+                                    foreach (XmlElement moduleBPInfoCycle in root.ChildNodes)
                                     {
-                                        moduleBPInfo = moduleBPInfoCycle;
-                                        break;
+                                        XmlElement id = (XmlElement)moduleBPInfoCycle.GetElementsByTagName("id")[0];
+                                        if (true
+                                            && id.GetElementsByTagName("debugBaseData:MDObject")[0].InnerText == MDObject
+                                            && id.GetElementsByTagName("debugBaseData:MDProperty")[0].InnerText == MDProperty)
+                                        {
+                                            moduleBPInfo = moduleBPInfoCycle;
+                                            break;
+                                        }
                                     }
+                                    if (moduleBPInfo == null)
+                                    {
+                                        moduleBPInfo = doc.CreateElement("moduleBPInfo", root.NamespaceURI);
+                                        doc.ChildNodes[1].AppendChild(moduleBPInfo);
+                                        XmlElement id = doc.CreateElement("id", root.NamespaceURI);
+                                        moduleBPInfo.AppendChild(id);
+                                        string namespace2 = "http://v8.1c.ru/8.3/debugger/debugBaseData";
+                                        XmlElement idType = doc.CreateElement("debugBaseData:type", namespace2);
+                                        id.AppendChild(idType);
+                                        idType.InnerText = "ConfigModule";
+                                        XmlElement idMDObject = doc.CreateElement("debugBaseData:MDObject", namespace2);
+                                        id.AppendChild(idMDObject);
+                                        idMDObject.InnerText = MDObject;
+                                        XmlElement idMDProperty = doc.CreateElement("debugBaseData:MDProperty", namespace2);
+                                        id.AppendChild(idMDProperty);
+                                        idMDProperty.InnerText = MDProperty;
+                                    }
+                                    XmlElement bpInfo = doc.CreateElement("bpInfo", root.NamespaceURI);
+                                    moduleBPInfo.AppendChild(bpInfo);
+                                    XmlElement line = doc.CreateElement("line", root.NamespaceURI);
+                                    line.InnerText = lineNumber.ToString();
+                                    bpInfo.AppendChild(line);
+                                    doc.Save(tempFilename);
+                                    success = true;
                                 }
-                                if (moduleBPInfo == null)
-                                {
-                                    moduleBPInfo = doc.CreateElement("moduleBPInfo", root.NamespaceURI);
-                                    doc.ChildNodes[1].AppendChild(moduleBPInfo);
-                                    XmlElement id = doc.CreateElement("id", root.NamespaceURI);
-                                    moduleBPInfo.AppendChild(id);
-                                    string namespace2 = "http://v8.1c.ru/8.3/debugger/debugBaseData";
-                                    XmlElement idType = doc.CreateElement("debugBaseData:type", namespace2);
-                                    id.AppendChild(idType);
-                                    idType.InnerText = "ConfigModule";
-                                    XmlElement idMDObject = doc.CreateElement("debugBaseData:MDObject", namespace2);
-                                    id.AppendChild(idMDObject);
-                                    idMDObject.InnerText = moduleNameEng;
-                                    XmlElement idMDProperty = doc.CreateElement("debugBaseData:MDProperty", namespace2);
-                                    id.AppendChild(idMDProperty);
-                                    idMDProperty.InnerText = moduleType;
-                                }
-                                XmlElement bpInfo = doc.CreateElement("bpInfo", root.NamespaceURI);
-                                moduleBPInfo.AppendChild(bpInfo);
-                                XmlElement line = doc.CreateElement("line", root.NamespaceURI);
-                                line.InnerText = lineNumber.ToString();
-                                bpInfo.AppendChild(line);
-                                doc.Save(tempFilename);
+                            }
+                            if (success)
+                            {
+                                success = false;
                                 if (IsRussianInputLanguage())
                                     SendKeys.Send("^(щ)");
                                 else
                                     SendKeys.Send("^(o)");
-                                success = WaitWindowShow("Загрузить точки останова из файла", out UIWindow, treeWalker);
+                                success = WaitWindowShow(breakPointsWindow, "Загрузить точки останова из файла", out tempElement, "#32770", treeWalker);
                             }
                             if (success)
                             {
-                                AutomationElement.FocusedElement.TryGetCurrentPattern(ValuePattern.Pattern, out valuePattern);
-                                ((ValuePattern)valuePattern).SetValue(tempFilename);
+                                success = false;
+                                valuePattern = _automation.GetFocusedElement().GetCurrentPattern(UIA_ValuePatternId);
+                                ((IUIAutomationValuePattern)valuePattern).SetValue(tempFilename);
                                 SendKeys.SendWait("{ENTER}");
-                                success = WaitWindowShow("Точки останова", out UIWindow, treeWalker);
-                                //int maxWait = 2000;
-                                //Stopwatch stopWatch = new Stopwatch();
-                                //stopWatch.Start();
-                                //success = false;
-                                //while (stopWatch.ElapsedMilliseconds < maxWait)
-                                //{
-                                //    if (File.Exists(tempFilename))
-                                //    {
-                                //        success = true;
-                                //        break;
-                                //    }
-                                //    Thread.Sleep(50);
-                                //}
+                                success = WaitWindowShow(null, "Точки останова", out breakPointsWindow, "V8NewLocalFrameBaseWnd", treeWalker);
                             }
                             if (success)
                             {
+                                success = false;
                                 //tableElement = FindTable1C(UIWindow, treeWalker);
-                                IUIAutomationElement cell = treeWalker.GetFirstChildElement(tableElement);
-                                while (cell != null)
+                                stopWatch.Restart();
+                                while (stopWatch.ElapsedMilliseconds < maxWait)
                                 {
-                                    if (cell.CurrentName == moduleName + " Имя модуля")
+                                    IUIAutomationElement cell = treeWalker.GetFirstChildElement(tableElement);
+                                    while (cell != null)
                                     {
-                                        cell = treeWalker.GetNextSiblingElement(cell);
-                                        if (cell.CurrentName == lineNumber + " Строка")
+                                        if (cell.CurrentName == moduleName + " Имя модуля")
                                         {
-                                            SetFocusByClick(cell);
-                                            SetFocusByClick(cell);
-                                            //SendKeys.Send("{Enter}");
-                                            break;
+                                            cell = treeWalker.GetNextSiblingElement(cell);
+                                            if (cell.CurrentName == lineNumber + " Строка")
+                                            {
+                                                success = true;
+                                                break;
+                                            }
                                         }
+                                        cell = treeWalker.GetNextSiblingElement(cell);
                                     }
-                                    cell = treeWalker.GetNextSiblingElement(cell);
+                                    if (success)
+                                    {
+                                        SetFocusByClick(cell);
+                                        SetFocusByClick(cell);
+                                        //SendKeys.Send("{Enter}");
+                                        SendKeys.Send("{F9}");
+                                        break;
+                                    }
+                                    Thread.Sleep(50);
                                 }
                             }
                         }
@@ -4779,16 +4804,19 @@ namespace ClipAngel
         private static IUIAutomationElement FindTable1C(IUIAutomationElement child, IUIAutomationTreeWalker treeWalker)
         {
             IUIAutomationElement result = null;
-            child = treeWalker.GetFirstChildElement(child);
-            while (child != null)
+            if (child != null)
             {
-                if (child.CurrentLocalizedControlType == "таблицу")
-                    result = child;
-                else
-                    result = FindTable1C(child, treeWalker);
-                if (result != null)
-                    break;
-                child = treeWalker.GetNextSiblingElement(child);
+                child = treeWalker.GetFirstChildElement(child);
+                while (child != null)
+                {
+                    if (child.CurrentLocalizedControlType == "таблицу")
+                        result = child;
+                    else
+                        result = FindTable1C(child, treeWalker);
+                    if (result != null)
+                        break;
+                    child = treeWalker.GetNextSiblingElement(child);
+                }
             }
             return result;
         }
@@ -4798,13 +4826,7 @@ namespace ClipAngel
             return String.Compare(InputLanguage.CurrentInputLanguage.Culture.TwoLetterISOLanguageName, "ru", StringComparison.InvariantCultureIgnoreCase) == 0;
         }
 
-        public void InvokeAutomationElement(AutomationElement automationElement)
-        {
-            var invokePattern = automationElement.GetCurrentPattern(InvokePattern.Pattern) as InvokePattern;
-            invokePattern.Invoke();
-        }
-
-        private bool WaitWindowShow(string title, out IUIAutomationElement parent, IUIAutomationTreeWalker treeWalker = null)
+        private bool WaitWindowShow(IUIAutomationElement mainWindow, string title, out IUIAutomationElement parent, string className, IUIAutomationTreeWalker treeWalker = null)
         {
             parent = null;
             bool success = false;
@@ -4826,31 +4848,31 @@ namespace ClipAngel
             //}
 
             CUIAutomation _automation = new CUIAutomation();
+            if (mainWindow == null)
+                mainWindow = _automation.GetRootElement();
             // https://msdn.microsoft.com/en-us/library/windows/desktop/ff625922(v=vs.85).aspx#WalkAncestors
             if (treeWalker == null)
                 treeWalker = _automation.CreateTreeWalker(_automation.CreateTrueCondition());
-            IUIAutomationCacheRequest request = _automation.CreateCacheRequest();
+            //IUIAutomationCacheRequest request = _automation.CreateCacheRequest();
+            int UIA_NamePropertyId = 30005;
+            int UIA_ClassNamePropertyId = 30012;
             while (stopWatch.ElapsedMilliseconds < maxWait)
             {
-                parent = _automation.GetFocusedElementBuildCache(request);
-                while (parent != null)
+                try
                 {
-                    string name = "";
-                    try
-                    {
-                        name = parent.CurrentName;
-                    }
-                    catch
-                    {
-                        break;
-                    }
-                    if (name == title)
+                    IUIAutomationCondition cond1 = _automation.CreatePropertyCondition(UIA_NamePropertyId, title);
+                    IUIAutomationCondition cond2 = _automation.CreatePropertyCondition(UIA_ClassNamePropertyId, className);
+                    IUIAutomationCondition cond = _automation.CreateAndCondition(cond1, cond2);
+                    parent = mainWindow.FindFirst(TreeScope.TreeScope_Children, cond);
+                    if (parent != null)
                     {
                         success = true;
                         break;
                     }
-                    //parent = parent.GetCachedParent(); // this way always null
-                    parent = treeWalker.GetParentElement(parent);
+                }
+                catch (Exception e)
+                {
+                    continue;
                 }
                 Thread.Sleep(50);
             }
@@ -6089,7 +6111,8 @@ namespace ClipAngel
                 string clipWindow = "";
                 string clipApplication = "";
                 bool is1C = false;
-                GetClipboardOwnerLockerInfo(true, out clipWindow, out clipApplication, out appPath, out is1C);
+                IUIAutomationElement mainWindow;
+                GetClipboardOwnerLockerInfo(true, out clipWindow, out clipApplication, out appPath, out is1C, out mainWindow);
                 Debug.WriteLine(String.Format(Properties.Resources.FailedToWriteClipboard, clipWindow, clipApplication));
             }
             //if (!success)

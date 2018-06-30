@@ -11,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using UIAutomationClient;
 
 namespace ClipAngel
 {
@@ -151,7 +152,8 @@ namespace ClipAngel
             string clipApplication = "";
             string appPath = "";
             bool is1C = false;
-            Main.GetClipboardOwnerLockerInfo(false, out clipWindow, out clipApplication, out appPath, out is1C, false);
+            IUIAutomationElement mainWindow;
+            Main.GetClipboardOwnerLockerInfo(false, out clipWindow, out clipApplication, out appPath, out is1C, out mainWindow, false);
             ListViewItem[] items = listViewRunningList.Items.Find(appPath, true);
             if (items.Length > 0)
             {
