@@ -3135,18 +3135,6 @@ namespace ClipAngel
             appPath = GetProcessMainModuleFullName(processId);
             hwnd = process1.MainWindowHandle;
             windowTitle = GetWindowTitle(hwnd);
-            //// We need top level window
-            ////const uint GW_OWNER = 4;
-            //while ((int)hwnd != 0)
-            //{
-            //    Window = GetWindowTitle(hwnd);
-            //    //IntPtr hOwner = GetWindow(hwnd, GW_OWNER);
-            //    hwnd = GetParent(hwnd);
-            //    //if ((int) hwnd == 0)
-            //    //{
-            //    //    hwnd = hOwner;
-            //    //}
-            //}
             if (true
                 && hwnd != IntPtr.Zero 
                 && String.Compare(application, "1cv8", true) == 0

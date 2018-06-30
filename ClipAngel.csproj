@@ -117,11 +117,6 @@
       <HintPath>packages\Microsoft.TestApi.0.6.0.0\lib\net40\TestApiCore.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="TestApiWpf, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.TestApi.0.6.0.0\lib\net40\TestApiWpf.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="UIAutomationClient" />
     <Reference Include="UIAutomationTypes" />
     <Reference Include="WindowsInput, Version=1.0.4.0, Culture=neutral, PublicKeyToken=9b287f7dc5073cad, processorArchitecture=MSIL">
       <HintPath>packages\InputSimulator.1.0.4.0\lib\net20\WindowsInput.dll</HintPath>
@@ -635,16 +630,7 @@
     <None Include="Picture\alien - no capture .ico" />
   </ItemGroup>
   <ItemGroup>
-    <COMReference Include="UIA">
-      <Guid>{930299CE-9965-4DEC-B0F4-A54848D4B667}</Guid>
-      <VersionMajor>1</VersionMajor>
-      <VersionMinor>0</VersionMinor>
-      <Lcid>0</Lcid>
-      <WrapperTool>tlbimp</WrapperTool>
-      <Isolated>False</Isolated>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-    </COMReference>
-    <COMReference Include="UIAutomationClient1">
+    <COMReference Include="UIAutomationClient">
       <Guid>{944DE083-8FB8-45CF-BCB7-C477ACB2F897}</Guid>
       <VersionMajor>1</VersionMajor>
       <VersionMinor>0</VersionMinor>
