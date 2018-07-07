@@ -98,7 +98,7 @@ namespace ClipAngel
         Bitmap imageRtf;
         Bitmap imageFile;
         Bitmap imageImg;
-        string filterText = ""; // TODO optimize speed
+        string searchString = ""; // TODO optimize speed
         bool periodFilterOn = false;
         int tabLength = 4;
         readonly RichTextBox _richTextBox = new RichTextBox();
@@ -138,6 +138,8 @@ namespace ClipAngel
         private ToolTip titleToolTip = new ToolTip();
         private Timer titleToolTipBeforeTimer = new Timer();
         string sortField = "Id";
+        List<int> searchMatchedIDs = new List<int>();
+        private int currentListMatchIndex = -1;
         private static string timePattern = "\\b[012]?\\d:[0-5]?\\d(?::[0-5]?\\d)?\\b";
         private static string datePattern = "\\b(?:19|20)?[0-9]{2}[\\-/.][0-9]{2}[\\-/.](?:19|20)?[0-9]{2}\\b";
         static private Dictionary<string, string> TextPatterns = new Dictionary<string, string>
@@ -1105,7 +1107,7 @@ namespace ClipAngel
                         //htmlTextBox.Document.Body.AppendChild(paragraph);
                         if (textPattern.Length > 0)
                         {
-                            MarkRegExpMatchesInWebBrowser(htmlTextBox, textPattern, !String.IsNullOrEmpty(filterText));
+                            MarkRegExpMatchesInWebBrowser(htmlTextBox, textPattern, !String.IsNullOrEmpty(searchString));
                         }
                     }
                     else
@@ -1121,7 +1123,7 @@ namespace ClipAngel
                         MarkLinksInRichTextBox(richTextBox, out TextLinkMatches);
                         if (textPattern.Length > 0)
                         {
-                            MarkRegExpMatchesInRichTextBox(richTextBox, textPattern, Color.Red, false, !String.IsNullOrEmpty(filterText), out FilterMatches);
+                            MarkRegExpMatchesInRichTextBox(richTextBox, textPattern, Color.Red, false, !String.IsNullOrEmpty(searchString), out FilterMatches);
                         }
                     }
                 }
@@ -1149,14 +1151,14 @@ namespace ClipAngel
             tableLayoutPanelData.SuspendLayout();
             UpdateClipButtons();
             htmlTextBox.Parent.Enabled = true;
-            if (comboBoxFilter.Focused)
+            if (comboBoxSearchString.Focused)
             {
                 // Antibug webBrowser steals focus. We set it back
-                int filterSelectionLength = comboBoxFilter.SelectionLength;
-                int filterSelectionStart = comboBoxFilter.SelectionStart;
-                comboBoxFilter.Focus();
-                comboBoxFilter.SelectionStart = filterSelectionStart;
-                comboBoxFilter.SelectionLength = filterSelectionLength;
+                int filterSelectionLength = comboBoxSearchString.SelectionLength;
+                int filterSelectionStart = comboBoxSearchString.SelectionStart;
+                comboBoxSearchString.Focus();
+                comboBoxSearchString.SelectionStart = filterSelectionStart;
+                comboBoxSearchString.SelectionLength = filterSelectionLength;
             }
             if (clipType == "img")
             {
@@ -1410,9 +1412,9 @@ namespace ClipAngel
                 searchFlags = 4;
             string[] array;
             if (Properties.Settings.Default.SearchWordsIndependently)
-                array = filterText.Split(new[] { " " }, StringSplitOptions.RemoveEmptyEntries);
+                array = searchString.Split(new[] { " " }, StringSplitOptions.RemoveEmptyEntries);
             else
-                array = new string[1] { filterText };
+                array = new string[1] { searchString };
             foreach (var word in array)
             {
                 mshtml.IHTMLTxtRange range = body.createTextRange();
@@ -1447,19 +1449,80 @@ namespace ClipAngel
                 AfterRowLoad(true);
         }
 
-        private void Filter_TextChanged(object sender, EventArgs e)
+        private void SearchString_TextChanged(object sender, EventArgs e)
         {
-            if (AllowFilterProcessing)
+            if (AllowFilterProcessing || !Properties.Settings.Default.FilterListBySearchString)
             {
-                timerApplyTextFiler.Stop();
-                timerApplyTextFiler.Start();
+                timerApplySearchString.Stop();
+                timerApplySearchString.Start();
             }
         }
 
-        private void TextFilterApply()
+        private void SearchStringApply()
         {
-            ReadFilterText();
-            UpdateClipBindingSource(true);
+            ReadSearchString();
+            searchMatchedIDs.Clear();
+            if (Properties.Settings.Default.FilterListBySearchString)
+                UpdateClipBindingSource(true);
+            else
+            {
+                if (!String.IsNullOrEmpty(searchString))
+                {
+                    SQLiteCommand command = new SQLiteCommand(m_dbConnection);
+                    command.CommandText = "Select Id From Clips";
+                    command.CommandText += " WHERE 1=1 " + SqlSearchFilter();
+                    command.CommandText += " ORDER BY " + sortField + " desc";
+                    if (Properties.Settings.Default.SearchCaseSensitive)
+                        command.CommandText = "PRAGMA case_sensitive_like = 1; " + command.CommandText;
+                    else
+                        command.CommandText = "PRAGMA case_sensitive_like = 0; " + command.CommandText;
+                    SQLiteDataReader reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        searchMatchedIDs.Add((int)reader["id"]);
+                    }
+                    currentListMatchIndex = -1;
+                }
+                foreach (DataGridViewRow row in dataGridView.Rows)
+                {
+                    row.Cells["ColumnTitle"].Value = null;
+                }
+                if (Properties.Settings.Default.AutoSelectMatchedClip)
+                {
+                    GotoSearchMatchInList();
+                }
+                else
+                {
+                    SelectCurrentRow(true);
+                }
+            }
+        }
+
+        private void GotoSearchMatchInList(bool Forward = true)
+        {
+            if (searchMatchedIDs.Count == 0)
+                return;
+            if (Forward)
+            {
+                currentListMatchIndex++;
+                currentListMatchIndex = Math.Min(currentListMatchIndex, searchMatchedIDs.Count - 1);
+            }
+            else
+            {
+                currentListMatchIndex--;
+                currentListMatchIndex = Math.Max(currentListMatchIndex, 0);
+            }
+            RestoreSelectedCurrentClip(true, searchMatchedIDs[currentListMatchIndex]);
+        }
+
+        private void SelectRowByID(int IDToSelect)
+        {
+            int newIndex = clipBindingSource.Find("Id", IDToSelect);
+            if (newIndex >= 0)
+            {
+                dataGridView.Rows[newIndex].Selected = false;
+                dataGridView.Rows[newIndex].Selected = true;
+            }
         }
 
         private void UpdateClipBindingSource(bool forceRowLoad = false, int currentClipId = 0, bool keepTextSelectionIfIDChanged = false, List<int> selectedClipIDs = null)
@@ -1490,26 +1553,9 @@ namespace ClipAngel
             filterOn = false;
             string sqlFilter = "1 = 1";
             string filterValue = "";
-            if (!String.IsNullOrEmpty(filterText))
+            if (!String.IsNullOrEmpty(searchString) && Properties.Settings.Default.FilterListBySearchString)
             {
-                string[] array;
-                string filterTextTemp = filterText;
-                filterTextTemp = filterTextTemp.Replace("\\", "\\\\");
-                filterTextTemp = filterTextTemp.Replace("_", "\\_");
-                filterTextTemp = filterTextTemp.Replace("'", "''");
-                if (!Properties.Settings.Default.SearchWildcards)
-                    filterTextTemp = filterTextTemp.Replace("%", "\\%");
-                if (Properties.Settings.Default.SearchWordsIndependently)
-                    array = filterTextTemp.Split(new[] { " " }, StringSplitOptions.RemoveEmptyEntries);
-                else
-                    array = new string[1] { filterTextTemp };
-                foreach (var word in array)
-                {
-                    if (Properties.Settings.Default.SearchCaseSensitive)
-                        sqlFilter += " AND (Text Like '%" + word + "%' ESCAPE '\\' OR Title Like '%" + word + "%' ESCAPE '\\')";
-                    else
-                        sqlFilter += " AND (UPPER(Text) Like UPPER('%" + word + "%') ESCAPE '\\' OR UPPER(Title) Like UPPER('%" + word + "%') ESCAPE '\\')";
-                }
+                sqlFilter += SqlSearchFilter();
                 filterOn = true;
                 if (Properties.Settings.Default.SearchIgnoreBigTexts)
                     sqlFilter += " AND (Chars < 100000 OR type = 'img')";
@@ -1604,18 +1650,37 @@ namespace ClipAngel
                     allowProcessDataGridSelectionChanged = false;
                     foreach (int selectedID in selectedClipIDs)
                     {
-                        int newIndex = clipBindingSource.Find("Id", selectedID);
-                        if (newIndex >= 0)
-                        {
-                            dataGridView.Rows[newIndex].Selected = false;
-                            dataGridView.Rows[newIndex].Selected = true;
-                        }
+                        SelectRowByID(selectedID);
                     }
                     allowProcessDataGridSelectionChanged = true;
                 }
             }
             allowRowLoad = true;
             //AutoGotoLastRow = false;
+        }
+
+        private string SqlSearchFilter()
+        {
+            string[] array;
+            string filterTextTemp = searchString;
+            filterTextTemp = filterTextTemp.Replace("\\", "\\\\");
+            filterTextTemp = filterTextTemp.Replace("_", "\\_");
+            filterTextTemp = filterTextTemp.Replace("'", "''");
+            if (!Properties.Settings.Default.SearchWildcards)
+                filterTextTemp = filterTextTemp.Replace("%", "\\%");
+            if (Properties.Settings.Default.SearchWordsIndependently)
+                array = filterTextTemp.Split(new[] {" "}, StringSplitOptions.RemoveEmptyEntries);
+            else
+                array = new string[1] {filterTextTemp};
+            string sqlSearchFilter = "";
+            foreach (var word in array)
+            {
+                if (Properties.Settings.Default.SearchCaseSensitive)
+                    sqlSearchFilter += " AND (Text Like '%" + word + "%' ESCAPE '\\' OR Title Like '%" + word + "%' ESCAPE '\\')";
+                else
+                    sqlSearchFilter += " AND (UPPER(Text) Like UPPER('%" + word + "%') ESCAPE '\\' OR UPPER(Title) Like UPPER('%" + word + "%') ESCAPE '\\')";
+            }
+            return sqlSearchFilter;
         }
 
         private void RestoreSelectedCurrentClip(bool forceRowLoad = false, int currentClipId = -1,
@@ -1656,9 +1721,9 @@ namespace ClipAngel
             if (filterOn)
             {
                 AllowFilterProcessing = false;
-                comboBoxFilter.Text = "";
+                comboBoxSearchString.Text = "";
                 periodFilterOn = false;
-                ReadFilterText();
+                ReadSearchString();
                 TypeFilter.SelectedIndex = 0;
                 MarkFilter.SelectedIndex = 0;
                 AllowFilterProcessing = true;
@@ -2678,9 +2743,9 @@ namespace ClipAngel
         private void SaveFilterInLastUsedList()
         {
             StringCollection lastFilterValues = Properties.Settings.Default.LastFilterValues;
-            if (!String.IsNullOrEmpty(filterText) && !lastFilterValues.Contains(filterText))
+            if (!String.IsNullOrEmpty(searchString) && !lastFilterValues.Contains(searchString))
             {
-                lastFilterValues.Insert(0, filterText);
+                lastFilterValues.Insert(0, searchString);
                 while (lastFilterValues.Count > 20)
                 {
                     lastFilterValues.RemoveAt(lastFilterValues.Count - 1);
@@ -2974,7 +3039,7 @@ namespace ClipAngel
             else
                 selectedRows.Add(dataGridView.CurrentRow);
             int counter = 0;
-            ReadFilterText();
+            ReadSearchString();
             List<int> selectedIDs = new List<int>();
             foreach (DataGridViewRow selectedRow in selectedRows)
             {
@@ -3018,9 +3083,9 @@ namespace ClipAngel
             // dataGridView.CurrentRow could be null here!
         }
 
-        private void ReadFilterText()
+        private void ReadSearchString()
         {
-            filterText = comboBoxFilter.Text;
+            searchString = comboBoxSearchString.Text;
         }
 
         private static Image GetImageFromBinary(byte[] binary)
@@ -3033,19 +3098,19 @@ namespace ClipAngel
 
         private void FillFilterItems()
         {
-            int filterSelectionLength = comboBoxFilter.SelectionLength;
-            int filterSelectionStart = comboBoxFilter.SelectionStart;
+            int filterSelectionLength = comboBoxSearchString.SelectionLength;
+            int filterSelectionStart = comboBoxSearchString.SelectionStart;
 
             StringCollection lastFilterValues = Properties.Settings.Default.LastFilterValues;
-            comboBoxFilter.Items.Clear();
+            comboBoxSearchString.Items.Clear();
             foreach (string String in lastFilterValues)
             {
-                comboBoxFilter.Items.Add(String);
+                comboBoxSearchString.Items.Add(String);
             }
 
             // For some reason selection is reset. So we restore it
-            comboBoxFilter.SelectionStart = filterSelectionStart;
-            comboBoxFilter.SelectionLength = filterSelectionLength;
+            comboBoxSearchString.SelectionStart = filterSelectionStart;
+            comboBoxSearchString.SelectionLength = filterSelectionLength;
         }
 
         IntPtr GetFocusWindow(int maxWait = 100)
@@ -3307,7 +3372,7 @@ namespace ClipAngel
                     LoadClipIfChangedID();
                 SaveFilterInLastUsedList();
             }
-            if (dataGridView.Focused || comboBoxFilter.Focused)
+            if (dataGridView.Focused || comboBoxSearchString.Focused)
             {
                 allowProcessDataGridSelectionChanged = false;
                 dataGridView.SuspendLayout();
@@ -3644,12 +3709,12 @@ namespace ClipAngel
             Application.Exit();
         }
 
-        private void Filter_KeyDown(object sender, KeyEventArgs e)
+        private void SearchString_KeyDown(object sender, KeyEventArgs e)
         {
             PassKeyToGrid(true, e);
         }
 
-        private void Filter_KeyUp(object sender, KeyEventArgs e)
+        private void SearchString_KeyUp(object sender, KeyEventArgs e)
         {
             PassKeyToGrid(false, e);
         }
@@ -3945,7 +4010,7 @@ namespace ClipAngel
         private string RegexpPattern()
         {
             string textPattern = "";
-            if (!String.IsNullOrEmpty(filterText))
+            if (!String.IsNullOrEmpty(searchString))
                 textPattern = RegexpPatternFromTextFilter();
             else
             {
@@ -3958,7 +4023,7 @@ namespace ClipAngel
 
         private string RegexpPatternFromTextFilter()
         {
-            string result = filterText;
+            string result = searchString;
             string[] array;
             if (Properties.Settings.Default.SearchWordsIndependently)
                 array = result.Split(new[] { " " }, StringSplitOptions.RemoveEmptyEntries);
@@ -4314,7 +4379,10 @@ namespace ClipAngel
             TypeFilter.DisplayMember = "Text";
             VisibleUserSettings allSettings = new VisibleUserSettings(this);
             toolStripButtonAutoSelectMatch.ToolTipText = allSettings.GetProperties().Find("AutoSelectMatch", true).Description;
+            autoselectMatchedClipMenuItem.ToolTipText = allSettings.GetProperties().Find("AutoSelectMatchedClip", true).Description;
+            filterListBySearchStringMenuItem.ToolTipText = allSettings.GetProperties().Find("FilterListBySearchString", true).Description;
             toolStripMenuItemSearchCaseSensitive.ToolTipText = allSettings.GetProperties().Find("SearchCaseSensitive", true).Description;
+            ignoreBigTextsToolStripMenuItem.ToolTipText = allSettings.GetProperties().Find("SearchIgnoreBigTexts", true).Description;
             toolStripMenuItemSearchWordsIndependently.ToolTipText = allSettings.GetProperties().Find("SearchWordsIndependently", true).Description;
             toolStripMenuItemSearchWildcards.ToolTipText = allSettings.GetProperties().Find("SearchWildcards", true).Description;
             moveCopiedClipToTopToolStripButton.ToolTipText = allSettings.GetProperties().Find("MoveCopiedClipToTop", true).Description;
@@ -4563,7 +4631,7 @@ namespace ClipAngel
             SetForegroundWindow(this.Handle);
         }
 
-        private void Filter_KeyPress(object sender, KeyPressEventArgs e)
+        private void SearchString_KeyPress(object sender, KeyPressEventArgs e)
         {
             // http://csharpcoding.org/tag/keypress/ Workaroud strange beeping 
             if (e.KeyChar == (char) Keys.Enter || e.KeyChar == (char) Keys.Escape)
@@ -4607,7 +4675,7 @@ namespace ClipAngel
                             IUIAutomationElement tempElement;
                             CUIAutomation _automation = new CUIAutomation();
                             IUIAutomationTreeWalker treeWalker = _automation.CreateTreeWalker(_automation.CreateTrueCondition());
-                            success = WaitWindowShow(null, "Точки останова", out breakPointsWindow, "V8NewLocalFrameBaseWnd", treeWalker);
+                            success = WaitWindowFocus(null, "Точки останова", out breakPointsWindow, "V8NewLocalFrameBaseWnd", treeWalker);
                             int maxWait = 2000;
                             Stopwatch stopWatch = new Stopwatch();
                             if (success)
@@ -4621,7 +4689,7 @@ namespace ClipAngel
                                         SendKeys.Send("^(ы)");
                                     else
                                         SendKeys.Send("^(s)");
-                                    success = WaitWindowShow(breakPointsWindow, "Сохранить точки останова в файл", out tempElement, "#32770", treeWalker);
+                                    success = WaitWindowFocus(breakPointsWindow, "Сохранить точки останова в файл", out tempElement, "#32770", treeWalker);
                                 }
                             }
                             if (success)
@@ -4729,7 +4797,7 @@ namespace ClipAngel
                                     SendKeys.Send("^(щ)");
                                 else
                                     SendKeys.Send("^(o)");
-                                success = WaitWindowShow(breakPointsWindow, "Загрузить точки останова из файла", out tempElement, "#32770", treeWalker);
+                                success = WaitWindowFocus(breakPointsWindow, "Загрузить точки останова из файла", out tempElement, "#32770", treeWalker);
                             }
                             if (success)
                             {
@@ -4737,16 +4805,24 @@ namespace ClipAngel
                                 valuePattern = _automation.GetFocusedElement().GetCurrentPattern(UIA_ValuePatternId);
                                 ((IUIAutomationValuePattern)valuePattern).SetValue(tempFilename);
                                 SendKeys.SendWait("{ENTER}");
-                                success = WaitWindowShow(null, "Точки останова", out breakPointsWindow, "V8NewLocalFrameBaseWnd", treeWalker);
+                                success = WaitWindowFocus(null, "Точки останова", out breakPointsWindow, "V8NewLocalFrameBaseWnd", treeWalker, 1000);
                             }
                             if (success)
                             {
                                 success = false;
                                 //tableElement = FindTable1C(UIWindow, treeWalker);
                                 stopWatch.Restart();
+                                IUIAutomationElement cell;
                                 while (stopWatch.ElapsedMilliseconds < maxWait)
                                 {
-                                    IUIAutomationElement cell = treeWalker.GetFirstChildElement(tableElement);
+                                    try
+                                    {
+                                        cell = treeWalker.GetFirstChildElement(tableElement);
+                                    }
+                                    catch
+                                    {
+                                        cell = null;
+                                    }
                                     while (cell != null)
                                     {
                                         if (cell.CurrentName == moduleName + " Имя модуля")
@@ -4814,11 +4890,11 @@ namespace ClipAngel
             return String.Compare(InputLanguage.CurrentInputLanguage.Culture.TwoLetterISOLanguageName, "ru", StringComparison.InvariantCultureIgnoreCase) == 0;
         }
 
-        private bool WaitWindowShow(IUIAutomationElement mainWindow, string title, out IUIAutomationElement parent, string className, IUIAutomationTreeWalker treeWalker = null)
+        private bool WaitWindowFocus(IUIAutomationElement mainWindow, string title, out IUIAutomationElement parent, string className, IUIAutomationTreeWalker treeWalker = null,
+            int wait = 2000)
         {
             parent = null;
             bool success = false;
-            int maxWait = 2000;
             Stopwatch stopWatch = new Stopwatch();
             stopWatch.Start();
             //while (stopWatch.ElapsedMilliseconds < maxWait)
@@ -4844,7 +4920,7 @@ namespace ClipAngel
             //IUIAutomationCacheRequest request = _automation.CreateCacheRequest();
             int UIA_NamePropertyId = 30005;
             int UIA_ClassNamePropertyId = 30012;
-            while (stopWatch.ElapsedMilliseconds < maxWait)
+            while (stopWatch.ElapsedMilliseconds < wait)
             {
                 try
                 {
@@ -4854,7 +4930,16 @@ namespace ClipAngel
                     parent = mainWindow.FindFirst(TreeScope.TreeScope_Children, cond);
                     if (parent != null)
                     {
-                        success = true;
+                        Stopwatch stopWatch2 = new Stopwatch();
+                        stopWatch2.Start();
+                        while (stopWatch2.ElapsedMilliseconds < wait)
+                        {
+                            if (parent.CurrentHasKeyboardFocus != 0)
+                            {
+                                success = true;
+                                break;
+                            }
+                        }
                         break;
                     }
                 }
@@ -4936,9 +5021,9 @@ namespace ClipAngel
                 searchFlags = 4;
             string[] array;
             if (Properties.Settings.Default.SearchWordsIndependently)
-                array = filterText.Split(new[] {" "}, StringSplitOptions.RemoveEmptyEntries);
+                array = searchString.Split(new[] {" "}, StringSplitOptions.RemoveEmptyEntries);
             else
-                array = new string[1] {filterText};
+                array = new string[1] {searchString};
             foreach (var word in array)
             {
                 mshtml.IHTMLTxtRange range = body.createTextRange();
@@ -5048,6 +5133,8 @@ namespace ClipAngel
 
         private void UpdateControlsStates()
         {
+            filterListBySearchStringMenuItem.Checked = Properties.Settings.Default.FilterListBySearchString;
+            autoselectMatchedClipMenuItem.Checked = Properties.Settings.Default.AutoSelectMatchedClip;
             toolStripMenuItemSecondaryColumns.Checked = Properties.Settings.Default.ShowSecondaryColumns;
             toolStripButtonSecondaryColumns.Checked = Properties.Settings.Default.ShowSecondaryColumns;
             toolStripMenuItemSearchCaseSensitive.Checked = Properties.Settings.Default.SearchCaseSensitive;
@@ -5171,8 +5258,8 @@ namespace ClipAngel
                 //&& !e.Alt
             )
             {
-                comboBoxFilter.Focus();
-                sendKey(comboBoxFilter.Handle, e.KeyData, false, true);
+                comboBoxSearchString.Focus();
+                sendKey(comboBoxSearchString.Handle, e.KeyData, false, true);
                 e.Handled = true;
             }
             //else if (e.KeyCode == Keys.Tab)
@@ -5543,10 +5630,10 @@ namespace ClipAngel
             //}
         }
 
-        private void timerApplyTextFiler_Tick(object sender = null, EventArgs e = null)
+        private void timerApplySearchString_Tick(object sender = null, EventArgs e = null)
         {
-            TextFilterApply();
-            timerApplyTextFiler.Stop();
+            SearchStringApply();
+            timerApplySearchString.Stop();
         }
 
         private void dataGridView_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
@@ -6354,21 +6441,21 @@ namespace ClipAngel
         {
             Properties.Settings.Default.SearchCaseSensitive = !Properties.Settings.Default.SearchCaseSensitive;
             UpdateControlsStates();
-            TextFilterApply();
+            SearchStringApply();
         }
 
         private void everyWordIndependentToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Properties.Settings.Default.SearchWordsIndependently = !Properties.Settings.Default.SearchWordsIndependently;
             UpdateControlsStates();
-            TextFilterApply();
+            SearchStringApply();
         }
 
         private void meandsAnySequenceOfCharsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Properties.Settings.Default.SearchWildcards = !Properties.Settings.Default.SearchWildcards;
             UpdateControlsStates();
-            TextFilterApply();
+            SearchStringApply();
         }
 
         private void dataGridView_MouseMove(object sender, MouseEventArgs e)
@@ -6531,25 +6618,25 @@ namespace ClipAngel
         {
             Properties.Settings.Default.SearchIgnoreBigTexts = !Properties.Settings.Default.SearchIgnoreBigTexts;
             UpdateControlsStates();
-            TextFilterApply();
+            SearchStringApply();
         }
 
         private void addSelectedTextInFilterToolStripMenu_Click(object sender, EventArgs e)
         {
             AllowFilterProcessing = false;
-            if (!String.IsNullOrWhiteSpace(comboBoxFilter.Text))
-                comboBoxFilter.Text += " ";
-            comboBoxFilter.Text += GetSelectedTextOfClip();
+            if (!String.IsNullOrWhiteSpace(comboBoxSearchString.Text))
+                comboBoxSearchString.Text += " ";
+            comboBoxSearchString.Text += GetSelectedTextOfClip();
             AllowFilterProcessing = true;
-            TextFilterApply();
+            SearchStringApply();
         }
 
         private void setSelectedTextInFilterToolStripMenu_Click(object sender, EventArgs e)
         {
             AllowFilterProcessing = false;
-            comboBoxFilter.Text = richTextBox.SelectedText;
+            comboBoxSearchString.Text = richTextBox.SelectedText;
             AllowFilterProcessing = true;
-            TextFilterApply();
+            SearchStringApply();
         }
 
         private void openLastClipsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -6590,6 +6677,29 @@ namespace ClipAngel
         private void gotoTopToolStripMenuItem_Click(object sender, EventArgs e)
         {
             GotoLastRow();
+        }
+
+        private void filterListBySearchStringToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.FilterListBySearchString = !Properties.Settings.Default.FilterListBySearchString;
+            UpdateControlsStates();
+            UpdateClipBindingSource();
+        }
+
+        private void autoselectFirstMatchedClipToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.AutoSelectMatchedClip = !Properties.Settings.Default.AutoSelectMatchedClip;
+            UpdateControlsStates();
+        }
+
+        private void NextMatchListMenuItem_Click(object sender, EventArgs e)
+        {
+            GotoSearchMatchInList();
+        }
+
+        private void PreviousMatchListMenuItem_Click(object sender, EventArgs e)
+        {
+            GotoSearchMatchInList(false);
         }
     }
 }

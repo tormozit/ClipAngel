@@ -246,9 +246,6 @@
   <data name="tableLayoutPanelData.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>412, 369</value>
   </data>
-  <data name="previousMatchToolStripMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Shift+F3</value>
-  </data>
   <data name="$this.AutoScaleDimensions" xml:space="preserve" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
   </data>
@@ -1571,9 +1568,6 @@
   <data name="textBoxWindow.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="comboBoxFilter.Anchor" xml:space="preserve" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left, Right</value>
-  </data>
   <data name="fileToolStripMenuItem1.Text" xml:space="preserve">
     <value>Παράθυρο</value>
   </data>
@@ -1646,9 +1640,6 @@
   <data name="changeClipTitleToolStripMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>F2</value>
   </data>
-  <data name="previousMatchToolStripMenuItem.Text" xml:space="preserve">
-    <value>Εύρεση προηγούμενου</value>
-  </data>
   <data name="contextMenuStripRtf.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>210, 92</value>
   </data>
@@ -1703,9 +1694,6 @@
   <data name="toolStripButtonMonospacedFont.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>23, 22</value>
   </data>
-  <data name="comboBoxFilter.Location" xml:space="preserve" type="System.Drawing.Point, System.Drawing">
-    <value>159, 395</value>
-  </data>
   <data name="toolStripMenuItem10.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>211, 22</value>
   </data>
@@ -1750,9 +1738,6 @@
   </data>
   <data name="checkUpdateToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>178, 22</value>
-  </data>
-  <data name="nextMatchToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
-    <value>214, 22</value>
   </data>
   <data name="copyToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Αντιγραφή...</value>
@@ -1979,17 +1964,11 @@
   <data name="toolStripMenuItem16.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>214, 22</value>
   </data>
-  <data name="previousMatchToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
-    <value>214, 22</value>
-  </data>
   <data name="toolStripButtonTopMostWindow.ImageTransparentColor" xml:space="preserve" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
   </data>
   <data name="htmlMenuItemOpenLink.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>209, 22</value>
-  </data>
-  <data name="comboBoxFilter.Font" xml:space="preserve" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 9pt</value>
   </data>
   <data name="toolStripSearchOptions.RightToLeft" xml:space="preserve" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
     <value>No</value>
@@ -2036,9 +2015,6 @@
   <data name="StripLabelType.Text" xml:space="preserve">
     <value>Τύπος</value>
   </data>
-  <data name="nextMatchToolStripMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>F3</value>
-  </data>
   <data name="toolStripTop.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>276, 25</value>
   </data>
@@ -2074,9 +2050,6 @@
   </data>
   <data name="TypeFilter.Anchor" xml:space="preserve" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
-  </data>
-  <data name="comboBoxFilter.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
-    <value>110, 23</value>
   </data>
   <data name="settingsToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>61, 20</value>
@@ -2141,9 +2114,6 @@
   <data name="wordWrapToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Αναδίπλωση λέξεων</value>
   </data>
-  <data name="comboBoxFilter.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
   <data name="toolStripTop.Location" xml:space="preserve" type="System.Drawing.Point, System.Drawing">
     <value>372, 0</value>
   </data>
@@ -2158,9 +2128,6 @@
   </data>
   <data name="urlTextBox.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>408, 22</value>
-  </data>
-  <data name="nextMatchToolStripMenuItem.Text" xml:space="preserve">
-    <value>Εύρεση επόμενου</value>
   </data>
   <metadata name="ImageSample.UserAddedColumn" xml:space="preserve" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -2236,9 +2203,6 @@
   </metadata>
   <metadata name="cultureManager1.TrayLocation" xml:space="preserve" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>500, 30</value>
-  </metadata>
-  <metadata name="timerApplyTextFiler.TrayLocation" xml:space="preserve" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>325, 3</value>
   </metadata>
   <metadata name="VisualWeight.UserAddedColumn" xml:space="preserve" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -2408,7 +2372,52 @@
   <data name="gotoTopToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>237, 22</value>
   </data>
-  <metadata name="$this.Language" xml:space="preserve" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>ru</value>
+  <data name="comboBoxSearchString.Anchor" xml:space="preserve" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left, Right</value>
+  </data>
+  <data name="comboBoxSearchString.Font" xml:space="preserve" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9pt</value>
+  </data>
+  <data name="comboBoxSearchString.Location" xml:space="preserve" type="System.Drawing.Point, System.Drawing">
+    <value>159, 395</value>
+  </data>
+  <data name="comboBoxSearchString.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>110, 23</value>
+  </data>
+  <data name="comboBoxSearchString.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <metadata name="timerApplySearchString.TrayLocation" xml:space="preserve" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>325, 3</value>
   </metadata>
+  <data name="NextMatchListMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Alt+Down</value>
+  </data>
+  <data name="NextMatchListMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>237, 22</value>
+  </data>
+  <data name="PreviousMatchListMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Alt+Up</value>
+  </data>
+  <data name="PreviousMatchListMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>237, 22</value>
+  </data>
+  <data name="NextMatchTextMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>F3</value>
+  </data>
+  <data name="NextMatchTextMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>214, 22</value>
+  </data>
+  <data name="PreviousMatchTextMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Shift+F3</value>
+  </data>
+  <data name="PreviousMatchTextMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>214, 22</value>
+  </data>
+  <data name="autoselectMatchedClipMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>209, 22</value>
+  </data>
+  <data name="filterListBySearchStringMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>209, 22</value>
+  </data>
 </root>

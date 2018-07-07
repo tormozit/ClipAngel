@@ -362,9 +362,6 @@ L'URL sera enregistrée dans le clip actuel et sera copiée dans le presse-papie
   <data name="tableLayoutPanelData.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>412, 369</value>
   </data>
-  <data name="previousMatchToolStripMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Shift+F3</value>
-  </data>
   <data name="toolStripMenuItemOpenFile.Text" xml:space="preserve">
     <value>Ouvrir le fichier clip</value>
   </data>
@@ -423,9 +420,6 @@ Les modifications au fichier temporaire ne sont pas synchronisées avec le clip!
   </data>
   <data name="toolStripTop.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
     <value>5</value>
-  </data>
-  <data name="comboBoxFilter.CueText" xml:space="preserve">
-    <value>Type de filtre dans liste</value>
   </data>
   <data name="supportToolStripMenuItem.Text" xml:space="preserve">
     <value>Envoyer bug ou suggestion</value>
@@ -1796,9 +1790,6 @@ Lorsque ON et "Fenêtre rapide ouverte" OFF, la fenêtre sera affichée dans la 
   <data name="textBoxWindow.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="comboBoxFilter.Anchor" xml:space="preserve" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left, Right</value>
-  </data>
   <data name="fileToolStripMenuItem1.Text" xml:space="preserve">
     <value>Fenêtre</value>
   </data>
@@ -1877,9 +1868,6 @@ Lorsque ON et "Fenêtre rapide ouverte" OFF, la fenêtre sera affichée dans la 
   <data name="changeClipTitleToolStripMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>F2</value>
   </data>
-  <data name="previousMatchToolStripMenuItem.Text" xml:space="preserve">
-    <value>Recherche précédente</value>
-  </data>
   <data name="toolStripMenuItem8.ToolTipText" xml:space="preserve">
     <value>Supprimer les clips sélectionnés non favoris de la liste. La suppression est effectuée lors de la fermeture de la base de données.	</value>
   </data>
@@ -1949,9 +1937,6 @@ Lorsque ON et "Fenêtre rapide ouverte" OFF, la fenêtre sera affichée dans la 
   <data name="toolStripButtonMonospacedFont.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>23, 22</value>
   </data>
-  <data name="comboBoxFilter.Location" xml:space="preserve" type="System.Drawing.Point, System.Drawing">
-    <value>159, 395</value>
-  </data>
   <data name="toolStripButtonFindPrevious.ToolTipText" xml:space="preserve">
     <value>Résultat précéd. dans clip texte (SHIFT+F3)</value>
   </data>
@@ -1972,9 +1957,6 @@ Lorsque ON et "Fenêtre rapide ouverte" OFF, la fenêtre sera affichée dans la 
   </data>
   <data name="tableLayoutPanelData.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
     <value>1</value>
-  </data>
-  <data name="nextMatchToolStripMenuItem.ToolTipText" xml:space="preserve">
-    <value>Résultat suiv. dans le clip texte (F3)</value>
   </data>
   <data name="ColumnTitle.HeaderText" xml:space="preserve">
     <value>Titre</value>
@@ -2015,9 +1997,6 @@ Lorsque ON et "Fenêtre rapide ouverte" OFF, la fenêtre sera affichée dans la 
   <data name="checkUpdateToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>178, 22</value>
   </data>
-  <data name="nextMatchToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
-    <value>214, 22</value>
-  </data>
   <data name="copyToolStripMenuItem.Text" xml:space="preserve">
     <value>Copier</value>
   </data>
@@ -2047,9 +2026,6 @@ Lorsque ON et "Fenêtre rapide ouverte" OFF, la fenêtre sera affichée dans la 
   </data>
   <data name="showOnlyImagesToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>250, 22</value>
-  </data>
-  <data name="previousMatchToolStripMenuItem.ToolTipText" xml:space="preserve">
-    <value>Résultat Précéd. dans clip texte (SHIFT+F3)</value>
   </data>
   <data name="setFavouriteToolStripMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Alt+Q</value>
@@ -2313,17 +2289,11 @@ Le sous-menu "Liste" comporte des commandes pour une sélection rapide</value>
   <data name="toolStripMenuItem16.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>214, 22</value>
   </data>
-  <data name="previousMatchToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
-    <value>214, 22</value>
-  </data>
   <data name="toolStripButtonTopMostWindow.ImageTransparentColor" xml:space="preserve" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
   </data>
   <data name="htmlMenuItemOpenLink.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>209, 22</value>
-  </data>
-  <data name="comboBoxFilter.Font" xml:space="preserve" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 9pt</value>
   </data>
   <data name="toolStripSearchOptions.RightToLeft" xml:space="preserve" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
     <value>No</value>
@@ -2342,10 +2312,6 @@ Le sous-menu "Liste" comporte des commandes pour une sélection rapide</value>
   </data>
   <data name="toolStripMenuItem6.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>209, 22</value>
-  </data>
-  <data name="comboBoxFilter.ToolTip" xml:space="preserve">
-    <value>Filtre pour le texte du clip. Liste et partage ce filtre entrée clé.
-Editer le filtre directement dans la liste. Naviguez dans la liste directement à partir du filtre.	</value>
   </data>
   <data name="statusStrip.Anchor" xml:space="preserve" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left, Right</value>
@@ -2394,9 +2360,6 @@ Editer le filtre directement dans la liste. Naviguez dans la liste directement �
   </data>
   <data name="toolStripMenuItemEditClipText.ToolTipText" xml:space="preserve">
     <value>Editer texte clip sous texte brut (F4)</value>
-  </data>
-  <data name="nextMatchToolStripMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>F3</value>
   </data>
   <data name="toolStripTop.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>276, 25</value>
@@ -2461,9 +2424,6 @@ Editer le filtre directement dans la liste. Naviguez dans la liste directement �
   </data>
   <data name="toolStripButtonTextFormatting.Text" xml:space="preserve">
     <value>Mise en forme native</value>
-  </data>
-  <data name="comboBoxFilter.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
-    <value>110, 23</value>
   </data>
   <data name="settingsToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>61, 20</value>
@@ -2550,9 +2510,6 @@ Ajouté à la liste ignorée, qui peut être éditée dans la fenêtre Paramètr
   <data name="wordWrapToolStripMenuItem.Text" xml:space="preserve">
     <value>Retour à la ligne</value>
   </data>
-  <data name="comboBoxFilter.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
   <data name="toolStripTop.Location" xml:space="preserve" type="System.Drawing.Point, System.Drawing">
     <value>372, 0</value>
   </data>
@@ -2570,9 +2527,6 @@ Ajouté à la liste ignorée, qui peut être éditée dans la fenêtre Paramètr
   </data>
   <data name="urlTextBox.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>408, 22</value>
-  </data>
-  <data name="nextMatchToolStripMenuItem.Text" xml:space="preserve">
-    <value>Recherche Suiv.</value>
   </data>
   <metadata name="ImageSample.UserAddedColumn" xml:space="preserve" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -2648,9 +2602,6 @@ Ajouté à la liste ignorée, qui peut être éditée dans la fenêtre Paramètr
   </metadata>
   <metadata name="cultureManager1.TrayLocation" xml:space="preserve" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>500, 30</value>
-  </metadata>
-  <metadata name="timerApplyTextFiler.TrayLocation" xml:space="preserve" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>325, 3</value>
   </metadata>
   <metadata name="VisualWeight.UserAddedColumn" xml:space="preserve" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -2898,7 +2849,52 @@ Le tri est conservé jusqu'à la capture du clip.</value>
   <data name="gotoTopToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>237, 22</value>
   </data>
-  <metadata name="$this.Language" xml:space="preserve" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>ru</value>
+  <data name="comboBoxSearchString.Anchor" xml:space="preserve" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left, Right</value>
+  </data>
+  <data name="comboBoxSearchString.Font" xml:space="preserve" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9pt</value>
+  </data>
+  <data name="comboBoxSearchString.Location" xml:space="preserve" type="System.Drawing.Point, System.Drawing">
+    <value>159, 395</value>
+  </data>
+  <data name="comboBoxSearchString.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>110, 23</value>
+  </data>
+  <data name="comboBoxSearchString.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <metadata name="timerApplySearchString.TrayLocation" xml:space="preserve" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>325, 3</value>
   </metadata>
+  <data name="NextMatchListMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Alt+Down</value>
+  </data>
+  <data name="NextMatchListMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>237, 22</value>
+  </data>
+  <data name="PreviousMatchListMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Alt+Up</value>
+  </data>
+  <data name="PreviousMatchListMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>237, 22</value>
+  </data>
+  <data name="NextMatchTextMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>F3</value>
+  </data>
+  <data name="NextMatchTextMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>214, 22</value>
+  </data>
+  <data name="PreviousMatchTextMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Shift+F3</value>
+  </data>
+  <data name="PreviousMatchTextMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>214, 22</value>
+  </data>
+  <data name="autoselectMatchedClipMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>209, 22</value>
+  </data>
+  <data name="filterListBySearchStringMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>209, 22</value>
+  </data>
 </root>

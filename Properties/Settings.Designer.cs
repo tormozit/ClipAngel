@@ -728,5 +728,29 @@ namespace ClipAngel.Properties {
                 this["Max1CCodeSizeToColorize"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool FilterListBySearchString {
+            get {
+                return ((bool)(this["FilterListBySearchString"]));
+            }
+            set {
+                this["FilterListBySearchString"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool AutoSelectMatchedClip {
+            get {
+                return ((bool)(this["AutoSelectMatchedClip"]));
+            }
+            set {
+                this["AutoSelectMatchedClip"] = value;
+            }
+        }
     }
 }

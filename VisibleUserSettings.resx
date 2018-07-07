@@ -127,7 +127,13 @@
     <value>Autoselect first match</value>
   </data>
   <data name="AutoSelectMatchDescription" xml:space="preserve">
-    <value>Autoselection of first match of filter in clip text. </value>
+    <value>Autoselection of first match of search string in clip text. </value>
+  </data>
+  <data name="AutoSelectMatchedClip" xml:space="preserve">
+    <value>Autoselect matched clip</value>
+  </data>
+  <data name="AutoSelectMatchedClipDescription" xml:space="preserve">
+    <value>When filter by search string is off and search string is changed, automatically go to first clip matched search string</value>
   </data>
   <data name="Autostart" xml:space="preserve">
     <value>Autostart program on user logon</value>
@@ -199,6 +205,12 @@ Leave blank to use standart database file "db.sqlite" in application user settin
   </data>
   <data name="FastWindowOpenDescription" xml:space="preserve">
     <value>Fast window opening by using some tricks. Can lead to some minor problems in window opening/closing.</value>
+  </data>
+  <data name="FilterListBySearchString" xml:space="preserve">
+    <value>Filter list by search string</value>
+  </data>
+  <data name="FilterListBySearchStringDescription" xml:space="preserve">
+    <value>Filter clip list by search string</value>
   </data>
   <data name="GlobalHotkeyCompareLastClips" xml:space="preserve">
     <value>Hotkey to compare last clips</value>

@@ -722,6 +722,8 @@ namespace ClipAngel
 
         public void Load(bool PortableMode = false)
         {
+            FilterListBySearchString = Properties.Settings.Default.FilterListBySearchString;
+            AutoSelectMatchedClip = Properties.Settings.Default.AutoSelectMatchedClip;
             Max1CCodeSizeToColorize = Properties.Settings.Default.Max1CCodeSizeToColorize;
             EncryptDatabaseForCurrentUser = Properties.Settings.Default.EncryptDatabaseForCurrentUser;
             ReplaceDuplicates = Properties.Settings.Default.ReplaceDuplicates;
@@ -1061,6 +1063,14 @@ namespace ClipAngel
         [GlobalizedCategory("Search")]
         [Editor(typeof(MyBoolEditor), typeof(UITypeEditor))]
         public bool SearchIgnoreBigTexts { get; set; }
+
+        [GlobalizedCategory("Search")]
+        [Editor(typeof(MyBoolEditor), typeof(UITypeEditor))]
+        public bool FilterListBySearchString { get; set; }
+
+        [GlobalizedCategory("Search")]
+        [Editor(typeof(MyBoolEditor), typeof(UITypeEditor))]
+        public bool AutoSelectMatchedClip { get; set; }
 
         [GlobalizedCategory("Other")]
         [Editor(typeof(MyBoolEditor), typeof(UITypeEditor))]

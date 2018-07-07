@@ -458,6 +458,16 @@ namespace ClipAngel.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap Filter1 {
+            get {
+                object obj = ResourceManager.GetObject("Filter1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Filtered {0}.
         /// </summary>
         public static string FilteredStatusText {
@@ -1032,7 +1042,7 @@ namespace ClipAngel.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 1.56.
+        ///   Looks up a localized string similar to 1.57.
         /// </summary>
         public static string VersionValue {
             get {

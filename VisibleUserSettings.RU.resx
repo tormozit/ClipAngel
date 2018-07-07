@@ -127,7 +127,13 @@
     <value>Автовыделение вхождения</value>
   </data>
   <data name="AutoSelectMatchDescription" xml:space="preserve">
-    <value>Автовыделение первого вхождения фильтра в тексте  клипа</value>
+    <value>Автовыделение первого вхождения строки поиска в тексте  клипа</value>
+  </data>
+  <data name="AutoSelectMatchedClip" xml:space="preserve">
+    <value>Автопереход к первому найденному клипу</value>
+  </data>
+  <data name="AutoSelectMatchedClipDescription" xml:space="preserve">
+    <value>Когда фильтрование списка клипов строкой поиска отключено и меняется строка поиска, автоматически переходить к первому клипу, отвечающему строке поиска.</value>
   </data>
   <data name="Autostart" xml:space="preserve">
     <value>Автозапуск программы при входе пользователя</value>
@@ -201,6 +207,12 @@
   </data>
   <data name="FastWindowOpenDescription" xml:space="preserve">
     <value>Ускоренное открытие окна через применение некоторых трюков. Может приводить к некоторым незначительным проблемам открытия/закрытия окна.</value>
+  </data>
+  <data name="FilterListBySearchString" xml:space="preserve">
+    <value>Фильтровать список строкой поиска</value>
+  </data>
+  <data name="FilterListBySearchStringDescription" xml:space="preserve">
+    <value>Фильтровать список клипов строкой поиска</value>
   </data>
   <data name="GlobalHotkeyCompareLastClips" xml:space="preserve">
     <value>Горячая клавиша сравнения последних клипов</value>
