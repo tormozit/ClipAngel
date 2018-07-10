@@ -3169,7 +3169,7 @@ namespace ClipAngel
         [DllImport("user32.dll")]
         static extern IntPtr GetOpenClipboardWindow();
 
-        static public void GetClipboardOwnerLockerInfo(bool Locker, out string windowTitle, out string application,
+        public void GetClipboardOwnerLockerInfo(bool Locker, out string windowTitle, out string application,
             out string appPath, out bool is1CCode, out IUIAutomationElement mainWindowAutomation, bool replaceNullWithLastActive = true)
         {
             IntPtr hwnd;
@@ -3194,7 +3194,7 @@ namespace ClipAngel
                 }
             }
             int processId;
-            GetWindowThreadProcessId(hwnd, out processId);
+            uint activeWindowThread = GetWindowThreadProcessId(hwnd, out processId);
             Process process1 = Process.GetProcessById(processId);
             application = process1.ProcessName;
             appPath = GetProcessMainModuleFullName(processId);
@@ -3205,6 +3205,7 @@ namespace ClipAngel
                 && String.Compare(application, "1cv8", true) == 0
                 )
             {
+                // This way 1C will crash later
                 var _automation = new CUIAutomation();
                 IUIAutomationElement focusedControl = null;
                 try
@@ -3215,7 +3216,7 @@ namespace ClipAngel
                 { };
                 is1CCode = true
                     && focusedControl != null
-                    && focusedControl.CurrentLocalizedControlType == "документ" 
+                    && focusedControl.CurrentLocalizedControlType == "документ"
                     //&& (false // Такая проверка не найдет не максимизированные окна и модули большинства форм
                     //    || mainWindow.Current.Name.Contains(": Модуль")
                     //    || mainWindow.Current.Name.Contains(": Форма"))
@@ -4662,6 +4663,9 @@ namespace ClipAngel
                         if (String.Compare(clipApplication, "1cv8", true) == 0)
                         {
                             string moduleName = match.Groups[4].ToString();
+                            string[] fragments = moduleName.Split("."[0]);
+                            if (fragments[0] == "ВнешняяОбработка")
+                                return;
                             int lineNumber = Convert.ToInt32(match.Groups[5].ToString());
                             ActivateTargetWindow();
                             SendKeys.Send("%{F9}");
@@ -4715,7 +4719,7 @@ namespace ClipAngel
                             {
                                 success = false;
                                 // DataProcessor.StandardTotalsManagement.Form.MainForm
-                                string[] fragments = moduleName.Split("."[0]);
+                                string xml = "";
                                 string MDObject = "";
                                 if (fragments.Length == 1)
                                 {
@@ -4734,7 +4738,6 @@ namespace ClipAngel
                                 }
                                 string MDProperty = typeMap1C[fragments[fragments.Length - 1]];
                                 stopWatch.Start();
-                                string xml = "";
                                 while (stopWatch.ElapsedMilliseconds < maxWait)
                                 {
                                     try
@@ -4789,7 +4792,7 @@ namespace ClipAngel
                                     doc.Save(tempFilename);
                                     success = true;
                                 }
-                            }
+                        }
                             if (success)
                             {
                                 success = false;
@@ -4930,17 +4933,18 @@ namespace ClipAngel
                     parent = mainWindow.FindFirst(TreeScope.TreeScope_Children, cond);
                     if (parent != null)
                     {
-                        Stopwatch stopWatch2 = new Stopwatch();
-                        stopWatch2.Start();
-                        while (stopWatch2.ElapsedMilliseconds < wait)
-                        {
-                            if (parent.CurrentHasKeyboardFocus != 0)
-                            {
+                        parent.SetFocus();
+                        //Stopwatch stopWatch2 = new Stopwatch();
+                        //stopWatch2.Start();
+                        //while (stopWatch2.ElapsedMilliseconds < wait)
+                        //{
+                        //    if (parent.CurrentHasKeyboardFocus != 0)
+                        //    {
                                 success = true;
                                 break;
-                            }
-                        }
-                        break;
+                        //    }
+                        //}
+                        //break;
                     }
                 }
                 catch (Exception e)
