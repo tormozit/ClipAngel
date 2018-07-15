@@ -139,7 +139,6 @@ namespace ClipAngel
         private Timer titleToolTipBeforeTimer = new Timer();
         string sortField = "Id";
         List<int> searchMatchedIDs = new List<int>();
-        private int currentListMatchIndex = -1;
         private static string timePattern = "\\b[012]?\\d:[0-5]?\\d(?::[0-5]?\\d)?\\b";
         private static string datePattern = "\\b(?:19|20)?[0-9]{2}[\\-/.][0-9]{2}[\\-/.](?:19|20)?[0-9]{2}\\b";
         static private Dictionary<string, string> TextPatterns = new Dictionary<string, string>
@@ -1466,30 +1465,14 @@ namespace ClipAngel
                 UpdateClipBindingSource(true);
             else
             {
-                if (!String.IsNullOrEmpty(searchString))
-                {
-                    SQLiteCommand command = new SQLiteCommand(m_dbConnection);
-                    command.CommandText = "Select Id From Clips";
-                    command.CommandText += " WHERE 1=1 " + SqlSearchFilter();
-                    command.CommandText += " ORDER BY " + sortField + " desc";
-                    if (Properties.Settings.Default.SearchCaseSensitive)
-                        command.CommandText = "PRAGMA case_sensitive_like = 1; " + command.CommandText;
-                    else
-                        command.CommandText = "PRAGMA case_sensitive_like = 0; " + command.CommandText;
-                    SQLiteDataReader reader = command.ExecuteReader();
-                    while (reader.Read())
-                    {
-                        searchMatchedIDs.Add((int)reader["id"]);
-                    }
-                    currentListMatchIndex = -1;
-                }
+                UpdateSearchMatchedIDs();
                 foreach (DataGridViewRow row in dataGridView.Rows)
                 {
                     row.Cells["ColumnTitle"].Value = null;
                 }
                 if (Properties.Settings.Default.AutoSelectMatchedClip)
                 {
-                    GotoSearchMatchInList();
+                    GotoSearchMatchInList(true, true);
                 }
                 else
                 {
@@ -1498,19 +1481,72 @@ namespace ClipAngel
             }
         }
 
-        private void GotoSearchMatchInList(bool Forward = true)
+        private void UpdateSearchMatchedIDs()
+        {
+            searchMatchedIDs.Clear();
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                SQLiteCommand command = new SQLiteCommand(m_dbConnection);
+                command.CommandText = "Select Id From Clips";
+                command.CommandText += " WHERE 1=1 " + SqlSearchFilter();
+                command.CommandText += " ORDER BY " + sortField + " desc";
+                if (Properties.Settings.Default.SearchCaseSensitive)
+                    command.CommandText = "PRAGMA case_sensitive_like = 1; " + command.CommandText;
+                else
+                    command.CommandText = "PRAGMA case_sensitive_like = 0; " + command.CommandText;
+                SQLiteDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    searchMatchedIDs.Add((int) reader["id"]);
+                }
+            }
+        }
+
+        private void GotoSearchMatchInList(bool Forward = true, bool resetPosition = false)
         {
             if (searchMatchedIDs.Count == 0)
                 return;
+            int currentListMatchIndex;
             if (Forward)
             {
-                currentListMatchIndex++;
-                currentListMatchIndex = Math.Min(currentListMatchIndex, searchMatchedIDs.Count - 1);
+                if (resetPosition)
+                    currentListMatchIndex = 0;
+                else
+                {
+                    currentListMatchIndex = searchMatchedIDs.Count - 1;
+                    if (dataGridView.CurrentRow != null)
+                    {
+                        int ListMatchIndex;
+                        for (int index = dataGridView.CurrentRow.Index + 1; index < dataGridView.RowCount; index++)
+                        {
+                            DataRowView dataRow = (DataRowView)dataGridView.Rows[index].DataBoundItem;
+                            ListMatchIndex = searchMatchedIDs.IndexOf((int)dataRow["Id"]);
+                            if (ListMatchIndex > -1)
+                            {
+                                currentListMatchIndex = ListMatchIndex;
+                                break;
+                            }
+                        }
+                    }
+                }
             }
             else
             {
-                currentListMatchIndex--;
-                currentListMatchIndex = Math.Max(currentListMatchIndex, 0);
+                currentListMatchIndex = 0;
+                if (dataGridView.CurrentRow != null)
+                {
+                    int ListMatchIndex;
+                    for (int index = dataGridView.CurrentRow.Index - 1; index >= 0; index--)
+                    {
+                        DataRowView dataRow = (DataRowView)dataGridView.Rows[index].DataBoundItem;
+                        ListMatchIndex = searchMatchedIDs.IndexOf((int)dataRow["Id"]);
+                        if (ListMatchIndex > -1)
+                        {
+                            currentListMatchIndex = ListMatchIndex;
+                            break;
+                        }
+                    }
+                }
             }
             RestoreSelectedCurrentClip(true, searchMatchedIDs[currentListMatchIndex]);
         }
@@ -1972,12 +2008,30 @@ namespace ClipAngel
                         textFormatPresent = true;
                     }
                 }
-                if (is1C && String.IsNullOrEmpty(richText) && String.IsNullOrEmpty(htmlText))
+                if (String.IsNullOrEmpty(richText) && String.IsNullOrEmpty(htmlText) && Properties.Settings.Default.Max1CCodeSizeToColorize > clipText.Length)
                 {
-                    SyntaxHighlighter syntax = new SyntaxHighlighter();
-                    if (Properties.Settings.Default.Max1CCodeSizeToColorize > clipText.Length)
+                    string[] textLines = TextToLines(clipText.ToLower());
+                    int maxLinesToProcess = 100;
+                    maxLinesToProcess = Math.Min(textLines.Length, maxLinesToProcess);
+                    string line;
+                    int positiveScore = 0;
+                    int negativeScore = 0;
+                    SyntaxHighlighter syntax1C = new SyntaxHighlighter();
+                    for (int i = 0; i < maxLinesToProcess; i++)
                     {
-                        htmlText = syntax.ProcessCode(clipText);
+                        line = textLines[i];
+                        int lineScore = syntax1C.isLineLike1C(line);
+                        if (lineScore > 0)
+                            positiveScore++;
+                        else if (lineScore < 0)
+                            negativeScore++;
+                    }
+                    if (false
+                        || negativeScore == 0 && is1C
+                        || negativeScore == 0 && positiveScore > 0
+                        || negativeScore > 0 && positiveScore / negativeScore > 1)
+                    {
+                        htmlText = syntax1C.ProcessCode(clipText);
                         clipType = "html";
                     }
                 }
@@ -3205,22 +3259,19 @@ namespace ClipAngel
                 && String.Compare(application, "1cv8", true) == 0
                 )
             {
-                // This way 1C will crash later
-                var _automation = new CUIAutomation();
-                IUIAutomationElement focusedControl = null;
-                try
-                {
-                    focusedControl = _automation.GetFocusedElement();
-                }
-                catch
-                { };
-                is1CCode = true
-                    && focusedControl != null
-                    && focusedControl.CurrentLocalizedControlType == "документ"
-                    //&& (false // Такая проверка не найдет не максимизированные окна и модули большинства форм
-                    //    || mainWindow.Current.Name.Contains(": Модуль")
-                    //    || mainWindow.Current.Name.Contains(": Форма"))
-                    ;
+                //// This way 1C configurator can crash later
+                //try
+                //{
+                //    var _automation = new CUIAutomation();
+                //    IUIAutomationElement focusedControl = null;
+                //    focusedControl = _automation.GetFocusedElement();
+                //    is1CCode = true
+                //               && focusedControl != null
+                //               && focusedControl.CurrentLocalizedControlType == "документ";
+                //}
+                //catch
+                //{ };
+                is1CCode = true;
             }
         }
 
@@ -5513,12 +5564,18 @@ namespace ClipAngel
             }
             else if (type == "file")
             {
-                string[] tokens = Regex.Split(RowReader["text"].ToString(), @"\r?\n|\r");
+                var tokens = TextToLines(RowReader["text"].ToString());
                 tempFile = tokens[0];
                 if (!File.Exists(tempFile))
                     tempFile = "";
             }
             return tempFile;
+        }
+
+        private static string[] TextToLines(string Text)
+        {
+            string[] tokens = Regex.Split(Text, @"\r?\n|\r");
+            return tokens;
         }
 
         private string clipTempFile(SQLiteDataReader rowReader, string suffix = "")
@@ -6687,7 +6744,15 @@ namespace ClipAngel
         {
             Properties.Settings.Default.FilterListBySearchString = !Properties.Settings.Default.FilterListBySearchString;
             UpdateControlsStates();
-            UpdateClipBindingSource();
+            if (!Properties.Settings.Default.FilterListBySearchString)
+            {
+                UpdateClipBindingSource();
+                UpdateSearchMatchedIDs();
+            }
+            else
+            {
+                SearchStringApply();
+            }
         }
 
         private void autoselectFirstMatchedClipToolStripMenuItem_Click(object sender, EventArgs e)

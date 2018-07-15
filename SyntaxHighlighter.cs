@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using Microsoft.Test.VariationGeneration.Constraints;
 
 namespace ClipAngel
 {
@@ -11,9 +12,95 @@ namespace ClipAngel
     {
         // Истина, если текущий символ находится в строке " "
         bool InLine;
+        List<string> keyWords = new List<string>()
+        {
+            "if",
+            "если",
+            "then",
+            "тогда",
+            "elsif",
+            "иначеесли",
+            "else",
+            "иначе",
+            "endif",
+            "конецесли",
+            "do",
+            "цикл",
+            "for",
+            "для",
+            "to",
+            "по",
+            "each",
+            "каждого",
+            "in",
+            "из",
+            "while",
+            "пока",
+            "enddo",
+            "конеццикла",
+            "procedure",
+            "процедура",
+            "endprocedure",
+            "конецпроцедуры",
+            "function",
+            "функция",
+            "endfunction",
+            "конецфункции",
+            "var",
+            "перем",
+            "export",
+            "экспорт",
+            "goto",
+            "перейти",
+            "and",
+            "и",
+            "or",
+            "или",
+            "not",
+            "не",
+            "val",
+            "знач",
+            "break",
+            "прервать",
+            "continue",
+            "продолжить",
+            "return",
+            "возврат",
+            "try",
+            "попытка",
+            "except",
+            "исключение",
+            "endtry",
+            "конецпопытки",
+            "raise",
+            "вызватьисключение",
+            "false",
+            "ложь",
+            "true",
+            "истина",
+            "undefined",
+            "неопределено",
+            "null",
+            "new",
+            "новый",
+            "execute",
+            "выполнить"
+        };
+        private string keyWordPattern = "";
+        private string operatorPattern = @"[\+\*\/\%\=\>\<]";
+        private string notLetterPattern = @"(?:[^ёа-яa-z]|^|$)";
 
         public SyntaxHighlighter()
         {
+            foreach (var keyWord in keyWords)
+            {
+                if (!String.IsNullOrEmpty(keyWordPattern))
+                {
+                    keyWordPattern += "|";
+                }
+                keyWordPattern += keyWord;
+            }
+            keyWordPattern = notLetterPattern + "(?:" + keyWordPattern + ")" + notLetterPattern;
         }
 
         // Возвращается строка CSS
@@ -62,9 +149,28 @@ namespace ClipAngel
         // Возвращаемое значение:
         //   Symbol из запрашиваемой позиции
         //
-        string GetSymbol(string Строка, int Position)
+        string GetSymbol(string Line, int Position)
         {
-            return Строка.Substring(Position, 1);
+            return Line.Substring(Position, 1);
+        }
+
+        public int isLineLike1C(string Line)
+        {
+            Line = Line.TrimStart();
+            if (String.IsNullOrEmpty(Line))
+                return 0;
+            if (Line.StartsWith("//") || Line.StartsWith("|"))
+                return 1;
+            int qoutePos = Line.IndexOf(@"""");
+            if (qoutePos >=0 )
+                Line = Line.Remove(qoutePos);
+            if (String.IsNullOrEmpty(Line))
+                return 0;
+            if (Regex.Match(Line, keyWordPattern).Success)
+                return 1;
+            if (Regex.IsMatch(Line, operatorPattern) || Line.Contains(");"))
+                return 0;
+            return -1;
         }
 
         // Token проверяется на принадлежность к ключевым словам 
@@ -79,78 +185,7 @@ namespace ClipAngel
         bool IsKeyword(string _Токен)
         {
             string Token = _Токен.ToLower();
-            return false ||
-                   Token == "if" ||
-                   Token == "если" ||
-                   Token == "then" ||
-                   Token == "тогда" ||
-                   Token == "elsif" ||
-                   Token == "иначеесли" ||
-                   Token == "else" ||
-                   Token == "иначе" ||
-                   Token == "endif" ||
-                   Token == "конецесли" ||
-                   Token == "do" ||
-                   Token == "цикл" ||
-                   Token == "for" ||
-                   Token == "для" ||
-                   Token == "to" ||
-                   Token == "по" ||
-                   Token == "each" ||
-                   Token == "каждого" ||
-                   Token == "in" ||
-                   Token == "из" ||
-                   Token == "while" ||
-                   Token == "пока" ||
-                   Token == "endDo" ||
-                   Token == "конеццикла" ||
-                   Token == "procedure" ||
-                   Token == "процедура" ||
-                   Token == "endprocedure" ||
-                   Token == "конецпроцедуры" ||
-                   Token == "function" ||
-                   Token == "функция" ||
-                   Token == "endfunction" ||
-                   Token == "конецфункции" ||
-                   Token == "var" ||
-                   Token == "перем" ||
-                   Token == "export" ||
-                   Token == "экспорт" ||
-                   Token == "goto" ||
-                   Token == "перейти" ||
-                   Token == "and" ||
-                   Token == "и" ||
-                   Token == "or" ||
-                   Token == "или" ||
-                   Token == "not" ||
-                   Token == "не" ||
-                   Token == "val" ||
-                   Token == "знач" ||
-                   Token == "break" ||
-                   Token == "прервать" ||
-                   Token == "continue" ||
-                   Token == "продолжить" ||
-                   Token == "return" ||
-                   Token == "возврат" ||
-                   Token == "try" ||
-                   Token == "попытка" ||
-                   Token == "except" ||
-                   Token == "исключение" ||
-                   Token == "endTry" ||
-                   Token == "конецпопытки" ||
-                   Token == "raise" ||
-                   Token == "вызватьисключение" ||
-                   Token == "false" ||
-                   Token == "ложь" ||
-                   Token == "true" ||
-                   Token == "истина" ||
-                   Token == "undefined" ||
-                   Token == "неопределено" ||
-                   Token == "null" ||
-                   Token == "new" ||
-                   Token == "новый" ||
-                   Token == "execute" ||
-                   Token == "выполнить";
+            return keyWords.Contains(Token);
         }
 
         // Проверяется символ на принадлежность к специальным символам
@@ -413,7 +448,7 @@ namespace ClipAngel
             result += "</style>\n";
             result += "</head>";
             result += "<body>";
-            result += "<pre>";
+            result += "<pre>\n";
             // Последовательно перебираются все строки кода, окрашиваются
             // и записываются в буфер
             code = code.Replace("\t", "    ");
