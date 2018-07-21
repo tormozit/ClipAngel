@@ -163,7 +163,7 @@
     <value>Folder for clip temp files</value>
   </data>
   <data name="ClipTempFileFolderDescription" xml:space="preserve">
-    <value>Folder for saving temp files of clips. Leave empty to use standart temp folder. Usually can be usefull in portable mode.</value>
+    <value>Folder for saving temp files of clips. Leave empty to use standard temp folder. Usually can be usefull in portable mode.</value>
   </data>
   <data name="CopyTextInAnyWindowOnCTRLF3" xml:space="preserve">
     <value>Copy text from any window by Control+F3</value>
@@ -180,7 +180,7 @@ Key press will be processed by the window. </value>
   </data>
   <data name="DatabaseFileDescription" xml:space="preserve">
     <value>You can change database filename to switch to other clipboard history. 
-Leave blank to use standart database file "db.sqlite" in application user settings folder.</value>
+Leave blank to use standard database file "db.sqlite" in application user settings folder.</value>
   </data>
   <data name="DatabaseSize" xml:space="preserve">
     <value>Database size MB</value>
@@ -193,6 +193,12 @@ Leave blank to use standart database file "db.sqlite" in application user settin
   </data>
   <data name="DefaultFontDescription" xml:space="preserve">
     <value>Font for clip list and default for clip text. Double click to change it.</value>
+  </data>
+  <data name="DeleteNonFavoriteClipsOnExit" xml:space="preserve">
+    <value>Delete non favorite clips on exit</value>
+  </data>
+  <data name="DeleteNonFavoriteClipsOnExitDescription" xml:space="preserve">
+    <value>Delete all non favorite clips after close database</value>
   </data>
   <data name="EncryptDatabaseForCurrentUser" xml:space="preserve">
     <value>Encrypt database for current user</value>

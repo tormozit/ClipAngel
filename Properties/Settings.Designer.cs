@@ -752,5 +752,17 @@ namespace ClipAngel.Properties {
                 this["AutoSelectMatchedClip"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool DeleteNonFavoriteClipsOnExit {
+            get {
+                return ((bool)(this["DeleteNonFavoriteClipsOnExit"]));
+            }
+            set {
+                this["DeleteNonFavoriteClipsOnExit"] = value;
+            }
+        }
     }
 }

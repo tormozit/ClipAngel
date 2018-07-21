@@ -44,7 +44,7 @@ namespace ClipAngel
 {
     enum PasteMethod
     {
-        Standart,
+        Standard,
         Text,
         Line,
         SendChars,
@@ -668,7 +668,7 @@ namespace ClipAngel
             else if (hotkeyTitle == Properties.Settings.Default.GlobalHotkeyIncrementalPaste)
             {
                 AllowHotkeyProcess = false;
-                SendPasteClipExpress(null, PasteMethod.Standart, false, true);
+                SendPasteClipExpress(null, PasteMethod.Standard, false, true);
                 if ((e.Modifier & EnumModifierKeys.Alt) != 0)
                     keybd_event((byte) VirtualKeyCode.MENU, 0x38, 0, 0); // LEFT
                 if ((e.Modifier & EnumModifierKeys.Control) != 0)
@@ -2065,7 +2065,7 @@ namespace ClipAngel
                 {
                     //clipType = "img";
                     bitmap = iData.GetData(DataFormats.Bitmap) as Bitmap;
-                    if (bitmap != null) // NUll happens while copying image in standart image viewer Windows 10
+                    if (bitmap != null) // NUll happens while copying image in standard image viewer Windows 10
                     {
                         using (MemoryStream memoryStream = new MemoryStream())
                         {
@@ -2816,7 +2816,7 @@ namespace ClipAngel
         }
 
         // Does not respect MoveCopiedClipToTop
-        private string SendPasteClipExpress(DataGridViewRow currentViewRow = null, PasteMethod pasteMethod = PasteMethod.Standart, bool pasteDelimiter = false, bool updateDB = false)
+        private string SendPasteClipExpress(DataGridViewRow currentViewRow = null, PasteMethod pasteMethod = PasteMethod.Standard, bool pasteDelimiter = false, bool updateDB = false)
         {
             if (currentViewRow == null)
                 currentViewRow = dataGridView.CurrentRow;
@@ -2837,7 +2837,7 @@ namespace ClipAngel
                     textToPaste = Environment.NewLine + textToPaste;
                 return textToPaste;
             }
-            if (pasteDelimiter && pasteMethod == PasteMethod.Standart)
+            if (pasteDelimiter && pasteMethod == PasteMethod.Standard)
             {
                 int multipasteDelay = 50;
                 Thread.Sleep(multipasteDelay);
@@ -2848,7 +2848,7 @@ namespace ClipAngel
                     Thread.Sleep(multipasteDelay);
                 //}
             }
-            CopyClipToClipboard(rowReader, pasteMethod != PasteMethod.Standart && pasteMethod != PasteMethod.File, false);
+            CopyClipToClipboard(rowReader, pasteMethod != PasteMethod.Standard && pasteMethod != PasteMethod.File, false);
             if (SendPaste(pasteMethod))
                 return "";
 
@@ -2874,7 +2874,7 @@ namespace ClipAngel
             return "";
         }
 
-        private bool SendPaste(PasteMethod pasteMethod = PasteMethod.Standart)
+        private bool SendPaste(PasteMethod pasteMethod = PasteMethod.Standard)
         {
             bool needElevation = ActivateTargetWindow();
             var curproc = Process.GetCurrentProcess();
@@ -3327,7 +3327,7 @@ namespace ClipAngel
             SendPasteOfSelectedTextOrSelectedClips(PasteMethod.Text);
         }
 
-        private void SendPasteOfSelectedTextOrSelectedClips(PasteMethod pasteMethod = PasteMethod.Standart)
+        private void SendPasteOfSelectedTextOrSelectedClips(PasteMethod pasteMethod = PasteMethod.Standard)
         {
             string agregateTextToPaste = "";
             string selectedText = "";
@@ -3341,7 +3341,7 @@ namespace ClipAngel
             }
             else
             {
-                if (pasteMethod == PasteMethod.Standart)
+                if (pasteMethod == PasteMethod.Standard)
                     itemPasteMethod = pasteMethod;
                 else
                     itemPasteMethod = PasteMethod.Null;
@@ -3750,7 +3750,7 @@ namespace ClipAngel
                 //if (!pasteENTERToolStripMenuItem.Enabled)
                 if (richTextBox.Focused && EditMode)
                     return true;
-                pasteMethod = PasteMethod.Standart;
+                pasteMethod = PasteMethod.Standard;
             }
             SendPasteOfSelectedTextOrSelectedClips(pasteMethod);
             return false;
@@ -4647,6 +4647,8 @@ namespace ClipAngel
 
         private void CloseDatabase()
         {
+            if (Properties.Settings.Default.DeleteNonFavoriteClipsOnExit)
+                deleteAllNonFavoriteClips();
             if (updateDBThread != null)
             {
                 stopUpdateDBThread = true;
@@ -4656,7 +4658,7 @@ namespace ClipAngel
                 RowReader = null;
             m_dbConnection.Close();
 
-            // Shrink database to really delete deleted clips
+            // Shrink database to really delete deleted clips. It can take up to several seconds. 
             m_dbConnection.Open();
             SQLiteCommand command = new SQLiteCommand("vacuum", m_dbConnection);
             command.ExecuteNonQuery();
@@ -6297,12 +6299,17 @@ namespace ClipAngel
             DialogResult result = MessageBox.Show(this, Properties.Resources.СonfirmDeleteAllNonFavorite, Properties.Resources.Confirmation, MessageBoxButtons.OKCancel);
             if (result != DialogResult.OK)
                 return;
+            deleteAllNonFavoriteClips();
+            UpdateClipBindingSource();
+        }
+
+        private void deleteAllNonFavoriteClips()
+        {
             allowRowLoad = false;
             string sql = "Delete from Clips where NOT Favorite OR Favorite IS NULL";
             SQLiteCommand command = new SQLiteCommand("", m_dbConnection);
             command.CommandText = sql;
             command.ExecuteNonQuery();
-            UpdateClipBindingSource();
         }
 
         private void openWithToolStripMenuItem_Click(object sender, EventArgs e)

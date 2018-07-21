@@ -481,8 +481,8 @@
           <target state="translated">Le clip n'a pas été capturé en raison de l'erreur de lecture du presse-papiers</target>
         </trans-unit>
         <trans-unit id="VersionValue" translate="yes" xml:space="preserve">
-          <source>1.58</source>
-          <target state="new">1.58</target>
+          <source>1.59</source>
+          <target state="new">1.59</target>
         </trans-unit>
         <trans-unit id="TargetWindow" translate="yes" xml:space="preserve">
           <source>Target window</source>
@@ -1230,8 +1230,9 @@
           <target state="translated">Dossier pour fichiers temporaires des clips</target>
         </trans-unit>
         <trans-unit id="ClipTempFileFolderDescription" translate="yes" xml:space="preserve">
-          <source>Folder for saving temp files of clips. Leave empty to use standart temp folder. Usually can be usefull in portable mode.</source>
-          <target state="translated">Dossier pour sauver fichiers temporaires de clips. Laissez vide pour utiliser le dossier temporaire standard ; utile en mode portable.</target>
+          <source>Folder for saving temp files of clips. Leave empty to use standard temp folder. Usually can be usefull in portable mode.</source>
+          <target state="needs-review-translation">Dossier pour sauver fichiers temporaires de clips. Laissez vide pour utiliser le dossier temporaire standard ; utile en mode portable.</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="CopyTextInAnyWindowOnCTRLF3" translate="yes" xml:space="preserve">
           <source>Copy text from any window by Control+F3</source>
@@ -1542,9 +1543,10 @@ Non applicable au formatage natif HTML.</target>
         </trans-unit>
         <trans-unit id="DatabaseFileDescription" translate="yes" xml:space="preserve">
           <source>You can change database filename to switch to other clipboard history. 
-Leave blank to use standart database file "db.sqlite" in application user settings folder.</source>
-          <target state="translated">Vous pouvez modifier le nom de fichier de la base de données pour passer à un autre historique du Presse-papiers. 
+Leave blank to use standard database file "db.sqlite" in application user settings folder.</source>
+          <target state="needs-review-translation">Vous pouvez modifier le nom de fichier de la base de données pour passer à un autre historique du Presse-papiers. 
 Laissez vide pour utiliser le fichier de base de données standard "db.sqlite" dans le dossier utilisateur de l'application.</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="MaxCellsToCaptureFormattedText" translate="yes" xml:space="preserve">
           <source>Max cells to capture formatted text</source>
@@ -1653,6 +1655,14 @@ La génération d'image consomme CPU. Si vous rencontrez une charge CPU élevée
         <trans-unit id="FilterListBySearchStringDescription" translate="yes" xml:space="preserve">
           <source>Filter clip list by search string</source>
           <target state="new">Filter clip list by search string</target>
+        </trans-unit>
+        <trans-unit id="DeleteNonFavoriteClipsOnExit" translate="yes" xml:space="preserve">
+          <source>Delete non favorite clips on exit</source>
+          <target state="new">Delete non favorite clips on exit</target>
+        </trans-unit>
+        <trans-unit id="DeleteNonFavoriteClipsOnExitDescription" translate="yes" xml:space="preserve">
+          <source>Delete all non favorite clips after close database</source>
+          <target state="new">Delete all non favorite clips after close database</target>
         </trans-unit>
       </group>
     </body>

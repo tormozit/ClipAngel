@@ -153,8 +153,9 @@
           <target state="translated">Folder plików tymczasowych klipów</target>
         </trans-unit>
         <trans-unit id="ClipTempFileFolderDescription" translate="yes" xml:space="preserve">
-          <source>Folder for saving temp files of clips. Leave empty to use standart temp folder. Usually can be usefull in portable mode.</source>
-          <target state="translated">Folder do zapisywania plików tymczasowych klipów. Pozostaw puste, aby użyć standardowego folderu plików tymczasowych. Zazwyczaj może być użyteczne w trybie przenośnym.</target>
+          <source>Folder for saving temp files of clips. Leave empty to use standard temp folder. Usually can be usefull in portable mode.</source>
+          <target state="needs-review-translation">Folder do zapisywania plików tymczasowych klipów. Pozostaw puste, aby użyć standardowego folderu plików tymczasowych. Zazwyczaj może być użyteczne w trybie przenośnym.</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="CopyTextInAnyWindowOnCTRLF3" translate="yes" xml:space="preserve">
           <source>Copy text from any window by Control+F3</source>
@@ -469,7 +470,7 @@ Nie dotyczy natywnego formatowania HTML.</target>
         </trans-unit>
         <trans-unit id="DatabaseFileDescription" translate="yes" xml:space="preserve">
           <source>You can change database filename to switch to other clipboard history. 
-Leave blank to use standart database file "db.sqlite" in application user settings folder.</source>
+Leave blank to use standard database file "db.sqlite" in application user settings folder.</source>
           <target state="needs-review-translation">Możesz zmienić nazwę bazy danych, aby przełączyć się na inną historię schowka. Pozostaw puste, aby użyć standartowego pliku bazy danych "db.sqlite" w folderze ustawień użytkownika aplikacji.</target>
           <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
@@ -580,6 +581,14 @@ Generowanie obrazu zużywa moc procesora. Jeśli masz duże obciążenie proceso
         <trans-unit id="FilterListBySearchStringDescription" translate="yes" xml:space="preserve">
           <source>Filter clip list by search string</source>
           <target state="new">Filter clip list by search string</target>
+        </trans-unit>
+        <trans-unit id="DeleteNonFavoriteClipsOnExit" translate="yes" xml:space="preserve">
+          <source>Delete non favorite clips on exit</source>
+          <target state="new">Delete non favorite clips on exit</target>
+        </trans-unit>
+        <trans-unit id="DeleteNonFavoriteClipsOnExitDescription" translate="yes" xml:space="preserve">
+          <source>Delete all non favorite clips after close database</source>
+          <target state="new">Delete all non favorite clips after close database</target>
         </trans-unit>
       </group>
     </body>
@@ -1596,8 +1605,8 @@ Generowanie obrazu zużywa moc procesora. Jeśli masz duże obciążenie proceso
           <target state="translated">Klip nie został przechwycony ze względu na błąd odczytu schowka</target>
         </trans-unit>
         <trans-unit id="VersionValue" translate="yes" xml:space="preserve">
-          <source>1.58</source>
-          <target state="new">1.58</target>
+          <source>1.59</source>
+          <target state="new">1.59</target>
         </trans-unit>
         <trans-unit id="TargetWindow" translate="yes" xml:space="preserve">
           <source>Target window</source>
