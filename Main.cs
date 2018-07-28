@@ -78,7 +78,6 @@ namespace ClipAngel
         string DataFormat_XMLSpreadSheet = "XML SpreadSheet";
         string ActualVersion;
         //DateTime lastAutorunUpdateCheck;
-        int MaxTextViewSize = 5000;
         bool TextWasCut;
         public KeyboardHook keyboardHook;
         WinEventDelegate dele = null;
@@ -100,13 +99,15 @@ namespace ClipAngel
         Bitmap imageImg;
         string searchString = ""; // TODO optimize speed
         bool periodFilterOn = false;
-        int tabLength = 4;
+        const int MaxTextViewSize = 5000;
+        const int tabLength = 4;
+        const int maxClipsToSelect = 10000;
+        const int ClipTitleLength = 70;
         readonly RichTextBox _richTextBox = new RichTextBox();
         static Dictionary<string, Bitmap> originalIconCache = new Dictionary<string, Bitmap>();
         static Dictionary<string, Bitmap> brightIconCache = new Dictionary<string, Bitmap>();
         private bool allowTextPositionChangeUpdate = false;
         private int _lastSelectedForCompareId;
-        const int ClipTitleLength = 70;
         int factualTop = 0;
         bool htmlMode = false;
         int selectionLength = 0;
@@ -1065,19 +1066,16 @@ namespace ClipAngel
                             htmlDoc.close(); // Steals focus!!!
                             mshtml.IHTMLBodyElement body = htmlDoc.body as mshtml.IHTMLBodyElement;
                             //htmlDoc.selection.empty();
-                            htmlTextBox.Document.Body.Drag += new HtmlElementEventHandler(htmlTextBoxDrag);
+                            htmlTextBox.Document.Body.Drag += new HtmlElementEventHandler(htmlTextBoxDrag); // to prevent internal drag&drop
                             htmlTextBox.Document.Body.KeyDown += new HtmlElementEventHandler(htmlTextBoxDocumentKeyDown);
 
                             // Need to be called every time, else handler will be lost
-                            htmlTextBox.Document.AttachEventHandler("onselectionchange",
-                                htmlTextBoxDocumentSelectionChange); // No multi call to handler, but why?
+                            htmlTextBox.Document.AttachEventHandler("onselectionchange", htmlTextBoxDocumentSelectionChange); // No multi call to handler, but why?
                             if (!htmlInitialized)
                             {
                                 mshtml.HTMLDocumentEvents2_Event iEvent = (mshtml.HTMLDocumentEvents2_Event) htmlDoc;
-                                iEvent.onclick +=
-                                    new mshtml.HTMLDocumentEvents2_onclickEventHandler(htmlTextBoxDocumentClick); //
-                                iEvent.onmousedown +=
-                                    new mshtml.HTMLDocumentEvents2_onmousedownEventHandler(htmlTextBoxMouseDown); //
+                                iEvent.onclick += new mshtml.HTMLDocumentEvents2_onclickEventHandler(htmlTextBoxDocumentClick); //
+                                iEvent.onmousedown += new mshtml.HTMLDocumentEvents2_onmousedownEventHandler(htmlTextBoxMouseDown); //
                                 //iEvent.onselectionchange += new mshtml.HTMLDocumentEvents2_onselectionchangeEventHandler(htmlTextBoxDocumentSelectionChange);
                                 htmlInitialized = true;
                             }
@@ -1962,6 +1960,19 @@ namespace ClipAngel
                     else
                     {
                         clipType = "html";
+                        // Example of htmlText
+                        //Version: 1.0
+                        //StartHTML: 000000174
+                        //EndHTML: 000000603
+                        //StartFragment: 000000285
+                        //EndFragment: 000000571
+                        //StartSelection: 000000285
+                        //EndSelection: 000000571
+                        //SourceURL: about: blank
+                        //    <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+                        //    <HTML><HEAD></HEAD>
+                        //    <BODY><!--StartFragment--><PRE><SPAN class=k><FONT color =#ff0000>Для</FONT></SPAN> бизнес<SPAN class=k><FONT color=#ff0000>-</FONT></SPAN>процесса <SPAN class=s>"Согласование изменений маршрута</SPAN>" добавлена команда <SPAN class=s>"</SPAN>
+                        //    </PRE><!--EndFragment--></BODY></HTML>
                         Match match = Regex.Match(htmlText, "SourceURL:(" + LinkPattern + ")", RegexOptions.IgnoreCase);
                         if (match.Captures.Count > 0)
                             clipUrl = match.Groups[1].ToString();
@@ -2008,7 +2019,7 @@ namespace ClipAngel
                         textFormatPresent = true;
                     }
                 }
-                if (String.IsNullOrEmpty(richText) && String.IsNullOrEmpty(htmlText) && Properties.Settings.Default.Max1CCodeSizeToColorize > clipText.Length)
+                if (!String.IsNullOrEmpty(clipText) && String.IsNullOrEmpty(richText) && String.IsNullOrEmpty(htmlText) && Properties.Settings.Default.Max1CCodeSizeToColorize > clipText.Length)
                 {
                     string[] textLines = TextToLines(clipText.ToLower());
                     int maxLinesToProcess = 100;
@@ -2028,10 +2039,11 @@ namespace ClipAngel
                     }
                     if (false
                         || negativeScore == 0 && is1C
-                        || negativeScore == 0 && positiveScore > 0
+                        || negativeScore == 0 && positiveScore > 1
                         || negativeScore > 0 && positiveScore / negativeScore > 1)
                     {
                         htmlText = syntax1C.ProcessCode(clipText);
+                        htmlText = ClipboardHelper.GetHtmlDataString(htmlText);
                         clipType = "html";
                     }
                 }
@@ -5325,6 +5337,15 @@ namespace ClipAngel
             //    richTextBox.Focus();
             //    e.Handled = true;
             //}
+            else if (e.KeyCode == Keys.A && e.Control)
+            {
+                // Prevent CTRL+A from selection all clips
+                e.Handled = true;
+                for (int i = 0; i < Math.Min(dataGridView.RowCount, maxClipsToSelect); i++)
+                {
+                    dataGridView.Rows[i].Selected = true;
+                }
+            }
         }
 
         private void buttonUpdate_Click(object sender, EventArgs e)
@@ -6632,10 +6653,6 @@ namespace ClipAngel
         }
 
         private void dataGridView_MouseClick(object sender, MouseEventArgs e)
-        {
-        }
-
-        private void dataGridView_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
         }
 

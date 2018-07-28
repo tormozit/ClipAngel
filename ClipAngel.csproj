@@ -130,6 +130,7 @@
     <Compile Include="AboutBox.Designer.cs">
       <DependentUpon>AboutBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="ClipboardHelper.cs" />
     <Compile Include="Components\Attributes.cs" />
     <Compile Include="Components\CueComboBox.cs">
       <SubType>Component</SubType>
@@ -200,11 +201,6 @@
     </Compile>
     <Compile Include="Tips.Designer.cs">
       <DependentUpon>Tips.cs</DependentUpon>
-    </Compile>
-    <Compile Include="VisibleUserSettings.RU.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>VisibleUserSettings.RU.resx</DependentUpon>
     </Compile>
     <EmbeddedResource Include="AboutBox.de.resx">
       <DependentUpon>AboutBox.cs</DependentUpon>

@@ -285,23 +285,7 @@ namespace ClipAngel
             this.toolStripButtonFindPrevious = new System.Windows.Forms.ToolStripButton();
             this.MarkFilter = new System.Windows.Forms.ComboBox();
             this.TypeFilter = new System.Windows.Forms.ComboBox();
-            this.comboBoxSearchString = new ClipAngel.CueComboBox();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
-            this.dataGridView = new ClipAngel.MyDataGridView();
-            this.AppImage = new System.Windows.Forms.DataGridViewImageColumn();
-            this.TypeImage = new System.Windows.Forms.DataGridViewImageColumn();
-            this.ColumnTitle = new ClipAngel.DataGridViewRichTextBoxColumn();
-            this.ImageSample = new System.Windows.Forms.DataGridViewImageColumn();
-            this.VisualWeight = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.imageSampleDataGridViewImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
-            this.ColumnCreated = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.charsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SizeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.usedDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.typeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.titleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.favoriteDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.contextMenuStripDataGrid = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
@@ -341,7 +325,6 @@ namespace ClipAngel
             this.toolStripMenuItem21 = new System.Windows.Forms.ToolStripSeparator();
             this.addSelectedTextToFilterToolStripHtml = new System.Windows.Forms.ToolStripMenuItem();
             this.setSelectedTextInFilterToolStripHtml = new System.Windows.Forms.ToolStripMenuItem();
-            this.ImageControl = new ClipAngel.ZoomablePictureBox();
             this.contextMenuPictureBox = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.originalSizeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fitFromInsideToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -470,11 +453,28 @@ namespace ClipAngel
             this.timerReconnect = new System.Windows.Forms.Timer(this.components);
             this.timerApplySearchString = new System.Windows.Forms.Timer(this.components);
             this.tooltipTimer = new System.Windows.Forms.Timer(this.components);
-            this.clipsTableAdapter = new ClipAngel.dbDataSetTableAdapters.ClipsTableAdapter();
-            this.tableAdapterManager = new ClipAngel.dbDataSetTableAdapters.TableAdapterManager();
             this.cultureManager2 = new Infralution.Localization.CultureManager(this.components);
             this.cultureManager3 = new Infralution.Localization.CultureManager(this.components);
             this.cultureManager4 = new Infralution.Localization.CultureManager(this.components);
+            this.clipsTableAdapter = new ClipAngel.dbDataSetTableAdapters.ClipsTableAdapter();
+            this.tableAdapterManager = new ClipAngel.dbDataSetTableAdapters.TableAdapterManager();
+            this.comboBoxSearchString = new ClipAngel.CueComboBox();
+            this.dataGridView = new ClipAngel.MyDataGridView();
+            this.AppImage = new System.Windows.Forms.DataGridViewImageColumn();
+            this.TypeImage = new System.Windows.Forms.DataGridViewImageColumn();
+            this.ColumnTitle = new ClipAngel.DataGridViewRichTextBoxColumn();
+            this.ImageSample = new System.Windows.Forms.DataGridViewImageColumn();
+            this.VisualWeight = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.imageSampleDataGridViewImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
+            this.ColumnCreated = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.charsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SizeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.usedDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.typeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.titleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.favoriteDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.ImageControl = new ClipAngel.ZoomablePictureBox();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewRichTextBoxColumn1 = new ClipAngel.DataGridViewRichTextBoxColumn();
@@ -487,7 +487,6 @@ namespace ClipAngel
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             this.toolStripBottom.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.contextMenuStripDataGrid.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.clipBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dbDataSet)).BeginInit();
@@ -496,7 +495,6 @@ namespace ClipAngel
             this.contextMenuUrl.SuspendLayout();
             this.contextMenuStripRtf.SuspendLayout();
             this.contextMenuStripHtml.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ImageControl)).BeginInit();
             this.contextMenuPictureBox.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.contextMenuStripApplication.SuspendLayout();
@@ -504,6 +502,8 @@ namespace ClipAngel
             this.MainMenu.SuspendLayout();
             this.contextMenuStripNotifyIcon.SuspendLayout();
             this.toolStripTop.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ImageControl)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -675,178 +675,12 @@ namespace ClipAngel
             this.toolTipDynamic.SetToolTip(this.TypeFilter, resources.GetString("TypeFilter.ToolTip"));
             this.TypeFilter.SelectedValueChanged += new System.EventHandler(this.TypeFilter_SelectedValueChanged);
             // 
-            // comboBoxSearchString
-            // 
-            resources.ApplyResources(this.comboBoxSearchString, "comboBoxSearchString");
-            this.comboBoxSearchString.Name = "comboBoxSearchString";
-            this.comboBoxSearchString.TabStop = false;
-            this.toolTipDynamic.SetToolTip(this.comboBoxSearchString, resources.GetString("comboBoxSearchString.ToolTip"));
-            this.comboBoxSearchString.TextChanged += new System.EventHandler(this.SearchString_TextChanged);
-            this.comboBoxSearchString.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SearchString_KeyDown);
-            this.comboBoxSearchString.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SearchString_KeyPress);
-            this.comboBoxSearchString.KeyUp += new System.Windows.Forms.KeyEventHandler(this.SearchString_KeyUp);
-            this.comboBoxSearchString.MouseEnter += new System.EventHandler(this.comboBoxFilter_MouseEnter);
-            this.comboBoxSearchString.MouseHover += new System.EventHandler(this.comboBoxFilter_MouseHover);
-            // 
             // monthCalendar1
             // 
             resources.ApplyResources(this.monthCalendar1, "monthCalendar1");
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.DateSelected += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateSelected);
             this.monthCalendar1.Leave += new System.EventHandler(this.monthCalendar1_Leave);
-            // 
-            // dataGridView
-            // 
-            this.dataGridView.AllowDrop = true;
-            this.dataGridView.AllowUserToAddRows = false;
-            this.dataGridView.AllowUserToDeleteRows = false;
-            this.dataGridView.AllowUserToResizeColumns = false;
-            this.dataGridView.AllowUserToResizeRows = false;
-            resources.ApplyResources(this.dataGridView, "dataGridView");
-            this.dataGridView.AutoGenerateColumns = false;
-            this.dataGridView.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.dataGridView.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
-            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView.ColumnHeadersVisible = false;
-            this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.AppImage,
-            this.TypeImage,
-            this.ColumnTitle,
-            this.ImageSample,
-            this.VisualWeight,
-            this.imageSampleDataGridViewImageColumn,
-            this.ColumnCreated,
-            this.charsDataGridViewTextBoxColumn,
-            this.SizeDataGridViewTextBoxColumn,
-            this.usedDataGridViewCheckBoxColumn,
-            this.typeDataGridViewTextBoxColumn,
-            this.titleDataGridViewTextBoxColumn,
-            this.idDataGridViewTextBoxColumn,
-            this.favoriteDataGridViewCheckBoxColumn});
-            this.dataGridView.ContextMenuStrip = this.contextMenuStripDataGrid;
-            this.dataGridView.DataSource = this.clipBindingSource;
-            this.dataGridView.Name = "dataGridView";
-            this.dataGridView.ReadOnly = true;
-            this.dataGridView.RowHeadersVisible = false;
-            this.dataGridView.RowTemplate.Height = 19;
-            this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView.StandardTab = true;
-            this.dataGridView.TabStop = false;
-            this.dataGridView.Tag = "";
-            this.dataGridView.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView_CellFormatting);
-            this.dataGridView.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView_CellMouseClick);
-            this.dataGridView.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView_CellMouseDown);
-            this.dataGridView.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellMouseEnter);
-            this.dataGridView.CellMouseLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellMouseLeave);
-            this.dataGridView.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.dataGridView_RowPrePaint);
-            this.dataGridView.SelectionChanged += new System.EventHandler(this.dataGridView_SelectionChanged);
-            this.dataGridView.DoubleClick += new System.EventHandler(this.dataGridView_DoubleClick);
-            this.dataGridView.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dataGridView_KeyDown);
-            this.dataGridView.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dataGridView_MouseClick);
-            this.dataGridView.MouseHover += new System.EventHandler(this.dataGridView_MouseHover);
-            this.dataGridView.MouseMove += new System.Windows.Forms.MouseEventHandler(this.dataGridView_MouseMove);
-            // 
-            // AppImage
-            // 
-            resources.ApplyResources(this.AppImage, "AppImage");
-            this.AppImage.Name = "AppImage";
-            this.AppImage.ReadOnly = true;
-            this.AppImage.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // TypeImage
-            // 
-            resources.ApplyResources(this.TypeImage, "TypeImage");
-            this.TypeImage.Name = "TypeImage";
-            this.TypeImage.ReadOnly = true;
-            this.TypeImage.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // ColumnTitle
-            // 
-            this.ColumnTitle.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            resources.ApplyResources(this.ColumnTitle, "ColumnTitle");
-            this.ColumnTitle.Name = "ColumnTitle";
-            this.ColumnTitle.ReadOnly = true;
-            this.ColumnTitle.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // ImageSample
-            // 
-            resources.ApplyResources(this.ImageSample, "ImageSample");
-            this.ImageSample.Name = "ImageSample";
-            this.ImageSample.ReadOnly = true;
-            // 
-            // VisualWeight
-            // 
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Green;
-            this.VisualWeight.DefaultCellStyle = dataGridViewCellStyle1;
-            resources.ApplyResources(this.VisualWeight, "VisualWeight");
-            this.VisualWeight.Name = "VisualWeight";
-            this.VisualWeight.ReadOnly = true;
-            this.VisualWeight.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.VisualWeight.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // imageSampleDataGridViewImageColumn
-            // 
-            this.imageSampleDataGridViewImageColumn.DataPropertyName = "ImageSample";
-            resources.ApplyResources(this.imageSampleDataGridViewImageColumn, "imageSampleDataGridViewImageColumn");
-            this.imageSampleDataGridViewImageColumn.Name = "imageSampleDataGridViewImageColumn";
-            this.imageSampleDataGridViewImageColumn.ReadOnly = true;
-            // 
-            // ColumnCreated
-            // 
-            this.ColumnCreated.DataPropertyName = "Created";
-            resources.ApplyResources(this.ColumnCreated, "ColumnCreated");
-            this.ColumnCreated.Name = "ColumnCreated";
-            this.ColumnCreated.ReadOnly = true;
-            // 
-            // charsDataGridViewTextBoxColumn
-            // 
-            this.charsDataGridViewTextBoxColumn.DataPropertyName = "Chars";
-            resources.ApplyResources(this.charsDataGridViewTextBoxColumn, "charsDataGridViewTextBoxColumn");
-            this.charsDataGridViewTextBoxColumn.Name = "charsDataGridViewTextBoxColumn";
-            this.charsDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // SizeDataGridViewTextBoxColumn
-            // 
-            this.SizeDataGridViewTextBoxColumn.DataPropertyName = "Size";
-            resources.ApplyResources(this.SizeDataGridViewTextBoxColumn, "SizeDataGridViewTextBoxColumn");
-            this.SizeDataGridViewTextBoxColumn.Name = "SizeDataGridViewTextBoxColumn";
-            this.SizeDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // usedDataGridViewCheckBoxColumn
-            // 
-            this.usedDataGridViewCheckBoxColumn.DataPropertyName = "Used";
-            resources.ApplyResources(this.usedDataGridViewCheckBoxColumn, "usedDataGridViewCheckBoxColumn");
-            this.usedDataGridViewCheckBoxColumn.Name = "usedDataGridViewCheckBoxColumn";
-            this.usedDataGridViewCheckBoxColumn.ReadOnly = true;
-            // 
-            // typeDataGridViewTextBoxColumn
-            // 
-            this.typeDataGridViewTextBoxColumn.DataPropertyName = "Type";
-            resources.ApplyResources(this.typeDataGridViewTextBoxColumn, "typeDataGridViewTextBoxColumn");
-            this.typeDataGridViewTextBoxColumn.Name = "typeDataGridViewTextBoxColumn";
-            this.typeDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // titleDataGridViewTextBoxColumn
-            // 
-            this.titleDataGridViewTextBoxColumn.DataPropertyName = "Title";
-            resources.ApplyResources(this.titleDataGridViewTextBoxColumn, "titleDataGridViewTextBoxColumn");
-            this.titleDataGridViewTextBoxColumn.Name = "titleDataGridViewTextBoxColumn";
-            this.titleDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            resources.ApplyResources(this.idDataGridViewTextBoxColumn, "idDataGridViewTextBoxColumn");
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // favoriteDataGridViewCheckBoxColumn
-            // 
-            this.favoriteDataGridViewCheckBoxColumn.DataPropertyName = "Favorite";
-            resources.ApplyResources(this.favoriteDataGridViewCheckBoxColumn, "favoriteDataGridViewCheckBoxColumn");
-            this.favoriteDataGridViewCheckBoxColumn.Name = "favoriteDataGridViewCheckBoxColumn";
-            this.favoriteDataGridViewCheckBoxColumn.ReadOnly = true;
             // 
             // contextMenuStripDataGrid
             // 
@@ -1143,20 +977,6 @@ namespace ClipAngel
             this.setSelectedTextInFilterToolStripHtml.Name = "setSelectedTextInFilterToolStripHtml";
             resources.ApplyResources(this.setSelectedTextInFilterToolStripHtml, "setSelectedTextInFilterToolStripHtml");
             this.setSelectedTextInFilterToolStripHtml.Click += new System.EventHandler(this.setSelectedTextInFilterToolStripMenu_Click);
-            // 
-            // ImageControl
-            // 
-            resources.ApplyResources(this.ImageControl, "ImageControl");
-            this.ImageControl.BackColor = System.Drawing.SystemColors.Control;
-            this.ImageControl.Border = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ImageControl.ContextMenuStrip = this.contextMenuPictureBox;
-            this.ImageControl.Image = null;
-            this.ImageControl.Name = "ImageControl";
-            this.ImageControl.Picture = "";
-            this.ImageControl.TabStop = false;
-            this.ImageControl.DoubleClick += new System.EventHandler(this.ImageControl_DoubleClick);
-            this.ImageControl.ZoomChanged += new System.EventHandler(this.ImageControl_ZoomChanged);
-            this.ImageControl.Resize += new System.EventHandler(this.ImageControl_Resize);
             // 
             // contextMenuPictureBox
             // 
@@ -2086,16 +1906,6 @@ namespace ClipAngel
             this.tooltipTimer.Interval = 50;
             this.tooltipTimer.Tick += new System.EventHandler(this.tooltipTimer_Tick);
             // 
-            // clipsTableAdapter
-            // 
-            this.clipsTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.ClipsTableAdapter = this.clipsTableAdapter;
-            this.tableAdapterManager.UpdateOrder = ClipAngel.dbDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            // 
             // cultureManager2
             // 
             this.cultureManager2.ManagedControl = this;
@@ -2107,6 +1917,195 @@ namespace ClipAngel
             // cultureManager4
             // 
             this.cultureManager4.ManagedControl = this;
+            // 
+            // clipsTableAdapter
+            // 
+            this.clipsTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.ClipsTableAdapter = this.clipsTableAdapter;
+            this.tableAdapterManager.UpdateOrder = ClipAngel.dbDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
+            // comboBoxSearchString
+            // 
+            resources.ApplyResources(this.comboBoxSearchString, "comboBoxSearchString");
+            this.comboBoxSearchString.Name = "comboBoxSearchString";
+            this.comboBoxSearchString.TabStop = false;
+            this.toolTipDynamic.SetToolTip(this.comboBoxSearchString, resources.GetString("comboBoxSearchString.ToolTip"));
+            this.comboBoxSearchString.TextChanged += new System.EventHandler(this.SearchString_TextChanged);
+            this.comboBoxSearchString.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SearchString_KeyDown);
+            this.comboBoxSearchString.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SearchString_KeyPress);
+            this.comboBoxSearchString.KeyUp += new System.Windows.Forms.KeyEventHandler(this.SearchString_KeyUp);
+            this.comboBoxSearchString.MouseEnter += new System.EventHandler(this.comboBoxFilter_MouseEnter);
+            this.comboBoxSearchString.MouseHover += new System.EventHandler(this.comboBoxFilter_MouseHover);
+            // 
+            // dataGridView
+            // 
+            this.dataGridView.AllowDrop = true;
+            this.dataGridView.AllowUserToAddRows = false;
+            this.dataGridView.AllowUserToDeleteRows = false;
+            this.dataGridView.AllowUserToResizeColumns = false;
+            this.dataGridView.AllowUserToResizeRows = false;
+            resources.ApplyResources(this.dataGridView, "dataGridView");
+            this.dataGridView.AutoGenerateColumns = false;
+            this.dataGridView.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dataGridView.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
+            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView.ColumnHeadersVisible = false;
+            this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.AppImage,
+            this.TypeImage,
+            this.ColumnTitle,
+            this.ImageSample,
+            this.VisualWeight,
+            this.imageSampleDataGridViewImageColumn,
+            this.ColumnCreated,
+            this.charsDataGridViewTextBoxColumn,
+            this.SizeDataGridViewTextBoxColumn,
+            this.usedDataGridViewCheckBoxColumn,
+            this.typeDataGridViewTextBoxColumn,
+            this.titleDataGridViewTextBoxColumn,
+            this.idDataGridViewTextBoxColumn,
+            this.favoriteDataGridViewCheckBoxColumn});
+            this.dataGridView.ContextMenuStrip = this.contextMenuStripDataGrid;
+            this.dataGridView.DataSource = this.clipBindingSource;
+            this.dataGridView.Name = "dataGridView";
+            this.dataGridView.ReadOnly = true;
+            this.dataGridView.RowHeadersVisible = false;
+            this.dataGridView.RowTemplate.Height = 19;
+            this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView.StandardTab = true;
+            this.dataGridView.TabStop = false;
+            this.dataGridView.Tag = "";
+            this.dataGridView.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView_CellFormatting);
+            this.dataGridView.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView_CellMouseDown);
+            this.dataGridView.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellMouseEnter);
+            this.dataGridView.CellMouseLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellMouseLeave);
+            this.dataGridView.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.dataGridView_RowPrePaint);
+            this.dataGridView.SelectionChanged += new System.EventHandler(this.dataGridView_SelectionChanged);
+            this.dataGridView.DoubleClick += new System.EventHandler(this.dataGridView_DoubleClick);
+            this.dataGridView.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dataGridView_KeyDown);
+            this.dataGridView.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dataGridView_MouseClick);
+            this.dataGridView.MouseHover += new System.EventHandler(this.dataGridView_MouseHover);
+            this.dataGridView.MouseMove += new System.Windows.Forms.MouseEventHandler(this.dataGridView_MouseMove);
+            // 
+            // AppImage
+            // 
+            resources.ApplyResources(this.AppImage, "AppImage");
+            this.AppImage.Name = "AppImage";
+            this.AppImage.ReadOnly = true;
+            this.AppImage.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // TypeImage
+            // 
+            resources.ApplyResources(this.TypeImage, "TypeImage");
+            this.TypeImage.Name = "TypeImage";
+            this.TypeImage.ReadOnly = true;
+            this.TypeImage.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // ColumnTitle
+            // 
+            this.ColumnTitle.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            resources.ApplyResources(this.ColumnTitle, "ColumnTitle");
+            this.ColumnTitle.Name = "ColumnTitle";
+            this.ColumnTitle.ReadOnly = true;
+            this.ColumnTitle.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // ImageSample
+            // 
+            resources.ApplyResources(this.ImageSample, "ImageSample");
+            this.ImageSample.Name = "ImageSample";
+            this.ImageSample.ReadOnly = true;
+            // 
+            // VisualWeight
+            // 
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Green;
+            this.VisualWeight.DefaultCellStyle = dataGridViewCellStyle1;
+            resources.ApplyResources(this.VisualWeight, "VisualWeight");
+            this.VisualWeight.Name = "VisualWeight";
+            this.VisualWeight.ReadOnly = true;
+            this.VisualWeight.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.VisualWeight.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // imageSampleDataGridViewImageColumn
+            // 
+            this.imageSampleDataGridViewImageColumn.DataPropertyName = "ImageSample";
+            resources.ApplyResources(this.imageSampleDataGridViewImageColumn, "imageSampleDataGridViewImageColumn");
+            this.imageSampleDataGridViewImageColumn.Name = "imageSampleDataGridViewImageColumn";
+            this.imageSampleDataGridViewImageColumn.ReadOnly = true;
+            // 
+            // ColumnCreated
+            // 
+            this.ColumnCreated.DataPropertyName = "Created";
+            resources.ApplyResources(this.ColumnCreated, "ColumnCreated");
+            this.ColumnCreated.Name = "ColumnCreated";
+            this.ColumnCreated.ReadOnly = true;
+            // 
+            // charsDataGridViewTextBoxColumn
+            // 
+            this.charsDataGridViewTextBoxColumn.DataPropertyName = "Chars";
+            resources.ApplyResources(this.charsDataGridViewTextBoxColumn, "charsDataGridViewTextBoxColumn");
+            this.charsDataGridViewTextBoxColumn.Name = "charsDataGridViewTextBoxColumn";
+            this.charsDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // SizeDataGridViewTextBoxColumn
+            // 
+            this.SizeDataGridViewTextBoxColumn.DataPropertyName = "Size";
+            resources.ApplyResources(this.SizeDataGridViewTextBoxColumn, "SizeDataGridViewTextBoxColumn");
+            this.SizeDataGridViewTextBoxColumn.Name = "SizeDataGridViewTextBoxColumn";
+            this.SizeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // usedDataGridViewCheckBoxColumn
+            // 
+            this.usedDataGridViewCheckBoxColumn.DataPropertyName = "Used";
+            resources.ApplyResources(this.usedDataGridViewCheckBoxColumn, "usedDataGridViewCheckBoxColumn");
+            this.usedDataGridViewCheckBoxColumn.Name = "usedDataGridViewCheckBoxColumn";
+            this.usedDataGridViewCheckBoxColumn.ReadOnly = true;
+            // 
+            // typeDataGridViewTextBoxColumn
+            // 
+            this.typeDataGridViewTextBoxColumn.DataPropertyName = "Type";
+            resources.ApplyResources(this.typeDataGridViewTextBoxColumn, "typeDataGridViewTextBoxColumn");
+            this.typeDataGridViewTextBoxColumn.Name = "typeDataGridViewTextBoxColumn";
+            this.typeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // titleDataGridViewTextBoxColumn
+            // 
+            this.titleDataGridViewTextBoxColumn.DataPropertyName = "Title";
+            resources.ApplyResources(this.titleDataGridViewTextBoxColumn, "titleDataGridViewTextBoxColumn");
+            this.titleDataGridViewTextBoxColumn.Name = "titleDataGridViewTextBoxColumn";
+            this.titleDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            resources.ApplyResources(this.idDataGridViewTextBoxColumn, "idDataGridViewTextBoxColumn");
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // favoriteDataGridViewCheckBoxColumn
+            // 
+            this.favoriteDataGridViewCheckBoxColumn.DataPropertyName = "Favorite";
+            resources.ApplyResources(this.favoriteDataGridViewCheckBoxColumn, "favoriteDataGridViewCheckBoxColumn");
+            this.favoriteDataGridViewCheckBoxColumn.Name = "favoriteDataGridViewCheckBoxColumn";
+            this.favoriteDataGridViewCheckBoxColumn.ReadOnly = true;
+            // 
+            // ImageControl
+            // 
+            resources.ApplyResources(this.ImageControl, "ImageControl");
+            this.ImageControl.BackColor = System.Drawing.SystemColors.Control;
+            this.ImageControl.Border = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ImageControl.ContextMenuStrip = this.contextMenuPictureBox;
+            this.ImageControl.Image = null;
+            this.ImageControl.Name = "ImageControl";
+            this.ImageControl.Picture = "";
+            this.ImageControl.TabStop = false;
+            this.ImageControl.DoubleClick += new System.EventHandler(this.ImageControl_DoubleClick);
+            this.ImageControl.ZoomChanged += new System.EventHandler(this.ImageControl_ZoomChanged);
+            this.ImageControl.Resize += new System.EventHandler(this.ImageControl_Resize);
             // 
             // dataGridViewImageColumn1
             // 
@@ -2178,7 +2177,6 @@ namespace ClipAngel
             this.splitContainer1.ResumeLayout(false);
             this.toolStripBottom.ResumeLayout(false);
             this.toolStripBottom.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.contextMenuStripDataGrid.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.clipBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dbDataSet)).EndInit();
@@ -2187,7 +2185,6 @@ namespace ClipAngel
             this.contextMenuUrl.ResumeLayout(false);
             this.contextMenuStripRtf.ResumeLayout(false);
             this.contextMenuStripHtml.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.ImageControl)).EndInit();
             this.contextMenuPictureBox.ResumeLayout(false);
             this.statusStrip.ResumeLayout(false);
             this.statusStrip.PerformLayout();
@@ -2198,6 +2195,8 @@ namespace ClipAngel
             this.contextMenuStripNotifyIcon.ResumeLayout(false);
             this.toolStripTop.ResumeLayout(false);
             this.toolStripTop.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ImageControl)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

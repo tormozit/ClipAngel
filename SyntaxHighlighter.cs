@@ -166,6 +166,8 @@ namespace ClipAngel
                 Line = Line.Remove(qoutePos);
             if (String.IsNullOrEmpty(Line))
                 return 0;
+            if (Line.EndsWith("."))
+                return -1;
             if (Regex.Match(Line, keyWordPattern).Success)
                 return 1;
             if (Regex.IsMatch(Line, operatorPattern) || Line.Contains(");"))
@@ -441,13 +443,15 @@ namespace ClipAngel
         public string ProcessCode(string code)
         {
             string result = "";
+            //result += @"<!DOCTYPE HTML PUBLIC ""-//W3C//DTD HTML 4.0 Transitional//EN"">" + "\n";
             result += "<html>";
-            result += "<head>";
-            result += "<style type = \"text/css\">";
+            result += "<head>\n";
+            result += "<style type=text/css>";
             result += StylePart();
             result += "</style>\n";
-            result += "</head>";
+            result += "</head>\n";
             result += "<body>";
+            result += "<!--StartFragment-->";
             result += "<pre>\n";
             // Последовательно перебираются все строки кода, окрашиваются
             // и записываются в буфер
@@ -460,6 +464,7 @@ namespace ClipAngel
                 result += ProcessLine(codeLine) + "\n";
             }
             result += "</pre>";
+            result += "<!--EndFragment-->";
             result += "</body>";
             result += "</html>";
             return result;

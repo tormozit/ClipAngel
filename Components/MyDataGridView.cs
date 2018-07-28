@@ -9,9 +9,11 @@ namespace ClipAngel
 {
     public class MyDataGridView: DataGridView
     {
+        private bool currentRowSelectedBeforeClick;
         // http://stackoverflow.com/questions/3172424/how-to-maintain-selected-rows-in-datagridview-when-mouse-is-held-down-on-a-cell
         protected override void OnCellMouseDown(DataGridViewCellMouseEventArgs e)
         {
+            currentRowSelectedBeforeClick = Rows[e.RowIndex].Selected;
             IEnumerable<DataGridViewRow> sel = null;
             if (e.Button == MouseButtons.Left && Rows[e.RowIndex].Selected)
                 sel = this.SelectedRows.OfType<DataGridViewRow>();
@@ -32,6 +34,10 @@ namespace ClipAngel
                     if (Rows[e.RowIndex] != selectedRow)
                         selectedRow.Selected = false;
                 }
+            }
+            if (e.Button == MouseButtons.Left && currentRowSelectedBeforeClick && (ModifierKeys & Keys.Control) != 0 && SelectedRows.Count > 1)
+            {
+                Rows[e.RowIndex].Selected = false;
             }
         }
 
