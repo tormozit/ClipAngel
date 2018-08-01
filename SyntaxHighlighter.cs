@@ -89,6 +89,7 @@ namespace ClipAngel
         private string keyWordPattern = "";
         private string operatorPattern = @"[\+\*\/\%\=\>\<]";
         private string notLetterPattern = @"(?:[^ёа-яa-z]|^|$)";
+        private string funcCallPattern = @"[_ёа-яa-z]\(";
 
         public SyntaxHighlighter()
         {
@@ -170,7 +171,7 @@ namespace ClipAngel
                 return -1;
             if (Regex.Match(Line, keyWordPattern).Success)
                 return 1;
-            if (Regex.IsMatch(Line, operatorPattern) || Line.Contains(");"))
+            if (Regex.IsMatch(Line, operatorPattern) || Regex.IsMatch(Line, funcCallPattern) || Line.Contains(");"))
                 return 0;
             return -1;
         }

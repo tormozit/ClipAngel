@@ -2863,4 +2863,7 @@ agregado ignorar lista, cual se puede editar en la ventana de configuración.</v
   <data name="filterListBySearchStringMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>209, 22</value>
   </data>
+  <data name="$this.ImeMode" xml:space="preserve" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
 </root>

@@ -4717,7 +4717,8 @@ namespace ClipAngel
             foreach (Match match in matches)
             {
                 if (match.Index <= sender.SelectionStart && (match.Index + match.Length) >= sender.SelectionStart)
-                    if (match.Groups[0].Success) // 1CCode
+                {
+                    if (match.Groups[3].Success) // 1CCodeLink
                     {
                         string appPath = "";
                         string clipWindow = "";
@@ -4857,7 +4858,7 @@ namespace ClipAngel
                                     doc.Save(tempFilename);
                                     success = true;
                                 }
-                        }
+                            }
                             if (success)
                             {
                                 success = false;
@@ -4919,6 +4920,7 @@ namespace ClipAngel
                     }
                     else // url
                         Process.Start(match.Value);
+                }
             }
         }
 

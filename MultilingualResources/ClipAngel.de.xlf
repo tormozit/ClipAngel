@@ -1606,8 +1606,8 @@ Generation of image consumes CPU. If you experience high CPU load, set lower val
           <target state="new">Clip was not captured due to clipboard read error</target>
         </trans-unit>
         <trans-unit id="VersionValue" translate="yes" xml:space="preserve">
-          <source>1.59</source>
-          <target state="new">1.59</target>
+          <source>1.60</source>
+          <target state="new">1.60</target>
         </trans-unit>
         <trans-unit id="TargetWindow" translate="yes" xml:space="preserve">
           <source>Target window</source>
@@ -6974,6 +6974,10 @@ Edit search string right from list. Navigate in list right from search field.</t
         <trans-unit id="filterListBySearchStringMenuItem.Text" translate="yes" xml:space="preserve">
           <source>Filter list by search string</source>
           <target state="new">Filter list by search string</target>
+        </trans-unit>
+        <trans-unit id="$this.ImeMode" translate="yes" xml:space="preserve" extype="System.Windows.Forms.ImeMode, System.Windows.Forms">
+          <source>NoControl</source>
+          <target state="needs-review-translation">NoControl</target>
         </trans-unit>
       </group>
     </body>
