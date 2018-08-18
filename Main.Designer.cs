@@ -390,6 +390,7 @@ namespace ClipAngel
             this.pasteLineToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pasteFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pasteSpecialToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pasteIntoSearchFieldMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemPasteChars = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem8 = new System.Windows.Forms.ToolStripMenuItem();
             this.changeClipTitleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -1401,6 +1402,7 @@ namespace ClipAngel
             // 
             this.clipToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.pasteToolStripMenuItem,
+            this.pasteIntoSearchFieldMenuItem,
             this.toolStripMenuItemPasteChars,
             this.toolStripMenuItem8,
             this.changeClipTitleToolStripMenuItem,
@@ -1463,6 +1465,12 @@ namespace ClipAngel
             this.pasteSpecialToolStripMenuItem.Name = "pasteSpecialToolStripMenuItem";
             resources.ApplyResources(this.pasteSpecialToolStripMenuItem, "pasteSpecialToolStripMenuItem");
             this.pasteSpecialToolStripMenuItem.Click += new System.EventHandler(this.pasteSpecialToolStripMenuItem_Click);
+            // 
+            // pasteIntoSearchFieldMenuItem
+            // 
+            this.pasteIntoSearchFieldMenuItem.Name = "pasteIntoSearchFieldMenuItem";
+            resources.ApplyResources(this.pasteIntoSearchFieldMenuItem, "pasteIntoSearchFieldMenuItem");
+            this.pasteIntoSearchFieldMenuItem.Click += new System.EventHandler(this.pasteIntoSearchFieldMenuItem_Click_1);
             // 
             // toolStripMenuItemPasteChars
             // 
@@ -2415,6 +2423,7 @@ namespace ClipAngel
         private System.Windows.Forms.ToolStripMenuItem filterListBySearchStringMenuItem;
         private System.Windows.Forms.ToolStripMenuItem NextMatchListMenuItem;
         private System.Windows.Forms.ToolStripMenuItem PreviousMatchListMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pasteIntoSearchFieldMenuItem;
     }
 }
 

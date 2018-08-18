@@ -2040,7 +2040,7 @@ namespace ClipAngel
                     if (false
                         || negativeScore == 0 && is1C
                         || negativeScore == 0 && positiveScore > 1
-                        || negativeScore > 0 && positiveScore / negativeScore > 1)
+                        || negativeScore > 0 && positiveScore > negativeScore)
                     {
                         htmlText = syntax1C.ProcessCode(clipText);
                         htmlText = ClipboardHelper.GetHtmlDataString(htmlText);
@@ -3362,8 +3362,7 @@ namespace ClipAngel
                 {
                     if (pasteMethod == PasteMethod.Line)
                     {
-                        agregateTextToPaste = agregateTextToPaste.Trim();
-                        agregateTextToPaste = Regex.Replace(agregateTextToPaste, "\\s+", " ");
+                        agregateTextToPaste = ConvertTextToLine(agregateTextToPaste);
                     }
                     SetTextInClipboard(agregateTextToPaste, false);
                     SendPaste(pasteMethod);
@@ -3391,6 +3390,13 @@ namespace ClipAngel
                 if (Properties.Settings.Default.MoveCopiedClipToTop)
                     MoveSelectedRows(0);
             }
+        }
+
+        private static string ConvertTextToLine(string agregateTextToPaste)
+        {
+            agregateTextToPaste = agregateTextToPaste.Trim();
+            agregateTextToPaste = Regex.Replace(agregateTextToPaste, "\\s+", " ");
+            return agregateTextToPaste;
         }
 
         private string GetSelectedTextOfClips(ref string selectedText, PasteMethod itemPasteMethod = PasteMethod.Null)
@@ -6795,6 +6801,14 @@ namespace ClipAngel
         private void PreviousMatchListMenuItem_Click(object sender, EventArgs e)
         {
             GotoSearchMatchInList(false);
+        }
+
+        private void pasteIntoSearchFieldMenuItem_Click_1(object sender, EventArgs e)
+        {
+            string selectedText = "";
+            string agregateTextToPaste = GetSelectedTextOfClips(ref selectedText);
+            agregateTextToPaste = ConvertTextToLine(agregateTextToPaste);
+            comboBoxSearchString.Text = agregateTextToPaste.Substring(0, Math.Min(50, agregateTextToPaste.Length));
         }
     }
 }

@@ -6394,7 +6394,7 @@ dodana do listy ignorowanych, która może być edytowana w oknie Ustawień.</ta
           <target state="needs-review-translation">727, 30</target>
         </trans-unit>
         <trans-unit id="$this.TrayHeight" translate="yes" extype="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" extradata="metadata" xml:space="preserve">
-          <source>55</source>
+          <source>25</source>
           <target state="needs-review-translation">63</target>
           <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
@@ -6976,9 +6976,21 @@ Edit search string right from list. Navigate in list right from search field.</t
           <source>Filter list by search string</source>
           <target state="new">Filter list by search string</target>
         </trans-unit>
-        <trans-unit id="$this.ImeMode" translate="yes" xml:space="preserve" extype="System.Windows.Forms.ImeMode, System.Windows.Forms">
-          <source>NoControl</source>
-          <target state="needs-review-translation">NoControl</target>
+        <trans-unit id="pasteIntoSearchFieldMenuItem.ShortcutKeys" translate="yes" xml:space="preserve" extype="System.Windows.Forms.Keys, System.Windows.Forms">
+          <source>Ctrl+S</source>
+          <target state="needs-review-translation">Ctrl+S</target>
+        </trans-unit>
+        <trans-unit id="pasteIntoSearchFieldMenuItem.Size" translate="yes" xml:space="preserve" extype="System.Drawing.Size, System.Drawing">
+          <source>214, 22</source>
+          <target state="needs-review-translation">214, 22</target>
+        </trans-unit>
+        <trans-unit id="pasteIntoSearchFieldMenuItem.Text" translate="yes" xml:space="preserve">
+          <source>Search text</source>
+          <target state="new">Search text</target>
+        </trans-unit>
+        <trans-unit id="pasteIntoSearchFieldMenuItem.ToolTipText" translate="yes" xml:space="preserve">
+          <source>Search first 50 symbols of selected text in clip list</source>
+          <target state="new">Search first 50 symbols of selected text in clip list</target>
         </trans-unit>
       </group>
     </body>
