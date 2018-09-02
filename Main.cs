@@ -3214,6 +3214,16 @@ namespace ClipAngel
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static string GetProcessMainModuleFullName(int pid)
         {
+            //Process p = Process.GetProcessById((int)pid);
+            //string result = "";
+            //try
+            //{
+            //    result = p.MainModule.FileName;
+            //}
+            //catch (Exception e)
+            //{
+            //}
+            //return result;
             var processHandle = OpenProcess(0x0400 | 0x0010, false, pid);
             if (processHandle == IntPtr.Zero)
             {
@@ -5579,7 +5589,7 @@ namespace ClipAngel
             else if (type == "rtf")
             {
                 RichTextBox rtb = new RichTextBox();
-                rtb.Rtf = RowReader["richText"].ToString();
+                rtb.Rtf = rowReader["richText"].ToString();
                 rtb.SaveFile(tempFile);
                 fileEditor = Properties.Settings.Default.RtfEditor;
             }
@@ -5590,12 +5600,13 @@ namespace ClipAngel
             }
             else if (type == "img")
             {
-                ImageControl.Image.Save(tempFile);
+                Image image = GetImageFromBinary((byte[]) rowReader["Binary"]);
+                image.Save(tempFile);
                 fileEditor = Properties.Settings.Default.ImageEditor;
             }
             else if (type == "file")
             {
-                var tokens = TextToLines(RowReader["text"].ToString());
+                var tokens = TextToLines(rowReader["text"].ToString());
                 tempFile = tokens[0];
                 if (!File.Exists(tempFile))
                     tempFile = "";
