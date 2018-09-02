@@ -51,7 +51,7 @@
       <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="ShowApplicationIconColumn" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">False</Value>
+      <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="ShowNativeTextFormatting" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
