@@ -12,9 +12,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="buttonDeleteSelected.ToolTip" xml:space="preserve">
-    <value></value>
-  </data>
   <data name="buttonOK.Location" xml:space="preserve" type="System.Drawing.Point, System.Drawing">
     <value>531, 382</value>
   </data>
@@ -123,14 +120,8 @@
   <data name="$this.StartPosition" xml:space="preserve" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterParent</value>
   </data>
-  <data name="listViewChosenList.ToolTip" xml:space="preserve">
-    <value></value>
-  </data>
   <data name="buttonSelectClipboardOwner.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
     <value>8</value>
-  </data>
-  <data name="label1.ToolTip" xml:space="preserve">
-    <value></value>
   </data>
   <data name="buttonDeleteSelected.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>161, 23</value>
@@ -140,9 +131,6 @@
   </data>
   <data name="buttonDeleteSelected.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
     <value>8</value>
-  </data>
-  <data name="buttonCancel.ToolTip" xml:space="preserve">
-    <value></value>
   </data>
   <data name="listViewChosenList.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>333, 281</value>
@@ -168,12 +156,6 @@
   <data name="buttonSelectTargetApplication.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
     <value>8</value>
   </data>
-  <data name="listViewRunningList.ToolTip" xml:space="preserve">
-    <value></value>
-  </data>
-  <data name="label2.ToolTip" xml:space="preserve">
-    <value></value>
-  </data>
   <data name="buttonRefresh.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>79, 23</value>
   </data>
@@ -195,12 +177,6 @@
   <data name="label1.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>102, 13</value>
   </data>
-  <data name="splitContainer1.Panel2.ToolTip" xml:space="preserve">
-    <value></value>
-  </data>
-  <data name="$this.ToolTip" xml:space="preserve">
-    <value></value>
-  </data>
   <data name="listViewChosenList.Location" xml:space="preserve" type="System.Drawing.Point, System.Drawing">
     <value>0, 23</value>
   </data>
@@ -219,9 +195,6 @@
   <data name="splitContainer1.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
     <value>10</value>
   </data>
-  <data name="splitContainer1.ToolTip" xml:space="preserve">
-    <value></value>
-  </data>
   <data name="RunningListModule.Text" xml:space="preserve">
     <value>Λειτουργική μονάδα</value>
   </data>
@@ -231,17 +204,11 @@
   <data name="buttonAdd.Location" xml:space="preserve" type="System.Drawing.Point, System.Drawing">
     <value>282, 41</value>
   </data>
-  <data name="splitContainer1.Panel1.ToolTip" xml:space="preserve">
-    <value></value>
-  </data>
   <data name="buttonDeleteSelected.Location" xml:space="preserve" type="System.Drawing.Point, System.Drawing">
     <value>12, 41</value>
   </data>
   <data name="buttonOK.Text" xml:space="preserve">
     <value>OK</value>
-  </data>
-  <data name="buttonOK.ToolTip" xml:space="preserve">
-    <value></value>
   </data>
   <data name="label1.AutoSize" xml:space="preserve" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -251,8 +218,5 @@
   </metadata>
   <metadata name="toolTip1.TrayLocation" xml:space="preserve" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
-  </metadata>
-  <metadata name="$this.Language" xml:space="preserve" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>ru</value>
   </metadata>
 </root>

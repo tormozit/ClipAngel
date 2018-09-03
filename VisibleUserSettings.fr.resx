@@ -21,9 +21,6 @@
   <data name="AutoSelectMatch" xml:space="preserve">
     <value>Auto Sélection du 1er résultat</value>
   </data>
-  <data name="AutoSelectMatchDescription" xml:space="preserve">
-    <value>Autoselection du premier résultat du filtre dans le clip texte.</value>
-  </data>
   <data name="Autostart" xml:space="preserve">
     <value>Démarrer automatiquement avec Windows</value>
   </data>
@@ -50,9 +47,6 @@
   </data>
   <data name="ClipTempFileFolder" xml:space="preserve">
     <value>Dossier pour fichiers temporaires des clips</value>
-  </data>
-  <data name="ClipTempFileFolderDescription" xml:space="preserve">
-    <value>Dossier pour sauver fichiers temporaires de clips. Laissez vide pour utiliser le dossier temporaire standard ; utile en mode portable.</value>
   </data>
   <data name="CopyTextInAnyWindowOnCTRLF3" xml:space="preserve">
     <value>Copier le texte d'une fenêtre par Control+F3</value>
@@ -90,32 +84,17 @@
   <data name="GlobalHotkeyIncrementalPaste" xml:space="preserve">
     <value>Raccourci pour coller et sélectionner la suivante</value>
   </data>
-  <data name="GlobalHotkeyIncrementalPasteDescription" xml:space="preserve">
-    <value>Utiliser ce raccourci clavier dans les programmes pour coller le clip actuel de la liste ClipAngel et sélectionner le clip suivant/haut qui sera affiché dans l'info-bulle</value>
-  </data>
   <data name="GlobalHotkeyOpenCurrent" xml:space="preserve">
     <value>Raccourci pour ouvrir fenêtre sans modification</value>
-  </data>
-  <data name="GlobalHotkeyOpenCurrentDescription" xml:space="preserve">
-    <value>Utiliser ce raccourci clavier dans les programmes pour ouvrir la fenêtre Clip Angel avec filtre sans modification et tous les clips. Appuyez à nouveau pour fermer la fenêtre.	</value>
   </data>
   <data name="GlobalHotkeyOpenFavorites" xml:space="preserve">
     <value>Raccourci pour ouvrir fenêtre avec favoris</value>
   </data>
-  <data name="GlobalHotkeyOpenFavoritesDescription" xml:space="preserve">
-    <value>Utiliser ce raccourci clavier dans les programmes pour afficher la fenêtre Clip Angel avec le filtre favoris uniquement. Appuyez à nouveau pour fermer la fenêtre.</value>
-  </data>
   <data name="GlobalHotkeyOpenLast" xml:space="preserve">
     <value>Raccourci "ouvrir fenêtre avecRéinitialisation"</value>
   </data>
-  <data name="GlobalHotkeyOpenLastDescription" xml:space="preserve">
-    <value>Utiliser ce raccourci clavier dans les programmes pour ouvrir la fenêtre ClipAngel, effacer les filtres et sélectionner le dernier clip capturé. Appuyez à nouveau pour fermer la fenêtre.	</value>
-  </data>
   <data name="GlobalHotkeyPasteText" xml:space="preserve">
     <value>Raccourci coller du texte brut (No=Aucun)</value>
-  </data>
-  <data name="GlobalHotkeyPasteTextDescription" xml:space="preserve">
-    <value>Utiliser ce raccourci clavier dans les programmes pour coller le dernier clip en texte brut (texte sans mise en forme ou pure texte)</value>
   </data>
   <data name="HistoryDepthDays" xml:space="preserve">
     <value>Garder l'Historique (Nbre Jours)</value>
@@ -257,28 +236,14 @@ WinMerge, Araxis Merge, DiffMerge, Kdiff3. La commande de comparaison de texte e
   <data name="WindowAutoPosition" xml:space="preserve">
     <value>Auto Position fenêtre ouverte</value>
   </data>
-  <data name="WindowAutoPositionDescription" xml:space="preserve">
-    <value>Si possible, la fenêtre s'ouvrira près du curseur de texte (entrée), sinon placer au centre de la fenêtre active.</value>
-  </data>
   <data name="WordWrap" xml:space="preserve">
     <value>Retour à la ligne</value>
-  </data>
-  <data name="WordWrapDescription" xml:space="preserve">
-    <value>Retour à la ligne dans le champ de texte de clip (CTRL+W).
-Non applicable au formatage natif HTML.</value>
   </data>
   <data name="PlaySoundOnClipCapture" xml:space="preserve">
     <value>Jouer un son à la capture d'un clip</value>
   </data>
-  <data name="PlaySoundOnClipCaptureDescription" xml:space="preserve">
-    <value>Jouer le son Windows standard lorsque le clip /la copie est capturé avec succès. Peut être ennuyant.</value>
-  </data>
   <data name="DatabaseFile" xml:space="preserve">
     <value>Fichier base de données</value>
-  </data>
-  <data name="DatabaseFileDescription" xml:space="preserve">
-    <value>Vous pouvez modifier le nom de fichier de la base de données pour passer à un autre historique du Presse-papiers. 
-Laissez vide pour utiliser le fichier de base de données standard "db.sqlite" dans le dossier utilisateur de l'application.</value>
   </data>
   <data name="MaxCellsToCaptureFormattedText" xml:space="preserve">
     <value>Cellules maximales en texte</value>

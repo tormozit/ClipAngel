@@ -21,9 +21,6 @@
   <data name="AutoSelectMatch" xml:space="preserve">
     <value>Selezione automatica prima occorrenza</value>
   </data>
-  <data name="AutoSelectMatchDescription" xml:space="preserve">
-    <value>Selezione automatica prima occorrenza filtro nel testo catturato. </value>
-  </data>
   <data name="Autostart" xml:space="preserve">
     <value>Avvio automatico programma ad accesso utente</value>
   </data>
@@ -50,9 +47,6 @@
   </data>
   <data name="ClipTempFileFolder" xml:space="preserve">
     <value>Cartella per i file temporanei delle catture</value>
-  </data>
-  <data name="ClipTempFileFolderDescription" xml:space="preserve">
-    <value>Cartella per il salvataggio dei file temporanei delle catture. Lascia vuoto per usare la cartella temporanea standard. Di solito può essere utile in modalità portatile.</value>
   </data>
   <data name="CopyTextInAnyWindowOnCTRLF3" xml:space="preserve">
     <value>Copia testo da qualsiasi finestra con CTRL+F3</value>
@@ -88,35 +82,17 @@ La pressione del tasto verrà gestita dalla finestra. </value>
   <data name="GlobalHotkeyCompareLastClipsDescription" xml:space="preserve">
     <value>Usa questo tasto di scelta rapida in qualsiasi programma per eseguire l'applicazione per confrontare le ultime 2 catture</value>
   </data>
-  <data name="GlobalHotkeyIncrementalPaste" xml:space="preserve">
-    <value>Tasto di scelta rapida per incollare e selezionare il successivo</value>
-  </data>
-  <data name="GlobalHotkeyIncrementalPasteDescription" xml:space="preserve">
-    <value>Usa questo tasto di scelta rapida in qualsiasi programma per incollare la cattura attuale da Clip Angel e selezionare la cattura successiva che verrà visualizzata nella barra di sistema</value>
-  </data>
   <data name="GlobalHotkeyOpenCurrent" xml:space="preserve">
     <value>Tasto di scelta rapida per aprire la finestra senza modifiche</value>
-  </data>
-  <data name="GlobalHotkeyOpenCurrentDescription" xml:space="preserve">
-    <value>Usa questo tasto di scelta rapida in qualsiasi programma per aprire la finestra Clip Angel senza nessuna modifica nella selezione filtro e cattura. Premi nuovamente per chiudere la finestra.</value>
   </data>
   <data name="GlobalHotkeyOpenFavorites" xml:space="preserve">
     <value>Tasto di scelta rapida per aprire la finestra con i preferiti</value>
   </data>
-  <data name="GlobalHotkeyOpenFavoritesDescription" xml:space="preserve">
-    <value>Usa questo tasto di scelta rapida in qualsiasi programma per visualizzare la finestra di Clip Angel con il filtro solo preferiti. Premi nuovamente per chiudere la finestra.</value>
-  </data>
   <data name="GlobalHotkeyOpenLast" xml:space="preserve">
     <value>Tasto di scelta rapida per aprire la finestra con ripristino</value>
   </data>
-  <data name="GlobalHotkeyOpenLastDescription" xml:space="preserve">
-    <value>Usa questo tasto di scelta rapida in qualsiasi programma per aprire la finestra di Clip Angel, azzerare i filtri e selezionare l'ultima cattura. Premi nuovamente per chiudere la finestra.</value>
-  </data>
   <data name="GlobalHotkeyPasteText" xml:space="preserve">
     <value>Tasto di scelta rapida per incollare testo normale</value>
-  </data>
-  <data name="GlobalHotkeyPasteTextDescription" xml:space="preserve">
-    <value>Usa questo tasto di scelta rapida in qualsiasi programma per incollare ultimo cattura come testo normale</value>
   </data>
   <data name="HistoryDepthDays" xml:space="preserve">
     <value>N. giorni mantenimento cronologia</value>
@@ -145,10 +121,6 @@ La pressione del tasto verrà gestita dalla finestra. </value>
   <data name="IgnoreExclusiveFormatClipCapture" xml:space="preserve">
     <value>Non catturare formato "Ignora Visualizzatore Appunti"</value>
   </data>
-  <data name="IgnoreExclusiveFormatClipCaptureDescription" xml:space="preserve">
-    <value>Non acquisire con formato "Ignora Visualizzatore Appunti" presente. 
-Questo formato è solitamente usato dai gestori di password quando si copiano le password negli Appunti. A volte può essere utile disattivarlo temporaneamente.</value>
-  </data>
   <data name="ImageEditor" xml:space="preserve">
     <value>Editor file immagine (PNG)</value>
   </data>
@@ -174,12 +146,6 @@ Questo formato è solitamente usato dai gestori di password quando si copiano le
     <value>Carattere a spaziatura fissa nel campo testo della cattura. 
 Potrebbe essere sovraccaricato dalla formattazione nativa RTF. 
 Non applicabile alla formattazione nativa HTML.</value>
-  </data>
-  <data name="MoveCopiedClipToTop" xml:space="preserve">
-    <value>Sposta catture in alto dopo l'uso</value>
-  </data>
-  <data name="MoveCopiedClipToTopDescription" xml:space="preserve">
-    <value>Sposta cattura dall'lelenco o catture complete in alto nell'elenco</value>
   </data>
   <data name="NumberOfClips" xml:space="preserve">
     <value>Numero delle catture</value>
@@ -249,37 +215,17 @@ Non applicabile alla formattazione nativa HTML.</value>
   <data name="TextEditorDescription" xml:space="preserve">
     <value>Usato nel comando "Apri file" per le catture. Lascia vuoto per usare l'applicazione predefinita del S.O. per modificare i file di testo (TXT).</value>
   </data>
-  <data name="UserSettingsPath" xml:space="preserve">
-    <value>Percorso impostazioni utente applicazione</value>
-  </data>
-  <data name="UserSettingsPathDescription" xml:space="preserve">
-    <value>Percorso dei file con le impostazioni utente e database</value>
-  </data>
   <data name="WindowAutoPosition" xml:space="preserve">
     <value>Auto posizionamento finestra all'apertura</value>
-  </data>
-  <data name="WindowAutoPositionDescription" xml:space="preserve">
-    <value>Se possibile, la finestra si aprirà nei pressi del punto di inserimento testo (input), altrimenti sarà posta nel centro della finestra attiva</value>
   </data>
   <data name="WordWrap" xml:space="preserve">
     <value>Ritorno a capo automatico</value>
   </data>
-  <data name="WordWrapDescription" xml:space="preserve">
-    <value>Ritorno a capo nel campo di testo cattura (CTRL+W). 
-Non applicabile alla formattazione nativa HTML.</value>
-  </data>
   <data name="PlaySoundOnClipCapture" xml:space="preserve">
     <value>Riproduci suono alla cattura</value>
   </data>
-  <data name="PlaySoundOnClipCaptureDescription" xml:space="preserve">
-    <value>Riproduce un suono standard di Windows quando la cattura è stata effettuata. Può essere noioso</value>
-  </data>
   <data name="DatabaseFile" xml:space="preserve">
     <value>File database</value>
-  </data>
-  <data name="DatabaseFileDescription" xml:space="preserve">
-    <value>Puoi modificare il nome file del database per passare ad altre cronologie Appunti. 
-lascia vuoto per usare il nome file database standard "db.sqlite" nella cartella impostazioni utente applicazione.</value>
   </data>
   <data name="MaxCellsToCaptureFormattedText" xml:space="preserve">
     <value>N. max celle da catturare testo formattato</value>

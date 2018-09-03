@@ -181,5 +181,10 @@ namespace ClipAngel
             if (e.Control && e.KeyCode == Keys.C)
                 CopySelectedValuesToClipboard(listViewChosenList);
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

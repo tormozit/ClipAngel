@@ -61,24 +61,18 @@
             // 
             // splitContainer1.Panel1
             // 
-            resources.ApplyResources(this.splitContainer1.Panel1, "splitContainer1.Panel1");
             this.splitContainer1.Panel1.Controls.Add(this.label2);
             this.splitContainer1.Panel1.Controls.Add(this.listViewChosenList);
-            this.toolTip1.SetToolTip(this.splitContainer1.Panel1, resources.GetString("splitContainer1.Panel1.ToolTip"));
             // 
             // splitContainer1.Panel2
             // 
-            resources.ApplyResources(this.splitContainer1.Panel2, "splitContainer1.Panel2");
             this.splitContainer1.Panel2.Controls.Add(this.label1);
             this.splitContainer1.Panel2.Controls.Add(this.listViewRunningList);
-            this.toolTip1.SetToolTip(this.splitContainer1.Panel2, resources.GetString("splitContainer1.Panel2.ToolTip"));
-            this.toolTip1.SetToolTip(this.splitContainer1, resources.GetString("splitContainer1.ToolTip"));
             // 
             // label2
             // 
             resources.ApplyResources(this.label2, "label2");
             this.label2.Name = "label2";
-            this.toolTip1.SetToolTip(this.label2, resources.GetString("label2.ToolTip"));
             // 
             // listViewChosenList
             // 
@@ -90,7 +84,6 @@
             this.listViewChosenList.HideSelection = false;
             this.listViewChosenList.Name = "listViewChosenList";
             this.listViewChosenList.Sorting = System.Windows.Forms.SortOrder.Ascending;
-            this.toolTip1.SetToolTip(this.listViewChosenList, resources.GetString("listViewChosenList.ToolTip"));
             this.listViewChosenList.UseCompatibleStateImageBehavior = false;
             this.listViewChosenList.View = System.Windows.Forms.View.Details;
             this.listViewChosenList.KeyDown += new System.Windows.Forms.KeyEventHandler(this.listViewChosenList_KeyDown);
@@ -107,7 +100,7 @@
             // 
             resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
-            this.toolTip1.SetToolTip(this.label1, resources.GetString("label1.ToolTip"));
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // listViewRunningList
             // 
@@ -119,7 +112,6 @@
             this.listViewRunningList.HideSelection = false;
             this.listViewRunningList.Name = "listViewRunningList";
             this.listViewRunningList.Sorting = System.Windows.Forms.SortOrder.Ascending;
-            this.toolTip1.SetToolTip(this.listViewRunningList, resources.GetString("listViewRunningList.ToolTip"));
             this.listViewRunningList.UseCompatibleStateImageBehavior = false;
             this.listViewRunningList.View = System.Windows.Forms.View.Details;
             this.listViewRunningList.DoubleClick += new System.EventHandler(this.listViewRunningList_DoubleClick);
@@ -138,7 +130,6 @@
             resources.ApplyResources(this.buttonCancel, "buttonCancel");
             this.buttonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.buttonCancel.Name = "buttonCancel";
-            this.toolTip1.SetToolTip(this.buttonCancel, resources.GetString("buttonCancel.ToolTip"));
             this.buttonCancel.UseVisualStyleBackColor = true;
             // 
             // buttonOK
@@ -146,7 +137,6 @@
             resources.ApplyResources(this.buttonOK, "buttonOK");
             this.buttonOK.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.buttonOK.Name = "buttonOK";
-            this.toolTip1.SetToolTip(this.buttonOK, resources.GetString("buttonOK.ToolTip"));
             this.buttonOK.UseVisualStyleBackColor = true;
             this.buttonOK.Click += new System.EventHandler(this.buttonOK_Click);
             // 
@@ -176,11 +166,10 @@
             // 
             // buttonDeleteSelected
             // 
-            resources.ApplyResources(this.buttonDeleteSelected, "buttonDeleteSelected");
             this.buttonDeleteSelected.Cursor = System.Windows.Forms.Cursors.Default;
             this.buttonDeleteSelected.Image = global::ClipAngel.Properties.Resources.delete;
+            resources.ApplyResources(this.buttonDeleteSelected, "buttonDeleteSelected");
             this.buttonDeleteSelected.Name = "buttonDeleteSelected";
-            this.toolTip1.SetToolTip(this.buttonDeleteSelected, resources.GetString("buttonDeleteSelected.ToolTip"));
             this.buttonDeleteSelected.UseVisualStyleBackColor = true;
             this.buttonDeleteSelected.Click += new System.EventHandler(this.buttonDeleteSelected_Click);
             // 
@@ -219,7 +208,6 @@
             this.Name = "AppListEditorForm";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
-            this.toolTip1.SetToolTip(this, resources.GetString("$this.ToolTip"));
             this.Load += new System.EventHandler(this.AppListEditorForm_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();

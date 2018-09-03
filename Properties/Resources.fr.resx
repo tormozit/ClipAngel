@@ -237,9 +237,6 @@
   <data name="LastClipWasMultiCaptured" xml:space="preserve">
     <value>Le dernier clip a été capturé deux fois avant de comparer</value>
   </data>
-  <data name="ClipWasNotCaptured" xml:space="preserve">
-    <value>Clip copié ({2}) N'a pas été capturé (taille trop grande {0}KB &gt; {1}KB)</value>
-  </data>
   <data name="PastedLastClip" xml:space="preserve">
     <value>Le clip collé est le dernier</value>
   </data>

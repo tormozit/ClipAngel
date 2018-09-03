@@ -12,11 +12,8 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="buttonDeleteSelected.ToolTip" xml:space="preserve">
-    <value></value>
-  </data>
   <data name="buttonSelectClipboardOwner.Text" xml:space="preserve">
-    <value>Wählen Sie Zwischenablage Besitzer</value>
+    <value>Zwischenablage Besitzer wählen</value>
   </data>
   <data name="buttonOK.Location" xml:space="preserve" type="System.Drawing.Point, System.Drawing">
     <value>531, 382</value>
@@ -58,7 +55,7 @@
     <value>Abbrechen</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Anwendung-Listen-editor</value>
+    <value>Anwendunglisten-Editor</value>
   </data>
   <data name="buttonSelectTargetApplication.Location" xml:space="preserve" type="System.Drawing.Point, System.Drawing">
     <value>531, 41</value>
@@ -121,7 +118,7 @@
     <value>Bottom, Right</value>
   </data>
   <data name="buttonSelectTargetApplication.ToolTip" xml:space="preserve">
-    <value>Wählen Sie im laufenden Anwendungen aktuelle Zielanwendung</value>
+    <value>In laufenden Anwendungen aktuelle Zielanwendung auswählen</value>
   </data>
   <data name="buttonOK.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
@@ -130,7 +127,7 @@
     <value>Pfad</value>
   </data>
   <data name="buttonRefresh.Text" xml:space="preserve">
-    <value>Auffrischen</value>
+    <value>Aktualisieren</value>
   </data>
   <data name="label2.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>98, 13</value>
@@ -141,17 +138,11 @@
   <data name="$this.StartPosition" xml:space="preserve" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterParent</value>
   </data>
-  <data name="listViewChosenList.ToolTip" xml:space="preserve">
-    <value></value>
-  </data>
   <data name="buttonSelectClipboardOwner.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
     <value>8</value>
   </data>
   <data name="buttonDeleteSelected.Text" xml:space="preserve">
     <value>Ausgewählte Anwendungen löschen</value>
-  </data>
-  <data name="label1.ToolTip" xml:space="preserve">
-    <value></value>
   </data>
   <data name="buttonDeleteSelected.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>161, 23</value>
@@ -162,14 +153,11 @@
   <data name="buttonDeleteSelected.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
     <value>8</value>
   </data>
-  <data name="buttonCancel.ToolTip" xml:space="preserve">
-    <value></value>
-  </data>
   <data name="listViewChosenList.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>333, 281</value>
   </data>
   <data name="buttonAddByFile.ToolTip" xml:space="preserve">
-    <value>Öffnen Sie Datei-Auswahl-Dialog und fügen Sie ausgewählte Anwendung</value>
+    <value>Dateiauswahldialog öffnen und die ausgewählte Anwendung hinzufügen</value>
   </data>
   <data name="label1.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
     <value>1</value>
@@ -196,13 +184,7 @@
     <value>8</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
-    <value>Gewählten einsatzfreudigen</value>
-  </data>
-  <data name="listViewRunningList.ToolTip" xml:space="preserve">
-    <value></value>
-  </data>
-  <data name="label2.ToolTip" xml:space="preserve">
-    <value></value>
+    <value>Gewählte Anwendungen</value>
   </data>
   <data name="buttonRefresh.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>79, 23</value>
@@ -225,17 +207,11 @@
   <data name="label1.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>102, 13</value>
   </data>
-  <data name="splitContainer1.Panel2.ToolTip" xml:space="preserve">
-    <value></value>
-  </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>Laufenden Anwendungen</value>
-  </data>
-  <data name="$this.ToolTip" xml:space="preserve">
-    <value></value>
+    <value>Laufende Anwendungen</value>
   </data>
   <data name="buttonRefresh.ToolTip" xml:space="preserve">
-    <value>Aktualisieren Sie die Liste der laufenden Anwendungen</value>
+    <value>Liste laufender Anwendungen aktualisieren</value>
   </data>
   <data name="listViewChosenList.Location" xml:space="preserve" type="System.Drawing.Point, System.Drawing">
     <value>0, 23</value>
@@ -244,7 +220,7 @@
     <value>3, 5</value>
   </data>
   <data name="buttonSelectClipboardOwner.ToolTip" xml:space="preserve">
-    <value>Wählen Sie die Zwischenablage Besitzer in aktuellen Anwendungen </value>
+    <value>Zwischenablage Besitzer in aktuellen Anwendungen wählen </value>
   </data>
   <data name="buttonRefresh.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
     <value>12</value>
@@ -258,9 +234,6 @@
   <data name="splitContainer1.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
     <value>10</value>
   </data>
-  <data name="splitContainer1.ToolTip" xml:space="preserve">
-    <value></value>
-  </data>
   <data name="RunningListModule.Text" xml:space="preserve">
     <value>Modul</value>
   </data>
@@ -270,17 +243,11 @@
   <data name="buttonAdd.Location" xml:space="preserve" type="System.Drawing.Point, System.Drawing">
     <value>282, 41</value>
   </data>
-  <data name="splitContainer1.Panel1.ToolTip" xml:space="preserve">
-    <value></value>
-  </data>
   <data name="buttonDeleteSelected.Location" xml:space="preserve" type="System.Drawing.Point, System.Drawing">
     <value>12, 41</value>
   </data>
   <data name="buttonOK.Text" xml:space="preserve">
     <value>OK</value>
-  </data>
-  <data name="buttonOK.ToolTip" xml:space="preserve">
-    <value></value>
   </data>
   <data name="label1.AutoSize" xml:space="preserve" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -290,8 +257,5 @@
   </metadata>
   <metadata name="toolTip1.TrayLocation" xml:space="preserve" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
-  </metadata>
-  <metadata name="$this.Language" xml:space="preserve" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>ru</value>
   </metadata>
 </root>

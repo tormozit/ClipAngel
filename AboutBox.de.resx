@@ -31,7 +31,7 @@
     <value>MiddleLeft</value>
   </data>
   <data name="linkLabelEmail.Text" xml:space="preserve">
-    <value>E-Mail</value>
+    <value>Email</value>
   </data>
   <data name="logoPictureBox.Dock" xml:space="preserve" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -70,7 +70,7 @@
     <value>Copyright</value>
   </data>
   <data name="labelVersion.Text" xml:space="preserve">
-    <value>Info</value>
+    <value>Version</value>
   </data>
   <data name="labelVersion.Anchor" xml:space="preserve" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
@@ -79,7 +79,7 @@
     <value>24</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Info</value>
+    <value>Über</value>
   </data>
   <data name="okButton.Text" xml:space="preserve">
     <value>&amp;OK</value>
@@ -162,7 +162,7 @@
     <value>True</value>
   </data>
   <data name="textBoxDescription.Text" xml:space="preserve">
-    <value>Dieses Programm erfasst viele Zwischenablageobjekte und ermöglicht Benutzer auswählen und Einfügen in einem beliebigen Programm.</value>
+    <value>Dieses Programm erfasst viele Objekte in der Zwischenablage und ermöglicht es dem Benutzer, eines auszuwählen und in einem beliebigen Programm einzufügen.</value>
   </data>
   <data name="labelAuthor.TextAlign" xml:space="preserve" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
@@ -186,7 +186,7 @@
     <value>2</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>Freeware (GPL3)</value>
+    <value>Freie Software (GPL3)</value>
   </data>
   <data name="linkLabel1.Anchor" xml:space="preserve" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>

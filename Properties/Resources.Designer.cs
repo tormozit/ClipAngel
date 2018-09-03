@@ -656,7 +656,7 @@ namespace ClipAngel.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to New version is available. To update use button is top command bar..
+        ///   Looks up a localized string similar to New version is available. To update use button in top command bar..
         /// </summary>
         public static string NewVersionAvailable {
             get {

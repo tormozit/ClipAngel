@@ -27,17 +27,8 @@
   <data name="labelTip.Font" xml:space="preserve" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 9.75pt</value>
   </data>
-  <data name="labelTip.Location" xml:space="preserve" type="System.Drawing.Point, System.Drawing">
-    <value>2, 64</value>
-  </data>
-  <data name="labelTip.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
-    <value>322, 71</value>
-  </data>
   <data name="labelTip.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
     <value>1</value>
-  </data>
-  <data name="pictureBox1.Location" xml:space="preserve" type="System.Drawing.Point, System.Drawing">
-    <value>142, 12</value>
   </data>
   <data name="pictureBox1.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>36, 38</value>
@@ -47,9 +38,6 @@
   </data>
   <data name="$this.AutoScaleDimensions" xml:space="preserve" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
-  </data>
-  <data name="$this.ClientSize" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
-    <value>323, 187</value>
   </data>
   <data name="$this.StartPosition" xml:space="preserve" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterParent</value>

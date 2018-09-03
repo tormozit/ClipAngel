@@ -22,7 +22,7 @@
     <value>..\Picture\delete.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="CutMarker" xml:space="preserve">
-    <value>Rest des Textes zeigen</value>
+    <value>Rest des Textes anzeigen</value>
   </data>
   <data name="text" xml:space="preserve">
     <value>Text</value>
@@ -40,7 +40,7 @@
     <value>..\Picture\OpenFile.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="LangRestart" xml:space="preserve">
-    <value>Für volle Sprachwandel musst du möglicherweise Programm neu starten</value>
+    <value>Für den vollständigen Sprachwechsel müssen Sie möglicherweise das Programm neu starten</value>
   </data>
   <data name="upload" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\upload.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -55,16 +55,16 @@
     <value>..\Picture\FindNext.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="allTypes" xml:space="preserve">
-    <value>alle Typen</value>
+    <value>Alle</value>
   </data>
   <data name="dbTemplate" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\DB\db.sqlite;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="CantPasteInElevatedWindow" xml:space="preserve">
-    <value>Nicht in der Lage, in Fenster mit höheren Priviledges einzufügen. Versuchen Sie das Programm als Administrator ausführen.</value>
+    <value>Kann nicht in Fenster mit höheren Berechtigungen eingefügt werden. Versuchen Sie, das Programm als Administrator auszuführen.</value>
   </data>
   <data name="VisualWeightTooltip" xml:space="preserve">
-    <value>Visuelle Clip Gewicht (Anzahl der Ziffern in der Zahl, die für visuelle Clip-Größe)</value>
+    <value>Visuelle Clip-Wichtung (Anzahl der Ziffern in der Zahl, die die sichtbaren Clipgröße repräsentiert)</value>
   </data>
   <data name="ClearFilter" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\ClearFilter.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -91,10 +91,10 @@
     <value>..\Picture\TypeText.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="NextClip" xml:space="preserve">
-    <value>Nächste сlip</value>
+    <value>Nächster Clip</value>
   </data>
   <data name="NoSupportedTextCompareApplication" xml:space="preserve">
-    <value>Keine unterstützten Text vergleichen Anwendung fand. Jetzt öffnen wir die Webseite um kostenlos zu bekommen.</value>
+    <value>Keine unterstützte Textvergleichsanwendung gefunden. Jetzt öffnen wir die Website, um eine kostenlos zu bekommen.</value>
   </data>
   <data name="Alien_64x64" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\Alien-64x64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -103,13 +103,13 @@
     <value>..\Picture\clear1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="NewVersionAvailable" xml:space="preserve">
-    <value>Neue Version ist verfügbar. Um Gebrauch zu aktualisieren ist Taste Befehl Top Bar.</value>
+    <value>Neue Version verfügbar. Aktualisieren über die Schaltfläche in der oberen Befehlsleiste</value>
   </data>
   <data name="ApplicationAddedToIgnoreList" xml:space="preserve">
-    <value>Anwendung "{0}" hinzugefügt, um Liste, welche zu ignorieren kann im Fenster "Einstellungen" bearbeitet werden</value>
+    <value>Anwendung "{0}" zur Ignorierliste hinzugefügt. Kann im Fenster "Einstellungen" bearbeitet werden</value>
   </data>
   <data name="CharUnit" xml:space="preserve">
-    <value>С</value>
+    <value>Z</value>
   </data>
   <data name="Top2" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\Top2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -136,10 +136,10 @@
     <value>..\Picture\FindPrevious.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ActivatedExistedProcess" xml:space="preserve">
-    <value>Bereits laufenden Instanz der Anwendung aktiviert</value>
+    <value>Laufende Instanz der Anwendung bereits aktiviert</value>
   </data>
   <data name="UpdateTo" xml:space="preserve">
-    <value>Aktualisieren Sie auf</value>
+    <value>Aktualisieren auf</value>
   </data>
   <data name="used" xml:space="preserve">
     <value>belegt</value>
@@ -163,28 +163,28 @@
     <value>https://sourceforge.net/p/Clip-Angel/Wiki/Description/</value>
   </data>
   <data name="QuestionResetSettings" xml:space="preserve">
-    <value>Sind Sie Einstellungen auf die Standardwerte zurücksetzen möchten?</value>
+    <value>Möchten Sie die Einstellungen wirklich auf die Standardwerte zurücksetzen?</value>
   </data>
   <data name="Version" xml:space="preserve">
-    <value>1.22</value>
+    <value>Version</value>
   </data>
   <data name="eye" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\eye.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="CouldNotRegisterHotkey" xml:space="preserve">
-    <value>Konnte nicht die globale hot Key registrieren</value>
+    <value>Der globale Hotkey konnte nicht registriert werden</value>
   </data>
   <data name="Dublicate" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\Dublicate.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="YouLatestVersion" xml:space="preserve">
-    <value>Sie verwenden die neueste version</value>
+    <value>Sie verwenden die neueste Version</value>
   </data>
   <data name="Back" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\Back.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="HowUseAutoTitle" xml:space="preserve">
-    <value>Eindeutige Zeichenfolge, die Auto Titel verwendet</value>
+    <value>Zeichenfolge löschen, um den automatischen Titel zu verwenden</value>
   </data>
   <data name="PixelFormat" xml:space="preserve">
     <value>Pixel</value>
@@ -194,9 +194,6 @@
   </data>
   <data name="TypeImg" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\TypeImg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Website" xml:space="preserve">
-    <value>https://sourceforge.net/projects/Clip-Angel</value>
   </data>
   <data name="MoveCopiedClipToTop" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\MoveCopiedClipToTop.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -214,13 +211,13 @@
     <value>tormozit@gmail.com</value>
   </data>
   <data name="FailedToWriteClipboard" xml:space="preserve">
-    <value>Fehler beim Schreiben der Zwischenablage. Es ist vom Fenster "{0}" Anwendung "{1}" gesperrt.</value>
+    <value>Fehler beim Schreiben der Zwischenablage. Es ist durch Fenster "{0}", Anwendung "{1}" gesperrt.</value>
   </data>
   <data name="WordWrap" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\word wrap.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="allMarks" xml:space="preserve">
-    <value>alle Marken</value>
+    <value>Markiert</value>
   </data>
   <data name="img" xml:space="preserve">
     <value>IMG</value>
@@ -238,10 +235,10 @@
     <value>..\Picture\Compare.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="СonfirmDeleteAllNonFavorite" xml:space="preserve">
-    <value>Sind Sie sicher, dass alle nicht Lieblings Clips löschen möchten?</value>
+    <value>Alle Nicht-Favoriten wirklich löschen?</value>
   </data>
   <data name="KiloByteUnit" xml:space="preserve">
-    <value>KB</value>
+    <value>kB</value>
   </data>
   <data name="alien" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\alien.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -261,11 +258,56 @@
   <data name="Search" xml:space="preserve">
     <value>Suchen</value>
   </data>
+  <data name="LastClipWasMultiCaptured" xml:space="preserve">
+    <value>Letzter Clip wurde vor dem Vergleich zweimal aufgenommen</value>
+  </data>
+  <data name="ClipWasNotCaptured" xml:space="preserve">
+    <value>Der kopierte Clip ({2}) wurde nicht erfasst. Zu groß: {0} kB &gt; {1} kB (wie in den Einstellungen festgelegt)</value>
+  </data>
+  <data name="PastedLastClip" xml:space="preserve">
+    <value>Gerade eingefügter Clip ist der letzte</value>
+  </data>
   <data name="calendar" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\calendar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Zoom" xml:space="preserve">
+    <value>Zoom</value>
+  </data>
+  <data name="text_email" xml:space="preserve">
+    <value>*Email</value>
+  </data>
+  <data name="text_number" xml:space="preserve">
+    <value>*Zahl</value>
+  </data>
+  <data name="text_phone" xml:space="preserve">
+    <value>*Telefon</value>
+  </data>
+  <data name="text_url" xml:space="preserve">
+    <value>*URL</value>
+  </data>
+  <data name="text_time" xml:space="preserve">
+    <value>*Zeit</value>
+  </data>
+  <data name="NoActiveWindow" xml:space="preserve">
+    <value>kein Zielfenster</value>
+  </data>
+  <data name="ErrorReadingClipboard" xml:space="preserve">
+    <value>Der Clip wurde aufgrund eines Lesefehlers in der Zwischenablage nicht erfasst</value>
+  </data>
+  <data name="TargetWindow" xml:space="preserve">
+    <value>Zielfenster</value>
+  </data>
+  <data name="TargetApp" xml:space="preserve">
+    <value>Zielanwendung</value>
+  </data>
   <data name="Columns" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\Columns.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="html" xml:space="preserve">
+    <value>HTML</value>
+  </data>
+  <data name="rtf" xml:space="preserve">
+    <value>RTF</value>
   </data>
   <data name="AutoselectFirstMatch" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\Autoselect first match.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -273,11 +315,26 @@
   <data name="OpenWith" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\Open with.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="FilteredStatusText" xml:space="preserve">
+    <value>Gefiltert {0}</value>
+  </data>
   <data name="Tip 32" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\Tip 32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="NoCapture" xml:space="preserve">
+    <value>Kein Erfassen</value>
+  </data>
   <data name="alienNoCapture" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\alien - no capture .ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MonitoringOFF" xml:space="preserve">
+    <value>Die Überwachung der Zwischenablage ist jetzt AUS</value>
+  </data>
+  <data name="MonitoringON" xml:space="preserve">
+    <value>Die Überwachung der Zwischenablage ist jetzt AN</value>
+  </data>
+  <data name="text_1CLine" xml:space="preserve">
+    <value>*1C Zeile</value>
   </data>
   <data name="Filter1" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\Filter.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

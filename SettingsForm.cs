@@ -171,7 +171,7 @@ namespace ClipAngel
             { "English", "English (by Tormozit)"},
             { "Chinese", "Chinese (by machine)"},
             { "French", "French (by François M.)"},
-            { "German", "German (by machine)"},
+            { "German", "German (by Dieter Hummel)"},
             { "Greek", "Greek (by machine)"},
             { "Hindi", "Hindi (by machine)"},
             { "Italian", "Italian (by Bovirus)"},

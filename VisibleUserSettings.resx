@@ -371,7 +371,7 @@ Not appliable to HTML native formatting.</value>
     <value>Replace duplicates</value>
   </data>
   <data name="ReplaceDuplicatesDescription" xml:space="preserve">
-    <value>Keep clips unique by content. Update existing dublicate clip instead of creating new.</value>
+    <value>Keep clips unique by content. Update existing duplicate clip instead of creating new.</value>
   </data>
   <data name="RestoreCaretPositionOnFocusReturn" xml:space="preserve">
     <value>Restore caret position on focus return</value>

@@ -21,9 +21,6 @@
   <data name="AutoSelectMatch" xml:space="preserve">
     <value>Automatycznie zaznacz pierwsze dopasowanie</value>
   </data>
-  <data name="AutoSelectMatchDescription" xml:space="preserve">
-    <value>Autozaznaczanie pierwszego dopasowania filtra w klipie tekstowym. </value>
-  </data>
   <data name="Autostart" xml:space="preserve">
     <value>Autostart programu przy logowaniu użytkownika</value>
   </data>
@@ -50,9 +47,6 @@
   </data>
   <data name="ClipTempFileFolder" xml:space="preserve">
     <value>Folder plików tymczasowych klipów</value>
-  </data>
-  <data name="ClipTempFileFolderDescription" xml:space="preserve">
-    <value>Folder do zapisywania plików tymczasowych klipów. Pozostaw puste, aby użyć standardowego folderu plików tymczasowych. Zazwyczaj może być użyteczne w trybie przenośnym.</value>
   </data>
   <data name="CopyTextInAnyWindowOnCTRLF3" xml:space="preserve">
     <value>Kopiowanie tekstu z dowolnego okna poprzez Control + F3</value>
@@ -87,35 +81,17 @@
   <data name="GlobalHotkeyCompareLastClipsDescription" xml:space="preserve">
     <value>Użyj tego szybkiego skrótu w dowolnym programie, aby uruchomić aplikację do porównania 2 ostatnich klipów</value>
   </data>
-  <data name="GlobalHotkeyIncrementalPaste" xml:space="preserve">
-    <value>Skrót do wklej i zaznacz następny</value>
-  </data>
-  <data name="GlobalHotkeyIncrementalPasteDescription" xml:space="preserve">
-    <value>Użyj tego skrótu w dowolnym programie aby wkleić bieżący klip z listy Clip Angel i wybrać następny/wyższy klip, który pojawi się w zasobniku podpowiedzi</value>
-  </data>
   <data name="GlobalHotkeyOpenCurrent" xml:space="preserve">
     <value>Skrót dla otwarcia okna bez żadnych zmian</value>
-  </data>
-  <data name="GlobalHotkeyOpenCurrentDescription" xml:space="preserve">
-    <value>Użyj tego skrótu w dowolnym programie, aby otworzyć okno Clip Angel bez zmian w filtrze i wyboru klipu. Naciśnij ponownie, aby zamknąć okno.</value>
   </data>
   <data name="GlobalHotkeyOpenFavorites" xml:space="preserve">
     <value>Skrót dla otwarcia okna z ulubionymi</value>
   </data>
-  <data name="GlobalHotkeyOpenFavoritesDescription" xml:space="preserve">
-    <value>Użyj tego skrótu w dowolnym programie, aby pokazać okno Clip Angel tylko z filtrem ulubionych. Naciśnij ponownie, aby zamknąć okno.</value>
-  </data>
   <data name="GlobalHotkeyOpenLast" xml:space="preserve">
     <value>Skrót dla otwarcia okna z wyzerowaniem</value>
   </data>
-  <data name="GlobalHotkeyOpenLastDescription" xml:space="preserve">
-    <value>Użyj tego skrótu w dowolnym programie, aby otworzyć okno Clip Angel, wyczyścić filtry i wybrać ostatni zarejestrowany klip. Naciśnij ponownie, aby zamknąć okno.</value>
-  </data>
   <data name="GlobalHotkeyPasteText" xml:space="preserve">
     <value>Skrót do wklejania jako zwykły tekst</value>
-  </data>
-  <data name="GlobalHotkeyPasteTextDescription" xml:space="preserve">
-    <value>Użyj tego skrótu w dowolnym programie, aby wkleić ostatnio zarejestrowany klip jako zwykły tekst</value>
   </data>
   <data name="HistoryDepthDays" xml:space="preserve">
     <value>Liczba dni historii</value>
@@ -144,9 +120,6 @@
   <data name="IgnoreExclusiveFormatClipCapture" xml:space="preserve">
     <value>Nie przechwytuj formatu "Ignoruj Podgląd Schowka".</value>
   </data>
-  <data name="IgnoreExclusiveFormatClipCaptureDescription" xml:space="preserve">
-    <value>Nie przechwytuje klipu z nadanym formatem "Ignoruj Podgląd Schowka". Format ten jest zazwyczaj używany przez menedżery haseł podczas kopiowania haseł do schowka. Czasami może być użyteczne, aby wyłączyć to tymczasowo.</value>
-  </data>
   <data name="ImageEditor" xml:space="preserve">
     <value>Aplikacja do edycji plików obrazu (PNG)</value>
   </data>
@@ -172,12 +145,6 @@
     <value>Czcionka o stałej szerokości w polu tekstowym klipu. 
 Może być przeładowane przez natywne formatowanie RTF. 
 Nie dotyczy natywnego formatowania HTML.</value>
-  </data>
-  <data name="MoveCopiedClipToTop" xml:space="preserve">
-    <value>Przenieś skopiowany na listę klip na samą górę</value>
-  </data>
-  <data name="MoveCopiedClipToTopDescription" xml:space="preserve">
-    <value>Przenosi skopiowany na listę lub w pełni wklejony klip na szczyt listy</value>
   </data>
   <data name="NumberOfClips" xml:space="preserve">
     <value>Liczba klipów</value>
@@ -246,36 +213,17 @@ Nie dotyczy natywnego formatowania HTML.</value>
   <data name="TextEditorDescription" xml:space="preserve">
     <value>Używane przez polecenie "Otwórz plik" dla klipu. Pozostaw puste, aby użyć domyślnej aplikacji systemowej do edycji plików tekstowych (TXT).</value>
   </data>
-  <data name="UserSettingsPath" xml:space="preserve">
-    <value>Ścieżka ustawień użytkownika aplikacji</value>
-  </data>
-  <data name="UserSettingsPathDescription" xml:space="preserve">
-    <value>Znajdują się tutaj pliki ustawień użytkownika oraz domyślna baza danych</value>
-  </data>
   <data name="WindowAutoPosition" xml:space="preserve">
     <value>Autopozycjonowanie okna przy otwarciu</value>
-  </data>
-  <data name="WindowAutoPositionDescription" xml:space="preserve">
-    <value>Jeśli to możliwe, okno zostanie otwarte w pobliżu karetki tekstowej (wejście), w innym wypadku będzie umieszczone w centrum aktywnego okna</value>
   </data>
   <data name="WordWrap" xml:space="preserve">
     <value>Zawijanie wierszy</value>
   </data>
-  <data name="WordWrapDescription" xml:space="preserve">
-    <value>Zawijanie wierszy w polu tekstowym klipu (CTRL + W). 
-Nie dotyczy natywnego formatowania HTML.</value>
-  </data>
   <data name="PlaySoundOnClipCapture" xml:space="preserve">
     <value>Odtwarzanie dźwięku podczas przechwytywania klipu</value>
   </data>
-  <data name="PlaySoundOnClipCaptureDescription" xml:space="preserve">
-    <value>Odtwarza standartowy dźwięk Windows kiedy klip zostanie pomyślnie przechwycony. Może to być irytujące ;)</value>
-  </data>
   <data name="DatabaseFile" xml:space="preserve">
     <value>Plik bazy danych</value>
-  </data>
-  <data name="DatabaseFileDescription" xml:space="preserve">
-    <value>Możesz zmienić nazwę bazy danych, aby przełączyć się na inną historię schowka. Pozostaw puste, aby użyć standartowego pliku bazy danych "db.sqlite" w folderze ustawień użytkownika aplikacji.</value>
   </data>
   <data name="MaxCellsToCaptureFormattedText" xml:space="preserve">
     <value>Maksymalna liczba komórek do przechwytywania sformatowanego tekstu</value>

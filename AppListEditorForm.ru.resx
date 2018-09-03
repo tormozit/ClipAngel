@@ -124,17 +124,17 @@
   <data name="label2.Text" xml:space="preserve">
     <value>Список приложений</value>
   </data>
-  <data name="SelectedListModule.Text" xml:space="preserve">
-    <value>Модуль</value>
-  </data>
-  <data name="SelectedListApplication.Text" xml:space="preserve">
-    <value>Путь</value>
-  </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
     <value>137, 13</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
     <value>Запущенные приложения</value>
+  </data>
+  <data name="SelectedListModule.Text" xml:space="preserve">
+    <value>Модуль</value>
+  </data>
+  <data name="SelectedListApplication.Text" xml:space="preserve">
+    <value>Путь</value>
   </data>
   <data name="RunningListModule.Text" xml:space="preserve">
     <value>Модуль</value>

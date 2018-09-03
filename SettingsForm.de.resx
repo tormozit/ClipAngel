@@ -28,7 +28,7 @@
     <value>14</value>
   </data>
   <data name="buttonReset.Text" xml:space="preserve">
-    <value>Auf Standards zurücksetzen</value>
+    <value>Auf Standardeinstellung zurücksetzen</value>
   </data>
   <data name="buttonCancel.Anchor" xml:space="preserve" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
@@ -82,7 +82,7 @@
     <value>18</value>
   </data>
   <data name="buttonClearFilter.Text" xml:space="preserve">
-    <value>B</value>
+    <value>X</value>
   </data>
   <data name="buttonClearFilter.ToolTip" xml:space="preserve">
     <value>Filter löschen</value>
@@ -118,7 +118,7 @@
     <value>21</value>
   </data>
   <data name="textBoxFilter.ToolTip" xml:space="preserve">
-    <value>Hot-Filter nach Namen und Beschreibung der Eigenschaft</value>
+    <value>Hot-Filter nach Name und Beschreibung der Eigenschaft</value>
   </data>
   <data name="propertyGrid1.Anchor" xml:space="preserve" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
@@ -140,9 +140,6 @@
   </data>
   <data name="contexMenuLabel.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>103, 26</value>
-  </data>
-  <data name="gridContextMenuCopy.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+C</value>
   </data>
   <data name="gridContextMenuCopy.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>144, 22</value>

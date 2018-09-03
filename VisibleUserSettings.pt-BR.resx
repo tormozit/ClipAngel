@@ -21,9 +21,6 @@
   <data name="AutoSelectMatch" xml:space="preserve">
     <value>Autoselecionar primeira correspondência</value>
   </data>
-  <data name="AutoSelectMatchDescription" xml:space="preserve">
-    <value>Seleção automática da primeira correspondência do filtro no texto do clip. </value>
-  </data>
   <data name="Autostart" xml:space="preserve">
     <value>Iniciar o programa no logon do usuário</value>
   </data>
@@ -50,9 +47,6 @@
   </data>
   <data name="ClipTempFileFolder" xml:space="preserve">
     <value>Pasta de arquivos temporários de clipes</value>
-  </data>
-  <data name="ClipTempFileFolderDescription" xml:space="preserve">
-    <value>Pasta para guardar arquivos temporários de clipes. Deixe vazio para usar a pasta temp standart. Geralmente pode ser útil no modo portátil.</value>
   </data>
   <data name="CopyTextInAnyWindowOnCTRLF3" xml:space="preserve">
     <value>Copiar o texto de qualquer janela com Ctrl + F3</value>
@@ -88,35 +82,17 @@ Tecla pressionada será processada pela janela. </value>
   <data name="GlobalHotkeyCompareLastClipsDescription" xml:space="preserve">
     <value>Use esta tecla de atalho em qualquer programa para carregar o aplicativo para comparar os últimos 2 clipes</value>
   </data>
-  <data name="GlobalHotkeyIncrementalPaste" xml:space="preserve">
-    <value>Tecla de atalho para colar incremental</value>
-  </data>
-  <data name="GlobalHotkeyIncrementalPasteDescription" xml:space="preserve">
-    <value>Use esta tecla de atalho em qualquer programa para colar clipe atual lista de Clip anjo e selecione próximo clipe que será mostrado na bandeja de dica de ferramenta</value>
-  </data>
   <data name="GlobalHotkeyOpenCurrent" xml:space="preserve">
     <value>Tecla de atalho para abrir a janela sem alterações</value>
-  </data>
-  <data name="GlobalHotkeyOpenCurrentDescription" xml:space="preserve">
-    <value>Use esta tecla de atalho em qualquer programa para abrir a janela de do Clip Angel sem alterações na seleção de filtro e clipe. Pressione novamente para fechar a janela.</value>
   </data>
   <data name="GlobalHotkeyOpenFavorites" xml:space="preserve">
     <value>Tecla de atalho para abrir a janela com os favoritos</value>
   </data>
-  <data name="GlobalHotkeyOpenFavoritesDescription" xml:space="preserve">
-    <value>Use esta tecla de atalho em qualquer programa para mostrar a janela do Clip Angel com filtro dos favoritos. Pressione novamente para fechar a janela.</value>
-  </data>
   <data name="GlobalHotkeyOpenLast" xml:space="preserve">
     <value>Tecla de atalho para abrir a janela com clipe ativo</value>
   </data>
-  <data name="GlobalHotkeyOpenLastDescription" xml:space="preserve">
-    <value>Use esta tecla de atalho em qualquer programa para abrir janela do Clip Angel, com filtros limpos e último clipe capturado. Pressione novamente para fechar a janela.</value>
-  </data>
   <data name="GlobalHotkeyPasteText" xml:space="preserve">
     <value>Tecla de atalho para colar texto sem formatação</value>
-  </data>
-  <data name="GlobalHotkeyPasteTextDescription" xml:space="preserve">
-    <value>Use esta tecla de atalho em qualquer programa para colar o último clipe capturado como texto sem formatação</value>
   </data>
   <data name="HistoryDepthDays" xml:space="preserve">
     <value>Quantidade de dias do histórico de clipes</value>
@@ -145,9 +121,6 @@ Tecla pressionada será processada pela janela. </value>
   <data name="IgnoreExclusiveFormatClipCapture" xml:space="preserve">
     <value>Não capturar o formato "Ignorar Visualizador de área de transferência"</value>
   </data>
-  <data name="IgnoreExclusiveFormatClipCaptureDescription" xml:space="preserve">
-    <value>Não capture clip com formato de "Ignorar Visualizador de área de transferência" presente. Este formato é geralmente utilizado por gerenciadores de senha ao copiar senhas para área de transferência. Às vezes pode ser útil desligá-lo temporariamente.</value>
-  </data>
   <data name="ImageEditor" xml:space="preserve">
     <value>Aplicativo de editor de arquivo de imagem (PNG)</value>
   </data>
@@ -173,12 +146,6 @@ Tecla pressionada será processada pela janela. </value>
     <value>Fonte mono-espaçada no campo de texto do clip. 
 Pode ser sobrecarregado por formatação nativa RTF. 
 Não aplicável à formatação nativa do HTML.</value>
-  </data>
-  <data name="MoveCopiedClipToTop" xml:space="preserve">
-    <value>Mover copiado na lista do clipe para o topo</value>
-  </data>
-  <data name="MoveCopiedClipToTopDescription" xml:space="preserve">
-    <value>Mever copiada na lista ou clip totalmente colado ao topo da lista</value>
   </data>
   <data name="NumberOfClips" xml:space="preserve">
     <value>Número de clipes</value>
@@ -247,23 +214,10 @@ WinMerge Araxis Merge, DiffMerge, o Kdiff3. Comando de comparar texto é aplica�
   <data name="TextEditorDescription" xml:space="preserve">
     <value>Usado no comando "Abrir arquivo" para clipe. Deixe em branco para usar o aplicativo padrão do sistema operacional para editar arquivos de texto (TXT).</value>
   </data>
-  <data name="UserSettingsPath" xml:space="preserve">
-    <value>Caminho de configurações do usuário</value>
-  </data>
-  <data name="UserSettingsPathDescription" xml:space="preserve">
-    <value>Arquivos com as configurações do usuário e banco de dados são salvos aqui</value>
-  </data>
   <data name="WindowAutoPosition" xml:space="preserve">
     <value>Posição da janela na abertura</value>
   </data>
-  <data name="WindowAutoPositionDescription" xml:space="preserve">
-    <value>Se possível, a janela abrirá perto do cursor de texto (entrada), caso contrário abrirá no centro da janela ativa</value>
-  </data>
   <data name="WordWrap" xml:space="preserve">
     <value>Quebra de linha</value>
-  </data>
-  <data name="WordWrapDescription" xml:space="preserve">
-    <value>Quebra de linha no campo de texto de clip (CTRL + W). 
-Não aplicável à formatação nativa do HTML.</value>
   </data>
 </root>

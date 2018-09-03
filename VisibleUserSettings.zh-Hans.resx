@@ -21,9 +21,6 @@
   <data name="AutoSelectMatch" xml:space="preserve">
     <value>自动选择第一个匹配项</value>
   </data>
-  <data name="AutoSelectMatchDescription" xml:space="preserve">
-    <value>Autoselection 的第一场比赛中剪辑文本筛选器。</value>
-  </data>
   <data name="Autostart" xml:space="preserve">
     <value>在用户登录时自动启动程序</value>
   </data>
@@ -50,9 +47,6 @@
   </data>
   <data name="ClipTempFileFolder" xml:space="preserve">
     <value>剪辑临时文件的文件夹</value>
-  </data>
-  <data name="ClipTempFileFolderDescription" xml:space="preserve">
-    <value>用于保存临时文件的剪辑的文件夹。留空以使用非标准 temp 文件夹。便携式模式通常可有用。</value>
   </data>
   <data name="CopyTextInAnyWindowOnCTRLF3" xml:space="preserve">
     <value>从控制 + F3 的任何窗口中复制文本</value>
@@ -88,35 +82,17 @@
   <data name="GlobalHotkeyCompareLastClipsDescription" xml:space="preserve">
     <value>在任何程序中使用此热键启动应用程序比较最后 2 剪辑</value>
   </data>
-  <data name="GlobalHotkeyIncrementalPaste" xml:space="preserve">
-    <value>对增量粘贴热键</value>
-  </data>
-  <data name="GlobalHotkeyIncrementalPasteDescription" xml:space="preserve">
-    <value>在任何程序中使用此热键粘贴当前剪辑从剪辑天使列表中，选择将托盘工具提示中显示的下一个剪辑</value>
-  </data>
   <data name="GlobalHotkeyOpenCurrent" xml:space="preserve">
     <value>打开窗口并无变动的热键</value>
-  </data>
-  <data name="GlobalHotkeyOpenCurrentDescription" xml:space="preserve">
-    <value>在任何程序中使用此热键打开剪辑天使窗口与筛选器和剪辑选择没有变化。再次按下关闭窗口。</value>
   </data>
   <data name="GlobalHotkeyOpenFavorites" xml:space="preserve">
     <value>打开收藏夹窗口的热键</value>
   </data>
-  <data name="GlobalHotkeyOpenFavoritesDescription" xml:space="preserve">
-    <value>在任何程序中，可以使用此热键显示剪辑天使窗口与收藏夹唯一的过滤器。再次按下关闭窗口。</value>
-  </data>
   <data name="GlobalHotkeyOpenLast" xml:space="preserve">
     <value>使用重置打开窗口的热键</value>
   </data>
-  <data name="GlobalHotkeyOpenLastDescription" xml:space="preserve">
-    <value>在任何程序中，可以使用此热键打开剪辑天使窗口、 清除筛选器，然后选择最后一个捕获的剪辑。再次按下关闭窗口。</value>
-  </data>
   <data name="GlobalHotkeyPasteText" xml:space="preserve">
     <value>将纯文本粘贴的热键</value>
-  </data>
-  <data name="GlobalHotkeyPasteTextDescription" xml:space="preserve">
-    <value>在任何程序中使用此热键将粘贴为纯文本的最后一个捕获的剪辑</value>
   </data>
   <data name="HistoryDepthDays" xml:space="preserve">
     <value>历史深度天</value>
@@ -145,9 +121,6 @@
   <data name="IgnoreExclusiveFormatClipCapture" xml:space="preserve">
     <value>不捕获"剪贴板查看器忽略"格式</value>
   </data>
-  <data name="IgnoreExclusiveFormatClipCaptureDescription" xml:space="preserve">
-    <value>不捕获剪辑与目前的"剪贴板查看器忽略"格式。这种格式通常经理使用的密码时将密码复制到剪贴板。有时它可能有用，把它关掉临时。</value>
-  </data>
   <data name="ImageEditor" xml:space="preserve">
     <value>图像 (PNG) 文件编辑器中的应用</value>
   </data>
@@ -173,12 +146,6 @@
     <value>在剪辑文本字段中的等宽字体。
 可以重载的 RTF 本机格式。
 不适用到 HTML 本机格式。</value>
-  </data>
-  <data name="MoveCopiedClipToTop" xml:space="preserve">
-    <value>将复制在列表剪辑移至顶部</value>
-  </data>
-  <data name="MoveCopiedClipToTopDescription" xml:space="preserve">
-    <value>将复制在列表或完全粘贴的剪辑移到列表的顶部</value>
   </data>
   <data name="NumberOfClips" xml:space="preserve">
     <value>剪辑的数目</value>
@@ -247,23 +214,10 @@ WinMerge，轴合并，DiffMerge，Kdiff3。文本比较命令是应用程序 %%
   <data name="TextEditorDescription" xml:space="preserve">
     <value>在"打开文件"命令中用于剪辑。请留空要用于编辑文本 (TXT) 文件的默认 OS 的应用程序。</value>
   </data>
-  <data name="UserSettingsPath" xml:space="preserve">
-    <value>用户设置路径</value>
-  </data>
-  <data name="UserSettingsPathDescription" xml:space="preserve">
-    <value>用户设置与数据库文件在这儿</value>
-  </data>
   <data name="WindowAutoPosition" xml:space="preserve">
     <value>在打开的窗口自动位置</value>
   </data>
-  <data name="WindowAutoPositionDescription" xml:space="preserve">
-    <value>如果可能的话，窗口将会打开附近文本插入符号 （输入），否则会在中心的活动窗口</value>
-  </data>
   <data name="WordWrap" xml:space="preserve">
     <value>自动换行</value>
-  </data>
-  <data name="WordWrapDescription" xml:space="preserve">
-    <value>自动换行的剪辑文本字段 (CTRL + W)。
-不适用到 HTML 本机格式。</value>
   </data>
 </root>

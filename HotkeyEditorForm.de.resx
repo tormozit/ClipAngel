@@ -67,7 +67,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Hotkey zu bearbeiten</value>
+    <value>Hotkey bearbeiten</value>
   </data>
   <data name="buttonOK.Anchor" xml:space="preserve" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
