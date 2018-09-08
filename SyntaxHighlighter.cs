@@ -95,6 +95,13 @@ namespace ClipAngel
         {
             foreach (var keyWord in keyWords)
             {
+                if (false
+                    || keyWord == "false"
+                    || keyWord == "true"
+                    || keyWord.Length < 4)
+                {
+                    continue;
+                }
                 if (!String.IsNullOrEmpty(keyWordPattern))
                 {
                     keyWordPattern += "|";
