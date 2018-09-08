@@ -335,7 +335,34 @@
     <EmbeddedResource Include="Main.zh-Hans.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PasteSpecial.de.resx">
+      <DependentUpon>PasteSpecial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PasteSpecial.el.resx">
+      <DependentUpon>PasteSpecial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PasteSpecial.es.resx">
+      <DependentUpon>PasteSpecial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PasteSpecial.fr.resx">
+      <DependentUpon>PasteSpecial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PasteSpecial.hi.resx">
+      <DependentUpon>PasteSpecial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PasteSpecial.it.resx">
+      <DependentUpon>PasteSpecial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PasteSpecial.pl.resx">
+      <DependentUpon>PasteSpecial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PasteSpecial.pt-BR.resx">
+      <DependentUpon>PasteSpecial.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PasteSpecial.ru.resx">
+      <DependentUpon>PasteSpecial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PasteSpecial.zh-Hans.resx">
       <DependentUpon>PasteSpecial.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.de.resx" />
@@ -400,10 +427,16 @@
     <EmbeddedResource Include="Tips.de.resx">
       <DependentUpon>Tips.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Tips.el.resx">
+      <DependentUpon>Tips.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Tips.es.resx">
       <DependentUpon>Tips.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Tips.fr.resx">
+      <DependentUpon>Tips.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tips.hi.resx">
       <DependentUpon>Tips.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Tips.it.resx">
@@ -422,6 +455,9 @@
       <DependentUpon>Tips.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Tips.ru.resx">
+      <DependentUpon>Tips.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tips.zh-Hans.resx">
       <DependentUpon>Tips.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VisibleUserSettings.de.resx">

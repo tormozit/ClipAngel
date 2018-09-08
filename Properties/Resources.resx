@@ -355,9 +355,6 @@
   <data name="FindOptions" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\FindOptions.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Support" xml:space="preserve">
-    <value>https://sourceforge.net/p/clip-angel/tickets/new/</value>
-  </data>
   <data name="TextFormatting" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\TextFormatting.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -450,5 +447,8 @@
   </data>
   <data name="Filter1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\Filter.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Support" xml:space="preserve">
+    <value>https://sourceforge.net/p/clip-angel/tickets/new/</value>
   </data>
 </root>

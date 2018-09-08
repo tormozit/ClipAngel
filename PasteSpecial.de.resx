@@ -1,0 +1,298 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <metadata name="toolTip1.TrayLocation" xml:space="preserve" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <data name="ReplaceEOL.AutoSize" xml:space="preserve" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="NormalizeFreeSpace.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="buttonCancel.ImeMode" xml:space="preserve" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="buttonOK.Anchor" xml:space="preserve" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="NormalizeFreeSpace.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>176, 17</value>
+  </data>
+  <data name="ReplaceEOL.Text" xml:space="preserve">
+    <value>Symbol "Zeilenende" durch Leerzeichen ersetzen</value>
+  </data>
+  <data name="SentenceCase.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="SentenceCase.Location" xml:space="preserve" type="System.Drawing.Point, System.Drawing">
+    <value>10, 93</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Inhalte einfügen</value>
+  </data>
+  <data name="ReplaceEOL.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="richTextBox1.Anchor" xml:space="preserve" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="checkBoxPasteIntoNewClip.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="CaseNoChange.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>78, 17</value>
+  </data>
+  <data name="textBoxNumberOfSpacesInTab.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>18, 20</value>
+  </data>
+  <data name="groupBox1.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="AllLowerCase.AutoSize" xml:space="preserve" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="NormalizeFreeSpace.Text" xml:space="preserve">
+    <value>Normalisieren nicht druckbarer Symbole</value>
+  </data>
+  <data name="buttonOK.Text" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="CaseNoChange.Location" xml:space="preserve" type="System.Drawing.Point, System.Drawing">
+    <value>10, 22</value>
+  </data>
+  <data name="checkBoxPasteIntoNewClip.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>233, 17</value>
+  </data>
+  <data name="textBoxNumberOfSpacesInTab.ToolTip" xml:space="preserve">
+    <value>Anzahl der Leerzeichen im TAB</value>
+  </data>
+  <data name="buttonOK.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="buttonCancel.Anchor" xml:space="preserve" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="CaseNoChange.Text" xml:space="preserve">
+    <value>Keine Änderung</value>
+  </data>
+  <data name="buttonOK.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="textBoxNumberOfSpacesInTab.Text" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="$this.StartPosition" xml:space="preserve" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterParent</value>
+  </data>
+  <data name="groupBox1.Location" xml:space="preserve" type="System.Drawing.Point, System.Drawing">
+    <value>12, 10</value>
+  </data>
+  <data name="richTextBox1.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
+    <value>21</value>
+  </data>
+  <data name="groupBox1.ToolTip" xml:space="preserve">
+    <value>Buchstabenstellung ändern</value>
+  </data>
+  <data name="checkBoxReplaceTabWithSpaces.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="label1.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
+    <value>22</value>
+  </data>
+  <data name="SentenceCase.ToolTip" xml:space="preserve">
+    <value>Großer erster buchstabe in jedem satz und kleinschrift für andere buchstaben</value>
+  </data>
+  <data name="AllLowerCase.ToolTip" xml:space="preserve">
+    <value>Nur kleinschrift</value>
+  </data>
+  <data name="buttonCancel.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="AllLowerCase.Text" xml:space="preserve">
+    <value>Kleinschrift</value>
+  </data>
+  <data name="checkBoxPasteIntoNewClip.Text" xml:space="preserve">
+    <value>In neuen Clip einfügen anstelle des Zielfensters
+</value>
+  </data>
+  <data name="AllLowerCase.Location" xml:space="preserve" type="System.Drawing.Point, System.Drawing">
+    <value>10, 69</value>
+  </data>
+  <data name="NormalizeFreeSpace.AutoSize" xml:space="preserve" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="checkBoxReplaceTabWithSpaces.Text" xml:space="preserve">
+    <value>TAB durch Leerzeichen ersetzen</value>
+  </data>
+  <data name="checkBoxPasteIntoNewClip.AutoSize" xml:space="preserve" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="buttonOK.ImeMode" xml:space="preserve" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="buttonCancel.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="textBoxNumberOfSpacesInTab.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
+    <value>23</value>
+  </data>
+  <data name="checkBoxReplaceTabWithSpaces.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>149, 17</value>
+  </data>
+  <data name="label1.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>45, 13</value>
+  </data>
+  <data name="CaseNoChange.AutoSize" xml:space="preserve" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="$this.AutoScaleDimensions" xml:space="preserve" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="buttonCancel.Text" xml:space="preserve">
+    <value>Abbrechen</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Vorschau</value>
+  </data>
+  <data name="label1.AutoSize" xml:space="preserve" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="NormalizeFreeSpace.ToolTip" xml:space="preserve">
+    <value>Jede Folge nicht druckbarer Symbole (außer Zeilenende) wird durch ein Leerzeichen ersetzt.
+Nachlaufende nicht druckbare Symbole werden gelöscht.</value>
+  </data>
+  <data name="CaseNoChange.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="AllLowerCase.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="SentenceCase.Text" xml:space="preserve">
+    <value>Satzfall</value>
+  </data>
+  <data name="checkBoxReplaceTabWithSpaces.AutoSize" xml:space="preserve" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Buchstabenstellung</value>
+  </data>
+  <data name="SentenceCase.AutoSize" xml:space="preserve" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <metadata name="toolTip1.GenerateMember" xml:space="preserve" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="$this.Localizable" xml:space="preserve" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="AllUpperCase.AutoSize" xml:space="preserve" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="AllUpperCase.Location" xml:space="preserve" type="System.Drawing.Point, System.Drawing">
+    <value>10, 45</value>
+  </data>
+  <data name="AllUpperCase.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>93, 17</value>
+  </data>
+  <data name="AllUpperCase.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="AllUpperCase.Text" xml:space="preserve">
+    <value>GROSSBUCHSTABEN</value>
+  </data>
+  <data name="AllUpperCase.ToolTip" xml:space="preserve">
+    <value>Nur GROSSBUCHSTABEN</value>
+  </data>
+  <data name="LowerCamelCase.AutoSize" xml:space="preserve" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LowerCamelCase.ImeMode" xml:space="preserve" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LowerCamelCase.Location" xml:space="preserve" type="System.Drawing.Point, System.Drawing">
+    <value>10, 138</value>
+  </data>
+  <data name="LowerCamelCase.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="LowerCamelCase.Text" xml:space="preserve">
+    <value>zu kleinHöckerSchrift</value>
+  </data>
+  <data name="LowerCamelCase.ToolTip" xml:space="preserve">
+    <value>kleiner Erster Buchstabe Im Ersten Wort Und Großer Für Den Ersten Buchstaben Der Anderen Wörter. Löschen aller Leerzeichen.</value>
+  </data>
+  <data name="UpperCamelCase.AutoSize" xml:space="preserve" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="UpperCamelCase.ImeMode" xml:space="preserve" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="UpperCamelCase.Location" xml:space="preserve" type="System.Drawing.Point, System.Drawing">
+    <value>10, 116</value>
+  </data>
+  <data name="UpperCamelCase.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="UpperCamelCase.Text" xml:space="preserve">
+    <value>zu GroßHöckerSchrift</value>
+  </data>
+  <data name="UpperCamelCase.ToolTip" xml:space="preserve">
+    <value>Großbuchstabe für den ersten Buchstaben in jedem Wort. Löschen aller Leerzeichen.</value>
+  </data>
+  <data name="NormalizeEndOfLines.AutoSize" xml:space="preserve" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="NormalizeEndOfLines.ImeMode" xml:space="preserve" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="NormalizeEndOfLines.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>174, 17</value>
+  </data>
+  <data name="NormalizeEndOfLines.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="NormalizeEndOfLines.Text" xml:space="preserve">
+    <value>"Zeilenende"-Symbole normalisieren
+</value>
+  </data>
+  <data name="NormalizeEndOfLines.ToolTip" xml:space="preserve">
+    <value>Jede Folge von "Zeilenende" Symbolen wird durch ein "Zeilenende" ersetzt.
+Nachlaufende nicht druckbare Symbole werden gelöscht.</value>
+  </data>
+  <data name="FromCamelCase.AutoSize" xml:space="preserve" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="FromCamelCase.ImeMode" xml:space="preserve" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="FromCamelCase.Location" xml:space="preserve" type="System.Drawing.Point, System.Drawing">
+    <value>10, 161</value>
+  </data>
+  <data name="FromCamelCase.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>101, 17</value>
+  </data>
+  <data name="FromCamelCase.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="FromCamelCase.Text" xml:space="preserve">
+    <value>von Höckerschrift</value>
+  </data>
+  <data name="FromCamelCase.ToolTip" xml:space="preserve">
+    <value>Trennt Wörter durch Großbuchstaben auf und ersetzt sie durch Kleinbuchstaben.</value>
+  </data>
+  <metadata name="$this.Language" xml:space="preserve" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>de</value>
+  </metadata>
+</root>

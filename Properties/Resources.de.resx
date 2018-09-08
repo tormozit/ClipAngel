@@ -48,14 +48,11 @@
   <data name="Confirmation" xml:space="preserve">
     <value>Bestätigung</value>
   </data>
-  <data name="Support" xml:space="preserve">
-    <value>https://sourceforge.net/p/Clip-Angel/Tickets/New/</value>
-  </data>
   <data name="FindNext" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\FindNext.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="allTypes" xml:space="preserve">
-    <value>Alle</value>
+    <value>alle typen</value>
   </data>
   <data name="dbTemplate" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\DB\db.sqlite;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -142,7 +139,7 @@
     <value>Aktualisieren auf</value>
   </data>
   <data name="used" xml:space="preserve">
-    <value>belegt</value>
+    <value>Genutzt</value>
   </data>
   <data name="file" xml:space="preserve">
     <value>Datei</value>
@@ -217,10 +214,10 @@
     <value>..\Picture\word wrap.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="allMarks" xml:space="preserve">
-    <value>Markiert</value>
+    <value>alle tags</value>
   </data>
   <data name="img" xml:space="preserve">
-    <value>IMG</value>
+    <value>Bild</value>
   </data>
   <data name="DownloadPage" xml:space="preserve">
     <value>https://sourceforge.net/projects/Clip-Angel/Files/Latest/Download</value>
@@ -292,7 +289,7 @@
     <value>kein Zielfenster</value>
   </data>
   <data name="ErrorReadingClipboard" xml:space="preserve">
-    <value>Der Clip wurde aufgrund eines Lesefehlers in der Zwischenablage nicht erfasst</value>
+    <value>Clip wurde aufgrund eines Lesefehlers in der Zwischenablage nicht erfasst</value>
   </data>
   <data name="TargetWindow" xml:space="preserve">
     <value>Zielfenster</value>
@@ -328,10 +325,10 @@
     <value>..\Picture\alien - no capture .ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="MonitoringOFF" xml:space="preserve">
-    <value>Die Überwachung der Zwischenablage ist jetzt AUS</value>
+    <value>Clipboardüberwachung ist jetzt AUS</value>
   </data>
   <data name="MonitoringON" xml:space="preserve">
-    <value>Die Überwachung der Zwischenablage ist jetzt AN</value>
+    <value>Clipboardüberwachung ist jetzt AN</value>
   </data>
   <data name="text_1CLine" xml:space="preserve">
     <value>*1C Zeile</value>

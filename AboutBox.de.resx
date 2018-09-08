@@ -79,7 +79,7 @@
     <value>24</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Über</value>
+    <value>Über ClipAngel</value>
   </data>
   <data name="okButton.Text" xml:space="preserve">
     <value>&amp;OK</value>
@@ -162,7 +162,7 @@
     <value>True</value>
   </data>
   <data name="textBoxDescription.Text" xml:space="preserve">
-    <value>Dieses Programm erfasst viele Objekte in der Zwischenablage und ermöglicht es dem Benutzer, eines auszuwählen und in einem beliebigen Programm einzufügen.</value>
+    <value>Dieses Programm erfasst Inhalte der Zwischenablage und ermöglicht es dem Benutzer, erfasste Objekte auszuwählen und in einem beliebigen Programm einzufügen.</value>
   </data>
   <data name="labelAuthor.TextAlign" xml:space="preserve" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>

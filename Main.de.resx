@@ -16,7 +16,7 @@
     <value>MiddleRight</value>
   </data>
   <data name="moveCopiedClipToTopToolStripMenuItem.Text" xml:space="preserve">
-    <value>Nach Gebrauch nach oben schieben</value>
+    <value>Nach Nutzung nach oben schieben</value>
   </data>
   <data name="statusStrip.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>416, 22</value>
@@ -42,7 +42,7 @@
     <value>209, 22</value>
   </data>
   <data name="toolStripButtonAutoSelectMatch.Text" xml:space="preserve">
-    <value>Erste Übereinstimmung automatisch auswählen</value>
+    <value>Ersten Treffer automatisch auswählen</value>
   </data>
   <data name="toolStripMenuItem10.ToolTipText" xml:space="preserve">
     <value>Mit diesem Befehl den Text der ausgewählten 2 Clips oder des aktuellen Clips mit dem zuvor ausgewählten Clip vergleichen</value>
@@ -84,7 +84,7 @@
     <value>Alt+Q</value>
   </data>
   <data name="TypeFilter.ToolTip" xml:space="preserve">
-    <value>Zeigen Sie nur Clips dieser Art. 
+    <value>Anzeige nur von Clips dieser Gattung. 
 Untermenü "Liste" enthält Befehle zur schnellen Auswahl</value>
   </data>
   <data name="editClipTextToolStripMenuItem.ToolTipText" xml:space="preserve">
@@ -206,7 +206,7 @@ Die URL wird im aktuellen Clip gespeichert und in die Zwischenablage kopiert..</
     <value>92, 22</value>
   </data>
   <data name="checkUpdateToolStripMenuItem.Text" xml:space="preserve">
-    <value>Auf Aktualisierung überprüfen</value>
+    <value>Auf Updates prüfen</value>
   </data>
   <data name="sendPasteToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>209, 22</value>
@@ -224,13 +224,13 @@ Die URL wird im aktuellen Clip gespeichert und in die Zwischenablage kopiert..</
     <value>False</value>
   </data>
   <data name="showOnlyUsedToolStripMenuItem.Text" xml:space="preserve">
-    <value>Nur verwendete anzeigen</value>
+    <value>Nur genutzte anzeigen</value>
   </data>
   <data name="StripLabelType.ToolTipText" xml:space="preserve">
     <value>Typ</value>
   </data>
   <data name="showAllMarksToolStripMenuItem.Text" xml:space="preserve">
-    <value>Alle Vermerke anzeigen</value>
+    <value>Alle Clips anzeigen</value>
   </data>
   <data name="htmlTextBox.MinimumSize" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>20, 20</value>
@@ -281,7 +281,7 @@ Die URL wird im aktuellen Clip gespeichert und in die Zwischenablage kopiert..</
     <value>Ausschneiden</value>
   </data>
   <data name="showAllTypesToolStripMenuItem.Text" xml:space="preserve">
-    <value>Alle Arten anzeigen</value>
+    <value>Alle Typen anzeigen</value>
   </data>
   <data name="mergeTextOfClipsToolStripMenuItem.Text" xml:space="preserve">
     <value>Text der Clips verbinden</value>
@@ -468,7 +468,7 @@ Clip-Datei mit Standardanwendung öffnen.
     <value>209, 22</value>
   </data>
   <data name="returnToPrevousSelectedClipToolStripMenuItem.Text" xml:space="preserve">
-    <value>Filter löschen und vorherigen auswählen</value>
+    <value>Filter löschen + vorigen Clip wählen</value>
   </data>
   <data name="contextMenuStripApplication.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>172, 48</value>
@@ -495,7 +495,7 @@ Clip-Datei mit Standardanwendung öffnen.
     <value>Einstellungen</value>
   </data>
   <data name="moveUpToolStripMenuItem.Text" xml:space="preserve">
-    <value>Nach oben</value>
+    <value>Aufwärts</value>
   </data>
   <data name="toolStripMenuItemEditClipText.ImageTransparentColor" xml:space="preserve" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
@@ -521,7 +521,7 @@ System-Menü öffnen, um die Clip-Datei in der gewählten Anwendung zu öffnen.
     <value>2, 2, 2, 2</value>
   </data>
   <data name="moveUpToolStripMenuItem.ToolTipText" xml:space="preserve">
-    <value>Ausgewählte Clips einen Schritt nach oben verschieben</value>
+    <value>Ausgewählte Clips eine Stufe nach oben schieben</value>
   </data>
   <data name="TypeFilter.Items" xml:space="preserve">
     <value>alle</value>
@@ -1110,7 +1110,7 @@ System-Menü öffnen, um die Clip-Datei in der gewählten Anwendung zu öffnen.
     <value>Top, Bottom, Left, Right</value>
   </data>
   <data name="toolStripMenuItemClearFilterAndSelectTop.ToolTipText" xml:space="preserve">
-    <value>Filter löschen und obersten Clip auswählen</value>
+    <value>Filter löschen + obersten Clip wählen</value>
   </data>
   <data name="showOnlyFilesToolStripMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Alt+3</value>
@@ -1233,7 +1233,7 @@ Clip-Datei mit Standardanwendung öffnen.
     <value>Fenster</value>
   </data>
   <data name="toolStripMenuItemMonitoringClipboard.Text" xml:space="preserve">
-    <value>Überwachung der Zwischenablage</value>
+    <value>Clipboardüberwachung</value>
   </data>
   <data name="сдуфкClipboardToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>212, 22</value>
@@ -1269,13 +1269,13 @@ Clip-Datei mit Standardanwendung öffnen.
     <value>Verwendet</value>
   </data>
   <data name="toolStripButtonFindPrevious.ToolTipText" xml:space="preserve">
-    <value>Vorherige Übereinstimmung in Clip-Text finden (UMSCHALT+F3)</value>
+    <value>Vorigen Treffer im Clip-Text finden (UMSCHALT+F3)</value>
   </data>
   <data name="TypeFilter.Location" xml:space="preserve" type="System.Drawing.Point, System.Drawing">
     <value>84, 395</value>
   </data>
   <data name="toolStripMenuItemSearchCaseSensitive.Text" xml:space="preserve">
-    <value>Unterscheidung nach \r\nGroß-/Kleinschreibung</value>
+    <value>Groß-/Kleinschreibung beachten</value>
   </data>
   <data name="notifyIcon.Text" xml:space="preserve">
     <value>ClipAngel</value>
@@ -1290,7 +1290,7 @@ Clip-Datei mit Standardanwendung öffnen.
     <value>Gesamten Text kopieren</value>
   </data>
   <data name="toolStripButtonClearFilterAndSelectTop.ToolTipText" xml:space="preserve">
-    <value>Filter löschen und Oben auswählen (F9)</value>
+    <value>Filter löschen + zum obersten Eintrag (F9)</value>
   </data>
   <data name="listToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>37, 20</value>
@@ -1350,7 +1350,7 @@ Clip-Datei mit Standardanwendung öffnen.
     <value>23, 22</value>
   </data>
   <data name="moveDownToolStripMenuItem.Text" xml:space="preserve">
-    <value>Nach unten</value>
+    <value>Abwärts</value>
   </data>
   <data name="TypeFilter.Font" xml:space="preserve" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 9pt</value>
@@ -1381,7 +1381,7 @@ Untermenü "Liste" enthält Befehle zur schnellen Auswahl</value>
     <value>Magenta</value>
   </data>
   <data name="toolStripMenuItem6.Text" xml:space="preserve">
-    <value>Text einfügen (STRG+EINGABE)</value>
+    <value>Text einfügen (Strg+Eingabe)</value>
   </data>
   <data name="urlTextBox.Location" xml:space="preserve" type="System.Drawing.Point, System.Drawing">
     <value>2, 345</value>
@@ -1435,7 +1435,7 @@ Untermenü "Liste" enthält Befehle zur schnellen Auswahl</value>
     <value>TypeImg</value>
   </data>
   <data name="toolStripMenuItem15.Text" xml:space="preserve">
-    <value>Text einfügen (STRG+EINGABE)</value>
+    <value>Text einfügen (Strg+Eingabe)</value>
   </data>
   <data name="toolStripBottom.Dock" xml:space="preserve" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>None</value>
@@ -1471,7 +1471,7 @@ Untermenü "Liste" enthält Befehle zur schnellen Auswahl</value>
     <value>17</value>
   </data>
   <data name="toolStripMenuItemClearFilterAndSelectTop.Text" xml:space="preserve">
-    <value>Filter löschen und Oben auswählen</value>
+    <value>Filter löschen + obersten Clip wählen</value>
   </data>
   <data name="aboutToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>52, 20</value>
@@ -1504,7 +1504,7 @@ Untermenü "Liste" enthält Befehle zur schnellen Auswahl</value>
     <value>78, 23</value>
   </data>
   <data name="pasteAsTextToolStripMenuItem.Text" xml:space="preserve">
-    <value>Text einfügen (STRG+EINGABE)</value>
+    <value>Text einfügen (Strg+Eingabe)</value>
   </data>
   <data name="toolStripButtonFindNext.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>23, 22</value>
@@ -2060,13 +2060,13 @@ Untermenü "Liste" enthält Befehle zur schnellen Auswahl</value>
     <value>0, 398</value>
   </data>
   <data name="aboutToolStripMenuItem1.Text" xml:space="preserve">
-    <value>Über</value>
+    <value>Über ClipAngel</value>
   </data>
   <data name="toolStripButtonWordWrap.ImageTransparentColor" xml:space="preserve" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
   </data>
   <data name="clipToolStripMenuItem.Text" xml:space="preserve">
-    <value>Ausschneiden</value>
+    <value>Clip</value>
   </data>
   <data name="htmlTextBox.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>406, 92</value>
@@ -2096,7 +2096,7 @@ Untermenü "Liste" enthält Befehle zur schnellen Auswahl</value>
     <value>329, 3</value>
   </data>
   <data name="toolStripMenuItemSearchWordsIndependently.Text" xml:space="preserve">
-    <value>Individuelle Wörter</value>
+    <value>Eigenständige Wörter</value>
   </data>
   <data name="toolStripButtonFindNext.ImageTransparentColor" xml:space="preserve" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
@@ -2172,7 +2172,7 @@ Untermenü "Liste" enthält Befehle zur schnellen Auswahl</value>
 </value>
   </data>
   <data name="MarkFilter.Items3" xml:space="preserve">
-    <value>IMG </value>
+    <value>Bild </value>
   </data>
   <data name="toolStripWindowTitleCopyAll.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>139, 22</value>
@@ -2196,7 +2196,7 @@ Untermenü "Liste" enthält Befehle zur schnellen Auswahl</value>
     <value>Datei</value>
   </data>
   <data name="TypeFilter.Items3" xml:space="preserve">
-    <value>IMG</value>
+    <value>Bild</value>
   </data>
   <data name="MarkFilter.Location" xml:space="preserve" type="System.Drawing.Point, System.Drawing">
     <value>3, 395</value>
@@ -2217,7 +2217,7 @@ Untermenü "Liste" enthält Befehle zur schnellen Auswahl</value>
     <value>Favoriten öffnen</value>
   </data>
   <data name="trayMenuItemMonitoringClipboard.Text" xml:space="preserve">
-    <value>Überwachung der Zwischenablage</value>
+    <value>Clipboardüberwachung</value>
   </data>
   <data name="TypeFilter.Anchor" xml:space="preserve" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
@@ -2278,13 +2278,13 @@ Ignorierliste hinzugefügt. Diese kann in den "Einstellungen" bearbeitet werden.
     <value>None</value>
   </data>
   <data name="toolStripButtonFindNext.ToolTipText" xml:space="preserve">
-    <value>Nächste Übereinstimmung im Clip-Text finden (F3)</value>
+    <value>Nächsten Treffer im Clip-Text finden (F3)</value>
   </data>
   <data name="toolStripButtonMonospacedFont.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>23, 22</value>
   </data>
   <data name="toolStripMenuItem3.Text" xml:space="preserve">
-    <value>Text einfügen (STRG+EINGABE)</value>
+    <value>Text einfügen (Strg+Eingabe)</value>
   </data>
   <data name="pictureBoxSource.SizeMode" xml:space="preserve" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>CenterImage</value>
@@ -2323,7 +2323,7 @@ Ignorierliste hinzugefügt. Diese kann in den "Einstellungen" bearbeitet werden.
     <value>408, 22</value>
   </data>
   <data name="aboutToolStripMenuItem.Text" xml:space="preserve">
-    <value>Über</value>
+    <value>Über ClipAngel</value>
   </data>
   <metadata name="ImageSample.UserAddedColumn" xml:space="preserve" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -2413,7 +2413,7 @@ Ignorierliste hinzugefügt. Diese kann in den "Einstellungen" bearbeitet werden.
     <value>Link öffnen (ALT+Klick)</value>
   </data>
   <data name="pasteTextToolStripMenuItem.Text" xml:space="preserve">
-    <value>Text einfügen (STRG+EINGABE)</value>
+    <value>Text einfügen (Strg+Eingabe)</value>
   </data>
   <data name="pasteTextToolStripMenuItem.ToolTipText" xml:space="preserve">
     <value>Fügen Sie im aktiven Fenster den ausgewählten Text des Clips als Klarext ein oder verbundenen Text  ausgewählter Clips.</value>
@@ -2482,13 +2482,13 @@ Ignorierliste hinzugefügt. Diese kann in den "Einstellungen" bearbeitet werden.
     <value>Nichtproportionale Schrift</value>
   </data>
   <data name="moveCopiedClipToTopToolStripButton.Text" xml:space="preserve">
-    <value>Nach Gebrauch nach oben verschieben</value>
+    <value>Nach Nutzung an erste Stelle schieben</value>
   </data>
   <data name="toolStripMenuItem19.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>234, 6</value>
   </data>
   <data name="sortByDefaultToolStripMenuItem.Text" xml:space="preserve">
-    <value>Standardmäßig sortieren</value>
+    <value>Standardsortierung</value>
   </data>
   <data name="sortByVisualSizeToolStripMenuItem.Text" xml:space="preserve">
     <value>Nach visueller Größe sortieren</value>
@@ -2514,7 +2514,7 @@ Die Sortierung wird bis zur Clip-Erfassung beibehalten.</value>
     <value>183, 22</value>
   </data>
   <data name="toolStripMenuItem20.Text" xml:space="preserve">
-    <value>Sortieren nach Dateigröße (Bytes)</value>
+    <value>Nach Dateigröße (Bytes) sortieren</value>
   </data>
   <data name="toolStripMenuItem20.ToolTipText" xml:space="preserve">
     <value>Nützlich zum Entfernen großer Clips, die die Datenbankgröße erheblich beeinflussen.
@@ -2524,7 +2524,7 @@ Die Sortierung wird bis zur Clip-Erfassung beibehalten.</value>
     <value>237, 22</value>
   </data>
   <data name="toolStripMenuItemSecondaryColumns.Text" xml:space="preserve">
-    <value>Sekundäre Spalten</value>
+    <value>Sekundär-Spalten</value>
   </data>
   <data name="toolStripMenuItem22.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>234, 6</value>
@@ -2539,7 +2539,7 @@ Die Sortierung wird bis zur Clip-Erfassung beibehalten.</value>
     <value>23, 22</value>
   </data>
   <data name="toolStripButtonSecondaryColumns.Text" xml:space="preserve">
-    <value>Sekundäre Spalten</value>
+    <value>Sekundär-Spalten</value>
   </data>
   <data name="ColumnCreated.HeaderText" xml:space="preserve">
     <value>Erstellt</value>
@@ -2626,7 +2626,7 @@ Die Sortierung wird bis zur Clip-Erfassung beibehalten.</value>
     <value>Die letzten Clips öffnen</value>
   </data>
   <data name="pasteLineToolStripMenuItem.Text" xml:space="preserve">
-    <value>Zeile einfügen (STRG+UMSCHALT+EINGABE)</value>
+    <value>Zeile einfügen (Strg+Umschalt+Eingabe)</value>
   </data>
   <data name="pasteLineToolStripMenuItem.ToolTipText" xml:space="preserve">
     <value>Im aktiven Fenster ausgewählten Klarext ohne Zeilenumbrüche und nicht-druckbarer Zeichen einfügen.</value>
@@ -2635,7 +2635,7 @@ Die Sortierung wird bis zur Clip-Erfassung beibehalten.</value>
     <value>221, 22</value>
   </data>
   <data name="toolStripMenuItem24.Text" xml:space="preserve">
-    <value>Zeile einfügen (STRG+UMSCHALT+EINGABE)</value>
+    <value>Zeile einfügen (Strg+Umschalt+Eingabe)</value>
   </data>
   <data name="toolStripMenuItem24.ToolTipText" xml:space="preserve">
     <value>Im aktiven Fenster ausgewählten Klarext ohne Zeilenumbrüche und nicht-druckbarer Zeichen einfügen.</value>
@@ -2674,7 +2674,7 @@ Die Sortierung wird bis zur Clip-Erfassung beibehalten.</value>
     <value>237, 22</value>
   </data>
   <data name="gotoTopToolStripMenuItem.Text" xml:space="preserve">
-    <value>Wähle Oben                  STRG+POS1</value>
+    <value>Oberster Eintrag                  Strg+Pos1</value>
   </data>
   <data name="gotoTopToolStripMenuItem.ToolTipText" xml:space="preserve">
     <value>Obersten (letzten) Clip auswählen</value>
@@ -2683,7 +2683,7 @@ Die Sortierung wird bis zur Clip-Erfassung beibehalten.</value>
     <value>Bottom, Left, Right</value>
   </data>
   <data name="comboBoxSearchString.CueText" xml:space="preserve">
-    <value>In Liste eingeben</value>
+    <value>Suchbegriff</value>
   </data>
   <data name="comboBoxSearchString.Font" xml:space="preserve" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 9pt</value>
@@ -2711,19 +2711,19 @@ Bearbeite den Suchstring direkt aus der Liste. Navigiere in der Liste direkt aus
     <value>237, 22</value>
   </data>
   <data name="NextMatchListMenuItem.Text" xml:space="preserve">
-    <value>Nächstes finden</value>
+    <value>Nächsten Treffer finden</value>
   </data>
   <data name="NextMatchListMenuItem.ToolTipText" xml:space="preserve">
-    <value>Finde nächste Übereinstimmung in der Liste</value>
+    <value>Finde nächsten Treffer in der Liste</value>
   </data>
   <data name="PreviousMatchListMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>237, 22</value>
   </data>
   <data name="PreviousMatchListMenuItem.Text" xml:space="preserve">
-    <value>Voriges finden</value>
+    <value>Vorigen Treffer finden</value>
   </data>
   <data name="PreviousMatchListMenuItem.ToolTipText" xml:space="preserve">
-    <value>Finde vorige Übereinstimmung in der Liste</value>
+    <value>Finde vorigen Treffer in der Liste</value>
   </data>
   <data name="NextMatchTextMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>F3</value>
@@ -2732,10 +2732,10 @@ Bearbeite den Suchstring direkt aus der Liste. Navigiere in der Liste direkt aus
     <value>214, 22</value>
   </data>
   <data name="NextMatchTextMenuItem.Text" xml:space="preserve">
-    <value>Nächstes finden</value>
+    <value>Nächsten Treffer finden</value>
   </data>
   <data name="NextMatchTextMenuItem.ToolTipText" xml:space="preserve">
-    <value>Nächste Übereinstimmung im Clip-Text finden (F3)</value>
+    <value>Nächsten Treffer im Clip-Text finden (F3)</value>
   </data>
   <data name="PreviousMatchTextMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Shift+F3</value>
@@ -2744,10 +2744,10 @@ Bearbeite den Suchstring direkt aus der Liste. Navigiere in der Liste direkt aus
     <value>214, 22</value>
   </data>
   <data name="PreviousMatchTextMenuItem.Text" xml:space="preserve">
-    <value>Voriges finden</value>
+    <value>Vorigen Treffer finden</value>
   </data>
   <data name="PreviousMatchTextMenuItem.ToolTipText" xml:space="preserve">
-    <value>Vorige Übereinstimmung im Clip-Text finden (UMSCHALT+F3)</value>
+    <value>Vorigen Treffer im Clip-Text finden (UMSCHALT+F3)</value>
   </data>
   <data name="autoselectMatchedClipMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>209, 22</value>

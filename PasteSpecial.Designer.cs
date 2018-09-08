@@ -91,6 +91,7 @@
             // 
             // groupBox1
             // 
+            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Controls.Add(this.CaseNoChange);
             this.groupBox1.Controls.Add(this.FromCamelCase);
             this.groupBox1.Controls.Add(this.LowerCamelCase);
@@ -98,7 +99,6 @@
             this.groupBox1.Controls.Add(this.SentenceCase);
             this.groupBox1.Controls.Add(this.AllUpperCase);
             this.groupBox1.Controls.Add(this.AllLowerCase);
-            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.TabStop = false;
             toolTip1.SetToolTip(this.groupBox1, resources.GetString("groupBox1.ToolTip"));
@@ -109,6 +109,7 @@
             this.CaseNoChange.Checked = true;
             this.CaseNoChange.Name = "CaseNoChange";
             this.CaseNoChange.TabStop = true;
+            toolTip1.SetToolTip(this.CaseNoChange, resources.GetString("CaseNoChange.ToolTip"));
             this.CaseNoChange.UseVisualStyleBackColor = true;
             this.CaseNoChange.CheckedChanged += new System.EventHandler(this.CaseNoChange_CheckedChanged);
             // 
@@ -156,6 +157,7 @@
             resources.ApplyResources(this.buttonCancel, "buttonCancel");
             this.buttonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.buttonCancel.Name = "buttonCancel";
+            toolTip1.SetToolTip(this.buttonCancel, resources.GetString("buttonCancel.ToolTip"));
             this.buttonCancel.UseVisualStyleBackColor = true;
             // 
             // buttonOK
@@ -163,6 +165,7 @@
             resources.ApplyResources(this.buttonOK, "buttonOK");
             this.buttonOK.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.buttonOK.Name = "buttonOK";
+            toolTip1.SetToolTip(this.buttonOK, resources.GetString("buttonOK.ToolTip"));
             this.buttonOK.UseVisualStyleBackColor = true;
             this.buttonOK.Click += new System.EventHandler(this.buttonOK_Click);
             // 
@@ -170,6 +173,7 @@
             // 
             resources.ApplyResources(this.ReplaceEOL, "ReplaceEOL");
             this.ReplaceEOL.Name = "ReplaceEOL";
+            toolTip1.SetToolTip(this.ReplaceEOL, resources.GetString("ReplaceEOL.ToolTip"));
             this.ReplaceEOL.UseVisualStyleBackColor = true;
             this.ReplaceEOL.CheckedChanged += new System.EventHandler(this.checkBoxReplaceEOL_CheckedChanged);
             // 
@@ -177,6 +181,7 @@
             // 
             resources.ApplyResources(this.checkBoxPasteIntoNewClip, "checkBoxPasteIntoNewClip");
             this.checkBoxPasteIntoNewClip.Name = "checkBoxPasteIntoNewClip";
+            toolTip1.SetToolTip(this.checkBoxPasteIntoNewClip, resources.GetString("checkBoxPasteIntoNewClip.ToolTip"));
             this.checkBoxPasteIntoNewClip.UseVisualStyleBackColor = true;
             // 
             // richTextBox1
@@ -184,16 +189,19 @@
             resources.ApplyResources(this.richTextBox1, "richTextBox1");
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.ReadOnly = true;
+            toolTip1.SetToolTip(this.richTextBox1, resources.GetString("richTextBox1.ToolTip"));
             // 
             // label1
             // 
             resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
+            toolTip1.SetToolTip(this.label1, resources.GetString("label1.ToolTip"));
             // 
             // checkBoxReplaceTabWithSpaces
             // 
             resources.ApplyResources(this.checkBoxReplaceTabWithSpaces, "checkBoxReplaceTabWithSpaces");
             this.checkBoxReplaceTabWithSpaces.Name = "checkBoxReplaceTabWithSpaces";
+            toolTip1.SetToolTip(this.checkBoxReplaceTabWithSpaces, resources.GetString("checkBoxReplaceTabWithSpaces.ToolTip"));
             this.checkBoxReplaceTabWithSpaces.UseVisualStyleBackColor = true;
             this.checkBoxReplaceTabWithSpaces.CheckedChanged += new System.EventHandler(this.checkBoxReplaceTabWithSpaces_CheckedChanged);
             // 
@@ -217,6 +225,7 @@
             this.Name = "PasteSpecial";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
+            toolTip1.SetToolTip(this, resources.GetString("$this.ToolTip"));
             this.Load += new System.EventHandler(this.SpecialPaste_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

@@ -19,13 +19,13 @@
     <value>Täglich nach Programmstart auf Updates prüfen</value>
   </data>
   <data name="AutoSelectMatch" xml:space="preserve">
-    <value>Autom. erste Übereinsimmung wählen</value>
+    <value>Autom. ersten Treffer wählen</value>
   </data>
   <data name="AutoSelectMatchDescription" xml:space="preserve">
-    <value>Autom. erste Übereinstimmung mit Suchbegriff im Cliptext auswählen</value>
+    <value>Autom. ersten Treffer mit Suchbegriff im Cliptext auswählen</value>
   </data>
   <data name="Autostart" xml:space="preserve">
-    <value>Autom. Programmstart bei Benutzeranmeldung</value>
+    <value>Autom. starten bei Benutzeranmeldung</value>
   </data>
   <data name="AutostartDescription" xml:space="preserve">
     <value></value>
@@ -59,8 +59,7 @@
     <value>Text aus jedem Fenster kopieren mit Strg+F3</value>
   </data>
   <data name="CopyTextInAnyWindowOnCTRLF3Description" xml:space="preserve">
-    <value>Mit Strg+F3 markierten Text aus jedem Fenster kopieren. Dieser Hotkey wird normalerweise in Texteditoren verwendet, um die ausgewählte Zeichenfolge zu suchen
-Tastendruck wird vom Fenster verarbeitet. </value>
+    <value>Mit Strg+F3 markierten Text aus jedem Fenster kopieren. Wird normalerweise in Texteditoren verwendet, um ausgewählte Zeichenfolge zu suchen. Tastendruck wird vom Fenster verarbeitet. </value>
   </data>
   <data name="CurrentPath" xml:space="preserve">
     <value>Aktueller Startpfad der Anwendung</value>
@@ -90,10 +89,10 @@ Tastendruck wird vom Fenster verarbeitet. </value>
     <value>Verwenden Sie diesen Hotkey in beliebigem Programm, um eine Anwendung zum Vergleichen der letzten beiden Clips zu starten</value>
   </data>
   <data name="GlobalHotkeyIncrementalPaste" xml:space="preserve">
-    <value>Hotkey zum Einfügen und Auswahl des nächsten</value>
+    <value>Hotkey zum Einfügen + zum nächsten Clip</value>
   </data>
   <data name="GlobalHotkeyIncrementalPasteDescription" xml:space="preserve">
-    <value>Verwenden Sie diesen Hotkey in einem beliebigen Programm, um den aktuellen Clip einzufügen und wählen den nächsten/oberen Clip, der in der QuickInfo angezeigt wird</value>
+    <value>Verwenden Sie diesen Hotkey in einem beliebigen Programm, um den aktuellen Clip einzufügen und den nächsten/oberen Clip auszuwählen, der in der QuickInfo angezeigt wird</value>
   </data>
   <data name="GlobalHotkeyOpenCurrent" xml:space="preserve">
     <value>Hotkey zum Öffnen des unveränderten Fensters</value>
@@ -108,7 +107,7 @@ Tastendruck wird vom Fenster verarbeitet. </value>
     <value>Verwenden Sie diesen Hotkey in einem beliebigen Programm, um das Favoritenfenster anzuzeigen. Erneut drücken, um es zu schließen.</value>
   </data>
   <data name="GlobalHotkeyOpenLast" xml:space="preserve">
-    <value>Hotkey zum Öffnen des Fensters mit Reset</value>
+    <value>Hotkey zum Öffnen des Fensters mit Filterreset</value>
   </data>
   <data name="GlobalHotkeyOpenLastDescription" xml:space="preserve">
     <value>Verwenden Sie diesen Hotkey in einem beliebigen Programm, um das Clipfenster zu öffnen, Filter zu löschen und den letzten Clip auszuwählen. Erneut drücken, um das Fenster zu schließen.</value>
@@ -120,13 +119,14 @@ Tastendruck wird vom Fenster verarbeitet. </value>
     <value>Verwenden Sie diesen Hotkey in einem beliebigen Programm, um den letzten Clip als unformatierten Text einzufügen</value>
   </data>
   <data name="HistoryDepthDays" xml:space="preserve">
-    <value>Aufbewahrung, Frist in Tagen</value>
+    <value>Historientiefe: Haltezeit in Tagen</value>
   </data>
   <data name="HistoryDepthDaysDescription" xml:space="preserve">
-    <value>Maximale Anzahl von Tagen, die normale Clips aufbewahrt werden. Löschung gemäß Einstellung täglich beim Start. 0 = nicht löschen.</value>
+    <value>Maximale Anzahl von Tagen, die normale Clips aufbewahrt werden. Löschung gemäß Einstellung täglich beim Start. 
+0 = nicht löschen.</value>
   </data>
   <data name="HistoryDepthNumber" xml:space="preserve">
-    <value>Aufbewahrung, Anzahl</value>
+    <value>Historientiefe: Clip-Anzahl</value>
   </data>
   <data name="HistoryDepthNumberDescription" xml:space="preserve">
     <value>Maximale Anzahl, die normale Clips aufbewahrt werden. Löschung gemäß Einstellung täglich beim Start. 0 = nicht löschen.
@@ -134,7 +134,7 @@ Tastendruck wird vom Fenster verarbeitet. </value>
 </value>
   </data>
   <data name="HtmlEditor" xml:space="preserve">
-    <value>HTML-Editor Anwendung</value>
+    <value>Anwendung für Bearbeitung von HTML</value>
   </data>
   <data name="HtmlEditorDescription" xml:space="preserve">
     <value>Wird für Clips beim "Datei öffnen" Befehl verwendet . Leer lassen, um die Standardanwendung zu verwenden.</value>
@@ -146,10 +146,11 @@ Tastendruck wird vom Fenster verarbeitet. </value>
     <value>Aus dieser Anwendung keine Clips erfassen</value>
   </data>
   <data name="IgnoreExclusiveFormatClipCapture" xml:space="preserve">
-    <value>Format "Zwischenablage-Viewer ignorieren" nicht erfassen</value>
+    <value>"Clipboard-Viewer Ignorieren"-Format nicht erfassen</value>
   </data>
   <data name="IgnoreExclusiveFormatClipCaptureDescription" xml:space="preserve">
-    <value>Mit aktivem "Zwischenablage-Viewer ignorieren" werden Clips nicht erfasst. Dieses Format wird in der Regel durch Passwortmanager verwendet, wenn Passwörter in die Zwischenablage kopiert werden. Manchmal ist es nützlich, dies temporär AUS zu schalten.</value>
+    <value>Clips mit aktivem "Clipboard-Viewer-Ignorieren"-Format werde nicht erfasst.
+Dieses Format wird in der Regel durch Passwortmanager verwendet, wenn Passwörter kopiert werden. Manchmal ist es nützlich, dies temporär AUS zu schalten.</value>
   </data>
   <data name="ImageEditor" xml:space="preserve">
     <value>Anwendung für Bildbearbeitung (PNG)</value>
@@ -164,7 +165,7 @@ Tastendruck wird vom Fenster verarbeitet. </value>
     <value>Sprache der Benutzeroberfläche</value>
   </data>
   <data name="MaxClipSizeKB" xml:space="preserve">
-    <value>Max. Clip-Größe in kB</value>
+    <value>max. Clip-Größe in kB</value>
   </data>
   <data name="MaxClipSizeKBDescription" xml:space="preserve">
     <value>Größere Clips werden nicht erfasst</value>
@@ -173,12 +174,11 @@ Tastendruck wird vom Fenster verarbeitet. </value>
     <value>Nichtproportionale Schrift</value>
   </data>
   <data name="MonospacedFontDescription" xml:space="preserve">
-    <value>Nichtproportionale Schrift im Clip-Textfeld. 
-Könnte aber native RTF-Formatierung enthalten. 
-Betrifft aber nicht native HTML-Formatierung.</value>
+    <value>Nichtproportionale Schrift im Clip-Textfeld. Könnte aber native RTF-Formatierung enthalten. 
+Native HTML-Formatierung ist nicht betroffen.</value>
   </data>
   <data name="MoveCopiedClipToTop" xml:space="preserve">
-    <value>Clips nach Gebrauch nach oben schieben</value>
+    <value>Nach Nutzung Clip nach oben schieben</value>
   </data>
   <data name="MoveCopiedClipToTopDescription" xml:space="preserve">
     <value>Verschiebe kopierte Clips oder vollständig eingefügte Clips an den Anfang der Liste</value>
@@ -196,10 +196,10 @@ Betrifft aber nicht native HTML-Formatierung.</value>
     <value>Aktivieren, um zu versuchen, die Position der Einfügemarke nach dem Rücksprung an das Zielfenster wiederherzustellen. Dies ist nützlich für Textfelder, die nach Fokusverlust den gesamten Text auswählen</value>
   </data>
   <data name="RtfEditor" xml:space="preserve">
-    <value>RTF-Editor Anwendung</value>
+    <value>Anwendung zur Bearbeitung von RTF</value>
   </data>
   <data name="RtfEditorDescription" xml:space="preserve">
-    <value>Wird für den Clip im "Datei öffnen" Befehl verwendet. Leer lassen, die Standardanwendung zu verwenden.</value>
+    <value>Wird für den Clip im "Datei öffnen" Befehl verwendet. Leer lassen, um die Standardanwendung zu verwenden.</value>
   </data>
   <data name="SearchCaseSensitive" xml:space="preserve">
     <value>Schreibungsabhängige Suche</value>
@@ -211,10 +211,10 @@ Betrifft aber nicht native HTML-Formatierung.</value>
     <value>Suche "%" als beliebige Zeichenfolge</value>
   </data>
   <data name="SearchWildcardsDescription" xml:space="preserve">
-    <value>Suche Zeichen "%" aus dem Filter als beliebige Zeichenfolge. Der Filter "La%so" beispielsweise findet Übereinstimmung mit "Lasso". </value>
+    <value>Suchzeichen "%" in Filter steht für beliebige Zeichenfolge. Filter "La%so" findet z.B. Übereinstimmung mit "Lasso". </value>
   </data>
   <data name="SearchWordsIndependently" xml:space="preserve">
-    <value>Suche nach unabhängigen Wörtern</value>
+    <value>Suche nach eigenständigen Wörtern</value>
   </data>
   <data name="SearchWordsIndependentlyDescription" xml:space="preserve">
     <value>Jedes Wort im Filter unabhängig suchen . Beispielsweise wird "Bert Vier" als Treffer "Herbert spielt Klavier" ausweisen. </value>
@@ -232,7 +232,7 @@ Betrifft aber nicht native HTML-Formatierung.</value>
     <value>Native Textformatierung für RTF- und HTML-Clips anzeigen (Strg + N)</value>
   </data>
   <data name="ShowSizeColumn" xml:space="preserve">
-    <value>Spalte mit Wichtung visueller Clips anzeigen</value>
+    <value>Spalte mit der Wichtung visueller Clips anzeigen</value>
   </data>
   <data name="ShowSizeColumnDescription" xml:space="preserve">
     <value>Spalte zeigt visuelle Wichtung des Clips (Anzahl der Ziffern in der sichtbaren Größe)</value>
@@ -268,7 +268,7 @@ DiffMerge, Kdiff3 zu suchen. Befehl für Textvergleich ist %application% %file1%
     <value>Zeilenumbruch</value>
   </data>
   <data name="WordWrapDescription" xml:space="preserve">
-    <value>Zeilenumbruch in Textfeld Clip (STRG + W)</value>
+    <value>Zeilenumbruch in Textfeld Clip (Strg + W)</value>
   </data>
   <data name="PlaySoundOnClipCapture" xml:space="preserve">
     <value>Ton abspielen beim Clip-Erfassen</value>
@@ -280,22 +280,21 @@ DiffMerge, Kdiff3 zu suchen. Befehl für Textvergleich ist %application% %file1%
     <value>Datenbankdatei</value>
   </data>
   <data name="DatabaseFileDescription" xml:space="preserve">
-    <value>Sie können den Namen der Datenbank ändern, um in einen anderen Zwischenablageverlauf zu wechseln.
-Feld leer lassen, um die Standarddatenbank "db.sqlite" im Ordner zu verwenden. wie in den Einstellungen festgelegt.</value>
+    <value>Sie können den Namen der Datenbank ändern, um in einen anderen Ablageverlauf zu wechseln. 
+Feld leer lassen, um die Standarddatenbank "db.sqlite" im Ordner zu verwenden. </value>
   </data>
   <data name="MaxCellsToCaptureFormattedText" xml:space="preserve">
-    <value>Max. Anzahl Zellen für formatierten Text</value>
+    <value>max. Anzahl Zellen für formatierten Text</value>
   </data>
   <data name="MaxCellsToCaptureFormattedTextDescription" xml:space="preserve">
-    <value>Beim Erfassen eines Clips aus Excel-Zellen wird formatierter Text nur erfasst, wenn die Anzahl der Zellen geringer ist als hier.  0 - nicht erfassen.
-Die Generierung von formatiertem Text belastet die CPU. Bei hoher CPU-Last legen Sie einen niedrigeren Wert fest.</value>
+    <value>Beim Erfassen von Clips aus Excel-Zellen wird formatierter Text nur erfasst, wenn Zellenanzahl geringer ist als hier.  0 - nicht erfassen. Die Generierung formatierten Textes erzeugt CPU-Last. Bei zu hoher, niedrigeren Wert festlegen.</value>
   </data>
   <data name="MaxCellsToCaptureImage" xml:space="preserve">
-    <value>Max. Anzahl Zellen für Bilder</value>
+    <value>max. Anzahl Zellen für Bilder</value>
   </data>
   <data name="MaxCellsToCaptureImageDescription" xml:space="preserve">
-    <value>Beim Erfassen eines Clips aus Excel-Zellen wird ein generiertes Bild nur erfasst, wenn die Anzahl der Zellen geringer ist als hier.  0 - nicht erfassen.
-Die Generierung von Bildern belastet die CPU. Bei hoher CPU-Last legen Sie einen niedrigeren Wert fest.</value>
+    <value>Beim Erfassen von Clips aus Excel-Zellen werden generierte Bilder nur erfasst, wenn Zellenanzahl kleiner ist als hier.  0 - nicht erfassen.
+Die Generierung von Bildern erzeugt CPU-Last. Bei zu hoher, niedrigeren Wert festlegen.</value>
   </data>
   <data name="ShowSecondaryColumns" xml:space="preserve">
     <value>Zweite Spalte anzeigen</value>
@@ -316,10 +315,10 @@ Die Generierung von Bildern belastet die CPU. Bei hoher CPU-Last legen Sie einen
     <value>Lese Fenstertitel aus Clip-Quellen. Deaktivieren Sie diese Einstellung, um Programmabstürze auf einigen Systemen zu vermeiden.</value>
   </data>
   <data name="GlobalHotkeySwitchMonitoring" xml:space="preserve">
-    <value>Hotkey zum Umschalten der Zwischenablageüberwachung</value>
+    <value>Hotkey zum Umschalten der Clipboardüberwachung</value>
   </data>
   <data name="GlobalHotkeySwitchMonitoringDescription" xml:space="preserve">
-    <value>Verwenden Sie diesen Hotkey in einem beliebigen Programm, um die Überwachung der Zwischenablage (Erfassen von Änderungen) umzuschalten.</value>
+    <value>Hotkey gilt in beliebigem Programm, um die Clipboardüberwachung (Erfassen von Änderungen) umzuschalten.</value>
   </data>
   <data name="UseFormattingInDuplicateDetection" xml:space="preserve">
     <value>Formatierung verwenden bei Duplikaterkennung</value>
@@ -346,10 +345,10 @@ Die Generierung von Bildern belastet die CPU. Bei hoher CPU-Last legen Sie einen
     <value>Setzen Sie das NTFS-Verschlüsselungskennzeichen in der Datenbankdatei. Nur der aktuelle Windows-Benutzer kann sie lesen.</value>
   </data>
   <data name="Max1CCodeSizeToColorize" xml:space="preserve">
-    <value>Max. 1C Codegröße zum Kolorieren</value>
+    <value>Max 1C Codegröße zum Kolorieren</value>
   </data>
   <data name="Max1CCodeSizeToColorizeDescription" xml:space="preserve">
-    <value>Max. 1C (russ. Programmierplattform) Codegröße in Zeichen, um Syntax zu kolorieren. Die Erfassung von 1C-Code wird anhand des fokussierten Fenstertyps erkannt. 0 = nicht kolorieren</value>
+    <value>Max 1C (russ. Programmierplattform) Codegröße in Zeichen, um Syntax zu kolorieren. Die Erfassung von 1C-Code wird anhand des fokussierten Fenstertyps erkannt. 0 = nicht kolorieren</value>
   </data>
   <data name="AutoSelectMatchedClip" xml:space="preserve">
     <value>Autom. übereinstimmende Clips auswählen</value>
