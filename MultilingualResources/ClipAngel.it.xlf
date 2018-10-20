@@ -1561,8 +1561,8 @@ La generazione dell'immagine consuma risorse della CPU. Se verifichi problemi di
           <target state="translated">La cattura non è stata effettuata a causa di un errore nella lettura degli Appunti</target>
         </trans-unit>
         <trans-unit id="VersionValue" translate="yes" xml:space="preserve">
-          <source>1.61</source>
-          <target state="new">1.61</target>
+          <source>1.63</source>
+          <target state="new">1.63</target>
         </trans-unit>
         <trans-unit id="TargetWindow" translate="yes" xml:space="preserve">
           <source>Target window</source>
@@ -8688,10 +8688,6 @@ Trailing unprintable symbols are deleted.</target>
         <trans-unit id="FromCamelCase.ToolTip" translate="yes" xml:space="preserve">
           <source>Split words by capital letters and put them lower case.</source>
           <target state="new">Split words by capital letters and put them lower case.</target>
-        </trans-unit>
-        <trans-unit id="$this.Language" translate="yes" xml:space="preserve" extype="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" extradata="metadata">
-          <source>de</source>
-          <target state="needs-review-translation">de</target>
         </trans-unit>
         <trans-unit id="checkBoxPasteIntoNewClip.ToolTip" translate="yes" xml:space="preserve">
           <source></source>

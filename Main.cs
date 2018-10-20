@@ -2038,7 +2038,7 @@ namespace ClipAngel
                             negativeScore++;
                     }
                     if (false
-                        || negativeScore == 0 && is1C
+                        || negativeScore == 0 && is1C && textLines.Length > 1
                         || negativeScore == 0 && positiveScore > 1
                         || negativeScore > 0 && positiveScore > negativeScore)
                     {
@@ -5213,7 +5213,7 @@ namespace ClipAngel
             Process.Start(Properties.Resources.HelpPage);
         }
 
-        private void copyClipToolStripMenuItem_Click(object sender, EventArgs e)
+        private void copyClipToolStripMenuItem_Click(object sender = null, EventArgs e = null)
         {
             CopyClipToClipboard(null, false, Properties.Settings.Default.MoveCopiedClipToTop);
         }
@@ -5363,6 +5363,11 @@ namespace ClipAngel
                 {
                     dataGridView.Rows[i].Selected = true;
                 }
+            }
+            else if (e.KeyCode == Keys.Insert && e.Control)
+            {
+                e.Handled = true;
+                copyClipToolStripMenuItem_Click();
             }
         }
 

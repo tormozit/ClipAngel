@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Diagnostics;
 using System.Resources;
 using Microsoft.Win32.SafeHandles;
+using System.Security.Permissions;
 
 namespace ClipAngel
 {
@@ -89,6 +90,7 @@ namespace ClipAngel
                     Application.EnableVisualStyles();
                     Application.SetCompatibleTextRenderingDefault(false);
                     Main Main = new Main(UserSettingsPath, PortableMode, args.Contains("/m"));
+                    Application.AddMessageFilter(new TestMessageFilter());
                     Application.Run(Main);
                     Properties.Settings.Default.Save();
                 }
@@ -163,6 +165,21 @@ namespace ClipAngel
                 }
             } while (pLast != IntPtr.Zero);
             return pLast;
+        }
+
+        // To support exit by taskkill signal http://qaru.site/questions/1648501/windows-application-handle-taskkill
+        [SecurityPermission(SecurityAction.LinkDemand, Flags = SecurityPermissionFlag.UnmanagedCode)]
+        private class TestMessageFilter : IMessageFilter
+        {
+            public bool PreFilterMessage(ref Message m)
+            {
+                if (m.Msg == /*WM_CLOSE*/ 0x10)
+                {
+                    Application.Exit();
+                    return true;
+                }
+                return false;
+            }
         }
     }
 }

@@ -292,7 +292,4 @@ Nachlaufende nicht druckbare Symbole werden gelöscht.</value>
   <data name="FromCamelCase.ToolTip" xml:space="preserve">
     <value>Trennt Wörter durch Großbuchstaben auf und ersetzt sie durch Kleinbuchstaben.</value>
   </data>
-  <metadata name="$this.Language" xml:space="preserve" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>de</value>
-  </metadata>
 </root>

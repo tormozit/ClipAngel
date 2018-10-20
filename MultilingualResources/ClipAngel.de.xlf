@@ -1549,8 +1549,8 @@ Die Generierung von Bildern erzeugt CPU-Last. Bei zu hoher, niedrigeren Wert fes
           <target state="translated">Clip wurde aufgrund eines Lesefehlers in der Zwischenablage nicht erfasst</target>
         </trans-unit>
         <trans-unit id="VersionValue" translate="yes" xml:space="preserve">
-          <source>1.61</source>
-          <target state="new">1.61</target>
+          <source>1.63</source>
+          <target state="new">1.63</target>
         </trans-unit>
         <trans-unit id="TargetWindow" translate="yes" xml:space="preserve">
           <source>Target window</source>
@@ -8565,10 +8565,6 @@ Nachlaufende nicht druckbare Symbole werden gelöscht.</target>
         <trans-unit id="FromCamelCase.ToolTip" translate="yes" xml:space="preserve">
           <source>Split words by capital letters and put them lower case.</source>
           <target state="translated">Trennt Wörter durch Großbuchstaben auf und ersetzt sie durch Kleinbuchstaben.</target>
-        </trans-unit>
-        <trans-unit id="$this.Language" translate="yes" xml:space="preserve" extype="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" extradata="metadata">
-          <source>de</source>
-          <target state="needs-review-translation">de</target>
         </trans-unit>
         <trans-unit id="checkBoxPasteIntoNewClip.ToolTip" translate="yes" xml:space="preserve">
           <source></source>

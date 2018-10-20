@@ -159,7 +159,9 @@ namespace ClipAngel
         //
         string GetSymbol(string Line, int Position)
         {
-            return Line.Substring(Position, 1);
+            if (Line.Length > Position)
+                return Line.Substring(Position, 1);
+            return "";
         }
 
         public int isLineLike1C(string Line)
@@ -273,7 +275,7 @@ namespace ClipAngel
                     State = 5;
                 else if (IsSpecialSymbol(CurrentSymbol))
                     State = 6;
-                else if (CurrentSymbol == "#")
+                else if (CurrentSymbol == "#" || CurrentSymbol == "&")
                     State = 8;
                 else
                     State = 4;
