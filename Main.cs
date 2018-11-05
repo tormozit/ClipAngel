@@ -151,7 +151,7 @@ namespace ClipAngel
             {"number", "((?:(?:\\s|^)[-])?\\b[0-9]+\\.?[0-9]+)\\b"},
             {"phone", "(?:[\\s\\(]|^)(\\+?\\b\\d?(\\d[ \\-\\(\\)]{0,2}){7,19}\\b)"},
             {"url", "(\\b(?:https?|ftp|file)://[-A-Z0-9+&@#\\\\/%?=~_|!:,.;]*[A-Z0-9+&@#/%=~_|])"},
-            {"1CLine", @"(\{((?:[a-zа-яё_]+\.)*(?:Форма|Модуль|МодульУправляемогоПриложения|МодульОбычногоПриложения|МодульВнешнегоСоединения|МодульКоманды|МодульМенеджера|МодульОбъекта))\((\d+)(?:,(\d+))?\)\})" }
+            {"1CLine", @"(\{([a-zа-яё_]+ )?((?:[a-zа-яё_]+\.)*(?:Форма|Модуль|МодульУправляемогоПриложения|МодульОбычногоПриложения|МодульВнешнегоСоединения|МодульКоманды|МодульМенеджера|МодульОбъекта))\((\d+)(?:,(\d+))?\)\})" }
         };
         static string LinkPattern = TextPatterns["url"];
         static private Dictionary<string, string> typeMap1C = new Dictionary<string, string>
@@ -980,7 +980,6 @@ namespace ClipAngel
             htmlDoc.write("");
             htmlDoc.close(); // Steals focus!!!
 
-            //richTextBox.Enabled = false;
             richTextBox.Text = "";
             textBoxApplication.Text = "";
             textBoxWindow.Text = "";
@@ -1134,16 +1133,9 @@ namespace ClipAngel
                 urlTextBox.Text = RowReader["Url"].ToString();
                 MarkLinksInRichTextBox(urlTextBox, out UrlLinkMatches);
 
-                if (clipType == "img")
-                {
-                    Image image = GetImageFromBinary((byte[]) RowReader["Binary"]);
-                    ImageControl.Image = image;
-                    ImageControl.ZoomFitInside();
-                }
                 if (!autoSelectMatch)
                     RestoreTextSelection(NewSelectionStart, NewSelectionLength);
                 allowTextPositionChangeUpdate = true;
-                UpdateSelectionPosition();
 
                 //richTextBox.HideSelection = false; // slow
             }
@@ -1170,7 +1162,6 @@ namespace ClipAngel
                 if (elementPanelHasFocus)
                     ImageControl.Focus();
                 htmlTextBox.Visible = false; // Without it htmlTextBox will be visible but why?
-                //richTextBox.Enabled = true;
             }
             else if (htmlMode)
             {
@@ -1193,7 +1184,6 @@ namespace ClipAngel
                 tableLayoutPanelData.RowStyles[1].SizeType = SizeType.Percent;
                 tableLayoutPanelData.RowStyles[2].Height = 0;
                 tableLayoutPanelData.RowStyles[2].SizeType = SizeType.Absolute;
-                //richTextBox.Enabled = true;
                 if (elementPanelHasFocus)
                     richTextBox.Focus();
             }
@@ -1203,9 +1193,19 @@ namespace ClipAngel
                 tableLayoutPanelData.RowStyles[3].Height = 25;
             if (EditMode && this.Visible && this.ContainsFocus)
                 richTextBox.Focus(); // Can activate this window, so we check that window has focus
+            if (clipType == "img")
+            {
+                Image image = GetImageFromBinary((byte[])RowReader["Binary"]);
+                ImageControl.Image = image;
+            }
             tableLayoutPanelData.ResumeLayout();
+            if (clipType == "img")
+            {
+                ImageControl.ZoomFitInside();
+            }
             if (autoSelectMatch)
                 SelectNextMatchInClipText();
+            OnClipContentSelectionChange();
         }
 
         protected virtual void LoadRowReader(int CurrentRowIndex = -1)
@@ -1282,12 +1282,19 @@ namespace ClipAngel
         {
             richTextBox.SelectionStart = NewSelectionStart;
             richTextBox.SelectionLength = NewSelectionLength;
-            richTextBox.HideSelection = true; // slow // Without this exeption in ScrollToCaret can be thrown
-            richTextBox.ScrollToCaret();
-            richTextBox.HideSelection = false; // slow
+            //richTextBox.HideSelection = true; // slow // Without this exeption in ScrollToCaret can be thrown
+            try
+            {
+                richTextBox.ScrollToCaret();
+            }
+            catch
+            {
+                // Happens when click in not full loaded richTextBox 
+            }
+            //richTextBox.HideSelection = false; // slow
         }
 
-        private void UpdateSelectionPosition()
+        private void OnClipContentSelectionChange()
         {
             if (htmlMode)
                 htmlTextBoxDocumentSelectionChange();
@@ -2072,6 +2079,7 @@ namespace ClipAngel
                 // http://www.cyberforum.ru/ado-net/thread832314.html
                 // html text check to prevent crush from too big generated Excel image
                 if (true
+                    && Properties.Settings.Default.CaptureImages
                     && iData.GetDataPresent(DataFormats.Bitmap)
                     && (false
                         || NumberOfImageCells == 0
@@ -3940,7 +3948,7 @@ namespace ClipAngel
         {
             if (htmlMode)
                 htmlTextBox.Document.Focus();
-            else if (richTextBox.Enabled)
+            else //if (richTextBox.Enabled)
                 richTextBox.Focus();
         }
 
@@ -4749,11 +4757,12 @@ namespace ClipAngel
                         GetClipboardOwnerLockerInfo(true, out clipWindow, out clipApplication, out appPath, out is1C, out mainWindow);
                         if (String.Compare(clipApplication, "1cv8", true) == 0)
                         {
-                            string moduleName = match.Groups[4].ToString();
+                            string extensionName = match.Groups[4].ToString();
+                            string moduleName = match.Groups[5].ToString();
                             string[] fragments = moduleName.Split("."[0]);
                             if (fragments[0] == "ВнешняяОбработка")
                                 return;
-                            int lineNumber = Convert.ToInt32(match.Groups[5].ToString());
+                            int lineNumber = Convert.ToInt32(match.Groups[6].ToString());
                             ActivateTargetWindow();
                             SendKeys.Send("%{F9}");
                             SendKeys.Flush();
@@ -4823,6 +4832,8 @@ namespace ClipAngel
                                         MDObject += "." + fragments[counter * 2 + 1];
                                     }
                                 }
+                                if (!String.IsNullOrEmpty(extensionName))
+                                    MDObject = extensionName + MDObject;
                                 string MDProperty = typeMap1C[fragments[fragments.Length - 1]];
                                 stopWatch.Start();
                                 while (stopWatch.ElapsedMilliseconds < maxWait)
@@ -4863,7 +4874,17 @@ namespace ClipAngel
                                         string namespace2 = "http://v8.1c.ru/8.3/debugger/debugBaseData";
                                         XmlElement idType = doc.CreateElement("debugBaseData:type", namespace2);
                                         id.AppendChild(idType);
-                                        idType.InnerText = "ConfigModule";
+                                        if (!String.IsNullOrEmpty(extensionName))
+                                        {
+                                            idType.InnerText = "ExtensionModule";
+                                            XmlElement idExtensionName = doc.CreateElement("debugBaseData:extensionName", namespace2);
+                                            id.AppendChild(idExtensionName);
+                                            idExtensionName.InnerText = extensionName.TrimEnd();
+                                        }
+                                        else
+                                        {
+                                            idType.InnerText = "ConfigModule";
+                                        }
                                         XmlElement idMDObject = doc.CreateElement("debugBaseData:MDObject", namespace2);
                                         id.AppendChild(idMDObject);
                                         idMDObject.InnerText = MDObject;
@@ -4903,6 +4924,9 @@ namespace ClipAngel
                                 //tableElement = FindTable1C(UIWindow, treeWalker);
                                 stopWatch.Restart();
                                 IUIAutomationElement cell;
+                                string fullModuleName = moduleName;
+                                if (!String.IsNullOrEmpty(extensionName))
+                                    fullModuleName = extensionName + fullModuleName;
                                 while (stopWatch.ElapsedMilliseconds < maxWait)
                                 {
                                     try
@@ -4915,7 +4939,7 @@ namespace ClipAngel
                                     }
                                     while (cell != null)
                                     {
-                                        if (cell.CurrentName == moduleName + " Имя модуля")
+                                        if (cell.CurrentName == fullModuleName + " Имя модуля")
                                         {
                                             cell = treeWalker.GetNextSiblingElement(cell);
                                             if (cell.CurrentName == lineNumber + " Строка")
@@ -5095,7 +5119,7 @@ namespace ClipAngel
                         control.SelectionLength = match.Groups[1].Length;
                         control.HideSelection = false;
                         allowTextPositionChangeUpdate = true;
-                        UpdateSelectionPosition();
+                        OnClipContentSelectionChange();
                         break;
                     }
                 }
@@ -5210,7 +5234,7 @@ namespace ClipAngel
             allowTextPositionChangeUpdate = true;
             if (RowReader["type"].ToString() == "html")
                 AfterRowLoad();
-            UpdateSelectionPosition();
+            OnClipContentSelectionChange();
         }
 
         private void helpToolStripMenuItem_Click(object sender, EventArgs e)
@@ -5796,10 +5820,10 @@ namespace ClipAngel
             //if (richTextBox.Text.Length - MultiLangEndMarker().Length < (int)RowReader["chars"])
             //    selectionStart += line - 1; // to take into account /r/n vs /n
             selectionLength = richTextBox.SelectionLength;
-            UpdateTextPositionIndicator(line, column);
+            UpdateClipContentPositionIndicator(line, column);
         }
 
-        private void UpdateTextPositionIndicator(int line = 1, int column = 1)
+        private void UpdateClipContentPositionIndicator(int line = 1, int column = 1)
         {
             string newText;
             if (RowReader!= null && RowReader["type"].ToString() == "img")
@@ -5823,7 +5847,7 @@ namespace ClipAngel
 
         private void ImageControl_MouseWheel(object sender, MouseEventArgs e)
         {
-            UpdateTextPositionIndicator();
+            UpdateClipContentPositionIndicator();
         }
 
         private void toolStripButtonFixedWidthFont_Click(object sender, EventArgs e)
@@ -6033,7 +6057,7 @@ namespace ClipAngel
             UpdateControlsStates();
             string clipType = RowReader["type"].ToString();
             if (clipType == "html" || clipType == "rtf")
-                AfterRowLoad();
+                AfterRowLoad(true);
         }
 
         private void toolStripButtonMarkFavorite_Click(object sender, EventArgs e)
@@ -6118,7 +6142,7 @@ namespace ClipAngel
             if (!String.IsNullOrEmpty(innerText))
                 if (selectionStart > innerText.Length)
                     selectionStart = innerText.Length;
-            UpdateTextPositionIndicator(0, 0);
+            UpdateClipContentPositionIndicator(0, 0);
         }
 
         private void htmlTextBoxMouseMove(Object sender, HtmlElementEventArgs e)
@@ -6661,12 +6685,12 @@ namespace ClipAngel
 
         private void ImageControl_Resize(object sender, EventArgs e)
         {
-            UpdateTextPositionIndicator();
+            UpdateClipContentPositionIndicator();
         }
 
         private void ImageControl_ZoomChanged(object sender, EventArgs e)
         {
-            UpdateTextPositionIndicator();
+            UpdateClipContentPositionIndicator();
         }
 
         private void fitFromInsideToolStripMenuItem_Click(object sender, EventArgs e)

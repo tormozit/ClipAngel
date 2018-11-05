@@ -722,6 +722,7 @@ namespace ClipAngel
 
         public void Load(bool PortableMode = false)
         {
+            CaptureImages = Properties.Settings.Default.CaptureImages;
             DeleteNonFavoriteClipsOnExit = Properties.Settings.Default.DeleteNonFavoriteClipsOnExit;
             FilterListBySearchString = Properties.Settings.Default.FilterListBySearchString;
             AutoSelectMatchedClip = Properties.Settings.Default.AutoSelectMatchedClip;
@@ -801,6 +802,7 @@ namespace ClipAngel
 
         public void Apply(bool PortableMode = false)
         {
+            Properties.Settings.Default.CaptureImages = CaptureImages;
             Properties.Settings.Default.DeleteNonFavoriteClipsOnExit = DeleteNonFavoriteClipsOnExit;
             Properties.Settings.Default.Max1CCodeSizeToColorize = Max1CCodeSizeToColorize;
             Properties.Settings.Default.EncryptDatabaseForCurrentUser = EncryptDatabaseForCurrentUser;
@@ -1016,6 +1018,10 @@ namespace ClipAngel
         [GlobalizedCategory("Other")]
         [Editor(typeof(MyBoolEditor), typeof(UITypeEditor))]
         public bool DeleteNonFavoriteClipsOnExit { get; set; }
+
+        [GlobalizedCategory("Other")]
+        [Editor(typeof(MyBoolEditor), typeof(UITypeEditor))]
+        public bool CaptureImages { get; set; }
 
         [GlobalizedCategory("Other")]
         [EditorAttribute(typeof(FolderNameEditor), typeof(UITypeEditor))]

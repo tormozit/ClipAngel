@@ -803,8 +803,8 @@ La generazione dell'immagine consuma risorse della CPU. Se verifichi problemi di
           <target state="new">Max 1C code size to colorize</target>
         </trans-unit>
         <trans-unit id="Max1CCodeSizeToColorizeDescription" translate="yes" xml:space="preserve">
-          <source>Max 1C (Russian programming platform) code size in chars to colorize syntax. 1C code capture is detected by focused window type. 0 - do not colorize</source>
-          <target state="new">Max 1C (Russian programming platform) code size in chars to colorize syntax. 1C code capture is detected by focused window type. 0 - do not colorize</target>
+          <source>Max 1C (Russian programming platform) code size in chars to colorize syntax. 1C code capture is detected by text content. 0 - do not colorize</source>
+          <target state="new">Max 1C (Russian programming platform) code size in chars to colorize syntax. 1C code capture is detected by text content. 0 - do not colorize</target>
         </trans-unit>
         <trans-unit id="AutoSelectMatchedClip" translate="yes" xml:space="preserve">
           <source>Autoselect matched clip</source>
@@ -829,6 +829,14 @@ La generazione dell'immagine consuma risorse della CPU. Se verifichi problemi di
         <trans-unit id="DeleteNonFavoriteClipsOnExitDescription" translate="yes" xml:space="preserve">
           <source>Delete all non favorite clips after close database</source>
           <target state="new">Delete all non favorite clips after close database</target>
+        </trans-unit>
+        <trans-unit id="CaptureImages" translate="yes" xml:space="preserve">
+          <source>Capture images</source>
+          <target state="new">Capture images</target>
+        </trans-unit>
+        <trans-unit id="CaptureImagesDescription" translate="yes" xml:space="preserve">
+          <source>Capture image clips</source>
+          <target state="new">Capture image clips</target>
         </trans-unit>
       </group>
     </body>
@@ -6031,10 +6039,6 @@ Il sottomenu "Elenco" dispone di comandi per la selezione rapida</target>
           <source>209, 22</source>
           <target state="needs-review-translation">209, 22</target>
         </trans-unit>
-        <trans-unit id="htmlTextBox.Anchor" translate="yes" extype="System.Windows.Forms.AnchorStyles, System.Windows.Forms" xml:space="preserve">
-          <source>Top, Bottom, Left, Right</source>
-          <target state="needs-review-translation">Top, Bottom, Left, Right</target>
-        </trans-unit>
         <trans-unit id="toolStripMenuItem15.ToolTipText" translate="yes" xml:space="preserve">
           <source>Paste in active window as plain text selected text of clip or agregated text of selected clips.
 </source>
@@ -6957,6 +6961,10 @@ Edit search string right from list. Navigate in list right from search field.</t
         <trans-unit id="menuItemSetFocusClipText.Text" translate="yes" xml:space="preserve">
           <source>Set focus to clip text (TAB)</source>
           <target state="new">Set focus to clip text (TAB)</target>
+        </trans-unit>
+        <trans-unit id="htmlTextBox.Dock" translate="yes" xml:space="preserve" extype="System.Windows.Forms.DockStyle, System.Windows.Forms">
+          <source>Fill</source>
+          <target state="needs-review-translation">Fill</target>
         </trans-unit>
       </group>
     </body>

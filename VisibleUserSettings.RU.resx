@@ -147,6 +147,12 @@
   <data name="AutostartPathDescription" xml:space="preserve">
     <value>Нажмите ОК для обновления команды автозапуска в соответствии с текущей командой запуска</value>
   </data>
+  <data name="CaptureImages" xml:space="preserve">
+    <value>Захватывать картинки</value>
+  </data>
+  <data name="CaptureImagesDescription" xml:space="preserve">
+    <value>Захватывать клипы картинок</value>
+  </data>
   <data name="ClearFiltersOnClose" xml:space="preserve">
     <value>Очищать фильтры при закрытии главного окна</value>
   </data>
@@ -322,7 +328,7 @@
     <value>Макс. размер кода 1C для раскраски</value>
   </data>
   <data name="Max1CCodeSizeToColorizeDescription" xml:space="preserve">
-    <value>Максимальный размер кода 1C (Российская платформа программирования) в символах для раскраски по синтаксису. Захват кода 1С определяется по сфокусированному окну. 0 - не раскрашивать</value>
+    <value>Максимальный размер кода 1C (Российская платформа программирования) в символах для раскраски по синтаксису. Захват кода 1С определяется по содержанию текста. 0 - не раскрашивать</value>
   </data>
   <data name="MaxCellsToCaptureFormattedText" xml:space="preserve">
     <value>Количество ячеек для захвата оформления</value>

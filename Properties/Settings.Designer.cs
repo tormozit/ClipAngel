@@ -764,5 +764,17 @@ namespace ClipAngel.Properties {
                 this["DeleteNonFavoriteClipsOnExit"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool CaptureImages {
+            get {
+                return ((bool)(this["CaptureImages"]));
+            }
+            set {
+                this["CaptureImages"] = value;
+            }
+        }
     }
 }

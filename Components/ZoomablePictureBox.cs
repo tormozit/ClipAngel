@@ -171,7 +171,7 @@ namespace ClipAngel
             OuterPanel.Dock = DockStyle.Fill;
             OuterPanel.Cursor = System.Windows.Forms.Cursors.NoMove2D;
             OuterPanel.AutoScroll = true;
-            OuterPanel.MouseEnter += new EventHandler(PicBox_MouseEnter);
+            //OuterPanel.MouseEnter += new EventHandler(PicBox_MouseEnter); // It will steal focus without reason. It's very bad
             //PicBox.MouseEnter += new EventHandler(PicBox_MouseEnter); // It will steal focus without reason. It's very bad
             PicBox.DoubleClick += new EventHandler(PicBox_DoubleClick);
             PicBox.MouseDown += new MouseEventHandler(PicBox_MouseDown);
@@ -202,8 +202,7 @@ namespace ClipAngel
         /// <remarks>Maximum 5 times bigger</remarks>
         private void ZoomIn()
         {
-            if ((PicBox.Width < (MINMAX * OuterPanel.Width)) &&
-                (PicBox.Height < (MINMAX * OuterPanel.Height)))
+            if (PicBox.Width < (MINMAX * Image.Width))
             {
                 int newWidth, newHeight;
                 double zoomFactor = ZoomFactor();
@@ -230,8 +229,7 @@ namespace ClipAngel
         /// <remarks>Minimum 5 times smaller</remarks>
         private void ZoomOut()
         {
-            if ((PicBox.Width > (OuterPanel.Width / MINMAX)) &&
-                (PicBox.Height > (OuterPanel.Height / MINMAX)))
+            if (PicBox.Width > Math.Min(Image.Width, 30) && PicBox.Height > Math.Min(Image.Height, 30))
             {
                 int newWidth, newHeight;
                 double zoomFactor = ZoomFactor();
@@ -260,9 +258,23 @@ namespace ClipAngel
 
         public void ZoomFitInside()
         {
-            PicBox.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Top; 
-            PicBox.Width = OuterPanel.Width;
-            PicBox.Height = OuterPanel.Height;
+            //PicBox.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Top;
+            PicBox.Anchor = AnchorStyles.Top | AnchorStyles.Left;
+            if (OuterPanel.Width < Image.Width)
+            {
+                PicBox.Width = OuterPanel.Width;
+                PicBox.Anchor = PicBox.Anchor | AnchorStyles.Right;
+            }
+            else
+                PicBox.Width = Image.Width;
+            if (OuterPanel.Height < Image.Height)
+            {
+                PicBox.Height = OuterPanel.Height;
+                PicBox.Anchor = PicBox.Anchor | AnchorStyles.Bottom;
+            }
+            else
+                PicBox.Height = Image.Height;
+            ZoomChanged(this, new EventArgs());
         }
 
         public void ZoomOriginalSize()

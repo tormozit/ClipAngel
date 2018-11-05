@@ -2159,9 +2159,6 @@ Il sottomenu "Elenco" dispone di comandi per la selezione rapida</value>
   <data name="toolStripMenuItem15.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>209, 22</value>
   </data>
-  <data name="htmlTextBox.Anchor" xml:space="preserve" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
-  </data>
   <data name="toolStripMenuItem15.ToolTipText" xml:space="preserve">
     <value>Incolla nella finestra attiva come testo normale selezionato della cattura o come testo aggregato delle catture selezionate. 
 </value>
@@ -2694,5 +2691,8 @@ L'ordinamento è mantenuto fino alla cattura del taglio.</value>
   </data>
   <data name="menuItemSetFocusClipText.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>212, 22</value>
+  </data>
+  <data name="htmlTextBox.Dock" xml:space="preserve" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
   </data>
 </root>

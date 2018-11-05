@@ -2158,9 +2158,6 @@ Untermenü "Liste" enthält Befehle zur schnellen Auswahl</value>
   <data name="toolStripMenuItem15.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>209, 22</value>
   </data>
-  <data name="htmlTextBox.Anchor" xml:space="preserve" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
-  </data>
   <data name="toolStripMenuItem15.ToolTipText" xml:space="preserve">
     <value>Fügen Sie im aktiven Fenster den ausgewählten Text des Clips als Klarext ein oder den verbundenen Text  ausgewählter Clips. 
 </value>
@@ -2766,5 +2763,8 @@ Bearbeite den Suchstring direkt aus der Liste. Navigiere in der Liste direkt aus
   </data>
   <data name="menuItemSetFocusClipText.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>212, 22</value>
+  </data>
+  <data name="htmlTextBox.Dock" xml:space="preserve" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
   </data>
 </root>

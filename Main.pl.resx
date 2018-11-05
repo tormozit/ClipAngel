@@ -2159,9 +2159,6 @@ Podmenu "Listy" ma komendy dla szybkiego wyboru</value>
   <data name="toolStripMenuItem15.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>209, 22</value>
   </data>
-  <data name="htmlTextBox.Anchor" xml:space="preserve" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
-  </data>
   <data name="toolStripMenuItem15.ToolTipText" xml:space="preserve">
     <value>Wkleja zaznaczony tekst z klipu w aktywne okno jako zwykły tekst lub łączny tekst z wybranych klipów. 
 </value>
@@ -2649,5 +2646,8 @@ Sortowanie jest przechowywane aż do przechwycenia klipu.</value>
   </data>
   <data name="menuItemSetFocusClipText.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>212, 22</value>
+  </data>
+  <data name="htmlTextBox.Dock" xml:space="preserve" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
   </data>
 </root>
