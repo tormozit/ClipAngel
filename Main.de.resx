@@ -425,9 +425,6 @@ Clip-Datei mit Standardanwendung öffnen.
   <data name="returnToPrevousSelectedClipToolStripMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>F8</value>
   </data>
-  <data name="toolStripMenuItemSetFocusClipText.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
-    <value>212, 22</value>
-  </data>
   <data name="htmlMenuItemOpenLink.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>209, 22</value>
   </data>
@@ -1225,9 +1222,6 @@ Clip-Datei mit Standardanwendung öffnen.
   </data>
   <data name="toolStripMenuItem8.ToolTipText" xml:space="preserve">
     <value>Ausgewählte Clips aus Liste löschen. Tatsächliche Löschung erfolgt mit Schließen der Datenbank.</value>
-  </data>
-  <data name="toolStripMenuItemSetFocusClipText.Text" xml:space="preserve">
-    <value>Fokus auf Clip-Text setzen (TAB)</value>
   </data>
   <data name="textBoxWindow.Text" xml:space="preserve">
     <value>Fenster</value>
@@ -2769,5 +2763,8 @@ Bearbeite den Suchstring direkt aus der Liste. Navigiere in der Liste direkt aus
   </data>
   <data name="pasteIntoSearchFieldMenuItem.ToolTipText" xml:space="preserve">
     <value>Die ersten 50 Zeichen des ausgewählten Textes in der Clipliste suchen</value>
+  </data>
+  <data name="menuItemSetFocusClipText.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>212, 22</value>
   </data>
 </root>

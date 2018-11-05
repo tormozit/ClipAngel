@@ -282,9 +282,6 @@
   <data name="returnToPrevousSelectedClipToolStripMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>F8</value>
   </data>
-  <data name="toolStripMenuItemSetFocusClipText.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
-    <value>212, 22</value>
-  </data>
   <data name="MarkFilter.Items" xml:space="preserve">
     <value>όλα</value>
   </data>
@@ -2209,5 +2206,8 @@
   </data>
   <data name="pasteIntoSearchFieldMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>214, 22</value>
+  </data>
+  <data name="menuItemSetFocusClipText.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>212, 22</value>
   </data>
 </root>

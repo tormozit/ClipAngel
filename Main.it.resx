@@ -425,9 +425,6 @@ Le modifiche nel file temporaneo non verranno sincronizzate con la cattura!</val
   <data name="returnToPrevousSelectedClipToolStripMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>F8</value>
   </data>
-  <data name="toolStripMenuItemSetFocusClipText.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
-    <value>212, 22</value>
-  </data>
   <data name="htmlMenuItemOpenLink.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>209, 22</value>
   </data>
@@ -1210,9 +1207,6 @@ Le modifiche nel file temporaneo non saranno sincronizzate con la cattura!</valu
   </data>
   <data name="changeClipTitleToolStripMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>F2</value>
-  </data>
-  <data name="toolStripMenuItemSetFocusClipText.Text" xml:space="preserve">
-    <value>Imposta focus al testo cattura (TAB)</value>
   </data>
   <data name="textBoxWindow.Text" xml:space="preserve">
     <value>Finestra</value>
@@ -2697,5 +2691,8 @@ L'ordinamento è mantenuto fino alla cattura del taglio.</value>
   </data>
   <data name="pasteIntoSearchFieldMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>214, 22</value>
+  </data>
+  <data name="menuItemSetFocusClipText.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>212, 22</value>
   </data>
 </root>

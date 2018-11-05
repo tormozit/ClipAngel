@@ -425,9 +425,6 @@ Url वर्तमान क्लिप में सहेजे जाएँ
   <data name="returnToPrevousSelectedClipToolStripMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>F8</value>
   </data>
-  <data name="toolStripMenuItemSetFocusClipText.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
-    <value>212, 22</value>
-  </data>
   <data name="htmlMenuItemOpenLink.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>209, 22</value>
   </data>
@@ -1210,9 +1207,6 @@ Url वर्तमान क्लिप में सहेजे जाएँ
   </data>
   <data name="changeClipTitleToolStripMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>F2</value>
-  </data>
-  <data name="toolStripMenuItemSetFocusClipText.Text" xml:space="preserve">
-    <value>क्लिप पाठ (टैब) करने के लिए फ़ोकस सेट करें</value>
   </data>
   <data name="textBoxWindow.Text" xml:space="preserve">
     <value>विंडो</value>
@@ -2583,5 +2577,8 @@ Url वर्तमान क्लिप में सहेजे जाएँ
   </data>
   <data name="pasteIntoSearchFieldMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>214, 22</value>
+  </data>
+  <data name="menuItemSetFocusClipText.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>212, 22</value>
   </data>
 </root>

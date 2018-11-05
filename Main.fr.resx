@@ -427,9 +427,6 @@ Les modifications apportées au fichier temporaire ne sont pas synchronisées av
   <data name="returnToPrevousSelectedClipToolStripMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>F8</value>
   </data>
-  <data name="toolStripMenuItemSetFocusClipText.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
-    <value>212, 22</value>
-  </data>
   <data name="MarkFilter.Items" xml:space="preserve">
     <value>tout</value>
   </data>
@@ -1765,9 +1762,6 @@ Lorsque ON et "Fenêtre rapide ouverte" OFF, la fenêtre sera affichée dans la 
   <data name="toolStripMenuItem8.ToolTipText" xml:space="preserve">
     <value>Supprimer les clips sélectionnés non favoris de la liste. La suppression est effectuée lors de la fermeture de la base de données.	</value>
   </data>
-  <data name="toolStripMenuItemSetFocusClipText.Text" xml:space="preserve">
-    <value>Configurer focus vers clips texte (TAB)</value>
-  </data>
   <data name="textBoxWindow.Text" xml:space="preserve">
     <value>Fenêtre</value>
   </data>
@@ -2667,5 +2661,8 @@ Le tri est conservé jusqu'à la capture du clip.</value>
   </data>
   <data name="pasteIntoSearchFieldMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>214, 22</value>
+  </data>
+  <data name="menuItemSetFocusClipText.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>212, 22</value>
   </data>
 </root>

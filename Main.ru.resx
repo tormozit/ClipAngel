@@ -532,10 +532,10 @@
 Если фокус находится в другом месте, то активизируется список.
 </value>
   </data>
-  <data name="toolStripMenuItemSetFocusClipText.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="menuItemSetFocusClipText.Size" type="System.Drawing.Size, System.Drawing">
     <value>287, 22</value>
   </data>
-  <data name="toolStripMenuItemSetFocusClipText.Text" xml:space="preserve">
+  <data name="menuItemSetFocusClipText.Text" xml:space="preserve">
     <value>Активизировать текст клипа (TAB)</value>
   </data>
   <data name="windowAlwaysOnTopToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
@@ -2278,9 +2278,5 @@
         wAAAAf/////AAAAB/////8AAAAH/////4AAAA//////gAAAD/////+AAAAP/////8AAAB//////4AAAP
         //////gAAA///////AAAH//////+AAA///////+AAP///////+AD/////////////////////////w==
 </value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
 </root>

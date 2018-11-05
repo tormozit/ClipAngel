@@ -142,6 +142,7 @@ namespace ClipAngel
         List<int> searchMatchedIDs = new List<int>();
         private static string timePattern = "\\b[012]?\\d:[0-5]?\\d(?::[0-5]?\\d)?\\b";
         private static string datePattern = "\\b(?:19|20)?[0-9]{2}[\\-/.][0-9]{2}[\\-/.](?:19|20)?[0-9]{2}\\b";
+        private bool areDeletedClips = false;
         static private Dictionary<string, string> TextPatterns = new Dictionary<string, string>
         {
             {"time", "((" + datePattern + "\\s"+ timePattern + ")|(?:(" + timePattern + "\\s)?"+ datePattern + ")|(?:"+ timePattern + "))"},
@@ -912,6 +913,7 @@ namespace ClipAngel
                 Tips form = new Tips();
                 form.ShowDialog();
             }
+            dataGridView.Focus();
         }
 
         // To hide on start
@@ -978,7 +980,7 @@ namespace ClipAngel
             htmlDoc.write("");
             htmlDoc.close(); // Steals focus!!!
 
-            richTextBox.Enabled = false;
+            //richTextBox.Enabled = false;
             richTextBox.Text = "";
             textBoxApplication.Text = "";
             textBoxWindow.Text = "";
@@ -1168,7 +1170,7 @@ namespace ClipAngel
                 if (elementPanelHasFocus)
                     ImageControl.Focus();
                 htmlTextBox.Visible = false; // Without it htmlTextBox will be visible but why?
-                richTextBox.Enabled = true;
+                //richTextBox.Enabled = true;
             }
             else if (htmlMode)
             {
@@ -1191,7 +1193,7 @@ namespace ClipAngel
                 tableLayoutPanelData.RowStyles[1].SizeType = SizeType.Percent;
                 tableLayoutPanelData.RowStyles[2].Height = 0;
                 tableLayoutPanelData.RowStyles[2].SizeType = SizeType.Absolute;
-                richTextBox.Enabled = true;
+                //richTextBox.Enabled = true;
                 if (elementPanelHasFocus)
                     richTextBox.Focus();
             }
@@ -1441,8 +1443,8 @@ namespace ClipAngel
 
         private void RichText_Click(object sender, EventArgs e)
         {
-            OpenLinkIfAltPressed(sender as RichTextBox, e, TextLinkMatches);
-            if (MaxTextViewSize >= (sender as RichTextBox).SelectionStart && TextWasCut)
+            OpenLinkIfAltPressed(richTextBox, e, TextLinkMatches);
+            if (MaxTextViewSize >= richTextBox.SelectionStart && TextWasCut)
                 AfterRowLoad(true);
         }
 
@@ -2545,6 +2547,7 @@ namespace ClipAngel
             allowRowLoad = true;
             //AfterRowLoad();
             SelectCurrentRow();
+            areDeletedClips = true;
         }
 
         [DllImport("user32.dll")]
@@ -3949,7 +3952,6 @@ namespace ClipAngel
             //    PrepareRow(row);
             //}
             //dataGridView.Update();
-
         }
 
         private void LoadVisibleRows()
@@ -4686,11 +4688,14 @@ namespace ClipAngel
                 RowReader = null;
             m_dbConnection.Close();
 
-            // Shrink database to really delete deleted clips. It can take up to several seconds. 
-            m_dbConnection.Open();
-            SQLiteCommand command = new SQLiteCommand("vacuum", m_dbConnection);
-            command.ExecuteNonQuery();
-            m_dbConnection.Close();
+            if (areDeletedClips)
+            {
+                // Shrink database to really delete deleted clips. It can take up to several seconds. 
+                m_dbConnection.Open();
+                SQLiteCommand command = new SQLiteCommand("vacuum", m_dbConnection);
+                command.ExecuteNonQuery();
+                m_dbConnection.Close();
+            }
         }
 
         private void exitToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -6231,6 +6236,8 @@ namespace ClipAngel
 
         private void richTextBox_Enter(object sender, EventArgs e)
         {
+            if (TextWasCut)
+                AfterRowLoad(true);
             if (true
                 && RowReader != null
                 && RowReader["type"].ToString() == "file"
@@ -6316,11 +6323,6 @@ namespace ClipAngel
                 CaptureClipboardData();
         }
 
-        private void toolStripMenuItem16_Click(object sender, EventArgs e)
-        {
-            FocusClipText();
-        }
-
         private void toolStripMenuItemCompareLastClips_Click(object sender = null, EventArgs e = null)
         {
             if (lastClipWasMultiCaptured)
@@ -6355,6 +6357,7 @@ namespace ClipAngel
             SQLiteCommand command = new SQLiteCommand("", m_dbConnection);
             command.CommandText = sql;
             command.ExecuteNonQuery();
+            areDeletedClips = true;
         }
 
         private void openWithToolStripMenuItem_Click(object sender, EventArgs e)
@@ -6825,6 +6828,11 @@ namespace ClipAngel
             string agregateTextToPaste = GetSelectedTextOfClips(ref selectedText);
             agregateTextToPaste = ConvertTextToLine(agregateTextToPaste);
             comboBoxSearchString.Text = agregateTextToPaste.Substring(0, Math.Min(50, agregateTextToPaste.Length));
+        }
+
+        private void menuItemSetFocusClipText_Click(object sender, EventArgs e)
+        {
+            FocusClipText();
         }
     }
 }
