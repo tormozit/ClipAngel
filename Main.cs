@@ -151,7 +151,7 @@ namespace ClipAngel
             {"number", "((?:(?:\\s|^)[-])?\\b[0-9]+\\.?[0-9]+)\\b"},
             {"phone", "(?:[\\s\\(]|^)(\\+?\\b\\d?(\\d[ \\-\\(\\)]{0,2}){7,19}\\b)"},
             {"url", "(\\b(?:https?|ftp|file)://[-A-Z0-9+&@#\\\\/%?=~_|!:,.;]*[A-Z0-9+&@#/%=~_|])"},
-            {"1CLine", @"(\{([a-zа-яё_]+ )?((?:[a-zа-яё_]+\.)*(?:Форма|Модуль|МодульУправляемогоПриложения|МодульОбычногоПриложения|МодульВнешнегоСоединения|МодульКоманды|МодульМенеджера|МодульОбъекта))\((\d+)(?:,(\d+))?\)\})" }
+            {"1CLine", @"(\{([a-zа-яё_]+ )?((?:[a-zа-яё_]+\.)*(?:Форма|Модуль|МодульУправляемогоПриложения|МодульОбычногоПриложения|МодульВнешнегоСоединения|МодульКоманды|МодульМенеджера|МодульОбъекта|МодульНабораЗаписей))\((\d+)(?:,(\d+))?\)\})" }
         };
         static string LinkPattern = TextPatterns["url"];
         static private Dictionary<string, string> typeMap1C = new Dictionary<string, string>
@@ -160,6 +160,7 @@ namespace ClipAngel
             {"МодульОбычногоПриложения", "OrdinaryApplicationModule"},
             {"МодульВнешнегоСоединения", "ExternalConnectionModule"},
             {"МодульОбъекта", "ObjectModule"},
+            {"МодульНабораЗаписей", "RecordsetModule"},
             {"МодульМенеджера", "ManagerModule"},
             {"МодульКоманды", "CommandModule"},
             {"Модуль", "Module"},
@@ -6260,8 +6261,12 @@ namespace ClipAngel
 
         private void richTextBox_Enter(object sender, EventArgs e)
         {
-            if (TextWasCut)
-                AfterRowLoad(true);
+            // It will corrupt protected memory on entering text field with cutted text.
+            //Необработанное исключение типа "System.AccessViolationException" произошел в System.Windows.Forms.dll
+            //    Дополнительная информация: Попытка чтения или записи защищенной памяти. Это часто свидетельствует о том, что другая память повреждена.
+            //if (TextWasCut)
+            //    AfterRowLoad(true);
+
             if (true
                 && RowReader != null
                 && RowReader["type"].ToString() == "file"
