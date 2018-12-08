@@ -394,6 +394,12 @@
   <data name="RtfEditorDescription" xml:space="preserve">
     <value>Используется в команде "Открыть файл" клипа. Оставьте пустым для использования назначенного в ОС приложения открытия файлов RTF.</value>
   </data>
+  <data name="SearchAllFields" xml:space="preserve">
+    <value>Искать во всех полях</value>
+  </data>
+  <data name="SearchAllFieldsDescription" xml:space="preserve">
+    <value>Выключено - искать только в тексте и заголовке клипов. Включено - искать в тексте, заголовке, заголовке окна, URL клипов.</value>
+  </data>
   <data name="SearchCaseSensitive" xml:space="preserve">
     <value>Искать с учетом регистра букв</value>
   </data>

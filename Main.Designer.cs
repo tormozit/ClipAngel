@@ -281,6 +281,7 @@ namespace ClipAngel
             this.toolStripMenuItemSearchWildcards = new System.Windows.Forms.ToolStripMenuItem();
             this.ignoreBigTextsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.filterListBySearchStringMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.searchAllFieldsMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripButtonFindNext = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonFindPrevious = new System.Windows.Forms.ToolStripButton();
             this.MarkFilter = new System.Windows.Forms.ComboBox();
@@ -426,6 +427,8 @@ namespace ClipAngel
             this.translateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ignoreApplicationInCaptureToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.uploadImageToWebToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exportMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.importToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.settingsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.fToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.checkUpdateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -483,6 +486,7 @@ namespace ClipAngel
             this.dataGridViewImageColumn4 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewRichTextBoxColumn2 = new ClipAngel.DataGridViewRichTextBoxColumn();
             this.dataGridViewImageColumn5 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.cultureManager5 = new Infralution.Localization.CultureManager(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -562,7 +566,8 @@ namespace ClipAngel
             this.toolStripMenuItemSearchWordsIndependently,
             this.toolStripMenuItemSearchWildcards,
             this.ignoreBigTextsToolStripMenuItem,
-            this.filterListBySearchStringMenuItem});
+            this.filterListBySearchStringMenuItem,
+            this.searchAllFieldsMenuItem});
             this.toolStripSearchOptions.Image = global::ClipAngel.Properties.Resources.FindOptions;
             resources.ApplyResources(this.toolStripSearchOptions, "toolStripSearchOptions");
             this.toolStripSearchOptions.Name = "toolStripSearchOptions";
@@ -629,6 +634,15 @@ namespace ClipAngel
             this.filterListBySearchStringMenuItem.Name = "filterListBySearchStringMenuItem";
             resources.ApplyResources(this.filterListBySearchStringMenuItem, "filterListBySearchStringMenuItem");
             this.filterListBySearchStringMenuItem.Click += new System.EventHandler(this.filterListBySearchStringToolStripMenuItem_Click);
+            // 
+            // searchAllFieldsMenuItem
+            // 
+            this.searchAllFieldsMenuItem.Checked = true;
+            this.searchAllFieldsMenuItem.CheckOnClick = true;
+            this.searchAllFieldsMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.searchAllFieldsMenuItem.Name = "searchAllFieldsMenuItem";
+            resources.ApplyResources(this.searchAllFieldsMenuItem, "searchAllFieldsMenuItem");
+            this.searchAllFieldsMenuItem.Click += new System.EventHandler(this.searchAllFieldsMenuItem_Click);
             // 
             // toolStripButtonFindNext
             // 
@@ -1599,7 +1613,9 @@ namespace ClipAngel
             this.textCompareToolStripMenuItem,
             this.translateToolStripMenuItem,
             this.ignoreApplicationInCaptureToolStripMenuItem,
-            this.uploadImageToWebToolStripMenuItem});
+            this.uploadImageToWebToolStripMenuItem,
+            this.exportMenuItem,
+            this.importToolStripMenuItem});
             this.clipToolStripMenuItem.Name = "clipToolStripMenuItem";
             resources.ApplyResources(this.clipToolStripMenuItem, "clipToolStripMenuItem");
             // 
@@ -1774,6 +1790,18 @@ namespace ClipAngel
             this.uploadImageToWebToolStripMenuItem.Name = "uploadImageToWebToolStripMenuItem";
             resources.ApplyResources(this.uploadImageToWebToolStripMenuItem, "uploadImageToWebToolStripMenuItem");
             this.uploadImageToWebToolStripMenuItem.Click += new System.EventHandler(this.uploadImageToWebToolStripMenuItem_Click);
+            // 
+            // exportMenuItem
+            // 
+            this.exportMenuItem.Name = "exportMenuItem";
+            resources.ApplyResources(this.exportMenuItem, "exportMenuItem");
+            this.exportMenuItem.Click += new System.EventHandler(this.exportMenuItem_Click);
+            // 
+            // importToolStripMenuItem
+            // 
+            this.importToolStripMenuItem.Name = "importToolStripMenuItem";
+            resources.ApplyResources(this.importToolStripMenuItem, "importToolStripMenuItem");
+            this.importToolStripMenuItem.Click += new System.EventHandler(this.importToolStripMenuItem_Click);
             // 
             // settingsToolStripMenuItem1
             // 
@@ -2160,6 +2188,10 @@ namespace ClipAngel
             this.dataGridViewImageColumn5.Name = "dataGridViewImageColumn5";
             this.dataGridViewImageColumn5.ReadOnly = true;
             // 
+            // cultureManager5
+            // 
+            this.cultureManager5.ManagedControl = this;
+            // 
             // Main
             // 
             this.AllowDrop = true;
@@ -2424,6 +2456,10 @@ namespace ClipAngel
         private System.Windows.Forms.ToolStripMenuItem NextMatchListMenuItem;
         private System.Windows.Forms.ToolStripMenuItem PreviousMatchListMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pasteIntoSearchFieldMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem searchAllFieldsMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exportMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem importToolStripMenuItem;
+        private Infralution.Localization.CultureManager cultureManager5;
     }
 }
 

@@ -255,7 +255,7 @@ namespace ClipAngel
         {
             base.InitializeDialog(openFileDialog);
             openFileDialog.CheckFileExists = false;
-            openFileDialog.Filter = "Clip Angel database|*.db|All|*.*";
+            openFileDialog.Filter = "ClipAngel database|*.db|All|*.*";
         }
     }
 
@@ -722,6 +722,7 @@ namespace ClipAngel
 
         public void Load(bool PortableMode = false)
         {
+            SearchAllFields = Properties.Settings.Default.SearchAllFields;
             CaptureImages = Properties.Settings.Default.CaptureImages;
             DeleteNonFavoriteClipsOnExit = Properties.Settings.Default.DeleteNonFavoriteClipsOnExit;
             FilterListBySearchString = Properties.Settings.Default.FilterListBySearchString;
@@ -802,6 +803,7 @@ namespace ClipAngel
 
         public void Apply(bool PortableMode = false)
         {
+            Properties.Settings.Default.SearchAllFields = SearchAllFields;
             Properties.Settings.Default.CaptureImages = CaptureImages;
             Properties.Settings.Default.DeleteNonFavoriteClipsOnExit = DeleteNonFavoriteClipsOnExit;
             Properties.Settings.Default.Max1CCodeSizeToColorize = Max1CCodeSizeToColorize;
@@ -1083,6 +1085,10 @@ namespace ClipAngel
         [GlobalizedCategory("Search")]
         [Editor(typeof(MyBoolEditor), typeof(UITypeEditor))]
         public bool AutoSelectMatchedClip { get; set; }
+
+        [GlobalizedCategory("Search")]
+        [Editor(typeof(MyBoolEditor), typeof(UITypeEditor))]
+        public bool SearchAllFields { get; set; }
 
         [GlobalizedCategory("Other")]
         [Editor(typeof(MyBoolEditor), typeof(UITypeEditor))]

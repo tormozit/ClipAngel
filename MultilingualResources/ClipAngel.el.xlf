@@ -476,8 +476,8 @@
           <target state="new">Clip was not captured due to clipboard read error</target>
         </trans-unit>
         <trans-unit id="VersionValue" translate="yes" xml:space="preserve">
-          <source>1.64</source>
-          <target state="new">1.64</target>
+          <source>1.66</source>
+          <target state="new">1.66</target>
         </trans-unit>
         <trans-unit id="TargetWindow" translate="yes" xml:space="preserve">
           <source>Target window</source>
@@ -1272,6 +1272,14 @@ Generation of image consumes CPU. If you experience high CPU load, set lower val
         <trans-unit id="CaptureImagesDescription" translate="yes" xml:space="preserve">
           <source>Capture image clips</source>
           <target state="new">Capture image clips</target>
+        </trans-unit>
+        <trans-unit id="SearchAllFields" translate="yes" xml:space="preserve">
+          <source>Search all fields</source>
+          <target state="new">Search all fields</target>
+        </trans-unit>
+        <trans-unit id="SearchAllFieldsDescription" translate="yes" xml:space="preserve">
+          <source>False - search only in Text and Title of clips. True - search in Text, Title, Window, Url of clips.</source>
+          <target state="new">False - search only in Text and Title of clips. True - search in Text, Title, Window, Url of clips.</target>
         </trans-unit>
       </group>
     </body>
@@ -6913,6 +6921,38 @@ Edit search string right from list. Navigate in list right from search field.</t
         <trans-unit id="htmlTextBox.Dock" translate="yes" xml:space="preserve" extype="System.Windows.Forms.DockStyle, System.Windows.Forms">
           <source>Fill</source>
           <target state="needs-review-translation">Fill</target>
+        </trans-unit>
+        <trans-unit id="searchAllFieldsMenuItem.Size" translate="yes" xml:space="preserve" extype="System.Drawing.Size, System.Drawing">
+          <source>209, 22</source>
+          <target state="needs-review-translation">209, 22</target>
+        </trans-unit>
+        <trans-unit id="searchAllFieldsMenuItem.Text" translate="yes" xml:space="preserve">
+          <source>Search all fields</source>
+          <target state="new">Search all fields</target>
+        </trans-unit>
+        <trans-unit id="openWithToolStripMenuItem.Visible" translate="yes" xml:space="preserve" extype="System.Boolean, mscorlib">
+          <source>False</source>
+          <target state="needs-review-translation">False</target>
+        </trans-unit>
+        <trans-unit id="exportMenuItem.Size" translate="yes" xml:space="preserve" extype="System.Drawing.Size, System.Drawing">
+          <source>214, 22</source>
+          <target state="needs-review-translation">214, 22</target>
+        </trans-unit>
+        <trans-unit id="exportMenuItem.Text" translate="yes" xml:space="preserve">
+          <source>Export</source>
+          <target state="new">Export</target>
+        </trans-unit>
+        <trans-unit id="exportMenuItem.ToolTipText" translate="yes" xml:space="preserve">
+          <source>Export selected clips to EXCEL file</source>
+          <target state="new">Export selected clips to EXCEL file</target>
+        </trans-unit>
+        <trans-unit id="importToolStripMenuItem.Size" translate="yes" xml:space="preserve" extype="System.Drawing.Size, System.Drawing">
+          <source>214, 22</source>
+          <target state="needs-review-translation">214, 22</target>
+        </trans-unit>
+        <trans-unit id="importToolStripMenuItem.Text" translate="yes" xml:space="preserve">
+          <source>Import</source>
+          <target state="new">Import</target>
         </trans-unit>
       </group>
     </body>

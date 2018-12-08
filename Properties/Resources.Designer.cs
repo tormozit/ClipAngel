@@ -1042,7 +1042,7 @@ namespace ClipAngel.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 1.65.
+        ///   Looks up a localized string similar to 1.66.
         /// </summary>
         public static string VersionValue {
             get {
@@ -1075,6 +1075,15 @@ namespace ClipAngel.Properties {
             get {
                 object obj = ResourceManager.GetObject("WordWrap", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Wrong file format.
+        /// </summary>
+        public static string WrongFileFormat {
+            get {
+                return ResourceManager.GetString("WrongFileFormat", resourceCulture);
             }
         }
         

@@ -776,5 +776,17 @@ namespace ClipAngel.Properties {
                 this["CaptureImages"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool SearchAllFields {
+            get {
+                return ((bool)(this["SearchAllFields"]));
+            }
+            set {
+                this["SearchAllFields"] = value;
+            }
+        }
     }
 }

@@ -11,12 +11,11 @@ using System.Runtime.InteropServices;
 using System.Threading;
 using System.Text.RegularExpressions;
 using System.Collections.Specialized;
+using System.Data.SqlClient;
 using System.Drawing.Imaging;
 using System.Globalization;
 using System.IO;
 using System.Linq;
-using System.Linq.Expressions;
-using System.Media;
 using System.Security.Cryptography;
 using System.Resources;
 using System.Net;
@@ -25,7 +24,6 @@ using AngleSharp.Parser.Html;
 using AngleSharp.Dom;
 using System.Reflection;
 using System.Runtime.CompilerServices;
-using System.Web.UI.Design;
 using System.Xml;
 using System.Xml.Linq;
 using WindowsInput.Native;
@@ -33,11 +31,7 @@ using mshtml;
 //using Word = Microsoft.Office.Interop.Word;
 using static IconTools;
 using Timer = System.Windows.Forms.Timer;
-using System.Xml.XPath;
 using UIAutomationClient;
-using Microsoft.Test.Input;
-using System.Drawing;
-using System.Windows.Automation;
 using TreeScope = UIAutomationClient.TreeScope;
 
 namespace ClipAngel
@@ -474,7 +468,7 @@ namespace ClipAngel
             //catch { };
 
             // https://msdn.microsoft.com/ru-ru/library/fbk67b6z(v=vs.110).aspx
-            dataAdapter = new SQLiteDataAdapter("", ConnectionString);
+            dataAdapter = new SQLiteDataAdapter("", m_dbConnection);
             //dataGridView.DataSource = clipBindingSource;
             UpdateClipBindingSource();
         }
@@ -1245,7 +1239,7 @@ namespace ClipAngel
             return number.ToString("N", numberFormat) + " " + unit;
         }
 
-        private string GetHtmlFromHtmlClipText()
+        private string GetHtmlFromHtmlClipText(bool AddSourceUrlComment = false)
         {
             string htmlClipText = RowReader["htmlText"].ToString();
             if (String.IsNullOrEmpty(htmlClipText))
@@ -1253,7 +1247,10 @@ namespace ClipAngel
             int indexOfHtlTag = htmlClipText.IndexOf("<html", StringComparison.OrdinalIgnoreCase);
             if (indexOfHtlTag < 0)
                 return "";
-            return htmlClipText.Substring(indexOfHtlTag);
+            string result = htmlClipText.Substring(indexOfHtlTag);
+            if (AddSourceUrlComment)
+                result = result +  "\n<!-- Original URL - " + RowReader["url"].ToString() + " -->";
+            return result;
         }
 
         private void RestoreTextSelection(int NewSelectionStart = -1, int NewSelectionLength = -1)
@@ -1446,7 +1443,6 @@ namespace ClipAngel
                         break;
                 }
             }
-
         }
 
         private void RichText_Click(object sender, EventArgs e)
@@ -1719,10 +1715,21 @@ namespace ClipAngel
             string sqlSearchFilter = "";
             foreach (var word in array)
             {
-                if (Properties.Settings.Default.SearchCaseSensitive)
-                    sqlSearchFilter += " AND (Text Like '%" + word + "%' ESCAPE '\\' OR Title Like '%" + word + "%' ESCAPE '\\')";
-                else
-                    sqlSearchFilter += " AND (UPPER(Text) Like UPPER('%" + word + "%') ESCAPE '\\' OR UPPER(Title) Like UPPER('%" + word + "%') ESCAPE '\\')";
+                List<string> fields = new List<string>{"Text", "Title"};
+                if (Properties.Settings.Default.SearchAllFields)
+                {
+                    fields.Add("Window");
+                    fields.Add("Url");
+                }
+                sqlSearchFilter = " AND (1=0";
+                foreach (string field in fields)
+                {
+                    if (Properties.Settings.Default.SearchCaseSensitive)
+                        sqlSearchFilter += " OR " + field + " Like '%" + word + "%' ESCAPE '\\'";
+                    else
+                        sqlSearchFilter += " OR UPPER(" + field + ") Like UPPER('%" + word + "%') ESCAPE '\\'";
+                }
+                sqlSearchFilter += ")";
             }
             return sqlSearchFilter;
         }
@@ -4469,6 +4476,7 @@ namespace ClipAngel
             TypeFilter.DisplayMember = "";
             TypeFilter.DisplayMember = "Text";
             VisibleUserSettings allSettings = new VisibleUserSettings(this);
+            searchAllFieldsMenuItem.ToolTipText = allSettings.GetProperties().Find("SearchAllFields", true).Description;
             toolStripButtonAutoSelectMatch.ToolTipText = allSettings.GetProperties().Find("AutoSelectMatch", true).Description;
             autoselectMatchedClipMenuItem.ToolTipText = allSettings.GetProperties().Find("AutoSelectMatchedClip", true).Description;
             filterListBySearchStringMenuItem.ToolTipText = allSettings.GetProperties().Find("FilterListBySearchString", true).Description;
@@ -4970,6 +4978,59 @@ namespace ClipAngel
             }
         }
 
+        internal static class NativeMethods
+        {
+            [DllImport("user32.dll", SetLastError = true)]
+            internal static extern uint SendInput(uint nInputs, ref NativeStructs.Input pInputs, int cbSize);
+        }
+
+        internal static class NativeStructs
+        {
+            [StructLayout(LayoutKind.Sequential)]
+            internal struct Input
+            {
+                public NativeEnums.SendInputEventType type;
+                public MouseInput mouseInput;
+            }
+
+            [StructLayout(LayoutKind.Sequential)]
+            internal struct MouseInput
+            {
+                public int dx;
+                public int dy;
+                public uint mouseData;
+                public NativeEnums.MouseEventFlags dwFlags;
+                public uint time;
+                public IntPtr dwExtraInfo;
+            }
+        }
+
+        internal static class NativeEnums
+        {
+            internal enum SendInputEventType : int
+            {
+                Mouse = 0,
+                Keyboard = 1,
+                Hardware = 2,
+            }
+
+            [Flags]
+            internal enum MouseEventFlags : uint
+            {
+                Move = 0x0001,
+                LeftDown = 0x0002,
+                LeftUp = 0x0004,
+                RightDown = 0x0008,
+                RightUp = 0x0010,
+                MiddleDown = 0x0020,
+                MiddleUp = 0x0040,
+                XDown = 0x0080,
+                XUp = 0x0100,
+                Wheel = 0x0800,
+                Absolute = 0x8000,
+            }
+        }
+
         private static void SetFocusByClick(IUIAutomationElement tableElement)
         {
             //tableElement.SetFocus(); // exception - not implemented
@@ -4977,8 +5038,40 @@ namespace ClipAngel
             //invokePattern.Invoke();
             UIAutomationClient.tagPOINT tagPoint;
             tableElement.GetClickablePoint(out tagPoint);
-            Mouse.MoveTo(new Point(tagPoint.x, tagPoint.y));
-            Mouse.Click(MouseButton.Left);
+            int x = tagPoint.x;
+            int y = tagPoint.y;
+
+            // This way not worked if user moves mouse
+            //Mouse.MoveTo(new Point(tagPoint.x, tagPoint.y));
+            //Mouse.Click(MouseButton.Left);
+
+            // This way click is made always at current cursor position
+            //const int MOUSEEVENTF_LEFTDOWN = 0x02;
+            //const int MOUSEEVENTF_LEFTUP = 0x04;
+            //const int MOUSEEVENTF_RIGHTDOWN = 0x08;
+            //const int MOUSEEVENTF_RIGHTUP = 0x10;
+            //mouse_event(MOUSEEVENTF_LEFTDOWN | MOUSEEVENTF_LEFTUP, (uint) tagPoint.x, (uint) tagPoint.y, 0, 0);
+
+            // https://stackoverflow.com/questions/6554494/how-can-i-send-a-right-click-event-to-an-automationelement-using-wpfs-ui-automa
+            NativeStructs.Input input = new NativeStructs.Input
+            {
+                type = NativeEnums.SendInputEventType.Mouse,
+                mouseInput = new NativeStructs.MouseInput
+                {
+                    dx = 0,
+                    dy = 0,
+                    mouseData = 0,
+                    dwFlags = NativeEnums.MouseEventFlags.Absolute | NativeEnums.MouseEventFlags.LeftDown | NativeEnums.MouseEventFlags.Move,
+                    time = 0,
+                    dwExtraInfo = IntPtr.Zero,
+                },
+            };
+            var virtualScreen = System.Windows.Forms.SystemInformation.VirtualScreen;
+            input.mouseInput.dx = Convert.ToInt32((x - virtualScreen.Left) * 65536 / virtualScreen.Width);
+            input.mouseInput.dy = Convert.ToInt32((y - virtualScreen.Top) * 65536 / virtualScreen.Height);
+            NativeMethods.SendInput(1, ref input, Marshal.SizeOf(input));
+            input.mouseInput.dwFlags = NativeEnums.MouseEventFlags.Absolute | NativeEnums.MouseEventFlags.LeftUp | NativeEnums.MouseEventFlags.Move;
+            NativeMethods.SendInput(1, ref input, Marshal.SizeOf(input));
         }
 
         private static IUIAutomationElement FindTable1C(IUIAutomationElement child, IUIAutomationTreeWalker treeWalker)
@@ -5250,6 +5343,7 @@ namespace ClipAngel
 
         private void UpdateControlsStates()
         {
+            searchAllFieldsMenuItem.Checked = Properties.Settings.Default.SearchAllFields;
             filterListBySearchStringMenuItem.Checked = Properties.Settings.Default.FilterListBySearchString;
             autoselectMatchedClipMenuItem.Checked = Properties.Settings.Default.AutoSelectMatchedClip;
             toolStripMenuItemSecondaryColumns.Checked = Properties.Settings.Default.ShowSecondaryColumns;
@@ -5630,7 +5724,7 @@ namespace ClipAngel
             }
             else if (type == "html")
             {
-                File.WriteAllText(tempFile, GetHtmlFromHtmlClipText(), Encoding.UTF8);
+                File.WriteAllText(tempFile, GetHtmlFromHtmlClipText(true), Encoding.UTF8);
                 fileEditor = Properties.Settings.Default.HtmlEditor;
             }
             else if (type == "img")
@@ -6862,6 +6956,68 @@ namespace ClipAngel
         private void menuItemSetFocusClipText_Click(object sender, EventArgs e)
         {
             FocusClipText();
+        }
+
+        private void searchAllFieldsMenuItem_Click(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.SearchAllFields = !Properties.Settings.Default.SearchAllFields;
+            UpdateControlsStates();
+            SearchStringApply();
+        }
+
+        private void exportMenuItem_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.CheckFileExists = false;
+            saveFileDialog.Filter = "ClipAngel clips|*.cac|All|*.*";
+            if (saveFileDialog.ShowDialog(this) != DialogResult.OK)
+                return;
+            string sql = "Select * from Clips where Id IN(null";
+            int counter = 0;
+            foreach (DataGridViewRow selectedRow in dataGridView.SelectedRows)
+            {
+                DataRowView dataRow = (DataRowView)selectedRow.DataBoundItem;
+                string parameterName = "@Id" + counter;
+                sql += "," + parameterName;
+                dataAdapter.SelectCommand.Parameters.Add(parameterName, DbType.Int32).Value = dataRow["Id"];
+                counter++;
+                if (counter == 999) // SQLITE_MAX_VARIABLE_NUMBER, which defaults to 999, but can be lowered at runtime
+                    break;
+            }
+            sql += ")";
+            dataAdapter.SelectCommand.CommandText = sql;
+            DataTable dataTable = new DataTable();
+            dataTable.TableName = "ClipAngelClips";
+            dataTable.Locale = CultureInfo.InvariantCulture;
+            dataAdapter.Fill(dataTable);
+            dataTable.WriteXml(saveFileDialog.FileName, XmlWriteMode.WriteSchema);
+        }
+
+        private void importToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.CheckFileExists = false;
+            openFileDialog.Filter = "ClipAngel clips|*.cac|All|*.*";
+            if (openFileDialog.ShowDialog(this) != DialogResult.OK)
+                return;
+            DataTable dataTable = new DataTable();
+            dataTable.Locale = CultureInfo.InvariantCulture;
+            try
+            {
+                dataTable.ReadXml(openFileDialog.FileName);
+            }
+            catch
+            {
+                MessageBox.Show(this, Properties.Resources.WrongFileFormat, Application.ProductName);
+                return;
+            }
+            foreach (DataRow importedRow in dataTable.Rows)
+            {
+                AddClip(null, null, importedRow["HtmlText"].ToString(), importedRow["RichText"].ToString(), importedRow["Type"].ToString(), importedRow["Text"].ToString(),
+                    importedRow["application"].ToString(), importedRow["window"].ToString(), importedRow["url"].ToString(), Convert.ToInt32(importedRow["chars"].ToString()),
+                    importedRow["AppPath"].ToString(), false, Convert.ToBoolean(importedRow["Favorite"].ToString()), false);
+            }
+            UpdateClipBindingSource();
         }
     }
 }

@@ -391,6 +391,12 @@ Not appliable to HTML native formatting.</value>
   <data name="RtfEditorDescription" xml:space="preserve">
     <value>Used in "Open file" command for clip. Leave empty to use default OS application for edit RTF files.</value>
   </data>
+  <data name="SearchAllFields" xml:space="preserve">
+    <value>Search all fields</value>
+  </data>
+  <data name="SearchAllFieldsDescription" xml:space="preserve">
+    <value>False - search only in Text and Title of clips. True - search in Text, Title, Window, Url of clips.</value>
+  </data>
   <data name="SearchCaseSensitive" xml:space="preserve">
     <value>Search case sensitive</value>
   </data>

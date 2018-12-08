@@ -436,4 +436,7 @@
   <data name="text_1CLine" xml:space="preserve">
     <value>*1C строка</value>
   </data>
+  <data name="WrongFileFormat" xml:space="preserve">
+    <value>Неправильный формат файла</value>
+  </data>
 </root>
