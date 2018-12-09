@@ -543,6 +543,10 @@
           <source>https://sourceforge.net/p/clip-angel/tickets/new/</source>
           <target state="new">https://sourceforge.net/p/clip-angel/tickets/new/</target>
         </trans-unit>
+        <trans-unit id="WrongFileFormat" translate="yes" xml:space="preserve">
+          <source>Wrong file format</source>
+          <target state="new">Wrong file format</target>
+        </trans-unit>
       </group>
     </body>
   </file>
@@ -6939,20 +6943,28 @@ Edit search string right from list. Navigate in list right from search field.</t
           <target state="needs-review-translation">214, 22</target>
         </trans-unit>
         <trans-unit id="exportMenuItem.Text" translate="yes" xml:space="preserve">
-          <source>Export</source>
-          <target state="new">Export</target>
+          <source>Export clips</source>
+          <target state="new">Export clips</target>
         </trans-unit>
         <trans-unit id="exportMenuItem.ToolTipText" translate="yes" xml:space="preserve">
-          <source>Export selected clips to EXCEL file</source>
-          <target state="new">Export selected clips to EXCEL file</target>
+          <source>Export selected clips to file</source>
+          <target state="new">Export selected clips to file</target>
         </trans-unit>
         <trans-unit id="importToolStripMenuItem.Size" translate="yes" xml:space="preserve" extype="System.Drawing.Size, System.Drawing">
           <source>214, 22</source>
           <target state="needs-review-translation">214, 22</target>
         </trans-unit>
         <trans-unit id="importToolStripMenuItem.Text" translate="yes" xml:space="preserve">
-          <source>Import</source>
-          <target state="new">Import</target>
+          <source>Import clips</source>
+          <target state="new">Import clips</target>
+        </trans-unit>
+        <trans-unit id="importToolStripMenuItem.ToolTipText" translate="yes" xml:space="preserve">
+          <source>Import clips from file</source>
+          <target state="new">Import clips from file</target>
+        </trans-unit>
+        <trans-unit id="cultureManager5.TrayLocation" translate="yes" xml:space="preserve" extype="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" extradata="metadata">
+          <source>890, 57</source>
+          <target state="needs-review-translation">890, 57</target>
         </trans-unit>
       </group>
     </body>

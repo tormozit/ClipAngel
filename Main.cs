@@ -4506,6 +4506,8 @@ namespace ClipAngel
             Properties.Settings.Default.RestoreCaretPositionOnFocusReturn = false; // disabled
             dataGridView.RowsDefaultCellStyle.Font = Properties.Settings.Default.Font;
             dataGridView.Columns["ColumnCreated"].DefaultCellStyle.Format = "HH:mmm:ss dd.MM";
+            dataGridView.Columns["VisualWeight"].Width = (int)dataGridView.RowsDefaultCellStyle.Font.Size;
+            dataGridView.RowTemplate.Height = (int)(dataGridView.RowsDefaultCellStyle.Font.Size + 11);
             UpdateColumnsSet();
             AfterRowLoad();
             this.ResumeLayout();

@@ -82,57 +82,45 @@ namespace ClipAngel
         private Image GetRtfImage(int rowIndex, object value, bool selected, DataGridViewCellStyle cellStyle)
         {
             Size cellSize = GetSize(rowIndex);
-
             if (cellSize.Width < 1 || cellSize.Height < 1)
                 return null;
-
-            RichTextBox ctl = null;
-
-            if (ctl == null)
+            RichTextBox ctl = _editingControl;
+            ctl.Size = GetSize(rowIndex);
+            if (SetRichTextBoxText(ctl, Convert.ToString(value)))
+                ctl.Font = cellStyle.Font;
+            // Print the content of RichTextBox to an image.
+            Size imgSize = new Size(cellSize.Width - 1, cellSize.Height - 1);
+            Image rtfImg = null;
+            ctl.DetectUrls = false; // todo customize
+            ctl.WordWrap = false; // Printer does not respect this 
+            ctl.Margin = new Padding(0);
+            if (selected)
             {
-                ctl = _editingControl;
-                ctl.Size = GetSize(rowIndex);
-                if (SetRichTextBoxText(ctl, Convert.ToString(value)))
-                    ctl.Font = cellStyle.Font;
+                // Selected cell state
+                ctl.BackColor = DataGridView.DefaultCellStyle.SelectionBackColor;
+                ctl.ForeColor = DataGridView.DefaultCellStyle.SelectionForeColor;
+
+                // tormozit: fix backgound color for cell
+                //ctl.BackColor = cellStyle.SelectionBackColor;
+                //ctl.ForeColor = cellStyle.SelectionForeColor;
             }
-
-            if (ctl != null)
+            else
             {
-                // Print the content of RichTextBox to an image.
-                Size imgSize = new Size(cellSize.Width - 1, cellSize.Height - 1);
-                Image rtfImg = null;
-                ctl.DetectUrls = false; // todo customize
-                ctl.WordWrap = false; // Printer does not respect this 
-                if (selected)
-                {
-                    // Selected cell state
-                    ctl.BackColor = DataGridView.DefaultCellStyle.SelectionBackColor;
-                    ctl.ForeColor = DataGridView.DefaultCellStyle.SelectionForeColor;
+                // tormozit: fix backgound color for cell
+                ctl.BackColor = cellStyle.BackColor;
+                ctl.ForeColor = cellStyle.ForeColor;
+            }
+            //ctl.Font = cellStyle.Font; // It ignores font from in rtf text
 
-                    // tormozit: fix backgound color for cell
-                    //ctl.BackColor = cellStyle.SelectionBackColor;
-                    //ctl.ForeColor = cellStyle.SelectionForeColor;
-                }
-                else
-                {
-                    // tormozit: fix backgound color for cell
-                    ctl.BackColor = cellStyle.BackColor;
-                    ctl.ForeColor = cellStyle.ForeColor;
-                }
-                //ctl.Font = cellStyle.Font; // It ignores font from in rtf text
-
-                // Print image
-                int extraWidth = 200; // To prevent last word cutting off, WordWrap is not respected by printer and is always ON
-                rtfImg = RichTextBoxPrinter.Print(ctl, imgSize.Width + extraWidth, imgSize.Height);
+            // Print image
+            int extraWidth = 200; // To prevent last word cutting off, WordWrap is not respected by printer and is always ON
+            rtfImg = RichTextBoxPrinter.Print(ctl, imgSize.Width + extraWidth, imgSize.Height);
                 
-                // Restore RichTextBox
-                ctl.BackColor = DataGridView.DefaultCellStyle.BackColor;
-                ctl.ForeColor = DataGridView.DefaultCellStyle.ForeColor;
+            // Restore RichTextBox
+            ctl.BackColor = DataGridView.DefaultCellStyle.BackColor;
+            ctl.ForeColor = DataGridView.DefaultCellStyle.ForeColor;
 
-                return rtfImg;
-            }
-
-            return null;
+            return rtfImg;
         }
 
         //public override void InitializeEditingControl(int rowIndex, object initialFormattedValue, DataGridViewCellStyle dataGridViewCellStyle)
@@ -158,8 +146,8 @@ namespace ClipAngel
             Image img = GetRtfImage(rowIndex, value, base.Selected, cellStyle);
             int textWitdh = cellBounds.Right - cellBounds.Left;
             int horizontalSpaceTextImage = 3;
-            int verticalSpace = 2; // 2 for 9pt font, 3 for 8pt font
-            
+            int verticalSpace = (int) Math.Max(11 - cellStyle.Font.Size, 0);
+
             // TODO customize
             DataGridViewCell SampleCell = DataGridView.Rows[rowIndex].Cells["imageSample"];
             if (SampleCell.Value != null)

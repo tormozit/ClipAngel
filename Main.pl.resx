@@ -2662,4 +2662,7 @@ Sortowanie jest przechowywane aż do przechwycenia klipu.</value>
   <data name="importToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>214, 22</value>
   </data>
+  <metadata name="cultureManager5.TrayLocation" xml:space="preserve" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>890, 57</value>
+  </metadata>
 </root>
