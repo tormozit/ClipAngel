@@ -2596,4 +2596,7 @@ agregado ignorar lista, cual se puede editar en la ventana de configuración.</v
   <metadata name="cultureManager5.TrayLocation" xml:space="preserve" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>890, 57</value>
   </metadata>
+  <data name="$this.ImeMode" xml:space="preserve" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
 </root>

@@ -1132,7 +1132,7 @@ namespace ClipAngel
                     RestoreTextSelection(NewSelectionStart, NewSelectionLength);
                 allowTextPositionChangeUpdate = true;
 
-                //richTextBox.HideSelection = false; // slow
+                richTextBox.HideSelection = false; // slow // Uncommented 10.12.2018 to prevent scroll to right border of wide 1-line text
             }
             tableLayoutPanelData.SuspendLayout();
             UpdateClipButtons();
@@ -1280,7 +1280,7 @@ namespace ClipAngel
         {
             richTextBox.SelectionStart = NewSelectionStart;
             richTextBox.SelectionLength = NewSelectionLength;
-            //richTextBox.HideSelection = true; // slow // Without this exeption in ScrollToCaret can be thrown
+            //richTextBox.HideSelection = true; // slow // Exeption in ScrollToCaret can be thrown without this 
             try
             {
                 richTextBox.ScrollToCaret();
@@ -2267,7 +2267,7 @@ namespace ClipAngel
         }
 
         void AddClip(byte[] binaryBuffer = null, byte[] imageSampleBuffer = null, string htmlText = "", string richText = "", string typeText = "text", string plainText = "",
-            string applicationText = "", string windowText = "", string url = "", int chars = 0, string appPath = "", bool used = false, bool favorite = false, bool updateList = true)
+            string applicationText = "", string windowText = "", string url = "", int chars = 0, string appPath = "", bool used = false, bool favorite = false, bool updateList = true, string clipTitle = "")
         {
             DateTime dtNow = DateTime.Now;
             int msFromLastCapture = DateDiffMilliseconds(lastCaptureMoment);
@@ -2303,7 +2303,8 @@ namespace ClipAngel
             int oldCurrentClipId = 0;
             lastClipWasMultiCaptured = false;
             DateTime created = DateTime.Now;
-            string clipTitle = TextClipTitle(plainText);
+            if (String.IsNullOrEmpty(clipTitle))
+                clipTitle = TextClipTitle(plainText);
             string hash;
             string sql = "SELECT Id, Title, Used, Favorite, Created FROM Clips Where Hash = @Hash";
             if (Properties.Settings.Default.ReplaceDuplicates)
@@ -7017,7 +7018,7 @@ namespace ClipAngel
             {
                 AddClip(null, null, importedRow["HtmlText"].ToString(), importedRow["RichText"].ToString(), importedRow["Type"].ToString(), importedRow["Text"].ToString(),
                     importedRow["application"].ToString(), importedRow["window"].ToString(), importedRow["url"].ToString(), Convert.ToInt32(importedRow["chars"].ToString()),
-                    importedRow["AppPath"].ToString(), false, Convert.ToBoolean(importedRow["Favorite"].ToString()), false);
+                    importedRow["AppPath"].ToString(), false, Convert.ToBoolean(importedRow["Favorite"].ToString()), false, importedRow["title"].ToString());
             }
             UpdateClipBindingSource();
         }
