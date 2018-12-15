@@ -1264,9 +1264,9 @@ namespace ClipAngel
                 mshtml.IHTMLDocument2 htmlDoc = htmlTextBox.Document.DomDocument as mshtml.IHTMLDocument2;
                 mshtml.IHTMLBodyElement body = htmlDoc.body as mshtml.IHTMLBodyElement;
                 mshtml.IHTMLTxtRange range = body.createTextRange();
-                range.moveStart("character", NewSelectionStart);
+                range.moveStart("character", NewSelectionStart + countLinesInString(RowReader["Text"].ToString().Substring(0, NewSelectionStart)));
                 range.collapse();
-                range.moveEnd("character", NewSelectionLength);
+                range.moveEnd("character", NewSelectionLength + countLinesInString(RowReader["Text"].ToString().Substring(NewSelectionStart, NewSelectionLength)));
                 range.@select();
                 range.scrollIntoView();
             }
@@ -5897,7 +5897,7 @@ namespace ClipAngel
 
         private void richTextBox_SelectionChanged(object sender = null, EventArgs e = null)
         {
-            if (!allowTextPositionChangeUpdate)
+            if (!allowTextPositionChangeUpdate||htmlMode)
                 return;
             if (!EditMode && richTextBox.SelectionStart + richTextBox.SelectionLength > clipRichTextLength)
             {
@@ -6230,17 +6230,26 @@ namespace ClipAngel
                 return;
             selectionLength = 0;
             if (!String.IsNullOrEmpty(range.text))
-                selectionLength = range.text.Length;
+                selectionLength = range.text.Length - countLinesInString(range.text) * 2;
             range.collapse();
             range.moveStart("character", -100000);
             selectionStart = 0;
             if (!String.IsNullOrEmpty(range.text))
-                selectionStart = range.text.Length;
+                selectionStart = range.text.Length - countLinesInString(range.text) * 2;
             string innerText = htmlDoc.body.innerText;
             if (!String.IsNullOrEmpty(innerText))
-                if (selectionStart > innerText.Length)
-                    selectionStart = innerText.Length;
+            {
+                int maxStart = innerText.Length - countLinesInString(innerText) * 2;
+                if (selectionStart > maxStart)
+                    selectionStart = maxStart;
+            }
             UpdateClipContentPositionIndicator(0, 0);
+        }
+
+        int countLinesInString(string text)
+        {
+            int result = (text.Length - text.Replace("\n", "").Length);
+            return result;
         }
 
         private void htmlTextBoxMouseMove(Object sender, HtmlElementEventArgs e)
