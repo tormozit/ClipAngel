@@ -1098,9 +1098,10 @@ namespace ClipAngel
                         //paragraph.Style = markerColor.ToString();
                         //paragraph.Style = markerFont.ToString();
                         //htmlTextBox.Document.Body.AppendChild(paragraph);
+                        MarkLinksInWebBrowser(htmlTextBox, out TextLinkMatches);
                         if (textPattern.Length > 0)
                         {
-                            MarkRegExpMatchesInWebBrowser(htmlTextBox, textPattern, !String.IsNullOrEmpty(searchString));
+                            MarkMatchesInWebBrowser(htmlTextBox, textPattern, !String.IsNullOrEmpty(searchString));
                         }
                     }
                     else
@@ -1261,19 +1262,29 @@ namespace ClipAngel
                 NewSelectionLength = selectionLength;
             if (htmlMode)
             {
-                mshtml.IHTMLDocument2 htmlDoc = htmlTextBox.Document.DomDocument as mshtml.IHTMLDocument2;
-                mshtml.IHTMLBodyElement body = htmlDoc.body as mshtml.IHTMLBodyElement;
-                mshtml.IHTMLTxtRange range = body.createTextRange();
-                range.moveStart("character", NewSelectionStart + countLinesInString(RowReader["Text"].ToString().Substring(0, NewSelectionStart)));
-                range.collapse();
-                range.moveEnd("character", NewSelectionLength + countLinesInString(RowReader["Text"].ToString().Substring(NewSelectionStart, NewSelectionLength)));
-                range.@select();
+                mshtml.IHTMLTxtRange range = SelectTextRangeInWebBrowser(NewSelectionStart, NewSelectionLength);
                 range.scrollIntoView();
             }
             else
             {
                 SetRichTextboxSelection(NewSelectionStart, NewSelectionLength);
             }
+        }
+
+        private mshtml.IHTMLTxtRange SelectTextRangeInWebBrowser(int NewSelectionStart, int NewSelectionLength)
+        {
+            mshtml.IHTMLDocument2 htmlDoc = htmlTextBox.Document.DomDocument as mshtml.IHTMLDocument2;
+            mshtml.IHTMLBodyElement body = htmlDoc.body as mshtml.IHTMLBodyElement;
+            mshtml.IHTMLTxtRange range = body.createTextRange();
+            range.moveStart("character", NewSelectionStart 
+                + GetNormalizedTextDeltaSize(RowReader["Text"].ToString().Substring(0, NewSelectionStart))
+                );
+            range.collapse();
+            range.moveEnd("character", NewSelectionLength 
+                + GetNormalizedTextDeltaSize(RowReader["Text"].ToString().Substring(NewSelectionStart, NewSelectionLength))
+                );
+            range.@select();
+            return range;
         }
 
         private void SetRichTextboxSelection(int NewSelectionStart, int NewSelectionLength)
@@ -1359,7 +1370,7 @@ namespace ClipAngel
 
         private void MarkLinksInRichTextBox(RichTextBox control, out MatchCollection matches)
         {
-            MarkRegExpMatchesInRichTextBox(control, "(" + LinkPattern + "|" + TextPatterns["1CLine"] + ")", Color.Blue, true, false, out matches);
+            MarkRegExpMatchesInRichTextBox(control, "(" + TextPatterns["1CLine"] + "|" + LinkPattern + ")", Color.Blue, true, false, out matches);
         }
 
         private void MarkRegExpMatchesInRichTextBox(RichTextBox control, string pattern, Color color, bool underline,
@@ -1404,9 +1415,32 @@ namespace ClipAngel
             control.SelectionFont = new Font(control.SelectionFont, FontStyle.Regular);
         }
 
-        private void MarkRegExpMatchesInWebBrowser(WebBrowser control, string pattern, bool bold = false)
+        private void MarkLinksInWebBrowser(WebBrowser control, out MatchCollection matches)
         {
-            mshtml.IHTMLDocument2 htmlDoc = (mshtml.IHTMLDocument2) htmlTextBox.Document.DomDocument;
+            MarkRegExpMatchesInWebBrowser(control, "(" + TextPatterns["1CLine"] + ")", out matches);
+        }
+
+        private void MarkRegExpMatchesInWebBrowser(WebBrowser control, string pattern, out MatchCollection matches)
+        {
+            mshtml.IHTMLDocument2 htmlDoc = (mshtml.IHTMLDocument2)control.Document.DomDocument;
+            RegexOptions options = RegexOptions.Singleline;
+            if (!Properties.Settings.Default.SearchCaseSensitive)
+                options = options | RegexOptions.IgnoreCase;
+            matches = Regex.Matches(RowReader["text"].ToString(), pattern, options);
+            int maxMarked = 50; // prevent slow down
+            foreach (Match match in matches)
+            {
+                mshtml.IHTMLTxtRange range = SelectTextRangeInWebBrowser(match.Groups[1].Index, match.Groups[1].Length);
+                range.execCommand("CreateLink", false, "");
+                maxMarked--;
+                if (maxMarked < 0)
+                    break;
+            }
+        }
+
+        private void MarkMatchesInWebBrowser(WebBrowser control, string pattern, bool bold = false)
+        {
+            mshtml.IHTMLDocument2 htmlDoc = (mshtml.IHTMLDocument2) control.Document.DomDocument;
             mshtml.IHTMLBodyElement body = htmlDoc.body as mshtml.IHTMLBodyElement;
             int boundingTop = 0;
             int colorIndex = 0;
@@ -1443,6 +1477,7 @@ namespace ClipAngel
                         break;
                 }
             }
+
         }
 
         private void RichText_Click(object sender, EventArgs e)
@@ -4750,16 +4785,17 @@ namespace ClipAngel
             Keys mod = Control.ModifierKeys & Keys.Modifiers;
             bool altOnly = mod == Keys.Alt;
             if (altOnly)
-                OpenLinkInRichTextBox(sender, matches);
+                OpenLinkFromTextBox(matches, sender.SelectionStart);
         }
 
-        private void OpenLinkInRichTextBox(RichTextBox sender, MatchCollection matches)
+        // Result - true if known link found
+        private bool OpenLinkFromTextBox(MatchCollection matches, int SelectionStart, bool allowOpenUnknown = true)
         {
             foreach (Match match in matches)
             {
-                if (match.Index <= sender.SelectionStart && (match.Index + match.Length) >= sender.SelectionStart)
+                if (match.Index <= SelectionStart && (match.Index + match.Length) >= SelectionStart)
                 {
-                    if (match.Groups[3].Success) // 1CCodeLink
+                    if (match.Groups[2].Success) // 1CCodeLink
                     {
                         string appPath = "";
                         string clipWindow = "";
@@ -4769,12 +4805,12 @@ namespace ClipAngel
                         GetClipboardOwnerLockerInfo(true, out clipWindow, out clipApplication, out appPath, out is1C, out mainWindow);
                         if (String.Compare(clipApplication, "1cv8", true) == 0)
                         {
-                            string extensionName = match.Groups[4].ToString();
-                            string moduleName = match.Groups[5].ToString();
+                            string extensionName = match.Groups[3].ToString();
+                            string moduleName = match.Groups[4].ToString();
                             string[] fragments = moduleName.Split("."[0]);
                             if (fragments[0] == "ВнешняяОбработка")
-                                return;
-                            int lineNumber = Convert.ToInt32(match.Groups[6].ToString());
+                                return true;
+                            int lineNumber = Convert.ToInt32(match.Groups[5].ToString());
                             ActivateTargetWindow();
                             SendKeys.Send("%{F9}");
                             SendKeys.Flush();
@@ -4976,9 +5012,12 @@ namespace ClipAngel
                         }
                     }
                     else // url
-                        Process.Start(match.Value);
+                        if (allowOpenUnknown)
+                            Process.Start(match.Value);
+                    return true;
                 }
             }
+            return false;
         }
 
         internal static class NativeMethods
@@ -6217,6 +6256,14 @@ namespace ClipAngel
         {
             if (!allowTextPositionChangeUpdate)
                 return;
+            selectionStart = GetHtmlPosition(out selectionLength);
+            UpdateClipContentPositionIndicator(0, 0);
+        }
+
+        private int GetHtmlPosition(out int length)
+        {
+            length = 0;
+            int start = 0;
             mshtml.IHTMLDocument2 htmlDoc = htmlTextBox.Document.DomDocument as mshtml.IHTMLDocument2;
             mshtml.IHTMLTxtRange range = null;
             try
@@ -6227,27 +6274,33 @@ namespace ClipAngel
             {
             }
             if (range == null)
-                return;
-            selectionLength = 0;
+                return start;
             if (!String.IsNullOrEmpty(range.text))
-                selectionLength = range.text.Length - countLinesInString(range.text) * 2;
+                length = range.text.Length 
+                    - GetNormalizedTextDeltaSize(range.text)
+                    ;
             range.collapse();
             range.moveStart("character", -100000);
-            selectionStart = 0;
             if (!String.IsNullOrEmpty(range.text))
-                selectionStart = range.text.Length - countLinesInString(range.text) * 2;
+                start = range.text.Length 
+                    - GetNormalizedTextDeltaSize(range.text)
+                    ;
             string innerText = htmlDoc.body.innerText;
             if (!String.IsNullOrEmpty(innerText))
             {
-                int maxStart = innerText.Length - countLinesInString(innerText) * 2;
-                if (selectionStart > maxStart)
-                    selectionStart = maxStart;
+                int maxStart = innerText.Length 
+                    - GetNormalizedTextDeltaSize(innerText)
+                    ;
+                if (start > maxStart)
+                    start = maxStart;
             }
-            UpdateClipContentPositionIndicator(0, 0);
+            return start;
         }
 
-        int countLinesInString(string text)
+        int GetNormalizedTextDeltaSize(string text)
         {
+            // Found no reliable way to map html position <-> text position
+            return 0;
             int result = (text.Length - text.Replace("\n", "").Length);
             return result;
         }
@@ -6283,8 +6336,13 @@ namespace ClipAngel
 
         private void openLinkInBrowserToolStripMenuItem_Click(object sender = null, EventArgs e = null)
         {
-            string href = lastClickedHtmlElement.GetAttribute("href");
-            Process.Start(href);
+            int dummy;
+            if (!OpenLinkFromTextBox(TextLinkMatches, GetHtmlPosition(out dummy), false))
+            {
+                string href = lastClickedHtmlElement.GetAttribute("href");
+                if (!String.IsNullOrEmpty(href))
+                    Process.Start(href);
+            }
         }
 
         private void showInTaskbarToolStripMenuItem_Click(object sender, EventArgs e)
@@ -6330,7 +6388,7 @@ namespace ClipAngel
 
         private void rtfMenuItemOpenLink_Click(object sender, EventArgs e)
         {
-            OpenLinkInRichTextBox(richTextBox, TextLinkMatches);
+            OpenLinkFromTextBox(TextLinkMatches, richTextBox.SelectionStart);
         }
 
         private void toolStripMenuItemShowAllTypes_Click(object sender, EventArgs e)
