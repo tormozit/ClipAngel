@@ -5069,9 +5069,9 @@ namespace ClipAngel
                     dwExtraInfo = IntPtr.Zero,
                 },
             };
-            var virtualScreen = System.Windows.Forms.SystemInformation.VirtualScreen;
-            input.mouseInput.dx = Convert.ToInt32((x - virtualScreen.Left) * 65536 / virtualScreen.Width);
-            input.mouseInput.dy = Convert.ToInt32((y - virtualScreen.Top) * 65536 / virtualScreen.Height);
+            var primaryScreen = Screen.PrimaryScreen;
+            input.mouseInput.dx = Convert.ToInt32((x - primaryScreen.WorkingArea.Left) * 65536 / primaryScreen.WorkingArea.Width);
+            input.mouseInput.dy = Convert.ToInt32((y - primaryScreen.WorkingArea.Top) * 65536 / primaryScreen.WorkingArea.Height);
             NativeMethods.SendInput(1, ref input, Marshal.SizeOf(input));
             input.mouseInput.dwFlags = NativeEnums.MouseEventFlags.Absolute | NativeEnums.MouseEventFlags.LeftUp | NativeEnums.MouseEventFlags.Move;
             NativeMethods.SendInput(1, ref input, Marshal.SizeOf(input));
