@@ -4833,19 +4833,26 @@ namespace ClipAngel
                                 if (tableElement != null)
                                 {
                                     SetFocusByClick(tableElement);
-                                    if (IsRussianInputLanguage())
-                                        SendKeys.Send("^(ы)");
-                                    else
-                                        SendKeys.Send("^(s)");
-                                    success = WaitWindowFocus(breakPointsWindow, "Сохранить точки останова в файл", out tempElement, "#32770", treeWalker);
+                                    for (int i = 0; i < 2; i++)
+                                    {
+                                        if (IsRussianInputLanguage())
+                                            SendKeys.Send("^(ы)");
+                                        else
+                                            SendKeys.Send("^(s)");
+                                        success = WaitWindowFocus(breakPointsWindow, "Сохранить точки останова в файл", out tempElement, "#32770", treeWalker, 1000);
+                                        if (success)
+                                            break;
+                                    }
                                 }
                             }
+                            else
+                                success = success;
                             if (success)
                             {
                                 success = false;
                                 File.Delete(tempFilename);
                                 valuePattern = _automation.GetFocusedElement().GetCurrentPattern(UIA_ValuePatternId);
-                                ((IUIAutomationValuePattern)valuePattern).SetValue(tempFilename);
+                                ((IUIAutomationValuePattern) valuePattern).SetValue(tempFilename);
                                 tempFilename = tempFilename + ".xml";
                                 SendKeys.Send("{ENTER}");
                                 stopWatch.Restart();
@@ -4859,6 +4866,8 @@ namespace ClipAngel
                                     Thread.Sleep(50);
                                 }
                             }
+                            else
+                                success = success;
                             if (success)
                             {
                                 success = false;
@@ -4958,6 +4967,8 @@ namespace ClipAngel
                                     SendKeys.Send("^(o)");
                                 success = WaitWindowFocus(breakPointsWindow, "Загрузить точки останова из файла", out tempElement, "#32770", treeWalker);
                             }
+                            else
+                                success = success;
                             if (success)
                             {
                                 success = false;
@@ -4966,6 +4977,8 @@ namespace ClipAngel
                                 SendKeys.SendWait("{ENTER}");
                                 success = WaitWindowFocus(null, "Точки останова", out breakPointsWindow, "V8NewLocalFrameBaseWnd", treeWalker, 1000);
                             }
+                            else
+                                success = success;
                             if (success)
                             {
                                 success = false;
@@ -5114,6 +5127,7 @@ namespace ClipAngel
             NativeMethods.SendInput(1, ref input, Marshal.SizeOf(input));
             input.mouseInput.dwFlags = NativeEnums.MouseEventFlags.Absolute | NativeEnums.MouseEventFlags.LeftUp | NativeEnums.MouseEventFlags.Move;
             NativeMethods.SendInput(1, ref input, Marshal.SizeOf(input));
+            Thread.Sleep(50);
         }
 
         private static IUIAutomationElement FindTable1C(IUIAutomationElement child, IUIAutomationTreeWalker treeWalker)
