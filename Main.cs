@@ -1277,11 +1277,11 @@ namespace ClipAngel
             mshtml.IHTMLBodyElement body = htmlDoc.body as mshtml.IHTMLBodyElement;
             mshtml.IHTMLTxtRange range = body.createTextRange();
             range.moveStart("character", NewSelectionStart 
-                + GetNormalizedTextDeltaSize(RowReader["Text"].ToString().Substring(0, NewSelectionStart))
+                //+ GetNormalizedTextDeltaSize(RowReader["Text"].ToString().Substring(0, Math.Max(NewSelectionStart, 0)))
                 );
             range.collapse();
             range.moveEnd("character", NewSelectionLength 
-                + GetNormalizedTextDeltaSize(RowReader["Text"].ToString().Substring(NewSelectionStart, NewSelectionLength))
+                //+ GetNormalizedTextDeltaSize(RowReader["Text"].ToString().Substring(Math.Max(NewSelectionStart, 0), NewSelectionLength))
                 );
             range.@select();
             return range;
@@ -6277,19 +6277,19 @@ namespace ClipAngel
                 return start;
             if (!String.IsNullOrEmpty(range.text))
                 length = range.text.Length 
-                    - GetNormalizedTextDeltaSize(range.text)
+                    //- GetNormalizedTextDeltaSize(range.text)
                     ;
             range.collapse();
             range.moveStart("character", -100000);
             if (!String.IsNullOrEmpty(range.text))
                 start = range.text.Length 
-                    - GetNormalizedTextDeltaSize(range.text)
+                    //- GetNormalizedTextDeltaSize(range.text)
                     ;
             string innerText = htmlDoc.body.innerText;
             if (!String.IsNullOrEmpty(innerText))
             {
                 int maxStart = innerText.Length 
-                    - GetNormalizedTextDeltaSize(innerText)
+                    //- GetNormalizedTextDeltaSize(innerText)
                     ;
                 if (start > maxStart)
                     start = maxStart;
