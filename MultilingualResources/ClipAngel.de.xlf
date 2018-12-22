@@ -6917,9 +6917,21 @@ Bearbeite den Suchstring direkt aus der Liste. Navigiere in der Liste direkt aus
           <source>890, 57</source>
           <target state="needs-review-translation">890, 57</target>
         </trans-unit>
-        <trans-unit id="$this.ImeMode" translate="yes" xml:space="preserve" extype="System.Windows.Forms.ImeMode, System.Windows.Forms">
-          <source>NoControl</source>
-          <target state="needs-review-translation">NoControl</target>
+        <trans-unit id="saveAsFileMenuItem.Size" translate="yes" xml:space="preserve" extype="System.Drawing.Size, System.Drawing">
+          <source>214, 22</source>
+          <target state="needs-review-translation">214, 22</target>
+        </trans-unit>
+        <trans-unit id="saveAsFileMenuItem.Text" translate="yes" xml:space="preserve">
+          <source>Save as file...</source>
+          <target state="new">Save as file...</target>
+        </trans-unit>
+        <trans-unit id="saveAsFileMenuItem.ToolTipText" translate="yes" xml:space="preserve">
+          <source>Save data to file with directory and name selection for text or image clip</source>
+          <target state="new">Save data to file with directory and name selection for text or image clip</target>
+        </trans-unit>
+        <trans-unit id="saveAsFileMenuItem.ShortcutKeys" translate="yes" xml:space="preserve" extype="System.Windows.Forms.Keys, System.Windows.Forms">
+          <source>Ctrl+S</source>
+          <target state="needs-review-translation">Ctrl+S</target>
         </trans-unit>
       </group>
     </body>

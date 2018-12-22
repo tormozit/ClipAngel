@@ -7103,6 +7103,22 @@ namespace ClipAngel
             }
             UpdateClipBindingSource();
         }
+
+        private void saveAsFileMenuItem_Click(object sender, EventArgs e)
+        {
+            string fileEditor = "";
+            string tempFile = GetClipTempFile(out fileEditor);
+            if (String.IsNullOrEmpty(tempFile))
+                return;
+            string extension = Path.GetExtension(tempFile);
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.FileName = RowReader["title"].ToString();
+            saveFileDialog.CheckFileExists = false;
+            saveFileDialog.Filter = extension  + "| *" + extension + "|All|*.*";
+            if (saveFileDialog.ShowDialog(this) != DialogResult.OK)
+                return;
+            File.Copy(tempFile, saveFileDialog.FileName);
+        }
     }
 }
 
