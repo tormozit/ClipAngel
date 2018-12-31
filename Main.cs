@@ -5122,8 +5122,8 @@ namespace ClipAngel
                 },
             };
             var primaryScreen = Screen.PrimaryScreen;
-            input.mouseInput.dx = Convert.ToInt32((x - primaryScreen.WorkingArea.Left) * 65536 / primaryScreen.WorkingArea.Width);
-            input.mouseInput.dy = Convert.ToInt32((y - primaryScreen.WorkingArea.Top) * 65536 / primaryScreen.WorkingArea.Height);
+            input.mouseInput.dx = Convert.ToInt32((x - primaryScreen.Bounds.Left) * 65536 / primaryScreen.Bounds.Width);
+            input.mouseInput.dy = Convert.ToInt32((y - primaryScreen.Bounds.Top) * 65536 / primaryScreen.Bounds.Height);
             NativeMethods.SendInput(1, ref input, Marshal.SizeOf(input));
             input.mouseInput.dwFlags = NativeEnums.MouseEventFlags.Absolute | NativeEnums.MouseEventFlags.LeftUp | NativeEnums.MouseEventFlags.Move;
             NativeMethods.SendInput(1, ref input, Marshal.SizeOf(input));
