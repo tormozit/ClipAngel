@@ -1384,11 +1384,11 @@ namespace ClipAngel
             int maxMarked = 50; // prevent slow down
             foreach (Match match in matches)
             {
+                int startGroup = 2;
                 control.SelectionStart = match.Groups[1].Index;
                 control.SelectionLength = match.Groups[1].Length;
-                if (match.Groups.Count > 3 && color == Color.Red)
+                if (match.Groups.Count > 3)
                 {
-                    int startGroup = 2;
                     for (int counter = startGroup; counter < match.Groups.Count; counter++)
                     {
                         if (match.Groups[counter].Success)
@@ -1747,25 +1747,27 @@ namespace ClipAngel
                 array = filterTextTemp.Split(new[] {" "}, StringSplitOptions.RemoveEmptyEntries);
             else
                 array = new string[1] {filterTextTemp};
-            string sqlSearchFilter = "";
-            foreach (var word in array)
+            List<string> fields = new List<string>{"Text", "Title"};
+            if (Properties.Settings.Default.SearchAllFields)
             {
-                List<string> fields = new List<string>{"Text", "Title"};
-                if (Properties.Settings.Default.SearchAllFields)
-                {
-                    fields.Add("Window");
-                    fields.Add("Url");
-                }
-                sqlSearchFilter = " AND (1=0";
-                foreach (string field in fields)
+                fields.Add("Window");
+                fields.Add("Url");
+            }
+            string sqlSearchFilter = "";
+            foreach (string field in fields)
+            {
+                sqlSearchFilter += " OR (1=1";
+                foreach (var word in array)
                 {
                     if (Properties.Settings.Default.SearchCaseSensitive)
-                        sqlSearchFilter += " OR " + field + " Like '%" + word + "%' ESCAPE '\\'";
+                        sqlSearchFilter += "\n AND " + field + " Like '%" + word + "%' ESCAPE '\\'";
                     else
-                        sqlSearchFilter += " OR UPPER(" + field + ") Like UPPER('%" + word + "%') ESCAPE '\\'";
+                        sqlSearchFilter += "\n AND UPPER(" + field + ") Like UPPER('%" + word + "%') ESCAPE '\\'";
                 }
                 sqlSearchFilter += ")";
             }
+            if (!String.IsNullOrEmpty(sqlSearchFilter))
+                sqlSearchFilter = " AND (1=0" + sqlSearchFilter + ")";
             return sqlSearchFilter;
         }
 
