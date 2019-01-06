@@ -329,6 +329,10 @@ namespace ClipAngel
             ResetIsMainProperty();
 
             LoadSettings();
+            if (Properties.Settings.Default.dataGridViewWidth != 0)
+            {
+                splitContainer1.SplitterDistance = Properties.Settings.Default.dataGridViewWidth;
+            }
         }
 
         // Mouse moved in window working area
@@ -4725,6 +4729,7 @@ namespace ClipAngel
             this.Visible = false;
             Properties.Settings.Default.WindowPositionX = this.Left;
             Properties.Settings.Default.WindowPositionY = this.Top;
+            Properties.Settings.Default.dataGridViewWidth = splitContainer1.SplitterDistance;
 
             //Properties.Settings.Default.Save(); // Not all properties were saved here. For example ShowInTaskbar was not saved
             RemoveClipboardFormatListener(this.Handle);

@@ -788,5 +788,17 @@ namespace ClipAngel.Properties {
                 this["SearchAllFields"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int dataGridViewWidth {
+            get {
+                return ((int)(this["dataGridViewWidth"]));
+            }
+            set {
+                this["dataGridViewWidth"] = value;
+            }
+        }
     }
 }
