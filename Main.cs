@@ -910,7 +910,7 @@ namespace ClipAngel
             if (this.Visible && Properties.Settings.Default.ShowTipsOnStart)
             {
                 Tips form = new Tips();
-                form.ShowDialog();
+                form.ShowDialog(this);
             }
             dataGridView.Focus();
         }
@@ -6985,7 +6985,7 @@ namespace ClipAngel
             PasteSpecial SpecialPasteForm = new PasteSpecial();
             string Dummy = "";
             SpecialPasteForm.OriginalText = GetSelectedTextOfClips(ref Dummy);
-            DialogResult result = SpecialPasteForm.ShowDialog();
+            DialogResult result = SpecialPasteForm.ShowDialog(this);
             if (result == DialogResult.OK)
             {
                 bool PasteIntoNewClip = SpecialPasteForm.PasteIntoNewClip;
