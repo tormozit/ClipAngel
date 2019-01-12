@@ -476,8 +476,8 @@
           <target state="new">Clip was not captured due to clipboard read error</target>
         </trans-unit>
         <trans-unit id="VersionValue" translate="yes" xml:space="preserve">
-          <source>1.69</source>
-          <target state="new">1.69</target>
+          <source>1.70</source>
+          <target state="new">1.70</target>
         </trans-unit>
         <trans-unit id="TargetWindow" translate="yes" xml:space="preserve">
           <source>Target window</source>

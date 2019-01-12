@@ -1434,15 +1434,20 @@ namespace ClipAngel
             matches = Regex.Matches(RowReader["text"].ToString(), pattern, options);
             int maxMarked = 50; // prevent slow down
             string href = "";
+            mshtml.IHTMLTxtRange range = null;
             foreach (Match match in matches)
             {
-                mshtml.IHTMLTxtRange range = SelectTextRangeInWebBrowser(match.Groups[1].Index, match.Groups[1].Length);
+                range = SelectTextRangeInWebBrowser(match.Groups[1].Index, match.Groups[1].Length);
                 if (is1Clink)
                     href = link1Cprefix + match.Index;
                 range.execCommand("CreateLink", false, href);
                 maxMarked--;
                 if (maxMarked < 0)
                     break;
+            }
+            if (range != null)
+            {
+                SelectTextRangeInWebBrowser(1, 0);
             }
         }
 
