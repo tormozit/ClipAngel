@@ -460,10 +460,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>VisibleUserSettings.de.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="VisibleUserSettings.el.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>VisibleUserSettings.el.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="VisibleUserSettings.es.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>VisibleUserSettings.es.Designer.cs</LastGenOutput>

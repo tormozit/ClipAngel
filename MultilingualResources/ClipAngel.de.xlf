@@ -390,8 +390,9 @@ Native HTML-Formatierung ist nicht betroffen.</target>
           <target state="translated">Native Textformatierung anzeigen</target>
         </trans-unit>
         <trans-unit id="ShowNativeTextFormattingDescription" translate="yes" xml:space="preserve">
-          <source>Show native text formatting for RTF and HTML clips (CLTR+N)</source>
-          <target state="translated">Native Textformatierung für RTF- und HTML-Clips anzeigen (Strg + N)</target>
+          <source>Show native text formatting for RTF and HTML clips (CTRL+N)</source>
+          <target state="needs-review-translation">Native Textformatierung für RTF- und HTML-Clips anzeigen (Strg + N)</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="ShowSizeColumn" translate="yes" xml:space="preserve">
           <source>Show visual clip weight column</source>

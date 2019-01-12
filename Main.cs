@@ -133,6 +133,7 @@ namespace ClipAngel
         private ToolTip titleToolTip = new ToolTip();
         private Timer titleToolTipBeforeTimer = new Timer();
         string sortField = "Id";
+        string link1Cprefix = "1Clink:";
         List<int> searchMatchedIDs = new List<int>();
         private static string timePattern = "\\b[012]?\\d:[0-5]?\\d(?::[0-5]?\\d)?\\b";
         private static string datePattern = "\\b(?:19|20)?[0-9]{2}[\\-/.][0-9]{2}[\\-/.](?:19|20)?[0-9]{2}\\b";
@@ -1421,10 +1422,10 @@ namespace ClipAngel
 
         private void MarkLinksInWebBrowser(WebBrowser control, out MatchCollection matches)
         {
-            MarkRegExpMatchesInWebBrowser(control, "(" + TextPatterns["1CLine"] + ")", out matches);
+            MarkRegExpMatchesInWebBrowser(control, "(" + TextPatterns["1CLine"] + ")", true, out matches);
         }
 
-        private void MarkRegExpMatchesInWebBrowser(WebBrowser control, string pattern, out MatchCollection matches)
+        private void MarkRegExpMatchesInWebBrowser(WebBrowser control, string pattern, bool is1Clink, out MatchCollection matches)
         {
             mshtml.IHTMLDocument2 htmlDoc = (mshtml.IHTMLDocument2)control.Document.DomDocument;
             RegexOptions options = RegexOptions.Singleline;
@@ -1432,10 +1433,13 @@ namespace ClipAngel
                 options = options | RegexOptions.IgnoreCase;
             matches = Regex.Matches(RowReader["text"].ToString(), pattern, options);
             int maxMarked = 50; // prevent slow down
+            string href = "";
             foreach (Match match in matches)
             {
                 mshtml.IHTMLTxtRange range = SelectTextRangeInWebBrowser(match.Groups[1].Index, match.Groups[1].Length);
-                range.execCommand("CreateLink", false, "");
+                if (is1Clink)
+                    href = link1Cprefix + match.Index;
+                range.execCommand("CreateLink", false, href);
                 maxMarked--;
                 if (maxMarked < 0)
                     break;
@@ -6267,6 +6271,7 @@ namespace ClipAngel
         {
             if (e.altKey)
             {
+                IHTMLElement hlink = e.srcElement;
                 openLinkInBrowserToolStripMenuItem_Click();
             }
             return false;
@@ -6357,10 +6362,20 @@ namespace ClipAngel
 
         private void openLinkInBrowserToolStripMenuItem_Click(object sender = null, EventArgs e = null)
         {
-            int dummy;
-            if (!OpenLinkFromTextBox(TextLinkMatches, GetHtmlPosition(out dummy), false))
+            string href = lastClickedHtmlElement.GetAttribute("href");
+            int textOffset = 0;
+            if (href.StartsWith(link1Cprefix))
+                try
+                {
+                    textOffset = Convert.ToInt32(href.Replace(link1Cprefix, ""));
+                }
+                catch
+                {}
+            if (textOffset > 0 && OpenLinkFromTextBox(TextLinkMatches, textOffset, false))
             {
-                string href = lastClickedHtmlElement.GetAttribute("href");
+            }
+            else
+            {
                 if (!String.IsNullOrEmpty(href))
                     Process.Start(href);
             }

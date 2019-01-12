@@ -636,8 +636,9 @@ Non applicabile alla formattazione nativa HTML.</target>
           <target state="translated">Visualizza la formattazione nativa del testo</target>
         </trans-unit>
         <trans-unit id="ShowNativeTextFormattingDescription" translate="yes" xml:space="preserve">
-          <source>Show native text formatting for RTF and HTML clips (CLTR+N)</source>
-          <target state="translated">Visualizza la formattazione nativa del testo per catture RTF e HTML (CTRL+N)</target>
+          <source>Show native text formatting for RTF and HTML clips (CTRL+N)</source>
+          <target state="needs-review-translation">Visualizza la formattazione nativa del testo per catture RTF e HTML (CTRL+N)</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="ShowSizeColumn" translate="yes" xml:space="preserve">
           <source>Show visual clip weight column</source>

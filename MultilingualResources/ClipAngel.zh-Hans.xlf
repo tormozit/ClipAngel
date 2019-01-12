@@ -1437,8 +1437,9 @@ Not appliable to HTML native formatting.</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">显示本机文本格式</target>
         </trans-unit>
         <trans-unit id="ShowNativeTextFormattingDescription" translate="yes" xml:space="preserve">
-          <source>Show native text formatting for RTF and HTML clips (CLTR+N)</source>
+          <source>Show native text formatting for RTF and HTML clips (CTRL+N)</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">显示本机文本格式的 RTF 和 HTML 剪辑 (中国肝移植注册 + N)</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="ShowSizeColumn" translate="yes" xml:space="preserve">
           <source>Show visual clip weight column</source>

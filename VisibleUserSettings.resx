@@ -431,7 +431,7 @@ Not appliable to HTML native formatting.</value>
     <value>Show native text formatting</value>
   </data>
   <data name="ShowNativeTextFormattingDescription" xml:space="preserve">
-    <value>Show native text formatting for RTF and HTML clips (CLTR+N)</value>
+    <value>Show native text formatting for RTF and HTML clips (CTRL+N)</value>
   </data>
   <data name="ShowSecondaryColumns" xml:space="preserve">
     <value>Show secondary columns</value>

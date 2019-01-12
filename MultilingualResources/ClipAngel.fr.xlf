@@ -1433,8 +1433,9 @@ Les Clips utilisés sont mis en haut de la liste.</target>
           <target state="translated">Afficher le format texte natif</target>
         </trans-unit>
         <trans-unit id="ShowNativeTextFormattingDescription" translate="yes" xml:space="preserve">
-          <source>Show native text formatting for RTF and HTML clips (CLTR+N)</source>
-          <target state="translated">Afficher le formatage du texte natif pour les clips RTF et HTML (CLTR + N)</target>
+          <source>Show native text formatting for RTF and HTML clips (CTRL+N)</source>
+          <target state="needs-review-translation">Afficher le formatage du texte natif pour les clips RTF et HTML (CLTR + N)</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="ShowSizeColumn" translate="yes" xml:space="preserve">
           <source>Show visual clip weight column</source>
