@@ -166,6 +166,8 @@ namespace ClipAngel
             {"ОбщаяКоманда", "CommonCommand"},
             {"Обработка", "DataProcessor"},
             {"Отчет", "Report"},
+            {"HTTPСервис", "HTTPService"},
+            {"WebСервис", "WebService"},
             {"Справочник", "Catalog"},
             {"Документ", "Document"},
             {"РегистрСведений", "InformationRegister"},
