@@ -166,7 +166,7 @@ namespace ClipAngel
             {"ОбщаяКоманда", "CommonCommand"},
             {"Обработка", "DataProcessor"},
             {"Отчет", "Report"},
-            {"HTTPСервис", "HTTPService"},
+            //{"HTTPСервис", "HTTPService"},
             {"WebСервис", "WebService"},
             {"Справочник", "Catalog"},
             {"Документ", "Document"},
@@ -4900,7 +4900,14 @@ namespace ClipAngel
                                 {
                                     for (int counter = 0; counter < fragments.Length / 2; counter++)
                                     {
-                                        string engName = typeMap1C[fragments[counter * 2]];
+                                        string rusName = fragments[counter * 2];
+                                        if (!typeMap1C.ContainsKey(rusName))
+                                        {
+                                            Activate();
+                                            MessageBox.Show(this, "Unknown 1C object type " + rusName, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                            return true;
+                                        }
+                                        string engName = typeMap1C[rusName];
                                         if (!String.IsNullOrEmpty(MDObject))
                                             MDObject += ".";
                                         MDObject += engName;
@@ -6370,7 +6377,7 @@ namespace ClipAngel
         private void openLinkInBrowserToolStripMenuItem_Click(object sender = null, EventArgs e = null)
         {
             string href = lastClickedHtmlElement.GetAttribute("href");
-            int textOffset = 0;
+            int textOffset = -1;
             if (href.StartsWith(link1Cprefix))
                 try
                 {
@@ -6378,7 +6385,7 @@ namespace ClipAngel
                 }
                 catch
                 {}
-            if (textOffset > 0 && OpenLinkFromTextBox(TextLinkMatches, textOffset, false))
+            if (textOffset >= 0 && OpenLinkFromTextBox(TextLinkMatches, textOffset, false))
             {
             }
             else
