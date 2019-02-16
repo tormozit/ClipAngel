@@ -51,17 +51,24 @@ namespace ClipAngel
         public const string IsMainPropName = "IsMain";
         public ResourceManager CurrentLangResourceManager;
         public string Locale = "";
+
         public bool PortableMode = false;
+
         //public int ClipsNumber = 0;
         public string UserSettingsPath;
+
         public string DbFileName;
         SQLiteConnection m_dbConnection;
         public string ConnectionString;
+
         SQLiteDataAdapter dataAdapter;
+
         //bool CaptureClipboard = true;
         bool allowRowLoad = true;
+
         //bool AutoGotoLastRow = true;
         bool AllowHotkeyProcess = true;
+
         bool EditMode = false;
         SQLiteDataReader RowReader;
         int LastId = 0;
@@ -70,18 +77,24 @@ namespace ClipAngel
         MatchCollection FilterMatches;
         string DataFormat_ClipboardViewerIgnore = "Clipboard Viewer Ignore";
         string DataFormat_XMLSpreadSheet = "XML SpreadSheet";
+
         string ActualVersion;
+
         //DateTime lastAutorunUpdateCheck;
         bool TextWasCut;
+
         public KeyboardHook keyboardHook;
         WinEventDelegate dele = null;
         private const uint WINEVENT_OUTOFCONTEXT = 0;
         private const uint EVENT_SYSTEM_FOREGROUND = 3;
         private static IntPtr lastActiveParentWindow;
         private static IntPtr lastChildWindow;
+
         private static RECT lastChildWindowRect;
+
         //static private string lastWindowSelectedText;
         static Point lastCaretPoint;
+
         private IntPtr HookChangeActiveWindow;
         private bool AllowFilterProcessing = true;
         private static Color favoriteColor = Color.FromArgb(255, 230, 220);
@@ -117,10 +130,10 @@ namespace ClipAngel
         private List<int> selectedClipsBeforeFilterApply = new List<int>();
         private Point lastMousePoint;
         private int maxWindowCoordForHiddenState = -10000;
-        private Color[] _wordColors = new Color[] { Color.Red, Color.DeepPink, Color.DarkOrange };
+        private Color[] _wordColors = new Color[] {Color.Red, Color.DeepPink, Color.DarkOrange};
         private DateTime lastCaptureMoment = DateTime.Now;
         private DateTime lastPasteMoment = DateTime.Now;
-        private Dictionary <int, DateTime> lastPastedClips = new Dictionary<int, DateTime>();
+        private Dictionary<int, DateTime> lastPastedClips = new Dictionary<int, DateTime>();
         private bool lastClipWasMultiCaptured = false;
         private Point LastMousePoint;
         private Timer captureTimer = new Timer();
@@ -138,17 +151,21 @@ namespace ClipAngel
         private static string timePattern = "\\b[012]?\\d:[0-5]?\\d(?::[0-5]?\\d)?\\b";
         private static string datePattern = "\\b(?:19|20)?[0-9]{2}[\\-/.][0-9]{2}[\\-/.](?:19|20)?[0-9]{2}\\b";
         private bool areDeletedClips = false;
+
         static private Dictionary<string, string> TextPatterns = new Dictionary<string, string>
         {
-            {"time", "((" + datePattern + "\\s"+ timePattern + ")|(?:(" + timePattern + "\\s)?"+ datePattern + ")|(?:"+ timePattern + "))"},
+            {"time", "((" + datePattern + "\\s" + timePattern + ")|(?:(" + timePattern + "\\s)?" + datePattern + ")|(?:" + timePattern + "))"},
             {"email", "(\\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}\\b)"},
             //{"number", "(?:[\\s\n\r\\(<>\\[]|^)([-+]?[0-9]+\\.?[0-9]+)(?:[;\\s\\)<>\\]%]|,\\B|$)"},
             {"number", "((?:(?:\\s|^)[-])?\\b[0-9]+\\.?[0-9]+)\\b"},
             {"phone", "(?:[\\s\\(]|^)(\\+?\\b\\d?(\\d[ \\-\\(\\)]{0,2}){7,19}\\b)"},
             {"url", "(\\b(?:https?|ftp|file)://[-A-Z0-9+&@#\\\\/%?=~_|!:,.;]*[A-Z0-9+&@#/%=~_|])"},
-            {"1CLine", @"(\{([a-zа-яё_]+ )?((?:[a-zа-яё_]+\.)*(?:Форма|Модуль|МодульУправляемогоПриложения|МодульОбычногоПриложения|МодульВнешнегоСоединения|МодульКоманды|МодульМенеджера|МодульОбъекта|МодульНабораЗаписей))\((\d+)(?:,(\d+))?\)\})" }
+            {"1CLine", @"(\{([a-zа-яё_]+ )?((?:[a-zа-яё_]+\.)*(?:Форма|Модуль|МодульУправляемогоПриложения|МодульОбычногоПриложения|МодульВнешнегоСоединения|МодульКоманды|МодульМенеджера|МодульОбъекта|МодульНабораЗаписей))\((\d+)(?:,(\d+))?\)\})"}
         };
+
         static string LinkPattern = TextPatterns["url"];
+        static string fileOrFolderPattern = @"((?:\b[a-z]:|\\\\[a-z0-9 %._-]+\\[a-z0-9 $%._-]+)\\(?:[^\\/:*?""<>|\r\n]+\\)*[^\\/:*?""<>|\r\n]*)";
+
         static private Dictionary<string, string> typeMap1C = new Dictionary<string, string>
         {
             {"МодульУправляемогоПриложения", "ManagedApplicationModule"},
@@ -166,7 +183,7 @@ namespace ClipAngel
             {"ОбщаяКоманда", "CommonCommand"},
             {"Обработка", "DataProcessor"},
             {"Отчет", "Report"},
-            //{"HTTPСервис", "HTTPService"},
+            {"HTTPСервис", "HTTPService"},
             {"WebСервис", "WebService"},
             {"Справочник", "Catalog"},
             {"Документ", "Document"},
@@ -178,6 +195,7 @@ namespace ClipAngel
         //static extern int DwmSetWindowAttribute(IntPtr hWnd, int attr, ref int value, int attrLen);
 
         const int WS_EX_NOACTIVATE = 0x08000000;
+
         //const int WS_EX_TOPMOST = 0x00000008;
         const int WS_EX_COMPOSITED = 0x02000000;
 
@@ -215,11 +233,11 @@ namespace ClipAngel
             // Title tooltip
             titleToolTip.AutoPopDelay = 3000;
             titleToolTipBeforeTimer.Interval = 500;
-            titleToolTipBeforeTimer.Tick += delegate (object sender, EventArgs e)
+            titleToolTipBeforeTimer.Tick += delegate(object sender, EventArgs e)
             {
                 titleToolTipBeforeTimer.Stop();
                 string text = Application.ProductName + String.Format(" <{0}> >> <{1}> [<{2}>]", Properties.Resources.Version, Properties.Resources.TargetWindow,
-                    Properties.Resources.TargetApp);
+                                  Properties.Resources.TargetApp);
                 titleToolTip.Show(text, this, this.PointToClient(Cursor.Position), titleToolTip.AutoPopDelay);
                 titleToolTipShown = true;
             };
@@ -271,7 +289,7 @@ namespace ClipAngel
             };
             foreach (KeyValuePair<string, string> pair in TextPatterns)
             {
-                _comboItemsTypes.Add(new ListItemNameText { Name = "text_" + pair.Key});
+                _comboItemsTypes.Add(new ListItemNameText {Name = "text_" + pair.Key});
             }
             TypeFilter.DataSource = _comboItemsTypes;
             TypeFilter.DisplayMember = "Text";
@@ -280,9 +298,9 @@ namespace ClipAngel
             MarkFilter.SelectedIndex = 0;
 
             BindingList<ListItemNameText> _comboItemsMarks = new BindingList<ListItemNameText>();
-            _comboItemsMarks.Add(new ListItemNameText { Name = "allMarks" });
-            _comboItemsMarks.Add(new ListItemNameText { Name = "favorite" });
-            _comboItemsMarks.Add(new ListItemNameText { Name = "used" });
+            _comboItemsMarks.Add(new ListItemNameText {Name = "allMarks"});
+            _comboItemsMarks.Add(new ListItemNameText {Name = "favorite"});
+            _comboItemsMarks.Add(new ListItemNameText {Name = "used"});
             MarkFilter.DataSource = _comboItemsMarks;
             MarkFilter.DisplayMember = "Text";
             MarkFilter.ValueMember = "Name";
@@ -339,7 +357,7 @@ namespace ClipAngel
         }
 
         // Mouse moved in window working area
-        void HideTitleTooltip() 
+        void HideTitleTooltip()
         {
             titleToolTipBeforeTimer.Stop();
             titleToolTip.Hide(this);
@@ -460,7 +478,7 @@ namespace ClipAngel
             }
             if (patternNamesNeedUpdate.Count > 0)
             {
-                ThreadStart work = delegate {UpdateNewDBFieldsBackground(commandUpdate, fieldsNeedUpdateText, fieldsNeedSelectText, patternNamesNeedUpdate);};
+                ThreadStart work = delegate { UpdateNewDBFieldsBackground(commandUpdate, fieldsNeedUpdateText, fieldsNeedSelectText, patternNamesNeedUpdate); };
                 updateDBThread = new Thread(work);
                 updateDBThread.Start();
             }
@@ -527,7 +545,7 @@ namespace ClipAngel
         {
             if (hwnd == IntPtr.Zero)
                 hwnd = GetForegroundWindow();
-                
+
             int targetProcessId;
             uint remoteThreadId = GetWindowThreadProcessId(hwnd, out targetProcessId);
             if (targetProcessId != Process.GetCurrentProcess().Id && lastActiveParentWindow != hwnd)
@@ -1009,9 +1027,9 @@ namespace ClipAngel
                 textBoxWindow.Text = RowReader["Window"].ToString();
                 StripLabelCreated.Text = ((DateTime) RowReader["Created"]).ToString();
                 if (!(RowReader["Size"] is DBNull))
-                    StripLabelSize.Text = FormattedClipNumericPropery((int)RowReader["Size"], MultiLangByteUnit());
+                    StripLabelSize.Text = FormattedClipNumericPropery((int) RowReader["Size"], MultiLangByteUnit());
                 if (!(RowReader["Chars"] is DBNull))
-                    StripLabelVisualSize.Text = FormattedClipNumericPropery((int)RowReader["Chars"], MultiLangCharUnit());
+                    StripLabelVisualSize.Text = FormattedClipNumericPropery((int) RowReader["Chars"], MultiLangCharUnit());
                 string TypeEng = RowReader["Type"].ToString();
                 StripLabelType.Text = LocalTypeName(TypeEng);
                 stripLabelPosition.Text = "1";
@@ -1124,7 +1142,7 @@ namespace ClipAngel
                         MarkLinksInRichTextBox(richTextBox, out TextLinkMatches);
                         if (textPattern.Length > 0)
                         {
-                            MarkRegExpMatchesInRichTextBox(richTextBox, textPattern, Color.Red, false, !String.IsNullOrEmpty(searchString), out FilterMatches);
+                            MarkRegExpMatchesInRichTextBox(richTextBox, textPattern, Color.Red, true, false, !String.IsNullOrEmpty(searchString), out FilterMatches);
                         }
                     }
                 }
@@ -1198,7 +1216,7 @@ namespace ClipAngel
                 richTextBox.Focus(); // Can activate this window, so we check that window has focus
             if (clipType == "img")
             {
-                Image image = GetImageFromBinary((byte[])RowReader["Binary"]);
+                Image image = GetImageFromBinary((byte[]) RowReader["Binary"]);
                 ImageControl.Image = image;
             }
             tableLayoutPanelData.ResumeLayout();
@@ -1257,7 +1275,7 @@ namespace ClipAngel
                 return "";
             string result = htmlClipText.Substring(indexOfHtlTag);
             if (AddSourceUrlComment)
-                result = result +  "\n<!-- Original URL - " + RowReader["url"].ToString() + " -->";
+                result = result + "\n<!-- Original URL - " + RowReader["url"].ToString() + " -->";
             return result;
         }
 
@@ -1283,13 +1301,13 @@ namespace ClipAngel
             mshtml.IHTMLDocument2 htmlDoc = htmlTextBox.Document.DomDocument as mshtml.IHTMLDocument2;
             mshtml.IHTMLBodyElement body = htmlDoc.body as mshtml.IHTMLBodyElement;
             mshtml.IHTMLTxtRange range = body.createTextRange();
-            range.moveStart("character", NewSelectionStart 
+            range.moveStart("character", NewSelectionStart
                 //+ GetNormalizedTextDeltaSize(RowReader["Text"].ToString().Substring(0, Math.Max(NewSelectionStart, 0)))
-                );
+            );
             range.collapse();
-            range.moveEnd("character", NewSelectionLength 
+            range.moveEnd("character", NewSelectionLength
                 //+ GetNormalizedTextDeltaSize(RowReader["Text"].ToString().Substring(Math.Max(NewSelectionStart, 0), NewSelectionLength))
-                );
+            );
             range.@select();
             return range;
         }
@@ -1377,10 +1395,10 @@ namespace ClipAngel
 
         private void MarkLinksInRichTextBox(RichTextBox control, out MatchCollection matches)
         {
-            MarkRegExpMatchesInRichTextBox(control, "(" + TextPatterns["1CLine"] + "|" + LinkPattern + ")", Color.Blue, true, false, out matches);
+            MarkRegExpMatchesInRichTextBox(control, "(" + TextPatterns["1CLine"] + "|" + fileOrFolderPattern + "|" + LinkPattern + ")", Color.Blue, false, true, false, out matches);
         }
 
-        private void MarkRegExpMatchesInRichTextBox(RichTextBox control, string pattern, Color color, bool underline,
+        private void MarkRegExpMatchesInRichTextBox(RichTextBox control, string pattern, Color color, bool allowDymanicColor, bool underline,
             bool bold, out MatchCollection matches)
         {
             RegexOptions options = RegexOptions.Singleline;
@@ -1392,9 +1410,11 @@ namespace ClipAngel
             foreach (Match match in matches)
             {
                 int startGroup = 2;
+                if (match.Groups.Count < 2)
+                    throw new ArgumentNullException("Wrong regexp pattern");
                 control.SelectionStart = match.Groups[1].Index;
                 control.SelectionLength = match.Groups[1].Length;
-                if (match.Groups.Count > 3)
+                if (allowDymanicColor && match.Groups.Count > 3)
                 {
                     for (int counter = startGroup; counter < match.Groups.Count; counter++)
                     {
@@ -1893,6 +1913,30 @@ namespace ClipAngel
             }
         }
 
+        public static ImageFormat GetImageFormat(Image img)
+        {
+            if (img.RawFormat.Equals(ImageFormat.Jpeg))
+                return ImageFormat.Jpeg;
+            if (img.RawFormat.Equals(ImageFormat.Bmp))
+                return ImageFormat.Bmp;
+            if (img.RawFormat.Equals(ImageFormat.Png))
+                return ImageFormat.Png;
+            if (img.RawFormat.Equals(ImageFormat.Emf))
+                return ImageFormat.Emf;
+            if (img.RawFormat.Equals(ImageFormat.Exif))
+                return ImageFormat.Exif;
+            if (img.RawFormat.Equals(ImageFormat.Gif))
+                return ImageFormat.Gif;
+            if (img.RawFormat.Equals(ImageFormat.Icon))
+                return ImageFormat.Icon;
+            if (img.RawFormat.Equals(ImageFormat.MemoryBmp))
+                return ImageFormat.MemoryBmp;
+            if (img.RawFormat.Equals(ImageFormat.Tiff))
+                return ImageFormat.Tiff;
+            else
+                return ImageFormat.Wmf;
+        }
+
         [DllImport("user32.dll")]
         static extern IntPtr GetClipboardOwner();
 
@@ -2146,7 +2190,7 @@ namespace ClipAngel
                         || Properties.Settings.Default.MaxCellsToCaptureImage > NumberOfImageCells))
                 {
                     //clipType = "img";
-                    bitmap = iData.GetData(DataFormats.Bitmap) as Bitmap;
+                    bitmap = iData.GetData(DataFormats.Bitmap, false) as Bitmap;
                     if (bitmap != null) // NUll happens while copying image in standard image viewer Windows 10
                     {
                         using (MemoryStream memoryStream = new MemoryStream())
@@ -4133,7 +4177,7 @@ namespace ClipAngel
             if (!String.IsNullOrEmpty(textPattern))
             {
                 MatchCollection tempMatches;
-                MarkRegExpMatchesInRichTextBox(_richTextBox, textPattern, Color.Red, false, true, out tempMatches);
+                MarkRegExpMatchesInRichTextBox(_richTextBox, textPattern, Color.Red, true, false, true, out tempMatches);
             }
             row.Cells["ColumnTitle"].Value = _richTextBox.Rtf;
 
@@ -4813,7 +4857,18 @@ namespace ClipAngel
             {
                 if (match.Index <= SelectionStart && (match.Index + match.Length) >= SelectionStart)
                 {
-                    if (match.Groups[2].Success) // 1CCodeLink
+                    int startIndex1C = 2;
+                    if (match.Groups[startIndex1C + 4].Success) // File link
+                    {
+                        string filePath = match.Value;
+                        if (!File.Exists(filePath))
+                        {
+                            return true;
+                        }
+                        string argument = "/select, \"" + filePath + "\"";
+                        System.Diagnostics.Process.Start("explorer.exe", argument);
+                    }
+                    else if (match.Groups[startIndex1C].Success) // 1C code link
                     {
                         string appPath = "";
                         string clipWindow = "";
@@ -4823,12 +4878,12 @@ namespace ClipAngel
                         GetClipboardOwnerLockerInfo(true, out clipWindow, out clipApplication, out appPath, out is1C, out mainWindow);
                         if (String.Compare(clipApplication, "1cv8", true) == 0)
                         {
-                            string extensionName = match.Groups[3].ToString();
-                            string moduleName = match.Groups[4].ToString();
+                            string extensionName = match.Groups[startIndex1C + 1].ToString();
+                            string moduleName = match.Groups[startIndex1C + 2].ToString();
                             string[] fragments = moduleName.Split("."[0]);
                             if (fragments[0] == "ВнешняяОбработка")
                                 return true;
-                            int lineNumber = Convert.ToInt32(match.Groups[5].ToString());
+                            int lineNumber = Convert.ToInt32(match.Groups[startIndex1C + 3].ToString());
                             ActivateTargetWindow();
                             SendKeys.Send("%{F9}");
                             SendKeys.Flush();
@@ -4925,7 +4980,9 @@ namespace ClipAngel
                                         xml = File.ReadAllText(tempFilename);
                                         break;
                                     }
-                                    catch { }
+                                    catch
+                                    {
+                                    }
                                     ;
                                     Thread.Sleep(50);
                                 }
@@ -4935,10 +4992,10 @@ namespace ClipAngel
                                     XmlDocument doc = new XmlDocument();
                                     doc.LoadXml(xml);
                                     XmlElement moduleBPInfo = null;
-                                    XmlElement root = (XmlElement)doc.ChildNodes[1];
+                                    XmlElement root = (XmlElement) doc.ChildNodes[1];
                                     foreach (XmlElement moduleBPInfoCycle in root.ChildNodes)
                                     {
-                                        XmlElement id = (XmlElement)moduleBPInfoCycle.GetElementsByTagName("id")[0];
+                                        XmlElement id = (XmlElement) moduleBPInfoCycle.GetElementsByTagName("id")[0];
                                         if (true
                                             && id.GetElementsByTagName("debugBaseData:MDObject")[0].InnerText == MDObject
                                             && id.GetElementsByTagName("debugBaseData:MDProperty")[0].InnerText == MDProperty)
@@ -4998,7 +5055,7 @@ namespace ClipAngel
                             {
                                 success = false;
                                 valuePattern = _automation.GetFocusedElement().GetCurrentPattern(UIA_ValuePatternId);
-                                ((IUIAutomationValuePattern)valuePattern).SetValue(tempFilename);
+                                ((IUIAutomationValuePattern) valuePattern).SetValue(tempFilename);
                                 SendKeys.SendWait("{ENTER}");
                                 success = WaitWindowFocus(null, "Точки останова", out breakPointsWindow, "V8NewLocalFrameBaseWnd", treeWalker, 1000);
                             }
@@ -5050,8 +5107,8 @@ namespace ClipAngel
                         }
                     }
                     else // url
-                        if (allowOpenUnknown)
-                            Process.Start(match.Value);
+                    if (allowOpenUnknown)
+                        Process.Start(match.Value);
                     return true;
                 }
             }

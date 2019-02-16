@@ -2416,12 +2416,6 @@ dodana do listy ignorowanych, która może być edytowana w oknie Ustawień.</va
   <data name="toolStripMenuItem18.ToolTipText" xml:space="preserve">
     <value>Wkleja wybrane klipy jako pliki do aktywnego okna</value>
   </data>
-  <data name="toolStripMenuItem18.Visible" xml:space="preserve" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="pasteFileToolStripMenuItem.Visible" xml:space="preserve" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <data name="filterByDateToolStripMenuItem.Text" xml:space="preserve">
     <value>Filtruj przez datę</value>
   </data>
@@ -2670,5 +2664,8 @@ Sortowanie jest przechowywane aż do przechwycenia klipu.</value>
   </data>
   <data name="saveAsFileMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+S</value>
+  </data>
+  <data name="$this.ImeMode" xml:space="preserve" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
 </root>

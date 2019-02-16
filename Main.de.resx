@@ -2421,12 +2421,6 @@ Ignorierliste hinzugefügt. Diese kann in den "Einstellungen" bearbeitet werden.
   <data name="toolStripMenuItem18.ToolTipText" xml:space="preserve">
     <value>Ausgewählte Clips im aktiven Fenster als Dateien einfügen</value>
   </data>
-  <data name="toolStripMenuItem18.Visible" xml:space="preserve" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="pasteFileToolStripMenuItem.Visible" xml:space="preserve" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <data name="filterByDateToolStripMenuItem.Text" xml:space="preserve">
     <value>Nach Datum filtern</value>
   </data>
@@ -2787,5 +2781,8 @@ Bearbeite den Suchstring direkt aus der Liste. Navigiere in der Liste direkt aus
   </data>
   <data name="saveAsFileMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+S</value>
+  </data>
+  <data name="$this.ImeMode" xml:space="preserve" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
 </root>

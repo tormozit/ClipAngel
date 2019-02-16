@@ -2428,12 +2428,6 @@ Ajouté à la liste ignorée, qui peut être éditée dans la fenêtre Paramètr
   <data name="toolStripMenuItem18.ToolTipText" xml:space="preserve">
     <value>Coller dans la fenêtre active les clips sélectionnés en tant que fichier</value>
   </data>
-  <data name="toolStripMenuItem18.Visible" xml:space="preserve" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="pasteFileToolStripMenuItem.Visible" xml:space="preserve" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <data name="filterByDateToolStripMenuItem.Text" xml:space="preserve">
     <value>Filtrer par date</value>
   </data>
@@ -2685,5 +2679,8 @@ Le tri est conservé jusqu'à la capture du clip.</value>
   </data>
   <data name="saveAsFileMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+S</value>
+  </data>
+  <data name="$this.ImeMode" xml:space="preserve" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
 </root>

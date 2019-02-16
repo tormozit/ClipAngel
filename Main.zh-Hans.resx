@@ -2401,12 +2401,6 @@ Url 将被保存在当前剪辑和将被复制到剪贴板。</value>
   <metadata name="clipsTableAdapter.TrayLocation" xml:space="preserve" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>946, 26</value>
   </metadata>
-  <data name="toolStripMenuItem18.Visible" xml:space="preserve" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="pasteFileToolStripMenuItem.Visible" xml:space="preserve" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <data name="monthCalendar1.Location" xml:space="preserve" type="System.Drawing.Point, System.Drawing">
     <value>3, 3</value>
   </data>
@@ -2601,5 +2595,8 @@ Url 将被保存在当前剪辑和将被复制到剪贴板。</value>
   </data>
   <data name="saveAsFileMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+S</value>
+  </data>
+  <data name="$this.ImeMode" xml:space="preserve" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
 </root>

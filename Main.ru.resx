@@ -233,6 +233,9 @@
   <data name="toolStripMenuItem18.Text" xml:space="preserve">
     <value>Вставить файл</value>
   </data>
+  <data name="toolStripMenuItem18.ToolTipText" xml:space="preserve">
+    <value>Вставить в активное окно выделенные клипы как файлы</value>
+  </data>
   <data name="toolStripMenuItem25.Size" type="System.Drawing.Size, System.Drawing">
     <value>273, 22</value>
   </data>
@@ -843,6 +846,9 @@
   </data>
   <data name="pasteFileToolStripMenuItem.Text" xml:space="preserve">
     <value>Вставить файл</value>
+  </data>
+  <data name="pasteFileToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>Вставить в активное окно выделенные клипы как файлы</value>
   </data>
   <data name="pasteSpecialToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>259, 22</value>

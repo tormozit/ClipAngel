@@ -2419,12 +2419,6 @@ all'elenco ignorate, che può essere modificato nella finestra delle impostazion
   <data name="toolStripMenuItem18.ToolTipText" xml:space="preserve">
     <value>Incolla nella finestra attiva le catture selezionate come file</value>
   </data>
-  <data name="toolStripMenuItem18.Visible" xml:space="preserve" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="pasteFileToolStripMenuItem.Visible" xml:space="preserve" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <data name="filterByDateToolStripMenuItem.Text" xml:space="preserve">
     <value>Filtra per data</value>
   </data>
@@ -2715,5 +2709,8 @@ L'ordinamento è mantenuto fino alla cattura del taglio.</value>
   </data>
   <data name="saveAsFileMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+S</value>
+  </data>
+  <data name="$this.ImeMode" xml:space="preserve" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
 </root>
