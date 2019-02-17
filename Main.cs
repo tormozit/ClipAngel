@@ -4858,7 +4858,7 @@ namespace ClipAngel
                 if (match.Index <= SelectionStart && (match.Index + match.Length) >= SelectionStart)
                 {
                     int startIndex1C = 2;
-                    if (match.Groups[startIndex1C + 4].Success) // File link
+                    if (match.Groups[startIndex1C + 5].Success) // File link
                     {
                         string filePath = match.Value;
                         if (!File.Exists(filePath))
