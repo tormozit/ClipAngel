@@ -3473,7 +3473,8 @@ namespace ClipAngel
             if (pasteMethod == PasteMethod.File)
             {
                 DataObject dto = new DataObject();
-                SetClipFilesInDataObject(dto);
+                string clipText = SetClipFilesInDataObject(dto);
+                SetTextInClipboardDataObject(dto, clipText);
                 SetClipboardDataObject(dto, false);
                 SendPaste();
             }
@@ -6898,8 +6899,9 @@ namespace ClipAngel
             }
         }
 
-        private void SetClipFilesInDataObject(DataObject dto, int maxRowsDrag = 100)
+        private string SetClipFilesInDataObject(DataObject dto, int maxRowsDrag = 100)
         {
+            string textList = "";
             StringCollection fileNameCollection = new StringCollection();
             foreach (DataGridViewRow selectedRow in dataGridView.SelectedRows)
             {
@@ -6912,12 +6914,14 @@ namespace ClipAngel
                     string junkVar;
                     string filename = GetClipTempFile(out junkVar, RowReader);
                     fileNameCollection.Add(filename);
+                    textList += filename;
                 }
                 else
                 {
                     foreach (string filename in clipDto.GetFileDropList())
                     {
                         fileNameCollection.Add(filename);
+                        textList += filename;
                     }
                 }
                 maxRowsDrag--;
@@ -6925,6 +6929,7 @@ namespace ClipAngel
                     break;
             }
             dto.SetFileDropList(fileNameCollection);
+            return textList;
         }
 
         private void contextMenuUrlOpenLink_Click(object sender, EventArgs e)
