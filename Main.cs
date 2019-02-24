@@ -2097,18 +2097,27 @@ namespace ClipAngel
                             if (documentHtml.Images.Length > 0)
                             {
                                 string ImageUrl = documentHtml.Images[0].Source;
-                                using (WebClient webClient = new WebClient())
+                                if (iData.GetDataPresent(DataFormats.Bitmap) && documentHtml.TextContent == null && documentHtml.Images.Length == 1)
                                 {
-                                    webClient.Proxy.Credentials = CredentialCache.DefaultCredentials;
-                                    try
+                                    // Command "Copy image" executed in browser
+                                    htmlText = "";
+                                    //clipType = "";
+                                }
+                                else// if (!ImageUrl.StartsWith("data:image"))
+                                {
+                                    using (WebClient webClient = new WebClient())
                                     {
-                                        byte[] tempBuffer = webClient.DownloadData(ImageUrl);
-                                        using (var ms = new MemoryStream(tempBuffer))
+                                        webClient.Proxy.Credentials = CredentialCache.DefaultCredentials;
+                                        try
                                         {
-                                            bitmap = new Bitmap(ms);
+                                            byte[] tempBuffer = webClient.DownloadData(ImageUrl);
+                                            using (var ms = new MemoryStream(tempBuffer))
+                                            {
+                                                bitmap = new Bitmap(ms);
+                                            }
                                         }
+                                        catch { }
                                     }
-                                    catch { }
                                 }
                             }
                         }
@@ -2166,9 +2175,14 @@ namespace ClipAngel
                     string[] fileNameList = iData.GetData(DataFormats.FileDrop) as string[];
                     if (fileNameList != null)
                     {
-                        clipText = String.Join("\n", fileNameList);
-                        if (iData.GetDataPresent(DataFormats.FileDrop))
+                        if (fileNameList.Length == 1 && iData.GetDataPresent(DataFormats.Bitmap))
                         {
+                            // Command "Copy image" executed in browser IE
+                            clipType = "";
+                        }
+                        else
+                        {
+                            clipText = String.Join("\n", fileNameList);
                             clipType = "file";
                         }
                     }
@@ -2233,21 +2247,28 @@ namespace ClipAngel
                         }
                     }
 
+                bool updateList = false;
+                if (clipType == "html" && clipText == "")
+                    clipType = "";
                 // Split Image+Html clip into 2: Image and Html 
                 if (clipTextImage != "")
                 {
                     // Image clip
-                    AddClip(binaryBuffer, imageSampleBuffer, "", "", "img", clipTextImage, clipApplication,
-                        clipWindow, clipUrl, clipCharsImage, appPath, false, false, htmlText == "");
+                    bool clipAdded = AddClip(binaryBuffer, imageSampleBuffer, "", "", "img", clipTextImage, clipApplication,
+                        clipWindow, clipUrl, clipCharsImage, appPath, false, false, false);
+                    updateList = updateList || clipAdded;
                     if (!String.IsNullOrWhiteSpace(clipText))
                         imageSampleBuffer = new byte[0];
                 }
                 if (clipType != "")
                 {
                     // Non image clip
-                    AddClip(new byte[0], imageSampleBuffer, htmlText, richText, clipType, clipText, clipApplication,
-                        clipWindow, clipUrl, clipChars, appPath, false, false, true);
+                    bool clipAdded = AddClip(new byte[0], imageSampleBuffer, htmlText, richText, clipType, clipText, clipApplication,
+                        clipWindow, clipUrl, clipChars, appPath, false, false, false);
+                    updateList = updateList || clipAdded;
                 }
+                if(updateList)
+                    UpdateClipBindingSource(false, 0);
             }
             finally
             {
@@ -2362,7 +2383,7 @@ namespace ClipAngel
             return count + 1;
         }
 
-        void AddClip(byte[] binaryBuffer = null, byte[] imageSampleBuffer = null, string htmlText = "", string richText = "", string typeText = "text", string plainText = "",
+        bool AddClip(byte[] binaryBuffer = null, byte[] imageSampleBuffer = null, string htmlText = "", string richText = "", string typeText = "text", string plainText = "",
             string applicationText = "", string windowText = "", string url = "", int chars = 0, string appPath = "", bool used = false, bool favorite = false, bool updateList = true, string clipTitle = "")
         {
             DateTime dtNow = DateTime.Now;
@@ -2382,7 +2403,7 @@ namespace ClipAngel
                 string message = String.Format(Properties.Resources.ClipWasNotCaptured, (int)(byteSize / 1024), Properties.Settings.Default.MaxClipSizeKB,
                     LocalTypeName(typeText));
                 notifyIcon.ShowBalloonTip(2000, Application.ProductName, message, ToolTipIcon.Info);
-                return;
+                return false;
             }
             if (!String.IsNullOrEmpty(Properties.Settings.Default.PlaySoundOnClipCapture))
             {
@@ -2434,7 +2455,7 @@ namespace ClipAngel
                             && lastPastedClips.ContainsKey(oldCurrentClipId)
                             && DateDiffMilliseconds(lastPastedClips[oldCurrentClipId], dtNow) < 1000) // Protection from automated return copy after we send paste. For example Word does so for html paste.
                         {
-                            return;
+                            return false;
                         }
                         used = GetNullableBoolFromSqlReader(reader, "Used");
                         favorite = GetNullableBoolFromSqlReader(reader, "Favorite");
@@ -2537,6 +2558,7 @@ namespace ClipAngel
                 ShowForPaste(false, true);
             //}
             lastCaptureMoment = DateTime.Now;
+            return true;
         }
 
         private static void CalculateByteAndCharSizeOfClip(string htmlText, string richText, string plainText, ref int chars, ref int byteSize)
