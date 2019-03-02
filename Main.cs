@@ -110,7 +110,6 @@ namespace ClipAngel
         const int tabLength = 4;
         const int maxClipsToSelect = 10000;
         const int ClipTitleLength = 70;
-        readonly RichTextBox _richTextBox = new RichTextBox();
         static Dictionary<string, Bitmap> originalIconCache = new Dictionary<string, Bitmap>();
         static Dictionary<string, Bitmap> brightIconCache = new Dictionary<string, Bitmap>();
         private bool allowTextPositionChangeUpdate = false;
@@ -151,6 +150,8 @@ namespace ClipAngel
         private static string timePattern = "\\b[012]?\\d:[0-5]?\\d(?::[0-5]?\\d)?\\b";
         private static string datePattern = "\\b(?:19|20)?[0-9]{2}[\\-/.][0-9]{2}[\\-/.](?:19|20)?[0-9]{2}\\b";
         private bool areDeletedClips = false;
+        readonly RichTextBox _richTextBox = new RichTextBox();
+        readonly RichTextBox richTextInternal = new RichTextBox();
 
         static private Dictionary<string, string> TextPatterns = new Dictionary<string, string>
         {
@@ -160,11 +161,12 @@ namespace ClipAngel
             {"number", "((?:(?:\\s|^)[-])?\\b[0-9]+\\.?[0-9]+)\\b"},
             {"phone", "(?:[\\s\\(]|^)(\\+?\\b\\d?(\\d[ \\-\\(\\)]{0,2}){7,19}\\b)"},
             {"url", "(\\b(?:https?|ftp|file)://[-A-Z0-9+&@#\\\\/%?=~_|!:,.;]*[A-Z0-9+&@#/%=~_|])"},
-            {"1CLine", @"(\{([a-zа-яё_]+ )?((?:[a-zа-яё_]+\.)*(?:Форма|Модуль|МодульУправляемогоПриложения|МодульОбычногоПриложения|МодульВнешнегоСоединения|МодульКоманды|МодульМенеджера|МодульОбъекта|МодульНабораЗаписей))\((\d+)(?:,(\d+))?\)\})"}
+            {"1CLine", @"(\{([a-zа-яё_]+ )?((?:[a-zа-яё_]+\.)*(?:Форма|Модуль|МодульУправляемогоПриложения|МодульОбычногоПриложения|МодульВнешнегоСоединения|МодульКоманды|МодульМенеджера|МодульОбъекта|МодульНабораЗаписей))\((\d+)(?:,(\d+))?\)\})"},
+            {"filename", @"((?:\b[a-z]:|\\\\[a-z0-9 %._-]+\\[a-z0-9 $%._-]+)\\(?:[^\\/:*?""<>|\r\n]+\\)*[^\\/:*?""<>|\r\n]*)"}
         };
 
         static string LinkPattern = TextPatterns["url"];
-        static string fileOrFolderPattern = @"((?:\b[a-z]:|\\\\[a-z0-9 %._-]+\\[a-z0-9 $%._-]+)\\(?:[^\\/:*?""<>|\r\n]+\\)*[^\\/:*?""<>|\r\n]*)";
+        static string fileOrFolderPattern = TextPatterns["filename"];
 
         static private Dictionary<string, string> typeMap1C = new Dictionary<string, string>
         {
@@ -975,10 +977,6 @@ namespace ClipAngel
             FullTextLoad = FullTextLoad || EditMode;
             richTextBox.ReadOnly = !EditMode;
             FilterMatches = null;
-            if (Properties.Settings.Default.MonospacedFont)
-                richTextBox.Font = new Font(FontFamily.GenericMonospace, Properties.Settings.Default.Font.Size);
-            else
-                richTextBox.Font = Properties.Settings.Default.Font;
             bool useNativeTextFormatting = false;
             htmlMode = false;
             bool elementPanelHasFocus = false
@@ -991,6 +989,14 @@ namespace ClipAngel
             clipType = "";
             pictureBoxSource.Image = null;
             ImageControl.Image = null;
+            if (Properties.Settings.Default.MonospacedFont)
+                richTextBox.Font = new Font(FontFamily.GenericMonospace, Properties.Settings.Default.Font.Size);
+            else
+                richTextBox.Font = Properties.Settings.Default.Font;
+            richTextInternal.Font = richTextBox.Font;
+            int fontsize = (int)richTextBox.Font.Size; // Size should be without digits after comma
+            richTextBox.SelectionTabs = new int[] { fontsize * 4, fontsize * 8, fontsize * 12, fontsize * 16 }; // Set tab size ~ 4
+            richTextInternal.SelectionTabs = richTextBox.SelectionTabs;
 
             //htmlTextBox.Parent = new Control();
             htmlTextBox.Parent.Enabled = false; // Prevent stealing focus
@@ -1000,7 +1006,7 @@ namespace ClipAngel
             htmlDoc.write("");
             htmlDoc.close(); // Steals focus!!!
 
-            richTextBox.Text = "";
+            richTextInternal.Clear();
             textBoxApplication.Text = "";
             textBoxWindow.Text = "";
             StripLabelCreated.Text = "";
@@ -1033,12 +1039,6 @@ namespace ClipAngel
                 string TypeEng = RowReader["Type"].ToString();
                 StripLabelType.Text = LocalTypeName(TypeEng);
                 stripLabelPosition.Text = "1";
-                richTextBox.Clear();
-                // to prevent autoscrolling during marking
-                richTextBox.HideSelection = true;
-                int fontsize = (int) richTextBox.Font.Size; // Size should be without digits after comma
-                richTextBox.SelectionTabs = new int[] {fontsize * 4, fontsize * 8, fontsize * 12, fontsize * 16};
-                // Set tab size ~ 4
                 string shortText;
                 string endMarker;
                 Font markerFont = richTextBox.Font;
@@ -1049,7 +1049,7 @@ namespace ClipAngel
                     //    shortText = fullRTF.Substring(0, MaxTextViewSize); // TODO find way correct cutting RTF
                     //else
                     shortText = fullText.Substring(0, MaxTextViewSize);
-                    richTextBox.Text = shortText;
+                    richTextInternal.Text = shortText;
                     endMarker = MultiLangCutMarker();
                     markerFont = new Font(markerFont, FontStyle.Underline);
                     TextWasCut = true;
@@ -1103,16 +1103,16 @@ namespace ClipAngel
                         }
                         else
                         {
-                            richTextBox.Rtf = fullRTF;
+                            richTextInternal.Rtf = fullRTF;
                         }
                     }
                     else
-                        richTextBox.Text = fullText;
+                        richTextInternal.Text = fullText;
                     endMarker = MultiLangEndMarker();
                     TextWasCut = false;
                     markerColor = Color.Green;
                 }
-                clipRichTextLength = richTextBox.TextLength;
+                clipRichTextLength = richTextInternal.TextLength;
                 if (!EditMode)
                 {
                     if (htmlMode)
@@ -1131,34 +1131,30 @@ namespace ClipAngel
                     }
                     else
                     {
-                        richTextBox.SelectionStart = richTextBox.TextLength;
-                        richTextBox.SelectionColor = markerColor;
-                        richTextBox.SelectionFont = markerFont;
+                        richTextInternal.SelectionStart = richTextInternal.TextLength;
+                        richTextInternal.SelectionColor = markerColor;
+                        richTextInternal.SelectionFont = markerFont;
                         if (TextWasCut)
                             endMarker = Environment.NewLine + endMarker;
-                        richTextBox.AppendText(endMarker);
+                        richTextInternal.AppendText(endMarker);
                         // Do it first, else ending hyperlink will connect underline to it
 
-                        MarkLinksInRichTextBox(richTextBox, out TextLinkMatches);
+                        MarkLinksInRichTextBox(richTextInternal, out TextLinkMatches);
                         if (textPattern.Length > 0)
                         {
-                            MarkRegExpMatchesInRichTextBox(richTextBox, textPattern, Color.Red, true, false, !String.IsNullOrEmpty(searchString), out FilterMatches);
+                            MarkRegExpMatchesInRichTextBox(richTextInternal, textPattern, Color.Red, true, false, !String.IsNullOrEmpty(searchString), out FilterMatches);
                         }
                     }
                 }
-                richTextBox.SelectionColor = new Color();
-                richTextBox.SelectionStart = 0;
+                richTextInternal.SelectionColor = new Color();
+                richTextInternal.SelectionStart = 0;
+                richTextInternal.AppendText(Environment.NewLine); // adding new line to prevent horizontal scroll to end of extra long last line
+                richTextBox.Rtf = richTextInternal.Rtf;
 
                 urlTextBox.HideSelection = true;
                 urlTextBox.Clear();
                 urlTextBox.Text = RowReader["Url"].ToString();
                 MarkLinksInRichTextBox(urlTextBox, out UrlLinkMatches);
-
-                if (!autoSelectMatch)
-                    RestoreTextSelection(NewSelectionStart, NewSelectionLength);
-                allowTextPositionChangeUpdate = true;
-
-                richTextBox.HideSelection = false; // slow // Uncommented 10.12.2018 to prevent scroll to right border of wide 1-line text
             }
             tableLayoutPanelData.SuspendLayout();
             UpdateClipButtons();
@@ -1225,7 +1221,10 @@ namespace ClipAngel
                 ImageControl.ZoomFitInside();
             }
             if (autoSelectMatch)
-                SelectNextMatchInClipText();
+                SelectNextMatchInClipText(false);
+            else
+                RestoreTextSelection(NewSelectionStart, NewSelectionLength);
+            allowTextPositionChangeUpdate = true;
             OnClipContentSelectionChange();
         }
 
@@ -1292,7 +1291,7 @@ namespace ClipAngel
             }
             else
             {
-                SetRichTextboxSelection(NewSelectionStart, NewSelectionLength);
+                SetRichTextboxSelection(NewSelectionStart, NewSelectionLength, selectionStart > 0);
             }
         }
 
@@ -1312,11 +1311,12 @@ namespace ClipAngel
             return range;
         }
 
-        private void SetRichTextboxSelection(int NewSelectionStart, int NewSelectionLength)
+        private void SetRichTextboxSelection(int NewSelectionStart, int NewSelectionLength, bool preventHardScroll = false)
         {
             richTextBox.SelectionStart = NewSelectionStart;
             richTextBox.SelectionLength = NewSelectionLength;
-            //richTextBox.HideSelection = true; // slow // Exeption in ScrollToCaret can be thrown without this 
+            if (preventHardScroll)
+                richTextBox.HideSelection = true; // slow // Exeption in ScrollToCaret can be thrown without this 
             try
             {
                 richTextBox.ScrollToCaret();
@@ -1325,7 +1325,8 @@ namespace ClipAngel
             {
                 // Happens when click in not full loaded richTextBox 
             }
-            //richTextBox.HideSelection = false; // slow
+            if (preventHardScroll)
+                richTextBox.HideSelection = false; // slow
         }
 
         private void OnClipContentSelectionChange()
@@ -1955,6 +1956,7 @@ namespace ClipAngel
             string richText = "";
             string htmlText = "";
             string clipUrl = "";
+            string imageUrl = "";
             int clipChars = 0;
             string appPath = "";
             string clipWindow = "";
@@ -2096,7 +2098,7 @@ namespace ClipAngel
                             var documentHtml = htmlParser.Parse(htmlText);
                             if (documentHtml.Images.Length > 0)
                             {
-                                string ImageUrl = documentHtml.Images[0].Source;
+                                imageUrl = documentHtml.Images[0].Source;
                                 if (iData.GetDataPresent(DataFormats.Bitmap) && documentHtml.TextContent == null && documentHtml.Images.Length == 1)
                                 {
                                     // Command "Copy image" executed in browser
@@ -2110,7 +2112,7 @@ namespace ClipAngel
                                         webClient.Proxy.Credentials = CredentialCache.DefaultCredentials;
                                         try
                                         {
-                                            byte[] tempBuffer = webClient.DownloadData(ImageUrl);
+                                            byte[] tempBuffer = webClient.DownloadData(imageUrl);
                                             using (var ms = new MemoryStream(tempBuffer))
                                             {
                                                 bitmap = new Bitmap(ms);
@@ -2255,7 +2257,7 @@ namespace ClipAngel
                 {
                     // Image clip
                     bool clipAdded = AddClip(binaryBuffer, imageSampleBuffer, "", "", "img", clipTextImage, clipApplication,
-                        clipWindow, clipUrl, clipCharsImage, appPath, false, false, false);
+                        clipWindow, imageUrl, clipCharsImage, appPath, false, false, false);
                     updateList = updateList || clipAdded;
                     if (!String.IsNullOrWhiteSpace(clipText))
                         imageSampleBuffer = new byte[0];
@@ -4628,6 +4630,7 @@ namespace ClipAngel
             dataGridView.Columns["ColumnCreated"].DefaultCellStyle.Format = "HH:mmm:ss dd.MM";
             dataGridView.Columns["VisualWeight"].Width = (int)dataGridView.RowsDefaultCellStyle.Font.Size;
             dataGridView.RowTemplate.Height = (int)(dataGridView.RowsDefaultCellStyle.Font.Size + 11);
+
             UpdateColumnsSet();
             AfterRowLoad();
             this.ResumeLayout();
@@ -5351,10 +5354,10 @@ namespace ClipAngel
             SelectNextMatchInClipText();
         }
 
-        private void SelectNextMatchInClipText()
+        private void SelectNextMatchInClipText(bool fromCurrentSelection = true)
         {
             if (htmlMode)
-                SelectNextMatchInWebBrowser(1);
+                SelectNextMatchInWebBrowser(1, fromCurrentSelection);
             else
             {
                 RichTextBox control = richTextBox;
@@ -5381,12 +5384,14 @@ namespace ClipAngel
             }
         }
 
-        private void SelectNextMatchInWebBrowser(int direction)
+        private void SelectNextMatchInWebBrowser(int direction, bool fromCurrentSelection = true)
         {
-            mshtml.IHTMLDocument2 htmlDoc = (mshtml.IHTMLDocument2) htmlTextBox.Document.DomDocument;
-            mshtml.IHTMLBodyElement body = htmlDoc.body as mshtml.IHTMLBodyElement;
-            mshtml.IHTMLTxtRange currentRange = GetHtmlCurrentTextRangeOrAllDocument();
-            mshtml.IHTMLTxtRange nearestMatch = null;
+            IHTMLDocument2 htmlDoc = (IHTMLDocument2) htmlTextBox.Document.DomDocument;
+            IHTMLBodyElement body = htmlDoc.body as IHTMLBodyElement;
+            IHTMLTxtRange currentRange = null;
+            if (fromCurrentSelection)
+                currentRange = GetHtmlCurrentTextRangeOrAllDocument();
+            IHTMLTxtRange nearestMatch = null;
             int searchFlags = 0;
             if (Properties.Settings.Default.SearchCaseSensitive)
                 searchFlags = 4;
@@ -5397,11 +5402,14 @@ namespace ClipAngel
                 array = new string[1] {searchString};
             foreach (var word in array)
             {
-                mshtml.IHTMLTxtRange range = body.createTextRange();
-                if (direction > 0)
-                    range.setEndPoint("StartToEnd", currentRange);
-                else
-                    range.setEndPoint("EndToStart", currentRange);
+                IHTMLTxtRange range = body.createTextRange();
+                if (currentRange != null)
+                {
+                    if (direction > 0)
+                        range.setEndPoint("StartToEnd", currentRange);
+                    else
+                        range.setEndPoint("EndToStart", currentRange);
+                }
                 if (range.findText(word, direction, searchFlags))
                 {
                     if (false
@@ -6396,16 +6404,19 @@ namespace ClipAngel
             if (range == null)
                 return start;
             if (!String.IsNullOrEmpty(range.text))
-                length = range.text.Length 
+                length = range.text.Length
                     //- GetNormalizedTextDeltaSize(range.text)
                     ;
+            string innerText = htmlDoc.body.innerText;
+            if (innerText.Length > 3000)
+                // Long html will make moveStart slow
+                return start;
             range.collapse();
             range.moveStart("character", -100000);
             if (!String.IsNullOrEmpty(range.text))
                 start = range.text.Length 
                     //- GetNormalizedTextDeltaSize(range.text)
                     ;
-            string innerText = htmlDoc.body.innerText;
             if (!String.IsNullOrEmpty(innerText))
             {
                 int maxStart = innerText.Length 
@@ -7239,6 +7250,7 @@ namespace ClipAngel
                 return;
             File.Copy(tempFile, saveFileDialog.FileName);
         }
+
     }
 }
 

@@ -439,4 +439,7 @@
   <data name="WrongFileFormat" xml:space="preserve">
     <value>Неправильный формат файла</value>
   </data>
+  <data name="text_filename" xml:space="preserve">
+    <value>*имя файла</value>
+  </data>
 </root>

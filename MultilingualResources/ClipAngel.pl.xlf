@@ -1647,6 +1647,10 @@ Generowanie obrazu zużywa moc procesora. Jeśli masz duże obciążenie proceso
           <source>Wrong file format</source>
           <target state="new">Wrong file format</target>
         </trans-unit>
+        <trans-unit id="filename" translate="yes" xml:space="preserve">
+          <source>filename</source>
+          <target state="new">filename</target>
+        </trans-unit>
       </group>
     </body>
   </file>

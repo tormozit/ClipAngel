@@ -454,4 +454,10 @@
   <data name="WrongFileFormat" xml:space="preserve">
     <value>Wrong file format</value>
   </data>
+  <data name="filename" xml:space="preserve">
+    <value>filename</value>
+  </data>
+  <data name="text_filename" xml:space="preserve">
+    <value>*filename</value>
+  </data>
 </root>

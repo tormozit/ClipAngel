@@ -286,7 +286,10 @@ namespace ClipAngel
 
         public double ZoomFactor()
         {
-            return Math.Min((double)PicBox.Width / Image.Width, (double)PicBox.Height / Image.Height);
+            if (Image != null)
+                return Math.Min((double) PicBox.Width / Image.Width, (double) PicBox.Height / Image.Height);
+            else
+                return 1;
         }
         #endregion
 

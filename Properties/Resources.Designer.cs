@@ -448,6 +448,15 @@ namespace ClipAngel.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to filename.
+        /// </summary>
+        public static string filename {
+            get {
+                return ResourceManager.GetString("filename", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         public static System.Drawing.Bitmap Filter {
@@ -835,6 +844,15 @@ namespace ClipAngel.Properties {
         public static string text_email {
             get {
                 return ResourceManager.GetString("text_email", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to *filename.
+        /// </summary>
+        public static string text_filename {
+            get {
+                return ResourceManager.GetString("text_filename", resourceCulture);
             }
         }
         
