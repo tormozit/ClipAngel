@@ -2596,7 +2596,4 @@ Url 将被保存在当前剪辑和将被复制到剪贴板。</value>
   <data name="saveAsFileMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+S</value>
   </data>
-  <data name="$this.ImeMode" xml:space="preserve" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
 </root>

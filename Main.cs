@@ -970,7 +970,7 @@ namespace ClipAngel
             int NewSelectionLength = -1)
         {
             //DataRowView CurrentRowView;
-            mshtml.IHTMLDocument2 htmlDoc;
+            IHTMLDocument2 htmlDoc;
             string clipType;
             string textPattern = RegexpPattern();
             bool autoSelectMatch = (textPattern.Length > 0 && Properties.Settings.Default.AutoSelectMatch);

@@ -2782,7 +2782,4 @@ Bearbeite den Suchstring direkt aus der Liste. Navigiere in der Liste direkt aus
   <data name="saveAsFileMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+S</value>
   </data>
-  <data name="$this.ImeMode" xml:space="preserve" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
 </root>
