@@ -998,14 +998,6 @@ namespace ClipAngel
             richTextBox.SelectionTabs = new int[] { fontsize * 4, fontsize * 8, fontsize * 12, fontsize * 16 }; // Set tab size ~ 4
             richTextInternal.SelectionTabs = richTextBox.SelectionTabs;
 
-            //htmlTextBox.Parent = new Control();
-            htmlTextBox.Parent.Enabled = false; // Prevent stealing focus
-            //htmlTextBox.Document.OpenNew(false);
-            //htmlTextBox.Document.Write("");
-            htmlDoc = htmlTextBox.Document.DomDocument as mshtml.IHTMLDocument2;
-            htmlDoc.write("");
-            htmlDoc.close(); // Steals focus!!!
-
             richTextInternal.Clear();
             textBoxApplication.Text = "";
             textBoxWindow.Text = "";
@@ -1025,6 +1017,16 @@ namespace ClipAngel
                                           && Properties.Settings.Default.ShowNativeTextFormatting
                                           && (clipType == "html" || clipType == "rtf");
                 Bitmap appIcon = ApplicationIcon(RowReader["appPath"].ToString());
+                htmlDoc = htmlTextBox.Document.DomDocument as mshtml.IHTMLDocument2;
+                if (clipType == "html")
+                {
+                    //htmlTextBox.Parent = new Control();
+                    htmlTextBox.Parent.Enabled = false; // Prevent stealing focus
+                    //htmlTextBox.Document.OpenNew(false);
+                    //htmlTextBox.Document.Write("");
+                    htmlDoc.write("");
+                    htmlDoc.close(); // Steals focus!!!
+                }
                 if (appIcon != null)
                 {
                     pictureBoxSource.Image = appIcon;
@@ -1036,8 +1038,7 @@ namespace ClipAngel
                     StripLabelSize.Text = FormattedClipNumericPropery((int) RowReader["Size"], MultiLangByteUnit());
                 if (!(RowReader["Chars"] is DBNull))
                     StripLabelVisualSize.Text = FormattedClipNumericPropery((int) RowReader["Chars"], MultiLangCharUnit());
-                string TypeEng = RowReader["Type"].ToString();
-                StripLabelType.Text = LocalTypeName(TypeEng);
+                StripLabelType.Text = LocalTypeName(clipType);
                 stripLabelPosition.Text = "1";
                 string shortText;
                 string endMarker;
@@ -1060,7 +1061,7 @@ namespace ClipAngel
                     if (useNativeTextFormatting)
                     {
                         htmlMode = true
-                                   && TypeEng == "html"
+                                   && clipType == "html"
                                    && !String.IsNullOrEmpty(htmlText);
                         if (htmlMode)
                         {
@@ -1155,10 +1156,13 @@ namespace ClipAngel
                 urlTextBox.Clear();
                 urlTextBox.Text = RowReader["Url"].ToString();
                 MarkLinksInRichTextBox(urlTextBox, out UrlLinkMatches);
+                if (clipType == "html")
+                {
+                    htmlTextBox.Parent.Enabled = true;
+                }
             }
             tableLayoutPanelData.SuspendLayout();
             UpdateClipButtons();
-            htmlTextBox.Parent.Enabled = true;
             if (comboBoxSearchString.Focused)
             {
                 // Antibug webBrowser steals focus. We set it back
@@ -1220,12 +1224,33 @@ namespace ClipAngel
             {
                 ImageControl.ZoomFitInside();
             }
-            if (autoSelectMatch)
-                SelectNextMatchInClipText(false);
             else
-                RestoreTextSelection(NewSelectionStart, NewSelectionLength);
-            allowTextPositionChangeUpdate = true;
-            OnClipContentSelectionChange();
+            {
+                if (autoSelectMatch)
+                    SelectNextMatchInClipText(false);
+                else
+                {
+                    if (NewSelectionStart == -1)
+                        NewSelectionStart = selectionStart;
+                    if (NewSelectionLength == -1)
+                        NewSelectionLength = selectionLength;
+                    if (NewSelectionStart > 0 || NewSelectionLength > 0)
+                    {
+                        if (htmlMode)
+                        {
+                            IHTMLTxtRange range = SelectTextRangeInWebBrowser(NewSelectionStart, NewSelectionLength);
+                            range.scrollIntoView();
+                        }
+                        else
+                        {
+                            SetRichTextboxSelection(NewSelectionStart, NewSelectionLength, true);
+                        }
+                    }
+                }
+                allowTextPositionChangeUpdate = true;
+                OnClipContentSelectionChange();
+            }
+            tableLayoutPanelData.Refresh(); // to let user see clip in autoSelectNextClip state
         }
 
         protected virtual void LoadRowReader(int CurrentRowIndex = -1)
@@ -1280,26 +1305,13 @@ namespace ClipAngel
 
         private void RestoreTextSelection(int NewSelectionStart = -1, int NewSelectionLength = -1)
         {
-            if (NewSelectionStart == -1)
-                NewSelectionStart = selectionStart;
-            if (NewSelectionLength == -1)
-                NewSelectionLength = selectionLength;
-            if (htmlMode)
-            {
-                mshtml.IHTMLTxtRange range = SelectTextRangeInWebBrowser(NewSelectionStart, NewSelectionLength);
-                range.scrollIntoView();
-            }
-            else
-            {
-                SetRichTextboxSelection(NewSelectionStart, NewSelectionLength, selectionStart > 0);
-            }
         }
 
-        private mshtml.IHTMLTxtRange SelectTextRangeInWebBrowser(int NewSelectionStart, int NewSelectionLength)
+        private IHTMLTxtRange SelectTextRangeInWebBrowser(int NewSelectionStart, int NewSelectionLength)
         {
-            mshtml.IHTMLDocument2 htmlDoc = htmlTextBox.Document.DomDocument as mshtml.IHTMLDocument2;
-            mshtml.IHTMLBodyElement body = htmlDoc.body as mshtml.IHTMLBodyElement;
-            mshtml.IHTMLTxtRange range = body.createTextRange();
+            IHTMLDocument2 htmlDoc = htmlTextBox.Document.DomDocument as IHTMLDocument2;
+            IHTMLBodyElement body = htmlDoc.body as IHTMLBodyElement;
+            IHTMLTxtRange range = body.createTextRange();
             range.moveStart("character", NewSelectionStart
                 //+ GetNormalizedTextDeltaSize(RowReader["Text"].ToString().Substring(0, Math.Max(NewSelectionStart, 0)))
             );
@@ -6408,7 +6420,7 @@ namespace ClipAngel
                     //- GetNormalizedTextDeltaSize(range.text)
                     ;
             string innerText = htmlDoc.body.innerText;
-            if (innerText.Length > 3000)
+            if (String.IsNullOrEmpty(innerText) || innerText.Length > 3000)
                 // Long html will make moveStart slow
                 return start;
             range.collapse();
