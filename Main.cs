@@ -1145,11 +1145,11 @@ namespace ClipAngel
                         {
                             MarkRegExpMatchesInRichTextBox(richTextInternal, textPattern, Color.Red, true, false, !String.IsNullOrEmpty(searchString), out FilterMatches);
                         }
+                        richTextInternal.AppendText(Environment.NewLine); // adding new line to prevent horizontal scroll to end of extra long last line
                     }
                 }
                 richTextInternal.SelectionColor = new Color();
                 richTextInternal.SelectionStart = 0;
-                richTextInternal.AppendText(Environment.NewLine); // adding new line to prevent horizontal scroll to end of extra long last line
                 richTextBox.Rtf = richTextInternal.Rtf;
 
                 urlTextBox.HideSelection = true;
@@ -5146,7 +5146,16 @@ namespace ClipAngel
                     }
                     else // url
                     if (allowOpenUnknown)
-                        Process.Start(match.Value);
+                    {
+                        try
+                        {
+                            Process.Start(match.Value);
+                        }
+                        catch
+                        {
+                            // for example file://C:/Users/Donny/AppData/Local/Temp/Clip.html
+                        }
+                    }
                     return true;
                 }
             }
