@@ -844,6 +844,14 @@ Generation of image consumes CPU. If you experience high CPU load, set lower val
           <source>False - search only in Text and Title of clips. True - search in Text, Title, Window, Url of clips.</source>
           <target state="new">False - search only in Text and Title of clips. True - search in Text, Title, Window, Url of clips.</target>
         </trans-unit>
+        <trans-unit id="AllowDownloadThumbnail" translate="yes" xml:space="preserve">
+          <source>Allow download thumbnail</source>
+          <target state="new">Allow download thumbnail</target>
+        </trans-unit>
+        <trans-unit id="AllowDownloadThumbnailDescription" translate="yes" xml:space="preserve">
+          <source>Allow download from internet thumbnail for video and image links</source>
+          <target state="new">Allow download from internet thumbnail for video and image links</target>
+        </trans-unit>
       </group>
     </body>
   </file>
@@ -1652,6 +1660,14 @@ Generation of image consumes CPU. If you experience high CPU load, set lower val
         <trans-unit id="text_filename" translate="yes" xml:space="preserve">
           <source>*filename</source>
           <target state="new">*filename</target>
+        </trans-unit>
+        <trans-unit id="text_url_image" translate="yes" xml:space="preserve">
+          <source>*url-image</source>
+          <target state="new">*url-image</target>
+        </trans-unit>
+        <trans-unit id="text_url_video" translate="yes" xml:space="preserve">
+          <source>*url-video</source>
+          <target state="new">*url-video</target>
         </trans-unit>
       </group>
     </body>

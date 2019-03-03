@@ -442,4 +442,10 @@
   <data name="text_filename" xml:space="preserve">
     <value>*имя файла</value>
   </data>
+  <data name="text_url_image" xml:space="preserve">
+    <value>*url-картин</value>
+  </data>
+  <data name="text_url_video" xml:space="preserve">
+    <value>*url-видео</value>
+  </data>
 </root>

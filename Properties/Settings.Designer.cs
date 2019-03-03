@@ -800,5 +800,17 @@ namespace ClipAngel.Properties {
                 this["dataGridViewWidth"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool AllowDownloadThumbnail {
+            get {
+                return ((bool)(this["AllowDownloadThumbnail"]));
+            }
+            set {
+                this["AllowDownloadThumbnail"] = value;
+            }
+        }
     }
 }

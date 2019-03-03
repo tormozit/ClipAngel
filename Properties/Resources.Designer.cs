@@ -893,6 +893,24 @@ namespace ClipAngel.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to *url-image.
+        /// </summary>
+        public static string text_url_image {
+            get {
+                return ResourceManager.GetString("text_url_image", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to *url-video.
+        /// </summary>
+        public static string text_url_video {
+            get {
+                return ResourceManager.GetString("text_url_video", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         public static System.Drawing.Bitmap TextFormatting {

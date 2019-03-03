@@ -117,6 +117,12 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AllowDownloadThumbnail" xml:space="preserve">
+    <value>Allow download thumbnail</value>
+  </data>
+  <data name="AllowDownloadThumbnailDescription" xml:space="preserve">
+    <value>Allow download from internet thumbnail for video and image links</value>
+  </data>
   <data name="AutoCheckUpdate" xml:space="preserve">
     <value>Autocheck for program update</value>
   </data>

@@ -460,4 +460,10 @@
   <data name="text_filename" xml:space="preserve">
     <value>*filename</value>
   </data>
+  <data name="text_url_image" xml:space="preserve">
+    <value>*url-image</value>
+  </data>
+  <data name="text_url_video" xml:space="preserve">
+    <value>*url-video</value>
+  </data>
 </root>

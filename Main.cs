@@ -161,13 +161,16 @@ namespace ClipAngel
             {"number", "((?:(?:\\s|^)[-])?\\b[0-9]+\\.?[0-9]+)\\b"},
             {"phone", "(?:[\\s\\(]|^)(\\+?\\b\\d?(\\d[ \\-\\(\\)]{0,2}){7,19}\\b)"},
             {"url", "(\\b(?:https?|ftp|file)://[-A-Z0-9+&@#\\\\/%?=~_|!:,.;]*[A-Z0-9+&@#/%=~_|])"},
-            {"1CLine", @"(\{([a-zа-яё_]+ )?((?:[a-zа-яё_]+\.)*(?:Форма|Модуль|МодульУправляемогоПриложения|МодульОбычногоПриложения|МодульВнешнегоСоединения|МодульКоманды|МодульМенеджера|МодульОбъекта|МодульНабораЗаписей))\((\d+)(?:,(\d+))?\)\})"},
-            {"filename", @"((?:\b[a-z]:|\\\\[a-z0-9 %._-]+\\[a-z0-9 $%._-]+)\\(?:[^\\/:*?""<>|\r\n]+\\)*[^\\/:*?""<>|\r\n]*)"}
+            {"url_image",  @"(https?:\/\/.*\.(?:png|jpg|gif|jpeg|svg))"},
+            {"url_video",  @"(?:https?://)?(?:www.)?youtu(?:\.be|be\.com)/(?:(?:.*)v(?:/|=)|(?:.*/)?)([a-zA-Z0-9-_]+)(?:[&?][%a-zA-Z0-9-_]+=[%a-zA-Z0-9-_]+)*"},
+            {"filename", @"((?:\b[a-z]:|\\\\[a-z0-9 %._-]+\\[a-z0-9 $%._-]+)\\(?:[^\\/:*?""<>|\r\n]+\\)*[^\\/:*?""<>|\r\n]*)"},
+            {"1CLine", @"(\{([a-zа-яё_]+ )?((?:[a-zа-яё_]+\.)*(?:Форма|Модуль|МодульУправляемогоПриложения|МодульОбычногоПриложения|МодульВнешнегоСоединения|МодульКоманды|МодульМенеджера|МодульОбъекта|МодульНабораЗаписей))\((\d+)(?:,(\d+))?\)\})"}
         };
 
         static string LinkPattern = TextPatterns["url"];
         static string fileOrFolderPattern = TextPatterns["filename"];
-        static string youtubePattern = @"(?:https?://)?(?:www.)?youtu(?:\.be|be\.com)/(?:(?:.*)v(?:/|=)|(?:.*/)?)([a-zA-Z0-9-_]+)(?:[&?][%a-zA-Z0-9-_]+=[%a-zA-Z0-9-_]+)*";
+        static string imagePattern = TextPatterns["url_image"];
+        static string videoPattern = TextPatterns["url_video"];
 
         static private Dictionary<string, string> typeMap1C = new Dictionary<string, string>
         {
@@ -2147,13 +2150,20 @@ namespace ClipAngel
                 }
                 if (Properties.Settings.Default.CaptureImages && textFormatPresent && bitmap == null)
                 {
-                    Match match = Regex.Match(clipText, "^\\s*" + youtubePattern + "\\s*$", RegexOptions.IgnoreCase);
+                    Match match;
+                    match = Regex.Match(clipText, "^\\s*" + videoPattern + "\\s*$", RegexOptions.IgnoreCase);
                     if (match.Success)
                     {
                         imageUrl = "http://img.youtube.com/vi/";
                         int youtubeIndex = (match.Groups.Count - 1);
                         var youtubeId = match.Groups[youtubeIndex].ToString();
                         imageUrl = imageUrl + youtubeId + "/default.jpg";
+                        bitmap = getBitmapFromUrl(imageUrl);
+                    }
+                    match = Regex.Match(clipText, "^\\s*" + imagePattern + "\\s*$", RegexOptions.IgnoreCase);
+                    if (match.Success)
+                    {
+                        imageUrl = match.Value;
                         bitmap = getBitmapFromUrl(imageUrl);
                     }
                 }
@@ -2296,21 +2306,22 @@ namespace ClipAngel
         private Bitmap getBitmapFromUrl(string imageUrl)
         {
             Bitmap bitmap = null;
-            using (WebClient webClient = new WebClient())
-            {
-                webClient.Proxy.Credentials = CredentialCache.DefaultCredentials;
-                try
+            if (Properties.Settings.Default.AllowDownloadThumbnail||imageUrl.StartsWith("data:image")||File.Exists(imageUrl))
+                using (WebClient webClient = new WebClient())
                 {
-                    byte[] tempBuffer = webClient.DownloadData(imageUrl);
-                    using (var ms = new MemoryStream(tempBuffer))
+                    webClient.Proxy.Credentials = CredentialCache.DefaultCredentials;
+                    try
                     {
-                        bitmap = new Bitmap(ms);
+                        byte[] tempBuffer = webClient.DownloadData(imageUrl);
+                        using (var ms = new MemoryStream(tempBuffer))
+                        {
+                            bitmap = new Bitmap(ms);
+                        }
+                    }
+                    catch
+                    {
                     }
                 }
-                catch
-                {
-                }
-            }
             return bitmap;
         }
 

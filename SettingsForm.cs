@@ -722,6 +722,7 @@ namespace ClipAngel
 
         public void Load(bool PortableMode = false)
         {
+            AllowDownloadThumbnail = Properties.Settings.Default.AllowDownloadThumbnail;
             SearchAllFields = Properties.Settings.Default.SearchAllFields;
             CaptureImages = Properties.Settings.Default.CaptureImages;
             DeleteNonFavoriteClipsOnExit = Properties.Settings.Default.DeleteNonFavoriteClipsOnExit;
@@ -803,6 +804,7 @@ namespace ClipAngel
 
         public void Apply(bool PortableMode = false)
         {
+            Properties.Settings.Default.AllowDownloadThumbnail = AllowDownloadThumbnail;
             Properties.Settings.Default.SearchAllFields = SearchAllFields;
             Properties.Settings.Default.CaptureImages = CaptureImages;
             Properties.Settings.Default.DeleteNonFavoriteClipsOnExit = DeleteNonFavoriteClipsOnExit;
@@ -1089,6 +1091,10 @@ namespace ClipAngel
         [GlobalizedCategory("Search")]
         [Editor(typeof(MyBoolEditor), typeof(UITypeEditor))]
         public bool SearchAllFields { get; set; }
+
+        [GlobalizedCategory("Other")]
+        [Editor(typeof(MyBoolEditor), typeof(UITypeEditor))]
+        public bool AllowDownloadThumbnail { get; set; }
 
         [GlobalizedCategory("Other")]
         [Editor(typeof(MyBoolEditor), typeof(UITypeEditor))]
