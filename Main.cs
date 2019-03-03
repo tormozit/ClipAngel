@@ -2121,7 +2121,7 @@ namespace ClipAngel
                                     htmlText = "";
                                     //clipType = "";
                                 }
-                                else// if (!ImageUrl.StartsWith("data:image"))
+                                else// if (!imageUrl.StartsWith("data:image"))
                                 {
                                     if (bitmap == null)
                                         bitmap = getBitmapFromUrl(imageUrl);
@@ -2280,6 +2280,8 @@ namespace ClipAngel
                 if (clipTextImage != "")
                 {
                     // Image clip
+                    if (imageUrl.StartsWith("data:image"))
+                        imageUrl = "";
                     bool clipAdded = AddClip(binaryBuffer, imageSampleBuffer, "", "", "img", clipTextImage, clipApplication,
                         clipWindow, imageUrl, clipCharsImage, appPath, false, false, false);
                     updateList = updateList || clipAdded;
