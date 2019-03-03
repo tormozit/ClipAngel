@@ -167,6 +167,7 @@ namespace ClipAngel
 
         static string LinkPattern = TextPatterns["url"];
         static string fileOrFolderPattern = TextPatterns["filename"];
+        static string youtubePattern = @"(?:https?://)?(?:www.)?youtu(?:\.be|be\.com)/(?:(?:.*)v(?:/|=)|(?:.*/)?)([a-zA-Z0-9-_]+)(?:[&?][%a-zA-Z0-9-_]+=[%a-zA-Z0-9-_]+)*";
 
         static private Dictionary<string, string> typeMap1C = new Dictionary<string, string>
         {
@@ -2103,7 +2104,7 @@ namespace ClipAngel
                         Match match = Regex.Match(htmlText, "SourceURL:(" + LinkPattern + ")", RegexOptions.IgnoreCase);
                         if (match.Captures.Count > 0)
                             clipUrl = match.Groups[1].ToString();
-                        if (String.IsNullOrWhiteSpace(clipText))
+                        if (Properties.Settings.Default.CaptureImages && String.IsNullOrWhiteSpace(clipText))
                         {
                             // It may take much time to parse big html
                             var htmlParser = new HtmlParser();
@@ -2119,19 +2120,8 @@ namespace ClipAngel
                                 }
                                 else// if (!ImageUrl.StartsWith("data:image"))
                                 {
-                                    using (WebClient webClient = new WebClient())
-                                    {
-                                        webClient.Proxy.Credentials = CredentialCache.DefaultCredentials;
-                                        try
-                                        {
-                                            byte[] tempBuffer = webClient.DownloadData(imageUrl);
-                                            using (var ms = new MemoryStream(tempBuffer))
-                                            {
-                                                bitmap = new Bitmap(ms);
-                                            }
-                                        }
-                                        catch { }
-                                    }
+                                    if (bitmap == null)
+                                        bitmap = getBitmapFromUrl(imageUrl);
                                 }
                             }
                         }
@@ -2153,6 +2143,18 @@ namespace ClipAngel
                         rtfBox.Rtf = richText;
                         clipText = rtfBox.Text;
                         textFormatPresent = true;
+                    }
+                }
+                if (Properties.Settings.Default.CaptureImages && textFormatPresent && bitmap == null)
+                {
+                    Match match = Regex.Match(clipText, "^\\s*" + youtubePattern + "\\s*$", RegexOptions.IgnoreCase);
+                    if (match.Success)
+                    {
+                        imageUrl = "http://img.youtube.com/vi/";
+                        int youtubeIndex = (match.Groups.Count - 1);
+                        var youtubeId = match.Groups[youtubeIndex].ToString();
+                        imageUrl = imageUrl + youtubeId + "/default.jpg";
+                        bitmap = getBitmapFromUrl(imageUrl);
                     }
                 }
                 if (!String.IsNullOrEmpty(clipText) && String.IsNullOrEmpty(richText) && String.IsNullOrEmpty(htmlText) && Properties.Settings.Default.Max1CCodeSizeToColorize > clipText.Length)
@@ -2189,7 +2191,7 @@ namespace ClipAngel
                     string[] fileNameList = iData.GetData(DataFormats.FileDrop) as string[];
                     if (fileNameList != null)
                     {
-                        if (fileNameList.Length == 1 && iData.GetDataPresent(DataFormats.Bitmap))
+                        if (Properties.Settings.Default.CaptureImages && fileNameList.Length == 1 && iData.GetDataPresent(DataFormats.Bitmap))
                         {
                             // Command "Copy image" executed in browser IE
                             clipType = "";
@@ -2289,6 +2291,27 @@ namespace ClipAngel
                 if (bitmap != null)
                     bitmap.Dispose();
             }
+        }
+
+        private Bitmap getBitmapFromUrl(string imageUrl)
+        {
+            Bitmap bitmap = null;
+            using (WebClient webClient = new WebClient())
+            {
+                webClient.Proxy.Credentials = CredentialCache.DefaultCredentials;
+                try
+                {
+                    byte[] tempBuffer = webClient.DownloadData(imageUrl);
+                    using (var ms = new MemoryStream(tempBuffer))
+                    {
+                        bitmap = new Bitmap(ms);
+                    }
+                }
+                catch
+                {
+                }
+            }
+            return bitmap;
         }
 
         private Point FindBestImageFragment(Bitmap bitmap, int fragmentWidth, int fragmentHeight, int diffTreshold = 20)
