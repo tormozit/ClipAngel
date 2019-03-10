@@ -5509,7 +5509,12 @@ namespace ClipAngel
             mshtml.IHTMLBodyElement body = htmlDoc.body as mshtml.IHTMLBodyElement;
             mshtml.IHTMLSelectionObject sel = htmlDoc.selection;
             //sel.empty(); // get an empty selection, so we start from the beginning
-            mshtml.IHTMLTxtRange range = (mshtml.IHTMLTxtRange) sel.createRange();
+            mshtml.IHTMLTxtRange range = null;
+            try
+            {
+                range = (mshtml.IHTMLTxtRange)sel.createRange();
+            }
+            catch{}
             if (range == null && !onlySelection)
                 range = body.createTextRange();
             return range;
