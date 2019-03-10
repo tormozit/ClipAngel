@@ -2104,7 +2104,7 @@ namespace ClipAngel
                         //    <HTML><HEAD></HEAD>
                         //    <BODY><!--StartFragment--><PRE><SPAN class=k><FONT color =#ff0000>Для</FONT></SPAN> бизнес<SPAN class=k><FONT color=#ff0000>-</FONT></SPAN>процесса <SPAN class=s>"Согласование изменений маршрута</SPAN>" добавлена команда <SPAN class=s>"</SPAN>
                         //    </PRE><!--EndFragment--></BODY></HTML>
-                        Match match = Regex.Match(htmlText, "SourceURL:(" + LinkPattern + ")", RegexOptions.IgnoreCase);
+                        Match match = Regex.Match(htmlText, @"SourceURL:(?:file:///)(.*?)(?:\n|\r|$)", RegexOptions.IgnoreCase);
                         if (match.Captures.Count > 0)
                             clipUrl = match.Groups[1].ToString();
                         if (Properties.Settings.Default.CaptureImages && String.IsNullOrWhiteSpace(clipText))
@@ -2280,6 +2280,8 @@ namespace ClipAngel
                 if (clipTextImage != "")
                 {
                     // Image clip
+                    if (!String.IsNullOrEmpty(clipUrl))
+                        imageUrl = clipUrl;
                     if (imageUrl.StartsWith("data:image"))
                         imageUrl = "";
                     bool clipAdded = AddClip(binaryBuffer, imageSampleBuffer, "", "", "img", clipTextImage, clipApplication,
@@ -2296,7 +2298,7 @@ namespace ClipAngel
                     updateList = updateList || clipAdded;
                 }
                 if(updateList)
-                    UpdateClipBindingSource(false, 0);
+                    UpdateClipBindingSource();
             }
             finally
             {
@@ -2490,7 +2492,10 @@ namespace ClipAngel
                 }
                 else
                 {
-                    byte[] binaryType = Encoding.Unicode.GetBytes(typeText);
+                    string typeTextToHash = "text";
+                    if (typeText != "text")
+                        typeTextToHash = "html"; // rtf-html but not txt. To avoid double capture from Excel on exit https://sourceforge.net/p/clip-angel/tickets/46/
+                    byte[] binaryType = Encoding.Unicode.GetBytes(typeTextToHash);
                     md5.TransformFinalBlock(binaryType, 0, binaryType.Length);
                 }
                 hash = Convert.ToBase64String(md5.Hash);
@@ -4916,11 +4921,11 @@ namespace ClipAngel
                 e.Handled = true;
         }
 
-        private void OpenLinkIfAltPressed(RichTextBox sender, EventArgs e, MatchCollection matches)
+        private void OpenLinkIfAltPressed(RichTextBox sender, EventArgs e, MatchCollection matches, bool checkAlt = true)
         {
             Keys mod = Control.ModifierKeys & Keys.Modifiers;
             bool altOnly = mod == Keys.Alt;
-            if (altOnly)
+            if (!checkAlt || altOnly)
                 OpenLinkFromTextBox(matches, sender.SelectionStart);
         }
 
@@ -7024,7 +7029,7 @@ namespace ClipAngel
 
         private void contextMenuUrlOpenLink_Click(object sender, EventArgs e)
         {
-            Process.Start(urlTextBox.Text);
+            OpenLinkIfAltPressed(sender as RichTextBox, e, UrlLinkMatches, false);
         }
 
         private void pasteFileToolStripMenuItem_Click(object sender, EventArgs e)
