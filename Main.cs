@@ -7034,7 +7034,7 @@ namespace ClipAngel
 
         private void contextMenuUrlOpenLink_Click(object sender, EventArgs e)
         {
-            OpenLinkIfAltPressed(sender as RichTextBox, e, UrlLinkMatches, false);
+            OpenLinkIfAltPressed(urlTextBox, e, UrlLinkMatches, false);
         }
 
         private void pasteFileToolStripMenuItem_Click(object sender, EventArgs e)
