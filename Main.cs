@@ -2492,10 +2492,7 @@ namespace ClipAngel
                 }
                 else
                 {
-                    string typeTextToHash = "text";
-                    if (typeText != "text")
-                        typeTextToHash = "html"; // rtf-html but not txt. To avoid double capture from Excel on exit https://sourceforge.net/p/clip-angel/tickets/46/
-                    byte[] binaryType = Encoding.Unicode.GetBytes(typeTextToHash);
+                    byte[] binaryType = Encoding.Unicode.GetBytes(typeText);
                     md5.TransformFinalBlock(binaryType, 0, binaryType.Length);
                 }
                 hash = Convert.ToBase64String(md5.Hash);
