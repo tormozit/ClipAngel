@@ -2104,7 +2104,7 @@ namespace ClipAngel
                         //    <HTML><HEAD></HEAD>
                         //    <BODY><!--StartFragment--><PRE><SPAN class=k><FONT color =#ff0000>Для</FONT></SPAN> бизнес<SPAN class=k><FONT color=#ff0000>-</FONT></SPAN>процесса <SPAN class=s>"Согласование изменений маршрута</SPAN>" добавлена команда <SPAN class=s>"</SPAN>
                         //    </PRE><!--EndFragment--></BODY></HTML>
-                        Match match = Regex.Match(htmlText, @"SourceURL:(?:file:///)(.*?)(?:\n|\r|$)", RegexOptions.IgnoreCase);
+                        Match match = Regex.Match(htmlText, @"SourceURL:(?:file:///)?(.*?)(?:\n|\r|$)", RegexOptions.IgnoreCase);
                         if (match.Captures.Count > 0)
                             clipUrl = match.Groups[1].ToString();
                         if (Properties.Settings.Default.CaptureImages && String.IsNullOrWhiteSpace(clipText))
