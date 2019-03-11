@@ -24,6 +24,7 @@ using AngleSharp.Parser.Html;
 using AngleSharp.Dom;
 using System.Reflection;
 using System.Runtime.CompilerServices;
+using System.Runtime.Remoting.Channels;
 using System.Xml;
 using System.Xml.Linq;
 using WindowsInput.Native;
@@ -2104,9 +2105,16 @@ namespace ClipAngel
                         //    <HTML><HEAD></HEAD>
                         //    <BODY><!--StartFragment--><PRE><SPAN class=k><FONT color =#ff0000>Для</FONT></SPAN> бизнес<SPAN class=k><FONT color=#ff0000>-</FONT></SPAN>процесса <SPAN class=s>"Согласование изменений маршрута</SPAN>" добавлена команда <SPAN class=s>"</SPAN>
                         //    </PRE><!--EndFragment--></BODY></HTML>
-                        Match match = Regex.Match(htmlText, @"SourceURL:(?:file:///)?(.*?)(?:\n|\r|$)", RegexOptions.IgnoreCase);
+                        Match match = Regex.Match(htmlText, @"SourceURL:(file:///?)?(.*?)(?:\n|\r|$)", RegexOptions.IgnoreCase);
                         if (match.Captures.Count > 0)
-                            clipUrl = match.Groups[1].ToString();
+                        {
+                            clipUrl = match.Groups[2].ToString();
+                            if (!String.IsNullOrEmpty(match.Groups[1].ToString()))
+                            {
+                                clipUrl = System.Web.HttpUtility.UrlDecode(clipUrl);
+                                clipUrl = clipUrl.Replace(@"/", @"\");
+                            }
+                        }
                         if (Properties.Settings.Default.CaptureImages && String.IsNullOrWhiteSpace(clipText))
                         {
                             // It may take much time to parse big html
@@ -2977,7 +2985,9 @@ namespace ClipAngel
         private string GetSelectedTextOfClip(bool onlySelectedPlainText = true)
         {
             string selectedText = "";
-            mshtml.IHTMLTxtRange htmlSelection = GetHtmlCurrentTextRangeOrAllDocument(true);
+            mshtml.IHTMLTxtRange htmlSelection = null;
+            if (RowReader["type"] == "html")
+                htmlSelection = GetHtmlCurrentTextRangeOrAllDocument(true);
             bool selectedPlainTextMode = true
                                          && onlySelectedPlainText
                                          && (false
