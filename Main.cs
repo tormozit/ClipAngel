@@ -222,7 +222,11 @@ namespace ClipAngel
         {
             this.UserSettingsPath = UserSettingsPath;
             this.PortableMode = PortableMode;
-            if (Properties.Settings.Default.WindowPositionX != 0 || Properties.Settings.Default.WindowPositionY != 0)
+            if (true
+                && (Properties.Settings.Default.WindowPositionX != 0 || Properties.Settings.Default.WindowPositionY != 0)
+                && (Properties.Settings.Default.WindowPositionX != -32000 && Properties.Settings.Default.WindowPositionY != -32000) // old version could save minimized state coords
+                && Properties.Settings.Default.WindowPositionY != maxWindowCoordForHiddenState
+                )
             {
                 this.Left = Properties.Settings.Default.WindowPositionX;
                 this.Top = Properties.Settings.Default.WindowPositionY;
@@ -2612,8 +2616,6 @@ namespace ClipAngel
             if (true
                 && applicationText == "ScreenshotReader"
                 && IsTextType(typeText)
-                //&& !Visible 
-                //&& Properties.Settings.Default.SelectTopClipOnOpen 
             )
                 ShowForPaste(false, true);
             //}
@@ -3815,9 +3817,6 @@ namespace ClipAngel
                 showOnlyFavoriteToolStripMenuItem_Click();
             else if (MarkFilter.SelectedValue.ToString() == "favorite")
                 showAllMarksToolStripMenuItem_Click();
-            //if (Properties.Settings.Default.SelectTopClipOnOpen)
-            //    GotoLastRow();
-            //else 
             if (clearFiltersAndGoToTop)
                 ClearFilter(-1);
             //Stopwatch sw = new Stopwatch();
@@ -4868,8 +4867,16 @@ namespace ClipAngel
         private void Main_FormClosed(object sender, FormClosedEventArgs e)
         {
             this.Visible = false;
-            Properties.Settings.Default.WindowPositionX = this.Left;
-            Properties.Settings.Default.WindowPositionY = this.Top;
+            if (this.Left == -32000)
+                Properties.Settings.Default.WindowPositionX = this.RestoreBounds.Left;
+            else
+                Properties.Settings.Default.WindowPositionX = this.Left;
+            if (this.Top == -32000)
+                Properties.Settings.Default.WindowPositionY = this.RestoreBounds.Top;
+            else if (this.Top == maxWindowCoordForHiddenState)
+                Properties.Settings.Default.WindowPositionY = factualTop;
+            else
+                Properties.Settings.Default.WindowPositionY = this.Top;
             Properties.Settings.Default.dataGridViewWidth = splitContainer1.SplitterDistance;
 
             //Properties.Settings.Default.Save(); // Not all properties were saved here. For example ShowInTaskbar was not saved

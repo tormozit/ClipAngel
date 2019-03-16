@@ -144,18 +144,6 @@ namespace ClipAngel.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool SelectTopClipOnOpen {
-            get {
-                return ((bool)(this["SelectTopClipOnOpen"]));
-            }
-            set {
-                this["SelectTopClipOnOpen"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool ClipListSimpleDraw {
             get {
