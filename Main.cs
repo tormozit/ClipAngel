@@ -223,13 +223,13 @@ namespace ClipAngel
             this.UserSettingsPath = UserSettingsPath;
             this.PortableMode = PortableMode;
             if (true
-                && (Properties.Settings.Default.WindowPositionX != 0 || Properties.Settings.Default.WindowPositionY != 0)
-                && (Properties.Settings.Default.WindowPositionX != -32000 && Properties.Settings.Default.WindowPositionY != -32000) // old version could save minimized state coords
-                && Properties.Settings.Default.WindowPositionY != maxWindowCoordForHiddenState
+                && (ClipAngel.Properties.Settings.Default.WindowPositionX != 0 || ClipAngel.Properties.Settings.Default.WindowPositionY != 0)
+                && (ClipAngel.Properties.Settings.Default.WindowPositionX != -32000 && ClipAngel.Properties.Settings.Default.WindowPositionY != -32000) // old version could save minimized state coords
+                && ClipAngel.Properties.Settings.Default.WindowPositionY != maxWindowCoordForHiddenState
                 )
             {
-                this.Left = Properties.Settings.Default.WindowPositionX;
-                this.Top = Properties.Settings.Default.WindowPositionY;
+                this.Left = ClipAngel.Properties.Settings.Default.WindowPositionX;
+                this.Top = ClipAngel.Properties.Settings.Default.WindowPositionY;
             }
 
             //// Disable window animation on minimize and restore. Failed
@@ -278,7 +278,7 @@ namespace ClipAngel
 
             htmlTextBox.Navigate("about:blank");
             htmlTextBox.Document.ExecCommand("EditMode", false, null);
-            //Properties.Settings.Default.FastWindowOpen = false; // for debug
+            //ClipAngel.Properties.Settings.Default.FastWindowOpen = false; // for debug
 
             // Antiflicker double buffering
             // http://stackoverflow.com/questions/76993/how-to-double-buffer-net-controls-on-a-form
@@ -323,13 +323,13 @@ namespace ClipAngel
             urlTextBox.AutoWordSelection = false;
 
             // Initialize StringCollection settings to prevent error saving settings 
-            if (Properties.Settings.Default.LastFilterValues == null)
+            if (ClipAngel.Properties.Settings.Default.LastFilterValues == null)
             {
-                Properties.Settings.Default.LastFilterValues = new StringCollection();
+                ClipAngel.Properties.Settings.Default.LastFilterValues = new StringCollection();
             }
-            if (Properties.Settings.Default.IgnoreApplicationsClipCapture == null)
+            if (ClipAngel.Properties.Settings.Default.IgnoreApplicationsClipCapture == null)
             {
-                Properties.Settings.Default.IgnoreApplicationsClipCapture = new StringCollection();
+                ClipAngel.Properties.Settings.Default.IgnoreApplicationsClipCapture = new StringCollection();
             }
 
             FillFilterItems();
@@ -351,8 +351,8 @@ namespace ClipAngel
                 //RestoreWindowIfMinimized();
                 allowVisible = true;
             }
-            if (Properties.Settings.Default.MainWindowSize.Width > 0)
-                this.Size = Properties.Settings.Default.MainWindowSize;
+            if (ClipAngel.Properties.Settings.Default.MainWindowSize.Width > 0)
+                this.Size = ClipAngel.Properties.Settings.Default.MainWindowSize;
             timerDaily.Interval = 1;
             timerDaily.Start();
             timerReconnect.Interval = (1000 * 5); // 5 seconds
@@ -361,9 +361,9 @@ namespace ClipAngel
             ResetIsMainProperty();
 
             LoadSettings();
-            if (Properties.Settings.Default.dataGridViewWidth != 0)
+            if (ClipAngel.Properties.Settings.Default.dataGridViewWidth != 0)
             {
-                splitContainer1.SplitterDistance = Properties.Settings.Default.dataGridViewWidth;
+                splitContainer1.SplitterDistance = ClipAngel.Properties.Settings.Default.dataGridViewWidth;
             }
         }
 
@@ -403,8 +403,8 @@ namespace ClipAngel
 
         private void OpenDatabase()
         {
-            if (!String.IsNullOrWhiteSpace(Properties.Settings.Default.DatabaseFile))
-                DbFileName = Properties.Settings.Default.DatabaseFile;
+            if (!String.IsNullOrWhiteSpace(ClipAngel.Properties.Settings.Default.DatabaseFile))
+                DbFileName = ClipAngel.Properties.Settings.Default.DatabaseFile;
             else
                 DbFileName = UserSettingsPath + "\\" + Properties.Resources.DBShortFilename;
             ConnectionString = "data source=" + DbFileName + ";journal_mode=OFF;"; // journal_mode=OFF - Disabled transactions
@@ -609,7 +609,7 @@ namespace ClipAngel
             }
             Debug.WriteLine("Active window " + lastActiveParentWindow + " " + targetTitle);
             string newTitle = Application.ProductName + " " + Properties.Resources.VersionValue;
-            if (!Properties.Settings.Default.MonitoringClipboard)
+            if (!ClipAngel.Properties.Settings.Default.MonitoringClipboard)
             {
                 newTitle += " [" + Properties.Resources.NoCapture + "]";
             }
@@ -626,23 +626,23 @@ namespace ClipAngel
         {
             EnumModifierKeys Modifiers;
             Keys Key;
-            if (ReadHotkeyFromText(Properties.Settings.Default.GlobalHotkeyOpenLast, out Modifiers, out Key))
+            if (ReadHotkeyFromText(ClipAngel.Properties.Settings.Default.GlobalHotkeyOpenLast, out Modifiers, out Key))
                 keyboardHook.RegisterHotKey(Modifiers, Key);
-            if (ReadHotkeyFromText(Properties.Settings.Default.GlobalHotkeyOpenCurrent, out Modifiers, out Key))
+            if (ReadHotkeyFromText(ClipAngel.Properties.Settings.Default.GlobalHotkeyOpenCurrent, out Modifiers, out Key))
                 keyboardHook.RegisterHotKey(Modifiers, Key);
-            if (ReadHotkeyFromText(Properties.Settings.Default.GlobalHotkeyOpenFavorites, out Modifiers, out Key))
+            if (ReadHotkeyFromText(ClipAngel.Properties.Settings.Default.GlobalHotkeyOpenFavorites, out Modifiers, out Key))
                 keyboardHook.RegisterHotKey(Modifiers, Key);
-            if (ReadHotkeyFromText(Properties.Settings.Default.GlobalHotkeyIncrementalPaste, out Modifiers, out Key))
+            if (ReadHotkeyFromText(ClipAngel.Properties.Settings.Default.GlobalHotkeyIncrementalPaste, out Modifiers, out Key))
                 keyboardHook.RegisterHotKey(Modifiers, Key);
-            if (ReadHotkeyFromText(Properties.Settings.Default.GlobalHotkeyCompareLastClips, out Modifiers, out Key))
+            if (ReadHotkeyFromText(ClipAngel.Properties.Settings.Default.GlobalHotkeyCompareLastClips, out Modifiers, out Key))
                 keyboardHook.RegisterHotKey(Modifiers, Key);
-            if (ReadHotkeyFromText(Properties.Settings.Default.GlobalHotkeyPasteText, out Modifiers, out Key))
+            if (ReadHotkeyFromText(ClipAngel.Properties.Settings.Default.GlobalHotkeyPasteText, out Modifiers, out Key))
                 keyboardHook.RegisterHotKey(Modifiers, Key);
-            if (ReadHotkeyFromText(Properties.Settings.Default.GlobalHotkeySimulateInput, out Modifiers, out Key))
+            if (ReadHotkeyFromText(ClipAngel.Properties.Settings.Default.GlobalHotkeySimulateInput, out Modifiers, out Key))
                 keyboardHook.RegisterHotKey(Modifiers, Key);
-            if (ReadHotkeyFromText(Properties.Settings.Default.GlobalHotkeySwitchMonitoring, out Modifiers, out Key))
+            if (ReadHotkeyFromText(ClipAngel.Properties.Settings.Default.GlobalHotkeySwitchMonitoring, out Modifiers, out Key))
                 keyboardHook.RegisterHotKey(Modifiers, Key);
-            if (Properties.Settings.Default.CopyTextInAnyWindowOnCTRLF3 && ReadHotkeyFromText("Control + F3", out Modifiers, out Key))
+            if (ClipAngel.Properties.Settings.Default.CopyTextInAnyWindowOnCTRLF3 && ReadHotkeyFromText("Control + F3", out Modifiers, out Key))
                 keyboardHook.RegisterHotKey(Modifiers, Key);
         }
 
@@ -668,7 +668,7 @@ namespace ClipAngel
             if (!AllowHotkeyProcess)
                 return;
             string hotkeyTitle = KeyboardHook.HotkeyTitle(e.Key, e.Modifier);
-            if (hotkeyTitle == Properties.Settings.Default.GlobalHotkeyOpenLast)
+            if (hotkeyTitle == ClipAngel.Properties.Settings.Default.GlobalHotkeyOpenLast)
             {
                 if (IsVisible() && this.ContainsFocus && MarkFilter.SelectedValue.ToString() != "favorite") // Sometimes it can cotain focus but be not visible!
                     this.Close();
@@ -678,7 +678,7 @@ namespace ClipAngel
                     dataGridView.Focus();
                 }
             }
-            else if (hotkeyTitle == Properties.Settings.Default.GlobalHotkeyOpenCurrent)
+            else if (hotkeyTitle == ClipAngel.Properties.Settings.Default.GlobalHotkeyOpenCurrent)
             {
                 if (IsVisible() && this.ContainsFocus && MarkFilter.SelectedValue.ToString() != "favorite")
                     this.Close();
@@ -688,7 +688,7 @@ namespace ClipAngel
                     //dataGridView.Focus();
                 }
             }
-            else if (hotkeyTitle == Properties.Settings.Default.GlobalHotkeyOpenFavorites)
+            else if (hotkeyTitle == ClipAngel.Properties.Settings.Default.GlobalHotkeyOpenFavorites)
             {
                 if (IsVisible() && this.ContainsFocus && MarkFilter.SelectedValue.ToString() == "favorite")
                     this.Close();
@@ -698,7 +698,7 @@ namespace ClipAngel
                     dataGridView.Focus();
                 }
             }
-            else if (hotkeyTitle == Properties.Settings.Default.GlobalHotkeyIncrementalPaste)
+            else if (hotkeyTitle == ClipAngel.Properties.Settings.Default.GlobalHotkeyIncrementalPaste)
             {
                 AllowHotkeyProcess = false;
                 SendPasteClipExpress(null, PasteMethod.Standard, false, true);
@@ -720,19 +720,19 @@ namespace ClipAngel
                 notifyIcon.ShowBalloonTip(3000, Properties.Resources.NextClip, messageText, ToolTipIcon.Info);
                 AllowHotkeyProcess = true;
             }
-            else if (hotkeyTitle == Properties.Settings.Default.GlobalHotkeyCompareLastClips)
+            else if (hotkeyTitle == ClipAngel.Properties.Settings.Default.GlobalHotkeyCompareLastClips)
             {
                 toolStripMenuItemCompareLastClips_Click();
             }
-            else if (hotkeyTitle == Properties.Settings.Default.GlobalHotkeyPasteText)
+            else if (hotkeyTitle == ClipAngel.Properties.Settings.Default.GlobalHotkeyPasteText)
             {
                 SendPasteClipExpress(dataGridView.Rows[0], PasteMethod.Text);
             }
-            else if (hotkeyTitle == Properties.Settings.Default.GlobalHotkeySimulateInput)
+            else if (hotkeyTitle == ClipAngel.Properties.Settings.Default.GlobalHotkeySimulateInput)
             {
                 SendPasteClipExpress(dataGridView.Rows[0], PasteMethod.SendChars);
             }
-            else if (hotkeyTitle == Properties.Settings.Default.GlobalHotkeySwitchMonitoring)
+            else if (hotkeyTitle == ClipAngel.Properties.Settings.Default.GlobalHotkeySwitchMonitoring)
             {
                 SwitchMonitoringClipboard(true);
             }
@@ -788,7 +788,7 @@ namespace ClipAngel
 
         protected override void WndProc(ref Message m)
         {
-            if (Properties.Settings.Default.FastWindowOpen)
+            if (ClipAngel.Properties.Settings.Default.FastWindowOpen)
             {
                 if (m.Msg == WM_SYSCOMMAND)
                 {
@@ -939,7 +939,7 @@ namespace ClipAngel
             // So we do not use it and make everything in constructor
             UpdateControlsStates(); //
             RestoreWindowIfMinimized();
-            if (this.Visible && Properties.Settings.Default.ShowTipsOnStart)
+            if (this.Visible && ClipAngel.Properties.Settings.Default.ShowTipsOnStart)
             {
                 Tips form = new Tips();
                 form.ShowDialog(this);
@@ -960,7 +960,7 @@ namespace ClipAngel
 
         private void ConnectClipboard()
         {
-            if (!Properties.Settings.Default.MonitoringClipboard)
+            if (!ClipAngel.Properties.Settings.Default.MonitoringClipboard)
                 return;
             if (!AddClipboardFormatListener(this.Handle))
             {
@@ -982,7 +982,7 @@ namespace ClipAngel
             IHTMLDocument2 htmlDoc;
             string clipType;
             string textPattern = RegexpPattern();
-            bool autoSelectMatch = (textPattern.Length > 0 && Properties.Settings.Default.AutoSelectMatch);
+            bool autoSelectMatch = (textPattern.Length > 0 && ClipAngel.Properties.Settings.Default.AutoSelectMatch);
             FullTextLoad = FullTextLoad || EditMode;
             richTextBox.ReadOnly = !EditMode;
             FilterMatches = null;
@@ -998,10 +998,10 @@ namespace ClipAngel
             clipType = "";
             pictureBoxSource.Image = null;
             ImageControl.Image = null;
-            if (Properties.Settings.Default.MonospacedFont)
-                richTextBox.Font = new Font(FontFamily.GenericMonospace, Properties.Settings.Default.Font.Size);
+            if (ClipAngel.Properties.Settings.Default.MonospacedFont)
+                richTextBox.Font = new Font(FontFamily.GenericMonospace, ClipAngel.Properties.Settings.Default.Font.Size);
             else
-                richTextBox.Font = Properties.Settings.Default.Font;
+                richTextBox.Font = ClipAngel.Properties.Settings.Default.Font;
             richTextInternal.Font = richTextBox.Font;
             int fontsize = (int)richTextBox.Font.Size; // Size should be without digits after comma
             richTextBox.SelectionTabs = new int[] { fontsize * 4, fontsize * 8, fontsize * 12, fontsize * 16 }; // Set tab size ~ 4
@@ -1023,7 +1023,7 @@ namespace ClipAngel
                 string fullRTF = RowReader["richText"].ToString();
                 string htmlText = GetHtmlFromHtmlClipText();
                 useNativeTextFormatting = true
-                                          && Properties.Settings.Default.ShowNativeTextFormatting
+                                          && ClipAngel.Properties.Settings.Default.ShowNativeTextFormatting
                                           && (clipType == "html" || clipType == "rtf");
                 Bitmap appIcon = ApplicationIcon(RowReader["appPath"].ToString());
                 htmlDoc = htmlTextBox.Document.DomDocument as mshtml.IHTMLDocument2;
@@ -1080,7 +1080,7 @@ namespace ClipAngel
                             htmlText = htmlText.Replace(marker, replacement);
 
                             string newStyle = " margin: 0;";
-                            if (Properties.Settings.Default.WordWrap)
+                            if (ClipAngel.Properties.Settings.Default.WordWrap)
                             {
                                 newStyle += " word-wrap: break-word;";
                             }
@@ -1424,7 +1424,7 @@ namespace ClipAngel
             bool bold, out MatchCollection matches)
         {
             RegexOptions options = RegexOptions.Singleline;
-            if (!Properties.Settings.Default.SearchCaseSensitive)
+            if (!ClipAngel.Properties.Settings.Default.SearchCaseSensitive)
                 options = options | RegexOptions.IgnoreCase;
             matches = Regex.Matches(control.Text, pattern, options);
             control.DeselectAll();
@@ -1473,7 +1473,7 @@ namespace ClipAngel
         {
             mshtml.IHTMLDocument2 htmlDoc = (mshtml.IHTMLDocument2)control.Document.DomDocument;
             RegexOptions options = RegexOptions.Singleline;
-            if (!Properties.Settings.Default.SearchCaseSensitive)
+            if (!ClipAngel.Properties.Settings.Default.SearchCaseSensitive)
                 options = options | RegexOptions.IgnoreCase;
             matches = Regex.Matches(RowReader["text"].ToString(), pattern, options);
             int maxMarked = 50; // prevent slow down
@@ -1503,10 +1503,10 @@ namespace ClipAngel
             int colorIndex = 0;
             int maxMarked = 50; // prevent slow down
             int searchFlags = 0;
-            if (Properties.Settings.Default.SearchCaseSensitive)
+            if (ClipAngel.Properties.Settings.Default.SearchCaseSensitive)
                 searchFlags = 4;
             string[] array;
-            if (Properties.Settings.Default.SearchWordsIndependently)
+            if (ClipAngel.Properties.Settings.Default.SearchWordsIndependently)
                 array = searchString.Split(new[] { " " }, StringSplitOptions.RemoveEmptyEntries);
             else
                 array = new string[1] { searchString };
@@ -1546,7 +1546,7 @@ namespace ClipAngel
 
         private void SearchString_TextChanged(object sender, EventArgs e)
         {
-            if (AllowFilterProcessing || !Properties.Settings.Default.FilterListBySearchString)
+            if (AllowFilterProcessing || !ClipAngel.Properties.Settings.Default.FilterListBySearchString)
             {
                 timerApplySearchString.Stop();
                 timerApplySearchString.Start();
@@ -1557,7 +1557,7 @@ namespace ClipAngel
         {
             ReadSearchString();
             searchMatchedIDs.Clear();
-            if (Properties.Settings.Default.FilterListBySearchString)
+            if (ClipAngel.Properties.Settings.Default.FilterListBySearchString)
                 UpdateClipBindingSource(true);
             else
             {
@@ -1566,7 +1566,7 @@ namespace ClipAngel
                 {
                     row.Cells["ColumnTitle"].Value = null;
                 }
-                if (Properties.Settings.Default.AutoSelectMatchedClip)
+                if (ClipAngel.Properties.Settings.Default.AutoSelectMatchedClip)
                 {
                     GotoSearchMatchInList(true, true);
                 }
@@ -1586,7 +1586,7 @@ namespace ClipAngel
                 command.CommandText = "Select Id From Clips";
                 command.CommandText += " WHERE 1=1 " + SqlSearchFilter();
                 command.CommandText += " ORDER BY " + sortField + " desc";
-                if (Properties.Settings.Default.SearchCaseSensitive)
+                if (ClipAngel.Properties.Settings.Default.SearchCaseSensitive)
                     command.CommandText = "PRAGMA case_sensitive_like = 1; " + command.CommandText;
                 else
                     command.CommandText = "PRAGMA case_sensitive_like = 0; " + command.CommandText;
@@ -1685,11 +1685,11 @@ namespace ClipAngel
             filterOn = false;
             string sqlFilter = "1 = 1";
             string filterValue = "";
-            if (!String.IsNullOrEmpty(searchString) && Properties.Settings.Default.FilterListBySearchString)
+            if (!String.IsNullOrEmpty(searchString) && ClipAngel.Properties.Settings.Default.FilterListBySearchString)
             {
                 sqlFilter += SqlSearchFilter();
                 filterOn = true;
-                if (Properties.Settings.Default.SearchIgnoreBigTexts)
+                if (ClipAngel.Properties.Settings.Default.SearchIgnoreBigTexts)
                     sqlFilter += " AND (Chars < 100000 OR type = 'img')";
             }
             if (TypeFilter.SelectedValue as string != "allTypes")
@@ -1728,7 +1728,7 @@ namespace ClipAngel
             string selectCommandText = "Select Id, NULL AS Used, NULL AS Title, NULL AS Chars, NULL AS Type, NULL AS Favorite, NULL AS ImageSample, NULL AS AppPath, NULL AS Size, NULL AS Created From Clips";
             selectCommandText += " WHERE " + sqlFilter;
             selectCommandText += " ORDER BY " + sortField + " desc";
-            if (Properties.Settings.Default.SearchCaseSensitive)
+            if (ClipAngel.Properties.Settings.Default.SearchCaseSensitive)
                 selectCommandText = "PRAGMA case_sensitive_like = 1; " + selectCommandText;
             else
                 selectCommandText = "PRAGMA case_sensitive_like = 0; " + selectCommandText;
@@ -1798,14 +1798,14 @@ namespace ClipAngel
             filterTextTemp = filterTextTemp.Replace("\\", "\\\\");
             filterTextTemp = filterTextTemp.Replace("_", "\\_");
             filterTextTemp = filterTextTemp.Replace("'", "''");
-            if (!Properties.Settings.Default.SearchWildcards)
+            if (!ClipAngel.Properties.Settings.Default.SearchWildcards)
                 filterTextTemp = filterTextTemp.Replace("%", "\\%");
-            if (Properties.Settings.Default.SearchWordsIndependently)
+            if (ClipAngel.Properties.Settings.Default.SearchWordsIndependently)
                 array = filterTextTemp.Split(new[] {" "}, StringSplitOptions.RemoveEmptyEntries);
             else
                 array = new string[1] {filterTextTemp};
             List<string> fields = new List<string>{"Text", "Title"};
-            if (Properties.Settings.Default.SearchAllFields)
+            if (ClipAngel.Properties.Settings.Default.SearchAllFields)
             {
                 fields.Add("Window");
                 fields.Add("Url");
@@ -1816,7 +1816,7 @@ namespace ClipAngel
                 sqlSearchFilter += " OR (1=1";
                 foreach (var word in array)
                 {
-                    if (Properties.Settings.Default.SearchCaseSensitive)
+                    if (ClipAngel.Properties.Settings.Default.SearchCaseSensitive)
                         sqlSearchFilter += "\n AND " + field + " Like '%" + word + "%' ESCAPE '\\'";
                     else
                         sqlSearchFilter += "\n AND UPPER(" + field + ") Like UPPER('%" + word + "%') ESCAPE '\\'";
@@ -1904,7 +1904,7 @@ namespace ClipAngel
                 if (!lastActSet)
                     //SetForegroundWindow(IntPtr.Zero); // This way focus was not lost!
                     SetActiveWindow(IntPtr.Zero);
-                if (Properties.Settings.Default.FastWindowOpen)
+                if (ClipAngel.Properties.Settings.Default.FastWindowOpen)
                 {
                     //bool lastActSet = false;
                     //if (lastActiveParentWindow != null)
@@ -1922,16 +1922,16 @@ namespace ClipAngel
                     this.ResumeLayout();
                 }
                 e.Cancel = true;
-                //if (Properties.Settings.Default.ClearFiltersOnClose)
+                //if (ClipAngel.Properties.Settings.Default.ClearFiltersOnClose)
                 //    ClearFilter();
                 //this.ResumeLayout();
             }
             else
             {
                 if (WindowState == FormWindowState.Normal)
-                    Properties.Settings.Default.MainWindowSize = Size;
+                    ClipAngel.Properties.Settings.Default.MainWindowSize = Size;
                 else
-                    Properties.Settings.Default.MainWindowSize = RestoreBounds.Size;
+                    ClipAngel.Properties.Settings.Default.MainWindowSize = RestoreBounds.Size;
             }
         }
 
@@ -1999,7 +1999,7 @@ namespace ClipAngel
                 notifyIcon.ShowBalloonTip(2000, Application.ProductName, Message, ToolTipIcon.Info);
                 return;
             }
-            if (iData.GetDataPresent(DataFormat_ClipboardViewerIgnore) && Properties.Settings.Default.IgnoreExclusiveFormatClipCapture)
+            if (iData.GetDataPresent(DataFormat_ClipboardViewerIgnore) && ClipAngel.Properties.Settings.Default.IgnoreExclusiveFormatClipCapture)
                 return;
             bool textFormatPresent = false;
             byte[] binaryBuffer = new byte[0];
@@ -2086,7 +2086,7 @@ namespace ClipAngel
                     && iData.GetDataPresent(DataFormats.Html)
                     && (false
                         || NumberOfFilledCells == 0
-                        || Properties.Settings.Default.MaxCellsToCaptureFormattedText > NumberOfFilledCells))
+                        || ClipAngel.Properties.Settings.Default.MaxCellsToCaptureFormattedText > NumberOfFilledCells))
                 {
                     htmlText = (string) iData.GetData(DataFormats.Html);
                     if (String.IsNullOrEmpty(htmlText))
@@ -2119,7 +2119,7 @@ namespace ClipAngel
                                 clipUrl = clipUrl.Replace(@"/", @"\");
                             }
                         }
-                        if (Properties.Settings.Default.CaptureImages && String.IsNullOrWhiteSpace(clipText))
+                        if (ClipAngel.Properties.Settings.Default.CaptureImages && String.IsNullOrWhiteSpace(clipText))
                         {
                             // It may take much time to parse big html
                             var htmlParser = new HtmlParser();
@@ -2148,7 +2148,7 @@ namespace ClipAngel
                     && clipType != "html"
                     && (false
                         || NumberOfFilledCells == 0
-                        || Properties.Settings.Default.MaxCellsToCaptureFormattedText > NumberOfFilledCells))
+                        || ClipAngel.Properties.Settings.Default.MaxCellsToCaptureFormattedText > NumberOfFilledCells))
                 {
                     richText = (string)iData.GetData(DataFormats.Rtf);
                     clipType = "rtf";
@@ -2160,7 +2160,7 @@ namespace ClipAngel
                         textFormatPresent = true;
                     }
                 }
-                if (Properties.Settings.Default.CaptureImages && textFormatPresent && bitmap == null)
+                if (ClipAngel.Properties.Settings.Default.CaptureImages && textFormatPresent && bitmap == null)
                 {
                     Match match;
                     match = Regex.Match(clipText, "^\\s*" + videoPattern + "\\s*$", RegexOptions.IgnoreCase);
@@ -2179,7 +2179,7 @@ namespace ClipAngel
                         bitmap = getBitmapFromUrl(imageUrl);
                     }
                 }
-                if (!String.IsNullOrEmpty(clipText) && String.IsNullOrEmpty(richText) && String.IsNullOrEmpty(htmlText) && Properties.Settings.Default.Max1CCodeSizeToColorize > clipText.Length)
+                if (!String.IsNullOrEmpty(clipText) && String.IsNullOrEmpty(richText) && String.IsNullOrEmpty(htmlText) && ClipAngel.Properties.Settings.Default.Max1CCodeSizeToColorize > clipText.Length)
                 {
                     string[] textLines = TextToLines(clipText.ToLower());
                     int maxLinesToProcess = 100;
@@ -2213,7 +2213,7 @@ namespace ClipAngel
                     string[] fileNameList = iData.GetData(DataFormats.FileDrop) as string[];
                     if (fileNameList != null)
                     {
-                        if (Properties.Settings.Default.CaptureImages && fileNameList.Length == 1 && iData.GetDataPresent(DataFormats.Bitmap))
+                        if (ClipAngel.Properties.Settings.Default.CaptureImages && fileNameList.Length == 1 && iData.GetDataPresent(DataFormats.Bitmap))
                         {
                             // Command "Copy image" executed in browser IE
                             clipType = "";
@@ -2235,11 +2235,11 @@ namespace ClipAngel
                 // http://www.cyberforum.ru/ado-net/thread832314.html
                 // html text check to prevent crush from too big generated Excel image
                 if (true
-                    && Properties.Settings.Default.CaptureImages
+                    && ClipAngel.Properties.Settings.Default.CaptureImages
                     && iData.GetDataPresent(DataFormats.Bitmap)
                     && (false
                         || NumberOfImageCells == 0
-                        || Properties.Settings.Default.MaxCellsToCaptureImage > NumberOfImageCells))
+                        || ClipAngel.Properties.Settings.Default.MaxCellsToCaptureImage > NumberOfImageCells))
                 {
                     //clipType = "img";
                     bitmap = iData.GetData(DataFormats.Bitmap, false) as Bitmap;
@@ -2322,7 +2322,7 @@ namespace ClipAngel
         private Bitmap getBitmapFromUrl(string imageUrl)
         {
             Bitmap bitmap = null;
-            if (Properties.Settings.Default.AllowDownloadThumbnail||imageUrl.StartsWith("data:image")||File.Exists(imageUrl))
+            if (ClipAngel.Properties.Settings.Default.AllowDownloadThumbnail||imageUrl.StartsWith("data:image")||File.Exists(imageUrl))
                 using (WebClient webClient = new WebClient())
                 {
                     webClient.Proxy.Credentials = CredentialCache.DefaultCredentials;
@@ -2462,16 +2462,16 @@ namespace ClipAngel
             CalculateByteAndCharSizeOfClip(htmlText, richText, plainText, ref chars, ref byteSize);
             if (binaryBuffer != null)
                 byteSize += binaryBuffer.Length;
-            if (byteSize > Properties.Settings.Default.MaxClipSizeKB * 1000)
+            if (byteSize > ClipAngel.Properties.Settings.Default.MaxClipSizeKB * 1000)
             {
-                string message = String.Format(Properties.Resources.ClipWasNotCaptured, (int)(byteSize / 1024), Properties.Settings.Default.MaxClipSizeKB,
+                string message = String.Format(Properties.Resources.ClipWasNotCaptured, (int)(byteSize / 1024), ClipAngel.Properties.Settings.Default.MaxClipSizeKB,
                     LocalTypeName(typeText));
                 notifyIcon.ShowBalloonTip(2000, Application.ProductName, message, ToolTipIcon.Info);
                 return false;
             }
-            if (!String.IsNullOrEmpty(Properties.Settings.Default.PlaySoundOnClipCapture))
+            if (!String.IsNullOrEmpty(ClipAngel.Properties.Settings.Default.PlaySoundOnClipCapture))
             {
-                string soundFileName = Properties.Settings.Default.PlaySoundOnClipCapture;
+                string soundFileName = ClipAngel.Properties.Settings.Default.PlaySoundOnClipCapture;
                 System.Media.SoundPlayer player = new System.Media.SoundPlayer(soundFileName);
                 try
                 {
@@ -2488,14 +2488,14 @@ namespace ClipAngel
                 clipTitle = TextClipTitle(plainText);
             string hash;
             string sql = "SELECT Id, Title, Used, Favorite, Created FROM Clips Where Hash = @Hash";
-            if (Properties.Settings.Default.ReplaceDuplicates)
+            if (ClipAngel.Properties.Settings.Default.ReplaceDuplicates)
             {
                 MD5 md5 = new MD5CryptoServiceProvider();
                 if (binaryBuffer != null)
                     md5.TransformBlock(binaryBuffer, 0, binaryBuffer.Length, binaryBuffer, 0);
                 byte[] binaryText = Encoding.Unicode.GetBytes(plainText);
                 md5.TransformBlock(binaryText, 0, binaryText.Length, binaryText, 0);
-                if (Properties.Settings.Default.UseFormattingInDuplicateDetection || String.IsNullOrEmpty(plainText))
+                if (ClipAngel.Properties.Settings.Default.UseFormattingInDuplicateDetection || String.IsNullOrEmpty(plainText))
                 {
                     byte[] binaryRichText = Encoding.Unicode.GetBytes(richText);
                     md5.TransformBlock(binaryRichText, 0, binaryRichText.Length, binaryRichText, 0);
@@ -2644,22 +2644,22 @@ namespace ClipAngel
 
         private void DeleteOldClips()
         {
-            if (Properties.Settings.Default.HistoryDepthDays == 0)
+            if (ClipAngel.Properties.Settings.Default.HistoryDepthDays == 0)
                 return;
             SQLiteCommand command = new SQLiteCommand(m_dbConnection);
-            command.CommandText = "Delete From Clips where (NOT Favorite OR Favorite IS NULL) AND Created < date('now','-" + Properties.Settings.Default.HistoryDepthDays + " day')";
-            //commandInsert.Parameters.AddWithValue("Number", Properties.Settings.Default.HistoryDepthDays);
+            command.CommandText = "Delete From Clips where (NOT Favorite OR Favorite IS NULL) AND Created < date('now','-" + ClipAngel.Properties.Settings.Default.HistoryDepthDays + " day')";
+            //commandInsert.Parameters.AddWithValue("Number", ClipAngel.Properties.Settings.Default.HistoryDepthDays);
             //command.Parameters.AddWithValue("CurDate", DateTime.Now);
             command.ExecuteNonQuery();
         }
 
         private void DeleteExcessClips()
         {
-            if (Properties.Settings.Default.HistoryDepthNumber == 0)
+            if (ClipAngel.Properties.Settings.Default.HistoryDepthNumber == 0)
                 return;
             SQLiteCommand command = new SQLiteCommand(m_dbConnection);
             int clipsCount = ClipsCount();
-            int numberOfClipsToDelete = clipsCount - Properties.Settings.Default.HistoryDepthNumber;
+            int numberOfClipsToDelete = clipsCount - ClipAngel.Properties.Settings.Default.HistoryDepthNumber;
             if (numberOfClipsToDelete > 0)
             {
                 command.CommandText = "Delete From Clips where (NOT Favorite OR Favorite IS NULL) AND Id IN (Select ID From Clips ORDER BY ID Limit @Number)";
@@ -2904,7 +2904,7 @@ namespace ClipAngel
             SaveFilterInLastUsedList();
             string clipText;
             var dto = ClipDataObject(rowReader, onlySelectedPlainText, out clipText);
-            //if (!Properties.Settings.Default.MoveCopiedClipToTop)
+            //if (!ClipAngel.Properties.Settings.Default.MoveCopiedClipToTop)
             //    CaptureClipboard = false;
             SetClipboardDataObject(dto, allowSelfCapture);
             return clipText;
@@ -3010,7 +3010,7 @@ namespace ClipAngel
 
         private void SaveFilterInLastUsedList()
         {
-            StringCollection lastFilterValues = Properties.Settings.Default.LastFilterValues;
+            StringCollection lastFilterValues = ClipAngel.Properties.Settings.Default.LastFilterValues;
             if (!String.IsNullOrEmpty(searchString) && !lastFilterValues.Contains(searchString))
             {
                 lastFilterValues.Insert(0, searchString);
@@ -3069,7 +3069,7 @@ namespace ClipAngel
             if (updateDB)
                 SetRowMark("Used", true, false, true);
             //if (false
-            //    || Properties.Settings.Default.MoveCopiedClipToTop 
+            //    || ClipAngel.Properties.Settings.Default.MoveCopiedClipToTop 
             //    || (true 
             //        && pasteMethod == PasteMethod.PasteText 
             //        && !String.IsNullOrEmpty(richTextBox.SelectedText)))
@@ -3201,7 +3201,7 @@ namespace ClipAngel
             }
             Debug.WriteLine("Get foreground window " + hForegroundWindow + " " + GetWindowTitle(hForegroundWindow));
 
-            //if (oldChildWindow != IntPtr.Zero && Properties.Settings.Default.RestoreCaretPositionOnFocusReturn)
+            //if (oldChildWindow != IntPtr.Zero && ClipAngel.Properties.Settings.Default.RestoreCaretPositionOnFocusReturn)
             //{
             //    Point point;
             //    RECT newRect;
@@ -3369,7 +3369,7 @@ namespace ClipAngel
             int filterSelectionLength = comboBoxSearchString.SelectionLength;
             int filterSelectionStart = comboBoxSearchString.SelectionStart;
 
-            StringCollection lastFilterValues = Properties.Settings.Default.LastFilterValues;
+            StringCollection lastFilterValues = ClipAngel.Properties.Settings.Default.LastFilterValues;
             comboBoxSearchString.Items.Clear();
             foreach (string String in lastFilterValues)
             {
@@ -3456,7 +3456,7 @@ namespace ClipAngel
             appPath = "";
             is1CCode = false;
             mainWindowAutomation = null;
-            //if (!Properties.Settings.Default.ReadWindowTitles)
+            //if (!ClipAngel.Properties.Settings.Default.ReadWindowTitles)
             //    return;
             if (Locker)
                 hwnd = GetOpenClipboardWindow();
@@ -3524,7 +3524,7 @@ namespace ClipAngel
         private static string GetWindowTitle(IntPtr hwnd)
         {
             string windowTitle = "";
-            if (Properties.Settings.Default.ReadWindowTitles)
+            if (ClipAngel.Properties.Settings.Default.ReadWindowTitles)
             {
                 int nChars = Math.Max(1024, GetWindowTextLength(hwnd) + 1); // crash https://sourceforge.net/p/clip-angel/tickets/20/
                 StringBuilder buff = new StringBuilder(nChars);
@@ -3587,7 +3587,7 @@ namespace ClipAngel
                 SetRowMark("Used", true, true, true);
             }
             if (true
-                && Properties.Settings.Default.MoveCopiedClipToTop
+                && ClipAngel.Properties.Settings.Default.MoveCopiedClipToTop
                 && String.IsNullOrEmpty(selectedText)
                 )
             {
@@ -3600,7 +3600,7 @@ namespace ClipAngel
             {
                 // With multipaste works incorrect
                 CaptureClipboardData();
-                if (Properties.Settings.Default.MoveCopiedClipToTop)
+                if (ClipAngel.Properties.Settings.Default.MoveCopiedClipToTop)
                     MoveSelectedRows(0);
             }
         }
@@ -3723,7 +3723,7 @@ namespace ClipAngel
 
         private void Main_Deactivate(object sender, EventArgs e)
         {
-            if (Properties.Settings.Default.FastWindowOpen)
+            if (ClipAngel.Properties.Settings.Default.FastWindowOpen)
             {
                 //if (this.WindowState == FormWindowState.Minimized)
                 //{
@@ -3837,7 +3837,7 @@ namespace ClipAngel
             {
                 Point caretPoint;
                 GUITHREADINFO guiInfo = GetGuiInfo(hWindow, out caretPoint);
-                if (caretPoint.Y > 0 && Properties.Settings.Default.RestoreCaretPositionOnFocusReturn)
+                if (caretPoint.Y > 0 && ClipAngel.Properties.Settings.Default.RestoreCaretPositionOnFocusReturn)
                 {
                     lastChildWindow = guiInfo.hwndFocus;
                     //lastWindowSelectedText = getActiveWindowSelectedText();
@@ -3850,7 +3850,7 @@ namespace ClipAngel
                     //int Result = GetCaretPos(out lastCaretPoint);
                     //AttachThreadInput(GetCurrentThreadId(), remoteThreadId, false);
                 }
-                if (Properties.Settings.Default.WindowAutoPosition)
+                if (ClipAngel.Properties.Settings.Default.WindowAutoPosition)
                 {
                     RECT activeRect;
                     if (caretPoint.Y > 0)
@@ -3880,7 +3880,7 @@ namespace ClipAngel
             //sw.Stop();
             //Debug.WriteLine("autoposition duration" + sw.ElapsedMilliseconds.ToString());
             RestoreWindowIfMinimized(newX, newY);
-            if (!Properties.Settings.Default.FastWindowOpen)
+            if (!ClipAngel.Properties.Settings.Default.FastWindowOpen)
             {
                 this.Activate();
                 this.Show();
@@ -3929,7 +3929,7 @@ namespace ClipAngel
                 else
                     newY = this.RestoreBounds.Y;
             }
-            if (Properties.Settings.Default.FastWindowOpen)
+            if (ClipAngel.Properties.Settings.Default.FastWindowOpen)
             {
                 if (newY <= maxWindowCoordForHiddenState)
                     newY = factualTop;
@@ -4304,7 +4304,7 @@ namespace ClipAngel
         {
             string result = searchString;
             string[] array;
-            if (Properties.Settings.Default.SearchWordsIndependently)
+            if (ClipAngel.Properties.Settings.Default.SearchWordsIndependently)
                 array = result.Split(new[] { " " }, StringSplitOptions.RemoveEmptyEntries);
             else
                 array = new string[1] {result};
@@ -4315,7 +4315,7 @@ namespace ClipAngel
                     result += "|";
                 result += "(" + Regex.Escape(word) + ")";
             }
-            if (Properties.Settings.Default.SearchWildcards)
+            if (ClipAngel.Properties.Settings.Default.SearchWildcards)
                 result = result.Replace("%", ".*?");
             if (!String.IsNullOrWhiteSpace(result))
                 result = "(" + result + ")";
@@ -4600,17 +4600,17 @@ namespace ClipAngel
         private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SettingsForm settingsFormForm = new SettingsForm(this);
-            string oldDatabaseFile = Properties.Settings.Default.DatabaseFile;
-            bool oldEncryptDatabaseForCurrentUser = Properties.Settings.Default.EncryptDatabaseForCurrentUser;
+            string oldDatabaseFile = ClipAngel.Properties.Settings.Default.DatabaseFile;
+            bool oldEncryptDatabaseForCurrentUser = ClipAngel.Properties.Settings.Default.EncryptDatabaseForCurrentUser;
             settingsFormForm.ShowDialog(this);
             if (settingsFormForm.DialogResult == DialogResult.OK)
             {
                 if (false
-                    || oldDatabaseFile != Properties.Settings.Default.DatabaseFile
-                    || oldEncryptDatabaseForCurrentUser != Properties.Settings.Default.EncryptDatabaseForCurrentUser)
+                    || oldDatabaseFile != ClipAngel.Properties.Settings.Default.DatabaseFile
+                    || oldEncryptDatabaseForCurrentUser != ClipAngel.Properties.Settings.Default.EncryptDatabaseForCurrentUser)
                 {
                     CloseDatabase();
-                    if (Properties.Settings.Default.EncryptDatabaseForCurrentUser)
+                    if (ClipAngel.Properties.Settings.Default.EncryptDatabaseForCurrentUser)
                         File.Encrypt(DbFileName);
                     else
                         File.Decrypt(DbFileName);
@@ -4620,7 +4620,7 @@ namespace ClipAngel
                 keyboardHook.UnregisterHotKeys();
                 RegisterHotKeys();
                 AutodeleteClips();
-                Properties.Settings.Default.Save(); // Not all properties are saved here. For example ShowInTaskbar are not saved
+                ClipAngel.Properties.Settings.Default.Save(); // Not all properties are saved here. For example ShowInTaskbar are not saved
             }
         }
 
@@ -4684,8 +4684,8 @@ namespace ClipAngel
             // To refresh text in list
             MarkFilter.DisplayMember = "";
             MarkFilter.DisplayMember = "Text";
-            Properties.Settings.Default.RestoreCaretPositionOnFocusReturn = false; // disabled
-            dataGridView.RowsDefaultCellStyle.Font = Properties.Settings.Default.Font;
+            ClipAngel.Properties.Settings.Default.RestoreCaretPositionOnFocusReturn = false; // disabled
+            dataGridView.RowsDefaultCellStyle.Font = ClipAngel.Properties.Settings.Default.Font;
             dataGridView.Columns["ColumnCreated"].DefaultCellStyle.Format = "HH:mmm:ss dd.MM";
             dataGridView.Columns["VisualWeight"].Width = (int)dataGridView.RowsDefaultCellStyle.Font.Size;
             dataGridView.RowTemplate.Height = (int)(dataGridView.RowsDefaultCellStyle.Font.Size + 11);
@@ -4697,16 +4697,16 @@ namespace ClipAngel
 
         private void UpdateColumnsSet()
         {
-            dataGridView.Columns["appImage"].Visible = Properties.Settings.Default.ShowApplicationIconColumn;
-            //dataGridView.Columns["VisualWeight"].Visible = Properties.Settings.Default.ShowVisualWeightColumn;
-            dataGridView.Columns["ColumnCreated"].Visible = Properties.Settings.Default.ShowSecondaryColumns;
+            dataGridView.Columns["appImage"].Visible = ClipAngel.Properties.Settings.Default.ShowApplicationIconColumn;
+            //dataGridView.Columns["VisualWeight"].Visible = ClipAngel.Properties.Settings.Default.ShowVisualWeightColumn;
+            dataGridView.Columns["ColumnCreated"].Visible = ClipAngel.Properties.Settings.Default.ShowSecondaryColumns;
         }
 
         private void UpdateIgnoreModulesInClipCapture()
         {
             ignoreModulesInClipCapture = new StringCollection();
-            if (Properties.Settings.Default.IgnoreApplicationsClipCapture != null)
-                foreach (var fullFilename in Properties.Settings.Default.IgnoreApplicationsClipCapture)
+            if (ClipAngel.Properties.Settings.Default.IgnoreApplicationsClipCapture != null)
+                foreach (var fullFilename in ClipAngel.Properties.Settings.Default.IgnoreApplicationsClipCapture)
                 {
                     ignoreModulesInClipCapture.Add(Path.GetFileNameWithoutExtension(fullFilename).ToLower());
                 }
@@ -4714,7 +4714,7 @@ namespace ClipAngel
 
         public async void CheckUpdate(bool UserRequest = false)
         {
-            if (!UserRequest && !Properties.Settings.Default.AutoCheckForUpdate)
+            if (!UserRequest && !ClipAngel.Properties.Settings.Default.AutoCheckForUpdate)
                 return;
             buttonUpdate.Visible = false;
             toolStripUpdateToSeparator.Visible = false;
@@ -4837,27 +4837,27 @@ namespace ClipAngel
         {
             // Bad luck trying to use Multilang tool http://stackoverflow.com/questions/38117969/convert-resx-to-xliff-format-failed
             string locale;
-            if (Properties.Settings.Default.Language == "Default")
+            if (ClipAngel.Properties.Settings.Default.Language == "Default")
                 locale = Application.CurrentCulture.TwoLetterISOLanguageName;
-            else if (Properties.Settings.Default.Language == "Chinese")
+            else if (ClipAngel.Properties.Settings.Default.Language == "Chinese")
                 locale = "zh-CN";
-            else if (Properties.Settings.Default.Language == "German")
+            else if (ClipAngel.Properties.Settings.Default.Language == "German")
                 locale = "de";
-            else if (Properties.Settings.Default.Language == "Italian")
+            else if (ClipAngel.Properties.Settings.Default.Language == "Italian")
                 locale = "it";
-            else if (Properties.Settings.Default.Language == "Polish")
+            else if (ClipAngel.Properties.Settings.Default.Language == "Polish")
                 locale = "pl";
-            else if (Properties.Settings.Default.Language == "PortugueseBrazil")
+            else if (ClipAngel.Properties.Settings.Default.Language == "PortugueseBrazil")
                 locale = "pt-BR";
-            else if (Properties.Settings.Default.Language == "Spain")
+            else if (ClipAngel.Properties.Settings.Default.Language == "Spain")
                 locale = "es";
-            else if (Properties.Settings.Default.Language == "Hindi")
+            else if (ClipAngel.Properties.Settings.Default.Language == "Hindi")
                 locale = "hi";
-            else if (Properties.Settings.Default.Language == "French")
+            else if (ClipAngel.Properties.Settings.Default.Language == "French")
                 locale = "fr";
-            else if (Properties.Settings.Default.Language == "Greek")
+            else if (ClipAngel.Properties.Settings.Default.Language == "Greek")
                 locale = "el";
-            else if (Properties.Settings.Default.Language == "Russian")
+            else if (ClipAngel.Properties.Settings.Default.Language == "Russian")
                 locale = "ru";
             else
                 locale = "en";
@@ -4868,18 +4868,18 @@ namespace ClipAngel
         {
             this.Visible = false;
             if (this.Left == -32000)
-                Properties.Settings.Default.WindowPositionX = this.RestoreBounds.Left;
+                ClipAngel.Properties.Settings.Default.WindowPositionX = this.RestoreBounds.Left;
             else
-                Properties.Settings.Default.WindowPositionX = this.Left;
+                ClipAngel.Properties.Settings.Default.WindowPositionX = this.Left;
             if (this.Top == -32000)
-                Properties.Settings.Default.WindowPositionY = this.RestoreBounds.Top;
+                ClipAngel.Properties.Settings.Default.WindowPositionY = this.RestoreBounds.Top;
             else if (this.Top == maxWindowCoordForHiddenState)
-                Properties.Settings.Default.WindowPositionY = factualTop;
+                ClipAngel.Properties.Settings.Default.WindowPositionY = factualTop;
             else
-                Properties.Settings.Default.WindowPositionY = this.Top;
-            Properties.Settings.Default.dataGridViewWidth = splitContainer1.SplitterDistance;
+                ClipAngel.Properties.Settings.Default.WindowPositionY = this.Top;
+            ClipAngel.Properties.Settings.Default.dataGridViewWidth = splitContainer1.SplitterDistance;
 
-            //Properties.Settings.Default.Save(); // Not all properties were saved here. For example ShowInTaskbar was not saved
+            //ClipAngel.Properties.Settings.Default.Save(); // Not all properties were saved here. For example ShowInTaskbar was not saved
             RemoveClipboardFormatListener(this.Handle);
             UnhookWinEvent(HookChangeActiveWindow);
             CloseDatabase();
@@ -4887,7 +4887,7 @@ namespace ClipAngel
 
         private void CloseDatabase()
         {
-            if (Properties.Settings.Default.DeleteNonFavoriteClipsOnExit)
+            if (ClipAngel.Properties.Settings.Default.DeleteNonFavoriteClipsOnExit)
                 deleteAllNonFavoriteClips();
             if (updateDBThread != null)
             {
@@ -4921,7 +4921,7 @@ namespace ClipAngel
 
         private void Main_Activated(object sender, EventArgs e)
         {
-            if (Properties.Settings.Default.FastWindowOpen)
+            if (ClipAngel.Properties.Settings.Default.FastWindowOpen)
             {
                 RestoreWindowIfMinimized();
             }
@@ -5469,10 +5469,10 @@ namespace ClipAngel
                 currentRange = GetHtmlCurrentTextRangeOrAllDocument();
             IHTMLTxtRange nearestMatch = null;
             int searchFlags = 0;
-            if (Properties.Settings.Default.SearchCaseSensitive)
+            if (ClipAngel.Properties.Settings.Default.SearchCaseSensitive)
                 searchFlags = 4;
             string[] array;
-            if (Properties.Settings.Default.SearchWordsIndependently)
+            if (ClipAngel.Properties.Settings.Default.SearchWordsIndependently)
                 array = searchString.Split(new[] {" "}, StringSplitOptions.RemoveEmptyEntries);
             else
                 array = new string[1] {searchString};
@@ -5572,7 +5572,7 @@ namespace ClipAngel
 
         private void wordWrapToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Properties.Settings.Default.WordWrap = !Properties.Settings.Default.WordWrap;
+            ClipAngel.Properties.Settings.Default.WordWrap = !ClipAngel.Properties.Settings.Default.WordWrap;
             allowTextPositionChangeUpdate = false;
             UpdateControlsStates();
             allowTextPositionChangeUpdate = true;
@@ -5588,37 +5588,37 @@ namespace ClipAngel
 
         private void copyClipToolStripMenuItem_Click(object sender = null, EventArgs e = null)
         {
-            CopyClipToClipboard(null, false, Properties.Settings.Default.MoveCopiedClipToTop);
+            CopyClipToClipboard(null, false, ClipAngel.Properties.Settings.Default.MoveCopiedClipToTop);
         }
 
         private void UpdateControlsStates()
         {
-            searchAllFieldsMenuItem.Checked = Properties.Settings.Default.SearchAllFields;
-            filterListBySearchStringMenuItem.Checked = Properties.Settings.Default.FilterListBySearchString;
-            autoselectMatchedClipMenuItem.Checked = Properties.Settings.Default.AutoSelectMatchedClip;
-            toolStripMenuItemSecondaryColumns.Checked = Properties.Settings.Default.ShowSecondaryColumns;
-            toolStripButtonSecondaryColumns.Checked = Properties.Settings.Default.ShowSecondaryColumns;
-            toolStripMenuItemSearchCaseSensitive.Checked = Properties.Settings.Default.SearchCaseSensitive;
-            toolStripMenuItemSearchWordsIndependently.Checked = Properties.Settings.Default.SearchWordsIndependently;
-            toolStripMenuItemSearchWildcards.Checked = Properties.Settings.Default.SearchWildcards;
-            ignoreBigTextsToolStripMenuItem.Checked = Properties.Settings.Default.SearchIgnoreBigTexts;
-            moveCopiedClipToTopToolStripButton.Checked = Properties.Settings.Default.MoveCopiedClipToTop;
-            moveCopiedClipToTopToolStripMenuItem.Checked = Properties.Settings.Default.MoveCopiedClipToTop;
-            toolStripButtonAutoSelectMatch.Checked = Properties.Settings.Default.AutoSelectMatch;
-            trayMenuItemMonitoringClipboard.Checked = Properties.Settings.Default.MonitoringClipboard;
-            toolStripMenuItemMonitoringClipboard.Checked = Properties.Settings.Default.MonitoringClipboard;
-            toolStripButtonTextFormatting.Checked = Properties.Settings.Default.ShowNativeTextFormatting;
-            textFormattingToolStripMenuItem.Checked = Properties.Settings.Default.ShowNativeTextFormatting;
-            toolStripButtonMonospacedFont.Checked = Properties.Settings.Default.MonospacedFont;
-            monospacedFontToolStripMenuItem.Checked = Properties.Settings.Default.MonospacedFont;
-            wordWrapToolStripMenuItem.Checked = Properties.Settings.Default.WordWrap;
-            toolStripButtonWordWrap.Checked = Properties.Settings.Default.WordWrap;
+            searchAllFieldsMenuItem.Checked = ClipAngel.Properties.Settings.Default.SearchAllFields;
+            filterListBySearchStringMenuItem.Checked = ClipAngel.Properties.Settings.Default.FilterListBySearchString;
+            autoselectMatchedClipMenuItem.Checked = ClipAngel.Properties.Settings.Default.AutoSelectMatchedClip;
+            toolStripMenuItemSecondaryColumns.Checked = ClipAngel.Properties.Settings.Default.ShowSecondaryColumns;
+            toolStripButtonSecondaryColumns.Checked = ClipAngel.Properties.Settings.Default.ShowSecondaryColumns;
+            toolStripMenuItemSearchCaseSensitive.Checked = ClipAngel.Properties.Settings.Default.SearchCaseSensitive;
+            toolStripMenuItemSearchWordsIndependently.Checked = ClipAngel.Properties.Settings.Default.SearchWordsIndependently;
+            toolStripMenuItemSearchWildcards.Checked = ClipAngel.Properties.Settings.Default.SearchWildcards;
+            ignoreBigTextsToolStripMenuItem.Checked = ClipAngel.Properties.Settings.Default.SearchIgnoreBigTexts;
+            moveCopiedClipToTopToolStripButton.Checked = ClipAngel.Properties.Settings.Default.MoveCopiedClipToTop;
+            moveCopiedClipToTopToolStripMenuItem.Checked = ClipAngel.Properties.Settings.Default.MoveCopiedClipToTop;
+            toolStripButtonAutoSelectMatch.Checked = ClipAngel.Properties.Settings.Default.AutoSelectMatch;
+            trayMenuItemMonitoringClipboard.Checked = ClipAngel.Properties.Settings.Default.MonitoringClipboard;
+            toolStripMenuItemMonitoringClipboard.Checked = ClipAngel.Properties.Settings.Default.MonitoringClipboard;
+            toolStripButtonTextFormatting.Checked = ClipAngel.Properties.Settings.Default.ShowNativeTextFormatting;
+            textFormattingToolStripMenuItem.Checked = ClipAngel.Properties.Settings.Default.ShowNativeTextFormatting;
+            toolStripButtonMonospacedFont.Checked = ClipAngel.Properties.Settings.Default.MonospacedFont;
+            monospacedFontToolStripMenuItem.Checked = ClipAngel.Properties.Settings.Default.MonospacedFont;
+            wordWrapToolStripMenuItem.Checked = ClipAngel.Properties.Settings.Default.WordWrap;
+            toolStripButtonWordWrap.Checked = ClipAngel.Properties.Settings.Default.WordWrap;
             richTextBox.WordWrap = wordWrapToolStripMenuItem.Checked;
-            //showInTaskbarToolStripMenuItem.Enabled = Properties.Settings.Default.FastWindowOpen;
-            showInTaskbarToolStripMenuItem.Checked = Properties.Settings.Default.ShowInTaskBar;
-            //if (Properties.Settings.Default.FastWindowOpen)
+            //showInTaskbarToolStripMenuItem.Enabled = ClipAngel.Properties.Settings.Default.FastWindowOpen;
+            showInTaskbarToolStripMenuItem.Checked = ClipAngel.Properties.Settings.Default.ShowInTaskBar;
+            //if (ClipAngel.Properties.Settings.Default.FastWindowOpen)
             //{
-                this.ShowInTaskbar = Properties.Settings.Default.ShowInTaskBar;
+                this.ShowInTaskbar = ClipAngel.Properties.Settings.Default.ShowInTaskBar;
                 // After ShowInTaskbar change true->false all window properties are deleted. So we need to reset it.
                 ResetIsMainProperty();
             //}
@@ -5963,25 +5963,25 @@ namespace ClipAngel
             if (type == "text" /*|| type == "file"*/)
             {
                 File.WriteAllText(tempFile, rowReader["text"].ToString(), Encoding.UTF8);
-                fileEditor = Properties.Settings.Default.TextEditor;
+                fileEditor = ClipAngel.Properties.Settings.Default.TextEditor;
             }
             else if (type == "rtf")
             {
                 RichTextBox rtb = new RichTextBox();
                 rtb.Rtf = rowReader["richText"].ToString();
                 rtb.SaveFile(tempFile);
-                fileEditor = Properties.Settings.Default.RtfEditor;
+                fileEditor = ClipAngel.Properties.Settings.Default.RtfEditor;
             }
             else if (type == "html")
             {
                 File.WriteAllText(tempFile, GetHtmlFromHtmlClipText(true), Encoding.UTF8);
-                fileEditor = Properties.Settings.Default.HtmlEditor;
+                fileEditor = ClipAngel.Properties.Settings.Default.HtmlEditor;
             }
             else if (type == "img")
             {
                 Image image = GetImageFromBinary((byte[]) rowReader["Binary"]);
                 image.Save(tempFile);
-                fileEditor = Properties.Settings.Default.ImageEditor;
+                fileEditor = ClipAngel.Properties.Settings.Default.ImageEditor;
             }
             else if (type == "file")
             {
@@ -6011,7 +6011,7 @@ namespace ClipAngel
                 extension = "png";
             else
                 extension = "dat";
-            string tempFolder = Properties.Settings.Default.ClipTempFileFolder;
+            string tempFolder = ClipAngel.Properties.Settings.Default.ClipTempFileFolder;
             if (!Directory.Exists(tempFolder))
                 tempFolder = Path.GetTempPath();
             if (!tempFolder.EndsWith("\\"))
@@ -6197,7 +6197,7 @@ namespace ClipAngel
 
         private void toolStripButtonFixedWidthFont_Click(object sender, EventArgs e)
         {
-            Properties.Settings.Default.MonospacedFont = !Properties.Settings.Default.MonospacedFont;
+            ClipAngel.Properties.Settings.Default.MonospacedFont = !ClipAngel.Properties.Settings.Default.MonospacedFont;
             UpdateControlsStates();
             AfterRowLoad();
         }
@@ -6209,8 +6209,8 @@ namespace ClipAngel
 
         private void SwitchMonitoringClipboard(bool showToolTip = false)
         {
-            Properties.Settings.Default.MonitoringClipboard = !Properties.Settings.Default.MonitoringClipboard;
-            if (Properties.Settings.Default.MonitoringClipboard)
+            ClipAngel.Properties.Settings.Default.MonitoringClipboard = !ClipAngel.Properties.Settings.Default.MonitoringClipboard;
+            if (ClipAngel.Properties.Settings.Default.MonitoringClipboard)
                 ConnectClipboard();
             else
                 RemoveClipboardFormatListener(this.Handle);
@@ -6220,7 +6220,7 @@ namespace ClipAngel
             if (showToolTip)
             {
                 string text;
-                if (Properties.Settings.Default.MonitoringClipboard)
+                if (ClipAngel.Properties.Settings.Default.MonitoringClipboard)
                     text = Properties.Resources.MonitoringON;
                 else
                     text = Properties.Resources.MonitoringOFF;
@@ -6231,7 +6231,7 @@ namespace ClipAngel
         private void UpdateNotifyIcon()
         {
             Icon icon;
-            if (!Properties.Settings.Default.MonitoringClipboard)
+            if (!ClipAngel.Properties.Settings.Default.MonitoringClipboard)
             {
                 icon = Properties.Resources.alienNoCapture;
             }
@@ -6319,7 +6319,7 @@ namespace ClipAngel
         {
             // TODO read paths from registry and let use custom application
             string path;
-            path = Properties.Settings.Default.TextCompareApplication;
+            path = ClipAngel.Properties.Settings.Default.TextCompareApplication;
             if (!String.IsNullOrEmpty(path) && File.Exists(path))
             {
                 return path;
@@ -6398,7 +6398,7 @@ namespace ClipAngel
 
         private void toolStripButtonTextFormatting_Click(object sender, EventArgs e)
         {
-            Properties.Settings.Default.ShowNativeTextFormatting = !Properties.Settings.Default.ShowNativeTextFormatting;
+            ClipAngel.Properties.Settings.Default.ShowNativeTextFormatting = !ClipAngel.Properties.Settings.Default.ShowNativeTextFormatting;
             UpdateControlsStates();
             string clipType = RowReader["type"].ToString();
             if (clipType == "html" || clipType == "rtf")
@@ -6569,7 +6569,7 @@ namespace ClipAngel
 
         private void showInTaskbarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Properties.Settings.Default.ShowInTaskBar = !Properties.Settings.Default.ShowInTaskBar;
+            ClipAngel.Properties.Settings.Default.ShowInTaskBar = !ClipAngel.Properties.Settings.Default.ShowInTaskBar;
             UpdateControlsStates();
         }
 
@@ -6588,7 +6588,7 @@ namespace ClipAngel
             DataObject dto = new DataObject();
             string text = richTextBox.SelectedText;
             SetTextInClipboardDataObject(dto, text);
-            if (Properties.Settings.Default.ShowNativeTextFormatting)
+            if (ClipAngel.Properties.Settings.Default.ShowNativeTextFormatting)
             {
                 dto.SetText(richTextBox.SelectedRtf, TextDataFormat.Rtf);
             }
@@ -6635,13 +6635,13 @@ namespace ClipAngel
 
         private void moveCopiedClipToTopToolStripButton_Click(object sender, EventArgs e)
         {
-            Properties.Settings.Default.MoveCopiedClipToTop = !Properties.Settings.Default.MoveCopiedClipToTop;
+            ClipAngel.Properties.Settings.Default.MoveCopiedClipToTop = !ClipAngel.Properties.Settings.Default.MoveCopiedClipToTop;
             UpdateControlsStates();
         }
 
         private void moveClipToTopToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Properties.Settings.Default.MoveCopiedClipToTop = !Properties.Settings.Default.MoveCopiedClipToTop;
+            ClipAngel.Properties.Settings.Default.MoveCopiedClipToTop = !ClipAngel.Properties.Settings.Default.MoveCopiedClipToTop;
             UpdateControlsStates();
         }
 
@@ -6671,7 +6671,7 @@ namespace ClipAngel
         {
             if (RowReader == null)
                 return;
-            StringCollection IgnoreApplicationsClipCapture = Properties.Settings.Default.IgnoreApplicationsClipCapture;
+            StringCollection IgnoreApplicationsClipCapture = ClipAngel.Properties.Settings.Default.IgnoreApplicationsClipCapture;
             string fullFilename = RowReader["AppPath"].ToString();
             if (String.IsNullOrEmpty(fullFilename))
                 return;
@@ -6964,27 +6964,27 @@ namespace ClipAngel
 
         private void toolStripButtonAutoSelectMatch_Click(object sender, EventArgs e)
         {
-            Properties.Settings.Default.AutoSelectMatch = !Properties.Settings.Default.AutoSelectMatch;
+            ClipAngel.Properties.Settings.Default.AutoSelectMatch = !ClipAngel.Properties.Settings.Default.AutoSelectMatch;
             UpdateControlsStates();
         }
 
         private void caseSensetiveToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Properties.Settings.Default.SearchCaseSensitive = !Properties.Settings.Default.SearchCaseSensitive;
+            ClipAngel.Properties.Settings.Default.SearchCaseSensitive = !ClipAngel.Properties.Settings.Default.SearchCaseSensitive;
             UpdateControlsStates();
             SearchStringApply();
         }
 
         private void everyWordIndependentToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Properties.Settings.Default.SearchWordsIndependently = !Properties.Settings.Default.SearchWordsIndependently;
+            ClipAngel.Properties.Settings.Default.SearchWordsIndependently = !ClipAngel.Properties.Settings.Default.SearchWordsIndependently;
             UpdateControlsStates();
             SearchStringApply();
         }
 
         private void meandsAnySequenceOfCharsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Properties.Settings.Default.SearchWildcards = !Properties.Settings.Default.SearchWildcards;
+            ClipAngel.Properties.Settings.Default.SearchWildcards = !ClipAngel.Properties.Settings.Default.SearchWildcards;
             UpdateControlsStates();
             SearchStringApply();
         }
@@ -7069,7 +7069,7 @@ namespace ClipAngel
             UpdateClipBindingSource();
 
             // Turn on secodnary columns
-            if (!Properties.Settings.Default.ShowSecondaryColumns)
+            if (!ClipAngel.Properties.Settings.Default.ShowSecondaryColumns)
                 toolStripMenuItemSecondaryColumns_Click();
         }
 
@@ -7133,21 +7133,21 @@ namespace ClipAngel
 
         private void toolStripButtonSecondaryColumns_Click(object sender, EventArgs e)
         {
-            Properties.Settings.Default.ShowSecondaryColumns = !Properties.Settings.Default.ShowSecondaryColumns;
+            ClipAngel.Properties.Settings.Default.ShowSecondaryColumns = !ClipAngel.Properties.Settings.Default.ShowSecondaryColumns;
             UpdateControlsStates();
             UpdateColumnsSet();
         }
 
         private void toolStripMenuItemSecondaryColumns_Click(object sender = null, EventArgs e = null)
         {
-            Properties.Settings.Default.ShowSecondaryColumns = !Properties.Settings.Default.ShowSecondaryColumns;
+            ClipAngel.Properties.Settings.Default.ShowSecondaryColumns = !ClipAngel.Properties.Settings.Default.ShowSecondaryColumns;
             UpdateControlsStates();
             UpdateColumnsSet();
         }
 
         private void ignoreBigTextClipsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Properties.Settings.Default.SearchIgnoreBigTexts = !Properties.Settings.Default.SearchIgnoreBigTexts;
+            ClipAngel.Properties.Settings.Default.SearchIgnoreBigTexts = !ClipAngel.Properties.Settings.Default.SearchIgnoreBigTexts;
             UpdateControlsStates();
             SearchStringApply();
         }
@@ -7212,9 +7212,9 @@ namespace ClipAngel
 
         private void filterListBySearchStringToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Properties.Settings.Default.FilterListBySearchString = !Properties.Settings.Default.FilterListBySearchString;
+            ClipAngel.Properties.Settings.Default.FilterListBySearchString = !ClipAngel.Properties.Settings.Default.FilterListBySearchString;
             UpdateControlsStates();
-            if (!Properties.Settings.Default.FilterListBySearchString)
+            if (!ClipAngel.Properties.Settings.Default.FilterListBySearchString)
             {
                 UpdateClipBindingSource();
                 UpdateSearchMatchedIDs();
@@ -7227,7 +7227,7 @@ namespace ClipAngel
 
         private void autoselectFirstMatchedClipToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Properties.Settings.Default.AutoSelectMatchedClip = !Properties.Settings.Default.AutoSelectMatchedClip;
+            ClipAngel.Properties.Settings.Default.AutoSelectMatchedClip = !ClipAngel.Properties.Settings.Default.AutoSelectMatchedClip;
             UpdateControlsStates();
         }
 
@@ -7256,7 +7256,7 @@ namespace ClipAngel
 
         private void searchAllFieldsMenuItem_Click(object sender, EventArgs e)
         {
-            Properties.Settings.Default.SearchAllFields = !Properties.Settings.Default.SearchAllFields;
+            ClipAngel.Properties.Settings.Default.SearchAllFields = !ClipAngel.Properties.Settings.Default.SearchAllFields;
             UpdateControlsStates();
             SearchStringApply();
         }
