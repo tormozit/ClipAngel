@@ -302,6 +302,9 @@ Url será salva no clipe atual e será copiada à área de transferência.</valu
   <data name="pictureBoxSource.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>16, 20</value>
   </data>
+  <data name="tableLayoutPanelData.LayoutSettings" xml:space="preserve" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="urlTextBox" Row="3" RowSpan="1" Column="0" ColumnSpan="1"&gt;&lt;/Control&gt;&lt;Control Name="richTextBox" Row="0" RowSpan="1" Column="0" ColumnSpan="1"&gt;&lt;/Control&gt;&lt;Control Name="htmlTextBox" Row="1" RowSpan="1" Column="0" ColumnSpan="1"&gt;&lt;/Control&gt;&lt;Control Name="ImageControl" Row="2" RowSpan="1" Column="0" ColumnSpan="1"&gt;&lt;/Control&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,100"&gt;&lt;/Columns&gt;&lt;Rows Styles="Percent,28,57143,Percent,28,57143,Percent,42,85714,Absolute,25,Absolute,20"&gt;&lt;/Rows&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
   <data name="tableLayoutPanelData.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>412, 369</value>
   </data>

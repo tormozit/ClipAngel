@@ -2988,7 +2988,7 @@ namespace ClipAngel
         {
             string selectedText = "";
             mshtml.IHTMLTxtRange htmlSelection = null;
-            if (RowReader["type"] == "html")
+            if (RowReader["type"].ToString() == "html")
                 htmlSelection = GetHtmlCurrentTextRangeOrAllDocument(true);
             bool selectedPlainTextMode = true
                                          && onlySelectedPlainText
@@ -4954,7 +4954,7 @@ namespace ClipAngel
                     if (match.Groups[startIndex1C + 5].Success) // File link
                     {
                         string filePath = match.Value;
-                        if (!File.Exists(filePath))
+                        if (!File.Exists(filePath) && !Directory.Exists(filePath))
                         {
                             return true;
                         }
@@ -7332,6 +7332,10 @@ namespace ClipAngel
             File.Copy(tempFile, saveFileDialog.FileName);
         }
 
+        private void tableLayoutPanelData_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
 

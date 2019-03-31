@@ -989,6 +989,7 @@ namespace ClipAngel
             this.tableLayoutPanelData.Controls.Add(this.htmlTextBox, 0, 1);
             this.tableLayoutPanelData.Controls.Add(this.ImageControl, 0, 2);
             this.tableLayoutPanelData.Name = "tableLayoutPanelData";
+            this.tableLayoutPanelData.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanelData_Paint);
             // 
             // urlTextBox
             // 
