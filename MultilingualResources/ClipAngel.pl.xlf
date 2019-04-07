@@ -1584,8 +1584,8 @@ Generowanie obrazu zużywa moc procesora. Jeśli masz duże obciążenie proceso
           <target state="translated">Klip nie został przechwycony ze względu na błąd odczytu schowka</target>
         </trans-unit>
         <trans-unit id="VersionValue" translate="yes" xml:space="preserve">
-          <source>1.77</source>
-          <target state="new">1.77</target>
+          <source>1.78</source>
+          <target state="new">1.78</target>
         </trans-unit>
         <trans-unit id="TargetWindow" translate="yes" xml:space="preserve">
           <source>Target window</source>

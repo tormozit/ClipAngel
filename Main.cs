@@ -6801,29 +6801,68 @@ namespace ClipAngel
             string tempFile = GetClipTempFile(out junkVar);
             if (String.IsNullOrEmpty(tempFile))
                 return;
-            // base on http://cropperplugins.codeplex.com/SourceControl/latest#Cropper.Plugins/ImageShack/Plugin.cs
-            string _baseUri = "http://www.imageshack.us/";
-            string _developerKey = "T39OZMFC7b60153bbc4341b959be614bc37f3278";
+            string ImageUrl = "";
             try
             {
-                string relativeUrl = "upload_api.php";
-                var http = new HttpClient();
-                http.BaseAddress = new Uri(_baseUri);
-                var form = new MultipartFormDataContent();
-                string mimetype = GetMimeType(tempFile);
-                HttpContent fileContent = new ByteArrayContent(File.ReadAllBytes(tempFile));
-                form.Add(fileContent, "fileupload", tempFile);
-                HttpContent keyContent = new StringContent(_developerKey);
-                form.Add(keyContent, "key");
-                HttpContent rembarContent = new StringContent("1");
-                form.Add(rembarContent, "rembar");
-                var response = http.PostAsync(relativeUrl, form);
-                XmlDocument doc = new XmlDocument();
-                doc.LoadXml(response.Result.Content.ReadAsStringAsync().Result);
-                XmlNamespaceManager namespaces = new XmlNamespaceManager(doc.NameTable);
-                namespaces.AddNamespace("ns", doc.DocumentElement.NamespaceURI);
-                XmlNode node = doc.DocumentElement.SelectSingleNode("/ns:imginfo/ns:links/ns:image_link", namespaces);
-                string ImageUrl = node.InnerText;
+                //// Key expired
+                //// base on http://cropperplugins.codeplex.com/SourceControl/latest#Cropper.Plugins/ImageShack/Plugin.cs
+                //string _baseUri = "http://www.imageshack.us/";
+                //string _developerKey = "234DNUWX2e44a0a56a245678963bcb127a1061ca"; //T39OZMFC7b60153bbc4341b959be614bc37f3278
+                //string relativeUrl = "upload_api.php";
+                //var http = new HttpClient();
+                //http.BaseAddress = new Uri(_baseUri);
+                //var form = new MultipartFormDataContent();
+                //string mimetype = GetMimeType(tempFile);
+                //HttpContent fileContent = new ByteArrayContent(File.ReadAllBytes(tempFile));
+                //form.Add(fileContent, "fileupload", tempFile);
+                //HttpContent keyContent = new StringContent(_developerKey);
+                //form.Add(keyContent, "key");
+                //HttpContent rembarContent = new StringContent("1");
+                //form.Add(rembarContent, "rembar");
+                //var response = http.PostAsync(relativeUrl, form);
+                //XmlDocument doc = new XmlDocument();
+                //string result = response.Result.Content.ReadAsStringAsync().Result;
+                //doc.LoadXml(result);
+                //XmlNamespaceManager namespaces = new XmlNamespaceManager(doc.NameTable);
+                //namespaces.AddNamespace("ns", doc.DocumentElement.NamespaceURI);
+                //XmlNode node = doc.DocumentElement.SelectSingleNode("/ns:imginfo/ns:links/ns:image_link", namespaces);
+                //string ImageUrl = node.InnerText;
+
+                // base on // https://www.codeproject.com/Questions/1091120/How-to-upload-big-size-image-file-using-imgur-api
+                // http://imgur.com/
+                // ClientID - ac075d738068f2f - get it here https://apidocs.imgur.com/#intro search "Register your application"
+                string api_url_image = "https://api.imgur.com/3/image";
+                //  string api_url = "https://api.imgur.com/3/upload";
+                HttpWebRequest request = (HttpWebRequest)WebRequest.Create(api_url_image);
+                request.Headers.Add("Authorization", "Client-ID ac075d738068f2f");    //authorized id
+                request.Method = "POST";
+                FileStream file = new FileStream(tempFile, FileMode.Open);
+                byte[] image = new byte[file.Length];
+                file.Read(image, 0, (int)file.Length);
+                ASCIIEncoding enc = new ASCIIEncoding();
+                string postData = Convert.ToBase64String(image);
+                byte[] bytes = enc.GetBytes(postData);
+                request.ContentType = "application/x-www-form-urlencoded";
+                request.ContentLength = bytes.Length;
+                Stream writer = request.GetRequestStream();
+                writer.Write(bytes, 0, bytes.Length);
+                HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+                response.GetResponseStream();
+                if (response.StatusCode == HttpStatusCode.OK)
+                {
+                    Stream responseStream = response.GetResponseStream();
+                    string responseStr = new StreamReader(responseStream).ReadToEnd();
+                    ImageUrl = responseStr.Remove(0, responseStr.IndexOf("link") + 7);
+                    ImageUrl = ImageUrl.Substring(0, ImageUrl.IndexOf("success") - 4);
+                    ImageUrl = ImageUrl.Replace("\\", "");
+                    responseStream.Close();
+                }
+                else
+                {
+                    throw new Exception("WebServer returned error " + response.StatusCode);
+                }
+                response.Close();
+
                 SaveClipUrl(ImageUrl);
                 AfterRowLoad();
                 SetTextInClipboard(ImageUrl);
