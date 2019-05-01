@@ -722,6 +722,7 @@ namespace ClipAngel
 
         public void Load(bool PortableMode = false)
         {
+            ConfirmationBeforeDelete = Properties.Settings.Default.ConfirmationBeforeDelete;
             AllowDownloadThumbnail = Properties.Settings.Default.AllowDownloadThumbnail;
             SearchAllFields = Properties.Settings.Default.SearchAllFields;
             CaptureImages = Properties.Settings.Default.CaptureImages;
@@ -804,6 +805,7 @@ namespace ClipAngel
 
         public void Apply(bool PortableMode = false)
         {
+            Properties.Settings.Default.ConfirmationBeforeDelete = ConfirmationBeforeDelete;
             Properties.Settings.Default.AllowDownloadThumbnail = AllowDownloadThumbnail;
             Properties.Settings.Default.SearchAllFields = SearchAllFields;
             Properties.Settings.Default.CaptureImages = CaptureImages;
@@ -1095,6 +1097,10 @@ namespace ClipAngel
         [GlobalizedCategory("Other")]
         [Editor(typeof(MyBoolEditor), typeof(UITypeEditor))]
         public bool AllowDownloadThumbnail { get; set; }
+
+        [GlobalizedCategory("Other")]
+        [Editor(typeof(MyBoolEditor), typeof(UITypeEditor))]
+        public bool ConfirmationBeforeDelete { get; set; }
 
         [GlobalizedCategory("Other")]
         [Editor(typeof(MyBoolEditor), typeof(UITypeEditor))]

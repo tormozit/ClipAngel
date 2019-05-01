@@ -178,6 +178,12 @@
     <value>Каталог для сохранения временных файлов клипов. Оставьте пустым для использования стандартного каталога временных файлов. 
 Обычно может быть полезен в портабельном режиме.</value>
   </data>
+  <data name="ConfirmationBeforeDelete" xml:space="preserve">
+    <value>Подтверждение перед удалением</value>
+  </data>
+  <data name="ConfirmationBeforeDeleteDescription" xml:space="preserve">
+    <value>Запрашивать подтверждение перед удалением клипов</value>
+  </data>
   <data name="CopyTextInAnyWindowOnCTRLF3" xml:space="preserve">
     <value>Копировать текст из любого окна по Control+F3</value>
   </data>

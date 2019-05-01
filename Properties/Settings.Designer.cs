@@ -800,5 +800,17 @@ namespace ClipAngel.Properties {
                 this["AllowDownloadThumbnail"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool ConfirmationBeforeDelete {
+            get {
+                return ((bool)(this["ConfirmationBeforeDelete"]));
+            }
+            set {
+                this["ConfirmationBeforeDelete"] = value;
+            }
+        }
     }
 }

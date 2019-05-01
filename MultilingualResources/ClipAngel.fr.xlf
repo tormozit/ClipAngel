@@ -478,8 +478,8 @@
           <target state="translated">Le clip n'a pas été capturé en raison de l'erreur de lecture du presse-papiers</target>
         </trans-unit>
         <trans-unit id="VersionValue" translate="yes" xml:space="preserve">
-          <source>1.78</source>
-          <target state="new">1.78</target>
+          <source>1.79</source>
+          <target state="new">1.79</target>
         </trans-unit>
         <trans-unit id="TargetWindow" translate="yes" xml:space="preserve">
           <source>Target window</source>
@@ -1664,6 +1664,14 @@ La génération d'image consomme CPU. Si vous rencontrez une charge CPU élevée
         <trans-unit id="AllowDownloadThumbnailDescription" translate="yes" xml:space="preserve">
           <source>Allow download from internet thumbnail for video and image links</source>
           <target state="new">Allow download from internet thumbnail for video and image links</target>
+        </trans-unit>
+        <trans-unit id="ConfirmationBeforeDelete" translate="yes" xml:space="preserve">
+          <source>Confirmation before delete</source>
+          <target state="new">Confirmation before delete</target>
+        </trans-unit>
+        <trans-unit id="ConfirmationBeforeDeleteDescription" translate="yes" xml:space="preserve">
+          <source>Ask confirmation before clip delete</source>
+          <target state="new">Ask confirmation before clip delete</target>
         </trans-unit>
       </group>
     </body>
@@ -7023,6 +7031,10 @@ Edit search string right from list. Navigate in list right from search field.</t
         <trans-unit id="saveAsFileMenuItem.ShortcutKeys" translate="yes" xml:space="preserve" extype="System.Windows.Forms.Keys, System.Windows.Forms">
           <source>Ctrl+S</source>
           <target state="needs-review-translation">Ctrl+S</target>
+        </trans-unit>
+        <trans-unit id="toolStripMenuItem8.ShortcutKeys" translate="yes" xml:space="preserve" extype="System.Windows.Forms.Keys, System.Windows.Forms">
+          <source>Del</source>
+          <target state="needs-review-translation">Del</target>
         </trans-unit>
       </group>
     </body>

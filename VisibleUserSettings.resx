@@ -177,6 +177,12 @@
   <data name="ClipTempFileFolderDescription" xml:space="preserve">
     <value>Folder for saving temp files of clips. Leave empty to use standard temp folder. Usually can be usefull in portable mode.</value>
   </data>
+  <data name="ConfirmationBeforeDelete" xml:space="preserve">
+    <value>Confirmation before delete</value>
+  </data>
+  <data name="ConfirmationBeforeDeleteDescription" xml:space="preserve">
+    <value>Ask confirmation before clip delete</value>
+  </data>
   <data name="CopyTextInAnyWindowOnCTRLF3" xml:space="preserve">
     <value>Copy text from any window by Control+F3</value>
   </data>

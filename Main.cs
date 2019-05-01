@@ -2713,6 +2713,12 @@ namespace ClipAngel
 
         private void Delete_Click(object sender, EventArgs e)
         {
+            if (Properties.Settings.Default.ConfirmationBeforeDelete)
+            {
+                var confirmResult = MessageBox.Show(this, "Are you sure to delete selected clips?", Application.ProductName, MessageBoxButtons.YesNo);
+                if (confirmResult != DialogResult.Yes)
+                    return;
+            }
             allowRowLoad = false;
             //int i = dataGridView.CurrentRow.Index;
             string sql = "Delete from Clips where Id IN(null";
@@ -5787,17 +5793,11 @@ namespace ClipAngel
                 order.Add(counter, selectedRow.Index);
                 counter++;
             }
-            if (false
-                || shiftType <= 0 && seletedRowIndexes.Contains(0)
-                || shiftType > 0 && seletedRowIndexes.Contains(dataGridView.RowCount - 1))
-            {
-                return;
-            }
             IOrderedEnumerable<int> SortedRowIndexes;
             if (shiftType < 0)
                 SortedRowIndexes = seletedRowIndexes.OrderBy(i=>i);
             else
-                SortedRowIndexes = seletedRowIndexes.OrderByDescending(i => i);
+                SortedRowIndexes = seletedRowIndexes.OrderByDescending(i=>i);
             foreach (int selectedRowIndex in SortedRowIndexes.ToList())
             {
                 DataRow selectedDataRow = ((DataRowView)clipBindingSource[selectedRowIndex]).Row;

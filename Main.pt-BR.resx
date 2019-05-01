@@ -2599,4 +2599,7 @@ adicionado à lista de ignorar, que pode ser editado na janela de configuraçõe
   <data name="saveAsFileMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+S</value>
   </data>
+  <data name="toolStripMenuItem8.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Del</value>
+  </data>
 </root>
