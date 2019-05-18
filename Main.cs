@@ -722,14 +722,20 @@ namespace ClipAngel
             }
             else if (hotkeyTitle == ClipAngel.Properties.Settings.Default.GlobalHotkeyCompareLastClips)
             {
+                if (filterOn)
+                    ClearFilter(-1);
                 toolStripMenuItemCompareLastClips_Click();
             }
             else if (hotkeyTitle == ClipAngel.Properties.Settings.Default.GlobalHotkeyPasteText)
             {
+                if (filterOn)
+                    ClearFilter(-1);
                 SendPasteClipExpress(dataGridView.Rows[0], PasteMethod.Text);
             }
             else if (hotkeyTitle == ClipAngel.Properties.Settings.Default.GlobalHotkeySimulateInput)
             {
+                if (filterOn)
+                    ClearFilter(-1);
                 SendPasteClipExpress(dataGridView.Rows[0], PasteMethod.SendChars);
             }
             else if (hotkeyTitle == ClipAngel.Properties.Settings.Default.GlobalHotkeySwitchMonitoring)
