@@ -2696,14 +2696,17 @@ namespace ClipAngel
         private static string TextClipTitle(string text)
         {
             string title = text.TrimStart();
-            // Removing repeats (series) of empty space and leave only 1 space
-            title = Regex.Replace(title, @"\s+", " ");
-            // Removing repeats (series of one char) of non digits and leave only 4 chars
-            title = Regex.Replace(title, "([^\\d])(?<=\\1\\1\\1\\1\\1)", String.Empty,
-                RegexOptions.IgnoreCase | RegexOptions.CultureInvariant | RegexOptions.Compiled);
-            // Removing repeats (series of one char) of digits and leave only 20 chars
-            title = Regex.Replace(title, "(\\d)(?<=\\1\\1\\1\\1\\1\\1\\1\\1\\1\\1\\1\\1\\1\\1\\1\\1\\1\\1\\1\\1\\1)", String.Empty,
-                RegexOptions.IgnoreCase | RegexOptions.CultureInvariant | RegexOptions.Compiled);
+            if (title.Length > ClipTitleLength)
+            {
+                // Removing repeats (series) of empty space and leave only 1 space
+                title = Regex.Replace(title, @"\s+", " ");
+                // Removing repeats (series of one char) of non digits and leave only 8 chars
+                title = Regex.Replace(title, "([^\\d])(?<=\\1\\1\\1\\1\\1\\1\\1\\1\\1)", String.Empty,
+                    RegexOptions.IgnoreCase | RegexOptions.CultureInvariant | RegexOptions.Compiled);
+                // Removing repeats (series of one char) of digits and leave only 20 chars
+                title = Regex.Replace(title, "(\\d)(?<=\\1\\1\\1\\1\\1\\1\\1\\1\\1\\1\\1\\1\\1\\1\\1\\1\\1\\1\\1\\1\\1)", String.Empty,
+                    RegexOptions.IgnoreCase | RegexOptions.CultureInvariant | RegexOptions.Compiled);
+            }
             if (title.Length > ClipTitleLength)
             {
                 title = title.Substring(0, ClipTitleLength - 1 - 3) + "...";
@@ -5094,7 +5097,7 @@ namespace ClipAngel
                                     XmlElement root = (XmlElement) doc.ChildNodes[1];
                                     foreach (XmlElement moduleBPInfoCycle in root.ChildNodes)
                                     {
-                                        XmlElement id = (XmlElement) moduleBPInfoCycle.GetElementsByTagName("id")[0];
+                                        XmlElement id = (XmlElement)moduleBPInfoCycle.GetElementsByTagName("id")[0];
                                         if (true
                                             && id.GetElementsByTagName("debugBaseData:MDObject")[0].InnerText == MDObject
                                             && id.GetElementsByTagName("debugBaseData:MDProperty")[0].InnerText == MDProperty)
@@ -5169,6 +5172,7 @@ namespace ClipAngel
                                 string fullModuleName = moduleName;
                                 if (!String.IsNullOrEmpty(extensionName))
                                     fullModuleName = extensionName + fullModuleName;
+                                SendKeys.Send("{PgDn}");
                                 while (stopWatch.ElapsedMilliseconds < maxWait)
                                 {
                                     try
@@ -5200,8 +5204,15 @@ namespace ClipAngel
                                         SendKeys.Send("{F9}");
                                         break;
                                     }
+                                    else
+                                    {
+                                        SendKeys.Send("{PgDn}");
+                                    }
                                     Thread.Sleep(50);
                                 }
+                                if (!success)
+                                    // Например в списке точек останова присутствует скроллбар и потому нужная ячейка была видимой области
+                                    SendKeys.Send("{Esc}");
                             }
                         }
                     }
@@ -5282,7 +5293,14 @@ namespace ClipAngel
             //IUIAutomationInvokePattern invokePattern = tableElement.GetCurrentPattern(InvokePattern.Pattern));
             //invokePattern.Invoke();
             UIAutomationClient.tagPOINT tagPoint;
-            tableElement.GetClickablePoint(out tagPoint);
+            try
+            {
+                tableElement.GetClickablePoint(out tagPoint);
+            }
+            catch
+            {
+                return;
+            }
             int x = tagPoint.x;
             int y = tagPoint.y;
 
@@ -6288,7 +6306,7 @@ namespace ClipAngel
                 DataRowView row2 = (DataRowView) dataGridView.SelectedRows[1].DataBoundItem;
                 id2 = (int) row2["id"];
             }
-            CompareClipsByID(id1, id2);
+            CompareClipsByID(id2, id1);
         }
 
         private void CompareClipsByID(int id1, int id2)
@@ -6752,7 +6770,7 @@ namespace ClipAngel
                 if (reader.Read())
                     id2 = (int)reader["Id"];
                 if (id2 > 0 && id1 > 0)
-                    CompareClipsByID(id1, id2);
+                    CompareClipsByID(id2, id1);
             }
         }
 
