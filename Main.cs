@@ -2720,7 +2720,7 @@ namespace ClipAngel
             return title;
         }
 
-        private void Delete_Click(object sender, EventArgs e)
+        private void Delete_Click(object sender = null, EventArgs e = null)
         {
             if (Properties.Settings.Default.ConfirmationBeforeDelete)
             {
@@ -5772,6 +5772,11 @@ namespace ClipAngel
             {
                 e.Handled = true;
                 copyClipToolStripMenuItem_Click();
+            }
+            else if (e.KeyCode == Keys.Delete)
+            {
+                e.Handled = true;
+                Delete_Click();
             }
         }
 
