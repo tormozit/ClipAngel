@@ -59,7 +59,7 @@ namespace ClipAngel
                     {
                         break;
                     }
-                    int eventIndex = WaitHandle.WaitAny(waitHandles);
+                    int eventIndex = WaitHandle.WaitAny(waitHandles, 60000); // sometimes waitAny begins consume 100% cpu core. Set timeout is workaround try.
                     if (eventIndex != WaitHandle.WaitTimeout)
                     {
                         if (eventIndex == 0)
@@ -75,6 +75,10 @@ namespace ClipAngel
                         {
                             break;
                         }
+                    }
+                    else
+                    {
+                        break; // sometimes waitAny begins consume 100% cpu core. This is workaround try.
                     }
                 }
             }

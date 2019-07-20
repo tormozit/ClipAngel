@@ -1590,8 +1590,8 @@ Generation of image consumes CPU. If you experience high CPU load, set lower val
           <target state="new">Clip was not captured due to clipboard read error</target>
         </trans-unit>
         <trans-unit id="VersionValue" translate="yes" xml:space="preserve">
-          <source>1.80</source>
-          <target state="new">1.80</target>
+          <source>1.82</source>
+          <target state="new">1.82</target>
         </trans-unit>
         <trans-unit id="TargetWindow" translate="yes" xml:space="preserve">
           <source>Target window</source>
@@ -1676,6 +1676,10 @@ Generation of image consumes CPU. If you experience high CPU load, set lower val
         <trans-unit id="text_url_video" translate="yes" xml:space="preserve">
           <source>*url-video</source>
           <target state="new">*url-video</target>
+        </trans-unit>
+        <trans-unit id="FailedChangeDatabaseFieEncryption" translate="yes" xml:space="preserve">
+          <source>Failed change database file encryption</source>
+          <target state="new">Failed change database file encryption</target>
         </trans-unit>
       </group>
     </body>
@@ -4711,8 +4715,9 @@ Submenu "Lista" dispone de comandos para la selección rápida</target>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Salir del programa</target>
         </trans-unit>
         <trans-unit id="toolStripMenuItem8.Text" translate="yes" xml:space="preserve">
-          <source>Delete</source>
+          <source>Delete                              Del</source>
           <target state="needs-review-translation" state-qualifier="tm-suggestion">Eliminar</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="resetFavouriteToolStripMenuItem.Text" translate="yes" xml:space="preserve">
           <source>Unmark as favorite</source>
@@ -7050,10 +7055,6 @@ Edit search string right from list. Navigate in list right from search field.</t
         <trans-unit id="saveAsFileMenuItem.ShortcutKeys" translate="yes" xml:space="preserve" extype="System.Windows.Forms.Keys, System.Windows.Forms">
           <source>Ctrl+S</source>
           <target state="needs-review-translation">Ctrl+S</target>
-        </trans-unit>
-        <trans-unit id="toolStripMenuItem8.ShortcutKeys" translate="yes" xml:space="preserve" extype="System.Windows.Forms.Keys, System.Windows.Forms">
-          <source>Del</source>
-          <target state="needs-review-translation">Del</target>
         </trans-unit>
       </group>
     </body>

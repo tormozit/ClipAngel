@@ -3489,9 +3489,16 @@ namespace ClipAngel
             int processId;
             uint activeWindowThread = GetWindowThreadProcessId(hwnd, out processId);
             Process process1 = Process.GetProcessById(processId);
-            application = process1.ProcessName;
+            try
+            {
+                application = process1.ProcessName;
+                hwnd = process1.MainWindowHandle;
+            }
+            catch (Exception e)
+            {
+                return;
+            }
             appPath = GetProcessMainModuleFullName(processId);
-            hwnd = process1.MainWindowHandle;
             windowTitle = GetWindowTitle(hwnd);
             if (true
                 && hwnd != IntPtr.Zero 
@@ -4625,11 +4632,40 @@ namespace ClipAngel
                     || oldEncryptDatabaseForCurrentUser != ClipAngel.Properties.Settings.Default.EncryptDatabaseForCurrentUser)
                 {
                     CloseDatabase();
+                    string encryptException = "";
                     if (ClipAngel.Properties.Settings.Default.EncryptDatabaseForCurrentUser)
-                        File.Encrypt(DbFileName);
+                    {
+                        try
+                        {
+                            //File.Encrypt("dhjjsfjsgfjsfjgsfj"); // for test
+                            File.Encrypt(DbFileName);
+                        }
+                        catch (Exception exception)
+                        {
+                            // https://sourceforge.net/p/clip-angel/tickets/60/
+                            encryptException = exception.Message;
+                            ClipAngel.Properties.Settings.Default.EncryptDatabaseForCurrentUser = false;
+                        }
+                    }
                     else
-                        File.Decrypt(DbFileName);
+                    {
+                        try
+                        {
+                            //File.Encrypt("dhjjsfjsgfjsfjgsfj"); // for test
+                            File.Decrypt(DbFileName);
+                        }
+                        catch (Exception exception)
+                        {
+                            // https://sourceforge.net/p/clip-angel/tickets/60/
+                            encryptException = exception.Message;
+                            ClipAngel.Properties.Settings.Default.EncryptDatabaseForCurrentUser = true;
+                        }
+                    }
                     OpenDatabase();
+                    if (!String.IsNullOrEmpty(encryptException))
+                    {
+                        MessageBox.Show(this, Properties.Resources.FailedChangeDatabaseFieEncryption + ": \n" + encryptException, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
                 LoadSettings();
                 keyboardHook.UnregisterHotKeys();

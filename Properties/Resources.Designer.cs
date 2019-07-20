@@ -412,6 +412,15 @@ namespace ClipAngel.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Failed change database file encryption.
+        /// </summary>
+        public static string FailedChangeDatabaseFieEncryption {
+            get {
+                return ResourceManager.GetString("FailedChangeDatabaseFieEncryption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Failed to read data in format &quot;{0}&quot; from clipboard..
         /// </summary>
         public static string FailedToReadFormatFromClipboard {
@@ -1078,7 +1087,7 @@ namespace ClipAngel.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 1.81.
+        ///   Looks up a localized string similar to 1.82.
         /// </summary>
         public static string VersionValue {
             get {

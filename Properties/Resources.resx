@@ -215,7 +215,7 @@
     <value>Next сlip</value>
   </data>
   <data name="VersionValue" xml:space="preserve">
-    <value>1.81</value>
+    <value>1.82</value>
   </data>
   <data name="Alien_64x64" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\Alien-64x64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -465,5 +465,8 @@
   </data>
   <data name="text_url_video" xml:space="preserve">
     <value>*url-video</value>
+  </data>
+  <data name="FailedChangeDatabaseFieEncryption" xml:space="preserve">
+    <value>Failed change database file encryption</value>
   </data>
 </root>
