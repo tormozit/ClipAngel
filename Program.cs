@@ -11,6 +11,7 @@ using System.Diagnostics;
 using System.Resources;
 using Microsoft.Win32.SafeHandles;
 using System.Security.Permissions;
+using System.Text;
 
 namespace ClipAngel
 {
@@ -171,6 +172,9 @@ namespace ClipAngel
             return pLast;
         }
 
+        [DllImport("User32.dll", SetLastError = true, CharSet = CharSet.Unicode)]
+        static extern long GetClassName(IntPtr hwnd, System.Text.StringBuilder lpClassName, int nMaxCount);
+
         // To support exit by taskkill signal http://qaru.site/questions/1648501/windows-application-handle-taskkill
         [SecurityPermission(SecurityAction.LinkDemand, Flags = SecurityPermissionFlag.UnmanagedCode)]
         private class TestMessageFilter : IMessageFilter
@@ -179,8 +183,14 @@ namespace ClipAngel
             {
                 if (m.Msg == /*WM_CLOSE*/ 0x10)
                 {
-                    Application.Exit();
-                    return true;
+                    int nChars = 100; 
+                    StringBuilder className = new StringBuilder(nChars);
+                    GetClassName(m.HWnd, className, nChars);
+                    if (className.ToString() != "URL Moniker Notification Window") // on some HTML clips with ShowNativeFormatting=True somehow this windows sends this message
+                    {
+                        Application.Exit();
+                        return true;
+                    }
                 }
                 return false;
             }
