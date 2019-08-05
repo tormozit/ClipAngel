@@ -1454,13 +1454,16 @@ namespace ClipAngel
                     }
                 }
                 control.SelectionColor = color;
-                FontStyle newstyle = control.SelectionFont.Style;
-                if (bold)
-                    newstyle = newstyle | FontStyle.Bold;
-                if (underline)
-                    newstyle = newstyle | FontStyle.Underline;
-                if (newstyle != control.SelectionFont.Style)
-                    control.SelectionFont = new Font(control.SelectionFont, newstyle);
+                if (control.SelectionFont != null)
+                {
+                    FontStyle newstyle = control.SelectionFont.Style;
+                    if (bold)
+                        newstyle = newstyle | FontStyle.Bold;
+                    if (underline)
+                        newstyle = newstyle | FontStyle.Underline;
+                    if (newstyle != control.SelectionFont.Style)
+                        control.SelectionFont = new Font(control.SelectionFont, newstyle);
+                }
                 maxMarked--;
                 if (maxMarked < 0)
                     break;
