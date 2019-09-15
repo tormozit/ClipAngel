@@ -6022,7 +6022,7 @@ namespace ClipAngel
                 return "";
             string type = RowReader["type"].ToString();
             //string TempFile = Path.GetTempFileName();
-            string tempFile = clipTempFile(rowReader, "copy");
+            string tempFile = clipTempFile(rowReader);
             if (tempFile == "")
             {
                 MessageBox.Show(this, Properties.Resources.ClipFileAlreadyOpened);
@@ -6084,7 +6084,10 @@ namespace ClipAngel
                 tempFolder = Path.GetTempPath();
             if (!tempFolder.EndsWith("\\"))
                 tempFolder += "\\";
-            string tempFile = tempFolder + "Clip " + rowReader["id"] + " " + suffix + "." + extension;
+            string tempFile = tempFolder + "Clip_" + rowReader["id"];
+            if (!String.IsNullOrEmpty(suffix))
+                tempFile += "_" + suffix;
+            tempFile += "." + extension;
             try
             {
                 using (new StreamWriter(tempFile))
