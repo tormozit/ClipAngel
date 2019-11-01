@@ -165,7 +165,7 @@ namespace ClipAngel
             {"url_image",  @"(https?:\/\/.*\.(?:png|jpg|gif|jpeg|svg))"},
             {"url_video",  @"(?:https?://)?(?:www.)?youtu(?:\.be|be\.com)/(?:(?:.*)v(?:/|=)|(?:.*/)?)([a-zA-Z0-9-_]+)(?:[&?][%a-zA-Z0-9-_]+=[%a-zA-Z0-9-_]+)*"},
             {"filename", @"((?:\b[a-z]:|\\\\[a-z0-9 %._-]+\\[a-z0-9 $%._-]+)\\(?:[^\\/:*?""<>|\r\n]+\\)*[^\\/:*?""<>|\r\n]*)"},
-            {"1CLine", @"(\{([a-zа-яё_]+ )?((?:[a-zа-яё_]+\.)*(?:Форма|Модуль|МодульУправляемогоПриложения|МодульОбычногоПриложения|МодульВнешнегоСоединения|МодульКоманды|МодульМенеджера|МодульОбъекта|МодульНабораЗаписей))\((\d+)(?:,(\d+))?\)\})"}
+            {"1CLine", @"(\{([a-zа-яё0-9_]+ )?((?:[a-zа-яё0-9_]+\.)*(?:Форма|Модуль|МодульУправляемогоПриложения|МодульОбычногоПриложения|МодульСеанса|МодульВнешнегоСоединения|МодульКоманды|МодульМенеджера|МодульОбъекта|МодульНабораЗаписей))\((\d+)(?:,(\d+))?\)\})"}
         };
 
         static string LinkPattern = TextPatterns["url"];
@@ -175,28 +175,37 @@ namespace ClipAngel
 
         static private Dictionary<string, string> typeMap1C = new Dictionary<string, string>
         {
-            {"МодульУправляемогоПриложения", "ManagedApplicationModule"},
-            {"МодульОбычногоПриложения", "OrdinaryApplicationModule"},
+            {"HTTPСервис", "HTTPService"},
+            {"WebСервис", "WebService"},
+            {"ВнешнийИсточникДанных", "ExternalDataSource"},
+            {"Документ", "Document"},
+            {"Задача", "Task"},
+            {"Команда", "Command"},
             {"МодульВнешнегоСоединения", "ExternalConnectionModule"},
+            {"МодульКоманды", "CommandModule"},
+            {"МодульОбычногоПриложения", "OrdinaryApplicationModule"},
             {"МодульОбъекта", "ObjectModule"},
             {"МодульНабораЗаписей", "RecordsetModule"},
             {"МодульМенеджера", "ManagerModule"},
-            {"МодульКоманды", "CommandModule"},
+            {"МодульСеанса", "SessionModule"},
+            {"МодульУправляемогоПриложения", "ManagedApplicationModule"},
             {"Модуль", "Module"},
-            {"Форма", "Form"},
-            {"Команда", "Command"},
             {"ОбщаяФорма", "CommonForm"},
             {"ОбщийМодуль", "CommonModule"},
             {"ОбщаяКоманда", "CommonCommand"},
             {"Обработка", "DataProcessor"},
+            {"Перечисление", "Enum"},
+            {"ПланВидовРасчета", "ChartOfCalculationTypes"},
+            {"ПланВидовХарактеристик", "ChartOfCharacteristicTypes"},
+            {"ПланОбмена", "ExchangePlan"},
             {"Отчет", "Report"},
-            {"HTTPСервис", "HTTPService"},
-            {"WebСервис", "WebService"},
-            {"Справочник", "Catalog"},
-            {"Документ", "Document"},
-            {"РегистрСведений", "InformationRegister"},
+            {"РегистрБухгалтерии", "AccountingRegister"},
             {"РегистрНакопления", "AccumulationRegister"},
-        };
+            {"РегистрРасчета", "CalculationRegister"},
+            {"РегистрСведений", "InformationRegister"},
+            {"Форма", "Form"},
+            {"Справочник", "Catalog"},
+      };
 
         //[DllImport("dwmapi", PreserveSig = true)]
         //static extern int DwmSetWindowAttribute(IntPtr hWnd, int attr, ref int value, int attrLen);

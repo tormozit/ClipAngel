@@ -478,8 +478,8 @@
           <target state="translated">Le clip n'a pas été capturé en raison de l'erreur de lecture du presse-papiers</target>
         </trans-unit>
         <trans-unit id="VersionValue" translate="yes" xml:space="preserve">
-          <source>1.84</source>
-          <target state="new">1.84</target>
+          <source>1.85</source>
+          <target state="new">1.85</target>
         </trans-unit>
         <trans-unit id="TargetWindow" translate="yes" xml:space="preserve">
           <source>Target window</source>
