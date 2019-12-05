@@ -157,7 +157,7 @@
     <value>Вебсайт</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>Бесплатная (GPL3)</value>
+    <value>Лицензия: GPL3</value>
   </data>
   <data name="linkLabel1.Text" xml:space="preserve">
     <value>Пожертвовать</value>
