@@ -220,6 +220,12 @@
   <data name="DeleteNonFavoriteClipsOnExitDescription" xml:space="preserve">
     <value>Удалять все нелюбимые клипы при закрытии базы данных</value>
   </data>
+  <data name="DelimiterForTextJoin" xml:space="preserve">
+    <value>Разделитель соединения текстов</value>
+  </data>
+  <data name="DelimiterForTextJoinDescription" xml:space="preserve">
+    <value>Разделитель, используемый в команде соединения текстов. Используйте "\n" для обозначения конца строки.</value>
+  </data>
   <data name="EncryptDatabaseForCurrentUser" xml:space="preserve">
     <value>Шифровать базу данных для текущего пользователя</value>
   </data>

@@ -812,5 +812,17 @@ namespace ClipAngel.Properties {
                 this["ConfirmationBeforeDelete"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("\\n")]
+        public string DelimiterForTextJoin {
+            get {
+                return ((string)(this["DelimiterForTextJoin"]));
+            }
+            set {
+                this["DelimiterForTextJoin"] = value;
+            }
+        }
     }
 }

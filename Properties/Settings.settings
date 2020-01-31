@@ -200,5 +200,8 @@
     <Setting Name="ConfirmationBeforeDelete" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
+    <Setting Name="DelimiterForTextJoin" Type="System.String" Scope="User">
+      <Value Profile="(Default)">\n</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

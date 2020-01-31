@@ -722,6 +722,7 @@ namespace ClipAngel
 
         public void Load(bool PortableMode = false)
         {
+            DelimiterForTextJoin = Properties.Settings.Default.DelimiterForTextJoin;
             ConfirmationBeforeDelete = Properties.Settings.Default.ConfirmationBeforeDelete;
             AllowDownloadThumbnail = Properties.Settings.Default.AllowDownloadThumbnail;
             SearchAllFields = Properties.Settings.Default.SearchAllFields;
@@ -805,6 +806,7 @@ namespace ClipAngel
 
         public void Apply(bool PortableMode = false)
         {
+            Properties.Settings.Default.DelimiterForTextJoin = DelimiterForTextJoin;
             Properties.Settings.Default.ConfirmationBeforeDelete = ConfirmationBeforeDelete;
             Properties.Settings.Default.AllowDownloadThumbnail = AllowDownloadThumbnail;
             Properties.Settings.Default.SearchAllFields = SearchAllFields;
@@ -1101,6 +1103,9 @@ namespace ClipAngel
         [GlobalizedCategory("Other")]
         [Editor(typeof(MyBoolEditor), typeof(UITypeEditor))]
         public bool ConfirmationBeforeDelete { get; set; }
+
+        [GlobalizedCategory("Other")]
+        public string DelimiterForTextJoin { get; set; }
 
         [GlobalizedCategory("Other")]
         [Editor(typeof(MyBoolEditor), typeof(UITypeEditor))]

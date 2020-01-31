@@ -218,6 +218,12 @@ Leave blank to use standard database file "db.sqlite" in application user settin
   <data name="DeleteNonFavoriteClipsOnExitDescription" xml:space="preserve">
     <value>Delete all non favorite clips after close database</value>
   </data>
+  <data name="DelimiterForTextJoin" xml:space="preserve">
+    <value>Delimiter for text join</value>
+  </data>
+  <data name="DelimiterForTextJoinDescription" xml:space="preserve">
+    <value>Delimiter used for text join command. Use "\n" as end of line.</value>
+  </data>
   <data name="EncryptDatabaseForCurrentUser" xml:space="preserve">
     <value>Encrypt database for current user</value>
   </data>

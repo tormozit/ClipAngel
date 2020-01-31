@@ -3077,7 +3077,7 @@ namespace ClipAngel
                     textToPaste = GetClipTempFile(out fileEditor, rowReader);
                 }
                 if (pasteDelimiter)
-                    textToPaste = Environment.NewLine + textToPaste;
+                    textToPaste = ClipAngel.Properties.Settings.Default.DelimiterForTextJoin.Replace("\\n", Environment.NewLine) + textToPaste;
                 return textToPaste;
             }
             if (pasteDelimiter && pasteMethod == PasteMethod.Standard)
