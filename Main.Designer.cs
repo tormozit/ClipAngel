@@ -269,7 +269,7 @@ namespace ClipAngel
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.toolStripBottom = new System.Windows.Forms.ToolStrip();
             this.toolStripButtonClearFilter = new System.Windows.Forms.ToolStripButton();
@@ -792,8 +792,8 @@ namespace ClipAngel
             // 
             // VisualWeight
             // 
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Green;
-            this.VisualWeight.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Green;
+            this.VisualWeight.DefaultCellStyle = dataGridViewCellStyle5;
             resources.ApplyResources(this.VisualWeight, "VisualWeight");
             this.VisualWeight.Name = "VisualWeight";
             this.VisualWeight.ReadOnly = true;
