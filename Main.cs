@@ -705,7 +705,7 @@ namespace ClipAngel
                     this.Close();
                 else
                 {
-                    ShowForPaste(true);
+                    ShowForPaste(true, true);
                     dataGridView.Focus();
                 }
             }
@@ -1881,7 +1881,7 @@ namespace ClipAngel
             dataGridView.Focus();
         }
 
-        private void ClearFilter(int CurrentClipID = 0)
+        private void ClearFilter(int CurrentClipID = 0, bool keepMarkFilterFilter = false)
         {
             if (filterOn)
             {
@@ -1890,7 +1890,8 @@ namespace ClipAngel
                 periodFilterOn = false;
                 ReadSearchString();
                 TypeFilter.SelectedIndex = 0;
-                MarkFilter.SelectedIndex = 0;
+                if (!keepMarkFilterFilter)
+                    MarkFilter.SelectedIndex = 0;
                 AllowFilterProcessing = true;
                 //UpdateClipBindingSource(false, CurrentClipID);
                 UpdateClipBindingSource(true, CurrentClipID); // To repaint text
@@ -3854,7 +3855,7 @@ namespace ClipAngel
             else if (MarkFilter.SelectedValue.ToString() == "favorite")
                 showAllMarksToolStripMenuItem_Click();
             if (clearFiltersAndGoToTop)
-                ClearFilter(-1);
+                ClearFilter(-1, onlyFavorites);
             //Stopwatch sw = new Stopwatch();
             //sw.Start();
             //this.SuspendLayout();
