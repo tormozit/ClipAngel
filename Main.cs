@@ -691,7 +691,7 @@ namespace ClipAngel
             }
             else if (hotkeyTitle == ClipAngel.Properties.Settings.Default.GlobalHotkeyOpenCurrent)
             {
-                if (IsVisible() && this.ContainsFocus && MarkFilter.SelectedValue.ToString() != "favorite")
+                if (IsVisible() && this.ContainsFocus)
                     this.Close();
                 else
                 {
@@ -3852,8 +3852,8 @@ namespace ClipAngel
             //{
             if (onlyFavorites)
                 showOnlyFavoriteToolStripMenuItem_Click();
-            else if (MarkFilter.SelectedValue.ToString() == "favorite")
-                showAllMarksToolStripMenuItem_Click();
+            //else if (MarkFilter.SelectedValue.ToString() == "favorite")
+            //    showAllMarksToolStripMenuItem_Click();
             if (clearFiltersAndGoToTop)
                 ClearFilter(-1, onlyFavorites);
             //Stopwatch sw = new Stopwatch();
