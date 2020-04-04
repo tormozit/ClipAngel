@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Runtime.InteropServices;
 using System.Threading;
 using System.Windows.Forms;
@@ -108,11 +109,25 @@ namespace ClipAngel
         [DllImport("user32.dll", SetLastError = true)]
         static extern void keybd_event(byte bVk, byte bScan, int dwFlags, int dwExtraInfo);
 
-        public static void SendChars()
+        public static void SendChars(Main main = null)
         {
             string textToPaste = Clipboard.GetText();
             InputSimulator inputSimulator = new InputSimulator(); // http://inputsimulator.codeplex.com/
-            inputSimulator.Keyboard.TextEntry(textToPaste);
+
+            if (textToPaste.Length > 100 || main == null || !main.ActivateTargetWindow())
+                inputSimulator.Keyboard.TextEntry(textToPaste);
+            else
+            {
+                Random random = new Random();
+                foreach (char oneChar in textToPaste)
+                {
+                    // Top registered speed of human typing is 18 chars per second on 2020y 
+                    Thread.Sleep(random.Next(70, 120));
+                    if (!main.ActivateTargetWindow())
+                        break;
+                    inputSimulator.Keyboard.TextEntry(oneChar);
+                }
+            }
         }
 
         public static void SendPaste()

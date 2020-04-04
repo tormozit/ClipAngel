@@ -3120,7 +3120,9 @@ namespace ClipAngel
 
         private bool SendPaste(PasteMethod pasteMethod = PasteMethod.Standard)
         {
-            bool needElevation = ActivateTargetWindow();
+            int targetProcessId;
+            GetWindowThreadProcessId(lastActiveParentWindow, out targetProcessId);
+            bool needElevation = targetProcessId != 0 && !UacHelper.IsProcessAccessible(targetProcessId);
             var curproc = Process.GetCurrentProcess();
             if (needElevation)
             {
@@ -3167,6 +3169,10 @@ namespace ClipAngel
                     return true;
                 }
             }
+            else
+            {
+                ActivateTargetWindow();
+            }
             if (pasteMethod != PasteMethod.SendChars)
             {
                 if (!needElevation)
@@ -3183,7 +3189,7 @@ namespace ClipAngel
                 if (!IsTextType())
                     return true;
                 if (!needElevation)
-                    Paster.SendChars();
+                    Paster.SendChars(this);
                 else
                 {
                     EventWaitHandle sendCharsEvent = Paster.GetSendCharsEventWaiter();
@@ -3193,20 +3199,9 @@ namespace ClipAngel
             return false;
         }
 
-        private bool ActivateTargetWindow()
+        public bool ActivateTargetWindow()
         {
-            int targetProcessId;
-            //string oldWindowSelectedText = lastWindowSelectedText;
-            //IntPtr oldChildWindow = lastChildWindow;
-            //RECT oldChildWindowRect = lastChildWindowRect;
-            //Point oldCaretPoint = lastCaretPoint;
-            uint remoteThreadId = GetWindowThreadProcessId(lastActiveParentWindow, out targetProcessId);
-            bool needElevation = targetProcessId != 0 && !UacHelper.IsProcessAccessible(targetProcessId);
-            //if (needElevation && pasteMethod == PasteMethod.SendChars)
-            //{
-            //    ShowElevationFail();
-            //    return;
-            //}
+            bool isTargetActive = false;
 
             // not reliable method
             // Previous active window by z-order https://www.whitebyte.info/programming/how-to-get-main-window-handle-of-the-last-active-window
@@ -3230,6 +3225,7 @@ namespace ClipAngel
                 Thread.Sleep(waitStep);
             }
             Debug.WriteLine("Get foreground window " + hForegroundWindow + " " + GetWindowTitle(hForegroundWindow));
+            isTargetActive = hForegroundWindow == lastActiveParentWindow;
 
             //if (oldChildWindow != IntPtr.Zero && ClipAngel.Properties.Settings.Default.RestoreCaretPositionOnFocusReturn)
             //{
@@ -3276,7 +3272,7 @@ namespace ClipAngel
             //        AttachThreadInput(GetCurrentThreadId(), remoteThreadId, false);
             //    }
             //}
-            return needElevation;
+            return isTargetActive;
         }
 
         private string getActiveWindowSelectedText()
