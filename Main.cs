@@ -2717,10 +2717,10 @@ namespace ClipAngel
         private static string TextClipTitle(string text)
         {
             string title = text.TrimStart();
+            // Removing repeats (series) of empty space and leave only 1 space
+            title = Regex.Replace(title, @"\s+", " ");
             if (title.Length > ClipTitleLength)
             {
-                // Removing repeats (series) of empty space and leave only 1 space
-                title = Regex.Replace(title, @"\s+", " ");
                 // Removing repeats (series of one char) of non digits and leave only 8 chars
                 title = Regex.Replace(title, "([^\\d])(?<=\\1\\1\\1\\1\\1\\1\\1\\1\\1)", String.Empty,
                     RegexOptions.IgnoreCase | RegexOptions.CultureInvariant | RegexOptions.Compiled);

@@ -103,6 +103,9 @@
   <data name="changeClipTitleToolStripMenuItem.ToolTipText" xml:space="preserve">
     <value>क्लिप शीर्षक संपादित करें</value>
   </data>
+  <data name="changeClipTitleToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>219, 22</value>
+  </data>
   <data name="toolStripWindowTitleCopyAll.Text" xml:space="preserve">
     <value>सभी पाठ की प्रतिलिपि बनाएँ</value>
   </data>
@@ -215,6 +218,9 @@ Url वर्तमान क्लिप में सहेजे जाएँ
   <data name="fileToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>37, 20</value>
   </data>
+  <data name="uploadImageToWebToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>219, 22</value>
+  </data>
   <data name="StripLabelVisualSize.AutoSize" xml:space="preserve" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
@@ -290,6 +296,9 @@ Url वर्तमान क्लिप में सहेजे जाएँ
   <data name="pasteAsTextToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>209, 22</value>
   </data>
+  <data name="textCompareToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>219, 22</value>
+  </data>
   <data name="textCompareToolStripMenuItem.Text" xml:space="preserve">
     <value>पाठ तुलना</value>
   </data>
@@ -298,6 +307,9 @@ Url वर्तमान क्लिप में सहेजे जाएँ
   </data>
   <data name="showOnlyUsedToolStripMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+3</value>
+  </data>
+  <data name="toolStripMenuItemPasteChars.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>219, 22</value>
   </data>
   <data name="pictureBoxSource.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>16, 20</value>
@@ -405,6 +417,9 @@ Url वर्तमान क्लिप में सहेजे जाएँ
   </data>
   <data name="ImageControl.Anchor" xml:space="preserve" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="ignoreApplicationInCaptureToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>219, 22</value>
   </data>
   <data name="StripLabelSize.Text" xml:space="preserve">
     <value>आकार</value>
@@ -1167,6 +1182,12 @@ Url वर्तमान क्लिप में सहेजे जाएँ
   <data name="splitContainer1.Dock" xml:space="preserve" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
+  <data name="monospacedFontToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>219, 22</value>
+  </data>
+  <data name="editClipTextToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>219, 22</value>
+  </data>
   <data name="toolStripMenuItem16.ToolTipText" xml:space="preserve">
     <value>पाठ या छवि क्लिप के लिए अस्थायी फ़ाइल के लिए डेटा सहेजें। 
 ओपन क्लिप फ़ाइल में डिफ़ॉल्ट अनुप्रयोग। 
@@ -1214,6 +1235,9 @@ Url वर्तमान क्लिप में सहेजे जाएँ
   <data name="textBoxWindow.Text" xml:space="preserve">
     <value>विंडो</value>
   </data>
+  <data name="openWithToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>219, 22</value>
+  </data>
   <data name="toolStripMenuItemMonitoringClipboard.Text" xml:space="preserve">
     <value>क्लिपबोर्ड की निगरानी</value>
   </data>
@@ -1246,6 +1270,9 @@ Url वर्तमान क्लिप में सहेजे जाएँ
   </data>
   <data name="returnToPrevousSelectedClipToolStripMenuItem.ToolTipText" xml:space="preserve">
     <value>चयनित क्लिप के परिवर्तन के साथ लागू फ़िल्टर्स साफ़ और चुनें क्लिप जो फ़िल्टर करने से पहले चयनित किया गया था</value>
+  </data>
+  <data name="wordWrapToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>219, 22</value>
   </data>
   <data name="usedDataGridViewCheckBoxColumn.HeaderText" xml:space="preserve">
     <value>उपयोग किया गया</value>
@@ -1325,6 +1352,9 @@ Url वर्तमान क्लिप में सहेजे जाएँ
   <data name="statusStrip.Anchor" xml:space="preserve" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left, Right</value>
   </data>
+  <data name="setFavouriteToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>219, 22</value>
+  </data>
   <data name="StripLabelCreated.AutoSize" xml:space="preserve" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
@@ -1333,6 +1363,9 @@ Url वर्तमान क्लिप में सहेजे जाएँ
   </data>
   <data name="pictureBoxSource.ToolTip" xml:space="preserve">
     <value>जो अनुप्रयोग के चिह्न क्लिप बनाई</value>
+  </data>
+  <data name="resetFavouriteToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>219, 22</value>
   </data>
   <data name="toolStripButtonTopMostWindow.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>23, 22</value>
@@ -1352,6 +1385,9 @@ Url वर्तमान क्लिप में सहेजे जाएँ
   </data>
   <data name="htmlMenuItemOpenLink.Text" xml:space="preserve">
     <value>लिंक खोलें (ALT + क्लिक करें)</value>
+  </data>
+  <data name="toolStripMenuItem8.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>219, 22</value>
   </data>
   <data name="copyToClipboardToolStripMenuItem.ToolTipText" xml:space="preserve">
     <value>प्रतिलिपि क्लिपबोर्ड के लिए वर्तमान क्लिप</value>
@@ -2035,6 +2071,9 @@ Url वर्तमान क्लिप में सहेजे जाएँ
   <data name="favoriteDataGridViewCheckBoxColumn.Visible" xml:space="preserve" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
+  <data name="translateToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>219, 22</value>
+  </data>
   <data name="historyToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>178, 22</value>
   </data>
@@ -2097,6 +2136,9 @@ Url वर्तमान क्लिप में सहेजे जाएँ
   </data>
   <data name="toolStripButtonFindNext.ImageTransparentColor" xml:space="preserve" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
+  </data>
+  <data name="toolStripMenuItem16.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>219, 22</value>
   </data>
   <data name="toolStripButtonTopMostWindow.ImageTransparentColor" xml:space="preserve" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
@@ -2260,6 +2302,9 @@ Url वर्तमान क्लिप में सहेजे जाएँ
   <data name="stripLabelPosition.TextAlign" xml:space="preserve" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleRight</value>
   </data>
+  <data name="mergeTextOfClipsToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>219, 22</value>
+  </data>
   <data name="toolStripBottom.RightToLeft" xml:space="preserve" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
     <value>Yes</value>
   </data>
@@ -2298,6 +2343,9 @@ Url वर्तमान क्लिप में सहेजे जाएँ
   </data>
   <data name="wordWrapToolStripMenuItem.Text" xml:space="preserve">
     <value>वर्ड रेप</value>
+  </data>
+  <data name="textFormattingToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>219, 22</value>
   </data>
   <data name="toolStripMenuItemSearchWordsIndependently.Font" xml:space="preserve" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 9pt</value>
@@ -2598,5 +2646,8 @@ Url वर्तमान क्लिप में सहेजे जाएँ
   </data>
   <data name="saveAsFileMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+S</value>
+  </data>
+  <data name="mergeTextOfClipsToolStripMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Ctrl+Alt+J</value>
   </data>
 </root>

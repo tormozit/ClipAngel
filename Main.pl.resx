@@ -103,6 +103,9 @@ Podmenu "Lista" ma komendy dla szybkiego wyboru</value>
   <data name="changeClipTitleToolStripMenuItem.ToolTipText" xml:space="preserve">
     <value>Edytuje tytuł klipu</value>
   </data>
+  <data name="changeClipTitleToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>219, 22</value>
+  </data>
   <data name="toolStripWindowTitleCopyAll.Text" xml:space="preserve">
     <value>Kopiuj cały tekst</value>
   </data>
@@ -215,6 +218,9 @@ Adres Url zostanie zapisany w bieżącym klipie i zostanie skopiowany do schowka
   <data name="fileToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>37, 20</value>
   </data>
+  <data name="uploadImageToWebToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>219, 22</value>
+  </data>
   <data name="StripLabelVisualSize.AutoSize" xml:space="preserve" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
@@ -290,6 +296,9 @@ Adres Url zostanie zapisany w bieżącym klipie i zostanie skopiowany do schowka
   <data name="pasteAsTextToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>209, 22</value>
   </data>
+  <data name="textCompareToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>219, 22</value>
+  </data>
   <data name="textCompareToolStripMenuItem.Text" xml:space="preserve">
     <value>Porównanie tekstu</value>
   </data>
@@ -298,6 +307,9 @@ Adres Url zostanie zapisany w bieżącym klipie i zostanie skopiowany do schowka
   </data>
   <data name="showOnlyUsedToolStripMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+3</value>
+  </data>
+  <data name="toolStripMenuItemPasteChars.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>219, 22</value>
   </data>
   <data name="pictureBoxSource.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>16, 20</value>
@@ -405,6 +417,9 @@ Zmiany w pliku tymczasowym nie są synchronizowane z klipem!</value>
   </data>
   <data name="ImageControl.Anchor" xml:space="preserve" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="ignoreApplicationInCaptureToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>219, 22</value>
   </data>
   <data name="StripLabelSize.Text" xml:space="preserve">
     <value>Rozmiar</value>
@@ -1167,6 +1182,12 @@ Zmiany w pliku tymczasowym nie są synchronizowane z klipem!
   <data name="splitContainer1.Dock" xml:space="preserve" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
+  <data name="monospacedFontToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>219, 22</value>
+  </data>
+  <data name="editClipTextToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>219, 22</value>
+  </data>
   <data name="toolStripMenuItem16.ToolTipText" xml:space="preserve">
     <value>Zapisuje dane do pliku tymczasowego dla klipu tekstowego lub obrazu. 
 Otwiera plik klipu w domyślnej aplikacji. 
@@ -1214,6 +1235,9 @@ Zmiany w pliku tymczasowym nie są synchronizowane z klipem!</value>
   <data name="textBoxWindow.Text" xml:space="preserve">
     <value>Okno</value>
   </data>
+  <data name="openWithToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>219, 22</value>
+  </data>
   <data name="toolStripMenuItemMonitoringClipboard.Text" xml:space="preserve">
     <value>Monitorowanie schowka</value>
   </data>
@@ -1246,6 +1270,9 @@ Zmiany w pliku tymczasowym nie są synchronizowane z klipem!</value>
   </data>
   <data name="returnToPrevousSelectedClipToolStripMenuItem.ToolTipText" xml:space="preserve">
     <value>Czyści filtry i wybrany klip, który został wybrany przed zastosowaniem filtru ze zmianą wybranego klipu</value>
+  </data>
+  <data name="wordWrapToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>219, 22</value>
   </data>
   <data name="usedDataGridViewCheckBoxColumn.HeaderText" xml:space="preserve">
     <value>Używane</value>
@@ -1325,6 +1352,9 @@ Zmiany w pliku tymczasowym nie są synchronizowane z klipem!</value>
   <data name="statusStrip.Anchor" xml:space="preserve" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left, Right</value>
   </data>
+  <data name="setFavouriteToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>219, 22</value>
+  </data>
   <data name="StripLabelCreated.AutoSize" xml:space="preserve" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
@@ -1333,6 +1363,9 @@ Zmiany w pliku tymczasowym nie są synchronizowane z klipem!</value>
   </data>
   <data name="pictureBoxSource.ToolTip" xml:space="preserve">
     <value>Ikona aplikacji, z której został skopiowany klip</value>
+  </data>
+  <data name="resetFavouriteToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>219, 22</value>
   </data>
   <data name="toolStripButtonTopMostWindow.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>23, 22</value>
@@ -1352,6 +1385,9 @@ Podmenu "Listy" ma komendy dla szybkiego wyboru</value>
   </data>
   <data name="htmlMenuItemOpenLink.Text" xml:space="preserve">
     <value>Otwórz link (ALT + kliknięcie)</value>
+  </data>
+  <data name="toolStripMenuItem8.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>219, 22</value>
   </data>
   <data name="copyToClipboardToolStripMenuItem.ToolTipText" xml:space="preserve">
     <value>Kopiuje bieżący klip do schowka</value>
@@ -2035,6 +2071,9 @@ Podmenu "Listy" ma komendy dla szybkiego wyboru</value>
   <data name="favoriteDataGridViewCheckBoxColumn.Visible" xml:space="preserve" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
+  <data name="translateToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>219, 22</value>
+  </data>
   <data name="historyToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>178, 22</value>
   </data>
@@ -2097,6 +2136,9 @@ Podmenu "Listy" ma komendy dla szybkiego wyboru</value>
   </data>
   <data name="toolStripButtonFindNext.ImageTransparentColor" xml:space="preserve" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
+  </data>
+  <data name="toolStripMenuItem16.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>219, 22</value>
   </data>
   <data name="toolStripButtonTopMostWindow.ImageTransparentColor" xml:space="preserve" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
@@ -2260,6 +2302,9 @@ dodana do listy ignorowanych, która może być edytowana w oknie Ustawień.</va
   <data name="stripLabelPosition.TextAlign" xml:space="preserve" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleRight</value>
   </data>
+  <data name="mergeTextOfClipsToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>219, 22</value>
+  </data>
   <data name="toolStripBottom.RightToLeft" xml:space="preserve" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
     <value>Yes</value>
   </data>
@@ -2298,6 +2343,9 @@ dodana do listy ignorowanych, która może być edytowana w oknie Ustawień.</va
   </data>
   <data name="wordWrapToolStripMenuItem.Text" xml:space="preserve">
     <value>Zawijanie wierszy</value>
+  </data>
+  <data name="textFormattingToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>219, 22</value>
   </data>
   <data name="toolStripMenuItemSearchWordsIndependently.Font" xml:space="preserve" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 9pt</value>
@@ -2667,5 +2715,8 @@ Sortowanie jest przechowywane aż do przechwycenia klipu.</value>
   </data>
   <data name="saveAsFileMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+S</value>
+  </data>
+  <data name="mergeTextOfClipsToolStripMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Ctrl+Alt+J</value>
   </data>
 </root>
