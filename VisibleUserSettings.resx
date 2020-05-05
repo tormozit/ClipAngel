@@ -224,6 +224,12 @@ Leave blank to use standard database file "db.sqlite" in application user settin
   <data name="DelimiterForTextJoinDescription" xml:space="preserve">
     <value>Delimiter used for text join command. Use "\n" as end of line.</value>
   </data>
+  <data name="DontSendPaste" xml:space="preserve">
+    <value>Don't send paste to target window</value>
+  </data>
+  <data name="DontSendPasteDescription" xml:space="preserve">
+    <value>Don't send paste to target window in Paste commands. Just put data on clipboard.</value>
+  </data>
   <data name="EncryptDatabaseForCurrentUser" xml:space="preserve">
     <value>Encrypt database for current user</value>
   </data>

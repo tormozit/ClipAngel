@@ -126,6 +126,9 @@ Sous-menu "Liste" a des commandes pour une sélection rapide	</value>
   <data name="resetFavouriteToolStripMenuItem.ToolTipText" xml:space="preserve">
     <value>Retirer clips sélectionnés des favoris</value>
   </data>
+  <data name="rtfMenuItemOpenLink.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>205, 22</value>
+  </data>
   <data name="statusStrip.AutoSize" xml:space="preserve" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
@@ -384,6 +387,9 @@ Les modifications au fichier temporaire ne sont pas synchronisées avec le clip!
   <data name="toolStripMenuItem16.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+F4</value>
   </data>
+  <data name="contextMenuStripHtml.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>209, 164</value>
+  </data>
   <data name="showInTaskbarToolStripMenuItem.Text" xml:space="preserve">
     <value>Voir dans barre des tâches</value>
   </data>
@@ -460,6 +466,9 @@ Les modifications apportées au fichier temporaire ne sont pas synchronisées av
   <data name="fToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>44, 20</value>
   </data>
+  <data name="toolStripUrlCopyAll.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>187, 22</value>
+  </data>
   <data name="toolStripButtonClearFilterAndSelectTop.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>23, 22</value>
   </data>
@@ -530,6 +539,9 @@ Les modifications du fichier temporaire ne sont pas synchronisées!</value>
   </data>
   <data name="toolStripUrlCopyAll.Text" xml:space="preserve">
     <value>Copier tout le texte</value>
+  </data>
+  <data name="copyToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>205, 22</value>
   </data>
   <data name="TypeFilter.Items" xml:space="preserve">
     <value>tout</value>
@@ -1789,6 +1801,9 @@ Lorsque ON et "Fenêtre rapide ouverte" OFF, la fenêtre sera affichée dans la 
   <data name="toolStripMenuItem8.ToolTipText" xml:space="preserve">
     <value>Supprimer les clips sélectionnés non favoris de la liste. La suppression est effectuée lors de la fermeture de la base de données.	</value>
   </data>
+  <data name="contextMenuStripRtf.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>206, 120</value>
+  </data>
   <data name="textBoxWindow.Text" xml:space="preserve">
     <value>Fenêtre</value>
   </data>
@@ -1800,6 +1815,9 @@ Lorsque ON et "Fenêtre rapide ouverte" OFF, la fenêtre sera affichée dans la 
   </data>
   <data name="сдуфкClipboardToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>212, 22</value>
+  </data>
+  <data name="contextMenuUrl.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>188, 48</value>
   </data>
   <data name="toolStripUpdateToSeparator.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>6, 25</value>
@@ -2183,6 +2201,9 @@ Le sous-menu "Liste" comporte des commandes pour une sélection rapide</value>
   <data name="ImageControl.ImeMode" xml:space="preserve" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
+  <data name="toolStripMenuItem6.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>205, 22</value>
+  </data>
   <data name="statusStrip.Anchor" xml:space="preserve" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left, Right</value>
   </data>
@@ -2464,6 +2485,9 @@ Ajouté à la liste ignorée, qui peut être éditée dans la fenêtre Paramètr
   <metadata name="clipsTableAdapter.TrayLocation" xml:space="preserve" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>946, 26</value>
   </metadata>
+  <data name="contextMenuUrlOpenLink.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>187, 22</value>
+  </data>
   <data name="contextMenuUrlOpenLink.Text" xml:space="preserve">
     <value>Ouvrir le lien (ALT+click)</value>
   </data>
@@ -2733,5 +2757,14 @@ Le tri est conservé jusqu'à la capture du clip.</value>
   </data>
   <data name="mergeTextOfClipsToolStripMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+Alt+J</value>
+  </data>
+  <data name="toolStripMenuItem25.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Ctrl+P</value>
+  </data>
+  <data name="pasteSpecialToolStripMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Ctrl+P</value>
+  </data>
+  <data name="$this.ImeMode" xml:space="preserve" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
 </root>

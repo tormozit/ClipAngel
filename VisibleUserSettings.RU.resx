@@ -226,6 +226,12 @@
   <data name="DelimiterForTextJoinDescription" xml:space="preserve">
     <value>Разделитель, используемый в команде соединения текстов. Используйте "\n" для обозначения конца строки.</value>
   </data>
+  <data name="DontSendPaste" xml:space="preserve">
+    <value>Не отправлять вставку в целевое окно</value>
+  </data>
+  <data name="DontSendPasteDescription" xml:space="preserve">
+    <value>Не отправлять вставку в целевое окно в командах Вставить. Только помещать данные в буфер обмена.</value>
+  </data>
   <data name="EncryptDatabaseForCurrentUser" xml:space="preserve">
     <value>Шифровать базу данных для текущего пользователя</value>
   </data>

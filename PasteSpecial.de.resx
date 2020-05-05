@@ -90,9 +90,6 @@
   <data name="buttonOK.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
   </data>
-  <data name="textBoxNumberOfSpacesInTab.Text" xml:space="preserve">
-    <value>4</value>
-  </data>
   <data name="$this.StartPosition" xml:space="preserve" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterParent</value>
   </data>
@@ -291,5 +288,32 @@ Nachlaufende nicht druckbare Symbole werden gelöscht.</value>
   </data>
   <data name="FromCamelCase.ToolTip" xml:space="preserve">
     <value>Trennt Wörter durch Großbuchstaben auf und ersetzt sie durch Kleinbuchstaben.</value>
+  </data>
+  <data name="AllUpperCase.ImeMode" xml:space="preserve" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="AllLowerCase.ImeMode" xml:space="preserve" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="SentenceCase.ImeMode" xml:space="preserve" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="CaseNoChange.ImeMode" xml:space="preserve" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label1.ImeMode" xml:space="preserve" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="checkBoxReplaceTabWithSpaces.ImeMode" xml:space="preserve" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ReplaceEOL.ImeMode" xml:space="preserve" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="checkBoxPasteIntoNewClip.ImeMode" xml:space="preserve" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="NormalizeFreeSpace.ImeMode" xml:space="preserve" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
 </root>

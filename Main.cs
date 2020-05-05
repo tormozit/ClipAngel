@@ -25,6 +25,7 @@ using AngleSharp.Dom;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.Remoting.Channels;
+using System.Web;
 using System.Xml;
 using System.Xml.Linq;
 using WindowsInput.Native;
@@ -560,17 +561,15 @@ namespace ClipAngel
             uint dwEventThread, uint dwmsEventTime)
         {
             // http://stackoverflow.com/a/10280800/4085971
-            int targetProcessId = UpdateLastActiveParentWindow(hwnd);
+            UpdateLastActiveParentWindow(hwnd);
         }
 
-        private int UpdateLastActiveParentWindow(IntPtr hwnd)
+        private void UpdateLastActiveParentWindow(IntPtr hwnd)
         {
             if (hwnd == IntPtr.Zero)
                 hwnd = GetForegroundWindow();
-
-            int targetProcessId;
-            uint remoteThreadId = GetWindowThreadProcessId(hwnd, out targetProcessId);
-            if (targetProcessId != Process.GetCurrentProcess().Id && lastActiveParentWindow != hwnd)
+            bool targetIsCurrentProcess = DoActiveWindowBelongsToCurrentProcess(hwnd);
+            if (!targetIsCurrentProcess && lastActiveParentWindow != hwnd)
             {
                 //preLastActiveParentWindow = lastActiveParentWindow; // In case with Explorer tray click it will not help
                 lastActiveParentWindow = hwnd;
@@ -580,7 +579,16 @@ namespace ClipAngel
                 //lastWindowSelectedText = null;
                 UpdateWindowTitle();
             }
-            return targetProcessId;
+        }
+
+        private static bool DoActiveWindowBelongsToCurrentProcess(IntPtr hwnd)
+        {
+            if (hwnd == IntPtr.Zero)
+                hwnd = GetForegroundWindow();
+            int targetProcessId;
+            uint remoteThreadId = GetWindowThreadProcessId(hwnd, out targetProcessId);
+            bool targetIsCurrentProcess = targetProcessId == Process.GetCurrentProcess().Id;
+            return targetIsCurrentProcess;
         }
 
         private class MyToolStripRenderer : ToolStripProfessionalRenderer
@@ -3118,6 +3126,7 @@ namespace ClipAngel
             return "";
         }
 
+        // Return - bool - true if failed
         private bool SendPaste(PasteMethod pasteMethod = PasteMethod.Standard)
         {
             int targetProcessId;
@@ -3172,9 +3181,14 @@ namespace ClipAngel
             else
             {
                 ActivateTargetWindow();
+                bool targetIsCurrentProcess = DoActiveWindowBelongsToCurrentProcess(IntPtr.Zero);
+                if (targetIsCurrentProcess)
+                    return true;
             }
             if (pasteMethod != PasteMethod.SendChars)
             {
+                if (Properties.Settings.Default.DontSendPaste)
+                    return false;
                 if (!needElevation)
                     Paster.SendPaste();
                 else
@@ -3775,7 +3789,7 @@ namespace ClipAngel
                 if (IsVisible())
                     this.Close();
                 else
-                    ShowForPaste();
+                    ShowForPaste(false, false, true);
             }
         }
 
@@ -3833,7 +3847,7 @@ namespace ClipAngel
         [return: MarshalAs(UnmanagedType.Bool)]
         internal static extern bool MoveWindow(IntPtr hwnd, int X, int Y, int nWidth, int nHeight, bool bRepaint);
 
-        private void ShowForPaste(bool onlyFavorites = false, bool clearFiltersAndGoToTop = false)
+        private void ShowForPaste(bool onlyFavorites = false, bool clearFiltersAndGoToTop = false, bool safeOpen = false)
         {
             foreach (Form form in Application.OpenForms)
             {
@@ -3855,17 +3869,17 @@ namespace ClipAngel
             //Stopwatch sw = new Stopwatch();
             //sw.Start();
             //this.SuspendLayout();
+            int newX = -12345;
+            int newY = -12345;
             if (this.Visible && this.ContainsFocus)
             {
-                RestoreWindowIfMinimized();
+                RestoreWindowIfMinimized(newX, newY, safeOpen);
                 return;
             }
             // https://www.codeproject.com/Articles/34520/Getting-Caret-Position-Inside-Any-Application
             // http://stackoverflow.com/questions/31055249/is-it-possible-to-get-caret-position-in-word-to-update-faster
             UpdateLastActiveParentWindow(IntPtr.Zero); // sometimes lastActiveParentWindow is not equal GetForegroundWindow()
             IntPtr hWindow = lastActiveParentWindow;
-            int newX = -12345;
-            int newY = -12345;
             if (hWindow != IntPtr.Zero)
             {
                 Point caretPoint;
@@ -3912,8 +3926,8 @@ namespace ClipAngel
             }
             //sw.Stop();
             //Debug.WriteLine("autoposition duration" + sw.ElapsedMilliseconds.ToString());
-            RestoreWindowIfMinimized(newX, newY);
-            if (!ClipAngel.Properties.Settings.Default.FastWindowOpen)
+            RestoreWindowIfMinimized(newX, newY, safeOpen);
+            if (!ClipAngel.Properties.Settings.Default.FastWindowOpen || safeOpen)
             {
                 this.Activate();
                 this.Show();
@@ -3938,7 +3952,7 @@ namespace ClipAngel
             return guiInfo;
         }
 
-        private void RestoreWindowIfMinimized(int newX = -12345, int newY = -12345)
+        private void RestoreWindowIfMinimized(int newX = -12345, int newY = -12345, bool safeOpen = false)
         {
             this.FormBorderStyle = FormBorderStyle.Sizable;
             if (!allowVisible)
@@ -3962,7 +3976,7 @@ namespace ClipAngel
                 else
                     newY = this.RestoreBounds.Y;
             }
-            if (ClipAngel.Properties.Settings.Default.FastWindowOpen)
+            if (!safeOpen && ClipAngel.Properties.Settings.Default.FastWindowOpen)
             {
                 if (newY <= maxWindowCoordForHiddenState)
                     newY = factualTop;
@@ -7008,6 +7022,7 @@ namespace ClipAngel
 
         private void mergeTextOfClipsToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            UpdateSelectedClipsHistory();
             int count = 0;
             string agregateTextToPaste = JoinOrPasteTextOfClips(PasteMethod.Null, out count);
             AddClip(null, null, "", "", "text", agregateTextToPaste);
@@ -7295,7 +7310,7 @@ namespace ClipAngel
 
         private void openWindowToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ShowForPaste(false, false);
+            ShowForPaste(false, false, true);
         }
 
         private void pasteLineToolStripMenuItem_Click(object sender, EventArgs e)
@@ -7453,6 +7468,20 @@ namespace ClipAngel
         private void tableLayoutPanelData_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void notifyIcon_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+
+        }
+
+        private void decodeTextToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            UpdateSelectedClipsHistory();
+            string selectedText = getSelectedOrAllText();
+            selectedText = HttpUtility.UrlDecode(selectedText);
+            AddClip(null, null, "", "", "text", selectedText);
+            GotoLastRow(true);
         }
     }
 }

@@ -124,6 +124,9 @@
   <data name="textBoxWindow.Location" xml:space="preserve" type="System.Drawing.Point, System.Drawing">
     <value>22, 3</value>
   </data>
+  <data name="rtfMenuItemOpenLink.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>205, 22</value>
+  </data>
   <data name="statusStrip.AutoSize" xml:space="preserve" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
@@ -385,6 +388,9 @@ Url 将被保存在当前剪辑和将被复制到剪贴板。</value>
   <data name="toolStripMenuItem16.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+F4</value>
   </data>
+  <data name="contextMenuStripHtml.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>209, 164</value>
+  </data>
   <data name="showInTaskbarToolStripMenuItem.Text" xml:space="preserve">
     <value>在任务栏中显示</value>
   </data>
@@ -464,6 +470,9 @@ Url 将被保存在当前剪辑和将被复制到剪贴板。</value>
   <data name="fToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>44, 20</value>
   </data>
+  <data name="toolStripUrlCopyAll.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>187, 22</value>
+  </data>
   <data name="toolStripButtonClearFilterAndSelectTop.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>23, 22</value>
   </data>
@@ -532,6 +541,9 @@ Url 将被保存在当前剪辑和将被复制到剪贴板。</value>
   </data>
   <data name="urlTextBox.Margin" xml:space="preserve" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
+  </data>
+  <data name="copyToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>205, 22</value>
   </data>
   <data name="TypeFilter.Items" xml:space="preserve">
     <value>全部</value>
@@ -1232,6 +1244,9 @@ Url 将被保存在当前剪辑和将被复制到剪贴板。</value>
   <data name="changeClipTitleToolStripMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>F2</value>
   </data>
+  <data name="contextMenuStripRtf.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>206, 120</value>
+  </data>
   <data name="textBoxWindow.Text" xml:space="preserve">
     <value>窗口</value>
   </data>
@@ -1243,6 +1258,9 @@ Url 将被保存在当前剪辑和将被复制到剪贴板。</value>
   </data>
   <data name="сдуфкClipboardToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>212, 22</value>
+  </data>
+  <data name="contextMenuUrl.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>188, 48</value>
   </data>
   <data name="charsDataGridViewTextBoxColumn.Visible" xml:space="preserve" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -2152,6 +2170,9 @@ Url 将被保存在当前剪辑和将被复制到剪贴板。</value>
   <data name="toolStripSearchOptions.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>29, 22</value>
   </data>
+  <data name="toolStripMenuItem6.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>205, 22</value>
+  </data>
   <data name="listToolStripMenuItem.Text" xml:space="preserve">
     <value>列表</value>
   </data>
@@ -2452,6 +2473,9 @@ Url 将被保存在当前剪辑和将被复制到剪贴板。</value>
   <metadata name="clipsTableAdapter.TrayLocation" xml:space="preserve" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>946, 26</value>
   </metadata>
+  <data name="contextMenuUrlOpenLink.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>187, 22</value>
+  </data>
   <data name="monthCalendar1.Location" xml:space="preserve" type="System.Drawing.Point, System.Drawing">
     <value>3, 3</value>
   </data>
@@ -2649,5 +2673,14 @@ Url 将被保存在当前剪辑和将被复制到剪贴板。</value>
   </data>
   <data name="mergeTextOfClipsToolStripMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+Alt+J</value>
+  </data>
+  <data name="toolStripMenuItem25.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Ctrl+P</value>
+  </data>
+  <data name="pasteSpecialToolStripMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Ctrl+P</value>
+  </data>
+  <data name="$this.ImeMode" xml:space="preserve" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
 </root>

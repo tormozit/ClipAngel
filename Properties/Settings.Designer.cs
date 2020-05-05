@@ -824,5 +824,101 @@ namespace ClipAngel.Properties {
                 this["DelimiterForTextJoin"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool ReplaceEOFWithSpace {
+            get {
+                return ((bool)(this["ReplaceEOFWithSpace"]));
+            }
+            set {
+                this["ReplaceEOFWithSpace"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool ReplaceTABWithSpaces {
+            get {
+                return ((bool)(this["ReplaceTABWithSpaces"]));
+            }
+            set {
+                this["ReplaceTABWithSpaces"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool NormalizeNonPrintable {
+            get {
+                return ((bool)(this["NormalizeNonPrintable"]));
+            }
+            set {
+                this["NormalizeNonPrintable"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool NormalizeEOF {
+            get {
+                return ((bool)(this["NormalizeEOF"]));
+            }
+            set {
+                this["NormalizeEOF"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool PasteIntoNewClip {
+            get {
+                return ((bool)(this["PasteIntoNewClip"]));
+            }
+            set {
+                this["PasteIntoNewClip"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public decimal CaseConversionMode {
+            get {
+                return ((decimal)(this["CaseConversionMode"]));
+            }
+            set {
+                this["CaseConversionMode"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("4")]
+        public string NumberOfSpacesInTab {
+            get {
+                return ((string)(this["NumberOfSpacesInTab"]));
+            }
+            set {
+                this["NumberOfSpacesInTab"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool DontSendPaste {
+            get {
+                return ((bool)(this["DontSendPaste"]));
+            }
+            set {
+                this["DontSendPaste"] = value;
+            }
+        }
     }
 }

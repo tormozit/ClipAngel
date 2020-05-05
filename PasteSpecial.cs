@@ -91,6 +91,13 @@ namespace ClipAngel
 
         private void SpecialPaste_Load(object sender, EventArgs e)
         {
+            CaseNoChange.Checked = Properties.Settings.Default.CaseConversionMode == 0;
+            AllUpperCase.Checked = Properties.Settings.Default.CaseConversionMode == 1;
+            AllLowerCase.Checked = Properties.Settings.Default.CaseConversionMode == 2;
+            SentenceCase.Checked = Properties.Settings.Default.CaseConversionMode == 3;
+            UpperCamelCase.Checked = Properties.Settings.Default.CaseConversionMode == 4;
+            LowerCamelCase.Checked = Properties.Settings.Default.CaseConversionMode == 5;
+            FromCamelCase.Checked = Properties.Settings.Default.CaseConversionMode == 6;
             UpdatePreview();
         }
 
@@ -132,6 +139,20 @@ namespace ClipAngel
         private void buttonOK_Click(object sender, EventArgs e)
         {
             PasteIntoNewClip = checkBoxPasteIntoNewClip.Checked;
+            if (CaseNoChange.Checked)
+                Properties.Settings.Default.CaseConversionMode = 0;
+            if (AllUpperCase.Checked)
+                Properties.Settings.Default.CaseConversionMode = 1;
+            if (AllLowerCase.Checked)
+                Properties.Settings.Default.CaseConversionMode = 2;
+            if (SentenceCase.Checked)
+                Properties.Settings.Default.CaseConversionMode = 3;
+            if (UpperCamelCase.Checked)
+                Properties.Settings.Default.CaseConversionMode = 4;
+            if (LowerCamelCase.Checked)
+                Properties.Settings.Default.CaseConversionMode = 5;
+            if (FromCamelCase.Checked)
+                Properties.Settings.Default.CaseConversionMode = 6;
         }
 
         private void checkBoxReplaceTabWithSpaces_CheckedChanged(object sender, EventArgs e)
