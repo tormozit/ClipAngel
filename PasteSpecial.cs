@@ -83,7 +83,8 @@ namespace ClipAngel
             if (NormalizeEndOfLines.Checked)
             {
                 text = text.Trim();
-                text = Regex.Replace(text, @"[\n\r]+", Environment.NewLine);
+                text = Regex.Replace(text, @"^\s*[\n\r]+", "");
+                text = Regex.Replace(text, @"[\n\r]+\s*[\n\r]+", Environment.NewLine);
             }
             richTextBox1.Text = text;
             ResultText = text;

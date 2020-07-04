@@ -12,6 +12,7 @@ using System.Resources;
 using Microsoft.Win32.SafeHandles;
 using System.Security.Permissions;
 using System.Text;
+using System.IO;
 
 namespace ClipAngel
 {
@@ -89,7 +90,8 @@ namespace ClipAngel
                 {
                     string UserSettingsPath = "";
                     bool PortableMode = false;
-                    PortableMode = args.Contains("/p") || args.Contains("/portable");
+                    string portableFlagFileName = Path.GetDirectoryName(Application.ExecutablePath) + "\\PortableMode.txt";
+                    PortableMode = args.Contains("/p") || args.Contains("/portable") || File.Exists(portableFlagFileName);
                     // http://stackoverflow.com/questions/1382617/how-to-make-designer-generated-net-application-settings-portable/2579399#2579399
                     UserSettingsPath = MakePortable(Properties.Settings.Default, PortableMode);
                     Application.EnableVisualStyles();

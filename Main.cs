@@ -5894,6 +5894,8 @@ namespace ClipAngel
                 int oldID = (int)selectedDataRow["ID"];
                 if (shiftType != 0)
                 {
+                    if (selectedRowIndex + shiftType < 0 || selectedRowIndex + shiftType > clipBindingSource.Count - 1)
+                        continue;
                     DataRow exchangeDataRow = ((DataRowView)clipBindingSource[selectedRowIndex + shiftType]).Row;
                     newID = (int)exchangeDataRow["ID"];
                 }
@@ -7479,8 +7481,10 @@ namespace ClipAngel
         {
             UpdateSelectedClipsHistory();
             string selectedText = getSelectedOrAllText();
-            selectedText = HttpUtility.UrlDecode(selectedText);
-            AddClip(null, null, "", "", "text", selectedText);
+            string newSelectedText = HttpUtility.UrlDecode(selectedText);
+            if (newSelectedText.Equals(selectedText))
+                return;
+            AddClip(null, null, "", "", "text", newSelectedText);
             GotoLastRow(true);
         }
     }

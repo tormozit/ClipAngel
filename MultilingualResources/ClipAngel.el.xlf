@@ -476,8 +476,8 @@
           <target state="new">Clip was not captured due to clipboard read error</target>
         </trans-unit>
         <trans-unit id="VersionValue" translate="yes" xml:space="preserve">
-          <source>1.89</source>
-          <target state="new">1.89</target>
+          <source>1.90</source>
+          <target state="new">1.90</target>
         </trans-unit>
         <trans-unit id="TargetWindow" translate="yes" xml:space="preserve">
           <source>Target window</source>
@@ -2111,9 +2111,8 @@ Generation of image consumes CPU. If you experience high CPU load, set lower val
           <target state="new">Move to top after use</target>
         </trans-unit>
         <trans-unit id="toolStripMenuItem13.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
-          <source>234, 6</source>
-          <target state="new">234, 6</target>
-          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
+          <source>250, 6</source>
+          <target state="needs-review-translation">250, 6</target>
         </trans-unit>
         <trans-unit id="statusStrip.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
           <source>416, 22</source>
@@ -2144,9 +2143,8 @@ Changes in temp file are not synchronized with clip!</target>
           <target state="new">Autoselect first match </target>
         </trans-unit>
         <trans-unit id="showAllTypesToolStripMenuItem.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
-          <source>237, 22</source>
-          <target state="new">237, 22</target>
-          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
+          <source>253, 22</source>
+          <target state="needs-review-translation">253, 22</target>
         </trans-unit>
         <trans-unit id="toolStripMenuItem10.ToolTipText" translate="yes" xml:space="preserve">
           <source>Compare text of selected 2 clips or current clip with previously selected clip by this command</source>
@@ -2202,9 +2200,8 @@ Changes in temp file are not synchronized with clip!</target>
           <target state="needs-review-translation" state-qualifier="tm-suggestion">Τύπος</target>
         </trans-unit>
         <trans-unit id="showAllMarksToolStripMenuItem.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
-          <source>237, 22</source>
-          <target state="new">237, 22</target>
-          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
+          <source>253, 22</source>
+          <target state="needs-review-translation">253, 22</target>
         </trans-unit>
         <trans-unit id="deleteAllNonFavoriteToolStripMenuItem.ToolTipText" translate="yes" xml:space="preserve">
           <source>Delete all non favorite clips from list. Real deletion is performed on database close.</source>
@@ -2322,9 +2319,8 @@ Submenu "List" has commands for quick selection</target>
           <target state="needs-review-translation">Bottom, Right</target>
         </trans-unit>
         <trans-unit id="returnToPrevousSelectedClipToolStripMenuItem.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
-          <source>237, 22</source>
-          <target state="new">237, 22</target>
-          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
+          <source>253, 22</source>
+          <target state="needs-review-translation">253, 22</target>
         </trans-unit>
         <trans-unit id="moveCopiedClipToTopToolStripButton.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
           <source>23, 22</source>
@@ -2343,9 +2339,8 @@ Submenu "List" has commands for quick selection</target>
           <target state="needs-review-translation">Del</target>
         </trans-unit>
         <trans-unit id="moveDownToolStripMenuItem.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
-          <source>237, 22</source>
-          <target state="new">237, 22</target>
-          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
+          <source>253, 22</source>
+          <target state="needs-review-translation">253, 22</target>
         </trans-unit>
         <trans-unit id="moveDownToolStripMenuItem.ToolTipText" translate="yes" xml:space="preserve">
           <source>Move selected clips one step down</source>
@@ -2439,9 +2434,8 @@ Url will be saved in current clip and will be copied to clipboard.</target>
           <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="showOnlyFilesToolStripMenuItem.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
-          <source>237, 22</source>
-          <target state="new">237, 22</target>
-          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
+          <source>253, 22</source>
+          <target state="needs-review-translation">253, 22</target>
         </trans-unit>
         <trans-unit id="StripLabelVisualSize.AutoSize" translate="yes" extype="System.Boolean, mscorlib" xml:space="preserve">
           <source>False</source>
@@ -2517,9 +2511,8 @@ Url will be saved in current clip and will be copied to clipboard.</target>
           <target state="needs-review-translation" state-qualifier="tm-suggestion">Επεξεργασία κείμενου</target>
         </trans-unit>
         <trans-unit id="deleteAllNonFavoriteToolStripMenuItem.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
-          <source>237, 22</source>
-          <target state="new">237, 22</target>
-          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
+          <source>253, 22</source>
+          <target state="needs-review-translation">253, 22</target>
         </trans-unit>
         <trans-unit id="MarkFilter.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
           <source>12</source>
@@ -2865,9 +2858,8 @@ Changes in temp file are not synchronized with clip!</target>
           <target state="needs-review-translation" state-qualifier="tm-suggestion">Μετακίνηση επάνω</target>
         </trans-unit>
         <trans-unit id="showOnlyFavoriteToolStripMenuItem.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
-          <source>237, 22</source>
-          <target state="new">237, 22</target>
-          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
+          <source>253, 22</source>
+          <target state="needs-review-translation">253, 22</target>
         </trans-unit>
         <trans-unit id="toolStripButtonOpenWith.ToolTipText" translate="yes" xml:space="preserve">
           <source>Save data to temp file for text or image clip.
@@ -2949,9 +2941,8 @@ Changes in temp file are not synchronized with clip!
           <target state="new">Paste in active window selected clips. Also performed by double click.</target>
         </trans-unit>
         <trans-unit id="moveUpToolStripMenuItem.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
-          <source>237, 22</source>
-          <target state="new">237, 22</target>
-          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
+          <source>253, 22</source>
+          <target state="needs-review-translation">253, 22</target>
         </trans-unit>
         <trans-unit id="showOnlyFilesToolStripMenuItem.Text" translate="yes" xml:space="preserve">
           <source>Show only files</source>
@@ -5303,9 +5294,8 @@ When ON and "Fast window open" OFF, window will be shown in taskbar if visible.
           <target state="needs-review-translation">212, 22</target>
         </trans-unit>
         <trans-unit id="toolStripMenuItem5.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
-          <source>234, 6</source>
-          <target state="new">234, 6</target>
-          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
+          <source>250, 6</source>
+          <target state="needs-review-translation">250, 6</target>
         </trans-unit>
         <trans-unit id="StripLabelType.TextAlign" translate="yes" extype="System.Drawing.ContentAlignment, System.Drawing" xml:space="preserve">
           <source>MiddleRight</source>
@@ -5316,9 +5306,8 @@ When ON and "Fast window open" OFF, window will be shown in taskbar if visible.
           <target state="needs-review-translation" state-qualifier="tm-suggestion">Αναγνωριστικό</target>
         </trans-unit>
         <trans-unit id="moveTopToolStripMenuItem.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
-          <source>237, 22</source>
-          <target state="new">237, 22</target>
-          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
+          <source>253, 22</source>
+          <target state="needs-review-translation">253, 22</target>
         </trans-unit>
         <trans-unit id="showAllTypesToolStripMenuItem.ShortcutKeys" translate="yes" extype="System.Windows.Forms.Keys, System.Windows.Forms" xml:space="preserve">
           <source>Alt+1</source>
@@ -5415,9 +5404,8 @@ When ON and "Fast window open" OFF, window will be shown in taskbar if visible.
           <target state="needs-review-translation">0</target>
         </trans-unit>
         <trans-unit id="showOnlyUsedToolStripMenuItem.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
-          <source>237, 22</source>
-          <target state="new">237, 22</target>
-          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
+          <source>253, 22</source>
+          <target state="needs-review-translation">253, 22</target>
         </trans-unit>
         <trans-unit id="splitContainer1.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
           <source>3</source>
@@ -5458,16 +5446,15 @@ When ON and "Fast window open" OFF, window will be shown in taskbar if visible.
           <target state="needs-review-translation">790, 420</target>
         </trans-unit>
         <trans-unit id="toolStripMenuItemClearFilters.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
-          <source>237, 22</source>
-          <target state="new">237, 22</target>
-          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
+          <source>253, 22</source>
+          <target state="needs-review-translation">253, 22</target>
         </trans-unit>
         <trans-unit id="SizeDataGridViewTextBoxColumn.Visible" translate="yes" extype="System.Boolean, mscorlib" xml:space="preserve">
           <source>False</source>
           <target state="needs-review-translation">False</target>
         </trans-unit>
         <trans-unit id="contextMenuStripDataGrid.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
-          <source>222, 290</source>
+          <source>222, 268</source>
           <target state="needs-review-translation">222, 290</target>
           <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
@@ -5570,9 +5557,8 @@ When ON and "Fast window open" OFF, window will be shown in taskbar if visible.
           <target state="needs-review-translation">1</target>
         </trans-unit>
         <trans-unit id="showOnlyImagesToolStripMenuItem.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
-          <source>237, 22</source>
-          <target state="new">237, 22</target>
-          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
+          <source>253, 22</source>
+          <target state="needs-review-translation">253, 22</target>
         </trans-unit>
         <trans-unit id="setFavouriteToolStripMenuItem.ShortcutKeys" translate="yes" extype="System.Windows.Forms.Keys, System.Windows.Forms" xml:space="preserve">
           <source>Alt+Q</source>
@@ -5690,8 +5676,9 @@ Submenu "List" has commands for quick selection</target>
           <target state="new">Mark selected clips as favorite</target>
         </trans-unit>
         <trans-unit id="richTextBox.Text" translate="yes" xml:space="preserve">
-          <source></source>
+          <source> </source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion"></target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="toolStripMenuItemClearFilterAndSelectTop.ShortcutKeys" translate="yes" extype="System.Windows.Forms.Keys, System.Windows.Forms" xml:space="preserve">
           <source>F9</source>
@@ -5734,9 +5721,8 @@ Submenu "List" has commands for quick selection</target>
           <target state="needs-review-translation">23, 22</target>
         </trans-unit>
         <trans-unit id="showOnlyTextsToolStripMenuItem.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
-          <source>237, 22</source>
-          <target state="new">237, 22</target>
-          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
+          <source>253, 22</source>
+          <target state="needs-review-translation">253, 22</target>
         </trans-unit>
         <trans-unit id="statusStrip.Dock" translate="yes" extype="System.Windows.Forms.DockStyle, System.Windows.Forms" xml:space="preserve">
           <source>None</source>
@@ -5801,8 +5787,9 @@ Submenu "List" has commands for quick selection</target>
           <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="urlTextBox.Text" translate="yes" xml:space="preserve">
-          <source></source>
+          <source> </source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion"></target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="toolStripMenuItemMonitoringClipboard.ToolTipText" translate="yes" xml:space="preserve">
           <source>Capture changes in clipboard</source>
@@ -6040,9 +6027,8 @@ Submenu "List" has commands for quick selection</target>
           <target state="new">Monitoring clipboard</target>
         </trans-unit>
         <trans-unit id="toolStripMenuItem17.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
-          <source>234, 6</source>
-          <target state="new">234, 6</target>
-          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
+          <source>250, 6</source>
+          <target state="needs-review-translation">250, 6</target>
         </trans-unit>
         <trans-unit id="StripLabelVisualSize.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
           <source>70, 17</source>
@@ -6216,9 +6202,8 @@ added to ignore list, wich can be edited in Settings window.</target>
           <target state="needs-review-translation">Yes</target>
         </trans-unit>
         <trans-unit id="toolStripMenuItemClearFilterAndSelectTop.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
-          <source>237, 22</source>
-          <target state="new">237, 22</target>
-          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
+          <source>253, 22</source>
+          <target state="needs-review-translation">253, 22</target>
         </trans-unit>
         <trans-unit id="toolStripMenuItemSwitchFocus.Text" translate="yes" xml:space="preserve">
           <source>Switch focus list/text</source>
@@ -6253,9 +6238,8 @@ added to ignore list, wich can be edited in Settings window.</target>
           <target state="needs-review-translation" state-qualifier="tm-suggestion">&amp;Διάκριση πεζών-κεφαλαίων</target>
         </trans-unit>
         <trans-unit id="moveCopiedClipToTopToolStripMenuItem.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
-          <source>237, 22</source>
-          <target state="new">237, 22</target>
-          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
+          <source>253, 22</source>
+          <target state="needs-review-translation">253, 22</target>
         </trans-unit>
         <trans-unit id="helpToolStripMenuItem.Text" translate="yes" xml:space="preserve">
           <source>Help</source>
@@ -6470,9 +6454,8 @@ added to ignore list, wich can be edited in Settings window.</target>
           <target state="new">Paste in active window selected clips as files </target>
         </trans-unit>
         <trans-unit id="filterByDateToolStripMenuItem.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
-          <source>237, 22</source>
-          <target state="new">237, 22</target>
-          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
+          <source>253, 22</source>
+          <target state="needs-review-translation">253, 22</target>
         </trans-unit>
         <trans-unit id="filterByDateToolStripMenuItem.Text" translate="yes" xml:space="preserve">
           <source>Filter by date</source>
@@ -6539,8 +6522,9 @@ added to ignore list, wich can be edited in Settings window.</target>
           <target state="new">Move to top after use</target>
         </trans-unit>
         <trans-unit id="toolStripMenuItem19.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
-          <source>234, 6</source>
+          <source>250, 6</source>
           <target state="needs-review-translation">234, 6</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="sortByDefaultToolStripMenuItem.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
           <source>183, 22</source>
@@ -6582,8 +6566,9 @@ Sorting is kept until clip capture.</source>
 Sorting is kept until clip capture.</target>
         </trans-unit>
         <trans-unit id="sortingToolStripMenuItem.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
-          <source>237, 22</source>
+          <source>253, 22</source>
           <target state="needs-review-translation">237, 22</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="sortingToolStripMenuItem.Text" translate="yes" xml:space="preserve">
           <source>Sort</source>
@@ -6604,16 +6589,18 @@ Sorting is kept until clip capture.</source>
 Sorting is kept until clip capture.</target>
         </trans-unit>
         <trans-unit id="toolStripMenuItemSecondaryColumns.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
-          <source>237, 22</source>
+          <source>253, 22</source>
           <target state="needs-review-translation">237, 22</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="toolStripMenuItemSecondaryColumns.Text" translate="yes" xml:space="preserve">
           <source>Secondary columns</source>
           <target state="new">Secondary columns</target>
         </trans-unit>
         <trans-unit id="toolStripMenuItem22.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
-          <source>234, 6</source>
+          <source>250, 6</source>
           <target state="needs-review-translation">234, 6</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="toolStripButtonReturnToPrevous.Visible" translate="yes" extype="System.Boolean, mscorlib" xml:space="preserve">
           <source>False</source>
@@ -6827,8 +6814,9 @@ Sorting is kept until clip capture.</target>
           <target state="new">Paste</target>
         </trans-unit>
         <trans-unit id="gotoTopToolStripMenuItem.Size" translate="yes" xml:space="preserve" extype="System.Drawing.Size, System.Drawing">
-          <source>237, 22</source>
+          <source>253, 22</source>
           <target state="needs-review-translation">237, 22</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="gotoTopToolStripMenuItem.Text" translate="yes" xml:space="preserve">
           <source>Select top                 Ctrl+Home</source>
@@ -6877,8 +6865,9 @@ Edit search string right from list. Navigate in list right from search field.</t
           <target state="needs-review-translation">Alt+Down</target>
         </trans-unit>
         <trans-unit id="NextMatchListMenuItem.Size" translate="yes" xml:space="preserve" extype="System.Drawing.Size, System.Drawing">
-          <source>237, 22</source>
+          <source>253, 22</source>
           <target state="needs-review-translation">237, 22</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="NextMatchListMenuItem.Text" translate="yes" xml:space="preserve">
           <source>Find next</source>
@@ -6893,8 +6882,9 @@ Edit search string right from list. Navigate in list right from search field.</t
           <target state="needs-review-translation">Alt+Up</target>
         </trans-unit>
         <trans-unit id="PreviousMatchListMenuItem.Size" translate="yes" xml:space="preserve" extype="System.Drawing.Size, System.Drawing">
-          <source>237, 22</source>
+          <source>253, 22</source>
           <target state="needs-review-translation">237, 22</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="PreviousMatchListMenuItem.Text" translate="yes" xml:space="preserve">
           <source>Find previous</source>
@@ -7055,9 +7045,23 @@ Edit search string right from list. Navigate in list right from search field.</t
           <source>Ctrl+P</source>
           <target state="needs-review-translation">Ctrl+P</target>
         </trans-unit>
-        <trans-unit id="$this.ImeMode" translate="yes" xml:space="preserve" extype="System.Windows.Forms.ImeMode, System.Windows.Forms">
-          <source>NoControl</source>
-          <target state="needs-review-translation">NoControl</target>
+        <trans-unit id="decodeTextToolStripMenuItem.Size" translate="yes" xml:space="preserve" extype="System.Drawing.Size, System.Drawing">
+          <source>220, 22</source>
+          <target state="needs-review-translation">220, 22</target>
+        </trans-unit>
+        <trans-unit id="decodeTextToolStripMenuItem.Text" translate="yes" xml:space="preserve">
+          <source>Decode URL</source>
+          <target state="new">Decode URL</target>
+        </trans-unit>
+        <trans-unit id="decodeTextToolStripMenuItem.ToolTipText" translate="yes" xml:space="preserve">
+          <source>Decode selected or all text of clip using URL rules (%) into new clip
+</source>
+          <target state="new">Decode selected or all text of clip using URL rules (%) into new clip
+</target>
+        </trans-unit>
+        <trans-unit id="deleteAllNonFavoriteToolStripMenuItem.ShortcutKeys" translate="yes" xml:space="preserve" extype="System.Windows.Forms.Keys, System.Windows.Forms">
+          <source>Ctrl+Alt+K</source>
+          <target state="needs-review-translation">Ctrl+Alt+K</target>
         </trans-unit>
       </group>
     </body>

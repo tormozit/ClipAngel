@@ -868,14 +868,16 @@ namespace ClipAngel
             string Keyname = Application.ProductName;
             try
             {
+                object currentValue = reg.GetValue(Keyname);
                 if (Autostart)
                 {
                     string CommandLine = "\"" + Application.ExecutablePath + "\"" + " /m";
                     if (PortableMode)
                         CommandLine += " /p";
-                    reg.SetValue(Keyname, CommandLine);
+                    if (!CommandLine.Equals(currentValue))
+                        reg.SetValue(Keyname, CommandLine);
                 }
-                else
+                else if (currentValue != null)
                     reg.DeleteValue(Keyname);
                 reg.Close();
                 Properties.Settings.Default.Autostart = Autostart;

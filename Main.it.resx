@@ -33,6 +33,9 @@
   <data name="toolStripButtonAutoSelectMatch.Text" xml:space="preserve">
     <value>Seleziona automaticamente prima occorrenza</value>
   </data>
+  <data name="showAllTypesToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>253, 22</value>
+  </data>
   <data name="toolStripMenuItem10.ToolTipText" xml:space="preserve">
     <value>Confronta il testo di 2 catture selezionate o della cattura attuale con una cattura precedentemente selezionata da questo comando</value>
   </data>
@@ -130,6 +133,9 @@ Il sottomenu "Elenco" dispone di comandi per la selezione rapida</value>
   <data name="statusStrip.AutoSize" xml:space="preserve" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
+  <data name="showOnlyImagesToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>253, 22</value>
+  </data>
   <data name="dataGridView.Location" xml:space="preserve" type="System.Drawing.Point, System.Drawing">
     <value>1, 0</value>
   </data>
@@ -150,6 +156,9 @@ Il sottomenu "Elenco" dispone di comandi per la selezione rapida</value>
   </data>
   <data name="toolStripBottom.Anchor" xml:space="preserve" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
+  </data>
+  <data name="returnToPrevousSelectedClipToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>253, 22</value>
   </data>
   <data name="moveCopiedClipToTopToolStripButton.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>23, 22</value>
@@ -224,6 +233,9 @@ L'URL verrà salvata nella cattura attuale e verrà copiata negli Appunti.</valu
   <data name="uploadImageToWebToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>219, 22</value>
   </data>
+  <data name="showOnlyFilesToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>253, 22</value>
+  </data>
   <data name="StripLabelVisualSize.AutoSize" xml:space="preserve" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
@@ -274,6 +286,9 @@ L'URL verrà salvata nella cattura attuale e verrà copiata negli Appunti.</valu
   </data>
   <data name="editClipTextToolStripMenuItem.Text" xml:space="preserve">
     <value>Modifica testo</value>
+  </data>
+  <data name="deleteAllNonFavoriteToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>253, 22</value>
   </data>
   <data name="toolStripMenuItemSearchWildcards.Text" xml:space="preserve">
     <value>"%" come qualsiasi sequenza di caratteri</value>
@@ -518,6 +533,9 @@ Le modifiche nel file temporaneo non verranno sincronizzate con la cattura!</val
   <data name="moveUpToolStripMenuItem.Text" xml:space="preserve">
     <value>Sposta su</value>
   </data>
+  <data name="showOnlyFavoriteToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>253, 22</value>
+  </data>
   <data name="toolStripMenuItemEditClipText.ImageTransparentColor" xml:space="preserve" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
   </data>
@@ -562,6 +580,9 @@ Le modifiche nel file temporaneo non verranno sincronizzate con la cattura!
   </data>
   <data name="pasteENTERToolStripMenuItem.ToolTipText" xml:space="preserve">
     <value>Incolla nella finestra attiva catture selezionate. Eseguibile anche con un doppio clic.</value>
+  </data>
+  <data name="moveUpToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>253, 22</value>
   </data>
   <data name="showOnlyFilesToolStripMenuItem.Text" xml:space="preserve">
     <value>Visualizza solo i file</value>
@@ -1220,11 +1241,17 @@ Le modifiche nel file temporaneo non saranno sincronizzate con la cattura!</valu
   <data name="windowAlwaysOnTopToolStripMenuItem.Text" xml:space="preserve">
     <value>Sempre in primo piano</value>
   </data>
+  <data name="toolStripMenuItem5.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>250, 6</value>
+  </data>
   <data name="StripLabelType.TextAlign" xml:space="preserve" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleRight</value>
   </data>
   <data name="textBoxApplication.ToolTip" xml:space="preserve">
     <value>Applicazione che ha copiato la cattura</value>
+  </data>
+  <data name="moveTopToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>253, 22</value>
   </data>
   <data name="showAllTypesToolStripMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Alt+1</value>
@@ -1274,6 +1301,9 @@ Le modifiche nel file temporaneo non saranno sincronizzate con la cattura!</valu
   <data name="dataGridView.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
+  <data name="showOnlyUsedToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>253, 22</value>
+  </data>
   <data name="splitContainer1.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
@@ -1297,6 +1327,9 @@ Le modifiche nel file temporaneo non saranno sincronizzate con la cattura!</valu
   </data>
   <data name="toolStripButtonFindPrevious.ToolTipText" xml:space="preserve">
     <value>Trova occorrenza precedente nel testo della cattura (MAIUSC+F3)</value>
+  </data>
+  <data name="toolStripMenuItemClearFilters.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>253, 22</value>
   </data>
   <data name="contextMenuStripDataGrid.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>222, 290</value>
@@ -1481,6 +1514,9 @@ Il sottomenu "Elenco" dispone di comandi per la selezione rapida</value>
   </data>
   <data name="toolStripButtonReturnToPrevous.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>23, 22</value>
+  </data>
+  <data name="showOnlyTextsToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>253, 22</value>
   </data>
   <data name="statusStrip.Dock" xml:space="preserve" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>None</value>
@@ -2098,6 +2134,9 @@ Il sottomenu "Elenco" dispone di comandi per la selezione rapida</value>
   <data name="toolStripMenuItem14.ToolTipText" xml:space="preserve">
     <value>Segna la cattura selezionata come preferita</value>
   </data>
+  <data name="showAllMarksToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>253, 22</value>
+  </data>
   <data name="statusStrip.Location" xml:space="preserve" type="System.Drawing.Point, System.Drawing">
     <value>0, 398</value>
   </data>
@@ -2155,6 +2194,9 @@ Il sottomenu "Elenco" dispone di comandi per la selezione rapida</value>
   <data name="toolStripButtonFindNext.ImageTransparentColor" xml:space="preserve" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
   </data>
+  <data name="moveDownToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>253, 22</value>
+  </data>
   <data name="toolStripMenuItem16.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>219, 22</value>
   </data>
@@ -2196,6 +2238,9 @@ Il sottomenu "Elenco" dispone di comandi per la selezione rapida</value>
   </data>
   <data name="StripLabelSize.TextAlign" xml:space="preserve" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleRight</value>
+  </data>
+  <data name="toolStripMenuItem17.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>250, 6</value>
   </data>
   <data name="StripLabelVisualSize.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>70, 17</value>
@@ -2323,11 +2368,17 @@ all'elenco ignorate, che può essere modificato nella finestra delle impostazion
   <data name="stripLabelPosition.TextAlign" xml:space="preserve" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleRight</value>
   </data>
+  <data name="toolStripMenuItem13.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>250, 6</value>
+  </data>
   <data name="mergeTextOfClipsToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>219, 22</value>
   </data>
   <data name="toolStripBottom.RightToLeft" xml:space="preserve" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
     <value>Yes</value>
+  </data>
+  <data name="toolStripMenuItemClearFilterAndSelectTop.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>253, 22</value>
   </data>
   <data name="toolStripMenuItemMonitoringClipboard.ToolTipText" xml:space="preserve">
     <value>Cattura modifiche negli Appunti</value>
@@ -2349,6 +2400,9 @@ all'elenco ignorate, che può essere modificato nella finestra delle impostazion
   </data>
   <data name="htmlMenuItemSelectAll.Text" xml:space="preserve">
     <value>Seleziona tutti</value>
+  </data>
+  <data name="moveCopiedClipToTopToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>253, 22</value>
   </data>
   <data name="helpToolStripMenuItem.Text" xml:space="preserve">
     <value>?</value>
@@ -2493,6 +2547,9 @@ all'elenco ignorate, che può essere modificato nella finestra delle impostazion
   </data>
   <data name="toolStripMenuItem18.ToolTipText" xml:space="preserve">
     <value>Incolla nella finestra attiva le catture selezionate come file</value>
+  </data>
+  <data name="filterByDateToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>253, 22</value>
   </data>
   <data name="filterByDateToolStripMenuItem.Text" xml:space="preserve">
     <value>Filtra per data</value>
@@ -2794,7 +2851,10 @@ L'ordinamento è mantenuto fino alla cattura del taglio.</value>
   <data name="pasteSpecialToolStripMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+P</value>
   </data>
-  <data name="$this.ImeMode" xml:space="preserve" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="decodeTextToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>220, 22</value>
+  </data>
+  <data name="deleteAllNonFavoriteToolStripMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Ctrl+Alt+K</value>
   </data>
 </root>
