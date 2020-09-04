@@ -1195,6 +1195,10 @@ namespace ClipAngel
                     htmlTextBox.Parent.Enabled = true;
                 }
             }
+            else
+            {
+                richTextBox.Clear();
+            }
             tableLayoutPanelData.SuspendLayout();
             UpdateClipButtons();
             if (comboBoxSearchString.Focused)
@@ -3178,13 +3182,10 @@ namespace ClipAngel
                     return true;
                 }
             }
-            else
-            {
-                ActivateTargetWindow();
-                bool targetIsCurrentProcess = DoActiveWindowBelongsToCurrentProcess(IntPtr.Zero);
-                if (targetIsCurrentProcess)
-                    return true;
-            }
+            ActivateTargetWindow();
+            bool targetIsCurrentProcess = DoActiveWindowBelongsToCurrentProcess(IntPtr.Zero);
+            if (targetIsCurrentProcess)
+                return true;
             if (pasteMethod != PasteMethod.SendChars)
             {
                 if (Properties.Settings.Default.DontSendPaste)
@@ -6219,8 +6220,12 @@ namespace ClipAngel
             {
                 if (!dataGridView.Rows[e.RowIndex].Selected)
                 {
+                    //dataGridView.CurrentCell = dataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex];
                     //dataGridView.Rows[e.RowIndex].Selected = true;
-                    dataGridView.CurrentCell = dataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex];
+                    DataRowView row1 = (DataRowView)dataGridView.Rows[e.RowIndex].DataBoundItem;
+                    int newPosition = clipBindingSource.Find("Id", (int)row1["id"]);
+                    clipBindingSource.Position = newPosition;
+                    SelectCurrentRow();
                     //dataGridView.Focus();
                 }
             }
