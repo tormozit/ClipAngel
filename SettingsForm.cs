@@ -938,47 +938,47 @@ namespace ClipAngel
         //[Editor(typeof(MyBoolEditor), typeof(UITypeEditor))]
         //public bool RestoreCaretPositionOnFocusReturn { get; set; }
 
-        [GlobalizedCategory("Hotkeys")]
+        [GlobalizedCategory("GlobalHotkeys")]
         [TypeConverterAttribute(typeof(HotkeyConverter))]
         [EditorAttribute(typeof(HotkeyEditor), typeof(UITypeEditor))]
         public string GlobalHotkeyOpenCurrent { get; set; }
 
-        [GlobalizedCategory("Hotkeys")]
+        [GlobalizedCategory("GlobalHotkeys")]
         [TypeConverterAttribute(typeof(HotkeyConverter))]
         [EditorAttribute(typeof(HotkeyEditor), typeof(UITypeEditor))]
         public string GlobalHotkeyOpenLast { get; set; }
 
-        [GlobalizedCategory("Hotkeys")]
+        [GlobalizedCategory("GlobalHotkeys")]
         [TypeConverterAttribute(typeof(HotkeyConverter))]
         [EditorAttribute(typeof(HotkeyEditor), typeof(UITypeEditor))]
         public string GlobalHotkeyOpenFavorites { get; set; }
 
-        [GlobalizedCategory("Hotkeys")]
+        [GlobalizedCategory("GlobalHotkeys")]
         [TypeConverterAttribute(typeof(HotkeyConverter))]
         [EditorAttribute(typeof(HotkeyEditor), typeof(UITypeEditor))]
         public string GlobalHotkeyIncrementalPaste { get; set; }
 
-        [GlobalizedCategory("Hotkeys")]
+        [GlobalizedCategory("GlobalHotkeys")]
         [TypeConverterAttribute(typeof(HotkeyConverter))]
         [EditorAttribute(typeof(HotkeyEditor), typeof(UITypeEditor))]
         public string GlobalHotkeyCompareLastClips { get; set; }
 
-        [GlobalizedCategory("Hotkeys")]
+        [GlobalizedCategory("GlobalHotkeys")]
         [TypeConverterAttribute(typeof(HotkeyConverter))]
         [EditorAttribute(typeof(HotkeyEditor), typeof(UITypeEditor))]
         public string GlobalHotkeyPasteText { get; set; }
 
-        [GlobalizedCategory("Hotkeys")]
+        [GlobalizedCategory("GlobalHotkeys")]
         [TypeConverterAttribute(typeof(HotkeyConverter))]
         [EditorAttribute(typeof(HotkeyEditor), typeof(UITypeEditor))]
         public string GlobalHotkeySimulateInput { get; set; }
 
-        [GlobalizedCategory("Hotkeys")]
+        [GlobalizedCategory("GlobalHotkeys")]
         [TypeConverterAttribute(typeof(HotkeyConverter))]
         [EditorAttribute(typeof(HotkeyEditor), typeof(UITypeEditor))]
         public string GlobalHotkeySwitchMonitoring { get; set; }
 
-       [GlobalizedCategory("Hotkeys")]
+       [GlobalizedCategory("GlobalHotkeys")]
         [Editor(typeof(MyBoolEditor), typeof(UITypeEditor))]
         public bool CopyTextInAnyWindowOnCTRLF3 { get; set; }
 

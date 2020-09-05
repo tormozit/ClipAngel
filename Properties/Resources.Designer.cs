@@ -261,6 +261,24 @@ namespace ClipAngel.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Are you sure want to delete all non favorite clips?.
+        /// </summary>
+        public static string ConfirmDeleteAllNonFavorite {
+            get {
+                return ResourceManager.GetString("ConfirmDeleteAllNonFavorite", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Are you sure to delete selected clips?.
+        /// </summary>
+        public static string ConfirmDeleteSelectedClips {
+            get {
+                return ResourceManager.GetString("ConfirmDeleteSelectedClips", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         public static System.Drawing.Bitmap copy {
@@ -531,6 +549,15 @@ namespace ClipAngel.Properties {
             get {
                 object obj = ResourceManager.GetObject("FixedWidthFont", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Global hotkeys.
+        /// </summary>
+        public static string GlobalHotkeys {
+            get {
+                return ResourceManager.GetString("GlobalHotkeys", resourceCulture);
             }
         }
         
@@ -1147,15 +1174,6 @@ namespace ClipAngel.Properties {
         public static string Zoom {
             get {
                 return ResourceManager.GetString("Zoom", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Are you sure want to delete all non favorite clips?.
-        /// </summary>
-        public static string СonfirmDeleteAllNonFavorite {
-            get {
-                return ResourceManager.GetString("СonfirmDeleteAllNonFavorite", resourceCulture);
             }
         }
     }

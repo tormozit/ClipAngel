@@ -1518,10 +1518,6 @@ Die Generierung von Bildern erzeugt CPU-Last. Bei zu hoher, niedrigeren Wert fes
           <source>..\Picture\Compare.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</source>
           <target state="needs-review-translation">..\Picture\Compare.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</target>
         </trans-unit>
-        <trans-unit id="СonfirmDeleteAllNonFavorite" translate="yes" xml:space="preserve">
-          <source>Are you sure want to delete all non favorite clips?</source>
-          <target state="translated">Alle Nicht-Favoriten wirklich löschen?</target>
-        </trans-unit>
         <trans-unit id="KiloByteUnit" translate="yes" xml:space="preserve">
           <source>KB</source>
           <target state="translated">kB</target>
@@ -1689,6 +1685,18 @@ Die Generierung von Bildern erzeugt CPU-Last. Bei zu hoher, niedrigeren Wert fes
         <trans-unit id="FailedChangeDatabaseFieEncryption" translate="yes" xml:space="preserve">
           <source>Failed change database file encryption</source>
           <target state="new">Failed change database file encryption</target>
+        </trans-unit>
+        <trans-unit id="ConfirmDeleteAllNonFavorite" translate="yes" xml:space="preserve">
+          <source>Are you sure want to delete all non favorite clips?</source>
+          <target state="new">Are you sure want to delete all non favorite clips?</target>
+        </trans-unit>
+        <trans-unit id="ConfirmDeleteSelectedClips" translate="yes" xml:space="preserve">
+          <source>Are you sure to delete selected clips?</source>
+          <target state="new">Are you sure to delete selected clips?</target>
+        </trans-unit>
+        <trans-unit id="GlobalHotkeys" translate="yes" xml:space="preserve">
+          <source>Global hotkeys</source>
+          <target state="new">Global hotkeys</target>
         </trans-unit>
       </group>
     </body>
@@ -8224,8 +8232,9 @@ Um das Programm bei Benutzeranmeldung zu starten, den Autostart in den Einstellu
           <target state="needs-review-translation">True</target>
         </trans-unit>
         <trans-unit id="NormalizeFreeSpace.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
-          <source>16</source>
+          <source>11</source>
           <target state="needs-review-translation">16</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="buttonCancel.ImeMode" translate="yes" extype="System.Windows.Forms.ImeMode, System.Windows.Forms" xml:space="preserve">
           <source>NoControl</source>
@@ -8244,8 +8253,9 @@ Um das Programm bei Benutzeranmeldung zu starten, den Autostart in den Einstellu
           <target state="translated">Symbol "Zeilenende" durch Leerzeichen ersetzen</target>
         </trans-unit>
         <trans-unit id="SentenceCase.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
-          <source>19</source>
+          <source>4</source>
           <target state="needs-review-translation">19</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="SentenceCase.Location" translate="yes" extype="System.Drawing.Point, System.Drawing" xml:space="preserve">
           <source>10, 93</source>
@@ -8256,16 +8266,18 @@ Um das Programm bei Benutzeranmeldung zu starten, den Autostart in den Einstellu
           <target state="translated">Inhalte einfügen</target>
         </trans-unit>
         <trans-unit id="ReplaceEOL.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
-          <source>16</source>
+          <source>8</source>
           <target state="needs-review-translation">16</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="richTextBox1.Anchor" translate="yes" extype="System.Windows.Forms.AnchorStyles, System.Windows.Forms" xml:space="preserve">
           <source>Top, Bottom, Left, Right</source>
           <target state="needs-review-translation">Top, Bottom, Left, Right</target>
         </trans-unit>
         <trans-unit id="checkBoxPasteIntoNewClip.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
-          <source>16</source>
+          <source>13</source>
           <target state="needs-review-translation">16</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="CaseNoChange.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
           <source>78, 17</source>
@@ -8280,8 +8292,9 @@ Um das Programm bei Benutzeranmeldung zu starten, den Autostart in den Einstellu
           <target state="needs-review-translation">18, 20</target>
         </trans-unit>
         <trans-unit id="groupBox1.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
-          <source>20</source>
+          <source>0</source>
           <target state="needs-review-translation">20</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="AllLowerCase.AutoSize" translate="yes" extype="System.Boolean, mscorlib" xml:space="preserve">
           <source>True</source>
@@ -8356,16 +8369,18 @@ Um das Programm bei Benutzeranmeldung zu starten, den Autostart in den Einstellu
           <target state="needs-review-translation">12, 10</target>
         </trans-unit>
         <trans-unit id="richTextBox1.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
-          <source>21</source>
+          <source>14</source>
           <target state="needs-review-translation">21</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="groupBox1.ToolTip" translate="yes" xml:space="preserve">
           <source>Change case of letters</source>
           <target state="translated">Buchstabenstellung ändern</target>
         </trans-unit>
         <trans-unit id="checkBoxReplaceTabWithSpaces.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
-          <source>16</source>
+          <source>9</source>
           <target state="needs-review-translation">16</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="label1.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
           <source>22</source>
@@ -8425,12 +8440,14 @@ Um das Programm bei Benutzeranmeldung zu starten, den Autostart in den Einstellu
           <target state="needs-review-translation">NoControl</target>
         </trans-unit>
         <trans-unit id="buttonCancel.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
-          <source>14</source>
+          <source>16</source>
           <target state="needs-review-translation">14</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="textBoxNumberOfSpacesInTab.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
-          <source>23</source>
+          <source>10</source>
           <target state="needs-review-translation">23</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="checkBoxReplaceTabWithSpaces.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
           <source>149, 17</source>
@@ -8491,12 +8508,14 @@ Nachlaufende nicht druckbare Symbole werden gelöscht.</target>
           <target state="final">174, 188</target>
         </trans-unit>
         <trans-unit id="CaseNoChange.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
-          <source>20</source>
+          <source>1</source>
           <target state="needs-review-translation">20</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="AllLowerCase.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
-          <source>18</source>
+          <source>3</source>
           <target state="needs-review-translation">18</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="SentenceCase.Text" translate="yes" xml:space="preserve">
           <source>Sentence case</source>
@@ -8535,8 +8554,9 @@ Nachlaufende nicht druckbare Symbole werden gelöscht.</target>
           <target state="needs-review-translation">93, 17</target>
         </trans-unit>
         <trans-unit id="AllUpperCase.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
-          <source>17</source>
+          <source>2</source>
           <target state="needs-review-translation">17</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="AllUpperCase.Text" translate="yes" xml:space="preserve">
           <source>UPPER CASE</source>
@@ -8563,8 +8583,9 @@ Nachlaufende nicht druckbare Symbole werden gelöscht.</target>
           <target state="final">115, 17</target>
         </trans-unit>
         <trans-unit id="LowerCamelCase.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
-          <source>19</source>
+          <source>6</source>
           <target state="needs-review-translation">19</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="LowerCamelCase.Text" translate="yes" xml:space="preserve">
           <source>to lowerCamelCase</source>
@@ -8591,8 +8612,9 @@ Nachlaufende nicht druckbare Symbole werden gelöscht.</target>
           <target state="final">119, 17</target>
         </trans-unit>
         <trans-unit id="UpperCamelCase.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
-          <source>19</source>
+          <source>5</source>
           <target state="needs-review-translation">19</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="UpperCamelCase.Text" translate="yes" xml:space="preserve">
           <source>to UpperCamelCase</source>
@@ -8619,8 +8641,9 @@ Nachlaufende nicht druckbare Symbole werden gelöscht.</target>
           <target state="needs-review-translation">174, 17</target>
         </trans-unit>
         <trans-unit id="NormalizeEndOfLines.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
-          <source>16</source>
+          <source>12</source>
           <target state="needs-review-translation">16</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="NormalizeEndOfLines.Text" translate="yes" xml:space="preserve">
           <source>Normalize "end of line" symbols</source>
@@ -8650,8 +8673,9 @@ Nachlaufende nicht druckbare Symbole werden gelöscht.</target>
           <target state="needs-review-translation">101, 17</target>
         </trans-unit>
         <trans-unit id="FromCamelCase.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
-          <source>19</source>
+          <source>7</source>
           <target state="needs-review-translation">19</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="FromCamelCase.Text" translate="yes" xml:space="preserve">
           <source>from CamelCase</source>
@@ -8696,6 +8720,46 @@ Nachlaufende nicht druckbare Symbole werden gelöscht.</target>
         <trans-unit id="NormalizeFreeSpace.ImeMode" translate="yes" xml:space="preserve" extype="System.Windows.Forms.ImeMode, System.Windows.Forms">
           <source>NoControl</source>
           <target state="needs-review-translation">NoControl</target>
+        </trans-unit>
+        <trans-unit id="checkBoxPasteIntoNewClip.ToolTip" translate="yes" xml:space="preserve">
+          <source></source>
+          <target state="new"></target>
+        </trans-unit>
+        <trans-unit id="checkBoxReplaceTabWithSpaces.ToolTip" translate="yes" xml:space="preserve">
+          <source></source>
+          <target state="new"></target>
+        </trans-unit>
+        <trans-unit id="buttonCancel.ToolTip" translate="yes" xml:space="preserve">
+          <source></source>
+          <target state="new"></target>
+        </trans-unit>
+        <trans-unit id="ReplaceEOL.ToolTip" translate="yes" xml:space="preserve">
+          <source></source>
+          <target state="new"></target>
+        </trans-unit>
+        <trans-unit id="CaseNoChange.ToolTip" translate="yes" xml:space="preserve">
+          <source></source>
+          <target state="new"></target>
+        </trans-unit>
+        <trans-unit id="$this.ToolTip" translate="yes" xml:space="preserve">
+          <source></source>
+          <target state="new"></target>
+        </trans-unit>
+        <trans-unit id="richTextBox1.ToolTip" translate="yes" xml:space="preserve">
+          <source></source>
+          <target state="new"></target>
+        </trans-unit>
+        <trans-unit id="label1.ToolTip" translate="yes" xml:space="preserve">
+          <source></source>
+          <target state="new"></target>
+        </trans-unit>
+        <trans-unit id="buttonOK.ToolTip" translate="yes" xml:space="preserve">
+          <source></source>
+          <target state="new"></target>
+        </trans-unit>
+        <trans-unit id="$this.Language" translate="yes" xml:space="preserve" extype="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" extradata="metadata">
+          <source>ru</source>
+          <target state="needs-review-translation">ru</target>
         </trans-unit>
       </group>
     </body>

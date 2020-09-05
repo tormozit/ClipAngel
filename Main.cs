@@ -2751,7 +2751,7 @@ namespace ClipAngel
         {
             if (Properties.Settings.Default.ConfirmationBeforeDelete)
             {
-                var confirmResult = MessageBox.Show(this, "Are you sure to delete selected clips?", Application.ProductName, MessageBoxButtons.YesNo);
+                var confirmResult = MessageBox.Show(this, Properties.Resources.ConfirmDeleteSelectedClips, Properties.Resources.Confirmation, MessageBoxButtons.YesNo);
                 if (confirmResult != DialogResult.Yes)
                     return;
             }
@@ -3528,8 +3528,11 @@ namespace ClipAngel
             windowTitle = GetWindowTitle(hwnd);
             if (true
                 && hwnd != IntPtr.Zero 
-                && String.Compare(application, "1cv8", true) == 0
-                )
+                && (false
+                    || String.Compare(application, "1cv8", true) == 0
+                    || String.Compare(application, "1CV7", true) == 0
+                    || String.Compare(application, "1CV7L", true) == 0
+                    || String.Compare(application, "1CV7S", true) == 0))
             {
                 //// This way 1C configurator can crash later
                 //try
@@ -6858,7 +6861,7 @@ namespace ClipAngel
 
         private void deleteAllNonFavoriteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show(this, Properties.Resources.СonfirmDeleteAllNonFavorite, Properties.Resources.Confirmation, MessageBoxButtons.OKCancel);
+            DialogResult result = MessageBox.Show(this, Properties.Resources.ConfirmDeleteAllNonFavorite, Properties.Resources.Confirmation, MessageBoxButtons.OKCancel);
             if (result != DialogResult.OK)
                 return;
             deleteAllNonFavoriteClips();

@@ -40,6 +40,8 @@
             this.LowerCamelCase = new System.Windows.Forms.RadioButton();
             this.UpperCamelCase = new System.Windows.Forms.RadioButton();
             this.textBoxNumberOfSpacesInTab = new System.Windows.Forms.TextBox();
+            this.NormalizeEndOfLines = new System.Windows.Forms.CheckBox();
+            this.NormalizeFreeSpace = new System.Windows.Forms.CheckBox();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.buttonOK = new System.Windows.Forms.Button();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
@@ -47,8 +49,6 @@
             this.checkBoxReplaceTabWithSpaces = new System.Windows.Forms.CheckBox();
             this.ReplaceEOL = new System.Windows.Forms.CheckBox();
             this.checkBoxPasteIntoNewClip = new System.Windows.Forms.CheckBox();
-            this.NormalizeEndOfLines = new System.Windows.Forms.CheckBox();
-            this.NormalizeFreeSpace = new System.Windows.Forms.CheckBox();
             toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -83,6 +83,7 @@
             // 
             // groupBox1
             // 
+            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Controls.Add(this.CaseNoChange);
             this.groupBox1.Controls.Add(this.FromCamelCase);
             this.groupBox1.Controls.Add(this.LowerCamelCase);
@@ -90,7 +91,6 @@
             this.groupBox1.Controls.Add(this.SentenceCase);
             this.groupBox1.Controls.Add(this.AllUpperCase);
             this.groupBox1.Controls.Add(this.AllLowerCase);
-            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.TabStop = false;
             toolTip1.SetToolTip(this.groupBox1, resources.GetString("groupBox1.ToolTip"));
@@ -101,6 +101,7 @@
             this.CaseNoChange.Checked = true;
             this.CaseNoChange.Name = "CaseNoChange";
             this.CaseNoChange.TabStop = true;
+            toolTip1.SetToolTip(this.CaseNoChange, resources.GetString("CaseNoChange.ToolTip"));
             this.CaseNoChange.UseVisualStyleBackColor = true;
             this.CaseNoChange.CheckedChanged += new System.EventHandler(this.CaseNoChange_CheckedChanged);
             // 
@@ -130,64 +131,12 @@
             // 
             // textBoxNumberOfSpacesInTab
             // 
-            this.textBoxNumberOfSpacesInTab.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::ClipAngel.Properties.Settings.Default, "NumberOfSpacesInTab", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             resources.ApplyResources(this.textBoxNumberOfSpacesInTab, "textBoxNumberOfSpacesInTab");
+            this.textBoxNumberOfSpacesInTab.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::ClipAngel.Properties.Settings.Default, "NumberOfSpacesInTab", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.textBoxNumberOfSpacesInTab.Name = "textBoxNumberOfSpacesInTab";
             this.textBoxNumberOfSpacesInTab.Text = global::ClipAngel.Properties.Settings.Default.NumberOfSpacesInTab;
             toolTip1.SetToolTip(this.textBoxNumberOfSpacesInTab, resources.GetString("textBoxNumberOfSpacesInTab.ToolTip"));
             this.textBoxNumberOfSpacesInTab.TextChanged += new System.EventHandler(this.textBoxNumberOfSpacesInTab_TextChanged);
-            // 
-            // buttonCancel
-            // 
-            resources.ApplyResources(this.buttonCancel, "buttonCancel");
-            this.buttonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.buttonCancel.Name = "buttonCancel";
-            this.buttonCancel.UseVisualStyleBackColor = true;
-            // 
-            // buttonOK
-            // 
-            resources.ApplyResources(this.buttonOK, "buttonOK");
-            this.buttonOK.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.buttonOK.Name = "buttonOK";
-            this.buttonOK.UseVisualStyleBackColor = true;
-            this.buttonOK.Click += new System.EventHandler(this.buttonOK_Click);
-            // 
-            // richTextBox1
-            // 
-            resources.ApplyResources(this.richTextBox1, "richTextBox1");
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.ReadOnly = true;
-            // 
-            // label1
-            // 
-            resources.ApplyResources(this.label1, "label1");
-            this.label1.Name = "label1";
-            // 
-            // checkBoxReplaceTabWithSpaces
-            // 
-            resources.ApplyResources(this.checkBoxReplaceTabWithSpaces, "checkBoxReplaceTabWithSpaces");
-            this.checkBoxReplaceTabWithSpaces.Checked = global::ClipAngel.Properties.Settings.Default.ReplaceTABWithSpaces;
-            this.checkBoxReplaceTabWithSpaces.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::ClipAngel.Properties.Settings.Default, "ReplaceTABWithSpaces", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.checkBoxReplaceTabWithSpaces.Name = "checkBoxReplaceTabWithSpaces";
-            this.checkBoxReplaceTabWithSpaces.UseVisualStyleBackColor = true;
-            this.checkBoxReplaceTabWithSpaces.CheckedChanged += new System.EventHandler(this.checkBoxReplaceTabWithSpaces_CheckedChanged);
-            // 
-            // ReplaceEOL
-            // 
-            resources.ApplyResources(this.ReplaceEOL, "ReplaceEOL");
-            this.ReplaceEOL.Checked = global::ClipAngel.Properties.Settings.Default.ReplaceEOFWithSpace;
-            this.ReplaceEOL.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::ClipAngel.Properties.Settings.Default, "ReplaceEOFWithSpace", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.ReplaceEOL.Name = "ReplaceEOL";
-            this.ReplaceEOL.UseVisualStyleBackColor = true;
-            this.ReplaceEOL.CheckedChanged += new System.EventHandler(this.checkBoxReplaceEOL_CheckedChanged);
-            // 
-            // checkBoxPasteIntoNewClip
-            // 
-            resources.ApplyResources(this.checkBoxPasteIntoNewClip, "checkBoxPasteIntoNewClip");
-            this.checkBoxPasteIntoNewClip.Checked = global::ClipAngel.Properties.Settings.Default.PasteIntoNewClip;
-            this.checkBoxPasteIntoNewClip.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::ClipAngel.Properties.Settings.Default, "PasteIntoNewClip", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.checkBoxPasteIntoNewClip.Name = "checkBoxPasteIntoNewClip";
-            this.checkBoxPasteIntoNewClip.UseVisualStyleBackColor = true;
             // 
             // NormalizeEndOfLines
             // 
@@ -208,6 +157,65 @@
             toolTip1.SetToolTip(this.NormalizeFreeSpace, resources.GetString("NormalizeFreeSpace.ToolTip"));
             this.NormalizeFreeSpace.UseVisualStyleBackColor = true;
             this.NormalizeFreeSpace.CheckedChanged += new System.EventHandler(this.NormalizeFreeSpace_CheckedChanged);
+            // 
+            // buttonCancel
+            // 
+            resources.ApplyResources(this.buttonCancel, "buttonCancel");
+            this.buttonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.buttonCancel.Name = "buttonCancel";
+            toolTip1.SetToolTip(this.buttonCancel, resources.GetString("buttonCancel.ToolTip"));
+            this.buttonCancel.UseVisualStyleBackColor = true;
+            // 
+            // buttonOK
+            // 
+            resources.ApplyResources(this.buttonOK, "buttonOK");
+            this.buttonOK.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.buttonOK.Name = "buttonOK";
+            toolTip1.SetToolTip(this.buttonOK, resources.GetString("buttonOK.ToolTip"));
+            this.buttonOK.UseVisualStyleBackColor = true;
+            this.buttonOK.Click += new System.EventHandler(this.buttonOK_Click);
+            // 
+            // richTextBox1
+            // 
+            resources.ApplyResources(this.richTextBox1, "richTextBox1");
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.ReadOnly = true;
+            toolTip1.SetToolTip(this.richTextBox1, resources.GetString("richTextBox1.ToolTip"));
+            // 
+            // label1
+            // 
+            resources.ApplyResources(this.label1, "label1");
+            this.label1.Name = "label1";
+            toolTip1.SetToolTip(this.label1, resources.GetString("label1.ToolTip"));
+            // 
+            // checkBoxReplaceTabWithSpaces
+            // 
+            resources.ApplyResources(this.checkBoxReplaceTabWithSpaces, "checkBoxReplaceTabWithSpaces");
+            this.checkBoxReplaceTabWithSpaces.Checked = global::ClipAngel.Properties.Settings.Default.ReplaceTABWithSpaces;
+            this.checkBoxReplaceTabWithSpaces.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::ClipAngel.Properties.Settings.Default, "ReplaceTABWithSpaces", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.checkBoxReplaceTabWithSpaces.Name = "checkBoxReplaceTabWithSpaces";
+            toolTip1.SetToolTip(this.checkBoxReplaceTabWithSpaces, resources.GetString("checkBoxReplaceTabWithSpaces.ToolTip"));
+            this.checkBoxReplaceTabWithSpaces.UseVisualStyleBackColor = true;
+            this.checkBoxReplaceTabWithSpaces.CheckedChanged += new System.EventHandler(this.checkBoxReplaceTabWithSpaces_CheckedChanged);
+            // 
+            // ReplaceEOL
+            // 
+            resources.ApplyResources(this.ReplaceEOL, "ReplaceEOL");
+            this.ReplaceEOL.Checked = global::ClipAngel.Properties.Settings.Default.ReplaceEOFWithSpace;
+            this.ReplaceEOL.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::ClipAngel.Properties.Settings.Default, "ReplaceEOFWithSpace", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.ReplaceEOL.Name = "ReplaceEOL";
+            toolTip1.SetToolTip(this.ReplaceEOL, resources.GetString("ReplaceEOL.ToolTip"));
+            this.ReplaceEOL.UseVisualStyleBackColor = true;
+            this.ReplaceEOL.CheckedChanged += new System.EventHandler(this.checkBoxReplaceEOL_CheckedChanged);
+            // 
+            // checkBoxPasteIntoNewClip
+            // 
+            resources.ApplyResources(this.checkBoxPasteIntoNewClip, "checkBoxPasteIntoNewClip");
+            this.checkBoxPasteIntoNewClip.Checked = global::ClipAngel.Properties.Settings.Default.PasteIntoNewClip;
+            this.checkBoxPasteIntoNewClip.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::ClipAngel.Properties.Settings.Default, "PasteIntoNewClip", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.checkBoxPasteIntoNewClip.Name = "checkBoxPasteIntoNewClip";
+            toolTip1.SetToolTip(this.checkBoxPasteIntoNewClip, resources.GetString("checkBoxPasteIntoNewClip.ToolTip"));
+            this.checkBoxPasteIntoNewClip.UseVisualStyleBackColor = true;
             // 
             // PasteSpecial
             // 
@@ -231,6 +239,7 @@
             this.Name = "PasteSpecial";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
+            toolTip1.SetToolTip(this, resources.GetString("$this.ToolTip"));
             this.Load += new System.EventHandler(this.SpecialPaste_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

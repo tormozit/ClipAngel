@@ -307,8 +307,8 @@
   <data name="HistoryOfChanges" xml:space="preserve">
     <value>https://sourceforge.net/p/clip-angel/blogrus/</value>
   </data>
-  <data name="Hotkeys" xml:space="preserve">
-    <value>Горячие клавиши</value>
+  <data name="GlobalHotkeys" xml:space="preserve">
+    <value>Глобальные горячие клавиши</value>
   </data>
   <data name="HowUseAutoTitle" xml:space="preserve">
     <value>Очистите строку для использования автозаголовка</value>
@@ -370,7 +370,7 @@
   <data name="YouLatestVersion" xml:space="preserve">
     <value>Вы используете последнюю версию</value>
   </data>
-  <data name="СonfirmDeleteAllNonFavorite" xml:space="preserve">
+  <data name="ConfirmDeleteAllNonFavorite" xml:space="preserve">
     <value>Вы действительно хотите удалить все не любимые клипы?</value>
   </data>
   <data name="LastClipWasMultiCaptured" xml:space="preserve">
@@ -450,5 +450,8 @@
   </data>
   <data name="FailedChangeDatabaseFieEncryption" xml:space="preserve">
     <value>Не удалось изменить режим шифрования файла базы данных</value>
+  </data>
+  <data name="ConfirmDeleteSelectedClips" xml:space="preserve">
+    <value>Вы действительно хотите удалить выделенные клипы?</value>
   </data>
 </root>

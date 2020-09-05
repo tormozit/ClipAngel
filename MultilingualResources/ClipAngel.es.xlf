@@ -1525,10 +1525,6 @@ Generation of image consumes CPU. If you experience high CPU load, set lower val
           <source>..\Picture\Compare.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</source>
           <target state="needs-review-translation">..\Picture\Compare.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</target>
         </trans-unit>
-        <trans-unit id="СonfirmDeleteAllNonFavorite" translate="yes" xml:space="preserve">
-          <source>Are you sure want to delete all non favorite clips?</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">¿Está seguro que desea borrar todos los clips favoritos no?</target>
-        </trans-unit>
         <trans-unit id="KiloByteUnit" translate="yes" xml:space="preserve">
           <source>KB</source>
           <target state="needs-review-translation" state-qualifier="tm-suggestion">KB</target>
@@ -1696,6 +1692,18 @@ Generation of image consumes CPU. If you experience high CPU load, set lower val
         <trans-unit id="FailedChangeDatabaseFieEncryption" translate="yes" xml:space="preserve">
           <source>Failed change database file encryption</source>
           <target state="new">Failed change database file encryption</target>
+        </trans-unit>
+        <trans-unit id="ConfirmDeleteAllNonFavorite" translate="yes" xml:space="preserve">
+          <source>Are you sure want to delete all non favorite clips?</source>
+          <target state="new">Are you sure want to delete all non favorite clips?</target>
+        </trans-unit>
+        <trans-unit id="ConfirmDeleteSelectedClips" translate="yes" xml:space="preserve">
+          <source>Are you sure to delete selected clips?</source>
+          <target state="new">Are you sure to delete selected clips?</target>
+        </trans-unit>
+        <trans-unit id="GlobalHotkeys" translate="yes" xml:space="preserve">
+          <source>Global hotkeys</source>
+          <target state="new">Global hotkeys</target>
         </trans-unit>
       </group>
     </body>
@@ -8295,8 +8303,9 @@ To launch program on user logon turn on autostart in settings.</target>
           <target state="needs-review-translation">True</target>
         </trans-unit>
         <trans-unit id="NormalizeFreeSpace.TabIndex" translate="yes" xml:space="preserve" extype="System.Int32, mscorlib">
-          <source>16</source>
+          <source>11</source>
           <target state="needs-review-translation">16</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="buttonCancel.ImeMode" translate="yes" xml:space="preserve" extype="System.Windows.Forms.ImeMode, System.Windows.Forms">
           <source>NoControl</source>
@@ -8315,8 +8324,9 @@ To launch program on user logon turn on autostart in settings.</target>
           <target state="new">Replace "end of line" symbol with space</target>
         </trans-unit>
         <trans-unit id="SentenceCase.TabIndex" translate="yes" xml:space="preserve" extype="System.Int32, mscorlib">
-          <source>19</source>
+          <source>4</source>
           <target state="needs-review-translation">19</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="SentenceCase.Location" translate="yes" xml:space="preserve" extype="System.Drawing.Point, System.Drawing">
           <source>10, 93</source>
@@ -8327,16 +8337,18 @@ To launch program on user logon turn on autostart in settings.</target>
           <target state="new">Paste special</target>
         </trans-unit>
         <trans-unit id="ReplaceEOL.TabIndex" translate="yes" xml:space="preserve" extype="System.Int32, mscorlib">
-          <source>16</source>
+          <source>8</source>
           <target state="needs-review-translation">16</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="richTextBox1.Anchor" translate="yes" xml:space="preserve" extype="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
           <source>Top, Bottom, Left, Right</source>
           <target state="needs-review-translation">Top, Bottom, Left, Right</target>
         </trans-unit>
         <trans-unit id="checkBoxPasteIntoNewClip.TabIndex" translate="yes" xml:space="preserve" extype="System.Int32, mscorlib">
-          <source>16</source>
+          <source>13</source>
           <target state="needs-review-translation">16</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="CaseNoChange.Size" translate="yes" xml:space="preserve" extype="System.Drawing.Size, System.Drawing">
           <source>78, 17</source>
@@ -8352,8 +8364,9 @@ To launch program on user logon turn on autostart in settings.</target>
           <target state="needs-review-translation">18, 20</target>
         </trans-unit>
         <trans-unit id="groupBox1.TabIndex" translate="yes" xml:space="preserve" extype="System.Int32, mscorlib">
-          <source>20</source>
+          <source>0</source>
           <target state="needs-review-translation">20</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="AllLowerCase.AutoSize" translate="yes" xml:space="preserve" extype="System.Boolean, mscorlib">
           <source>True</source>
@@ -8433,16 +8446,18 @@ To launch program on user logon turn on autostart in settings.</target>
           <target state="needs-review-translation">12, 10</target>
         </trans-unit>
         <trans-unit id="richTextBox1.TabIndex" translate="yes" xml:space="preserve" extype="System.Int32, mscorlib">
-          <source>21</source>
+          <source>14</source>
           <target state="needs-review-translation">21</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="groupBox1.ToolTip" translate="yes" xml:space="preserve">
           <source>Change case of letters</source>
           <target state="new">Change case of letters</target>
         </trans-unit>
         <trans-unit id="checkBoxReplaceTabWithSpaces.TabIndex" translate="yes" xml:space="preserve" extype="System.Int32, mscorlib">
-          <source>16</source>
+          <source>9</source>
           <target state="needs-review-translation">16</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="label1.TabIndex" translate="yes" xml:space="preserve" extype="System.Int32, mscorlib">
           <source>22</source>
@@ -8504,12 +8519,14 @@ To launch program on user logon turn on autostart in settings.</target>
           <target state="needs-review-translation">NoControl</target>
         </trans-unit>
         <trans-unit id="buttonCancel.TabIndex" translate="yes" xml:space="preserve" extype="System.Int32, mscorlib">
-          <source>14</source>
+          <source>16</source>
           <target state="needs-review-translation">14</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="textBoxNumberOfSpacesInTab.TabIndex" translate="yes" xml:space="preserve" extype="System.Int32, mscorlib">
-          <source>23</source>
+          <source>10</source>
           <target state="needs-review-translation">23</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="checkBoxReplaceTabWithSpaces.Size" translate="yes" xml:space="preserve" extype="System.Drawing.Size, System.Drawing">
           <source>149, 17</source>
@@ -8576,12 +8593,14 @@ Trailing unprintable symbols are deleted.</target>
           <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="CaseNoChange.TabIndex" translate="yes" xml:space="preserve" extype="System.Int32, mscorlib">
-          <source>20</source>
+          <source>1</source>
           <target state="needs-review-translation">20</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="AllLowerCase.TabIndex" translate="yes" xml:space="preserve" extype="System.Int32, mscorlib">
-          <source>18</source>
+          <source>3</source>
           <target state="needs-review-translation">18</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="SentenceCase.Text" translate="yes" xml:space="preserve">
           <source>Sentence case</source>
@@ -8620,8 +8639,9 @@ Trailing unprintable symbols are deleted.</target>
           <target state="needs-review-translation">93, 17</target>
         </trans-unit>
         <trans-unit id="AllUpperCase.TabIndex" translate="yes" xml:space="preserve" extype="System.Int32, mscorlib">
-          <source>17</source>
+          <source>2</source>
           <target state="needs-review-translation">17</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="AllUpperCase.Text" translate="yes" xml:space="preserve">
           <source>UPPER CASE</source>
@@ -8649,8 +8669,9 @@ Trailing unprintable symbols are deleted.</target>
           <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="LowerCamelCase.TabIndex" translate="yes" xml:space="preserve" extype="System.Int32, mscorlib">
-          <source>19</source>
+          <source>6</source>
           <target state="needs-review-translation">19</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="LowerCamelCase.Text" translate="yes" xml:space="preserve">
           <source>to lowerCamelCase</source>
@@ -8678,8 +8699,9 @@ Trailing unprintable symbols are deleted.</target>
           <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="UpperCamelCase.TabIndex" translate="yes" xml:space="preserve" extype="System.Int32, mscorlib">
-          <source>19</source>
+          <source>5</source>
           <target state="needs-review-translation">19</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="UpperCamelCase.Text" translate="yes" xml:space="preserve">
           <source>to UpperCamelCase</source>
@@ -8707,8 +8729,9 @@ Trailing unprintable symbols are deleted.</target>
           <target state="needs-review-translation">174, 17</target>
         </trans-unit>
         <trans-unit id="NormalizeEndOfLines.TabIndex" translate="yes" xml:space="preserve" extype="System.Int32, mscorlib">
-          <source>16</source>
+          <source>12</source>
           <target state="needs-review-translation">16</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="NormalizeEndOfLines.Text" translate="yes" xml:space="preserve">
           <source>Normalize "end of line" symbols</source>
@@ -8737,8 +8760,9 @@ Trailing unprintable symbols are deleted.</target>
           <target state="needs-review-translation">101, 17</target>
         </trans-unit>
         <trans-unit id="FromCamelCase.TabIndex" translate="yes" xml:space="preserve" extype="System.Int32, mscorlib">
-          <source>19</source>
+          <source>7</source>
           <target state="needs-review-translation">19</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="FromCamelCase.Text" translate="yes" xml:space="preserve">
           <source>from CamelCase</source>
@@ -8783,6 +8807,46 @@ Trailing unprintable symbols are deleted.</target>
         <trans-unit id="NormalizeFreeSpace.ImeMode" translate="yes" xml:space="preserve" extype="System.Windows.Forms.ImeMode, System.Windows.Forms">
           <source>NoControl</source>
           <target state="needs-review-translation">NoControl</target>
+        </trans-unit>
+        <trans-unit id="checkBoxPasteIntoNewClip.ToolTip" translate="yes" xml:space="preserve">
+          <source></source>
+          <target state="new"></target>
+        </trans-unit>
+        <trans-unit id="checkBoxReplaceTabWithSpaces.ToolTip" translate="yes" xml:space="preserve">
+          <source></source>
+          <target state="new"></target>
+        </trans-unit>
+        <trans-unit id="buttonCancel.ToolTip" translate="yes" xml:space="preserve">
+          <source></source>
+          <target state="new"></target>
+        </trans-unit>
+        <trans-unit id="ReplaceEOL.ToolTip" translate="yes" xml:space="preserve">
+          <source></source>
+          <target state="new"></target>
+        </trans-unit>
+        <trans-unit id="CaseNoChange.ToolTip" translate="yes" xml:space="preserve">
+          <source></source>
+          <target state="new"></target>
+        </trans-unit>
+        <trans-unit id="$this.ToolTip" translate="yes" xml:space="preserve">
+          <source></source>
+          <target state="new"></target>
+        </trans-unit>
+        <trans-unit id="richTextBox1.ToolTip" translate="yes" xml:space="preserve">
+          <source></source>
+          <target state="new"></target>
+        </trans-unit>
+        <trans-unit id="label1.ToolTip" translate="yes" xml:space="preserve">
+          <source></source>
+          <target state="new"></target>
+        </trans-unit>
+        <trans-unit id="buttonOK.ToolTip" translate="yes" xml:space="preserve">
+          <source></source>
+          <target state="new"></target>
+        </trans-unit>
+        <trans-unit id="$this.Language" translate="yes" xml:space="preserve" extype="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" extradata="metadata">
+          <source>ru</source>
+          <target state="needs-review-translation">ru</target>
         </trans-unit>
       </group>
     </body>
