@@ -184,7 +184,7 @@
     <value>209, 22</value>
   </data>
   <data name="ignoreBigTextsToolStripMenuItem.Text" xml:space="preserve">
-    <value>Ingore big texts</value>
+    <value>Ignore big texts</value>
   </data>
   <data name="filterListBySearchStringMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>209, 22</value>
@@ -229,7 +229,7 @@
     <value>23, 22</value>
   </data>
   <data name="toolStripButtonFindPrevious.ToolTipText" xml:space="preserve">
-    <value>Find previuos match in clip text (SHIFT+F3)</value>
+    <value>Find previous match in clip text (SHIFT+F3)</value>
   </data>
   <data name="toolStripBottom.Location" type="System.Drawing.Point, System.Drawing">
     <value>270, 394</value>
@@ -837,7 +837,7 @@ Changes in temp file are not synchronized with clip!</value>
     <value>Paste text (CTRL+ENTER)</value>
   </data>
   <data name="toolStripMenuItem6.ToolTipText" xml:space="preserve">
-    <value>Paste in active window as plain text selected text of clip or agregated text of selected clips.
+    <value>Paste in active window as plain text selected text of clip or aggregated text of selected clips.
 </value>
   </data>
   <data name="toolStripMenuItem23.Size" type="System.Drawing.Size, System.Drawing">
@@ -925,7 +925,7 @@ Changes in temp file are not synchronized with clip!</value>
     <value>Paste text (CTRL+ ENTER)</value>
   </data>
   <data name="toolStripMenuItem15.ToolTipText" xml:space="preserve">
-    <value>Paste in active window as plain text selected text of clip or agregated text of selected clips.
+    <value>Paste in active window as plain text selected text of clip or aggregated text of selected clips.
 </value>
   </data>
   <data name="htmlMenuItemSelectAll.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
@@ -1652,7 +1652,7 @@ Sorting is kept until clip capture.</value>
     <value>Find previous</value>
   </data>
   <data name="PreviousMatchListMenuItem.ToolTipText" xml:space="preserve">
-    <value>Find previuos match in list</value>
+    <value>Find previous match in list</value>
   </data>
   <data name="toolStripMenuItem19.Size" type="System.Drawing.Size, System.Drawing">
     <value>250, 6</value>
@@ -1790,7 +1790,7 @@ Sorting is kept until clip capture.</value>
     <value>Find previous</value>
   </data>
   <data name="PreviousMatchTextMenuItem.ToolTipText" xml:space="preserve">
-    <value>Find previuos match in clip text (SHIFT+F3)</value>
+    <value>Find previous match in clip text (SHIFT+F3)</value>
   </data>
   <data name="textFormattingToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+N</value>
@@ -1941,7 +1941,7 @@ Url will be saved in current clip and will be copied to clipboard.</value>
   </data>
   <data name="ignoreApplicationInCaptureToolStripMenuItem.ToolTipText" xml:space="preserve">
     <value>Ignore application in clip capture. Application will be 
-added to ignore list, wich can be edited in Settings window.</value>
+added to ignore list, which can be edited in Settings window.</value>
   </data>
   <data name="exportMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>220, 22</value>

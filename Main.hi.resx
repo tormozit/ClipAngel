@@ -1174,7 +1174,7 @@ Url वर्तमान क्लिप में सहेजे जाएँ
     <value>140, 26</value>
   </data>
   <data name="toolStripMenuItem7.ToolTipText" xml:space="preserve">
-    <value>सक्रिय विंडो में वर्ण इनपुट चयनित क्लिप्स का क्लिप या agregated पाठ के चयनित पाठ के अनुकरण।</value>
+    <value>सक्रिय विंडो में वर्ण इनपुट चयनित क्लिप्स का क्लिप या aggregated पाठ के चयनित पाठ के अनुकरण।</value>
   </data>
   <data name="MarkFilter.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
     <value>12</value>
@@ -1192,7 +1192,7 @@ Url वर्तमान क्लिप में सहेजे जाएँ
     <value>Magenta</value>
   </data>
   <data name="toolStripMenuItemPasteChars.ToolTipText" xml:space="preserve">
-    <value>सक्रिय विंडो में वर्ण इनपुट चयनित क्लिप्स का क्लिप या agregated पाठ के चयनित पाठ के अनुकरण।</value>
+    <value>सक्रिय विंडो में वर्ण इनपुट चयनित क्लिप्स का क्लिप या aggregated पाठ के चयनित पाठ के अनुकरण।</value>
   </data>
   <data name="toolStripMenuItem9.Text" xml:space="preserve">
     <value>स्पष्ट क्लिपबोर्ड</value>
@@ -1326,7 +1326,7 @@ Url वर्तमान क्लिप में सहेजे जाएँ
     <value>उपयोग किया गया</value>
   </data>
   <data name="toolStripButtonFindPrevious.ToolTipText" xml:space="preserve">
-    <value>Previuos मैच में क्लिप पाठ (SHIFT + F3) पता</value>
+    <value>Previous मैच में क्लिप पाठ (SHIFT + F3) पता</value>
   </data>
   <data name="toolStripMenuItemClearFilters.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>253, 22</value>
@@ -2258,7 +2258,7 @@ Url वर्तमान क्लिप में सहेजे जाएँ
     <value>प्रकार</value>
   </data>
   <data name="toolStripMenuItem6.ToolTipText" xml:space="preserve">
-    <value>सक्रिय विंडो में सादा पाठ चयनित क्लिप या agregated चयनित क्लिप्स के पाठ के पाठ के रूप में चिपकाएँ। 
+    <value>सक्रिय विंडो में सादा पाठ चयनित क्लिप या aggregated चयनित क्लिप्स के पाठ के पाठ के रूप में चिपकाएँ। 
 </value>
   </data>
   <data name="toolStripMenuItemEditClipText.ToolTipText" xml:space="preserve">
@@ -2271,7 +2271,7 @@ Url वर्तमान क्लिप में सहेजे जाएँ
     <value>209, 22</value>
   </data>
   <data name="toolStripMenuItem15.ToolTipText" xml:space="preserve">
-    <value>सक्रिय विंडो में सादा पाठ चयनित क्लिप या agregated चयनित क्लिप्स के पाठ के पाठ के रूप में चिपकाएँ। 
+    <value>सक्रिय विंडो में सादा पाठ चयनित क्लिप या aggregated चयनित क्लिप्स के पाठ के पाठ के रूप में चिपकाएँ। 
 </value>
   </data>
   <data name="MarkFilter.Items3" xml:space="preserve">

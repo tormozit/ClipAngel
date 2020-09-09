@@ -85,7 +85,7 @@
     <value>X</value>
   </data>
   <data name="buttonClearFilter.ToolTip" xml:space="preserve">
-    <value>清除筛选器</value>
+    <value>清除过滤器</value>
   </data>
   <data name="label1.Anchor" xml:space="preserve" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -103,7 +103,7 @@
     <value>20</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>筛选器︰</value>
+    <value>过滤器：</value>
   </data>
   <data name="textBoxFilter.Anchor" xml:space="preserve" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -118,7 +118,7 @@
     <value>21</value>
   </data>
   <data name="textBoxFilter.ToolTip" xml:space="preserve">
-    <value>热筛选器的名称和属性的说明</value>
+    <value>按属性的名称和描述进行过滤</value>
   </data>
   <data name="propertyGrid1.Anchor" xml:space="preserve" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>

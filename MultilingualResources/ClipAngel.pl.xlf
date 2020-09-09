@@ -613,8 +613,8 @@ Generowanie obrazu zużywa moc procesora. Jeśli masz duże obciążenie proceso
           <target state="new">Allow download thumbnail</target>
         </trans-unit>
         <trans-unit id="AllowDownloadThumbnailDescription" translate="yes" xml:space="preserve">
-          <source>Allow download from internet thumbnail for video and image links</source>
-          <target state="new">Allow download from internet thumbnail for video and image links</target>
+          <source>Allow download thumbnail for video and image links from internet</source>
+          <target state="new">Allow download thumbnail for video and image links from internet</target>
         </trans-unit>
         <trans-unit id="ConfirmationBeforeDelete" translate="yes" xml:space="preserve">
           <source>Confirmation before delete</source>
@@ -1349,7 +1349,7 @@ Generowanie obrazu zużywa moc procesora. Jeśli masz duże obciążenie proceso
           <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="ApplicationAddedToIgnoreList" translate="yes" xml:space="preserve">
-          <source>Application "{0}" added to ignore list, wich can be edited in Settings window</source>
+          <source>Application "{0}" added to ignore list, which can be edited in Settings window</source>
           <target state="translated">Aplikacja "{0}" dodana do listy ignorowanych, którą można edytować w oknie Ustawień</target>
         </trans-unit>
         <trans-unit id="CharUnit" translate="yes" xml:space="preserve">
@@ -4416,7 +4416,7 @@ Zmiany w pliku tymczasowym nie są synchronizowane z klipem!</target>
           <target state="needs-review-translation" state-qualifier="tm-suggestion">Używane</target>
         </trans-unit>
         <trans-unit id="toolStripButtonFindPrevious.ToolTipText" translate="yes" xml:space="preserve">
-          <source>Find previuos match in clip text (SHIFT+F3)</source>
+          <source>Find previous match in clip text (SHIFT+F3)</source>
           <target state="translated">Znajduje poprzednie dopasowanie w tekście klipu (SHIFT + F3)</target>
         </trans-unit>
         <trans-unit id="toolStripMenuItem10.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
@@ -6077,7 +6077,7 @@ Podmenu "Listy" ma komendy dla szybkiego wyboru</target>
           <target state="needs-review-translation" state-qualifier="tm-suggestion">Typ</target>
         </trans-unit>
         <trans-unit id="toolStripMenuItem6.ToolTipText" translate="yes" xml:space="preserve">
-          <source>Paste in active window as plain text selected text of clip or agregated text of selected clips.
+          <source>Paste in active window as plain text selected text of clip or aggregated text of selected clips.
 </source>
           <target state="translated">Wkleja zaznaczony tekst z klipu w aktywne okno jako zwykły tekst lub łączny tekst z wybranych klipów. 
 </target>
@@ -6101,7 +6101,7 @@ Podmenu "Listy" ma komendy dla szybkiego wyboru</target>
           <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="toolStripMenuItem15.ToolTipText" translate="yes" xml:space="preserve">
-          <source>Paste in active window as plain text selected text of clip or agregated text of selected clips.
+          <source>Paste in active window as plain text selected text of clip or aggregated text of selected clips.
 </source>
           <target state="translated">Wkleja zaznaczony tekst z klipu w aktywne okno jako zwykły tekst lub łączny tekst z wybranych klipów. 
 </target>
@@ -6214,7 +6214,7 @@ Podmenu "Listy" ma komendy dla szybkiego wyboru</target>
         </trans-unit>
         <trans-unit id="ignoreApplicationInCaptureToolStripMenuItem.ToolTipText" translate="yes" xml:space="preserve">
           <source>Ignore application in clip capture. Application will be 
-added to ignore list, wich can be edited in Settings window.</source>
+added to ignore list, which can be edited in Settings window.</source>
           <target state="translated">Ignoruje aplikacjię podczas przechytywania klipu. Aplikacja będzie 
 dodana do listy ignorowanych, która może być edytowana w oknie Ustawień.</target>
         </trans-unit>
@@ -6707,8 +6707,8 @@ Sortowanie jest przechowywane aż do przechwycenia klipu.</target>
           <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="ignoreBigTextsToolStripMenuItem.Text" translate="yes" xml:space="preserve">
-          <source>Ingore big texts</source>
-          <target state="new">Ingore big texts</target>
+          <source>Ignore big texts</source>
+          <target state="new">Ignore big texts</target>
         </trans-unit>
         <trans-unit id="addSelectedTextInFilterToolStripMenuRtf.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
           <source>205, 22</source>
@@ -6953,8 +6953,8 @@ Edit search string right from list. Navigate in list right from search field.</t
           <target state="new">Find previous</target>
         </trans-unit>
         <trans-unit id="PreviousMatchListMenuItem.ToolTipText" translate="yes" xml:space="preserve">
-          <source>Find previuos match in list</source>
-          <target state="new">Find previuos match in list</target>
+          <source>Find previous match in list</source>
+          <target state="new">Find previous match in list</target>
         </trans-unit>
         <trans-unit id="NextMatchTextMenuItem.ShortcutKeys" translate="yes" xml:space="preserve" extype="System.Windows.Forms.Keys, System.Windows.Forms">
           <source>F3</source>
@@ -6987,8 +6987,8 @@ Edit search string right from list. Navigate in list right from search field.</t
           <target state="new">Find previous</target>
         </trans-unit>
         <trans-unit id="PreviousMatchTextMenuItem.ToolTipText" translate="yes" xml:space="preserve">
-          <source>Find previuos match in clip text (SHIFT+F3)</source>
-          <target state="new">Find previuos match in clip text (SHIFT+F3)</target>
+          <source>Find previous match in clip text (SHIFT+F3)</source>
+          <target state="new">Find previous match in clip text (SHIFT+F3)</target>
         </trans-unit>
         <trans-unit id="autoselectMatchedClipMenuItem.Size" translate="yes" xml:space="preserve" extype="System.Drawing.Size, System.Drawing">
           <source>209, 22</source>
@@ -8776,8 +8776,8 @@ Trailing unprintable symbols are deleted.</target>
           <target state="new">from CamelCase</target>
         </trans-unit>
         <trans-unit id="FromCamelCase.ToolTip" translate="yes" xml:space="preserve">
-          <source>Split words by capital letters and put them lower case.</source>
-          <target state="new">Split words by capital letters and put them lower case.</target>
+          <source>Split words by capital letters and change them to lower case.</source>
+          <target state="new">Split words by capital letters and change them to lower case.</target>
         </trans-unit>
         <trans-unit id="AllUpperCase.ImeMode" translate="yes" xml:space="preserve" extype="System.Windows.Forms.ImeMode, System.Windows.Forms">
           <source>NoControl</source>

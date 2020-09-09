@@ -121,7 +121,7 @@
     <value>Allow download thumbnail</value>
   </data>
   <data name="AllowDownloadThumbnailDescription" xml:space="preserve">
-    <value>Allow download from internet thumbnail for video and image links</value>
+    <value>Allow download thumbnail for video and image links from internet</value>
   </data>
   <data name="AutoCheckUpdate" xml:space="preserve">
     <value>Autocheck for program update</value>

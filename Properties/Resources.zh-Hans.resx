@@ -22,10 +22,10 @@
     <value>..\Picture\delete.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="CutMarker" xml:space="preserve">
-    <value>显示其余文本</value>
+    <value>显示剩余文本</value>
   </data>
   <data name="text" xml:space="preserve">
-    <value>短信</value>
+    <value>文本</value>
   </data>
   <data name="Filter" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\Filter.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -40,7 +40,7 @@
     <value>..\Picture\OpenFile.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="LangRestart" xml:space="preserve">
-    <value>完整的语言更改为您可能需要重新启动程序</value>
+    <value>需要重启软件以更改用户语言</value>
   </data>
   <data name="upload" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\upload.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -58,10 +58,10 @@
     <value>..\DB\db.sqlite;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="CantPasteInElevatedWindow" xml:space="preserve">
-    <value>无法粘贴到窗口具有更高的权限。请尝试以管理员身份运行程序。</value>
+    <value>无法越权粘贴内容，请尝试以管理员身份运行程序</value>
   </data>
   <data name="VisualWeightTooltip" xml:space="preserve">
-    <value>视觉的剪辑重量 （表示视觉剪辑的大小的数字中的数字个数）</value>
+    <value>可见剪辑权重 (代表可视剪辑的数目)</value>
   </data>
   <data name="ClearFilter" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\ClearFilter.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -88,10 +88,10 @@
     <value>..\Picture\TypeText.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="NextClip" xml:space="preserve">
-    <value>下一个 сlip</value>
+    <value>下一剪辑</value>
   </data>
   <data name="NoSupportedTextCompareApplication" xml:space="preserve">
-    <value>没有支持的文本比较应用程序被发现。现在我们打开网站，获取自由一个。</value>
+    <value>未找到支持的文本比较的程序，要立即获取一个免费程序吗?</value>
   </data>
   <data name="Alien_64x64" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\Alien-64x64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -100,10 +100,10 @@
     <value>..\Picture\clear1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="NewVersionAvailable" xml:space="preserve">
-    <value>新的版本是可用的。更新使用按钮是 top 命令栏。</value>
+    <value>发现新版本，请使用顶部命令栏中的按钮进行更新</value>
   </data>
   <data name="ApplicationAddedToIgnoreList" xml:space="preserve">
-    <value>应用程序"{0}"添加到忽略列表，哪可以在设置窗口中编辑</value>
+    <value>程序 {0} 已添加至忽略列表，可在设置中编辑</value>
   </data>
   <data name="CharUnit" xml:space="preserve">
     <value>С</value>
@@ -133,7 +133,7 @@
     <value>..\Picture\FindPrevious.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ActivatedExistedProcess" xml:space="preserve">
-    <value>激活已经运行的应用程序实例</value>
+    <value>已激活正在运行的应用程序实例</value>
   </data>
   <data name="UpdateTo" xml:space="preserve">
     <value>更新至</value>
@@ -148,7 +148,7 @@
     <value>db.sqlite</value>
   </data>
   <data name="FailedToReadFormatFromClipboard" xml:space="preserve">
-    <value>从剪贴板读取格式"{0}"的数据失败。</value>
+    <value>无法从剪贴板读取格式为 "{0}" 的数据</value>
   </data>
   <data name="TopMostWindow" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\TopMostWindow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -160,13 +160,16 @@
     <value>https://sourceforge.net/p/clip-angel/wiki/Description/</value>
   </data>
   <data name="QuestionResetSettings" xml:space="preserve">
-    <value>是否确实要将设置重置为默认值？</value>
+    <value>您确定要将所有设置重置为默认值吗？</value>
+  </data>
+  <data name="Version" xml:space="preserve">
+    <value>版本</value>
   </data>
   <data name="eye" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\eye.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="CouldNotRegisterHotkey" xml:space="preserve">
-    <value>不能注册全局热键</value>
+    <value>无法注册全局热键</value>
   </data>
   <data name="Dublicate" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\Dublicate.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -178,7 +181,7 @@
     <value>..\Picture\Back.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="HowUseAutoTitle" xml:space="preserve">
-    <value>明确要使用自动标题的字符串</value>
+    <value>清除字符串以使用自动标题</value>
   </data>
   <data name="PixelFormat" xml:space="preserve">
     <value>像素</value>
@@ -189,6 +192,9 @@
   <data name="TypeImg" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\TypeImg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Website" xml:space="preserve">
+    <value>https://sourceforge.net/projects/clip-angel</value>
+  </data>
   <data name="MoveCopiedClipToTop" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\MoveCopiedClipToTop.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -196,7 +202,7 @@
     <value>..\Picture\TypeFile.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ClipFileAlreadyOpened" xml:space="preserve">
-    <value>剪辑文件已经打开阻止</value>
+    <value>剪辑文件已打开并阻止</value>
   </data>
   <data name="down" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\down.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -205,13 +211,13 @@
     <value>tormozit@gmail.com</value>
   </data>
   <data name="FailedToWriteClipboard" xml:space="preserve">
-    <value>未能写入剪贴板。它是由窗口"{0}"应用程序"{1}"锁</value>
+    <value>无法写入剪贴板，它已被窗口 "{0}" 应用程序 "{1}" 锁定</value>
   </data>
   <data name="WordWrap" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\word wrap.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="allMarks" xml:space="preserve">
-    <value>所有标记</value>
+    <value>全部标记</value>
   </data>
   <data name="img" xml:space="preserve">
     <value>img</value>
@@ -247,13 +253,58 @@
     <value>..\Picture\FindOptions.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Search" xml:space="preserve">
-    <value>搜索</value>
+    <value>搜索​​​​</value>
+  </data>
+  <data name="LastClipWasMultiCaptured" xml:space="preserve">
+    <value>最后一个剪辑在比较前被捕获两次</value>
+  </data>
+  <data name="ClipWasNotCaptured" xml:space="preserve">
+    <value>复制的剪辑 ({2}) 未被捕获，尺寸太大 {0}KB &gt; {1}KB (设置值)</value>
+  </data>
+  <data name="PastedLastClip" xml:space="preserve">
+    <value>刚粘贴的内容是最后一个</value>
   </data>
   <data name="calendar" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\calendar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="text_email" xml:space="preserve">
+    <value>*电子邮件</value>
+  </data>
+  <data name="text_number" xml:space="preserve">
+    <value>*数字</value>
+  </data>
+  <data name="text_phone" xml:space="preserve">
+    <value>*电话号码</value>
+  </data>
+  <data name="text_url" xml:space="preserve">
+    <value>*网址</value>
+  </data>
+  <data name="text_time" xml:space="preserve">
+    <value>*时间</value>
+  </data>
+  <data name="NoActiveWindow" xml:space="preserve">
+    <value>无目标窗口</value>
+  </data>
+  <data name="ErrorReadingClipboard" xml:space="preserve">
+    <value>由于剪贴板读取错误，剪辑未被捕获</value>
+  </data>
+  <data name="VersionValue" xml:space="preserve">
+    <value>1.91</value>
+  </data>
+  <data name="TargetWindow" xml:space="preserve">
+    <value>目标窗口</value>
+  </data>
+  <data name="TargetApp" xml:space="preserve">
+    <value>目标程序</value>
+  </data>
   <data name="Columns" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\Columns.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="html" xml:space="preserve">
+    <value>html</value>
+  </data>
+  <data name="rtf" xml:space="preserve">
+    <value>rtf</value>
   </data>
   <data name="AutoselectFirstMatch" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\Autoselect first match.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -261,13 +312,58 @@
   <data name="OpenWith" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\Open with.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="FilteredStatusText" xml:space="preserve">
+    <value>已过滤 {0}</value>
+  </data>
   <data name="Tip 32" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\Tip 32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NoCapture" xml:space="preserve">
+    <value>无捕获</value>
   </data>
   <data name="alienNoCapture" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\alien - no capture .ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="MonitoringOFF" xml:space="preserve">
+    <value>剪贴板监控现在已关闭</value>
+  </data>
+  <data name="MonitoringON" xml:space="preserve">
+    <value>剪贴板监控现在已开启</value>
+  </data>
+  <data name="text_1CLine" xml:space="preserve">
+    <value>*1C 行</value>
+  </data>
   <data name="Filter1" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\Filter.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Support" xml:space="preserve">
+    <value>https://sourceforge.net/p/clip-angel/tickets/new/</value>
+  </data>
+  <data name="WrongFileFormat" xml:space="preserve">
+    <value>文件格式错误</value>
+  </data>
+  <data name="filename" xml:space="preserve">
+    <value>文件名</value>
+  </data>
+  <data name="text_filename" xml:space="preserve">
+    <value>*文件名</value>
+  </data>
+  <data name="text_url_image" xml:space="preserve">
+    <value>*图片链接</value>
+  </data>
+  <data name="text_url_video" xml:space="preserve">
+    <value>*视频链接</value>
+  </data>
+  <data name="FailedChangeDatabaseFieEncryption" xml:space="preserve">
+    <value>更改数据库文件加密失败</value>
+  </data>
+  <data name="ConfirmDeleteAllNonFavorite" xml:space="preserve">
+    <value>您确定要删除所有非收藏的剪辑吗？</value>
+  </data>
+  <data name="ConfirmDeleteSelectedClips" xml:space="preserve">
+    <value>你确定要删除所选的剪辑吗？</value>
+  </data>
+  <data name="GlobalHotkeys" xml:space="preserve">
+    <value>全局热键</value>
   </data>
 </root>

@@ -604,8 +604,8 @@ Die Generierung von Bildern erzeugt CPU-Last. Bei zu hoher, niedrigeren Wert fes
           <target state="new">Allow download thumbnail</target>
         </trans-unit>
         <trans-unit id="AllowDownloadThumbnailDescription" translate="yes" xml:space="preserve">
-          <source>Allow download from internet thumbnail for video and image links</source>
-          <target state="new">Allow download from internet thumbnail for video and image links</target>
+          <source>Allow download thumbnail for video and image links from internet</source>
+          <target state="new">Allow download thumbnail for video and image links from internet</target>
         </trans-unit>
         <trans-unit id="ConfirmationBeforeDelete" translate="yes" xml:space="preserve">
           <source>Confirmation before delete</source>
@@ -1343,7 +1343,7 @@ Die Generierung von Bildern erzeugt CPU-Last. Bei zu hoher, niedrigeren Wert fes
           <note from="MultilingualEditor" annotates="source" priority="4">Typo in source ...is top... should be  ...in top...</note>
         </trans-unit>
         <trans-unit id="ApplicationAddedToIgnoreList" translate="yes" xml:space="preserve">
-          <source>Application "{0}" added to ignore list, wich can be edited in Settings window</source>
+          <source>Application "{0}" added to ignore list, which can be edited in Settings window</source>
           <target state="translated">Anwendung "{0}" zur Ignorierliste hinzugefügt. Kann im Fenster "Einstellungen" bearbeitet werden</target>
         </trans-unit>
         <trans-unit id="CharUnit" translate="yes" xml:space="preserve">
@@ -4373,7 +4373,7 @@ Clip-Datei mit Standardanwendung öffnen.
           <target state="translated">Verwendet</target>
         </trans-unit>
         <trans-unit id="toolStripButtonFindPrevious.ToolTipText" translate="yes" xml:space="preserve">
-          <source>Find previuos match in clip text (SHIFT+F3)</source>
+          <source>Find previous match in clip text (SHIFT+F3)</source>
           <target state="translated">Vorigen Treffer im Clip-Text finden (UMSCHALT+F3)</target>
         </trans-unit>
         <trans-unit id="toolStripMenuItem10.Size" translate="no" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
@@ -6019,10 +6019,10 @@ Untermenü "Liste" enthält Befehle zur schnellen Auswahl</target>
           <target state="translated">Art</target>
         </trans-unit>
         <trans-unit id="toolStripMenuItem6.ToolTipText" translate="yes" xml:space="preserve">
-          <source>Paste in active window as plain text selected text of clip or agregated text of selected clips.
+          <source>Paste in active window as plain text selected text of clip or aggregated text of selected clips.
 </source>
           <target state="translated">Fügen Sie im aktiven Fenster den ausgewählten Text des Clips als Klarext ein oder den verbundenen Text  ausgewählter Clips. </target>
-          <note from="MultilingualEditor" annotates="source" priority="4">Typo in source: agregated - should read aggregated</note>
+          <note from="MultilingualEditor" annotates="source" priority="4">Typo in source: aggregated - should read aggregated</note>
         </trans-unit>
         <trans-unit id="toolStripMenuItemEditClipText.ToolTipText" translate="yes" xml:space="preserve">
           <source>Edit clip text as plain text (F4)</source>
@@ -6042,7 +6042,7 @@ Untermenü "Liste" enthält Befehle zur schnellen Auswahl</target>
           <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="toolStripMenuItem15.ToolTipText" translate="yes" xml:space="preserve">
-          <source>Paste in active window as plain text selected text of clip or agregated text of selected clips.
+          <source>Paste in active window as plain text selected text of clip or aggregated text of selected clips.
 </source>
           <target state="translated">Fügen Sie im aktiven Fenster den ausgewählten Text des Clips als Klarext ein oder den verbundenen Text  ausgewählter Clips. 
 </target>
@@ -6154,7 +6154,7 @@ Untermenü "Liste" enthält Befehle zur schnellen Auswahl</target>
         </trans-unit>
         <trans-unit id="ignoreApplicationInCaptureToolStripMenuItem.ToolTipText" translate="yes" xml:space="preserve">
           <source>Ignore application in clip capture. Application will be 
-added to ignore list, wich can be edited in Settings window.</source>
+added to ignore list, which can be edited in Settings window.</source>
           <target state="translated">Anwendung bei der Cliperfassung ignorieren. Anwendung wird zur 
 Ignorierliste hinzugefügt. Diese kann in den "Einstellungen" bearbeitet werden.</target>
         </trans-unit>
@@ -6634,7 +6634,7 @@ Die Sortierung wird bis zur Clip-Erfassung beibehalten.</target>
           <target state="final">209, 22</target>
         </trans-unit>
         <trans-unit id="ignoreBigTextsToolStripMenuItem.Text" translate="yes" xml:space="preserve">
-          <source>Ingore big texts</source>
+          <source>Ignore big texts</source>
           <target state="translated">Ignoriere große Texte</target>
         </trans-unit>
         <trans-unit id="addSelectedTextInFilterToolStripMenuRtf.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
@@ -6880,7 +6880,7 @@ Bearbeite den Suchstring direkt aus der Liste. Navigiere in der Liste direkt aus
           <target state="translated">Vorigen Treffer finden</target>
         </trans-unit>
         <trans-unit id="PreviousMatchListMenuItem.ToolTipText" translate="yes" xml:space="preserve">
-          <source>Find previuos match in list</source>
+          <source>Find previous match in list</source>
           <target state="translated">Finde vorigen Treffer in der Liste</target>
         </trans-unit>
         <trans-unit id="NextMatchTextMenuItem.ShortcutKeys" translate="yes" extype="System.Windows.Forms.Keys, System.Windows.Forms" xml:space="preserve">
@@ -6914,7 +6914,7 @@ Bearbeite den Suchstring direkt aus der Liste. Navigiere in der Liste direkt aus
           <target state="translated">Vorigen Treffer finden</target>
         </trans-unit>
         <trans-unit id="PreviousMatchTextMenuItem.ToolTipText" translate="yes" xml:space="preserve">
-          <source>Find previuos match in clip text (SHIFT+F3)</source>
+          <source>Find previous match in clip text (SHIFT+F3)</source>
           <target state="translated">Vorigen Treffer im Clip-Text finden (UMSCHALT+F3)</target>
         </trans-unit>
         <trans-unit id="autoselectMatchedClipMenuItem.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
@@ -8682,7 +8682,7 @@ Nachlaufende nicht druckbare Symbole werden gelöscht.</target>
           <target state="translated">von Höckerschrift</target>
         </trans-unit>
         <trans-unit id="FromCamelCase.ToolTip" translate="yes" xml:space="preserve">
-          <source>Split words by capital letters and put them lower case.</source>
+          <source>Split words by capital letters and change them to lower case.</source>
           <target state="translated">Trennt Wörter durch Großbuchstaben auf und ersetzt sie durch Kleinbuchstaben.</target>
         </trans-unit>
         <trans-unit id="AllUpperCase.ImeMode" translate="yes" xml:space="preserve" extype="System.Windows.Forms.ImeMode, System.Windows.Forms">

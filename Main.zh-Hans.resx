@@ -15,14 +15,25 @@
   <data name="StripLabelCreated.TextAlign" xml:space="preserve" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleRight</value>
   </data>
+  <data name="moveCopiedClipToTopToolStripMenuItem.Text" xml:space="preserve">
+    <value>使用后移至顶部</value>
+  </data>
   <data name="statusStrip.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>416, 22</value>
+  </data>
+  <data name="toolStripMenuItemOpenFile.ToolTipText" xml:space="preserve">
+    <value>将文本或图片剪辑保存数据到临时文件
+在默认应用程序中打开剪辑文件
+临时文件中的更改未与剪辑同步！</value>
   </data>
   <data name="fileToolStripMenuItem1.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>63, 20</value>
   </data>
+  <data name="pasteENTERToolStripMenuItem.Text" xml:space="preserve">
+    <value>粘贴 (回车)</value>
+  </data>
   <data name="toolStripButtonClearFilter.ToolTipText" xml:space="preserve">
-    <value>清除筛选器 (F7)</value>
+    <value>清除过滤器 (F7)</value>
   </data>
   <data name="toolStripButtonTextFormatting.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>23, 22</value>
@@ -31,13 +42,13 @@
     <value>209, 22</value>
   </data>
   <data name="toolStripButtonAutoSelectMatch.Text" xml:space="preserve">
-    <value>自动选择第一个匹配项</value>
+    <value>自动选中第一个匹配项 </value>
   </data>
   <data name="showAllTypesToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>253, 22</value>
   </data>
   <data name="toolStripMenuItem10.ToolTipText" xml:space="preserve">
-    <value>通过此命令比较选定 2 剪辑或当前剪辑 prevoiusly 选定的剪辑与文本</value>
+    <value>通过此命令将选定的2个剪辑或当前与先前选择的剪辑进行文本比较</value>
   </data>
   <data name="htmlMenuItemCopyLinkAdress.Text" xml:space="preserve">
     <value>复制链接地址</value>
@@ -49,7 +60,7 @@
     <value>VisualWeight</value>
   </data>
   <data name="toolStripButtonTopMostWindow.Text" xml:space="preserve">
-    <value>总在最前面的窗口</value>
+    <value>窗口置顶</value>
   </data>
   <data name="MarkFilter.Anchor" xml:space="preserve" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
@@ -66,8 +77,11 @@
   <data name="deleteToolStripMenuItem1.Text" xml:space="preserve">
     <value>删除</value>
   </data>
+  <data name="toolStripMenuItem3.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>221, 22</value>
+  </data>
   <data name="toolStripMenuItemSwitchFocus.ToolTipText" xml:space="preserve">
-    <value>列表和剪辑文本之间切换焦点。如果焦点是在其他地方，列表将被激活。</value>
+    <value>在列表和剪辑文本之间切换焦点。如果焦点在其他地方，列表将被激活</value>
   </data>
   <data name="copyToClipboardToolStripMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+C</value>
@@ -78,15 +92,18 @@
   <data name="typeDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
     <value>类型</value>
   </data>
+  <data name="deleteAllNonFavoriteToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>从列表中删除所有非收藏的剪辑，在数据库关闭时将执行真正的删除</value>
+  </data>
   <data name="toolStripMenuItem14.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Alt+Q</value>
   </data>
   <data name="TypeFilter.ToolTip" xml:space="preserve">
-    <value>显示仅此类型的剪辑。
-子菜单中"的清单"已用于快速选择命令</value>
+    <value>只显示此类型的剪辑 
+子菜单“列表”有快速选择命令</value>
   </data>
   <data name="editClipTextToolStripMenuItem.ToolTipText" xml:space="preserve">
-    <value>作为纯文本编辑剪辑文本</value>
+    <value>以纯文本编辑剪辑</value>
   </data>
   <data name="showInTaskbarToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>212, 22</value>
@@ -98,7 +115,7 @@
     <value>171, 22</value>
   </data>
   <data name="trayMenuItemMonitoringClipboard.ToolTipText" xml:space="preserve">
-    <value>捕捉剪贴板中的变化</value>
+    <value>捕获剪贴板中的更改</value>
   </data>
   <data name="urlTextBox.Font" xml:space="preserve" type="System.Drawing.Font, System.Drawing">
     <value>Tahoma, 9pt</value>
@@ -107,13 +124,16 @@
     <value>编辑剪辑标题</value>
   </data>
   <data name="changeClipTitleToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
-    <value>219, 22</value>
+    <value>220, 22</value>
+  </data>
+  <data name="copyToClipboardToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>221, 22</value>
   </data>
   <data name="toolStripWindowTitleCopyAll.Text" xml:space="preserve">
-    <value>复制所有文本</value>
+    <value>复制全部文本</value>
   </data>
   <data name="windowAlwaysOnTopToolStripMenuItem.ToolTipText" xml:space="preserve">
-    <value>窗口总在最高的模式</value>
+    <value>窗口置顶模式</value>
   </data>
   <data name="splitContainer1.SplitterDistance" xml:space="preserve" type="System.Int32, mscorlib">
     <value>370</value>
@@ -146,10 +166,10 @@
     <value>Ctrl+T</value>
   </data>
   <data name="openWithToolStripMenuItem.Text" xml:space="preserve">
-    <value>用打开的文件...</value>
+    <value>打开文件...</value>
   </data>
   <data name="copyFullFilenameToolStripMenuItem.Text" xml:space="preserve">
-    <value>复制完整的文件名</value>
+    <value>复制完整文件名</value>
   </data>
   <data name="AppImage.HeaderText" xml:space="preserve">
     <value>AppImage</value>
@@ -172,27 +192,33 @@
   <data name="deleteToolStripMenuItem1.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Del</value>
   </data>
+  <data name="moveDownToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>将选中的剪辑向下移动</value>
+  </data>
   <data name="titleDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
-    <value>职务</value>
+    <value>标题</value>
   </data>
   <data name="ImageSample.HeaderText" xml:space="preserve">
-    <value>ImageSample</value>
+    <value>图片示例</value>
   </data>
   <data name="checkUpdateToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>178, 22</value>
   </data>
   <data name="StripLabelSize.ToolTipText" xml:space="preserve">
-    <value>所有数据类型的剪辑以字节为单位的总大小</value>
+    <value>所有数据类型的剪辑总字节大小</value>
+  </data>
+  <data name="StripLabelCreated.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>130, 17</value>
   </data>
   <data name="uploadImageToWebToolStripMenuItem.ToolTipText" xml:space="preserve">
-    <value>将图像剪辑上传到图片托管网站。
-Url 将被保存在当前剪辑和将被复制到剪贴板。</value>
+    <value>上传图片剪辑到网站 
+链接将被保存到当前剪辑中，并将被复制到剪贴板</value>
   </data>
   <data name="toolStripButtonReturnToPrevous.ToolTipText" xml:space="preserve">
-    <value>清除筛选器和在筛选器之前被选中的选择剪辑应用与所选剪辑的变化</value>
+    <value>清除过滤器，并选择在过滤器应用之前选择的剪辑</value>
   </data>
   <data name="supportToolStripMenuItem.ToolTipText" xml:space="preserve">
-    <value>发送 bug 报告或请求功能</value>
+    <value>发送错误报告或请求功能</value>
   </data>
   <data name="MainMenu.Text" xml:space="preserve">
     <value>menuStrip1</value>
@@ -207,22 +233,28 @@ Url 将被保存在当前剪辑和将被复制到剪贴板。</value>
     <value>Alt+W</value>
   </data>
   <data name="toolStripButtonMarkFavorite.ToolTipText" xml:space="preserve">
-    <value>剪辑是最喜欢的吗</value>
+    <value>该剪辑为收藏吗</value>
+  </data>
+  <data name="toolStripMenuItem11.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>221, 22</value>
+  </data>
+  <data name="StripLabelType.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>45, 17</value>
   </data>
   <data name="showOnlyTextsToolStripMenuItem.Text" xml:space="preserve">
-    <value>显示仅文本</value>
+    <value>仅显示文本</value>
   </data>
   <data name="toolStripMenuItem1.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
-    <value>92, 22</value>
+    <value>93, 22</value>
   </data>
   <data name="checkUpdateToolStripMenuItem.Text" xml:space="preserve">
     <value>检查更新</value>
   </data>
   <data name="sendPasteToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
-    <value>209, 22</value>
+    <value>208, 22</value>
   </data>
   <data name="showOnlyImagesToolStripMenuItem.Text" xml:space="preserve">
-    <value>显示仅图像</value>
+    <value>仅显示图片</value>
   </data>
   <data name="showOnlyImagesToolStripMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Alt+2</value>
@@ -231,7 +263,7 @@ Url 将被保存在当前剪辑和将被复制到剪贴板。</value>
     <value>37, 20</value>
   </data>
   <data name="uploadImageToWebToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
-    <value>219, 22</value>
+    <value>220, 22</value>
   </data>
   <data name="showOnlyFilesToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>253, 22</value>
@@ -240,7 +272,7 @@ Url 将被保存在当前剪辑和将被复制到剪贴板。</value>
     <value>False</value>
   </data>
   <data name="showOnlyUsedToolStripMenuItem.Text" xml:space="preserve">
-    <value>显示只使用</value>
+    <value>仅显示已使用的</value>
   </data>
   <data name="StripLabelType.ToolTipText" xml:space="preserve">
     <value>类型</value>
@@ -278,8 +310,14 @@ Url 将被保存在当前剪辑和将被复制到剪贴板。</value>
   <data name="htmlMenuItemSelectAll.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+A</value>
   </data>
+  <data name="deleteToolStripMenuItem1.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>221, 22</value>
+  </data>
   <data name="richTextBox.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>408, 94</value>
+  </data>
+  <data name="moveTopToolStripMenuItem.Text" xml:space="preserve">
+    <value>移至顶部</value>
   </data>
   <data name="ImageControl.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
     <value>8</value>
@@ -291,7 +329,7 @@ Url 将被保存在当前剪辑和将被复制到剪贴板。</value>
     <value>253, 22</value>
   </data>
   <data name="toolStripMenuItemSearchWildcards.Text" xml:space="preserve">
-    <value>作为任何字符序列"%"</value>
+    <value>"%" 作为任意字符序列</value>
   </data>
   <data name="StripLabelSize.AutoSize" xml:space="preserve" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -303,19 +341,19 @@ Url 将被保存在当前剪辑和将被复制到剪贴板。</value>
     <value>显示所有类型</value>
   </data>
   <data name="mergeTextOfClipsToolStripMenuItem.Text" xml:space="preserve">
-    <value>加入文本剪辑</value>
+    <value>合并剪辑文本</value>
   </data>
   <data name="copyToClipboardToolStripMenuItem.Text" xml:space="preserve">
-    <value>复制到剪贴板</value>
+    <value>复制到剪切板</value>
   </data>
   <data name="dataGridViewImageColumn1.MinimumWidth" xml:space="preserve" type="System.Int32, mscorlib">
     <value>18</value>
   </data>
   <data name="pasteAsTextToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
-    <value>209, 22</value>
+    <value>208, 22</value>
   </data>
   <data name="textCompareToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
-    <value>219, 22</value>
+    <value>220, 22</value>
   </data>
   <data name="textCompareToolStripMenuItem.Text" xml:space="preserve">
     <value>文本比较</value>
@@ -327,7 +365,7 @@ Url 将被保存在当前剪辑和将被复制到剪贴板。</value>
     <value>Ctrl+3</value>
   </data>
   <data name="toolStripMenuItemPasteChars.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
-    <value>219, 22</value>
+    <value>220, 22</value>
   </data>
   <data name="pictureBoxSource.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>16, 20</value>
@@ -366,7 +404,7 @@ Url 将被保存在当前剪辑和将被复制到剪贴板。</value>
     <value>True</value>
   </data>
   <data name="toolStripMenuItemPasteChars.Text" xml:space="preserve">
-    <value>模拟输入字符</value>
+    <value>模拟字符输入</value>
   </data>
   <data name="supportToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>178, 22</value>
@@ -375,7 +413,7 @@ Url 将被保存在当前剪辑和将被复制到剪贴板。</value>
     <value>None</value>
   </data>
   <data name="urlTextBox.ToolTip" xml:space="preserve">
-    <value>从这个 URL 复制剪辑</value>
+    <value>剪辑复制于此链接</value>
   </data>
   <data name="toolStripMenuItem12.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>F2</value>
@@ -384,9 +422,9 @@ Url 将被保存在当前剪辑和将被复制到剪贴板。</value>
     <value>790, 24</value>
   </data>
   <data name="openWithToolStripMenuItem.ToolTipText" xml:space="preserve">
-    <value>将数据保存到临时文件的文本或图像剪辑。
-打开系统菜单，选择应用程序中打开剪辑文件。
-临时文件中的更改与剪辑不同步 ！</value>
+    <value>将文本或图片剪辑保存数据到临时文件
+打开系统菜单以在选定程序中打开剪辑文件
+临时文件中的更改未与剪辑同步！</value>
   </data>
   <data name="textBoxApplication.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
     <value>2</value>
@@ -407,19 +445,25 @@ Url 将被保存在当前剪辑和将被复制到剪贴板。</value>
     <value>209, 164</value>
   </data>
   <data name="showInTaskbarToolStripMenuItem.Text" xml:space="preserve">
-    <value>在任务栏中显示</value>
+    <value>在任务栏上显示</value>
   </data>
   <data name="toolStripMenuItemMonitoringClipboard.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>212, 22</value>
   </data>
   <data name="textBoxWindow.ToolTip" xml:space="preserve">
-    <value>复制剪辑的窗口的标题</value>
+    <value>复制剪辑的窗口标题</value>
+  </data>
+  <data name="toolStripMenuItem3.ToolTipText" xml:space="preserve">
+    <value>粘贴 (所选剪辑纯文本、图片剪辑文件名或纯文本或所有选中剪辑的汇总纯文本) 到活动窗口</value>
   </data>
   <data name="buttonUpdate.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>63, 22</value>
   </data>
   <data name="clipToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>40, 20</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ClipAngel</value>
   </data>
   <data name="buttonUpdate.ImageTransparentColor" xml:space="preserve" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
@@ -436,11 +480,16 @@ Url 将被保存在当前剪辑和将被复制到剪贴板。</value>
   <data name="toolStripBottom.Text" xml:space="preserve">
     <value>toolStrip2</value>
   </data>
+  <data name="toolStripMenuItem11.ToolTipText" xml:space="preserve">
+    <value>将文本或图片剪辑保存数据到临时文件
+在默认应用程序中打开剪辑文件
+临时文件中的更改未与剪辑同步！</value>
+  </data>
   <data name="ImageControl.Anchor" xml:space="preserve" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
   <data name="ignoreApplicationInCaptureToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
-    <value>219, 22</value>
+    <value>220, 22</value>
   </data>
   <data name="StripLabelSize.Text" xml:space="preserve">
     <value>大小</value>
@@ -452,8 +501,7 @@ Url 将被保存在当前剪辑和将被复制到剪贴板。</value>
     <value>文件</value>
   </data>
   <data name="textCompareToolStripMenuItem.ToolTipText" xml:space="preserve">
-    <value>通过此命令
-比较选定 2 剪辑或当前剪辑 prevoiusly 选定的剪辑与文本</value>
+    <value>通过此命令将选定的2个剪辑或当前与先前选择的剪辑进行文本比较</value>
   </data>
   <data name="textBoxApplication.Anchor" xml:space="preserve" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -465,22 +513,22 @@ Url 将被保存在当前剪辑和将被复制到剪贴板。</value>
     <value>F8</value>
   </data>
   <data name="htmlMenuItemOpenLink.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
-    <value>209, 22</value>
+    <value>208, 22</value>
   </data>
   <data name="MarkFilter.Items" xml:space="preserve">
-    <value>全部</value>
+    <value>所有</value>
   </data>
   <data name="toolStripButtonMarkFavorite.ImageTransparentColor" xml:space="preserve" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
   </data>
   <data name="StripLabelVisualSize.ToolTipText" xml:space="preserve">
-    <value>可视尺寸︰ 数目的字符或像素</value>
+    <value>可视大小：字符数或像素</value>
   </data>
   <data name="fToolStripMenuItem.Text" xml:space="preserve">
     <value>帮助</value>
   </data>
   <data name="toolStripMenuItem7.Text" xml:space="preserve">
-    <value>模拟输入字符</value>
+    <value>模拟字符输入</value>
   </data>
   <data name="fToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>44, 20</value>
@@ -492,19 +540,22 @@ Url 将被保存在当前剪辑和将被复制到剪贴板。</value>
     <value>23, 22</value>
   </data>
   <data name="toolStripUrlCopyAll.Text" xml:space="preserve">
-    <value>复制所有文本</value>
+    <value>复制全部文本</value>
   </data>
   <data name="htmlTextBox.Location" xml:space="preserve" type="System.Drawing.Point, System.Drawing">
     <value>3, 101</value>
   </data>
+  <data name="deleteToolStripMenuItem1.ToolTipText" xml:space="preserve">
+    <value>从列表中删除所有选中的剪辑，在数据库关闭时将执行真正的删除</value>
+  </data>
   <data name="supportToolStripMenuItem.Text" xml:space="preserve">
-    <value>发送 bug 或功能</value>
+    <value>发送 bug 或功能请求</value>
   </data>
   <data name="toolStripMenuItemSearchCaseSensitive.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>209, 22</value>
   </data>
   <data name="returnToPrevousSelectedClipToolStripMenuItem.Text" xml:space="preserve">
-    <value>清除筛选器并选择一个昨日。</value>
+    <value>清除过滤器并选中先前条目</value>
   </data>
   <data name="contextMenuStripApplication.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>172, 48</value>
@@ -525,7 +576,7 @@ Url 将被保存在当前剪辑和将被复制到剪贴板。</value>
     <value>Magenta</value>
   </data>
   <data name="dataGridViewRichTextBoxColumn2.HeaderText" xml:space="preserve">
-    <value>ColumnTitle</value>
+    <value>列标题</value>
   </data>
   <data name="settingsToolStripMenuItem.Text" xml:space="preserve">
     <value>设置</value>
@@ -540,16 +591,15 @@ Url 将被保存在当前剪辑和将被复制到剪贴板。</value>
     <value>Magenta</value>
   </data>
   <data name="toolStripButtonOpenWith.ToolTipText" xml:space="preserve">
-    <value>将数据保存到临时文件的文本或图像剪辑。
-打开系统菜单，选择应用程序中打开剪辑文件。
-临时文件中的更改与剪辑不同步 ！
-</value>
+    <value>将文本或图片剪辑保存数据到临时文件
+打开系统菜单以在选定程序中打开剪辑文件
+临时文件中的更改未与剪辑同步！</value>
   </data>
   <data name="htmlTextBox.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
     <value>10</value>
   </data>
   <data name="charsDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
-    <value>字符数</value>
+    <value>字符</value>
   </data>
   <data name="toolStripButtonClearFilter.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>23, 22</value>
@@ -560,11 +610,14 @@ Url 将被保存在当前剪辑和将被复制到剪贴板。</value>
   <data name="urlTextBox.Margin" xml:space="preserve" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
   </data>
+  <data name="moveUpToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>将选中的剪辑上移一位</value>
+  </data>
   <data name="copyToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>205, 22</value>
   </data>
   <data name="TypeFilter.Items" xml:space="preserve">
-    <value>全部</value>
+    <value>所有</value>
   </data>
   <data name="toolStripButtonFindPrevious.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>23, 22</value>
@@ -579,19 +632,19 @@ Url 将被保存在当前剪辑和将被复制到剪贴板。</value>
     <value>187, 22</value>
   </data>
   <data name="pasteENTERToolStripMenuItem.ToolTipText" xml:space="preserve">
-    <value>在活动窗口选定剪辑中粘贴。也由双击。</value>
+    <value>将选定的剪辑粘贴至活动窗口，也可通过直接双击完成</value>
   </data>
   <data name="moveUpToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>253, 22</value>
   </data>
   <data name="showOnlyFilesToolStripMenuItem.Text" xml:space="preserve">
-    <value>只显示文件</value>
+    <value>仅显示文件</value>
   </data>
   <data name="toolStripSearchOptions.ToolTipText" xml:space="preserve">
     <value>搜索选项</value>
   </data>
   <data name="setFavouriteToolStripMenuItem.Text" xml:space="preserve">
-    <value>最喜欢的标志</value>
+    <value>标为收藏</value>
   </data>
   <data name="textFormattingToolStripMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+N</value>
@@ -1141,7 +1194,7 @@ Url 将被保存在当前剪辑和将被复制到剪贴板。</value>
     <value>None</value>
   </data>
   <data name="stripLabelPosition.Text" xml:space="preserve">
-    <value>定位</value>
+    <value>位置</value>
   </data>
   <data name="settingsToolStripMenuItem1.Text" xml:space="preserve">
     <value>设置</value>
@@ -1156,7 +1209,7 @@ Url 将被保存在当前剪辑和将被复制到剪贴板。</value>
     <value>Top, Bottom, Left, Right</value>
   </data>
   <data name="toolStripMenuItemClearFilterAndSelectTop.ToolTipText" xml:space="preserve">
-    <value>清除筛选器并选择顶级剪辑</value>
+    <value>清除过滤器并选中第一个条目</value>
   </data>
   <data name="showOnlyFilesToolStripMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Alt+3</value>
@@ -1167,23 +1220,38 @@ Url 将被保存在当前剪辑和将被复制到剪贴板。</value>
   <data name="ImageControl.Location" xml:space="preserve" type="System.Drawing.Point, System.Drawing">
     <value>2, 198</value>
   </data>
+  <data name="rtfMenuItemOpenLink.Text" xml:space="preserve">
+    <value>打开链接 (ALT+点击)</value>
+  </data>
   <data name="toolStripTop.Text" xml:space="preserve">
     <value>toolStrip1</value>
   </data>
   <data name="contextMenuWindowTitle.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
-    <value>140, 26</value>
+    <value>141, 26</value>
   </data>
   <data name="toolStripMenuItem7.ToolTipText" xml:space="preserve">
-    <value>在所选文本的选定的剪辑的剪辑或 agregated 文本活动窗口 char 输入模拟。</value>
+    <value>模拟选定剪辑或选定剪辑的合计文本的键盘输入到活动窗口</value>
   </data>
   <data name="MarkFilter.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
     <value>12</value>
+  </data>
+  <data name="toolStripMenuItem14.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>221, 22</value>
+  </data>
+  <data name="toolStripMenuItem12.Text" xml:space="preserve">
+    <value>编辑标题</value>
   </data>
   <data name="toolStripMenuItemSearchWildcards.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>209, 22</value>
   </data>
   <data name="pictureBoxSource.BackgroundImageLayout" xml:space="preserve" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Center</value>
+  </data>
+  <data name="showInTaskbarToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>关闭时，窗口将总是隐藏在任务栏
+当开启且“快速打开窗口”开启时，窗口将总是显示在任务栏
+当开启和“快速打开窗口”开启时，窗口将会显示在任务栏
+</value>
   </data>
   <data name="toolStripMenuItemSwitchFocus.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>212, 22</value>
@@ -1192,13 +1260,13 @@ Url 将被保存在当前剪辑和将被复制到剪贴板。</value>
     <value>Magenta</value>
   </data>
   <data name="toolStripMenuItemPasteChars.ToolTipText" xml:space="preserve">
-    <value>在所选文本的选定的剪辑的剪辑或 agregated 文本活动窗口 char 输入模拟。</value>
+    <value>模拟选定剪辑或选定剪辑的合计文本的键盘输入到活动窗口</value>
   </data>
   <data name="toolStripMenuItem9.Text" xml:space="preserve">
-    <value>清除剪贴板</value>
+    <value>清空剪贴板</value>
   </data>
   <data name="StripLabelCreated.Text" xml:space="preserve">
-    <value>已创建</value>
+    <value>创建于</value>
   </data>
   <data name="statusStrip.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
     <value>4</value>
@@ -1216,18 +1284,18 @@ Url 将被保存在当前剪辑和将被复制到剪贴板。</value>
     <value>Fill</value>
   </data>
   <data name="monospacedFontToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
-    <value>219, 22</value>
+    <value>220, 22</value>
   </data>
   <data name="editClipTextToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
-    <value>219, 22</value>
+    <value>220, 22</value>
   </data>
   <data name="toolStripMenuItem16.ToolTipText" xml:space="preserve">
-    <value>将数据保存到临时文件的文本或图像剪辑。
-打开剪辑文件在默认应用程序。
-临时文件中的更改与剪辑不同步 ！</value>
+    <value>将文本或图片剪辑保存数据到临时文件
+在默认应用程序中打开剪辑文件
+临时文件中的更改未与剪辑同步！</value>
   </data>
   <data name="toolStripMenuItem14.Text" xml:space="preserve">
-    <value>最喜欢的标志</value>
+    <value>标为收藏</value>
   </data>
   <data name="toolStripBottom.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
     <value>13</value>
@@ -1239,7 +1307,7 @@ Url 将被保存在当前剪辑和将被复制到剪贴板。</value>
     <value>Del</value>
   </data>
   <data name="windowAlwaysOnTopToolStripMenuItem.Text" xml:space="preserve">
-    <value>置于顶层</value>
+    <value>窗口置顶</value>
   </data>
   <data name="toolStripMenuItem5.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>250, 6</value>
@@ -1248,7 +1316,7 @@ Url 将被保存在当前剪辑和将被复制到剪贴板。</value>
     <value>MiddleRight</value>
   </data>
   <data name="textBoxApplication.ToolTip" xml:space="preserve">
-    <value>应用程序的复制剪辑</value>
+    <value>复制剪辑的程序</value>
   </data>
   <data name="moveTopToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>253, 22</value>
@@ -1262,6 +1330,9 @@ Url 将被保存在当前剪辑和将被复制到剪贴板。</value>
   <data name="textBoxWindow.Anchor" xml:space="preserve" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
   </data>
+  <data name="pasteENTERToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>221, 22</value>
+  </data>
   <data name="tableLayoutPanelData.Margin" xml:space="preserve" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
   </data>
@@ -1271,6 +1342,9 @@ Url 将被保存在当前剪辑和将被复制到剪贴板。</value>
   <data name="changeClipTitleToolStripMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>F2</value>
   </data>
+  <data name="toolStripMenuItem8.ToolTipText" xml:space="preserve">
+    <value>从列表中删除选定的非收藏剪辑，在数据库关闭时将执行真正的删除</value>
+  </data>
   <data name="contextMenuStripRtf.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>206, 120</value>
   </data>
@@ -1278,10 +1352,10 @@ Url 将被保存在当前剪辑和将被复制到剪贴板。</value>
     <value>窗口</value>
   </data>
   <data name="openWithToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
-    <value>219, 22</value>
+    <value>220, 22</value>
   </data>
   <data name="toolStripMenuItemMonitoringClipboard.Text" xml:space="preserve">
-    <value>监测剪贴板</value>
+    <value>正在监视剪贴板</value>
   </data>
   <data name="сдуфкClipboardToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>212, 22</value>
@@ -1289,14 +1363,23 @@ Url 将被保存在当前剪辑和将被复制到剪贴板。</value>
   <data name="contextMenuUrl.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>188, 48</value>
   </data>
+  <data name="stripLabelPosition.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>36, 17</value>
+  </data>
+  <data name="toolStripMenuItem12.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>221, 22</value>
+  </data>
   <data name="charsDataGridViewTextBoxColumn.Visible" xml:space="preserve" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
+  <data name="toolStripBottom.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>100, 25</value>
+  </data>
   <data name="ignoreApplicationInCaptureToolStripMenuItem.Text" xml:space="preserve">
-    <value>忽略应用程序</value>
+    <value>忽略程序</value>
   </data>
   <data name="historyToolStripMenuItem.Text" xml:space="preserve">
-    <value>更改的历史记录</value>
+    <value>更新历史</value>
   </data>
   <data name="dataGridView.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1314,25 +1397,28 @@ Url 将被保存在当前剪辑和将被复制到剪贴板。</value>
     <value>2, 2, 2, 2</value>
   </data>
   <data name="toolStripButtonTopMostWindow.ToolTipText" xml:space="preserve">
-    <value>窗口总在最高的模式</value>
+    <value>窗口置顶模式</value>
   </data>
   <data name="returnToPrevousSelectedClipToolStripMenuItem.ToolTipText" xml:space="preserve">
-    <value>清除筛选器和在筛选器之前被选中的选择剪辑应用与所选剪辑的变化</value>
+    <value>清除过滤器，并选择在过滤器应用之前选择的剪辑</value>
   </data>
   <data name="wordWrapToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
-    <value>219, 22</value>
+    <value>220, 22</value>
   </data>
   <data name="usedDataGridViewCheckBoxColumn.HeaderText" xml:space="preserve">
     <value>已使用</value>
   </data>
   <data name="toolStripButtonFindPrevious.ToolTipText" xml:space="preserve">
-    <value>找到在今日匹配在剪辑文本 (SHIFT + F3)</value>
+    <value>查找上一匹配项 (SHIFT+F3)</value>
+  </data>
+  <data name="toolStripMenuItem10.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>221, 22</value>
   </data>
   <data name="toolStripMenuItemClearFilters.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>253, 22</value>
   </data>
   <data name="contextMenuStripDataGrid.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
-    <value>222, 290</value>
+    <value>222, 268</value>
   </data>
   <data name="TypeFilter.Location" xml:space="preserve" type="System.Drawing.Point, System.Drawing">
     <value>84, 395</value>
@@ -1341,22 +1427,25 @@ Url 将被保存在当前剪辑和将被复制到剪贴板。</value>
     <value>区分大小写</value>
   </data>
   <data name="notifyIcon.Text" xml:space="preserve">
-    <value>剪辑的天使</value>
+    <value>Clip Angel</value>
+  </data>
+  <data name="ColumnTitle.HeaderText" xml:space="preserve">
+    <value>标题</value>
   </data>
   <data name="AppImage.Width" xml:space="preserve" type="System.Int32, mscorlib">
     <value>18</value>
   </data>
   <data name="toolStripApplicationCopyAll.Text" xml:space="preserve">
-    <value>复制所有文本</value>
+    <value>复制全部文本</value>
   </data>
   <data name="toolStripButtonClearFilterAndSelectTop.ToolTipText" xml:space="preserve">
-    <value>清除筛选器和 seleсt 顶部 (F9)</value>
+    <value>清除过滤器并选中第一个条目 (F9)</value>
   </data>
   <data name="listToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>37, 20</value>
   </data>
   <data name="toolStripMenuItemCompareLastClips.Text" xml:space="preserve">
-    <value>比较最后剪辑</value>
+    <value>比较上一剪辑</value>
   </data>
   <data name="copyToolStripMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+C</value>
@@ -1368,7 +1457,7 @@ Url 将被保存在当前剪辑和将被复制到剪贴板。</value>
     <value>文本比较</value>
   </data>
   <data name="toolStripMenuItemClearFilters.Text" xml:space="preserve">
-    <value>清除筛选器</value>
+    <value>清除过滤器</value>
   </data>
   <data name="pictureBoxSource.ImeMode" xml:space="preserve" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -1383,10 +1472,13 @@ Url 将被保存在当前剪辑和将被复制到剪贴板。</value>
     <value>F4</value>
   </data>
   <data name="toolStripMenuItem2.ToolTipText" xml:space="preserve">
-    <value>在活动窗口选定剪辑中粘贴。也由双击。</value>
+    <value>将选定的剪辑粘贴至活动窗口，也可通过直接双击完成</value>
+  </data>
+  <data name="toolStripBottom.Location" xml:space="preserve" type="System.Drawing.Point, System.Drawing">
+    <value>270, 394</value>
   </data>
   <data name="favoriteDataGridViewCheckBoxColumn.HeaderText" xml:space="preserve">
-    <value>收藏夹</value>
+    <value>收藏</value>
   </data>
   <data name="translateToolStripMenuItem.Text" xml:space="preserve">
     <value>翻译文本</value>
@@ -1404,7 +1496,7 @@ Url 将被保存在当前剪辑和将被复制到剪贴板。</value>
     <value>Bottom, Left, Right</value>
   </data>
   <data name="setFavouriteToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
-    <value>219, 22</value>
+    <value>220, 22</value>
   </data>
   <data name="StripLabelCreated.AutoSize" xml:space="preserve" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -1413,10 +1505,10 @@ Url 将被保存在当前剪辑和将被复制到剪贴板。</value>
     <value>187, 22</value>
   </data>
   <data name="pictureBoxSource.ToolTip" xml:space="preserve">
-    <value>这是应用程序的图标复制剪辑</value>
+    <value>复制剪辑的程序图标</value>
   </data>
   <data name="resetFavouriteToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
-    <value>219, 22</value>
+    <value>220, 22</value>
   </data>
   <data name="toolStripButtonTopMostWindow.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>23, 22</value>
@@ -1428,29 +1520,41 @@ Url 将被保存在当前剪辑和将被复制到剪贴板。</value>
     <value>Segoe UI, 9pt</value>
   </data>
   <data name="MarkFilter.ToolTip" xml:space="preserve">
-    <value>显示仅此标记的剪辑。
-子菜单中"的清单"已用于快速选择命令</value>
+    <value>只显示此标记的剪辑 
+子菜单“列表”有快速选择命令</value>
   </data>
   <data name="helpToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>178, 22</value>
   </data>
   <data name="htmlMenuItemOpenLink.Text" xml:space="preserve">
-    <value>打开链接 （ALT + 单击）</value>
+    <value>打开链接 (ALT+点击)</value>
+  </data>
+  <data name="toolStripMenuItem11.Text" xml:space="preserve">
+    <value>打开文件</value>
   </data>
   <data name="toolStripMenuItem8.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
-    <value>219, 22</value>
+    <value>220, 22</value>
+  </data>
+  <data name="moveTopToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>将选中的剪辑移至顶部</value>
   </data>
   <data name="copyToClipboardToolStripMenuItem.ToolTipText" xml:space="preserve">
-    <value>复制到剪贴板的当前剪辑</value>
+    <value>复制当前剪辑到剪贴板</value>
   </data>
   <data name="htmlMenuItemCopyLinkAdress.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
-    <value>209, 22</value>
+    <value>208, 22</value>
   </data>
   <data name="toolStripButtonMonospacedFont.ImageTransparentColor" xml:space="preserve" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
   </data>
+  <data name="toolStripMenuItem6.Text" xml:space="preserve">
+    <value>粘贴文本 (CTRL+ENTER)</value>
+  </data>
   <data name="moveUpToolStripMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+Up</value>
+  </data>
+  <data name="contextMenuStripNotifyIcon.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>188, 158</value>
   </data>
   <data name="urlTextBox.Location" xml:space="preserve" type="System.Drawing.Point, System.Drawing">
     <value>2, 345</value>
@@ -1468,13 +1572,13 @@ Url 将被保存在当前剪辑和将被复制到剪贴板。</value>
     <value>False</value>
   </data>
   <data name="toolStripMenuItemSwitchFocus.Text" xml:space="preserve">
-    <value>切换焦点的列表文本</value>
+    <value>切换焦点列表/文本</value>
   </data>
   <data name="pictureBoxSource.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
   <data name="setFavouriteToolStripMenuItem.ToolTipText" xml:space="preserve">
-    <value>将所选剪辑标记为喜爱</value>
+    <value>标记选中剪辑为收藏</value>
   </data>
   <data name="richTextBox.Text" xml:space="preserve">
     <value></value>
@@ -1486,7 +1590,7 @@ Url 将被保存在当前剪辑和将被复制到剪贴板。</value>
     <value>83, 20</value>
   </data>
   <data name="dataGridViewRichTextBoxColumn1.HeaderText" xml:space="preserve">
-    <value>ColumnTitle</value>
+    <value>列标题</value>
   </data>
   <data name="buttonUpdate.Visible" xml:space="preserve" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -1495,7 +1599,7 @@ Url 将被保存在当前剪辑和将被复制到剪贴板。</value>
     <value>False</value>
   </data>
   <data name="toolStripButtonWordWrap.Text" xml:space="preserve">
-    <value>自动换行</value>
+    <value>文本自动换行</value>
   </data>
   <data name="richTextBox.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
     <value>2</value>
@@ -1507,7 +1611,7 @@ Url 将被保存在当前剪辑和将被复制到剪贴板。</value>
     <value>TypeImg</value>
   </data>
   <data name="toolStripMenuItem15.Text" xml:space="preserve">
-    <value>粘贴文本 (CTRL + ENTER)</value>
+    <value>粘贴文本 (CTRL+ENTER)</value>
   </data>
   <data name="toolStripBottom.Dock" xml:space="preserve" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>None</value>
@@ -1525,16 +1629,16 @@ Url 将被保存在当前剪辑和将被复制到剪贴板。</value>
     <value>23, 22</value>
   </data>
   <data name="sendPasteToolStripMenuItem.Text" xml:space="preserve">
-    <value>粘贴原始 (ENTER)</value>
+    <value>粘贴原始 (回车)</value>
   </data>
   <data name="exitToolStripMenuItem.ToolTipText" xml:space="preserve">
     <value>退出程序</value>
   </data>
   <data name="toolStripMenuItem8.Text" xml:space="preserve">
-    <value>删除</value>
+    <value>删除                              Del</value>
   </data>
   <data name="resetFavouriteToolStripMenuItem.Text" xml:space="preserve">
-    <value>取消标记为喜爱</value>
+    <value>取消标记为收藏</value>
   </data>
   <data name="exitToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>212, 22</value>
@@ -1546,13 +1650,13 @@ Url 将被保存在当前剪辑和将被复制到剪贴板。</value>
     <value>17</value>
   </data>
   <data name="toolStripMenuItemClearFilterAndSelectTop.Text" xml:space="preserve">
-    <value>清除筛选器并选择顶部</value>
+    <value>清除过滤器并选中第一个条目</value>
   </data>
   <data name="aboutToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>52, 20</value>
   </data>
   <data name="uploadImageToWebToolStripMenuItem.Text" xml:space="preserve">
-    <value>将图像上传到 web</value>
+    <value>上传图片</value>
   </data>
   <data name="urlTextBox.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
     <value>11</value>
@@ -1561,7 +1665,7 @@ Url 将被保存在当前剪辑和将被复制到剪贴板。</value>
     <value>40, 20</value>
   </data>
   <data name="toolStripMenuItem4.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
-    <value>209, 22</value>
+    <value>208, 22</value>
   </data>
   <data name="toolStripUpdateToSeparator.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>6, 25</value>
@@ -1570,7 +1674,7 @@ Url 将被保存在当前剪辑和将被复制到剪贴板。</value>
     <value></value>
   </data>
   <data name="htmlMenuItemSelectAll.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
-    <value>209, 22</value>
+    <value>208, 22</value>
   </data>
   <data name="tableLayoutPanelData.RowCount" xml:space="preserve" type="System.Int32, mscorlib">
     <value>4</value>
@@ -1579,7 +1683,7 @@ Url 将被保存在当前剪辑和将被复制到剪贴板。</value>
     <value>78, 23</value>
   </data>
   <data name="pasteAsTextToolStripMenuItem.Text" xml:space="preserve">
-    <value>粘贴文本 (CTRL + ENTER)</value>
+    <value>粘贴文本 (CTRL+ENTER)</value>
   </data>
   <data name="toolStripButtonFindNext.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>23, 22</value>
@@ -2126,13 +2230,13 @@ Url 将被保存在当前剪辑和将被复制到剪贴板。</value>
     <value>False</value>
   </data>
   <data name="translateToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
-    <value>219, 22</value>
+    <value>220, 22</value>
   </data>
   <data name="historyToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>178, 22</value>
   </data>
   <data name="toolStripMenuItem14.ToolTipText" xml:space="preserve">
-    <value>将所选剪辑标记为喜爱</value>
+    <value>标记选中剪辑为收藏</value>
   </data>
   <data name="showAllMarksToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>253, 22</value>
@@ -2151,6 +2255,9 @@ Url 将被保存在当前剪辑和将被复制到剪贴板。</value>
   </data>
   <data name="htmlTextBox.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>406, 92</value>
+  </data>
+  <data name="toolStripMenuItem2.Text" xml:space="preserve">
+    <value>粘贴 (回车)</value>
   </data>
   <data name="toolStripSearchOptions.Text" xml:space="preserve">
     <value>toolStripDropDownButton1</value>
@@ -2177,7 +2284,7 @@ Url 将被保存在当前剪辑和将被复制到剪贴板。</value>
 </value>
   </data>
   <data name="checkUpdateToolStripMenuItem.ToolTipText" xml:space="preserve">
-    <value>检查调用 update 时每次启动，然后每一天。此命令允许现在叫它。</value>
+    <value>每次启动程序/每天都会检查更新，此命令可以立即检查更新</value>
   </data>
   <data name="exitToolStripMenuItem1.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>187, 22</value>
@@ -2189,7 +2296,7 @@ Url 将被保存在当前剪辑和将被复制到剪贴板。</value>
     <value>329, 3</value>
   </data>
   <data name="toolStripMenuItemSearchWordsIndependently.Text" xml:space="preserve">
-    <value>独立的单词</value>
+    <value>独立单词</value>
   </data>
   <data name="toolStripButtonFindNext.ImageTransparentColor" xml:space="preserve" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
@@ -2198,13 +2305,13 @@ Url 将被保存在当前剪辑和将被复制到剪贴板。</value>
     <value>253, 22</value>
   </data>
   <data name="toolStripMenuItem16.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
-    <value>219, 22</value>
+    <value>220, 22</value>
   </data>
   <data name="toolStripButtonTopMostWindow.ImageTransparentColor" xml:space="preserve" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
   </data>
   <data name="deleteAllNonFavoriteToolStripMenuItem.Text" xml:space="preserve">
-    <value>删除所有非收藏</value>
+    <value>删除所有非收藏条目</value>
   </data>
   <data name="toolStripButtonReturnToPrevous.ImageTransparentColor" xml:space="preserve" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
@@ -2219,7 +2326,7 @@ Url 将被保存在当前剪辑和将被复制到剪贴板。</value>
     <value>列表</value>
   </data>
   <data name="resetFavouriteToolStripMenuItem.ToolTipText" xml:space="preserve">
-    <value>取消标记选定的剪辑作为最喜欢</value>
+    <value>取消标记选中剪辑为收藏</value>
   </data>
   <data name="fileToolStripMenuItem.Text" xml:space="preserve">
     <value>文件</value>
@@ -2228,10 +2335,10 @@ Url 将被保存在当前剪辑和将被复制到剪贴板。</value>
     <value>9</value>
   </data>
   <data name="stripLabelPosition.ToolTipText" xml:space="preserve">
-    <value>文本位置&lt;offset&gt;(&lt;line&gt;:&lt;column&gt;): &lt;length&gt; </value>
+    <value>文本位置 &lt;offset&gt;(&lt;line&gt;:&lt;column&gt;):&lt;length&gt;</value>
   </data>
   <data name="toolStripMenuItemCompareLastClips.ToolTipText" xml:space="preserve">
-    <value>比较文本的最后一个剪辑</value>
+    <value>比较最后剪辑的文本</value>
   </data>
   <data name="windowAlwaysOnTopToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>212, 22</value>
@@ -2249,7 +2356,7 @@ Url 将被保存在当前剪辑和将被复制到剪贴板。</value>
     <value>209, 22</value>
   </data>
   <data name="dataGridViewImageColumn4.HeaderText" xml:space="preserve">
-    <value>ImageSample</value>
+    <value>图片示例</value>
   </data>
   <data name="dataGridViewImageColumn2.Width" xml:space="preserve" type="System.Int32, mscorlib">
     <value>17</value>
@@ -2258,30 +2365,33 @@ Url 将被保存在当前剪辑和将被复制到剪贴板。</value>
     <value>类型</value>
   </data>
   <data name="toolStripMenuItem6.ToolTipText" xml:space="preserve">
-    <value>在活动窗口中粘贴为纯文本选定文本剪辑或 agregated 文本的选定的剪辑。
+    <value>粘贴选定剪辑或选定剪辑的合计文本为纯文本到活动窗口
 </value>
   </data>
   <data name="toolStripMenuItemEditClipText.ToolTipText" xml:space="preserve">
-    <value>编辑剪辑文本作为纯文本 (F4)</value>
+    <value>以纯文本编辑剪辑 (F4)</value>
   </data>
   <data name="showOnlyFavoriteToolStripMenuItem.Text" xml:space="preserve">
-    <value>仅显示最喜欢</value>
+    <value>只显示收藏夹</value>
+  </data>
+  <data name="toolStripTop.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>253, 25</value>
   </data>
   <data name="toolStripMenuItem15.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
-    <value>209, 22</value>
+    <value>208, 22</value>
   </data>
   <data name="toolStripMenuItem15.ToolTipText" xml:space="preserve">
-    <value>在活动窗口中粘贴为纯文本选定文本剪辑或 agregated 文本的选定的剪辑。
+    <value>粘贴选定剪辑或选定剪辑的合计文本为纯文本到活动窗口
 </value>
   </data>
   <data name="MarkFilter.Items3" xml:space="preserve">
     <value>img</value>
   </data>
   <data name="toolStripWindowTitleCopyAll.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
-    <value>139, 22</value>
+    <value>140, 22</value>
   </data>
   <data name="MarkFilter.Items1" xml:space="preserve">
-    <value>短信</value>
+    <value>文本</value>
   </data>
   <data name="exitToolStripMenuItem1.Text" xml:space="preserve">
     <value>退出</value>
@@ -2290,10 +2400,10 @@ Url 将被保存在当前剪辑和将被复制到剪贴板。</value>
     <value>187, 22</value>
   </data>
   <data name="buttonUpdate.ToolTipText" xml:space="preserve">
-    <value>到新版本的更新程序</value>
+    <value>更新程序到新版本</value>
   </data>
   <data name="TypeFilter.Items1" xml:space="preserve">
-    <value>短信</value>
+    <value>文本</value>
   </data>
   <data name="TypeFilter.Items2" xml:space="preserve">
     <value>文件</value>
@@ -2311,16 +2421,16 @@ Url 将被保存在当前剪辑和将被复制到剪贴板。</value>
     <value>False</value>
   </data>
   <data name="StripLabelVisualSize.Text" xml:space="preserve">
-    <value>VisualSize</value>
+    <value>可视大小</value>
   </data>
   <data name="toolStripSearchOptions.RightToLeft" xml:space="preserve" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
     <value>No</value>
   </data>
   <data name="openFavoritesToolStripMenuItem.Text" xml:space="preserve">
-    <value>开放最喜爱的剪辑</value>
+    <value>打开收藏剪辑</value>
   </data>
   <data name="trayMenuItemMonitoringClipboard.Text" xml:space="preserve">
-    <value>监测剪贴板</value>
+    <value>正在监视剪贴板</value>
   </data>
   <data name="TypeFilter.Anchor" xml:space="preserve" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
@@ -2329,7 +2439,7 @@ Url 将被保存在当前剪辑和将被复制到剪贴板。</value>
     <value>790, 420</value>
   </data>
   <data name="toolStripButtonTextFormatting.Text" xml:space="preserve">
-    <value>本机格式</value>
+    <value>原生格式</value>
   </data>
   <data name="toolStripButtonFindPrevious.ImageTransparentColor" xml:space="preserve" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
@@ -2337,21 +2447,24 @@ Url 将被保存在当前剪辑和将被复制到剪贴板。</value>
   <data name="moveCopiedClipToTopToolStripButton.ImageTransparentColor" xml:space="preserve" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
   </data>
+  <data name="toolStripMenuItem2.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>221, 22</value>
+  </data>
   <data name="textFormattingToolStripMenuItem.Text" xml:space="preserve">
-    <value>本机格式</value>
+    <value>原生格式</value>
   </data>
   <data name="TypeImage.HeaderText" xml:space="preserve">
     <value>TypeImg</value>
   </data>
   <data name="сдуфкClipboardToolStripMenuItem.Text" xml:space="preserve">
-    <value>清除剪贴板</value>
+    <value>清空剪贴板</value>
   </data>
   <data name="settingsToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>61, 20</value>
   </data>
   <data name="ignoreApplicationInCaptureToolStripMenuItem.ToolTipText" xml:space="preserve">
-    <value>忽略在剪辑捕获中的应用。应用程序将
-添加到忽略列表，可以在设置窗口中编辑哪。</value>
+    <value>排除的程序，程序将 
+添加到忽略列表中，可在设置中编辑</value>
   </data>
   <data name="toolStripButtonOpenWith.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>23, 22</value>
@@ -2365,6 +2478,9 @@ Url 将被保存在当前剪辑和将被复制到剪贴板。</value>
   <data name="dataGridViewImageColumn2.HeaderText" xml:space="preserve">
     <value>AppImage</value>
   </data>
+  <data name="toolStripMenuItem7.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>221, 22</value>
+  </data>
   <data name="stripLabelPosition.TextAlign" xml:space="preserve" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleRight</value>
   </data>
@@ -2372,7 +2488,7 @@ Url 将被保存在当前剪辑和将被复制到剪贴板。</value>
     <value>250, 6</value>
   </data>
   <data name="mergeTextOfClipsToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
-    <value>219, 22</value>
+    <value>220, 22</value>
   </data>
   <data name="toolStripBottom.RightToLeft" xml:space="preserve" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
     <value>Yes</value>
@@ -2381,19 +2497,22 @@ Url 将被保存在当前剪辑和将被复制到剪贴板。</value>
     <value>253, 22</value>
   </data>
   <data name="toolStripMenuItemMonitoringClipboard.ToolTipText" xml:space="preserve">
-    <value>捕捉剪贴板中的变化</value>
+    <value>捕获剪贴板中的更改</value>
   </data>
   <data name="imageSampleDataGridViewImageColumn.HeaderText" xml:space="preserve">
-    <value>ImageSample</value>
+    <value>图片示例</value>
   </data>
   <data name="toolStripTop.Dock" xml:space="preserve" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>None</value>
   </data>
   <data name="toolStripButtonFindNext.ToolTipText" xml:space="preserve">
-    <value>在剪辑文本 (F3) 中查找下一个匹配项</value>
+    <value>查找下一个匹配项 (F3)</value>
   </data>
   <data name="toolStripButtonMonospacedFont.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>23, 22</value>
+  </data>
+  <data name="toolStripMenuItem3.Text" xml:space="preserve">
+    <value>粘贴文本 (Ctrl+Enter)</value>
   </data>
   <data name="pictureBoxSource.SizeMode" xml:space="preserve" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>CenterImage</value>
@@ -2408,28 +2527,28 @@ Url 将被保存在当前剪辑和将被复制到剪贴板。</value>
     <value>帮助</value>
   </data>
   <data name="mergeTextOfClipsToolStripMenuItem.ToolTipText" xml:space="preserve">
-    <value>文本的选定的剪辑加入新的剪辑，然后选择它</value>
+    <value>将选中剪辑的文本合并到新剪辑并选中</value>
   </data>
   <data name="translateToolStripMenuItem.ToolTipText" xml:space="preserve">
-    <value>翻译剪辑文本或其选定的部分</value>
+    <value>翻译剪辑或其所选部分</value>
   </data>
   <data name="toolStripButtonOpenWith.ImageTransparentColor" xml:space="preserve" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
   </data>
   <data name="wordWrapToolStripMenuItem.Text" xml:space="preserve">
-    <value>自动换行</value>
+    <value>文本自动换行</value>
   </data>
   <data name="textFormattingToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
-    <value>219, 22</value>
+    <value>220, 22</value>
   </data>
   <data name="toolStripMenuItemSearchWordsIndependently.Font" xml:space="preserve" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 9pt</value>
   </data>
   <data name="idDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
-    <value>ID</value>
+    <value>Id</value>
   </data>
   <data name="toolStripMenuItem16.Text" xml:space="preserve">
-    <value>打开的文件</value>
+    <value>打开文件</value>
   </data>
   <data name="toolStripButtonWordWrap.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>23, 22</value>
@@ -2450,7 +2569,7 @@ Url 将被保存在当前剪辑和将被复制到剪贴板。</value>
     <value>97, 0</value>
   </metadata>
   <metadata name="statusStrip.TrayLocation" xml:space="preserve" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>5, -1</value>
+    <value>5, 1</value>
   </metadata>
   <metadata name="contextMenuUrl.TrayLocation" xml:space="preserve" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>1177, 0</value>
@@ -2474,7 +2593,7 @@ Url 将被保存在当前剪辑和将被复制到剪贴板。</value>
     <value>377, 31</value>
   </metadata>
   <metadata name="notifyIcon.TrayLocation" xml:space="preserve" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1071, -1</value>
+    <value>1071, 1</value>
   </metadata>
   <metadata name="MainMenu.TrayLocation" xml:space="preserve" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>946, 0</value>
@@ -2492,7 +2611,7 @@ Url 将被保存在当前剪辑和将被复制到剪贴板。</value>
     <value>727, 30</value>
   </metadata>
   <metadata name="$this.TrayHeight" xml:space="preserve" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>72</value>
+    <value>89</value>
   </metadata>
   <metadata name="contextMenuStripDataGrid.TrayLocation" xml:space="preserve" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>-2, 26</value>
@@ -2530,8 +2649,41 @@ Url 将被保存在当前剪辑和将被复制到剪贴板。</value>
   <data name="contextMenuUrlOpenLink.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>187, 22</value>
   </data>
+  <data name="contextMenuUrlOpenLink.Text" xml:space="preserve">
+    <value>打开链接 (ALT+点击)</value>
+  </data>
+  <data name="pasteTextToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>221, 22</value>
+  </data>
+  <data name="pasteTextToolStripMenuItem.Text" xml:space="preserve">
+    <value>粘贴文本 (Ctrl+Enter)</value>
+  </data>
+  <data name="pasteTextToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>粘贴 (所选剪辑纯文本、图片剪辑文件名或纯文本或所有选中剪辑的汇总纯文本) 到活动窗口</value>
+  </data>
+  <data name="pasteFileToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>221, 22</value>
+  </data>
+  <data name="pasteFileToolStripMenuItem.Text" xml:space="preserve">
+    <value>粘贴文件</value>
+  </data>
+  <data name="pasteFileToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>粘贴所选剪辑为文件到活动窗口 </value>
+  </data>
+  <data name="toolStripMenuItem18.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>221, 22</value>
+  </data>
+  <data name="toolStripMenuItem18.Text" xml:space="preserve">
+    <value>粘贴文件</value>
+  </data>
+  <data name="toolStripMenuItem18.ToolTipText" xml:space="preserve">
+    <value>粘贴所选剪辑为文件到活动窗口 </value>
+  </data>
   <data name="filterByDateToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>253, 22</value>
+  </data>
+  <data name="filterByDateToolStripMenuItem.Text" xml:space="preserve">
+    <value>按日期过滤</value>
   </data>
   <data name="monthCalendar1.Location" xml:space="preserve" type="System.Drawing.Point, System.Drawing">
     <value>3, 3</value>
@@ -2548,11 +2700,20 @@ Url 将被保存在当前剪辑和将被复制到剪贴板。</value>
   <data name="monthCalendar1.ImeMode" xml:space="preserve" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
+  <data name="filterByDateToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>按剪辑创建日期过滤</value>
+  </data>
   <data name="originalSizeToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>150, 22</value>
   </data>
+  <data name="originalSizeToolStripMenuItem.Text" xml:space="preserve">
+    <value>原始大小</value>
+  </data>
   <data name="fitFromInsideToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>150, 22</value>
+  </data>
+  <data name="fitFromInsideToolStripMenuItem.Text" xml:space="preserve">
+    <value>自内部适应</value>
   </data>
   <data name="contextMenuPictureBox.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>151, 48</value>
@@ -2560,20 +2721,68 @@ Url 将被保存在当前剪辑和将被复制到剪贴板。</value>
   <metadata name="contextMenuPictureBox.TrayLocation" xml:space="preserve" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>274, 57</value>
   </metadata>
+  <data name="toolStripMenuItem12.ToolTipText" xml:space="preserve">
+    <value>编辑剪辑标题</value>
+  </data>
+  <data name="toolStripButtonMonospacedFont.Text" xml:space="preserve">
+    <value>等宽字体</value>
+  </data>
+  <data name="moveCopiedClipToTopToolStripButton.Text" xml:space="preserve">
+    <value>使用后移至顶部</value>
+  </data>
   <data name="toolStripMenuItem19.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
-    <value>234, 6</value>
+    <value>250, 6</value>
+  </data>
+  <data name="sortByDefaultToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>183, 22</value>
+  </data>
+  <data name="sortByDefaultToolStripMenuItem.Text" xml:space="preserve">
+    <value>按默认顺序排序</value>
+  </data>
+  <data name="sortByVisualSizeToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>183, 22</value>
+  </data>
+  <data name="sortByVisualSizeToolStripMenuItem.Text" xml:space="preserve">
+    <value>按可视大小排序</value>
+  </data>
+  <data name="sortByToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>183, 22</value>
+  </data>
+  <data name="sortByToolStripMenuItem.Text" xml:space="preserve">
+    <value>按创建日期排序</value>
+  </data>
+  <data name="sortByVisualSizeToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>有助于排除拖慢文本过滤的大文本 
+排序一直保持到再次捕获剪辑</value>
+  </data>
+  <data name="sortByToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>
+排序一直保持到再次剪辑捕获</value>
   </data>
   <data name="sortingToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
-    <value>237, 22</value>
+    <value>253, 22</value>
+  </data>
+  <data name="sortingToolStripMenuItem.Text" xml:space="preserve">
+    <value>排序</value>
   </data>
   <data name="toolStripMenuItem20.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>183, 22</value>
   </data>
+  <data name="toolStripMenuItem20.Text" xml:space="preserve">
+    <value>按字节大小排序</value>
+  </data>
+  <data name="toolStripMenuItem20.ToolTipText" xml:space="preserve">
+    <value>有助于排除影响数据库大小的条目
+排序一直保持到再次捕获剪辑</value>
+  </data>
   <data name="toolStripMenuItemSecondaryColumns.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
-    <value>237, 22</value>
+    <value>253, 22</value>
+  </data>
+  <data name="toolStripMenuItemSecondaryColumns.Text" xml:space="preserve">
+    <value>二级列</value>
   </data>
   <data name="toolStripMenuItem22.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
-    <value>234, 6</value>
+    <value>250, 6</value>
   </data>
   <data name="toolStripButtonReturnToPrevous.Visible" xml:space="preserve" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -2584,35 +2793,77 @@ Url 将被保存在当前剪辑和将被复制到剪贴板。</value>
   <data name="toolStripButtonSecondaryColumns.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>23, 22</value>
   </data>
+  <data name="toolStripButtonSecondaryColumns.Text" xml:space="preserve">
+    <value>二级列</value>
+  </data>
+  <data name="ColumnCreated.HeaderText" xml:space="preserve">
+    <value>创建于</value>
+  </data>
   <data name="ColumnCreated.Visible" xml:space="preserve" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
   <metadata name="ColumnCreated.UserAddedColumn" xml:space="preserve" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <data name="ColumnCreated.Width" xml:space="preserve" type="System.Int32, mscorlib">
+    <value>80</value>
+  </data>
   <data name="toolStripButtonOpenWith.Visible" xml:space="preserve" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
+  <data name="ignoreBigTextsToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>209, 22</value>
+  </data>
+  <data name="ignoreBigTextsToolStripMenuItem.Text" xml:space="preserve">
+    <value>忽略大文本</value>
+  </data>
   <data name="addSelectedTextInFilterToolStripMenuRtf.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
-    <value>206, 22</value>
+    <value>205, 22</value>
+  </data>
+  <data name="addSelectedTextInFilterToolStripMenuRtf.Text" xml:space="preserve">
+    <value>在过滤器中添加文本</value>
   </data>
   <data name="setSelectedTextInFilterToolStripMenuRtf.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
-    <value>206, 22</value>
+    <value>205, 22</value>
+  </data>
+  <data name="setSelectedTextInFilterToolStripMenuRtf.Text" xml:space="preserve">
+    <value>在过滤器中设置文本</value>
   </data>
   <data name="addSelectedTextToFilterToolStripHtml.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
-    <value>209, 22</value>
+    <value>208, 22</value>
+  </data>
+  <data name="addSelectedTextToFilterToolStripHtml.Text" xml:space="preserve">
+    <value>在过滤器中添加文本</value>
   </data>
   <data name="setSelectedTextInFilterToolStripHtml.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
-    <value>209, 22</value>
+    <value>208, 22</value>
+  </data>
+  <data name="setSelectedTextInFilterToolStripHtml.Text" xml:space="preserve">
+    <value>在过滤器中设置文本</value>
   </data>
   <data name="toolStripMenuItem21.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
-    <value>206, 6</value>
+    <value>205, 6</value>
+  </data>
+  <data name="addSelectedTextToFilterToolStripHtml.ToolTipText" xml:space="preserve">
+    <value>在文本过滤器中添加选中的文本</value>
+  </data>
+  <data name="setSelectedTextInFilterToolStripHtml.ToolTipText" xml:space="preserve">
+    <value>在文本过滤器中设置选中的文本</value>
   </data>
   <data name="toolStripMenuItem23.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
-    <value>203, 6</value>
+    <value>202, 6</value>
+  </data>
+  <data name="addSelectedTextInFilterToolStripMenuRtf.ToolTipText" xml:space="preserve">
+    <value>在文本过滤器中添加选中的文本</value>
+  </data>
+  <data name="setSelectedTextInFilterToolStripMenuRtf.ToolTipText" xml:space="preserve">
+    <value>在文本过滤器中设置选中的文本</value>
   </data>
   <data name="stripLabelFiltered.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>50, 17</value>
+  </data>
+  <data name="stripLabelFiltered.Text" xml:space="preserve">
+    <value>已过滤</value>
   </data>
   <metadata name="cultureManager2.TrayLocation" xml:space="preserve" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>455, 57</value>
@@ -2620,14 +2871,38 @@ Url 将被保存在当前剪辑和将被复制到剪贴板。</value>
   <data name="toolStripBottom.AutoSize" xml:space="preserve" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
+  <data name="stripLabelFiltered.ToolTipText" xml:space="preserve">
+    <value>过滤剪辑数</value>
+  </data>
   <data name="openWindowToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>187, 22</value>
+  </data>
+  <data name="openWindowToolStripMenuItem.Text" xml:space="preserve">
+    <value>打开窗口</value>
   </data>
   <data name="openLastClipsToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>187, 22</value>
   </data>
+  <data name="openLastClipsToolStripMenuItem.Text" xml:space="preserve">
+    <value>打开上一剪辑</value>
+  </data>
+  <data name="pasteLineToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>221, 22</value>
+  </data>
+  <data name="pasteLineToolStripMenuItem.Text" xml:space="preserve">
+    <value>粘贴行 (Ctrl+Shift+Enter)</value>
+  </data>
+  <data name="pasteLineToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>将选中的纯文本 (去除换行符和多余的不可打印字符) 粘贴到活动窗口</value>
+  </data>
   <data name="toolStripMenuItem24.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>221, 22</value>
+  </data>
+  <data name="toolStripMenuItem24.Text" xml:space="preserve">
+    <value>粘贴行 (Ctrl+Shift+Enter)</value>
+  </data>
+  <data name="toolStripMenuItem24.ToolTipText" xml:space="preserve">
+    <value>将选中的纯文本 (去除换行符和多余的不可打印字符) 粘贴到活动窗口</value>
   </data>
   <metadata name="cultureManager3.TrayLocation" xml:space="preserve" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>600, 57</value>
@@ -2638,20 +2913,41 @@ Url 将被保存在当前剪辑和将被复制到剪贴板。</value>
   <data name="pasteSpecialToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>221, 22</value>
   </data>
+  <data name="pasteSpecialToolStripMenuItem.Text" xml:space="preserve">
+    <value>选择性粘贴...</value>
+  </data>
   <data name="toolStripMenuItem25.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>221, 22</value>
   </data>
+  <data name="toolStripMenuItem25.Text" xml:space="preserve">
+    <value>选择性粘贴...</value>
+  </data>
   <data name="htmlMenuItemCopy.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
-    <value>209, 22</value>
+    <value>208, 22</value>
+  </data>
+  <data name="htmlMenuItemCopy.Text" xml:space="preserve">
+    <value>复制</value>
   </data>
   <data name="pasteToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
-    <value>214, 22</value>
+    <value>220, 22</value>
+  </data>
+  <data name="pasteToolStripMenuItem.Text" xml:space="preserve">
+    <value>粘贴</value>
   </data>
   <data name="gotoTopToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
-    <value>237, 22</value>
+    <value>253, 22</value>
+  </data>
+  <data name="gotoTopToolStripMenuItem.Text" xml:space="preserve">
+    <value>选择顶部条目                 Ctrl+Home</value>
+  </data>
+  <data name="gotoTopToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>选择顶部 (最后一个) 剪辑</value>
   </data>
   <data name="comboBoxSearchString.Anchor" xml:space="preserve" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left, Right</value>
+  </data>
+  <data name="comboBoxSearchString.CueText" xml:space="preserve">
+    <value>列表中类型</value>
   </data>
   <data name="comboBoxSearchString.Font" xml:space="preserve" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 9pt</value>
@@ -2665,6 +2961,10 @@ Url 将被保存在当前剪辑和将被复制到剪贴板。</value>
   <data name="comboBoxSearchString.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
     <value>6</value>
   </data>
+  <data name="comboBoxSearchString.ToolTip" xml:space="preserve">
+    <value>搜索字符串，列表和搜索字段共享键盘输入
+从列表中编辑右边的搜索字符串，从搜索字段在列表中导航</value>
+  </data>
   <metadata name="timerApplySearchString.TrayLocation" xml:space="preserve" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>325, 3</value>
   </metadata>
@@ -2672,37 +2972,76 @@ Url 将被保存在当前剪辑和将被复制到剪贴板。</value>
     <value>Alt+Down</value>
   </data>
   <data name="NextMatchListMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
-    <value>237, 22</value>
+    <value>253, 22</value>
+  </data>
+  <data name="NextMatchListMenuItem.Text" xml:space="preserve">
+    <value>查找下一个</value>
+  </data>
+  <data name="NextMatchListMenuItem.ToolTipText" xml:space="preserve">
+    <value>在列表中查找下一个匹配项</value>
   </data>
   <data name="PreviousMatchListMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Alt+Up</value>
   </data>
   <data name="PreviousMatchListMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
-    <value>237, 22</value>
+    <value>253, 22</value>
+  </data>
+  <data name="PreviousMatchListMenuItem.Text" xml:space="preserve">
+    <value>查找上一个</value>
+  </data>
+  <data name="PreviousMatchListMenuItem.ToolTipText" xml:space="preserve">
+    <value>在列表中查找上一个匹配项</value>
   </data>
   <data name="NextMatchTextMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>F3</value>
   </data>
   <data name="NextMatchTextMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
-    <value>214, 22</value>
+    <value>220, 22</value>
+  </data>
+  <data name="NextMatchTextMenuItem.Text" xml:space="preserve">
+    <value>查找下一个</value>
+  </data>
+  <data name="NextMatchTextMenuItem.ToolTipText" xml:space="preserve">
+    <value>查找下一个匹配项 (F3)</value>
   </data>
   <data name="PreviousMatchTextMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Shift+F3</value>
   </data>
   <data name="PreviousMatchTextMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
-    <value>214, 22</value>
+    <value>220, 22</value>
+  </data>
+  <data name="PreviousMatchTextMenuItem.Text" xml:space="preserve">
+    <value>查找上一个</value>
+  </data>
+  <data name="PreviousMatchTextMenuItem.ToolTipText" xml:space="preserve">
+    <value>查找上一匹配项 (SHIFT+F3)</value>
   </data>
   <data name="autoselectMatchedClipMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>209, 22</value>
   </data>
+  <data name="autoselectMatchedClipMenuItem.Text" xml:space="preserve">
+    <value>自动选择匹配的剪辑</value>
+  </data>
   <data name="filterListBySearchStringMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>209, 22</value>
   </data>
+  <data name="filterListBySearchStringMenuItem.Text" xml:space="preserve">
+    <value>通过搜索字符串过滤列表</value>
+  </data>
   <data name="pasteIntoSearchFieldMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
-    <value>214, 22</value>
+    <value>220, 22</value>
+  </data>
+  <data name="pasteIntoSearchFieldMenuItem.Text" xml:space="preserve">
+    <value>在列表中搜索文本</value>
+  </data>
+  <data name="pasteIntoSearchFieldMenuItem.ToolTipText" xml:space="preserve">
+    <value>在剪辑列表中搜索选中文本的前 50 个符号</value>
   </data>
   <data name="menuItemSetFocusClipText.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>212, 22</value>
+  </data>
+  <data name="menuItemSetFocusClipText.Text" xml:space="preserve">
+    <value>聚焦剪辑文本 (TAB)</value>
   </data>
   <data name="htmlTextBox.Dock" xml:space="preserve" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -2710,20 +3049,41 @@ Url 将被保存在当前剪辑和将被复制到剪贴板。</value>
   <data name="searchAllFieldsMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>209, 22</value>
   </data>
+  <data name="searchAllFieldsMenuItem.Text" xml:space="preserve">
+    <value>搜索所有字段</value>
+  </data>
   <data name="openWithToolStripMenuItem.Visible" xml:space="preserve" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
   <data name="exportMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
-    <value>214, 22</value>
+    <value>220, 22</value>
+  </data>
+  <data name="exportMenuItem.Text" xml:space="preserve">
+    <value>导出剪辑</value>
+  </data>
+  <data name="exportMenuItem.ToolTipText" xml:space="preserve">
+    <value>导出所选剪辑到文件</value>
   </data>
   <data name="importToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
-    <value>214, 22</value>
+    <value>220, 22</value>
+  </data>
+  <data name="importToolStripMenuItem.Text" xml:space="preserve">
+    <value>导入剪辑</value>
+  </data>
+  <data name="importToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>从文件导入剪辑</value>
   </data>
   <metadata name="cultureManager5.TrayLocation" xml:space="preserve" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>890, 57</value>
   </metadata>
   <data name="saveAsFileMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
-    <value>214, 22</value>
+    <value>220, 22</value>
+  </data>
+  <data name="saveAsFileMenuItem.Text" xml:space="preserve">
+    <value>另存为文件</value>
+  </data>
+  <data name="saveAsFileMenuItem.ToolTipText" xml:space="preserve">
+    <value>保存数据到文件并为文本或图片剪辑选择名称</value>
   </data>
   <data name="saveAsFileMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+S</value>
@@ -2739,6 +3099,13 @@ Url 将被保存在当前剪辑和将被复制到剪贴板。</value>
   </data>
   <data name="decodeTextToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>220, 22</value>
+  </data>
+  <data name="decodeTextToolStripMenuItem.Text" xml:space="preserve">
+    <value>解码网址</value>
+  </data>
+  <data name="decodeTextToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>使用 URL 规则 (%) 将选定或所有文本剪辑解码为新剪辑
+</value>
   </data>
   <data name="deleteAllNonFavoriteToolStripMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+Alt+K</value>

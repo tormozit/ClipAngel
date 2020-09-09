@@ -230,7 +230,7 @@
     <value>New version is available. To update use button in top command bar.</value>
   </data>
   <data name="ApplicationAddedToIgnoreList" xml:space="preserve">
-    <value>Application "{0}" added to ignore list, wich can be edited in Settings window</value>
+    <value>Application "{0}" added to ignore list, which can be edited in Settings window</value>
   </data>
   <data name="CharUnit" xml:space="preserve">
     <value>С</value>

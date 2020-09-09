@@ -162,7 +162,7 @@
     <value>True</value>
   </data>
   <data name="textBoxDescription.Text" xml:space="preserve">
-    <value>此程序捕获许多剪贴板对象，并允许用户选择和粘贴在任何程序中的一个。</value>
+    <value>此程序能捕获许多剪贴板对象，并允许用户在任何程序中快速粘贴</value>
   </data>
   <data name="labelAuthor.TextAlign" xml:space="preserve" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
@@ -186,7 +186,7 @@
     <value>2</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>免费软件 (GPL3)</value>
+    <value>许可证： GPL3</value>
   </data>
   <data name="linkLabel1.Anchor" xml:space="preserve" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
@@ -240,7 +240,7 @@
     <value>Top, Bottom, Left, Right</value>
   </data>
   <data name="labelAuthor.Text" xml:space="preserve">
-    <value>作者︰ Tormozit (Sergey Starykh) 俄罗斯</value>
+    <value>作者：Tormozit (Starykh Sergey) 来自俄罗斯</value>
   </data>
   <data name="label1.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>304, 15</value>

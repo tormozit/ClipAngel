@@ -575,7 +575,7 @@ Trailing unprintable symbols are deleted.</value>
     <value>149, 17</value>
   </data>
   <data name="FromCamelCase.ToolTip" xml:space="preserve">
-    <value>Split words by capital letters and put them lower case.</value>
+    <value>Split words by capital letters and change them to lower case.</value>
   </data>
   <data name="LowerCamelCase.ToolTip" xml:space="preserve">
     <value>Lower case for first letter in first word and upper case for first letter in other words. Delete all spaces.</value>

@@ -118,7 +118,7 @@ namespace ClipAngel.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Application &quot;{0}&quot; added to ignore list, wich can be edited in Settings window.
+        ///   Looks up a localized string similar to Application &quot;{0}&quot; added to ignore list, which can be edited in Settings window.
         /// </summary>
         public static string ApplicationAddedToIgnoreList {
             get {

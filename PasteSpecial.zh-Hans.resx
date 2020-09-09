@@ -19,7 +19,7 @@
     <value>True</value>
   </data>
   <data name="NormalizeFreeSpace.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
-    <value>16</value>
+    <value>11</value>
   </data>
   <data name="buttonCancel.ImeMode" xml:space="preserve" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -30,32 +30,47 @@
   <data name="NormalizeFreeSpace.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>176, 17</value>
   </data>
+  <data name="ReplaceEOL.Text" xml:space="preserve">
+    <value>用 “空格” 替换 “行尾符“</value>
+  </data>
   <data name="SentenceCase.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
-    <value>19</value>
+    <value>4</value>
   </data>
   <data name="SentenceCase.Location" xml:space="preserve" type="System.Drawing.Point, System.Drawing">
     <value>10, 93</value>
   </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>选择性粘贴</value>
+  </data>
   <data name="ReplaceEOL.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
-    <value>16</value>
+    <value>8</value>
   </data>
   <data name="richTextBox1.Anchor" xml:space="preserve" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
   <data name="checkBoxPasteIntoNewClip.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
-    <value>16</value>
+    <value>13</value>
   </data>
   <data name="CaseNoChange.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>78, 17</value>
+  </data>
+  <data name="buttonOK.Location" xml:space="preserve" type="System.Drawing.Point, System.Drawing">
+    <value>282, 299</value>
   </data>
   <data name="textBoxNumberOfSpacesInTab.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>18, 20</value>
   </data>
   <data name="groupBox1.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
-    <value>20</value>
+    <value>0</value>
   </data>
   <data name="AllLowerCase.AutoSize" xml:space="preserve" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="NormalizeFreeSpace.Text" xml:space="preserve">
+    <value>规范化不可打印的符号</value>
+  </data>
+  <data name="buttonOK.Text" xml:space="preserve">
+    <value>确定</value>
   </data>
   <data name="CaseNoChange.Location" xml:space="preserve" type="System.Drawing.Point, System.Drawing">
     <value>10, 22</value>
@@ -63,38 +78,89 @@
   <data name="checkBoxPasteIntoNewClip.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>233, 17</value>
   </data>
+  <data name="textBoxNumberOfSpacesInTab.ToolTip" xml:space="preserve">
+    <value>TAB 含的空格数</value>
+  </data>
   <data name="buttonOK.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
     <value>15</value>
+  </data>
+  <data name="label1.Location" xml:space="preserve" type="System.Drawing.Point, System.Drawing">
+    <value>8, 201</value>
   </data>
   <data name="buttonCancel.Anchor" xml:space="preserve" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
   </data>
+  <data name="CaseNoChange.Text" xml:space="preserve">
+    <value>保持不变</value>
+  </data>
   <data name="buttonOK.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
   </data>
+  <data name="checkBoxReplaceTabWithSpaces.Location" xml:space="preserve" type="System.Drawing.Point, System.Drawing">
+    <value>192, 44</value>
+  </data>
   <data name="$this.StartPosition" xml:space="preserve" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterParent</value>
+  </data>
+  <data name="buttonCancel.Location" xml:space="preserve" type="System.Drawing.Point, System.Drawing">
+    <value>363, 299</value>
+  </data>
+  <data name="NormalizeFreeSpace.Location" xml:space="preserve" type="System.Drawing.Point, System.Drawing">
+    <value>192, 67</value>
+  </data>
+  <data name="ReplaceEOL.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>217, 17</value>
+  </data>
+  <data name="richTextBox1.Text" xml:space="preserve">
+    <value></value>
   </data>
   <data name="groupBox1.Location" xml:space="preserve" type="System.Drawing.Point, System.Drawing">
     <value>12, 10</value>
   </data>
   <data name="richTextBox1.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
-    <value>21</value>
+    <value>14</value>
+  </data>
+  <data name="groupBox1.ToolTip" xml:space="preserve">
+    <value>更改字母大小写</value>
   </data>
   <data name="checkBoxReplaceTabWithSpaces.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
-    <value>16</value>
+    <value>9</value>
   </data>
   <data name="label1.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
     <value>22</value>
   </data>
+  <data name="SentenceCase.ToolTip" xml:space="preserve">
+    <value>每句首字母为大写字母，其他字母为小写</value>
+  </data>
+  <data name="AllLowerCase.ToolTip" xml:space="preserve">
+    <value>所有字母小写</value>
+  </data>
   <data name="buttonCancel.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
+  </data>
+  <data name="AllLowerCase.Text" xml:space="preserve">
+    <value>改为小写</value>
+  </data>
+  <data name="checkBoxPasteIntoNewClip.Text" xml:space="preserve">
+    <value>粘贴到新剪辑而不是目标窗口</value>
   </data>
   <data name="AllLowerCase.Location" xml:space="preserve" type="System.Drawing.Point, System.Drawing">
     <value>10, 69</value>
   </data>
+  <data name="ReplaceEOL.Location" xml:space="preserve" type="System.Drawing.Point, System.Drawing">
+    <value>192, 21</value>
+  </data>
   <data name="NormalizeFreeSpace.AutoSize" xml:space="preserve" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="checkBoxReplaceTabWithSpaces.Text" xml:space="preserve">
+    <value>用空格替换 TAB</value>
+  </data>
+  <data name="richTextBox1.Location" xml:space="preserve" type="System.Drawing.Point, System.Drawing">
+    <value>11, 217</value>
+  </data>
+  <data name="richTextBox1.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>427, 76</value>
   </data>
   <data name="checkBoxPasteIntoNewClip.AutoSize" xml:space="preserve" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -103,10 +169,10 @@
     <value>NoControl</value>
   </data>
   <data name="buttonCancel.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
-    <value>14</value>
+    <value>16</value>
   </data>
   <data name="textBoxNumberOfSpacesInTab.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
-    <value>23</value>
+    <value>10</value>
   </data>
   <data name="checkBoxReplaceTabWithSpaces.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>149, 17</value>
@@ -120,17 +186,51 @@
   <data name="$this.AutoScaleDimensions" xml:space="preserve" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
   </data>
+  <data name="buttonCancel.Text" xml:space="preserve">
+    <value>取消</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>预览</value>
+  </data>
+  <data name="textBoxNumberOfSpacesInTab.Location" xml:space="preserve" type="System.Drawing.Point, System.Drawing">
+    <value>420, 44</value>
+  </data>
+  <data name="checkBoxPasteIntoNewClip.Location" xml:space="preserve" type="System.Drawing.Point, System.Drawing">
+    <value>192, 113</value>
+  </data>
+  <data name="SentenceCase.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>97, 17</value>
+  </data>
+  <data name="AllLowerCase.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>76, 17</value>
+  </data>
+  <data name="$this.ClientSize" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>445, 328</value>
+  </data>
   <data name="label1.AutoSize" xml:space="preserve" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="NormalizeFreeSpace.ToolTip" xml:space="preserve">
+    <value>每个不可打印符号序列 (除了行尾) 都被替换为一个空格
+前缀不可打印符号被删除</value>
+  </data>
+  <data name="groupBox1.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>174, 188</value>
+  </data>
   <data name="CaseNoChange.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
-    <value>20</value>
+    <value>1</value>
   </data>
   <data name="AllLowerCase.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
-    <value>18</value>
+    <value>3</value>
+  </data>
+  <data name="SentenceCase.Text" xml:space="preserve">
+    <value>句首大写</value>
   </data>
   <data name="checkBoxReplaceTabWithSpaces.AutoSize" xml:space="preserve" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>字母大小写</value>
   </data>
   <data name="SentenceCase.AutoSize" xml:space="preserve" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -151,7 +251,13 @@
     <value>93, 17</value>
   </data>
   <data name="AllUpperCase.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
-    <value>17</value>
+    <value>2</value>
+  </data>
+  <data name="AllUpperCase.Text" xml:space="preserve">
+    <value>大写</value>
+  </data>
+  <data name="AllUpperCase.ToolTip" xml:space="preserve">
+    <value>所有字母大写</value>
   </data>
   <data name="LowerCamelCase.AutoSize" xml:space="preserve" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -162,8 +268,17 @@
   <data name="LowerCamelCase.Location" xml:space="preserve" type="System.Drawing.Point, System.Drawing">
     <value>10, 138</value>
   </data>
+  <data name="LowerCamelCase.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>115, 17</value>
+  </data>
   <data name="LowerCamelCase.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
-    <value>19</value>
+    <value>6</value>
+  </data>
+  <data name="LowerCamelCase.Text" xml:space="preserve">
+    <value>to lowerCamelCase</value>
+  </data>
+  <data name="LowerCamelCase.ToolTip" xml:space="preserve">
+    <value>第一个单词的第一个字母为小写，其他单词的第一个字母为大写。删除所有空格</value>
   </data>
   <data name="UpperCamelCase.AutoSize" xml:space="preserve" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -174,8 +289,17 @@
   <data name="UpperCamelCase.Location" xml:space="preserve" type="System.Drawing.Point, System.Drawing">
     <value>10, 116</value>
   </data>
+  <data name="UpperCamelCase.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>119, 17</value>
+  </data>
   <data name="UpperCamelCase.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
-    <value>19</value>
+    <value>5</value>
+  </data>
+  <data name="UpperCamelCase.Text" xml:space="preserve">
+    <value>to UpperCamelCase</value>
+  </data>
+  <data name="UpperCamelCase.ToolTip" xml:space="preserve">
+    <value>每个单词的首字母大写，删除所有空格</value>
   </data>
   <data name="NormalizeEndOfLines.AutoSize" xml:space="preserve" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -183,11 +307,21 @@
   <data name="NormalizeEndOfLines.ImeMode" xml:space="preserve" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
+  <data name="NormalizeEndOfLines.Location" xml:space="preserve" type="System.Drawing.Point, System.Drawing">
+    <value>192, 90</value>
+  </data>
   <data name="NormalizeEndOfLines.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>174, 17</value>
   </data>
   <data name="NormalizeEndOfLines.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
-    <value>16</value>
+    <value>12</value>
+  </data>
+  <data name="NormalizeEndOfLines.Text" xml:space="preserve">
+    <value>规范化“行尾符”</value>
+  </data>
+  <data name="NormalizeEndOfLines.ToolTip" xml:space="preserve">
+    <value>每个行尾符号序列都替换为一个行尾
+前缀不可打印符号被删除</value>
   </data>
   <data name="FromCamelCase.AutoSize" xml:space="preserve" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -202,7 +336,13 @@
     <value>101, 17</value>
   </data>
   <data name="FromCamelCase.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
-    <value>19</value>
+    <value>7</value>
+  </data>
+  <data name="FromCamelCase.Text" xml:space="preserve">
+    <value>from CamelCase</value>
+  </data>
+  <data name="FromCamelCase.ToolTip" xml:space="preserve">
+    <value>用大写字母分割单词，并改为小写</value>
   </data>
   <data name="AllUpperCase.ImeMode" xml:space="preserve" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -230,6 +370,33 @@
   </data>
   <data name="NormalizeFreeSpace.ImeMode" xml:space="preserve" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
+  </data>
+  <data name="checkBoxPasteIntoNewClip.ToolTip" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="checkBoxReplaceTabWithSpaces.ToolTip" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="buttonCancel.ToolTip" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="ReplaceEOL.ToolTip" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="CaseNoChange.ToolTip" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="$this.ToolTip" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="richTextBox1.ToolTip" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="label1.ToolTip" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="buttonOK.ToolTip" xml:space="preserve">
+    <value></value>
   </data>
   <metadata name="$this.Language" xml:space="preserve" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>ru</value>
