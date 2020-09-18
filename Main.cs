@@ -72,7 +72,7 @@ namespace ClipAngel
         bool AllowHotkeyProcess = true;
 
         bool EditMode = false;
-        SQLiteDataReader RowReader;
+        SQLiteDataReader LoadedClipRowReader;
         int LastId = 0;
         MatchCollection TextLinkMatches;
         MatchCollection UrlLinkMatches;
@@ -1041,16 +1041,16 @@ namespace ClipAngel
             StripLabelType.Text = "";
             stripLabelPosition.Text = "";
             LoadRowReader();
-            if (RowReader != null)
+            if (LoadedClipRowReader != null)
             {
-                clipType = RowReader["type"].ToString();
-                string fullText = RowReader["Text"].ToString();
-                string fullRTF = RowReader["richText"].ToString();
+                clipType = LoadedClipRowReader["type"].ToString();
+                string fullText = LoadedClipRowReader["Text"].ToString();
+                string fullRTF = LoadedClipRowReader["richText"].ToString();
                 string htmlText = GetHtmlFromHtmlClipText();
                 useNativeTextFormatting = true
                                           && ClipAngel.Properties.Settings.Default.ShowNativeTextFormatting
                                           && (clipType == "html" || clipType == "rtf");
-                Bitmap appIcon = ApplicationIcon(RowReader["appPath"].ToString());
+                Bitmap appIcon = ApplicationIcon(LoadedClipRowReader["appPath"].ToString());
                 htmlDoc = htmlTextBox.Document.DomDocument as mshtml.IHTMLDocument2;
                 if (clipType == "html")
                 {
@@ -1065,13 +1065,13 @@ namespace ClipAngel
                 {
                     pictureBoxSource.Image = appIcon;
                 }
-                textBoxApplication.Text = RowReader["Application"].ToString();
-                textBoxWindow.Text = RowReader["Window"].ToString();
-                StripLabelCreated.Text = ((DateTime) RowReader["Created"]).ToString();
-                if (!(RowReader["Size"] is DBNull))
-                    StripLabelSize.Text = FormattedClipNumericPropery((int) RowReader["Size"], MultiLangByteUnit());
-                if (!(RowReader["Chars"] is DBNull))
-                    StripLabelVisualSize.Text = FormattedClipNumericPropery((int) RowReader["Chars"], MultiLangCharUnit());
+                textBoxApplication.Text = LoadedClipRowReader["Application"].ToString();
+                textBoxWindow.Text = LoadedClipRowReader["Window"].ToString();
+                StripLabelCreated.Text = ((DateTime) LoadedClipRowReader["Created"]).ToString();
+                if (!(LoadedClipRowReader["Size"] is DBNull))
+                    StripLabelSize.Text = FormattedClipNumericPropery((int) LoadedClipRowReader["Size"], MultiLangByteUnit());
+                if (!(LoadedClipRowReader["Chars"] is DBNull))
+                    StripLabelVisualSize.Text = FormattedClipNumericPropery((int) LoadedClipRowReader["Chars"], MultiLangCharUnit());
                 StripLabelType.Text = LocalTypeName(clipType);
                 stripLabelPosition.Text = "1";
                 string shortText;
@@ -1188,7 +1188,7 @@ namespace ClipAngel
 
                 urlTextBox.HideSelection = true;
                 urlTextBox.Clear();
-                urlTextBox.Text = RowReader["Url"].ToString();
+                urlTextBox.Text = LoadedClipRowReader["Url"].ToString();
                 MarkLinksInRichTextBox(urlTextBox, out UrlLinkMatches);
                 if (clipType == "html")
                 {
@@ -1254,7 +1254,7 @@ namespace ClipAngel
                 richTextBox.Focus(); // Can activate this window, so we check that window has focus
             if (clipType == "img")
             {
-                Image image = GetImageFromBinary((byte[]) RowReader["Binary"]);
+                Image image = GetImageFromBinary((byte[]) LoadedClipRowReader["Binary"]);
                 ImageControl.Image = image;
             }
             tableLayoutPanelData.ResumeLayout();
@@ -1294,7 +1294,7 @@ namespace ClipAngel
         protected virtual void LoadRowReader(int CurrentRowIndex = -1)
         {
             DataRowView CurrentRowView;
-            RowReader = null;
+            LoadedClipRowReader = null;
             if (CurrentRowIndex == -1)
             {
                 CurrentRowView = clipBindingSource.Current as DataRowView;
@@ -1306,7 +1306,7 @@ namespace ClipAngel
             if (CurrentRowView == null)
                 return;
             DataRow CurrentRow = CurrentRowView.Row;
-            RowReader = getRowReader((int) CurrentRow["Id"]);
+            LoadedClipRowReader = getRowReader((int) CurrentRow["Id"]);
         }
 
         private string LocalTypeName(string TypeEng)
@@ -1329,7 +1329,7 @@ namespace ClipAngel
 
         private string GetHtmlFromHtmlClipText(bool AddSourceUrlComment = false)
         {
-            string htmlClipText = RowReader["htmlText"].ToString();
+            string htmlClipText = LoadedClipRowReader["htmlText"].ToString();
             if (String.IsNullOrEmpty(htmlClipText))
                 return "";
             int indexOfHtlTag = htmlClipText.IndexOf("<html", StringComparison.OrdinalIgnoreCase);
@@ -1337,7 +1337,7 @@ namespace ClipAngel
                 return "";
             string result = htmlClipText.Substring(indexOfHtlTag);
             if (AddSourceUrlComment)
-                result = result + "\n<!-- Original URL - " + RowReader["url"].ToString() + " -->";
+                result = result + "\n<!-- Original URL - " + LoadedClipRowReader["url"].ToString() + " -->";
             return result;
         }
 
@@ -1507,7 +1507,7 @@ namespace ClipAngel
             RegexOptions options = RegexOptions.Singleline;
             if (!ClipAngel.Properties.Settings.Default.SearchCaseSensitive)
                 options = options | RegexOptions.IgnoreCase;
-            matches = Regex.Matches(RowReader["text"].ToString(), pattern, options);
+            matches = Regex.Matches(LoadedClipRowReader["text"].ToString(), pattern, options);
             int maxMarked = 50; // prevent slow down
             string href = "";
             mshtml.IHTMLTxtRange range = null;
@@ -2955,7 +2955,7 @@ namespace ClipAngel
         private DataObject ClipDataObject(SQLiteDataReader rowReader, bool onlySelectedPlainText, out string clipText)
         {
             if (rowReader == null)
-                rowReader = RowReader;
+                rowReader = LoadedClipRowReader;
 
             //DataRow CurrentDataRow = ((DataRowView)clipBindingSource.Current).Row;
             string type = (string) rowReader["type"];
@@ -2968,7 +2968,7 @@ namespace ClipAngel
                 string fileEditor = "";
                 clipText = GetClipTempFile(out fileEditor, rowReader);
             }
-            if (rowReader == RowReader)
+            if (rowReader == LoadedClipRowReader)
             {
                 string selectedText = GetSelectedTextOfClip(onlySelectedPlainText);
                 if (!String.IsNullOrEmpty(selectedText))
@@ -3030,7 +3030,7 @@ namespace ClipAngel
         {
             string selectedText = "";
             mshtml.IHTMLTxtRange htmlSelection = null;
-            if (RowReader["type"].ToString() == "html")
+            if (LoadedClipRowReader["type"].ToString() == "html")
                 htmlSelection = GetHtmlCurrentTextRangeOrAllDocument(true);
             bool selectedPlainTextMode = true
                                          && onlySelectedPlainText
@@ -3067,7 +3067,7 @@ namespace ClipAngel
         private bool IsTextType(string type = "")
         {
             if (type == "")
-                type = (string) RowReader["type"];
+                type = (string) LoadedClipRowReader["type"];
             return type == "rtf" || type == "text" || type == "html";
         }
 
@@ -3749,15 +3749,15 @@ namespace ClipAngel
             CalculateByteAndCharSizeOfClip("", "", newText, ref chars, ref byteSize);
             string sql = "Update Clips set Title = @Title, Text = @Text, Size = @Size, Chars = @Chars where Id = @Id";
             SQLiteCommand command = new SQLiteCommand(sql, m_dbConnection);
-            command.Parameters.AddWithValue("@Id", RowReader["Id"]);
+            command.Parameters.AddWithValue("@Id", LoadedClipRowReader["Id"]);
             command.Parameters.AddWithValue("@Text", newText);
             command.Parameters.AddWithValue("@Size", byteSize);
             command.Parameters.AddWithValue("@chars", chars);
             string newTitle = "";
-            if (RowReader["Title"].ToString() == TextClipTitle(RowReader["Text"].ToString()))
+            if (LoadedClipRowReader["Title"].ToString() == TextClipTitle(LoadedClipRowReader["Text"].ToString()))
                 newTitle = TextClipTitle(newText);
             else
-                newTitle = RowReader["Title"].ToString();
+                newTitle = LoadedClipRowReader["Title"].ToString();
             command.Parameters.AddWithValue("@Title", newTitle);
             command.ExecuteNonQuery();
 
@@ -3767,7 +3767,7 @@ namespace ClipAngel
         {
             string sql = "Update Clips set Url = @Url where Id = @Id";
             SQLiteCommand command = new SQLiteCommand(sql, m_dbConnection);
-            command.Parameters.AddWithValue("@Id", RowReader["Id"]);
+            command.Parameters.AddWithValue("@Id", LoadedClipRowReader["Id"]);
             command.Parameters.AddWithValue("@Url", Url);
             command.ExecuteNonQuery();
         }
@@ -4107,9 +4107,9 @@ namespace ClipAngel
 
         private void UpdateSelectedClipsHistory()
         {
-            if (RowReader != null)
+            if (LoadedClipRowReader != null)
             {
-                int oldID = (int) RowReader["id"];
+                int oldID = (int) LoadedClipRowReader["id"];
                 if (!selectedClipsBeforeFilterApply.Contains(oldID))
                     selectedClipsBeforeFilterApply.Add(oldID);
             }
@@ -4118,13 +4118,13 @@ namespace ClipAngel
         private bool CurrentIDChanged()
         {
             return false
-                   || (RowReader == null && dataGridView.CurrentRow != null)
-                   || (RowReader != null && dataGridView.CurrentRow == null)
+                   || (LoadedClipRowReader == null && dataGridView.CurrentRow != null)
+                   || (LoadedClipRowReader != null && dataGridView.CurrentRow == null)
                    || !(true
-                        && RowReader != null
+                        && LoadedClipRowReader != null
                         && dataGridView.CurrentRow != null
                         && dataGridView.CurrentRow.DataBoundItem != null
-                        && (int) (dataGridView.CurrentRow.DataBoundItem as DataRowView)["ID"] == (int) RowReader["ID"]);
+                        && (int) (dataGridView.CurrentRow.DataBoundItem as DataRowView)["ID"] == (int) LoadedClipRowReader["ID"]);
         }
 
         void SelectCurrentRow(bool forceRowLoad = false, bool keepTextSelection = true, bool clearSelection = true,
@@ -4636,8 +4636,8 @@ namespace ClipAngel
             {
                 //dataRowView = (DataRowView)(dataGridView.CurrentRow.DataBoundItem);
                 dataRowView = (DataRowView) (clipBindingSource.Current);
-                if (dataRowView != null && RowReader != null)
-                    dataRowView[fieldName] = RowReader[fieldName]; // DataBoundItem can be not read yet
+                if (dataRowView != null && LoadedClipRowReader != null)
+                    dataRowView[fieldName] = LoadedClipRowReader[fieldName]; // DataBoundItem can be not read yet
             }
             bool favVal = false;
             if (dataRowView != null)
@@ -4974,8 +4974,8 @@ namespace ClipAngel
                 stopUpdateDBThread = true;
                 updateDBThread.Join();
             }
-            if (RowReader != null)
-                RowReader = null;
+            if (LoadedClipRowReader != null)
+                LoadedClipRowReader = null;
             m_dbConnection.Close();
 
             if (areDeletedClips)
@@ -5671,7 +5671,7 @@ namespace ClipAngel
             allowTextPositionChangeUpdate = false;
             UpdateControlsStates();
             allowTextPositionChangeUpdate = true;
-            if (RowReader["type"].ToString() == "html")
+            if (LoadedClipRowReader["type"].ToString() == "html")
                 AfterRowLoad();
             OnClipContentSelectionChange();
         }
@@ -5732,16 +5732,16 @@ namespace ClipAngel
         {
             if (dataGridView.CurrentRow != null)
             {
-                string oldTitle = RowReader["Title"] as string;
+                string oldTitle = LoadedClipRowReader["Title"] as string;
                 InputBoxResult inputResult = InputBox.Show(Properties.Resources.HowUseAutoTitle, Properties.Resources.EditClipTitle, oldTitle, this);
                 if (inputResult.ReturnCode == DialogResult.OK)
                 {
                     string sql = "Update Clips set Title=@Title where Id=@Id";
                     SQLiteCommand command = new SQLiteCommand(sql, m_dbConnection);
-                    command.Parameters.AddWithValue("@Id", RowReader["Id"]);
+                    command.Parameters.AddWithValue("@Id", LoadedClipRowReader["Id"]);
                     string newTitle;
                     if (inputResult.Text == "")
-                        newTitle = TextClipTitle(RowReader["text"].ToString());
+                        newTitle = TextClipTitle(LoadedClipRowReader["text"].ToString());
                     else
                         newTitle = inputResult.Text;
                     command.Parameters.AddWithValue("@Title", newTitle);
@@ -6045,10 +6045,10 @@ namespace ClipAngel
         {
             fileEditor = "";
             if (rowReader == null)
-                rowReader = RowReader;
+                rowReader = LoadedClipRowReader;
             if (rowReader == null)
                 return "";
-            string type = RowReader["type"].ToString();
+            string type = rowReader["type"].ToString();
             //string TempFile = Path.GetTempFileName();
             string tempFile = clipTempFile(rowReader);
             if (tempFile == "")
@@ -6139,10 +6139,10 @@ namespace ClipAngel
 
         private void editClipTextToolStripMenuItem_Click(object sender = null, EventArgs e = null)
         {
-            if (RowReader == null)
+            if (LoadedClipRowReader == null)
                 return;
             bool newEditMode = !EditMode;
-            string clipType = RowReader["type"].ToString();
+            string clipType = LoadedClipRowReader["type"].ToString();
             if (!IsTextType())
                 return;
             //selectionStart = richTextBox.SelectionStart;
@@ -6156,8 +6156,8 @@ namespace ClipAngel
             {
                 if (clipType != "text")
                 {
-                    AddClip(null, null, "", "", "text", RowReader["text"].ToString(), "", "", "", 0, "",
-                        (bool) RowReader["used"], (bool) RowReader["favorite"]);
+                    AddClip(null, null, "", "", "text", LoadedClipRowReader["text"].ToString(), "", "", "", 0, "",
+                        (bool) LoadedClipRowReader["used"], (bool) LoadedClipRowReader["favorite"]);
                     GotoLastRow(true);
                 }
                 //else
@@ -6274,7 +6274,7 @@ namespace ClipAngel
         private void UpdateClipContentPositionIndicator(int line = 1, int column = 1)
         {
             string newText;
-            if (RowReader!= null && RowReader["type"].ToString() == "img")
+            if (LoadedClipRowReader!= null && LoadedClipRowReader["type"].ToString() == "img")
             {
                 //double zoomFactor = Math.Min((double) ImageControl.ClientSize.Width / ImageControl.Image.Width, (double) ImageControl.ClientSize.Height / ImageControl.Image.Height);
                 double zoomFactor = ImageControl.ZoomFactor();
@@ -6356,7 +6356,7 @@ namespace ClipAngel
         {
             string selectedText = richTextBox.SelectedText;
             if (selectedText == "")
-                selectedText = RowReader["text"].ToString();
+                selectedText = LoadedClipRowReader["text"].ToString();
             return selectedText;
         }
 
@@ -6368,18 +6368,18 @@ namespace ClipAngel
                 return;
             if (dataGridView.SelectedRows.Count == 1)
             {
-                type1 = RowReader["type"].ToString();
+                type1 = LoadedClipRowReader["type"].ToString();
                 if (!IsTextType() && type1 != "file")
                     return;
                 if (_lastSelectedForCompareId == 0)
                 {
-                    _lastSelectedForCompareId = (int) RowReader["id"];
+                    _lastSelectedForCompareId = (int) LoadedClipRowReader["id"];
                     //MessageBox.Show("Now execute this command on the second clip to compare", Application.ProductName);
                     return;
                 }
                 else
                 {
-                    id1 = (int) RowReader["id"];
+                    id1 = (int) LoadedClipRowReader["id"];
                     id2 = _lastSelectedForCompareId;
                     _lastSelectedForCompareId = 0;
                 }
@@ -6503,14 +6503,14 @@ namespace ClipAngel
         {
             ClipAngel.Properties.Settings.Default.ShowNativeTextFormatting = !ClipAngel.Properties.Settings.Default.ShowNativeTextFormatting;
             UpdateControlsStates();
-            string clipType = RowReader["type"].ToString();
+            string clipType = LoadedClipRowReader["type"].ToString();
             if (clipType == "html" || clipType == "rtf")
                 AfterRowLoad(true);
         }
 
         private void toolStripButtonMarkFavorite_Click(object sender, EventArgs e)
         {
-            if (RowReader == null)
+            if (LoadedClipRowReader == null)
                 return;
             SetRowMark("Favorite", !BoolFieldValue("Favorite"));
         }
@@ -6757,8 +6757,8 @@ namespace ClipAngel
             //    AfterRowLoad(true);
 
             if (true
-                && RowReader != null
-                && RowReader["type"].ToString() == "file"
+                && LoadedClipRowReader != null
+                && LoadedClipRowReader["type"].ToString() == "file"
                 && richTextBox.SelectionLength == 0
                 && richTextBox.SelectionStart == 0)
             {
@@ -6772,10 +6772,10 @@ namespace ClipAngel
 
         private void ignoreApplicationInCaptureToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (RowReader == null)
+            if (LoadedClipRowReader == null)
                 return;
             StringCollection IgnoreApplicationsClipCapture = ClipAngel.Properties.Settings.Default.IgnoreApplicationsClipCapture;
-            string fullFilename = RowReader["AppPath"].ToString();
+            string fullFilename = LoadedClipRowReader["AppPath"].ToString();
             if (String.IsNullOrEmpty(fullFilename))
                 return;
             if (IgnoreApplicationsClipCapture.Contains(fullFilename))
@@ -6789,9 +6789,9 @@ namespace ClipAngel
 
         private void copyFullFilenameToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (RowReader == null)
+            if (LoadedClipRowReader == null)
                 return;
-            string fullFilename = RowReader["AppPath"].ToString();
+            string fullFilename = LoadedClipRowReader["AppPath"].ToString();
             SetTextInClipboard(fullFilename);
         }
 
@@ -6897,7 +6897,7 @@ namespace ClipAngel
 
         private void uploadImageToWebToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string clipType = (string) RowReader["type"];
+            string clipType = (string) LoadedClipRowReader["type"];
             if (clipType != "img")
                 return;
             string junkVar;
@@ -7467,7 +7467,7 @@ namespace ClipAngel
                 return;
             string extension = Path.GetExtension(tempFile);
             SaveFileDialog saveFileDialog = new SaveFileDialog();
-            saveFileDialog.FileName = RowReader["title"].ToString();
+            saveFileDialog.FileName = LoadedClipRowReader["title"].ToString();
             saveFileDialog.CheckFileExists = false;
             saveFileDialog.Filter = extension  + "| *" + extension + "|All|*.*";
             if (saveFileDialog.ShowDialog(this) != DialogResult.OK)
