@@ -22,7 +22,7 @@
     <value>Autom. ersten Treffer wählen</value>
   </data>
   <data name="AutoSelectMatchDescription" xml:space="preserve">
-    <value>Autom. ersten Treffer mit Suchbegriff im Cliptext auswählen</value>
+    <value>Autom. ersten Treffer mit Suchbegriff im Cliptext auswählen.</value>
   </data>
   <data name="Autostart" xml:space="preserve">
     <value>Autom. starten bei Benutzeranmeldung</value>
@@ -80,7 +80,7 @@
     <value>Schnelle Fensteröffnung</value>
   </data>
   <data name="FastWindowOpenDescription" xml:space="preserve">
-    <value>Einige Tricks für schnelle Fensteröffnung. Kann zu kleinen Problemen beim Öffnen/Schließen des Fensters führen</value>
+    <value>Einige Tricks für schnelle Fensteröffnung. Kann zu kleinen Problemen beim Öffnen/Schließen des Fensters führen.</value>
   </data>
   <data name="GlobalHotkeyCompareLastClips" xml:space="preserve">
     <value>Hotkey zum Vergleichen der letzten Clips</value>
@@ -243,7 +243,6 @@ Native HTML-Formatierung ist nicht betroffen.</value>
   <data name="TextCompareApplicationDescription" xml:space="preserve">
     <value>Leer lassen, um automatische nach Beyond Compare, ExamDiff Pro, WinMerge, Araxis Merge, 
 DiffMerge, Kdiff3 zu suchen. Befehl für Textvergleich ist %application% %file1% %file2%
-
 </value>
   </data>
   <data name="TextEditor" xml:space="preserve">
@@ -274,14 +273,14 @@ DiffMerge, Kdiff3 zu suchen. Befehl für Textvergleich ist %application% %file1%
     <value>Ton abspielen beim Clip-Erfassen</value>
   </data>
   <data name="PlaySoundOnClipCaptureDescription" xml:space="preserve">
-    <value>Ton abspielen, wenn der Clip erfolgreich aufgenommen wurde. Kann nervig sein...</value>
+    <value>Ton abspielen, wenn der Clip erfolgreich aufgenommen wurde. Kann nervig sein</value>
   </data>
   <data name="DatabaseFile" xml:space="preserve">
     <value>Datenbankdatei</value>
   </data>
   <data name="DatabaseFileDescription" xml:space="preserve">
     <value>Sie können den Namen der Datenbank ändern, um in einen anderen Ablageverlauf zu wechseln. 
-Feld leer lassen, um die Standarddatenbank "db.sqlite" im Ordner zu verwenden. </value>
+Feld leer lassen, um die Standarddatenbank "db.sqlite" im Ordner zu verwenden.</value>
   </data>
   <data name="MaxCellsToCaptureFormattedText" xml:space="preserve">
     <value>max. Anzahl Zellen für formatierten Text</value>
@@ -318,7 +317,7 @@ Die Generierung von Bildern erzeugt CPU-Last. Bei zu hoher, niedrigeren Wert fes
     <value>Hotkey zum Umschalten der Clipboardüberwachung</value>
   </data>
   <data name="GlobalHotkeySwitchMonitoringDescription" xml:space="preserve">
-    <value>Hotkey gilt in beliebigem Programm, um die Clipboardüberwachung (Erfassen von Änderungen) umzuschalten.</value>
+    <value>Hotkey gilt in beliebigem Programm, um die Clipboardüberwachung (Erfassen von Änderungen) umzuschalten</value>
   </data>
   <data name="UseFormattingInDuplicateDetection" xml:space="preserve">
     <value>Formatierung verwenden bei Duplikaterkennung</value>
@@ -367,5 +366,41 @@ Die Generierung von Bildern erzeugt CPU-Last. Bei zu hoher, niedrigeren Wert fes
   </data>
   <data name="DeleteNonFavoriteClipsOnExitDescription" xml:space="preserve">
     <value>Lösche alle Nicht-Favoriten nach Schließen der Datenbank</value>
+  </data>
+  <data name="CaptureImages" xml:space="preserve">
+    <value>Bilder erfassen</value>
+  </data>
+  <data name="CaptureImagesDescription" xml:space="preserve">
+    <value>Bildclips erfassen</value>
+  </data>
+  <data name="SearchAllFields" xml:space="preserve">
+    <value>Suche in allen Feldern</value>
+  </data>
+  <data name="SearchAllFieldsDescription" xml:space="preserve">
+    <value>Falsch - Suche nur in Text und Titel der Clips. Wahr - Suche in Text, Titel, Fenster, Url von Clips.</value>
+  </data>
+  <data name="AllowDownloadThumbnail" xml:space="preserve">
+    <value>Download der Miniaturansicht erlauben</value>
+  </data>
+  <data name="AllowDownloadThumbnailDescription" xml:space="preserve">
+    <value>Erlaube Herunterladen von Miniaturbildern für Video- und Bildverknüpfungen aus dem Internet</value>
+  </data>
+  <data name="ConfirmationBeforeDelete" xml:space="preserve">
+    <value>Bestätigung vor Löschung</value>
+  </data>
+  <data name="ConfirmationBeforeDeleteDescription" xml:space="preserve">
+    <value>Vor Löschen eines Clips nach Bestätigung fragen</value>
+  </data>
+  <data name="DelimiterForTextJoin" xml:space="preserve">
+    <value>Begrenzer für Textverknüpfung</value>
+  </data>
+  <data name="DelimiterForTextJoinDescription" xml:space="preserve">
+    <value>Begrenzer für den Befehl zur Textverknüpfung. Verwenden Sie "\n" als Zeilenende.</value>
+  </data>
+  <data name="DontSendPaste" xml:space="preserve">
+    <value>Keine Einfügungen ins Zielfenster senden</value>
+  </data>
+  <data name="DontSendPasteDescription" xml:space="preserve">
+    <value>Bei Einfügen-Befehlen keine Einfügung an das Zielfenster senden. Einfach Daten in Zwischenablage ablegen.</value>
   </data>
 </root>

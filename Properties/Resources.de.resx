@@ -100,7 +100,7 @@
     <value>..\Picture\clear1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="NewVersionAvailable" xml:space="preserve">
-    <value>Neue Version verfügbar. Aktualisieren über die Schaltfläche in der oberen Befehlsleiste</value>
+    <value>Neue Version verfügbar. Aktualisieren über die Schaltfläche in der oberen Befehlsleiste.</value>
   </data>
   <data name="ApplicationAddedToIgnoreList" xml:space="preserve">
     <value>Anwendung "{0}" zur Ignorierliste hinzugefügt. Kann im Fenster "Einstellungen" bearbeitet werden</value>
@@ -332,5 +332,35 @@
   </data>
   <data name="Filter1" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\Filter.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Support" xml:space="preserve">
+    <value>https://sourceforge.net/p/clip-angel/tickets/new/</value>
+  </data>
+  <data name="WrongFileFormat" xml:space="preserve">
+    <value>Falsches Dateiformat</value>
+  </data>
+  <data name="filename" xml:space="preserve">
+    <value>filename</value>
+  </data>
+  <data name="text_filename" xml:space="preserve">
+    <value>*filename</value>
+  </data>
+  <data name="text_url_image" xml:space="preserve">
+    <value>*url-image</value>
+  </data>
+  <data name="text_url_video" xml:space="preserve">
+    <value>*url-video</value>
+  </data>
+  <data name="FailedChangeDatabaseFieEncryption" xml:space="preserve">
+    <value>Verschlüsselung von Datenbankdateien fehlgeschlagen</value>
+  </data>
+  <data name="ConfirmDeleteAllNonFavorite" xml:space="preserve">
+    <value>Wirklich alle nicht favorisierten Clips löschen?</value>
+  </data>
+  <data name="ConfirmDeleteSelectedClips" xml:space="preserve">
+    <value>Wirklich die ausgewählten Clips löschen?</value>
+  </data>
+  <data name="GlobalHotkeys" xml:space="preserve">
+    <value>Globale Tastenkürzel</value>
   </data>
 </root>

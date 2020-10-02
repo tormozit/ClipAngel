@@ -42,7 +42,7 @@
     <value>209, 22</value>
   </data>
   <data name="toolStripButtonAutoSelectMatch.Text" xml:space="preserve">
-    <value>Ersten Treffer automatisch auswählen</value>
+    <value>Ersten Treffer automatisch auswählen </value>
   </data>
   <data name="toolStripMenuItem10.ToolTipText" xml:space="preserve">
     <value>Mit diesem Befehl den Text der ausgewählten 2 Clips oder des aktuellen Clips mit dem zuvor ausgewählten Clip vergleichen</value>
@@ -78,7 +78,7 @@
     <value>Typ</value>
   </data>
   <data name="deleteAllNonFavoriteToolStripMenuItem.ToolTipText" xml:space="preserve">
-    <value>Alle Nicht-Favoriten löschen</value>
+    <value>Alle Nicht-Favoriten löschen. Echte Löschung wird beim Schließen der Datenbank durchgeführt.</value>
   </data>
   <data name="toolStripMenuItem14.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Alt+Q</value>
@@ -341,7 +341,7 @@ Die URL wird im aktuellen Clip gespeichert und in die Zwischenablage kopiert..</
     <value>None</value>
   </data>
   <data name="urlTextBox.ToolTip" xml:space="preserve">
-    <value>Clip wurde aus diesem URL kopiert.</value>
+    <value>Clip wurde aus diesem URL kopiert</value>
   </data>
   <data name="toolStripMenuItem12.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>F2</value>
@@ -373,7 +373,7 @@ System-Menü öffnen, um die Clip-Datei in der gewählten Anwendung zu öffnen.
     <value>Titel des Fensters, das den Clip kopiert hat</value>
   </data>
   <data name="toolStripMenuItem3.ToolTipText" xml:space="preserve">
-    <value>In aktives Fenster ausgewählten Klarext oder Bildclip-Dateiname oder verbundenen Klartext ausgewählter Clips einfügen</value>
+    <value>Fügt in das aktive Fenster den ausgewählten reinen Cliptext, den Dateinamen des Bildclips oder den kombinierten reinen Text der ausgewählten Clips ein.</value>
   </data>
   <data name="buttonUpdate.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>63, 22</value>
@@ -414,7 +414,8 @@ Clip-Datei mit Standardanwendung öffnen.
     <value>Datei</value>
   </data>
   <data name="textCompareToolStripMenuItem.ToolTipText" xml:space="preserve">
-    <value>Text der ausgewählten 2 Clips oder des aktuellen Clips mit dem zuvor ausgewählten Clip vergleichen</value>
+    <value>Text der ausgewählten 2 Clips oder des aktuellen Clips mit dem zuvor ausgewählten Clip vergleichen
+</value>
   </data>
   <data name="textBoxApplication.Anchor" xml:space="preserve" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -465,7 +466,7 @@ Clip-Datei mit Standardanwendung öffnen.
     <value>209, 22</value>
   </data>
   <data name="returnToPrevousSelectedClipToolStripMenuItem.Text" xml:space="preserve">
-    <value>Filter löschen + vorigen Clip wählen</value>
+    <value>Filter löschen + vorigen Clip wählen.</value>
   </data>
   <data name="contextMenuStripApplication.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>172, 48</value>
@@ -500,7 +501,8 @@ Clip-Datei mit Standardanwendung öffnen.
   <data name="toolStripButtonOpenWith.ToolTipText" xml:space="preserve">
     <value>Speichern Sie Bild- oder Text Clips in einer temporären Datei.
 System-Menü öffnen, um die Clip-Datei in der gewählten Anwendung zu öffnen. 
-Änderungen in der temporären Datei werden nicht mit dem Clip synchronisiert!</value>
+Änderungen in der temporären Datei werden nicht mit dem Clip synchronisiert!
+</value>
   </data>
   <data name="htmlTextBox.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
     <value>10</value>
@@ -1128,7 +1130,7 @@ System-Menü öffnen, um die Clip-Datei in der gewählten Anwendung zu öffnen.
     <value>140, 26</value>
   </data>
   <data name="toolStripMenuItem7.ToolTipText" xml:space="preserve">
-    <value>Simuliert im aktiven Fenster die Zeicheneingabe ausgewählten Textes des Clips oder verbundener Text ausgewählter Clips</value>
+    <value>Simuliert im aktiven Fenster die Zeicheneingabe ausgewählten Textes des Clips oder verbundener Text ausgewählter Clips.</value>
   </data>
   <data name="MarkFilter.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
     <value>12</value>
@@ -2147,7 +2149,8 @@ Untermenü "Liste" enthält Befehle zur schnellen Auswahl</value>
     <value>Art</value>
   </data>
   <data name="toolStripMenuItem6.ToolTipText" xml:space="preserve">
-    <value>Fügen Sie im aktiven Fenster den ausgewählten Text des Clips als Klarext ein oder den verbundenen Text  ausgewählter Clips. </value>
+    <value>Fügen Sie im aktiven Fenster den ausgewählten Text des Clips als Klartext ein oder den verbundenen Text  ausgewählter Clips.
+</value>
   </data>
   <data name="toolStripMenuItemEditClipText.ToolTipText" xml:space="preserve">
     <value>Clip-Text als unformatierten Text bearbeiten (F4)</value>
@@ -2163,7 +2166,7 @@ Untermenü "Liste" enthält Befehle zur schnellen Auswahl</value>
 </value>
   </data>
   <data name="MarkFilter.Items3" xml:space="preserve">
-    <value>Bild </value>
+    <value>Bild</value>
   </data>
   <data name="toolStripWindowTitleCopyAll.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>139, 22</value>
@@ -2413,13 +2416,13 @@ Ignorierliste hinzugefügt. Diese kann in den "Einstellungen" bearbeitet werden.
     <value>Datei einfügen</value>
   </data>
   <data name="pasteFileToolStripMenuItem.ToolTipText" xml:space="preserve">
-    <value>Ausgewählte Clips im aktiven Fenster als Dateien einfügen</value>
+    <value>Ausgewählte Clips im aktiven Fenster als Dateien einfügen </value>
   </data>
   <data name="toolStripMenuItem18.Text" xml:space="preserve">
     <value>Datei einfügen</value>
   </data>
   <data name="toolStripMenuItem18.ToolTipText" xml:space="preserve">
-    <value>Ausgewählte Clips im aktiven Fenster als Dateien einfügen</value>
+    <value>Ausgewählte Clips im aktiven Fenster als Dateien einfügen </value>
   </data>
   <data name="filterByDateToolStripMenuItem.Text" xml:space="preserve">
     <value>Nach Datum filtern</value>
@@ -2758,11 +2761,17 @@ Bearbeite den Suchstring direkt aus der Liste. Navigiere in der Liste direkt aus
   <data name="menuItemSetFocusClipText.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>212, 22</value>
   </data>
+  <data name="menuItemSetFocusClipText.Text" xml:space="preserve">
+    <value>Fokus auf Clip-Text setzen (TAB)</value>
+  </data>
   <data name="htmlTextBox.Dock" xml:space="preserve" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
   <data name="searchAllFieldsMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>209, 22</value>
+  </data>
+  <data name="searchAllFieldsMenuItem.Text" xml:space="preserve">
+    <value>Suche in allen Feldern</value>
   </data>
   <data name="openWithToolStripMenuItem.Visible" xml:space="preserve" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -2770,14 +2779,32 @@ Bearbeite den Suchstring direkt aus der Liste. Navigiere in der Liste direkt aus
   <data name="exportMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>214, 22</value>
   </data>
+  <data name="exportMenuItem.Text" xml:space="preserve">
+    <value>Clips exportieren</value>
+  </data>
+  <data name="exportMenuItem.ToolTipText" xml:space="preserve">
+    <value>Ausgewählte Clips in Datei exportieren</value>
+  </data>
   <data name="importToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>214, 22</value>
+  </data>
+  <data name="importToolStripMenuItem.Text" xml:space="preserve">
+    <value>Clips importieren</value>
+  </data>
+  <data name="importToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>Clips aus Datei importieren</value>
   </data>
   <metadata name="cultureManager5.TrayLocation" xml:space="preserve" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>890, 57</value>
   </metadata>
   <data name="saveAsFileMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>214, 22</value>
+  </data>
+  <data name="saveAsFileMenuItem.Text" xml:space="preserve">
+    <value>Speichern als Datei...</value>
+  </data>
+  <data name="saveAsFileMenuItem.ToolTipText" xml:space="preserve">
+    <value>Daten in Datei speichern mit Verzeichnis- und Namensauswahl für Text- oder Bildclip</value>
   </data>
   <data name="saveAsFileMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+S</value>
@@ -2793,6 +2820,13 @@ Bearbeite den Suchstring direkt aus der Liste. Navigiere in der Liste direkt aus
   </data>
   <data name="decodeTextToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>220, 22</value>
+  </data>
+  <data name="decodeTextToolStripMenuItem.Text" xml:space="preserve">
+    <value>URL dekodieren</value>
+  </data>
+  <data name="decodeTextToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>Ausgewählten oder gesamten Cliptext mithilfe von URL-Regeln (%) in neuen Clip dekodieren
+</value>
   </data>
   <data name="deleteAllNonFavoriteToolStripMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+Alt+K</value>

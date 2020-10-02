@@ -113,7 +113,7 @@
         </trans-unit>
         <trans-unit id="AutoSelectMatchDescription" translate="yes" xml:space="preserve">
           <source>Autoselection of first match of search string in clip text. </source>
-          <target state="translated">Autom. ersten Treffer mit Suchbegriff im Cliptext auswählen</target>
+          <target state="translated">Autom. ersten Treffer mit Suchbegriff im Cliptext auswählen.</target>
         </trans-unit>
         <trans-unit id="Autostart" translate="yes" xml:space="preserve">
           <source>Autostart program on user logon</source>
@@ -191,7 +191,7 @@ Key press will be processed by the window. </source>
         </trans-unit>
         <trans-unit id="FastWindowOpenDescription" translate="yes" xml:space="preserve">
           <source>Fast window opening by using some tricks. Can lead to some minor problems in window opening/closing.</source>
-          <target state="translated">Einige Tricks für schnelle Fensteröffnung. Kann zu kleinen Problemen beim Öffnen/Schließen des Fensters führen</target>
+          <target state="translated">Einige Tricks für schnelle Fensteröffnung. Kann zu kleinen Problemen beim Öffnen/Schließen des Fensters führen.</target>
         </trans-unit>
         <trans-unit id="GlobalHotkeyCompareLastClips" translate="yes" xml:space="preserve">
           <source>Hotkey to compare last clips</source>
@@ -412,7 +412,6 @@ Native HTML-Formatierung ist nicht betroffen.</target>
 WinMerge, Araxis Merge, DiffMerge, Kdiff3. Text compare command is %application% %file1% %file2%</source>
           <target state="translated">Leer lassen, um automatische nach Beyond Compare, ExamDiff Pro, WinMerge, Araxis Merge, 
 DiffMerge, Kdiff3 zu suchen. Befehl für Textvergleich ist %application% %file1% %file2%
-
 </target>
         </trans-unit>
         <trans-unit id="TextEditor" translate="yes" xml:space="preserve">
@@ -453,7 +452,7 @@ DiffMerge, Kdiff3 zu suchen. Befehl für Textvergleich ist %application% %file1%
         </trans-unit>
         <trans-unit id="PlaySoundOnClipCaptureDescription" translate="yes" xml:space="preserve">
           <source>Playing sound when clip is successfully captured. Can be annoying</source>
-          <target state="translated">Ton abspielen, wenn der Clip erfolgreich aufgenommen wurde. Kann nervig sein...</target>
+          <target state="translated">Ton abspielen, wenn der Clip erfolgreich aufgenommen wurde. Kann nervig sein</target>
         </trans-unit>
         <trans-unit id="DatabaseFile" translate="yes" xml:space="preserve">
           <source>Database file</source>
@@ -463,7 +462,7 @@ DiffMerge, Kdiff3 zu suchen. Befehl für Textvergleich ist %application% %file1%
           <source>You can change database filename to switch to other clipboard history. 
 Leave blank to use standard database file "db.sqlite" in application user settings folder.</source>
           <target state="translated">Sie können den Namen der Datenbank ändern, um in einen anderen Ablageverlauf zu wechseln. 
-Feld leer lassen, um die Standarddatenbank "db.sqlite" im Ordner zu verwenden. </target>
+Feld leer lassen, um die Standarddatenbank "db.sqlite" im Ordner zu verwenden.</target>
         </trans-unit>
         <trans-unit id="MaxCellsToCaptureFormattedText" translate="yes" xml:space="preserve">
           <source>Max cells to capture formatted text</source>
@@ -514,7 +513,7 @@ Die Generierung von Bildern erzeugt CPU-Last. Bei zu hoher, niedrigeren Wert fes
         </trans-unit>
         <trans-unit id="GlobalHotkeySwitchMonitoringDescription" translate="yes" xml:space="preserve">
           <source>Use this hot key in any program to switch clipboard monitoring (capturing changes) by ClipAngel</source>
-          <target state="translated">Hotkey gilt in beliebigem Programm, um die Clipboardüberwachung (Erfassen von Änderungen) umzuschalten.</target>
+          <target state="translated">Hotkey gilt in beliebigem Programm, um die Clipboardüberwachung (Erfassen von Änderungen) umzuschalten</target>
         </trans-unit>
         <trans-unit id="UseFormattingInDuplicateDetection" translate="yes" xml:space="preserve">
           <source>Use formatting in duplicate detection</source>
@@ -585,51 +584,51 @@ Die Generierung von Bildern erzeugt CPU-Last. Bei zu hoher, niedrigeren Wert fes
         </trans-unit>
         <trans-unit id="CaptureImages" translate="yes" xml:space="preserve">
           <source>Capture images</source>
-          <target state="new">Capture images</target>
+          <target state="translated">Bilder erfassen</target>
         </trans-unit>
         <trans-unit id="CaptureImagesDescription" translate="yes" xml:space="preserve">
           <source>Capture image clips</source>
-          <target state="new">Capture image clips</target>
+          <target state="translated">Bildclips erfassen</target>
         </trans-unit>
         <trans-unit id="SearchAllFields" translate="yes" xml:space="preserve">
           <source>Search all fields</source>
-          <target state="new">Search all fields</target>
+          <target state="translated">Suche in allen Feldern</target>
         </trans-unit>
         <trans-unit id="SearchAllFieldsDescription" translate="yes" xml:space="preserve">
           <source>False - search only in Text and Title of clips. True - search in Text, Title, Window, Url of clips.</source>
-          <target state="new">False - search only in Text and Title of clips. True - search in Text, Title, Window, Url of clips.</target>
+          <target state="translated">Falsch - Suche nur in Text und Titel der Clips. Wahr - Suche in Text, Titel, Fenster, Url von Clips.</target>
         </trans-unit>
         <trans-unit id="AllowDownloadThumbnail" translate="yes" xml:space="preserve">
           <source>Allow download thumbnail</source>
-          <target state="new">Allow download thumbnail</target>
+          <target state="translated">Download der Miniaturansicht erlauben</target>
         </trans-unit>
         <trans-unit id="AllowDownloadThumbnailDescription" translate="yes" xml:space="preserve">
           <source>Allow download thumbnail for video and image links from internet</source>
-          <target state="new">Allow download thumbnail for video and image links from internet</target>
+          <target state="translated">Erlaube Herunterladen von Miniaturbildern für Video- und Bildverknüpfungen aus dem Internet</target>
         </trans-unit>
         <trans-unit id="ConfirmationBeforeDelete" translate="yes" xml:space="preserve">
           <source>Confirmation before delete</source>
-          <target state="new">Confirmation before delete</target>
+          <target state="translated">Bestätigung vor Löschung</target>
         </trans-unit>
         <trans-unit id="ConfirmationBeforeDeleteDescription" translate="yes" xml:space="preserve">
           <source>Ask confirmation before clip delete</source>
-          <target state="new">Ask confirmation before clip delete</target>
+          <target state="translated">Vor Löschen eines Clips nach Bestätigung fragen</target>
         </trans-unit>
         <trans-unit id="DelimiterForTextJoin" translate="yes" xml:space="preserve">
           <source>Delimiter for text join</source>
-          <target state="new">Delimiter for text join</target>
+          <target state="translated">Begrenzer für Textverknüpfung</target>
         </trans-unit>
         <trans-unit id="DelimiterForTextJoinDescription" translate="yes" xml:space="preserve">
           <source>Delimiter used for text join command. Use "\n" as end of line.</source>
-          <target state="new">Delimiter used for text join command. Use "\n" as end of line.</target>
+          <target state="translated">Begrenzer für den Befehl zur Textverknüpfung. Verwenden Sie "\n" als Zeilenende.</target>
         </trans-unit>
         <trans-unit id="DontSendPaste" translate="yes" xml:space="preserve">
           <source>Don't send paste to target window</source>
-          <target state="new">Don't send paste to target window</target>
+          <target state="translated">Keine Einfügungen ins Zielfenster senden</target>
         </trans-unit>
         <trans-unit id="DontSendPasteDescription" translate="yes" xml:space="preserve">
           <source>Don't send paste to target window in Paste commands. Just put data on clipboard.</source>
-          <target state="new">Don't send paste to target window in Paste commands. Just put data on clipboard.</target>
+          <target state="translated">Bei Einfügen-Befehlen keine Einfügung an das Zielfenster senden. Einfach Daten in Zwischenablage ablegen.</target>
         </trans-unit>
       </group>
     </body>
@@ -1338,7 +1337,7 @@ Die Generierung von Bildern erzeugt CPU-Last. Bei zu hoher, niedrigeren Wert fes
         </trans-unit>
         <trans-unit id="NewVersionAvailable" translate="yes" xml:space="preserve">
           <source>New version is available. To update use button in top command bar.</source>
-          <target state="needs-review-translation">Neue Version verfügbar. Aktualisieren über die Schaltfläche in der oberen Befehlsleiste</target>
+          <target state="translated">Neue Version verfügbar. Aktualisieren über die Schaltfläche in der oberen Befehlsleiste.</target>
           <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
           <note from="MultilingualEditor" annotates="source" priority="4">Typo in source ...is top... should be  ...in top...</note>
         </trans-unit>
@@ -1660,43 +1659,43 @@ Die Generierung von Bildern erzeugt CPU-Last. Bei zu hoher, niedrigeren Wert fes
         </trans-unit>
         <trans-unit id="Support" translate="yes" xml:space="preserve">
           <source>https://sourceforge.net/p/clip-angel/tickets/new/</source>
-          <target state="new">https://sourceforge.net/p/clip-angel/tickets/new/</target>
+          <target state="translated">https://sourceforge.net/p/clip-angel/tickets/new/</target>
         </trans-unit>
         <trans-unit id="WrongFileFormat" translate="yes" xml:space="preserve">
           <source>Wrong file format</source>
-          <target state="new">Wrong file format</target>
+          <target state="translated">Falsches Dateiformat</target>
         </trans-unit>
         <trans-unit id="filename" translate="yes" xml:space="preserve">
           <source>filename</source>
-          <target state="new">filename</target>
+          <target state="translated">filename</target>
         </trans-unit>
         <trans-unit id="text_filename" translate="yes" xml:space="preserve">
           <source>*filename</source>
-          <target state="new">*filename</target>
+          <target state="translated">*filename</target>
         </trans-unit>
         <trans-unit id="text_url_image" translate="yes" xml:space="preserve">
           <source>*url-image</source>
-          <target state="new">*url-image</target>
+          <target state="translated">*url-image</target>
         </trans-unit>
         <trans-unit id="text_url_video" translate="yes" xml:space="preserve">
           <source>*url-video</source>
-          <target state="new">*url-video</target>
+          <target state="translated">*url-video</target>
         </trans-unit>
         <trans-unit id="FailedChangeDatabaseFieEncryption" translate="yes" xml:space="preserve">
           <source>Failed change database file encryption</source>
-          <target state="new">Failed change database file encryption</target>
+          <target state="translated">Verschlüsselung von Datenbankdateien fehlgeschlagen</target>
         </trans-unit>
         <trans-unit id="ConfirmDeleteAllNonFavorite" translate="yes" xml:space="preserve">
           <source>Are you sure want to delete all non favorite clips?</source>
-          <target state="new">Are you sure want to delete all non favorite clips?</target>
+          <target state="translated">Wirklich alle nicht favorisierten Clips löschen?</target>
         </trans-unit>
         <trans-unit id="ConfirmDeleteSelectedClips" translate="yes" xml:space="preserve">
           <source>Are you sure to delete selected clips?</source>
-          <target state="new">Are you sure to delete selected clips?</target>
+          <target state="translated">Wirklich die ausgewählten Clips löschen?</target>
         </trans-unit>
         <trans-unit id="GlobalHotkeys" translate="yes" xml:space="preserve">
           <source>Global hotkeys</source>
-          <target state="new">Global hotkeys</target>
+          <target state="translated">Globale Tastenkürzel</target>
         </trans-unit>
       </group>
     </body>
@@ -2167,7 +2166,7 @@ Changes in temp file are not synchronized with clip!</source>
         </trans-unit>
         <trans-unit id="toolStripButtonAutoSelectMatch.Text" translate="yes" xml:space="preserve">
           <source>Autoselect first match </source>
-          <target state="translated">Ersten Treffer automatisch auswählen</target>
+          <target state="translated">Ersten Treffer automatisch auswählen </target>
         </trans-unit>
         <trans-unit id="showAllTypesToolStripMenuItem.Size" translate="no" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
           <source>253, 22</source>
@@ -2238,7 +2237,7 @@ Changes in temp file are not synchronized with clip!</source>
         </trans-unit>
         <trans-unit id="deleteAllNonFavoriteToolStripMenuItem.ToolTipText" translate="yes" xml:space="preserve">
           <source>Delete all non favorite clips from list. Real deletion is performed on database close.</source>
-          <target state="translated">Alle Nicht-Favoriten löschen</target>
+          <target state="translated">Alle Nicht-Favoriten löschen. Echte Löschung wird beim Schließen der Datenbank durchgeführt.</target>
         </trans-unit>
         <trans-unit id="toolStripMenuItem14.ShortcutKeys" translate="yes" extype="System.Windows.Forms.Keys, System.Windows.Forms" xml:space="preserve">
           <source>Alt+Q</source>
@@ -2669,7 +2668,7 @@ Die URL wird im aktuellen Clip gespeichert und in die Zwischenablage kopiert..</
         </trans-unit>
         <trans-unit id="urlTextBox.ToolTip" translate="yes" xml:space="preserve">
           <source>From this URL clip was copied</source>
-          <target state="translated">Clip wurde aus diesem URL kopiert.</target>
+          <target state="translated">Clip wurde aus diesem URL kopiert</target>
         </trans-unit>
         <trans-unit id="toolStripMenuItem12.ShortcutKeys" translate="yes" extype="System.Windows.Forms.Keys, System.Windows.Forms" xml:space="preserve">
           <source>F2</source>
@@ -2725,7 +2724,7 @@ System-Menü öffnen, um die Clip-Datei in der gewählten Anwendung zu öffnen.
         </trans-unit>
         <trans-unit id="toolStripMenuItem3.ToolTipText" translate="yes" xml:space="preserve">
           <source>Paste in active window selected plain text of clip or image clip file name or aggregated plain text of selected clips.</source>
-          <target state="translated">In aktives Fenster ausgewählten Klarext oder Bildclip-Dateiname oder verbundenen Klartext ausgewählter Clips einfügen</target>
+          <target state="translated">Fügt in das aktive Fenster den ausgewählten reinen Cliptext, den Dateinamen des Bildclips oder den kombinierten reinen Text der ausgewählten Clips ein.</target>
         </trans-unit>
         <trans-unit id="buttonUpdate.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
           <source>63, 22</source>
@@ -2790,7 +2789,8 @@ Clip-Datei mit Standardanwendung öffnen.
         <trans-unit id="textCompareToolStripMenuItem.ToolTipText" translate="yes" xml:space="preserve">
           <source>Compare text of selected 2 clips or current clip with previously selected clip by this command
 </source>
-          <target state="needs-review-translation">Text der ausgewählten 2 Clips oder des aktuellen Clips mit dem zuvor ausgewählten Clip vergleichen</target>
+          <target state="translated">Text der ausgewählten 2 Clips oder des aktuellen Clips mit dem zuvor ausgewählten Clip vergleichen
+</target>
           <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
           <note from="MultilingualEditor" annotates="source" priority="4">Typo in source: prevoiusly - should be previously</note>
         </trans-unit>
@@ -2865,7 +2865,7 @@ Clip-Datei mit Standardanwendung öffnen.
         </trans-unit>
         <trans-unit id="returnToPrevousSelectedClipToolStripMenuItem.Text" translate="yes" xml:space="preserve">
           <source>Clear filters and select prev.</source>
-          <target state="translated">Filter löschen + vorigen Clip wählen</target>
+          <target state="translated">Filter löschen + vorigen Clip wählen.</target>
         </trans-unit>
         <trans-unit id="contextMenuStripApplication.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
           <source>172, 48</source>
@@ -2918,7 +2918,8 @@ Changes in temp file are not synchronized with clip!
 </source>
           <target state="translated">Speichern Sie Bild- oder Text Clips in einer temporären Datei.
 System-Menü öffnen, um die Clip-Datei in der gewählten Anwendung zu öffnen. 
-Änderungen in der temporären Datei werden nicht mit dem Clip synchronisiert!</target>
+Änderungen in der temporären Datei werden nicht mit dem Clip synchronisiert!
+</target>
         </trans-unit>
         <trans-unit id="htmlTextBox.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
           <source>10</source>
@@ -4125,7 +4126,7 @@ System-Menü öffnen, um die Clip-Datei in der gewählten Anwendung zu öffnen.
         </trans-unit>
         <trans-unit id="toolStripMenuItem7.ToolTipText" translate="yes" xml:space="preserve">
           <source>Simulate in active window char input of selected text of clip or aggregated text of selected clips.</source>
-          <target state="needs-review-translation">Simuliert im aktiven Fenster die Zeicheneingabe ausgewählten Textes des Clips oder verbundener Text ausgewählter Clips</target>
+          <target state="translated">Simuliert im aktiven Fenster die Zeicheneingabe ausgewählten Textes des Clips oder verbundener Text ausgewählter Clips.</target>
           <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="MarkFilter.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
@@ -6021,7 +6022,8 @@ Untermenü "Liste" enthält Befehle zur schnellen Auswahl</target>
         <trans-unit id="toolStripMenuItem6.ToolTipText" translate="yes" xml:space="preserve">
           <source>Paste in active window as plain text selected text of clip or aggregated text of selected clips.
 </source>
-          <target state="translated">Fügen Sie im aktiven Fenster den ausgewählten Text des Clips als Klarext ein oder den verbundenen Text  ausgewählter Clips. </target>
+          <target state="translated">Fügen Sie im aktiven Fenster den ausgewählten Text des Clips als Klartext ein oder den verbundenen Text  ausgewählter Clips.
+</target>
           <note from="MultilingualEditor" annotates="source" priority="4">Typo in source: aggregated - should read aggregated</note>
         </trans-unit>
         <trans-unit id="toolStripMenuItemEditClipText.ToolTipText" translate="yes" xml:space="preserve">
@@ -6049,7 +6051,7 @@ Untermenü "Liste" enthält Befehle zur schnellen Auswahl</target>
         </trans-unit>
         <trans-unit id="MarkFilter.Items3" translate="yes" xml:space="preserve">
           <source>img</source>
-          <target state="translated">Bild </target>
+          <target state="translated">Bild</target>
         </trans-unit>
         <trans-unit id="toolStripWindowTitleCopyAll.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
           <source>140, 22</source>
@@ -6428,7 +6430,7 @@ Ignorierliste hinzugefügt. Diese kann in den "Einstellungen" bearbeitet werden.
         </trans-unit>
         <trans-unit id="pasteFileToolStripMenuItem.ToolTipText" translate="yes" xml:space="preserve">
           <source>Paste in active window selected clips as files </source>
-          <target state="translated">Ausgewählte Clips im aktiven Fenster als Dateien einfügen</target>
+          <target state="translated">Ausgewählte Clips im aktiven Fenster als Dateien einfügen </target>
         </trans-unit>
         <trans-unit id="toolStripMenuItem18.Size" translate="no" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
           <source>221, 22</source>
@@ -6440,7 +6442,7 @@ Ignorierliste hinzugefügt. Diese kann in den "Einstellungen" bearbeitet werden.
         </trans-unit>
         <trans-unit id="toolStripMenuItem18.ToolTipText" translate="yes" xml:space="preserve">
           <source>Paste in active window selected clips as files </source>
-          <target state="translated">Ausgewählte Clips im aktiven Fenster als Dateien einfügen</target>
+          <target state="translated">Ausgewählte Clips im aktiven Fenster als Dateien einfügen </target>
         </trans-unit>
         <trans-unit id="filterByDateToolStripMenuItem.Size" translate="no" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
           <source>253, 22</source>
@@ -6956,7 +6958,7 @@ Bearbeite den Suchstring direkt aus der Liste. Navigiere in der Liste direkt aus
         </trans-unit>
         <trans-unit id="menuItemSetFocusClipText.Text" translate="yes" xml:space="preserve">
           <source>Set focus to clip text (TAB)</source>
-          <target state="new">Set focus to clip text (TAB)</target>
+          <target state="translated">Fokus auf Clip-Text setzen (TAB)</target>
         </trans-unit>
         <trans-unit id="htmlTextBox.Dock" translate="yes" xml:space="preserve" extype="System.Windows.Forms.DockStyle, System.Windows.Forms">
           <source>Fill</source>
@@ -6968,7 +6970,7 @@ Bearbeite den Suchstring direkt aus der Liste. Navigiere in der Liste direkt aus
         </trans-unit>
         <trans-unit id="searchAllFieldsMenuItem.Text" translate="yes" xml:space="preserve">
           <source>Search all fields</source>
-          <target state="new">Search all fields</target>
+          <target state="translated">Suche in allen Feldern</target>
         </trans-unit>
         <trans-unit id="openWithToolStripMenuItem.Visible" translate="yes" xml:space="preserve" extype="System.Boolean, mscorlib">
           <source>False</source>
@@ -6981,11 +6983,11 @@ Bearbeite den Suchstring direkt aus der Liste. Navigiere in der Liste direkt aus
         </trans-unit>
         <trans-unit id="exportMenuItem.Text" translate="yes" xml:space="preserve">
           <source>Export clips</source>
-          <target state="new">Export clips</target>
+          <target state="translated">Clips exportieren</target>
         </trans-unit>
         <trans-unit id="exportMenuItem.ToolTipText" translate="yes" xml:space="preserve">
           <source>Export selected clips to file</source>
-          <target state="new">Export selected clips to file</target>
+          <target state="translated">Ausgewählte Clips in Datei exportieren</target>
         </trans-unit>
         <trans-unit id="importToolStripMenuItem.Size" translate="yes" xml:space="preserve" extype="System.Drawing.Size, System.Drawing">
           <source>220, 22</source>
@@ -6994,11 +6996,11 @@ Bearbeite den Suchstring direkt aus der Liste. Navigiere in der Liste direkt aus
         </trans-unit>
         <trans-unit id="importToolStripMenuItem.Text" translate="yes" xml:space="preserve">
           <source>Import clips</source>
-          <target state="new">Import clips</target>
+          <target state="translated">Clips importieren</target>
         </trans-unit>
         <trans-unit id="importToolStripMenuItem.ToolTipText" translate="yes" xml:space="preserve">
           <source>Import clips from file</source>
-          <target state="new">Import clips from file</target>
+          <target state="translated">Clips aus Datei importieren</target>
         </trans-unit>
         <trans-unit id="cultureManager5.TrayLocation" translate="yes" xml:space="preserve" extype="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" extradata="metadata">
           <source>890, 57</source>
@@ -7011,11 +7013,11 @@ Bearbeite den Suchstring direkt aus der Liste. Navigiere in der Liste direkt aus
         </trans-unit>
         <trans-unit id="saveAsFileMenuItem.Text" translate="yes" xml:space="preserve">
           <source>Save as file...</source>
-          <target state="new">Save as file...</target>
+          <target state="translated">Speichern als Datei...</target>
         </trans-unit>
         <trans-unit id="saveAsFileMenuItem.ToolTipText" translate="yes" xml:space="preserve">
           <source>Save data to file with directory and name selection for text or image clip</source>
-          <target state="new">Save data to file with directory and name selection for text or image clip</target>
+          <target state="translated">Daten in Datei speichern mit Verzeichnis- und Namensauswahl für Text- oder Bildclip</target>
         </trans-unit>
         <trans-unit id="saveAsFileMenuItem.ShortcutKeys" translate="yes" xml:space="preserve" extype="System.Windows.Forms.Keys, System.Windows.Forms">
           <source>Ctrl+S</source>
@@ -7039,12 +7041,12 @@ Bearbeite den Suchstring direkt aus der Liste. Navigiere in der Liste direkt aus
         </trans-unit>
         <trans-unit id="decodeTextToolStripMenuItem.Text" translate="yes" xml:space="preserve">
           <source>Decode URL</source>
-          <target state="new">Decode URL</target>
+          <target state="translated">URL dekodieren</target>
         </trans-unit>
         <trans-unit id="decodeTextToolStripMenuItem.ToolTipText" translate="yes" xml:space="preserve">
           <source>Decode selected or all text of clip using URL rules (%) into new clip
 </source>
-          <target state="new">Decode selected or all text of clip using URL rules (%) into new clip
+          <target state="translated">Ausgewählten oder gesamten Cliptext mithilfe von URL-Regeln (%) in neuen Clip dekodieren
 </target>
         </trans-unit>
         <trans-unit id="deleteAllNonFavoriteToolStripMenuItem.ShortcutKeys" translate="yes" xml:space="preserve" extype="System.Windows.Forms.Keys, System.Windows.Forms">
@@ -8362,7 +8364,7 @@ Um das Programm bei Benutzeranmeldung zu starten, den Autostart in den Einstellu
         </trans-unit>
         <trans-unit id="richTextBox1.Text" translate="yes" xml:space="preserve">
           <source></source>
-          <target state="new"></target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion"></target>
         </trans-unit>
         <trans-unit id="groupBox1.Location" translate="yes" extype="System.Drawing.Point, System.Drawing" xml:space="preserve">
           <source>12, 10</source>
@@ -8593,7 +8595,7 @@ Nachlaufende nicht druckbare Symbole werden gelöscht.</target>
         </trans-unit>
         <trans-unit id="LowerCamelCase.ToolTip" translate="yes" xml:space="preserve">
           <source>Lower case for first letter in first word and upper case for first letter in other words. Delete all spaces.</source>
-          <target state="translated">kleiner Erster Buchstabe Im Ersten Wort Und Großer Für Den Ersten Buchstaben Der Anderen Wörter. Löschen aller Leerzeichen.</target>
+          <target state="translated">Kleinbuchstaben für den ersten Buchstaben im ersten Wort und Großbuchstaben für den ersten Buchstaben in anderen Wörtern. Löschen aller Leerzeichen.</target>
         </trans-unit>
         <trans-unit id="UpperCamelCase.AutoSize" translate="yes" extype="System.Boolean, mscorlib" xml:space="preserve">
           <source>True</source>
@@ -8723,39 +8725,39 @@ Nachlaufende nicht druckbare Symbole werden gelöscht.</target>
         </trans-unit>
         <trans-unit id="checkBoxPasteIntoNewClip.ToolTip" translate="yes" xml:space="preserve">
           <source></source>
-          <target state="new"></target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion"></target>
         </trans-unit>
         <trans-unit id="checkBoxReplaceTabWithSpaces.ToolTip" translate="yes" xml:space="preserve">
           <source></source>
-          <target state="new"></target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion"></target>
         </trans-unit>
         <trans-unit id="buttonCancel.ToolTip" translate="yes" xml:space="preserve">
           <source></source>
-          <target state="new"></target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion"></target>
         </trans-unit>
         <trans-unit id="ReplaceEOL.ToolTip" translate="yes" xml:space="preserve">
           <source></source>
-          <target state="new"></target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion"></target>
         </trans-unit>
         <trans-unit id="CaseNoChange.ToolTip" translate="yes" xml:space="preserve">
           <source></source>
-          <target state="new"></target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion"></target>
         </trans-unit>
         <trans-unit id="$this.ToolTip" translate="yes" xml:space="preserve">
           <source></source>
-          <target state="new"></target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion"></target>
         </trans-unit>
         <trans-unit id="richTextBox1.ToolTip" translate="yes" xml:space="preserve">
           <source></source>
-          <target state="new"></target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion"></target>
         </trans-unit>
         <trans-unit id="label1.ToolTip" translate="yes" xml:space="preserve">
           <source></source>
-          <target state="new"></target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion"></target>
         </trans-unit>
         <trans-unit id="buttonOK.ToolTip" translate="yes" xml:space="preserve">
           <source></source>
-          <target state="new"></target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion"></target>
         </trans-unit>
         <trans-unit id="$this.Language" translate="yes" xml:space="preserve" extype="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" extradata="metadata">
           <source>ru</source>
