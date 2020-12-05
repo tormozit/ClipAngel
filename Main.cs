@@ -350,7 +350,7 @@ namespace ClipAngel
             {
                 Directory.CreateDirectory(UserSettingsPath);
             }
-            OpenDatabase();
+            OpenDatabaseWithUpdateEncryption();
             ConnectClipboard();
             if (StartMinimized)
             {
@@ -415,10 +415,6 @@ namespace ClipAngel
 
         private void OpenDatabase()
         {
-            if (!String.IsNullOrWhiteSpace(ClipAngel.Properties.Settings.Default.DatabaseFile))
-                DbFileName = ClipAngel.Properties.Settings.Default.DatabaseFile;
-            else
-                DbFileName = UserSettingsPath + "\\" + Properties.Resources.DBShortFilename;
             ConnectionString = "data source=" + DbFileName + ";journal_mode=OFF;"; // journal_mode=OFF - Disabled transactions
             string Reputation = "Magic67234784";
             if (!File.Exists(DbFileName))
@@ -2040,6 +2036,7 @@ namespace ClipAngel
             int NumberOfFilledCells = 0;
             int NumberOfImageCells = 0;
             Bitmap bitmap = null;
+
             try
             {
                 if (iData.GetDataPresent(DataFormats.UnicodeText))
@@ -2271,8 +2268,8 @@ namespace ClipAngel
                     && ClipAngel.Properties.Settings.Default.CaptureImages
                     && iData.GetDataPresent(DataFormats.Bitmap)
                     && (false
-                        || NumberOfImageCells == 0
-                        || ClipAngel.Properties.Settings.Default.MaxCellsToCaptureImage > NumberOfImageCells))
+                        || NumberOfImageCells == 0 && string.IsNullOrWhiteSpace(clipText)
+                        || NumberOfImageCells != 0 && ClipAngel.Properties.Settings.Default.MaxCellsToCaptureImage > NumberOfImageCells))
                 {
                     //clipType = "img";
                     bitmap = iData.GetData(DataFormats.Bitmap, false) as Bitmap;
@@ -4661,46 +4658,55 @@ namespace ClipAngel
                     || oldEncryptDatabaseForCurrentUser != ClipAngel.Properties.Settings.Default.EncryptDatabaseForCurrentUser)
                 {
                     CloseDatabase();
-                    string encryptException = "";
-                    if (ClipAngel.Properties.Settings.Default.EncryptDatabaseForCurrentUser)
-                    {
-                        try
-                        {
-                            //File.Encrypt("dhjjsfjsgfjsfjgsfj"); // for test
-                            File.Encrypt(DbFileName);
-                        }
-                        catch (Exception exception)
-                        {
-                            // https://sourceforge.net/p/clip-angel/tickets/60/
-                            encryptException = exception.Message;
-                            ClipAngel.Properties.Settings.Default.EncryptDatabaseForCurrentUser = false;
-                        }
-                    }
-                    else
-                    {
-                        try
-                        {
-                            //File.Encrypt("dhjjsfjsgfjsfjgsfj"); // for test
-                            File.Decrypt(DbFileName);
-                        }
-                        catch (Exception exception)
-                        {
-                            // https://sourceforge.net/p/clip-angel/tickets/60/
-                            encryptException = exception.Message;
-                            ClipAngel.Properties.Settings.Default.EncryptDatabaseForCurrentUser = true;
-                        }
-                    }
-                    OpenDatabase();
-                    if (!String.IsNullOrEmpty(encryptException))
-                    {
-                        MessageBox.Show(this, Properties.Resources.FailedChangeDatabaseFieEncryption + ": \n" + encryptException, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
+                    OpenDatabaseWithUpdateEncryption();
                 }
                 LoadSettings();
                 keyboardHook.UnregisterHotKeys();
                 RegisterHotKeys();
                 AutodeleteClips();
                 ClipAngel.Properties.Settings.Default.Save(); // Not all properties are saved here. For example ShowInTaskbar are not saved
+            }
+        }
+
+        private void OpenDatabaseWithUpdateEncryption()
+        {
+            if (!String.IsNullOrWhiteSpace(ClipAngel.Properties.Settings.Default.DatabaseFile))
+                DbFileName = ClipAngel.Properties.Settings.Default.DatabaseFile;
+            else
+                DbFileName = UserSettingsPath + "\\" + Properties.Resources.DBShortFilename;
+            string encryptException = "";
+            if (ClipAngel.Properties.Settings.Default.EncryptDatabaseForCurrentUser)
+            {
+                try
+                {
+                    //File.Encrypt("dhjjsfjsgfjsfjgsfj"); // for test
+                    File.Encrypt(DbFileName);
+                }
+                catch (Exception exception)
+                {
+                    // https://sourceforge.net/p/clip-angel/tickets/60/
+                    encryptException = exception.Message;
+                    ClipAngel.Properties.Settings.Default.EncryptDatabaseForCurrentUser = false;
+                }
+            }
+            else
+            {
+                try
+                {
+                    //File.Encrypt("dhjjsfjsgfjsfjgsfj"); // for test
+                    File.Decrypt(DbFileName);
+                }
+                catch (Exception exception)
+                {
+                    // https://sourceforge.net/p/clip-angel/tickets/60/
+                    encryptException = exception.Message;
+                    ClipAngel.Properties.Settings.Default.EncryptDatabaseForCurrentUser = true;
+                }
+            }
+            OpenDatabase();
+            if (!String.IsNullOrEmpty(encryptException))
+            {
+                MessageBox.Show(this, Properties.Resources.FailedChangeDatabaseFieEncryption + ": \n" + encryptException, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -5129,13 +5135,19 @@ namespace ClipAngel
                                     for (int counter = 0; counter < fragments.Length / 2; counter++)
                                     {
                                         string rusName = fragments[counter * 2];
-                                        if (!typeMap1C.ContainsKey(rusName))
+                                        if (true
+                                            && !typeMap1C.ContainsKey(rusName)
+                                            && !typeMap1C.ContainsValue(rusName))
                                         {
                                             Activate();
                                             MessageBox.Show(this, "Unknown 1C object type " + rusName, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
                                             return true;
                                         }
-                                        string engName = typeMap1C[rusName];
+                                        string engName;
+                                        if (typeMap1C.ContainsKey(rusName))
+                                            engName = typeMap1C[rusName];
+                                        else
+                                            engName = rusName;
                                         if (!String.IsNullOrEmpty(MDObject))
                                             MDObject += ".";
                                         MDObject += engName;
@@ -5256,7 +5268,12 @@ namespace ClipAngel
                                     }
                                     while (cell != null)
                                     {
-                                        if (cell.CurrentName == fullModuleName + " Имя модуля")
+                                        if (false
+                                            || cell.CurrentName == fullModuleName + " Имя модуля"
+                                            || cell.CurrentName == fullModuleName + ".Форма Имя модуля" // Обработка.ирПоискДублейИЗаменаСсылок.Форма.Форма.Форма
+                                            || cell.CurrentName == fullModuleName + " Module name" // TODO check
+                                            || cell.CurrentName == fullModuleName + ".Form Module name" // TODO check
+                                            )
                                         {
                                             cell = treeWalker.GetNextSiblingElement(cell);
                                             if (cell.CurrentName == lineNumber + " Строка")
@@ -6947,6 +6964,7 @@ namespace ClipAngel
                 byte[] bytes = enc.GetBytes(postData);
                 request.ContentType = "application/x-www-form-urlencoded";
                 request.ContentLength = bytes.Length;
+                request.Timeout = 5;
                 Stream writer = request.GetRequestStream();
                 writer.Write(bytes, 0, bytes.Length);
                 HttpWebResponse response = (HttpWebResponse)request.GetResponse();
