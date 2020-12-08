@@ -6964,7 +6964,7 @@ namespace ClipAngel
                 byte[] bytes = enc.GetBytes(postData);
                 request.ContentType = "application/x-www-form-urlencoded";
                 request.ContentLength = bytes.Length;
-                request.Timeout = 5;
+                request.Timeout = 5000;
                 Stream writer = request.GetRequestStream();
                 writer.Write(bytes, 0, bytes.Length);
                 HttpWebResponse response = (HttpWebResponse)request.GetResponse();
