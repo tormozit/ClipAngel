@@ -110,7 +110,7 @@ namespace ClipAngel
         bool periodFilterOn = false;
         const int MaxTextViewSize = 5000;
         const int tabLength = 4;
-        const int maxClipsToSelect = 10000;
+        const int maxClipsToSelect = 1000;
         const int ClipTitleLength = 70;
         static Dictionary<string, Bitmap> originalIconCache = new Dictionary<string, Bitmap>();
         static Dictionary<string, Bitmap> brightIconCache = new Dictionary<string, Bitmap>();
@@ -657,8 +657,8 @@ namespace ClipAngel
                 keyboardHook.RegisterHotKey(Modifiers, Key);
             if (ReadHotkeyFromText(ClipAngel.Properties.Settings.Default.GlobalHotkeySwitchMonitoring, out Modifiers, out Key))
                 keyboardHook.RegisterHotKey(Modifiers, Key);
-            if (ClipAngel.Properties.Settings.Default.CopyTextInAnyWindowOnCTRLF3 && ReadHotkeyFromText("Control + F3", out Modifiers, out Key))
-                keyboardHook.RegisterHotKey(Modifiers, Key);
+            //if (ClipAngel.Properties.Settings.Default.CopyTextInAnyWindowOnCTRLF3 && ReadHotkeyFromText("Control + F3", out Modifiers, out Key))
+            //    keyboardHook.RegisterHotKey(Modifiers, Key);
         }
 
         private static bool ReadHotkeyFromText(string HotkeyText, out EnumModifierKeys Modifiers, out Keys Key)

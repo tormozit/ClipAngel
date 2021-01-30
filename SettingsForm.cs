@@ -755,7 +755,7 @@ namespace ClipAngel
             GlobalHotkeySimulateInput = Properties.Settings.Default.GlobalHotkeySimulateInput;
             UseFormattingInDuplicateDetection = Properties.Settings.Default.UseFormattingInDuplicateDetection;
             IgnoreApplicationsClipCapture = Properties.Settings.Default.IgnoreApplicationsClipCapture;
-            CopyTextInAnyWindowOnCTRLF3 = Properties.Settings.Default.CopyTextInAnyWindowOnCTRLF3;
+            //CopyTextInAnyWindowOnCTRLF3 = Properties.Settings.Default.CopyTextInAnyWindowOnCTRLF3;
             FastWindowOpen = Properties.Settings.Default.FastWindowOpen;
             HistoryDepthDays = Properties.Settings.Default.HistoryDepthDays;
             HistoryDepthNumber = Properties.Settings.Default.HistoryDepthNumber;
@@ -838,7 +838,7 @@ namespace ClipAngel
             Properties.Settings.Default.GlobalHotkeySimulateInput = GlobalHotkeySimulateInput;
             Properties.Settings.Default.UseFormattingInDuplicateDetection = UseFormattingInDuplicateDetection;
             Properties.Settings.Default.IgnoreApplicationsClipCapture = IgnoreApplicationsClipCapture;
-            Properties.Settings.Default.CopyTextInAnyWindowOnCTRLF3 = CopyTextInAnyWindowOnCTRLF3;
+            //Properties.Settings.Default.CopyTextInAnyWindowOnCTRLF3 = CopyTextInAnyWindowOnCTRLF3;
             Properties.Settings.Default.FastWindowOpen = FastWindowOpen;
             Properties.Settings.Default.HistoryDepthDays = HistoryDepthDays;
             Properties.Settings.Default.HistoryDepthNumber = HistoryDepthNumber;
@@ -978,9 +978,9 @@ namespace ClipAngel
         [EditorAttribute(typeof(HotkeyEditor), typeof(UITypeEditor))]
         public string GlobalHotkeySwitchMonitoring { get; set; }
 
-       [GlobalizedCategory("GlobalHotkeys")]
-        [Editor(typeof(MyBoolEditor), typeof(UITypeEditor))]
-        public bool CopyTextInAnyWindowOnCTRLF3 { get; set; }
+       //[GlobalizedCategory("GlobalHotkeys")]
+       // [Editor(typeof(MyBoolEditor), typeof(UITypeEditor))]
+       // public bool CopyTextInAnyWindowOnCTRLF3 { get; set; }
 
         [GlobalizedCategory("Other")]
         public int MaxClipSizeKB { get; set; }
