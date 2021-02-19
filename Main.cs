@@ -11,6 +11,7 @@ using System.Runtime.InteropServices;
 using System.Threading;
 using System.Text.RegularExpressions;
 using System.Collections.Specialized;
+using System.ComponentModel.Design;
 using System.Data.SqlClient;
 using System.Drawing.Imaging;
 using System.Globalization;
@@ -35,6 +36,11 @@ using static IconTools;
 using Timer = System.Windows.Forms.Timer;
 using UIAutomationClient;
 using TreeScope = UIAutomationClient.TreeScope;
+using System.Security.Principal;
+using System.Xml.Serialization;
+using System.Net.NetworkInformation;
+using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 namespace ClipAngel
 {
@@ -7512,6 +7518,226 @@ namespace ClipAngel
                 return;
             AddClip(null, null, "", "", "text", newSelectedText);
             GotoLastRow(true);
+        }
+
+        public async Task CreateSendChannel()
+        {
+            using (Aes myAes = Aes.Create())
+            {
+                myAes.KeySize = 256;
+                myAes.GenerateKey();
+                File.WriteAllBytes(ChannelEncryptionKeyFileName(), myAes.Key);
+            }
+            await setChannelKeyValue("senderName", Environment.MachineName);
+            HttpClient client = new HttpClient();
+            await client.DeleteAsync(ChannelKeyUrl("recipients"));
+            await client.DeleteAsync(ChannelKeyUrl("data"));
+            await client.DeleteAsync(ChannelKeyUrl("dataDate"));
+        }
+
+        private async Task<string> setChannelKeyValue(string key, string value)
+        {
+            string channelHost = SendChannelHost();
+            HttpClient client = new HttpClient();
+            HttpContent content = new StringContent("\"" + value + "\"");
+            HttpResponseMessage response = await client.PutAsync(ChannelKeyUrl(key), content);
+            response.EnsureSuccessStatusCode();
+            return channelHost;
+        }
+
+        private string ChannelKeyUrl(string key)
+        {
+            string URL = SendChannelHost() + CurrentSendChannel() + $"/{key}.json";
+            return URL;
+        }
+
+        private string ChannelEncryptionKeyFileName()
+        {
+            string result = UserSettingsPath + "\\Backup.db";
+            return result;
+        }
+
+        public byte[] channelEncryptionKey()
+        {
+            string KeyFileName = ChannelEncryptionKeyFileName();
+            if(!File.Exists(KeyFileName))
+                CreateSendChannel();
+            byte [] result = File.ReadAllBytes(ChannelEncryptionKeyFileName());
+            return result;
+        }
+
+        private void connectRecipientToolStripMenuItem_Click(object sender = null, EventArgs e = null)
+        {
+            ConnectRecipientForm form = new ConnectRecipientForm();
+            form.ShowDialog(this);
+        }
+
+        public string CurrentSendChannel()
+        {
+            string sid = WindowsIdentity.GetCurrent().User.Value;
+            string currentMAC = FindMAC();
+            MD5 md5 = new MD5CryptoServiceProvider();
+            byte[] binaryText;
+            binaryText = Encoding.Unicode.GetBytes(Environment.MachineName);
+            md5.TransformBlock(binaryText, 0, binaryText.Length, binaryText, 0);
+            binaryText = Encoding.Unicode.GetBytes(sid);
+            md5.TransformBlock(binaryText, 0, binaryText.Length, binaryText, 0);
+            binaryText = Encoding.Unicode.GetBytes(currentMAC);
+            md5.TransformFinalBlock(binaryText, 0, binaryText.Length);
+            string currentSendChannel = Convert.ToBase64String(md5.Hash);
+            if (currentSendChannel != Properties.Settings.Default.SendChannel)
+            {
+                Properties.Settings.Default.SendChannel = currentSendChannel;
+                Properties.Settings.Default.ChannelMAC = currentMAC;
+                Properties.Settings.Default.Save();
+                CreateSendChannel();
+            }
+            //currentSendChannel = "testChannel1"; // for testing
+            return currentSendChannel.Replace("/","!");
+        }
+
+        private static string FindMAC()
+        {
+            string MAC = "0";
+            NetworkInterface[] adapters = NetworkInterface.GetAllNetworkInterfaces();
+            if (adapters != null && adapters.Length >= 0)
+            {
+                for (int stage = 1; stage < 3; stage++)
+                {
+                    foreach (NetworkInterface adapter in adapters)
+                    {
+                        if (adapter.NetworkInterfaceType != NetworkInterfaceType.Ethernet)
+                            continue;
+                        MAC = stringMACFromAdapter(adapter);
+                        if (false
+                            || stage == 2
+                            || (true
+                                && stage == 1
+                                && MAC == Properties.Settings.Default.ChannelMAC))
+                        {
+                            break;
+                        }
+                    }
+                    if (MAC == Properties.Settings.Default.ChannelMAC)
+                        break;
+                }
+            }
+            return MAC;
+        }
+
+        private static string stringMACFromAdapter(NetworkInterface adapter)
+        {
+            PhysicalAddress address = adapter.GetPhysicalAddress();
+            byte[] bytes = address.GetAddressBytes();
+            string result = "";
+            for (int i = 0; i < bytes.Length; i++)
+            {
+                result += bytes[i].ToString("X2");
+            }
+            return result;
+        }
+
+        public static string SendChannelHost()
+        {
+            string channelHost = "https://clipangel-495b4-default-rtdb.firebaseio.com/";
+            return channelHost;
+        }
+
+        async private void sendClipToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            await SendClipToChannel();
+        }
+
+        private async Task SendClipToChannel()
+        {
+            var recipients = await GetChannelRecipients();
+            if (recipients == null)
+            {
+                connectRecipientToolStripMenuItem_Click();
+                return;
+            }
+            await setChannelKeyValue("dataDate", DateTime.Now.ToString());
+            string Dummy = "";
+            string text = GetSelectedTextOfClips(ref Dummy);
+            Aes myAes = Aes.Create();
+            myAes.Key = channelEncryptionKey();
+            string value = "";
+            using (MemoryStream ms = new MemoryStream())
+            {
+                using (CryptoStream cs = new CryptoStream(ms, myAes.CreateEncryptor(), CryptoStreamMode.Write))
+                {
+                    cs.Write(Encoding.UTF8.GetBytes(text), 0, text.Length);
+                }
+                value = Convert.ToBase64String(ms.ToArray());
+            }
+            await setChannelKeyValue("data", value);
+            string urlFCM = "https://fcm.googleapis.com/fcm/send";
+            foreach (var keyValue in recipients)
+            {
+                WebRequest tRequest = WebRequest.Create(urlFCM);
+                string pushID = keyValue.Value;
+                // https://stackoverflow.com/questions/37412963/send-push-to-android-by-c-sharp-using-fcm-firebase-cloud-messaging
+                tRequest.Method = "post";
+                tRequest.ContentType = "application/json";
+                 //serverKey - Key from Firebase cloud messaging server  
+                tRequest.Headers.Add("Authorization", string.Format("key ={0}", "AAAA3ng0Df0:APA91bEFCpni5RPQt_CNQL4YboyShoS8XS_GyiQlUzYo1xsfE-ZkGOXEyyxRZuGG2K2k1ehxzGe90zdXmSbC9tg75MEMkIWKmKCIuwVq_7bafA37Vzmy5ZOr9O4YTiTXe1jKwWBwjurn"));
+                //Sender Id - From firebase project setting  
+                tRequest.Headers.Add("Sender", string.Format("id ={0}", "955499417085"));
+                var payload = new
+                {
+                    to = pushID,
+                    priority = "high",
+                    content_available = true,
+                    notification = new
+                    {
+                        body = "Received clip from " + Environment.MachineName + " sent " + DateTime.Now,
+                        title = "Received clip",
+                        badge = 1
+                    },
+                    data = new
+                    {
+                        channel = CurrentSendChannel(),
+                        sender = Environment.MachineName,
+                        time = DateTime.Now
+                    }
+                };
+                string postbody = JsonConvert.SerializeObject(payload);
+                Byte[] byteArray = Encoding.UTF8.GetBytes(postbody);
+                tRequest.ContentLength = byteArray.Length;
+                using (Stream dataStream = tRequest.GetRequestStream())
+                {
+                    dataStream.Write(byteArray, 0, byteArray.Length);
+                    using (WebResponse tResponse = tRequest.GetResponse())
+                    {
+                        using (Stream dataStreamResponse = tResponse.GetResponseStream())
+                        {
+                            if (dataStreamResponse != null)
+                                using (StreamReader tReader = new StreamReader(dataStreamResponse))
+                                {
+                                    String sResponseFromServer = tReader.ReadToEnd();
+                                    //result.Response = sResponseFromServer;
+                                    var dumb = 0;
+                                }
+                        }
+                    }
+                }
+            }
+        }
+
+        public async Task<dynamic> GetChannelRecipients()
+        {
+            string channelHost = Main.SendChannelHost();
+            HttpClient client = new HttpClient();
+            HttpResponseMessage response = await client.GetAsync(ChannelKeyUrl("recipients"));
+            response.EnsureSuccessStatusCode();
+            String responseStream = await response.Content.ReadAsStringAsync();
+            dynamic array = JsonConvert.DeserializeObject(responseStream);
+            return array;
+        }
+
+        async private void toolStripMenuItem26_Click(object sender, EventArgs e)
+        {
+            await SendClipToChannel();
         }
     }
 }

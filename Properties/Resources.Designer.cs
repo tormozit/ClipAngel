@@ -279,6 +279,15 @@ namespace ClipAngel.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to All connected devices will loose connection to channel. Are you sure want to reset clip send channel?.
+        /// </summary>
+        public static string ConfirmResetChannel {
+            get {
+                return ResourceManager.GetString("ConfirmResetChannel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         public static System.Drawing.Bitmap copy {

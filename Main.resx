@@ -582,6 +582,12 @@ Edit search string right from list. Navigate in list right from search field.</v
   <data name="toolStripMenuItem7.ToolTipText" xml:space="preserve">
     <value>Simulate in active window char input of selected text of clip or aggregated text of selected clips.</value>
   </data>
+  <data name="toolStripMenuItem26.Size" type="System.Drawing.Size, System.Drawing">
+    <value>221, 22</value>
+  </data>
+  <data name="toolStripMenuItem26.Text" xml:space="preserve">
+    <value>Send clip to channel</value>
+  </data>
   <data name="copyToClipboardToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+C</value>
   </data>
@@ -657,7 +663,7 @@ Changes in temp file are not synchronized with clip!</value>
     <value>Delete selected clips from list. Real deletion is performed on database close.</value>
   </data>
   <data name="contextMenuStripDataGrid.Size" type="System.Drawing.Size, System.Drawing">
-    <value>222, 268</value>
+    <value>222, 312</value>
   </data>
   <data name="&gt;&gt;contextMenuStripDataGrid.Name" xml:space="preserve">
     <value>contextMenuStripDataGrid</value>
@@ -1076,7 +1082,7 @@ Changes in temp file are not synchronized with clip!</value>
     <value>1</value>
   </data>
   <data name="tableLayoutPanelData.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="urlTextBox" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="richTextBox" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="htmlTextBox" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="ImageControl" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,100" /&gt;&lt;Rows Styles="Percent,28,57143,Percent,28,57143,Percent,42,85714,Absolute,25,Absolute,20" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="urlTextBox" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="richTextBox" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="htmlTextBox" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="ImageControl" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,100" /&gt;&lt;Rows Styles="Percent,28,57143,Percent,28,57143,Percent,42,85714,Absolute,25,Absolute,20" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <metadata name="statusStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>5, -1</value>
@@ -1970,6 +1976,24 @@ added to ignore list, which can be edited in Settings window.</value>
   <data name="decodeTextToolStripMenuItem.ToolTipText" xml:space="preserve">
     <value>Decode selected or all text of clip using URL rules (%) into new clip
 </value>
+  </data>
+  <data name="connectRecipientToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>168, 22</value>
+  </data>
+  <data name="connectRecipientToolStripMenuItem.Text" xml:space="preserve">
+    <value>Connect recipient</value>
+  </data>
+  <data name="sendClipToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>168, 22</value>
+  </data>
+  <data name="sendClipToolStripMenuItem.Text" xml:space="preserve">
+    <value>Send clip</value>
+  </data>
+  <data name="clipChannelToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>220, 22</value>
+  </data>
+  <data name="clipChannelToolStripMenuItem.Text" xml:space="preserve">
+    <value>Clip channel</value>
   </data>
   <data name="clipToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>40, 20</value>
@@ -3646,6 +3670,12 @@ Changes in temp file are not synchronized with clip!
   <data name="&gt;&gt;toolStripMenuItem7.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;toolStripMenuItem26.Name" xml:space="preserve">
+    <value>toolStripMenuItem26</value>
+  </data>
+  <data name="&gt;&gt;toolStripMenuItem26.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;copyToClipboardToolStripMenuItem.Name" xml:space="preserve">
     <value>copyToClipboardToolStripMenuItem</value>
   </data>
@@ -4274,6 +4304,24 @@ Changes in temp file are not synchronized with clip!
     <value>decodeTextToolStripMenuItem</value>
   </data>
   <data name="&gt;&gt;decodeTextToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;clipChannelToolStripMenuItem.Name" xml:space="preserve">
+    <value>clipChannelToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;clipChannelToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;connectRecipientToolStripMenuItem.Name" xml:space="preserve">
+    <value>connectRecipientToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;connectRecipientToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;sendClipToolStripMenuItem.Name" xml:space="preserve">
+    <value>sendClipToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;sendClipToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;settingsToolStripMenuItem1.Name" xml:space="preserve">

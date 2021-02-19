@@ -920,5 +920,29 @@ namespace ClipAngel.Properties {
                 this["DontSendPaste"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string SendChannel {
+            get {
+                return ((string)(this["SendChannel"]));
+            }
+            set {
+                this["SendChannel"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public string ChannelMAC {
+            get {
+                return ((string)(this["ChannelMAC"]));
+            }
+            set {
+                this["ChannelMAC"] = value;
+            }
+        }
     }
 }

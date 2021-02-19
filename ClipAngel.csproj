@@ -94,6 +94,16 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
       <HintPath>C:\Program Files (x86)\Microsoft.NET\Primary Interop Assemblies\Microsoft.mshtml.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="QRCoder, Version=1.4.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\QRCoder.1.4.1\lib\net40\QRCoder.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -114,6 +124,7 @@
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="UIAutomationTypes" />
+    <Reference Include="WindowsBase" />
     <Reference Include="WindowsInput, Version=1.0.4.0, Culture=neutral, PublicKeyToken=9b287f7dc5073cad, processorArchitecture=MSIL">
       <HintPath>packages\InputSimulator.1.0.4.0\lib\net20\WindowsInput.dll</HintPath>
       <Private>True</Private>
@@ -143,6 +154,12 @@
     <Compile Include="Components\UacHelper.cs" />
     <Compile Include="Components\ZoomablePictureBox.cs">
       <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ConnectRecipientForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConnectRecipientForm.Designer.cs">
+      <DependentUpon>ConnectRecipientForm.cs</DependentUpon>
     </Compile>
     <Compile Include="dbDataSet.cs">
       <DependentUpon>dbDataSet.xsd</DependentUpon>
@@ -178,6 +195,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="SecretData.cs" />
     <Compile Include="Settings.cs" />
     <Compile Include="SettingsForm.cs">
       <SubType>Form</SubType>
@@ -265,6 +283,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AppListEditorForm.zh-Hans.resx">
       <DependentUpon>AppListEditorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConnectRecipientForm.resx">
+      <DependentUpon>ConnectRecipientForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HotkeyEditorForm.de.resx">
       <DependentUpon>HotkeyEditorForm.cs</DependentUpon>

@@ -475,4 +475,7 @@
   <data name="GlobalHotkeys" xml:space="preserve">
     <value>Global hotkeys</value>
   </data>
+  <data name="ConfirmResetChannel" xml:space="preserve">
+    <value>All connected devices will loose connection to channel. Are you sure want to reset clip send channel?</value>
+  </data>
 </root>

@@ -1697,6 +1697,10 @@ Die Generierung von Bildern erzeugt CPU-Last. Bei zu hoher, niedrigeren Wert fes
           <source>Global hotkeys</source>
           <target state="translated">Globale Tastenkürzel</target>
         </trans-unit>
+        <trans-unit id="ConfirmResetChannel" translate="yes" xml:space="preserve">
+          <source>All connected devices will loose connection to channel. Are you sure want to reset clip send channel?</source>
+          <target state="new">All connected devices will loose connection to channel. Are you sure want to reset clip send channel?</target>
+        </trans-unit>
       </group>
     </body>
   </file>
@@ -7053,6 +7057,34 @@ Bearbeite den Suchstring direkt aus der Liste. Navigiere in der Liste direkt aus
           <source>Ctrl+Alt+K</source>
           <target state="needs-review-translation">Ctrl+Alt+K</target>
         </trans-unit>
+        <trans-unit id="connectRecipientToolStripMenuItem.Size" translate="yes" xml:space="preserve" extype="System.Drawing.Size, System.Drawing">
+          <source>168, 22</source>
+          <target state="needs-review-translation">168, 22</target>
+        </trans-unit>
+        <trans-unit id="connectRecipientToolStripMenuItem.Text" translate="yes" xml:space="preserve">
+          <source>Connect recipient</source>
+          <target state="new">Connect recipient</target>
+        </trans-unit>
+        <trans-unit id="sendClipToolStripMenuItem.ShortcutKeys" translate="yes" xml:space="preserve" extype="System.Windows.Forms.Keys, System.Windows.Forms">
+          <source>F11</source>
+          <target state="needs-review-translation">F11</target>
+        </trans-unit>
+        <trans-unit id="sendClipToolStripMenuItem.Size" translate="yes" xml:space="preserve" extype="System.Drawing.Size, System.Drawing">
+          <source>168, 22</source>
+          <target state="needs-review-translation">168, 22</target>
+        </trans-unit>
+        <trans-unit id="sendClipToolStripMenuItem.Text" translate="yes" xml:space="preserve">
+          <source>Send clip</source>
+          <target state="new">Send clip</target>
+        </trans-unit>
+        <trans-unit id="clipChannelToolStripMenuItem.Size" translate="yes" xml:space="preserve" extype="System.Drawing.Size, System.Drawing">
+          <source>220, 22</source>
+          <target state="needs-review-translation">220, 22</target>
+        </trans-unit>
+        <trans-unit id="clipChannelToolStripMenuItem.Text" translate="yes" xml:space="preserve">
+          <source>Clip channel</source>
+          <target state="new">Clip channel</target>
+        </trans-unit>
       </group>
     </body>
   </file>
@@ -8762,6 +8794,19 @@ Nachlaufende nicht druckbare Symbole werden gelöscht.</target>
         <trans-unit id="$this.Language" translate="yes" xml:space="preserve" extype="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" extradata="metadata">
           <source>ru</source>
           <target state="needs-review-translation">ru</target>
+        </trans-unit>
+      </group>
+    </body>
+  </file>
+  <file datatype="xml" source-language="en" target-language="de" original="CLIPANGEL/CONNECTRECIPIENTFORM.RESX" tool-id="MultilingualAppToolkit" product-name="n/a" product-version="n/a" build-num="n/a">
+    <header>
+      <tool tool-id="MultilingualAppToolkit" tool-name="Multilingual App Toolkit" tool-version="4.0.1916.0" tool-company="Microsoft" />
+    </header>
+    <body>
+      <group id="CLIPANGEL/CONNECTRECIPIENTFORM.RESX" datatype="resx">
+        <trans-unit id="toolTip1.TrayLocation" translate="yes" xml:space="preserve" extype="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" extradata="metadata">
+          <source>17, 17</source>
+          <target state="needs-review-translation">17, 17</target>
         </trans-unit>
       </group>
     </body>

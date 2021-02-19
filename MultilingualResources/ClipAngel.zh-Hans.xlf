@@ -876,7 +876,7 @@
           <source>*1C line</source>
           <target state="translated">*1C 行</target>
         </trans-unit>
-        <trans-unit id="Filter1" translate="yes" xml:space="preserve" extype="System.Resources.ResXFileRef, System.Windows.Forms">
+        <trans-unit id="Filter1" translate="yes" extype="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
           <source>..\Picture\Filter.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</source>
           <target state="translated">..\Picture\Filter.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</target>
         </trans-unit>
@@ -919,6 +919,10 @@
         <trans-unit id="GlobalHotkeys" translate="yes" xml:space="preserve">
           <source>Global hotkeys</source>
           <target state="translated">全局热键</target>
+        </trans-unit>
+        <trans-unit id="ConfirmResetChannel" translate="yes" xml:space="preserve">
+          <source>All connected devices will loose connection to channel. Are you sure want to reset clip send channel?</source>
+          <target state="new">All connected devices will loose connection to channel. Are you sure want to reset clip send channel?</target>
         </trans-unit>
       </group>
     </body>
@@ -6842,7 +6846,7 @@ Sorting is kept until clip capture.</source>
           <source>Paste special...</source>
           <target state="translated">选择性粘贴...</target>
         </trans-unit>
-        <trans-unit id="toolStripMenuItem25.Size" translate="yes" xml:space="preserve" extype="System.Drawing.Size, System.Drawing">
+        <trans-unit id="toolStripMenuItem25.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
           <source>221, 22</source>
           <target state="translated">221, 22</target>
         </trans-unit>
@@ -6850,7 +6854,7 @@ Sorting is kept until clip capture.</source>
           <source>Paste special...</source>
           <target state="translated">选择性粘贴...</target>
         </trans-unit>
-        <trans-unit id="htmlMenuItemCopy.Size" translate="yes" xml:space="preserve" extype="System.Drawing.Size, System.Drawing">
+        <trans-unit id="htmlMenuItemCopy.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
           <source>208, 22</source>
           <target state="translated">208, 22</target>
           <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
@@ -6859,7 +6863,7 @@ Sorting is kept until clip capture.</source>
           <source>Copy</source>
           <target state="translated">复制</target>
         </trans-unit>
-        <trans-unit id="pasteToolStripMenuItem.Size" translate="yes" xml:space="preserve" extype="System.Drawing.Size, System.Drawing">
+        <trans-unit id="pasteToolStripMenuItem.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
           <source>220, 22</source>
           <target state="translated">220, 22</target>
           <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
@@ -6868,7 +6872,7 @@ Sorting is kept until clip capture.</source>
           <source>Paste</source>
           <target state="translated">粘贴</target>
         </trans-unit>
-        <trans-unit id="gotoTopToolStripMenuItem.Size" translate="yes" xml:space="preserve" extype="System.Drawing.Size, System.Drawing">
+        <trans-unit id="gotoTopToolStripMenuItem.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
           <source>253, 22</source>
           <target state="translated">253, 22</target>
           <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
@@ -6881,7 +6885,7 @@ Sorting is kept until clip capture.</source>
           <source>Select top (last) clip</source>
           <target state="translated">选择顶部 (最后一个) 剪辑</target>
         </trans-unit>
-        <trans-unit id="comboBoxSearchString.Anchor" translate="yes" xml:space="preserve" extype="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+        <trans-unit id="comboBoxSearchString.Anchor" translate="yes" extype="System.Windows.Forms.AnchorStyles, System.Windows.Forms" xml:space="preserve">
           <source>Bottom, Left, Right</source>
           <target state="needs-review-translation">Bottom, Left, Right</target>
         </trans-unit>
@@ -6889,19 +6893,19 @@ Sorting is kept until clip capture.</source>
           <source>Type in list</source>
           <target state="translated">列表中类型</target>
         </trans-unit>
-        <trans-unit id="comboBoxSearchString.Font" translate="yes" xml:space="preserve" extype="System.Drawing.Font, System.Drawing">
+        <trans-unit id="comboBoxSearchString.Font" translate="yes" extype="System.Drawing.Font, System.Drawing" xml:space="preserve">
           <source>Segoe UI, 9pt</source>
           <target state="translated">Segoe UI, 9pt</target>
         </trans-unit>
-        <trans-unit id="comboBoxSearchString.Location" translate="yes" xml:space="preserve" extype="System.Drawing.Point, System.Drawing">
+        <trans-unit id="comboBoxSearchString.Location" translate="yes" extype="System.Drawing.Point, System.Drawing" xml:space="preserve">
           <source>159, 395</source>
           <target state="translated">159, 395</target>
         </trans-unit>
-        <trans-unit id="comboBoxSearchString.Size" translate="yes" xml:space="preserve" extype="System.Drawing.Size, System.Drawing">
+        <trans-unit id="comboBoxSearchString.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
           <source>110, 23</source>
           <target state="translated">110, 23</target>
         </trans-unit>
-        <trans-unit id="comboBoxSearchString.TabIndex" translate="yes" xml:space="preserve" extype="System.Int32, mscorlib">
+        <trans-unit id="comboBoxSearchString.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
           <source>6</source>
           <target state="translated">6</target>
         </trans-unit>
@@ -6911,15 +6915,15 @@ Edit search string right from list. Navigate in list right from search field.</s
           <target state="translated">搜索字符串，列表和搜索字段共享键盘输入
 从列表中编辑右边的搜索字符串，从搜索字段在列表中导航</target>
         </trans-unit>
-        <trans-unit id="timerApplySearchString.TrayLocation" translate="yes" xml:space="preserve" extype="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" extradata="metadata">
+        <trans-unit id="timerApplySearchString.TrayLocation" translate="yes" extype="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" extradata="metadata" xml:space="preserve">
           <source>325, 3</source>
           <target state="translated">325, 3</target>
         </trans-unit>
-        <trans-unit id="NextMatchListMenuItem.ShortcutKeys" translate="yes" xml:space="preserve" extype="System.Windows.Forms.Keys, System.Windows.Forms">
+        <trans-unit id="NextMatchListMenuItem.ShortcutKeys" translate="yes" extype="System.Windows.Forms.Keys, System.Windows.Forms" xml:space="preserve">
           <source>Alt+Down</source>
           <target state="needs-review-translation">Alt+Down</target>
         </trans-unit>
-        <trans-unit id="NextMatchListMenuItem.Size" translate="yes" xml:space="preserve" extype="System.Drawing.Size, System.Drawing">
+        <trans-unit id="NextMatchListMenuItem.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
           <source>253, 22</source>
           <target state="translated">253, 22</target>
           <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
@@ -6932,11 +6936,11 @@ Edit search string right from list. Navigate in list right from search field.</s
           <source>Find next match in list</source>
           <target state="translated">在列表中查找下一个匹配项</target>
         </trans-unit>
-        <trans-unit id="PreviousMatchListMenuItem.ShortcutKeys" translate="yes" xml:space="preserve" extype="System.Windows.Forms.Keys, System.Windows.Forms">
+        <trans-unit id="PreviousMatchListMenuItem.ShortcutKeys" translate="yes" extype="System.Windows.Forms.Keys, System.Windows.Forms" xml:space="preserve">
           <source>Alt+Up</source>
           <target state="needs-review-translation">Alt+Up</target>
         </trans-unit>
-        <trans-unit id="PreviousMatchListMenuItem.Size" translate="yes" xml:space="preserve" extype="System.Drawing.Size, System.Drawing">
+        <trans-unit id="PreviousMatchListMenuItem.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
           <source>253, 22</source>
           <target state="translated">253, 22</target>
           <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
@@ -6949,11 +6953,11 @@ Edit search string right from list. Navigate in list right from search field.</s
           <source>Find previous match in list</source>
           <target state="translated">在列表中查找上一个匹配项</target>
         </trans-unit>
-        <trans-unit id="NextMatchTextMenuItem.ShortcutKeys" translate="yes" xml:space="preserve" extype="System.Windows.Forms.Keys, System.Windows.Forms">
+        <trans-unit id="NextMatchTextMenuItem.ShortcutKeys" translate="yes" extype="System.Windows.Forms.Keys, System.Windows.Forms" xml:space="preserve">
           <source>F3</source>
           <target state="needs-review-translation">F3</target>
         </trans-unit>
-        <trans-unit id="NextMatchTextMenuItem.Size" translate="yes" xml:space="preserve" extype="System.Drawing.Size, System.Drawing">
+        <trans-unit id="NextMatchTextMenuItem.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
           <source>220, 22</source>
           <target state="translated">220, 22</target>
           <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
@@ -6966,11 +6970,11 @@ Edit search string right from list. Navigate in list right from search field.</s
           <source>Find next match in clip text (F3)</source>
           <target state="translated">查找下一个匹配项 (F3)</target>
         </trans-unit>
-        <trans-unit id="PreviousMatchTextMenuItem.ShortcutKeys" translate="yes" xml:space="preserve" extype="System.Windows.Forms.Keys, System.Windows.Forms">
+        <trans-unit id="PreviousMatchTextMenuItem.ShortcutKeys" translate="yes" extype="System.Windows.Forms.Keys, System.Windows.Forms" xml:space="preserve">
           <source>Shift+F3</source>
           <target state="translated">Shift+F3</target>
         </trans-unit>
-        <trans-unit id="PreviousMatchTextMenuItem.Size" translate="yes" xml:space="preserve" extype="System.Drawing.Size, System.Drawing">
+        <trans-unit id="PreviousMatchTextMenuItem.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
           <source>220, 22</source>
           <target state="translated">220, 22</target>
           <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
@@ -6983,7 +6987,7 @@ Edit search string right from list. Navigate in list right from search field.</s
           <source>Find previous match in clip text (SHIFT+F3)</source>
           <target state="translated">查找上一匹配项 (SHIFT+F3)</target>
         </trans-unit>
-        <trans-unit id="autoselectMatchedClipMenuItem.Size" translate="yes" xml:space="preserve" extype="System.Drawing.Size, System.Drawing">
+        <trans-unit id="autoselectMatchedClipMenuItem.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
           <source>209, 22</source>
           <target state="translated">209, 22</target>
         </trans-unit>
@@ -6991,7 +6995,7 @@ Edit search string right from list. Navigate in list right from search field.</s
           <source>Autoselect matched clip</source>
           <target state="translated">自动选择匹配的剪辑</target>
         </trans-unit>
-        <trans-unit id="filterListBySearchStringMenuItem.Size" translate="yes" xml:space="preserve" extype="System.Drawing.Size, System.Drawing">
+        <trans-unit id="filterListBySearchStringMenuItem.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
           <source>209, 22</source>
           <target state="translated">209, 22</target>
         </trans-unit>
@@ -6999,12 +7003,12 @@ Edit search string right from list. Navigate in list right from search field.</s
           <source>Filter list by search string</source>
           <target state="translated">通过搜索字符串过滤列表</target>
         </trans-unit>
-        <trans-unit id="pasteIntoSearchFieldMenuItem.ShortcutKeys" translate="yes" xml:space="preserve" extype="System.Windows.Forms.Keys, System.Windows.Forms">
+        <trans-unit id="pasteIntoSearchFieldMenuItem.ShortcutKeys" translate="yes" extype="System.Windows.Forms.Keys, System.Windows.Forms" xml:space="preserve">
           <source>Ctrl+D</source>
           <target state="new">Ctrl+D</target>
           <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
-        <trans-unit id="pasteIntoSearchFieldMenuItem.Size" translate="yes" xml:space="preserve" extype="System.Drawing.Size, System.Drawing">
+        <trans-unit id="pasteIntoSearchFieldMenuItem.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
           <source>220, 22</source>
           <target state="translated">220, 22</target>
           <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
@@ -7017,7 +7021,7 @@ Edit search string right from list. Navigate in list right from search field.</s
           <source>Search in clip list first 50 symbols of selected text</source>
           <target state="translated">在剪辑列表中搜索选中文本的前 50 个符号</target>
         </trans-unit>
-        <trans-unit id="menuItemSetFocusClipText.Size" translate="yes" xml:space="preserve" extype="System.Drawing.Size, System.Drawing">
+        <trans-unit id="menuItemSetFocusClipText.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
           <source>212, 22</source>
           <target state="translated">212, 22</target>
         </trans-unit>
@@ -7025,11 +7029,11 @@ Edit search string right from list. Navigate in list right from search field.</s
           <source>Set focus to clip text (TAB)</source>
           <target state="translated">聚焦剪辑文本 (TAB)</target>
         </trans-unit>
-        <trans-unit id="htmlTextBox.Dock" translate="yes" xml:space="preserve" extype="System.Windows.Forms.DockStyle, System.Windows.Forms">
+        <trans-unit id="htmlTextBox.Dock" translate="yes" extype="System.Windows.Forms.DockStyle, System.Windows.Forms" xml:space="preserve">
           <source>Fill</source>
           <target state="needs-review-translation">Fill</target>
         </trans-unit>
-        <trans-unit id="searchAllFieldsMenuItem.Size" translate="yes" xml:space="preserve" extype="System.Drawing.Size, System.Drawing">
+        <trans-unit id="searchAllFieldsMenuItem.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
           <source>209, 22</source>
           <target state="translated">209, 22</target>
         </trans-unit>
@@ -7037,11 +7041,11 @@ Edit search string right from list. Navigate in list right from search field.</s
           <source>Search all fields</source>
           <target state="translated">搜索所有字段</target>
         </trans-unit>
-        <trans-unit id="openWithToolStripMenuItem.Visible" translate="yes" xml:space="preserve" extype="System.Boolean, mscorlib">
+        <trans-unit id="openWithToolStripMenuItem.Visible" translate="yes" extype="System.Boolean, mscorlib" xml:space="preserve">
           <source>False</source>
           <target state="needs-review-translation">False</target>
         </trans-unit>
-        <trans-unit id="exportMenuItem.Size" translate="yes" xml:space="preserve" extype="System.Drawing.Size, System.Drawing">
+        <trans-unit id="exportMenuItem.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
           <source>220, 22</source>
           <target state="translated">220, 22</target>
           <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
@@ -7054,7 +7058,7 @@ Edit search string right from list. Navigate in list right from search field.</s
           <source>Export selected clips to file</source>
           <target state="translated">导出所选剪辑到文件</target>
         </trans-unit>
-        <trans-unit id="importToolStripMenuItem.Size" translate="yes" xml:space="preserve" extype="System.Drawing.Size, System.Drawing">
+        <trans-unit id="importToolStripMenuItem.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
           <source>220, 22</source>
           <target state="translated">220, 22</target>
           <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
@@ -7067,11 +7071,11 @@ Edit search string right from list. Navigate in list right from search field.</s
           <source>Import clips from file</source>
           <target state="translated">从文件导入剪辑</target>
         </trans-unit>
-        <trans-unit id="cultureManager5.TrayLocation" translate="yes" xml:space="preserve" extype="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" extradata="metadata">
+        <trans-unit id="cultureManager5.TrayLocation" translate="yes" extype="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" extradata="metadata" xml:space="preserve">
           <source>890, 57</source>
           <target state="translated">890, 57</target>
         </trans-unit>
-        <trans-unit id="saveAsFileMenuItem.Size" translate="yes" xml:space="preserve" extype="System.Drawing.Size, System.Drawing">
+        <trans-unit id="saveAsFileMenuItem.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
           <source>220, 22</source>
           <target state="translated">220, 22</target>
           <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
@@ -7084,23 +7088,23 @@ Edit search string right from list. Navigate in list right from search field.</s
           <source>Save data to file with directory and name selection for text or image clip</source>
           <target state="translated">保存数据到文件并为文本或图片剪辑选择名称</target>
         </trans-unit>
-        <trans-unit id="saveAsFileMenuItem.ShortcutKeys" translate="yes" xml:space="preserve" extype="System.Windows.Forms.Keys, System.Windows.Forms">
+        <trans-unit id="saveAsFileMenuItem.ShortcutKeys" translate="yes" extype="System.Windows.Forms.Keys, System.Windows.Forms" xml:space="preserve">
           <source>Ctrl+S</source>
           <target state="needs-review-translation">Ctrl+S</target>
         </trans-unit>
-        <trans-unit id="mergeTextOfClipsToolStripMenuItem.ShortcutKeys" translate="yes" xml:space="preserve" extype="System.Windows.Forms.Keys, System.Windows.Forms">
+        <trans-unit id="mergeTextOfClipsToolStripMenuItem.ShortcutKeys" translate="yes" extype="System.Windows.Forms.Keys, System.Windows.Forms" xml:space="preserve">
           <source>Ctrl+Alt+J</source>
           <target state="needs-review-translation">Ctrl+Alt+J</target>
         </trans-unit>
-        <trans-unit id="toolStripMenuItem25.ShortcutKeys" translate="yes" xml:space="preserve" extype="System.Windows.Forms.Keys, System.Windows.Forms">
+        <trans-unit id="toolStripMenuItem25.ShortcutKeys" translate="yes" extype="System.Windows.Forms.Keys, System.Windows.Forms" xml:space="preserve">
           <source>Ctrl+P</source>
           <target state="needs-review-translation">Ctrl+P</target>
         </trans-unit>
-        <trans-unit id="pasteSpecialToolStripMenuItem.ShortcutKeys" translate="yes" xml:space="preserve" extype="System.Windows.Forms.Keys, System.Windows.Forms">
+        <trans-unit id="pasteSpecialToolStripMenuItem.ShortcutKeys" translate="yes" extype="System.Windows.Forms.Keys, System.Windows.Forms" xml:space="preserve">
           <source>Ctrl+P</source>
           <target state="needs-review-translation">Ctrl+P</target>
         </trans-unit>
-        <trans-unit id="decodeTextToolStripMenuItem.Size" translate="yes" xml:space="preserve" extype="System.Drawing.Size, System.Drawing">
+        <trans-unit id="decodeTextToolStripMenuItem.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
           <source>220, 22</source>
           <target state="translated">220, 22</target>
         </trans-unit>
@@ -7114,9 +7118,37 @@ Edit search string right from list. Navigate in list right from search field.</s
           <target state="translated">使用 URL 规则 (%) 将选定或所有文本剪辑解码为新剪辑
 </target>
         </trans-unit>
-        <trans-unit id="deleteAllNonFavoriteToolStripMenuItem.ShortcutKeys" translate="yes" xml:space="preserve" extype="System.Windows.Forms.Keys, System.Windows.Forms">
+        <trans-unit id="deleteAllNonFavoriteToolStripMenuItem.ShortcutKeys" translate="yes" extype="System.Windows.Forms.Keys, System.Windows.Forms" xml:space="preserve">
           <source>Ctrl+Alt+K</source>
           <target state="needs-review-translation">Ctrl+Alt+K</target>
+        </trans-unit>
+        <trans-unit id="connectRecipientToolStripMenuItem.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
+          <source>168, 22</source>
+          <target state="needs-review-translation">168, 22</target>
+        </trans-unit>
+        <trans-unit id="connectRecipientToolStripMenuItem.Text" translate="yes" xml:space="preserve">
+          <source>Connect recipient</source>
+          <target state="new">Connect recipient</target>
+        </trans-unit>
+        <trans-unit id="sendClipToolStripMenuItem.ShortcutKeys" translate="yes" extype="System.Windows.Forms.Keys, System.Windows.Forms" xml:space="preserve">
+          <source>F11</source>
+          <target state="needs-review-translation">F11</target>
+        </trans-unit>
+        <trans-unit id="sendClipToolStripMenuItem.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
+          <source>168, 22</source>
+          <target state="needs-review-translation">168, 22</target>
+        </trans-unit>
+        <trans-unit id="sendClipToolStripMenuItem.Text" translate="yes" xml:space="preserve">
+          <source>Send clip</source>
+          <target state="new">Send clip</target>
+        </trans-unit>
+        <trans-unit id="clipChannelToolStripMenuItem.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
+          <source>220, 22</source>
+          <target state="needs-review-translation">220, 22</target>
+        </trans-unit>
+        <trans-unit id="clipChannelToolStripMenuItem.Text" translate="yes" xml:space="preserve">
+          <source>Clip channel</source>
+          <target state="new">Clip channel</target>
         </trans-unit>
       </group>
     </body>
@@ -8294,28 +8326,28 @@ To launch program on user logon turn on autostart in settings.</source>
     </header>
     <body>
       <group id="CLIPANGEL/PASTESPECIAL.RESX" datatype="resx">
-        <trans-unit id="toolTip1.TrayLocation" translate="yes" xml:space="preserve" extype="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" extradata="metadata">
+        <trans-unit id="toolTip1.TrayLocation" translate="yes" extype="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" extradata="metadata" xml:space="preserve">
           <source>17, 17</source>
           <target state="translated">17, 17</target>
         </trans-unit>
-        <trans-unit id="ReplaceEOL.AutoSize" translate="yes" xml:space="preserve" extype="System.Boolean, mscorlib">
+        <trans-unit id="ReplaceEOL.AutoSize" translate="yes" extype="System.Boolean, mscorlib" xml:space="preserve">
           <source>True</source>
           <target state="needs-review-translation">True</target>
         </trans-unit>
-        <trans-unit id="NormalizeFreeSpace.TabIndex" translate="yes" xml:space="preserve" extype="System.Int32, mscorlib">
+        <trans-unit id="NormalizeFreeSpace.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
           <source>11</source>
           <target state="translated">11</target>
           <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
-        <trans-unit id="buttonCancel.ImeMode" translate="yes" xml:space="preserve" extype="System.Windows.Forms.ImeMode, System.Windows.Forms">
+        <trans-unit id="buttonCancel.ImeMode" translate="yes" extype="System.Windows.Forms.ImeMode, System.Windows.Forms" xml:space="preserve">
           <source>NoControl</source>
           <target state="needs-review-translation">NoControl</target>
         </trans-unit>
-        <trans-unit id="buttonOK.Anchor" translate="yes" xml:space="preserve" extype="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+        <trans-unit id="buttonOK.Anchor" translate="yes" extype="System.Windows.Forms.AnchorStyles, System.Windows.Forms" xml:space="preserve">
           <source>Bottom, Right</source>
           <target state="needs-review-translation">Bottom, Right</target>
         </trans-unit>
-        <trans-unit id="NormalizeFreeSpace.Size" translate="yes" xml:space="preserve" extype="System.Drawing.Size, System.Drawing">
+        <trans-unit id="NormalizeFreeSpace.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
           <source>176, 17</source>
           <target state="translated">176, 17</target>
         </trans-unit>
@@ -8323,12 +8355,12 @@ To launch program on user logon turn on autostart in settings.</source>
           <source>Replace "end of line" symbol with space</source>
           <target state="translated">用 “空格” 替换 “行尾符“</target>
         </trans-unit>
-        <trans-unit id="SentenceCase.TabIndex" translate="yes" xml:space="preserve" extype="System.Int32, mscorlib">
+        <trans-unit id="SentenceCase.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
           <source>4</source>
           <target state="translated">4</target>
           <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
-        <trans-unit id="SentenceCase.Location" translate="yes" xml:space="preserve" extype="System.Drawing.Point, System.Drawing">
+        <trans-unit id="SentenceCase.Location" translate="yes" extype="System.Drawing.Point, System.Drawing" xml:space="preserve">
           <source>10, 93</source>
           <target state="translated">10, 93</target>
         </trans-unit>
@@ -8336,39 +8368,39 @@ To launch program on user logon turn on autostart in settings.</source>
           <source>Paste special</source>
           <target state="translated">选择性粘贴</target>
         </trans-unit>
-        <trans-unit id="ReplaceEOL.TabIndex" translate="yes" xml:space="preserve" extype="System.Int32, mscorlib">
+        <trans-unit id="ReplaceEOL.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
           <source>8</source>
           <target state="translated">8</target>
           <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
-        <trans-unit id="richTextBox1.Anchor" translate="yes" xml:space="preserve" extype="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+        <trans-unit id="richTextBox1.Anchor" translate="yes" extype="System.Windows.Forms.AnchorStyles, System.Windows.Forms" xml:space="preserve">
           <source>Top, Bottom, Left, Right</source>
           <target state="needs-review-translation">Top, Bottom, Left, Right</target>
         </trans-unit>
-        <trans-unit id="checkBoxPasteIntoNewClip.TabIndex" translate="yes" xml:space="preserve" extype="System.Int32, mscorlib">
+        <trans-unit id="checkBoxPasteIntoNewClip.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
           <source>13</source>
           <target state="translated">13</target>
           <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
-        <trans-unit id="CaseNoChange.Size" translate="yes" xml:space="preserve" extype="System.Drawing.Size, System.Drawing">
+        <trans-unit id="CaseNoChange.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
           <source>78, 17</source>
           <target state="translated">78, 17</target>
         </trans-unit>
-        <trans-unit id="buttonOK.Location" translate="yes" xml:space="preserve" extype="System.Drawing.Point, System.Drawing">
+        <trans-unit id="buttonOK.Location" translate="yes" extype="System.Drawing.Point, System.Drawing" xml:space="preserve">
           <source>282, 299</source>
           <target state="translated">282, 299</target>
           <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
-        <trans-unit id="textBoxNumberOfSpacesInTab.Size" translate="yes" xml:space="preserve" extype="System.Drawing.Size, System.Drawing">
+        <trans-unit id="textBoxNumberOfSpacesInTab.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
           <source>18, 20</source>
           <target state="translated">18, 20</target>
         </trans-unit>
-        <trans-unit id="groupBox1.TabIndex" translate="yes" xml:space="preserve" extype="System.Int32, mscorlib">
+        <trans-unit id="groupBox1.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
           <source>0</source>
           <target state="translated">0</target>
           <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
-        <trans-unit id="AllLowerCase.AutoSize" translate="yes" xml:space="preserve" extype="System.Boolean, mscorlib">
+        <trans-unit id="AllLowerCase.AutoSize" translate="yes" extype="System.Boolean, mscorlib" xml:space="preserve">
           <source>True</source>
           <target state="needs-review-translation">True</target>
         </trans-unit>
@@ -8380,11 +8412,11 @@ To launch program on user logon turn on autostart in settings.</source>
           <source>OK</source>
           <target state="translated">确定</target>
         </trans-unit>
-        <trans-unit id="CaseNoChange.Location" translate="yes" xml:space="preserve" extype="System.Drawing.Point, System.Drawing">
+        <trans-unit id="CaseNoChange.Location" translate="yes" extype="System.Drawing.Point, System.Drawing" xml:space="preserve">
           <source>10, 22</source>
           <target state="translated">10, 22</target>
         </trans-unit>
-        <trans-unit id="checkBoxPasteIntoNewClip.Size" translate="yes" xml:space="preserve" extype="System.Drawing.Size, System.Drawing">
+        <trans-unit id="checkBoxPasteIntoNewClip.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
           <source>233, 17</source>
           <target state="translated">233, 17</target>
         </trans-unit>
@@ -8392,16 +8424,16 @@ To launch program on user logon turn on autostart in settings.</source>
           <source>Number of spaces in TAB</source>
           <target state="translated">TAB 含的空格数</target>
         </trans-unit>
-        <trans-unit id="buttonOK.TabIndex" translate="yes" xml:space="preserve" extype="System.Int32, mscorlib">
+        <trans-unit id="buttonOK.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
           <source>15</source>
           <target state="translated">15</target>
         </trans-unit>
-        <trans-unit id="label1.Location" translate="yes" xml:space="preserve" extype="System.Drawing.Point, System.Drawing">
+        <trans-unit id="label1.Location" translate="yes" extype="System.Drawing.Point, System.Drawing" xml:space="preserve">
           <source>8, 201</source>
           <target state="translated">8, 201</target>
           <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
-        <trans-unit id="buttonCancel.Anchor" translate="yes" xml:space="preserve" extype="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+        <trans-unit id="buttonCancel.Anchor" translate="yes" extype="System.Windows.Forms.AnchorStyles, System.Windows.Forms" xml:space="preserve">
           <source>Bottom, Right</source>
           <target state="needs-review-translation">Bottom, Right</target>
         </trans-unit>
@@ -8409,30 +8441,30 @@ To launch program on user logon turn on autostart in settings.</source>
           <source>No change</source>
           <target state="translated">保持不变</target>
         </trans-unit>
-        <trans-unit id="buttonOK.Size" translate="yes" xml:space="preserve" extype="System.Drawing.Size, System.Drawing">
+        <trans-unit id="buttonOK.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
           <source>75, 23</source>
           <target state="translated">75, 23</target>
         </trans-unit>
-        <trans-unit id="checkBoxReplaceTabWithSpaces.Location" translate="yes" xml:space="preserve" extype="System.Drawing.Point, System.Drawing">
+        <trans-unit id="checkBoxReplaceTabWithSpaces.Location" translate="yes" extype="System.Drawing.Point, System.Drawing" xml:space="preserve">
           <source>192, 44</source>
           <target state="translated">192, 44</target>
           <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
-        <trans-unit id="$this.StartPosition" translate="yes" xml:space="preserve" extype="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+        <trans-unit id="$this.StartPosition" translate="yes" extype="System.Windows.Forms.FormStartPosition, System.Windows.Forms" xml:space="preserve">
           <source>CenterParent</source>
           <target state="needs-review-translation">CenterParent</target>
         </trans-unit>
-        <trans-unit id="buttonCancel.Location" translate="yes" xml:space="preserve" extype="System.Drawing.Point, System.Drawing">
+        <trans-unit id="buttonCancel.Location" translate="yes" extype="System.Drawing.Point, System.Drawing" xml:space="preserve">
           <source>363, 299</source>
           <target state="translated">363, 299</target>
           <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
-        <trans-unit id="NormalizeFreeSpace.Location" translate="yes" xml:space="preserve" extype="System.Drawing.Point, System.Drawing">
+        <trans-unit id="NormalizeFreeSpace.Location" translate="yes" extype="System.Drawing.Point, System.Drawing" xml:space="preserve">
           <source>192, 67</source>
           <target state="translated">192, 67</target>
           <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
-        <trans-unit id="ReplaceEOL.Size" translate="yes" xml:space="preserve" extype="System.Drawing.Size, System.Drawing">
+        <trans-unit id="ReplaceEOL.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
           <source>217, 17</source>
           <target state="translated">217, 17</target>
           <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
@@ -8441,11 +8473,11 @@ To launch program on user logon turn on autostart in settings.</source>
           <source></source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion"></target>
         </trans-unit>
-        <trans-unit id="groupBox1.Location" translate="yes" xml:space="preserve" extype="System.Drawing.Point, System.Drawing">
+        <trans-unit id="groupBox1.Location" translate="yes" extype="System.Drawing.Point, System.Drawing" xml:space="preserve">
           <source>12, 10</source>
           <target state="translated">12, 10</target>
         </trans-unit>
-        <trans-unit id="richTextBox1.TabIndex" translate="yes" xml:space="preserve" extype="System.Int32, mscorlib">
+        <trans-unit id="richTextBox1.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
           <source>14</source>
           <target state="translated">14</target>
           <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
@@ -8454,12 +8486,12 @@ To launch program on user logon turn on autostart in settings.</source>
           <source>Change case of letters</source>
           <target state="translated">更改字母大小写</target>
         </trans-unit>
-        <trans-unit id="checkBoxReplaceTabWithSpaces.TabIndex" translate="yes" xml:space="preserve" extype="System.Int32, mscorlib">
+        <trans-unit id="checkBoxReplaceTabWithSpaces.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
           <source>9</source>
           <target state="translated">9</target>
           <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
-        <trans-unit id="label1.TabIndex" translate="yes" xml:space="preserve" extype="System.Int32, mscorlib">
+        <trans-unit id="label1.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
           <source>22</source>
           <target state="translated">22</target>
         </trans-unit>
@@ -8471,7 +8503,7 @@ To launch program on user logon turn on autostart in settings.</source>
           <source>Lower case for all letters</source>
           <target state="translated">所有字母小写</target>
         </trans-unit>
-        <trans-unit id="buttonCancel.Size" translate="yes" xml:space="preserve" extype="System.Drawing.Size, System.Drawing">
+        <trans-unit id="buttonCancel.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
           <source>75, 23</source>
           <target state="translated">75, 23</target>
         </trans-unit>
@@ -8483,16 +8515,16 @@ To launch program on user logon turn on autostart in settings.</source>
           <source>Paste into new clip instead of target window</source>
           <target state="translated">粘贴到新剪辑而不是目标窗口</target>
         </trans-unit>
-        <trans-unit id="AllLowerCase.Location" translate="yes" xml:space="preserve" extype="System.Drawing.Point, System.Drawing">
+        <trans-unit id="AllLowerCase.Location" translate="yes" extype="System.Drawing.Point, System.Drawing" xml:space="preserve">
           <source>10, 69</source>
           <target state="translated">10, 69</target>
         </trans-unit>
-        <trans-unit id="ReplaceEOL.Location" translate="yes" xml:space="preserve" extype="System.Drawing.Point, System.Drawing">
+        <trans-unit id="ReplaceEOL.Location" translate="yes" extype="System.Drawing.Point, System.Drawing" xml:space="preserve">
           <source>192, 21</source>
           <target state="translated">192, 21</target>
           <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
-        <trans-unit id="NormalizeFreeSpace.AutoSize" translate="yes" xml:space="preserve" extype="System.Boolean, mscorlib">
+        <trans-unit id="NormalizeFreeSpace.AutoSize" translate="yes" extype="System.Boolean, mscorlib" xml:space="preserve">
           <source>True</source>
           <target state="needs-review-translation">True</target>
         </trans-unit>
@@ -8500,47 +8532,47 @@ To launch program on user logon turn on autostart in settings.</source>
           <source>Replace TAB with spaces</source>
           <target state="translated">用空格替换 TAB</target>
         </trans-unit>
-        <trans-unit id="richTextBox1.Location" translate="yes" xml:space="preserve" extype="System.Drawing.Point, System.Drawing">
+        <trans-unit id="richTextBox1.Location" translate="yes" extype="System.Drawing.Point, System.Drawing" xml:space="preserve">
           <source>11, 217</source>
           <target state="translated">11, 217</target>
           <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
-        <trans-unit id="richTextBox1.Size" translate="yes" xml:space="preserve" extype="System.Drawing.Size, System.Drawing">
+        <trans-unit id="richTextBox1.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
           <source>427, 76</source>
           <target state="translated">427, 76</target>
           <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
-        <trans-unit id="checkBoxPasteIntoNewClip.AutoSize" translate="yes" xml:space="preserve" extype="System.Boolean, mscorlib">
+        <trans-unit id="checkBoxPasteIntoNewClip.AutoSize" translate="yes" extype="System.Boolean, mscorlib" xml:space="preserve">
           <source>True</source>
           <target state="needs-review-translation">True</target>
         </trans-unit>
-        <trans-unit id="buttonOK.ImeMode" translate="yes" xml:space="preserve" extype="System.Windows.Forms.ImeMode, System.Windows.Forms">
+        <trans-unit id="buttonOK.ImeMode" translate="yes" extype="System.Windows.Forms.ImeMode, System.Windows.Forms" xml:space="preserve">
           <source>NoControl</source>
           <target state="needs-review-translation">NoControl</target>
         </trans-unit>
-        <trans-unit id="buttonCancel.TabIndex" translate="yes" xml:space="preserve" extype="System.Int32, mscorlib">
+        <trans-unit id="buttonCancel.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
           <source>16</source>
           <target state="translated">16</target>
           <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
-        <trans-unit id="textBoxNumberOfSpacesInTab.TabIndex" translate="yes" xml:space="preserve" extype="System.Int32, mscorlib">
+        <trans-unit id="textBoxNumberOfSpacesInTab.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
           <source>10</source>
           <target state="translated">10</target>
           <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
-        <trans-unit id="checkBoxReplaceTabWithSpaces.Size" translate="yes" xml:space="preserve" extype="System.Drawing.Size, System.Drawing">
+        <trans-unit id="checkBoxReplaceTabWithSpaces.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
           <source>149, 17</source>
           <target state="translated">149, 17</target>
         </trans-unit>
-        <trans-unit id="label1.Size" translate="yes" xml:space="preserve" extype="System.Drawing.Size, System.Drawing">
+        <trans-unit id="label1.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
           <source>45, 13</source>
           <target state="translated">45, 13</target>
         </trans-unit>
-        <trans-unit id="CaseNoChange.AutoSize" translate="yes" xml:space="preserve" extype="System.Boolean, mscorlib">
+        <trans-unit id="CaseNoChange.AutoSize" translate="yes" extype="System.Boolean, mscorlib" xml:space="preserve">
           <source>True</source>
           <target state="needs-review-translation">True</target>
         </trans-unit>
-        <trans-unit id="$this.AutoScaleDimensions" translate="yes" xml:space="preserve" extype="System.Drawing.SizeF, System.Drawing">
+        <trans-unit id="$this.AutoScaleDimensions" translate="yes" extype="System.Drawing.SizeF, System.Drawing" xml:space="preserve">
           <source>6, 13</source>
           <target state="translated">6, 13</target>
         </trans-unit>
@@ -8552,32 +8584,32 @@ To launch program on user logon turn on autostart in settings.</source>
           <source>Preview</source>
           <target state="translated">预览</target>
         </trans-unit>
-        <trans-unit id="textBoxNumberOfSpacesInTab.Location" translate="yes" xml:space="preserve" extype="System.Drawing.Point, System.Drawing">
+        <trans-unit id="textBoxNumberOfSpacesInTab.Location" translate="yes" extype="System.Drawing.Point, System.Drawing" xml:space="preserve">
           <source>420, 44</source>
           <target state="translated">420, 44</target>
           <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
-        <trans-unit id="checkBoxPasteIntoNewClip.Location" translate="yes" xml:space="preserve" extype="System.Drawing.Point, System.Drawing">
+        <trans-unit id="checkBoxPasteIntoNewClip.Location" translate="yes" extype="System.Drawing.Point, System.Drawing" xml:space="preserve">
           <source>192, 113</source>
           <target state="translated">192, 113</target>
           <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
-        <trans-unit id="SentenceCase.Size" translate="yes" xml:space="preserve" extype="System.Drawing.Size, System.Drawing">
+        <trans-unit id="SentenceCase.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
           <source>97, 17</source>
           <target state="translated">97, 17</target>
           <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
-        <trans-unit id="AllLowerCase.Size" translate="yes" xml:space="preserve" extype="System.Drawing.Size, System.Drawing">
+        <trans-unit id="AllLowerCase.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
           <source>76, 17</source>
           <target state="translated">76, 17</target>
           <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
-        <trans-unit id="$this.ClientSize" translate="yes" xml:space="preserve" extype="System.Drawing.Size, System.Drawing">
+        <trans-unit id="$this.ClientSize" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
           <source>445, 328</source>
           <target state="translated">445, 328</target>
           <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
-        <trans-unit id="label1.AutoSize" translate="yes" xml:space="preserve" extype="System.Boolean, mscorlib">
+        <trans-unit id="label1.AutoSize" translate="yes" extype="System.Boolean, mscorlib" xml:space="preserve">
           <source>True</source>
           <target state="needs-review-translation">True</target>
         </trans-unit>
@@ -8587,17 +8619,17 @@ Trailing unprintable symbols are deleted.</source>
           <target state="translated">每个不可打印符号序列 (除了行尾) 都被替换为一个空格
 前缀不可打印符号被删除</target>
         </trans-unit>
-        <trans-unit id="groupBox1.Size" translate="yes" xml:space="preserve" extype="System.Drawing.Size, System.Drawing">
+        <trans-unit id="groupBox1.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
           <source>174, 188</source>
           <target state="translated">174, 188</target>
           <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
-        <trans-unit id="CaseNoChange.TabIndex" translate="yes" xml:space="preserve" extype="System.Int32, mscorlib">
+        <trans-unit id="CaseNoChange.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
           <source>1</source>
           <target state="translated">1</target>
           <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
-        <trans-unit id="AllLowerCase.TabIndex" translate="yes" xml:space="preserve" extype="System.Int32, mscorlib">
+        <trans-unit id="AllLowerCase.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
           <source>3</source>
           <target state="translated">3</target>
           <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
@@ -8606,7 +8638,7 @@ Trailing unprintable symbols are deleted.</source>
           <source>Sentence case</source>
           <target state="translated">句首大写</target>
         </trans-unit>
-        <trans-unit id="checkBoxReplaceTabWithSpaces.AutoSize" translate="yes" xml:space="preserve" extype="System.Boolean, mscorlib">
+        <trans-unit id="checkBoxReplaceTabWithSpaces.AutoSize" translate="yes" extype="System.Boolean, mscorlib" xml:space="preserve">
           <source>True</source>
           <target state="needs-review-translation">True</target>
         </trans-unit>
@@ -8614,31 +8646,31 @@ Trailing unprintable symbols are deleted.</source>
           <source>Case of letters</source>
           <target state="translated">字母大小写</target>
         </trans-unit>
-        <trans-unit id="SentenceCase.AutoSize" translate="yes" xml:space="preserve" extype="System.Boolean, mscorlib">
+        <trans-unit id="SentenceCase.AutoSize" translate="yes" extype="System.Boolean, mscorlib" xml:space="preserve">
           <source>True</source>
           <target state="needs-review-translation">True</target>
         </trans-unit>
-        <trans-unit id="toolTip1.GenerateMember" translate="yes" xml:space="preserve" extype="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" extradata="metadata">
+        <trans-unit id="toolTip1.GenerateMember" translate="yes" extype="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" extradata="metadata" xml:space="preserve">
           <source>False</source>
           <target state="needs-review-translation">False</target>
         </trans-unit>
-        <trans-unit id="$this.Localizable" translate="yes" xml:space="preserve" extype="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" extradata="metadata">
+        <trans-unit id="$this.Localizable" translate="yes" extype="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" extradata="metadata" xml:space="preserve">
           <source>True</source>
           <target state="needs-review-translation">True</target>
         </trans-unit>
-        <trans-unit id="AllUpperCase.AutoSize" translate="yes" xml:space="preserve" extype="System.Boolean, mscorlib">
+        <trans-unit id="AllUpperCase.AutoSize" translate="yes" extype="System.Boolean, mscorlib" xml:space="preserve">
           <source>True</source>
           <target state="needs-review-translation">True</target>
         </trans-unit>
-        <trans-unit id="AllUpperCase.Location" translate="yes" xml:space="preserve" extype="System.Drawing.Point, System.Drawing">
+        <trans-unit id="AllUpperCase.Location" translate="yes" extype="System.Drawing.Point, System.Drawing" xml:space="preserve">
           <source>10, 45</source>
           <target state="translated">10, 45</target>
         </trans-unit>
-        <trans-unit id="AllUpperCase.Size" translate="yes" xml:space="preserve" extype="System.Drawing.Size, System.Drawing">
+        <trans-unit id="AllUpperCase.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
           <source>93, 17</source>
           <target state="translated">93, 17</target>
         </trans-unit>
-        <trans-unit id="AllUpperCase.TabIndex" translate="yes" xml:space="preserve" extype="System.Int32, mscorlib">
+        <trans-unit id="AllUpperCase.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
           <source>2</source>
           <target state="translated">2</target>
           <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
@@ -8651,24 +8683,24 @@ Trailing unprintable symbols are deleted.</source>
           <source>Upper case for all letters</source>
           <target state="translated">所有字母大写</target>
         </trans-unit>
-        <trans-unit id="LowerCamelCase.AutoSize" translate="yes" xml:space="preserve" extype="System.Boolean, mscorlib">
+        <trans-unit id="LowerCamelCase.AutoSize" translate="yes" extype="System.Boolean, mscorlib" xml:space="preserve">
           <source>True</source>
           <target state="needs-review-translation">True</target>
         </trans-unit>
-        <trans-unit id="LowerCamelCase.ImeMode" translate="yes" xml:space="preserve" extype="System.Windows.Forms.ImeMode, System.Windows.Forms">
+        <trans-unit id="LowerCamelCase.ImeMode" translate="yes" extype="System.Windows.Forms.ImeMode, System.Windows.Forms" xml:space="preserve">
           <source>NoControl</source>
           <target state="needs-review-translation">NoControl</target>
         </trans-unit>
-        <trans-unit id="LowerCamelCase.Location" translate="yes" xml:space="preserve" extype="System.Drawing.Point, System.Drawing">
+        <trans-unit id="LowerCamelCase.Location" translate="yes" extype="System.Drawing.Point, System.Drawing" xml:space="preserve">
           <source>10, 138</source>
           <target state="translated">10, 138</target>
         </trans-unit>
-        <trans-unit id="LowerCamelCase.Size" translate="yes" xml:space="preserve" extype="System.Drawing.Size, System.Drawing">
+        <trans-unit id="LowerCamelCase.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
           <source>115, 17</source>
           <target state="translated">115, 17</target>
           <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
-        <trans-unit id="LowerCamelCase.TabIndex" translate="yes" xml:space="preserve" extype="System.Int32, mscorlib">
+        <trans-unit id="LowerCamelCase.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
           <source>6</source>
           <target state="translated">6</target>
           <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
@@ -8681,24 +8713,24 @@ Trailing unprintable symbols are deleted.</source>
           <source>Lower case for first letter in first word and upper case for first letter in other words. Delete all spaces.</source>
           <target state="translated">第一个单词的第一个字母为小写，其他单词的第一个字母为大写。删除所有空格</target>
         </trans-unit>
-        <trans-unit id="UpperCamelCase.AutoSize" translate="yes" xml:space="preserve" extype="System.Boolean, mscorlib">
+        <trans-unit id="UpperCamelCase.AutoSize" translate="yes" extype="System.Boolean, mscorlib" xml:space="preserve">
           <source>True</source>
           <target state="needs-review-translation">True</target>
         </trans-unit>
-        <trans-unit id="UpperCamelCase.ImeMode" translate="yes" xml:space="preserve" extype="System.Windows.Forms.ImeMode, System.Windows.Forms">
+        <trans-unit id="UpperCamelCase.ImeMode" translate="yes" extype="System.Windows.Forms.ImeMode, System.Windows.Forms" xml:space="preserve">
           <source>NoControl</source>
           <target state="needs-review-translation">NoControl</target>
         </trans-unit>
-        <trans-unit id="UpperCamelCase.Location" translate="yes" xml:space="preserve" extype="System.Drawing.Point, System.Drawing">
+        <trans-unit id="UpperCamelCase.Location" translate="yes" extype="System.Drawing.Point, System.Drawing" xml:space="preserve">
           <source>10, 116</source>
           <target state="translated">10, 116</target>
         </trans-unit>
-        <trans-unit id="UpperCamelCase.Size" translate="yes" xml:space="preserve" extype="System.Drawing.Size, System.Drawing">
+        <trans-unit id="UpperCamelCase.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
           <source>119, 17</source>
           <target state="translated">119, 17</target>
           <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
-        <trans-unit id="UpperCamelCase.TabIndex" translate="yes" xml:space="preserve" extype="System.Int32, mscorlib">
+        <trans-unit id="UpperCamelCase.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
           <source>5</source>
           <target state="translated">5</target>
           <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
@@ -8711,24 +8743,24 @@ Trailing unprintable symbols are deleted.</source>
           <source>Upper case for first letter in every word. Delete all spaces.</source>
           <target state="translated">每个单词的首字母大写，删除所有空格</target>
         </trans-unit>
-        <trans-unit id="NormalizeEndOfLines.AutoSize" translate="yes" xml:space="preserve" extype="System.Boolean, mscorlib">
+        <trans-unit id="NormalizeEndOfLines.AutoSize" translate="yes" extype="System.Boolean, mscorlib" xml:space="preserve">
           <source>True</source>
           <target state="needs-review-translation">True</target>
         </trans-unit>
-        <trans-unit id="NormalizeEndOfLines.ImeMode" translate="yes" xml:space="preserve" extype="System.Windows.Forms.ImeMode, System.Windows.Forms">
+        <trans-unit id="NormalizeEndOfLines.ImeMode" translate="yes" extype="System.Windows.Forms.ImeMode, System.Windows.Forms" xml:space="preserve">
           <source>NoControl</source>
           <target state="needs-review-translation">NoControl</target>
         </trans-unit>
-        <trans-unit id="NormalizeEndOfLines.Location" translate="yes" xml:space="preserve" extype="System.Drawing.Point, System.Drawing">
+        <trans-unit id="NormalizeEndOfLines.Location" translate="yes" extype="System.Drawing.Point, System.Drawing" xml:space="preserve">
           <source>192, 90</source>
           <target state="translated">192, 90</target>
           <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
-        <trans-unit id="NormalizeEndOfLines.Size" translate="yes" xml:space="preserve" extype="System.Drawing.Size, System.Drawing">
+        <trans-unit id="NormalizeEndOfLines.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
           <source>174, 17</source>
           <target state="translated">174, 17</target>
         </trans-unit>
-        <trans-unit id="NormalizeEndOfLines.TabIndex" translate="yes" xml:space="preserve" extype="System.Int32, mscorlib">
+        <trans-unit id="NormalizeEndOfLines.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
           <source>12</source>
           <target state="translated">12</target>
           <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
@@ -8743,23 +8775,23 @@ Trailing unprintable symbols are deleted.</source>
           <target state="translated">每个行尾符号序列都替换为一个行尾
 前缀不可打印符号被删除</target>
         </trans-unit>
-        <trans-unit id="FromCamelCase.AutoSize" translate="yes" xml:space="preserve" extype="System.Boolean, mscorlib">
+        <trans-unit id="FromCamelCase.AutoSize" translate="yes" extype="System.Boolean, mscorlib" xml:space="preserve">
           <source>True</source>
           <target state="needs-review-translation">True</target>
         </trans-unit>
-        <trans-unit id="FromCamelCase.ImeMode" translate="yes" xml:space="preserve" extype="System.Windows.Forms.ImeMode, System.Windows.Forms">
+        <trans-unit id="FromCamelCase.ImeMode" translate="yes" extype="System.Windows.Forms.ImeMode, System.Windows.Forms" xml:space="preserve">
           <source>NoControl</source>
           <target state="needs-review-translation">NoControl</target>
         </trans-unit>
-        <trans-unit id="FromCamelCase.Location" translate="yes" xml:space="preserve" extype="System.Drawing.Point, System.Drawing">
+        <trans-unit id="FromCamelCase.Location" translate="yes" extype="System.Drawing.Point, System.Drawing" xml:space="preserve">
           <source>10, 161</source>
           <target state="translated">10, 161</target>
         </trans-unit>
-        <trans-unit id="FromCamelCase.Size" translate="yes" xml:space="preserve" extype="System.Drawing.Size, System.Drawing">
+        <trans-unit id="FromCamelCase.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
           <source>101, 17</source>
           <target state="translated">101, 17</target>
         </trans-unit>
-        <trans-unit id="FromCamelCase.TabIndex" translate="yes" xml:space="preserve" extype="System.Int32, mscorlib">
+        <trans-unit id="FromCamelCase.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
           <source>7</source>
           <target state="translated">7</target>
           <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
@@ -8772,39 +8804,39 @@ Trailing unprintable symbols are deleted.</source>
           <source>Split words by capital letters and change them to lower case.</source>
           <target state="translated">用大写字母分割单词，并改为小写</target>
         </trans-unit>
-        <trans-unit id="AllUpperCase.ImeMode" translate="yes" xml:space="preserve" extype="System.Windows.Forms.ImeMode, System.Windows.Forms">
+        <trans-unit id="AllUpperCase.ImeMode" translate="yes" extype="System.Windows.Forms.ImeMode, System.Windows.Forms" xml:space="preserve">
           <source>NoControl</source>
           <target state="needs-review-translation">NoControl</target>
         </trans-unit>
-        <trans-unit id="AllLowerCase.ImeMode" translate="yes" xml:space="preserve" extype="System.Windows.Forms.ImeMode, System.Windows.Forms">
+        <trans-unit id="AllLowerCase.ImeMode" translate="yes" extype="System.Windows.Forms.ImeMode, System.Windows.Forms" xml:space="preserve">
           <source>NoControl</source>
           <target state="needs-review-translation">NoControl</target>
         </trans-unit>
-        <trans-unit id="SentenceCase.ImeMode" translate="yes" xml:space="preserve" extype="System.Windows.Forms.ImeMode, System.Windows.Forms">
+        <trans-unit id="SentenceCase.ImeMode" translate="yes" extype="System.Windows.Forms.ImeMode, System.Windows.Forms" xml:space="preserve">
           <source>NoControl</source>
           <target state="needs-review-translation">NoControl</target>
         </trans-unit>
-        <trans-unit id="CaseNoChange.ImeMode" translate="yes" xml:space="preserve" extype="System.Windows.Forms.ImeMode, System.Windows.Forms">
+        <trans-unit id="CaseNoChange.ImeMode" translate="yes" extype="System.Windows.Forms.ImeMode, System.Windows.Forms" xml:space="preserve">
           <source>NoControl</source>
           <target state="needs-review-translation">NoControl</target>
         </trans-unit>
-        <trans-unit id="label1.ImeMode" translate="yes" xml:space="preserve" extype="System.Windows.Forms.ImeMode, System.Windows.Forms">
+        <trans-unit id="label1.ImeMode" translate="yes" extype="System.Windows.Forms.ImeMode, System.Windows.Forms" xml:space="preserve">
           <source>NoControl</source>
           <target state="needs-review-translation">NoControl</target>
         </trans-unit>
-        <trans-unit id="checkBoxReplaceTabWithSpaces.ImeMode" translate="yes" xml:space="preserve" extype="System.Windows.Forms.ImeMode, System.Windows.Forms">
+        <trans-unit id="checkBoxReplaceTabWithSpaces.ImeMode" translate="yes" extype="System.Windows.Forms.ImeMode, System.Windows.Forms" xml:space="preserve">
           <source>NoControl</source>
           <target state="needs-review-translation">NoControl</target>
         </trans-unit>
-        <trans-unit id="ReplaceEOL.ImeMode" translate="yes" xml:space="preserve" extype="System.Windows.Forms.ImeMode, System.Windows.Forms">
+        <trans-unit id="ReplaceEOL.ImeMode" translate="yes" extype="System.Windows.Forms.ImeMode, System.Windows.Forms" xml:space="preserve">
           <source>NoControl</source>
           <target state="needs-review-translation">NoControl</target>
         </trans-unit>
-        <trans-unit id="checkBoxPasteIntoNewClip.ImeMode" translate="yes" xml:space="preserve" extype="System.Windows.Forms.ImeMode, System.Windows.Forms">
+        <trans-unit id="checkBoxPasteIntoNewClip.ImeMode" translate="yes" extype="System.Windows.Forms.ImeMode, System.Windows.Forms" xml:space="preserve">
           <source>NoControl</source>
           <target state="needs-review-translation">NoControl</target>
         </trans-unit>
-        <trans-unit id="NormalizeFreeSpace.ImeMode" translate="yes" xml:space="preserve" extype="System.Windows.Forms.ImeMode, System.Windows.Forms">
+        <trans-unit id="NormalizeFreeSpace.ImeMode" translate="yes" extype="System.Windows.Forms.ImeMode, System.Windows.Forms" xml:space="preserve">
           <source>NoControl</source>
           <target state="needs-review-translation">NoControl</target>
         </trans-unit>
@@ -8844,9 +8876,22 @@ Trailing unprintable symbols are deleted.</source>
           <source></source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion"></target>
         </trans-unit>
-        <trans-unit id="$this.Language" translate="yes" xml:space="preserve" extype="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" extradata="metadata">
+        <trans-unit id="$this.Language" translate="yes" extype="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" extradata="metadata" xml:space="preserve">
           <source>ru</source>
           <target state="translated">ru</target>
+        </trans-unit>
+      </group>
+    </body>
+  </file>
+  <file datatype="xml" source-language="en" target-language="zh-Hans" original="CLIPANGEL/CONNECTRECIPIENTFORM.RESX" tool-id="MultilingualAppToolkit" product-name="n/a" product-version="n/a" build-num="n/a">
+    <header>
+      <tool tool-id="MultilingualAppToolkit" tool-name="Multilingual App Toolkit" tool-version="4.0.1916.0" tool-company="Microsoft" />
+    </header>
+    <body>
+      <group id="CLIPANGEL/CONNECTRECIPIENTFORM.RESX" datatype="resx">
+        <trans-unit id="toolTip1.TrayLocation" translate="yes" xml:space="preserve" extype="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" extradata="metadata">
+          <source>17, 17</source>
+          <target state="needs-review-translation">17, 17</target>
         </trans-unit>
       </group>
     </body>

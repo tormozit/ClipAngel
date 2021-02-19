@@ -251,7 +251,7 @@ namespace ClipAngel
 
     public class DatabaseFileNameEditor : FileNameEditor
     {
-        protected override void InitializeDialog(OpenFileDialog openFileDialog)
+        protected override void InitializeDialog(System.Windows.Forms.OpenFileDialog openFileDialog)
         {
             base.InitializeDialog(openFileDialog);
             openFileDialog.CheckFileExists = false;
@@ -261,7 +261,7 @@ namespace ClipAngel
 
     public class SoundFileNameEditor : FileNameEditor
     {
-        protected override void InitializeDialog(OpenFileDialog openFileDialog)
+        protected override void InitializeDialog(System.Windows.Forms.OpenFileDialog openFileDialog)
         {
             base.InitializeDialog(openFileDialog);
             openFileDialog.CheckFileExists = true;
@@ -271,7 +271,7 @@ namespace ClipAngel
 
     public class ApplicationPathEditor : UITypeEditor
     {
-        private OpenFileDialog ofd;
+        private System.Windows.Forms.OpenFileDialog ofd;
         public override UITypeEditorEditStyle GetEditStyle(ITypeDescriptorContext context)
         {
             return UITypeEditorEditStyle.Modal;
@@ -285,7 +285,7 @@ namespace ClipAngel
                 provider.GetService(typeof(IWindowsFormsEditorService));
                 if (editorService != null)
                 {
-                    ofd = new OpenFileDialog();
+                    ofd = new System.Windows.Forms.OpenFileDialog();
                     ofd.Multiselect = true;
                     ofd.Filter = "Application|*.exe";
                     ofd.FileName = value.ToString();
