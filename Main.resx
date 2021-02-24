@@ -582,11 +582,14 @@ Edit search string right from list. Navigate in list right from search field.</v
   <data name="toolStripMenuItem7.ToolTipText" xml:space="preserve">
     <value>Simulate in active window char input of selected text of clip or aggregated text of selected clips.</value>
   </data>
-  <data name="toolStripMenuItem26.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="sendClipMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>221, 22</value>
   </data>
-  <data name="toolStripMenuItem26.Text" xml:space="preserve">
+  <data name="sendClipMenuItem.Text" xml:space="preserve">
     <value>Send clip to channel</value>
+  </data>
+  <data name="sendClipMenuItem.ToolTipText" xml:space="preserve">
+    <value>Send encrypted clip to all recipients of channel. </value>
   </data>
   <data name="copyToClipboardToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+C</value>
@@ -1989,11 +1992,17 @@ added to ignore list, which can be edited in Settings window.</value>
   <data name="sendClipToolStripMenuItem.Text" xml:space="preserve">
     <value>Send clip</value>
   </data>
+  <data name="sendClipToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>Send clip to all recipients of channel</value>
+  </data>
   <data name="clipChannelToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>220, 22</value>
   </data>
   <data name="clipChannelToolStripMenuItem.Text" xml:space="preserve">
     <value>Clip channel</value>
+  </data>
+  <data name="clipChannelToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>Network channel for sending clip to other applications</value>
   </data>
   <data name="clipToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>40, 20</value>
@@ -3670,10 +3679,10 @@ Changes in temp file are not synchronized with clip!
   <data name="&gt;&gt;toolStripMenuItem7.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;toolStripMenuItem26.Name" xml:space="preserve">
-    <value>toolStripMenuItem26</value>
+  <data name="&gt;&gt;sendClipMenuItem.Name" xml:space="preserve">
+    <value>sendClipMenuItem</value>
   </data>
-  <data name="&gt;&gt;toolStripMenuItem26.Type" xml:space="preserve">
+  <data name="&gt;&gt;sendClipMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;copyToClipboardToolStripMenuItem.Name" xml:space="preserve">

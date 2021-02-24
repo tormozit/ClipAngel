@@ -39,9 +39,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.textBoxRecipients = new System.Windows.Forms.TextBox();
             this.checkBoxShow = new System.Windows.Forms.CheckBox();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.textBoxSenderName = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.toolTip2 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -81,6 +81,7 @@
             this.buttonRefresh.Size = new System.Drawing.Size(60, 23);
             this.buttonRefresh.TabIndex = 4;
             this.buttonRefresh.Text = "Refresh";
+            this.toolTip2.SetToolTip(this.buttonRefresh, "Read recipients from channel");
             this.buttonRefresh.UseVisualStyleBackColor = true;
             this.buttonRefresh.Click += new System.EventHandler(this.buttonRefresh_Click);
             // 
@@ -108,6 +109,7 @@
             this.buttonReset.Size = new System.Drawing.Size(60, 20);
             this.buttonReset.TabIndex = 4;
             this.buttonReset.Text = "Reset";
+            this.toolTip2.SetToolTip(this.buttonReset, "Clear all recipients of your channel and generate new crypto key");
             this.buttonReset.UseVisualStyleBackColor = true;
             this.buttonReset.Click += new System.EventHandler(this.buttonReset_Click);
             // 
@@ -177,9 +179,11 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox);
+            this.KeyPreview = true;
             this.Name = "ConnectRecipientForm";
             this.Text = "Connect recipient";
             this.Load += new System.EventHandler(this.ConnectRecipientForm_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ConnectRecipientForm_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -198,8 +202,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBoxRecipients;
         private System.Windows.Forms.CheckBox checkBoxShow;
-        private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.TextBox textBoxSenderName;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ToolTip toolTip2;
     }
 }

@@ -478,4 +478,7 @@
   <data name="ConfirmResetChannel" xml:space="preserve">
     <value>All connected devices will loose connection to channel. Are you sure want to reset clip send channel?</value>
   </data>
+  <data name="TooBigClipForChannel" xml:space="preserve">
+    <value>Too big text for sending via channel. Max size - 10000 chars.</value>
+  </data>
 </root>

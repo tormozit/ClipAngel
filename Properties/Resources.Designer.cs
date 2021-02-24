@@ -976,6 +976,15 @@ namespace ClipAngel.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Too big text for sending via channel. Max size - 10000 chars..
+        /// </summary>
+        public static string TooBigClipForChannel {
+            get {
+                return ResourceManager.GetString("TooBigClipForChannel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         public static System.Drawing.Bitmap Top1 {

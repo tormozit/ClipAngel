@@ -70,10 +70,12 @@ namespace ClipAngel
             {
                 Main owner = (Main)Owner;
                 textBoxChannelName.Text = owner.CurrentSendChannel();
+                AESKey key = owner.channelEncryptionKey();
                 var data = new
                 {
                     channel = textBoxChannelName.Text,
-                    key = Convert.ToBase64String(owner.channelEncryptionKey())
+                    key = key.key,
+                    IV = key.IV
                 };
                 string dataString = JsonConvert.SerializeObject(data);
                 QRCodeGenerator qrGenerator = new QRCodeGenerator();
@@ -86,6 +88,14 @@ namespace ClipAngel
             else
             {
                 pictureBox.Visible = false;
+            }
+        }
+
+        private void ConnectRecipientForm_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                this.Close();
             }
         }
     }

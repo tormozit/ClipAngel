@@ -161,6 +161,7 @@
     <Compile Include="ConnectRecipientForm.Designer.cs">
       <DependentUpon>ConnectRecipientForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Crypter.cs" />
     <Compile Include="dbDataSet.cs">
       <DependentUpon>dbDataSet.xsd</DependentUpon>
     </Compile>

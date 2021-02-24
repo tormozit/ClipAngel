@@ -310,7 +310,7 @@ namespace ClipAngel
             this.toolStripMenuItem18 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem25 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem7 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem26 = new System.Windows.Forms.ToolStripMenuItem();
+            this.sendClipMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.copyToClipboardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem12 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem14 = new System.Windows.Forms.ToolStripMenuItem();
@@ -877,7 +877,7 @@ namespace ClipAngel
             this.toolStripMenuItem18,
             this.toolStripMenuItem25,
             this.toolStripMenuItem7,
-            this.toolStripMenuItem26,
+            this.sendClipMenuItem,
             this.copyToClipboardToolStripMenuItem,
             this.toolStripMenuItem12,
             this.toolStripMenuItem14,
@@ -929,11 +929,11 @@ namespace ClipAngel
             resources.ApplyResources(this.toolStripMenuItem7, "toolStripMenuItem7");
             this.toolStripMenuItem7.Click += new System.EventHandler(this.toolStripMenuItemPasteChars_Click);
             // 
-            // toolStripMenuItem26
+            // sendClipMenuItem
             // 
-            this.toolStripMenuItem26.Name = "toolStripMenuItem26";
-            resources.ApplyResources(this.toolStripMenuItem26, "toolStripMenuItem26");
-            this.toolStripMenuItem26.Click += new System.EventHandler(this.toolStripMenuItem26_Click);
+            this.sendClipMenuItem.Name = "sendClipMenuItem";
+            resources.ApplyResources(this.sendClipMenuItem, "sendClipMenuItem");
+            this.sendClipMenuItem.Click += new System.EventHandler(this.sendClipMenuItem_Click);
             // 
             // copyToClipboardToolStripMenuItem
             // 
@@ -2515,7 +2515,7 @@ namespace ClipAngel
         private System.Windows.Forms.ToolStripMenuItem clipChannelToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem connectRecipientToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sendClipToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem26;
+        private System.Windows.Forms.ToolStripMenuItem sendClipMenuItem;
     }
 }
 

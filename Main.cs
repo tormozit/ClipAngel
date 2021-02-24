@@ -53,7 +53,11 @@ namespace ClipAngel
         File,
         Null
     };
-
+    public struct AESKey
+    {
+        public string key;
+        public string IV;
+    }
     public partial class Main : Form
     {
         public const string IsMainPropName = "IsMain";
@@ -112,6 +116,7 @@ namespace ClipAngel
         Bitmap imageRtf;
         Bitmap imageFile;
         Bitmap imageImg;
+        const int ChannelDataLifeTime = 60;
         string searchString = ""; // TODO optimize speed
         bool periodFilterOn = false;
         const int MaxTextViewSize = 5000;
@@ -144,6 +149,7 @@ namespace ClipAngel
         private bool lastClipWasMultiCaptured = false;
         private Point LastMousePoint;
         private Timer captureTimer = new Timer();
+        private Timer channelTimer = new Timer();
         private Thread updateDBThread;
         private bool stopUpdateDBThread = false;
         private int selectedRangeStart = -1;
@@ -375,6 +381,7 @@ namespace ClipAngel
             timerDaily.Start();
             timerReconnect.Interval = (1000 * 5); // 5 seconds
             timerReconnect.Start();
+            CheckClearChannelData();
             this.ActiveControl = dataGridView;
             ResetIsMainProperty();
 
@@ -7526,7 +7533,14 @@ namespace ClipAngel
             {
                 myAes.KeySize = 256;
                 myAes.GenerateKey();
-                File.WriteAllBytes(ChannelEncryptionKeyFileName(), myAes.Key);
+                myAes.GenerateIV();
+                AESKey data = new AESKey
+                {
+                    key = Convert.ToBase64String(myAes.Key),
+                    IV = Convert.ToBase64String(myAes.IV)
+                };
+                string dataString = JsonConvert.SerializeObject(data);
+                File.WriteAllText(ChannelEncryptionKeyFileName(), dataString);
             }
             await setChannelKeyValue("senderName", Environment.MachineName);
             HttpClient client = new HttpClient();
@@ -7545,9 +7559,18 @@ namespace ClipAngel
             return channelHost;
         }
 
+       private async Task<string> delChannelKey(string key)
+        {
+            string channelHost = SendChannelHost();
+            HttpClient client = new HttpClient();
+            HttpResponseMessage response = await client.DeleteAsync(ChannelKeyUrl(key));
+            response.EnsureSuccessStatusCode();
+            return channelHost;
+        }
+
         private string ChannelKeyUrl(string key)
         {
-            string URL = SendChannelHost() + CurrentSendChannel() + $"/{key}.json";
+            string URL = SendChannelHost() + CurrentSendChannel() + $"/{key}.json" + "?auth=" + SecretData.FirebaseDatabase();
             return URL;
         }
 
@@ -7557,13 +7580,14 @@ namespace ClipAngel
             return result;
         }
 
-        public byte[] channelEncryptionKey()
+        public AESKey channelEncryptionKey()
         {
             string KeyFileName = ChannelEncryptionKeyFileName();
             if(!File.Exists(KeyFileName))
                 CreateSendChannel();
-            byte [] result = File.ReadAllBytes(ChannelEncryptionKeyFileName());
-            return result;
+            string json = File.ReadAllText(ChannelEncryptionKeyFileName());
+            AESKey keyData = JsonConvert.DeserializeObject<AESKey>(json);
+            return keyData;
         }
 
         private void connectRecipientToolStripMenuItem_Click(object sender = null, EventArgs e = null)
@@ -7648,6 +7672,13 @@ namespace ClipAngel
             await SendClipToChannel();
         }
 
+        public static long ToUnixTimestamp(DateTime d)
+        {
+            var epoch = d - new DateTime(1970, 1, 1, 0, 0, 0);
+
+            return (long)epoch.TotalSeconds;
+        }
+
         private async Task SendClipToChannel()
         {
             var recipients = await GetChannelRecipients();
@@ -7656,20 +7687,19 @@ namespace ClipAngel
                 connectRecipientToolStripMenuItem_Click();
                 return;
             }
-            await setChannelKeyValue("dataDate", DateTime.Now.ToString());
             string Dummy = "";
             string text = GetSelectedTextOfClips(ref Dummy);
-            Aes myAes = Aes.Create();
-            myAes.Key = channelEncryptionKey();
-            string value = "";
-            using (MemoryStream ms = new MemoryStream())
+            if (text.Length > 10000)
             {
-                using (CryptoStream cs = new CryptoStream(ms, myAes.CreateEncryptor(), CryptoStreamMode.Write))
-                {
-                    cs.Write(Encoding.UTF8.GetBytes(text), 0, text.Length);
-                }
-                value = Convert.ToBase64String(ms.ToArray());
+                MessageBox.Show(this, Properties.Resources.TooBigClipForChannel);
+                return;
             }
+            await setChannelKeyValue("dataDate", DateTime.Now.ToString());
+            await setChannelKeyValue("dataTimestamp", ToUnixTimestamp(DateTime.Now).ToString());
+            var key = channelEncryptionKey();
+            Crypter crypter = new Crypter(key.key, key.IV);
+            string value = crypter.EncryptAES(text);
+            //string roundTrip = crypter.DecryptAES(value); // test
             await setChannelKeyValue("data", value);
             string urlFCM = "https://fcm.googleapis.com/fcm/send";
             foreach (var keyValue in recipients)
@@ -7680,7 +7710,7 @@ namespace ClipAngel
                 tRequest.Method = "post";
                 tRequest.ContentType = "application/json";
                  //serverKey - Key from Firebase cloud messaging server  
-                tRequest.Headers.Add("Authorization", string.Format("key ={0}", "AAAA3ng0Df0:APA91bEFCpni5RPQt_CNQL4YboyShoS8XS_GyiQlUzYo1xsfE-ZkGOXEyyxRZuGG2K2k1ehxzGe90zdXmSbC9tg75MEMkIWKmKCIuwVq_7bafA37Vzmy5ZOr9O4YTiTXe1jKwWBwjurn"));
+                tRequest.Headers.Add("Authorization", string.Format("key ={0}", SecretData.FirebaseMessaging()));
                 //Sender Id - From firebase project setting  
                 tRequest.Headers.Add("Sender", string.Format("id ={0}", "955499417085"));
                 var payload = new
@@ -7707,6 +7737,7 @@ namespace ClipAngel
                 using (Stream dataStream = tRequest.GetRequestStream())
                 {
                     dataStream.Write(byteArray, 0, byteArray.Length);
+                    Properties.Settings.Default.ClipSendDate = DateTime.Now;
                     using (WebResponse tResponse = tRequest.GetResponse())
                     {
                         using (Stream dataStreamResponse = tResponse.GetResponseStream())
@@ -7722,11 +7753,43 @@ namespace ClipAngel
                     }
                 }
             }
+            CheckClearChannelData();
+        }
+
+        private void CheckClearChannelData()
+        {
+            if (Properties.Settings.Default.ClipSendDate != DateTime.MinValue)
+            {
+                bool restartTimer = false;
+                if ((DateTime.Now - Properties.Settings.Default.ClipSendDate).TotalMinutes >= ChannelDataLifeTime)
+                {
+                    try
+                    {
+                        delChannelKey("data");
+                        delChannelKey("dataDate");
+                        delChannelKey("dataTimestamp");
+                        Properties.Settings.Default.ClipSendDate = DateTime.MinValue;
+                    }
+                    catch (Exception e)
+                    {
+                        restartTimer = true;
+                    }
+                }
+                else
+                {
+                    restartTimer = true;
+                }
+                if (restartTimer)
+                {
+                    channelTimer.Tick += delegate { CheckClearChannelData(); };
+                    channelTimer.Interval = 60 * 60 * 1000;
+                    channelTimer.Start();
+                }
+            }
         }
 
         public async Task<dynamic> GetChannelRecipients()
         {
-            string channelHost = Main.SendChannelHost();
             HttpClient client = new HttpClient();
             HttpResponseMessage response = await client.GetAsync(ChannelKeyUrl("recipients"));
             response.EnsureSuccessStatusCode();
@@ -7735,7 +7798,7 @@ namespace ClipAngel
             return array;
         }
 
-        async private void toolStripMenuItem26_Click(object sender, EventArgs e)
+        async private void sendClipMenuItem_Click(object sender, EventArgs e)
         {
             await SendClipToChannel();
         }
