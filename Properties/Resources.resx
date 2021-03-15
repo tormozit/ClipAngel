@@ -121,6 +121,9 @@
   <data name="merge" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\merge.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Dublicate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Picture\Dublicate.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Paste" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\Paste.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -145,8 +148,8 @@
   <data name="OpenFile" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\OpenFile.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="LangRestart" xml:space="preserve">
-    <value>For full language change you may need to restart program</value>
+  <data name="text" xml:space="preserve">
+    <value>text</value>
   </data>
   <data name="AutoselectFirstMatch" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\Autoselect first match.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -154,17 +157,29 @@
   <data name="Confirmation" xml:space="preserve">
     <value>Confirmation</value>
   </data>
+  <data name="ConfirmDeleteAllNonFavorite" xml:space="preserve">
+    <value>Are you sure want to delete all non favorite clips?</value>
+  </data>
+  <data name="Support" xml:space="preserve">
+    <value>https://sourceforge.net/p/clip-angel/tickets/new/</value>
+  </data>
   <data name="FindNext" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\FindNext.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ClipWasNotCaptured" xml:space="preserve">
     <value>Copied clip ({2}) was not captured. Too big size {0}KB &gt; {1}KB (set in settings)</value>
   </data>
+  <data name="FailedChangeDatabaseFieEncryption" xml:space="preserve">
+    <value>Failed change database file encryption</value>
+  </data>
   <data name="allTypes" xml:space="preserve">
     <value>all types</value>
   </data>
   <data name="dbTemplate" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\DB\db.sqlite;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ConfirmDeleteSelectedClips" xml:space="preserve">
+    <value>Are you sure to delete selected clips?</value>
   </data>
   <data name="CantPasteInElevatedWindow" xml:space="preserve">
     <value>Unable to paste into window having higher priviledges. Try run program as administrator.</value>
@@ -178,11 +193,11 @@
   <data name="upload" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\upload.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="MonitoringON" xml:space="preserve">
+    <value>Clipboard monitoring now is ON</value>
+  </data>
   <data name="text_url" xml:space="preserve">
     <value>*url</value>
-  </data>
-  <data name="DownloadPage" xml:space="preserve">
-    <value>https://sourceforge.net/projects/clip-angel/files/latest/download</value>
   </data>
   <data name="UnmarkFavorite" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\Reset favorite.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -196,20 +211,17 @@
   <data name="Donate" xml:space="preserve">
     <value>https://www.paypal.me/tormozit/500</value>
   </data>
-  <data name="MegaByteUnit" xml:space="preserve">
-    <value>MB</value>
-  </data>
   <data name="Size" xml:space="preserve">
     <value>Size</value>
   </data>
   <data name="TypeText" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\TypeText.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="TypeFile" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Picture\TypeFile.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="filename" xml:space="preserve">
+    <value>filename</value>
   </data>
-  <data name="VisualWeightTooltip" xml:space="preserve">
-    <value>Visual clip weight (number of digits in number representing visual clip size)</value>
+  <data name="OpenWith" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Picture\Open with.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="NextClip" xml:space="preserve">
     <value>Next сlip</value>
@@ -223,14 +235,17 @@
   <data name="clear1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\clear1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="WordWrap" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Picture\word wrap.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="text_url_image" xml:space="preserve">
+    <value>*url-image</value>
   </data>
   <data name="NewVersionAvailable" xml:space="preserve">
     <value>New version is available. To update use button in top command bar.</value>
   </data>
   <data name="ApplicationAddedToIgnoreList" xml:space="preserve">
     <value>Application "{0}" added to ignore list, which can be edited in Settings window</value>
+  </data>
+  <data name="ConfirmResetChannel" xml:space="preserve">
+    <value>All connected devices will loose connection to channel. Are you sure want to reset clip send channel?</value>
   </data>
   <data name="CharUnit" xml:space="preserve">
     <value>С</value>
@@ -241,8 +256,17 @@
   <data name="EditClipTitle" xml:space="preserve">
     <value>Edit clip title</value>
   </data>
+  <data name="TooBigClipForChannel" xml:space="preserve">
+    <value>Too big text for sending via channel. Max size - 10000 chars.</value>
+  </data>
+  <data name="text_1CLine" xml:space="preserve">
+    <value>*1C line</value>
+  </data>
   <data name="favorite" xml:space="preserve">
     <value>favorite</value>
+  </data>
+  <data name="VisualWeightTooltip" xml:space="preserve">
+    <value>Visual clip weight (number of digits in number representing visual clip size)</value>
   </data>
   <data name="keyboard" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\keyboard.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -253,8 +277,8 @@
   <data name="HelpPage" xml:space="preserve">
     <value>https://sourceforge.net/p/clip-angel/wiki/Description/</value>
   </data>
-  <data name="Compare" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Picture\Compare.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ClipFileAlreadyOpened" xml:space="preserve">
+    <value>Clip file already opened and blocked</value>
   </data>
   <data name="copy" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\copy.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -268,11 +292,11 @@
   <data name="FindPrevious" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\FindPrevious.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="OpenWith" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Picture\Open with.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="ActivatedExistedProcess" xml:space="preserve">
     <value>Activated already running instance of the application</value>
+  </data>
+  <data name="WrongFileFormat" xml:space="preserve">
+    <value>Wrong file format</value>
   </data>
   <data name="UpdateTo" xml:space="preserve">
     <value>Update to</value>
@@ -304,14 +328,20 @@
   <data name="Version" xml:space="preserve">
     <value>Version</value>
   </data>
+  <data name="GlobalHotkeys" xml:space="preserve">
+    <value>Global hotkeys</value>
+  </data>
   <data name="eye" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\eye.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="CouldNotRegisterHotkey" xml:space="preserve">
     <value>Couldn’t register the global hot key</value>
   </data>
-  <data name="Dublicate" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Picture\Dublicate.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="LangRestart" xml:space="preserve">
+    <value>For full language change you may need to restart program</value>
+  </data>
+  <data name="text_url_video" xml:space="preserve">
+    <value>*url-video</value>
   </data>
   <data name="YouLatestVersion" xml:space="preserve">
     <value>You are using the latest version</value>
@@ -324,6 +354,9 @@
   </data>
   <data name="Back" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\Back.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Filter1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Picture\Filter.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="calendar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\calendar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -340,6 +373,12 @@
   <data name="PixelFormat" xml:space="preserve">
     <value>Pixel</value>
   </data>
+  <data name="MonitoringOFF" xml:space="preserve">
+    <value>Clipboard monitoring now is OFF</value>
+  </data>
+  <data name="translate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Picture\translate.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="TypeImg" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\TypeImg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -355,6 +394,12 @@
   <data name="FindOptions" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\FindOptions.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="TypeFile" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Picture\TypeFile.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Tip 32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Picture\Tip 32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="TextFormatting" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\TextFormatting.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -364,11 +409,14 @@
   <data name="Email" xml:space="preserve">
     <value>tormozit@gmail.com</value>
   </data>
+  <data name="text_phone" xml:space="preserve">
+    <value>*phone</value>
+  </data>
   <data name="FailedToWriteClipboard" xml:space="preserve">
     <value>Failed to write clipboard. It is locked by window "{0}" application "{1}"</value>
   </data>
-  <data name="translate" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Picture\translate.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="WordWrap" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Picture\word wrap.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="allMarks" xml:space="preserve">
     <value>all marks</value>
@@ -376,11 +424,14 @@
   <data name="NoActiveWindow" xml:space="preserve">
     <value>no target window</value>
   </data>
-  <data name="text_phone" xml:space="preserve">
-    <value>*phone</value>
+  <data name="DownloadPage" xml:space="preserve">
+    <value>https://sourceforge.net/projects/clip-angel/files/latest/download</value>
   </data>
   <data name="TypeRtf" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\TypeRtf.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="alienNoCapture" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Picture\alien - no capture .ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Top1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\Top1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -388,14 +439,14 @@
   <data name="TargetWindow" xml:space="preserve">
     <value>Target window</value>
   </data>
-  <data name="text" xml:space="preserve">
-    <value>text</value>
+  <data name="NoCapture" xml:space="preserve">
+    <value>No capture</value>
   </data>
-  <data name="FixedWidthFont" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Picture\FixedWidthFont.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Compare" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Picture\Compare.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ConfirmDeleteAllNonFavorite" xml:space="preserve">
-    <value>Are you sure want to delete all non favorite clips?</value>
+  <data name="Edit" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Picture\Edit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="FilteredStatusText" xml:space="preserve">
     <value>Filtered {0}</value>
@@ -406,6 +457,9 @@
   <data name="alien" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\alien.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="text_filename" xml:space="preserve">
+    <value>*filename</value>
+  </data>
   <data name="Search" xml:space="preserve">
     <value>Search</value>
   </data>
@@ -415,8 +469,8 @@
   <data name="img" xml:space="preserve">
     <value>img</value>
   </data>
-  <data name="ClipFileAlreadyOpened" xml:space="preserve">
-    <value>Clip file already opened and blocked</value>
+  <data name="FixedWidthFont" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Picture\FixedWidthFont.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="html" xml:space="preserve">
     <value>html</value>
@@ -424,61 +478,10 @@
   <data name="Columns" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\Columns.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Edit" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Picture\Edit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="MegaByteUnit" xml:space="preserve">
+    <value>MB</value>
   </data>
-  <data name="Tip 32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Picture\Tip 32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="NoCapture" xml:space="preserve">
-    <value>No capture</value>
-  </data>
-  <data name="alienNoCapture" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Picture\alien - no capture .ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="MonitoringOFF" xml:space="preserve">
-    <value>Clipboard monitoring now is OFF</value>
-  </data>
-  <data name="MonitoringON" xml:space="preserve">
-    <value>Clipboard monitoring now is ON</value>
-  </data>
-  <data name="text_1CLine" xml:space="preserve">
-    <value>*1C line</value>
-  </data>
-  <data name="Filter1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Picture\Filter.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Support" xml:space="preserve">
-    <value>https://sourceforge.net/p/clip-angel/tickets/new/</value>
-  </data>
-  <data name="WrongFileFormat" xml:space="preserve">
-    <value>Wrong file format</value>
-  </data>
-  <data name="filename" xml:space="preserve">
-    <value>filename</value>
-  </data>
-  <data name="text_filename" xml:space="preserve">
-    <value>*filename</value>
-  </data>
-  <data name="text_url_image" xml:space="preserve">
-    <value>*url-image</value>
-  </data>
-  <data name="text_url_video" xml:space="preserve">
-    <value>*url-video</value>
-  </data>
-  <data name="FailedChangeDatabaseFieEncryption" xml:space="preserve">
-    <value>Failed change database file encryption</value>
-  </data>
-  <data name="ConfirmDeleteSelectedClips" xml:space="preserve">
-    <value>Are you sure to delete selected clips?</value>
-  </data>
-  <data name="GlobalHotkeys" xml:space="preserve">
-    <value>Global hotkeys</value>
-  </data>
-  <data name="ConfirmResetChannel" xml:space="preserve">
-    <value>All connected devices will loose connection to channel. Are you sure want to reset clip send channel?</value>
-  </data>
-  <data name="TooBigClipForChannel" xml:space="preserve">
-    <value>Too big text for sending via channel. Max size - 10000 chars.</value>
+  <data name="Send" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Send.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

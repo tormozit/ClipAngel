@@ -288,6 +288,9 @@
     <EmbeddedResource Include="ConnectRecipientForm.resx">
       <DependentUpon>ConnectRecipientForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ConnectRecipientForm.ru.resx">
+      <DependentUpon>ConnectRecipientForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="HotkeyEditorForm.de.resx">
       <DependentUpon>HotkeyEditorForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -694,6 +697,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Picture\Filter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Send.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Multilingual App Toolkit\Microsoft.Multilingual.ResxResources.targets" Label="MultilingualAppToolkit" Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\Multilingual App Toolkit\v$(MultilingualAppToolkitVersion)\Microsoft.Multilingual.ResxResources.targets')" />

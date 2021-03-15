@@ -48,123 +48,92 @@
             // 
             // pictureBox
             // 
-            this.pictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox.Location = new System.Drawing.Point(13, 113);
+            resources.ApplyResources(this.pictureBox, "pictureBox");
+            this.pictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new System.Drawing.Size(681, 492);
-            this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox.TabIndex = 0;
             this.pictureBox.TabStop = false;
+            this.toolTip2.SetToolTip(this.pictureBox, resources.GetString("pictureBox.ToolTip"));
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(89, 34);
+            resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(60, 13);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Recipients:";
+            this.toolTip2.SetToolTip(this.label1, resources.GetString("label1.ToolTip"));
             // 
             // QuantityOfRecipients
             // 
-            this.QuantityOfRecipients.Location = new System.Drawing.Point(147, 34);
+            resources.ApplyResources(this.QuantityOfRecipients, "QuantityOfRecipients");
             this.QuantityOfRecipients.Name = "QuantityOfRecipients";
-            this.QuantityOfRecipients.Size = new System.Drawing.Size(20, 13);
-            this.QuantityOfRecipients.TabIndex = 3;
-            this.QuantityOfRecipients.Text = "QuantityOfRecipients";
+            this.toolTip2.SetToolTip(this.QuantityOfRecipients, resources.GetString("QuantityOfRecipients.ToolTip"));
             // 
             // buttonRefresh
             // 
-            this.buttonRefresh.Location = new System.Drawing.Point(13, 29);
+            resources.ApplyResources(this.buttonRefresh, "buttonRefresh");
             this.buttonRefresh.Name = "buttonRefresh";
-            this.buttonRefresh.Size = new System.Drawing.Size(60, 23);
-            this.buttonRefresh.TabIndex = 4;
-            this.buttonRefresh.Text = "Refresh";
-            this.toolTip2.SetToolTip(this.buttonRefresh, "Read recipients from channel");
+            this.toolTip2.SetToolTip(this.buttonRefresh, resources.GetString("buttonRefresh.ToolTip"));
             this.buttonRefresh.UseVisualStyleBackColor = true;
             this.buttonRefresh.Click += new System.EventHandler(this.buttonRefresh_Click);
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(89, 9);
+            resources.ApplyResources(this.label2, "label2");
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(78, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Channel name:";
+            this.toolTip2.SetToolTip(this.label2, resources.GetString("label2.ToolTip"));
             // 
             // textBoxChannelName
             // 
-            this.textBoxChannelName.Location = new System.Drawing.Point(167, 6);
+            resources.ApplyResources(this.textBoxChannelName, "textBoxChannelName");
             this.textBoxChannelName.Name = "textBoxChannelName";
             this.textBoxChannelName.ReadOnly = true;
-            this.textBoxChannelName.Size = new System.Drawing.Size(175, 20);
-            this.textBoxChannelName.TabIndex = 5;
+            this.toolTip2.SetToolTip(this.textBoxChannelName, resources.GetString("textBoxChannelName.ToolTip"));
             // 
             // buttonReset
             // 
-            this.buttonReset.Location = new System.Drawing.Point(13, 6);
+            resources.ApplyResources(this.buttonReset, "buttonReset");
             this.buttonReset.Name = "buttonReset";
-            this.buttonReset.Size = new System.Drawing.Size(60, 20);
-            this.buttonReset.TabIndex = 4;
-            this.buttonReset.Text = "Reset";
-            this.toolTip2.SetToolTip(this.buttonReset, "Clear all recipients of your channel and generate new crypto key");
+            this.toolTip2.SetToolTip(this.buttonReset, resources.GetString("buttonReset.ToolTip"));
             this.buttonReset.UseVisualStyleBackColor = true;
             this.buttonReset.Click += new System.EventHandler(this.buttonReset_Click);
             // 
             // label3
             // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.Location = new System.Drawing.Point(85, 57);
+            resources.ApplyResources(this.label3, "label3");
+            this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(609, 54);
-            this.label3.TabIndex = 6;
-            this.label3.Text = resources.GetString("label3.Text");
+            this.toolTip2.SetToolTip(this.label3, resources.GetString("label3.ToolTip"));
             // 
             // textBoxRecipients
             // 
-            this.textBoxRecipients.Location = new System.Drawing.Point(167, 31);
+            resources.ApplyResources(this.textBoxRecipients, "textBoxRecipients");
             this.textBoxRecipients.Name = "textBoxRecipients";
             this.textBoxRecipients.ReadOnly = true;
-            this.textBoxRecipients.Size = new System.Drawing.Size(376, 20);
-            this.textBoxRecipients.TabIndex = 5;
+            this.toolTip2.SetToolTip(this.textBoxRecipients, resources.GetString("textBoxRecipients.ToolTip"));
             // 
             // checkBoxShow
             // 
-            this.checkBoxShow.AutoSize = true;
-            this.checkBoxShow.Location = new System.Drawing.Point(13, 90);
+            resources.ApplyResources(this.checkBoxShow, "checkBoxShow");
             this.checkBoxShow.Name = "checkBoxShow";
-            this.checkBoxShow.Size = new System.Drawing.Size(72, 17);
-            this.checkBoxShow.TabIndex = 7;
-            this.checkBoxShow.Text = "Show QR";
+            this.toolTip2.SetToolTip(this.checkBoxShow, resources.GetString("checkBoxShow.ToolTip"));
             this.checkBoxShow.UseVisualStyleBackColor = true;
             this.checkBoxShow.CheckedChanged += new System.EventHandler(this.checkBoxShow_CheckedChanged);
             // 
             // textBoxSenderName
             // 
-            this.textBoxSenderName.Location = new System.Drawing.Point(434, 6);
+            resources.ApplyResources(this.textBoxSenderName, "textBoxSenderName");
             this.textBoxSenderName.Name = "textBoxSenderName";
             this.textBoxSenderName.ReadOnly = true;
-            this.textBoxSenderName.Size = new System.Drawing.Size(109, 20);
-            this.textBoxSenderName.TabIndex = 9;
+            this.toolTip2.SetToolTip(this.textBoxSenderName, resources.GetString("textBoxSenderName.ToolTip"));
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(356, 9);
+            resources.ApplyResources(this.label4, "label4");
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(73, 13);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "Sender name:";
+            this.toolTip2.SetToolTip(this.label4, resources.GetString("label4.ToolTip"));
             // 
             // ConnectRecipientForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(706, 617);
             this.Controls.Add(this.textBoxSenderName);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.checkBoxShow);
@@ -179,7 +148,7 @@
             this.Controls.Add(this.pictureBox);
             this.KeyPreview = true;
             this.Name = "ConnectRecipientForm";
-            this.Text = "Connect clip channel";
+            this.toolTip2.SetToolTip(this, resources.GetString("$this.ToolTip"));
             this.Load += new System.EventHandler(this.ConnectRecipientForm_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ConnectRecipientForm_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
