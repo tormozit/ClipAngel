@@ -29,6 +29,7 @@ namespace ClipAngel
             Main owner = (Main)Owner;
             await owner.CreateSendChannel();
             RefreshRecipients();
+            checkBoxShow_CheckedChanged();
         }
 
         private async void buttonRefresh_Click(object sender, EventArgs e)
@@ -64,7 +65,7 @@ namespace ClipAngel
             RefreshRecipients();
         }
 
-        private void checkBoxShow_CheckedChanged(object sender, EventArgs e)
+        private void checkBoxShow_CheckedChanged(object sender = null, EventArgs e = null)
         {
             if (checkBoxShow.Checked)
             {
@@ -74,8 +75,8 @@ namespace ClipAngel
                 var data = new
                 {
                     channel = textBoxChannelName.Text,
-                    key = key.key,
-                    IV = key.IV
+                    senderName = Environment.MachineName,
+                    key = key.key
                 };
                 string dataString = JsonConvert.SerializeObject(data);
                 QRCodeGenerator qrGenerator = new QRCodeGenerator();

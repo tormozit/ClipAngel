@@ -1884,7 +1884,10 @@ namespace ClipAngel
                 int newPosition = clipBindingSource.Find("Id", currentClipId);
                 allowRowLoad = false;
                 if (newPosition == -1)
+                {
                     UpdateSelectedClipsHistory();
+                    GotoLastRow();
+                }
                 else
                 {
                     // Calls SelectionChanged in DataGridView. Resets selectedRows!
@@ -5502,7 +5505,7 @@ namespace ClipAngel
                     IUIAutomationCondition cond2 = _automation.CreatePropertyCondition(UIA_ClassNamePropertyId, className);
                     IUIAutomationCondition cond = _automation.CreateAndCondition(cond1, cond2);
                     parent = mainWindow.FindFirst(TreeScope.TreeScope_Children, cond);
-                    if (parent != null)
+                    if (parent != null && parent.CurrentHasKeyboardFocus > 0)
                     {
                         parent.SetFocus();
                         //Stopwatch stopWatch2 = new Stopwatch();
@@ -7533,11 +7536,12 @@ namespace ClipAngel
             {
                 myAes.KeySize = 256;
                 myAes.GenerateKey();
-                myAes.GenerateIV();
+                //myAes.GenerateIV();
                 AESKey data = new AESKey
                 {
                     key = Convert.ToBase64String(myAes.Key),
-                    IV = Convert.ToBase64String(myAes.IV)
+                    //IV = Convert.ToBase64String(myAes.IV)
+                    IV = ""
                 };
                 string dataString = JsonConvert.SerializeObject(data);
                 File.WriteAllText(ChannelEncryptionKeyFileName(), dataString);
@@ -7547,6 +7551,7 @@ namespace ClipAngel
             await client.DeleteAsync(ChannelKeyUrl("recipients"));
             await client.DeleteAsync(ChannelKeyUrl("data"));
             await client.DeleteAsync(ChannelKeyUrl("dataDate"));
+            await client.DeleteAsync(ChannelKeyUrl("dataTimestamp"));
         }
 
         private async Task<string> setChannelKeyValue(string key, string value)
@@ -7587,6 +7592,7 @@ namespace ClipAngel
                 CreateSendChannel();
             string json = File.ReadAllText(ChannelEncryptionKeyFileName());
             AESKey keyData = JsonConvert.DeserializeObject<AESKey>(json);
+            keyData.IV = SecretData.CryptoIV();
             return keyData;
         }
 
@@ -7718,17 +7724,16 @@ namespace ClipAngel
                     to = pushID,
                     priority = "high",
                     content_available = true,
-                    notification = new
-                    {
-                        body = "Received clip from " + Environment.MachineName + " sent " + DateTime.Now,
-                        title = "Received clip",
-                        badge = 1
-                    },
+                    // this is wrong way
+                    //notification = new
+                    //{
+                    //    body = "Received clip from " + Environment.MachineName + " sent " + DateTime.Now,
+                    //    title = "Received clip",
+                    //    badge = 1
+                    //},
                     data = new
                     {
-                        channel = CurrentSendChannel(),
-                        sender = Environment.MachineName,
-                        time = DateTime.Now
+                        channel = CurrentSendChannel()
                     }
                 };
                 string postbody = JsonConvert.SerializeObject(payload);
@@ -7738,6 +7743,7 @@ namespace ClipAngel
                 {
                     dataStream.Write(byteArray, 0, byteArray.Length);
                     Properties.Settings.Default.ClipSendDate = DateTime.Now;
+                    Properties.Settings.Default.Save();
                     using (WebResponse tResponse = tRequest.GetResponse())
                     {
                         using (Stream dataStreamResponse = tResponse.GetResponseStream())

@@ -1594,8 +1594,8 @@ Die Generierung von Bildern erzeugt CPU-Last. Bei zu hoher, niedrigeren Wert fes
           <target state="translated">Clip wurde aufgrund eines Lesefehlers in der Zwischenablage nicht erfasst</target>
         </trans-unit>
         <trans-unit id="VersionValue" translate="yes" xml:space="preserve">
-          <source>1.94</source>
-          <target state="new">1.94</target>
+          <source>1.95</source>
+          <target state="new">1.95</target>
         </trans-unit>
         <trans-unit id="TargetWindow" translate="yes" xml:space="preserve">
           <source>Target window</source>
@@ -1700,6 +1700,10 @@ Die Generierung von Bildern erzeugt CPU-Last. Bei zu hoher, niedrigeren Wert fes
         <trans-unit id="ConfirmResetChannel" translate="yes" xml:space="preserve">
           <source>All connected devices will loose connection to channel. Are you sure want to reset clip send channel?</source>
           <target state="new">All connected devices will loose connection to channel. Are you sure want to reset clip send channel?</target>
+        </trans-unit>
+        <trans-unit id="TooBigClipForChannel" translate="yes" xml:space="preserve">
+          <source>Too big text for sending via channel. Max size - 10000 chars.</source>
+          <target state="new">Too big text for sending via channel. Max size - 10000 chars.</target>
         </trans-unit>
       </group>
     </body>
@@ -4390,8 +4394,8 @@ Clip-Datei mit Standardanwendung öffnen.
           <target state="final">253, 22</target>
         </trans-unit>
         <trans-unit id="contextMenuStripDataGrid.Size" translate="no" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
-          <source>222, 268</source>
-          <target state="final">222, 268</target>
+          <source>222, 312</source>
+          <target state="final">222, 312</target>
         </trans-unit>
         <trans-unit id="TypeFilter.Location" translate="yes" extype="System.Drawing.Point, System.Drawing" xml:space="preserve">
           <source>84, 395</source>
@@ -7065,10 +7069,6 @@ Bearbeite den Suchstring direkt aus der Liste. Navigiere in der Liste direkt aus
           <source>Connect recipient</source>
           <target state="new">Connect recipient</target>
         </trans-unit>
-        <trans-unit id="sendClipToolStripMenuItem.ShortcutKeys" translate="yes" xml:space="preserve" extype="System.Windows.Forms.Keys, System.Windows.Forms">
-          <source>F11</source>
-          <target state="needs-review-translation">F11</target>
-        </trans-unit>
         <trans-unit id="sendClipToolStripMenuItem.Size" translate="yes" xml:space="preserve" extype="System.Drawing.Size, System.Drawing">
           <source>168, 22</source>
           <target state="needs-review-translation">168, 22</target>
@@ -7084,6 +7084,26 @@ Bearbeite den Suchstring direkt aus der Liste. Navigiere in der Liste direkt aus
         <trans-unit id="clipChannelToolStripMenuItem.Text" translate="yes" xml:space="preserve">
           <source>Clip channel</source>
           <target state="new">Clip channel</target>
+        </trans-unit>
+        <trans-unit id="sendClipMenuItem.Size" translate="yes" xml:space="preserve" extype="System.Drawing.Size, System.Drawing">
+          <source>221, 22</source>
+          <target state="needs-review-translation">221, 22</target>
+        </trans-unit>
+        <trans-unit id="sendClipMenuItem.Text" translate="yes" xml:space="preserve">
+          <source>Send clip to channel</source>
+          <target state="new">Send clip to channel</target>
+        </trans-unit>
+        <trans-unit id="sendClipMenuItem.ToolTipText" translate="yes" xml:space="preserve">
+          <source>Send encrypted clip to all recipients of channel. </source>
+          <target state="new">Send encrypted clip to all recipients of channel. </target>
+        </trans-unit>
+        <trans-unit id="sendClipToolStripMenuItem.ToolTipText" translate="yes" xml:space="preserve">
+          <source>Send clip to all recipients of channel</source>
+          <target state="new">Send clip to all recipients of channel</target>
+        </trans-unit>
+        <trans-unit id="clipChannelToolStripMenuItem.ToolTipText" translate="yes" xml:space="preserve">
+          <source>Network channel for sending clip to other applications</source>
+          <target state="new">Network channel for sending clip to other applications</target>
         </trans-unit>
       </group>
     </body>
@@ -8804,9 +8824,9 @@ Nachlaufende nicht druckbare Symbole werden gelöscht.</target>
     </header>
     <body>
       <group id="CLIPANGEL/CONNECTRECIPIENTFORM.RESX" datatype="resx">
-        <trans-unit id="toolTip1.TrayLocation" translate="yes" xml:space="preserve" extype="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" extradata="metadata">
-          <source>17, 17</source>
-          <target state="needs-review-translation">17, 17</target>
+        <trans-unit id="toolTip2.TrayLocation" translate="yes" xml:space="preserve" extype="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" extradata="metadata">
+          <source>114, 17</source>
+          <target state="needs-review-translation">114, 17</target>
         </trans-unit>
       </group>
     </body>

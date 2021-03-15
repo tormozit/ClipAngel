@@ -120,4 +120,13 @@
   <metadata name="toolTip2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>114, 17</value>
   </metadata>
+  <data name="label3.Text" xml:space="preserve">
+    <value>You can open this window via menu &lt;Window&gt;/&lt;Connect clip channel&gt;.
+If you send clip to channel it will be sent encrypted via internet. Only devices connected to this channel will be able to decrypt it.
+Below is your private connection QR code. DO NOT SHOW IT to untrusted cameras.
+Open CLIPOID app on Android device and enter "Connect to channel" mode. Then aim device camera to this QR code.</value>
+  </data>
+  <metadata name="toolTip2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>114, 17</value>
+  </metadata>
 </root>

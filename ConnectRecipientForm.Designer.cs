@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConnectRecipientForm));
             this.pictureBox = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.QuantityOfRecipients = new System.Windows.Forms.Label();
@@ -50,9 +51,9 @@
             this.pictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox.Location = new System.Drawing.Point(13, 93);
+            this.pictureBox.Location = new System.Drawing.Point(13, 113);
             this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new System.Drawing.Size(608, 545);
+            this.pictureBox.Size = new System.Drawing.Size(681, 492);
             this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox.TabIndex = 0;
             this.pictureBox.TabStop = false;
@@ -117,14 +118,11 @@
             // 
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(72, 64);
+            this.label3.Location = new System.Drawing.Point(85, 57);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(546, 26);
+            this.label3.Size = new System.Drawing.Size(609, 54);
             this.label3.TabIndex = 6;
-            this.label3.Text = "Below is your private connection QR code. DO NOT SHOW IT to untrusted cameras.\r\nO" +
-    "pen ClipAndroid app on device and enter \"Connect to channel\" mode. Then aim devi" +
-    "ce camera to this QR code.";
+            this.label3.Text = resources.GetString("label3.Text");
             // 
             // textBoxRecipients
             // 
@@ -137,11 +135,11 @@
             // checkBoxShow
             // 
             this.checkBoxShow.AutoSize = true;
-            this.checkBoxShow.Location = new System.Drawing.Point(13, 69);
+            this.checkBoxShow.Location = new System.Drawing.Point(13, 90);
             this.checkBoxShow.Name = "checkBoxShow";
-            this.checkBoxShow.Size = new System.Drawing.Size(53, 17);
+            this.checkBoxShow.Size = new System.Drawing.Size(72, 17);
             this.checkBoxShow.TabIndex = 7;
-            this.checkBoxShow.Text = "Show";
+            this.checkBoxShow.Text = "Show QR";
             this.checkBoxShow.UseVisualStyleBackColor = true;
             this.checkBoxShow.CheckedChanged += new System.EventHandler(this.checkBoxShow_CheckedChanged);
             // 
@@ -166,7 +164,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(633, 650);
+            this.ClientSize = new System.Drawing.Size(706, 617);
             this.Controls.Add(this.textBoxSenderName);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.checkBoxShow);
@@ -181,7 +179,7 @@
             this.Controls.Add(this.pictureBox);
             this.KeyPreview = true;
             this.Name = "ConnectRecipientForm";
-            this.Text = "Connect recipient";
+            this.Text = "Connect clip channel";
             this.Load += new System.EventHandler(this.ConnectRecipientForm_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ConnectRecipientForm_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
