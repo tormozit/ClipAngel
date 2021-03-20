@@ -928,6 +928,10 @@
           <source>Too big text for sending via channel. Max size - 10000 chars.</source>
           <target state="new">Too big text for sending via channel. Max size - 10000 chars.</target>
         </trans-unit>
+        <trans-unit id="Send" translate="yes" xml:space="preserve" extype="System.Resources.ResXFileRef, System.Windows.Forms">
+          <source>..\Resources\Send.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</source>
+          <target state="needs-review-translation">..\Resources\Send.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</target>
+        </trans-unit>
       </group>
     </body>
   </file>
@@ -2644,7 +2648,8 @@ Url will be saved in current clip and will be copied to clipboard.</source>
         </trans-unit>
         <trans-unit id="tableLayoutPanelData.LayoutSettings" translate="yes" extype="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms" xml:space="preserve">
           <source><bpt id="1">&lt;TableLayoutSettings&gt;</bpt><bpt id="2">&lt;Controls&gt;</bpt><bpt id="3">&lt;Control Name="urlTextBox" Row="3" RowSpan="1" Column="0" ColumnSpan="1"&gt;</bpt><ept id="3">&lt;/Control&gt;</ept><bpt id="4">&lt;Control Name="richTextBox" Row="0" RowSpan="1" Column="0" ColumnSpan="1"&gt;</bpt><ept id="4">&lt;/Control&gt;</ept><bpt id="5">&lt;Control Name="htmlTextBox" Row="1" RowSpan="1" Column="0" ColumnSpan="1"&gt;</bpt><ept id="5">&lt;/Control&gt;</ept><bpt id="6">&lt;Control Name="ImageControl" Row="2" RowSpan="1" Column="0" ColumnSpan="1"&gt;</bpt><ept id="6">&lt;/Control&gt;</ept><ept id="2">&lt;/Controls&gt;</ept><bpt id="7">&lt;Columns Styles="Percent,100"&gt;</bpt><ept id="7">&lt;/Columns&gt;</ept><bpt id="8">&lt;Rows Styles="Percent,28,57143,Percent,28,57143,Percent,42,85714,Absolute,25,Absolute,20"&gt;</bpt><ept id="8">&lt;/Rows&gt;</ept><ept id="1">&lt;/TableLayoutSettings&gt;</ept></source>
-          <target state="translated"><bpt id="1">&lt;TableLayoutSettings&gt;</bpt><bpt id="2">&lt;Controls&gt;</bpt><bpt id="3">&lt;Control Name="urlTextBox" Row="3" RowSpan="1" Column="0" ColumnSpan="1"&gt;</bpt><ept id="3">&lt;/Control&gt;</ept><bpt id="4">&lt;Control Name="richTextBox" Row="0" RowSpan="1" Column="0" ColumnSpan="1"&gt;</bpt><ept id="4">&lt;/Control&gt;</ept><bpt id="5">&lt;Control Name="htmlTextBox" Row="1" RowSpan="1" Column="0" ColumnSpan="1"&gt;</bpt><ept id="5">&lt;/Control&gt;</ept><bpt id="6">&lt;Control Name="ImageControl" Row="2" RowSpan="1" Column="0" ColumnSpan="1"&gt;</bpt><ept id="6">&lt;/Control&gt;</ept><ept id="2">&lt;/Controls&gt;</ept><bpt id="7">&lt;Columns Styles="Percent,100"&gt;</bpt><ept id="7">&lt;/Columns&gt;</ept><bpt id="8">&lt;Rows Styles="Percent,28,57143,Percent,28,57143,Percent,42,85714,Absolute,25,Absolute,20"&gt;</bpt><ept id="8">&lt;/Rows&gt;</ept><ept id="1">&lt;/TableLayoutSettings&gt;</ept></target>
+          <target state="needs-review-translation"><bpt id="1">&lt;TableLayoutSettings&gt;</bpt><bpt id="2">&lt;Controls&gt;</bpt><bpt id="3">&lt;Control Name="urlTextBox" Row="3" RowSpan="1" Column="0" ColumnSpan="1"&gt;</bpt><ept id="3">&lt;/Control&gt;</ept><bpt id="4">&lt;Control Name="richTextBox" Row="0" RowSpan="1" Column="0" ColumnSpan="1"&gt;</bpt><ept id="4">&lt;/Control&gt;</ept><bpt id="5">&lt;Control Name="htmlTextBox" Row="1" RowSpan="1" Column="0" ColumnSpan="1"&gt;</bpt><ept id="5">&lt;/Control&gt;</ept><bpt id="6">&lt;Control Name="ImageControl" Row="2" RowSpan="1" Column="0" ColumnSpan="1"&gt;</bpt><ept id="6">&lt;/Control&gt;</ept><ept id="2">&lt;/Controls&gt;</ept><bpt id="7">&lt;Columns Styles="Percent,100"&gt;</bpt><ept id="7">&lt;/Columns&gt;</ept><bpt id="8">&lt;Rows Styles="Percent,28,57143,Percent,28,57143,Percent,42,85714,Absolute,25,Absolute,20"&gt;</bpt><ept id="8">&lt;/Rows&gt;</ept><ept id="1">&lt;/TableLayoutSettings&gt;</ept></target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="tableLayoutPanelData.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
           <source>412, 369</source>
@@ -4435,7 +4440,7 @@ Changes in temp file are not synchronized with clip!</source>
           <target state="translated">253, 22</target>
         </trans-unit>
         <trans-unit id="contextMenuStripDataGrid.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
-          <source>222, 312</source>
+          <source>222, 290</source>
           <target state="needs-review-translation">222, 268</target>
           <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
@@ -7127,28 +7132,22 @@ Edit search string right from list. Navigate in list right from search field.</s
           <target state="needs-review-translation">Ctrl+Alt+K</target>
         </trans-unit>
         <trans-unit id="connectRecipientToolStripMenuItem.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
-          <source>168, 22</source>
+          <source>212, 22</source>
           <target state="needs-review-translation">168, 22</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="connectRecipientToolStripMenuItem.Text" translate="yes" xml:space="preserve">
-          <source>Connect recipient</source>
-          <target state="new">Connect recipient</target>
+          <source>Connect clip channel</source>
+          <target state="new">Connect clip channel</target>
         </trans-unit>
         <trans-unit id="sendClipToolStripMenuItem.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
-          <source>168, 22</source>
+          <source>220, 22</source>
           <target state="needs-review-translation">168, 22</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="sendClipToolStripMenuItem.Text" translate="yes" xml:space="preserve">
-          <source>Send clip</source>
-          <target state="new">Send clip</target>
-        </trans-unit>
-        <trans-unit id="clipChannelToolStripMenuItem.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
-          <source>220, 22</source>
-          <target state="needs-review-translation">220, 22</target>
-        </trans-unit>
-        <trans-unit id="clipChannelToolStripMenuItem.Text" translate="yes" xml:space="preserve">
-          <source>Clip channel</source>
-          <target state="new">Clip channel</target>
+          <source>Send clip to channel</source>
+          <target state="new">Send clip to channel</target>
         </trans-unit>
         <trans-unit id="sendClipMenuItem.Size" translate="yes" xml:space="preserve" extype="System.Drawing.Size, System.Drawing">
           <source>221, 22</source>
@@ -7166,9 +7165,9 @@ Edit search string right from list. Navigate in list right from search field.</s
           <source>Send clip to all recipients of channel</source>
           <target state="new">Send clip to all recipients of channel</target>
         </trans-unit>
-        <trans-unit id="clipChannelToolStripMenuItem.ToolTipText" translate="yes" xml:space="preserve">
-          <source>Network channel for sending clip to other applications</source>
-          <target state="new">Network channel for sending clip to other applications</target>
+        <trans-unit id="connectRecipientToolStripMenuItem.ToolTipText" translate="yes" xml:space="preserve">
+          <source>Set up clip channel</source>
+          <target state="new">Set up clip channel</target>
         </trans-unit>
       </group>
     </body>
@@ -8912,6 +8911,280 @@ Trailing unprintable symbols are deleted.</source>
         <trans-unit id="toolTip2.TrayLocation" translate="yes" xml:space="preserve" extype="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" extradata="metadata">
           <source>114, 17</source>
           <target state="needs-review-translation">114, 17</target>
+        </trans-unit>
+        <trans-unit id="label1.Text" translate="yes" xml:space="preserve">
+          <source>Recipients:</source>
+          <target state="new">Recipients:</target>
+        </trans-unit>
+        <trans-unit id="buttonReset.Text" translate="yes" xml:space="preserve">
+          <source>Reset</source>
+          <target state="new">Reset</target>
+        </trans-unit>
+        <trans-unit id="buttonRefresh.TabIndex" translate="yes" xml:space="preserve" extype="System.Int32, mscorlib">
+          <source>4</source>
+          <target state="needs-review-translation">4</target>
+        </trans-unit>
+        <trans-unit id="checkBoxShow.Size" translate="yes" xml:space="preserve" extype="System.Drawing.Size, System.Drawing">
+          <source>72, 17</source>
+          <target state="needs-review-translation">72, 17</target>
+        </trans-unit>
+        <trans-unit id="buttonReset.Size" translate="yes" xml:space="preserve" extype="System.Drawing.Size, System.Drawing">
+          <source>70, 20</source>
+          <target state="needs-review-translation">70, 20</target>
+        </trans-unit>
+        <trans-unit id="buttonRefresh.ToolTip" translate="yes" xml:space="preserve">
+          <source>Read recipients from channel</source>
+          <target state="new">Read recipients from channel</target>
+        </trans-unit>
+        <trans-unit id="label3.Anchor" translate="yes" xml:space="preserve" extype="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+          <source>Top, Left, Right</source>
+          <target state="needs-review-translation">Top, Left, Right</target>
+        </trans-unit>
+        <trans-unit id="pictureBox.SizeMode" translate="yes" xml:space="preserve" extype="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+          <source>Zoom</source>
+          <target state="needs-review-translation">Zoom</target>
+        </trans-unit>
+        <trans-unit id="buttonReset.ToolTip" translate="yes" xml:space="preserve">
+          <source>Clear all recipients of your channel and generate new crypto key</source>
+          <target state="new">Clear all recipients of your channel and generate new crypto key</target>
+        </trans-unit>
+        <trans-unit id="buttonReset.Location" translate="yes" xml:space="preserve" extype="System.Drawing.Point, System.Drawing">
+          <source>13, 6</source>
+          <target state="needs-review-translation">13, 6</target>
+        </trans-unit>
+        <trans-unit id="label4.TabIndex" translate="yes" xml:space="preserve" extype="System.Int32, mscorlib">
+          <source>8</source>
+          <target state="needs-review-translation">8</target>
+        </trans-unit>
+        <trans-unit id="label2.ToolTip" translate="yes" xml:space="preserve">
+          <source></source>
+          <target state="new"></target>
+        </trans-unit>
+        <trans-unit id="label3.Size" translate="yes" xml:space="preserve" extype="System.Drawing.Size, System.Drawing">
+          <source>609, 54</source>
+          <target state="needs-review-translation">609, 54</target>
+        </trans-unit>
+        <trans-unit id="textBoxChannelName.TabIndex" translate="yes" xml:space="preserve" extype="System.Int32, mscorlib">
+          <source>5</source>
+          <target state="needs-review-translation">5</target>
+        </trans-unit>
+        <trans-unit id="label3.Location" translate="yes" xml:space="preserve" extype="System.Drawing.Point, System.Drawing">
+          <source>85, 57</source>
+          <target state="needs-review-translation">85, 57</target>
+        </trans-unit>
+        <trans-unit id="checkBoxShow.ToolTip" translate="yes" xml:space="preserve">
+          <source></source>
+          <target state="new"></target>
+        </trans-unit>
+        <trans-unit id="pictureBox.TabIndex" translate="yes" xml:space="preserve" extype="System.Int32, mscorlib">
+          <source>0</source>
+          <target state="needs-review-translation">0</target>
+        </trans-unit>
+        <trans-unit id="label1.TabIndex" translate="yes" xml:space="preserve" extype="System.Int32, mscorlib">
+          <source>2</source>
+          <target state="needs-review-translation">2</target>
+        </trans-unit>
+        <trans-unit id="textBoxSenderName.ToolTip" translate="yes" xml:space="preserve">
+          <source></source>
+          <target state="new"></target>
+        </trans-unit>
+        <trans-unit id="label1.Size" translate="yes" xml:space="preserve" extype="System.Drawing.Size, System.Drawing">
+          <source>64, 13</source>
+          <target state="needs-review-translation">64, 13</target>
+        </trans-unit>
+        <trans-unit id="checkBoxShow.TabIndex" translate="yes" xml:space="preserve" extype="System.Int32, mscorlib">
+          <source>7</source>
+          <target state="needs-review-translation">7</target>
+        </trans-unit>
+        <trans-unit id="label1.ToolTip" translate="yes" xml:space="preserve">
+          <source></source>
+          <target state="new"></target>
+        </trans-unit>
+        <trans-unit id="buttonRefresh.Location" translate="yes" xml:space="preserve" extype="System.Drawing.Point, System.Drawing">
+          <source>13, 29</source>
+          <target state="needs-review-translation">13, 29</target>
+        </trans-unit>
+        <trans-unit id="textBoxChannelName.ToolTip" translate="yes" xml:space="preserve">
+          <source></source>
+          <target state="new"></target>
+        </trans-unit>
+        <trans-unit id="label2.Size" translate="yes" xml:space="preserve" extype="System.Drawing.Size, System.Drawing">
+          <source>78, 13</source>
+          <target state="needs-review-translation">78, 13</target>
+        </trans-unit>
+        <trans-unit id="textBoxRecipients.TabIndex" translate="yes" xml:space="preserve" extype="System.Int32, mscorlib">
+          <source>5</source>
+          <target state="needs-review-translation">5</target>
+        </trans-unit>
+        <trans-unit id="QuantityOfRecipients.Text" translate="yes" xml:space="preserve">
+          <source>QuantityOfRecipients</source>
+          <target state="new">QuantityOfRecipients</target>
+        </trans-unit>
+        <trans-unit id="$this.ToolTip" translate="yes" xml:space="preserve">
+          <source></source>
+          <target state="new"></target>
+        </trans-unit>
+        <trans-unit id="label4.Text" translate="yes" xml:space="preserve">
+          <source>Sender name:</source>
+          <target state="new">Sender name:</target>
+        </trans-unit>
+        <trans-unit id="textBoxSenderName.TabIndex" translate="yes" xml:space="preserve" extype="System.Int32, mscorlib">
+          <source>9</source>
+          <target state="needs-review-translation">9</target>
+        </trans-unit>
+        <trans-unit id="textBoxChannelName.Size" translate="yes" xml:space="preserve" extype="System.Drawing.Size, System.Drawing">
+          <source>175, 20</source>
+          <target state="needs-review-translation">175, 20</target>
+        </trans-unit>
+        <trans-unit id="label4.Location" translate="yes" xml:space="preserve" extype="System.Drawing.Point, System.Drawing">
+          <source>356, 9</source>
+          <target state="needs-review-translation">356, 9</target>
+        </trans-unit>
+        <trans-unit id="label3.Text" translate="yes" xml:space="preserve">
+          <source>You can open this window via menu <it id="1" pos="open">&lt;Window&gt;</it>/<it id="2" pos="open">&lt;Connect clip channel&gt;</it>.
+If you send clip to channel it will be sent encrypted via internet. Only devices connected to this channel will be able to decrypt it. Below is your private connection QR code. DO NOT SHOW IT to untrusted cameras. Open CLIPOID app on Android device and enter "Connect to channel" mode. Then aim device camera to this QR code.</source>
+          <target state="new">You can open this window via menu <it id="1" pos="open">&lt;Window&gt;</it>/<it id="2" pos="open">&lt;Connect clip channel&gt;</it>.
+If you send clip to channel it will be sent encrypted via internet. Only devices connected to this channel will be able to decrypt it. Below is your private connection QR code. DO NOT SHOW IT to untrusted cameras. Open CLIPOID app on Android device and enter "Connect to channel" mode. Then aim device camera to this QR code.</target>
+        </trans-unit>
+        <trans-unit id="buttonRefresh.Size" translate="yes" xml:space="preserve" extype="System.Drawing.Size, System.Drawing">
+          <source>70, 23</source>
+          <target state="needs-review-translation">70, 23</target>
+        </trans-unit>
+        <trans-unit id="buttonRefresh.Text" translate="yes" xml:space="preserve">
+          <source>Refresh</source>
+          <target state="new">Refresh</target>
+        </trans-unit>
+        <trans-unit id="checkBoxShow.Location" translate="yes" xml:space="preserve" extype="System.Drawing.Point, System.Drawing">
+          <source>13, 90</source>
+          <target state="needs-review-translation">13, 90</target>
+        </trans-unit>
+        <trans-unit id="$this.AutoScaleDimensions" translate="yes" xml:space="preserve" extype="System.Drawing.SizeF, System.Drawing">
+          <source>6, 13</source>
+          <target state="needs-review-translation">6, 13</target>
+        </trans-unit>
+        <trans-unit id="pictureBox.Size" translate="yes" xml:space="preserve" extype="System.Drawing.Size, System.Drawing">
+          <source>681, 487</source>
+          <target state="needs-review-translation">681, 487</target>
+        </trans-unit>
+        <trans-unit id="label2.AutoSize" translate="yes" xml:space="preserve" extype="System.Boolean, mscorlib">
+          <source>True</source>
+          <target state="needs-review-translation">True</target>
+        </trans-unit>
+        <trans-unit id="pictureBox.Location" translate="yes" xml:space="preserve" extype="System.Drawing.Point, System.Drawing">
+          <source>12, 118</source>
+          <target state="needs-review-translation">12, 118</target>
+        </trans-unit>
+        <trans-unit id="textBoxSenderName.Size" translate="yes" xml:space="preserve" extype="System.Drawing.Size, System.Drawing">
+          <source>109, 20</source>
+          <target state="needs-review-translation">109, 20</target>
+        </trans-unit>
+        <trans-unit id="QuantityOfRecipients.ToolTip" translate="yes" xml:space="preserve">
+          <source></source>
+          <target state="new"></target>
+        </trans-unit>
+        <trans-unit id="QuantityOfRecipients.TabIndex" translate="yes" xml:space="preserve" extype="System.Int32, mscorlib">
+          <source>3</source>
+          <target state="needs-review-translation">3</target>
+        </trans-unit>
+        <trans-unit id="label4.ToolTip" translate="yes" xml:space="preserve">
+          <source></source>
+          <target state="new"></target>
+        </trans-unit>
+        <trans-unit id="QuantityOfRecipients.Size" translate="yes" xml:space="preserve" extype="System.Drawing.Size, System.Drawing">
+          <source>13, 13</source>
+          <target state="needs-review-translation">13, 13</target>
+        </trans-unit>
+        <trans-unit id="textBoxSenderName.Location" translate="yes" xml:space="preserve" extype="System.Drawing.Point, System.Drawing">
+          <source>434, 6</source>
+          <target state="needs-review-translation">434, 6</target>
+        </trans-unit>
+        <trans-unit id="label1.Location" translate="yes" xml:space="preserve" extype="System.Drawing.Point, System.Drawing">
+          <source>88, 34</source>
+          <target state="needs-review-translation">88, 34</target>
+        </trans-unit>
+        <trans-unit id="label2.Text" translate="yes" xml:space="preserve">
+          <source>Channel name:</source>
+          <target state="new">Channel name:</target>
+        </trans-unit>
+        <trans-unit id="buttonReset.TabIndex" translate="yes" xml:space="preserve" extype="System.Int32, mscorlib">
+          <source>4</source>
+          <target state="needs-review-translation">4</target>
+        </trans-unit>
+        <trans-unit id="label4.AutoSize" translate="yes" xml:space="preserve" extype="System.Boolean, mscorlib">
+          <source>True</source>
+          <target state="needs-review-translation">True</target>
+        </trans-unit>
+        <trans-unit id="label2.Location" translate="yes" xml:space="preserve" extype="System.Drawing.Point, System.Drawing">
+          <source>88, 9</source>
+          <target state="needs-review-translation">88, 9</target>
+        </trans-unit>
+        <trans-unit id="textBoxRecipients.Location" translate="yes" xml:space="preserve" extype="System.Drawing.Point, System.Drawing">
+          <source>167, 31</source>
+          <target state="needs-review-translation">167, 31</target>
+        </trans-unit>
+        <trans-unit id="textBoxRecipients.ToolTip" translate="yes" xml:space="preserve">
+          <source></source>
+          <target state="new"></target>
+        </trans-unit>
+        <trans-unit id="label4.Size" translate="yes" xml:space="preserve" extype="System.Drawing.Size, System.Drawing">
+          <source>73, 13</source>
+          <target state="needs-review-translation">73, 13</target>
+        </trans-unit>
+        <trans-unit id="checkBoxShow.Text" translate="yes" xml:space="preserve">
+          <source>Show QR</source>
+          <target state="new">Show QR</target>
+        </trans-unit>
+        <trans-unit id="pictureBox.Anchor" translate="yes" xml:space="preserve" extype="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+          <source>Top, Bottom, Left, Right</source>
+          <target state="needs-review-translation">Top, Bottom, Left, Right</target>
+        </trans-unit>
+        <trans-unit id="label3.ToolTip" translate="yes" xml:space="preserve">
+          <source></source>
+          <target state="new"></target>
+        </trans-unit>
+        <trans-unit id="checkBoxShow.AutoSize" translate="yes" xml:space="preserve" extype="System.Boolean, mscorlib">
+          <source>True</source>
+          <target state="needs-review-translation">True</target>
+        </trans-unit>
+        <trans-unit id="$this.Text" translate="yes" xml:space="preserve">
+          <source>Connect clip channel</source>
+          <target state="new">Connect clip channel</target>
+        </trans-unit>
+        <trans-unit id="textBoxRecipients.Size" translate="yes" xml:space="preserve" extype="System.Drawing.Size, System.Drawing">
+          <source>376, 20</source>
+          <target state="needs-review-translation">376, 20</target>
+        </trans-unit>
+        <trans-unit id="$this.ClientSize" translate="yes" xml:space="preserve" extype="System.Drawing.Size, System.Drawing">
+          <source>706, 617</source>
+          <target state="needs-review-translation">706, 617</target>
+        </trans-unit>
+        <trans-unit id="label3.TabIndex" translate="yes" xml:space="preserve" extype="System.Int32, mscorlib">
+          <source>6</source>
+          <target state="needs-review-translation">6</target>
+        </trans-unit>
+        <trans-unit id="textBoxChannelName.Location" translate="yes" xml:space="preserve" extype="System.Drawing.Point, System.Drawing">
+          <source>167, 6</source>
+          <target state="needs-review-translation">167, 6</target>
+        </trans-unit>
+        <trans-unit id="QuantityOfRecipients.Location" translate="yes" xml:space="preserve" extype="System.Drawing.Point, System.Drawing">
+          <source>152, 34</source>
+          <target state="needs-review-translation">152, 34</target>
+        </trans-unit>
+        <trans-unit id="pictureBox.ToolTip" translate="yes" xml:space="preserve">
+          <source></source>
+          <target state="new"></target>
+        </trans-unit>
+        <trans-unit id="label2.TabIndex" translate="yes" xml:space="preserve" extype="System.Int32, mscorlib">
+          <source>2</source>
+          <target state="needs-review-translation">2</target>
+        </trans-unit>
+        <trans-unit id="$this.Localizable" translate="yes" xml:space="preserve" extype="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" extradata="metadata">
+          <source>True</source>
+          <target state="needs-review-translation">True</target>
+        </trans-unit>
+        <trans-unit id="$this.Language" translate="yes" xml:space="preserve" extype="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" extradata="metadata">
+          <source>ru</source>
+          <target state="needs-review-translation">ru</target>
         </trans-unit>
       </group>
     </body>

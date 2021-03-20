@@ -2749,9 +2749,6 @@ Url वर्तमान क्लिप में सहेजे जाएँ
   <data name="sendClipToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>168, 22</value>
   </data>
-  <data name="clipChannelToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
-    <value>220, 22</value>
-  </data>
   <data name="sendClipMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>221, 22</value>
   </data>

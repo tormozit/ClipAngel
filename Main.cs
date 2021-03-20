@@ -71,9 +71,17 @@ namespace ClipAngel
 
         public string DbFileName;
         SQLiteConnection m_dbConnection;
+        SQLiteDataAdapter backgroundDataAdapter;
         public string ConnectionString;
 
-        SQLiteDataAdapter dataAdapter;
+        SQLiteDataAdapter globalDataAdapter;
+
+        private struct ReloadTask
+        {
+            Task task;
+            private SQLiteConnection DBConnection;
+        };
+        ReloadTask[] tasks;
 
         //bool CaptureClipboard = true;
         bool allowRowLoad = true;
@@ -81,6 +89,8 @@ namespace ClipAngel
         //bool AutoGotoLastRow = true;
         bool AllowHotkeyProcess = true;
 
+        private Task<DataTable> lastReloadListTask;
+        private DateTime lastReloadListTime;
         bool EditMode = false;
         SQLiteDataReader LoadedClipRowReader;
         int LastId = 0;
@@ -525,9 +535,9 @@ namespace ClipAngel
             //catch { };
 
             // https://msdn.microsoft.com/ru-ru/library/fbk67b6z(v=vs.110).aspx
-            dataAdapter = new SQLiteDataAdapter("", m_dbConnection);
+            globalDataAdapter = new SQLiteDataAdapter("", m_dbConnection);
             //dataGridView.DataSource = clipBindingSource;
-            UpdateClipBindingSource();
+            ReloadList();
         }
 
         private void UpdateNewDBFieldsBackground(SQLiteCommand commandUpdate, string fieldsNeedUpdateText, string fieldsNeedSelectText, StringCollection patternNamesNeedUpdate)
@@ -1594,13 +1604,16 @@ namespace ClipAngel
             }
         }
 
-        private void SearchStringApply()
+        async private void SearchStringApply()
         {
             ReadSearchString();
             searchMatchedIDs.Clear();
             if (ClipAngel.Properties.Settings.Default.FilterListBySearchString)
-                UpdateClipBindingSource(true);
+            {
+                ReloadList(true);
+            }
             else
+
             {
                 UpdateSearchMatchedIDs();
                 foreach (DataGridViewRow row in dataGridView.Rows)
@@ -1698,17 +1711,17 @@ namespace ClipAngel
             }
         }
 
-        private void UpdateClipBindingSource(bool forceRowLoad = false, int currentClipId = 0, bool keepTextSelectionIfIDChanged = false, List<int> selectedClipIDs = null)
+        async private void ReloadList(bool forceRowLoad = false, int currentClipId = 0, bool keepTextSelectionIfIDChanged = false, List<int> selectedClipIDs = null)
         {
+            if (globalDataAdapter == null)
+                return;
             if (!(this.Visible && this.ContainsFocus))
                 sortField = "Id";
-            if (dataAdapter == null)
-                return;
             if (EditMode)
-                SaveClipText();
+                SaveClipText(); string TypeFilterSelectedValue = TypeFilter.SelectedValue as string;
             if (currentClipId == 0 && clipBindingSource.Current != null)
             {
-                currentClipId = (int) (clipBindingSource.Current as DataRowView).Row["Id"];
+                currentClipId = (int)(clipBindingSource.Current as DataRowView).Row["Id"];
                 if (dataGridView.SelectedRows.Count > 1 && selectedClipIDs == null)
                 {
                     selectedClipIDs = new List<int>();
@@ -1716,68 +1729,30 @@ namespace ClipAngel
                     {
                         if (selectedRow == null)
                             continue;
-                        DataRowView dataRow = (DataRowView) selectedRow.DataBoundItem;
-                        selectedClipIDs.Insert(0, (int) dataRow["Id"]);
+                        DataRowView dataRow = (DataRowView)selectedRow.DataBoundItem;
+                        selectedClipIDs.Insert(0, (int)dataRow["Id"]);
                     }
                 }
             }
-            allowRowLoad = false;
-            bool oldFilterOn = filterOn;
-            filterOn = false;
-            string sqlFilter = "1 = 1";
-            string filterValue = "";
-            if (!String.IsNullOrEmpty(searchString) && ClipAngel.Properties.Settings.Default.FilterListBySearchString)
+            string MarkFilterSelectedValue = MarkFilter.SelectedValue as string;
+            DateTime monthCalendar1SelectionStart = monthCalendar1.SelectionStart;
+            DateTime monthCalendar1SelectionEnd = monthCalendar1.SelectionEnd;
+            Task<DataTable> reloadListTask = Task.Run(() => ReloadListAsync(TypeFilterSelectedValue, MarkFilterSelectedValue, monthCalendar1SelectionStart, monthCalendar1SelectionEnd));
+            lastReloadListTask = reloadListTask;
+            DataTable table = await reloadListTask;
+            if (true
+                && lastReloadListTask != null
+                && lastReloadListTask != reloadListTask
+                //&& (false
+                //    || lastReloadListTask.IsCompleted 
+                //    || (true 
+                //        && lastReloadListTime != null
+                //        && DateDiffMilliseconds(lastReloadListTime, DateTime.Now) < 5000))
+               )
             {
-                sqlFilter += SqlSearchFilter();
-                filterOn = true;
-                if (ClipAngel.Properties.Settings.Default.SearchIgnoreBigTexts)
-                    sqlFilter += " AND (Chars < 100000 OR type = 'img')";
+                return;
             }
-            if (TypeFilter.SelectedValue as string != "allTypes")
-            {
-                filterValue = TypeFilter.SelectedValue as string;
-                bool isText = filterValue.Contains("text");
-                string filterValueText;
-                if (isText)
-                    filterValueText = "'html','rtf','text'";
-                else
-                    filterValueText = "'" + filterValue + "'";
-                sqlFilter += " AND type IN (" + filterValueText + ")";
-                if (isText && filterValue != "text")
-                {
-                    sqlFilter += String.Format(" AND Contain_{0}", filterValue.Substring("text_".Length));
-                }
-                filterOn = true;
-            }
-            if (MarkFilter.SelectedValue as string != "allMarks")
-            {
-                filterValue = MarkFilter.SelectedValue as string;
-                sqlFilter += " AND " + filterValue;
-                filterOn = true;
-            }
-            if (periodFilterOn)
-            {
-                sqlFilter += " AND Created BETWEEN @startDate AND @endDate ";
-                dataAdapter.SelectCommand.Parameters.AddWithValue("startDate", monthCalendar1.SelectionStart);
-                dataAdapter.SelectCommand.Parameters.AddWithValue("endDate", monthCalendar1.SelectionEnd);
-                filterOn = true;
-            }
-            if (!oldFilterOn && filterOn)
-                selectedClipsBeforeFilterApply.Clear();
-            // Dublicated code 8gfd8843
-            //string selectCommandText = "Select Id, Used, Title, Chars, Type, Favorite, ImageSample, AppPath, Size, Created From Clips";
-            string selectCommandText = "Select Id, NULL AS Used, NULL AS Title, NULL AS Chars, NULL AS Type, NULL AS Favorite, NULL AS ImageSample, NULL AS AppPath, NULL AS Size, NULL AS Created From Clips";
-            selectCommandText += " WHERE " + sqlFilter;
-            selectCommandText += " ORDER BY " + sortField + " desc";
-            if (ClipAngel.Properties.Settings.Default.SearchCaseSensitive)
-                selectCommandText = "PRAGMA case_sensitive_like = 1; " + selectCommandText;
-            else
-                selectCommandText = "PRAGMA case_sensitive_like = 0; " + selectCommandText;
-            dataAdapter.SelectCommand.CommandText = selectCommandText;
-
-            DataTable table = new DataTable();
-            table.Locale = CultureInfo.InvariantCulture;
-            dataAdapter.Fill(table);
+            lastReloadListTime = DateTime.Now;
             clipBindingSource.DataSource = table;
             stripLabelPosition.Spring = false;
             stripLabelPosition.Width = 50;
@@ -1802,14 +1777,14 @@ namespace ClipAngel
             if (LastId == 0)
             {
                 GotoLastRow();
-                DataRowView lastRow = (DataRowView) clipBindingSource.Current;
+                DataRowView lastRow = (DataRowView)clipBindingSource.Current;
                 if (lastRow == null)
                 {
                     LastId = 0;
                 }
                 else
                 {
-                    LastId = (int) lastRow["Id"];
+                    LastId = (int)lastRow["Id"];
                 }
             }
             else
@@ -1830,6 +1805,80 @@ namespace ClipAngel
             }
             allowRowLoad = true;
             //AutoGotoLastRow = false;
+        }
+
+        private async Task<DataTable> ReloadListAsync(string TypeFilterSelectedValue, string MarkFilterSelectedValue, DateTime monthCalendar1SelectionStart, DateTime monthCalendar1SelectionEnd)
+        {
+            if (backgroundDataAdapter != null)
+            {
+                backgroundDataAdapter.SelectCommand.Cancel();
+            }
+            backgroundDataAdapter = new SQLiteDataAdapter("", m_dbConnection);
+            allowRowLoad = false;
+            bool oldFilterOn = filterOn;
+            filterOn = false;
+            string sqlFilter = "1 = 1";
+            string filterValue = "";
+            if (!String.IsNullOrEmpty(searchString) && ClipAngel.Properties.Settings.Default.FilterListBySearchString)
+            {
+                sqlFilter += SqlSearchFilter();
+                filterOn = true;
+                if (ClipAngel.Properties.Settings.Default.SearchIgnoreBigTexts)
+                    sqlFilter += " AND (Chars < 100000 OR type = 'img')";
+            }
+            if (TypeFilterSelectedValue as string != "allTypes")
+            {
+                filterValue = TypeFilterSelectedValue as string;
+                bool isText = filterValue.Contains("text");
+                string filterValueText;
+                if (isText)
+                    filterValueText = "'html','rtf','text'";
+                else
+                    filterValueText = "'" + filterValue + "'";
+                sqlFilter += " AND type IN (" + filterValueText + ")";
+                if (isText && filterValue != "text")
+                {
+                    sqlFilter += String.Format(" AND Contain_{0}", filterValue.Substring("text_".Length));
+                }
+                filterOn = true;
+            }
+            if (MarkFilterSelectedValue as string != "allMarks")
+            {
+                filterValue = MarkFilterSelectedValue as string;
+                sqlFilter += " AND " + filterValue;
+                filterOn = true;
+            }
+            if (periodFilterOn)
+            {
+                sqlFilter += " AND Created BETWEEN @startDate AND @endDate ";
+                backgroundDataAdapter.SelectCommand.Parameters.AddWithValue("startDate", monthCalendar1SelectionStart);
+                backgroundDataAdapter.SelectCommand.Parameters.AddWithValue("endDate", monthCalendar1SelectionEnd);
+                filterOn = true;
+            }
+            if (!oldFilterOn && filterOn)
+                selectedClipsBeforeFilterApply.Clear();
+            // Dublicated code 8gfd8843
+            //string selectCommandText = "Select Id, Used, Title, Chars, Type, Favorite, ImageSample, AppPath, Size, Created From Clips";
+            string selectCommandText = "Select Id, NULL AS Used, NULL AS Title, NULL AS Chars, NULL AS Type, NULL AS Favorite, NULL AS ImageSample, NULL AS AppPath, NULL AS Size, NULL AS Created From Clips";
+            selectCommandText += " WHERE " + sqlFilter;
+            selectCommandText += " ORDER BY " + sortField + " desc";
+            if (ClipAngel.Properties.Settings.Default.SearchCaseSensitive)
+                selectCommandText = "PRAGMA case_sensitive_like = 1; " + selectCommandText;
+            else
+                selectCommandText = "PRAGMA case_sensitive_like = 0; " + selectCommandText;
+            backgroundDataAdapter.SelectCommand.CommandText = selectCommandText;
+
+            DataTable table = new DataTable();
+            table.Locale = CultureInfo.InvariantCulture;
+            try
+            {
+                backgroundDataAdapter.Fill(table);
+            }
+            catch (Exception e)
+            {
+                int dummy = 0;
+            }
+            return table;
         }
 
         private string SqlSearchFilter()
@@ -1918,7 +1967,7 @@ namespace ClipAngel
                     MarkFilter.SelectedIndex = 0;
                 AllowFilterProcessing = true;
                 //UpdateClipBindingSource(false, CurrentClipID);
-                UpdateClipBindingSource(true, CurrentClipID); // To repaint text
+                ReloadList(true, CurrentClipID); // To repaint text
             }
             else if (CurrentClipID != 0)
                 RestoreSelectedCurrentClip(false, CurrentClipID);
@@ -2356,7 +2405,7 @@ namespace ClipAngel
                     updateList = updateList || clipAdded;
                 }
                 if(updateList)
-                    UpdateClipBindingSource();
+                    ReloadList();
             }
             finally
             {
@@ -2658,7 +2707,7 @@ namespace ClipAngel
             //if (this.Visible)
             //{
             if (updateList)
-                UpdateClipBindingSource(false, 0, oldCurrentClipId > 0);
+                ReloadList(false, 0, oldCurrentClipId > 0);
             if (true
                 && applicationText == "ScreenshotReader"
                 && IsTextType(typeText)
@@ -3391,7 +3440,7 @@ namespace ClipAngel
             ////Row[fieldName] = newValue;
             ////dataAdapter.Update(dbDataSet);
             if (allSelected)
-                UpdateClipBindingSource(true);
+                ReloadList(true);
             else
             {
                 LoadRowReader();
@@ -4730,7 +4779,7 @@ namespace ClipAngel
         {
             DeleteOldClips();
             DeleteExcessClips();
-            UpdateClipBindingSource();
+            ReloadList();
         }
 
         private class ListItemNameText
@@ -5505,7 +5554,7 @@ namespace ClipAngel
                     IUIAutomationCondition cond2 = _automation.CreatePropertyCondition(UIA_ClassNamePropertyId, className);
                     IUIAutomationCondition cond = _automation.CreateAndCondition(cond1, cond2);
                     parent = mainWindow.FindFirst(TreeScope.TreeScope_Children, cond);
-                    if (parent != null && parent.CurrentHasKeyboardFocus > 0)
+                    if (parent != null)
                     {
                         parent.SetFocus();
                         //Stopwatch stopWatch2 = new Stopwatch();
@@ -5544,7 +5593,7 @@ namespace ClipAngel
         {
             if (AllowFilterProcessing)
             {
-                UpdateClipBindingSource(true);
+                ReloadList(true);
             }
         }
 
@@ -5779,7 +5828,7 @@ namespace ClipAngel
                         newTitle = inputResult.Text;
                     command.Parameters.AddWithValue("@Title", newTitle);
                     command.ExecuteNonQuery();
-                    UpdateClipBindingSource(true);
+                    ReloadList(true);
                 }
             }
         }
@@ -5798,7 +5847,7 @@ namespace ClipAngel
         {
             if (AllowFilterProcessing)
             {
-                UpdateClipBindingSource();
+                ReloadList();
             }
         }
 
@@ -5966,7 +6015,7 @@ namespace ClipAngel
             }
             List <int> ids = order.Select(d => d.Value).ToList();
             ids.Reverse();
-            UpdateClipBindingSource(false, newCurrentID, true, ids);
+            ReloadList(false, newCurrentID, true, ids);
         }
 
         private void RegisterClipIdChange(int oldID, int newID)
@@ -6183,7 +6232,7 @@ namespace ClipAngel
             allowRowLoad = false;
             if (!newEditMode)
             {
-                UpdateClipBindingSource();
+                ReloadList();
             }
             else
             {
@@ -6246,8 +6295,8 @@ namespace ClipAngel
 
         private void timerApplySearchString_Tick(object sender = null, EventArgs e = null)
         {
-            SearchStringApply();
             timerApplySearchString.Stop();
+            SearchStringApply();
         }
 
         private void dataGridView_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
@@ -6898,7 +6947,7 @@ namespace ClipAngel
             if (result != DialogResult.OK)
                 return;
             deleteAllNonFavoriteClips();
-            UpdateClipBindingSource();
+            ReloadList();
         }
 
         private void deleteAllNonFavoriteClips()
@@ -7243,7 +7292,7 @@ namespace ClipAngel
         {
             monthCalendar1.Hide();
             periodFilterOn = true;
-            UpdateClipBindingSource();
+            ReloadList();
 
             // Turn on secodnary columns
             if (!ClipAngel.Properties.Settings.Default.ShowSecondaryColumns)
@@ -7286,26 +7335,26 @@ namespace ClipAngel
         private void sortByDefaultToolStripMenuItem_Click(object sender, EventArgs e)
         {
             sortField = "Clips.Id";
-            UpdateClipBindingSource();
+            ReloadList();
         }
 
         private void sortByVisualSizeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //sortField = "Chars"; // not working
             sortField = "Clips.Chars";
-            UpdateClipBindingSource();
+            ReloadList();
         }
 
         private void sortByCreationDateToolStripMenuItem_Click(object sender, EventArgs e)
         {
             sortField = "Clips.Created";
-            UpdateClipBindingSource();
+            ReloadList();
         }
 
         private void toolStripMenuItem20_Click(object sender, EventArgs e)
         {
             sortField = "Clips.Size";
-            UpdateClipBindingSource();
+            ReloadList();
         }
 
         private void toolStripButtonSecondaryColumns_Click(object sender, EventArgs e)
@@ -7393,7 +7442,7 @@ namespace ClipAngel
             UpdateControlsStates();
             if (!ClipAngel.Properties.Settings.Default.FilterListBySearchString)
             {
-                UpdateClipBindingSource();
+                ReloadList();
                 UpdateSearchMatchedIDs();
             }
             else
@@ -7452,17 +7501,17 @@ namespace ClipAngel
                 DataRowView dataRow = (DataRowView)selectedRow.DataBoundItem;
                 string parameterName = "@Id" + counter;
                 sql += "," + parameterName;
-                dataAdapter.SelectCommand.Parameters.Add(parameterName, DbType.Int32).Value = dataRow["Id"];
+                globalDataAdapter.SelectCommand.Parameters.Add(parameterName, DbType.Int32).Value = dataRow["Id"];
                 counter++;
                 if (counter == 999) // SQLITE_MAX_VARIABLE_NUMBER, which defaults to 999, but can be lowered at runtime
                     break;
             }
             sql += ")";
-            dataAdapter.SelectCommand.CommandText = sql;
+            globalDataAdapter.SelectCommand.CommandText = sql;
             DataTable dataTable = new DataTable();
             dataTable.TableName = "ClipAngelClips";
             dataTable.Locale = CultureInfo.InvariantCulture;
-            dataAdapter.Fill(dataTable);
+            globalDataAdapter.Fill(dataTable);
             dataTable.WriteXml(saveFileDialog.FileName, XmlWriteMode.WriteSchema);
         }
 
@@ -7490,7 +7539,7 @@ namespace ClipAngel
                     importedRow["application"].ToString(), importedRow["window"].ToString(), importedRow["url"].ToString(), Convert.ToInt32(importedRow["chars"].ToString()),
                     importedRow["AppPath"].ToString(), false, Convert.ToBoolean(importedRow["Favorite"].ToString()), false, importedRow["title"].ToString());
             }
-            UpdateClipBindingSource();
+            ReloadList();
         }
 
         private void saveAsFileMenuItem_Click(object sender, EventArgs e)
@@ -7632,7 +7681,7 @@ namespace ClipAngel
             NetworkInterface[] adapters = NetworkInterface.GetAllNetworkInterfaces();
             if (adapters != null && adapters.Length >= 0)
             {
-                for (int stage = 1; stage < 3; stage++)
+                for (int stage = 1; stage <= 2; stage++)
                 {
                     foreach (NetworkInterface adapter in adapters)
                     {
@@ -7650,6 +7699,8 @@ namespace ClipAngel
                     }
                     if (MAC == Properties.Settings.Default.ChannelMAC)
                         break;
+                    else
+                    {    string dummy = ""; }
                 }
             }
             return MAC;

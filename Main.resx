@@ -4108,6 +4108,12 @@ Changes in temp file are not synchronized with clip!
   <data name="&gt;&gt;toolStripMenuItemPasteChars.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;sendClipToolStripMenuItem.Name" xml:space="preserve">
+    <value>sendClipToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;sendClipToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;toolStripMenuItem8.Name" xml:space="preserve">
     <value>toolStripMenuItem8</value>
   </data>
@@ -4232,12 +4238,6 @@ Changes in temp file are not synchronized with clip!
     <value>decodeTextToolStripMenuItem</value>
   </data>
   <data name="&gt;&gt;decodeTextToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;sendClipToolStripMenuItem.Name" xml:space="preserve">
-    <value>sendClipToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;sendClipToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;settingsToolStripMenuItem1.Name" xml:space="preserve">

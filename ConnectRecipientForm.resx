@@ -117,14 +117,15 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="&gt;&gt;QuantityOfRecipients.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
   <data name="label1.Text" xml:space="preserve">
     <value>Recipients:</value>
   </data>
-  <data name="&gt;&gt;textBoxChannelName.ZOrder" xml:space="preserve">
-    <value>5</value>
+  <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="textBoxChannelName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>167, 6</value>
   </data>
   <data name="buttonReset.Text" xml:space="preserve">
     <value>Reset</value>
@@ -145,7 +146,6 @@
   <data name="&gt;&gt;checkBoxShow.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="checkBoxShow.Size" type="System.Drawing.Size, System.Drawing">
     <value>72, 17</value>
   </data>
@@ -154,6 +154,9 @@
   </data>
   <data name="buttonRefresh.ToolTip" xml:space="preserve">
     <value>Read recipients from channel</value>
+  </data>
+  <data name="label4.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="&gt;&gt;toolTip2.Name" xml:space="preserve">
     <value>toolTip2</value>
@@ -171,8 +174,8 @@
   <data name="pictureBox.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>Zoom</value>
   </data>
-  <data name="&gt;&gt;textBoxRecipients.ZOrder" xml:space="preserve">
-    <value>4</value>
+  <data name="&gt;&gt;pictureBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="buttonReset.ToolTip" xml:space="preserve">
     <value>Clear all recipients of your channel and generate new crypto key</value>
@@ -207,9 +210,6 @@
   <data name="&gt;&gt;QuantityOfRecipients.Name" xml:space="preserve">
     <value>QuantityOfRecipients</value>
   </data>
-  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
   <data name="textBoxChannelName.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
@@ -222,11 +222,14 @@
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
     <value>10</value>
   </data>
+  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="buttonReset.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
   <data name="checkBoxShow.ToolTip" xml:space="preserve">
     <value />
-  </data>
-  <data name="pictureBox.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
   </data>
   <data name="label1.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -294,14 +297,14 @@
   <data name="&gt;&gt;pictureBox.ZOrder" xml:space="preserve">
     <value>11</value>
   </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="textBoxSenderName.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
   </data>
   <data name="textBoxChannelName.Size" type="System.Drawing.Size, System.Drawing">
     <value>175, 20</value>
-  </data>
-  <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>356, 9</value>
   </data>
   <data name="label3.Text" xml:space="preserve">
     <value>You can open this window via menu &lt;Window&gt;/&lt;Connect clip channel&gt;.
@@ -325,25 +328,19 @@ If you send clip to channel it will be sent encrypted via internet. Only devices
   <data name="checkBoxShow.Location" type="System.Drawing.Point, System.Drawing">
     <value>13, 90</value>
   </data>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
+  <data name="pictureBox.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="pictureBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>681, 487</value>
   </data>
-  <data name="&gt;&gt;buttonReset.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;buttonRefresh.Parent" xml:space="preserve">
+  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
   <data name="&gt;&gt;textBoxSenderName.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="label2.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;buttonReset.Parent" xml:space="preserve">
+  <data name="&gt;&gt;buttonRefresh.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
   <data name="pictureBox.Location" type="System.Drawing.Point, System.Drawing">
@@ -354,9 +351,6 @@ If you send clip to channel it will be sent encrypted via internet. Only devices
   </data>
   <data name="QuantityOfRecipients.ToolTip" xml:space="preserve">
     <value />
-  </data>
-  <data name="&gt;&gt;textBoxChannelName.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="QuantityOfRecipients.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -370,14 +364,17 @@ If you send clip to channel it will be sent encrypted via internet. Only devices
   <data name="QuantityOfRecipients.Size" type="System.Drawing.Size, System.Drawing">
     <value>13, 13</value>
   </data>
-  <data name="&gt;&gt;pictureBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="label2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="&gt;&gt;textBoxRecipients.Name" xml:space="preserve">
     <value>textBoxRecipients</value>
   </data>
   <data name="textBoxSenderName.Location" type="System.Drawing.Point, System.Drawing">
     <value>434, 6</value>
+  </data>
+  <data name="textBoxRecipients.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
     <value>9</value>
@@ -400,23 +397,26 @@ If you send clip to channel it will be sent encrypted via internet. Only devices
   <data name="&gt;&gt;textBoxRecipients.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="buttonReset.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
   </data>
-  <data name="label4.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="&gt;&gt;QuantityOfRecipients.ZOrder" xml:space="preserve">
+    <value>8</value>
   </data>
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
     <value>88, 9</value>
   </data>
-  <data name="textBoxRecipients.Location" type="System.Drawing.Point, System.Drawing">
-    <value>167, 31</value>
+  <data name="&gt;&gt;textBoxChannelName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="textBoxRecipients.ToolTip" xml:space="preserve">
+  <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>356, 9</value>
+  </data>
+  <data name="&gt;&gt;buttonReset.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="pictureBox.ToolTip" xml:space="preserve">
     <value />
-  </data>
-  <data name="&gt;&gt;checkBoxShow.ZOrder" xml:space="preserve">
-    <value>2</value>
   </data>
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
     <value>73, 13</value>
@@ -430,8 +430,8 @@ If you send clip to channel it will be sent encrypted via internet. Only devices
   <data name="pictureBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
-  <data name="label3.ToolTip" xml:space="preserve">
-    <value />
+  <data name="&gt;&gt;textBoxRecipients.ZOrder" xml:space="preserve">
+    <value>4</value>
   </data>
   <data name="checkBoxShow.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -448,23 +448,23 @@ If you send clip to channel it will be sent encrypted via internet. Only devices
   <data name="label3.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
   </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;buttonReset.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
-  <data name="textBoxChannelName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>167, 6</value>
+  <data name="&gt;&gt;checkBoxShow.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="QuantityOfRecipients.Location" type="System.Drawing.Point, System.Drawing">
     <value>152, 34</value>
   </data>
-  <data name="pictureBox.ToolTip" xml:space="preserve">
+  <data name="label3.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
-    <value>3</value>
+  <data name="&gt;&gt;textBoxChannelName.ZOrder" xml:space="preserve">
+    <value>5</value>
   </data>
-  <data name="&gt;&gt;label1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="textBoxRecipients.Location" type="System.Drawing.Point, System.Drawing">
+    <value>167, 31</value>
   </data>
   <data name="&gt;&gt;textBoxSenderName.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -480,8 +480,5 @@ If you send clip to channel it will be sent encrypted via internet. Only devices
   </metadata>
   <metadata name="toolTip2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>114, 17</value>
-  </metadata>
-  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>ru</value>
   </metadata>
 </root>

@@ -454,4 +454,10 @@
   <data name="ConfirmDeleteSelectedClips" xml:space="preserve">
     <value>Вы действительно хотите удалить выделенные клипы?</value>
   </data>
+  <data name="ConfirmResetChannel" xml:space="preserve">
+    <value>Все подключенные устройства потеряют связь с каналом. Вы действительно хотите сбросить ключ шифрования канала?</value>
+  </data>
+  <data name="TooBigClipForChannel" xml:space="preserve">
+    <value>Слишком большой клип для отправки в канал. Макс. размер - 10000 символов.</value>
+  </data>
 </root>

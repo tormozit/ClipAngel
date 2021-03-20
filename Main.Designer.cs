@@ -395,6 +395,7 @@ namespace ClipAngel
             this.pasteSpecialToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pasteIntoSearchFieldMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemPasteChars = new System.Windows.Forms.ToolStripMenuItem();
+            this.sendClipToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem8 = new System.Windows.Forms.ToolStripMenuItem();
             this.changeClipTitleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.NextMatchTextMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -416,7 +417,6 @@ namespace ClipAngel
             this.exportMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.importToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.decodeTextToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.sendClipToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.settingsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.fToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.checkUpdateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -1520,6 +1520,13 @@ namespace ClipAngel
             resources.ApplyResources(this.toolStripMenuItemPasteChars, "toolStripMenuItemPasteChars");
             this.toolStripMenuItemPasteChars.Click += new System.EventHandler(this.toolStripMenuItemPasteChars_Click);
             // 
+            // sendClipToolStripMenuItem
+            // 
+            this.sendClipToolStripMenuItem.Image = global::ClipAngel.Properties.Resources.Send;
+            this.sendClipToolStripMenuItem.Name = "sendClipToolStripMenuItem";
+            resources.ApplyResources(this.sendClipToolStripMenuItem, "sendClipToolStripMenuItem");
+            this.sendClipToolStripMenuItem.Click += new System.EventHandler(this.sendClipMenuItem_Click);
+            // 
             // toolStripMenuItem8
             // 
             this.toolStripMenuItem8.Image = global::ClipAngel.Properties.Resources.delete;
@@ -1660,13 +1667,6 @@ namespace ClipAngel
             this.decodeTextToolStripMenuItem.Name = "decodeTextToolStripMenuItem";
             resources.ApplyResources(this.decodeTextToolStripMenuItem, "decodeTextToolStripMenuItem");
             this.decodeTextToolStripMenuItem.Click += new System.EventHandler(this.decodeTextToolStripMenuItem_Click);
-            // 
-            // sendClipToolStripMenuItem
-            // 
-            this.sendClipToolStripMenuItem.Image = global::ClipAngel.Properties.Resources.Send;
-            this.sendClipToolStripMenuItem.Name = "sendClipToolStripMenuItem";
-            resources.ApplyResources(this.sendClipToolStripMenuItem, "sendClipToolStripMenuItem");
-            this.sendClipToolStripMenuItem.Click += new System.EventHandler(this.sendClipMenuItem_Click);
             // 
             // settingsToolStripMenuItem1
             // 
@@ -1979,7 +1979,6 @@ namespace ClipAngel
             // 
             // timerApplySearchString
             // 
-            this.timerApplySearchString.Interval = 300;
             this.timerApplySearchString.Tick += new System.EventHandler(this.timerApplySearchString_Tick);
             // 
             // tooltipTimer
