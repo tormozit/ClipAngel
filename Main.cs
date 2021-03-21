@@ -7593,7 +7593,9 @@ namespace ClipAngel
                     IV = ""
                 };
                 string dataString = JsonConvert.SerializeObject(data);
-                File.WriteAllText(ChannelEncryptionKeyFileName(), dataString);
+                string filename = ChannelEncryptionKeyFileName();
+                File.WriteAllText(filename, dataString);
+                File.Encrypt(filename);
             }
             await setChannelKeyValue("senderName", Environment.MachineName);
             HttpClient client = new HttpClient();
