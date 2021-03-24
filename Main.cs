@@ -82,6 +82,19 @@ namespace ClipAngel
             private SQLiteConnection DBConnection;
         };
         ReloadTask[] tasks;
+        public struct removeClipsFilter
+        {
+            public int PID;
+            public DateTime TimeStart;
+            public DateTime TimeEnd;
+        }
+        public struct LastClip
+        {
+            public int ID;
+            public DateTime Created;
+            public int ProcessID;
+        }
+        static List<LastClip> lastClips = new List<LastClip>();
 
         //bool CaptureClipboard = true;
         bool allowRowLoad = true;
@@ -99,6 +112,7 @@ namespace ClipAngel
         MatchCollection FilterMatches;
         string DataFormat_ClipboardViewerIgnore = "Clipboard Viewer Ignore";
         string DataFormat_XMLSpreadSheet = "XML SpreadSheet";
+        string DataFormat_RemoveTempClipsFromHistory = "RemoveTempClipsFromHistory"; // Turboconf
 
         string ActualVersion;
 
@@ -853,7 +867,7 @@ namespace ClipAngel
                         UsualClipboardMode = false;
                     else if (!captureTimer.Enabled)
                     {
-                        captureTimer.Interval = 50;
+                        captureTimer.Interval = 100;
                         captureTimer.Start();
                     }
                     break;
@@ -1718,7 +1732,8 @@ namespace ClipAngel
             if (!(this.Visible && this.ContainsFocus))
                 sortField = "Id";
             if (EditMode)
-                SaveClipText(); string TypeFilterSelectedValue = TypeFilter.SelectedValue as string;
+                SaveClipText();
+            string TypeFilterSelectedValue = TypeFilter.SelectedValue as string;
             if (currentClipId == 0 && clipBindingSource.Current != null)
             {
                 currentClipId = (int)(clipBindingSource.Current as DataRowView).Row["Id"];
@@ -2077,8 +2092,9 @@ namespace ClipAngel
             string clipWindow = "";
             string clipApplication = "";
             bool is1C = false;
+            int processID = 0;
             IUIAutomationElement mainWindow;
-            GetClipboardOwnerLockerInfo(false, out clipWindow, out clipApplication, out appPath, out is1C, out mainWindow);
+            GetClipboardOwnerLockerInfo(false, out clipWindow, out clipApplication, out appPath, out is1C, out mainWindow, out processID);
             if (ignoreModulesInClipCapture.Contains(clipApplication.ToLower()))
                 return;
             try
@@ -2095,6 +2111,38 @@ namespace ClipAngel
             }
             if (iData.GetDataPresent(DataFormat_ClipboardViewerIgnore) && ClipAngel.Properties.Settings.Default.IgnoreExclusiveFormatClipCapture)
                 return;
+            if (iData.GetDataPresent(DataFormat_RemoveTempClipsFromHistory))
+            {
+                removeClipsFilter removeClipsFilter;
+                string dataString = (string) iData.GetData(DataFormat_RemoveTempClipsFromHistory);
+                
+                // Test
+                //removeClipsFilter removeClipsFilter = new removeClipsFilter
+                //{
+                //    PID = 0,
+                //    TimeStart = DateTime.Now.AddMilliseconds(-1000),
+                //    TimeEnd = DateTime.Now
+                //};
+                //dataString = JsonConvert.SerializeObject(removeClipsFilter);
+
+                removeClipsFilter = JsonConvert.DeserializeObject<removeClipsFilter>(dataString);
+                for (int i = lastClips.Count - 1; i >= 0; i--)
+                {
+                    LastClip lastClip = lastClips[i];
+                    if (true
+                        && (false
+                            || removeClipsFilter.PID == 0
+                            || removeClipsFilter.PID == lastClip.ProcessID)
+                        && removeClipsFilter.TimeStart < lastClip.Created
+                        && removeClipsFilter.TimeEnd > lastClip.Created)
+                    {
+                        SQLiteCommand command = new SQLiteCommand("Delete from Clips where Id = @Id", m_dbConnection);
+                        command.Parameters.Add("Id", DbType.Int32).Value = lastClip.ID;
+                        command.ExecuteNonQuery();
+                    lastClips.RemoveAt(i);
+                    }
+                }
+            }
             bool textFormatPresent = false;
             byte[] binaryBuffer = new byte[0];
             byte[] imageSampleBuffer = new byte[0];
@@ -2392,8 +2440,9 @@ namespace ClipAngel
                     if (imageUrl.StartsWith("data:image"))
                         imageUrl = "";
                     bool clipAdded = AddClip(binaryBuffer, imageSampleBuffer, "", "", "img", clipTextImage, clipApplication,
-                        clipWindow, imageUrl, clipCharsImage, appPath, false, false, false);
+                        clipWindow, imageUrl, clipCharsImage, appPath, false, false, false, "", processID);
                     updateList = updateList || clipAdded;
+
                     if (!String.IsNullOrWhiteSpace(clipText))
                         imageSampleBuffer = new byte[0];
                 }
@@ -2401,7 +2450,7 @@ namespace ClipAngel
                 {
                     // Non image clip
                     bool clipAdded = AddClip(new byte[0], imageSampleBuffer, htmlText, richText, clipType, clipText, clipApplication,
-                        clipWindow, clipUrl, clipChars, appPath, false, false, false);
+                        clipWindow, clipUrl, clipChars, appPath, false, false, false, "", processID);
                     updateList = updateList || clipAdded;
                 }
                 if(updateList)
@@ -2543,7 +2592,7 @@ namespace ClipAngel
         }
 
         bool AddClip(byte[] binaryBuffer = null, byte[] imageSampleBuffer = null, string htmlText = "", string richText = "", string typeText = "text", string plainText = "",
-            string applicationText = "", string windowText = "", string url = "", int chars = 0, string appPath = "", bool used = false, bool favorite = false, bool updateList = true, string clipTitle = "")
+            string applicationText = "", string windowText = "", string url = "", int chars = 0, string appPath = "", bool used = false, bool favorite = false, bool updateList = true, string clipTitle = "", int processID = 0)
         {
             DateTime dtNow = DateTime.Now;
             int msFromLastCapture = DateDiffMilliseconds(lastCaptureMoment);
@@ -2639,6 +2688,12 @@ namespace ClipAngel
                 hash = Convert.ToBase64String(g.ToByteArray());
             }
             LastId = LastId + 1;
+            lastClips.Add(new LastClip {Created = created, ID = LastId, ProcessID = processID});
+            int lastClipsMaxSize = 10;
+            while (lastClips.Count > lastClipsMaxSize)
+            {
+                lastClips.RemoveRange(0, lastClips.Count - lastClipsMaxSize);
+            }
 
             SQLiteCommand commandInsert = new SQLiteCommand("", m_dbConnection);
             commandInsert.Parameters.AddWithValue("@Id", LastId);
@@ -3551,7 +3606,7 @@ namespace ClipAngel
         static extern IntPtr GetOpenClipboardWindow();
 
         public void GetClipboardOwnerLockerInfo(bool Locker, out string windowTitle, out string application,
-            out string appPath, out bool is1CCode, out IUIAutomationElement mainWindowAutomation, bool replaceNullWithLastActive = true)
+            out string appPath, out bool is1CCode, out IUIAutomationElement mainWindowAutomation, out int processId, bool replaceNullWithLastActive = true)
         {
             IntPtr hwnd;
             windowTitle = "";
@@ -3559,6 +3614,7 @@ namespace ClipAngel
             appPath = "";
             is1CCode = false;
             mainWindowAutomation = null;
+            processId = 0;
             //if (!ClipAngel.Properties.Settings.Default.ReadWindowTitles)
             //    return;
             if (Locker)
@@ -3574,7 +3630,6 @@ namespace ClipAngel
                     return;
                 }
             }
-            int processId;
             uint activeWindowThread = GetWindowThreadProcessId(hwnd, out processId);
             Process process1 = Process.GetProcessById(processId);
             try
@@ -5118,8 +5173,9 @@ namespace ClipAngel
                         string clipWindow = "";
                         string clipApplication = "";
                         bool is1C = false;
+                        int processID = 0;
                         IUIAutomationElement mainWindow;
-                        GetClipboardOwnerLockerInfo(true, out clipWindow, out clipApplication, out appPath, out is1C, out mainWindow);
+                        GetClipboardOwnerLockerInfo(true, out clipWindow, out clipApplication, out appPath, out is1C, out mainWindow, out processID);
                         if (String.Compare(clipApplication, "1cv8", true) == 0)
                         {
                             string extensionName = match.Groups[startIndex1C + 1].ToString();
@@ -6901,8 +6957,9 @@ namespace ClipAngel
                 string clipWindow = "";
                 string clipApplication = "";
                 bool is1C = false;
+                int processID = 0;
                 IUIAutomationElement mainWindow;
-                GetClipboardOwnerLockerInfo(true, out clipWindow, out clipApplication, out appPath, out is1C, out mainWindow);
+                GetClipboardOwnerLockerInfo(true, out clipWindow, out clipApplication, out appPath, out is1C, out mainWindow, out processID);
                 Debug.WriteLine(String.Format(Properties.Resources.FailedToWriteClipboard, clipWindow, clipApplication));
             }
             //if (!success)

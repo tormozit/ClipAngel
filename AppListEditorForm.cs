@@ -152,8 +152,9 @@ namespace ClipAngel
             string clipApplication = "";
             string appPath = "";
             bool is1C = false;
+            int processID = 0;
             IUIAutomationElement mainWindow;
-            ((Main)Owner).GetClipboardOwnerLockerInfo(false, out clipWindow, out clipApplication, out appPath, out is1C, out mainWindow, false);
+            ((Main)Owner).GetClipboardOwnerLockerInfo(false, out clipWindow, out clipApplication, out appPath, out is1C, out mainWindow, out processID, false);
             ListViewItem[] items = listViewRunningList.Items.Find(appPath, true);
             if (items.Length > 0)
             {
