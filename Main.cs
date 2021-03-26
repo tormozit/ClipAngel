@@ -63,13 +63,13 @@ namespace ClipAngel
         public const string IsMainPropName = "IsMain";
         public ResourceManager CurrentLangResourceManager;
         public string Locale = "";
+        public string DbFileName;
 
         public bool PortableMode = false;
 
         //public int ClipsNumber = 0;
         public string UserSettingsPath;
 
-        public string DbFileName;
         SQLiteConnection m_dbConnection;
         SQLiteDataAdapter backgroundDataAdapter;
         public string ConnectionString;
@@ -386,7 +386,7 @@ namespace ClipAngel
             {
                 Directory.CreateDirectory(UserSettingsPath);
             }
-            OpenDatabaseWithUpdateEncryption();
+            OpenDatabase(true);
             ConnectClipboard();
             if (StartMinimized)
             {
@@ -450,8 +450,12 @@ namespace ClipAngel
             #endregion
         }
 
-        private void OpenDatabase()
+        private void OpenDatabase(bool updateEncryption = false)
         {
+            if (!String.IsNullOrWhiteSpace(ClipAngel.Properties.Settings.Default.DatabaseFile))
+                DbFileName = ClipAngel.Properties.Settings.Default.DatabaseFile;
+            else
+                DbFileName = UserSettingsPath + "\\" + Properties.Resources.DBShortFilename;
             ConnectionString = "data source=" + DbFileName + ";journal_mode=OFF;"; // journal_mode=OFF - Disabled transactions
             string Reputation = "Magic67234784";
             if (!File.Exists(DbFileName))
@@ -462,6 +466,42 @@ namespace ClipAngel
                 // Encryption http://stackoverflow.com/questions/12190672/can-i-password-encrypt-sqlite-database
                 m_dbConnection.ChangePassword(Reputation);
                 m_dbConnection.Close();
+            }
+            if (updateEncryption)
+            {
+                string encryptException = "";
+                if (ClipAngel.Properties.Settings.Default.EncryptDatabaseForCurrentUser)
+                {
+                    try
+                    {
+                        //File.Encrypt("dhjjsfjsgfjsfjgsfj"); // for test
+                        File.Encrypt(DbFileName);
+                    }
+                    catch (Exception exception)
+                    {
+                        // https://sourceforge.net/p/clip-angel/tickets/60/
+                        encryptException = exception.Message;
+                        ClipAngel.Properties.Settings.Default.EncryptDatabaseForCurrentUser = false;
+                    }
+                }
+                else
+                {
+                    try
+                    {
+                        //File.Encrypt("dhjjsfjsgfjsfjgsfj"); // for test
+                        File.Decrypt(DbFileName);
+                    }
+                    catch (Exception exception)
+                    {
+                        // https://sourceforge.net/p/clip-angel/tickets/60/
+                        encryptException = exception.Message;
+                        ClipAngel.Properties.Settings.Default.EncryptDatabaseForCurrentUser = true;
+                    }
+                }
+                if (!String.IsNullOrEmpty(encryptException))
+                {
+                    MessageBox.Show(this, Properties.Resources.FailedChangeDatabaseFieEncryption + ": \n" + encryptException, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             ConnectionString += "Password = " + Reputation + ";";
             m_dbConnection = new SQLiteConnection(ConnectionString);
@@ -1074,7 +1114,10 @@ namespace ClipAngel
             StripLabelType.Text = "";
             stripLabelPosition.Text = "";
             LoadRowReader();
-            if (LoadedClipRowReader != null)
+            if (true 
+                && LoadedClipRowReader != null 
+                && !(LoadedClipRowReader["Created"] is DBNull) // protection from reading deleted clip
+                )
             {
                 clipType = LoadedClipRowReader["type"].ToString();
                 string fullText = LoadedClipRowReader["Text"].ToString();
@@ -1725,7 +1768,7 @@ namespace ClipAngel
             }
         }
 
-        async private void ReloadList(bool forceRowLoad = false, int currentClipId = 0, bool keepTextSelectionIfIDChanged = false, List<int> selectedClipIDs = null)
+        async private void ReloadList(bool forceRowLoad = false, int currentClipId = 0, bool keepTextSelectionIfIDChanged = false, List<int> selectedClipIDs = null, bool waitFinish = false)
         {
             if (globalDataAdapter == null)
                 return;
@@ -1754,6 +1797,8 @@ namespace ClipAngel
             DateTime monthCalendar1SelectionEnd = monthCalendar1.SelectionEnd;
             Task<DataTable> reloadListTask = Task.Run(() => ReloadListAsync(TypeFilterSelectedValue, MarkFilterSelectedValue, monthCalendar1SelectionStart, monthCalendar1SelectionEnd));
             lastReloadListTask = reloadListTask;
+            if (waitFinish)
+                reloadListTask.Wait();
             DataTable table = await reloadListTask;
             if (true
                 && lastReloadListTask != null
@@ -2093,6 +2138,7 @@ namespace ClipAngel
             string clipApplication = "";
             bool is1C = false;
             int processID = 0;
+            bool needUpdateList = false;
             IUIAutomationElement mainWindow;
             GetClipboardOwnerLockerInfo(false, out clipWindow, out clipApplication, out appPath, out is1C, out mainWindow, out processID);
             if (ignoreModulesInClipCapture.Contains(clipApplication.ToLower()))
@@ -2109,8 +2155,6 @@ namespace ClipAngel
                 notifyIcon.ShowBalloonTip(2000, Application.ProductName, Message, ToolTipIcon.Info);
                 return;
             }
-            if (iData.GetDataPresent(DataFormat_ClipboardViewerIgnore) && ClipAngel.Properties.Settings.Default.IgnoreExclusiveFormatClipCapture)
-                return;
             if (iData.GetDataPresent(DataFormat_RemoveTempClipsFromHistory))
             {
                 removeClipsFilter removeClipsFilter;
@@ -2134,14 +2178,21 @@ namespace ClipAngel
                             || removeClipsFilter.PID == 0
                             || removeClipsFilter.PID == lastClip.ProcessID)
                         && removeClipsFilter.TimeStart < lastClip.Created
-                        && removeClipsFilter.TimeEnd > lastClip.Created)
+                        && removeClipsFilter.TimeEnd.AddMilliseconds(100) > lastClip.Created)
                     {
                         SQLiteCommand command = new SQLiteCommand("Delete from Clips where Id = @Id", m_dbConnection);
                         command.Parameters.Add("Id", DbType.Int32).Value = lastClip.ID;
                         command.ExecuteNonQuery();
-                    lastClips.RemoveAt(i);
+                        lastClips.RemoveAt(i);
+                        needUpdateList = true;
                     }
                 }
+            }
+            if (iData.GetDataPresent(DataFormat_ClipboardViewerIgnore) && ClipAngel.Properties.Settings.Default.IgnoreExclusiveFormatClipCapture)
+            {
+                if (needUpdateList)
+                    ReloadList();
+                return;
             }
             bool textFormatPresent = false;
             byte[] binaryBuffer = new byte[0];
@@ -2149,7 +2200,6 @@ namespace ClipAngel
             int NumberOfFilledCells = 0;
             int NumberOfImageCells = 0;
             Bitmap bitmap = null;
-
             try
             {
                 if (iData.GetDataPresent(DataFormats.UnicodeText))
@@ -2428,7 +2478,6 @@ namespace ClipAngel
                         }
                     }
 
-                bool updateList = false;
                 if (clipType == "html" && clipText == "")
                     clipType = "";
                 // Split Image+Html clip into 2: Image and Html 
@@ -2441,7 +2490,7 @@ namespace ClipAngel
                         imageUrl = "";
                     bool clipAdded = AddClip(binaryBuffer, imageSampleBuffer, "", "", "img", clipTextImage, clipApplication,
                         clipWindow, imageUrl, clipCharsImage, appPath, false, false, false, "", processID);
-                    updateList = updateList || clipAdded;
+                    needUpdateList = needUpdateList || clipAdded;
 
                     if (!String.IsNullOrWhiteSpace(clipText))
                         imageSampleBuffer = new byte[0];
@@ -2451,16 +2500,16 @@ namespace ClipAngel
                     // Non image clip
                     bool clipAdded = AddClip(new byte[0], imageSampleBuffer, htmlText, richText, clipType, clipText, clipApplication,
                         clipWindow, clipUrl, clipChars, appPath, false, false, false, "", processID);
-                    updateList = updateList || clipAdded;
+                    needUpdateList = needUpdateList || clipAdded;
                 }
-                if(updateList)
-                    ReloadList();
             }
             finally
             {
                 if (bitmap != null)
                     bitmap.Dispose();
             }
+            if (needUpdateList)
+                ReloadList();
         }
 
         private Bitmap getBitmapFromUrl(string imageUrl)
@@ -2689,7 +2738,7 @@ namespace ClipAngel
             }
             LastId = LastId + 1;
             lastClips.Add(new LastClip {Created = created, ID = LastId, ProcessID = processID});
-            int lastClipsMaxSize = 10;
+            int lastClipsMaxSize = 5;
             while (lastClips.Count > lastClipsMaxSize)
             {
                 lastClips.RemoveRange(0, lastClips.Count - lastClipsMaxSize);
@@ -2762,7 +2811,7 @@ namespace ClipAngel
             //if (this.Visible)
             //{
             if (updateList)
-                ReloadList(false, 0, oldCurrentClipId > 0);
+                ReloadList(false, 0, oldCurrentClipId > 0, null, true);
             if (true
                 && applicationText == "ScreenshotReader"
                 && IsTextType(typeText)
@@ -4778,55 +4827,13 @@ namespace ClipAngel
                     || oldEncryptDatabaseForCurrentUser != ClipAngel.Properties.Settings.Default.EncryptDatabaseForCurrentUser)
                 {
                     CloseDatabase();
-                    OpenDatabaseWithUpdateEncryption();
+                    OpenDatabase(true);
                 }
                 LoadSettings();
                 keyboardHook.UnregisterHotKeys();
                 RegisterHotKeys();
                 AutodeleteClips();
                 ClipAngel.Properties.Settings.Default.Save(); // Not all properties are saved here. For example ShowInTaskbar are not saved
-            }
-        }
-
-        private void OpenDatabaseWithUpdateEncryption()
-        {
-            if (!String.IsNullOrWhiteSpace(ClipAngel.Properties.Settings.Default.DatabaseFile))
-                DbFileName = ClipAngel.Properties.Settings.Default.DatabaseFile;
-            else
-                DbFileName = UserSettingsPath + "\\" + Properties.Resources.DBShortFilename;
-            string encryptException = "";
-            if (ClipAngel.Properties.Settings.Default.EncryptDatabaseForCurrentUser)
-            {
-                try
-                {
-                    //File.Encrypt("dhjjsfjsgfjsfjgsfj"); // for test
-                    File.Encrypt(DbFileName);
-                }
-                catch (Exception exception)
-                {
-                    // https://sourceforge.net/p/clip-angel/tickets/60/
-                    encryptException = exception.Message;
-                    ClipAngel.Properties.Settings.Default.EncryptDatabaseForCurrentUser = false;
-                }
-            }
-            else
-            {
-                try
-                {
-                    //File.Encrypt("dhjjsfjsgfjsfjgsfj"); // for test
-                    File.Decrypt(DbFileName);
-                }
-                catch (Exception exception)
-                {
-                    // https://sourceforge.net/p/clip-angel/tickets/60/
-                    encryptException = exception.Message;
-                    ClipAngel.Properties.Settings.Default.EncryptDatabaseForCurrentUser = true;
-                }
-            }
-            OpenDatabase();
-            if (!String.IsNullOrEmpty(encryptException))
-            {
-                MessageBox.Show(this, Properties.Resources.FailedChangeDatabaseFieEncryption + ": \n" + encryptException, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
