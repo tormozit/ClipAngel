@@ -98,24 +98,33 @@ namespace ClipAngel
             return pasteEvent;
         }
 
-        static public EventWaitHandle GetSendCharsEventWaiter(int processID = 0)
+        static public EventWaitHandle GetSendCharsEventWaiter(int processID = 0, bool slow = false)
         {
             if (processID == 0)
                 processID = Process.GetCurrentProcess().Id;
-            EventWaitHandle pasteEvent = new EventWaitHandle(false, EventResetMode.ManualReset, "ClipAngelSendChars" + processID);
+            string name = "ClipAngelSendChars";
+            if(slow)
+                name += "Slow";
+            else
+                name += "Fast";
+            EventWaitHandle pasteEvent = new EventWaitHandle(false, EventResetMode.ManualReset, name + processID);
             return pasteEvent;
         }
 
         [DllImport("user32.dll", SetLastError = true)]
         static extern void keybd_event(byte bVk, byte bScan, int dwFlags, int dwExtraInfo);
 
-        public static void SendChars(Main main = null)
+        public static void SendChars(Main main = null, bool slow = false)
         {
             string textToPaste = Clipboard.GetText();
             InputSimulator inputSimulator = new InputSimulator(); // http://inputsimulator.codeplex.com/
-
-            if (textToPaste.Length > 100 || main == null || !main.ActivateTargetWindow())
+            bool isTargetActive = main != null && main.ActivateAndCheckTargetWindow();
+            if (true
+                && !slow
+                && !isTargetActive)
+            {
                 inputSimulator.Keyboard.TextEntry(textToPaste);
+            }
             else
             {
                 Random random = new Random();
@@ -123,7 +132,7 @@ namespace ClipAngel
                 {
                     // Top registered speed of human typing is 18 chars per second on 2020y 
                     Thread.Sleep(random.Next(70, 120));
-                    if (!main.ActivateTargetWindow())
+                    if (!main.ActivateAndCheckTargetWindow(false))
                         break;
                     inputSimulator.Keyboard.TextEntry(oneChar);
                 }

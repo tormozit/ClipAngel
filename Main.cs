@@ -49,7 +49,8 @@ namespace ClipAngel
         Standard,
         Text,
         Line,
-        SendChars,
+        SendCharsFast,
+        SendCharsSlow,
         File,
         Null
     };
@@ -828,7 +829,7 @@ namespace ClipAngel
             {
                 if (filterOn)
                     ClearFilter(-1);
-                SendPasteClipExpress(dataGridView.Rows[0], PasteMethod.SendChars);
+                SendPasteClipExpress(dataGridView.Rows[0], PasteMethod.SendCharsFast);
             }
             else if (hotkeyTitle == ClipAngel.Properties.Settings.Default.GlobalHotkeySwitchMonitoring)
             {
@@ -3348,11 +3349,23 @@ namespace ClipAngel
                     return true;
                 }
             }
-            ActivateTargetWindow();
+            ActivateAndCheckTargetWindow();
             bool targetIsCurrentProcess = DoActiveWindowBelongsToCurrentProcess(IntPtr.Zero);
             if (targetIsCurrentProcess)
                 return true;
-            if (pasteMethod != PasteMethod.SendChars)
+            if (pasteMethod == PasteMethod.SendCharsFast || pasteMethod == PasteMethod.SendCharsSlow)
+            {
+                if (!IsTextType())
+                    return true;
+                if (!needElevation)
+                    Paster.SendChars(this, pasteMethod == PasteMethod.SendCharsSlow);
+                else
+                {
+                    EventWaitHandle sendCharsEvent = Paster.GetSendCharsEventWaiter(0, pasteMethod == PasteMethod.SendCharsSlow);
+                    sendCharsEvent.Set();
+                }
+            }
+            else
             {
                 if (Properties.Settings.Default.DontSendPaste)
                     return false;
@@ -3365,36 +3378,28 @@ namespace ClipAngel
                 }
                 lastPasteMoment = DateTime.Now;
             }
-            else
-            {
-                if (!IsTextType())
-                    return true;
-                if (!needElevation)
-                    Paster.SendChars(this);
-                else
-                {
-                    EventWaitHandle sendCharsEvent = Paster.GetSendCharsEventWaiter();
-                    sendCharsEvent.Set();
-                }
-            }
             return false;
         }
 
-        public bool ActivateTargetWindow()
+        public bool ActivateAndCheckTargetWindow(bool activate = true)
         {
             bool isTargetActive = false;
 
             // not reliable method
             // Previous active window by z-order https://www.whitebyte.info/programming/how-to-get-main-window-handle-of-the-last-active-window
 
-            if (!this.TopMost)
+            if (activate)
             {
-                this.Close();
-            }
-            else
-            {
-                SetForegroundWindow(lastActiveParentWindow);
-                Debug.WriteLine("Set foreground window " + lastActiveParentWindow + " " + GetWindowTitle(lastActiveParentWindow));
+                if (!this.TopMost)
+                {
+                    this.Close();
+                }
+                else
+                {
+                    SetForegroundWindow(lastActiveParentWindow);
+                    Debug.WriteLine("Set foreground window " + lastActiveParentWindow + " " + GetWindowTitle(lastActiveParentWindow));
+                }
+
             }
             int waitStep = 5;
             IntPtr hForegroundWindow = IntPtr.Zero;
@@ -5191,7 +5196,7 @@ namespace ClipAngel
                             if (fragments[0] == "ВнешняяОбработка")
                                 return true;
                             int lineNumber = Convert.ToInt32(match.Groups[startIndex1C + 3].ToString());
-                            ActivateTargetWindow();
+                            ActivateAndCheckTargetWindow();
                             SendKeys.Send("%{F9}");
                             SendKeys.Flush();
                             bool success = false;
@@ -6101,9 +6106,14 @@ namespace ClipAngel
             Process.Start(Properties.Resources.HistoryOfChanges); // Returns 0. Why?
         }
 
-        private void toolStripMenuItemPasteChars_Click(object sender, EventArgs e)
+        private void toolStripMenuItemPasteCharsFast_Click(object sender, EventArgs e)
         {
-            SendPasteOfSelectedTextOrSelectedClips(PasteMethod.SendChars);
+            SendPasteOfSelectedTextOrSelectedClips(PasteMethod.SendCharsFast);
+        }
+
+        private void toolStripMenuItemPasteCharsSlow_Click(object sender, EventArgs e)
+        {
+            SendPasteOfSelectedTextOrSelectedClips(PasteMethod.SendCharsSlow);
         }
 
         private void openInDefaultApplicationToolStripMenuItem_Click(object sender, EventArgs e)

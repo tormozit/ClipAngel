@@ -44,13 +44,14 @@ namespace ClipAngel
                     return;
                 }
                 EventWaitHandle pasteEventWaiter = Paster.GetPasteEventWaiter(parentPID);
-                EventWaitHandle sendCharsEventWaiter = Paster.GetSendCharsEventWaiter(parentPID);
+                EventWaitHandle sendCharsFastEventWaiter = Paster.GetSendCharsEventWaiter(parentPID, false);
+                EventWaitHandle sendCharsSlowEventWaiter = Paster.GetSendCharsEventWaiter(parentPID, true); // not implemented
 
                 // https://social.msdn.microsoft.com/Forums/vstudio/en-US/ade69140-490f-4070-b8b5-08ac80d1c557/how-to-waitany-on-a-process-a-manualresetevent?forum=netfxbcl
                 ManualResetEvent processExitWaiter = new ManualResetEvent(true);
                 processExitWaiter.SafeWaitHandle = new SafeWaitHandle(parentProcess.Handle, false);
 
-                WaitHandle[] waitHandles = new WaitHandle[3] { pasteEventWaiter, sendCharsEventWaiter, processExitWaiter};
+                WaitHandle[] waitHandles = new WaitHandle[4] { pasteEventWaiter, processExitWaiter, sendCharsFastEventWaiter, sendCharsSlowEventWaiter};
                 while (true)
                 {
                     try
@@ -61,19 +62,24 @@ namespace ClipAngel
                     {
                         break;
                     }
-                    int eventIndex = WaitHandle.WaitAny(waitHandles, 60000); // sometimes waitAny begins consume 100% cpu core. Set timeout is workaround try.
+                    int eventIndex = WaitHandle.WaitAny(waitHandles, 60000); // sometimes waitAny begins consume 100% cpu core. Set timeout is workaround try and it seems working well.
                     if (eventIndex != WaitHandle.WaitTimeout)
                     {
-                        if (eventIndex == 0)
+                        if (waitHandles[eventIndex] == pasteEventWaiter)
                         {
                             Paster.SendPaste();
                             pasteEventWaiter.Reset();
-                        } else if (eventIndex == 1)
+                        } else if (waitHandles[eventIndex] == sendCharsFastEventWaiter)
                         {
-                            Paster.SendChars();
-                            sendCharsEventWaiter.Reset();
+                            Paster.SendChars(null, false);
+                            sendCharsFastEventWaiter.Reset();
                         }
-                        else if (eventIndex == 2)
+                        //else if (waitHandles[eventIndex] == sendCharsSlowEventWaiter)
+                        //{
+                        //    Paster.SendChars(null, true);
+                        //    sendCharsSlowEventWaiter.Reset();
+                        //}
+                        else if (waitHandles[eventIndex] == processExitWaiter)
                         {
                             break;
                         }

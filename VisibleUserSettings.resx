@@ -285,10 +285,10 @@ Leave blank to use standard database file "db.sqlite" in application user settin
     <value>Use this hot key in any program to paste last clip as plain text</value>
   </data>
   <data name="GlobalHotkeySimulateInput" xml:space="preserve">
-    <value>Hotkey to simulate keyboard input</value>
+    <value>Hotkey to simulate fast keyboard input</value>
   </data>
   <data name="GlobalHotkeySimulateInputDescription" xml:space="preserve">
-    <value>Use this hot key in any program to simulate keyboard input of last clip</value>
+    <value>Use this hot key in any program to simulate fast keyboard input of last clip</value>
   </data>
   <data name="GlobalHotkeySwitchMonitoring" xml:space="preserve">
     <value>Hotkey to switch clipboard monitoring</value>

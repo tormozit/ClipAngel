@@ -291,10 +291,10 @@
     <value>Эта горячая клавиша при нажатии в любой программе вставит последний клип в виде простого текста</value>
   </data>
   <data name="GlobalHotkeySimulateInput" xml:space="preserve">
-    <value>Горячая клавиша эмуляции ввода текста</value>
+    <value>Горячая клавиша эмуляции быстрого ввода</value>
   </data>
   <data name="GlobalHotkeySimulateInputDescription" xml:space="preserve">
-    <value>Эта горячая клавиша при нажатии в любой программе эмулирует ввод текста последнего клипа</value>
+    <value>Эта горячая клавиша при нажатии в любой программе эмулирует быстрый ввод текста последнего клипа</value>
   </data>
   <data name="GlobalHotkeySwitchMonitoring" xml:space="preserve">
     <value>Горячая клавиша переключения слежения за буфером</value>

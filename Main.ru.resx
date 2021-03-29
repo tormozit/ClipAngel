@@ -136,126 +136,8 @@
     <value>Строка поиска. Список и поле поиска имеют общий клавиатурный ввод.
 Редактируйте строку поиска прямо в списке. Перемещайтесь по списку прямо из поля поиска.</value>
   </data>
-  <data name="toolStripMenuItem2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>273, 22</value>
-  </data>
-  <data name="toolStripMenuItem2.Text" xml:space="preserve">
-    <value>Вставить (Enter)</value>
-  </data>
-  <data name="toolStripMenuItem2.ToolTipText" xml:space="preserve">
-    <value>Вставить в активное окно выбранные клипы. Также выполняется по двойному клику в списке.
-</value>
-  </data>
-  <data name="toolStripMenuItem3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>273, 22</value>
-  </data>
-  <data name="toolStripMenuItem3.Text" xml:space="preserve">
-    <value>Вставить текст (Ctrl+Enter)</value>
-  </data>
-  <data name="toolStripMenuItem3.ToolTipText" xml:space="preserve">
-    <value>Вставить в активное окно выделенный простой текст клипа или имя файла графического клипа или агрегированный простой текст выделенных клипов.</value>
-  </data>
-  <data name="toolStripMenuItem24.Size" type="System.Drawing.Size, System.Drawing">
-    <value>273, 22</value>
-  </data>
-  <data name="toolStripMenuItem24.Text" xml:space="preserve">
-    <value>Вставить строку (Ctrl+Shift+Enter)</value>
-  </data>
-  <data name="toolStripMenuItem24.ToolTipText" xml:space="preserve">
-    <value>Вставить в активное окно выделенный простой текст клипа без переносов строк и лишних непечатных символов.</value>
-  </data>
-  <data name="toolStripMenuItem18.Size" type="System.Drawing.Size, System.Drawing">
-    <value>273, 22</value>
-  </data>
-  <data name="toolStripMenuItem18.Text" xml:space="preserve">
-    <value>Вставить файл</value>
-  </data>
-  <data name="toolStripMenuItem18.ToolTipText" xml:space="preserve">
-    <value>Вставить в активное окно выделенные клипы как файлы</value>
-  </data>
-  <data name="toolStripMenuItem25.Size" type="System.Drawing.Size, System.Drawing">
-    <value>273, 22</value>
-  </data>
-  <data name="toolStripMenuItem25.Text" xml:space="preserve">
-    <value>Вставить с параметрами...</value>
-  </data>
-  <data name="toolStripMenuItem7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>273, 22</value>
-  </data>
-  <data name="toolStripMenuItem7.Text" xml:space="preserve">
-    <value>Эмулировать ввод символов</value>
-  </data>
-  <data name="toolStripMenuItem7.ToolTipText" xml:space="preserve">
-    <value>Эмулировать в активном окне ввод текущего текстового клипа или выделенного текста посимвольно.</value>
-  </data>
-  <data name="sendClipMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>273, 22</value>
-  </data>
-  <data name="sendClipMenuItem.Text" xml:space="preserve">
-    <value>Отправить клип в канал</value>
-  </data>
-  <data name="sendClipMenuItem.ToolTipText" xml:space="preserve">
-    <value>Отправить клип всем получателям канала клипов</value>
-  </data>
-  <data name="copyToClipboardToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>273, 22</value>
-  </data>
-  <data name="copyToClipboardToolStripMenuItem.Text" xml:space="preserve">
-    <value>Копировать в буфер обмена</value>
-  </data>
-  <data name="copyToClipboardToolStripMenuItem.ToolTipText" xml:space="preserve">
-    <value>Копировать текущий клип в буфер обмена</value>
-  </data>
-  <data name="toolStripMenuItem12.Size" type="System.Drawing.Size, System.Drawing">
-    <value>273, 22</value>
-  </data>
-  <data name="toolStripMenuItem12.Text" xml:space="preserve">
-    <value>Редактировать заголовок</value>
-  </data>
-  <data name="toolStripMenuItem12.ToolTipText" xml:space="preserve">
-    <value>Редактировать заголовок клипа</value>
-  </data>
-  <data name="toolStripMenuItem14.Size" type="System.Drawing.Size, System.Drawing">
-    <value>273, 22</value>
-  </data>
-  <data name="toolStripMenuItem14.Text" xml:space="preserve">
-    <value>Пометить любимыми</value>
-  </data>
-  <data name="toolStripMenuItem14.ToolTipText" xml:space="preserve">
-    <value>Пометить выбранные клипы любимыми</value>
-  </data>
-  <data name="toolStripMenuItem11.Size" type="System.Drawing.Size, System.Drawing">
-    <value>273, 22</value>
-  </data>
-  <data name="toolStripMenuItem11.Text" xml:space="preserve">
-    <value>Открыть файл клипа</value>
-  </data>
-  <data name="toolStripMenuItem11.ToolTipText" xml:space="preserve">
-    <value>Сохраняет данные во временный файл для текстового или графического клипа.
-Открывает файл клипа в приложении по умолчанию.
-Изменения временного файла не синхронизируются с клипом!</value>
-  </data>
-  <data name="toolStripMenuItem10.Size" type="System.Drawing.Size, System.Drawing">
-    <value>273, 22</value>
-  </data>
-  <data name="toolStripMenuItem10.Text" xml:space="preserve">
-    <value>Сравнить тексты</value>
-  </data>
-  <data name="toolStripMenuItem10.ToolTipText" xml:space="preserve">
-    <value>Сравнить тексты 2 выбранных клипов или текущего клипа с предыдущим выбранным этой командой
-</value>
-  </data>
-  <data name="deleteToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>273, 22</value>
-  </data>
-  <data name="deleteToolStripMenuItem1.Text" xml:space="preserve">
-    <value>Удалить</value>
-  </data>
-  <data name="deleteToolStripMenuItem1.ToolTipText" xml:space="preserve">
-    <value>Удалить выделенные клипы из списка. Настоящее удаление выполняется при закрытии базы данных.</value>
-  </data>
   <data name="contextMenuStripDataGrid.Size" type="System.Drawing.Size, System.Drawing">
-    <value>274, 312</value>
+    <value>274, 290</value>
   </data>
   <data name="pictureBoxSource.ToolTip" xml:space="preserve">
     <value>Иконка приложения, из которого клип был скопирован</value>
@@ -350,11 +232,126 @@
   <data name="toolStripButtonFindPrevious.ToolTipText" xml:space="preserve">
     <value>Найти предыдущее в тексте клипа (SHIFT+F3)</value>
   </data>
+  <data name="toolStripMenuItem2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>273, 22</value>
+  </data>
+  <data name="toolStripMenuItem2.Text" xml:space="preserve">
+    <value>Вставить (Enter)</value>
+  </data>
+  <data name="toolStripMenuItem2.ToolTipText" xml:space="preserve">
+    <value>Вставить в активное окно выбранные клипы. Также выполняется по двойному клику в списке.
+</value>
+  </data>
+  <data name="toolStripMenuItem3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>273, 22</value>
+  </data>
+  <data name="toolStripMenuItem3.Text" xml:space="preserve">
+    <value>Вставить текст (Ctrl+Enter)</value>
+  </data>
+  <data name="toolStripMenuItem3.ToolTipText" xml:space="preserve">
+    <value>Вставить в активное окно выделенный простой текст клипа или имя файла графического клипа или агрегированный простой текст выделенных клипов.</value>
+  </data>
+  <data name="toolStripMenuItem24.Size" type="System.Drawing.Size, System.Drawing">
+    <value>273, 22</value>
+  </data>
+  <data name="toolStripMenuItem24.Text" xml:space="preserve">
+    <value>Вставить строку (Ctrl+Shift+Enter)</value>
+  </data>
+  <data name="toolStripMenuItem24.ToolTipText" xml:space="preserve">
+    <value>Вставить в активное окно выделенный простой текст клипа без переносов строк и лишних непечатных символов.</value>
+  </data>
+  <data name="toolStripMenuItem18.Size" type="System.Drawing.Size, System.Drawing">
+    <value>273, 22</value>
+  </data>
+  <data name="toolStripMenuItem18.Text" xml:space="preserve">
+    <value>Вставить файл</value>
+  </data>
+  <data name="toolStripMenuItem18.ToolTipText" xml:space="preserve">
+    <value>Вставить в активное окно выделенные клипы как файлы</value>
+  </data>
+  <data name="toolStripMenuItem25.Size" type="System.Drawing.Size, System.Drawing">
+    <value>273, 22</value>
+  </data>
+  <data name="toolStripMenuItem25.Text" xml:space="preserve">
+    <value>Вставить с параметрами...</value>
+  </data>
+  <data name="toolStripMenuItem7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>273, 22</value>
+  </data>
+  <data name="toolStripMenuItem7.Text" xml:space="preserve">
+    <value>Эмулировать быстрый ввод</value>
+  </data>
+  <data name="toolStripMenuItem7.ToolTipText" xml:space="preserve">
+    <value>Эмулировать в активном окне быстрый ввод текущего текстового клипа или выделенного текста посимвольно.</value>
+  </data>
+  <data name="sendClipMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>273, 22</value>
+  </data>
+  <data name="sendClipMenuItem.Text" xml:space="preserve">
+    <value>Отправить клип в канал</value>
+  </data>
+  <data name="sendClipMenuItem.ToolTipText" xml:space="preserve">
+    <value>Отправить клип всем получателям канала клипов</value>
+  </data>
+  <data name="copyToClipboardToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>273, 22</value>
+  </data>
+  <data name="copyToClipboardToolStripMenuItem.Text" xml:space="preserve">
+    <value>Копировать в буфер обмена</value>
+  </data>
+  <data name="copyToClipboardToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>Копировать текущий клип в буфер обмена</value>
+  </data>
+  <data name="toolStripMenuItem12.Size" type="System.Drawing.Size, System.Drawing">
+    <value>273, 22</value>
+  </data>
+  <data name="toolStripMenuItem12.Text" xml:space="preserve">
+    <value>Редактировать заголовок</value>
+  </data>
+  <data name="toolStripMenuItem12.ToolTipText" xml:space="preserve">
+    <value>Редактировать заголовок клипа</value>
+  </data>
+  <data name="toolStripMenuItem14.Size" type="System.Drawing.Size, System.Drawing">
+    <value>273, 22</value>
+  </data>
+  <data name="toolStripMenuItem14.Text" xml:space="preserve">
+    <value>Пометить любимыми</value>
+  </data>
+  <data name="toolStripMenuItem14.ToolTipText" xml:space="preserve">
+    <value>Пометить выбранные клипы любимыми</value>
+  </data>
+  <data name="toolStripMenuItem11.Size" type="System.Drawing.Size, System.Drawing">
+    <value>273, 22</value>
+  </data>
+  <data name="toolStripMenuItem11.Text" xml:space="preserve">
+    <value>Открыть файл клипа</value>
+  </data>
+  <data name="toolStripMenuItem11.ToolTipText" xml:space="preserve">
+    <value>Сохраняет данные во временный файл для текстового или графического клипа.
+Открывает файл клипа в приложении по умолчанию.
+Изменения временного файла не синхронизируются с клипом!</value>
+  </data>
+  <data name="toolStripMenuItem10.Size" type="System.Drawing.Size, System.Drawing">
+    <value>273, 22</value>
+  </data>
+  <data name="toolStripMenuItem10.Text" xml:space="preserve">
+    <value>Сравнить тексты</value>
+  </data>
+  <data name="toolStripMenuItem10.ToolTipText" xml:space="preserve">
+    <value>Сравнить тексты 2 выбранных клипов или текущего клипа с предыдущим выбранным этой командой
+</value>
+  </data>
+  <data name="deleteToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>273, 22</value>
+  </data>
+  <data name="deleteToolStripMenuItem1.Text" xml:space="preserve">
+    <value>Удалить</value>
+  </data>
+  <data name="deleteToolStripMenuItem1.ToolTipText" xml:space="preserve">
+    <value>Удалить выделенные клипы из списка. Настоящее удаление выполняется при закрытии базы данных.</value>
+  </data>
   <data name="contextMenuUrl.Size" type="System.Drawing.Size, System.Drawing">
     <value>229, 48</value>
-  </data>
-  <data name="urlTextBox.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Tahoma, 9pt</value>
   </data>
   <data name="urlTextBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>2, 344</value>
@@ -488,6 +485,9 @@
   <data name="contextMenuPictureBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>219, 48</value>
   </data>
+  <data name="ImageControl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>433, 142</value>
+  </data>
   <data name="originalSizeToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>218, 22</value>
   </data>
@@ -539,14 +539,310 @@
   <data name="toolStripWindowTitleCopyAll.Text" xml:space="preserve">
     <value>Копировать весь текст</value>
   </data>
-  <data name="MainMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>815, 24</value>
-  </data>
   <data name="fileToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
     <value>48, 20</value>
   </data>
   <data name="fileToolStripMenuItem1.Text" xml:space="preserve">
     <value>Окно</value>
+  </data>
+  <data name="listToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>60, 20</value>
+  </data>
+  <data name="listToolStripMenuItem.Text" xml:space="preserve">
+    <value>Список</value>
+  </data>
+  <data name="pasteENTERToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>259, 22</value>
+  </data>
+  <data name="pasteENTERToolStripMenuItem.Text" xml:space="preserve">
+    <value>Вставить (Enter)</value>
+  </data>
+  <data name="pasteENTERToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>Вставить в активное окно выбранные клипы. Также выполняется по двойному клику в списке.</value>
+  </data>
+  <data name="pasteTextToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>259, 22</value>
+  </data>
+  <data name="pasteTextToolStripMenuItem.Text" xml:space="preserve">
+    <value>Вставить текст (Ctrl+Enter)</value>
+  </data>
+  <data name="pasteTextToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>Вставить в активное окно выделенный простой текст клипа или имя файла графического клипа или агрегированный простой текст выделенных клипов.</value>
+  </data>
+  <data name="pasteLineToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>259, 22</value>
+  </data>
+  <data name="pasteLineToolStripMenuItem.Text" xml:space="preserve">
+    <value>Вставить строку (Ctrl+Shift+Enter)</value>
+  </data>
+  <data name="pasteLineToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>Вставить в активное окно выделенный простой текст клипа без переносов строк и лишних непечатных символов.</value>
+  </data>
+  <data name="pasteFileToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>259, 22</value>
+  </data>
+  <data name="pasteFileToolStripMenuItem.Text" xml:space="preserve">
+    <value>Вставить файл</value>
+  </data>
+  <data name="pasteFileToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>Вставить в активное окно выделенные клипы как файлы</value>
+  </data>
+  <data name="pasteSpecialToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>259, 22</value>
+  </data>
+  <data name="pasteSpecialToolStripMenuItem.Text" xml:space="preserve">
+    <value>Вставить с параметрами...</value>
+  </data>
+  <data name="toolStripMenuItemPasteCharsFast.Size" type="System.Drawing.Size, System.Drawing">
+    <value>259, 22</value>
+  </data>
+  <data name="toolStripMenuItemPasteCharsFast.Text" xml:space="preserve">
+    <value>Эмулировать быстрый ввод</value>
+  </data>
+  <data name="toolStripMenuItemPasteCharsFast.ToolTipText" xml:space="preserve">
+    <value>Эмулировать в активном окне быстрый ввод текущего текстового клипа или выделенного текста посимвольно.</value>
+  </data>
+  <data name="toolStripMenuItemPasteCharsSlow.Size" type="System.Drawing.Size, System.Drawing">
+    <value>259, 22</value>
+  </data>
+  <data name="toolStripMenuItemPasteCharsSlow.Text" xml:space="preserve">
+    <value>Эмулировать медленный ввод</value>
+  </data>
+  <data name="toolStripMenuItemPasteCharsSlow.ToolTipText" xml:space="preserve">
+    <value>Эмулировать в активном окне медленный ввод текущего текстового клипа или выделенного текста посимвольно.
+Не работает при отправке в привилегированное окно.</value>
+  </data>
+  <data name="pasteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>235, 22</value>
+  </data>
+  <data name="pasteToolStripMenuItem.Text" xml:space="preserve">
+    <value>Вставить</value>
+  </data>
+  <data name="pasteIntoSearchFieldMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>235, 22</value>
+  </data>
+  <data name="pasteIntoSearchFieldMenuItem.Text" xml:space="preserve">
+    <value>Искать текст в списке</value>
+  </data>
+  <data name="pasteIntoSearchFieldMenuItem.ToolTipText" xml:space="preserve">
+    <value>Искать в списке клипов первые 50 символов выделенного текста</value>
+  </data>
+  <data name="sendClipToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>235, 22</value>
+  </data>
+  <data name="sendClipToolStripMenuItem.Text" xml:space="preserve">
+    <value>Отправить клип в канал</value>
+  </data>
+  <data name="sendClipToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>Отправить клип всем получателям канала клипов</value>
+  </data>
+  <data name="toolStripMenuItem8.Size" type="System.Drawing.Size, System.Drawing">
+    <value>235, 22</value>
+  </data>
+  <data name="toolStripMenuItem8.Text" xml:space="preserve">
+    <value>Удалить</value>
+  </data>
+  <data name="toolStripMenuItem8.ToolTipText" xml:space="preserve">
+    <value>Удалить выделенные нелюбимые клипы из списка. Настоящее удаление выполняется при закрытии базы данных.</value>
+  </data>
+  <data name="changeClipTitleToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>235, 22</value>
+  </data>
+  <data name="changeClipTitleToolStripMenuItem.Text" xml:space="preserve">
+    <value>Редактировать заголовок</value>
+  </data>
+  <data name="changeClipTitleToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>Редактировать заголовок клипа</value>
+  </data>
+  <data name="NextMatchTextMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>235, 22</value>
+  </data>
+  <data name="NextMatchTextMenuItem.Text" xml:space="preserve">
+    <value>Найти следующее</value>
+  </data>
+  <data name="NextMatchTextMenuItem.ToolTipText" xml:space="preserve">
+    <value>Найти следующее вхождение в тексте клипа (F3)</value>
+  </data>
+  <data name="PreviousMatchTextMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>235, 22</value>
+  </data>
+  <data name="PreviousMatchTextMenuItem.Text" xml:space="preserve">
+    <value>Найти предыдущее</value>
+  </data>
+  <data name="PreviousMatchTextMenuItem.ToolTipText" xml:space="preserve">
+    <value>Найти предыдующее вхождение в тексте клипа (SHIFT+F3)</value>
+  </data>
+  <data name="textFormattingToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>235, 22</value>
+  </data>
+  <data name="textFormattingToolStripMenuItem.Text" xml:space="preserve">
+    <value>Родное оформление</value>
+  </data>
+  <data name="wordWrapToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>235, 22</value>
+  </data>
+  <data name="wordWrapToolStripMenuItem.Text" xml:space="preserve">
+    <value>Перенос слов</value>
+  </data>
+  <data name="monospacedFontToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>235, 22</value>
+  </data>
+  <data name="monospacedFontToolStripMenuItem.Text" xml:space="preserve">
+    <value>Моноширинный шрифт</value>
+  </data>
+  <data name="setFavouriteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>235, 22</value>
+  </data>
+  <data name="setFavouriteToolStripMenuItem.Text" xml:space="preserve">
+    <value>Пометить любимыми</value>
+  </data>
+  <data name="setFavouriteToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>Пометить выбранные клипы любимыми</value>
+  </data>
+  <data name="resetFavouriteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>235, 22</value>
+  </data>
+  <data name="resetFavouriteToolStripMenuItem.Text" xml:space="preserve">
+    <value>Пометить обычными</value>
+  </data>
+  <data name="resetFavouriteToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>Пометить выбранные клипы обычными</value>
+  </data>
+  <data name="editClipTextToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>235, 22</value>
+  </data>
+  <data name="editClipTextToolStripMenuItem.Text" xml:space="preserve">
+    <value>Редактировать текст</value>
+  </data>
+  <data name="editClipTextToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>Редактировать текст клипа в виде простого текста</value>
+  </data>
+  <data name="toolStripMenuItem16.Size" type="System.Drawing.Size, System.Drawing">
+    <value>235, 22</value>
+  </data>
+  <data name="toolStripMenuItem16.Text" xml:space="preserve">
+    <value>Открыть файл</value>
+  </data>
+  <data name="toolStripMenuItem16.ToolTipText" xml:space="preserve">
+    <value>Сохраняет данные во временный файл для текстового или графического клипа.
+Открывает файл клипа в приложении по умолчанию.
+Изменения временного файла не синхронизируются с клипом!</value>
+  </data>
+  <data name="openWithToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>235, 22</value>
+  </data>
+  <data name="openWithToolStripMenuItem.Text" xml:space="preserve">
+    <value>Открыть файл с помощью...</value>
+  </data>
+  <data name="openWithToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>Сохраняет данные во временный файл для текстового или графического клипа.
+Открывает стандартный диалог выбора приложения для открытия файла.
+Изменения временного файла не синхронизируются с клипом!</value>
+  </data>
+  <data name="saveAsFileMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>235, 22</value>
+  </data>
+  <data name="saveAsFileMenuItem.Text" xml:space="preserve">
+    <value>Сохранить как файл...</value>
+  </data>
+  <data name="saveAsFileMenuItem.ToolTipText" xml:space="preserve">
+    <value>Сохраняет данные текстового или графического клипа в файл с выбором имени и каталога</value>
+  </data>
+  <data name="mergeTextOfClipsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>235, 22</value>
+  </data>
+  <data name="mergeTextOfClipsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Соединить тексты</value>
+  </data>
+  <data name="mergeTextOfClipsToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>Соединить тексты клипов в новый клип и выбрать его</value>
+  </data>
+  <data name="textCompareToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>235, 22</value>
+  </data>
+  <data name="textCompareToolStripMenuItem.Text" xml:space="preserve">
+    <value>Сравнить тексты</value>
+  </data>
+  <data name="textCompareToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>Сравнить тексты 2 выбранных клипов или текущего клипа с предыдущим выбранным этой командой
+</value>
+  </data>
+  <data name="translateToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>235, 22</value>
+  </data>
+  <data name="translateToolStripMenuItem.Text" xml:space="preserve">
+    <value>Перевести текст</value>
+  </data>
+  <data name="translateToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>Перевести текст клипа или его выделенную часть</value>
+  </data>
+  <data name="uploadImageToWebToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>235, 22</value>
+  </data>
+  <data name="uploadImageToWebToolStripMenuItem.Text" xml:space="preserve">
+    <value>Закачать картинку в web</value>
+  </data>
+  <data name="uploadImageToWebToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>Закачать картинку клипа на сайт хостинга картинок. 
+Адрес будет сохранен в клипе картинки и будет помещен в буфер обмена.</value>
+  </data>
+  <data name="ignoreApplicationInCaptureToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>235, 22</value>
+  </data>
+  <data name="ignoreApplicationInCaptureToolStripMenuItem.Text" xml:space="preserve">
+    <value>Игнорировать приложение</value>
+  </data>
+  <data name="ignoreApplicationInCaptureToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>Игнорировать приложение при захвате клипов. Приложение будет добавлено в список игнорирования, 
+который можно отредактировать через диалог "Настройки".</value>
+  </data>
+  <data name="exportMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>235, 22</value>
+  </data>
+  <data name="exportMenuItem.Text" xml:space="preserve">
+    <value>Экспортировать клипы</value>
+  </data>
+  <data name="exportMenuItem.ToolTipText" xml:space="preserve">
+    <value>Экспортировать выбранные клипы в файл</value>
+  </data>
+  <data name="importToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>235, 22</value>
+  </data>
+  <data name="importToolStripMenuItem.Text" xml:space="preserve">
+    <value>Импортировать клипы</value>
+  </data>
+  <data name="importToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>Импортировать клипы из файла</value>
+  </data>
+  <data name="decodeTextToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>235, 22</value>
+  </data>
+  <data name="decodeTextToolStripMenuItem.Text" xml:space="preserve">
+    <value>Декодировать URL</value>
+  </data>
+  <data name="decodeTextToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>Декодировать выделенный или весь текст клипа по правилам URL (%) в новый клип</value>
+  </data>
+  <data name="clipToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>47, 20</value>
+  </data>
+  <data name="clipToolStripMenuItem.Text" xml:space="preserve">
+    <value>Клип</value>
+  </data>
+  <data name="settingsToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>79, 20</value>
+  </data>
+  <data name="settingsToolStripMenuItem1.Text" xml:space="preserve">
+    <value>Настройки</value>
+  </data>
+  <data name="fToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>71, 20</value>
+  </data>
+  <data name="fToolStripMenuItem.Text" xml:space="preserve">
+    <value>Помощь </value>
+  </data>
+  <data name="MainMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>815, 24</value>
   </data>
   <data name="toolStripMenuItemSwitchFocus.Size" type="System.Drawing.Size, System.Drawing">
     <value>287, 22</value>
@@ -617,12 +913,6 @@
   </data>
   <data name="exitToolStripMenuItem.ToolTipText" xml:space="preserve">
     <value>Завершить работу программы</value>
-  </data>
-  <data name="listToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>60, 20</value>
-  </data>
-  <data name="listToolStripMenuItem.Text" xml:space="preserve">
-    <value>Список</value>
   </data>
   <data name="toolStripMenuItemSecondaryColumns.Size" type="System.Drawing.Size, System.Drawing">
     <value>289, 22</value>
@@ -834,286 +1124,6 @@
   </data>
   <data name="gotoTopToolStripMenuItem.ToolTipText" xml:space="preserve">
     <value>Выбрать верхний клип</value>
-  </data>
-  <data name="clipToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>47, 20</value>
-  </data>
-  <data name="clipToolStripMenuItem.Text" xml:space="preserve">
-    <value>Клип</value>
-  </data>
-  <data name="pasteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>235, 22</value>
-  </data>
-  <data name="pasteToolStripMenuItem.Text" xml:space="preserve">
-    <value>Вставить</value>
-  </data>
-  <data name="pasteENTERToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>259, 22</value>
-  </data>
-  <data name="pasteENTERToolStripMenuItem.Text" xml:space="preserve">
-    <value>Вставить (Enter)</value>
-  </data>
-  <data name="pasteENTERToolStripMenuItem.ToolTipText" xml:space="preserve">
-    <value>Вставить в активное окно выбранные клипы. Также выполняется по двойному клику в списке.</value>
-  </data>
-  <data name="pasteTextToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>259, 22</value>
-  </data>
-  <data name="pasteTextToolStripMenuItem.Text" xml:space="preserve">
-    <value>Вставить текст (Ctrl+Enter)</value>
-  </data>
-  <data name="pasteTextToolStripMenuItem.ToolTipText" xml:space="preserve">
-    <value>Вставить в активное окно выделенный простой текст клипа или имя файла графического клипа или агрегированный простой текст выделенных клипов.</value>
-  </data>
-  <data name="pasteLineToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>259, 22</value>
-  </data>
-  <data name="pasteLineToolStripMenuItem.Text" xml:space="preserve">
-    <value>Вставить строку (Ctrl+Shift+Enter)</value>
-  </data>
-  <data name="pasteLineToolStripMenuItem.ToolTipText" xml:space="preserve">
-    <value>Вставить в активное окно выделенный простой текст клипа без переносов строк и лишних непечатных символов.</value>
-  </data>
-  <data name="pasteFileToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>259, 22</value>
-  </data>
-  <data name="pasteFileToolStripMenuItem.Text" xml:space="preserve">
-    <value>Вставить файл</value>
-  </data>
-  <data name="pasteFileToolStripMenuItem.ToolTipText" xml:space="preserve">
-    <value>Вставить в активное окно выделенные клипы как файлы</value>
-  </data>
-  <data name="pasteSpecialToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>259, 22</value>
-  </data>
-  <data name="pasteSpecialToolStripMenuItem.Text" xml:space="preserve">
-    <value>Вставить с параметрами...</value>
-  </data>
-  <data name="pasteIntoSearchFieldMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>235, 22</value>
-  </data>
-  <data name="pasteIntoSearchFieldMenuItem.Text" xml:space="preserve">
-    <value>Искать текст в списке</value>
-  </data>
-  <data name="pasteIntoSearchFieldMenuItem.ToolTipText" xml:space="preserve">
-    <value>Искать в списке клипов первые 50 символов выделенного текста</value>
-  </data>
-  <data name="toolStripMenuItemPasteChars.Size" type="System.Drawing.Size, System.Drawing">
-    <value>235, 22</value>
-  </data>
-  <data name="toolStripMenuItemPasteChars.Text" xml:space="preserve">
-    <value>Эмулировать ввод символов</value>
-  </data>
-  <data name="toolStripMenuItemPasteChars.ToolTipText" xml:space="preserve">
-    <value>Эмулировать в активном окне ввод текстового клипа или выделенного текста посимвольно.</value>
-  </data>
-  <data name="toolStripMenuItem8.Size" type="System.Drawing.Size, System.Drawing">
-    <value>235, 22</value>
-  </data>
-  <data name="toolStripMenuItem8.Text" xml:space="preserve">
-    <value>Удалить</value>
-  </data>
-  <data name="toolStripMenuItem8.ToolTipText" xml:space="preserve">
-    <value>Удалить выделенные нелюбимые клипы из списка. Настоящее удаление выполняется при закрытии базы данных.</value>
-  </data>
-  <data name="changeClipTitleToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>235, 22</value>
-  </data>
-  <data name="changeClipTitleToolStripMenuItem.Text" xml:space="preserve">
-    <value>Редактировать заголовок</value>
-  </data>
-  <data name="changeClipTitleToolStripMenuItem.ToolTipText" xml:space="preserve">
-    <value>Редактировать заголовок клипа</value>
-  </data>
-  <data name="NextMatchTextMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>235, 22</value>
-  </data>
-  <data name="NextMatchTextMenuItem.Text" xml:space="preserve">
-    <value>Найти следующее</value>
-  </data>
-  <data name="NextMatchTextMenuItem.ToolTipText" xml:space="preserve">
-    <value>Найти следующее вхождение в тексте клипа (F3)</value>
-  </data>
-  <data name="PreviousMatchTextMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>235, 22</value>
-  </data>
-  <data name="PreviousMatchTextMenuItem.Text" xml:space="preserve">
-    <value>Найти предыдущее</value>
-  </data>
-  <data name="PreviousMatchTextMenuItem.ToolTipText" xml:space="preserve">
-    <value>Найти предыдующее вхождение в тексте клипа (SHIFT+F3)</value>
-  </data>
-  <data name="textFormattingToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>235, 22</value>
-  </data>
-  <data name="textFormattingToolStripMenuItem.Text" xml:space="preserve">
-    <value>Родное оформление</value>
-  </data>
-  <data name="wordWrapToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>235, 22</value>
-  </data>
-  <data name="wordWrapToolStripMenuItem.Text" xml:space="preserve">
-    <value>Перенос слов</value>
-  </data>
-  <data name="monospacedFontToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>235, 22</value>
-  </data>
-  <data name="monospacedFontToolStripMenuItem.Text" xml:space="preserve">
-    <value>Моноширинный шрифт</value>
-  </data>
-  <data name="setFavouriteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>235, 22</value>
-  </data>
-  <data name="setFavouriteToolStripMenuItem.Text" xml:space="preserve">
-    <value>Пометить любимыми</value>
-  </data>
-  <data name="setFavouriteToolStripMenuItem.ToolTipText" xml:space="preserve">
-    <value>Пометить выбранные клипы любимыми</value>
-  </data>
-  <data name="resetFavouriteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>235, 22</value>
-  </data>
-  <data name="resetFavouriteToolStripMenuItem.Text" xml:space="preserve">
-    <value>Пометить обычными</value>
-  </data>
-  <data name="resetFavouriteToolStripMenuItem.ToolTipText" xml:space="preserve">
-    <value>Пометить выбранные клипы обычными</value>
-  </data>
-  <data name="editClipTextToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>235, 22</value>
-  </data>
-  <data name="editClipTextToolStripMenuItem.Text" xml:space="preserve">
-    <value>Редактировать текст</value>
-  </data>
-  <data name="editClipTextToolStripMenuItem.ToolTipText" xml:space="preserve">
-    <value>Редактировать текст клипа в виде простого текста</value>
-  </data>
-  <data name="toolStripMenuItem16.Size" type="System.Drawing.Size, System.Drawing">
-    <value>235, 22</value>
-  </data>
-  <data name="toolStripMenuItem16.Text" xml:space="preserve">
-    <value>Открыть файл</value>
-  </data>
-  <data name="toolStripMenuItem16.ToolTipText" xml:space="preserve">
-    <value>Сохраняет данные во временный файл для текстового или графического клипа.
-Открывает файл клипа в приложении по умолчанию.
-Изменения временного файла не синхронизируются с клипом!</value>
-  </data>
-  <data name="openWithToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>235, 22</value>
-  </data>
-  <data name="openWithToolStripMenuItem.Text" xml:space="preserve">
-    <value>Открыть файл с помощью...</value>
-  </data>
-  <data name="openWithToolStripMenuItem.ToolTipText" xml:space="preserve">
-    <value>Сохраняет данные во временный файл для текстового или графического клипа.
-Открывает стандартный диалог выбора приложения для открытия файла.
-Изменения временного файла не синхронизируются с клипом!</value>
-  </data>
-  <data name="saveAsFileMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>235, 22</value>
-  </data>
-  <data name="saveAsFileMenuItem.Text" xml:space="preserve">
-    <value>Сохранить как файл...</value>
-  </data>
-  <data name="saveAsFileMenuItem.ToolTipText" xml:space="preserve">
-    <value>Сохраняет данные текстового или графического клипа в файл с выбором имени и каталога</value>
-  </data>
-  <data name="mergeTextOfClipsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>235, 22</value>
-  </data>
-  <data name="mergeTextOfClipsToolStripMenuItem.Text" xml:space="preserve">
-    <value>Соединить тексты</value>
-  </data>
-  <data name="mergeTextOfClipsToolStripMenuItem.ToolTipText" xml:space="preserve">
-    <value>Соединить тексты клипов в новый клип и выбрать его</value>
-  </data>
-  <data name="textCompareToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>235, 22</value>
-  </data>
-  <data name="textCompareToolStripMenuItem.Text" xml:space="preserve">
-    <value>Сравнить тексты</value>
-  </data>
-  <data name="textCompareToolStripMenuItem.ToolTipText" xml:space="preserve">
-    <value>Сравнить тексты 2 выбранных клипов или текущего клипа с предыдущим выбранным этой командой
-</value>
-  </data>
-  <data name="translateToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>235, 22</value>
-  </data>
-  <data name="translateToolStripMenuItem.Text" xml:space="preserve">
-    <value>Перевести текст</value>
-  </data>
-  <data name="translateToolStripMenuItem.ToolTipText" xml:space="preserve">
-    <value>Перевести текст клипа или его выделенную часть</value>
-  </data>
-  <data name="uploadImageToWebToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>235, 22</value>
-  </data>
-  <data name="uploadImageToWebToolStripMenuItem.Text" xml:space="preserve">
-    <value>Закачать картинку в web</value>
-  </data>
-  <data name="uploadImageToWebToolStripMenuItem.ToolTipText" xml:space="preserve">
-    <value>Закачать картинку клипа на сайт хостинга картинок. 
-Адрес будет сохранен в клипе картинки и будет помещен в буфер обмена.</value>
-  </data>
-  <data name="ignoreApplicationInCaptureToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>235, 22</value>
-  </data>
-  <data name="ignoreApplicationInCaptureToolStripMenuItem.Text" xml:space="preserve">
-    <value>Игнорировать приложение</value>
-  </data>
-  <data name="ignoreApplicationInCaptureToolStripMenuItem.ToolTipText" xml:space="preserve">
-    <value>Игнорировать приложение при захвате клипов. Приложение будет добавлено в список игнорирования, 
-который можно отредактировать через диалог "Настройки".</value>
-  </data>
-  <data name="exportMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>235, 22</value>
-  </data>
-  <data name="exportMenuItem.Text" xml:space="preserve">
-    <value>Экспортировать клипы</value>
-  </data>
-  <data name="exportMenuItem.ToolTipText" xml:space="preserve">
-    <value>Экспортировать выбранные клипы в файл</value>
-  </data>
-  <data name="importToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>235, 22</value>
-  </data>
-  <data name="importToolStripMenuItem.Text" xml:space="preserve">
-    <value>Импортировать клипы</value>
-  </data>
-  <data name="importToolStripMenuItem.ToolTipText" xml:space="preserve">
-    <value>Импортировать клипы из файла</value>
-  </data>
-  <data name="decodeTextToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>235, 22</value>
-  </data>
-  <data name="decodeTextToolStripMenuItem.Text" xml:space="preserve">
-    <value>Декодировать URL</value>
-  </data>
-  <data name="decodeTextToolStripMenuItem.ToolTipText" xml:space="preserve">
-    <value>Декодировать выделенный или весь текст клипа по правилам URL (%) в новый клип</value>
-  </data>
-  <data name="sendClipToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>235, 22</value>
-  </data>
-  <data name="sendClipToolStripMenuItem.Text" xml:space="preserve">
-    <value>Отправить клип в канал</value>
-  </data>
-  <data name="sendClipToolStripMenuItem.ToolTipText" xml:space="preserve">
-    <value>Отправить клип всем получателям канала клипов</value>
-  </data>
-  <data name="settingsToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>79, 20</value>
-  </data>
-  <data name="settingsToolStripMenuItem1.Text" xml:space="preserve">
-    <value>Настройки</value>
-  </data>
-  <data name="fToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>71, 20</value>
-  </data>
-  <data name="fToolStripMenuItem.Text" xml:space="preserve">
-    <value>Помощь </value>
   </data>
   <data name="checkUpdateToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>218, 22</value>
@@ -2353,8 +2363,5 @@
         wAAAAf/////AAAAB/////8AAAAH/////4AAAA//////gAAAD/////+AAAAP/////8AAAB//////4AAAP
         //////gAAA///////AAAH//////+AAA///////+AAP///////+AD/////////////////////////w==
 </value>
-  </data>
-  <data name="ImageControl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>433, 142</value>
   </data>
 </root>
