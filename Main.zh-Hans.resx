@@ -364,9 +364,6 @@
   <data name="showOnlyUsedToolStripMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+3</value>
   </data>
-  <data name="toolStripMenuItemPasteChars.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
-    <value>220, 22</value>
-  </data>
   <data name="pictureBoxSource.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>16, 20</value>
   </data>
@@ -402,9 +399,6 @@
   </data>
   <data name="notifyIcon.Visible" xml:space="preserve" type="System.Boolean, mscorlib">
     <value>True</value>
-  </data>
-  <data name="toolStripMenuItemPasteChars.Text" xml:space="preserve">
-    <value>模拟字符输入</value>
   </data>
   <data name="supportToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>178, 22</value>
@@ -1258,9 +1252,6 @@
   </data>
   <data name="toolStripButtonClearFilterAndSelectTop.ImageTransparentColor" xml:space="preserve" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
-  </data>
-  <data name="toolStripMenuItemPasteChars.ToolTipText" xml:space="preserve">
-    <value>模拟选定剪辑或选定剪辑的合计文本的键盘输入到活动窗口</value>
   </data>
   <data name="toolStripMenuItem9.Text" xml:space="preserve">
     <value>清空剪贴板</value>
@@ -3119,7 +3110,10 @@
   <data name="sendClipMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>221, 22</value>
   </data>
-  <data name="$this.ImeMode" xml:space="preserve" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="toolStripMenuItemPasteCharsFast.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>221, 22</value>
+  </data>
+  <data name="toolStripMenuItemPasteCharsSlow.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>221, 22</value>
   </data>
 </root>

@@ -795,12 +795,13 @@ namespace ClipAngel
             {
                 AllowHotkeyProcess = false;
                 SendPasteClipExpress(null, PasteMethod.Standard, false, true);
-                if ((e.Modifier & EnumModifierKeys.Alt) != 0)
-                    keybd_event((byte) VirtualKeyCode.MENU, 0x38, 0, 0); // LEFT
-                if ((e.Modifier & EnumModifierKeys.Control) != 0)
-                    keybd_event((byte) VirtualKeyCode.CONTROL, 0x1D, 0, 0);
-                if ((e.Modifier & EnumModifierKeys.Shift) != 0)
-                    keybd_event((byte) VirtualKeyCode.SHIFT, 0x2A, 0, 0);
+                // https://www.hostedredmine.com/issues/925182
+                //if ((e.Modifier & EnumModifierKeys.Alt) != 0)
+                //    keybd_event((byte) VirtualKeyCode.MENU, 0x38, 0, 0); // LEFT
+                //if ((e.Modifier & EnumModifierKeys.Control) != 0)
+                //    keybd_event((byte) VirtualKeyCode.CONTROL, 0x1D, 0, 0);
+                //if ((e.Modifier & EnumModifierKeys.Shift) != 0)
+                //    keybd_event((byte) VirtualKeyCode.SHIFT, 0x2A, 0, 0);
                 DataRow oldCurrentDataRow = ((DataRowView) clipBindingSource.Current).Row;
                 clipBindingSource.MovePrevious();
                 DataRow CurrentDataRow = ((DataRowView) clipBindingSource.Current).Row;
@@ -7669,14 +7670,16 @@ namespace ClipAngel
                 string dataString = JsonConvert.SerializeObject(data);
                 string filename = ChannelEncryptionKeyFileName();
                 File.WriteAllText(filename, dataString);
-                File.Encrypt(filename);
+                if (Properties.Settings.Default.EncryptDatabaseForCurrentUser)
+                    File.Encrypt(filename);
             }
-            await setChannelKeyValue("senderName", Environment.MachineName);
             HttpClient client = new HttpClient();
             await client.DeleteAsync(ChannelKeyUrl("recipients"));
             await client.DeleteAsync(ChannelKeyUrl("data"));
             await client.DeleteAsync(ChannelKeyUrl("dataDate"));
             await client.DeleteAsync(ChannelKeyUrl("dataTimestamp"));
+            //await client.DeleteAsync(ChannelKeyUrl("senderName"));
+            await setChannelKeyValue("senderName", Environment.MachineName);
         }
 
         private async Task<string> setChannelKeyValue(string key, string value)

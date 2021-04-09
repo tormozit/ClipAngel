@@ -326,9 +326,6 @@ Url वर्तमान क्लिप में सहेजे जाएँ
   <data name="showOnlyUsedToolStripMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+3</value>
   </data>
-  <data name="toolStripMenuItemPasteChars.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
-    <value>219, 22</value>
-  </data>
   <data name="pictureBoxSource.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>16, 20</value>
   </data>
@@ -364,9 +361,6 @@ Url वर्तमान क्लिप में सहेजे जाएँ
   </data>
   <data name="notifyIcon.Visible" xml:space="preserve" type="System.Boolean, mscorlib">
     <value>True</value>
-  </data>
-  <data name="toolStripMenuItemPasteChars.Text" xml:space="preserve">
-    <value>वर्ण इनपुट अनुकरण</value>
   </data>
   <data name="supportToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>178, 22</value>
@@ -1190,9 +1184,6 @@ Url वर्तमान क्लिप में सहेजे जाएँ
   </data>
   <data name="toolStripButtonClearFilterAndSelectTop.ImageTransparentColor" xml:space="preserve" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
-  </data>
-  <data name="toolStripMenuItemPasteChars.ToolTipText" xml:space="preserve">
-    <value>सक्रिय विंडो में वर्ण इनपुट चयनित क्लिप्स का क्लिप या aggregated पाठ के चयनित पाठ के अनुकरण।</value>
   </data>
   <data name="toolStripMenuItem9.Text" xml:space="preserve">
     <value>स्पष्ट क्लिपबोर्ड</value>
@@ -2752,7 +2743,10 @@ Url वर्तमान क्लिप में सहेजे जाएँ
   <data name="sendClipMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>221, 22</value>
   </data>
-  <data name="$this.ImeMode" xml:space="preserve" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="toolStripMenuItemPasteCharsFast.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>221, 22</value>
+  </data>
+  <data name="toolStripMenuItemPasteCharsSlow.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>221, 22</value>
   </data>
 </root>

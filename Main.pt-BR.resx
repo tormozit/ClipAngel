@@ -326,9 +326,6 @@ Url será salva no clipe atual e será copiada à área de transferência.</valu
   <data name="showOnlyUsedToolStripMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+3</value>
   </data>
-  <data name="toolStripMenuItemPasteChars.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
-    <value>219, 22</value>
-  </data>
   <data name="pictureBoxSource.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>16, 20</value>
   </data>
@@ -364,9 +361,6 @@ Url será salva no clipe atual e será copiada à área de transferência.</valu
   </data>
   <data name="notifyIcon.Visible" xml:space="preserve" type="System.Boolean, mscorlib">
     <value>True</value>
-  </data>
-  <data name="toolStripMenuItemPasteChars.Text" xml:space="preserve">
-    <value>Simular a entrada de caracteres</value>
   </data>
   <data name="supportToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>178, 22</value>
@@ -1190,9 +1184,6 @@ Alterações no arquivo temp não são sincronizadas com o clipe!
   </data>
   <data name="toolStripButtonClearFilterAndSelectTop.ImageTransparentColor" xml:space="preserve" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
-  </data>
-  <data name="toolStripMenuItemPasteChars.ToolTipText" xml:space="preserve">
-    <value>Simule em entrada de caracgter na janela ativa do texto selecionado de texto clipe ou texto agregado de clipes selecionados.</value>
   </data>
   <data name="toolStripMenuItem9.Text" xml:space="preserve">
     <value>Limpar área de transferência</value>
@@ -2752,7 +2743,10 @@ adicionado à lista de ignorar, que pode ser editado na janela de configuraçõe
   <data name="sendClipMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>221, 22</value>
   </data>
-  <data name="$this.ImeMode" xml:space="preserve" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="toolStripMenuItemPasteCharsFast.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>221, 22</value>
+  </data>
+  <data name="toolStripMenuItemPasteCharsSlow.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>221, 22</value>
   </data>
 </root>

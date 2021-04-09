@@ -534,12 +534,14 @@ Die Generierung von Bildern erzeugt CPU-Last. Bei zu hoher, niedrigeren Wert fes
           <note from="MultilingualEditor" annotates="source" priority="4">Typo in source text 'dublicate' should be 'duplicate'</note>
         </trans-unit>
         <trans-unit id="GlobalHotkeySimulateInput" translate="yes" xml:space="preserve">
-          <source>Hotkey to simulate keyboard input</source>
-          <target state="translated">Hotkey zum Simulation der Tastatureingabe</target>
+          <source>Hotkey to simulate fast keyboard input</source>
+          <target state="needs-review-translation">Hotkey zum Simulation der Tastatureingabe</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="GlobalHotkeySimulateInputDescription" translate="yes" xml:space="preserve">
-          <source>Use this hot key in any program to simulate keyboard input of last clip</source>
-          <target state="translated">Verwenden Sie diesen Hotkey in jedem Programm, um die Tastatureingabe des letzten Clips zu simulieren</target>
+          <source>Use this hot key in any program to simulate fast keyboard input of last clip</source>
+          <target state="needs-review-translation">Verwenden Sie diesen Hotkey in jedem Programm, um die Tastatureingabe des letzten Clips zu simulieren</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="EncryptDatabaseForCurrentUser" translate="yes" xml:space="preserve">
           <source>Encrypt database for current user</source>
@@ -2614,10 +2616,6 @@ Die URL wird im aktuellen Clip gespeichert und in die Zwischenablage kopiert..</
           <source>Ctrl+3</source>
           <target state="final">Ctrl+3</target>
         </trans-unit>
-        <trans-unit id="toolStripMenuItemPasteChars.Size" translate="no" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
-          <source>220, 22</source>
-          <target state="final">220, 22</target>
-        </trans-unit>
         <trans-unit id="pictureBoxSource.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
           <source>16, 20</source>
           <target state="needs-review-translation">16, 20</target>
@@ -2665,10 +2663,6 @@ Die URL wird im aktuellen Clip gespeichert und in die Zwischenablage kopiert..</
         <trans-unit id="notifyIcon.Visible" translate="yes" extype="System.Boolean, mscorlib" xml:space="preserve">
           <source>True</source>
           <target state="needs-review-translation">True</target>
-        </trans-unit>
-        <trans-unit id="toolStripMenuItemPasteChars.Text" translate="yes" xml:space="preserve">
-          <source>Simulate char input</source>
-          <target state="translated">Zeicheneingabe simulieren</target>
         </trans-unit>
         <trans-unit id="supportToolStripMenuItem.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
           <source>178, 22</source>
@@ -2840,8 +2834,9 @@ Clip-Datei mit Standardanwendung öffnen.
           <target state="translated">Hilfe</target>
         </trans-unit>
         <trans-unit id="toolStripMenuItem7.Text" translate="yes" xml:space="preserve">
-          <source>Simulate char input</source>
-          <target state="translated">Zeicheneingabe simulieren</target>
+          <source>Simulate fast char input</source>
+          <target state="needs-review-translation">Zeicheneingabe simulieren</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="fToolStripMenuItem.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
           <source>44, 20</source>
@@ -4137,8 +4132,8 @@ System-Menü öffnen, um die Clip-Datei in der gewählten Anwendung zu öffnen.
           <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="toolStripMenuItem7.ToolTipText" translate="yes" xml:space="preserve">
-          <source>Simulate in active window char input of selected text of clip or aggregated text of selected clips.</source>
-          <target state="translated">Simuliert im aktiven Fenster die Zeicheneingabe ausgewählten Textes des Clips oder verbundener Text ausgewählter Clips.</target>
+          <source>Simulate in active window fast char input of selected text of clip or aggregated text of selected clips.</source>
+          <target state="needs-review-translation">Simuliert im aktiven Fenster die Zeicheneingabe ausgewählten Textes des Clips oder verbundener Text ausgewählter Clips.</target>
           <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="MarkFilter.TabIndex" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
@@ -4178,12 +4173,6 @@ Wenn diese Option aktiviert (AN) und "Schnelle Fensteröffnung" deaktiviert (AUS
         <trans-unit id="toolStripButtonClearFilterAndSelectTop.ImageTransparentColor" translate="yes" extype="System.Drawing.Color, System.Drawing" xml:space="preserve">
           <source>Magenta</source>
           <target state="needs-review-translation">Magenta</target>
-        </trans-unit>
-        <trans-unit id="toolStripMenuItemPasteChars.ToolTipText" translate="yes" xml:space="preserve">
-          <source>Simulate in active window char input of selected text of clip or aggregated text of selected clips.</source>
-          <target state="needs-review-translation">Simuliert im aktiven Fenster die Zeicheneingabe ausgewählten Textes des Clips oder verbundener Text ausgewählter Clips.
-</target>
-          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="toolStripMenuItem9.Text" translate="yes" xml:space="preserve">
           <source>Clear clipboard</source>
@@ -7103,9 +7092,31 @@ Bearbeite den Suchstring direkt aus der Liste. Navigiere in der Liste direkt aus
           <source>Set up clip channel</source>
           <target state="new">Set up clip channel</target>
         </trans-unit>
-        <trans-unit id="$this.ImeMode" translate="yes" xml:space="preserve" extype="System.Windows.Forms.ImeMode, System.Windows.Forms">
-          <source>NoControl</source>
-          <target state="needs-review-translation">NoControl</target>
+        <trans-unit id="toolStripMenuItemPasteCharsFast.Size" translate="yes" xml:space="preserve" extype="System.Drawing.Size, System.Drawing">
+          <source>221, 22</source>
+          <target state="needs-review-translation">221, 22</target>
+        </trans-unit>
+        <trans-unit id="toolStripMenuItemPasteCharsFast.Text" translate="yes" xml:space="preserve">
+          <source>Simulate fast char input</source>
+          <target state="new">Simulate fast char input</target>
+        </trans-unit>
+        <trans-unit id="toolStripMenuItemPasteCharsFast.ToolTipText" translate="yes" xml:space="preserve">
+          <source>Simulate in active window fast char input of selected text of clip or aggregated text of selected clips.</source>
+          <target state="new">Simulate in active window fast char input of selected text of clip or aggregated text of selected clips.</target>
+        </trans-unit>
+        <trans-unit id="toolStripMenuItemPasteCharsSlow.Size" translate="yes" xml:space="preserve" extype="System.Drawing.Size, System.Drawing">
+          <source>221, 22</source>
+          <target state="needs-review-translation">221, 22</target>
+        </trans-unit>
+        <trans-unit id="toolStripMenuItemPasteCharsSlow.Text" translate="yes" xml:space="preserve">
+          <source>Simulate slow char input</source>
+          <target state="new">Simulate slow char input</target>
+        </trans-unit>
+        <trans-unit id="toolStripMenuItemPasteCharsSlow.ToolTipText" translate="yes" xml:space="preserve">
+          <source>Simulate in active window fast char input of selected text of clip or aggregated text of selected clips.
+Not working for sending to elevated window</source>
+          <target state="new">Simulate in active window fast char input of selected text of clip or aggregated text of selected clips.
+Not working for sending to elevated window</target>
         </trans-unit>
       </group>
     </body>

@@ -328,9 +328,6 @@ L'URL sera enregistrée dans le clip actuel et sera copiée dans le presse-papie
   <data name="showOnlyUsedToolStripMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+3</value>
   </data>
-  <data name="toolStripMenuItemPasteChars.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
-    <value>219, 22</value>
-  </data>
   <data name="pictureBoxSource.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>16, 20</value>
   </data>
@@ -363,9 +360,6 @@ L'URL sera enregistrée dans le clip actuel et sera copiée dans le presse-papie
   </data>
   <data name="notifyIcon.Visible" xml:space="preserve" type="System.Boolean, mscorlib">
     <value>True</value>
-  </data>
-  <data name="toolStripMenuItemPasteChars.Text" xml:space="preserve">
-    <value>Simuler l'entrée de caractère</value>
   </data>
   <data name="supportToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>178, 22</value>
@@ -1205,9 +1199,6 @@ Lorsque ON et "Fenêtre rapide ouverte" OFF, la fenêtre sera affichée dans la 
   </data>
   <data name="toolStripMenuItem8.Text" xml:space="preserve">
     <value>Supprimer</value>
-  </data>
-  <data name="toolStripMenuItemPasteChars.ToolTipText" xml:space="preserve">
-    <value>Simuler l'entrée caractère de la fenêtre active au texte sélectionné du clip ou du texte agrégé des clips sélectionnés.</value>
   </data>
   <data name="toolStripMenuItem9.Text" xml:space="preserve">
     <value>Effacer le Presse-papiers</value>
@@ -2836,7 +2827,10 @@ Le tri est conservé jusqu'à la capture du clip.</value>
   <data name="sendClipMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>221, 22</value>
   </data>
-  <data name="$this.ImeMode" xml:space="preserve" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="toolStripMenuItemPasteCharsFast.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>221, 22</value>
+  </data>
+  <data name="toolStripMenuItemPasteCharsSlow.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>221, 22</value>
   </data>
 </root>

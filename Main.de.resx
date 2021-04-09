@@ -331,9 +331,6 @@ Die URL wird im aktuellen Clip gespeichert und in die Zwischenablage kopiert..</
   <data name="notifyIcon.Visible" xml:space="preserve" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="toolStripMenuItemPasteChars.Text" xml:space="preserve">
-    <value>Zeicheneingabe simulieren</value>
-  </data>
   <data name="supportToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>178, 22</value>
   </data>
@@ -1155,10 +1152,6 @@ Wenn diese Option aktiviert (AN) und "Schnelle Fensteröffnung" deaktiviert (AUS
   </data>
   <data name="toolStripButtonClearFilterAndSelectTop.ImageTransparentColor" xml:space="preserve" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
-  </data>
-  <data name="toolStripMenuItemPasteChars.ToolTipText" xml:space="preserve">
-    <value>Simuliert im aktiven Fenster die Zeicheneingabe ausgewählten Textes des Clips oder verbundener Text ausgewählter Clips.
-</value>
   </data>
   <data name="toolStripMenuItem9.Text" xml:space="preserve">
     <value>Zwischenablage löschen</value>
@@ -2840,7 +2833,10 @@ Bearbeite den Suchstring direkt aus der Liste. Navigiere in der Liste direkt aus
   <data name="sendClipMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>221, 22</value>
   </data>
-  <data name="$this.ImeMode" xml:space="preserve" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="toolStripMenuItemPasteCharsFast.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>221, 22</value>
+  </data>
+  <data name="toolStripMenuItemPasteCharsSlow.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>221, 22</value>
   </data>
 </root>
