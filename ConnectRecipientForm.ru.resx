@@ -196,6 +196,9 @@
   <data name="label4.Text" xml:space="preserve">
     <value>Отправитель:</value>
   </data>
+  <data name="linkClipoid.ToolTip" xml:space="preserve">
+    <value>Установить приложение Clipoid на Android устройство через PlayMarket</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Подключение канала клипов</value>
   </data>

@@ -7823,8 +7823,8 @@ namespace ClipAngel
                 connectRecipientToolStripMenuItem_Click();
                 return;
             }
-            string Dummy = "";
-            string text = GetSelectedTextOfClips(ref Dummy);
+            int Dummy;
+            string text = JoinOrPasteTextOfClips(PasteMethod.Null, out Dummy);
             if (text.Length > 10000)
             {
                 MessageBox.Show(this, Properties.Resources.TooBigClipForChannel);

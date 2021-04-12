@@ -43,6 +43,7 @@
             this.textBoxSenderName = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.toolTip2 = new System.Windows.Forms.ToolTip(this.components);
+            this.linkClipoid = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,19 +53,16 @@
             this.pictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox.Name = "pictureBox";
             this.pictureBox.TabStop = false;
-            this.toolTip2.SetToolTip(this.pictureBox, resources.GetString("pictureBox.ToolTip"));
             // 
             // label1
             // 
             resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
-            this.toolTip2.SetToolTip(this.label1, resources.GetString("label1.ToolTip"));
             // 
             // QuantityOfRecipients
             // 
             resources.ApplyResources(this.QuantityOfRecipients, "QuantityOfRecipients");
             this.QuantityOfRecipients.Name = "QuantityOfRecipients";
-            this.toolTip2.SetToolTip(this.QuantityOfRecipients, resources.GetString("QuantityOfRecipients.ToolTip"));
             // 
             // buttonRefresh
             // 
@@ -78,14 +76,12 @@
             // 
             resources.ApplyResources(this.label2, "label2");
             this.label2.Name = "label2";
-            this.toolTip2.SetToolTip(this.label2, resources.GetString("label2.ToolTip"));
             // 
             // textBoxChannelName
             // 
             resources.ApplyResources(this.textBoxChannelName, "textBoxChannelName");
             this.textBoxChannelName.Name = "textBoxChannelName";
             this.textBoxChannelName.ReadOnly = true;
-            this.toolTip2.SetToolTip(this.textBoxChannelName, resources.GetString("textBoxChannelName.ToolTip"));
             // 
             // buttonReset
             // 
@@ -100,20 +96,17 @@
             resources.ApplyResources(this.label3, "label3");
             this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label3.Name = "label3";
-            this.toolTip2.SetToolTip(this.label3, resources.GetString("label3.ToolTip"));
             // 
             // textBoxRecipients
             // 
             resources.ApplyResources(this.textBoxRecipients, "textBoxRecipients");
             this.textBoxRecipients.Name = "textBoxRecipients";
             this.textBoxRecipients.ReadOnly = true;
-            this.toolTip2.SetToolTip(this.textBoxRecipients, resources.GetString("textBoxRecipients.ToolTip"));
             // 
             // checkBoxShow
             // 
             resources.ApplyResources(this.checkBoxShow, "checkBoxShow");
             this.checkBoxShow.Name = "checkBoxShow";
-            this.toolTip2.SetToolTip(this.checkBoxShow, resources.GetString("checkBoxShow.ToolTip"));
             this.checkBoxShow.UseVisualStyleBackColor = true;
             this.checkBoxShow.CheckedChanged += new System.EventHandler(this.checkBoxShow_CheckedChanged);
             // 
@@ -122,18 +115,25 @@
             resources.ApplyResources(this.textBoxSenderName, "textBoxSenderName");
             this.textBoxSenderName.Name = "textBoxSenderName";
             this.textBoxSenderName.ReadOnly = true;
-            this.toolTip2.SetToolTip(this.textBoxSenderName, resources.GetString("textBoxSenderName.ToolTip"));
             // 
             // label4
             // 
             resources.ApplyResources(this.label4, "label4");
             this.label4.Name = "label4";
-            this.toolTip2.SetToolTip(this.label4, resources.GetString("label4.ToolTip"));
+            // 
+            // linkClipoid
+            // 
+            resources.ApplyResources(this.linkClipoid, "linkClipoid");
+            this.linkClipoid.Name = "linkClipoid";
+            this.linkClipoid.TabStop = true;
+            this.toolTip2.SetToolTip(this.linkClipoid, resources.GetString("linkClipoid.ToolTip"));
+            this.linkClipoid.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkClipoid_LinkClicked);
             // 
             // ConnectRecipientForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.linkClipoid);
             this.Controls.Add(this.textBoxSenderName);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.checkBoxShow);
@@ -148,7 +148,6 @@
             this.Controls.Add(this.pictureBox);
             this.KeyPreview = true;
             this.Name = "ConnectRecipientForm";
-            this.toolTip2.SetToolTip(this, resources.GetString("$this.ToolTip"));
             this.Load += new System.EventHandler(this.ConnectRecipientForm_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ConnectRecipientForm_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
@@ -172,5 +171,6 @@
         private System.Windows.Forms.TextBox textBoxSenderName;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ToolTip toolTip2;
+        private System.Windows.Forms.LinkLabel linkClipoid;
     }
 }

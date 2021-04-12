@@ -99,5 +99,10 @@ namespace ClipAngel
                 this.Close();
             }
         }
+
+        private void linkClipoid_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://play.google.com/store/apps/details?id=com.clipangel.app");
+        }
     }
 }

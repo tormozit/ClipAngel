@@ -1596,8 +1596,8 @@ Die Generierung von Bildern erzeugt CPU-Last. Bei zu hoher, niedrigeren Wert fes
           <target state="translated">Clip wurde aufgrund eines Lesefehlers in der Zwischenablage nicht erfasst</target>
         </trans-unit>
         <trans-unit id="VersionValue" translate="yes" xml:space="preserve">
-          <source>1.95</source>
-          <target state="new">1.95</target>
+          <source>1.96</source>
+          <target state="new">1.96</target>
         </trans-unit>
         <trans-unit id="TargetWindow" translate="yes" xml:space="preserve">
           <source>Target window</source>
@@ -8885,10 +8885,6 @@ Nachlaufende nicht druckbare Symbole werden gelöscht.</target>
           <source>8</source>
           <target state="needs-review-translation">8</target>
         </trans-unit>
-        <trans-unit id="label2.ToolTip" translate="yes" xml:space="preserve">
-          <source></source>
-          <target state="new"></target>
-        </trans-unit>
         <trans-unit id="label3.Size" translate="yes" xml:space="preserve" extype="System.Drawing.Size, System.Drawing">
           <source>609, 54</source>
           <target state="needs-review-translation">609, 54</target>
@@ -8901,10 +8897,6 @@ Nachlaufende nicht druckbare Symbole werden gelöscht.</target>
           <source>85, 57</source>
           <target state="needs-review-translation">85, 57</target>
         </trans-unit>
-        <trans-unit id="checkBoxShow.ToolTip" translate="yes" xml:space="preserve">
-          <source></source>
-          <target state="new"></target>
-        </trans-unit>
         <trans-unit id="pictureBox.TabIndex" translate="yes" xml:space="preserve" extype="System.Int32, mscorlib">
           <source>0</source>
           <target state="needs-review-translation">0</target>
@@ -8912,10 +8904,6 @@ Nachlaufende nicht druckbare Symbole werden gelöscht.</target>
         <trans-unit id="label1.TabIndex" translate="yes" xml:space="preserve" extype="System.Int32, mscorlib">
           <source>2</source>
           <target state="needs-review-translation">2</target>
-        </trans-unit>
-        <trans-unit id="textBoxSenderName.ToolTip" translate="yes" xml:space="preserve">
-          <source></source>
-          <target state="new"></target>
         </trans-unit>
         <trans-unit id="label1.Size" translate="yes" xml:space="preserve" extype="System.Drawing.Size, System.Drawing">
           <source>64, 13</source>
@@ -8925,17 +8913,9 @@ Nachlaufende nicht druckbare Symbole werden gelöscht.</target>
           <source>7</source>
           <target state="needs-review-translation">7</target>
         </trans-unit>
-        <trans-unit id="label1.ToolTip" translate="yes" xml:space="preserve">
-          <source></source>
-          <target state="new"></target>
-        </trans-unit>
         <trans-unit id="buttonRefresh.Location" translate="yes" xml:space="preserve" extype="System.Drawing.Point, System.Drawing">
           <source>13, 29</source>
           <target state="needs-review-translation">13, 29</target>
-        </trans-unit>
-        <trans-unit id="textBoxChannelName.ToolTip" translate="yes" xml:space="preserve">
-          <source></source>
-          <target state="new"></target>
         </trans-unit>
         <trans-unit id="label2.Size" translate="yes" xml:space="preserve" extype="System.Drawing.Size, System.Drawing">
           <source>78, 13</source>
@@ -8948,10 +8928,6 @@ Nachlaufende nicht druckbare Symbole werden gelöscht.</target>
         <trans-unit id="QuantityOfRecipients.Text" translate="yes" xml:space="preserve">
           <source>QuantityOfRecipients</source>
           <target state="new">QuantityOfRecipients</target>
-        </trans-unit>
-        <trans-unit id="$this.ToolTip" translate="yes" xml:space="preserve">
-          <source></source>
-          <target state="new"></target>
         </trans-unit>
         <trans-unit id="label4.Text" translate="yes" xml:space="preserve">
           <source>Sender name:</source>
@@ -9007,17 +8983,9 @@ If you send clip to channel it will be sent encrypted via internet. Only devices
           <source>109, 20</source>
           <target state="needs-review-translation">109, 20</target>
         </trans-unit>
-        <trans-unit id="QuantityOfRecipients.ToolTip" translate="yes" xml:space="preserve">
-          <source></source>
-          <target state="new"></target>
-        </trans-unit>
         <trans-unit id="QuantityOfRecipients.TabIndex" translate="yes" xml:space="preserve" extype="System.Int32, mscorlib">
           <source>3</source>
           <target state="needs-review-translation">3</target>
-        </trans-unit>
-        <trans-unit id="label4.ToolTip" translate="yes" xml:space="preserve">
-          <source></source>
-          <target state="new"></target>
         </trans-unit>
         <trans-unit id="QuantityOfRecipients.Size" translate="yes" xml:space="preserve" extype="System.Drawing.Size, System.Drawing">
           <source>13, 13</source>
@@ -9051,10 +9019,6 @@ If you send clip to channel it will be sent encrypted via internet. Only devices
           <source>167, 31</source>
           <target state="needs-review-translation">167, 31</target>
         </trans-unit>
-        <trans-unit id="textBoxRecipients.ToolTip" translate="yes" xml:space="preserve">
-          <source></source>
-          <target state="new"></target>
-        </trans-unit>
         <trans-unit id="label4.Size" translate="yes" xml:space="preserve" extype="System.Drawing.Size, System.Drawing">
           <source>73, 13</source>
           <target state="needs-review-translation">73, 13</target>
@@ -9066,10 +9030,6 @@ If you send clip to channel it will be sent encrypted via internet. Only devices
         <trans-unit id="pictureBox.Anchor" translate="yes" xml:space="preserve" extype="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
           <source>Top, Bottom, Left, Right</source>
           <target state="needs-review-translation">Top, Bottom, Left, Right</target>
-        </trans-unit>
-        <trans-unit id="label3.ToolTip" translate="yes" xml:space="preserve">
-          <source></source>
-          <target state="new"></target>
         </trans-unit>
         <trans-unit id="checkBoxShow.AutoSize" translate="yes" xml:space="preserve" extype="System.Boolean, mscorlib">
           <source>True</source>
@@ -9099,10 +9059,6 @@ If you send clip to channel it will be sent encrypted via internet. Only devices
           <source>152, 34</source>
           <target state="needs-review-translation">152, 34</target>
         </trans-unit>
-        <trans-unit id="pictureBox.ToolTip" translate="yes" xml:space="preserve">
-          <source></source>
-          <target state="new"></target>
-        </trans-unit>
         <trans-unit id="label2.TabIndex" translate="yes" xml:space="preserve" extype="System.Int32, mscorlib">
           <source>2</source>
           <target state="needs-review-translation">2</target>
@@ -9110,6 +9066,30 @@ If you send clip to channel it will be sent encrypted via internet. Only devices
         <trans-unit id="$this.Localizable" translate="yes" xml:space="preserve" extype="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" extradata="metadata">
           <source>True</source>
           <target state="needs-review-translation">True</target>
+        </trans-unit>
+        <trans-unit id="linkClipoid.AutoSize" translate="yes" xml:space="preserve" extype="System.Boolean, mscorlib">
+          <source>True</source>
+          <target state="needs-review-translation">True</target>
+        </trans-unit>
+        <trans-unit id="linkClipoid.Location" translate="yes" xml:space="preserve" extype="System.Drawing.Point, System.Drawing">
+          <source>28, 57</source>
+          <target state="needs-review-translation">28, 57</target>
+        </trans-unit>
+        <trans-unit id="linkClipoid.Size" translate="yes" xml:space="preserve" extype="System.Drawing.Size, System.Drawing">
+          <source>38, 13</source>
+          <target state="needs-review-translation">38, 13</target>
+        </trans-unit>
+        <trans-unit id="linkClipoid.TabIndex" translate="yes" xml:space="preserve" extype="System.Int32, mscorlib">
+          <source>11</source>
+          <target state="needs-review-translation">11</target>
+        </trans-unit>
+        <trans-unit id="linkClipoid.Text" translate="yes" xml:space="preserve">
+          <source>Clipoid</source>
+          <target state="new">Clipoid</target>
+        </trans-unit>
+        <trans-unit id="linkClipoid.ToolTip" translate="yes" xml:space="preserve">
+          <source>Install Clipoid app on Android device via PlayMarket</source>
+          <target state="new">Install Clipoid app on Android device via PlayMarket</target>
         </trans-unit>
       </group>
     </body>
