@@ -230,9 +230,6 @@
     <Setting Name="SendChannel" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="ChannelMAC" Type="System.String" Scope="User">
-      <Value Profile="(Default)">0</Value>
-    </Setting>
     <Setting Name="ClipSendDate" Type="System.DateTime" Scope="User">
       <Value Profile="(Default)" />
     </Setting>

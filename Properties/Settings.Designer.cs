@@ -935,18 +935,6 @@ namespace ClipAngel.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public string ChannelMAC {
-            get {
-                return ((string)(this["ChannelMAC"]));
-            }
-            set {
-                this["ChannelMAC"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         public global::System.DateTime ClipSendDate {
             get {
                 return ((global::System.DateTime)(this["ClipSendDate"]));

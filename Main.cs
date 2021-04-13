@@ -7733,20 +7733,16 @@ namespace ClipAngel
         public string CurrentSendChannel()
         {
             string sid = WindowsIdentity.GetCurrent().User.Value;
-            string currentMAC = FindMAC();
             MD5 md5 = new MD5CryptoServiceProvider();
             byte[] binaryText;
             binaryText = Encoding.Unicode.GetBytes(Environment.MachineName);
             md5.TransformBlock(binaryText, 0, binaryText.Length, binaryText, 0);
             binaryText = Encoding.Unicode.GetBytes(sid);
-            md5.TransformBlock(binaryText, 0, binaryText.Length, binaryText, 0);
-            binaryText = Encoding.Unicode.GetBytes(currentMAC);
             md5.TransformFinalBlock(binaryText, 0, binaryText.Length);
             string currentSendChannel = Convert.ToBase64String(md5.Hash);
             if (currentSendChannel != Properties.Settings.Default.SendChannel)
             {
                 Properties.Settings.Default.SendChannel = currentSendChannel;
-                Properties.Settings.Default.ChannelMAC = currentMAC;
                 Properties.Settings.Default.Save();
                 CreateSendChannel();
             }
@@ -7754,36 +7750,36 @@ namespace ClipAngel
             return currentSendChannel.Replace("/","!");
         }
 
-        private static string FindMAC()
-        {
-            string MAC = "0";
-            NetworkInterface[] adapters = NetworkInterface.GetAllNetworkInterfaces();
-            if (adapters != null && adapters.Length >= 0)
-            {
-                for (int stage = 1; stage <= 2; stage++)
-                {
-                    foreach (NetworkInterface adapter in adapters)
-                    {
-                        if (adapter.NetworkInterfaceType != NetworkInterfaceType.Ethernet)
-                            continue;
-                        MAC = stringMACFromAdapter(adapter);
-                        if (false
-                            || stage == 2
-                            || (true
-                                && stage == 1
-                                && MAC == Properties.Settings.Default.ChannelMAC))
-                        {
-                            break;
-                        }
-                    }
-                    if (MAC == Properties.Settings.Default.ChannelMAC)
-                        break;
-                    else
-                    {    string dummy = ""; }
-                }
-            }
-            return MAC;
-        }
+        //private static string FindMAC()
+        //{
+        //    string MAC = "0";
+        //    NetworkInterface[] adapters = NetworkInterface.GetAllNetworkInterfaces();
+        //    if (adapters != null && adapters.Length >= 0)
+        //    {
+        //        for (int stage = 1; stage <= 2; stage++)
+        //        {
+        //            foreach (NetworkInterface adapter in adapters)
+        //            {
+        //                if (adapter.NetworkInterfaceType != NetworkInterfaceType.Ethernet)
+        //                    continue;
+        //                MAC = stringMACFromAdapter(adapter);
+        //                if (false
+        //                    || stage == 2
+        //                    || (true
+        //                        && stage == 1
+        //                        && MAC == Properties.Settings.Default.ChannelMAC))
+        //                {
+        //                    break;
+        //                }
+        //            }
+        //            if (MAC == Properties.Settings.Default.ChannelMAC)
+        //                break;
+        //            else
+        //            {    string dummy = ""; }
+        //        }
+        //    }
+        //    return MAC;
+        //}
 
         private static string stringMACFromAdapter(NetworkInterface adapter)
         {
