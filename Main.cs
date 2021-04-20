@@ -817,35 +817,35 @@ namespace ClipAngel
             else if (hotkeyTitle == ClipAngel.Properties.Settings.Default.GlobalHotkeyCompareLastClips)
             {
                 if (filterOn)
-                    ClearFilter(-1);
+                    ClearFilter(-1, false, true);
                 toolStripMenuItemCompareLastClips_Click();
             }
             else if (hotkeyTitle == ClipAngel.Properties.Settings.Default.GlobalHotkeyPasteText)
             {
                 if (filterOn)
-                    ClearFilter(-1);
+                    ClearFilter(-1, false, true);
                 SendPasteClipExpress(dataGridView.Rows[0], PasteMethod.Text);
             }
             else if (hotkeyTitle == ClipAngel.Properties.Settings.Default.GlobalHotkeySimulateInput)
             {
                 if (filterOn)
-                    ClearFilter(-1);
+                    ClearFilter(-1, false, true);
                 SendPasteClipExpress(dataGridView.Rows[0], PasteMethod.SendCharsFast);
             }
             else if (hotkeyTitle == ClipAngel.Properties.Settings.Default.GlobalHotkeySwitchMonitoring)
             {
                 SwitchMonitoringClipboard(true);
             }
-            else if (hotkeyTitle == "Control + F3")
-            {
-                keyboardHook.UnregisterHotKeys();
-                BackupClipboard();
-                //Clipboard.Clear();
-                Paster.SendCopy(false);
-                SendKeys.SendWait("^{F3}");
-                RegisterHotKeys();
-                RestoreClipboard();
-            }
+            //else if (hotkeyTitle == "Control + F3")
+            //{
+            //    keyboardHook.UnregisterHotKeys();
+            //    BackupClipboard();
+            //    //Clipboard.Clear();
+            //    Paster.SendCopy(false);
+            //    SendKeys.SendWait("^{F3}");
+            //    RegisterHotKeys();
+            //    RestoreClipboard();
+            //}
             else
             {
                 //int a = 0;
@@ -2016,7 +2016,7 @@ namespace ClipAngel
             dataGridView.Focus();
         }
 
-        private void ClearFilter(int CurrentClipID = 0, bool keepMarkFilterFilter = false)
+        private void ClearFilter(int CurrentClipID = 0, bool keepMarkFilterFilter = false, bool waitFinish = false)
         {
             if (filterOn)
             {
@@ -2029,7 +2029,7 @@ namespace ClipAngel
                     MarkFilter.SelectedIndex = 0;
                 AllowFilterProcessing = true;
                 //UpdateClipBindingSource(false, CurrentClipID);
-                ReloadList(true, CurrentClipID); // To repaint text
+                ReloadList(true, CurrentClipID, waitFinish); // To repaint text
             }
             else if (CurrentClipID != 0)
                 RestoreSelectedCurrentClip(false, CurrentClipID);
@@ -2176,9 +2176,10 @@ namespace ClipAngel
                 {
                     LastClip lastClip = lastClips[i];
                     if (true
-                        && (false
-                            || removeClipsFilter.PID == 0
-                            || removeClipsFilter.PID == lastClip.ProcessID)
+                        // Will not work correctly during capturing clip from remote desktop session
+                        //&& (false
+                        //    || removeClipsFilter.PID == 0
+                        //    || removeClipsFilter.PID == lastClip.ProcessID)
                         && removeClipsFilter.TimeStart < lastClip.Created
                         && removeClipsFilter.TimeEnd.AddMilliseconds(100) > lastClip.Created)
                     {
@@ -3114,6 +3115,8 @@ namespace ClipAngel
             SaveFilterInLastUsedList();
             string clipText;
             var dto = ClipDataObject(rowReader, onlySelectedPlainText, out clipText);
+            if (dto == null)
+                return "";
             //if (!ClipAngel.Properties.Settings.Default.MoveCopiedClipToTop)
             //    CaptureClipboard = false;
             SetClipboardDataObject(dto, allowSelfCapture);
@@ -3122,8 +3125,11 @@ namespace ClipAngel
 
         private DataObject ClipDataObject(SQLiteDataReader rowReader, bool onlySelectedPlainText, out string clipText)
         {
+            clipText = "";
             if (rowReader == null)
                 rowReader = LoadedClipRowReader;
+            if (rowReader == null)
+                return null;
 
             //DataRow CurrentDataRow = ((DataRowView)clipBindingSource.Current).Row;
             string type = (string) rowReader["type"];
