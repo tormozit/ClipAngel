@@ -1596,8 +1596,8 @@ Die Generierung von Bildern erzeugt CPU-Last. Bei zu hoher, niedrigeren Wert fes
           <target state="translated">Clip wurde aufgrund eines Lesefehlers in der Zwischenablage nicht erfasst</target>
         </trans-unit>
         <trans-unit id="VersionValue" translate="yes" xml:space="preserve">
-          <source>1.96</source>
-          <target state="new">1.96</target>
+          <source>1.97</source>
+          <target state="new">1.97</target>
         </trans-unit>
         <trans-unit id="TargetWindow" translate="yes" xml:space="preserve">
           <source>Target window</source>

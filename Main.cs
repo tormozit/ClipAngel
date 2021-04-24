@@ -2172,6 +2172,7 @@ namespace ClipAngel
                 //dataString = JsonConvert.SerializeObject(removeClipsFilter);
 
                 removeClipsFilter = JsonConvert.DeserializeObject<removeClipsFilter>(dataString);
+                int removeTimespan = removeClipsFilter.TimeEnd.Subtract(removeClipsFilter.TimeStart).Milliseconds;
                 for (int i = lastClips.Count - 1; i >= 0; i--)
                 {
                     LastClip lastClip = lastClips[i];
@@ -2180,8 +2181,7 @@ namespace ClipAngel
                         //&& (false
                         //    || removeClipsFilter.PID == 0
                         //    || removeClipsFilter.PID == lastClip.ProcessID)
-                        && removeClipsFilter.TimeStart < lastClip.Created
-                        && removeClipsFilter.TimeEnd.AddMilliseconds(100) > lastClip.Created)
+                        && DateTime.Now.Subtract(lastClip.Created).Milliseconds < removeTimespan)
                     {
                         SQLiteCommand command = new SQLiteCommand("Delete from Clips where Id = @Id", m_dbConnection);
                         command.Parameters.Add("Id", DbType.Int32).Value = lastClip.ID;
