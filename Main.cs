@@ -6090,7 +6090,7 @@ namespace ClipAngel
             }
             List <int> ids = order.Select(d => d.Value).ToList();
             ids.Reverse();
-            ReloadList(false, newCurrentID, true, ids);
+            ReloadList(false, newCurrentID, true, ids, true);
         }
 
         private void RegisterClipIdChange(int oldID, int newID)
