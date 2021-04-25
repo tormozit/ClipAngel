@@ -2120,6 +2120,7 @@ namespace ClipAngel
 
         private void CaptureClipboardData()
         {
+            DateTime now = DateTime.Now;
             captureTimer.Stop();
             //
             // Data on the clipboard uses the 
@@ -2172,16 +2173,18 @@ namespace ClipAngel
                 //dataString = JsonConvert.SerializeObject(removeClipsFilter);
 
                 removeClipsFilter = JsonConvert.DeserializeObject<removeClipsFilter>(dataString);
-                int removeTimespan = removeClipsFilter.TimeEnd.Subtract(removeClipsFilter.TimeStart).Milliseconds;
+                double maxRemovedClipAge = removeClipsFilter.TimeEnd.Subtract(removeClipsFilter.TimeStart).TotalMilliseconds; // Докинем немного времени на путь от источника до приемника
+                double timeDelta = now.Subtract(removeClipsFilter.TimeEnd).TotalMilliseconds;
                 for (int i = lastClips.Count - 1; i >= 0; i--)
                 {
                     LastClip lastClip = lastClips[i];
+                    double clipAge = now.Subtract(lastClip.Created).TotalMilliseconds;
                     if (true
                         // Will not work correctly during capturing clip from remote desktop session
                         //&& (false
                         //    || removeClipsFilter.PID == 0
                         //    || removeClipsFilter.PID == lastClip.ProcessID)
-                        && DateTime.Now.Subtract(lastClip.Created).Milliseconds < removeTimespan)
+                        && clipAge < maxRemovedClipAge)
                     {
                         SQLiteCommand command = new SQLiteCommand("Delete from Clips where Id = @Id", m_dbConnection);
                         command.Parameters.Add("Id", DbType.Int32).Value = lastClip.ID;
