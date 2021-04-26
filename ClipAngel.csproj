@@ -137,6 +137,7 @@
     <Compile Include="AboutBox.Designer.cs">
       <DependentUpon>AboutBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="SecretData1.cs" />
     <Compile Include="ClipboardHelper.cs" />
     <Compile Include="Components\Attributes.cs" />
     <Compile Include="Components\CueComboBox.cs">
