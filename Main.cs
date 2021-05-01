@@ -2029,7 +2029,7 @@ namespace ClipAngel
                     MarkFilter.SelectedIndex = 0;
                 AllowFilterProcessing = true;
                 //UpdateClipBindingSource(false, CurrentClipID);
-                ReloadList(true, CurrentClipID, waitFinish); // To repaint text
+                ReloadList(true, CurrentClipID, false, null, waitFinish); // To repaint text
             }
             else if (CurrentClipID != 0)
                 RestoreSelectedCurrentClip(false, CurrentClipID);
