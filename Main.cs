@@ -2162,35 +2162,37 @@ namespace ClipAngel
             {
                 removeClipsFilter removeClipsFilter;
                 string dataString = (string) iData.GetData(DataFormat_RemoveTempClipsFromHistory);
-                
-                // Test
-                //removeClipsFilter removeClipsFilter = new removeClipsFilter
-                //{
-                //    PID = 0,
-                //    TimeStart = DateTime.Now.AddMilliseconds(-1000),
-                //    TimeEnd = DateTime.Now
-                //};
-                //dataString = JsonConvert.SerializeObject(removeClipsFilter);
-
-                removeClipsFilter = JsonConvert.DeserializeObject<removeClipsFilter>(dataString);
-                double maxRemovedClipAge = removeClipsFilter.TimeEnd.Subtract(removeClipsFilter.TimeStart).TotalMilliseconds; // Докинем немного времени на путь от источника до приемника
-                double timeDelta = now.Subtract(removeClipsFilter.TimeEnd).TotalMilliseconds;
-                for (int i = lastClips.Count - 1; i >= 0; i--)
+                if (!String.IsNullOrWhiteSpace(dataString))  // Rarely we got NULL 
                 {
-                    LastClip lastClip = lastClips[i];
-                    double clipAge = now.Subtract(lastClip.Created).TotalMilliseconds;
-                    if (true
-                        // Will not work correctly during capturing clip from remote desktop session
-                        //&& (false
-                        //    || removeClipsFilter.PID == 0
-                        //    || removeClipsFilter.PID == lastClip.ProcessID)
-                        && clipAge < maxRemovedClipAge)
+                    // Test
+                    //removeClipsFilter removeClipsFilter = new removeClipsFilter
+                    //{
+                    //    PID = 0,
+                    //    TimeStart = DateTime.Now.AddMilliseconds(-1000),
+                    //    TimeEnd = DateTime.Now
+                    //};
+                    //dataString = JsonConvert.SerializeObject(removeClipsFilter);
+
+                    removeClipsFilter = JsonConvert.DeserializeObject<removeClipsFilter>(dataString);
+                    double maxRemovedClipAge = removeClipsFilter.TimeEnd.Subtract(removeClipsFilter.TimeStart).TotalMilliseconds; // Докинем немного времени на путь от источника до приемника
+                    double timeDelta = now.Subtract(removeClipsFilter.TimeEnd).TotalMilliseconds;
+                    for (int i = lastClips.Count - 1; i >= 0; i--)
                     {
-                        SQLiteCommand command = new SQLiteCommand("Delete from Clips where Id = @Id", m_dbConnection);
-                        command.Parameters.Add("Id", DbType.Int32).Value = lastClip.ID;
-                        command.ExecuteNonQuery();
-                        lastClips.RemoveAt(i);
-                        needUpdateList = true;
+                        LastClip lastClip = lastClips[i];
+                        double clipAge = now.Subtract(lastClip.Created).TotalMilliseconds;
+                        if (true
+                            // Will not work correctly during capturing clip from remote desktop session
+                            //&& (false
+                            //    || removeClipsFilter.PID == 0
+                            //    || removeClipsFilter.PID == lastClip.ProcessID)
+                            && clipAge < maxRemovedClipAge)
+                        {
+                            SQLiteCommand command = new SQLiteCommand("Delete from Clips where Id = @Id", m_dbConnection);
+                            command.Parameters.Add("Id", DbType.Int32).Value = lastClip.ID;
+                            command.ExecuteNonQuery();
+                            lastClips.RemoveAt(i);
+                            needUpdateList = true;
+                        }
                     }
                 }
             }
@@ -7623,7 +7625,7 @@ namespace ClipAngel
                     importedRow["application"].ToString(), importedRow["window"].ToString(), importedRow["url"].ToString(), Convert.ToInt32(importedRow["chars"].ToString()),
                     importedRow["AppPath"].ToString(), false, Convert.ToBoolean(importedRow["Favorite"].ToString()), false, importedRow["title"].ToString());
             }
-            ReloadList();
+            ReloadList(false, 0, false, null, true);
         }
 
         private void saveAsFileMenuItem_Click(object sender, EventArgs e)
