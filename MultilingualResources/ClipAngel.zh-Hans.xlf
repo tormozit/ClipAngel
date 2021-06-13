@@ -816,7 +816,7 @@
           <target state="translated">由于剪贴板读取错误，剪辑未被捕获</target>
         </trans-unit>
         <trans-unit id="VersionValue" translate="yes" xml:space="preserve">
-          <source>1.97</source>
+          <source>1.98</source>
           <target state="needs-review-translation">1.91</target>
           <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>

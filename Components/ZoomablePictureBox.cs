@@ -68,6 +68,8 @@ namespace ClipAngel
             this.zoomMode = PictureBoxSizeMode.Zoom;
             InitializeComponent();
             InitCtrl(); // my special settings for the ctrl
+            SetStyle(ControlStyles.SupportsTransparentBackColor, true);
+            PicBox.BackColor = Color.Transparent;
         }
 
         private Point _StartPoint;

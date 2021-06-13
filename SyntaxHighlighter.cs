@@ -175,7 +175,7 @@ namespace ClipAngel
                 Line = Line.Remove(qoutePos);
             if (String.IsNullOrEmpty(Line))
                 return 0;
-            if (Line.EndsWith("."))
+            if (Line.EndsWith(".")||Line.Contains("><"))
                 return -1;
             if (Regex.Match(Line, keyWordPattern).Success)
                 return 1;

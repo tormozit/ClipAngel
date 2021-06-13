@@ -3584,7 +3584,8 @@ namespace ClipAngel
         {
             MemoryStream memoryStream = new MemoryStream(binary, 0, binary.Length);
             memoryStream.Write(binary, 0, binary.Length);
-            Image image = new Bitmap(memoryStream);
+            Bitmap image = new Bitmap(memoryStream);
+            //image.MakeTransparent(); // It just makes all black color pixels become transparent
             return image;
         }
 
