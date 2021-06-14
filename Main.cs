@@ -2497,7 +2497,7 @@ namespace ClipAngel
                     if (imageUrl.StartsWith("data:image"))
                         imageUrl = "";
                     bool clipAdded = AddClip(binaryBuffer, imageSampleBuffer, "", "", "img", clipTextImage, clipApplication,
-                        clipWindow, imageUrl, clipCharsImage, appPath, false, false, false, "", processID);
+                        clipWindow, imageUrl, clipCharsImage, appPath, false, false, false, "");
                     needUpdateList = needUpdateList || clipAdded;
 
                     if (!String.IsNullOrWhiteSpace(clipText))
@@ -2507,7 +2507,7 @@ namespace ClipAngel
                 {
                     // Non image clip
                     bool clipAdded = AddClip(new byte[0], imageSampleBuffer, htmlText, richText, clipType, clipText, clipApplication,
-                        clipWindow, clipUrl, clipChars, appPath, false, false, false, "", processID);
+                        clipWindow, clipUrl, clipChars, appPath, false, false, false, "");
                     needUpdateList = needUpdateList || clipAdded;
                 }
             }
@@ -2649,7 +2649,8 @@ namespace ClipAngel
         }
 
         bool AddClip(byte[] binaryBuffer = null, byte[] imageSampleBuffer = null, string htmlText = "", string richText = "", string typeText = "text", string plainText = "",
-            string applicationText = "", string windowText = "", string url = "", int chars = 0, string appPath = "", bool used = false, bool favorite = false, bool updateList = true, string clipTitle = "", int processID = 0)
+            string applicationText = "", string windowText = "", string url = "", int chars = 0, string appPath = "", bool used = false, bool favorite = false, bool updateList = true,
+            string clipTitle = "", DateTime created = new DateTime())
         {
             DateTime dtNow = DateTime.Now;
             int msFromLastCapture = DateDiffMilliseconds(lastCaptureMoment);
@@ -2684,7 +2685,8 @@ namespace ClipAngel
             }
             int oldCurrentClipId = 0;
             lastClipWasMultiCaptured = false;
-            DateTime created = DateTime.Now;
+            if (DateTime.MinValue == created)
+                created = DateTime.Now;
             if (String.IsNullOrEmpty(clipTitle))
                 clipTitle = TextClipTitle(plainText);
             string hash;
@@ -2745,7 +2747,7 @@ namespace ClipAngel
                 hash = Convert.ToBase64String(g.ToByteArray());
             }
             LastId = LastId + 1;
-            lastClips.Add(new LastClip {Created = created, ID = LastId, ProcessID = processID});
+            lastClips.Add(new LastClip {Created = created, ID = LastId, ProcessID = 0});
             int lastClipsMaxSize = 5;
             while (lastClips.Count > lastClipsMaxSize)
             {
@@ -7624,7 +7626,7 @@ namespace ClipAngel
             {
                 AddClip(null, null, importedRow["HtmlText"].ToString(), importedRow["RichText"].ToString(), importedRow["Type"].ToString(), importedRow["Text"].ToString(),
                     importedRow["application"].ToString(), importedRow["window"].ToString(), importedRow["url"].ToString(), Convert.ToInt32(importedRow["chars"].ToString()),
-                    importedRow["AppPath"].ToString(), false, Convert.ToBoolean(importedRow["Favorite"].ToString()), false, importedRow["title"].ToString());
+                    importedRow["AppPath"].ToString(), false, Convert.ToBoolean(importedRow["Favorite"].ToString()), false, importedRow["title"].ToString(), DateTime.Parse(importedRow["Created"].ToString()));
             }
             ReloadList(false, 0, false, null, true);
         }
