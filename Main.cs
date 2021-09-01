@@ -5304,7 +5304,9 @@ namespace ClipAngel
                                 }
                                 if (!String.IsNullOrEmpty(extensionName))
                                     MDObject = extensionName + MDObject;
-                                string MDProperty = typeMap1C[fragments[fragments.Length - 1]];
+                                string MDProperty = fragments[fragments.Length - 1];
+                                if (!typeMap1C.ContainsValue(MDProperty))
+                                    MDProperty = typeMap1C[MDProperty];
                                 stopWatch.Start();
                                 while (stopWatch.ElapsedMilliseconds < maxWait)
                                 {

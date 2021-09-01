@@ -551,7 +551,7 @@ namespace ClipAngel.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("10000")]
+        [global::System.Configuration.DefaultSettingValueAttribute("20000")]
         public int MaxCellsToCaptureFormattedText {
             get {
                 return ((int)(this["MaxCellsToCaptureFormattedText"]));

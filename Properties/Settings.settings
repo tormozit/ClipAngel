@@ -135,7 +135,7 @@
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="MaxCellsToCaptureFormattedText" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">10000</Value>
+      <Value Profile="(Default)">20000</Value>
     </Setting>
     <Setting Name="MaxCellsToCaptureImage" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">2000</Value>
