@@ -5208,8 +5208,14 @@ namespace ClipAngel
                             string extensionName = match.Groups[startIndex1C + 1].ToString();
                             string moduleName = match.Groups[startIndex1C + 2].ToString();
                             string[] fragments = moduleName.Split("."[0]);
-                            if (fragments[0] == "ВнешняяОбработка")
+                            if (fragments[0] == "ВнешняяОбработка" || fragments[0] == "ExternalDataProcessor")
                                 return true;
+                            string MDObjectName = "";
+                            if (fragments.Length > 1)
+                                MDObjectName = fragments[1];
+                            string MDFormName = "";
+                            if (fragments.Length > 3)
+                                MDFormName = fragments[3];
                             int lineNumber = Convert.ToInt32(match.Groups[startIndex1C + 3].ToString());
                             ActivateAndCheckTargetWindow();
                             SendKeys.Send("%{F9}");
@@ -5302,8 +5308,8 @@ namespace ClipAngel
                                         MDObject += "." + fragments[counter * 2 + 1];
                                     }
                                 }
-                                if (!String.IsNullOrEmpty(extensionName))
-                                    MDObject = extensionName + MDObject;
+                                //if (!String.IsNullOrEmpty(extensionName))
+                                //    MDObject = extensionName + MDObject;
                                 string MDProperty = fragments[fragments.Length - 1];
                                 if (!typeMap1C.ContainsValue(MDProperty))
                                     MDProperty = typeMap1C[MDProperty];
@@ -5418,11 +5424,17 @@ namespace ClipAngel
                                     }
                                     while (cell != null)
                                     {
-                                        if (false
-                                            || cell.CurrentName == fullModuleName + " Имя модуля"
-                                            || cell.CurrentName == fullModuleName + ".Форма Имя модуля" // Обработка.ирПоискДублейИЗаменаСсылок.Форма.Форма.Форма
-                                            || cell.CurrentName == fullModuleName + " Module name" // TODO check
-                                            || cell.CurrentName == fullModuleName + ".Form Module name" // TODO check
+                                        string cellText = cell.CurrentName;
+                                        if (true
+                                            && cellText.Contains(extensionName)
+                                            && cellText.Contains("." + MDObjectName + ".")
+                                            && (MDFormName.Length == 0 || cellText.Contains("." + MDFormName + "."))
+                                            //&& (false
+                                            //    || cell.CurrentName == fullModuleName + " Имя модуля"
+                                            //    || cell.CurrentName == fullModuleName + ".Форма Имя модуля" // Обработка.ирПоискДублейИЗаменаСсылок.Форма.Форма.Форма
+                                            //    || cell.CurrentName == fullModuleName + " Module name" // TODO check
+                                            //    || cell.CurrentName == fullModuleName + ".Form Module name" // TODO check
+                                            //    )
                                             )
                                         {
                                             cell = treeWalker.GetNextSiblingElement(cell);
