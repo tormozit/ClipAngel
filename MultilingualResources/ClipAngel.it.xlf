@@ -682,8 +682,8 @@ WinMerge, Araxis Merge, DiffMerge, Kdiff3. Text compare command is %application%
           <target state="translated">Auto posizionamento finestra all'apertura</target>
         </trans-unit>
         <trans-unit id="WindowAutoPositionDescription" translate="yes" xml:space="preserve">
-          <source>If possible, window will open near text caret (input), otherwise will place in center of active window</source>
-          <target state="new">If possible, window will open near text caret (input), otherwise will place in center of active window</target>
+          <source>If enabled, then, if possible, window will open near place of text input or in center of active window. If disabled, window will open in position where it was last closed.</source>
+          <target state="new">If enabled, then, if possible, window will open near place of text input or in center of active window. If disabled, window will open in position where it was last closed.</target>
           <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="WordWrap" translate="yes" xml:space="preserve">

@@ -498,7 +498,7 @@ WinMerge, Araxis Merge, DiffMerge, Kdiff3. Text compare command is %application%
     <value>Window auto position on open</value>
   </data>
   <data name="WindowAutoPositionDescription" xml:space="preserve">
-    <value>If possible, window will open near text caret (input), otherwise will place in center of active window</value>
+    <value>If enabled, then, if possible, window will open near place of text input or in center of active window. If disabled, window will open in position where it was last closed.</value>
   </data>
   <data name="WordWrap" xml:space="preserve">
     <value>Word wrap</value>

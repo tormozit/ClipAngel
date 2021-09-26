@@ -223,7 +223,7 @@ namespace ClipAngel
             }
         }
 
-        class ModifiersState
+        public class ModifiersState
         {
             //public bool rshift, lshift, lcontrol, rcontrol, lalt, ralt, lwin, rwin;
 
@@ -250,24 +250,23 @@ namespace ClipAngel
 
             public void ReleaseAll()
             {
-                //lalt = KeyboardInfo.GetKeyState(Keys.LMenu).IsPressed;
-                //ralt = KeyboardInfo.GetKeyState(Keys.RMenu).IsPressed;
-                //lcontrol = KeyboardInfo.GetKeyState(Keys.LControlKey).IsPressed;
-                //rcontrol = KeyboardInfo.GetKeyState(Keys.RControlKey).IsPressed;
-                //lshift = KeyboardInfo.GetKeyState(Keys.LShiftKey).IsPressed;
-                //rshift = KeyboardInfo.GetKeyState(Keys.RShiftKey).IsPressed;
-                //lwin = KeyboardInfo.GetKeyState(Keys.LWin).IsPressed;
-                //rwin = KeyboardInfo.GetKeyState(Keys.RWin).IsPressed;
-
                 const int KEYEVENTF_KEYUP = 0x0002; //Key up flag
-                keybd_event((byte)VirtualKeyCode.SHIFT, 0x2A, KEYEVENTF_KEYUP, 0); // LEFT
-                keybd_event((byte)VirtualKeyCode.SHIFT, 0x36, KEYEVENTF_KEYUP, 0);
-                keybd_event((byte)VirtualKeyCode.CONTROL, 0x1D, KEYEVENTF_KEYUP, 0); // LEFT
-                keybd_event((byte)VirtualKeyCode.CONTROL, 0x9D, KEYEVENTF_KEYUP, 0);
-                keybd_event((byte)VirtualKeyCode.MENU, 0x38, KEYEVENTF_KEYUP, 0); // LEFT
-                keybd_event((byte)VirtualKeyCode.MENU, 0xB8, KEYEVENTF_KEYUP, 0);
-                keybd_event((byte)VirtualKeyCode.LWIN, 0x5B, KEYEVENTF_KEYUP, 0);
-                keybd_event((byte)VirtualKeyCode.RWIN, 0x5C, KEYEVENTF_KEYUP, 0);
+                if (KeyboardInfo.GetKeyState(Keys.LShiftKey).IsPressed)
+                    keybd_event((byte)VirtualKeyCode.SHIFT, 0x2A, KEYEVENTF_KEYUP, 0); // LEFT
+                if (KeyboardInfo.GetKeyState(Keys.RShiftKey).IsPressed)
+                    keybd_event((byte)VirtualKeyCode.SHIFT, 0x36, KEYEVENTF_KEYUP, 0);
+                if (KeyboardInfo.GetKeyState(Keys.LControlKey).IsPressed)
+                    keybd_event((byte)VirtualKeyCode.CONTROL, 0x1D, KEYEVENTF_KEYUP, 0); // LEFT
+                if (KeyboardInfo.GetKeyState(Keys.RControlKey).IsPressed)
+                    keybd_event((byte)VirtualKeyCode.CONTROL, 0x9D, KEYEVENTF_KEYUP, 0);
+                if (KeyboardInfo.GetKeyState(Keys.LMenu).IsPressed)
+                    keybd_event((byte)VirtualKeyCode.MENU, 0x38, KEYEVENTF_KEYUP, 0); // LEFT
+                if (KeyboardInfo.GetKeyState(Keys.RMenu).IsPressed)
+                    keybd_event((byte)VirtualKeyCode.MENU, 0xB8, KEYEVENTF_KEYUP, 0);
+                if (KeyboardInfo.GetKeyState(Keys.LWin).IsPressed)
+                    keybd_event((byte)VirtualKeyCode.LWIN, 0x5B, KEYEVENTF_KEYUP, 0);
+                if (KeyboardInfo.GetKeyState(Keys.RWin).IsPressed)
+                    keybd_event((byte)VirtualKeyCode.RWIN, 0x5C, KEYEVENTF_KEYUP, 0);
             }
         }
     }

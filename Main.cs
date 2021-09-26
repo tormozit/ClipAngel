@@ -40,7 +40,12 @@ using System.Security.Principal;
 using System.Xml.Serialization;
 using System.Net.NetworkInformation;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using Newtonsoft.Json;
+using Cursor = System.Windows.Forms.Cursor;
+using KeyEventArgs = System.Windows.Forms.KeyEventArgs;
+using MouseEventArgs = System.Windows.Forms.MouseEventArgs;
+using MouseEventHandler = System.Windows.Forms.MouseEventHandler;
 
 namespace ClipAngel
 {
@@ -175,6 +180,7 @@ namespace ClipAngel
         private Point LastMousePoint;
         private Timer captureTimer = new Timer();
         private Timer channelTimer = new Timer();
+        private DateTime TimeFromWindowOpen;
         private Thread updateDBThread;
         private bool stopUpdateDBThread = false;
         private int selectedRangeStart = -1;
@@ -3363,6 +3369,8 @@ namespace ClipAngel
                     return true;
                 }
             }
+            //Paster.ModifiersState mod = new Paster.ModifiersState();
+            //mod.ReleaseAll();
             ActivateAndCheckTargetWindow();
             bool targetIsCurrentProcess = DoActiveWindowBelongsToCurrentProcess(IntPtr.Zero);
             if (targetIsCurrentProcess)
@@ -4200,6 +4208,14 @@ namespace ClipAngel
             {
                 e.Handled = true;
                 FocusClipText();
+            }
+            if (true
+                && (DateTime.Now - TimeFromWindowOpen).TotalMilliseconds < 1000 // Temporary block main menu activation to avoid unwanted action while opening main window with ALT+* hotkey
+                && (e.Modifiers == Keys.Alt) 
+                && (e.KeyCode == Keys.Menu))
+            {
+                e.SuppressKeyPress = true;
+                e.Handled = true;
             }
         }
 
@@ -5159,6 +5175,7 @@ namespace ClipAngel
                 RestoreWindowIfMinimized();
             }
             SetForegroundWindow(this.Handle);
+            TimeFromWindowOpen = DateTime.Now;
         }
 
         private void SearchString_KeyPress(object sender, KeyPressEventArgs e)

@@ -1523,8 +1523,8 @@ WinMerge, Araxis Merge, DiffMerge, KdiffMerge, Kdiff3. 文本比较命令是 %ap
           <target state="translated" state-qualifier="mt-suggestion">打开时窗口的自动位置</target>
         </trans-unit>
         <trans-unit id="WindowAutoPositionDescription" translate="yes" xml:space="preserve">
-          <source>If possible, window will open near text caret (input), otherwise will place in center of active window</source>
-          <target state="translated">如果可能，窗口将在文本(输入)附近打开，否则将置于活动窗口的中心</target>
+          <source>If enabled, then, if possible, window will open near place of text input or in center of active window. If disabled, window will open in position where it was last closed.</source>
+          <target state="needs-review-translation">如果可能，窗口将在文本(输入)附近打开，否则将置于活动窗口的中心</target>
           <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="WordWrap" translate="yes" xml:space="preserve">

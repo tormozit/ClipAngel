@@ -435,8 +435,9 @@ DiffMerge, Kdiff3 zu suchen. Befehl für Textvergleich ist %application% %file1%
           <target state="translated">Autom. Fensterposition beim Öffnen</target>
         </trans-unit>
         <trans-unit id="WindowAutoPositionDescription" translate="yes" xml:space="preserve">
-          <source>If possible, window will open near text caret (input), otherwise will place in center of active window</source>
-          <target state="translated">Wenn möglich, öffnet sich das Fenster in der Nähe der Text-Einfügemarke (Eingabe), sonst in der Mitte  des aktiven Fensters</target>
+          <source>If enabled, then, if possible, window will open near place of text input or in center of active window. If disabled, window will open in position where it was last closed.</source>
+          <target state="needs-review-translation">Wenn möglich, öffnet sich das Fenster in der Nähe der Text-Einfügemarke (Eingabe), sonst in der Mitte  des aktiven Fensters</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="WordWrap" translate="yes" xml:space="preserve">
           <source>Word wrap</source>
