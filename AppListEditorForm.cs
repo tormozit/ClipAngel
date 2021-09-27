@@ -148,14 +148,8 @@ namespace ClipAngel
 
         private void buttonSelectClipboardOwner_Click(object sender, EventArgs e)
         {
-            string clipWindow = "";
-            string clipApplication = "";
-            string appPath = "";
-            bool is1C = false;
-            int processID = 0;
-            IUIAutomationElement mainWindow;
-            ((Main)Owner).GetClipboardOwnerLockerInfo(false, out clipWindow, out clipApplication, out appPath, out is1C, out mainWindow, out processID, false);
-            ListViewItem[] items = listViewRunningList.Items.Find(appPath, true);
+            Main.ClipboardOwner clipboardOwner = ((Main)Owner).GetClipboardOwnerLockerInfo(false, false);
+            ListViewItem[] items = listViewRunningList.Items.Find(clipboardOwner.appPath, true);
             if (items.Length > 0)
             {
                 items[0].Selected = true;

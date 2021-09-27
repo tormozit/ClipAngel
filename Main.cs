@@ -2142,15 +2142,9 @@ namespace ClipAngel
             string clipUrl = "";
             string imageUrl = "";
             int clipChars = 0;
-            string appPath = "";
-            string clipWindow = "";
-            string clipApplication = "";
-            bool is1C = false;
-            int processID = 0;
             bool needUpdateList = false;
-            IUIAutomationElement mainWindow;
-            GetClipboardOwnerLockerInfo(false, out clipWindow, out clipApplication, out appPath, out is1C, out mainWindow, out processID);
-            if (ignoreModulesInClipCapture.Contains(clipApplication.ToLower()))
+            ClipboardOwner clipboardOwner = GetClipboardOwnerLockerInfo(false);
+            if (ignoreModulesInClipCapture.Contains(clipboardOwner.application.ToLower()))
                 return;
             try
             {
@@ -2405,7 +2399,7 @@ namespace ClipAngel
                             negativeScore++;
                     }
                     if (false
-                        || negativeScore == 0 && is1C && textLines.Length > 1
+                        || negativeScore == 0 && clipboardOwner.is1CCode && textLines.Length > 1
                         || negativeScore == 0 && positiveScore > 1
                         || negativeScore > 0 && positiveScore > negativeScore)
                     {
@@ -2460,8 +2454,8 @@ namespace ClipAngel
                         //clipTextImage = Properties.Resources.Size + ": " + image.Width + "x" + image.Height + "\n"
                         //     + Properties.Resources.PixelFormat + ": " + image.PixelFormat + "\n";
                         clipTextImage = bitmap.Width + " x " + bitmap.Height;
-                        if (!String.IsNullOrEmpty(clipWindow))
-                            clipTextImage += ", " + clipWindow;
+                        if (!String.IsNullOrEmpty(clipboardOwner.windowTitle))
+                            clipTextImage += ", " + clipboardOwner.windowTitle;
                         clipTextImage += ", " + Properties.Resources.PixelFormat + ": " + Image.GetPixelFormatSize(bitmap.PixelFormat);
                         clipCharsImage = bitmap.Width * bitmap.Height;
                         // OCR
@@ -2502,8 +2496,8 @@ namespace ClipAngel
                         imageUrl = clipUrl;
                     if (imageUrl.StartsWith("data:image"))
                         imageUrl = "";
-                    bool clipAdded = AddClip(binaryBuffer, imageSampleBuffer, "", "", "img", clipTextImage, clipApplication,
-                        clipWindow, imageUrl, clipCharsImage, appPath, false, false, false, "");
+                    bool clipAdded = AddClip(binaryBuffer, imageSampleBuffer, "", "", "img", clipTextImage, clipboardOwner.application,
+                        clipboardOwner.windowTitle, imageUrl, clipCharsImage, clipboardOwner.appPath, false, false, false, "");
                     needUpdateList = needUpdateList || clipAdded;
 
                     if (!String.IsNullOrWhiteSpace(clipText))
@@ -2512,8 +2506,8 @@ namespace ClipAngel
                 if (clipType != "")
                 {
                     // Non image clip
-                    bool clipAdded = AddClip(new byte[0], imageSampleBuffer, htmlText, richText, clipType, clipText, clipApplication,
-                        clipWindow, clipUrl, clipChars, appPath, false, false, false, "");
+                    bool clipAdded = AddClip(new byte[0], imageSampleBuffer, htmlText, richText, clipType, clipText, clipboardOwner.application,
+                        clipboardOwner.windowTitle, clipUrl, clipChars, clipboardOwner.appPath, false, false, false, "");
                     needUpdateList = needUpdateList || clipAdded;
                 }
             }
@@ -3369,8 +3363,6 @@ namespace ClipAngel
                     return true;
                 }
             }
-            //Paster.ModifiersState mod = new Paster.ModifiersState();
-            //mod.ReleaseAll();
             ActivateAndCheckTargetWindow();
             bool targetIsCurrentProcess = DoActiveWindowBelongsToCurrentProcess(IntPtr.Zero);
             if (targetIsCurrentProcess)
@@ -3392,7 +3384,9 @@ namespace ClipAngel
                 if (Properties.Settings.Default.DontSendPaste)
                     return false;
                 if (!needElevation)
-                    Paster.SendPaste();
+                {
+                     Paster.SendPaste(this);
+                }
                 else
                 {
                     EventWaitHandle pasteEvent = Paster.GetPasteEventWaiter();
@@ -3682,16 +3676,21 @@ namespace ClipAngel
         [DllImport("user32.dll")]
         static extern IntPtr GetOpenClipboardWindow();
 
-        public void GetClipboardOwnerLockerInfo(bool Locker, out string windowTitle, out string application,
-            out string appPath, out bool is1CCode, out IUIAutomationElement mainWindowAutomation, out int processId, bool replaceNullWithLastActive = true)
+        public class ClipboardOwner
+        {
+            public string windowTitle = "";
+            public string application = "";
+            public string appPath = "";
+            public bool is1CCode = false;
+            public IUIAutomationElement mainWindowAutomation = null;
+            public int processId = 0;
+            public bool isRemoteDesktop = false;
+        }
+
+        public ClipboardOwner GetClipboardOwnerLockerInfo(bool Locker, bool replaceNullWithLastActive = true)
         {
             IntPtr hwnd;
-            windowTitle = "";
-            application = "";
-            appPath = "";
-            is1CCode = false;
-            mainWindowAutomation = null;
-            processId = 0;
+            ClipboardOwner result = new ClipboardOwner();
             //if (!ClipAngel.Properties.Settings.Default.ReadWindowTitles)
             //    return;
             if (Locker)
@@ -3704,29 +3703,29 @@ namespace ClipAngel
                     hwnd = lastActiveParentWindow;
                 else
                 {
-                    return;
+                    return result;
                 }
             }
-            uint activeWindowThread = GetWindowThreadProcessId(hwnd, out processId);
-            Process process1 = Process.GetProcessById(processId);
+            uint activeWindowThread = GetWindowThreadProcessId(hwnd, out result.processId);
+            Process process1 = Process.GetProcessById(result.processId);
             try
             {
-                application = process1.ProcessName;
+                result.application = process1.ProcessName;
                 hwnd = process1.MainWindowHandle;
             }
             catch (Exception e)
             {
-                return;
+                return result;
             }
-            appPath = GetProcessMainModuleFullName(processId);
-            windowTitle = GetWindowTitle(hwnd);
+            result.appPath = GetProcessMainModuleFullName(result.processId);
+            result.windowTitle = GetWindowTitle(hwnd);
             if (true
                 && hwnd != IntPtr.Zero 
                 && (false
-                    || String.Compare(application, "1cv8", true) == 0
-                    || String.Compare(application, "1CV7", true) == 0
-                    || String.Compare(application, "1CV7L", true) == 0
-                    || String.Compare(application, "1CV7S", true) == 0))
+                    || String.Compare(result.application, "1cv8", true) == 0
+                    || String.Compare(result.application, "1CV7", true) == 0
+                    || String.Compare(result.application, "1CV7L", true) == 0
+                    || String.Compare(result.application, "1CV7S", true) == 0))
             {
                 //// This way 1C configurator can crash later
                 //try
@@ -3740,8 +3739,17 @@ namespace ClipAngel
                 //}
                 //catch
                 //{ };
-                is1CCode = true;
+                result.is1CCode = true;
             }
+            if (true
+                && hwnd != IntPtr.Zero
+                && (false
+                    || String.Compare(result.application, "RDCMain", true) == 0
+                    || String.Compare(result.application, "RDP", true) == 0))
+            {
+                result.isRemoteDesktop = true;
+            }
+            return result;
         }
 
         void sendKey(IntPtr hwnd, Keys keyCode, bool extended = false, bool down = true, bool up = true)
@@ -5213,14 +5221,8 @@ namespace ClipAngel
                     }
                     else if (match.Groups[startIndex1C].Success) // 1C code link
                     {
-                        string appPath = "";
-                        string clipWindow = "";
-                        string clipApplication = "";
-                        bool is1C = false;
-                        int processID = 0;
-                        IUIAutomationElement mainWindow;
-                        GetClipboardOwnerLockerInfo(true, out clipWindow, out clipApplication, out appPath, out is1C, out mainWindow, out processID);
-                        if (String.Compare(clipApplication, "1cv8", true) == 0)
+                        ClipboardOwner clipboardOwner = GetClipboardOwnerLockerInfo(true);
+                        if (String.Compare(clipboardOwner.application, "1cv8", true) == 0)
                         {
                             string extensionName = match.Groups[startIndex1C + 1].ToString();
                             string moduleName = match.Groups[startIndex1C + 2].ToString();
@@ -5235,6 +5237,8 @@ namespace ClipAngel
                                 MDFormName = fragments[3];
                             int lineNumber = Convert.ToInt32(match.Groups[startIndex1C + 3].ToString());
                             ActivateAndCheckTargetWindow();
+                            Paster.ModifiersState mod = new Paster.ModifiersState();
+                            mod.ReleaseAll(this);
                             SendKeys.Send("%{F9}");
                             SendKeys.Flush();
                             bool success = false;
@@ -7016,14 +7020,8 @@ namespace ClipAngel
             }
             catch
             {
-                string appPath = "";
-                string clipWindow = "";
-                string clipApplication = "";
-                bool is1C = false;
-                int processID = 0;
-                IUIAutomationElement mainWindow;
-                GetClipboardOwnerLockerInfo(true, out clipWindow, out clipApplication, out appPath, out is1C, out mainWindow, out processID);
-                Debug.WriteLine(String.Format(Properties.Resources.FailedToWriteClipboard, clipWindow, clipApplication));
+                ClipboardOwner clipboardOwner = GetClipboardOwnerLockerInfo(true);
+                Debug.WriteLine(String.Format(Properties.Resources.FailedToWriteClipboard, clipboardOwner.windowTitle, clipboardOwner.application));
             }
             //if (!success)
             //    try
@@ -7032,11 +7030,8 @@ namespace ClipAngel
             //    }
             //    catch (Exception ex)
             //    {
-            //        string appPath = "";
-            //        string clipWindow = "";
-            //        string clipApplication = "";
-            //        GetClipboardOwnerLockerInfo(true, out clipWindow, out clipApplication, out appPath);
-            //        Debug.WriteLine(String.Format(Properties.Resources.FailedToWriteClipboard, clipWindow, clipApplication));
+            //        ClipboardOwner clipboardOwner = GetClipboardOwnerLockerInfo(true);
+            //        Debug.WriteLine(String.Format(Properties.Resources.FailedToWriteClipboard, clipboardOwner.windowTitle, clipboardOwner.application));
             //    }
             ConnectClipboard();
             if (allowSelfCapture)

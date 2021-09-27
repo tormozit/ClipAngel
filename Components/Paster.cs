@@ -139,22 +139,15 @@ namespace ClipAngel
             }
         }
 
-        public static void SendPaste()
+        public static void SendPaste(Main main = null)
         {
-            // Spyed from AceText. Works in all windows including CMD and RDP
-
             ModifiersState mod = new ModifiersState();
-            mod.ReleaseAll();
-
-            // Send CTRL+V
-            const int KEYEVENTF_KEYUP = 0x0002; //Key up flag
-            keybd_event((byte)VirtualKeyCode.CONTROL, 0x1D, 0, 0);
-            keybd_event((byte)'V', 0x2f, 0, 0);
-            keybd_event((byte)'V', 0x2f, KEYEVENTF_KEYUP, 0);
-            keybd_event((byte)VirtualKeyCode.CONTROL, 0x1D, KEYEVENTF_KEYUP, 0);
-            //SendKeys.SendWait("^");
-
-            //mod.RestoreState();
+            mod.ReleaseAll(main);
+            InputSimulator simulator = new InputSimulator();
+            simulator.Keyboard.KeyDown(VirtualKeyCode.CONTROL);
+            simulator.Keyboard.KeyDown(VirtualKeyCode.VK_V);
+            simulator.Keyboard.KeyUp(VirtualKeyCode.VK_V);
+            simulator.Keyboard.KeyUp(VirtualKeyCode.CONTROL);
         }
 
         public static void SendCopy(bool waitForComplete = false)
@@ -248,25 +241,27 @@ namespace ClipAngel
             //        keybd_event((byte)VirtualKeyCode.RWIN, 0x5C, 0, 0);
             //}
 
-            public void ReleaseAll()
+            public void ReleaseAll(Main main = null)
             {
-                const int KEYEVENTF_KEYUP = 0x0002; //Key up flag
-                if (KeyboardInfo.GetKeyState(Keys.LShiftKey).IsPressed)
-                    keybd_event((byte)VirtualKeyCode.SHIFT, 0x2A, KEYEVENTF_KEYUP, 0); // LEFT
-                if (KeyboardInfo.GetKeyState(Keys.RShiftKey).IsPressed)
-                    keybd_event((byte)VirtualKeyCode.SHIFT, 0x36, KEYEVENTF_KEYUP, 0);
-                if (KeyboardInfo.GetKeyState(Keys.LControlKey).IsPressed)
-                    keybd_event((byte)VirtualKeyCode.CONTROL, 0x1D, KEYEVENTF_KEYUP, 0); // LEFT
-                if (KeyboardInfo.GetKeyState(Keys.RControlKey).IsPressed)
-                    keybd_event((byte)VirtualKeyCode.CONTROL, 0x9D, KEYEVENTF_KEYUP, 0);
-                if (KeyboardInfo.GetKeyState(Keys.LMenu).IsPressed)
-                    keybd_event((byte)VirtualKeyCode.MENU, 0x38, KEYEVENTF_KEYUP, 0); // LEFT
-                if (KeyboardInfo.GetKeyState(Keys.RMenu).IsPressed)
-                    keybd_event((byte)VirtualKeyCode.MENU, 0xB8, KEYEVENTF_KEYUP, 0);
-                if (KeyboardInfo.GetKeyState(Keys.LWin).IsPressed)
-                    keybd_event((byte)VirtualKeyCode.LWIN, 0x5B, KEYEVENTF_KEYUP, 0);
-                if (KeyboardInfo.GetKeyState(Keys.RWin).IsPressed)
-                    keybd_event((byte)VirtualKeyCode.RWIN, 0x5C, KEYEVENTF_KEYUP, 0);
+                Main.ClipboardOwner clipboardOwner = main.GetClipboardOwnerLockerInfo(false);
+                bool forced = clipboardOwner.isRemoteDesktop;
+                InputSimulator simulator = new InputSimulator();
+                if (forced || KeyboardInfo.GetKeyState(Keys.LShiftKey).IsPressed)
+                    simulator.Keyboard.KeyUp(VirtualKeyCode.SHIFT);
+                if (forced || KeyboardInfo.GetKeyState(Keys.RShiftKey).IsPressed)
+                    simulator.Keyboard.KeyUp(VirtualKeyCode.RSHIFT);
+                if (forced || KeyboardInfo.GetKeyState(Keys.LControlKey).IsPressed)
+                    simulator.Keyboard.KeyUp(VirtualKeyCode.CONTROL);
+                if (forced || KeyboardInfo.GetKeyState(Keys.RControlKey).IsPressed)
+                    simulator.Keyboard.KeyUp(VirtualKeyCode.RCONTROL);
+                if (forced || KeyboardInfo.GetKeyState(Keys.LMenu).IsPressed)
+                    simulator.Keyboard.KeyUp(VirtualKeyCode.MENU);
+                if (forced || KeyboardInfo.GetKeyState(Keys.RMenu).IsPressed)
+                    simulator.Keyboard.KeyUp(VirtualKeyCode.RMENU);
+                if (forced || KeyboardInfo.GetKeyState(Keys.LWin).IsPressed)
+                    simulator.Keyboard.KeyUp(VirtualKeyCode.LWIN);
+                if (forced || KeyboardInfo.GetKeyState(Keys.RWin).IsPressed)
+                    simulator.Keyboard.KeyUp(VirtualKeyCode.RWIN);
             }
         }
     }
