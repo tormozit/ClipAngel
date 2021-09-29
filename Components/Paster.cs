@@ -142,11 +142,10 @@ namespace ClipAngel
         public static void SendPaste(Main main = null)
         {
             ModifiersState mod = new ModifiersState();
-            mod.ReleaseAll(main);
+            mod.ReleaseAll(false, main);
             InputSimulator simulator = new InputSimulator();
             simulator.Keyboard.KeyDown(VirtualKeyCode.CONTROL);
-            simulator.Keyboard.KeyDown(VirtualKeyCode.VK_V);
-            simulator.Keyboard.KeyUp(VirtualKeyCode.VK_V);
+            simulator.Keyboard.KeyPress(VirtualKeyCode.VK_V);
             simulator.Keyboard.KeyUp(VirtualKeyCode.CONTROL);
         }
 
@@ -241,10 +240,13 @@ namespace ClipAngel
             //        keybd_event((byte)VirtualKeyCode.RWIN, 0x5C, 0, 0);
             //}
 
-            public void ReleaseAll(Main main = null)
+            public void ReleaseAll(bool forced = false, Main main = null)
             {
-                Main.ClipboardOwner clipboardOwner = main.GetClipboardOwnerLockerInfo(false);
-                bool forced = clipboardOwner.isRemoteDesktop;
+                if (main != null)
+                {
+                    Main.ClipboardOwner clipboardOwner = main.GetClipboardOwnerLockerInfo(true); // Looks like this call eliminates ALT down state in remote desktop
+                    //forced = forced || clipboardOwner.isRemoteDesktop;
+                }
                 InputSimulator simulator = new InputSimulator();
                 if (forced || KeyboardInfo.GetKeyState(Keys.LShiftKey).IsPressed)
                     simulator.Keyboard.KeyUp(VirtualKeyCode.SHIFT);

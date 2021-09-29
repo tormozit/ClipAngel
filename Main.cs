@@ -3744,7 +3744,7 @@ namespace ClipAngel
             if (true
                 && hwnd != IntPtr.Zero
                 && (false
-                    || String.Compare(result.application, "RDCMain", true) == 0
+                    || String.Compare(result.application, "RDCMan", true) == 0
                     || String.Compare(result.application, "RDP", true) == 0))
             {
                 result.isRemoteDesktop = true;
@@ -5237,10 +5237,10 @@ namespace ClipAngel
                                 MDFormName = fragments[3];
                             int lineNumber = Convert.ToInt32(match.Groups[startIndex1C + 3].ToString());
                             ActivateAndCheckTargetWindow();
-                            Paster.ModifiersState mod = new Paster.ModifiersState();
-                            mod.ReleaseAll(this);
                             SendKeys.Send("%{F9}");
                             SendKeys.Flush();
+                            //Paster.ModifiersState mod = new Paster.ModifiersState();
+                            //mod.ReleaseAll(true);
                             bool success = false;
                             object valuePattern = null;
                             int UIA_ValuePatternId = 10002;
