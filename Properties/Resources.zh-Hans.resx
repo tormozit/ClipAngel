@@ -288,9 +288,6 @@
   <data name="ErrorReadingClipboard" xml:space="preserve">
     <value>由于剪贴板读取错误，剪辑未被捕获</value>
   </data>
-  <data name="VersionValue" xml:space="preserve">
-    <value>1.91</value>
-  </data>
   <data name="TargetWindow" xml:space="preserve">
     <value>目标窗口</value>
   </data>
