@@ -117,64 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="toolStripBottom.Location" type="System.Drawing.Point, System.Drawing">
-    <value>270, 395</value>
-  </data>
-  <data name="MarkFilter.ToolTip" xml:space="preserve">
-    <value>Показывать только клипы с такими пометками. 
-Подменю "Список" содержит команды для быстрого выбора.</value>
-  </data>
-  <data name="TypeFilter.ToolTip" xml:space="preserve">
-    <value>Показывать только клипы заданных типов. 
-Подменю "Список" содержит команды для быстрого выбора.</value>
-  </data>
-  <data name="comboBoxSearchString.CueText" xml:space="preserve">
-    <value>Ввод в списке</value>
-  </data>
-  <data name="comboBoxSearchString.ToolTip" xml:space="preserve">
-    <value>Строка поиска. Список и поле поиска имеют общий клавиатурный ввод.
-Редактируйте строку поиска прямо в списке. Перемещайтесь по списку прямо из поля поиска.</value>
-  </data>
-  <data name="contextMenuStripDataGrid.Size" type="System.Drawing.Size, System.Drawing">
-    <value>274, 290</value>
-  </data>
-  <data name="pictureBoxSource.ToolTip" xml:space="preserve">
-    <value>Иконка приложения, из которого клип был скопирован</value>
-  </data>
-  <data name="tableLayoutPanelData.Size" type="System.Drawing.Size, System.Drawing">
-    <value>437, 368</value>
-  </data>
-  <data name="statusStrip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>441, 22</value>
-  </data>
-  <data name="contextMenuStripApplication.Size" type="System.Drawing.Size, System.Drawing">
-    <value>247, 48</value>
-  </data>
-  <data name="textBoxApplication.Location" type="System.Drawing.Point, System.Drawing">
-    <value>354, 3</value>
-  </data>
-  <data name="textBoxApplication.ToolTip" xml:space="preserve">
-    <value>Приложение откуда клип был скопирован</value>
-  </data>
-  <data name="contextMenuWindowTitle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>198, 26</value>
-  </data>
-  <data name="textBoxWindow.Size" type="System.Drawing.Size, System.Drawing">
-    <value>326, 20</value>
-  </data>
-  <data name="textBoxWindow.ToolTip" xml:space="preserve">
-    <value>Заголовок окна откуда клип был скопирован</value>
-  </data>
-  <data name="splitContainer1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>815, 420</value>
-  </data>
   <data name="toolStripButtonClearFilter.ToolTipText" xml:space="preserve">
     <value>Очистить фильтры (F7)</value>
   </data>
-  <data name="toolStripSearchOptions.ToolTipText" xml:space="preserve">
-    <value>Опции поиска</value>
-  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="toolStripButtonAutoSelectMatch.Size" type="System.Drawing.Size, System.Drawing">
     <value>261, 22</value>
   </data>
@@ -226,11 +172,38 @@
   <data name="searchAllFieldsMenuItem.Text" xml:space="preserve">
     <value>Искать во всех полях</value>
   </data>
+  <data name="toolStripSearchOptions.ToolTipText" xml:space="preserve">
+    <value>Опции поиска</value>
+  </data>
   <data name="toolStripButtonFindNext.ToolTipText" xml:space="preserve">
     <value>Найти следующее в тексте клипа (F3)</value>
   </data>
   <data name="toolStripButtonFindPrevious.ToolTipText" xml:space="preserve">
     <value>Найти предыдущее в тексте клипа (SHIFT+F3)</value>
+  </data>
+  <data name="toolStripBottom.Location" type="System.Drawing.Point, System.Drawing">
+    <value>270, 395</value>
+  </data>
+  <data name="toolStripBottom.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MarkFilter.ToolTip" xml:space="preserve">
+    <value>Показывать только клипы с такими пометками. 
+Подменю "Список" содержит команды для быстрого выбора.</value>
+  </data>
+  <data name="TypeFilter.ToolTip" xml:space="preserve">
+    <value>Показывать только клипы заданных типов. 
+Подменю "Список" содержит команды для быстрого выбора.</value>
+  </data>
+  <data name="comboBoxSearchString.CueText" xml:space="preserve">
+    <value>Ввод в списке</value>
+  </data>
+  <data name="comboBoxSearchString.ToolTip" xml:space="preserve">
+    <value>Строка поиска. Список и поле поиска имеют общий клавиатурный ввод.
+Редактируйте строку поиска прямо в списке. Перемещайтесь по списку прямо из поля поиска.</value>
+  </data>
+  <data name="monthCalendar1.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="toolStripMenuItem2.Size" type="System.Drawing.Size, System.Drawing">
     <value>273, 22</value>
@@ -291,7 +264,7 @@
     <value>Отправить клип в канал</value>
   </data>
   <data name="sendClipMenuItem.ToolTipText" xml:space="preserve">
-    <value>Отправить клип всем получателям канала клипов</value>
+    <value>Отправить текстовый клип всем получателям канала клипов</value>
   </data>
   <data name="copyToClipboardToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>273, 22</value>
@@ -350,17 +323,20 @@
   <data name="deleteToolStripMenuItem1.ToolTipText" xml:space="preserve">
     <value>Удалить выделенные клипы из списка. Настоящее удаление выполняется при закрытии базы данных.</value>
   </data>
-  <data name="contextMenuUrl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>229, 48</value>
+  <data name="contextMenuStripDataGrid.Size" type="System.Drawing.Size, System.Drawing">
+    <value>274, 290</value>
   </data>
-  <data name="urlTextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>2, 344</value>
+  <data name="contextMenuStripDataGrid.ToolTip" xml:space="preserve">
+    <value />
   </data>
-  <data name="urlTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>433, 22</value>
+  <data name="dataGridView.ToolTip" xml:space="preserve">
+    <value />
   </data>
-  <data name="urlTextBox.ToolTip" xml:space="preserve">
-    <value>Из web страницы с таким адресом клип был скопирован</value>
+  <data name="splitContainer1.Panel1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="pictureBoxSource.ToolTip" xml:space="preserve">
+    <value>Иконка приложения, из которого клип был скопирован</value>
   </data>
   <data name="contextMenuUrlOpenLink.Size" type="System.Drawing.Size, System.Drawing">
     <value>228, 22</value>
@@ -374,11 +350,20 @@
   <data name="toolStripUrlCopyAll.Text" xml:space="preserve">
     <value>Копировать весь текст</value>
   </data>
-  <data name="contextMenuStripRtf.Size" type="System.Drawing.Size, System.Drawing">
-    <value>234, 120</value>
+  <data name="contextMenuUrl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>229, 48</value>
   </data>
-  <data name="richTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>433, 94</value>
+  <data name="contextMenuUrl.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="urlTextBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>2, 344</value>
+  </data>
+  <data name="urlTextBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>433, 22</value>
+  </data>
+  <data name="urlTextBox.ToolTip" xml:space="preserve">
+    <value>Из web страницы с таким адресом клип был скопирован</value>
   </data>
   <data name="rtfMenuItemOpenLink.Size" type="System.Drawing.Size, System.Drawing">
     <value>233, 22</value>
@@ -422,11 +407,17 @@
   <data name="setSelectedTextInFilterToolStripMenuRtf.ToolTipText" xml:space="preserve">
     <value>Установить выделенный текст в текстовый фильтр</value>
   </data>
-  <data name="contextMenuStripHtml.Size" type="System.Drawing.Size, System.Drawing">
-    <value>237, 164</value>
+  <data name="contextMenuStripRtf.Size" type="System.Drawing.Size, System.Drawing">
+    <value>234, 120</value>
   </data>
-  <data name="htmlTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>431, 92</value>
+  <data name="contextMenuStripRtf.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="richTextBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>433, 94</value>
+  </data>
+  <data name="richTextBox.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="htmlMenuItemOpenLink.Size" type="System.Drawing.Size, System.Drawing">
     <value>236, 22</value>
@@ -482,11 +473,17 @@
   <data name="setSelectedTextInFilterToolStripHtml.ToolTipText" xml:space="preserve">
     <value>Установить выделенный текст в текстовый фильтр</value>
   </data>
-  <data name="contextMenuPictureBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>219, 48</value>
+  <data name="contextMenuStripHtml.Size" type="System.Drawing.Size, System.Drawing">
+    <value>237, 164</value>
   </data>
-  <data name="ImageControl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>433, 142</value>
+  <data name="contextMenuStripHtml.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="htmlTextBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>431, 92</value>
+  </data>
+  <data name="htmlTextBox.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="originalSizeToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>218, 22</value>
@@ -499,6 +496,24 @@
   </data>
   <data name="fitFromInsideToolStripMenuItem.Text" xml:space="preserve">
     <value>Оптимальное увеличение</value>
+  </data>
+  <data name="contextMenuPictureBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>219, 48</value>
+  </data>
+  <data name="contextMenuPictureBox.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ImageControl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>433, 142</value>
+  </data>
+  <data name="ImageControl.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tableLayoutPanelData.Size" type="System.Drawing.Size, System.Drawing">
+    <value>437, 368</value>
+  </data>
+  <data name="tableLayoutPanelData.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="stripLabelFiltered.ToolTipText" xml:space="preserve">
     <value>Количество отобранных клипов</value>
@@ -521,6 +536,12 @@
   <data name="StripLabelCreated.ToolTipText" xml:space="preserve">
     <value>Дата создания</value>
   </data>
+  <data name="statusStrip.Size" type="System.Drawing.Size, System.Drawing">
+    <value>441, 22</value>
+  </data>
+  <data name="statusStrip.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="copyFullFilenameToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>246, 22</value>
   </data>
@@ -533,17 +554,331 @@
   <data name="toolStripApplicationCopyAll.Text" xml:space="preserve">
     <value>Копировать весь текст</value>
   </data>
+  <data name="contextMenuStripApplication.Size" type="System.Drawing.Size, System.Drawing">
+    <value>247, 48</value>
+  </data>
+  <data name="contextMenuStripApplication.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="textBoxApplication.Location" type="System.Drawing.Point, System.Drawing">
+    <value>354, 3</value>
+  </data>
+  <data name="textBoxApplication.ToolTip" xml:space="preserve">
+    <value>Приложение откуда клип был скопирован</value>
+  </data>
   <data name="toolStripWindowTitleCopyAll.Size" type="System.Drawing.Size, System.Drawing">
     <value>197, 22</value>
   </data>
   <data name="toolStripWindowTitleCopyAll.Text" xml:space="preserve">
     <value>Копировать весь текст</value>
   </data>
+  <data name="contextMenuWindowTitle.Size" type="System.Drawing.Size, System.Drawing">
+    <value>198, 26</value>
+  </data>
+  <data name="contextMenuWindowTitle.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="textBoxWindow.Size" type="System.Drawing.Size, System.Drawing">
+    <value>326, 20</value>
+  </data>
+  <data name="textBoxWindow.ToolTip" xml:space="preserve">
+    <value>Заголовок окна откуда клип был скопирован</value>
+  </data>
+  <data name="splitContainer1.Panel2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="splitContainer1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>815, 420</value>
+  </data>
+  <data name="splitContainer1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="toolStripMenuItemSwitchFocus.Size" type="System.Drawing.Size, System.Drawing">
+    <value>287, 22</value>
+  </data>
+  <data name="toolStripMenuItemSwitchFocus.Text" xml:space="preserve">
+    <value>Переключить фокус список/текст</value>
+  </data>
+  <data name="toolStripMenuItemSwitchFocus.ToolTipText" xml:space="preserve">
+    <value>Переключить фокус ввода между списком и текстом клипа. 
+Если фокус находится в другом месте, то активизируется список.
+</value>
+  </data>
+  <data name="menuItemSetFocusClipText.Size" type="System.Drawing.Size, System.Drawing">
+    <value>287, 22</value>
+  </data>
+  <data name="menuItemSetFocusClipText.Text" xml:space="preserve">
+    <value>Активизировать текст клипа (TAB)</value>
+  </data>
+  <data name="windowAlwaysOnTopToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>287, 22</value>
+  </data>
+  <data name="windowAlwaysOnTopToolStripMenuItem.Text" xml:space="preserve">
+    <value>Всегда сверху</value>
+  </data>
+  <data name="windowAlwaysOnTopToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>Режим окна всегда сверху</value>
+  </data>
+  <data name="showInTaskbarToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>287, 22</value>
+  </data>
+  <data name="showInTaskbarToolStripMenuItem.Text" xml:space="preserve">
+    <value>Показывать в панели задач</value>
+  </data>
+  <data name="showInTaskbarToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>Когда ВЫКЛ, окно будет всегда скрыто в панели задач. 
+Когда ВКЛ и "Быстрое открытие окна" ВКЛ, окно будет всегда отображаться в панели задач. 
+Когда ВКЛ и "Быстрое открытие окна" ВЫКЛ, окно будет отображаться в панели задач если видимо. </value>
+  </data>
+  <data name="toolStripMenuItemMonitoringClipboard.Size" type="System.Drawing.Size, System.Drawing">
+    <value>287, 22</value>
+  </data>
+  <data name="toolStripMenuItemMonitoringClipboard.Text" xml:space="preserve">
+    <value>Слежение за буфером обмена</value>
+  </data>
+  <data name="toolStripMenuItemMonitoringClipboard.ToolTipText" xml:space="preserve">
+    <value>Захватывать изменения в буфере обмена</value>
+  </data>
+  <data name="сдуфкClipboardToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>287, 22</value>
+  </data>
+  <data name="сдуфкClipboardToolStripMenuItem.Text" xml:space="preserve">
+    <value>Очистить буфер обмена</value>
+  </data>
+  <data name="connectRecipientToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>287, 22</value>
+  </data>
+  <data name="connectRecipientToolStripMenuItem.Text" xml:space="preserve">
+    <value>Подключение канала клипов</value>
+  </data>
+  <data name="connectRecipientToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>Подключение канала отправки клипов на устройства Android</value>
+  </data>
+  <data name="exitToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>287, 22</value>
+  </data>
+  <data name="exitToolStripMenuItem.Text" xml:space="preserve">
+    <value>Выход</value>
+  </data>
+  <data name="exitToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>Завершить работу программы</value>
+  </data>
   <data name="fileToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
     <value>48, 20</value>
   </data>
   <data name="fileToolStripMenuItem1.Text" xml:space="preserve">
     <value>Окно</value>
+  </data>
+  <data name="toolStripMenuItemSecondaryColumns.Size" type="System.Drawing.Size, System.Drawing">
+    <value>289, 22</value>
+  </data>
+  <data name="toolStripMenuItemSecondaryColumns.Text" xml:space="preserve">
+    <value>Дополнительные колонки</value>
+  </data>
+  <data name="moveCopiedClipToTopToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>289, 22</value>
+  </data>
+  <data name="moveCopiedClipToTopToolStripMenuItem.Text" xml:space="preserve">
+    <value>Перемещать наверх после использов.</value>
+  </data>
+  <data name="moveCopiedClipToTopToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>Перемещать клип наверх после его копирования/вставки</value>
+  </data>
+  <data name="toolStripMenuItem22.Size" type="System.Drawing.Size, System.Drawing">
+    <value>286, 6</value>
+  </data>
+  <data name="moveTopToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>289, 22</value>
+  </data>
+  <data name="moveTopToolStripMenuItem.Text" xml:space="preserve">
+    <value>Переместить наверх</value>
+  </data>
+  <data name="moveTopToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>Переместить выделенные клипы наверх списка</value>
+  </data>
+  <data name="moveUpToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>289, 22</value>
+  </data>
+  <data name="moveUpToolStripMenuItem.Text" xml:space="preserve">
+    <value>Переместить вверх</value>
+  </data>
+  <data name="moveUpToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>Переместить выделенные клипы на одну позицию вверх</value>
+  </data>
+  <data name="moveDownToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>289, 22</value>
+  </data>
+  <data name="moveDownToolStripMenuItem.Text" xml:space="preserve">
+    <value>Переместить вниз</value>
+  </data>
+  <data name="moveDownToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>Переместить выделенные клипы на одну позицию вниз</value>
+  </data>
+  <data name="filterByDateToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>289, 22</value>
+  </data>
+  <data name="filterByDateToolStripMenuItem.Text" xml:space="preserve">
+    <value>Фильтр по дате</value>
+  </data>
+  <data name="filterByDateToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>Установить фильтр по дате создания клипа</value>
+  </data>
+  <data name="sortByDefaultToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>286, 22</value>
+  </data>
+  <data name="sortByDefaultToolStripMenuItem.Text" xml:space="preserve">
+    <value>Сортировать по умолчанию</value>
+  </data>
+  <data name="sortByVisualSizeToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>286, 22</value>
+  </data>
+  <data name="sortByVisualSizeToolStripMenuItem.Text" xml:space="preserve">
+    <value>Сортировать по визуальному размеру</value>
+  </data>
+  <data name="sortByVisualSizeToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>Полезно для удаления больших текстов, замедляющих работу текстового фильтра. 
+Сортировка сохраняется до захвата клипа.</value>
+  </data>
+  <data name="toolStripMenuItem20.Size" type="System.Drawing.Size, System.Drawing">
+    <value>286, 22</value>
+  </data>
+  <data name="toolStripMenuItem20.Text" xml:space="preserve">
+    <value>Сортировать по размеру в байтах</value>
+  </data>
+  <data name="toolStripMenuItem20.ToolTipText" xml:space="preserve">
+    <value>Полезно для удаления больших клипов, заметно влияющих на размер базы данных. 
+Сортировка сохраняется до захвата клипа.
+</value>
+  </data>
+  <data name="sortByToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>286, 22</value>
+  </data>
+  <data name="sortByToolStripMenuItem.Text" xml:space="preserve">
+    <value>Сортировать по дате создания</value>
+  </data>
+  <data name="sortByToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>Сортировка сохраняется до захвата клипа.</value>
+  </data>
+  <data name="sortingToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>289, 22</value>
+  </data>
+  <data name="sortingToolStripMenuItem.Text" xml:space="preserve">
+    <value>Сортировка</value>
+  </data>
+  <data name="deleteAllNonFavoriteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>289, 22</value>
+  </data>
+  <data name="deleteAllNonFavoriteToolStripMenuItem.Text" xml:space="preserve">
+    <value>Удалить все нелюбимые</value>
+  </data>
+  <data name="deleteAllNonFavoriteToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>Удалить все нелюбимые клипы из списка. Настоящее удаление выполняется при закрытии базы данных.</value>
+  </data>
+  <data name="toolStripMenuItem5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>286, 6</value>
+  </data>
+  <data name="showAllMarksToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>289, 22</value>
+  </data>
+  <data name="showAllMarksToolStripMenuItem.Text" xml:space="preserve">
+    <value>Показать все категории</value>
+  </data>
+  <data name="showOnlyFavoriteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>289, 22</value>
+  </data>
+  <data name="showOnlyFavoriteToolStripMenuItem.Text" xml:space="preserve">
+    <value>Показать только любимые</value>
+  </data>
+  <data name="showOnlyUsedToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>289, 22</value>
+  </data>
+  <data name="showOnlyUsedToolStripMenuItem.Text" xml:space="preserve">
+    <value>Показать только полезные</value>
+  </data>
+  <data name="toolStripMenuItem13.Size" type="System.Drawing.Size, System.Drawing">
+    <value>286, 6</value>
+  </data>
+  <data name="showAllTypesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>289, 22</value>
+  </data>
+  <data name="showAllTypesToolStripMenuItem.Text" xml:space="preserve">
+    <value>Показать все типы</value>
+  </data>
+  <data name="showOnlyImagesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>289, 22</value>
+  </data>
+  <data name="showOnlyImagesToolStripMenuItem.Text" xml:space="preserve">
+    <value>Показать только картинки</value>
+  </data>
+  <data name="showOnlyFilesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>289, 22</value>
+  </data>
+  <data name="showOnlyFilesToolStripMenuItem.Text" xml:space="preserve">
+    <value>Показать только файлы</value>
+  </data>
+  <data name="showOnlyTextsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>289, 22</value>
+  </data>
+  <data name="showOnlyTextsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Показать только тексты</value>
+  </data>
+  <data name="toolStripMenuItem17.Size" type="System.Drawing.Size, System.Drawing">
+    <value>286, 6</value>
+  </data>
+  <data name="toolStripMenuItemClearFilters.Size" type="System.Drawing.Size, System.Drawing">
+    <value>289, 22</value>
+  </data>
+  <data name="toolStripMenuItemClearFilters.Text" xml:space="preserve">
+    <value>Очистить фильтры</value>
+  </data>
+  <data name="returnToPrevousSelectedClipToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>289, 22</value>
+  </data>
+  <data name="returnToPrevousSelectedClipToolStripMenuItem.Text" xml:space="preserve">
+    <value>Очистить фильтры и выбрать пред.</value>
+  </data>
+  <data name="returnToPrevousSelectedClipToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>Очистить фильтры и выбрать клип, выбранный перед применением фильтра 
+с изменением выбранного клипа</value>
+  </data>
+  <data name="toolStripMenuItemClearFilterAndSelectTop.Size" type="System.Drawing.Size, System.Drawing">
+    <value>289, 22</value>
+  </data>
+  <data name="toolStripMenuItemClearFilterAndSelectTop.Text" xml:space="preserve">
+    <value>Очистить фильтры и выбрать верх</value>
+  </data>
+  <data name="toolStripMenuItemClearFilterAndSelectTop.ToolTipText" xml:space="preserve">
+    <value>Очистить фильтры и выбрать верхний клип</value>
+  </data>
+  <data name="NextMatchListMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>289, 22</value>
+  </data>
+  <data name="NextMatchListMenuItem.Text" xml:space="preserve">
+    <value>Найти следующий</value>
+  </data>
+  <data name="NextMatchListMenuItem.ToolTipText" xml:space="preserve">
+    <value>Найти следующий клип</value>
+  </data>
+  <data name="PreviousMatchListMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>289, 22</value>
+  </data>
+  <data name="PreviousMatchListMenuItem.Text" xml:space="preserve">
+    <value>Найти предыдущий</value>
+  </data>
+  <data name="PreviousMatchListMenuItem.ToolTipText" xml:space="preserve">
+    <value>Найти предыдущий клип</value>
+  </data>
+  <data name="toolStripMenuItem19.Size" type="System.Drawing.Size, System.Drawing">
+    <value>286, 6</value>
+  </data>
+  <data name="gotoTopToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>289, 22</value>
+  </data>
+  <data name="gotoTopToolStripMenuItem.Text" xml:space="preserve">
+    <value>Выбрать верх                          Ctrl+Home</value>
+  </data>
+  <data name="gotoTopToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>Выбрать верхний клип</value>
   </data>
   <data name="listToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>60, 20</value>
@@ -634,7 +969,7 @@
     <value>Отправить клип в канал</value>
   </data>
   <data name="sendClipToolStripMenuItem.ToolTipText" xml:space="preserve">
-    <value>Отправить клип всем получателям канала клипов</value>
+    <value>Отправить текстовый клип всем получателям канала клипов</value>
   </data>
   <data name="toolStripMenuItem8.Size" type="System.Drawing.Size, System.Drawing">
     <value>235, 22</value>
@@ -835,296 +1170,6 @@
   <data name="settingsToolStripMenuItem1.Text" xml:space="preserve">
     <value>Настройки</value>
   </data>
-  <data name="fToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>71, 20</value>
-  </data>
-  <data name="fToolStripMenuItem.Text" xml:space="preserve">
-    <value>Помощь </value>
-  </data>
-  <data name="MainMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>815, 24</value>
-  </data>
-  <data name="toolStripMenuItemSwitchFocus.Size" type="System.Drawing.Size, System.Drawing">
-    <value>287, 22</value>
-  </data>
-  <data name="toolStripMenuItemSwitchFocus.Text" xml:space="preserve">
-    <value>Переключить фокус список/текст</value>
-  </data>
-  <data name="toolStripMenuItemSwitchFocus.ToolTipText" xml:space="preserve">
-    <value>Переключить фокус ввода между списком и текстом клипа. 
-Если фокус находится в другом месте, то активизируется список.
-</value>
-  </data>
-  <data name="menuItemSetFocusClipText.Size" type="System.Drawing.Size, System.Drawing">
-    <value>287, 22</value>
-  </data>
-  <data name="menuItemSetFocusClipText.Text" xml:space="preserve">
-    <value>Активизировать текст клипа (TAB)</value>
-  </data>
-  <data name="windowAlwaysOnTopToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>287, 22</value>
-  </data>
-  <data name="windowAlwaysOnTopToolStripMenuItem.Text" xml:space="preserve">
-    <value>Всегда сверху</value>
-  </data>
-  <data name="windowAlwaysOnTopToolStripMenuItem.ToolTipText" xml:space="preserve">
-    <value>Режим окна всегда сверху</value>
-  </data>
-  <data name="showInTaskbarToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>287, 22</value>
-  </data>
-  <data name="showInTaskbarToolStripMenuItem.Text" xml:space="preserve">
-    <value>Показывать в панели задач</value>
-  </data>
-  <data name="showInTaskbarToolStripMenuItem.ToolTipText" xml:space="preserve">
-    <value>Когда ВЫКЛ, окно будет всегда скрыто в панели задач. 
-Когда ВКЛ и "Быстрое открытие окна" ВКЛ, окно будет всегда отображаться в панели задач. 
-Когда ВКЛ и "Быстрое открытие окна" ВЫКЛ, окно будет отображаться в панели задач если видимо. </value>
-  </data>
-  <data name="toolStripMenuItemMonitoringClipboard.Size" type="System.Drawing.Size, System.Drawing">
-    <value>287, 22</value>
-  </data>
-  <data name="toolStripMenuItemMonitoringClipboard.Text" xml:space="preserve">
-    <value>Слежение за буфером обмена</value>
-  </data>
-  <data name="toolStripMenuItemMonitoringClipboard.ToolTipText" xml:space="preserve">
-    <value>Захватывать изменения в буфере обмена</value>
-  </data>
-  <data name="сдуфкClipboardToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>287, 22</value>
-  </data>
-  <data name="сдуфкClipboardToolStripMenuItem.Text" xml:space="preserve">
-    <value>Очистить буфер обмена</value>
-  </data>
-  <data name="connectRecipientToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>287, 22</value>
-  </data>
-  <data name="connectRecipientToolStripMenuItem.Text" xml:space="preserve">
-    <value>Подключение канала клипов</value>
-  </data>
-  <data name="connectRecipientToolStripMenuItem.ToolTipText" xml:space="preserve">
-    <value>Подключение канала отправки клипов на устройства Android</value>
-  </data>
-  <data name="exitToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>287, 22</value>
-  </data>
-  <data name="exitToolStripMenuItem.Text" xml:space="preserve">
-    <value>Выход</value>
-  </data>
-  <data name="exitToolStripMenuItem.ToolTipText" xml:space="preserve">
-    <value>Завершить работу программы</value>
-  </data>
-  <data name="toolStripMenuItemSecondaryColumns.Size" type="System.Drawing.Size, System.Drawing">
-    <value>289, 22</value>
-  </data>
-  <data name="toolStripMenuItemSecondaryColumns.Text" xml:space="preserve">
-    <value>Дополнительные колонки</value>
-  </data>
-  <data name="moveCopiedClipToTopToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>289, 22</value>
-  </data>
-  <data name="moveCopiedClipToTopToolStripMenuItem.Text" xml:space="preserve">
-    <value>Перемещать наверх после использов.</value>
-  </data>
-  <data name="moveCopiedClipToTopToolStripMenuItem.ToolTipText" xml:space="preserve">
-    <value>Перемещать клип наверх после его копирования/вставки</value>
-  </data>
-  <data name="toolStripMenuItem22.Size" type="System.Drawing.Size, System.Drawing">
-    <value>286, 6</value>
-  </data>
-  <data name="moveTopToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>289, 22</value>
-  </data>
-  <data name="moveTopToolStripMenuItem.Text" xml:space="preserve">
-    <value>Переместить наверх</value>
-  </data>
-  <data name="moveTopToolStripMenuItem.ToolTipText" xml:space="preserve">
-    <value>Переместить выделенные клипы наверх списка</value>
-  </data>
-  <data name="moveUpToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>289, 22</value>
-  </data>
-  <data name="moveUpToolStripMenuItem.Text" xml:space="preserve">
-    <value>Переместить вверх</value>
-  </data>
-  <data name="moveUpToolStripMenuItem.ToolTipText" xml:space="preserve">
-    <value>Переместить выделенные клипы на одну позицию вверх</value>
-  </data>
-  <data name="moveDownToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>289, 22</value>
-  </data>
-  <data name="moveDownToolStripMenuItem.Text" xml:space="preserve">
-    <value>Переместить вниз</value>
-  </data>
-  <data name="moveDownToolStripMenuItem.ToolTipText" xml:space="preserve">
-    <value>Переместить выделенные клипы на одну позицию вниз</value>
-  </data>
-  <data name="filterByDateToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>289, 22</value>
-  </data>
-  <data name="filterByDateToolStripMenuItem.Text" xml:space="preserve">
-    <value>Фильтр по дате</value>
-  </data>
-  <data name="filterByDateToolStripMenuItem.ToolTipText" xml:space="preserve">
-    <value>Установить фильтр по дате создания клипа</value>
-  </data>
-  <data name="sortingToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>289, 22</value>
-  </data>
-  <data name="sortingToolStripMenuItem.Text" xml:space="preserve">
-    <value>Сортировка</value>
-  </data>
-  <data name="sortByDefaultToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>286, 22</value>
-  </data>
-  <data name="sortByDefaultToolStripMenuItem.Text" xml:space="preserve">
-    <value>Сортировать по умолчанию</value>
-  </data>
-  <data name="sortByVisualSizeToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>286, 22</value>
-  </data>
-  <data name="sortByVisualSizeToolStripMenuItem.Text" xml:space="preserve">
-    <value>Сортировать по визуальному размеру</value>
-  </data>
-  <data name="sortByVisualSizeToolStripMenuItem.ToolTipText" xml:space="preserve">
-    <value>Полезно для удаления больших текстов, замедляющих работу текстового фильтра. 
-Сортировка сохраняется до захвата клипа.</value>
-  </data>
-  <data name="toolStripMenuItem20.Size" type="System.Drawing.Size, System.Drawing">
-    <value>286, 22</value>
-  </data>
-  <data name="toolStripMenuItem20.Text" xml:space="preserve">
-    <value>Сортировать по размеру в байтах</value>
-  </data>
-  <data name="toolStripMenuItem20.ToolTipText" xml:space="preserve">
-    <value>Полезно для удаления больших клипов, заметно влияющих на размер базы данных. 
-Сортировка сохраняется до захвата клипа.
-</value>
-  </data>
-  <data name="sortByToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>286, 22</value>
-  </data>
-  <data name="sortByToolStripMenuItem.Text" xml:space="preserve">
-    <value>Сортировать по дате создания</value>
-  </data>
-  <data name="sortByToolStripMenuItem.ToolTipText" xml:space="preserve">
-    <value>Сортировка сохраняется до захвата клипа.</value>
-  </data>
-  <data name="deleteAllNonFavoriteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>289, 22</value>
-  </data>
-  <data name="deleteAllNonFavoriteToolStripMenuItem.Text" xml:space="preserve">
-    <value>Удалить все нелюбимые</value>
-  </data>
-  <data name="deleteAllNonFavoriteToolStripMenuItem.ToolTipText" xml:space="preserve">
-    <value>Удалить все нелюбимые клипы из списка. Настоящее удаление выполняется при закрытии базы данных.</value>
-  </data>
-  <data name="toolStripMenuItem5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>286, 6</value>
-  </data>
-  <data name="showAllMarksToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>289, 22</value>
-  </data>
-  <data name="showAllMarksToolStripMenuItem.Text" xml:space="preserve">
-    <value>Показать все категории</value>
-  </data>
-  <data name="showOnlyFavoriteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>289, 22</value>
-  </data>
-  <data name="showOnlyFavoriteToolStripMenuItem.Text" xml:space="preserve">
-    <value>Показать только любимые</value>
-  </data>
-  <data name="showOnlyUsedToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>289, 22</value>
-  </data>
-  <data name="showOnlyUsedToolStripMenuItem.Text" xml:space="preserve">
-    <value>Показать только полезные</value>
-  </data>
-  <data name="toolStripMenuItem13.Size" type="System.Drawing.Size, System.Drawing">
-    <value>286, 6</value>
-  </data>
-  <data name="showAllTypesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>289, 22</value>
-  </data>
-  <data name="showAllTypesToolStripMenuItem.Text" xml:space="preserve">
-    <value>Показать все типы</value>
-  </data>
-  <data name="showOnlyImagesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>289, 22</value>
-  </data>
-  <data name="showOnlyImagesToolStripMenuItem.Text" xml:space="preserve">
-    <value>Показать только картинки</value>
-  </data>
-  <data name="showOnlyFilesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>289, 22</value>
-  </data>
-  <data name="showOnlyFilesToolStripMenuItem.Text" xml:space="preserve">
-    <value>Показать только файлы</value>
-  </data>
-  <data name="showOnlyTextsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>289, 22</value>
-  </data>
-  <data name="showOnlyTextsToolStripMenuItem.Text" xml:space="preserve">
-    <value>Показать только тексты</value>
-  </data>
-  <data name="toolStripMenuItem17.Size" type="System.Drawing.Size, System.Drawing">
-    <value>286, 6</value>
-  </data>
-  <data name="toolStripMenuItemClearFilters.Size" type="System.Drawing.Size, System.Drawing">
-    <value>289, 22</value>
-  </data>
-  <data name="toolStripMenuItemClearFilters.Text" xml:space="preserve">
-    <value>Очистить фильтры</value>
-  </data>
-  <data name="returnToPrevousSelectedClipToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>289, 22</value>
-  </data>
-  <data name="returnToPrevousSelectedClipToolStripMenuItem.Text" xml:space="preserve">
-    <value>Очистить фильтры и выбрать пред.</value>
-  </data>
-  <data name="returnToPrevousSelectedClipToolStripMenuItem.ToolTipText" xml:space="preserve">
-    <value>Очистить фильтры и выбрать клип, выбранный перед применением фильтра 
-с изменением выбранного клипа</value>
-  </data>
-  <data name="toolStripMenuItemClearFilterAndSelectTop.Size" type="System.Drawing.Size, System.Drawing">
-    <value>289, 22</value>
-  </data>
-  <data name="toolStripMenuItemClearFilterAndSelectTop.Text" xml:space="preserve">
-    <value>Очистить фильтры и выбрать верх</value>
-  </data>
-  <data name="toolStripMenuItemClearFilterAndSelectTop.ToolTipText" xml:space="preserve">
-    <value>Очистить фильтры и выбрать верхний клип</value>
-  </data>
-  <data name="NextMatchListMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>289, 22</value>
-  </data>
-  <data name="NextMatchListMenuItem.Text" xml:space="preserve">
-    <value>Найти следующий</value>
-  </data>
-  <data name="NextMatchListMenuItem.ToolTipText" xml:space="preserve">
-    <value>Найти следующий клип</value>
-  </data>
-  <data name="PreviousMatchListMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>289, 22</value>
-  </data>
-  <data name="PreviousMatchListMenuItem.Text" xml:space="preserve">
-    <value>Найти предыдущий</value>
-  </data>
-  <data name="PreviousMatchListMenuItem.ToolTipText" xml:space="preserve">
-    <value>Найти предыдущий клип</value>
-  </data>
-  <data name="toolStripMenuItem19.Size" type="System.Drawing.Size, System.Drawing">
-    <value>286, 6</value>
-  </data>
-  <data name="gotoTopToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>289, 22</value>
-  </data>
-  <data name="gotoTopToolStripMenuItem.Text" xml:space="preserve">
-    <value>Выбрать верх                          Ctrl+Home</value>
-  </data>
-  <data name="gotoTopToolStripMenuItem.ToolTipText" xml:space="preserve">
-    <value>Выбрать верхний клип</value>
-  </data>
   <data name="checkUpdateToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>218, 22</value>
   </data>
@@ -1162,8 +1207,71 @@
   <data name="aboutToolStripMenuItem1.Text" xml:space="preserve">
     <value>О программе</value>
   </data>
+  <data name="fToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>71, 20</value>
+  </data>
+  <data name="fToolStripMenuItem.Text" xml:space="preserve">
+    <value>Помощь </value>
+  </data>
+  <data name="MainMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>815, 24</value>
+  </data>
+  <data name="MainMenu.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="openWindowToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>243, 22</value>
+  </data>
+  <data name="openWindowToolStripMenuItem.Text" xml:space="preserve">
+    <value>Открыть окно</value>
+  </data>
+  <data name="openLastClipsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>243, 22</value>
+  </data>
+  <data name="openLastClipsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Открыть последние клипы</value>
+  </data>
+  <data name="openFavoritesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>243, 22</value>
+  </data>
+  <data name="openFavoritesToolStripMenuItem.Text" xml:space="preserve">
+    <value>Открыть любимые клипы</value>
+  </data>
+  <data name="toolStripMenuItemCompareLastClips.Size" type="System.Drawing.Size, System.Drawing">
+    <value>243, 22</value>
+  </data>
+  <data name="toolStripMenuItemCompareLastClips.Text" xml:space="preserve">
+    <value>Сравнить последние клипы</value>
+  </data>
+  <data name="toolStripMenuItemCompareLastClips.ToolTipText" xml:space="preserve">
+    <value>Сравнить тексты последних 2-х клипов</value>
+  </data>
+  <data name="trayMenuItemMonitoringClipboard.Size" type="System.Drawing.Size, System.Drawing">
+    <value>243, 22</value>
+  </data>
+  <data name="trayMenuItemMonitoringClipboard.Text" xml:space="preserve">
+    <value>Слежение за буфером обмена</value>
+  </data>
+  <data name="trayMenuItemMonitoringClipboard.ToolTipText" xml:space="preserve">
+    <value>Захватывать изменения в буфере обмена</value>
+  </data>
+  <data name="toolStripMenuItem9.Size" type="System.Drawing.Size, System.Drawing">
+    <value>243, 22</value>
+  </data>
+  <data name="toolStripMenuItem9.Text" xml:space="preserve">
+    <value>Очистить буфер обмена</value>
+  </data>
+  <data name="exitToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>243, 22</value>
+  </data>
+  <data name="exitToolStripMenuItem1.Text" xml:space="preserve">
+    <value>Выход</value>
+  </data>
   <data name="contextMenuStripNotifyIcon.Size" type="System.Drawing.Size, System.Drawing">
     <value>244, 158</value>
+  </data>
+  <data name="contextMenuStripNotifyIcon.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="notifyIcon.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1706,54 +1814,6 @@
   <data name="notifyIcon.Text" xml:space="preserve">
     <value>ClipAngel</value>
   </data>
-  <data name="openWindowToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>243, 22</value>
-  </data>
-  <data name="openWindowToolStripMenuItem.Text" xml:space="preserve">
-    <value>Открыть окно</value>
-  </data>
-  <data name="openLastClipsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>243, 22</value>
-  </data>
-  <data name="openLastClipsToolStripMenuItem.Text" xml:space="preserve">
-    <value>Открыть последние клипы</value>
-  </data>
-  <data name="openFavoritesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>243, 22</value>
-  </data>
-  <data name="openFavoritesToolStripMenuItem.Text" xml:space="preserve">
-    <value>Открыть любимые клипы</value>
-  </data>
-  <data name="toolStripMenuItemCompareLastClips.Size" type="System.Drawing.Size, System.Drawing">
-    <value>243, 22</value>
-  </data>
-  <data name="toolStripMenuItemCompareLastClips.Text" xml:space="preserve">
-    <value>Сравнить последние клипы</value>
-  </data>
-  <data name="toolStripMenuItemCompareLastClips.ToolTipText" xml:space="preserve">
-    <value>Сравнить тексты последних 2-х клипов</value>
-  </data>
-  <data name="trayMenuItemMonitoringClipboard.Size" type="System.Drawing.Size, System.Drawing">
-    <value>243, 22</value>
-  </data>
-  <data name="trayMenuItemMonitoringClipboard.Text" xml:space="preserve">
-    <value>Слежение за буфером обмена</value>
-  </data>
-  <data name="trayMenuItemMonitoringClipboard.ToolTipText" xml:space="preserve">
-    <value>Захватывать изменения в буфере обмена</value>
-  </data>
-  <data name="toolStripMenuItem9.Size" type="System.Drawing.Size, System.Drawing">
-    <value>243, 22</value>
-  </data>
-  <data name="toolStripMenuItem9.Text" xml:space="preserve">
-    <value>Очистить буфер обмена</value>
-  </data>
-  <data name="exitToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>243, 22</value>
-  </data>
-  <data name="exitToolStripMenuItem1.Text" xml:space="preserve">
-    <value>Выход</value>
-  </data>
   <data name="toolStripButtonTextFormatting.Text" xml:space="preserve">
     <value />
   </data>
@@ -1822,6 +1882,9 @@
   </data>
   <data name="buttonUpdate.ToolTipText" xml:space="preserve">
     <value>Обновить программу на новую версию</value>
+  </data>
+  <data name="toolStripTop.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>815, 444</value>
@@ -2363,5 +2426,8 @@
         wAAAAf/////AAAAB/////8AAAAH/////4AAAA//////gAAAD/////+AAAAP/////8AAAB//////4AAAP
         //////gAAA///////AAAH//////+AAA///////+AAP///////+AD/////////////////////////w==
 </value>
+  </data>
+  <data name="$this.ToolTip" xml:space="preserve">
+    <value />
   </data>
 </root>
