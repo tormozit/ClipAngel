@@ -1114,6 +1114,7 @@ namespace ClipAngel
             richTextInternal.SelectionTabs = richTextBox.SelectionTabs;
 
             richTextInternal.Clear();
+            urlTextBox.Text = "";
             textBoxApplication.Text = "";
             textBoxWindow.Text = "";
             StripLabelCreated.Text = "";
@@ -7665,12 +7666,21 @@ namespace ClipAngel
                 return;
             string extension = Path.GetExtension(tempFile);
             SaveFileDialog saveFileDialog = new SaveFileDialog();
-            saveFileDialog.FileName = LoadedClipRowReader["title"].ToString();
+            string fileName = RemoveInvalidCharsFromFileName(LoadedClipRowReader["title"].ToString().Substring(0, 50) + " " + LoadedClipRowReader["created"]);
+            saveFileDialog.FileName = fileName;
             saveFileDialog.CheckFileExists = false;
             saveFileDialog.Filter = extension  + "| *" + extension + "|All|*.*";
             if (saveFileDialog.ShowDialog(this) != DialogResult.OK)
                 return;
             File.Copy(tempFile, saveFileDialog.FileName);
+        }
+
+        private static string RemoveInvalidCharsFromFileName(string fileName, string replacement = "_")
+        {
+            string regexSearch = new string(Path.GetInvalidFileNameChars()) + new string(Path.GetInvalidPathChars());
+            Regex r = new Regex(string.Format("[{0}]", Regex.Escape(regexSearch)));
+            fileName = r.Replace(fileName, replacement);
+            return fileName;
         }
 
         private void tableLayoutPanelData_Paint(object sender, PaintEventArgs e)
