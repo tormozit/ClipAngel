@@ -1604,8 +1604,8 @@ Generowanie obrazu zużywa moc procesora. Jeśli masz duże obciążenie proceso
           <target state="translated">Klip nie został przechwycony ze względu na błąd odczytu schowka</target>
         </trans-unit>
         <trans-unit id="VersionValue" translate="yes" xml:space="preserve">
-          <source>2.00</source>
-          <target state="new">2.00</target>
+          <source>2.00.1</source>
+          <target state="new">2.00.1</target>
         </trans-unit>
         <trans-unit id="TargetWindow" translate="yes" xml:space="preserve">
           <source>Target window</source>
@@ -4429,7 +4429,7 @@ Zmiany w pliku tymczasowym nie są synchronizowane z klipem!</target>
           <target state="needs-review-translation">253, 22</target>
         </trans-unit>
         <trans-unit id="contextMenuStripDataGrid.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
-          <source>222, 290</source>
+          <source>222, 312</source>
           <target state="needs-review-translation">222, 290</target>
           <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
@@ -7152,12 +7152,12 @@ Edit search string right from list. Navigate in list right from search field.</t
           <target state="new">Send clip to channel</target>
         </trans-unit>
         <trans-unit id="sendClipMenuItem.ToolTipText" translate="yes" xml:space="preserve">
-          <source>Send encrypted clip to all recipients of channel. </source>
-          <target state="new">Send encrypted clip to all recipients of channel. </target>
+          <source>Send text clip to all recipients of channel. </source>
+          <target state="new">Send text clip to all recipients of channel. </target>
         </trans-unit>
         <trans-unit id="sendClipToolStripMenuItem.ToolTipText" translate="yes" xml:space="preserve">
-          <source>Send clip to all recipients of channel</source>
-          <target state="new">Send clip to all recipients of channel</target>
+          <source>Send encrypted text clip to all recipients of channel</source>
+          <target state="new">Send encrypted text clip to all recipients of channel</target>
         </trans-unit>
         <trans-unit id="connectRecipientToolStripMenuItem.ToolTipText" translate="yes" xml:space="preserve">
           <source>Set up clip channel</source>

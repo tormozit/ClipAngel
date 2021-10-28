@@ -800,25 +800,35 @@ namespace ClipAngel
             else if (hotkeyTitle == ClipAngel.Properties.Settings.Default.GlobalHotkeyIncrementalPaste)
             {
                 AllowHotkeyProcess = false;
-                SendPasteClipExpress(null, PasteMethod.Standard, false, true);
-                // https://www.hostedredmine.com/issues/925182
-                //if ((e.Modifier & EnumModifierKeys.Alt) != 0)
-                //    keybd_event((byte) VirtualKeyCode.MENU, 0x38, 0, 0); // LEFT
-                //if ((e.Modifier & EnumModifierKeys.Control) != 0)
-                //    keybd_event((byte) VirtualKeyCode.CONTROL, 0x1D, 0, 0);
-                //if ((e.Modifier & EnumModifierKeys.Shift) != 0)
-                //    keybd_event((byte) VirtualKeyCode.SHIFT, 0x2A, 0, 0);
-                DataRow oldCurrentDataRow = ((DataRowView) clipBindingSource.Current).Row;
-                clipBindingSource.MovePrevious();
-                DataRow CurrentDataRow = ((DataRowView) clipBindingSource.Current).Row;
-                notifyIcon.Visible = true;
-                string messageText;
-                if (oldCurrentDataRow == CurrentDataRow)
-                    messageText = Properties.Resources.PastedLastClip;
-                else
-                    messageText = CurrentDataRow["Title"].ToString();
-                notifyIcon.ShowBalloonTip(3000, Properties.Resources.NextClip, messageText, ToolTipIcon.Info);
-                AllowHotkeyProcess = true;
+                try
+                {
+                    SendPasteClipExpress(null, PasteMethod.Standard, false, true);
+                    // https://www.hostedredmine.com/issues/925182
+                    //if ((e.Modifier & EnumModifierKeys.Alt) != 0)
+                    //    keybd_event((byte) VirtualKeyCode.MENU, 0x38, 0, 0); // LEFT
+                    //if ((e.Modifier & EnumModifierKeys.Control) != 0)
+                    //    keybd_event((byte) VirtualKeyCode.CONTROL, 0x1D, 0, 0);
+                    //if ((e.Modifier & EnumModifierKeys.Shift) != 0)
+                    //    keybd_event((byte) VirtualKeyCode.SHIFT, 0x2A, 0, 0);
+                    DataRow oldCurrentDataRow = ((DataRowView) clipBindingSource.Current).Row;
+                    clipBindingSource.MovePrevious();
+                    DataRow CurrentDataRow = ((DataRowView) clipBindingSource.Current).Row;
+                    notifyIcon.Visible = true;
+                    string messageText;
+                    if (oldCurrentDataRow == CurrentDataRow)
+                        messageText = Properties.Resources.PastedLastClip;
+                    else
+                        messageText = CurrentDataRow["Title"].ToString();
+                    notifyIcon.ShowBalloonTip(3000, Properties.Resources.NextClip, messageText, ToolTipIcon.Info);
+                }
+                catch (Exception)
+                {
+                    int dummy = 1;
+                }
+                finally
+                {
+                    AllowHotkeyProcess = true;
+                }
             }
             else if (hotkeyTitle == ClipAngel.Properties.Settings.Default.GlobalHotkeyCompareLastClips)
             {
@@ -2964,6 +2974,7 @@ namespace ClipAngel
             //AfterRowLoad();
             SelectCurrentRow();
             areDeletedClips = true;
+            //ReloadList(); // ViewWindow will move -bad
         }
 
         [DllImport("user32.dll")]
