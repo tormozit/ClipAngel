@@ -7668,7 +7668,15 @@ namespace ClipAngel
             }
             ReloadList(false, 0, false, null, true);
         }
-
+        public static string TruncateLongString(string inputString, int maxChars, string postfix = "...")
+        {
+            if (maxChars <= 0)
+                throw new ArgumentOutOfRangeException("maxChars");
+            if (inputString == null || inputString.Length < maxChars)
+                return inputString;
+            var truncatedString = inputString.Substring(0, maxChars) + postfix;
+            return truncatedString;
+        }
         private void saveAsFileMenuItem_Click(object sender, EventArgs e)
         {
             string fileEditor = "";
@@ -7677,7 +7685,7 @@ namespace ClipAngel
                 return;
             string extension = Path.GetExtension(tempFile);
             SaveFileDialog saveFileDialog = new SaveFileDialog();
-            string fileName = RemoveInvalidCharsFromFileName(LoadedClipRowReader["title"].ToString().Substring(0, 50) + " " + LoadedClipRowReader["created"]);
+            string fileName = RemoveInvalidCharsFromFileName(TruncateLongString(LoadedClipRowReader["title"].ToString(), 50, "") + " " + LoadedClipRowReader["created"]);
             saveFileDialog.FileName = fileName;
             saveFileDialog.CheckFileExists = false;
             saveFileDialog.Filter = extension  + "| *" + extension + "|All|*.*";
