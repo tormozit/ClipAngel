@@ -31,7 +31,7 @@
     <value>..\Picture\Filter.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="HistoryOfChanges" xml:space="preserve">
-    <value>https://sourceforge.net/p/Clip-Angel/blog</value>
+    <value>https://sourceforge.net/p/clip-angel/blog</value>
   </data>
   <data name="clear2" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\clear2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -91,7 +91,7 @@
     <value>Następny сlip</value>
   </data>
   <data name="NoSupportedTextCompareApplication" xml:space="preserve">
-    <value>Żadna aplikacja do porównywania tekstu nie została odnaleziona. Teraz zostanie otworzona strona internetowa, aby otrzymać jedną darmową.</value>
+    <value>Żadna aplikacja do porównywania tekstu nie została odnaleziona. Teraz zostanie otwarta strona internetowa, aby pobrać darmową.</value>
   </data>
   <data name="Alien_64x64" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\Alien-64x64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -145,7 +145,7 @@
     <value>plik</value>
   </data>
   <data name="DBShortFilename" xml:space="preserve">
-    <value>DB.sqlite</value>
+    <value>db.sqlite</value>
   </data>
   <data name="FailedToReadFormatFromClipboard" xml:space="preserve">
     <value>Nie można odczytać danych w formacie "{0}" ze schowka.</value>
@@ -157,10 +157,13 @@
     <value>B</value>
   </data>
   <data name="HelpPage" xml:space="preserve">
-    <value>https://sourceforge.net/p/Clip-Angel/wiki/Description/</value>
+    <value>https://sourceforge.net/p/clip-angel/wiki/Description/</value>
   </data>
   <data name="QuestionResetSettings" xml:space="preserve">
     <value>Czy na pewno chcesz zresetować ustawienia do wartości domyślnych?</value>
+  </data>
+  <data name="Version" xml:space="preserve">
+    <value>Wersja</value>
   </data>
   <data name="eye" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\eye.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -252,6 +255,9 @@
   <data name="LastClipWasMultiCaptured" xml:space="preserve">
     <value>Ostatni klip został przechwycony dwa razy przed porównaniem</value>
   </data>
+  <data name="ClipWasNotCaptured" xml:space="preserve">
+    <value>Skopiowany klip ({2}) nie został przechwycony. Zbyt duży rozmiar {0}KB &gt; {1}KB (ustaw w ustawieniach)</value>
+  </data>
   <data name="PastedLastClip" xml:space="preserve">
     <value>Po prostu wklejony klip jest ostatni</value>
   </data>
@@ -297,14 +303,59 @@
   <data name="OpenWith" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\Open with.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="FilteredStatusText" xml:space="preserve">
+    <value>Filtrowane {0}</value>
+  </data>
   <data name="Tip 32" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\Tip 32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NoCapture" xml:space="preserve">
+    <value>Brak przechwycenia</value>
   </data>
   <data name="alienNoCapture" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\alien - no capture .ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="MonitoringOFF" xml:space="preserve">
+    <value>Monitorowanie schowka jest teraz wyłączone</value>
+  </data>
+  <data name="MonitoringON" xml:space="preserve">
+    <value>Monitorowanie schowka jest teraz włączone</value>
+  </data>
+  <data name="text_1CLine" xml:space="preserve">
+    <value>*1C linia</value>
+  </data>
   <data name="Filter1" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Picture\Filter.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="WrongFileFormat" xml:space="preserve">
+    <value>Nieprawidłowy format pliku</value>
+  </data>
+  <data name="filename" xml:space="preserve">
+    <value>nazwa pliku</value>
+  </data>
+  <data name="text_filename" xml:space="preserve">
+    <value>*nazwa pliku</value>
+  </data>
+  <data name="text_url_image" xml:space="preserve">
+    <value>*url-obrazu</value>
+  </data>
+  <data name="FailedChangeDatabaseFieEncryption" xml:space="preserve">
+    <value>Nieudana zmiana szyfrowania pliku bazy danych</value>
+  </data>
+  <data name="ConfirmDeleteAllNonFavorite" xml:space="preserve">
+    <value>Czy na pewno chcesz usunąć wszystkie nie ulubione klipy?</value>
+  </data>
+  <data name="ConfirmDeleteSelectedClips" xml:space="preserve">
+    <value>Czy na pewno chcesz usunąć wybrane klipy?</value>
+  </data>
+  <data name="GlobalHotkeys" xml:space="preserve">
+    <value>Globalne klawisze skrótów</value>
+  </data>
+  <data name="ConfirmResetChannel" xml:space="preserve">
+    <value>Wszystkie podłączone urządzenia stracą połączenie z kanałem. Czy na pewno chcesz zresetować kanał nadawania klipu?</value>
+  </data>
+  <data name="TooBigClipForChannel" xml:space="preserve">
+    <value>Zbyt duży tekst do wysłania przez kanał. Maksymalny rozmiar - 10000 znaków.</value>
   </data>
   <data name="Send" xml:space="preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Send.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

@@ -16,10 +16,13 @@
     <value>Automatycznie sprawdzaj aktualizację programu</value>
   </data>
   <data name="AutoCheckUpdateDescription" xml:space="preserve">
-    <value>Automatycznie sprawdza aktualizację programu przy starcie i każdego dnia</value>
+    <value>Automatycznie sprawdzaj aktualizację programu każdego dnia przy starcie</value>
   </data>
   <data name="AutoSelectMatch" xml:space="preserve">
     <value>Automatycznie zaznacz pierwsze dopasowanie</value>
+  </data>
+  <data name="AutoSelectMatchDescription" xml:space="preserve">
+    <value>Autoselekcja pierwszego dopasowania szukanego ciągu w tekście schowka.</value>
   </data>
   <data name="Autostart" xml:space="preserve">
     <value>Autostart programu przy logowaniu użytkownika</value>
@@ -48,14 +51,18 @@
   <data name="ClipTempFileFolder" xml:space="preserve">
     <value>Folder plików tymczasowych klipów</value>
   </data>
+  <data name="ClipTempFileFolderDescription" xml:space="preserve">
+    <value>Folder do zapisywania plików tymczasowych klipów. Pozostaw puste, aby użyć standardowego folderu tymczasowego. Zazwyczaj może być użyteczny w trybie przenośnym.</value>
+  </data>
   <data name="CopyTextInAnyWindowOnCTRLF3" xml:space="preserve">
-    <value>Kopiowanie tekstu z dowolnego okna poprzez Control + F3</value>
+    <value>Kopiowanie tekstu z dowolnego okna poprzez Ctrl + F3</value>
   </data>
   <data name="CopyTextInAnyWindowOnCTRLF3Description" xml:space="preserve">
-    <value>Edycja skrótu</value>
+    <value>Kopiowanie zaznaczonego tekstu z dowolnego okna po wciśnięciu Ctrl+F3. Ten klawisz skrótu jest zwykle używany w edytorach tekstu do wyszukiwania wybranego ciągu znaków. 
+Naciśnięcie klawisza zostanie przetworzone przez okno.</value>
   </data>
   <data name="CurrentPath" xml:space="preserve">
-    <value>Bieżąca ścieżka startowa aplikacji</value>
+    <value>Bieżąca ścieżka aplikacji</value>
   </data>
   <data name="DatabaseSize" xml:space="preserve">
     <value>Rozmiar bazy danych w MB</value>
@@ -79,19 +86,37 @@
     <value>Skrót do porównania ostatnich klipów</value>
   </data>
   <data name="GlobalHotkeyCompareLastClipsDescription" xml:space="preserve">
-    <value>Użyj tego szybkiego skrótu w dowolnym programie, aby uruchomić aplikację do porównania 2 ostatnich klipów</value>
+    <value>Użyj tego klawisza skrótu w dowolnym programie, aby uruchomić aplikację do porównywania ostatnich 2 klipów</value>
+  </data>
+  <data name="GlobalHotkeyIncrementalPaste" xml:space="preserve">
+    <value>Klawisz skrótu, aby wkleić i wybrać następny</value>
+  </data>
+  <data name="GlobalHotkeyIncrementalPasteDescription" xml:space="preserve">
+    <value>Użyj tego klawisza skrótu w dowolnym programie, aby wkleić bieżący klip z listy ClipAngel i wybrać następny/wyższy klip, który zostanie pokazany w podpowiedzi na pasku narzędzi.</value>
   </data>
   <data name="GlobalHotkeyOpenCurrent" xml:space="preserve">
     <value>Skrót dla otwarcia okna bez żadnych zmian</value>
   </data>
+  <data name="GlobalHotkeyOpenCurrentDescription" xml:space="preserve">
+    <value>Użyj tego klawisza skrótu w dowolnym programie, aby otworzyć okno ClipAngel bez zmian w wyborze filtrów i klipów. Naciśnij ponownie, aby zamknąć okno.</value>
+  </data>
   <data name="GlobalHotkeyOpenFavorites" xml:space="preserve">
     <value>Skrót dla otwarcia okna z ulubionymi</value>
+  </data>
+  <data name="GlobalHotkeyOpenFavoritesDescription" xml:space="preserve">
+    <value>Użyj tego klawisza w dowolnym programie, aby wyświetlić okno ClipAngel z filtrem tylko ulubionych. Naciśnij ponownie, aby zamknąć okno.</value>
   </data>
   <data name="GlobalHotkeyOpenLast" xml:space="preserve">
     <value>Skrót dla otwarcia okna z wyzerowaniem</value>
   </data>
+  <data name="GlobalHotkeyOpenLastDescription" xml:space="preserve">
+    <value>Użyj tego klawisza skrótu w dowolnym programie, aby otworzyć okno ClipAngel, wyczyścić filtry i wybrać ostatni klip. Naciśnij ponownie, aby zamknąć okno.</value>
+  </data>
   <data name="GlobalHotkeyPasteText" xml:space="preserve">
     <value>Skrót do wklejania jako zwykły tekst</value>
+  </data>
+  <data name="GlobalHotkeyPasteTextDescription" xml:space="preserve">
+    <value>Użyj tego klawisza skrótu w dowolnym programie, aby wkleić ostatni klip jako zwykły tekst</value>
   </data>
   <data name="HistoryDepthDays" xml:space="preserve">
     <value>Liczba dni historii</value>
@@ -106,7 +131,7 @@
     <value>Maksymalna liczba przechowywanych klipów, które nie są ulubione. Usuwanie jest wykonywane przy starcie, każdego dnia, według zastosowanych ustawień. 0 - nie usuwaj.</value>
   </data>
   <data name="HtmlEditor" xml:space="preserve">
-    <value>Aplikacja do edytowania plikówHTML</value>
+    <value>Aplikacja do edytowania plików HTML</value>
   </data>
   <data name="HtmlEditorDescription" xml:space="preserve">
     <value>Używane przez polecenie "Otwórz plik" dla klipu. Pozostaw puste, aby użyć domyślnej aplikacji systemowej do edycji plików HTML.</value>
@@ -119,6 +144,10 @@
   </data>
   <data name="IgnoreExclusiveFormatClipCapture" xml:space="preserve">
     <value>Nie przechwytuj formatu "Ignoruj Podgląd Schowka".</value>
+  </data>
+  <data name="IgnoreExclusiveFormatClipCaptureDescription" xml:space="preserve">
+    <value>Nie przechwytuj klipu za pomocą obecnego formatu "Ignoruj Przeglądarkę Schowka".
+Ten format jest zwykle używany przez menedżerów haseł podczas kopiowania haseł do schowka. Czasami może być użyteczne tymczasowe wyłączenie go.</value>
   </data>
   <data name="ImageEditor" xml:space="preserve">
     <value>Aplikacja do edycji plików obrazu (PNG)</value>
@@ -145,6 +174,12 @@
     <value>Czcionka o stałej szerokości w polu tekstowym klipu. 
 Może być przeładowane przez natywne formatowanie RTF. 
 Nie dotyczy natywnego formatowania HTML.</value>
+  </data>
+  <data name="MoveCopiedClipToTop" xml:space="preserve">
+    <value>Przenieś klipy na górę po użyciu</value>
+  </data>
+  <data name="MoveCopiedClipToTopDescription" xml:space="preserve">
+    <value>Przesuń skopiowane z listy lub całkowicie wklejone klipy na górę listy</value>
   </data>
   <data name="NumberOfClips" xml:space="preserve">
     <value>Liczba klipów</value>
@@ -213,17 +248,36 @@ Nie dotyczy natywnego formatowania HTML.</value>
   <data name="TextEditorDescription" xml:space="preserve">
     <value>Używane przez polecenie "Otwórz plik" dla klipu. Pozostaw puste, aby użyć domyślnej aplikacji systemowej do edycji plików tekstowych (TXT).</value>
   </data>
+  <data name="UserSettingsPath" xml:space="preserve">
+    <value>Ścieżka ustawień użytkownika aplikacji</value>
+  </data>
+  <data name="UserSettingsPathDescription" xml:space="preserve">
+    <value>Pliki z ustawieniami użytkownika i domyślnym plikiem bazy danych znajdują się tutaj</value>
+  </data>
   <data name="WindowAutoPosition" xml:space="preserve">
     <value>Autopozycjonowanie okna przy otwarciu</value>
+  </data>
+  <data name="WindowAutoPositionDescription" xml:space="preserve">
+    <value>Jeżeli jest włączone, to w miarę możliwości okno zostanie otwarte w pobliżu miejsca wprowadzenia tekstu lub na środku aktywnego okna. Jeśli jest wyłączona, okno otworzy się w pozycji, w której było ostatnio zamknięte.</value>
   </data>
   <data name="WordWrap" xml:space="preserve">
     <value>Zawijanie wierszy</value>
   </data>
+  <data name="WordWrapDescription" xml:space="preserve">
+    <value>Zawijanie wyrazów w polu tekstowym klipu (CTRL+W)</value>
+  </data>
   <data name="PlaySoundOnClipCapture" xml:space="preserve">
     <value>Odtwarzanie dźwięku podczas przechwytywania klipu</value>
   </data>
+  <data name="PlaySoundOnClipCaptureDescription" xml:space="preserve">
+    <value>Odtwarzanie dźwięku po pomyślnym przechwyceniu klipu. Może być irytujące</value>
+  </data>
   <data name="DatabaseFile" xml:space="preserve">
     <value>Plik bazy danych</value>
+  </data>
+  <data name="DatabaseFileDescription" xml:space="preserve">
+    <value>Możesz zmienić nazwę pliku bazy danych, aby przełączyć się na inną historię schowka. 
+Pozostaw puste, aby użyć standardowego pliku bazy danych "db.sqlite". w folderze ustawień użytkownika aplikacji.</value>
   </data>
   <data name="MaxCellsToCaptureFormattedText" xml:space="preserve">
     <value>Maksymalna liczba komórek do przechwytywania sformatowanego tekstu</value>
@@ -244,5 +298,107 @@ Generowanie obrazu zużywa moc procesora. Jeśli masz duże obciążenie proceso
   </data>
   <data name="ShowSecondaryColumnsDescription" xml:space="preserve">
     <value>Pokazuje drugorzędne kolumny na liście</value>
+  </data>
+  <data name="SearchIgnoreBigTexts" xml:space="preserve">
+    <value>Wyszukiwanie z ignorowaniem dużych tekstów</value>
+  </data>
+  <data name="SearchIgnoreBigTextsDescription" xml:space="preserve">
+    <value>Szukaj z ignorowaniem dużych (rozmiar wizualny &gt; 99 999 znaków) klipów tekstowych. Przyspieszy to wyszukiwanie.</value>
+  </data>
+  <data name="ReadWindowTitles" xml:space="preserve">
+    <value>Odczytaj tytuły okien</value>
+  </data>
+  <data name="ReadWindowTitlesDescription" xml:space="preserve">
+    <value>Odczytaj tytuły okien z klipów źródłowych. Usuń zaznaczenie tego ustawienia, aby uniknąć awarii programu na niektórych systemach.</value>
+  </data>
+  <data name="GlobalHotkeySwitchMonitoring" xml:space="preserve">
+    <value>Klawisz skrótu do przełączania monitorowania schowka</value>
+  </data>
+  <data name="GlobalHotkeySwitchMonitoringDescription" xml:space="preserve">
+    <value>Użyj tego klawisza skrótu w dowolnym programie, aby przełączyć monitorowanie schowka (przechwytywanie zmian) przez ClipAngel</value>
+  </data>
+  <data name="UseFormattingInDuplicateDetection" xml:space="preserve">
+    <value>Użyj formatowania w wykrywaniu duplikatów</value>
+  </data>
+  <data name="UseFormattingInDuplicateDetectionDescription" xml:space="preserve">
+    <value>Użyj natywnego formatowania tekstu w wykrywaniu duplikatów. W przeciwnym razie do wykrywania duplikatów tekstu będzie używany tylko zwykły tekst.</value>
+  </data>
+  <data name="ReplaceDuplicates" xml:space="preserve">
+    <value>Zastąpić duplikaty</value>
+  </data>
+  <data name="ReplaceDuplicatesDescription" xml:space="preserve">
+    <value>Utrzymuj klipy unikalne pod względem treści. Uaktualnij istniejący zduplikowany klip zamiast tworzyć nowy.</value>
+  </data>
+  <data name="GlobalHotkeySimulateInput" xml:space="preserve">
+    <value>Klawisz skrótu do symulowania szybkiego wprowadzania danych z klawiatury</value>
+  </data>
+  <data name="GlobalHotkeySimulateInputDescription" xml:space="preserve">
+    <value>Użyj tego klawisza skrótu w dowolnym programie, aby symulować szybkie wprowadzanie ostatniego klipu z klawiatury</value>
+  </data>
+  <data name="EncryptDatabaseForCurrentUser" xml:space="preserve">
+    <value>Szyfrowanie bazy danych dla bieżącego użytkownika</value>
+  </data>
+  <data name="EncryptDatabaseForCurrentUserDescription" xml:space="preserve">
+    <value>Ustawienie flagi szyfrowania NTFS w pliku bazy danych. Tylko aktualny użytkownik systemu Windows będzie mógł go odczytać.</value>
+  </data>
+  <data name="Max1CCodeSizeToColorize" xml:space="preserve">
+    <value>Maksymalny rozmiar kodu 1C do kolorowania</value>
+  </data>
+  <data name="Max1CCodeSizeToColorizeDescription" xml:space="preserve">
+    <value>Max 1C (rosyjska platforma programistyczna) rozmiar kodu w znakach, aby pokolorować składnię. Przechwytywanie kodu 1C jest wykrywane na podstawie zawartości tekstu. 0 - nie koloruj</value>
+  </data>
+  <data name="AutoSelectMatchedClip" xml:space="preserve">
+    <value>Automatycznie wybierz dopasowany klip</value>
+  </data>
+  <data name="AutoSelectMatchedClipDescription" xml:space="preserve">
+    <value>Gdy filtrowanie według wyszukiwanego ciągu jest wyłączone, a szukany ciąg zostanie zmieniony, automatycznie przechodzi do pierwszego klipu pasującego do szukanego ciągu</value>
+  </data>
+  <data name="FilterListBySearchString" xml:space="preserve">
+    <value>Filtrowanie listy według wyszukiwanego ciągu</value>
+  </data>
+  <data name="FilterListBySearchStringDescription" xml:space="preserve">
+    <value>Filtrowanie listy klipów według wyszukiwanego ciągu znaków</value>
+  </data>
+  <data name="DeleteNonFavoriteClipsOnExit" xml:space="preserve">
+    <value>Usuwanie nie ulubionych klipów przy wyjściu</value>
+  </data>
+  <data name="DeleteNonFavoriteClipsOnExitDescription" xml:space="preserve">
+    <value>Usuwanie wszystkich nie ulubionych klipów po zamknięciu bazy danych</value>
+  </data>
+  <data name="CaptureImages" xml:space="preserve">
+    <value>Przechwytywanie obrazów</value>
+  </data>
+  <data name="CaptureImagesDescription" xml:space="preserve">
+    <value>Przechwytywanie klipów obrazu</value>
+  </data>
+  <data name="SearchAllFields" xml:space="preserve">
+    <value>Przeszukaj wszystkie pola</value>
+  </data>
+  <data name="SearchAllFieldsDescription" xml:space="preserve">
+    <value>False - wyszukiwanie tylko w tekście i tytule klipów. True - wyszukiwanie w tekście, tytule, oknie, url klipów.</value>
+  </data>
+  <data name="AllowDownloadThumbnail" xml:space="preserve">
+    <value>Pozwól na pobranie miniaturki</value>
+  </data>
+  <data name="AllowDownloadThumbnailDescription" xml:space="preserve">
+    <value>Zezwalaj na pobieranie miniatur dla linków do filmów i obrazów z Internetu.</value>
+  </data>
+  <data name="ConfirmationBeforeDelete" xml:space="preserve">
+    <value>Potwierdzenie przed usunięciem</value>
+  </data>
+  <data name="ConfirmationBeforeDeleteDescription" xml:space="preserve">
+    <value>Zapytaj o potwierdzenie przed usunięciem klipu</value>
+  </data>
+  <data name="DelimiterForTextJoin" xml:space="preserve">
+    <value>Delimiter dla łączenia tekstów</value>
+  </data>
+  <data name="DelimiterForTextJoinDescription" xml:space="preserve">
+    <value>Delimiter używany w poleceniu łączenia tekstów. Użyj "\n" jako koniec linii.</value>
+  </data>
+  <data name="DontSendPaste" xml:space="preserve">
+    <value>Nie wysyłaj wklej do okna docelowego</value>
+  </data>
+  <data name="DontSendPasteDescription" xml:space="preserve">
+    <value>Nie wysyłaj wklej do okna docelowego w poleceniach Wklej. Wystarczy umieścić dane w schowku.</value>
   </data>
 </root>

@@ -33,9 +33,6 @@
   <data name="linkLabelEmail.Text" xml:space="preserve">
     <value>Adres e-mail</value>
   </data>
-  <data name="logoPictureBox.Dock" xml:space="preserve" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
   <data name="linkLabelWebSite.Location" xml:space="preserve" type="System.Drawing.Point, System.Drawing">
     <value>155, 75</value>
   </data>
@@ -79,7 +76,7 @@
     <value>24</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>O Clip Angel</value>
+    <value>O programie Clip Angel</value>
   </data>
   <data name="okButton.Text" xml:space="preserve">
     <value>&amp;OK</value>
@@ -186,7 +183,7 @@
     <value>2</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>Freeware (GPL3)</value>
+    <value>Licencja: GPL3</value>
   </data>
   <data name="linkLabel1.Anchor" xml:space="preserve" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>

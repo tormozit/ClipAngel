@@ -24,11 +24,19 @@
   <data name="DontShowTipsOnStart.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
+  <data name="DontShowTipsOnStart.Text" xml:space="preserve">
+    <value>Nie pokazuj tego okna ponownie</value>
+  </data>
   <data name="labelTip.Font" xml:space="preserve" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 9.75pt</value>
   </data>
   <data name="labelTip.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
     <value>1</value>
+  </data>
+  <data name="labelTip.Text" xml:space="preserve">
+    <value>Klawisz skrótu &lt;Hotkey&gt; otwiera ClipAngel z dowolnego programu. Następnie wybierz i wklej żądany klip poprzez podwójne kliknięcie lub ENTER.
+
+Aby program uruchamiał się po zalogowaniu użytkownika włącz autostart w ustawieniach</value>
   </data>
   <data name="pictureBox1.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>36, 38</value>
@@ -41,6 +49,9 @@
   </data>
   <data name="$this.StartPosition" xml:space="preserve" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterParent</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Porada</value>
   </data>
   <metadata name="$this.Localizable" xml:space="preserve" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

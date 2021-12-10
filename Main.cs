@@ -41,6 +41,7 @@ using System.Xml.Serialization;
 using System.Net.NetworkInformation;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using ClipAngel.Properties;
 using Newtonsoft.Json;
 using Cursor = System.Windows.Forms.Cursor;
 using KeyEventArgs = System.Windows.Forms.KeyEventArgs;
@@ -1059,6 +1060,7 @@ namespace ClipAngel
             {
                 Tips form = new Tips();
                 form.ShowDialog(this);
+                Settings.Default.Save();
             }
             dataGridView.Focus();
         }
