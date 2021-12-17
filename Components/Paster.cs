@@ -121,7 +121,7 @@ namespace ClipAngel
             bool isTargetActive = main != null && main.ActivateAndCheckTargetWindow();
             if (true
                 && !slow
-                && !isTargetActive)
+                && isTargetActive)
             {
                 inputSimulator.Keyboard.TextEntry(textToPaste);
             }
