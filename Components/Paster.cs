@@ -118,12 +118,12 @@ namespace ClipAngel
         {
             string textToPaste = Clipboard.GetText();
             InputSimulator inputSimulator = new InputSimulator(); // http://inputsimulator.codeplex.com/
-            bool isTargetActive = main != null && main.ActivateAndCheckTargetWindow();
-            if (true
-                && !slow
-                && isTargetActive)
+            main.ActivateAndCheckTargetWindow();
+            textToPaste = textToPaste.Replace("\r\n", "\n");
+            if (!slow)
             {
-                inputSimulator.Keyboard.TextEntry(textToPaste);
+                if (main.ActivateAndCheckTargetWindow(false))
+                    inputSimulator.Keyboard.TextEntry(textToPaste);
             }
             else
             {
