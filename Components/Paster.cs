@@ -119,7 +119,7 @@ namespace ClipAngel
             string textToPaste = Clipboard.GetText();
             InputSimulator inputSimulator = new InputSimulator(); // http://inputsimulator.codeplex.com/
             main.ActivateAndCheckTargetWindow();
-            textToPaste = textToPaste.Replace("\r\n", "\n");
+            //textToPaste = textToPaste.Replace("\r\n", "\n");
             if (!slow)
             {
                 if (main.ActivateAndCheckTargetWindow(false))
