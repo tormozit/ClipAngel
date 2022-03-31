@@ -152,7 +152,7 @@ namespace ClipAngel
         bool periodFilterOn = false;
         const int MaxTextViewSize = 5000;
         const int tabLength = 4;
-        const int maxClipsToSelect = 1000;
+        const int maxClipsToSelect = 300; // SQLite default limit for quantity of variables
         const int ClipTitleLength = 70;
         static Dictionary<string, Bitmap> originalIconCache = new Dictionary<string, Bitmap>();
         static Dictionary<string, Bitmap> brightIconCache = new Dictionary<string, Bitmap>();
@@ -4841,7 +4841,16 @@ namespace ClipAngel
                 row = dataGridView.CurrentRow;
             DataRowView dataRowView = (DataRowView) (row.DataBoundItem);
             bool fav = BoolFieldValue("Favorite", dataRowView);
-            bool used = (bool) dataRowView.Row["Used"];
+            bool used;
+            try
+            {
+                used = (bool)dataRowView.Row["Used"];
+            }
+            catch (Exception)
+            {
+                // Not yet fully read
+                return;
+            }
             foreach (DataGridViewCell cell in row.Cells)
             {
                 if (fav)
