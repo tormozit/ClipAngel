@@ -943,5 +943,17 @@ namespace ClipAngel.Properties {
                 this["ClipSendDate"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("No")]
+        public string GlobalHotkeyForcedCapture {
+            get {
+                return ((string)(this["GlobalHotkeyForcedCapture"]));
+            }
+            set {
+                this["GlobalHotkeyForcedCapture"] = value;
+            }
+        }
     }
 }

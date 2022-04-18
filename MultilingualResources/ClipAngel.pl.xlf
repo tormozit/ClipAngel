@@ -526,8 +526,9 @@ Generowanie obrazu zużywa moc procesora. Jeśli masz duże obciążenie proceso
           <target state="translated">Klawisz skrótu do przełączania monitorowania schowka</target>
         </trans-unit>
         <trans-unit id="GlobalHotkeySwitchMonitoringDescription" translate="yes" xml:space="preserve">
-          <source>Use this hot key in any program to switch clipboard monitoring (capturing changes) by ClipAngel</source>
-          <target state="translated">Użyj tego klawisza skrótu w dowolnym programie, aby przełączyć monitorowanie schowka (przechwytywanie zmian) przez ClipAngel</target>
+          <source>Use this hot key in any program to switch clipboard monitoring (autocapture changes) by ClipAngel</source>
+          <target state="needs-review-translation">Użyj tego klawisza skrótu w dowolnym programie, aby przełączyć monitorowanie schowka (przechwytywanie zmian) przez ClipAngel</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="UseFormattingInDuplicateDetection" translate="yes" xml:space="preserve">
           <source>Use formatting in duplicate detection</source>
@@ -640,6 +641,14 @@ Generowanie obrazu zużywa moc procesora. Jeśli masz duże obciążenie proceso
         <trans-unit id="DontSendPasteDescription" translate="yes" xml:space="preserve">
           <source>Don't send paste to target window in Paste commands. Just put data on clipboard.</source>
           <target state="translated">Nie wysyłaj wklej do okna docelowego w poleceniach Wklej. Wystarczy umieścić dane w schowku.</target>
+        </trans-unit>
+        <trans-unit id="GlobalHotkeyForcedCapture" translate="yes" xml:space="preserve">
+          <source>Hotkey to forced capture clip</source>
+          <target state="new">Hotkey to forced capture clip</target>
+        </trans-unit>
+        <trans-unit id="GlobalHotkeyForcedCaptureDescription" translate="yes" xml:space="preserve">
+          <source>Use this hot key in any program to copy data with capture in ClipAngel when clipboard monitoring (autocapture changes) is off.</source>
+          <target state="new">Use this hot key in any program to copy data with capture in ClipAngel when clipboard monitoring (autocapture changes) is off.</target>
         </trans-unit>
       </group>
     </body>
@@ -1605,8 +1614,8 @@ Generowanie obrazu zużywa moc procesora. Jeśli masz duże obciążenie proceso
           <target state="translated">Klip nie został przechwycony ze względu na błąd odczytu schowka</target>
         </trans-unit>
         <trans-unit id="VersionValue" translate="yes" xml:space="preserve">
-          <source>2.02</source>
-          <target state="new">2.02</target>
+          <source>2.03</source>
+          <target state="new">2.03</target>
         </trans-unit>
         <trans-unit id="TargetWindow" translate="yes" xml:space="preserve">
           <source>Target window</source>

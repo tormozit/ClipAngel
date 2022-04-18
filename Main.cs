@@ -108,7 +108,7 @@ namespace ClipAngel
 
         //bool AutoGotoLastRow = true;
         bool AllowHotkeyProcess = true;
-
+ 
         private Task<DataTable> lastReloadListTask;
         private DateTime lastReloadListTime;
         bool EditMode = false;
@@ -181,6 +181,7 @@ namespace ClipAngel
         private Point LastMousePoint;
         private Timer captureTimer = new Timer();
         private Timer channelTimer = new Timer();
+        private Timer tempCaptureTimer = new Timer();
         private DateTime TimeFromWindowOpen;
         private Thread updateDBThread;
         private bool stopUpdateDBThread = false;
@@ -742,6 +743,8 @@ namespace ClipAngel
                 keyboardHook.RegisterHotKey(Modifiers, Key);
             if (ReadHotkeyFromText(ClipAngel.Properties.Settings.Default.GlobalHotkeySwitchMonitoring, out Modifiers, out Key))
                 keyboardHook.RegisterHotKey(Modifiers, Key);
+            if (ReadHotkeyFromText(ClipAngel.Properties.Settings.Default.GlobalHotkeyForcedCapture, out Modifiers, out Key))
+                keyboardHook.RegisterHotKey(Modifiers, Key);
             //if (ClipAngel.Properties.Settings.Default.CopyTextInAnyWindowOnCTRLF3 && ReadHotkeyFromText("Control + F3", out Modifiers, out Key))
             //    keyboardHook.RegisterHotKey(Modifiers, Key);
         }
@@ -852,6 +855,17 @@ namespace ClipAngel
             else if (hotkeyTitle == ClipAngel.Properties.Settings.Default.GlobalHotkeySwitchMonitoring)
             {
                 SwitchMonitoringClipboard(true);
+            }
+            else if (hotkeyTitle == ClipAngel.Properties.Settings.Default.GlobalHotkeyForcedCapture)
+            {
+                if (!ClipAngel.Properties.Settings.Default.MonitoringClipboard)
+                {
+                    ClipAngel.Properties.Settings.Default.MonitoringClipboard = true;
+                    ConnectClipboard();
+                    tempCaptureTimer.Interval = 2000;
+                    tempCaptureTimer.Start();
+                }
+                Paster.SendCopy(false);
             }
             //else if (hotkeyTitle == "Control + F3")
             //{
@@ -2141,6 +2155,12 @@ namespace ClipAngel
         {
             DateTime now = DateTime.Now;
             captureTimer.Stop();
+            if (tempCaptureTimer.Enabled)
+            {
+                tempCaptureTimer.Stop();
+                ClipAngel.Properties.Settings.Default.MonitoringClipboard = false;
+                RemoveClipboardFormatListener(this.Handle);
+            }
             //
             // Data on the clipboard uses the 
             // IDataObject interface

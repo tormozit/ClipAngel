@@ -254,6 +254,12 @@ Leave blank to use standard database file "db.sqlite" in application user settin
   <data name="GlobalHotkeyCompareLastClipsDescription" xml:space="preserve">
     <value>Use this hot key in any program to launch application for comparing last 2 clips</value>
   </data>
+  <data name="GlobalHotkeyForcedCapture" xml:space="preserve">
+    <value>Hotkey to forced capture clip</value>
+  </data>
+  <data name="GlobalHotkeyForcedCaptureDescription" xml:space="preserve">
+    <value>Use this hot key in any program to copy data with capture in ClipAngel when clipboard monitoring (autocapture changes) is off.</value>
+  </data>
   <data name="GlobalHotkeyIncrementalPaste" xml:space="preserve">
     <value>Hotkey to paste and select next</value>
   </data>
@@ -294,7 +300,7 @@ Leave blank to use standard database file "db.sqlite" in application user settin
     <value>Hotkey to switch clipboard monitoring</value>
   </data>
   <data name="GlobalHotkeySwitchMonitoringDescription" xml:space="preserve">
-    <value>Use this hot key in any program to switch clipboard monitoring (capturing changes) by ClipAngel</value>
+    <value>Use this hot key in any program to switch clipboard monitoring (autocapture changes) by ClipAngel</value>
   </data>
   <data name="HistoryDepthDays" xml:space="preserve">
     <value>History depth days</value>

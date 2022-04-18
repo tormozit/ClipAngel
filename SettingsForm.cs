@@ -722,6 +722,7 @@ namespace ClipAngel
 
         public void Load(bool PortableMode = false)
         {
+            GlobalHotkeyForcedCapture = Properties.Settings.Default.GlobalHotkeyForcedCapture;
             DontSendPaste = Properties.Settings.Default.DontSendPaste;
             DelimiterForTextJoin = Properties.Settings.Default.DelimiterForTextJoin;
             ConfirmationBeforeDelete = Properties.Settings.Default.ConfirmationBeforeDelete;
@@ -807,6 +808,7 @@ namespace ClipAngel
 
         public void Apply(bool PortableMode = false)
         {
+            Properties.Settings.Default.GlobalHotkeyForcedCapture = GlobalHotkeyForcedCapture;
             Properties.Settings.Default.DontSendPaste = DontSendPaste;
             Properties.Settings.Default.DelimiterForTextJoin = DelimiterForTextJoin;
             Properties.Settings.Default.ConfirmationBeforeDelete = ConfirmationBeforeDelete;
@@ -977,6 +979,11 @@ namespace ClipAngel
         [TypeConverterAttribute(typeof(HotkeyConverter))]
         [EditorAttribute(typeof(HotkeyEditor), typeof(UITypeEditor))]
         public string GlobalHotkeySwitchMonitoring { get; set; }
+
+        [GlobalizedCategory("GlobalHotkeys")]
+        [TypeConverterAttribute(typeof(HotkeyConverter))]
+        [EditorAttribute(typeof(HotkeyEditor), typeof(UITypeEditor))]
+        public string GlobalHotkeyForcedCapture { get; set; }
 
        //[GlobalizedCategory("GlobalHotkeys")]
        // [Editor(typeof(MyBoolEditor), typeof(UITypeEditor))]

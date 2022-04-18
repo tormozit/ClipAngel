@@ -256,6 +256,12 @@
   <data name="GlobalHotkeyCompareLastClipsDescription" xml:space="preserve">
     <value>Эта горячая клавиша при нажатии в любой программе запустит приложение сравнения 2-х последних клипов</value>
   </data>
+  <data name="GlobalHotkeyForcedCapture" xml:space="preserve">
+    <value>Горячая клавиша принудительного захвата клипа</value>
+  </data>
+  <data name="GlobalHotkeyForcedCaptureDescription" xml:space="preserve">
+    <value>Эта горячая клавиша при нажатии в любой программе скопирует клип и принудительно поместит его в список ClipAngel даже при выключенном слежении за буфером обмена (автозахвата изменений).</value>
+  </data>
   <data name="GlobalHotkeyIncrementalPaste" xml:space="preserve">
     <value>Горячая клавиша последовательной вставки</value>
   </data>
@@ -300,7 +306,7 @@
     <value>Горячая клавиша переключения слежения за буфером</value>
   </data>
   <data name="GlobalHotkeySwitchMonitoringDescription" xml:space="preserve">
-    <value>Эта горячая клавиша при нажатии в любой программе переключит слежение за буфером обмена (захват изменений) в ClipAngel</value>
+    <value>Эта горячая клавиша при нажатии в любой программе переключит слежение за буфером обмена (автозахват изменений) в ClipAngel</value>
   </data>
   <data name="HistoryDepthDays" xml:space="preserve">
     <value>Глубина истории клипов по дням</value>
