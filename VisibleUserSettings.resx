@@ -461,7 +461,7 @@ Not appliable to HTML native formatting.</value>
     <value>Show native text formatting</value>
   </data>
   <data name="ShowNativeTextFormattingDescription" xml:space="preserve">
-    <value>Show native text formatting for RTF and HTML clips (CTRL+N)</value>
+    <value>Show native text formatting for RTF and HTML clips (CTRL+N). However, text greater than 10K chars after loading will be shown without formatting until user click in text field.</value>
   </data>
   <data name="ShowSecondaryColumns" xml:space="preserve">
     <value>Show secondary columns</value>

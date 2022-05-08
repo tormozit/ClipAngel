@@ -390,7 +390,7 @@ Native HTML-Formatierung ist nicht betroffen.</target>
           <target state="translated">Native Textformatierung anzeigen</target>
         </trans-unit>
         <trans-unit id="ShowNativeTextFormattingDescription" translate="yes" xml:space="preserve">
-          <source>Show native text formatting for RTF and HTML clips (CTRL+N)</source>
+          <source>Show native text formatting for RTF and HTML clips (CTRL+N). However, text greater than 10K chars after loading will be shown without formatting until user click in text field.</source>
           <target state="needs-review-translation">Native Textformatierung für RTF- und HTML-Clips anzeigen (Strg + N)</target>
           <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>

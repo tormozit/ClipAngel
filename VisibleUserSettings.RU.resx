@@ -465,7 +465,7 @@
     <value>Родное оформление</value>
   </data>
   <data name="ShowNativeTextFormattingDescription" xml:space="preserve">
-    <value>Показывать родное оформление текста клипа (CTRL+N)</value>
+    <value>Показывать родное оформление текста клипа (CTRL+N). Однако текст размером более 10К символов после загрузки будет показываться без оформления пока пользователь не кликнет в текстовом поле.</value>
   </data>
   <data name="ShowSecondaryColumns" xml:space="preserve">
     <value>Показывать дополнительные колонки</value>

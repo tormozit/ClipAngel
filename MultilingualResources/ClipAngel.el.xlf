@@ -1122,8 +1122,8 @@ Not appliable to HTML native formatting.</target>
           <target state="new">Show native text formatting</target>
         </trans-unit>
         <trans-unit id="ShowNativeTextFormattingDescription" translate="yes" xml:space="preserve">
-          <source>Show native text formatting for RTF and HTML clips (CTRL+N)</source>
-          <target state="new">Show native text formatting for RTF and HTML clips (CTRL+N)</target>
+          <source>Show native text formatting for RTF and HTML clips (CTRL+N). However, text greater than 10K chars after loading will be shown without formatting until user click in text field.</source>
+          <target state="new">Show native text formatting for RTF and HTML clips (CTRL+N). However, text greater than 10K chars after loading will be shown without formatting until user click in text field.</target>
         </trans-unit>
         <trans-unit id="ShowSizeColumn" translate="yes" xml:space="preserve">
           <source>Show visual clip weight column</source>

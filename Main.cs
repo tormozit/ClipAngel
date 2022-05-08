@@ -150,7 +150,7 @@ namespace ClipAngel
         const int ChannelDataLifeTime = 60;
         string searchString = ""; // TODO optimize speed
         bool periodFilterOn = false;
-        const int MaxTextViewSize = 5000;
+        const int MaxTextViewSize = 10000;
         const int tabLength = 4;
         const int maxClipsToSelect = 300; // SQLite default limit for quantity of variables
         const int ClipTitleLength = 70;
