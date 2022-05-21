@@ -371,34 +371,31 @@
   <data name="NormalizeFreeSpace.ImeMode" xml:space="preserve" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="checkBoxPasteIntoNewClip.ToolTip" xml:space="preserve">
-    <value></value>
-  </data>
-  <data name="checkBoxReplaceTabWithSpaces.ToolTip" xml:space="preserve">
-    <value></value>
-  </data>
-  <data name="buttonCancel.ToolTip" xml:space="preserve">
-    <value></value>
-  </data>
-  <data name="ReplaceEOL.ToolTip" xml:space="preserve">
-    <value></value>
-  </data>
-  <data name="CaseNoChange.ToolTip" xml:space="preserve">
-    <value></value>
-  </data>
-  <data name="$this.ToolTip" xml:space="preserve">
-    <value></value>
-  </data>
-  <data name="richTextBox1.ToolTip" xml:space="preserve">
-    <value></value>
-  </data>
-  <data name="label1.ToolTip" xml:space="preserve">
-    <value></value>
-  </data>
-  <data name="buttonOK.ToolTip" xml:space="preserve">
-    <value></value>
-  </data>
   <metadata name="$this.Language" xml:space="preserve" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>ru</value>
   </metadata>
+  <data name="DelimiterForTextJoin.Location" xml:space="preserve" type="System.Drawing.Point, System.Drawing">
+    <value>300, 136</value>
+  </data>
+  <data name="DelimiterForTextJoin.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>138, 20</value>
+  </data>
+  <data name="DelimiterForTextJoin.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
+    <value>23</value>
+  </data>
+  <data name="labelDelimiterForTextJoin.AutoSize" xml:space="preserve" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="labelDelimiterForTextJoin.ImeMode" xml:space="preserve" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="labelDelimiterForTextJoin.Location" xml:space="preserve" type="System.Drawing.Point, System.Drawing">
+    <value>189, 139</value>
+  </data>
+  <data name="labelDelimiterForTextJoin.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>101, 13</value>
+  </data>
+  <data name="labelDelimiterForTextJoin.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
+    <value>24</value>
+  </data>
 </root>

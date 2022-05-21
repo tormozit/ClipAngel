@@ -1615,8 +1615,8 @@ La generazione dell'immagine consuma risorse della CPU. Se verifichi problemi di
           <target state="translated">La cattura non è stata effettuata a causa di un errore nella lettura degli Appunti</target>
         </trans-unit>
         <trans-unit id="VersionValue" translate="yes" xml:space="preserve">
-          <source>2.03</source>
-          <target state="new">2.03</target>
+          <source>2.04</source>
+          <target state="new">2.04</target>
         </trans-unit>
         <trans-unit id="TargetWindow" translate="yes" xml:space="preserve">
           <source>Target window</source>
@@ -8889,6 +8889,52 @@ Trailing unprintable symbols are deleted.</target>
           <source>NoControl</source>
           <target state="needs-review-translation">NoControl</target>
         </trans-unit>
+        <trans-unit id="$this.Language" translate="yes" extype="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" extradata="metadata" xml:space="preserve">
+          <source>ru</source>
+          <target state="needs-review-translation">ru</target>
+        </trans-unit>
+        <trans-unit id="DelimiterForTextJoin.Location" translate="yes" xml:space="preserve" extype="System.Drawing.Point, System.Drawing">
+          <source>296, 136</source>
+          <target state="needs-review-translation">300, 136</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
+        </trans-unit>
+        <trans-unit id="DelimiterForTextJoin.Size" translate="yes" xml:space="preserve" extype="System.Drawing.Size, System.Drawing">
+          <source>142, 20</source>
+          <target state="needs-review-translation">138, 20</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
+        </trans-unit>
+        <trans-unit id="DelimiterForTextJoin.TabIndex" translate="yes" xml:space="preserve" extype="System.Int32, mscorlib">
+          <source>23</source>
+          <target state="needs-review-translation">23</target>
+        </trans-unit>
+        <trans-unit id="labelDelimiterForTextJoin.AutoSize" translate="yes" xml:space="preserve" extype="System.Boolean, mscorlib">
+          <source>True</source>
+          <target state="needs-review-translation">True</target>
+        </trans-unit>
+        <trans-unit id="labelDelimiterForTextJoin.ImeMode" translate="yes" xml:space="preserve" extype="System.Windows.Forms.ImeMode, System.Windows.Forms">
+          <source>NoControl</source>
+          <target state="needs-review-translation">NoControl</target>
+        </trans-unit>
+        <trans-unit id="labelDelimiterForTextJoin.Location" translate="yes" xml:space="preserve" extype="System.Drawing.Point, System.Drawing">
+          <source>189, 139</source>
+          <target state="needs-review-translation">189, 139</target>
+        </trans-unit>
+        <trans-unit id="labelDelimiterForTextJoin.Size" translate="yes" xml:space="preserve" extype="System.Drawing.Size, System.Drawing">
+          <source>101, 13</source>
+          <target state="needs-review-translation">101, 13</target>
+        </trans-unit>
+        <trans-unit id="labelDelimiterForTextJoin.TabIndex" translate="yes" xml:space="preserve" extype="System.Int32, mscorlib">
+          <source>24</source>
+          <target state="needs-review-translation">24</target>
+        </trans-unit>
+        <trans-unit id="labelDelimiterForTextJoin.Text" translate="yes" xml:space="preserve">
+          <source>Delimiter for text join</source>
+          <target state="new">Delimiter for text join</target>
+        </trans-unit>
+        <trans-unit id="buttonOK.ToolTip" translate="yes" xml:space="preserve">
+          <source></source>
+          <target state="new"></target>
+        </trans-unit>
         <trans-unit id="checkBoxPasteIntoNewClip.ToolTip" translate="yes" xml:space="preserve">
           <source></source>
           <target state="new"></target>
@@ -8909,6 +8955,10 @@ Trailing unprintable symbols are deleted.</target>
           <source></source>
           <target state="new"></target>
         </trans-unit>
+        <trans-unit id="labelDelimiterForTextJoin.ToolTip" translate="yes" xml:space="preserve">
+          <source></source>
+          <target state="new"></target>
+        </trans-unit>
         <trans-unit id="$this.ToolTip" translate="yes" xml:space="preserve">
           <source></source>
           <target state="new"></target>
@@ -8917,17 +8967,13 @@ Trailing unprintable symbols are deleted.</target>
           <source></source>
           <target state="new"></target>
         </trans-unit>
+        <trans-unit id="DelimiterForTextJoin.ToolTip" translate="yes" xml:space="preserve">
+          <source>Use "\n" as end of line</source>
+          <target state="new">Use "\n" as end of line</target>
+        </trans-unit>
         <trans-unit id="label1.ToolTip" translate="yes" xml:space="preserve">
           <source></source>
           <target state="new"></target>
-        </trans-unit>
-        <trans-unit id="buttonOK.ToolTip" translate="yes" xml:space="preserve">
-          <source></source>
-          <target state="new"></target>
-        </trans-unit>
-        <trans-unit id="$this.Language" translate="yes" extype="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" extradata="metadata" xml:space="preserve">
-          <source>ru</source>
-          <target state="needs-review-translation">ru</target>
         </trans-unit>
       </group>
     </body>

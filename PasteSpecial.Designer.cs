@@ -42,10 +42,12 @@
             this.textBoxNumberOfSpacesInTab = new System.Windows.Forms.TextBox();
             this.NormalizeEndOfLines = new System.Windows.Forms.CheckBox();
             this.NormalizeFreeSpace = new System.Windows.Forms.CheckBox();
+            this.DelimiterForTextJoin = new System.Windows.Forms.TextBox();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.buttonOK = new System.Windows.Forms.Button();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.labelDelimiterForTextJoin = new System.Windows.Forms.Label();
             this.checkBoxReplaceTabWithSpaces = new System.Windows.Forms.CheckBox();
             this.ReplaceEOL = new System.Windows.Forms.CheckBox();
             this.checkBoxPasteIntoNewClip = new System.Windows.Forms.CheckBox();
@@ -158,6 +160,13 @@
             this.NormalizeFreeSpace.UseVisualStyleBackColor = true;
             this.NormalizeFreeSpace.CheckedChanged += new System.EventHandler(this.NormalizeFreeSpace_CheckedChanged);
             // 
+            // DelimiterForTextJoin
+            // 
+            resources.ApplyResources(this.DelimiterForTextJoin, "DelimiterForTextJoin");
+            this.DelimiterForTextJoin.Name = "DelimiterForTextJoin";
+            toolTip1.SetToolTip(this.DelimiterForTextJoin, resources.GetString("DelimiterForTextJoin.ToolTip"));
+            this.DelimiterForTextJoin.TextChanged += new System.EventHandler(this.DelimiterForTextJoin_TextChanged);
+            // 
             // buttonCancel
             // 
             resources.ApplyResources(this.buttonCancel, "buttonCancel");
@@ -187,6 +196,12 @@
             resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
             toolTip1.SetToolTip(this.label1, resources.GetString("label1.ToolTip"));
+            // 
+            // labelDelimiterForTextJoin
+            // 
+            resources.ApplyResources(this.labelDelimiterForTextJoin, "labelDelimiterForTextJoin");
+            this.labelDelimiterForTextJoin.Name = "labelDelimiterForTextJoin";
+            toolTip1.SetToolTip(this.labelDelimiterForTextJoin, resources.GetString("labelDelimiterForTextJoin.ToolTip"));
             // 
             // checkBoxReplaceTabWithSpaces
             // 
@@ -223,6 +238,8 @@
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.buttonCancel;
+            this.Controls.Add(this.labelDelimiterForTextJoin);
+            this.Controls.Add(this.DelimiterForTextJoin);
             this.Controls.Add(this.textBoxNumberOfSpacesInTab);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.richTextBox1);
@@ -268,5 +285,7 @@
         private System.Windows.Forms.RadioButton UpperCamelCase;
         private System.Windows.Forms.RadioButton FromCamelCase;
         private System.Windows.Forms.CheckBox NormalizeEndOfLines;
+        private System.Windows.Forms.TextBox DelimiterForTextJoin;
+        private System.Windows.Forms.Label labelDelimiterForTextJoin;
     }
 }

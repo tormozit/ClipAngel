@@ -147,14 +147,20 @@
     <value>Верхний регистр для первой буквы каждого предложения и нижний регистр для остальных букв.
  </value>
   </data>
+  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>160, 188</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Регистр букв </value>
+  </data>
+  <data name="groupBox1.ToolTip" xml:space="preserve">
+    <value>Изменение регистра букв </value>
+  </data>
   <data name="CaseNoChange.Size" type="System.Drawing.Size, System.Drawing">
     <value>82, 17</value>
   </data>
   <data name="CaseNoChange.Text" xml:space="preserve">
     <value>Не менять </value>
-  </data>
-  <data name="CaseNoChange.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="FromCamelCase.Size" type="System.Drawing.Size, System.Drawing">
     <value>149, 17</value>
@@ -183,15 +189,6 @@
   <data name="UpperCamelCase.ToolTip" xml:space="preserve">
     <value>Все слова с заглавной буквы. Удалить все пробелы.
 </value>
-  </data>
-  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>160, 188</value>
-  </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>Регистр букв </value>
-  </data>
-  <data name="groupBox1.ToolTip" xml:space="preserve">
-    <value>Изменение регистра букв </value>
   </data>
   <data name="textBoxNumberOfSpacesInTab.Location" type="System.Drawing.Point, System.Drawing">
     <value>420, 41</value>
@@ -225,23 +222,23 @@
     <value>Каждая последовательность непечатных символов (кроме символа "перенос строки") заменяется одним пробелом. 
 Крайние непечатные символы удаляются. </value>
   </data>
+  <data name="DelimiterForTextJoin.Location" type="System.Drawing.Point, System.Drawing">
+    <value>361, 136</value>
+  </data>
+  <data name="DelimiterForTextJoin.Size" type="System.Drawing.Size, System.Drawing">
+    <value>77, 20</value>
+  </data>
+  <data name="DelimiterForTextJoin.ToolTip" xml:space="preserve">
+    <value>Используйте "\n" в качестве конца строки</value>
+  </data>
   <data name="buttonCancel.Location" type="System.Drawing.Point, System.Drawing">
     <value>363, 298</value>
   </data>
   <data name="buttonCancel.Text" xml:space="preserve">
     <value>Отмена</value>
   </data>
-  <data name="buttonCancel.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="buttonOK.Location" type="System.Drawing.Point, System.Drawing">
     <value>282, 298</value>
-  </data>
-  <data name="buttonOK.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="richTextBox1.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
     <value>85, 13</value>
@@ -249,8 +246,14 @@
   <data name="label1.Text" xml:space="preserve">
     <value>Предпросмотр </value>
   </data>
-  <data name="label1.ToolTip" xml:space="preserve">
-    <value />
+  <data name="labelDelimiterForTextJoin.Location" type="System.Drawing.Point, System.Drawing">
+    <value>176, 139</value>
+  </data>
+  <data name="labelDelimiterForTextJoin.Size" type="System.Drawing.Size, System.Drawing">
+    <value>179, 13</value>
+  </data>
+  <data name="labelDelimiterForTextJoin.Text" xml:space="preserve">
+    <value>Разделитель соединения текстов</value>
   </data>
   <data name="checkBoxReplaceTabWithSpaces.Location" type="System.Drawing.Point, System.Drawing">
     <value>176, 44</value>
@@ -261,9 +264,6 @@
   <data name="checkBoxReplaceTabWithSpaces.Text" xml:space="preserve">
     <value>Заменить символ табуляции на пробелы  </value>
   </data>
-  <data name="checkBoxReplaceTabWithSpaces.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="ReplaceEOL.Location" type="System.Drawing.Point, System.Drawing">
     <value>176, 21</value>
   </data>
@@ -272,9 +272,6 @@
   </data>
   <data name="ReplaceEOL.Text" xml:space="preserve">
     <value>Заменить символ "перенос строки" на пробел </value>
-  </data>
-  <data name="ReplaceEOL.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="checkBoxPasteIntoNewClip.Location" type="System.Drawing.Point, System.Drawing">
     <value>176, 113</value>
@@ -285,13 +282,7 @@
   <data name="checkBoxPasteIntoNewClip.Text" xml:space="preserve">
     <value>Вставить в новый клип вместо целевого окна </value>
   </data>
-  <data name="checkBoxPasteIntoNewClip.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Вставить  с параметрами </value>
-  </data>
-  <data name="$this.ToolTip" xml:space="preserve">
-    <value />
   </data>
 </root>

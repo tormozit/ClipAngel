@@ -50,7 +50,7 @@ using MouseEventHandler = System.Windows.Forms.MouseEventHandler;
 
 namespace ClipAngel
 {
-    enum PasteMethod
+    public enum PasteMethod
     {
         Standard,
         Text,
@@ -3287,7 +3287,7 @@ namespace ClipAngel
         }
 
         // Does not respect MoveCopiedClipToTop
-        private string SendPasteClipExpress(DataGridViewRow currentViewRow = null, PasteMethod pasteMethod = PasteMethod.Standard, bool pasteDelimiter = false, bool updateDB = false)
+        private string SendPasteClipExpress(DataGridViewRow currentViewRow = null, PasteMethod pasteMethod = PasteMethod.Standard, bool pasteDelimiter = false, bool updateDB = false, string DelimiterForTextJoin = null)
         {
             if (currentViewRow == null)
                 currentViewRow = dataGridView.CurrentRow;
@@ -3305,7 +3305,11 @@ namespace ClipAngel
                     textToPaste = GetClipTempFile(out fileEditor, rowReader);
                 }
                 if (pasteDelimiter)
-                    textToPaste = ClipAngel.Properties.Settings.Default.DelimiterForTextJoin.Replace("\\n", Environment.NewLine) + textToPaste;
+                {
+                    if (DelimiterForTextJoin == null)
+                        DelimiterForTextJoin = ClipAngel.Properties.Settings.Default.DelimiterForTextJoin;
+                    textToPaste = DelimiterForTextJoin.Replace("\\n", Environment.NewLine) + textToPaste;
+                }
                 return textToPaste;
             }
             if (pasteDelimiter && pasteMethod == PasteMethod.Standard)
@@ -3899,7 +3903,7 @@ namespace ClipAngel
             return agregateTextToPaste;
         }
 
-        private string GetSelectedTextOfClips(ref string selectedText, PasteMethod itemPasteMethod = PasteMethod.Null)
+        public string GetSelectedTextOfClips(ref string selectedText, PasteMethod itemPasteMethod = PasteMethod.Null, string DelimiterForTextJoin = null)
         {
             string agregateTextToPaste = "";
             int count;
@@ -3911,12 +3915,12 @@ namespace ClipAngel
             }
             if (String.IsNullOrEmpty(agregateTextToPaste))
             {
-                agregateTextToPaste = JoinOrPasteTextOfClips(itemPasteMethod, out count);
+                agregateTextToPaste = JoinOrPasteTextOfClips(itemPasteMethod, out count, DelimiterForTextJoin);
             }
             return agregateTextToPaste;
         }
 
-        private string JoinOrPasteTextOfClips(PasteMethod itemPasteMethod, out int count)
+        private string JoinOrPasteTextOfClips(PasteMethod itemPasteMethod, out int count, string DelimiterForTextJoin = null)
         {
             string agregateTextToPaste = "";
             bool pasteDelimiter = false;
@@ -3924,7 +3928,7 @@ namespace ClipAngel
             for (int i = count - 1; i >= 0; i--)
             {
                 DataGridViewRow selectedRow = dataGridView.SelectedRows[i];
-                agregateTextToPaste += SendPasteClipExpress(selectedRow, itemPasteMethod, pasteDelimiter);
+                agregateTextToPaste += SendPasteClipExpress(selectedRow, itemPasteMethod, pasteDelimiter, false, DelimiterForTextJoin);
                 pasteDelimiter = true;
             }
             return agregateTextToPaste;
@@ -7571,9 +7575,7 @@ namespace ClipAngel
 
         private void pasteSpecialToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            PasteSpecial SpecialPasteForm = new PasteSpecial();
-            string Dummy = "";
-            SpecialPasteForm.OriginalText = GetSelectedTextOfClips(ref Dummy);
+            PasteSpecial SpecialPasteForm = new PasteSpecial(this);
             DialogResult result = SpecialPasteForm.ShowDialog(this);
             if (result == DialogResult.OK)
             {

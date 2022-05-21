@@ -14,16 +14,20 @@ namespace ClipAngel
 {
     public partial class PasteSpecial : Form
     {
-        public string OriginalText;
+        string OriginalText;
         public string ResultText;
         public bool PasteIntoNewClip;
-        public PasteSpecial()
+        public PasteSpecial(Main Owner)
         {
+            this.Owner = Owner;
             InitializeComponent();
+            DelimiterForTextJoin.Text = Properties.Settings.Default.DelimiterForTextJoin.ToString();
         }
 
         private void UpdatePreview()
         {
+            string Dummy = "";
+            OriginalText = (Owner as Main).GetSelectedTextOfClips(ref Dummy, PasteMethod.Null, DelimiterForTextJoin.Text);
             string text = OriginalText;
             TextInfo textInfo = CultureInfo.CurrentCulture.TextInfo;
             if (AllLowerCase.Checked)
@@ -140,6 +144,7 @@ namespace ClipAngel
         private void buttonOK_Click(object sender, EventArgs e)
         {
             PasteIntoNewClip = checkBoxPasteIntoNewClip.Checked;
+            Properties.Settings.Default.DelimiterForTextJoin = DelimiterForTextJoin.Text;
             if (CaseNoChange.Checked)
                 Properties.Settings.Default.CaseConversionMode = 0;
             if (AllUpperCase.Checked)
@@ -197,6 +202,11 @@ namespace ClipAngel
                     .ToArray()))
                 .Trim(); ;
             ;
+        }
+
+        private void DelimiterForTextJoin_TextChanged(object sender, EventArgs e)
+        {
+            UpdatePreview();
         }
     }
 }
