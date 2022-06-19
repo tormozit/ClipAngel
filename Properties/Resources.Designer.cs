@@ -402,7 +402,7 @@ namespace ClipAngel.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to tormozit@gmail.com.
+        ///   Looks up a localized string similar to tormozit@mail.ru.
         /// </summary>
         public static string Email {
             get {
