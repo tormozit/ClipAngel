@@ -3038,7 +3038,7 @@ namespace ClipAngel
         static extern bool EnableWindow(IntPtr hwnd, bool bEnable);
 
         [DllImport("user32.dll", CharSet = CharSet.Unicode)]
-        static extern int GetWindowText(IntPtr hWnd, StringBuilder text, int count);
+        static extern int GetWindowText(IntPtr hWnd, [Out] StringBuilder text, int count);
 
         [DllImport("user32.dll", CharSet = CharSet.Unicode, SetLastError = true)]
         static extern int GetWindowTextLength(IntPtr hWnd);
@@ -3815,15 +3815,15 @@ namespace ClipAngel
         private static string GetWindowTitle(IntPtr hwnd)
         {
             string windowTitle = "";
-            if (ClipAngel.Properties.Settings.Default.ReadWindowTitles)
-            {
+            //if (ClipAngel.Properties.Settings.Default.ReadWindowTitles)
+            //{
                 int nChars = Math.Max(1024, GetWindowTextLength(hwnd) + 1); // crash https://sourceforge.net/p/clip-angel/tickets/20/
                 StringBuilder buff = new StringBuilder(nChars);
                 if (GetWindowText(hwnd, buff, nChars) > 0)
                 {
                     windowTitle = buff.ToString();
                 }
-            }
+            //}
             return windowTitle;
         }
 
