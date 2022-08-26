@@ -3683,6 +3683,9 @@ namespace ClipAngel
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static string GetProcessMainModuleFullName(int pid)
         {
+            string result = null;
+            //return result; // anti crash
+
             //Process p = Process.GetProcessById((int)pid);
             //string result = "";
             //try
@@ -3692,7 +3695,6 @@ namespace ClipAngel
             //catch (Exception e)
             //{
             //}
-            //return result;
             var processHandle = OpenProcess(0x0400 | 0x0010, false, pid);
             if (processHandle == IntPtr.Zero)
             {
@@ -3701,13 +3703,13 @@ namespace ClipAngel
             }
             const int lengthSb = 1000; // Dirty
             var sb = new StringBuilder(lengthSb);
-            string result = null;
             // Possibly there is no such fuction in Windows 7 https://stackoverflow.com/a/321343/4085971
             if (GetModuleFileNameEx(processHandle, IntPtr.Zero, sb, lengthSb) > 0)
             {
                 result = sb.ToString();
             }
             CloseHandle(processHandle);
+
             return result;
         }
 
@@ -3815,6 +3817,8 @@ namespace ClipAngel
         private static string GetWindowTitle(IntPtr hwnd)
         {
             string windowTitle = "";
+            //return windowTitle; // anti crash
+            
             //if (ClipAngel.Properties.Settings.Default.ReadWindowTitles)
             //{
                 int nChars = Math.Max(1024, GetWindowTextLength(hwnd) + 1); // crash https://sourceforge.net/p/clip-angel/tickets/20/

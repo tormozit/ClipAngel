@@ -8860,10 +8860,6 @@ Trailing unprintable symbols are deleted.</target>
           <source>NoControl</source>
           <target state="needs-review-translation">NoControl</target>
         </trans-unit>
-        <trans-unit id="$this.Language" translate="yes" extype="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" extradata="metadata" xml:space="preserve">
-          <source>ru</source>
-          <target state="needs-review-translation">ru</target>
-        </trans-unit>
         <trans-unit id="DelimiterForTextJoin.Location" translate="yes" xml:space="preserve" extype="System.Drawing.Point, System.Drawing">
           <source>296, 136</source>
           <target state="needs-review-translation">300, 136</target>

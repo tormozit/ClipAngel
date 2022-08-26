@@ -319,9 +319,6 @@ Nachlaufende nicht druckbare Symbole werden gelöscht.</value>
   <data name="NormalizeFreeSpace.ImeMode" xml:space="preserve" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <metadata name="$this.Language" xml:space="preserve" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>ru</value>
-  </metadata>
   <data name="DelimiterForTextJoin.Location" xml:space="preserve" type="System.Drawing.Point, System.Drawing">
     <value>300, 136</value>
   </data>
