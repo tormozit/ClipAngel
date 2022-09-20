@@ -736,7 +736,7 @@ namespace ClipAngel
             EncryptDatabaseForCurrentUser = Properties.Settings.Default.EncryptDatabaseForCurrentUser;
             ReplaceDuplicates = Properties.Settings.Default.ReplaceDuplicates;
             GlobalHotkeySwitchMonitoring = Properties.Settings.Default.GlobalHotkeySwitchMonitoring;
-            //ReadWindowTitles = Properties.Settings.Default.ReadWindowTitles;
+            ReadWindowTitles = Properties.Settings.Default.ReadWindowTitles;
             MaxCellsToCaptureFormattedText = Properties.Settings.Default.MaxCellsToCaptureFormattedText;
             MaxCellsToCaptureImage = Properties.Settings.Default.MaxCellsToCaptureImage;
             DatabaseFile = Properties.Settings.Default.DatabaseFile;
@@ -820,7 +820,7 @@ namespace ClipAngel
             Properties.Settings.Default.EncryptDatabaseForCurrentUser = EncryptDatabaseForCurrentUser;
             Properties.Settings.Default.ReplaceDuplicates = ReplaceDuplicates;
             Properties.Settings.Default.GlobalHotkeySwitchMonitoring = GlobalHotkeySwitchMonitoring;
-            //Properties.Settings.Default.ReadWindowTitles = ReadWindowTitles;
+            Properties.Settings.Default.ReadWindowTitles = ReadWindowTitles;
             Properties.Settings.Default.MaxCellsToCaptureImage = MaxCellsToCaptureImage;
             Properties.Settings.Default.MaxCellsToCaptureFormattedText = MaxCellsToCaptureFormattedText;
             Properties.Settings.Default.DatabaseFile = DatabaseFile;
@@ -1007,9 +1007,9 @@ namespace ClipAngel
         [GlobalizedCategory("Other")]
         public int Max1CCodeSizeToColorize { get; set; }
 
-        //[GlobalizedCategory("Other")]
-        //[Editor(typeof(MyBoolEditor), typeof(UITypeEditor))]
-        //public bool ReadWindowTitles { get; set; }
+        [GlobalizedCategory("Other")]
+        [Editor(typeof(MyBoolEditor), typeof(UITypeEditor))]
+        public bool ReadWindowTitles { get; set; }
 
         [GlobalizedCategory("Other")]
         public Font DefaultFont { get; set; }

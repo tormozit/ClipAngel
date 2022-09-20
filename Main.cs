@@ -2476,7 +2476,34 @@ namespace ClipAngel
                         || NumberOfImageCells != 0 && ClipAngel.Properties.Settings.Default.MaxCellsToCaptureImage > NumberOfImageCells))
                 {
                     //clipType = "img";
-                    bitmap = iData.GetData(DataFormats.Bitmap, false) as Bitmap;
+                    if (iData.GetDataPresent(DataFormats.Dib))
+                    {
+                        // First - try get 24b bitmap + 8b alpfa (transparency)
+                        // https://www.csharpcodi.com/vs2/1561/noterium/src/Noterium.Core/Helpers/ClipboardHelper.cs/
+                        // https://www.hostedredmine.com/issues/929403
+                        var dib = ((MemoryStream)Clipboard.GetData(DataFormats.Dib)).ToArray();
+                        var width = BitConverter.ToInt32(dib, 4);
+                        var height = BitConverter.ToInt32(dib, 8);
+                        var bpp = BitConverter.ToInt16(dib, 14);
+                        if (bpp == 32)
+                        {
+                            var gch = GCHandle.Alloc(dib, GCHandleType.Pinned);
+                            try
+                            {
+                                var ptr = new IntPtr((long)gch.AddrOfPinnedObject() + 40);
+                                bitmap = new Bitmap(width, height, width * 4, PixelFormat.Format32bppArgb, ptr);
+                                bitmap.RotateFlip(RotateFlipType.Rotate180FlipX);
+                            }
+                            finally
+                            {
+                                gch.Free();
+                            }
+                        }
+                    }
+                    if (bitmap == null)
+                        // Second - get 24b bitmap
+                        bitmap = iData.GetData(DataFormats.Bitmap, false) as Bitmap;
+
                     if (bitmap != null) // NUll happens while copying image in standard image viewer Windows 10
                     {
                         using (MemoryStream memoryStream = new MemoryStream())
@@ -2546,8 +2573,7 @@ namespace ClipAngel
             }
             finally
             {
-                if (bitmap != null)
-                    bitmap.Dispose();
+                bitmap?.Dispose();
             }
             if (needUpdateList)
                 ReloadList();
@@ -3038,7 +3064,7 @@ namespace ClipAngel
         static extern bool EnableWindow(IntPtr hwnd, bool bEnable);
 
         [DllImport("user32.dll", CharSet = CharSet.Unicode)]
-        static extern int GetWindowText(IntPtr hWnd, [Out] StringBuilder text, int count);
+        static extern int GetWindowText(IntPtr hWnd, [MarshalAs(UnmanagedType.LPWStr)] StringBuilder text, int count);
 
         [DllImport("user32.dll", CharSet = CharSet.Unicode, SetLastError = true)]
         static extern int GetWindowTextLength(IntPtr hWnd);
@@ -3673,7 +3699,7 @@ namespace ClipAngel
         public static extern IntPtr OpenProcess(uint processAccess, bool bInheritHandle, int processId);
 
         [DllImport("psapi.dll", CharSet = CharSet.Unicode)]
-        static extern uint GetModuleFileNameEx(IntPtr hProcess, IntPtr hModule, [Out] StringBuilder lpBaseName, [In] [MarshalAs(UnmanagedType.U4)] int nSize);
+        static extern uint GetModuleFileNameEx(IntPtr hProcess, IntPtr hModule, [MarshalAs(UnmanagedType.LPWStr)] StringBuilder lpBaseName, int nSize);
 
         [DllImport("kernel32.dll", SetLastError = true)]
         [return: MarshalAs(UnmanagedType.Bool)]
@@ -3704,7 +3730,7 @@ namespace ClipAngel
             const int lengthSb = 1000; // Dirty
             var sb = new StringBuilder(lengthSb);
             // Possibly there is no such fuction in Windows 7 https://stackoverflow.com/a/321343/4085971
-            if (GetModuleFileNameEx(processHandle, IntPtr.Zero, sb, lengthSb) > 0)
+            if (GetModuleFileNameEx(processHandle, IntPtr.Zero, sb, sb.Capacity) > 0)
             {
                 result = sb.ToString();
             }
@@ -3731,8 +3757,8 @@ namespace ClipAngel
         {
             IntPtr hwnd;
             ClipboardOwner result = new ClipboardOwner();
-            //if (!ClipAngel.Properties.Settings.Default.ReadWindowTitles)
-            //    return;
+            if (!ClipAngel.Properties.Settings.Default.ReadWindowTitles)
+                return result;
             if (Locker)
                 hwnd = GetOpenClipboardWindow();
             else
@@ -3818,16 +3844,16 @@ namespace ClipAngel
         {
             string windowTitle = "";
             //return windowTitle; // anti crash
-            
-            //if (ClipAngel.Properties.Settings.Default.ReadWindowTitles)
-            //{
+
+            if (ClipAngel.Properties.Settings.Default.ReadWindowTitles)
+            {
                 int nChars = Math.Max(1024, GetWindowTextLength(hwnd) + 1); // crash https://sourceforge.net/p/clip-angel/tickets/20/
                 StringBuilder buff = new StringBuilder(nChars);
-                if (GetWindowText(hwnd, buff, nChars) > 0)
+                if (GetWindowText(hwnd, buff, buff.Capacity) > 0)
                 {
                     windowTitle = buff.ToString();
                 }
-            //}
+            }
             return windowTitle;
         }
 
