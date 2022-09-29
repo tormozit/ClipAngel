@@ -817,8 +817,8 @@
           <target state="translated">由于剪贴板读取错误，剪辑未被捕获</target>
         </trans-unit>
         <trans-unit id="VersionValue" translate="no" xml:space="preserve">
-          <source>2.04</source>
-          <target state="final">2.04</target>
+          <source>2.05</source>
+          <target state="final">2.05</target>
         </trans-unit>
         <trans-unit id="TargetWindow" translate="yes" xml:space="preserve">
           <source>Target window</source>

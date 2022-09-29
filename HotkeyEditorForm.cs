@@ -27,7 +27,9 @@ namespace ClipAngel
             if (false
                 || e.KeyCode == Keys.ControlKey
                 || e.KeyCode == Keys.ShiftKey
-                || e.KeyCode == Keys.Menu)
+                || e.KeyCode == Keys.Menu
+                || e.Control && e.KeyCode == Keys.V
+                || e.Control && e.KeyCode == Keys.C)
             {
                 e.Handled = true;
                 return;
