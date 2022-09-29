@@ -28,8 +28,9 @@ namespace ClipAngel
                 || e.KeyCode == Keys.ControlKey
                 || e.KeyCode == Keys.ShiftKey
                 || e.KeyCode == Keys.Menu
-                || e.Control && e.KeyCode == Keys.V
-                || e.Control && e.KeyCode == Keys.C)
+                || e.Control && !e.Shift && !e.Alt && e.KeyCode == Keys.V // Deny CTRL+V
+                || e.Control && !e.Shift && !e.Alt && e.KeyCode == Keys.C // Deny CTRL+C
+                )
             {
                 e.Handled = true;
                 return;
