@@ -7725,7 +7725,7 @@ namespace ClipAngel
             }
             foreach (DataRow importedRow in dataTable.Rows)
             {
-                AddClip(null, null, importedRow["HtmlText"].ToString(), importedRow["RichText"].ToString(), importedRow["Type"].ToString(), importedRow["Text"].ToString(),
+                AddClip((byte[])importedRow["Binary"], (byte[])importedRow["ImageSample"], importedRow["HtmlText"].ToString(), importedRow["RichText"].ToString(), importedRow["Type"].ToString(), importedRow["Text"].ToString(),
                     importedRow["application"].ToString(), importedRow["window"].ToString(), importedRow["url"].ToString(), Convert.ToInt32(importedRow["chars"].ToString()),
                     importedRow["AppPath"].ToString(), false, Convert.ToBoolean(importedRow["Favorite"].ToString()), false, importedRow["title"].ToString(), DateTime.Parse(importedRow["Created"].ToString()));
             }
