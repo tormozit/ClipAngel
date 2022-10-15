@@ -200,8 +200,8 @@
           <target state="needs-review-translation">..\Picture\TypeText.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</target>
         </trans-unit>
         <trans-unit id="NextClip" translate="yes" xml:space="preserve">
-          <source>Next сlip</source>
-          <target state="new">Next сlip</target>
+          <source>Current сlip</source>
+          <target state="new">Current сlip</target>
         </trans-unit>
         <trans-unit id="NoSupportedTextCompareApplication" translate="yes" xml:space="preserve">
           <source>No supported text compare application was found. Now we open website to get free one.</source>
@@ -472,8 +472,8 @@
           <target state="new">Clip was not captured due to clipboard read error</target>
         </trans-unit>
         <trans-unit id="VersionValue" translate="yes" xml:space="preserve">
-          <source>2.05</source>
-          <target state="new">2.05</target>
+          <source>2.06</source>
+          <target state="new">2.06</target>
         </trans-unit>
         <trans-unit id="TargetWindow" translate="yes" xml:space="preserve">
           <source>Target window</source>
@@ -988,8 +988,8 @@ Key press will be processed by the window. </target>
           <target state="new">History depth number</target>
         </trans-unit>
         <trans-unit id="HistoryDepthNumberDescription" translate="yes" xml:space="preserve">
-          <source>Maximum number of stored non favorite clips. Deletion is executed on start, every day, on settings apply. 0 - do not delete.</source>
-          <target state="new">Maximum number of stored non favorite clips. Deletion is executed on start, every day, on settings apply. 0 - do not delete.</target>
+          <source>Maximum number of stored non favorite clips. Deletion is executed on start, every day, on settings apply. 0 - do not delete. Recommended &lt;50K</source>
+          <target state="new">Maximum number of stored non favorite clips. Deletion is executed on start, every day, on settings apply. 0 - do not delete. Recommended &lt;50K</target>
         </trans-unit>
         <trans-unit id="HtmlEditor" translate="yes" xml:space="preserve">
           <source>HTML file editor application</source>
@@ -1364,6 +1364,14 @@ Generation of image consumes CPU. If you experience high CPU load, set lower val
         <trans-unit id="GlobalHotkeyForcedCaptureDescription" translate="yes" xml:space="preserve">
           <source>Use this hot key in any program to copy data with capture in ClipAngel when clipboard monitoring (autocapture changes) is off.</source>
           <target state="new">Use this hot key in any program to copy data with capture in ClipAngel when clipboard monitoring (autocapture changes) is off.</target>
+        </trans-unit>
+        <trans-unit id="GlobalHotkeyDecrementalPaste" translate="yes" xml:space="preserve">
+          <source>Hotkey to paste and select previous</source>
+          <target state="new">Hotkey to paste and select previous</target>
+        </trans-unit>
+        <trans-unit id="GlobalHotkeyDecrementalPasteDescription" translate="yes" xml:space="preserve">
+          <source>Use this hot key in any program to paste current clip from ClipAngel list and select previous/lower clip which will be shown in tray tooltip</source>
+          <target state="new">Use this hot key in any program to paste current clip from ClipAngel list and select previous/lower clip which will be shown in tray tooltip</target>
         </trans-unit>
       </group>
     </body>

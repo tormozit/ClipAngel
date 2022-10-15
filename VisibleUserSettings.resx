@@ -254,6 +254,12 @@ Leave blank to use standard database file "db.sqlite" in application user settin
   <data name="GlobalHotkeyCompareLastClipsDescription" xml:space="preserve">
     <value>Use this hot key in any program to launch application for comparing last 2 clips</value>
   </data>
+  <data name="GlobalHotkeyDecrementalPaste" xml:space="preserve">
+    <value>Hotkey to paste and select previous</value>
+  </data>
+  <data name="GlobalHotkeyDecrementalPasteDescription" xml:space="preserve">
+    <value>Use this hot key in any program to paste current clip from ClipAngel list and select previous/lower clip which will be shown in tray tooltip</value>
+  </data>
   <data name="GlobalHotkeyForcedCapture" xml:space="preserve">
     <value>Hotkey to forced capture clip</value>
   </data>
@@ -312,7 +318,7 @@ Leave blank to use standard database file "db.sqlite" in application user settin
     <value>History depth number</value>
   </data>
   <data name="HistoryDepthNumberDescription" xml:space="preserve">
-    <value>Maximum number of stored non favorite clips. Deletion is executed on start, every day, on settings apply. 0 - do not delete.</value>
+    <value>Maximum number of stored non favorite clips. Deletion is executed on start, every day, on settings apply. 0 - do not delete. Recommended &lt;50K</value>
   </data>
   <data name="HtmlEditor" xml:space="preserve">
     <value>HTML file editor application</value>

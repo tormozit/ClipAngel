@@ -719,7 +719,7 @@ namespace ClipAngel.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Next сlip.
+        ///   Looks up a localized string similar to Current сlip.
         /// </summary>
         public static string NextClip {
             get {
@@ -1142,7 +1142,7 @@ namespace ClipAngel.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 2.05.
+        ///   Looks up a localized string similar to 2.06.
         /// </summary>
         public static string VersionValue {
             get {

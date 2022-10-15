@@ -541,8 +541,9 @@
           <target state="translated">..\Picture\TypeText.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</target>
         </trans-unit>
         <trans-unit id="NextClip" translate="yes" xml:space="preserve">
-          <source>Next сlip</source>
-          <target state="translated" state-qualifier="mt-suggestion">下一剪辑</target>
+          <source>Current сlip</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">下一剪辑</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="NoSupportedTextCompareApplication" translate="yes" xml:space="preserve">
           <source>No supported text compare application was found. Now we open website to get free one.</source>
@@ -817,8 +818,8 @@
           <target state="translated">由于剪贴板读取错误，剪辑未被捕获</target>
         </trans-unit>
         <trans-unit id="VersionValue" translate="no" xml:space="preserve">
-          <source>2.05</source>
-          <target state="final">2.05</target>
+          <source>2.06</source>
+          <target state="final">2.06</target>
         </trans-unit>
         <trans-unit id="TargetWindow" translate="yes" xml:space="preserve">
           <source>Target window</source>
@@ -1341,8 +1342,9 @@ Key press will be processed by the window. </source>
           <target state="translated" state-qualifier="mt-suggestion">最大历史数目</target>
         </trans-unit>
         <trans-unit id="HistoryDepthNumberDescription" translate="yes" xml:space="preserve">
-          <source>Maximum number of stored non favorite clips. Deletion is executed on start, every day, on settings apply. 0 - do not delete.</source>
-          <target state="translated" state-qualifier="mt-suggestion">保存非收藏剪辑的最大数目。打开时、每天执行删除，在设置中应用。0 - 代表不删除</target>
+          <source>Maximum number of stored non favorite clips. Deletion is executed on start, every day, on settings apply. 0 - do not delete. Recommended &lt;50K</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">保存非收藏剪辑的最大数目。打开时、每天执行删除，在设置中应用。0 - 代表不删除</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="HtmlEditor" translate="yes" xml:space="preserve">
           <source>HTML file editor application</source>
@@ -1729,6 +1731,14 @@ Generation of image consumes CPU. If you experience high CPU load, set lower val
         <trans-unit id="GlobalHotkeyForcedCaptureDescription" translate="yes" xml:space="preserve">
           <source>Use this hot key in any program to copy data with capture in ClipAngel when clipboard monitoring (autocapture changes) is off.</source>
           <target state="new">Use this hot key in any program to copy data with capture in ClipAngel when clipboard monitoring (autocapture changes) is off.</target>
+        </trans-unit>
+        <trans-unit id="GlobalHotkeyDecrementalPaste" translate="yes" xml:space="preserve">
+          <source>Hotkey to paste and select previous</source>
+          <target state="new">Hotkey to paste and select previous</target>
+        </trans-unit>
+        <trans-unit id="GlobalHotkeyDecrementalPasteDescription" translate="yes" xml:space="preserve">
+          <source>Use this hot key in any program to paste current clip from ClipAngel list and select previous/lower clip which will be shown in tray tooltip</source>
+          <target state="new">Use this hot key in any program to paste current clip from ClipAngel list and select previous/lower clip which will be shown in tray tooltip</target>
         </trans-unit>
       </group>
     </body>

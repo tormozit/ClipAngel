@@ -25,7 +25,7 @@ namespace ClipAngel.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("10000")]
+        [global::System.Configuration.DefaultSettingValueAttribute("30000")]
         public int HistoryDepthNumber {
             get {
                 return ((int)(this["HistoryDepthNumber"]));
@@ -953,6 +953,18 @@ namespace ClipAngel.Properties {
             }
             set {
                 this["GlobalHotkeyForcedCapture"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("No")]
+        public string GlobalHotkeyDecrementalPaste {
+            get {
+                return ((string)(this["GlobalHotkeyDecrementalPaste"]));
+            }
+            set {
+                this["GlobalHotkeyDecrementalPaste"] = value;
             }
         }
     }

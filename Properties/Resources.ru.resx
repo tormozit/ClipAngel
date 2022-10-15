@@ -332,7 +332,7 @@
     <value>Новая версия доступна. Для обновления нажмите кнопку в верхней командной панели.</value>
   </data>
   <data name="NextClip" xml:space="preserve">
-    <value>Следующий клип</value>
+    <value>Текущий клип</value>
   </data>
   <data name="NoSupportedTextCompareApplication" xml:space="preserve">
     <value>Не найдено поддерживаемое приложение для сравнения текстов. Сейчас откроем вебсайт, чтобы скачать бесплатное.</value>

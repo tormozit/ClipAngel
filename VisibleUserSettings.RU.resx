@@ -256,6 +256,13 @@
   <data name="GlobalHotkeyCompareLastClipsDescription" xml:space="preserve">
     <value>Эта горячая клавиша при нажатии в любой программе запустит приложение сравнения 2-х последних клипов</value>
   </data>
+  <data name="GlobalHotkeyDecrementalPaste" xml:space="preserve">
+    <value>Горячая клавиша последовательной вставки обратной</value>
+  </data>
+  <data name="GlobalHotkeyDecrementalPasteDescription" xml:space="preserve">
+    <value>Эта горячая клавиша при нажатии в любой программе вставит текущий клип из списка ClipAngel, 
+перейдет к предыдущему/нижнему клипу в списке и покажет его во всплывающей подсказке</value>
+  </data>
   <data name="GlobalHotkeyForcedCapture" xml:space="preserve">
     <value>Горячая клавиша принудительного захвата клипа</value>
   </data>
@@ -263,7 +270,7 @@
     <value>Эта горячая клавиша при нажатии в любой программе скопирует клип и принудительно поместит его в список ClipAngel даже при выключенном слежении за буфером обмена (автозахвата изменений).</value>
   </data>
   <data name="GlobalHotkeyIncrementalPaste" xml:space="preserve">
-    <value>Горячая клавиша последовательной вставки</value>
+    <value>Горячая клавиша последовательной вставки прямой</value>
   </data>
   <data name="GlobalHotkeyIncrementalPasteDescription" xml:space="preserve">
     <value>Эта горячая клавиша при нажатии в любой программе вставит текущий клип из списка ClipAngel, 
@@ -320,7 +327,7 @@
   </data>
   <data name="HistoryDepthNumberDescription" xml:space="preserve">
     <value>Максимальное количество хранимых не любимых клипов. 
-Удаление выполняется при старте, каждый день, при применении настроек. 0 - не удалять.</value>
+Удаление выполняется при старте, каждый день, при применении настроек. 0 - не удалять. Рекомендуется &lt;50К</value>
   </data>
   <data name="HtmlEditor" xml:space="preserve">
     <value>Приложение открытия файлов HTML</value>

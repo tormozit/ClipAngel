@@ -773,6 +773,7 @@ namespace ClipAngel
             GlobalHotkeyOpenCurrent = Properties.Settings.Default.GlobalHotkeyOpenCurrent;
             GlobalHotkeyOpenFavorites = Properties.Settings.Default.GlobalHotkeyOpenFavorites;
             GlobalHotkeyIncrementalPaste = Properties.Settings.Default.GlobalHotkeyIncrementalPaste;
+            GlobalHotkeyDecrementalPaste = Properties.Settings.Default.GlobalHotkeyDecrementalPaste;
             GlobalHotkeyCompareLastClips = Properties.Settings.Default.GlobalHotkeyCompareLastClips;
             WindowAutoPosition = Properties.Settings.Default.WindowAutoPosition;
             MoveCopiedClipToTop = Properties.Settings.Default.MoveCopiedClipToTop;
@@ -862,6 +863,7 @@ namespace ClipAngel
             Properties.Settings.Default.GlobalHotkeyOpenCurrent = GlobalHotkeyOpenCurrent;
             Properties.Settings.Default.GlobalHotkeyOpenFavorites = GlobalHotkeyOpenFavorites;
             Properties.Settings.Default.GlobalHotkeyIncrementalPaste = GlobalHotkeyIncrementalPaste;
+            Properties.Settings.Default.GlobalHotkeyDecrementalPaste = GlobalHotkeyDecrementalPaste;
             Properties.Settings.Default.GlobalHotkeyCompareLastClips = GlobalHotkeyCompareLastClips;
             Properties.Settings.Default.Language = Language;
 
@@ -959,6 +961,11 @@ namespace ClipAngel
         [TypeConverterAttribute(typeof(HotkeyConverter))]
         [EditorAttribute(typeof(HotkeyEditor), typeof(UITypeEditor))]
         public string GlobalHotkeyIncrementalPaste { get; set; }
+
+        [GlobalizedCategory("GlobalHotkeys")]
+        [TypeConverterAttribute(typeof(HotkeyConverter))]
+        [EditorAttribute(typeof(HotkeyEditor), typeof(UITypeEditor))]
+        public string GlobalHotkeyDecrementalPaste { get; set; }
 
         [GlobalizedCategory("GlobalHotkeys")]
         [TypeConverterAttribute(typeof(HotkeyConverter))]

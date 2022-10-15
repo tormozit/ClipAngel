@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="HistoryDepthNumber" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">10000</Value>
+      <Value Profile="(Default)">30000</Value>
     </Setting>
     <Setting Name="GlobalHotkeyOpenLast" Type="System.String" Scope="User">
       <Value Profile="(Default)">Alt + V</Value>
@@ -234,6 +234,9 @@
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="GlobalHotkeyForcedCapture" Type="System.String" Scope="User">
+      <Value Profile="(Default)">No</Value>
+    </Setting>
+    <Setting Name="GlobalHotkeyDecrementalPaste" Type="System.String" Scope="User">
       <Value Profile="(Default)">No</Value>
     </Setting>
   </Settings>
