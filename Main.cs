@@ -2495,22 +2495,26 @@ namespace ClipAngel
                         // First - try get 24b bitmap + 8b alpfa (transparency)
                         // https://www.csharpcodi.com/vs2/1561/noterium/src/Noterium.Core/Helpers/ClipboardHelper.cs/
                         // https://www.hostedredmine.com/issues/929403
-                        var dib = ((MemoryStream)Clipboard.GetData(DataFormats.Dib)).ToArray();
-                        var width = BitConverter.ToInt32(dib, 4);
-                        var height = BitConverter.ToInt32(dib, 8);
-                        var bpp = BitConverter.ToInt16(dib, 14);
-                        if (bpp == 32)
+                        var dibData = Clipboard.GetData(DataFormats.Dib);
+                        if (dibData != null)
                         {
-                            var gch = GCHandle.Alloc(dib, GCHandleType.Pinned);
-                            try
+                            var dib = ((MemoryStream)dibData).ToArray();
+                            var width = BitConverter.ToInt32(dib, 4);
+                            var height = BitConverter.ToInt32(dib, 8);
+                            var bpp = BitConverter.ToInt16(dib, 14);
+                            if (bpp == 32)
                             {
-                                var ptr = new IntPtr((long)gch.AddrOfPinnedObject() + 40);
-                                bitmap = new Bitmap(width, height, width * 4, PixelFormat.Format32bppArgb, ptr);
-                                bitmap.RotateFlip(RotateFlipType.Rotate180FlipX);
-                            }
-                            finally
-                            {
-                                gch.Free();
+                                var gch = GCHandle.Alloc(dib, GCHandleType.Pinned);
+                                try
+                                {
+                                    var ptr = new IntPtr((long)gch.AddrOfPinnedObject() + 40);
+                                    bitmap = new Bitmap(width, height, width * 4, PixelFormat.Format32bppArgb, ptr);
+                                    bitmap.RotateFlip(RotateFlipType.Rotate180FlipX);
+                                }
+                                finally
+                                {
+                                    gch.Free();
+                                }
                             }
                         }
                     }
