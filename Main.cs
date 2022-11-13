@@ -2492,30 +2492,11 @@ namespace ClipAngel
                     //clipType = "img";
                     if (iData.GetDataPresent(DataFormats.Dib))
                     {
-                        // First - try get 24b bitmap + 8b alpfa (transparency)
-                        // https://www.csharpcodi.com/vs2/1561/noterium/src/Noterium.Core/Helpers/ClipboardHelper.cs/
-                        // https://www.hostedredmine.com/issues/929403
                         var dibData = Clipboard.GetData(DataFormats.Dib);
                         if (dibData != null)
                         {
                             var dib = ((MemoryStream)dibData).ToArray();
-                            var width = BitConverter.ToInt32(dib, 4);
-                            var height = BitConverter.ToInt32(dib, 8);
-                            var bpp = BitConverter.ToInt16(dib, 14);
-                            if (bpp == 32)
-                            {
-                                var gch = GCHandle.Alloc(dib, GCHandleType.Pinned);
-                                try
-                                {
-                                    var ptr = new IntPtr((long)gch.AddrOfPinnedObject() + 40);
-                                    bitmap = new Bitmap(width, height, width * 4, PixelFormat.Format32bppArgb, ptr);
-                                    bitmap.RotateFlip(RotateFlipType.Rotate180FlipX);
-                                }
-                                finally
-                                {
-                                    gch.Free();
-                                }
-                            }
+                            bitmap = ImageFromClipboardDib(dib);
                         }
                     }
                     if (bitmap == null)
@@ -2597,6 +2578,133 @@ namespace ClipAngel
                 ReloadList();
         }
 
+        public static Bitmap ImageFromClipboardDib(Byte[] dibBytes)
+        {
+            Bitmap bitmap = null;
+            var width = 0;
+            var height = 0;
+            var planes = 0;
+            var bitCount = 0;
+            var compression = 0;
+            var headerSize = 0;
+            if (dibBytes == null || dibBytes.Length < 4)
+                return null;
+            headerSize = BitConverter.ToInt32(dibBytes, 0);
+            // Only supporting 40-byte DIB from clipboard
+            if (headerSize != 40)
+                return null;
+
+            // First - try get 24b bitmap + 8b alpfa (transparency)
+            // https://www.csharpcodi.com/vs2/1561/noterium/src/Noterium.Core/Helpers/ClipboardHelper.cs/
+            // https://www.hostedredmine.com/issues/929403
+            width = BitConverter.ToInt32(dibBytes, 4);
+            height = BitConverter.ToInt32(dibBytes, 8);
+            planes = BitConverter.ToInt16(dibBytes, 12);
+            bitCount = BitConverter.ToInt16(dibBytes, 14);
+            compression = BitConverter.ToInt32(dibBytes, 16);
+            if (bitCount == 32 && planes == 1 && (compression == 0))
+            {
+                var gch = GCHandle.Alloc(dibBytes, GCHandleType.Pinned);
+                try
+                {
+                    var ptr = new IntPtr((long)gch.AddrOfPinnedObject() + headerSize);
+                    bitmap = new Bitmap(width, height, width * 4, PixelFormat.Format32bppArgb, ptr);
+                    bitmap.RotateFlip(RotateFlipType.Rotate180FlipX);
+                }
+                finally
+                {
+                    gch.Free();
+                }
+            }
+            return bitmap;
+
+            //// https://www.folkstalk.com/tech/copying-from-and-to-clipboard-loses-image-transparency-with-code-solution/
+            //try
+            //{
+            //    Byte[] header = new Byte[headerSize];
+            //    Array.Copy(dibBytes, header, headerSize);
+            //    Int32 imageIndex = headerSize;
+            //    width = BitConverter.ToInt32(header, 0x04);
+            //    height = BitConverter.ToInt32(header, 0x08);
+            //    planes = BitConverter.ToInt16(header, 0x0C);
+            //    bitCount = BitConverter.ToInt16(header, 0x0E);
+            //    //Compression: 0 = RGB; 3 = BITFIELDS.
+            //    compression = BitConverter.ToInt32(header, 0x10);
+            //    // Not dealing with non-standard formats.
+            //    if (planes != 1 || (compression != 0 && compression != 3))
+            //        return null;
+            //    PixelFormat format;
+            //    switch (bitCount)
+            //    {
+            //        case 32:
+            //            format = PixelFormat.Format32bppArgb; //PixelFormat.Format32bppRgb;
+            //            break;
+            //        case 24:
+            //            format = PixelFormat.Format24bppRgb;
+            //            break;
+            //        case 16:
+            //            format = PixelFormat.Format16bppRgb555;
+            //            break;
+            //        default:
+            //            return null;
+            //    }
+            //    if (compression == 3)
+            //        imageIndex += 12;
+            //    if (dibBytes.Length < imageIndex)
+            //        return null;
+            //    Byte[] image = new Byte[dibBytes.Length - imageIndex];
+            //    Array.Copy(dibBytes, imageIndex, image, 0, image.Length);
+            //    // Classic stride: fit within blocks of 4 bytes.
+            //    Int32 stride = (((((bitCount * width) + 7) / 8) + 3) / 4) * 4;
+            //    if (compression == 3)
+            //    {
+            //        if (format == PixelFormat.Format32bppArgb)
+            //            format = PixelFormat.Format32bppRgb; // For Excel
+            //        UInt32 redMask = BitConverter.ToUInt32(dibBytes, headerSize + 0);
+            //        UInt32 greenMask = BitConverter.ToUInt32(dibBytes, headerSize + 4);
+            //        UInt32 blueMask = BitConverter.ToUInt32(dibBytes, headerSize + 8);
+            //        // Fix for the undocumented use of 32bppARGB disguised as BITFIELDS. Despite lacking an alpha bit field,
+            //        // the alpha bytes are still filled in, without any header indication of alpha usage.
+            //        // Pure 32-bit RGB: check if a switch to ARGB can be made by checking for non-zero alpha.
+            //        // Admitted, this may give a mess if the alpha bits simply aren't cleared, but why the hell wouldn't it use 24bpp then?
+            //        if (bitCount == 32 && redMask == 0xFF0000 && greenMask == 0x00FF00 && blueMask == 0x0000FF)
+            //        {
+            //            // Stride is always a multiple of 4; no need to take it into account for 32bpp.
+            //            for (Int32 pix = 3; pix < image.Length; pix += 4)
+            //            {
+            //                // 0 can mean transparent, but can also mean the alpha isn't filled in, so only check for non-zero alpha,
+            //                // which would indicate there is actual data in the alpha bytes.
+            //                if (image[pix] == 0)
+            //                    continue;
+            //                format = PixelFormat.Format32bppPArgb;
+            //                break;
+            //            }
+            //        }
+            //        else
+            //            // Could be supported with a system that parses the colour masks,
+            //            // but I don't think the clipboard ever uses these anyway.
+            //            return null;
+            //    }
+            //    var gch = GCHandle.Alloc(image, GCHandleType.Pinned);
+            //    try
+            //    {
+            //        var ptr = new IntPtr((long)gch.AddrOfPinnedObject());
+            //        bitmap = new Bitmap(width, height, stride, format, ptr);
+            //    }
+            //    finally
+            //    {
+            //        gch.Free();
+            //    }
+            //    if (bitmap != null)
+            //        // This is bmp; reverse image lines.
+            //        bitmap.RotateFlip(RotateFlipType.Rotate180FlipX);
+            //    return bitmap;
+            //}
+            //catch
+            //{
+            //    return null;
+            //}
+        }
         private Bitmap getBitmapFromUrl(string imageUrl)
         {
             Bitmap bitmap = null;
