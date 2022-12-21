@@ -110,7 +110,7 @@ namespace ClipAngel
             string question = Properties.Resources.QuestionResetSettings;
             if (DialogResult.Yes == MessageBox.Show(question, Application.ProductName, MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation))
             {
-                //Properties.Settings.Default.Reset(); // Not working, it seem reason is type System.Collections.Specialized.StringCollection
+                //Properties.Settings.Default.Reset(); // Not working, it seems that reason is type System.Collections.Specialized.StringCollection
                 foreach (SettingsProperty settingsKey in Properties.Settings.Default.Properties)
                 {
                     var value = Properties.Settings.Default[settingsKey.Name];
@@ -722,6 +722,7 @@ namespace ClipAngel
 
         public void Load(bool PortableMode = false)
         {
+            IgnoreUrlsClipCapture = Properties.Settings.Default.IgnoreUrlsClipCapture;
             GlobalHotkeyForcedCapture = Properties.Settings.Default.GlobalHotkeyForcedCapture;
             DontSendPaste = Properties.Settings.Default.DontSendPaste;
             DelimiterForTextJoin = Properties.Settings.Default.DelimiterForTextJoin;
@@ -809,6 +810,7 @@ namespace ClipAngel
 
         public void Apply(bool PortableMode = false)
         {
+            Properties.Settings.Default.IgnoreUrlsClipCapture = IgnoreUrlsClipCapture;
             Properties.Settings.Default.GlobalHotkeyForcedCapture = GlobalHotkeyForcedCapture;
             Properties.Settings.Default.DontSendPaste = DontSendPaste;
             Properties.Settings.Default.DelimiterForTextJoin = DelimiterForTextJoin;
@@ -1081,6 +1083,10 @@ namespace ClipAngel
         [GlobalizedCategory("Applications")]
         [Editor(typeof(AppListEditor), typeof(UITypeEditor))]
         public StringCollection IgnoreApplicationsClipCapture { get; set; }
+
+        [GlobalizedCategory("Applications")]
+        [Editor(typeof(UITypeEditor), typeof(UITypeEditor))]
+        public string IgnoreUrlsClipCapture { get; set; }
 
         [GlobalizedCategory("Search")]
         [Editor(typeof(MyBoolEditor), typeof(UITypeEditor))]

@@ -349,6 +349,12 @@
     <value>Не захватывать клип с форматом "Clipboard Viewer Ignore". 
 Этот формат обычно используется менеджерами паролей при копировании пароля в буфер обмена. Иногда может быть полезно временно выключить.</value>
   </data>
+  <data name="IgnoreUrlsClipCapture" xml:space="preserve">
+    <value>Игнорировать URL источника в захвате клипов</value>
+  </data>
+  <data name="IgnoreUrlsClipCaptureDescription" xml:space="preserve">
+    <value>Список подстрок, совпадение с которыми в URL источника клипа будет игнорировать захват клипа. Разделители: "," или ";"</value>
+  </data>
   <data name="ImageEditor" xml:space="preserve">
     <value>Приложение открытия файлов картинок (PNG)</value>
   </data>

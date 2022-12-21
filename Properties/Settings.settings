@@ -239,5 +239,8 @@
     <Setting Name="GlobalHotkeyDecrementalPaste" Type="System.String" Scope="User">
       <Value Profile="(Default)">No</Value>
     </Setting>
+    <Setting Name="IgnoreUrlsClipCapture" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
   </Settings>
 </SettingsFile>

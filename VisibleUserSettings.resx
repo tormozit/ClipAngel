@@ -339,6 +339,12 @@ Leave blank to use standard database file "db.sqlite" in application user settin
     <value>Do not capture clip with "Clipboard Viewer Ignore" format present. 
 This format is usually  used by password managers when copying passwords to clipboard. Sometimes it may be usefull to switch it OFF temporary.</value>
   </data>
+  <data name="IgnoreUrlsClipCapture" xml:space="preserve">
+    <value>Ignore source URLs in clip capture</value>
+  </data>
+  <data name="IgnoreUrlsClipCaptureDescription" xml:space="preserve">
+    <value>List of substrings that match in clip source URL will ignore clip capture. Delimiters: "," or ";"</value>
+  </data>
   <data name="ImageEditor" xml:space="preserve">
     <value>Image (PNG) file editor application</value>
   </data>

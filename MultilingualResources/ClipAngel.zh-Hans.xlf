@@ -818,8 +818,8 @@
           <target state="translated">由于剪贴板读取错误，剪辑未被捕获</target>
         </trans-unit>
         <trans-unit id="VersionValue" translate="no" xml:space="preserve">
-          <source>2.07</source>
-          <target state="final">2.07</target>
+          <source>2.08</source>
+          <target state="final">2.08</target>
         </trans-unit>
         <trans-unit id="TargetWindow" translate="yes" xml:space="preserve">
           <source>Target window</source>
@@ -1739,6 +1739,14 @@ Generation of image consumes CPU. If you experience high CPU load, set lower val
         <trans-unit id="GlobalHotkeyDecrementalPasteDescription" translate="yes" xml:space="preserve">
           <source>Use this hot key in any program to paste current clip from ClipAngel list and select previous/lower clip which will be shown in tray tooltip</source>
           <target state="new">Use this hot key in any program to paste current clip from ClipAngel list and select previous/lower clip which will be shown in tray tooltip</target>
+        </trans-unit>
+        <trans-unit id="IgnoreUrlsClipCapture" translate="yes" xml:space="preserve">
+          <source>Ignore source URLs in clip capture</source>
+          <target state="new">Ignore source URLs in clip capture</target>
+        </trans-unit>
+        <trans-unit id="IgnoreUrlsClipCaptureDescription" translate="yes" xml:space="preserve">
+          <source>List of substrings that match in clip source URL will ignore clip capture. Delimiters: "," or ";"</source>
+          <target state="new">List of substrings that match in clip source URL will ignore clip capture. Delimiters: "," or ";"</target>
         </trans-unit>
       </group>
     </body>

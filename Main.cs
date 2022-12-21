@@ -2366,6 +2366,17 @@ namespace ClipAngel
                                 clipUrl = System.Web.HttpUtility.UrlDecode(clipUrl);
                                 clipUrl = clipUrl.Replace(@"/", @"\");
                             }
+                            string[] IgnoreTemplates = Settings.Default.IgnoreUrlsClipCapture.Trim().ToLower().Split(new string[] { ";", "," }, StringSplitOptions.RemoveEmptyEntries);
+                            if (IgnoreTemplates.Length > 0)
+                            {
+                                foreach (var template in IgnoreTemplates)
+                                {
+                                    if (clipUrl.ToLower().Contains(template.Trim()))
+                                    {
+                                        return;
+                                    }
+                                }
+                            }
                         }
                         if (ClipAngel.Properties.Settings.Default.CaptureImages && String.IsNullOrWhiteSpace(clipText))
                         {
