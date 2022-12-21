@@ -6085,7 +6085,7 @@ namespace ClipAngel
             allowTextPositionChangeUpdate = false;
             UpdateControlsStates();
             allowTextPositionChangeUpdate = true;
-            if (LoadedClipRowReader["type"].ToString() == "html")
+            if (LoadedClipRowReader!=null && LoadedClipRowReader["type"].ToString() == "html")
                 AfterRowLoad();
             OnClipContentSelectionChange();
         }
@@ -6922,9 +6922,12 @@ namespace ClipAngel
         {
             ClipAngel.Properties.Settings.Default.ShowNativeTextFormatting = !ClipAngel.Properties.Settings.Default.ShowNativeTextFormatting;
             UpdateControlsStates();
-            string clipType = LoadedClipRowReader["type"].ToString();
-            if (clipType == "html" || clipType == "rtf")
-                AfterRowLoad(true);
+            if (LoadedClipRowReader != null)
+            {
+                string clipType = LoadedClipRowReader["type"].ToString();
+                if (clipType == "html" || clipType == "rtf")
+                    AfterRowLoad(true);
+            }
         }
 
         private void toolStripButtonMarkFavorite_Click(object sender, EventArgs e)
