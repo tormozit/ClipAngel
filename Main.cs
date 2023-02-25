@@ -5458,7 +5458,7 @@ namespace ClipAngel
                             bool success = false;
                             object valuePattern = null;
                             int UIA_ValuePatternId = 10002;
-                            string tempFilename = Path.GetTempFileName();
+                            string tempFilename = Path.ChangeExtension(Path.GetTempFileName(), "xml");
                             IUIAutomationElement tableElement = null;
                             IUIAutomationElement breakPointsWindow;
                             IUIAutomationElement tempElement;
@@ -5494,7 +5494,6 @@ namespace ClipAngel
                                 File.Delete(tempFilename);
                                 valuePattern = _automation.GetFocusedElement().GetCurrentPattern(UIA_ValuePatternId);
                                 ((IUIAutomationValuePattern) valuePattern).SetValue(tempFilename);
-                                tempFilename = tempFilename + ".xml";
                                 SendKeys.Send("{ENTER}");
                                 stopWatch.Restart();
                                 while (stopWatch.ElapsedMilliseconds < maxWait)
@@ -5699,6 +5698,7 @@ namespace ClipAngel
                                     // Например в списке точек останова присутствует скроллбар и потому нужная ячейка была видимой области
                                     SendKeys.Send("{Esc}");
                             }
+                            File.Delete(tempFilename);
                         }
                     }
                     else // url
