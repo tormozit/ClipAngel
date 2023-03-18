@@ -5392,6 +5392,7 @@ namespace ClipAngel
 
         private void Main_Activated(object sender, EventArgs e)
         {
+            UpdateColumnsSet(); // 
             if (ClipAngel.Properties.Settings.Default.FastWindowOpen)
             {
                 RestoreWindowIfMinimized();
