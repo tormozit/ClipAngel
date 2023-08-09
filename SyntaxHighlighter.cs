@@ -372,7 +372,7 @@ namespace ClipAngel
                                 bool success = false;
                                 try
                                 {
-                                    int dummy = Convert.ToInt32(Token);
+                                    Int64 dummy = Convert.ToInt64(Token);
                                     success = true;
                                 }
                                 catch

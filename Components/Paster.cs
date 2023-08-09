@@ -149,6 +149,32 @@ namespace ClipAngel
             simulator.Keyboard.KeyUp(VirtualKeyCode.CONTROL);
         }
 
+        public static void SendSave(Main main = null)
+        {
+            ModifiersState mod = new ModifiersState();
+            mod.ReleaseAll(false, main);
+            InputSimulator simulator = new InputSimulator();
+            simulator.Keyboard.KeyDown(VirtualKeyCode.CONTROL);
+            simulator.Keyboard.KeyPress(VirtualKeyCode.VK_S);
+            simulator.Keyboard.KeyUp(VirtualKeyCode.CONTROL);
+        }
+
+        public static void SendOpen(Main main = null)
+        {
+            ModifiersState mod = new ModifiersState();
+            mod.ReleaseAll(false, main);
+            InputSimulator simulator = new InputSimulator();
+            simulator.Keyboard.KeyDown(VirtualKeyCode.CONTROL);
+            simulator.Keyboard.KeyPress(VirtualKeyCode.VK_O);
+            simulator.Keyboard.KeyUp(VirtualKeyCode.CONTROL);
+        }
+
+        public static void SendKeyPress(VirtualKeyCode key)
+        {
+            InputSimulator simulator = new InputSimulator();
+            simulator.Keyboard.KeyPress(key);
+        }
+
         public static void SendCopy(bool waitForComplete = false)
         {
             ModifiersState mod = new ModifiersState();

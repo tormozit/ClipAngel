@@ -5453,7 +5453,7 @@ namespace ClipAngel
                             int lineNumber = Convert.ToInt32(match.Groups[startIndex1C + 3].ToString());
                             ActivateAndCheckTargetWindow();
                             SendKeys.Send("%{F9}");
-                            SendKeys.Flush();
+                            //SendKeys.Flush();
                             //Paster.ModifiersState mod = new Paster.ModifiersState();
                             //mod.ReleaseAll(true);
                             bool success = false;
@@ -5475,16 +5475,9 @@ namespace ClipAngel
                                 if (tableElement != null)
                                 {
                                     SetFocusByClick(tableElement);
-                                    for (int i = 0; i < 2; i++)
-                                    {
-                                        if (IsRussianInputLanguage())
-                                            SendKeys.Send("^(ы)");
-                                        else
-                                            SendKeys.Send("^(s)");
-                                        success = WaitWindowFocus(breakPointsWindow, "Сохранить точки останова в файл", out tempElement, "#32770", treeWalker, 1000);
-                                        if (success)
-                                            break;
-                                    }
+                                    Thread.Sleep(100);
+                                    Paster.SendSave();
+                                    success = WaitWindowFocus(breakPointsWindow, "Сохранить точки останова в файл", out tempElement, "#32770", treeWalker, 1000);
                                 }
                             }
                             else
@@ -5495,7 +5488,7 @@ namespace ClipAngel
                                 File.Delete(tempFilename);
                                 valuePattern = _automation.GetFocusedElement().GetCurrentPattern(UIA_ValuePatternId);
                                 ((IUIAutomationValuePattern) valuePattern).SetValue(tempFilename);
-                                SendKeys.Send("{ENTER}");
+                                Paster.SendKeyPress(VirtualKeyCode.RETURN);
                                 stopWatch.Restart();
                                 while (stopWatch.ElapsedMilliseconds < maxWait)
                                 {
@@ -5509,6 +5502,7 @@ namespace ClipAngel
                             }
                             else
                                 success = success;
+                            //Logger.WriteLine("Automation-1");
                             if (success)
                             {
                                 success = false;
@@ -5619,10 +5613,7 @@ namespace ClipAngel
                             if (success)
                             {
                                 success = false;
-                                if (IsRussianInputLanguage())
-                                    SendKeys.Send("^(щ)");
-                                else
-                                    SendKeys.Send("^(o)");
+                                Paster.SendOpen();
                                 success = WaitWindowFocus(breakPointsWindow, "Загрузить точки останова из файла", out tempElement, "#32770", treeWalker);
                             }
                             else
@@ -5632,7 +5623,7 @@ namespace ClipAngel
                                 success = false;
                                 valuePattern = _automation.GetFocusedElement().GetCurrentPattern(UIA_ValuePatternId);
                                 ((IUIAutomationValuePattern) valuePattern).SetValue(tempFilename);
-                                SendKeys.SendWait("{ENTER}");
+                                Paster.SendKeyPress(VirtualKeyCode.RETURN);
                                 success = WaitWindowFocus(null, "Точки останова", out breakPointsWindow, "V8NewLocalFrameBaseWnd", treeWalker, 1000);
                             }
                             else
@@ -5646,7 +5637,7 @@ namespace ClipAngel
                                 string fullModuleName = moduleName;
                                 if (!String.IsNullOrEmpty(extensionName))
                                     fullModuleName = extensionName + fullModuleName;
-                                SendKeys.Send("{PgDn}");
+                                Paster.SendKeyPress(VirtualKeyCode.NEXT); // PageDOwn
                                 while (stopWatch.ElapsedMilliseconds < maxWait)
                                 {
                                     try
@@ -5685,19 +5676,19 @@ namespace ClipAngel
                                     {
                                         SetFocusByClick(cell);
                                         SetFocusByClick(cell);
-                                        //SendKeys.Send("{Enter}");
-                                        SendKeys.Send("{F9}");
+                                        //Paster.SendKeyPress(VirtualKeyCode.RETURN);
+                                        Paster.SendKeyPress(VirtualKeyCode.F9);
                                         break;
                                     }
                                     else
                                     {
-                                        SendKeys.Send("{PgDn}");
+                                        Paster.SendKeyPress(VirtualKeyCode.NEXT); // PageDown
                                     }
                                     Thread.Sleep(50);
                                 }
                                 if (!success)
                                     // Например в списке точек останова присутствует скроллбар и потому нужная ячейка была видимой области
-                                    SendKeys.Send("{Esc}");
+                                    Paster.SendKeyPress(VirtualKeyCode.ESCAPE);
                             }
                             File.Delete(tempFilename);
                         }
@@ -8211,6 +8202,18 @@ namespace ClipAngel
         private void fileToolStripMenuItem1_Click(object sender, EventArgs e)
         {
 
+        }
+    }
+    public static class Logger
+    {
+        private static string LogFile = Path.GetTempPath() + "\\ClipAngelLog.txt";
+        public static void WriteLine(string txt)
+        {
+            File.AppendAllText(LogFile, DateTime.Now.ToString() + ": " + txt + "\n");
+        }
+        public static void DeleteLog()
+        {
+            File.Delete(LogFile);
         }
     }
 }
