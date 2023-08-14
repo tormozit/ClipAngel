@@ -5475,7 +5475,7 @@ namespace ClipAngel
                                 if (tableElement != null)
                                 {
                                     SetFocusByClick(tableElement);
-                                    Thread.Sleep(100);
+                                    Thread.Sleep(200);
                                     Paster.SendSave();
                                     success = WaitWindowFocus(breakPointsWindow, "Сохранить точки останова в файл", out tempElement, "#32770", treeWalker, 1000);
                                 }
@@ -5664,7 +5664,14 @@ namespace ClipAngel
                                             )
                                         {
                                             cell = treeWalker.GetNextSiblingElement(cell);
-                                            if (cell.CurrentName == lineNumber + " Строка")
+                                            int cellLineNumber = -1000;
+                                            try
+                                            {
+                                                cellLineNumber = Int32.Parse(cell.CurrentName.Split(new[] { " " }, StringSplitOptions.RemoveEmptyEntries)[0]);
+                                            }
+                                            catch{};
+                                            // Если модуль отредактирован, то конфигуратор смещает номера строк при загрузке из файла. Поэтому допускаем окрестность Х строк
+                                            if (Math.Abs(cellLineNumber - lineNumber) < 10)
                                             {
                                                 success = true;
                                                 break;
