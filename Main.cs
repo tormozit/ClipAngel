@@ -211,7 +211,7 @@ namespace ClipAngel
             {"url_image",  @"(https?:\/\/.*\.(?:png|jpg|gif|jpeg|svg))"},
             {"url_video",  @"(?:https?://)?(?:www.)?youtu(?:\.be|be\.com)/(?:(?:.*)v(?:/|=)|(?:.*/)?)([a-zA-Z0-9-_]+)(?:[&?][%a-zA-Z0-9-_]+=[%a-zA-Z0-9-_]+)*"},
             {"filename", @"((?:\b[a-z]:|\\\\[a-z0-9 %._-]+\\[a-z0-9 $%._-]+)\\(?:[^\\/:*?""<>|\r\n]+\\)*[^\\/:*?""<>|\r\n]*)"},
-            {"1CLine", @"(\{([a-zа-яё0-9_]+ )?((?:[a-zа-яё0-9_]+\.)*(?:Форма|Form|Модуль[a-zа-яё0-9_]*|[a-zа-яё0-9_]*Module))\((\d+)(?:,(\d+))?\)\})"}
+            {"1CLine", @"(\{([a-zа-яё0-9_]+ )?(([a-zа-яё0-9_]+::.+?::)?(?:[a-zа-яё0-9_]+\.)*(?:Форма|Form|Модуль[a-zа-яё0-9_]*|[a-zа-яё0-9_]*Module|))\((\d+)(?:,(\d+))?(?:\:?([a-zа-яё0-9_]+)(?:,(-?\d+))?)?\)\})"}
         };
 
         static string LinkPattern = TextPatterns["url"];
@@ -5450,7 +5450,7 @@ namespace ClipAngel
                             string MDFormName = "";
                             if (fragments.Length > 3)
                                 MDFormName = fragments[3];
-                            int lineNumber = Convert.ToInt32(match.Groups[startIndex1C + 3].ToString());
+                            int lineNumber = Convert.ToInt32(match.Groups[startIndex1C + 4].ToString());
                             ActivateAndCheckTargetWindow();
                             SendKeys.Send("%{F9}");
                             //SendKeys.Flush();
@@ -5459,6 +5459,7 @@ namespace ClipAngel
                             bool success = false;
                             object valuePattern = null;
                             int UIA_ValuePatternId = 10002;
+                            string breakpointMarker = "OpenLink";
                             string tempFilename = Path.ChangeExtension(Path.GetTempFileName(), "xml");
                             IUIAutomationElement tableElement = null;
                             IUIAutomationElement breakPointsWindow;
@@ -5606,6 +5607,11 @@ namespace ClipAngel
                                     XmlElement line = doc.CreateElement("line", root.NamespaceURI);
                                     line.InnerText = lineNumber.ToString();
                                     bpInfo.AppendChild(line);
+                                    breakpointMarker = breakpointMarker + line.InnerText;
+                                    XmlElement condition = doc.CreateElement("condition", root.NamespaceURI);
+                                    condition.InnerText = breakpointMarker;
+                                    bpInfo.AppendChild(condition);
+
                                     doc.Save(tempFilename);
                                     success = true;
                                 }
@@ -5633,7 +5639,7 @@ namespace ClipAngel
                                 success = false;
                                 //tableElement = FindTable1C(UIWindow, treeWalker);
                                 stopWatch.Restart();
-                                IUIAutomationElement cell;
+                                IUIAutomationElement cell, cell1;
                                 string fullModuleName = moduleName;
                                 if (!String.IsNullOrEmpty(extensionName))
                                     fullModuleName = extensionName + fullModuleName;
@@ -5655,23 +5661,12 @@ namespace ClipAngel
                                             && cellText.Contains(extensionName)
                                             && cellText.Contains("." + MDObjectName + ".")
                                             && (MDFormName.Length == 0 || cellText.Contains("." + MDFormName + "."))
-                                            //&& (false
-                                            //    || cell.CurrentName == fullModuleName + " Имя модуля"
-                                            //    || cell.CurrentName == fullModuleName + ".Форма Имя модуля" // Обработка.ирПоискДублейИЗаменаСсылок.Форма.Форма.Форма
-                                            //    || cell.CurrentName == fullModuleName + " Module name" // TODO check
-                                            //    || cell.CurrentName == fullModuleName + ".Form Module name" // TODO check
-                                            //    )
                                             )
                                         {
                                             cell = treeWalker.GetNextSiblingElement(cell);
-                                            int cellLineNumber = -1000;
-                                            try
-                                            {
-                                                cellLineNumber = Int32.Parse(cell.CurrentName.Split(new[] { " " }, StringSplitOptions.RemoveEmptyEntries)[0]);
-                                            }
-                                            catch{};
-                                            // Если модуль отредактирован, то конфигуратор смещает номера строк при загрузке из файла. Поэтому допускаем окрестность Х строк
-                                            if (Math.Abs(cellLineNumber - lineNumber) < 10)
+                                            cell1 = treeWalker.GetNextSiblingElement(cell);
+                                            cellText = cell1.CurrentName;
+                                            if (cellText.Contains(breakpointMarker))
                                             {
                                                 success = true;
                                                 break;
