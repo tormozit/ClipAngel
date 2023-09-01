@@ -1571,7 +1571,7 @@ namespace ClipAngel
 
         private void MarkLinksInRichTextBox(RichTextBox control, out MatchCollection matches)
         {
-            MarkRegExpMatchesInRichTextBox(control, "(" + TextPatterns["1CLine"] + "|" + fileOrFolderPattern + "|" + LinkPattern + ")", Color.Blue, false, true, false, out matches);
+            MarkRegExpMatchesInRichTextBox(control, "(" + fileOrFolderPattern + "|" + LinkPattern + "|" + TextPatterns["1CLine"] + ")", Color.Blue, false, true, false, out matches);
         }
 
         private void MarkRegExpMatchesInRichTextBox(RichTextBox control, string pattern, Color color, bool allowDymanicColor, bool underline,
@@ -1623,7 +1623,7 @@ namespace ClipAngel
 
         private void MarkLinksInWebBrowser(WebBrowser control, out MatchCollection matches)
         {
-            MarkRegExpMatchesInWebBrowser(control, "(" + TextPatterns["1CLine"] + ")", true, out matches);
+            MarkRegExpMatchesInWebBrowser(control, "((ъъъ)|(ъъъ)|" + TextPatterns["1CLine"] + ")", true, out matches);
         }
 
         private void MarkRegExpMatchesInWebBrowser(WebBrowser control, string pattern, bool is1Clink, out MatchCollection matches)
@@ -5423,8 +5423,8 @@ namespace ClipAngel
             {
                 if (match.Index <= SelectionStart && (match.Index + match.Length) >= SelectionStart)
                 {
-                    int startIndex1C = 2;
-                    if (match.Groups[startIndex1C + 5].Success) // File link
+                    int startIndex1C = 4;
+                    if (match.Groups[2].Success) // File link
                     {
                         string filePath = match.Value;
                         if (!File.Exists(filePath) && !Directory.Exists(filePath))
