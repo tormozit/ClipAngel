@@ -211,7 +211,7 @@ namespace ClipAngel
             {"url_image",  @"(https?:\/\/.*\.(?:png|jpg|gif|jpeg|svg))"},
             {"url_video",  @"(?:https?://)?(?:www.)?youtu(?:\.be|be\.com)/(?:(?:.*)v(?:/|=)|(?:.*/)?)([a-zA-Z0-9-_]+)(?:[&?][%a-zA-Z0-9-_]+=[%a-zA-Z0-9-_]+)*"},
             {"filename", @"((?:\b[a-z]:|\\\\[a-z0-9 %._-]+\\[a-z0-9 $%._-]+)\\(?:[^\\/:*?""<>|\r\n]+\\)*[^\\/:*?""<>|\r\n]*)"},
-            {"1CLine", @"(\{([a-zа-яё0-9_]+ )?(([a-zа-яё0-9_]+::.+?::)?(?:[a-zа-яё0-9_]+\.)*(?:Форма|Form|Модуль[a-zа-яё0-9_]*|[a-zа-яё0-9_]*Module|))\((\d+)(?:,(\d+))?(?:\:?([a-zа-яё0-9_]+)(?:,(-?\d+))?)?\)\})"}
+            {"1CLine", @"(\{([a-zа-яё0-9_]+ )?(([a-zа-яё0-9_]+::.+?::)?(?:[a-zа-яё0-9_]+\.)*(?:Форма|Form|Модуль[a-zа-яё0-9_]*|[a-zа-яё0-9_]*Module|))\((\d+)(?:,(\d+))?(?:\:?([a-zа-яё0-9_<>]*)(?:,(-?\d+))?)?\)\})"}
         };
 
         static string LinkPattern = TextPatterns["url"];
@@ -2208,7 +2208,7 @@ namespace ClipAngel
             if (iData.GetDataPresent(DataFormat_RemoveTempClipsFromHistory))
             {
                 removeClipsFilter removeClipsFilter;
-                string dataString = (string) iData.GetData(DataFormat_RemoveTempClipsFromHistory);
+                var dataString = GetStingFromClipboardData(iData, DataFormat_RemoveTempClipsFromHistory);
                 if (!String.IsNullOrWhiteSpace(dataString))  // Rarely we got NULL 
                 {
                     // Test
@@ -2259,7 +2259,7 @@ namespace ClipAngel
             {
                 if (iData.GetDataPresent(DataFormats.UnicodeText))
                 {
-                    clipText = (string) iData.GetData(DataFormats.UnicodeText);
+                    clipText = GetStingFromClipboardData(iData, DataFormats.UnicodeText);
                     if (!String.IsNullOrEmpty(clipText))
                     {
                         clipType = "text";
@@ -2268,7 +2268,7 @@ namespace ClipAngel
                 }
                 if (!textFormatPresent && iData.GetDataPresent(DataFormats.Text))
                 {
-                    clipText = (string) iData.GetData(DataFormats.Text);
+                    clipText = GetStingFromClipboardData(iData, DataFormats.Text);
                     if (!String.IsNullOrEmpty(clipText))
                     {
                         clipType = "text";
@@ -2336,7 +2336,7 @@ namespace ClipAngel
                         || NumberOfFilledCells == 0
                         || ClipAngel.Properties.Settings.Default.MaxCellsToCaptureFormattedText > NumberOfFilledCells))
                 {
-                    htmlText = (string) iData.GetData(DataFormats.Html);
+                    htmlText = GetStingFromClipboardData(iData, DataFormats.Html);
                     if (String.IsNullOrEmpty(htmlText))
                     {
                         htmlText = "";
@@ -2409,7 +2409,7 @@ namespace ClipAngel
                         || NumberOfFilledCells == 0
                         || ClipAngel.Properties.Settings.Default.MaxCellsToCaptureFormattedText > NumberOfFilledCells))
                 {
-                    richText = (string)iData.GetData(DataFormats.Rtf);
+                    richText = GetStingFromClipboardData(iData, DataFormats.Rtf);
                     clipType = "rtf";
                     if (!textFormatPresent)
                     {
@@ -2587,6 +2587,19 @@ namespace ClipAngel
             }
             if (needUpdateList)
                 ReloadList();
+        }
+
+        private static string GetStingFromClipboardData(IDataObject iData, string formatName)
+        {
+            string dataString = "";
+            try
+            {
+                dataString = (string) iData.GetData(formatName);
+            }
+            catch (Exception)
+            {
+            }
+            return dataString;
         }
 
         public static Bitmap ImageFromClipboardDib(Byte[] dibBytes)
@@ -3890,11 +3903,11 @@ namespace ClipAngel
             public bool isRemoteDesktop = false;
         }
 
-        public ClipboardOwner GetClipboardOwnerLockerInfo(bool Locker, bool replaceNullWithLastActive = true)
+        public ClipboardOwner GetClipboardOwnerLockerInfo(bool Locker, bool replaceNullWithLastActive = true, bool forceReadWindowTitles = false)
         {
             IntPtr hwnd;
             ClipboardOwner result = new ClipboardOwner();
-            if (!ClipAngel.Properties.Settings.Default.ReadWindowTitles)
+            if (!ClipAngel.Properties.Settings.Default.ReadWindowTitles && !forceReadWindowTitles)
                 return result;
             if (Locker)
                 hwnd = GetOpenClipboardWindow();
@@ -4532,14 +4545,22 @@ namespace ClipAngel
 
         private bool CurrentIDChanged()
         {
-            return false
-                   || (LoadedClipRowReader == null && dataGridView.CurrentRow != null)
-                   || (LoadedClipRowReader != null && dataGridView.CurrentRow == null)
-                   || !(true
-                        && LoadedClipRowReader != null
-                        && dataGridView.CurrentRow != null
-                        && dataGridView.CurrentRow.DataBoundItem != null
-                        && (int) (dataGridView.CurrentRow.DataBoundItem as DataRowView)["ID"] == (int) LoadedClipRowReader["ID"]);
+            try
+            {
+                return false
+                       || (LoadedClipRowReader == null && dataGridView.CurrentRow != null)
+                       || (LoadedClipRowReader != null && dataGridView.CurrentRow == null)
+                       || !(true
+                            && LoadedClipRowReader != null
+                            && dataGridView.CurrentRow != null
+                            && dataGridView.CurrentRow.DataBoundItem != null
+                            && (int)(dataGridView.CurrentRow.DataBoundItem as DataRowView)["ID"] == (int)LoadedClipRowReader["ID"]);
+            }
+            catch (Exception e)
+            {
+                // Cast exception
+                return true;
+            }
         }
 
         void SelectCurrentRow(bool forceRowLoad = false, bool keepTextSelection = true, bool clearSelection = true,
@@ -5436,7 +5457,7 @@ namespace ClipAngel
                     }
                     else if (match.Groups[startIndex1C].Success) // 1C code link
                     {
-                        ClipboardOwner clipboardOwner = GetClipboardOwnerLockerInfo(true);
+                        ClipboardOwner clipboardOwner = GetClipboardOwnerLockerInfo(true, true, true);
                         if (String.Compare(clipboardOwner.application, "1cv8", true) == 0)
                         {
                             string extensionName = match.Groups[startIndex1C + 1].ToString();
