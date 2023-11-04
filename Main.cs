@@ -1083,10 +1083,6 @@ namespace ClipAngel
 
         private void Main_Load(object sender, EventArgs e)
         {
-            if (Registry.GetValue("HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Nls\\CodePage", "ACP", 0) == "65001")
-            {
-                MessageBox.Show(this, "You have switched ON \"Beta: Use Unicode UTF - 8 for worldwide language support\" in your OS Windows settings. Therefore ClipAngel may not work correctly.", Application.ProductName);
-            }
             // Due to the hidden start window can be shown and this event raised not on the start
             // So we do not use it and make everything in constructor
             UpdateControlsStates(); //

@@ -13,6 +13,7 @@ using Microsoft.Win32.SafeHandles;
 using System.Security.Permissions;
 using System.Text;
 using System.IO;
+using Microsoft.Win32;
 
 namespace ClipAngel
 {
@@ -102,6 +103,10 @@ namespace ClipAngel
                     UserSettingsPath = MakePortable(Properties.Settings.Default, PortableMode);
                     Application.EnableVisualStyles();
                     Application.SetCompatibleTextRenderingDefault(false);
+                    if (Registry.GetValue("HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Nls\\CodePage", "ACP", 0) == "65001")
+                    {
+                        MessageBox.Show("You have switched ON \"Beta: Use Unicode UTF - 8 for worldwide language support\" in your OS Windows settings. Therefore ClipAngel may not work correctly.", Application.ProductName);
+                    }
                     Main Main = new Main(UserSettingsPath, PortableMode, args.Contains("/m"));
                     Application.AddMessageFilter(new TestMessageFilter());
                     Application.Run(Main);
