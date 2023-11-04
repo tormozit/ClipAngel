@@ -5688,7 +5688,15 @@ namespace ClipAngel
                                             )
                                         {
                                             cell = treeWalker.GetNextSiblingElement(cell);
+                                            if (cell == null)
+                                            {
+                                                break;
+                                            }
                                             cell1 = treeWalker.GetNextSiblingElement(cell);
+                                            if (cell1 == null)
+                                            {
+                                                break;
+                                            }
                                             cellText = cell1.CurrentName;
                                             if (cellText.Contains(breakpointMarker))
                                             {
