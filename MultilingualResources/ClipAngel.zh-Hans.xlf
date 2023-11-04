@@ -818,8 +818,8 @@
           <target state="translated">由于剪贴板读取错误，剪辑未被捕获</target>
         </trans-unit>
         <trans-unit id="VersionValue" translate="no" xml:space="preserve">
-          <source>2.12</source>
-          <target state="final">2.12</target>
+          <source>2.12b</source>
+          <target state="final">2.12b</target>
         </trans-unit>
         <trans-unit id="TargetWindow" translate="yes" xml:space="preserve">
           <source>Target window</source>
@@ -4456,7 +4456,7 @@ Changes in temp file are not synchronized with clip!</source>
           <target state="translated">253, 22</target>
         </trans-unit>
         <trans-unit id="contextMenuStripDataGrid.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
-          <source>222, 312</source>
+          <source>222, 290</source>
           <target state="needs-review-translation">222, 268</target>
           <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
@@ -4685,7 +4685,7 @@ Submenu "List" has commands for quick selection</source>
           <target state="translated" state-qualifier="mt-suggestion">标记选中剪辑为收藏</target>
         </trans-unit>
         <trans-unit id="richTextBox.Text" translate="yes" xml:space="preserve">
-          <source> </source>
+          <source></source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion"></target>
           <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>

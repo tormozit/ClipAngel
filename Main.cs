@@ -42,11 +42,14 @@ using System.Net.NetworkInformation;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using ClipAngel.Properties;
+using Microsoft.Win32;
 using Newtonsoft.Json;
 using Cursor = System.Windows.Forms.Cursor;
 using KeyEventArgs = System.Windows.Forms.KeyEventArgs;
 using MouseEventArgs = System.Windows.Forms.MouseEventArgs;
 using MouseEventHandler = System.Windows.Forms.MouseEventHandler;
+using OpenFileDialog = System.Windows.Forms.OpenFileDialog;
+using SaveFileDialog = System.Windows.Forms.SaveFileDialog;
 
 namespace ClipAngel
 {
@@ -1089,6 +1092,10 @@ namespace ClipAngel
                 Tips form = new Tips();
                 form.ShowDialog(this);
                 Settings.Default.Save();
+            }
+            if (true||Registry.GetValue("HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Nls\\CodePage", "ACP", 0) == "65001")
+            {
+                MessageBox.Show(this, "You have switched ON \"Beta: Use Unicode UTF - 8 for worldwide language support\" in your OS Windows settings. Therefore ClipAngel may not work correctly.", Application.ProductName);
             }
             dataGridView.Focus();
         }

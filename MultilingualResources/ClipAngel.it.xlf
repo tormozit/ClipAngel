@@ -1634,8 +1634,8 @@ La generazione dell'immagine consuma risorse della CPU. Se verifichi problemi di
           <target state="translated">La cattura non è stata effettuata a causa di un errore nella lettura degli Appunti</target>
         </trans-unit>
         <trans-unit id="VersionValue" translate="yes" xml:space="preserve">
-          <source>2.12</source>
-          <target state="new">2.12</target>
+          <source>2.12b</source>
+          <target state="new">2.12b</target>
         </trans-unit>
         <trans-unit id="TargetWindow" translate="yes" xml:space="preserve">
           <source>Target window</source>
@@ -4459,7 +4459,7 @@ Le modifiche nel file temporaneo non saranno sincronizzate con la cattura!</targ
           <target state="needs-review-translation">253, 22</target>
         </trans-unit>
         <trans-unit id="contextMenuStripDataGrid.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
-          <source>222, 312</source>
+          <source>222, 290</source>
           <target state="needs-review-translation">222, 290</target>
           <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
@@ -4688,7 +4688,7 @@ Il sottomenu "Elenco" dispone di comandi per la selezione rapida</target>
           <target state="translated">Segna cattura selezionata come preferita</target>
         </trans-unit>
         <trans-unit id="richTextBox.Text" translate="yes" xml:space="preserve">
-          <source> </source>
+          <source></source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion"></target>
           <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>

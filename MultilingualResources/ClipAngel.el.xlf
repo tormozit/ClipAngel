@@ -472,8 +472,8 @@
           <target state="new">Clip was not captured due to clipboard read error</target>
         </trans-unit>
         <trans-unit id="VersionValue" translate="yes" xml:space="preserve">
-          <source>2.12</source>
-          <target state="new">2.12</target>
+          <source>2.12b</source>
+          <target state="new">2.12b</target>
         </trans-unit>
         <trans-unit id="TargetWindow" translate="yes" xml:space="preserve">
           <source>Target window</source>
@@ -5486,7 +5486,7 @@ When ON and "Fast window open" OFF, window will be shown in taskbar if visible.
           <target state="needs-review-translation">False</target>
         </trans-unit>
         <trans-unit id="contextMenuStripDataGrid.Size" translate="yes" extype="System.Drawing.Size, System.Drawing" xml:space="preserve">
-          <source>222, 312</source>
+          <source>222, 290</source>
           <target state="needs-review-translation">222, 290</target>
           <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
@@ -5708,7 +5708,7 @@ Submenu "List" has commands for quick selection</target>
           <target state="new">Mark selected clips as favorite</target>
         </trans-unit>
         <trans-unit id="richTextBox.Text" translate="yes" xml:space="preserve">
-          <source> </source>
+          <source></source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion"></target>
           <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>

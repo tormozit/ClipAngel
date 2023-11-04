@@ -666,7 +666,7 @@ Changes in temp file are not synchronized with clip!</value>
     <value>Delete selected clips from list. Real deletion is performed on database close.</value>
   </data>
   <data name="contextMenuStripDataGrid.Size" type="System.Drawing.Size, System.Drawing">
-    <value>222, 312</value>
+    <value>222, 290</value>
   </data>
   <data name="&gt;&gt;contextMenuStripDataGrid.Name" xml:space="preserve">
     <value>contextMenuStripDataGrid</value>
@@ -892,7 +892,7 @@ Changes in temp file are not synchronized with clip!</value>
     <value>2</value>
   </data>
   <data name="richTextBox.Text" xml:space="preserve">
-    <value> </value>
+    <value />
   </data>
   <data name="&gt;&gt;richTextBox.Name" xml:space="preserve">
     <value>richTextBox</value>
