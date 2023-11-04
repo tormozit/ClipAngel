@@ -1634,8 +1634,8 @@ La generazione dell'immagine consuma risorse della CPU. Se verifichi problemi di
           <target state="translated">La cattura non è stata effettuata a causa di un errore nella lettura degli Appunti</target>
         </trans-unit>
         <trans-unit id="VersionValue" translate="yes" xml:space="preserve">
-          <source>2.12b</source>
-          <target state="new">2.12b</target>
+          <source>2.12</source>
+          <target state="new">2.12</target>
         </trans-unit>
         <trans-unit id="TargetWindow" translate="yes" xml:space="preserve">
           <source>Target window</source>
