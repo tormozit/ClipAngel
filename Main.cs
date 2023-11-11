@@ -5490,7 +5490,13 @@ namespace ClipAngel
                             IUIAutomationElement tempElement;
                             CUIAutomation _automation = new CUIAutomation();
                             IUIAutomationTreeWalker treeWalker = _automation.CreateTreeWalker(_automation.CreateTrueCondition());
-                            success = WaitWindowFocus(null, "Точки останова", out breakPointsWindow, "V8NewLocalFrameBaseWnd", treeWalker);
+                            bool Later8_3_24 = false;
+                            success = WaitWindowFocus(null, "Точки останова", out breakPointsWindow, "V8NewLocalFrameBaseWnd", treeWalker, 1000, out Later8_3_24);
+                            if (!success && Later8_3_24)
+                            {
+                                Paster.SendRestore();
+                                success = WaitWindowFocus(null, "Точки останова", out breakPointsWindow, "V8NewLocalFrameBaseWnd", treeWalker, 1000, out Later8_3_24);
+                            }
                             int maxWait = 2000;
                             Stopwatch stopWatch = new Stopwatch();
                             if (success)
@@ -5502,7 +5508,7 @@ namespace ClipAngel
                                     SetFocusByClick(tableElement);
                                     Thread.Sleep(200);
                                     Paster.SendSave();
-                                    success = WaitWindowFocus(breakPointsWindow, "Сохранить точки останова в файл", out tempElement, "#32770", treeWalker, 1000);
+                                    success = WaitWindowFocus(breakPointsWindow, "Сохранить точки останова в файл", out tempElement, "#32770", treeWalker, 1000, out Later8_3_24);
                                 }
                             }
                             else
@@ -5635,6 +5641,12 @@ namespace ClipAngel
                                     XmlElement condition = doc.CreateElement("condition", root.NamespaceURI);
                                     condition.InnerText = breakpointMarker;
                                     bpInfo.AppendChild(condition);
+                                    if (Later8_3_24)
+                                    {
+                                        XmlElement active = doc.CreateElement("breakOnCondition", root.NamespaceURI);
+                                        active.InnerText = "true";
+                                        bpInfo.AppendChild(active);
+                                    }
 
                                     doc.Save(tempFilename);
                                     success = true;
@@ -5644,7 +5656,7 @@ namespace ClipAngel
                             {
                                 success = false;
                                 Paster.SendOpen();
-                                success = WaitWindowFocus(breakPointsWindow, "Загрузить точки останова из файла", out tempElement, "#32770", treeWalker);
+                                success = WaitWindowFocus(breakPointsWindow, "Загрузить точки останова из файла", out tempElement, "#32770", treeWalker, 1000, out Later8_3_24);
                             }
                             else
                                 success = success;
@@ -5654,7 +5666,7 @@ namespace ClipAngel
                                 valuePattern = _automation.GetFocusedElement().GetCurrentPattern(UIA_ValuePatternId);
                                 ((IUIAutomationValuePattern) valuePattern).SetValue(tempFilename);
                                 Paster.SendKeyPress(VirtualKeyCode.RETURN);
-                                success = WaitWindowFocus(null, "Точки останова", out breakPointsWindow, "V8NewLocalFrameBaseWnd", treeWalker, 1000);
+                                success = WaitWindowFocus(null, "Точки останова", out breakPointsWindow, "V8NewLocalFrameBaseWnd", treeWalker, 1000, out Later8_3_24);
                             }
                             else
                                 success = success;
@@ -5874,10 +5886,11 @@ namespace ClipAngel
             return String.Compare(InputLanguage.CurrentInputLanguage.Culture.TwoLetterISOLanguageName, "ru", StringComparison.InvariantCultureIgnoreCase) == 0;
         }
 
-        private bool WaitWindowFocus(IUIAutomationElement mainWindow, string title, out IUIAutomationElement parent, string className, IUIAutomationTreeWalker treeWalker = null,
-            int wait = 2000)
+        private bool WaitWindowFocus(IUIAutomationElement mainWindow, string title, out IUIAutomationElement resultWindow, string className, IUIAutomationTreeWalker treeWalker,
+            int wait, out bool Later8_3_24)
         {
-            parent = null;
+            Later8_3_24 = false;
+            resultWindow = null;
             bool success = false;
             Stopwatch stopWatch = new Stopwatch();
             stopWatch.Start();
@@ -5896,14 +5909,50 @@ namespace ClipAngel
             //}
 
             CUIAutomation _automation = new CUIAutomation();
-            if (mainWindow == null)
-                mainWindow = _automation.GetRootElement();
-            // https://msdn.microsoft.com/en-us/library/windows/desktop/ff625922(v=vs.85).aspx#WalkAncestors
-            if (treeWalker == null)
-                treeWalker = _automation.CreateTreeWalker(_automation.CreateTrueCondition());
             //IUIAutomationCacheRequest request = _automation.CreateCacheRequest();
             int UIA_NamePropertyId = 30005;
             int UIA_ClassNamePropertyId = 30012;
+            if (mainWindow == null)
+            {
+                bool rootResult;
+                IUIAutomationElement rootWindow = _automation.GetRootElement();
+                rootResult = WaitWindowFocus(rootWindow, title, out resultWindow, className, treeWalker, wait, out Later8_3_24);
+                if (rootResult)
+                    return true;
+                IUIAutomationCondition cond = _automation.CreatePropertyCondition(UIA_ClassNamePropertyId, "V8TopLevelFrame");
+                IUIAutomationElement parentWindow = _automation.GetFocusedElement();
+                IUIAutomationElement topWindow = null;
+                //topWindow = topWindow.FindFirst(TreeScope.TreeScope_Parent, cond); // not works
+                while (parentWindow != null)
+                {
+                    if (parentWindow.GetCurrentPropertyValue(UIA_ClassNamePropertyId) == "V8TopLevelFrame")
+                    {
+                        topWindow = parentWindow;
+                        break;
+                    }
+                    parentWindow = treeWalker.GetParentElement(parentWindow);
+                }
+                if (topWindow!=null)
+                {
+                    rootResult = WaitWindowFocus(topWindow, title, out resultWindow, className, treeWalker, wait, out Later8_3_24);
+                    Later8_3_24 = true;
+                    if (rootResult)
+                        return true;
+                }
+                return false;
+            }
+            else
+            {
+                IUIAutomationElement parentWindow = treeWalker.GetParentElement(mainWindow);
+                if (parentWindow!=null && parentWindow.GetCurrentPropertyValue(UIA_ClassNamePropertyId) == "V8TopLevelFrame")
+                {
+                    Later8_3_24 = true;
+                    mainWindow = parentWindow;
+                }
+            }
+            // https://msdn.microsoft.com/en-us/library/windows/desktop/ff625922(v=vs.85).aspx#WalkAncestors
+            if (treeWalker == null)
+                treeWalker = _automation.CreateTreeWalker(_automation.CreateTrueCondition());
             while (stopWatch.ElapsedMilliseconds < wait)
             {
                 try
@@ -5911,15 +5960,15 @@ namespace ClipAngel
                     IUIAutomationCondition cond1 = _automation.CreatePropertyCondition(UIA_NamePropertyId, title);
                     IUIAutomationCondition cond2 = _automation.CreatePropertyCondition(UIA_ClassNamePropertyId, className);
                     IUIAutomationCondition cond = _automation.CreateAndCondition(cond1, cond2);
-                    parent = mainWindow.FindFirst(TreeScope.TreeScope_Children, cond);
-                    if (parent != null)
+                    resultWindow = mainWindow.FindFirst(TreeScope.TreeScope_Children, cond);
+                    if (resultWindow != null)
                     {
-                        parent.SetFocus();
+                        resultWindow.SetFocus();
                         //Stopwatch stopWatch2 = new Stopwatch();
                         //stopWatch2.Start();
                         //while (stopWatch2.ElapsedMilliseconds < wait)
                         //{
-                        //    if (parent.CurrentHasKeyboardFocus != 0)
+                        //    if (resultWindow.CurrentHasKeyboardFocus != 0)
                         //    {
                                 success = true;
                                 break;
