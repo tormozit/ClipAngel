@@ -41,6 +41,7 @@ using System.Xml.Serialization;
 using System.Net.NetworkInformation;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using WindowsInput;
 using ClipAngel.Properties;
 using Microsoft.Win32;
 using Newtonsoft.Json;
@@ -5735,6 +5736,12 @@ namespace ClipAngel
                                 if (!success)
                                     // Например в списке точек останова присутствует скроллбар и потому нужная ячейка была видимой области
                                     Paster.SendKeyPress(VirtualKeyCode.ESCAPE);
+                                else if (Later8_3_24)
+                                {
+                                    SendKeys.Send("%{F9}");
+                                    Paster.SendCloseChild();
+                                }
+                                    
                             }
                             File.Delete(tempFilename);
                         }

@@ -169,6 +169,16 @@ namespace ClipAngel
             simulator.Keyboard.KeyUp(VirtualKeyCode.CONTROL);
         }
 
+        public static void SendCloseChild(Main main = null)
+        {
+            ModifiersState mod = new ModifiersState();
+            mod.ReleaseAll(false, main);
+            InputSimulator simulator = new InputSimulator();
+            simulator.Keyboard.KeyDown(VirtualKeyCode.SHIFT);
+            simulator.Keyboard.KeyPress(VirtualKeyCode.ESCAPE);
+            simulator.Keyboard.KeyUp(VirtualKeyCode.SHIFT);
+        }
+
         public static void SendRestore(Main main = null)
         {
             ModifiersState mod = new ModifiersState();
