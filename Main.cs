@@ -3146,13 +3146,19 @@ namespace ClipAngel
             }
             allowRowLoad = false;
             //int i = dataGridView.CurrentRow.Index;
-            string sql = "Delete from Clips where Id IN(null";
+            string sql = "Delete from Clips where NOT Favorite AND Id IN(null";
             SQLiteCommand command = new SQLiteCommand("", m_dbConnection);
             int counter = 0;
+            bool doFullReload = false;
             foreach (DataGridViewRow selectedRow in dataGridView.SelectedRows)
             {
                 DataRowView dataRow = (DataRowView) selectedRow.DataBoundItem;
-                if (dataRow["Favorite"] != DBNull.Value && (bool)dataRow["Favorite"])
+                if (dataRow["Favorite"] == DBNull.Value)
+                {
+                    doFullReload = true;
+                    continue;
+                }
+                if ((bool)dataRow["Favorite"])
                     continue;
                 string parameterName = "@Id" + counter;
                 sql += "," + parameterName;
@@ -3176,7 +3182,8 @@ namespace ClipAngel
             //AfterRowLoad();
             SelectCurrentRow();
             areDeletedClips = true;
-            //ReloadList(); // ViewWindow will move -bad
+            if (doFullReload)
+                ReloadList(); // ViewWindow will move -bad
         }
 
         [DllImport("user32.dll")]
