@@ -138,99 +138,6 @@
   <data name="toolStripBottom.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>None</value>
   </data>
-  <data name="toolStripButtonClearFilter.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="toolStripButtonClearFilter.Size" type="System.Drawing.Size, System.Drawing">
-    <value>23, 22</value>
-  </data>
-  <data name="toolStripButtonClearFilter.ToolTipText" xml:space="preserve">
-    <value>Clear filters (F7)</value>
-  </data>
-  <data name="toolStripButtonAutoSelectMatch.Size" type="System.Drawing.Size, System.Drawing">
-    <value>209, 22</value>
-  </data>
-  <data name="toolStripButtonAutoSelectMatch.Text" xml:space="preserve">
-    <value>Autoselect first match </value>
-  </data>
-  <data name="autoselectMatchedClipMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>209, 22</value>
-  </data>
-  <data name="autoselectMatchedClipMenuItem.Text" xml:space="preserve">
-    <value>Autoselect matched clip</value>
-  </data>
-  <data name="toolStripMenuItemSearchCaseSensitive.Size" type="System.Drawing.Size, System.Drawing">
-    <value>209, 22</value>
-  </data>
-  <data name="toolStripMenuItemSearchCaseSensitive.Text" xml:space="preserve">
-    <value>Case sensitive</value>
-  </data>
-  <data name="toolStripMenuItemSearchWordsIndependently.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 9pt</value>
-  </data>
-  <data name="toolStripMenuItemSearchWordsIndependently.Size" type="System.Drawing.Size, System.Drawing">
-    <value>209, 22</value>
-  </data>
-  <data name="toolStripMenuItemSearchWordsIndependently.Text" xml:space="preserve">
-    <value>Independent words</value>
-  </data>
-  <data name="toolStripMenuItemSearchWildcards.Size" type="System.Drawing.Size, System.Drawing">
-    <value>209, 22</value>
-  </data>
-  <data name="toolStripMenuItemSearchWildcards.Text" xml:space="preserve">
-    <value>"%" as any char sequence</value>
-  </data>
-  <data name="ignoreBigTextsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>209, 22</value>
-  </data>
-  <data name="ignoreBigTextsToolStripMenuItem.Text" xml:space="preserve">
-    <value>Ignore big texts</value>
-  </data>
-  <data name="filterListBySearchStringMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>209, 22</value>
-  </data>
-  <data name="filterListBySearchStringMenuItem.Text" xml:space="preserve">
-    <value>Filter list by search string</value>
-  </data>
-  <data name="searchAllFieldsMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>209, 22</value>
-  </data>
-  <data name="searchAllFieldsMenuItem.Text" xml:space="preserve">
-    <value>Search all fields</value>
-  </data>
-  <data name="toolStripSearchOptions.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="toolStripSearchOptions.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
-    <value>No</value>
-  </data>
-  <data name="toolStripSearchOptions.Size" type="System.Drawing.Size, System.Drawing">
-    <value>29, 22</value>
-  </data>
-  <data name="toolStripSearchOptions.Text" xml:space="preserve">
-    <value>toolStripDropDownButton1</value>
-  </data>
-  <data name="toolStripSearchOptions.ToolTipText" xml:space="preserve">
-    <value>Search Options</value>
-  </data>
-  <data name="toolStripButtonFindNext.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="toolStripButtonFindNext.Size" type="System.Drawing.Size, System.Drawing">
-    <value>23, 22</value>
-  </data>
-  <data name="toolStripButtonFindNext.ToolTipText" xml:space="preserve">
-    <value>Find next match in clip text (F3)</value>
-  </data>
-  <data name="toolStripButtonFindPrevious.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="toolStripButtonFindPrevious.Size" type="System.Drawing.Size, System.Drawing">
-    <value>23, 22</value>
-  </data>
-  <data name="toolStripButtonFindPrevious.ToolTipText" xml:space="preserve">
-    <value>Find previous match in clip text (SHIFT+F3)</value>
-  </data>
   <data name="toolStripBottom.Location" type="System.Drawing.Point, System.Drawing">
     <value>270, 394</value>
   </data>
@@ -258,6 +165,9 @@
   <data name="&gt;&gt;toolStripBottom.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <metadata name="toolTipDynamic.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>377, 31</value>
+  </metadata>
   <data name="MarkFilter.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
   </data>
@@ -285,9 +195,6 @@
   <data name="MarkFilter.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
   </data>
-  <metadata name="toolTipDynamic.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>377, 31</value>
-  </metadata>
   <data name="MarkFilter.ToolTip" xml:space="preserve">
     <value>Show only clips of this marks. 
 Submenu "List" has commands for quick selection</value>
@@ -478,7 +385,7 @@ Edit search string right from list. Navigate in list right from search field.</v
     <value>False</value>
   </data>
   <data name="ColumnCreated.Width" type="System.Int32, mscorlib">
-    <value>80</value>
+    <value>5</value>
   </data>
   <data name="charsDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
     <value>Chars</value>
@@ -528,6 +435,420 @@ Edit search string right from list. Navigate in list right from search field.</v
   <metadata name="contextMenuStripDataGrid.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>-2, 26</value>
   </metadata>
+  <data name="contextMenuStripDataGrid.Size" type="System.Drawing.Size, System.Drawing">
+    <value>222, 290</value>
+  </data>
+  <data name="&gt;&gt;contextMenuStripDataGrid.Name" xml:space="preserve">
+    <value>contextMenuStripDataGrid</value>
+  </data>
+  <data name="&gt;&gt;contextMenuStripDataGrid.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <metadata name="clipBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>97, 0</value>
+  </metadata>
+  <metadata name="dbDataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>235, 2</value>
+  </metadata>
+  <data name="dataGridView.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1, 0</value>
+  </data>
+  <data name="dataGridView.Size" type="System.Drawing.Size, System.Drawing">
+    <value>369, 393</value>
+  </data>
+  <data name="dataGridView.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;dataGridView.Name" xml:space="preserve">
+    <value>dataGridView</value>
+  </data>
+  <data name="&gt;&gt;dataGridView.Type" xml:space="preserve">
+    <value>ClipAngel.MyDataGridView, ClipAngel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;dataGridView.Parent" xml:space="preserve">
+    <value>splitContainer1.Panel1</value>
+  </data>
+  <data name="&gt;&gt;dataGridView.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.Panel1.Name" xml:space="preserve">
+    <value>splitContainer1.Panel1</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.Panel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.Panel1.Parent" xml:space="preserve">
+    <value>splitContainer1</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.Panel1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="splitContainer1.Panel2.AutoScroll" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="pictureBoxSource.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Center</value>
+  </data>
+  <data name="pictureBoxSource.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="pictureBoxSource.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1, 3</value>
+  </data>
+  <data name="pictureBoxSource.Size" type="System.Drawing.Size, System.Drawing">
+    <value>16, 20</value>
+  </data>
+  <data name="pictureBoxSource.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>CenterImage</value>
+  </data>
+  <data name="pictureBoxSource.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="pictureBoxSource.ToolTip" xml:space="preserve">
+    <value>Icon of the application which was copied clip</value>
+  </data>
+  <data name="&gt;&gt;pictureBoxSource.Name" xml:space="preserve">
+    <value>pictureBoxSource</value>
+  </data>
+  <data name="&gt;&gt;pictureBoxSource.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pictureBoxSource.Parent" xml:space="preserve">
+    <value>splitContainer1.Panel2</value>
+  </data>
+  <data name="&gt;&gt;pictureBoxSource.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tableLayoutPanelData.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="tableLayoutPanelData.ColumnCount" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;urlTextBox.Name" xml:space="preserve">
+    <value>urlTextBox</value>
+  </data>
+  <data name="&gt;&gt;urlTextBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;urlTextBox.Parent" xml:space="preserve">
+    <value>tableLayoutPanelData</value>
+  </data>
+  <data name="&gt;&gt;urlTextBox.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;richTextBox.Name" xml:space="preserve">
+    <value>richTextBox</value>
+  </data>
+  <data name="&gt;&gt;richTextBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;richTextBox.Parent" xml:space="preserve">
+    <value>tableLayoutPanelData</value>
+  </data>
+  <data name="&gt;&gt;richTextBox.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;htmlTextBox.Name" xml:space="preserve">
+    <value>htmlTextBox</value>
+  </data>
+  <data name="&gt;&gt;htmlTextBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.WebBrowser, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;htmlTextBox.Parent" xml:space="preserve">
+    <value>tableLayoutPanelData</value>
+  </data>
+  <data name="&gt;&gt;htmlTextBox.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;ImageControl.Name" xml:space="preserve">
+    <value>ImageControl</value>
+  </data>
+  <data name="&gt;&gt;ImageControl.Type" xml:space="preserve">
+    <value>ClipAngel.ZoomablePictureBox, ClipAngel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;ImageControl.Parent" xml:space="preserve">
+    <value>tableLayoutPanelData</value>
+  </data>
+  <data name="&gt;&gt;ImageControl.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="tableLayoutPanelData.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 27</value>
+  </data>
+  <data name="tableLayoutPanelData.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="tableLayoutPanelData.RowCount" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="tableLayoutPanelData.Size" type="System.Drawing.Size, System.Drawing">
+    <value>412, 369</value>
+  </data>
+  <data name="tableLayoutPanelData.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanelData.Name" xml:space="preserve">
+    <value>tableLayoutPanelData</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanelData.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanelData.Parent" xml:space="preserve">
+    <value>splitContainer1.Panel2</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanelData.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="tableLayoutPanelData.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="urlTextBox" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="richTextBox" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="htmlTextBox" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="ImageControl" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,100" /&gt;&lt;Rows Styles="Percent,28,57143,Percent,28,57143,Percent,42,85714,Absolute,25,Absolute,20" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
+  <metadata name="statusStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>5, -1</value>
+  </metadata>
+  <data name="statusStrip.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left, Right</value>
+  </data>
+  <data name="statusStrip.AutoSize" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="statusStrip.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="statusStrip.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 398</value>
+  </data>
+  <data name="statusStrip.Size" type="System.Drawing.Size, System.Drawing">
+    <value>416, 22</value>
+  </data>
+  <data name="statusStrip.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="statusStrip.Text" xml:space="preserve">
+    <value>statusStrip</value>
+  </data>
+  <data name="&gt;&gt;statusStrip.Name" xml:space="preserve">
+    <value>statusStrip</value>
+  </data>
+  <data name="&gt;&gt;statusStrip.Type" xml:space="preserve">
+    <value>System.Windows.Forms.StatusStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;statusStrip.Parent" xml:space="preserve">
+    <value>splitContainer1.Panel2</value>
+  </data>
+  <data name="&gt;&gt;statusStrip.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="textBoxApplication.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <metadata name="contextMenuStripApplication.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>751, 2</value>
+  </metadata>
+  <data name="contextMenuStripApplication.Size" type="System.Drawing.Size, System.Drawing">
+    <value>172, 48</value>
+  </data>
+  <data name="&gt;&gt;contextMenuStripApplication.Name" xml:space="preserve">
+    <value>contextMenuStripApplication</value>
+  </data>
+  <data name="&gt;&gt;contextMenuStripApplication.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="textBoxApplication.Location" type="System.Drawing.Point, System.Drawing">
+    <value>329, 3</value>
+  </data>
+  <data name="textBoxApplication.Size" type="System.Drawing.Size, System.Drawing">
+    <value>83, 20</value>
+  </data>
+  <data name="textBoxApplication.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="textBoxApplication.Text" xml:space="preserve">
+    <value>Application</value>
+  </data>
+  <data name="textBoxApplication.ToolTip" xml:space="preserve">
+    <value>Application which copied clip</value>
+  </data>
+  <data name="&gt;&gt;textBoxApplication.Name" xml:space="preserve">
+    <value>textBoxApplication</value>
+  </data>
+  <data name="&gt;&gt;textBoxApplication.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textBoxApplication.Parent" xml:space="preserve">
+    <value>splitContainer1.Panel2</value>
+  </data>
+  <data name="&gt;&gt;textBoxApplication.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="textBoxWindow.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <metadata name="contextMenuWindowTitle.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>1232, 29</value>
+  </metadata>
+  <data name="contextMenuWindowTitle.Size" type="System.Drawing.Size, System.Drawing">
+    <value>141, 26</value>
+  </data>
+  <data name="&gt;&gt;contextMenuWindowTitle.Name" xml:space="preserve">
+    <value>contextMenuWindowTitle</value>
+  </data>
+  <data name="&gt;&gt;contextMenuWindowTitle.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="textBoxWindow.Location" type="System.Drawing.Point, System.Drawing">
+    <value>22, 3</value>
+  </data>
+  <data name="textBoxWindow.Size" type="System.Drawing.Size, System.Drawing">
+    <value>301, 20</value>
+  </data>
+  <data name="textBoxWindow.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="textBoxWindow.Text" xml:space="preserve">
+    <value>Window</value>
+  </data>
+  <data name="textBoxWindow.ToolTip" xml:space="preserve">
+    <value>Title of window which copied clip</value>
+  </data>
+  <data name="&gt;&gt;textBoxWindow.Name" xml:space="preserve">
+    <value>textBoxWindow</value>
+  </data>
+  <data name="&gt;&gt;textBoxWindow.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textBoxWindow.Parent" xml:space="preserve">
+    <value>splitContainer1.Panel2</value>
+  </data>
+  <data name="&gt;&gt;textBoxWindow.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.Panel2.Name" xml:space="preserve">
+    <value>splitContainer1.Panel2</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.Panel2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.Panel2.Parent" xml:space="preserve">
+    <value>splitContainer1</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.Panel2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="splitContainer1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>790, 420</value>
+  </data>
+  <data name="splitContainer1.SplitterDistance" type="System.Int32, mscorlib">
+    <value>370</value>
+  </data>
+  <data name="splitContainer1.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.Name" xml:space="preserve">
+    <value>splitContainer1</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitContainer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;splitContainer1.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="toolStripButtonClearFilter.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="toolStripButtonClearFilter.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 22</value>
+  </data>
+  <data name="toolStripButtonClearFilter.ToolTipText" xml:space="preserve">
+    <value>Clear filters (F7)</value>
+  </data>
+  <data name="toolStripSearchOptions.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="toolStripSearchOptions.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="toolStripSearchOptions.Size" type="System.Drawing.Size, System.Drawing">
+    <value>29, 22</value>
+  </data>
+  <data name="toolStripSearchOptions.Text" xml:space="preserve">
+    <value>toolStripDropDownButton1</value>
+  </data>
+  <data name="toolStripSearchOptions.ToolTipText" xml:space="preserve">
+    <value>Search Options</value>
+  </data>
+  <data name="toolStripButtonAutoSelectMatch.Size" type="System.Drawing.Size, System.Drawing">
+    <value>209, 22</value>
+  </data>
+  <data name="toolStripButtonAutoSelectMatch.Text" xml:space="preserve">
+    <value>Autoselect first match </value>
+  </data>
+  <data name="autoselectMatchedClipMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>209, 22</value>
+  </data>
+  <data name="autoselectMatchedClipMenuItem.Text" xml:space="preserve">
+    <value>Autoselect matched clip</value>
+  </data>
+  <data name="toolStripMenuItemSearchCaseSensitive.Size" type="System.Drawing.Size, System.Drawing">
+    <value>209, 22</value>
+  </data>
+  <data name="toolStripMenuItemSearchCaseSensitive.Text" xml:space="preserve">
+    <value>Case sensitive</value>
+  </data>
+  <data name="toolStripMenuItemSearchWordsIndependently.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9pt</value>
+  </data>
+  <data name="toolStripMenuItemSearchWordsIndependently.Size" type="System.Drawing.Size, System.Drawing">
+    <value>209, 22</value>
+  </data>
+  <data name="toolStripMenuItemSearchWordsIndependently.Text" xml:space="preserve">
+    <value>Independent words</value>
+  </data>
+  <data name="toolStripMenuItemSearchWildcards.Size" type="System.Drawing.Size, System.Drawing">
+    <value>209, 22</value>
+  </data>
+  <data name="toolStripMenuItemSearchWildcards.Text" xml:space="preserve">
+    <value>"%" as any char sequence</value>
+  </data>
+  <data name="ignoreBigTextsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>209, 22</value>
+  </data>
+  <data name="ignoreBigTextsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Ignore big texts</value>
+  </data>
+  <data name="filterListBySearchStringMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>209, 22</value>
+  </data>
+  <data name="filterListBySearchStringMenuItem.Text" xml:space="preserve">
+    <value>Filter list by search string</value>
+  </data>
+  <data name="searchAllFieldsMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>209, 22</value>
+  </data>
+  <data name="searchAllFieldsMenuItem.Text" xml:space="preserve">
+    <value>Search all fields</value>
+  </data>
+  <data name="toolStripButtonFindNext.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="toolStripButtonFindNext.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 22</value>
+  </data>
+  <data name="toolStripButtonFindNext.ToolTipText" xml:space="preserve">
+    <value>Find next match in clip text (F3)</value>
+  </data>
+  <data name="toolStripButtonFindPrevious.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="toolStripButtonFindPrevious.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 22</value>
+  </data>
+  <data name="toolStripButtonFindPrevious.ToolTipText" xml:space="preserve">
+    <value>Find previous match in clip text (SHIFT+F3)</value>
+  </data>
   <data name="toolStripMenuItem2.Size" type="System.Drawing.Size, System.Drawing">
     <value>221, 22</value>
   </data>
@@ -665,114 +986,12 @@ Changes in temp file are not synchronized with clip!</value>
   <data name="deleteToolStripMenuItem1.ToolTipText" xml:space="preserve">
     <value>Delete selected clips from list. Real deletion is performed on database close.</value>
   </data>
-  <data name="contextMenuStripDataGrid.Size" type="System.Drawing.Size, System.Drawing">
-    <value>222, 290</value>
-  </data>
-  <data name="&gt;&gt;contextMenuStripDataGrid.Name" xml:space="preserve">
-    <value>contextMenuStripDataGrid</value>
-  </data>
-  <data name="&gt;&gt;contextMenuStripDataGrid.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <metadata name="clipBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>97, 0</value>
-  </metadata>
-  <metadata name="dbDataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>235, 2</value>
-  </metadata>
-  <data name="dataGridView.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1, 0</value>
-  </data>
-  <data name="dataGridView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>369, 393</value>
-  </data>
-  <data name="dataGridView.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;dataGridView.Name" xml:space="preserve">
-    <value>dataGridView</value>
-  </data>
-  <data name="&gt;&gt;dataGridView.Type" xml:space="preserve">
-    <value>ClipAngel.MyDataGridView, ClipAngel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;dataGridView.Parent" xml:space="preserve">
-    <value>splitContainer1.Panel1</value>
-  </data>
-  <data name="&gt;&gt;dataGridView.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;splitContainer1.Panel1.Name" xml:space="preserve">
-    <value>splitContainer1.Panel1</value>
-  </data>
-  <data name="&gt;&gt;splitContainer1.Panel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;splitContainer1.Panel1.Parent" xml:space="preserve">
-    <value>splitContainer1</value>
-  </data>
-  <data name="&gt;&gt;splitContainer1.Panel1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="splitContainer1.Panel2.AutoScroll" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="pictureBoxSource.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>Center</value>
-  </data>
-  <data name="pictureBoxSource.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="pictureBoxSource.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1, 3</value>
-  </data>
-  <data name="pictureBoxSource.Size" type="System.Drawing.Size, System.Drawing">
-    <value>16, 20</value>
-  </data>
-  <data name="pictureBoxSource.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
-    <value>CenterImage</value>
-  </data>
-  <data name="pictureBoxSource.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="pictureBoxSource.ToolTip" xml:space="preserve">
-    <value>Icon of the application which was copied clip</value>
-  </data>
-  <data name="&gt;&gt;pictureBoxSource.Name" xml:space="preserve">
-    <value>pictureBoxSource</value>
-  </data>
-  <data name="&gt;&gt;pictureBoxSource.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pictureBoxSource.Parent" xml:space="preserve">
-    <value>splitContainer1.Panel2</value>
-  </data>
-  <data name="&gt;&gt;pictureBoxSource.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="tableLayoutPanelData.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
-  </data>
-  <data name="tableLayoutPanelData.ColumnCount" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
   <data name="urlTextBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
   <metadata name="contextMenuUrl.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>1177, 0</value>
   </metadata>
-  <data name="contextMenuUrlOpenLink.Size" type="System.Drawing.Size, System.Drawing">
-    <value>187, 22</value>
-  </data>
-  <data name="contextMenuUrlOpenLink.Text" xml:space="preserve">
-    <value>Open link (ALT+click)</value>
-  </data>
-  <data name="toolStripUrlCopyAll.Size" type="System.Drawing.Size, System.Drawing">
-    <value>187, 22</value>
-  </data>
-  <data name="toolStripUrlCopyAll.Text" xml:space="preserve">
-    <value>Copy all text</value>
-  </data>
   <data name="contextMenuUrl.Size" type="System.Drawing.Size, System.Drawing">
     <value>188, 48</value>
   </data>
@@ -818,12 +1037,60 @@ Changes in temp file are not synchronized with clip!</value>
   <data name="&gt;&gt;urlTextBox.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="contextMenuUrlOpenLink.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 22</value>
+  </data>
+  <data name="contextMenuUrlOpenLink.Text" xml:space="preserve">
+    <value>Open link (ALT+click)</value>
+  </data>
+  <data name="toolStripUrlCopyAll.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 22</value>
+  </data>
+  <data name="toolStripUrlCopyAll.Text" xml:space="preserve">
+    <value>Copy all text</value>
+  </data>
   <data name="richTextBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
   <metadata name="contextMenuStripRtf.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>600, 2</value>
   </metadata>
+  <data name="contextMenuStripRtf.Size" type="System.Drawing.Size, System.Drawing">
+    <value>206, 120</value>
+  </data>
+  <data name="&gt;&gt;contextMenuStripRtf.Name" xml:space="preserve">
+    <value>contextMenuStripRtf</value>
+  </data>
+  <data name="&gt;&gt;contextMenuStripRtf.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="richTextBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>2, 2</value>
+  </data>
+  <data name="richTextBox.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="richTextBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>408, 94</value>
+  </data>
+  <data name="richTextBox.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="richTextBox.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;richTextBox.Name" xml:space="preserve">
+    <value>richTextBox</value>
+  </data>
+  <data name="&gt;&gt;richTextBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;richTextBox.Parent" xml:space="preserve">
+    <value>tableLayoutPanelData</value>
+  </data>
+  <data name="&gt;&gt;richTextBox.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <data name="rtfMenuItemOpenLink.Size" type="System.Drawing.Size, System.Drawing">
     <value>205, 22</value>
   </data>
@@ -870,45 +1137,45 @@ Changes in temp file are not synchronized with clip!</value>
   <data name="setSelectedTextInFilterToolStripMenuRtf.ToolTipText" xml:space="preserve">
     <value>Set selected text in text filter</value>
   </data>
-  <data name="contextMenuStripRtf.Size" type="System.Drawing.Size, System.Drawing">
-    <value>206, 120</value>
-  </data>
-  <data name="&gt;&gt;contextMenuStripRtf.Name" xml:space="preserve">
-    <value>contextMenuStripRtf</value>
-  </data>
-  <data name="&gt;&gt;contextMenuStripRtf.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="richTextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>2, 2</value>
-  </data>
-  <data name="richTextBox.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
-  </data>
-  <data name="richTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>408, 94</value>
-  </data>
-  <data name="richTextBox.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="richTextBox.Text" xml:space="preserve">
-    <value />
-  </data>
-  <data name="&gt;&gt;richTextBox.Name" xml:space="preserve">
-    <value>richTextBox</value>
-  </data>
-  <data name="&gt;&gt;richTextBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;richTextBox.Parent" xml:space="preserve">
-    <value>tableLayoutPanelData</value>
-  </data>
-  <data name="&gt;&gt;richTextBox.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <metadata name="contextMenuStripHtml.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>451, 2</value>
   </metadata>
+  <data name="contextMenuStripHtml.Size" type="System.Drawing.Size, System.Drawing">
+    <value>209, 164</value>
+  </data>
+  <data name="&gt;&gt;contextMenuStripHtml.Name" xml:space="preserve">
+    <value>contextMenuStripHtml</value>
+  </data>
+  <data name="&gt;&gt;contextMenuStripHtml.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="htmlTextBox.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="htmlTextBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 101</value>
+  </data>
+  <data name="htmlTextBox.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>20, 20</value>
+  </data>
+  <data name="htmlTextBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>406, 92</value>
+  </data>
+  <data name="htmlTextBox.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;htmlTextBox.Name" xml:space="preserve">
+    <value>htmlTextBox</value>
+  </data>
+  <data name="&gt;&gt;htmlTextBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.WebBrowser, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;htmlTextBox.Parent" xml:space="preserve">
+    <value>tableLayoutPanelData</value>
+  </data>
+  <data name="&gt;&gt;htmlTextBox.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
   <data name="htmlMenuItemOpenLink.Size" type="System.Drawing.Size, System.Drawing">
     <value>208, 22</value>
   </data>
@@ -967,60 +1234,12 @@ Changes in temp file are not synchronized with clip!</value>
   <data name="setSelectedTextInFilterToolStripHtml.ToolTipText" xml:space="preserve">
     <value>Set selected text in text filter</value>
   </data>
-  <data name="contextMenuStripHtml.Size" type="System.Drawing.Size, System.Drawing">
-    <value>209, 164</value>
-  </data>
-  <data name="&gt;&gt;contextMenuStripHtml.Name" xml:space="preserve">
-    <value>contextMenuStripHtml</value>
-  </data>
-  <data name="&gt;&gt;contextMenuStripHtml.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="htmlTextBox.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="htmlTextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 101</value>
-  </data>
-  <data name="htmlTextBox.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>20, 20</value>
-  </data>
-  <data name="htmlTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>406, 92</value>
-  </data>
-  <data name="htmlTextBox.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="&gt;&gt;htmlTextBox.Name" xml:space="preserve">
-    <value>htmlTextBox</value>
-  </data>
-  <data name="&gt;&gt;htmlTextBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.WebBrowser, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;htmlTextBox.Parent" xml:space="preserve">
-    <value>tableLayoutPanelData</value>
-  </data>
-  <data name="&gt;&gt;htmlTextBox.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <data name="ImageControl.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
   <metadata name="contextMenuPictureBox.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>274, 57</value>
   </metadata>
-  <data name="originalSizeToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>150, 22</value>
-  </data>
-  <data name="originalSizeToolStripMenuItem.Text" xml:space="preserve">
-    <value>Original size</value>
-  </data>
-  <data name="fitFromInsideToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>150, 22</value>
-  </data>
-  <data name="fitFromInsideToolStripMenuItem.Text" xml:space="preserve">
-    <value>Fit from inside</value>
-  </data>
   <data name="contextMenuPictureBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>151, 48</value>
   </data>
@@ -1057,47 +1276,17 @@ Changes in temp file are not synchronized with clip!</value>
   <data name="&gt;&gt;ImageControl.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="tableLayoutPanelData.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 27</value>
+  <data name="originalSizeToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>150, 22</value>
   </data>
-  <data name="tableLayoutPanelData.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
+  <data name="originalSizeToolStripMenuItem.Text" xml:space="preserve">
+    <value>Original size</value>
   </data>
-  <data name="tableLayoutPanelData.RowCount" type="System.Int32, mscorlib">
-    <value>4</value>
+  <data name="fitFromInsideToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>150, 22</value>
   </data>
-  <data name="tableLayoutPanelData.Size" type="System.Drawing.Size, System.Drawing">
-    <value>412, 369</value>
-  </data>
-  <data name="tableLayoutPanelData.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanelData.Name" xml:space="preserve">
-    <value>tableLayoutPanelData</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanelData.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanelData.Parent" xml:space="preserve">
-    <value>splitContainer1.Panel2</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanelData.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="tableLayoutPanelData.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="urlTextBox" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="richTextBox" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="htmlTextBox" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="ImageControl" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,100" /&gt;&lt;Rows Styles="Percent,28,57143,Percent,28,57143,Percent,42,85714,Absolute,25,Absolute,20" /&gt;&lt;/TableLayoutSettings&gt;</value>
-  </data>
-  <metadata name="statusStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>5, -1</value>
-  </metadata>
-  <data name="statusStrip.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left, Right</value>
-  </data>
-  <data name="statusStrip.AutoSize" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="statusStrip.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>None</value>
+  <data name="fitFromInsideToolStripMenuItem.Text" xml:space="preserve">
+    <value>Fit from inside</value>
   </data>
   <data name="stripLabelFiltered.Size" type="System.Drawing.Size, System.Drawing">
     <value>50, 17</value>
@@ -1183,36 +1372,6 @@ Changes in temp file are not synchronized with clip!</value>
   <data name="StripLabelCreated.ToolTipText" xml:space="preserve">
     <value>Created time</value>
   </data>
-  <data name="statusStrip.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 398</value>
-  </data>
-  <data name="statusStrip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>416, 22</value>
-  </data>
-  <data name="statusStrip.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="statusStrip.Text" xml:space="preserve">
-    <value>statusStrip</value>
-  </data>
-  <data name="&gt;&gt;statusStrip.Name" xml:space="preserve">
-    <value>statusStrip</value>
-  </data>
-  <data name="&gt;&gt;statusStrip.Type" xml:space="preserve">
-    <value>System.Windows.Forms.StatusStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;statusStrip.Parent" xml:space="preserve">
-    <value>splitContainer1.Panel2</value>
-  </data>
-  <data name="&gt;&gt;statusStrip.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="textBoxApplication.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
-  </data>
-  <metadata name="contextMenuStripApplication.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>751, 2</value>
-  </metadata>
   <data name="copyFullFilenameToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>171, 22</value>
   </data>
@@ -1225,126 +1384,45 @@ Changes in temp file are not synchronized with clip!</value>
   <data name="toolStripApplicationCopyAll.Text" xml:space="preserve">
     <value>Copy all text</value>
   </data>
-  <data name="contextMenuStripApplication.Size" type="System.Drawing.Size, System.Drawing">
-    <value>172, 48</value>
-  </data>
-  <data name="&gt;&gt;contextMenuStripApplication.Name" xml:space="preserve">
-    <value>contextMenuStripApplication</value>
-  </data>
-  <data name="&gt;&gt;contextMenuStripApplication.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="textBoxApplication.Location" type="System.Drawing.Point, System.Drawing">
-    <value>329, 3</value>
-  </data>
-  <data name="textBoxApplication.Size" type="System.Drawing.Size, System.Drawing">
-    <value>83, 20</value>
-  </data>
-  <data name="textBoxApplication.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="textBoxApplication.Text" xml:space="preserve">
-    <value>Application</value>
-  </data>
-  <data name="textBoxApplication.ToolTip" xml:space="preserve">
-    <value>Application which copied clip</value>
-  </data>
-  <data name="&gt;&gt;textBoxApplication.Name" xml:space="preserve">
-    <value>textBoxApplication</value>
-  </data>
-  <data name="&gt;&gt;textBoxApplication.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;textBoxApplication.Parent" xml:space="preserve">
-    <value>splitContainer1.Panel2</value>
-  </data>
-  <data name="&gt;&gt;textBoxApplication.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="textBoxWindow.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
-  <metadata name="contextMenuWindowTitle.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1232, 29</value>
-  </metadata>
   <data name="toolStripWindowTitleCopyAll.Size" type="System.Drawing.Size, System.Drawing">
     <value>140, 22</value>
   </data>
   <data name="toolStripWindowTitleCopyAll.Text" xml:space="preserve">
     <value>Copy all text</value>
   </data>
-  <data name="contextMenuWindowTitle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>141, 26</value>
-  </data>
-  <data name="&gt;&gt;contextMenuWindowTitle.Name" xml:space="preserve">
-    <value>contextMenuWindowTitle</value>
-  </data>
-  <data name="&gt;&gt;contextMenuWindowTitle.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="textBoxWindow.Location" type="System.Drawing.Point, System.Drawing">
-    <value>22, 3</value>
-  </data>
-  <data name="textBoxWindow.Size" type="System.Drawing.Size, System.Drawing">
-    <value>301, 20</value>
-  </data>
-  <data name="textBoxWindow.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="textBoxWindow.Text" xml:space="preserve">
-    <value>Window</value>
-  </data>
-  <data name="textBoxWindow.ToolTip" xml:space="preserve">
-    <value>Title of window which copied clip</value>
-  </data>
-  <data name="&gt;&gt;textBoxWindow.Name" xml:space="preserve">
-    <value>textBoxWindow</value>
-  </data>
-  <data name="&gt;&gt;textBoxWindow.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;textBoxWindow.Parent" xml:space="preserve">
-    <value>splitContainer1.Panel2</value>
-  </data>
-  <data name="&gt;&gt;textBoxWindow.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;splitContainer1.Panel2.Name" xml:space="preserve">
-    <value>splitContainer1.Panel2</value>
-  </data>
-  <data name="&gt;&gt;splitContainer1.Panel2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;splitContainer1.Panel2.Parent" xml:space="preserve">
-    <value>splitContainer1</value>
-  </data>
-  <data name="&gt;&gt;splitContainer1.Panel2.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="splitContainer1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>790, 420</value>
-  </data>
-  <data name="splitContainer1.SplitterDistance" type="System.Int32, mscorlib">
-    <value>370</value>
-  </data>
-  <data name="splitContainer1.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;splitContainer1.Name" xml:space="preserve">
-    <value>splitContainer1</value>
-  </data>
-  <data name="&gt;&gt;splitContainer1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.SplitContainer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;splitContainer1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;splitContainer1.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
   <metadata name="MainMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>946, 0</value>
   </metadata>
+  <data name="MainMenu.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="MainMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>790, 24</value>
+  </data>
+  <data name="MainMenu.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="MainMenu.Text" xml:space="preserve">
+    <value>menuStrip1</value>
+  </data>
+  <data name="&gt;&gt;MainMenu.Name" xml:space="preserve">
+    <value>MainMenu</value>
+  </data>
+  <data name="&gt;&gt;MainMenu.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;MainMenu.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;MainMenu.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="fileToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>63, 20</value>
+  </data>
+  <data name="fileToolStripMenuItem1.Text" xml:space="preserve">
+    <value>Window</value>
+  </data>
   <data name="toolStripMenuItemSwitchFocus.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>F10</value>
   </data>
@@ -1423,11 +1501,11 @@ When ON and "Fast window open" OFF, window will be shown in taskbar if visible.
   <data name="exitToolStripMenuItem.ToolTipText" xml:space="preserve">
     <value>Exit the program</value>
   </data>
-  <data name="fileToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>63, 20</value>
+  <data name="listToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>37, 20</value>
   </data>
-  <data name="fileToolStripMenuItem1.Text" xml:space="preserve">
-    <value>Window</value>
+  <data name="listToolStripMenuItem.Text" xml:space="preserve">
+    <value>List</value>
   </data>
   <data name="toolStripMenuItemSecondaryColumns.Size" type="System.Drawing.Size, System.Drawing">
     <value>253, 22</value>
@@ -1489,6 +1567,12 @@ When ON and "Fast window open" OFF, window will be shown in taskbar if visible.
   <data name="filterByDateToolStripMenuItem.ToolTipText" xml:space="preserve">
     <value>Set filter by clip creation date</value>
   </data>
+  <data name="sortingToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>253, 22</value>
+  </data>
+  <data name="sortingToolStripMenuItem.Text" xml:space="preserve">
+    <value>Sort</value>
+  </data>
   <data name="sortByDefaultToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>183, 22</value>
   </data>
@@ -1524,12 +1608,6 @@ Sorting is kept until clip capture.</value>
   <data name="sortByToolStripMenuItem.ToolTipText" xml:space="preserve">
     <value>
 Sorting is kept until clip capture.</value>
-  </data>
-  <data name="sortingToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>253, 22</value>
-  </data>
-  <data name="sortingToolStripMenuItem.Text" xml:space="preserve">
-    <value>Sort</value>
   </data>
   <data name="deleteAllNonFavoriteToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+Alt+K</value>
@@ -1684,11 +1762,17 @@ Sorting is kept until clip capture.</value>
   <data name="gotoTopToolStripMenuItem.ToolTipText" xml:space="preserve">
     <value>Select top (last) clip</value>
   </data>
-  <data name="listToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>37, 20</value>
+  <data name="clipToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>40, 20</value>
   </data>
-  <data name="listToolStripMenuItem.Text" xml:space="preserve">
-    <value>List</value>
+  <data name="clipToolStripMenuItem.Text" xml:space="preserve">
+    <value>Clip</value>
+  </data>
+  <data name="pasteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>220, 22</value>
+  </data>
+  <data name="pasteToolStripMenuItem.Text" xml:space="preserve">
+    <value>Paste</value>
   </data>
   <data name="pasteENTERToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>221, 22</value>
@@ -1753,12 +1837,6 @@ Sorting is kept until clip capture.</value>
   <data name="toolStripMenuItemPasteCharsSlow.ToolTipText" xml:space="preserve">
     <value>Simulate in active window fast char input of selected text of clip or aggregated text of selected clips.
 Not working for sending to elevated window</value>
-  </data>
-  <data name="pasteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>220, 22</value>
-  </data>
-  <data name="pasteToolStripMenuItem.Text" xml:space="preserve">
-    <value>Paste</value>
   </data>
   <data name="pasteIntoSearchFieldMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+D</value>
@@ -2008,17 +2086,17 @@ added to ignore list, which can be edited in Settings window.</value>
     <value>Decode selected or all text of clip using URL rules (%) into new clip
 </value>
   </data>
-  <data name="clipToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>40, 20</value>
-  </data>
-  <data name="clipToolStripMenuItem.Text" xml:space="preserve">
-    <value>Clip</value>
-  </data>
   <data name="settingsToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
     <value>61, 20</value>
   </data>
   <data name="settingsToolStripMenuItem1.Text" xml:space="preserve">
     <value>Settings</value>
+  </data>
+  <data name="fToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>44, 20</value>
+  </data>
+  <data name="fToolStripMenuItem.Text" xml:space="preserve">
+    <value>Help</value>
   </data>
   <data name="checkUpdateToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>178, 22</value>
@@ -2056,35 +2134,11 @@ added to ignore list, which can be edited in Settings window.</value>
   <data name="aboutToolStripMenuItem1.Text" xml:space="preserve">
     <value>About</value>
   </data>
-  <data name="fToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>44, 20</value>
+  <data name="fileToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>37, 20</value>
   </data>
-  <data name="fToolStripMenuItem.Text" xml:space="preserve">
-    <value>Help</value>
-  </data>
-  <data name="MainMenu.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="MainMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>790, 24</value>
-  </data>
-  <data name="MainMenu.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="MainMenu.Text" xml:space="preserve">
-    <value>menuStrip1</value>
-  </data>
-  <data name="&gt;&gt;MainMenu.Name" xml:space="preserve">
-    <value>MainMenu</value>
-  </data>
-  <data name="&gt;&gt;MainMenu.Type" xml:space="preserve">
-    <value>System.Windows.Forms.MenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;MainMenu.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;MainMenu.ZOrder" xml:space="preserve">
-    <value>10</value>
+  <data name="fileToolStripMenuItem.Text" xml:space="preserve">
+    <value>File</value>
   </data>
   <data name="toolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
     <value>93, 22</value>
@@ -2092,11 +2146,11 @@ added to ignore list, which can be edited in Settings window.</value>
   <data name="toolStripMenuItem1.Text" xml:space="preserve">
     <value>Exit</value>
   </data>
-  <data name="fileToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>37, 20</value>
+  <data name="deleteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>40, 20</value>
   </data>
-  <data name="fileToolStripMenuItem.Text" xml:space="preserve">
-    <value>File</value>
+  <data name="deleteToolStripMenuItem.Text" xml:space="preserve">
+    <value>Clip</value>
   </data>
   <data name="sendPasteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>208, 22</value>
@@ -2119,12 +2173,6 @@ added to ignore list, which can be edited in Settings window.</value>
   <data name="toolStripMenuItem4.Text" xml:space="preserve">
     <value>Delete</value>
   </data>
-  <data name="deleteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>40, 20</value>
-  </data>
-  <data name="deleteToolStripMenuItem.Text" xml:space="preserve">
-    <value>Clip</value>
-  </data>
   <data name="settingsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>61, 20</value>
   </data>
@@ -2143,54 +2191,6 @@ added to ignore list, which can be edited in Settings window.</value>
   <metadata name="contextMenuStripNotifyIcon.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>183, 28</value>
   </metadata>
-  <data name="openWindowToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>187, 22</value>
-  </data>
-  <data name="openWindowToolStripMenuItem.Text" xml:space="preserve">
-    <value>Open window</value>
-  </data>
-  <data name="openLastClipsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>187, 22</value>
-  </data>
-  <data name="openLastClipsToolStripMenuItem.Text" xml:space="preserve">
-    <value>Open last clips</value>
-  </data>
-  <data name="openFavoritesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>187, 22</value>
-  </data>
-  <data name="openFavoritesToolStripMenuItem.Text" xml:space="preserve">
-    <value>Open favorite clips</value>
-  </data>
-  <data name="toolStripMenuItemCompareLastClips.Size" type="System.Drawing.Size, System.Drawing">
-    <value>187, 22</value>
-  </data>
-  <data name="toolStripMenuItemCompareLastClips.Text" xml:space="preserve">
-    <value>Compare last clips</value>
-  </data>
-  <data name="toolStripMenuItemCompareLastClips.ToolTipText" xml:space="preserve">
-    <value>Compare text of last clips</value>
-  </data>
-  <data name="trayMenuItemMonitoringClipboard.Size" type="System.Drawing.Size, System.Drawing">
-    <value>187, 22</value>
-  </data>
-  <data name="trayMenuItemMonitoringClipboard.Text" xml:space="preserve">
-    <value>Monitoring clipboard</value>
-  </data>
-  <data name="trayMenuItemMonitoringClipboard.ToolTipText" xml:space="preserve">
-    <value>Capture changes in clipboard</value>
-  </data>
-  <data name="toolStripMenuItem9.Size" type="System.Drawing.Size, System.Drawing">
-    <value>187, 22</value>
-  </data>
-  <data name="toolStripMenuItem9.Text" xml:space="preserve">
-    <value>Clear clipboard</value>
-  </data>
-  <data name="exitToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>187, 22</value>
-  </data>
-  <data name="exitToolStripMenuItem1.Text" xml:space="preserve">
-    <value>Exit</value>
-  </data>
   <data name="contextMenuStripNotifyIcon.Size" type="System.Drawing.Size, System.Drawing">
     <value>188, 158</value>
   </data>
@@ -2744,11 +2744,83 @@ added to ignore list, which can be edited in Settings window.</value>
   <data name="notifyIcon.Visible" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="openWindowToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 22</value>
+  </data>
+  <data name="openWindowToolStripMenuItem.Text" xml:space="preserve">
+    <value>Open window</value>
+  </data>
+  <data name="openLastClipsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 22</value>
+  </data>
+  <data name="openLastClipsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Open last clips</value>
+  </data>
+  <data name="openFavoritesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 22</value>
+  </data>
+  <data name="openFavoritesToolStripMenuItem.Text" xml:space="preserve">
+    <value>Open favorite clips</value>
+  </data>
+  <data name="toolStripMenuItemCompareLastClips.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 22</value>
+  </data>
+  <data name="toolStripMenuItemCompareLastClips.Text" xml:space="preserve">
+    <value>Compare last clips</value>
+  </data>
+  <data name="toolStripMenuItemCompareLastClips.ToolTipText" xml:space="preserve">
+    <value>Compare text of last clips</value>
+  </data>
+  <data name="trayMenuItemMonitoringClipboard.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 22</value>
+  </data>
+  <data name="trayMenuItemMonitoringClipboard.Text" xml:space="preserve">
+    <value>Monitoring clipboard</value>
+  </data>
+  <data name="trayMenuItemMonitoringClipboard.ToolTipText" xml:space="preserve">
+    <value>Capture changes in clipboard</value>
+  </data>
+  <data name="toolStripMenuItem9.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 22</value>
+  </data>
+  <data name="toolStripMenuItem9.Text" xml:space="preserve">
+    <value>Clear clipboard</value>
+  </data>
+  <data name="exitToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 22</value>
+  </data>
+  <data name="exitToolStripMenuItem1.Text" xml:space="preserve">
+    <value>Exit</value>
+  </data>
   <metadata name="toolStripTop.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>625, 29</value>
   </metadata>
   <data name="toolStripTop.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>None</value>
+  </data>
+  <data name="toolStripTop.Location" type="System.Drawing.Point, System.Drawing">
+    <value>372, 0</value>
+  </data>
+  <data name="toolStripTop.Size" type="System.Drawing.Size, System.Drawing">
+    <value>253, 25</value>
+  </data>
+  <data name="toolStripTop.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="toolStripTop.Text" xml:space="preserve">
+    <value>toolStrip1</value>
+  </data>
+  <data name="&gt;&gt;toolStripTop.Name" xml:space="preserve">
+    <value>toolStripTop</value>
+  </data>
+  <data name="&gt;&gt;toolStripTop.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripTop.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;toolStripTop.ZOrder" xml:space="preserve">
+    <value>8</value>
   </data>
   <data name="toolStripButtonTextFormatting.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
@@ -2907,30 +2979,6 @@ Changes in temp file are not synchronized with clip!
   </data>
   <data name="buttonUpdate.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
-  </data>
-  <data name="toolStripTop.Location" type="System.Drawing.Point, System.Drawing">
-    <value>372, 0</value>
-  </data>
-  <data name="toolStripTop.Size" type="System.Drawing.Size, System.Drawing">
-    <value>253, 25</value>
-  </data>
-  <data name="toolStripTop.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="toolStripTop.Text" xml:space="preserve">
-    <value>toolStrip1</value>
-  </data>
-  <data name="&gt;&gt;toolStripTop.Name" xml:space="preserve">
-    <value>toolStripTop</value>
-  </data>
-  <data name="&gt;&gt;toolStripTop.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripTop.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;toolStripTop.ZOrder" xml:space="preserve">
-    <value>8</value>
   </data>
   <metadata name="cultureManager1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>500, 30</value>
@@ -3562,90 +3610,6 @@ Changes in temp file are not synchronized with clip!
   </data>
   <data name="&gt;&gt;toolStripButtonFindPrevious.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;AppImage.Name" xml:space="preserve">
-    <value>AppImage</value>
-  </data>
-  <data name="&gt;&gt;AppImage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewImageColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;TypeImage.Name" xml:space="preserve">
-    <value>TypeImage</value>
-  </data>
-  <data name="&gt;&gt;TypeImage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewImageColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ColumnTitle.Name" xml:space="preserve">
-    <value>ColumnTitle</value>
-  </data>
-  <data name="&gt;&gt;ColumnTitle.Type" xml:space="preserve">
-    <value>ClipAngel.DataGridViewRichTextBoxColumn, ClipAngel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;ImageSample.Name" xml:space="preserve">
-    <value>ImageSample</value>
-  </data>
-  <data name="&gt;&gt;ImageSample.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewImageColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;VisualWeight.Name" xml:space="preserve">
-    <value>VisualWeight</value>
-  </data>
-  <data name="&gt;&gt;VisualWeight.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;imageSampleDataGridViewImageColumn.Name" xml:space="preserve">
-    <value>imageSampleDataGridViewImageColumn</value>
-  </data>
-  <data name="&gt;&gt;imageSampleDataGridViewImageColumn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewImageColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ColumnCreated.Name" xml:space="preserve">
-    <value>ColumnCreated</value>
-  </data>
-  <data name="&gt;&gt;ColumnCreated.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;charsDataGridViewTextBoxColumn.Name" xml:space="preserve">
-    <value>charsDataGridViewTextBoxColumn</value>
-  </data>
-  <data name="&gt;&gt;charsDataGridViewTextBoxColumn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SizeDataGridViewTextBoxColumn.Name" xml:space="preserve">
-    <value>SizeDataGridViewTextBoxColumn</value>
-  </data>
-  <data name="&gt;&gt;SizeDataGridViewTextBoxColumn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;usedDataGridViewCheckBoxColumn.Name" xml:space="preserve">
-    <value>usedDataGridViewCheckBoxColumn</value>
-  </data>
-  <data name="&gt;&gt;usedDataGridViewCheckBoxColumn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewCheckBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;typeDataGridViewTextBoxColumn.Name" xml:space="preserve">
-    <value>typeDataGridViewTextBoxColumn</value>
-  </data>
-  <data name="&gt;&gt;typeDataGridViewTextBoxColumn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;titleDataGridViewTextBoxColumn.Name" xml:space="preserve">
-    <value>titleDataGridViewTextBoxColumn</value>
-  </data>
-  <data name="&gt;&gt;titleDataGridViewTextBoxColumn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;idDataGridViewTextBoxColumn.Name" xml:space="preserve">
-    <value>idDataGridViewTextBoxColumn</value>
-  </data>
-  <data name="&gt;&gt;idDataGridViewTextBoxColumn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;favoriteDataGridViewCheckBoxColumn.Name" xml:space="preserve">
-    <value>favoriteDataGridViewCheckBoxColumn</value>
-  </data>
-  <data name="&gt;&gt;favoriteDataGridViewCheckBoxColumn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewCheckBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;toolStripMenuItem2.Name" xml:space="preserve">
     <value>toolStripMenuItem2</value>
@@ -4672,6 +4636,90 @@ Changes in temp file are not synchronized with clip!
   </data>
   <data name="&gt;&gt;dataGridViewImageColumn5.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewImageColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AppImage.Name" xml:space="preserve">
+    <value>AppImage</value>
+  </data>
+  <data name="&gt;&gt;AppImage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewImageColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TypeImage.Name" xml:space="preserve">
+    <value>TypeImage</value>
+  </data>
+  <data name="&gt;&gt;TypeImage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewImageColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ColumnTitle.Name" xml:space="preserve">
+    <value>ColumnTitle</value>
+  </data>
+  <data name="&gt;&gt;ColumnTitle.Type" xml:space="preserve">
+    <value>ClipAngel.DataGridViewRichTextBoxColumn, ClipAngel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;ImageSample.Name" xml:space="preserve">
+    <value>ImageSample</value>
+  </data>
+  <data name="&gt;&gt;ImageSample.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewImageColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;VisualWeight.Name" xml:space="preserve">
+    <value>VisualWeight</value>
+  </data>
+  <data name="&gt;&gt;VisualWeight.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;imageSampleDataGridViewImageColumn.Name" xml:space="preserve">
+    <value>imageSampleDataGridViewImageColumn</value>
+  </data>
+  <data name="&gt;&gt;imageSampleDataGridViewImageColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewImageColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ColumnCreated.Name" xml:space="preserve">
+    <value>ColumnCreated</value>
+  </data>
+  <data name="&gt;&gt;ColumnCreated.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;charsDataGridViewTextBoxColumn.Name" xml:space="preserve">
+    <value>charsDataGridViewTextBoxColumn</value>
+  </data>
+  <data name="&gt;&gt;charsDataGridViewTextBoxColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SizeDataGridViewTextBoxColumn.Name" xml:space="preserve">
+    <value>SizeDataGridViewTextBoxColumn</value>
+  </data>
+  <data name="&gt;&gt;SizeDataGridViewTextBoxColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;usedDataGridViewCheckBoxColumn.Name" xml:space="preserve">
+    <value>usedDataGridViewCheckBoxColumn</value>
+  </data>
+  <data name="&gt;&gt;usedDataGridViewCheckBoxColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewCheckBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;typeDataGridViewTextBoxColumn.Name" xml:space="preserve">
+    <value>typeDataGridViewTextBoxColumn</value>
+  </data>
+  <data name="&gt;&gt;typeDataGridViewTextBoxColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;titleDataGridViewTextBoxColumn.Name" xml:space="preserve">
+    <value>titleDataGridViewTextBoxColumn</value>
+  </data>
+  <data name="&gt;&gt;titleDataGridViewTextBoxColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;idDataGridViewTextBoxColumn.Name" xml:space="preserve">
+    <value>idDataGridViewTextBoxColumn</value>
+  </data>
+  <data name="&gt;&gt;idDataGridViewTextBoxColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;favoriteDataGridViewCheckBoxColumn.Name" xml:space="preserve">
+    <value>favoriteDataGridViewCheckBoxColumn</value>
+  </data>
+  <data name="&gt;&gt;favoriteDataGridViewCheckBoxColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewCheckBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>Main</value>

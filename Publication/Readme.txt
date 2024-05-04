@@ -8,3 +8,5 @@ Default global hotkey to open ClipAngel - ALT+V. You can change it and find othe
 
 Application does not modify Windows files or registry (except you check Autostart option).
 Application has no digital signing. Therefore, if you have Smart Screen enabled, you must allow it to run the application.
+
+Sources mirror https://github.com/tormozit/ClipAngel

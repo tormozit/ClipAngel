@@ -269,7 +269,7 @@ namespace ClipAngel
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.toolStripBottom = new System.Windows.Forms.ToolStrip();
             this.toolStripButtonClearFilter = new System.Windows.Forms.ToolStripButton();
@@ -289,20 +289,6 @@ namespace ClipAngel
             this.comboBoxSearchString = new ClipAngel.CueComboBox();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.dataGridView = new ClipAngel.MyDataGridView();
-            this.AppImage = new System.Windows.Forms.DataGridViewImageColumn();
-            this.TypeImage = new System.Windows.Forms.DataGridViewImageColumn();
-            this.ColumnTitle = new ClipAngel.DataGridViewRichTextBoxColumn();
-            this.ImageSample = new System.Windows.Forms.DataGridViewImageColumn();
-            this.VisualWeight = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.imageSampleDataGridViewImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
-            this.ColumnCreated = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.charsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SizeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.usedDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.typeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.titleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.favoriteDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.contextMenuStripDataGrid = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
@@ -493,6 +479,20 @@ namespace ClipAngel
             this.dataGridViewImageColumn4 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewRichTextBoxColumn2 = new ClipAngel.DataGridViewRichTextBoxColumn();
             this.dataGridViewImageColumn5 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.AppImage = new System.Windows.Forms.DataGridViewImageColumn();
+            this.TypeImage = new System.Windows.Forms.DataGridViewImageColumn();
+            this.ColumnTitle = new ClipAngel.DataGridViewRichTextBoxColumn();
+            this.ImageSample = new System.Windows.Forms.DataGridViewImageColumn();
+            this.VisualWeight = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.imageSampleDataGridViewImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
+            this.ColumnCreated = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.charsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SizeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.usedDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.typeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.titleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.favoriteDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -766,107 +766,6 @@ namespace ClipAngel
             this.dataGridView.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dataGridView_MouseClick);
             this.dataGridView.MouseHover += new System.EventHandler(this.dataGridView_MouseHover);
             this.dataGridView.MouseMove += new System.Windows.Forms.MouseEventHandler(this.dataGridView_MouseMove);
-            // 
-            // AppImage
-            // 
-            resources.ApplyResources(this.AppImage, "AppImage");
-            this.AppImage.Name = "AppImage";
-            this.AppImage.ReadOnly = true;
-            this.AppImage.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // TypeImage
-            // 
-            resources.ApplyResources(this.TypeImage, "TypeImage");
-            this.TypeImage.Name = "TypeImage";
-            this.TypeImage.ReadOnly = true;
-            this.TypeImage.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // ColumnTitle
-            // 
-            this.ColumnTitle.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            resources.ApplyResources(this.ColumnTitle, "ColumnTitle");
-            this.ColumnTitle.Name = "ColumnTitle";
-            this.ColumnTitle.ReadOnly = true;
-            this.ColumnTitle.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // ImageSample
-            // 
-            resources.ApplyResources(this.ImageSample, "ImageSample");
-            this.ImageSample.Name = "ImageSample";
-            this.ImageSample.ReadOnly = true;
-            // 
-            // VisualWeight
-            // 
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Green;
-            this.VisualWeight.DefaultCellStyle = dataGridViewCellStyle1;
-            resources.ApplyResources(this.VisualWeight, "VisualWeight");
-            this.VisualWeight.Name = "VisualWeight";
-            this.VisualWeight.ReadOnly = true;
-            this.VisualWeight.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.VisualWeight.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // imageSampleDataGridViewImageColumn
-            // 
-            this.imageSampleDataGridViewImageColumn.DataPropertyName = "ImageSample";
-            resources.ApplyResources(this.imageSampleDataGridViewImageColumn, "imageSampleDataGridViewImageColumn");
-            this.imageSampleDataGridViewImageColumn.Name = "imageSampleDataGridViewImageColumn";
-            this.imageSampleDataGridViewImageColumn.ReadOnly = true;
-            // 
-            // ColumnCreated
-            // 
-            this.ColumnCreated.DataPropertyName = "Created";
-            resources.ApplyResources(this.ColumnCreated, "ColumnCreated");
-            this.ColumnCreated.Name = "ColumnCreated";
-            this.ColumnCreated.ReadOnly = true;
-            // 
-            // charsDataGridViewTextBoxColumn
-            // 
-            this.charsDataGridViewTextBoxColumn.DataPropertyName = "Chars";
-            resources.ApplyResources(this.charsDataGridViewTextBoxColumn, "charsDataGridViewTextBoxColumn");
-            this.charsDataGridViewTextBoxColumn.Name = "charsDataGridViewTextBoxColumn";
-            this.charsDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // SizeDataGridViewTextBoxColumn
-            // 
-            this.SizeDataGridViewTextBoxColumn.DataPropertyName = "Size";
-            resources.ApplyResources(this.SizeDataGridViewTextBoxColumn, "SizeDataGridViewTextBoxColumn");
-            this.SizeDataGridViewTextBoxColumn.Name = "SizeDataGridViewTextBoxColumn";
-            this.SizeDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // usedDataGridViewCheckBoxColumn
-            // 
-            this.usedDataGridViewCheckBoxColumn.DataPropertyName = "Used";
-            resources.ApplyResources(this.usedDataGridViewCheckBoxColumn, "usedDataGridViewCheckBoxColumn");
-            this.usedDataGridViewCheckBoxColumn.Name = "usedDataGridViewCheckBoxColumn";
-            this.usedDataGridViewCheckBoxColumn.ReadOnly = true;
-            // 
-            // typeDataGridViewTextBoxColumn
-            // 
-            this.typeDataGridViewTextBoxColumn.DataPropertyName = "Type";
-            resources.ApplyResources(this.typeDataGridViewTextBoxColumn, "typeDataGridViewTextBoxColumn");
-            this.typeDataGridViewTextBoxColumn.Name = "typeDataGridViewTextBoxColumn";
-            this.typeDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // titleDataGridViewTextBoxColumn
-            // 
-            this.titleDataGridViewTextBoxColumn.DataPropertyName = "Title";
-            resources.ApplyResources(this.titleDataGridViewTextBoxColumn, "titleDataGridViewTextBoxColumn");
-            this.titleDataGridViewTextBoxColumn.Name = "titleDataGridViewTextBoxColumn";
-            this.titleDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            resources.ApplyResources(this.idDataGridViewTextBoxColumn, "idDataGridViewTextBoxColumn");
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // favoriteDataGridViewCheckBoxColumn
-            // 
-            this.favoriteDataGridViewCheckBoxColumn.DataPropertyName = "Favorite";
-            resources.ApplyResources(this.favoriteDataGridViewCheckBoxColumn, "favoriteDataGridViewCheckBoxColumn");
-            this.favoriteDataGridViewCheckBoxColumn.Name = "favoriteDataGridViewCheckBoxColumn";
-            this.favoriteDataGridViewCheckBoxColumn.ReadOnly = true;
             // 
             // contextMenuStripDataGrid
             // 
@@ -2245,6 +2144,108 @@ namespace ClipAngel
             this.dataGridViewImageColumn5.Name = "dataGridViewImageColumn5";
             this.dataGridViewImageColumn5.ReadOnly = true;
             // 
+            // AppImage
+            // 
+            resources.ApplyResources(this.AppImage, "AppImage");
+            this.AppImage.Name = "AppImage";
+            this.AppImage.ReadOnly = true;
+            this.AppImage.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // TypeImage
+            // 
+            resources.ApplyResources(this.TypeImage, "TypeImage");
+            this.TypeImage.Name = "TypeImage";
+            this.TypeImage.ReadOnly = true;
+            this.TypeImage.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // ColumnTitle
+            // 
+            this.ColumnTitle.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            resources.ApplyResources(this.ColumnTitle, "ColumnTitle");
+            this.ColumnTitle.Name = "ColumnTitle";
+            this.ColumnTitle.ReadOnly = true;
+            this.ColumnTitle.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // ImageSample
+            // 
+            resources.ApplyResources(this.ImageSample, "ImageSample");
+            this.ImageSample.Name = "ImageSample";
+            this.ImageSample.ReadOnly = true;
+            // 
+            // VisualWeight
+            // 
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Green;
+            this.VisualWeight.DefaultCellStyle = dataGridViewCellStyle2;
+            resources.ApplyResources(this.VisualWeight, "VisualWeight");
+            this.VisualWeight.Name = "VisualWeight";
+            this.VisualWeight.ReadOnly = true;
+            this.VisualWeight.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.VisualWeight.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // imageSampleDataGridViewImageColumn
+            // 
+            this.imageSampleDataGridViewImageColumn.DataPropertyName = "ImageSample";
+            resources.ApplyResources(this.imageSampleDataGridViewImageColumn, "imageSampleDataGridViewImageColumn");
+            this.imageSampleDataGridViewImageColumn.Name = "imageSampleDataGridViewImageColumn";
+            this.imageSampleDataGridViewImageColumn.ReadOnly = true;
+            // 
+            // ColumnCreated
+            // 
+            this.ColumnCreated.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.ColumnCreated.DataPropertyName = "Created";
+            resources.ApplyResources(this.ColumnCreated, "ColumnCreated");
+            this.ColumnCreated.Name = "ColumnCreated";
+            this.ColumnCreated.ReadOnly = true;
+            // 
+            // charsDataGridViewTextBoxColumn
+            // 
+            this.charsDataGridViewTextBoxColumn.DataPropertyName = "Chars";
+            resources.ApplyResources(this.charsDataGridViewTextBoxColumn, "charsDataGridViewTextBoxColumn");
+            this.charsDataGridViewTextBoxColumn.Name = "charsDataGridViewTextBoxColumn";
+            this.charsDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // SizeDataGridViewTextBoxColumn
+            // 
+            this.SizeDataGridViewTextBoxColumn.DataPropertyName = "Size";
+            resources.ApplyResources(this.SizeDataGridViewTextBoxColumn, "SizeDataGridViewTextBoxColumn");
+            this.SizeDataGridViewTextBoxColumn.Name = "SizeDataGridViewTextBoxColumn";
+            this.SizeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // usedDataGridViewCheckBoxColumn
+            // 
+            this.usedDataGridViewCheckBoxColumn.DataPropertyName = "Used";
+            resources.ApplyResources(this.usedDataGridViewCheckBoxColumn, "usedDataGridViewCheckBoxColumn");
+            this.usedDataGridViewCheckBoxColumn.Name = "usedDataGridViewCheckBoxColumn";
+            this.usedDataGridViewCheckBoxColumn.ReadOnly = true;
+            // 
+            // typeDataGridViewTextBoxColumn
+            // 
+            this.typeDataGridViewTextBoxColumn.DataPropertyName = "Type";
+            resources.ApplyResources(this.typeDataGridViewTextBoxColumn, "typeDataGridViewTextBoxColumn");
+            this.typeDataGridViewTextBoxColumn.Name = "typeDataGridViewTextBoxColumn";
+            this.typeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // titleDataGridViewTextBoxColumn
+            // 
+            this.titleDataGridViewTextBoxColumn.DataPropertyName = "Title";
+            resources.ApplyResources(this.titleDataGridViewTextBoxColumn, "titleDataGridViewTextBoxColumn");
+            this.titleDataGridViewTextBoxColumn.Name = "titleDataGridViewTextBoxColumn";
+            this.titleDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            resources.ApplyResources(this.idDataGridViewTextBoxColumn, "idDataGridViewTextBoxColumn");
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // favoriteDataGridViewCheckBoxColumn
+            // 
+            this.favoriteDataGridViewCheckBoxColumn.DataPropertyName = "Favorite";
+            resources.ApplyResources(this.favoriteDataGridViewCheckBoxColumn, "favoriteDataGridViewCheckBoxColumn");
+            this.favoriteDataGridViewCheckBoxColumn.Name = "favoriteDataGridViewCheckBoxColumn";
+            this.favoriteDataGridViewCheckBoxColumn.ReadOnly = true;
+            // 
             // Main
             // 
             this.AllowDrop = true;
@@ -2466,20 +2467,6 @@ namespace ClipAngel
         private System.Windows.Forms.ToolStripButton toolStripButtonSecondaryColumns;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemSecondaryColumns;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem22;
-        private System.Windows.Forms.DataGridViewImageColumn AppImage;
-        private System.Windows.Forms.DataGridViewImageColumn TypeImage;
-        private DataGridViewRichTextBoxColumn ColumnTitle;
-        private System.Windows.Forms.DataGridViewImageColumn ImageSample;
-        private System.Windows.Forms.DataGridViewTextBoxColumn VisualWeight;
-        private System.Windows.Forms.DataGridViewImageColumn imageSampleDataGridViewImageColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnCreated;
-        private System.Windows.Forms.DataGridViewTextBoxColumn charsDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SizeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn usedDataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn typeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn titleDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn favoriteDataGridViewCheckBoxColumn;
         private System.Windows.Forms.ToolStripMenuItem ignoreBigTextsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addSelectedTextInFilterToolStripMenuRtf;
         private System.Windows.Forms.ToolStripMenuItem setSelectedTextInFilterToolStripMenuRtf;
@@ -2519,6 +2506,20 @@ namespace ClipAngel
         private System.Windows.Forms.ToolStripMenuItem sendClipToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemPasteCharsFast;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemPasteCharsSlow;
+        private System.Windows.Forms.DataGridViewImageColumn AppImage;
+        private System.Windows.Forms.DataGridViewImageColumn TypeImage;
+        private DataGridViewRichTextBoxColumn ColumnTitle;
+        private System.Windows.Forms.DataGridViewImageColumn ImageSample;
+        private System.Windows.Forms.DataGridViewTextBoxColumn VisualWeight;
+        private System.Windows.Forms.DataGridViewImageColumn imageSampleDataGridViewImageColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnCreated;
+        private System.Windows.Forms.DataGridViewTextBoxColumn charsDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SizeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn usedDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn typeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn titleDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn favoriteDataGridViewCheckBoxColumn;
     }
 }
 

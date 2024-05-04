@@ -1625,8 +1625,8 @@ Die Generierung von Bildern erzeugt CPU-Last. Bei zu hoher, niedrigeren Wert fes
           <target state="translated">Clip wurde aufgrund eines Lesefehlers in der Zwischenablage nicht erfasst</target>
         </trans-unit>
         <trans-unit id="VersionValue" translate="yes" xml:space="preserve">
-          <source>2.13</source>
-          <target state="new">2.13</target>
+          <source>2.14</source>
+          <target state="new">2.14</target>
         </trans-unit>
         <trans-unit id="TargetWindow" translate="yes" xml:space="preserve">
           <source>Target window</source>
@@ -6654,8 +6654,8 @@ Die Sortierung wird bis zur Clip-Erfassung beibehalten.</target>
           <target state="needs-review-translation">True</target>
         </trans-unit>
         <trans-unit id="ColumnCreated.Width" translate="no" extype="System.Int32, mscorlib" xml:space="preserve">
-          <source>80</source>
-          <target state="final">80</target>
+          <source>5</source>
+          <target state="final">5</target>
         </trans-unit>
         <trans-unit id="toolStripButtonOpenWith.Visible" translate="yes" extype="System.Boolean, mscorlib" xml:space="preserve">
           <source>False</source>

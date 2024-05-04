@@ -2581,6 +2581,9 @@ adicionado à lista de ignorar, que pode ser editado na janela de configuraçõe
   <metadata name="ColumnCreated.UserAddedColumn" xml:space="preserve" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <data name="ColumnCreated.Width" xml:space="preserve" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
   <data name="toolStripButtonOpenWith.Visible" xml:space="preserve" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>

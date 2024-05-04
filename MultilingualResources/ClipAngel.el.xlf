@@ -472,8 +472,8 @@
           <target state="new">Clip was not captured due to clipboard read error</target>
         </trans-unit>
         <trans-unit id="VersionValue" translate="yes" xml:space="preserve">
-          <source>2.13</source>
-          <target state="new">2.13</target>
+          <source>2.14</source>
+          <target state="new">2.14</target>
         </trans-unit>
         <trans-unit id="TargetWindow" translate="yes" xml:space="preserve">
           <source>Target window</source>
@@ -6663,9 +6663,8 @@ Sorting is kept until clip capture.</target>
           <target state="needs-review-translation">True</target>
         </trans-unit>
         <trans-unit id="ColumnCreated.Width" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
-          <source>80</source>
-          <target state="new">80</target>
-          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
+          <source>5</source>
+          <target state="needs-review-translation">5</target>
         </trans-unit>
         <trans-unit id="toolStripButtonOpenWith.Visible" translate="yes" extype="System.Boolean, mscorlib" xml:space="preserve">
           <source>False</source>
