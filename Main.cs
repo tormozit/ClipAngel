@@ -4833,10 +4833,12 @@ namespace ClipAngel
             {
                 if (File.Exists(filePath))
                 {
-                    Icon smallIcon = null;
-                    smallIcon = IconTools.GetIconForFile(filePath, ShellIconSize.SmallIcon);
-                    originalImage = smallIcon.ToBitmap();
-                    brightImage = (Bitmap) ChangeImageOpacity(originalImage, 0.6f);
+                    Icon smallIcon = IconTools.GetIconForFile(filePath, ShellIconSize.SmallIcon);
+                    if (smallIcon != null)
+                    {
+                        originalImage = smallIcon.ToBitmap();
+                        brightImage = (Bitmap) ChangeImageOpacity(originalImage, 0.6f);
+                    }
                 }
                 originalIconCache[filePath] = originalImage;
                 brightIconCache[filePath] = brightImage;
