@@ -2238,7 +2238,7 @@ namespace ClipAngel
                             //    || removeClipsFilter.PID == lastClip.ProcessID)
                             && clipAge < maxRemovedClipAge)
                         {
-                            SQLiteCommand command = new SQLiteCommand("Delete from Clips where Id = @Id", m_dbConnection);
+                            SQLiteCommand command = new SQLiteCommand("Delete from Clips where Id = @Id and not Favorite", m_dbConnection);
                             command.Parameters.Add("Id", DbType.Int32).Value = lastClip.ID;
                             command.ExecuteNonQuery();
                             lastClips.RemoveAt(i);
