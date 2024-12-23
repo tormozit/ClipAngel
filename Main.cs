@@ -51,6 +51,7 @@ using MouseEventArgs = System.Windows.Forms.MouseEventArgs;
 using MouseEventHandler = System.Windows.Forms.MouseEventHandler;
 using OpenFileDialog = System.Windows.Forms.OpenFileDialog;
 using SaveFileDialog = System.Windows.Forms.SaveFileDialog;
+using Google.Apis.Auth.OAuth2;
 
 namespace ClipAngel
 {
@@ -8202,33 +8203,23 @@ namespace ClipAngel
             string value = crypter.EncryptAES(text);
             //string roundTrip = crypter.DecryptAES(value); // test
             await setChannelKeyValue("data", value);
-            string urlFCM = "https://fcm.googleapis.com/fcm/send";
+            string urlFCM = "https://fcm.googleapis.com/v1/projects/clipangel-495b4/messages:send";
             foreach (var keyValue in recipients)
             {
                 WebRequest tRequest = WebRequest.Create(urlFCM);
                 string pushID = keyValue.Value;
-                // https://stackoverflow.com/questions/37412963/send-push-to-android-by-c-sharp-using-fcm-firebase-cloud-messaging
                 tRequest.Method = "post";
                 tRequest.ContentType = "application/json";
-                 //serverKey - Key from Firebase cloud messaging server  
-                tRequest.Headers.Add("Authorization", string.Format("key ={0}", SecretData.FirebaseMessaging()));
-                //Sender Id - From firebase project setting  
-                tRequest.Headers.Add("Sender", string.Format("id ={0}", "955499417085"));
+                tRequest.Headers.Add("Authorization", string.Format("Bearer {0}", await getServiceAccountAccessToken()));  
                 var payload = new
                 {
-                    to = pushID,
-                    priority = "high",
-                    content_available = true,
-                    // this is wrong way
-                    //notification = new
-                    //{
-                    //    body = "Received clip from " + Environment.MachineName + " sent " + DateTime.Now,
-                    //    title = "Received clip",
-                    //    badge = 1
-                    //},
-                    data = new
+                    message = new
                     {
-                        channel = CurrentSendChannel()
+                        token = pushID,
+                        data = new
+                        {
+                            channel = CurrentSendChannel()
+                        }
                     }
                 };
                 string postbody = JsonConvert.SerializeObject(payload);
@@ -8255,6 +8246,22 @@ namespace ClipAngel
                 }
             }
             CheckClearChannelData();
+        }
+        public static async Task<string> getServiceAccountAccessToken()
+        {
+            try
+            {
+                var credentials = GoogleCredential.FromJson(SecretData.FirebaseMessaging());
+                var scopes = "https://www.googleapis.com/auth/firebase.messaging";
+                credentials = credentials.CreateScoped(scopes);
+                var accessToken = await credentials.UnderlyingCredential.GetAccessTokenForRequestAsync();
+                return accessToken;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Exception: {ex.Message}");
+                return "";
+            }
         }
 
         private void CheckClearChannelData()
