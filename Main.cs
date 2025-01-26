@@ -52,6 +52,7 @@ using MouseEventHandler = System.Windows.Forms.MouseEventHandler;
 using OpenFileDialog = System.Windows.Forms.OpenFileDialog;
 using SaveFileDialog = System.Windows.Forms.SaveFileDialog;
 using Google.Apis.Auth.OAuth2;
+using System.Net.Http.Headers;
 
 namespace ClipAngel
 {
@@ -7401,7 +7402,7 @@ namespace ClipAngel
             return result;
         }
 
-        private void uploadImageToWebToolStripMenuItem_Click(object sender, EventArgs e)
+        async private void uploadImageToWebToolStripMenuItem_Click(object sender, EventArgs e)
         {
             string clipType = (string) LoadedClipRowReader["type"];
             if (clipType != "img")
@@ -7437,41 +7438,58 @@ namespace ClipAngel
                 //XmlNode node = doc.DocumentElement.SelectSingleNode("/ns:imginfo/ns:links/ns:image_link", namespaces);
                 //string ImageUrl = node.InnerText;
 
-                // base on // https://www.codeproject.com/Questions/1091120/How-to-upload-big-size-image-file-using-imgur-api
-                // http://imgur.com/
-                // ClientID - ac075d738068f2f - get it here https://apidocs.imgur.com/#intro search "Register your application"
-                string api_url_image = "https://api.imgur.com/3/image";
-                //  string api_url = "https://api.imgur.com/3/upload";
-                HttpWebRequest request = (HttpWebRequest)WebRequest.Create(api_url_image);
-                request.Headers.Add("Authorization", "Client-ID ac075d738068f2f");    //authorized id
-                request.Method = "POST";
-                FileStream file = new FileStream(tempFile, FileMode.Open);
-                byte[] image = new byte[file.Length];
-                file.Read(image, 0, (int)file.Length);
-                ASCIIEncoding enc = new ASCIIEncoding();
-                string postData = Convert.ToBase64String(image);
-                byte[] bytes = enc.GetBytes(postData);
-                request.ContentType = "application/x-www-form-urlencoded";
-                request.ContentLength = bytes.Length;
-                request.Timeout = 5000;
-                Stream writer = request.GetRequestStream();
-                writer.Write(bytes, 0, bytes.Length);
-                HttpWebResponse response = (HttpWebResponse)request.GetResponse();
-                response.GetResponseStream();
-                if (response.StatusCode == HttpStatusCode.OK)
+                //// based on // https://www.codeproject.com/Questions/1091120/How-to-upload-big-size-image-file-using-imgur-api
+                //// http://imgur.com/
+                //// ClientID - ac075d738068f2f - get it here https://apidocs.imgur.com/#intro search "Register your application"
+                //string api_url_image = "https://api.imgur.com/3/image";
+                //HttpWebRequest request = (HttpWebRequest)WebRequest.Create(api_url_image);
+                ////request.Headers.Add("Authorization", "Client-ID ac075d738068f2f");    //authorized id - old API
+                //request.Headers.Add("Authorization", string.Format("Bearer {0}", await getImgurAccessToken()));
+                //request.Method = "POST";
+                //FileStream file = new FileStream(tempFile, FileMode.Open);
+                //byte[] image = new byte[file.Length];
+                //file.Read(image, 0, (int)file.Length);
+                //ASCIIEncoding enc = new ASCIIEncoding();
+                //string postData = Convert.ToBase64String(image);
+                //byte[] bytes = enc.GetBytes(postData);
+                //request.ContentType = "application/x-www-form-urlencoded";
+                //request.ContentLength = bytes.Length;
+                //request.Timeout = 5000;
+                //Stream writer = request.GetRequestStream();
+                //writer.Write(bytes, 0, bytes.Length);
+                //HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+                //response.GetResponseStream();
+                //if (response.StatusCode == HttpStatusCode.OK)
+                //{
+                //    Stream responseStream = response.GetResponseStream();
+                //    string responseStr = new StreamReader(responseStream).ReadToEnd();
+                //    ImageUrl = responseStr.Remove(0, responseStr.IndexOf("link") + 7);
+                //    ImageUrl = ImageUrl.Substring(0, ImageUrl.IndexOf("success") - 4);
+                //    ImageUrl = ImageUrl.Replace("\\", "");
+                //    responseStream.Close();
+                //}
+                //else
+                //{
+                //    throw new Exception("WebServer returned error " + response.StatusCode);
+                //}
+                //response.Close();
+
+                string apiKey = "ca6dc2239a7705bd7b7280d2719e3fae"; // Получите API-ключ на сайте ImgBB
+                string apiUrl = $"https://api.imgbb.com/1/upload?key={apiKey}";
+                byte[] imageBytes = File.ReadAllBytes(tempFile);
+                using (HttpClient client = new HttpClient())
                 {
-                    Stream responseStream = response.GetResponseStream();
-                    string responseStr = new StreamReader(responseStream).ReadToEnd();
-                    ImageUrl = responseStr.Remove(0, responseStr.IndexOf("link") + 7);
-                    ImageUrl = ImageUrl.Substring(0, ImageUrl.IndexOf("success") - 4);
-                    ImageUrl = ImageUrl.Replace("\\", "");
-                    responseStream.Close();
+                    using (var formData = new MultipartFormDataContent())
+                    {
+                        var imageContent = new ByteArrayContent(imageBytes);
+                        imageContent.Headers.ContentType = new MediaTypeHeaderValue("image/jpeg");
+                        formData.Add(imageContent, "image", "_");
+                        HttpResponseMessage response = await client.PostAsync(apiUrl, formData);
+                        string responseData = await response.Content.ReadAsStringAsync();
+                        dynamic responseObject = JsonConvert.DeserializeObject(responseData);
+                        ImageUrl = responseObject.data.url;
+                    }
                 }
-                else
-                {
-                    throw new Exception("WebServer returned error " + response.StatusCode);
-                }
-                response.Close();
 
                 SaveClipUrl(ImageUrl);
                 AfterRowLoad();
