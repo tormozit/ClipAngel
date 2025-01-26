@@ -7474,7 +7474,7 @@ namespace ClipAngel
                 //}
                 //response.Close();
 
-                string apiKey = "ca6dc2239a7705bd7b7280d2719e3fae"; // Получите API-ключ на сайте ImgBB
+                string apiKey = SecretData.ImgBBKey(); // Получите API-ключ на сайте ImgBB
                 string apiUrl = $"https://api.imgbb.com/1/upload?key={apiKey}";
                 byte[] imageBytes = File.ReadAllBytes(tempFile);
                 using (HttpClient client = new HttpClient())

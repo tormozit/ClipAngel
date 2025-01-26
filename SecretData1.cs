@@ -14,5 +14,9 @@
         {
             return "";
         }
+        public static string ImgBBKey()
+        {
+            return "";
+        }
     }
 }
