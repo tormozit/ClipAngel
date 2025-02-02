@@ -130,7 +130,7 @@
     <value>Odśwież</value>
   </data>
   <data name="label2.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
-    <value>98, 13</value>
+    <value>102, 13</value>
   </data>
   <data name="buttonCancel.Location" xml:space="preserve" type="System.Drawing.Point, System.Drawing">
     <value>612, 382</value>
@@ -205,7 +205,7 @@
     <value>2, 23</value>
   </data>
   <data name="label1.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
-    <value>102, 13</value>
+    <value>106, 13</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
     <value>Uruchomione aplikacje</value>

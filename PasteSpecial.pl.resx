@@ -19,7 +19,7 @@
     <value>True</value>
   </data>
   <data name="NormalizeFreeSpace.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
-    <value>16</value>
+    <value>11</value>
   </data>
   <data name="buttonCancel.ImeMode" xml:space="preserve" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -34,7 +34,7 @@
     <value>Zastąpić "koniec linii" symbolem ze spacją</value>
   </data>
   <data name="SentenceCase.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
-    <value>19</value>
+    <value>4</value>
   </data>
   <data name="SentenceCase.Location" xml:space="preserve" type="System.Drawing.Point, System.Drawing">
     <value>10, 93</value>
@@ -43,13 +43,13 @@
     <value>Wklej specjalnie</value>
   </data>
   <data name="ReplaceEOL.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
-    <value>16</value>
+    <value>8</value>
   </data>
   <data name="richTextBox1.Anchor" xml:space="preserve" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
   <data name="checkBoxPasteIntoNewClip.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
-    <value>16</value>
+    <value>13</value>
   </data>
   <data name="CaseNoChange.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>78, 17</value>
@@ -58,7 +58,7 @@
     <value>18, 20</value>
   </data>
   <data name="groupBox1.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
-    <value>20</value>
+    <value>0</value>
   </data>
   <data name="AllLowerCase.AutoSize" xml:space="preserve" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -100,13 +100,13 @@
     <value>12, 10</value>
   </data>
   <data name="richTextBox1.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
-    <value>21</value>
+    <value>14</value>
   </data>
   <data name="groupBox1.ToolTip" xml:space="preserve">
     <value>Zmiana wielkości liter</value>
   </data>
   <data name="checkBoxReplaceTabWithSpaces.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
-    <value>16</value>
+    <value>9</value>
   </data>
   <data name="label1.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
     <value>22</value>
@@ -142,10 +142,10 @@
     <value>NoControl</value>
   </data>
   <data name="buttonCancel.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
-    <value>14</value>
+    <value>16</value>
   </data>
   <data name="textBoxNumberOfSpacesInTab.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
-    <value>23</value>
+    <value>10</value>
   </data>
   <data name="checkBoxReplaceTabWithSpaces.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>149, 17</value>
@@ -173,10 +173,10 @@
 Usuwane są symbole niedrukowalne.</value>
   </data>
   <data name="CaseNoChange.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
-    <value>20</value>
+    <value>1</value>
   </data>
   <data name="AllLowerCase.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
-    <value>18</value>
+    <value>3</value>
   </data>
   <data name="SentenceCase.Text" xml:space="preserve">
     <value>Znaki frazy</value>
@@ -206,7 +206,7 @@ Usuwane są symbole niedrukowalne.</value>
     <value>93, 17</value>
   </data>
   <data name="AllUpperCase.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
-    <value>17</value>
+    <value>2</value>
   </data>
   <data name="AllUpperCase.Text" xml:space="preserve">
     <value>WIELKIE ZNAKI</value>
@@ -224,10 +224,13 @@ Usuwane są symbole niedrukowalne.</value>
     <value>10, 138</value>
   </data>
   <data name="LowerCamelCase.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
-    <value>19</value>
+    <value>6</value>
+  </data>
+  <data name="LowerCamelCase.Text" xml:space="preserve">
+    <value>Konwertuj na lowerCamelCase</value>
   </data>
   <data name="LowerCamelCase.ToolTip" xml:space="preserve">
-    <value>Mała litera dla pierwszej litery w pierwszym słowie i duża litera dla pierwszej litery w pozostałych słowach. Usuń wszystkie spacje.</value>
+    <value>Konwertuj na lowerCamelCase oznacza zapis do postaci: Pierwsza litera pierwszego słowa jest mała, pierwsze litery kolejnych słów są wielkie. Nie używa się spacji ani znaków specjalnych między słowami. Przykład: "konwersja na camel case" to "konwersjaNaCamelCase"</value>
   </data>
   <data name="UpperCamelCase.AutoSize" xml:space="preserve" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -239,10 +242,13 @@ Usuwane są symbole niedrukowalne.</value>
     <value>10, 116</value>
   </data>
   <data name="UpperCamelCase.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
-    <value>19</value>
+    <value>5</value>
+  </data>
+  <data name="UpperCamelCase.Text" xml:space="preserve">
+    <value>Konwertuj na UpperCamelCase</value>
   </data>
   <data name="UpperCamelCase.ToolTip" xml:space="preserve">
-    <value>Wielka litera dla pierwszej litery w każdym słowie. Usuń wszystkie spacje.</value>
+    <value>Konwertuj na UpperCamelCase oznacza zapis do postaci gdzie Pierwsza litera każdego słowa jest wielka. Nie używa się spacji ani znaków specjalnych między słowami. Przykład: "konwersja na camel case" to "KonwersjaNaCamelCase"</value>
   </data>
   <data name="NormalizeEndOfLines.AutoSize" xml:space="preserve" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -254,14 +260,14 @@ Usuwane są symbole niedrukowalne.</value>
     <value>174, 17</value>
   </data>
   <data name="NormalizeEndOfLines.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
-    <value>16</value>
+    <value>12</value>
   </data>
   <data name="NormalizeEndOfLines.Text" xml:space="preserve">
-    <value>Normalizacja "koniec linii" symbole</value>
+    <value>Normalizuj symbole "końca linii"</value>
   </data>
   <data name="NormalizeEndOfLines.ToolTip" xml:space="preserve">
-    <value>Każda sekwencja symboli "koniec linii" zastępuje się jednym "koniec linii".
-Usuwane są symbole niedrukowalne.</value>
+    <value>Każda sekwencja symboli "koniec linii" jest zastępowana jednym "końcem linii".
+Końcowe symbole niedrukowalne są usuwane.</value>
   </data>
   <data name="FromCamelCase.AutoSize" xml:space="preserve" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -276,10 +282,13 @@ Usuwane są symbole niedrukowalne.</value>
     <value>101, 17</value>
   </data>
   <data name="FromCamelCase.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
-    <value>19</value>
+    <value>7</value>
+  </data>
+  <data name="FromCamelCase.Text" xml:space="preserve">
+    <value>Konwertuj z CamelCase</value>
   </data>
   <data name="FromCamelCase.ToolTip" xml:space="preserve">
-    <value>Podziel wyrazy według wielkich liter i zmień je na małe.</value>
+    <value>Podziel wyraz spacją według wielkich liter i zmień je na małe.</value>
   </data>
   <data name="AllUpperCase.ImeMode" xml:space="preserve" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -309,10 +318,10 @@ Usuwane są symbole niedrukowalne.</value>
     <value>NoControl</value>
   </data>
   <data name="DelimiterForTextJoin.Location" xml:space="preserve" type="System.Drawing.Point, System.Drawing">
-    <value>300, 136</value>
+    <value>296, 136</value>
   </data>
   <data name="DelimiterForTextJoin.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
-    <value>138, 20</value>
+    <value>142, 20</value>
   </data>
   <data name="DelimiterForTextJoin.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
     <value>23</value>
@@ -331,5 +340,11 @@ Usuwane są symbole niedrukowalne.</value>
   </data>
   <data name="labelDelimiterForTextJoin.TabIndex" xml:space="preserve" type="System.Int32, mscorlib">
     <value>24</value>
+  </data>
+  <data name="labelDelimiterForTextJoin.Text" xml:space="preserve">
+    <value>Separator łączenia tekstu</value>
+  </data>
+  <data name="DelimiterForTextJoin.ToolTip" xml:space="preserve">
+    <value>Użyj "\n" jako końca linii</value>
   </data>
 </root>
