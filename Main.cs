@@ -1583,6 +1583,7 @@ namespace ClipAngel
         private void MarkRegExpMatchesInRichTextBox(RichTextBox control, string pattern, Color color, bool allowDymanicColor, bool underline,
             bool bold, out MatchCollection matches)
         {
+            control.DetectUrls = false; // Antibug Framework 4.8 - explicit set value "false" in editor is ignored and changed to "true" in runtime
             RegexOptions options = RegexOptions.Singleline;
             if (!ClipAngel.Properties.Settings.Default.SearchCaseSensitive)
                 options = options | RegexOptions.IgnoreCase;
