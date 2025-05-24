@@ -200,24 +200,23 @@ namespace ClipAngel
         string sortField = "Id";
         string link1Cprefix = "1Clink:";
         List<int> searchMatchedIDs = new List<int>();
-        private static string timePattern = "\\b[012]?\\d:[0-5]?\\d(?::[0-5]?\\d)?\\b";
-        private static string datePattern = "\\b(?:19|20)?[0-9]{2}[\\-/.][0-9]{2}[\\-/.](?:19|20)?[0-9]{2}\\b";
+        static string timePattern = "\\b[012]?\\d:[0-5]?\\d(?::[0-5]?\\d)?\\b";
+        static string datePattern = "\\b(?:19|20)?[0-9]{2}[\\-/.][0-9]{2}[\\-/.](?:19|20)?[0-9]{2}\\b";
         private bool areDeletedClips = false;
         readonly RichTextBox _richTextBox = new RichTextBox();
         readonly RichTextBox richTextInternal = new RichTextBox();
-
+        static string LetDig = "a-zа-яё0-9_";
         static private Dictionary<string, string> TextPatterns = new Dictionary<string, string>
         {
-            {"time", "((" + datePattern + "\\s" + timePattern + ")|(?:(" + timePattern + "\\s)?" + datePattern + ")|(?:" + timePattern + "))"},
-            {"email", "(\\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}\\b)"},
-            //{"number", "(?:[\\s\n\r\\(<>\\[]|^)([-+]?[0-9]+\\.?[0-9]+)(?:[;\\s\\)<>\\]%]|,\\B|$)"},
-            {"number", "((?:(?:\\s|^)[-])?\\b[0-9]+\\.?[0-9]+)\\b"},
-            {"phone", "(?:[\\s\\(]|^)(\\+?\\b\\d?(\\d[ \\-\\(\\)]{0,2}){7,19}\\b)"},
-            {"url", "(\\b(?:https?|ftp|file|e1c)://[a-zа-яё0-9-+&@#\\\\/%?=~_|!:,.;()]+)"},
-            {"url_image",  @"(https?:\/\/.*\.(?:png|jpg|gif|jpeg|svg))"},
-            {"url_video",  @"(?:https?://)?(?:www.)?youtu(?:\.be|be\.com)/(?:(?:.*)v(?:/|=)|(?:.*/)?)([a-zA-Z0-9-_]+)(?:[&?][%a-zA-Z0-9-_]+=[%a-zA-Z0-9-_]+)*"},
-            {"filename", @"((?:\b[a-z]:|\\\\[a-z0-9 %._-]+\\[a-z0-9 $%._-]+)\\(?:[^\\/:*?""<>|\r\n]+\\)*[^\\/:*?""<>|\r\n]*)"},
-            {"1CLine", @"(\{([a-zа-яё0-9_]+ )?(([a-zа-яё0-9_]+::.+?::)?(?:[a-zа-яё0-9_]+\.)*(?:Форма|Form|Модуль[a-zа-яё0-9_]*|[a-zа-яё0-9_]*Module|))\((\d+)(?:,(\d+))?(?:\:?([a-zа-яё0-9_<>]*)(?:,(-?\d+))?)?\)\})"}
+            {"time", $@"(({datePattern}\s{timePattern})|(?:({timePattern}\s)?{datePattern})|(?:{timePattern}))"},
+            {"email", @"(\b[A-Z0-9._%+-]+@[-A-Z0-9.]+\.[A-Z]{2,6}\b)"},
+            {"number", @"((?:(?:\s|^)[-])?\b[0-9]+\.?[0-9]+)\b"},
+            {"phone", @"(?:[\s\(]|^)(\+?\b\d?(\d[ \-\()]{0,2}){7,19}\b)"},
+            {"url", $@"(\b(?:https?|ftp|file|e1c)://[{LetDig}\-+&@#\\/%?=~|!:,.;()]+[{LetDig}])"},
+            {"url_image", @"(https?:\/\/.*\.(?:png|jpg|gif|jpeg|svg))"},
+            {"url_video", @"(?:https?://)?(?:www\.)?youtu(?:\.be|be\.com)/(?:(?:.*)v(?:/|=)|(?:.*/)?)([a-zA-Z0-9-_]+)"},
+            {"filename", $@"((?:\b[a-z]:|\\\\[{LetDig} %.\-]+\\[{LetDig} $%.\-]+)\\(?:[^\\/:*?""<>|\r\n]+\\)*[^\\/:*?""<>|\r\n]*)"},
+            {"1CLine", $@"(\{{([{LetDig}]+ )?(([{LetDig}]+::.+?::)?(?:[{LetDig}\.])*(?:Форма|Form|Модуль[{LetDig}]*|[{LetDig}]*Module|))\((\d+)(?:,(\d+))?(?:\:?([{LetDig}<>]*)(?:,(-?\d+))?)?\)\}})"}
         };
 
         static string LinkPattern = TextPatterns["url"];
@@ -8331,6 +8330,11 @@ namespace ClipAngel
         }
 
         private void fileToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView_DragOver(object sender, DragEventArgs e)
         {
 
         }

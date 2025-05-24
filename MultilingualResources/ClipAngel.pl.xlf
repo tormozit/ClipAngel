@@ -6729,10 +6729,6 @@ Sortowanie jest przechowywane aż do przechwycenia klipu.</target>
           <source>True</source>
           <target state="needs-review-translation">True</target>
         </trans-unit>
-        <trans-unit id="ColumnCreated.Width" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
-          <source>5</source>
-          <target state="needs-review-translation">5</target>
-        </trans-unit>
         <trans-unit id="toolStripButtonOpenWith.Visible" translate="yes" extype="System.Boolean, mscorlib" xml:space="preserve">
           <source>False</source>
           <target state="needs-review-translation">False</target>

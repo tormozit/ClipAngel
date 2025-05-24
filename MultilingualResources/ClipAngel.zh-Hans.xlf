@@ -6714,11 +6714,6 @@ Sorting is kept until clip capture.</source>
           <source>True</source>
           <target state="needs-review-translation">True</target>
         </trans-unit>
-        <trans-unit id="ColumnCreated.Width" translate="yes" extype="System.Int32, mscorlib" xml:space="preserve">
-          <source>5</source>
-          <target state="needs-review-translation">80</target>
-          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
-        </trans-unit>
         <trans-unit id="toolStripButtonOpenWith.Visible" translate="yes" extype="System.Boolean, mscorlib" xml:space="preserve">
           <source>False</source>
           <target state="needs-review-translation">False</target>
