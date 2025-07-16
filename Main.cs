@@ -7672,7 +7672,10 @@ namespace ClipAngel
                             DataObject dto = new DataObject();
                             int count = 0;
                             string agregateTextToPaste = JoinOrPasteTextOfClips(PasteMethod.Null, out count);
-                            SetTextInClipboardDataObject(dto, agregateTextToPaste);
+                            if (agregateTextToPaste.Length < 1000)
+                            {
+                                SetTextInClipboardDataObject(dto, agregateTextToPaste);
+                            }
                             SetClipFilesInDataObject(dto);
                             dataGridView.DoDragDrop(dto, DragDropEffects.Copy);
                         }
