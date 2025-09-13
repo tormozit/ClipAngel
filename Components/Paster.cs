@@ -116,6 +116,7 @@ namespace ClipAngel
 
         public static void SendChars(Main main = null, bool slow = false)
         {
+            Thread.Sleep(100);
             string textToPaste = Clipboard.GetText();
             InputSimulator inputSimulator = new InputSimulator(); // http://inputsimulator.codeplex.com/
             main.ActivateAndCheckTargetWindow();

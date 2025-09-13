@@ -187,6 +187,7 @@ namespace ClipAngel
         private Point LastMousePoint;
         private Timer captureTimer = new Timer();
         private Timer channelTimer = new Timer();
+        private Timer fix1CTimer = new Timer();
         private Timer tempCaptureTimer = new Timer();
         private DateTime TimeFromWindowOpen;
         private Thread updateDBThread;
@@ -327,6 +328,9 @@ namespace ClipAngel
             keyboardHook.KeyPressed += new EventHandler<KeyPressedEventArgs>(hook_KeyPressed);
             ImageControl.MouseWheel += new MouseEventHandler(ImageControl_MouseWheel);
             captureTimer.Tick += delegate { CaptureClipboardData(); };
+            fix1CTimer.Interval = 2000;
+            fix1CTimer.Tick += delegate { fix1CFormat(); };
+            fix1CTimer.Start();
             RegisterHotKeys();
             toolStripTop.Renderer = new MyToolStripRenderer();
             toolStripBottom.Renderer = new MyToolStripRenderer();
@@ -2170,6 +2174,61 @@ namespace ClipAngel
 
         [DllImport("user32.dll")]
         static extern IntPtr GetClipboardOwner();
+        [DllImport("user32.dll")]
+        private static extern bool IsHungAppWindow(IntPtr hWnd);
+        [DllImport("user32.dll")]
+        private static extern bool IsClipboardFormatAvailable(uint format);
+
+        [DllImport("user32.dll")]
+        private static extern uint RegisterClipboardFormat(string lpszFormat);
+
+        public struct ClipFormat
+        {
+            public string Name;
+            public uint Id;
+            public ClipFormat(string name, uint id)
+            {
+                Name = name;
+                Id = id;
+            }
+        }
+
+        private void fix1CFormat()
+        {
+            if (!ClipAngel.Properties.Settings.Default.MonitoringClipboard)
+                return;
+            //IDataObject iData = Clipboard.GetDataObject(); // Зависает
+            ClipFormat[] formats = new ClipFormat[]
+            {
+                new ClipFormat("1C:MD8", 0),
+                new ClipFormat("1C:MD8 Info", 0),
+                new ClipFormat("1C:MD8 External Data", 0)
+            };
+            for (int i = 0; i < formats.Length; i++)
+            {
+                formats[i].Id = RegisterClipboardFormat(formats[i].Name);
+            }
+            bool formatFound = false;
+            foreach (ClipFormat clipFormat in formats)
+            {
+                if (IsClipboardFormatAvailable(clipFormat.Id))
+                {
+                    formatFound = true;
+                    break;
+                }
+            }
+            if (formatFound)
+            {
+                ClipboardOwner clipboardOwner = GetClipboardOwnerLockerInfo(false);
+                if (true
+                    && clipboardOwner.application.StartsWith("1cv8")
+                    && IsHungAppWindow(clipboardOwner.windowHandle))
+                {
+                    GotoLastRow();
+                    CopyClipToClipboard();
+                }
+            }
+        }
 
         private void CaptureClipboardData()
         {
@@ -2214,7 +2273,7 @@ namespace ClipAngel
             if (iData.GetDataPresent(DataFormat_RemoveTempClipsFromHistory))
             {
                 removeClipsFilter removeClipsFilter;
-                var dataString = GetStingFromClipboardData(iData, DataFormat_RemoveTempClipsFromHistory);
+                var dataString = GetStringFromClipboardData(iData, DataFormat_RemoveTempClipsFromHistory);
                 if (!String.IsNullOrWhiteSpace(dataString))  // Rarely we got NULL 
                 {
                     // Test
@@ -2265,7 +2324,7 @@ namespace ClipAngel
             {
                 if (iData.GetDataPresent(DataFormats.UnicodeText))
                 {
-                    clipText = GetStingFromClipboardData(iData, DataFormats.UnicodeText);
+                    clipText = GetStringFromClipboardData(iData, DataFormats.UnicodeText);
                     if (!String.IsNullOrEmpty(clipText))
                     {
                         clipType = "text";
@@ -2274,7 +2333,7 @@ namespace ClipAngel
                 }
                 if (!textFormatPresent && iData.GetDataPresent(DataFormats.Text))
                 {
-                    clipText = GetStingFromClipboardData(iData, DataFormats.Text);
+                    clipText = GetStringFromClipboardData(iData, DataFormats.Text);
                     if (!String.IsNullOrEmpty(clipText))
                     {
                         clipType = "text";
@@ -2342,7 +2401,7 @@ namespace ClipAngel
                         || NumberOfFilledCells == 0
                         || ClipAngel.Properties.Settings.Default.MaxCellsToCaptureFormattedText > NumberOfFilledCells))
                 {
-                    htmlText = GetStingFromClipboardData(iData, DataFormats.Html);
+                    htmlText = GetStringFromClipboardData(iData, DataFormats.Html);
                     if (String.IsNullOrEmpty(htmlText))
                     {
                         htmlText = "";
@@ -2415,7 +2474,7 @@ namespace ClipAngel
                         || NumberOfFilledCells == 0
                         || ClipAngel.Properties.Settings.Default.MaxCellsToCaptureFormattedText > NumberOfFilledCells))
                 {
-                    richText = GetStingFromClipboardData(iData, DataFormats.Rtf);
+                    richText = GetStringFromClipboardData(iData, DataFormats.Rtf);
                     clipType = "rtf";
                     if (!textFormatPresent)
                     {
@@ -2595,7 +2654,23 @@ namespace ClipAngel
                 ReloadList();
         }
 
-        private static string GetStingFromClipboardData(IDataObject iData, string formatName)
+        public static string GetDataFromClipboard(string format)
+        {
+            if (Clipboard.ContainsData(format))
+            {
+                var stream = Clipboard.GetData(format) as MemoryStream;
+                if (stream == null)
+                {
+                    throw new Exception("Stream is Null: " + format);
+                }
+                var buffer = new byte[stream.Length];
+                stream.Read(buffer, 0, (int)stream.Length);
+                return Encoding.UTF8.GetString(buffer);
+            }
+            return "";
+        }
+
+        private static string GetStringFromClipboardData(IDataObject iData, string formatName)
         {
             string dataString = "";
             try
@@ -3908,6 +3983,7 @@ namespace ClipAngel
         public class ClipboardOwner
         {
             public string windowTitle = "";
+            public IntPtr windowHandle = IntPtr.Zero;
             public string application = "";
             public string appPath = "";
             public bool is1CCode = false;
@@ -3947,6 +4023,7 @@ namespace ClipAngel
                 return result;
             }
             result.appPath = GetProcessMainModuleFullName(result.processId);
+            result.windowHandle = hwnd;
             result.windowTitle = GetWindowTitle(hwnd);
             if (true
                 && hwnd != IntPtr.Zero 
@@ -7672,7 +7749,7 @@ namespace ClipAngel
                             DataObject dto = new DataObject();
                             int count = 0;
                             string agregateTextToPaste = JoinOrPasteTextOfClips(PasteMethod.Null, out count);
-                            if (agregateTextToPaste.Length < 1000)
+                            if (agregateTextToPaste.Length < 2000)
                             {
                                 SetTextInClipboardDataObject(dto, agregateTextToPaste);
                             }
