@@ -7283,7 +7283,7 @@ namespace ClipAngel
             DataObject dto = new DataObject();
             string text = richTextBox.SelectedText;
             SetTextInClipboardDataObject(dto, text);
-            if (ClipAngel.Properties.Settings.Default.ShowNativeTextFormatting)
+            if (ClipAngel.Properties.Settings.Default.ShowNativeTextFormatting && richTextBox.SelectedRtf.Length > 0)
             {
                 dto.SetText(richTextBox.SelectedRtf, TextDataFormat.Rtf);
             }
