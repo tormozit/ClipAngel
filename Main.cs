@@ -2654,33 +2654,42 @@ namespace ClipAngel
                 ReloadList();
         }
 
-        public static string GetDataFromClipboard(string format)
+        private string GetStringFromClipboardData(IDataObject iData, string formatName)
         {
-            if (Clipboard.ContainsData(format))
-            {
-                var stream = Clipboard.GetData(format) as MemoryStream;
-                if (stream == null)
-                {
-                    throw new Exception("Stream is Null: " + format);
-                }
-                var buffer = new byte[stream.Length];
-                stream.Read(buffer, 0, (int)stream.Length);
-                return Encoding.UTF8.GetString(buffer);
-            }
-            return "";
-        }
-
-        private static string GetStringFromClipboardData(IDataObject iData, string formatName)
-        {
-            string dataString = "";
             try
             {
-                dataString = (string) iData.GetData(formatName);
+                var data = iData.GetData(formatName);
+                if (data == null) return "";
+                if (data is string)
+                {
+                    return (string) data;
+                }
+                if (!(data is MemoryStream))
+                {
+                    throw new Exception("Stream is Null: " + formatName);
+                }
+                Encoding encoding;
+                if (formatName == DataFormats.UnicodeText || formatName == DataFormat_RemoveTempClipsFromHistory)
+                {
+                    encoding = Encoding.Unicode;
+                }
+                else if (formatName == DataFormats.OemText)
+                {
+                    encoding = Encoding.ASCII;
+                }
+                else
+                {
+                    encoding = Encoding.UTF8;
+                }
+                MemoryStream stream = (MemoryStream)data;
+                var buffer = new byte[stream.Length];
+                stream.Read(buffer, 0, (int)stream.Length);
+                return encoding.GetString(buffer);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                return "";
             }
-            return dataString;
         }
 
         public static Bitmap ImageFromClipboardDib(Byte[] dibBytes)
