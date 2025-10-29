@@ -7013,7 +7013,10 @@ namespace ClipAngel
             File.WriteAllText(filename1, rowReader1["text"].ToString(), Encoding.UTF8);
             string filename2 = clipTempFile(rowReader2, "comp");
             File.WriteAllText(filename2, rowReader2["text"].ToString(), Encoding.UTF8);
-            Process.Start(comparatorName, String.Format("\"{0}\" \"{1}\"", filename1, filename2));
+            string preParam = "";
+            if (comparatorName.EndsWith("code.exe", true, CultureInfo.CurrentCulture))
+                preParam = "-d ";
+            Process.Start(comparatorName, preParam + String.Format("\"{0}\" \"{1}\"", filename1, filename2));
         }
 
         string comparatorExeFileName()
