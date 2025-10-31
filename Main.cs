@@ -7761,7 +7761,7 @@ namespace ClipAngel
                             DataObject dto = new DataObject();
                             int count = 0;
                             string agregateTextToPaste = JoinOrPasteTextOfClips(PasteMethod.Null, out count);
-                            if (agregateTextToPaste.Length < 2000)
+                            if (agregateTextToPaste.Length < 1000) // MS Teams bug workaround https://github.com/tormozit/ClipAngel/issues/16
                             {
                                 SetTextInClipboardDataObject(dto, agregateTextToPaste);
                             }
