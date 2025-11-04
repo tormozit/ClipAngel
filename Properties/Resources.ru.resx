@@ -460,4 +460,7 @@
   <data name="TooBigClipForChannel" xml:space="preserve">
     <value>Слишком большой клип для отправки в канал. Макс. размер - 10000 символов.</value>
   </data>
+  <data name="Duplicate" xml:space="preserve">
+    <value>Копия</value>
+  </data>
 </root>

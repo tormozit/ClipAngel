@@ -3064,4 +3064,7 @@ Edytuj ciąg wyszukiwania bezpośrednio z listy. Nawiguj po liście w prawo od p
     <value>Symulacja w aktywnym oknie szybkiego wprowadzania tekstu wybranego klipu lub zbiorczego tekstu wybranych klipów.
 Nie działa wysyłanie do okna z podniesionymi uprawnieniami</value>
   </data>
+  <data name="duplicateTextClipToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>220, 22</value>
+  </data>
 </root>

@@ -8430,6 +8430,12 @@ namespace ClipAngel
         {
 
         }
+
+        private void duplicateTextClipToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AddClip(null, null , "", "", "text", "" + CurrentLangResourceManager.GetString("Duplicate") + " " + LoadedClipRowReader["Text"]);
+            GotoLastRow();
+        }
     }
     public static class Logger
     {

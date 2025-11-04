@@ -2833,4 +2833,7 @@ Le tri est conservé jusqu'à la capture du clip.</value>
   <data name="toolStripMenuItemPasteCharsSlow.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>221, 22</value>
   </data>
+  <data name="duplicateTextClipToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>220, 22</value>
+  </data>
 </root>

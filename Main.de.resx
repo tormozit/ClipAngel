@@ -2839,4 +2839,7 @@ Bearbeite den Suchstring direkt aus der Liste. Navigiere in der Liste direkt aus
   <data name="toolStripMenuItemPasteCharsSlow.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>221, 22</value>
   </data>
+  <data name="duplicateTextClipToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>220, 22</value>
+  </data>
 </root>

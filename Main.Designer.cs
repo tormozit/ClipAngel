@@ -428,6 +428,7 @@ namespace ClipAngel
             this.openWithToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveAsFileMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mergeTextOfClipsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.duplicateTextClipToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.textCompareToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.translateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.uploadImageToWebToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -493,6 +494,7 @@ namespace ClipAngel
             this.dataGridViewImageColumn4 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewRichTextBoxColumn2 = new ClipAngel.DataGridViewRichTextBoxColumn();
             this.dataGridViewImageColumn5 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.cultureManager6 = new Infralution.Localization.CultureManager(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -1636,6 +1638,7 @@ namespace ClipAngel
             this.openWithToolStripMenuItem,
             this.saveAsFileMenuItem,
             this.mergeTextOfClipsToolStripMenuItem,
+            this.duplicateTextClipToolStripMenuItem,
             this.textCompareToolStripMenuItem,
             this.translateToolStripMenuItem,
             this.uploadImageToWebToolStripMenuItem,
@@ -1812,6 +1815,12 @@ namespace ClipAngel
             this.mergeTextOfClipsToolStripMenuItem.Name = "mergeTextOfClipsToolStripMenuItem";
             resources.ApplyResources(this.mergeTextOfClipsToolStripMenuItem, "mergeTextOfClipsToolStripMenuItem");
             this.mergeTextOfClipsToolStripMenuItem.Click += new System.EventHandler(this.mergeTextOfClipsToolStripMenuItem_Click);
+            // 
+            // duplicateTextClipToolStripMenuItem
+            // 
+            this.duplicateTextClipToolStripMenuItem.Name = "duplicateTextClipToolStripMenuItem";
+            resources.ApplyResources(this.duplicateTextClipToolStripMenuItem, "duplicateTextClipToolStripMenuItem");
+            this.duplicateTextClipToolStripMenuItem.Click += new System.EventHandler(this.duplicateTextClipToolStripMenuItem_Click);
             // 
             // textCompareToolStripMenuItem
             // 
@@ -2247,6 +2256,10 @@ namespace ClipAngel
             this.dataGridViewImageColumn5.Name = "dataGridViewImageColumn5";
             this.dataGridViewImageColumn5.ReadOnly = true;
             // 
+            // cultureManager6
+            // 
+            this.cultureManager6.ManagedControl = this;
+            // 
             // Main
             // 
             this.AllowDrop = true;
@@ -2521,6 +2534,8 @@ namespace ClipAngel
         private System.Windows.Forms.DataGridViewTextBoxColumn titleDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn favoriteDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.ToolStripMenuItem duplicateTextClipToolStripMenuItem;
+        private Infralution.Localization.CultureManager cultureManager6;
     }
 }
 
