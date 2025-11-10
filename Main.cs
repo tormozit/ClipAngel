@@ -711,11 +711,13 @@ namespace ClipAngel
                 targetTitle = GetWindowTitle(lastActiveParentWindow);
                 int pid;
                 GetWindowThreadProcessId(lastActiveParentWindow, out pid);
-                Process proc = Process.GetProcessById(pid);
-                if (proc != null)
+                try
                 {
-                    targetTitle += " [" + proc.ProcessName + "]";
+                    Process proc = Process.GetProcessById(pid);
+                    if (proc != null)
+                        targetTitle += " [" + proc.ProcessName + "]";
                 }
+                catch (Exception) { }
             }
             Debug.WriteLine("Active window " + lastActiveParentWindow + " " + targetTitle);
             string newTitle = Application.ProductName + " " + Properties.Resources.VersionValue;
