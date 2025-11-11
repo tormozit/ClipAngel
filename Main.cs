@@ -2228,6 +2228,23 @@ namespace ClipAngel
             }
         }
 
+        private bool IsIgnoredUrl(string clipUrl)
+        {
+            string[] IgnoreTemplates = Settings.Default.IgnoreUrlsClipCapture.Trim().ToLower().Split(new string[] { ";", "," }, StringSplitOptions.RemoveEmptyEntries);
+            if (IgnoreTemplates.Length > 0)
+            {
+                foreach (var template in IgnoreTemplates)
+                {
+                    if (clipUrl.ToLower().Contains(template.Trim()))
+                    {
+                        return true;
+                    }
+                }
+            }
+
+            return false;
+        }
+
         private void CaptureClipboardData()
         {
             DateTime now = DateTime.Now;
@@ -2429,17 +2446,8 @@ namespace ClipAngel
                                 clipUrl = System.Web.HttpUtility.UrlDecode(clipUrl);
                                 clipUrl = clipUrl.Replace(@"/", @"\");
                             }
-                            string[] IgnoreTemplates = Settings.Default.IgnoreUrlsClipCapture.Trim().ToLower().Split(new string[] { ";", "," }, StringSplitOptions.RemoveEmptyEntries);
-                            if (IgnoreTemplates.Length > 0)
-                            {
-                                foreach (var template in IgnoreTemplates)
-                                {
-                                    if (clipUrl.ToLower().Contains(template.Trim()))
-                                    {
-                                        return;
-                                    }
-                                }
-                            }
+                            if (IsIgnoredUrl(clipUrl))
+                                return;
                         }
                         if (ClipAngel.Properties.Settings.Default.CaptureImages && String.IsNullOrWhiteSpace(clipText))
                         {
@@ -2462,6 +2470,24 @@ namespace ClipAngel
                                 }
                             }
                         }
+                    }
+                }
+                // explicit case for Chromium browsers to attempt to detect URL from "Chromium internal source URL"
+                else
+                {
+                    string expectedFormat = "Chromium internal source URL";
+                    if (iData.GetFormats().Contains(expectedFormat))
+                    {
+                        object data = iData.GetData(expectedFormat);
+
+                        if (data is MemoryStream ms)
+                            clipUrl = Encoding.UTF8.GetString(ms.ToArray());
+                        else if (data is string s)
+                            clipUrl = s;
+
+                        if (clipUrl != null)
+                            if (IsIgnoredUrl(clipUrl))
+                                return;
                     }
                 }
 
