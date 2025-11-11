@@ -2480,10 +2480,10 @@ namespace ClipAngel
                     {
                         object data = iData.GetData(expectedFormat);
 
-                        if (data is MemoryStream ms)
-                            clipUrl = Encoding.UTF8.GetString(ms.ToArray());
-                        else if (data is string s)
-                            clipUrl = s;
+                        if (data is MemoryStream)
+                            clipUrl = Encoding.UTF8.GetString((data as MemoryStream).ToArray());
+                        else if (data is string)
+                            clipUrl = (data as string);
 
                         if (clipUrl != null)
                             if (IsIgnoredUrl(clipUrl))
