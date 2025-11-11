@@ -709,9 +709,7 @@ namespace ClipAngel
             if (lastActiveParentWindow != null)
             {
                 targetTitle = GetWindowTitle(lastActiveParentWindow);
-                int pid;
-                GetWindowThreadProcessId(lastActiveParentWindow, out pid);
-                Process proc = Process.GetProcessById(pid);
+                Process proc = ProcessFromWindow(lastActiveParentWindow);
                 if (proc != null)
                 {
                     targetTitle += " [" + proc.ProcessName + "]";
@@ -3976,7 +3974,7 @@ namespace ClipAngel
             }
             const int lengthSb = 1000; // Dirty
             var sb = new StringBuilder(lengthSb);
-            // Possibly there is no such fuction in Windows 7 https://stackoverflow.com/a/321343/4085971
+            // Possibly there is no such function in Windows 7 https://stackoverflow.com/a/321343/4085971
             if (GetModuleFileNameEx(processHandle, IntPtr.Zero, sb, sb.Capacity) > 0)
             {
                 result = sb.ToString();
@@ -4020,12 +4018,14 @@ namespace ClipAngel
                     return result;
                 }
             }
-            uint activeWindowThread = GetWindowThreadProcessId(hwnd, out result.processId);
-            Process process1 = Process.GetProcessById(result.processId);
+            Process process = ProcessFromWindow(hwnd);
+            if (process == null)
+                return result;
+            result.processId = process.Id;
             try
             {
-                result.application = process1.ProcessName;
-                hwnd = process1.MainWindowHandle;
+                result.application = process.ProcessName;
+                hwnd = process.MainWindowHandle;
             }
             catch (Exception e)
             {
@@ -4065,6 +4065,22 @@ namespace ClipAngel
                 result.isRemoteDesktop = true;
             }
             return result;
+        }
+
+        private static Process ProcessFromWindow(IntPtr hwnd)
+        {
+            int processId;
+            GetWindowThreadProcessId(hwnd, out processId);
+            Process process = null;
+            try
+            {
+                process = Process.GetProcessById(processId);
+            }
+            catch (Exception)
+            {
+                // https://github.com/tormozit/ClipAngel/pull/20
+            }
+            return process;
         }
 
         void sendKey(IntPtr hwnd, Keys keyCode, bool extended = false, bool down = true, bool up = true)

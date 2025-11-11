@@ -7232,6 +7232,14 @@ Nie działa wysyłanie do okna z podniesionymi uprawnieniami</target>
           <source>Duplicate text clip</source>
           <target state="new">Duplicate text clip</target>
         </trans-unit>
+        <trans-unit id="duplicateTextClipToolStripMenuItem.ToolTipText" translate="yes" xml:space="preserve">
+          <source>Add copy of text clip in clip list</source>
+          <target state="new">Add copy of text clip in clip list</target>
+        </trans-unit>
+        <trans-unit id="cultureManager6.TrayLocation" translate="yes" xml:space="preserve" extype="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" extradata="metadata">
+          <source>1035, 57</source>
+          <target state="needs-review-translation">1035, 57</target>
+        </trans-unit>
       </group>
     </body>
   </file>
