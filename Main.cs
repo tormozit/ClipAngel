@@ -2200,7 +2200,8 @@ namespace ClipAngel
             {
                 new ClipFormat("1C:MD8", 0),
                 new ClipFormat("1C:MD8 Info", 0),
-                new ClipFormat("1C:MD8 External Data", 0)
+                new ClipFormat("1C:MD8 External Data", 0),
+                new ClipFormat("1C:TxtEdt OutlineText", 0)
             };
             for (int i = 0; i < formats.Length; i++)
             {
