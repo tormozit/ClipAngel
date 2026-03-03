@@ -3755,7 +3755,7 @@ namespace ClipAngel
             }
             int waitStep = 5;
             IntPtr hForegroundWindow = IntPtr.Zero;
-            for (int i = 0; i < 200; i += waitStep)
+            for (int i = 0; i < 500; i += waitStep)
             {
                 hForegroundWindow = GetForegroundWindow();
                 if (hForegroundWindow != IntPtr.Zero)
