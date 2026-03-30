@@ -8556,8 +8556,9 @@ namespace ClipAngel
                 if (iData.GetDataPresent(format))
                 {
                     var data = iData.GetData(format);
-                    if (data is MemoryStream ms)
+                    if (data is MemoryStream)
                     {
+                        MemoryStream ms = (MemoryStream)data;
                         dataMap[format] = Convert.ToBase64String(ms.ToArray());
                         found = true;
                     }
