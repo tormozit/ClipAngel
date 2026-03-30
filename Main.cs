@@ -126,6 +126,13 @@ namespace ClipAngel
         string DataFormat_ClipboardViewerIgnore = "Clipboard Viewer Ignore";
         string DataFormat_XMLSpreadSheet = "XML SpreadSheet";
         string DataFormat_RemoveTempClipsFromHistory = "RemoveTempClipsFromHistory"; // Turboconf
+        private static readonly string[] Formats1C = {
+            "1C:V8MngCmdObjectsDataFormat",
+            "1C:MD8 Info",
+            "1C:MD8 Data",
+            "1C:MD8",
+            "1C:MD8 External Data"
+        };
 
         string ActualVersion;
 
@@ -153,6 +160,7 @@ namespace ClipAngel
         Bitmap imageRtf;
         Bitmap imageFile;
         Bitmap imageImg;
+        Bitmap image1C;
         const int ChannelDataLifeTime = 60;
         string searchString = ""; // TODO optimize speed
         bool periodFilterOn = false;
@@ -341,7 +349,7 @@ namespace ClipAngel
             imageRtf = resourceManager.GetObject("TypeRtf") as Bitmap;
             imageFile = resourceManager.GetObject("TypeFile") as Bitmap;
             imageImg = resourceManager.GetObject("TypeImg") as Bitmap;
-
+            image1C = resourceManager.GetObject("Type1CMD8") as Bitmap;
             htmlTextBox.Navigate("about:blank");
             htmlTextBox.Document.ExecCommand("EditMode", false, null);
             //ClipAngel.Properties.Settings.Default.FastWindowOpen = false; // for debug
@@ -363,6 +371,7 @@ namespace ClipAngel
                 new ListItemNameText {Name = "text"},
                 new ListItemNameText {Name = "rtf"},
                 new ListItemNameText {Name = "html"},
+                new ListItemNameText {Name = "1c"},
             };
             foreach (KeyValuePair<string, string> pair in TextPatterns)
             {
@@ -1179,12 +1188,17 @@ namespace ClipAngel
                 string fullText = LoadedClipRowReader["Text"].ToString();
                 string fullRTF = LoadedClipRowReader["richText"].ToString();
                 string htmlText = GetHtmlFromHtmlClipText();
+                if (clipType == "1c")
+                {
+                    byte[] binaryData = LoadedClipRowReader["Binary"] as byte[];
+                    htmlText = Generate1CHtml(fullText, fullRTF, htmlText, binaryData);
+                }
                 useNativeTextFormatting = true
                                           && ClipAngel.Properties.Settings.Default.ShowNativeTextFormatting
-                                          && (clipType == "html" || clipType == "rtf");
+                                          && (clipType == "html" || clipType == "rtf" || clipType == "1c");
                 Bitmap appIcon = ApplicationIcon(LoadedClipRowReader["appPath"].ToString());
                 htmlDoc = htmlTextBox.Document.DomDocument as mshtml.IHTMLDocument2;
-                if (clipType == "html")
+                if (clipType == "html" || clipType == "1c")
                 {
                     //htmlTextBox.Parent = new Control();
                     htmlTextBox.Parent.Enabled = false; // Prevent stealing focus
@@ -1224,10 +1238,10 @@ namespace ClipAngel
                 }
                 else
                 {
-                    if (useNativeTextFormatting)
+                    if (useNativeTextFormatting || clipType == "1c")
                     {
                         htmlMode = true
-                                   && clipType == "html"
+                                   && (clipType == "html" || clipType == "1c")
                                    && !String.IsNullOrEmpty(htmlText);
                         if (htmlMode)
                         {
@@ -1251,22 +1265,21 @@ namespace ClipAngel
                             //htmlTextBox.Document.OpenNew(false);
                             //htmlTextBox.Document.Write(htmlText);
                             htmlDoc.write(htmlText);
+                            htmlDoc.designMode = "Off"; // Explicitly disable edit mode to allow interaction with custom elements
                             htmlDoc.close(); // Steals focus!!!
-                            mshtml.IHTMLBodyElement body = htmlDoc.body as mshtml.IHTMLBodyElement;
-                            //htmlDoc.selection.empty();
-                            htmlTextBox.Document.Body.Drag += new HtmlElementEventHandler(htmlTextBoxDrag); // to prevent internal drag&drop
-                            htmlTextBox.Document.Body.KeyDown += new HtmlElementEventHandler(htmlTextBoxDocumentKeyDown);
-
-                            // Need to be called every time, else handler will be lost
-                            htmlTextBox.Document.AttachEventHandler("onselectionchange", htmlTextBoxDocumentSelectionChange); // No multi call to handler, but why?
-                            if (!htmlInitialized)
+                            
+                            if (htmlTextBox.Document != null && htmlTextBox.Document.Body != null)
                             {
-                                mshtml.HTMLDocumentEvents2_Event iEvent = (mshtml.HTMLDocumentEvents2_Event) htmlDoc;
-                                iEvent.onclick += new mshtml.HTMLDocumentEvents2_onclickEventHandler(htmlTextBoxDocumentClick); //
-                                iEvent.onmousedown += new mshtml.HTMLDocumentEvents2_onmousedownEventHandler(htmlTextBoxMouseDown); //
-                                //iEvent.onselectionchange += new mshtml.HTMLDocumentEvents2_onselectionchangeEventHandler(htmlTextBoxDocumentSelectionChange);
-                                htmlInitialized = true;
+                                htmlTextBox.Document.Body.Drag += new HtmlElementEventHandler(htmlTextBoxDrag); // to prevent internal drag&drop
+                                htmlTextBox.Document.Body.KeyDown += new HtmlElementEventHandler(htmlTextBoxDocumentKeyDown);
+                                htmlTextBox.Document.AttachEventHandler("onselectionchange", htmlTextBoxDocumentSelectionChange);
                             }
+                            mshtml.HTMLDocumentEvents2_Event iEvent = (mshtml.HTMLDocumentEvents2_Event) htmlDoc;
+                            iEvent.onclick += new mshtml.HTMLDocumentEvents2_onclickEventHandler(htmlTextBoxDocumentClick); //
+                            iEvent.onmousedown += new mshtml.HTMLDocumentEvents2_onmousedownEventHandler(htmlTextBoxMouseDown); //
+                            //iEvent.onselectionchange += new mshtml.HTMLDocumentEvents2_onselectionchangeEventHandler(htmlTextBoxDocumentSelectionChange);
+                            htmlInitialized = true;
+
                         }
                         else
                         {
@@ -1322,7 +1335,7 @@ namespace ClipAngel
                 urlTextBox.Clear();
                 urlTextBox.Text = LoadedClipRowReader["Url"].ToString();
                 MarkLinksInRichTextBox(urlTextBox, out UrlLinkMatches);
-                if (clipType == "html")
+                if (clipType == "html" || clipType == "1c")
                 {
                     htmlTextBox.Parent.Enabled = true;
                 }
@@ -1353,8 +1366,9 @@ namespace ClipAngel
                 if (elementPanelHasFocus)
                     ImageControl.Focus();
                 htmlTextBox.Visible = false; // Without it htmlTextBox will be visible but why?
+                richTextBox.Visible = true;
             }
-            else if (htmlMode)
+            else if (htmlMode || clipType == "1c")
             {
                 tableLayoutPanelData.RowStyles[0].Height = 0;
                 tableLayoutPanelData.RowStyles[0].SizeType = SizeType.Absolute;
@@ -1366,6 +1380,7 @@ namespace ClipAngel
                 if (elementPanelHasFocus)
                     htmlTextBox.Document.Focus();
                 htmlTextBox.Visible = true;
+                richTextBox.Visible = false;
             }
             else
             {
@@ -1377,6 +1392,8 @@ namespace ClipAngel
                 tableLayoutPanelData.RowStyles[2].SizeType = SizeType.Absolute;
                 if (elementPanelHasFocus)
                     richTextBox.Focus();
+                htmlTextBox.Visible = false;
+                richTextBox.Visible = true;
             }
             if (urlTextBox.Text == "")
                 tableLayoutPanelData.RowStyles[3].Height = 0;
@@ -1443,6 +1460,7 @@ namespace ClipAngel
 
         private string LocalTypeName(string TypeEng)
         {
+            if (TypeEng == "1c") return "1C";
             string localTypeName;
             if (CurrentLangResourceManager.GetString(TypeEng) == null)
                 localTypeName = TypeEng;
@@ -2331,7 +2349,9 @@ namespace ClipAngel
                 return;
             }
             bool textFormatPresent = false;
-            byte[] binaryBuffer = new byte[0];
+            byte[] data1C = Capture1CData(iData);
+            bool found1C = (data1C != null);
+            byte[] binaryBuffer = found1C ? data1C : new byte[0];
             byte[] imageSampleBuffer = new byte[0];
             int NumberOfFilledCells = 0;
             int NumberOfImageCells = 0;
@@ -2648,6 +2668,15 @@ namespace ClipAngel
 
                 if (clipType == "html" && clipText == "")
                     clipType = "";
+
+                if (found1C)
+                {
+                    clipType = "1c";
+                    if (String.IsNullOrEmpty(clipText))
+                        clipText = "Объект 1С (Метаданные)";
+                    binaryBuffer = data1C; 
+                }
+
                 // Split Image+Html clip into 2: Image and Html 
                 if (clipTextImage != "")
                 {
@@ -2666,7 +2695,7 @@ namespace ClipAngel
                 if (clipType != "")
                 {
                     // Non image clip
-                    bool clipAdded = AddClip(new byte[0], imageSampleBuffer, htmlText, richText, clipType, clipText, clipboardOwner.application,
+                    bool clipAdded = AddClip(binaryBuffer, imageSampleBuffer, htmlText, richText, clipType, clipText, clipboardOwner.application,
                         clipboardOwner.windowTitle, clipUrl, clipChars, clipboardOwner.appPath, false, false, false, "");
                     needUpdateList = needUpdateList || clipAdded;
                 }
@@ -3486,6 +3515,17 @@ namespace ClipAngel
                 string selectedText = GetSelectedTextOfClip(onlySelectedPlainText);
                 if (!String.IsNullOrEmpty(selectedText))
                     clipText = selectedText;
+            }
+            if (type == "1c" && !onlySelectedPlainText)
+            {
+                DataObject dto1c = new DataObject();
+                Restore1CData(dto1c, binary);
+                SetTextInClipboardDataObject(dto1c, clipText);
+                if (!(richText is DBNull) && !String.IsNullOrEmpty(richText.ToString()))
+                    dto1c.SetText(richText.ToString(), TextDataFormat.Rtf);
+                if (!(htmlText is DBNull) && !String.IsNullOrEmpty(htmlText.ToString()))
+                    dto1c.SetText(htmlText.ToString(), TextDataFormat.Html);
+                return dto1c;
             }
             DataObject dto = new DataObject();
             if (IsTextType(type) || type == "file" || onlySelectedPlainText)
@@ -4861,6 +4901,9 @@ namespace ClipAngel
             {
                 case "text":
                     image = imageText;
+                    break;
+                case "1c":
+                    image = image1C;
                     break;
                 case "html":
                     image = imageHtml;
@@ -7202,12 +7245,36 @@ namespace ClipAngel
 
         private bool htmlTextBoxDocumentClick(mshtml.IHTMLEventObj e)
         {
+            IHTMLElement src = e.srcElement;
+            if (src != null && src.className == "copy-btn")
+            {
+                string copyId = src.getAttribute("data-copy-id") as string;
+                if (!string.IsNullOrEmpty(copyId))
+                {
+                    mshtml.IHTMLDocument3 doc3 = htmlTextBox.Document.DomDocument as mshtml.IHTMLDocument3;
+                    if (doc3 != null)
+                    {
+                        mshtml.IHTMLElement contentElement = doc3.getElementById(copyId);
+                        if (contentElement != null)
+                        {
+                            string text = contentElement.innerText;
+                            if (!string.IsNullOrEmpty(text))
+                            {
+                                Clipboard.SetText(text);
+                                src.innerText = "ОК!";
+                            }
+                        }
+                    }
+                }
+                return false;
+            }
             if (e.altKey)
             {
                 IHTMLElement hlink = e.srcElement;
                 openLinkInBrowserToolStripMenuItem_Click();
+                return false;
             }
-            return false;
+            return true;
         }
 
         private void htmlTextBoxDocumentSelectionChange(Object sender = null, EventArgs e = null)
@@ -8478,6 +8545,165 @@ namespace ClipAngel
         {
             AddClip(null, null , "", "", "text", "" + CurrentLangResourceManager.GetString("Duplicate") + " " + LoadedClipRowReader["Text"]);
             GotoLastRow();
+        }
+
+        private byte[] Capture1CData(IDataObject iData)
+        {
+            var dataMap = new Dictionary<string, string>();
+            bool found = false;
+            foreach (var format in Formats1C)
+            {
+                if (iData.GetDataPresent(format))
+                {
+                    var data = iData.GetData(format);
+                    if (data is MemoryStream ms)
+                    {
+                        dataMap[format] = Convert.ToBase64String(ms.ToArray());
+                        found = true;
+                    }
+                }
+            }
+            return found ? Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(dataMap)) : null;
+        }
+
+        private void Restore1CData(DataObject dto, byte[] binary)
+        {
+            if (binary == null || binary.Length == 0) return;
+            try
+            {
+                var json = Encoding.UTF8.GetString(binary);
+                var dataMap = JsonConvert.DeserializeObject<Dictionary<string, string>>(json);
+                if (dataMap == null) return;
+                foreach (var pair in dataMap)
+                {
+                    var data = Convert.FromBase64String(pair.Value);
+                    dto.SetData(pair.Key, new MemoryStream(data));
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine("Error restoring 1C data: " + ex.Message);
+            }
+        }
+
+        private string Generate1CHtml(string plainText, string richText, string htmlText, byte[] binary1C)
+        {
+            StringBuilder sb = new StringBuilder();
+            bool hasBaseHtml = !String.IsNullOrEmpty(htmlText);
+            
+            sb.Append("<!DOCTYPE html><html><head><meta http-equiv='X-UA-Compatible' content='IE=edge' /><style>");
+            sb.Append("body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 14px; margin: 15px; background: #fff; color: #333; line-height: 1.5; }");
+            sb.Append(".format-item { border: 1px solid #e0e0e0; margin-bottom: 8px; border-radius: 6px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }");
+            sb.Append(".item-header { background-color: #f8fafc; padding: 12px; cursor: pointer; border-bottom: 1px solid #edf2f7; transition: background 0.2s; white-space: nowrap; overflow: hidden; zoom: 1; }");
+            sb.Append(".item-header:hover { background-color: #edf2f7; }");
+            sb.Append(".format-name { font-weight: 600; color: #2d3748; font-family: 'Consolas', 'Monaco', monospace; font-size: 13px; display: block; overflow: hidden; text-overflow: ellipsis; }");
+            sb.Append(".format-content { display: none; background-color: #ffffff; padding: 0; border-top: 1px solid #edf2f7; }");
+            sb.Append(".format-content pre { margin: 0; padding: 12px; white-space: pre-wrap; font-family: 'Consolas', 'Courier New', monospace; font-size: 12px; color: #4a5568; max-height: 400px; overflow-y: auto; display: block; background: #fdfdfd; }");
+            sb.Append(".toggle-icon { font-size: 13px; color: #a0aec0; width: 42px; margin-right: 8px; float: left; display: block; text-align: center; font-family: monospace; font-weight: bold; }");
+            sb.Append(".copy-btn { float: right; background-color: #4299e1; color: white; padding: 2px 10px; border-radius: 4px; font-size: 11px; font-family: -apple-system, sans-serif; cursor: pointer; border: none; font-weight: 600; margin-top: -2px; transition: background 0.2s; }");
+            sb.Append(".copy-btn:hover { background-color: #3182ce; }");
+            sb.Append(".header-title { margin-bottom: 15px; color: #1a202c; font-size: 16px; font-weight: 700; border-bottom: 2px solid #3182ce; padding-bottom: 5px; display: inline-block; }");
+            sb.Append("</style>");
+            sb.Append("<script>");
+            sb.Append("function getNextElementSibling(node) {");
+            sb.Append("  var sibling = node ? node.nextSibling : null;");
+            sb.Append("  while (sibling && sibling.nodeType !== 1) sibling = sibling.nextSibling;");
+            sb.Append("  return sibling;");
+            sb.Append("}");
+            sb.Append("function hasClass(element, className) {");
+            sb.Append("  var cssClass = element && element.className ? element.className : '';");
+            sb.Append("  return (' ' + cssClass + ' ').indexOf(' ' + className + ' ') >= 0;");
+            sb.Append("}");
+            sb.Append("function getFirstByClass(root, className) {");
+            sb.Append("  if (!root) return null;");
+            sb.Append("  if (root.getElementsByClassName) {");
+            sb.Append("    var directMatch = root.getElementsByClassName(className);");
+            sb.Append("    if (directMatch && directMatch.length) return directMatch[0];");
+            sb.Append("  }");
+            sb.Append("  var elements = root.getElementsByTagName('*');");
+            sb.Append("  for (var i = 0; i < elements.length; i++) {");
+            sb.Append("    if (hasClass(elements[i], className)) return elements[i];");
+            sb.Append("  }");
+            sb.Append("  return null;");
+            sb.Append("}");
+            sb.Append("function toggleItem(header, e) {");
+            sb.Append("  var target = (e && (e.target || e.srcElement)) || null;");
+            sb.Append("  if (target && hasClass(target, 'copy-btn')) return false;");
+            sb.Append("  var content = header.nextElementSibling ? header.nextElementSibling : getNextElementSibling(header);");
+            sb.Append("  var icon = header.querySelector ? header.querySelector('.toggle-icon') : getFirstByClass(header, 'toggle-icon');");
+            sb.Append("  if (!content) return false;");
+            sb.Append("  var isHidden = (content.style.display === 'none' || content.style.display === '');");
+            sb.Append("  content.style.display = isHidden ? 'block' : 'none';");
+            sb.Append("  if (icon) icon.innerHTML = isHidden ? '[ - ]' : '[ + ]';");
+            sb.Append("  header.style.backgroundColor = isHidden ? '#edf2f7' : '#f8fafc';");
+            sb.Append("  return false;");
+            sb.Append("}");
+            sb.Append("</script></head><body>");
+
+            if (hasBaseHtml)
+            {
+                sb.Append(htmlText);
+                sb.Append("<hr style='margin: 30px 0; border: 0; border-top: 2px solid #f7fafc;'/>");
+            }
+            else if (!String.IsNullOrEmpty(plainText))
+            {
+                sb.Append("<div style='white-space: pre-wrap; margin-bottom: 25px; border-bottom: 1px solid #e2e8f0; padding-bottom: 20px; color: #2d3748; font-size: 15px;'>");
+                sb.Append(System.Web.HttpUtility.HtmlEncode(plainText));
+                sb.Append("</div>");
+            }
+
+            if (binary1C != null && binary1C.Length > 0)
+            {
+                try
+                {
+                    var json = Encoding.UTF8.GetString(binary1C);
+                    var dataMap = JsonConvert.DeserializeObject<Dictionary<string, string>>(json);
+                    if (dataMap != null && dataMap.Count > 0)
+                    {
+                        sb.Append("<div class='header-title'>Вложенные форматы 1С:</div>");
+                        int index = 0;
+                        foreach (var pair in dataMap)
+                        {
+                            byte[] data = Convert.FromBase64String(pair.Value);
+                            string contentId = "content_" + index;
+                            
+                            sb.Append("<div class='format-item'>");
+                            // Header
+                            sb.Append("<div class='item-header' onclick='return toggleItem(this, event)'>");
+                            sb.Append("<span class='copy-btn' data-copy-id='" + contentId + "'>Копировать</span>");
+                            sb.Append("<span class='toggle-icon'>[ + ]</span> ");
+                            sb.Append("<span class='format-name'>" + System.Web.HttpUtility.HtmlEncode(pair.Key) + "</span>");
+                            sb.Append("</div>");
+                            
+                            // Content
+                            sb.AppendFormat("<div id='{0}' class='format-content' style='display: none;'>", contentId);
+                            sb.Append("<pre>");
+                            try 
+                            { 
+                                string textContent = Encoding.UTF8.GetString(data);
+                                if (string.IsNullOrEmpty(textContent)) 
+                                    sb.Append("<span style='color: #a0aec0; font-style: italic;'>[Пусто]</span>");
+                                else
+                                    sb.Append(System.Web.HttpUtility.HtmlEncode(textContent));
+                            } 
+                            catch { sb.Append("<span style='color: #e53e3e;'>[Бинарные данные]</span>"); }
+                            sb.Append("</pre></div>"); // end content
+                            
+                            sb.Append("</div>"); // end item
+                            index++;
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    sb.Append("<div style='color: #c53030; padding: 12px; border: 1px solid #feb2b2; background: #fff5f5; border-radius: 6px; font-size: 13px;'>");
+                    sb.Append("<strong>Ошибка разбора данных 1С:</strong> " + System.Web.HttpUtility.HtmlEncode(ex.Message));
+                    sb.Append("</div>");
+                }
+            }
+
+            sb.Append("</body></html>");
+            return sb.ToString();
         }
     }
     public static class Logger

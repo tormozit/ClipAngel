@@ -783,6 +783,7 @@ namespace ClipAngel
             this.TypeImage.Name = "TypeImage";
             this.TypeImage.ReadOnly = true;
             this.TypeImage.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.TypeImage.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             // 
             // ColumnTitle
             // 
