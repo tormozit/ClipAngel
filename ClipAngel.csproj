@@ -618,6 +618,7 @@
     <None Include="Picture\Filter.ico" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Picture\Type1CMD8.png" />
     <None Include="Picture\TypeFile.png" />
     <None Include="Picture\TypeHtml.png" />
     <None Include="Picture\TypeImg.png" />

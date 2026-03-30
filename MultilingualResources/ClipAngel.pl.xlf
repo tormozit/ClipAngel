@@ -1763,6 +1763,10 @@ Przykład: youtube.com,facebook.com</target>
           <source>Duplicate</source>
           <target state="new">Duplicate</target>
         </trans-unit>
+        <trans-unit id="Type1CMD8" translate="yes" xml:space="preserve" extype="System.Resources.ResXFileRef, System.Windows.Forms">
+          <source>..\Picture\Type1CMD8.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</source>
+          <target state="needs-review-translation">..\Picture\Type1CMD8.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</target>
+        </trans-unit>
       </group>
     </body>
   </file>
