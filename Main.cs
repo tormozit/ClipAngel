@@ -2200,7 +2200,8 @@ namespace ClipAngel
             {
                 new ClipFormat("1C:MD8", 0),
                 new ClipFormat("1C:MD8 Info", 0),
-                new ClipFormat("1C:MD8 External Data", 0)
+                new ClipFormat("1C:MD8 External Data", 0),
+                new ClipFormat("1C:TxtEdt OutlineText", 0)
             };
             for (int i = 0; i < formats.Length; i++)
             {
@@ -3754,7 +3755,7 @@ namespace ClipAngel
             }
             int waitStep = 5;
             IntPtr hForegroundWindow = IntPtr.Zero;
-            for (int i = 0; i < 200; i += waitStep)
+            for (int i = 0; i < 500; i += waitStep)
             {
                 hForegroundWindow = GetForegroundWindow();
                 if (hForegroundWindow != IntPtr.Zero)
