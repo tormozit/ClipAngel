@@ -145,71 +145,29 @@ namespace ClipAngel
         {
             base.Paint(graphics, clipBounds, cellBounds, rowIndex, cellState, null, null, errorText, cellStyle, advancedBorderStyle, paintParts);
             Image img = GetRtfImage(rowIndex, value, base.Selected, cellStyle);
-            int textWitdh = cellBounds.Width;
-            int horizontalSpaceTextImage = 4;
+            int textWitdh = cellBounds.Right - cellBounds.Left;
+            int horizontalSpaceTextImage = 3;
             int verticalSpace = (int) Math.Max(11 - cellStyle.Font.Size, 0);
 
+            // TODO customize
             DataGridViewCell SampleCell = DataGridView.Rows[rowIndex].Cells["imageSample"];
-            Image sample = SampleCell.Value as Image;
-            Rectangle sampleBoxRect = Rectangle.Empty;
-            Rectangle sampleRect = Rectangle.Empty;
-            if (sample != null)
+            if (SampleCell.Value != null)
             {
-                int boxHeight = Math.Max(cellBounds.Height - 4, 1);
-                int boxWidth = Math.Max(Math.Min(cellBounds.Width / 4, 72), 28);
-                sampleBoxRect = new Rectangle(
-                    cellBounds.Right - boxWidth - horizontalSpaceTextImage,
-                    cellBounds.Top + 2,
-                    boxWidth,
-                    boxHeight);
-
-                int innerPadding = 2;
-                int availableWidth = Math.Max(sampleBoxRect.Width - (innerPadding * 2), 1);
-                int availableHeight = Math.Max(sampleBoxRect.Height - (innerPadding * 2), 1);
-                float ratio = Math.Min((float) availableWidth / Math.Max(sample.Width, 1), (float) availableHeight / Math.Max(sample.Height, 1));
-                int drawWidth = Math.Max(1, (int) Math.Round(sample.Width * ratio));
-                int drawHeight = Math.Max(1, (int) Math.Round(sample.Height * ratio));
-
-                sampleRect = new Rectangle(
-                    sampleBoxRect.Left + ((sampleBoxRect.Width - drawWidth) / 2),
-                    sampleBoxRect.Top + ((sampleBoxRect.Height - drawHeight) / 2),
-                    drawWidth,
-                    drawHeight);
-                textWitdh = Math.Max(sampleBoxRect.Left - cellBounds.Left - (horizontalSpaceTextImage * 2), 1);
+                textWitdh -= SampleCell.Size.Width;
             }
-
-            Region previousClip = graphics.Clip;
-            graphics.SetClip(cellBounds);
             if (img != null)
             {
-                Rectangle rect = new Rectangle(0, 0, Math.Max(textWitdh - horizontalSpaceTextImage, 1), Math.Max(cellBounds.Height - 2, 1));
+                Rectangle rect = new Rectangle(0, 0, textWitdh - horizontalSpaceTextImage, cellBounds.Bottom - 2);
                 graphics.DrawImage(img, cellBounds.Left + 3, cellBounds.Top + verticalSpace, rect, GraphicsUnit.Pixel);
             }
 
-            if (sample != null)
+            if (SampleCell.Value != null)
             {
-                using (SolidBrush backgroundBrush = new SolidBrush(Color.FromArgb(245, 247, 250)))
-                using (Pen borderPen = new Pen(Color.FromArgb(190, 198, 210)))
-                {
-                    graphics.FillRectangle(backgroundBrush, sampleBoxRect);
-                    graphics.DrawRectangle(borderPen, sampleBoxRect.Left, sampleBoxRect.Top, sampleBoxRect.Width - 1, sampleBoxRect.Height - 1);
-                }
-
-                InterpolationMode oldInterpolation = graphics.InterpolationMode;
-                PixelOffsetMode oldPixelOffset = graphics.PixelOffsetMode;
-                graphics.InterpolationMode = InterpolationMode.HighQualityBicubic;
-                graphics.PixelOffsetMode = PixelOffsetMode.HighQuality;
-                try
-                {
-                    graphics.DrawImage(sample, sampleRect);
-                }
-                finally
-                {
-                    graphics.InterpolationMode = oldInterpolation;
-                    graphics.PixelOffsetMode = oldPixelOffset;
-                }
+                Image sample = (Image) SampleCell.Value;
+                Pen borderPen = new Pen(Color.Green);
+                graphics.DrawLine(borderPen, cellBounds.Left + textWitdh + horizontalSpaceTextImage - 2, cellBounds.Top + 1, cellBounds.Left + textWitdh + horizontalSpaceTextImage - 2, cellBounds.Bottom - 1);
+                graphics.DrawImage(sample, cellBounds.Left + textWitdh + horizontalSpaceTextImage, cellBounds.Top + 1);
             }
-            graphics.Clip = previousClip;
         }
 
         #region Handlers of edit events, copyied from DataGridViewTextBoxCell
