@@ -118,6 +118,8 @@ namespace ClipAngel
  
         private Task<DataTable> lastReloadListTask;
         private DateTime lastReloadListTime;
+        private bool reloadListPending = false;
+        private bool reloadListRunning = false;
         bool EditMode = false;
         SQLiteDataReader LoadedClipRowReader;
         int LastId = 0;
@@ -1897,95 +1899,103 @@ namespace ClipAngel
                 sortField = "Id";
             if (EditMode)
                 SaveClipText();
-            string TypeFilterSelectedValue = TypeFilter.SelectedValue as string;
-            if (currentClipId == 0 && clipBindingSource.Current != null)
+            if (reloadListRunning)
             {
-                currentClipId = (int)(clipBindingSource.Current as DataRowView).Row["Id"];
-                if (dataGridView.SelectedRows.Count > 1 && selectedClipIDs == null)
-                {
-                    selectedClipIDs = new List<int>();
-                    foreach (DataGridViewRow selectedRow in dataGridView.SelectedRows)
-                    {
-                        if (selectedRow == null)
-                            continue;
-                        DataRowView dataRow = (DataRowView)selectedRow.DataBoundItem;
-                        selectedClipIDs.Insert(0, (int)dataRow["Id"]);
-                    }
-                }
-            }
-            string MarkFilterSelectedValue = MarkFilter.SelectedValue as string;
-            DateTime monthCalendar1SelectionStart = monthCalendar1.SelectionStart;
-            DateTime monthCalendar1SelectionEnd = monthCalendar1.SelectionEnd;
-            Task<DataTable> reloadListTask = Task.Run(() => ReloadListAsync(TypeFilterSelectedValue, MarkFilterSelectedValue, monthCalendar1SelectionStart, monthCalendar1SelectionEnd));
-            lastReloadListTask = reloadListTask;
-            if (waitFinish)
-                reloadListTask.Wait();
-            DataTable table = await reloadListTask;
-            if (true
-                && lastReloadListTask != null
-                && lastReloadListTask != reloadListTask
-                //&& (false
-                //    || lastReloadListTask.IsCompleted 
-                //    || (true 
-                //        && lastReloadListTime != null
-                //        && DateDiffMilliseconds(lastReloadListTime, DateTime.Now) < 5000))
-               )
-            {
+                reloadListPending = true;
                 return;
             }
-            lastReloadListTime = DateTime.Now;
-            clipBindingSource.DataSource = table;
-            stripLabelPosition.Spring = false;
-            stripLabelPosition.Width = 50;
-            stripLabelFiltered.Visible = filterOn;
-            if (filterOn)
-                stripLabelFiltered.Text = String.Format(Properties.Resources.FilteredStatusText, table.Rows.Count);
-            stripLabelPosition.Spring = true;
-            PrepareTableGrid(); // Long
-            if (filterOn)
+            reloadListRunning = true;
+            try
             {
-                toolStripButtonClearFilter.Enabled = true;
-                //toolStripButtonClearFilter.Checked = true; // Back color wil not change
-                toolStripButtonClearFilter.BackColor = Color.GreenYellow;
-            }
-            else
-            {
-                toolStripButtonClearFilter.Enabled = false;
-                toolStripButtonClearFilter.BackColor = DefaultBackColor;
-                //toolStripButtonClearFilter.Checked = false;
-            }
-            //ClipsNumber = clipBindingSource.Count;
-            if (LastId == 0)
-            {
-                GotoLastRow();
-                DataRowView lastRow = (DataRowView)clipBindingSource.Current;
-                if (lastRow == null)
+                do
                 {
-                    LastId = 0;
-                }
-                else
-                {
-                    LastId = (int)lastRow["Id"];
-                }
-            }
-            else
-            {
-                allowRowLoad = false;
-                dataGridView.ClearSelection();
-                allowRowLoad = true;
-                RestoreSelectedCurrentClip(forceRowLoad, currentClipId, false, keepTextSelectionIfIDChanged);
-                if (selectedClipIDs != null)
-                {
-                    allowProcessDataGridSelectionChanged = false;
-                    foreach (int selectedID in selectedClipIDs)
+                    reloadListPending = false;
+                    string TypeFilterSelectedValue = TypeFilter.SelectedValue as string;
+                    if (currentClipId == 0 && clipBindingSource.Current != null)
                     {
-                        SelectRowByID(selectedID);
+                        currentClipId = (int)(clipBindingSource.Current as DataRowView).Row["Id"];
+                        if (dataGridView.SelectedRows.Count > 1 && selectedClipIDs == null)
+                        {
+                            selectedClipIDs = new List<int>();
+                            foreach (DataGridViewRow selectedRow in dataGridView.SelectedRows)
+                            {
+                                if (selectedRow == null)
+                                    continue;
+                                DataRowView dataRow = (DataRowView)selectedRow.DataBoundItem;
+                                selectedClipIDs.Insert(0, (int)dataRow["Id"]);
+                            }
+                        }
                     }
-                    allowProcessDataGridSelectionChanged = true;
-                }
+                    string MarkFilterSelectedValue = MarkFilter.SelectedValue as string;
+                    DateTime monthCalendar1SelectionStart = monthCalendar1.SelectionStart;
+                    DateTime monthCalendar1SelectionEnd = monthCalendar1.SelectionEnd;
+                    Task<DataTable> reloadListTask = Task.Run(() => ReloadListAsync(TypeFilterSelectedValue, MarkFilterSelectedValue, monthCalendar1SelectionStart, monthCalendar1SelectionEnd));
+                    lastReloadListTask = reloadListTask;
+                    if (waitFinish)
+                        reloadListTask.Wait();
+                    DataTable table = await reloadListTask;
+                    if (reloadListPending)
+                        // Если за время ожидания появился новый запрос на обновление
+                        continue;
+                    lastReloadListTime = DateTime.Now;
+                    clipBindingSource.DataSource = table;
+                    stripLabelPosition.Spring = false;
+                    stripLabelPosition.Width = 50;
+                    stripLabelFiltered.Visible = filterOn;
+                    if (filterOn)
+                        stripLabelFiltered.Text = String.Format(Properties.Resources.FilteredStatusText, table.Rows.Count);
+                    stripLabelPosition.Spring = true;
+                    PrepareTableGrid(); // Long
+                    if (filterOn)
+                    {
+                        toolStripButtonClearFilter.Enabled = true;
+                        //toolStripButtonClearFilter.Checked = true; // Back color wil not change
+                        toolStripButtonClearFilter.BackColor = Color.GreenYellow;
+                    }
+                    else
+                    {
+                        toolStripButtonClearFilter.Enabled = false;
+                        toolStripButtonClearFilter.BackColor = DefaultBackColor;
+                        //toolStripButtonClearFilter.Checked = false;
+                    }
+                    //ClipsNumber = clipBindingSource.Count;
+                    if (LastId == 0)
+                    {
+                        GotoLastRow();
+                        DataRowView lastRow = (DataRowView)clipBindingSource.Current;
+                        if (lastRow == null)
+                        {
+                            LastId = 0;
+                        }
+                        else
+                        {
+                            LastId = (int)lastRow["Id"];
+                        }
+                    }
+                    else
+                    {
+                        allowRowLoad = false;
+                        dataGridView.ClearSelection();
+                        allowRowLoad = true;
+                        RestoreSelectedCurrentClip(forceRowLoad, currentClipId, false, keepTextSelectionIfIDChanged);
+                        if (selectedClipIDs != null)
+                        {
+                            allowProcessDataGridSelectionChanged = false;
+                            foreach (int selectedID in selectedClipIDs)
+                            {
+                                SelectRowByID(selectedID);
+                            }
+                            allowProcessDataGridSelectionChanged = true;
+                        }
+                    }
+                    allowRowLoad = true;
+                    //AutoGotoLastRow = false;
+                } while (reloadListPending);
             }
-            allowRowLoad = true;
-            //AutoGotoLastRow = false;
+            finally
+            {
+                reloadListRunning = false;
+            }
         }
 
         private async Task<DataTable> ReloadListAsync(string TypeFilterSelectedValue, string MarkFilterSelectedValue, DateTime monthCalendar1SelectionStart, DateTime monthCalendar1SelectionEnd)
