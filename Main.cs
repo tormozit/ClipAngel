@@ -9023,10 +9023,13 @@ public sealed class LowLevelKeyboardHook : IDisposable
             var kb = (KBDLLHOOKSTRUCT)Marshal.PtrToStructure(lParam, typeof(KBDLLHOOKSTRUCT));
             if (kb.vkCode == VK_F3 && (GetAsyncKeyState(VK_CONTROL) & 0x8000) != 0)
             {
-                // Сначала пробрасываем нажатие дальше — активное приложение получает Ctrl+F3
-                IntPtr result = CallNextHookEx(_hookId, nCode, wParam, lParam);
-                // Затем уведомляем ClipAngel (BeginInvoke в UI-потоке, см. подписку)
-                CtrlF3Pressed?.Invoke();
+                // Игнорируем инжектированные (программные) нажатия — флаг LLKHF_INJECTED
+                // Второе событие с flags=0x10 — это синтетическое нажатие от активного приложения, например от TurboConf в конфигураторе 1С
+                const uint LLKHF_INJECTED = 0x10;
+                IntPtr result = CallNextHookEx(_hookId, nCode, wParam, lParam); // пробрасываем нажатие дальше — активное приложение получает Ctrl+F3
+                if ((kb.flags & LLKHF_INJECTED) != 0)
+                    return result;
+                CtrlF3Pressed?.Invoke(); // уведомляем ClipAngel (BeginInvoke в UI-потоке, см. подписку)
                 return result;
             }
         }
