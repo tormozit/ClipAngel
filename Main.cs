@@ -200,6 +200,7 @@ namespace ClipAngel
         private Timer channelTimer = new Timer();
         private Timer fix1CTimer = new Timer();
         private Timer tempCaptureTimer = new Timer();
+        private Timer ctrlF3Timer = new Timer();
         private DateTime TimeFromWindowOpen;
         private Thread updateDBThread;
         private bool stopUpdateDBThread = false;
@@ -776,9 +777,20 @@ namespace ClipAngel
             {
                 if (lowLevelKeyboardHook == null)
                 {
+                    ctrlF3Timer.Interval = 200;
+                    ctrlF3Timer.Tick += delegate
+                    {
+                        ctrlF3Timer.Stop();
+                        CopyTextInAnyWindowViaUIAutomation();
+                    };
                     lowLevelKeyboardHook = new LowLevelKeyboardHook();
                     lowLevelKeyboardHook.CtrlF3Pressed += () =>
-                        BeginInvoke((Action)CopyTextInAnyWindowViaUIAutomation);
+                    {
+                        // Перезапуск таймера при каждом авторепите — вызов произойдёт только после
+                        // отпускания клавиш, когда таймер наконец сработает
+                        ctrlF3Timer.Stop();
+                        ctrlF3Timer.Start();
+                    };
                 }
             }
             else
@@ -788,6 +800,7 @@ namespace ClipAngel
                     lowLevelKeyboardHook.Dispose();
                     lowLevelKeyboardHook = null;
                 }
+                ctrlF3Timer.Stop();
             }
         }
 
@@ -915,9 +928,7 @@ namespace ClipAngel
                     }
                 }
                 if (!string.IsNullOrEmpty(selectedText))
-                {
                     AddClip(null, null, "", "", "text", selectedText);
-                }
             }
             catch (Exception ex)
             {
@@ -9023,13 +9034,8 @@ public sealed class LowLevelKeyboardHook : IDisposable
             var kb = (KBDLLHOOKSTRUCT)Marshal.PtrToStructure(lParam, typeof(KBDLLHOOKSTRUCT));
             if (kb.vkCode == VK_F3 && (GetAsyncKeyState(VK_CONTROL) & 0x8000) != 0)
             {
-                // Игнорируем инжектированные (программные) нажатия — флаг LLKHF_INJECTED
-                // Второе событие с flags=0x10 — это синтетическое нажатие от активного приложения, например от TurboConf в конфигураторе 1С
-                const uint LLKHF_INJECTED = 0x10;
                 IntPtr result = CallNextHookEx(_hookId, nCode, wParam, lParam); // пробрасываем нажатие дальше — активное приложение получает Ctrl+F3
-                if ((kb.flags & LLKHF_INJECTED) != 0)
-                    return result;
-                CtrlF3Pressed?.Invoke(); // уведомляем ClipAngel (BeginInvoke в UI-потоке, см. подписку)
+                CtrlF3Pressed?.Invoke();
                 return result;
             }
         }
