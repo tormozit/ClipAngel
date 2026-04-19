@@ -416,7 +416,7 @@
     <value>Проигрывать звук при захвате клипа</value>
   </data>
   <data name="PlaySoundOnClipCaptureDescription" xml:space="preserve">
-    <value>Проигрывать звук при успешном захвате клипа. Может быть надоедливо.</value>
+    <value>Проигрывать звук при захвате клипа отличного от последнего. Может быть надоедливо.</value>
   </data>
   <data name="ReadWindowTitles" xml:space="preserve">
     <value>Читать заголовки окон</value>

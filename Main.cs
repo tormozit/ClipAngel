@@ -897,12 +897,10 @@ namespace ClipAngel
                 }
                 Paster.SendCopy(false);
             }
-            // Ctrl+F3 обрабатывается через LowLevelKeyboardHook
             else
             {
                 //int a = 0;
             }
-
         }
 
         private void CopyTextInAnyWindowViaUIAutomation()
@@ -3091,18 +3089,6 @@ namespace ClipAngel
                 notifyIcon.ShowBalloonTip(2000, Application.ProductName, message, ToolTipIcon.Info);
                 return false;
             }
-            if (!String.IsNullOrEmpty(ClipAngel.Properties.Settings.Default.PlaySoundOnClipCapture))
-            {
-                string soundFileName = ClipAngel.Properties.Settings.Default.PlaySoundOnClipCapture;
-                System.Media.SoundPlayer player = new System.Media.SoundPlayer(soundFileName);
-                try
-                {
-                    player.Play();
-                }
-                catch
-                {
-                }
-            }
             int oldCurrentClipId = 0;
             lastClipWasMultiCaptured = false;
             if (DateTime.MinValue == created)
@@ -3165,6 +3151,18 @@ namespace ClipAngel
             {
                 Guid g = Guid.NewGuid();
                 hash = Convert.ToBase64String(g.ToByteArray());
+            }
+            if (!lastClipWasMultiCaptured && !String.IsNullOrEmpty(ClipAngel.Properties.Settings.Default.PlaySoundOnClipCapture))
+            {
+                string soundFileName = ClipAngel.Properties.Settings.Default.PlaySoundOnClipCapture;
+                System.Media.SoundPlayer player = new System.Media.SoundPlayer(soundFileName);
+                try
+                {
+                    player.Play();
+                }
+                catch
+                {
+                }
             }
             LastId = LastId + 1;
             lastClips.Add(new LastClip {Created = created, ID = LastId, ProcessID = 0});

@@ -22,14 +22,14 @@ namespace ClipAngel {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class VisibleUserSettings1 {
+    internal class VisibleUserSettings {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal VisibleUserSettings1() {
+        internal VisibleUserSettings() {
         }
         
         /// <summary>
@@ -913,7 +913,7 @@ namespace ClipAngel {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Playing sound when clip is successfully captured. Can be annoying.
+        ///   Looks up a localized string similar to Playing sound when clip is captured and differs from last clip. Can be annoying..
         /// </summary>
         internal static string PlaySoundOnClipCaptureDescription {
             get {

@@ -406,7 +406,7 @@ Not appliable to HTML native formatting.</value>
     <value>Play sound on clip capture</value>
   </data>
   <data name="PlaySoundOnClipCaptureDescription" xml:space="preserve">
-    <value>Playing sound when clip is successfully captured. Can be annoying</value>
+    <value>Playing sound when clip is captured and differs from last clip. Can be annoying.</value>
   </data>
   <data name="ReadWindowTitles" xml:space="preserve">
     <value>Read window titles</value>
