@@ -22,11 +22,14 @@ namespace ClipAngel {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class VisibleUserSettingsClass {
+    internal class VisibleUserSettings1 {
+        
         private static global::System.Resources.ResourceManager resourceMan;
+        
         private static global::System.Globalization.CultureInfo resourceCulture;
+        
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal VisibleUserSettingsClass() {
+        internal VisibleUserSettings1() {
         }
         
         /// <summary>
@@ -256,7 +259,7 @@ namespace ClipAngel {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Copy text from any window by Control+F3.
+        ///   Looks up a localized string similar to Capture selected text by Control+F3.
         /// </summary>
         internal static string CopyTextInAnyWindowOnCTRLF3 {
             get {
@@ -265,8 +268,7 @@ namespace ClipAngel {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Copy selected text from any window when Control+F3 is pressed. This hotkey usually is used in text editors to search selected string. 
-        ///Key press will be processed by the window. .
+        ///   Looks up a localized string similar to Capture selected text in active window when Control+F3 is pressed. This hotkey usually is used in text editors to search selected string. Capturing selected text only works in editors that support UIAutomation..
         /// </summary>
         internal static string CopyTextInAnyWindowOnCTRLF3Description {
             get {

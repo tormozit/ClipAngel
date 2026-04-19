@@ -472,8 +472,8 @@
           <target state="new">Clip was not captured due to clipboard read error</target>
         </trans-unit>
         <trans-unit id="VersionValue" translate="yes" xml:space="preserve">
-          <source>2.22</source>
-          <target state="new">2.22</target>
+          <source>2.23</source>
+          <target state="new">2.23</target>
         </trans-unit>
         <trans-unit id="TargetWindow" translate="yes" xml:space="preserve">
           <source>Target window</source>
@@ -898,14 +898,12 @@
           <target state="new">Folder for saving temp files of clips. Leave empty to use standard temp folder. Usually can be usefull in portable mode.</target>
         </trans-unit>
         <trans-unit id="CopyTextInAnyWindowOnCTRLF3" translate="yes" xml:space="preserve">
-          <source>Copy text from any window by Control+F3</source>
-          <target state="new">Copy text from any window by Control+F3</target>
+          <source>Capture selected text by Control+F3</source>
+          <target state="new">Capture selected text by Control+F3</target>
         </trans-unit>
         <trans-unit id="CopyTextInAnyWindowOnCTRLF3Description" translate="yes" xml:space="preserve">
-          <source>Copy selected text from any window when Control+F3 is pressed. This hotkey usually is used in text editors to search selected string. 
-Key press will be processed by the window. </source>
-          <target state="new">Copy selected text from any window when Control+F3 is pressed. This hotkey usually is used in text editors to search selected string. 
-Key press will be processed by the window. </target>
+          <source>Capture selected text in active window when Control+F3 is pressed. This hotkey usually is used in text editors to search selected string. Capturing selected text only works in editors that support UIAutomation.</source>
+          <target state="new">Capture selected text in active window when Control+F3 is pressed. This hotkey usually is used in text editors to search selected string. Capturing selected text only works in editors that support UIAutomation.</target>
         </trans-unit>
         <trans-unit id="CurrentPath" translate="yes" xml:space="preserve">
           <source>Application current start path</source>

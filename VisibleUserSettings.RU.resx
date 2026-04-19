@@ -185,12 +185,11 @@
     <value>Запрашивать подтверждение перед удалением клипов</value>
   </data>
   <data name="CopyTextInAnyWindowOnCTRLF3" xml:space="preserve">
-    <value>Копировать текст из любого окна по Control+F3</value>
+    <value>Захватывать выделенныей текст по Control+F3</value>
   </data>
   <data name="CopyTextInAnyWindowOnCTRLF3Description" xml:space="preserve">
-    <value>Копировать выделенный текст из любого окна при нажатии Control+F3.  
-Это сочетание обычно используется текстовыми редакторами для поиска выделенной строки. 
-При этом нажатие будет обработано самим окном.</value>
+    <value>Захватывать выделенный текст активного окна при нажатии Control+F3.
+Это сочетание обычно используется текстовыми редакторами для поиска выделенной строки. Получение выделенного текста работает только в редакторах, поддерживающих UIAutomation.</value>
   </data>
   <data name="CurrentPath" xml:space="preserve">
     <value>Команда текущего запуска программы</value>

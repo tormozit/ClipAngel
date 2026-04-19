@@ -114,6 +114,7 @@ namespace ClipAngel
 
         //bool AutoGotoLastRow = true;
         bool AllowHotkeyProcess = true;
+        LowLevelKeyboardHook lowLevelKeyboardHook;
  
         private Task<DataTable> lastReloadListTask;
         private DateTime lastReloadListTime;
@@ -334,6 +335,7 @@ namespace ClipAngel
             // register the event that is fired after the key press.
             keyboardHook = new KeyboardHook(CurrentLangResourceManager);
             keyboardHook.KeyPressed += new EventHandler<KeyPressedEventArgs>(hook_KeyPressed);
+            UpdateLowLevelKeyboardHook();
             ImageControl.MouseWheel += new MouseEventHandler(ImageControl_MouseWheel);
             captureTimer.Tick += delegate { CaptureClipboardData(); };
             fix1CTimer.Interval = 2000;
@@ -763,8 +765,28 @@ namespace ClipAngel
                 keyboardHook.RegisterHotKey(Modifiers, Key);
             if (ReadHotkeyFromText(ClipAngel.Properties.Settings.Default.GlobalHotkeyForcedCapture, out Modifiers, out Key))
                 keyboardHook.RegisterHotKey(Modifiers, Key);
-            //if (ClipAngel.Properties.Settings.Default.CopyTextInAnyWindowOnCTRLF3 && ReadHotkeyFromText("Control + F3", out Modifiers, out Key))
-            //    keyboardHook.RegisterHotKey(Modifiers, Key);
+            // Ctrl+F3 обрабатывается через LowLevelKeyboardHook, а не через RegisterHotKey
+        }
+
+        private void UpdateLowLevelKeyboardHook()
+        {
+            if (ClipAngel.Properties.Settings.Default.CopyTextInAnyWindowOnCTRLF3)
+            {
+                if (lowLevelKeyboardHook == null)
+                {
+                    lowLevelKeyboardHook = new LowLevelKeyboardHook();
+                    lowLevelKeyboardHook.CtrlF3Pressed += () =>
+                        BeginInvoke((Action)CopyTextInAnyWindowViaUIAutomation);
+                }
+            }
+            else
+            {
+                if (lowLevelKeyboardHook != null)
+                {
+                    lowLevelKeyboardHook.Dispose();
+                    lowLevelKeyboardHook = null;
+                }
+            }
         }
 
         private static bool ReadHotkeyFromText(string HotkeyText, out EnumModifierKeys Modifiers, out Keys Key)
@@ -860,21 +882,45 @@ namespace ClipAngel
                 }
                 Paster.SendCopy(false);
             }
-            //else if (hotkeyTitle == "Control + F3")
-            //{
-            //    keyboardHook.UnregisterHotKeys();
-            //    BackupClipboard();
-            //    //Clipboard.Clear();
-            //    Paster.SendCopy(false);
-            //    SendKeys.SendWait("^{F3}");
-            //    RegisterHotKeys();
-            //    RestoreClipboard();
-            //}
+            // Ctrl+F3 обрабатывается через LowLevelKeyboardHook
             else
             {
                 //int a = 0;
             }
 
+        }
+
+        private void CopyTextInAnyWindowViaUIAutomation()
+        {
+            try
+            {
+                System.Windows.Automation.AutomationElement focusedElement = System.Windows.Automation.AutomationElement.FocusedElement;
+                if (focusedElement == null)
+                    return;
+                string selectedText = null;
+                object textPatternObj;
+                if (focusedElement.TryGetCurrentPattern(
+                    System.Windows.Automation.TextPattern.Pattern, out textPatternObj))
+                {
+                    var textPattern = (System.Windows.Automation.TextPattern)textPatternObj;
+                    var selection = textPattern.GetSelection();
+                    if (selection != null && selection.Length > 0)
+                    {
+                        var sb = new System.Text.StringBuilder();
+                        foreach (var range in selection)
+                            sb.Append(range.GetText(-1));
+                        selectedText = sb.ToString();
+                    }
+                }
+                if (!string.IsNullOrEmpty(selectedText))
+                {
+                    AddClip(null, null, "", "", "text", selectedText);
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine("CopyTextInAnyWindowViaUIAutomation error: " + ex.Message);
+            }
         }
 
         private void PasteAndSelectNext(int direction)
@@ -5363,6 +5409,7 @@ namespace ClipAngel
             // To refresh text in list
             MarkFilter.DisplayMember = "";
             MarkFilter.DisplayMember = "Text";
+            UpdateLowLevelKeyboardHook();
             ClipAngel.Properties.Settings.Default.RestoreCaretPositionOnFocusReturn = false; // disabled
             dataGridView.RowsDefaultCellStyle.Font = ClipAngel.Properties.Settings.Default.Font;
             dataGridView.Columns["ColumnCreated"].DefaultCellStyle.Format = "HH:mmm:ss dd.MM";
@@ -5561,6 +5608,11 @@ namespace ClipAngel
             //ClipAngel.Properties.Settings.Default.Save(); // Not all properties were saved here. For example ShowInTaskbar was not saved
             RemoveClipboardFormatListener(this.Handle);
             UnhookWinEvent(HookChangeActiveWindow);
+            if (lowLevelKeyboardHook != null)
+            {
+                lowLevelKeyboardHook.Dispose();
+                lowLevelKeyboardHook = null;
+            }
             CloseDatabase();
         }
 
@@ -8896,6 +8948,89 @@ public enum EnumModifierKeys : uint
     Control = 2,
     Shift = 4,
     Win = 8
+}
+
+/// <summary>
+/// Низкоуровневый клавиатурный хук (WH_KEYBOARD_LL) для перехвата Ctrl+F3.
+/// Пробрасывает нажатие прозрачно через CallNextHookEx — без Unregister/Register.
+/// </summary>
+public sealed class LowLevelKeyboardHook : IDisposable
+{
+    private const int WH_KEYBOARD_LL = 13;
+    private const int WM_KEYDOWN    = 0x0100;
+    private const int WM_SYSKEYDOWN = 0x0104;
+    private const int VK_F3         = 0x72;
+    private const int VK_CONTROL    = 0x11;
+
+    public event Action CtrlF3Pressed;
+
+    private delegate IntPtr LowLevelKeyboardProc(int nCode, IntPtr wParam, IntPtr lParam);
+    private readonly LowLevelKeyboardProc _proc;
+    private IntPtr _hookId = IntPtr.Zero;
+
+    [DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = true)]
+    private static extern IntPtr SetWindowsHookEx(int idHook, LowLevelKeyboardProc lpfn,
+        IntPtr hMod, uint dwThreadId);
+
+    [DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = true)]
+    [return: MarshalAs(UnmanagedType.Bool)]
+    private static extern bool UnhookWindowsHookEx(IntPtr hhk);
+
+    [DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = true)]
+    private static extern IntPtr CallNextHookEx(IntPtr hhk, int nCode, IntPtr wParam, IntPtr lParam);
+
+    [DllImport("kernel32.dll", CharSet = CharSet.Auto, SetLastError = true)]
+    private static extern IntPtr GetModuleHandle(string lpModuleName);
+
+    [DllImport("user32.dll")]
+    private static extern short GetAsyncKeyState(int vKey);
+
+    [StructLayout(LayoutKind.Sequential)]
+    private struct KBDLLHOOKSTRUCT
+    {
+        public uint vkCode;
+        public uint scanCode;
+        public uint flags;
+        public uint time;
+        public IntPtr dwExtraInfo;
+    }
+
+    public LowLevelKeyboardHook()
+    {
+        _proc = HookCallback;
+        using (var curProcess = System.Diagnostics.Process.GetCurrentProcess())
+        using (var curModule = curProcess.MainModule)
+        {
+            _hookId = SetWindowsHookEx(WH_KEYBOARD_LL, _proc,
+                GetModuleHandle(curModule.ModuleName), 0);
+        }
+    }
+
+    private IntPtr HookCallback(int nCode, IntPtr wParam, IntPtr lParam)
+    {
+        if (nCode >= 0 && (wParam == (IntPtr)WM_KEYDOWN || wParam == (IntPtr)WM_SYSKEYDOWN))
+        {
+            var kb = (KBDLLHOOKSTRUCT)Marshal.PtrToStructure(lParam, typeof(KBDLLHOOKSTRUCT));
+            if (kb.vkCode == VK_F3 && (GetAsyncKeyState(VK_CONTROL) & 0x8000) != 0)
+            {
+                // Сначала пробрасываем нажатие дальше — активное приложение получает Ctrl+F3
+                IntPtr result = CallNextHookEx(_hookId, nCode, wParam, lParam);
+                // Затем уведомляем ClipAngel (BeginInvoke в UI-потоке, см. подписку)
+                CtrlF3Pressed?.Invoke();
+                return result;
+            }
+        }
+        return CallNextHookEx(_hookId, nCode, wParam, lParam);
+    }
+
+    public void Dispose()
+    {
+        if (_hookId != IntPtr.Zero)
+        {
+            UnhookWindowsHookEx(_hookId);
+            _hookId = IntPtr.Zero;
+        }
+    }
 }
 
 // Solution for casesensitivity in SQLite http://www.cyberforum.ru/ado-net/thread1708878.html

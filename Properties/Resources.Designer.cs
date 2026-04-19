@@ -1052,7 +1052,7 @@ namespace ClipAngel.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
@@ -1161,7 +1161,7 @@ namespace ClipAngel.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 2.22.
+        ///   Looks up a localized string similar to 2.23.
         /// </summary>
         public static string VersionValue {
             get {

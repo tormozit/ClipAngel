@@ -184,11 +184,10 @@
     <value>Ask confirmation before clip delete</value>
   </data>
   <data name="CopyTextInAnyWindowOnCTRLF3" xml:space="preserve">
-    <value>Copy text from any window by Control+F3</value>
+    <value>Capture selected text by Control+F3</value>
   </data>
   <data name="CopyTextInAnyWindowOnCTRLF3Description" xml:space="preserve">
-    <value>Copy selected text from any window when Control+F3 is pressed. This hotkey usually is used in text editors to search selected string. 
-Key press will be processed by the window. </value>
+    <value>Capture selected text in active window when Control+F3 is pressed. This hotkey usually is used in text editors to search selected string. Capturing selected text only works in editors that support UIAutomation.</value>
   </data>
   <data name="CurrentPath" xml:space="preserve">
     <value>Application current start path</value>

@@ -818,8 +818,8 @@
           <target state="translated">由于剪贴板读取错误，剪辑未被捕获</target>
         </trans-unit>
         <trans-unit id="VersionValue" translate="no" xml:space="preserve">
-          <source>2.22</source>
-          <target state="final">2.22</target>
+          <source>2.23</source>
+          <target state="final">2.23</target>
         </trans-unit>
         <trans-unit id="TargetWindow" translate="yes" xml:space="preserve">
           <source>Target window</source>
@@ -1246,14 +1246,15 @@
           <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="CopyTextInAnyWindowOnCTRLF3" translate="yes" xml:space="preserve">
-          <source>Copy text from any window by Control+F3</source>
-          <target state="translated" state-qualifier="mt-suggestion">通过 Ctrl+F3 复制任何窗口的文本</target>
+          <source>Capture selected text by Control+F3</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">通过 Ctrl+F3 复制任何窗口的文本</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="CopyTextInAnyWindowOnCTRLF3Description" translate="yes" xml:space="preserve">
-          <source>Copy selected text from any window when Control+F3 is pressed. This hotkey usually is used in text editors to search selected string. 
-Key press will be processed by the window. </source>
-          <target state="translated" state-qualifier="mt-suggestion">当按下 Ctrl+F3 时从任意窗口复制选中的文本，此快捷键通常用于文本编辑器来搜索选中的字符串 
+          <source>Capture selected text in active window when Control+F3 is pressed. This hotkey usually is used in text editors to search selected string. Capturing selected text only works in editors that support UIAutomation.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">当按下 Ctrl+F3 时从任意窗口复制选中的文本，此快捷键通常用于文本编辑器来搜索选中的字符串 
 键击将由窗口处理</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="CurrentPath" translate="yes" xml:space="preserve">
           <source>Application current start path</source>

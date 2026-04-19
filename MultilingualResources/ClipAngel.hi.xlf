@@ -395,14 +395,15 @@
           <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="CopyTextInAnyWindowOnCTRLF3" translate="yes" xml:space="preserve">
-          <source>Copy text from any window by Control+F3</source>
+          <source>Capture selected text by Control+F3</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">नियंत्रण + F3 द्वारा किसी भी खिड़की से पाठ की प्रतिलिपि बनाएँ</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="CopyTextInAnyWindowOnCTRLF3Description" translate="yes" xml:space="preserve">
-          <source>Copy selected text from any window when Control+F3 is pressed. This hotkey usually is used in text editors to search selected string. 
-Key press will be processed by the window. </source>
+          <source>Capture selected text in active window when Control+F3 is pressed. This hotkey usually is used in text editors to search selected string. Capturing selected text only works in editors that support UIAutomation.</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">नियंत्रण + F3 दबाया जाता है, जब किसी भी खिड़की से चयनित पाठ की प्रतिलिपि बनाएँ। इस हॉटकी आमतौर पर चयनित स्ट्रिंग खोजने के लिए पाठ संपादकों में प्रयोग किया जाता है। 
 कुंजी दबाएँ विंडो द्वारा संसाधित किया जाएगा। </target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="CurrentPath" translate="yes" xml:space="preserve">
           <source>Application current start path</source>
@@ -1629,8 +1630,8 @@ Generation of image consumes CPU. If you experience high CPU load, set lower val
           <target state="new">Clip was not captured due to clipboard read error</target>
         </trans-unit>
         <trans-unit id="VersionValue" translate="yes" xml:space="preserve">
-          <source>2.22</source>
-          <target state="new">2.22</target>
+          <source>2.23</source>
+          <target state="new">2.23</target>
         </trans-unit>
         <trans-unit id="TargetWindow" translate="yes" xml:space="preserve">
           <source>Target window</source>
