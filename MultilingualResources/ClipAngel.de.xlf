@@ -454,8 +454,9 @@ DiffMerge, Kdiff3 zu suchen. Befehl für Textvergleich ist %application% %file1%
           <target state="translated">Ton abspielen beim Clip-Erfassen</target>
         </trans-unit>
         <trans-unit id="PlaySoundOnClipCaptureDescription" translate="yes" xml:space="preserve">
-          <source>Playing sound when clip is successfully captured. Can be annoying</source>
-          <target state="translated">Ton abspielen, wenn der Clip erfolgreich aufgenommen wurde. Kann nervig sein</target>
+          <source>Playing sound when clip is captured and differs from last clip. Can be annoying.</source>
+          <target state="needs-review-translation">Ton abspielen, wenn der Clip erfolgreich aufgenommen wurde. Kann nervig sein</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="DatabaseFile" translate="yes" xml:space="preserve">
           <source>Database file</source>

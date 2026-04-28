@@ -1552,8 +1552,9 @@ WinMerge, Araxis Merge, DiffMerge, KdiffMerge, Kdiff3. 文本比较命令是 %ap
           <target state="translated">捕获剪辑时播放声音</target>
         </trans-unit>
         <trans-unit id="PlaySoundOnClipCaptureDescription" translate="yes" xml:space="preserve">
-          <source>Playing sound when clip is successfully captured. Can be annoying</source>
-          <target state="translated">剪辑捕获成功时播放声音，可能会很烦</target>
+          <source>Playing sound when clip is captured and differs from last clip. Can be annoying.</source>
+          <target state="needs-review-translation">剪辑捕获成功时播放声音，可能会很烦</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="DatabaseFile" translate="yes" xml:space="preserve">
           <source>Database file</source>

@@ -701,8 +701,8 @@ WinMerge, Araxis Merge, DiffMerge, Kdiff3. Text compare command is %application%
           <target state="new">Play sound on clip capture</target>
         </trans-unit>
         <trans-unit id="PlaySoundOnClipCaptureDescription" translate="yes" xml:space="preserve">
-          <source>Playing sound when clip is successfully captured. Can be annoying</source>
-          <target state="new">Playing sound when clip is successfully captured. Can be annoying</target>
+          <source>Playing sound when clip is captured and differs from last clip. Can be annoying.</source>
+          <target state="new">Playing sound when clip is captured and differs from last clip. Can be annoying.</target>
         </trans-unit>
         <trans-unit id="DatabaseFile" translate="yes" xml:space="preserve">
           <source>Database file</source>

@@ -1545,8 +1545,8 @@ WinMerge, Araxis Merge, DiffMerge, Kdiff3. La commande de comparaison de texte e
           <target state="translated">Jouer un son à la capture d'un clip</target>
         </trans-unit>
         <trans-unit id="PlaySoundOnClipCaptureDescription" translate="yes" xml:space="preserve">
-          <source>Playing sound when clip is successfully captured. Can be annoying</source>
-          <target state="new">Playing sound when clip is successfully captured. Can be annoying</target>
+          <source>Playing sound when clip is captured and differs from last clip. Can be annoying.</source>
+          <target state="new">Playing sound when clip is captured and differs from last clip. Can be annoying.</target>
           <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="DatabaseFile" translate="yes" xml:space="preserve">

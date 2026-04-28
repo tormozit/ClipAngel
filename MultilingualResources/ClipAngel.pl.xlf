@@ -468,8 +468,8 @@ Komenda dla porównania tekstu to %application% %file1% %file2%</target>
           <target state="translated">Odtwarzanie dźwięku podczas przechwytywania klipu</target>
         </trans-unit>
         <trans-unit id="PlaySoundOnClipCaptureDescription" translate="yes" xml:space="preserve">
-          <source>Playing sound when clip is successfully captured. Can be annoying</source>
-          <target state="translated">Odtwarza dźwięk po pomyślnym przechwyceniu klipu jeśli opcja włączona. Uwaga to może być denerwujące
+          <source>Playing sound when clip is captured and differs from last clip. Can be annoying.</source>
+          <target state="needs-review-translation">Odtwarza dźwięk po pomyślnym przechwyceniu klipu jeśli opcja włączona. Uwaga to może być denerwujące
 Ustaw ścieżkę do wybranego pliku *.wav</target>
           <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
