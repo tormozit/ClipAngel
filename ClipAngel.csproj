@@ -11,6 +11,8 @@
     <AssemblyName>ClipAngel</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <TargetFrameworkProfile />
@@ -138,6 +140,7 @@
     <Reference Include="UIAutomationClient" />
     <Reference Include="UIAutomationTypes" />
     <Reference Include="WindowsBase" />
+    <Reference Include="System.Runtime.WindowsRuntime" />
     <Reference Include="WindowsInput, Version=1.0.4.0, Culture=neutral, PublicKeyToken=9b287f7dc5073cad, processorArchitecture=MSIL">
       <HintPath>packages\InputSimulator.1.0.4.0\lib\net20\WindowsInput.dll</HintPath>
       <Private>True</Private>
@@ -152,6 +155,7 @@
     </Compile>
     <Compile Include="SecretData1.cs" />
     <Compile Include="ClipboardHelper.cs" />
+    <Compile Include="OcrHelper.cs" />
     <Compile Include="Components\Attributes.cs" />
     <Compile Include="Components\CueComboBox.cs">
       <SubType>Component</SubType>

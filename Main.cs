@@ -8618,6 +8618,48 @@ namespace ClipAngel
             GotoLastRow();
         }
 
+        async private void textFromPictureToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (LoadedClipRowReader == null || (string)LoadedClipRowReader["type"] != "img")
+                return;
+
+            if (!OcrHelper.IsOcrSupported())
+            {
+                MessageBox.Show(this,
+                    Properties.Resources.OcrNotSupportedOnThisOs,
+                    Application.ProductName,
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            byte[] binary = LoadedClipRowReader["Binary"] as byte[];
+            if (binary == null || binary.Length == 0)
+                return;
+
+            try
+            {
+                Image image = GetImageFromBinary(binary);
+                string recognizedText = await OcrHelper.RecognizeTextAsync(new Bitmap(image));
+
+                if (string.IsNullOrWhiteSpace(recognizedText))
+                {
+                    MessageBox.Show(this,
+                        Properties.Resources.OcrNoTextFound,
+                        Application.ProductName,
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+
+                AddClip(null, null, "", "", "text", recognizedText);
+                GotoLastRow();
+            }
+            catch (Exception ex)
+            {
+                WriteExcetionToLog(ex);
+                MessageBox.Show(this, ex.Message, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         private byte[] Capture1CData(IDataObject iData)
         {
             var dataMap = new Dictionary<string, string>();

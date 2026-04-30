@@ -4760,4 +4760,13 @@ Changes in temp file are not synchronized with clip!
   <metadata name="cultureManager6.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>1035, 57</value>
   </metadata>
+  <data name="textFromPictureToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>236, 22</value>
+  </data>
+  <data name="textFromPictureToolStripMenuItem.Text" xml:space="preserve">
+    <value>Text from picture</value>
+  </data>
+  <data name="textFromPictureToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>Recognize text from the current image clip and add it as a new text clip. Works on Windows 10 and later only.</value>
+  </data>
 </root>

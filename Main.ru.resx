@@ -1130,6 +1130,15 @@
     <value>Закачать картинку клипа на сайт хостинга картинок. 
 Адрес будет сохранен в клипе картинки и будет помещен в буфер обмена.</value>
   </data>
+  <data name="textFromPictureToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>236, 22</value>
+  </data>
+  <data name="textFromPictureToolStripMenuItem.Text" xml:space="preserve">
+    <value>Текст из картинки</value>
+  </data>
+  <data name="textFromPictureToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>Распознать текст из клипа-картинки и добавить его как текстовый клип. Работает только на Windows 10 и новее.</value>
+  </data>
   <data name="ignoreApplicationInCaptureToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>236, 22</value>
   </data>

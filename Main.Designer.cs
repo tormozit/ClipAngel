@@ -432,6 +432,7 @@ namespace ClipAngel
             this.textCompareToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.translateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.uploadImageToWebToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.textFromPictureToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ignoreApplicationInCaptureToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exportMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.importToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -1642,6 +1643,7 @@ namespace ClipAngel
             this.textCompareToolStripMenuItem,
             this.translateToolStripMenuItem,
             this.uploadImageToWebToolStripMenuItem,
+            this.textFromPictureToolStripMenuItem,
             this.ignoreApplicationInCaptureToolStripMenuItem,
             this.exportMenuItem,
             this.importToolStripMenuItem,
@@ -1842,6 +1844,12 @@ namespace ClipAngel
             this.uploadImageToWebToolStripMenuItem.Name = "uploadImageToWebToolStripMenuItem";
             resources.ApplyResources(this.uploadImageToWebToolStripMenuItem, "uploadImageToWebToolStripMenuItem");
             this.uploadImageToWebToolStripMenuItem.Click += new System.EventHandler(this.uploadImageToWebToolStripMenuItem_Click);
+            // 
+            // textFromPictureToolStripMenuItem
+            // 
+            this.textFromPictureToolStripMenuItem.Name = "textFromPictureToolStripMenuItem";
+            resources.ApplyResources(this.textFromPictureToolStripMenuItem, "textFromPictureToolStripMenuItem");
+            this.textFromPictureToolStripMenuItem.Click += new System.EventHandler(this.textFromPictureToolStripMenuItem_Click);
             // 
             // ignoreApplicationInCaptureToolStripMenuItem
             // 
@@ -2445,6 +2453,7 @@ namespace ClipAngel
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem16;
         private System.Windows.Forms.ToolStripButton toolStripButtonOpenWith;
         private System.Windows.Forms.ToolStripMenuItem uploadImageToWebToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem textFromPictureToolStripMenuItem;
         private System.Windows.Forms.ContextMenuStrip contextMenuUrl;
         private System.Windows.Forms.ToolStripMenuItem toolStripUrlCopyAll;
         private System.Windows.Forms.ContextMenuStrip contextMenuWindowTitle;

@@ -598,6 +598,14 @@
           <source>..\Picture\Type1CMD8.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</source>
           <target state="needs-review-translation">..\Picture\Type1CMD8.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</target>
         </trans-unit>
+        <trans-unit id="OcrNotSupportedOnThisOs" translate="yes" xml:space="preserve">
+          <source>Text recognition from image requires Windows 10 or later.</source>
+          <target state="new">Text recognition from image requires Windows 10 or later.</target>
+        </trans-unit>
+        <trans-unit id="OcrNoTextFound" translate="yes" xml:space="preserve">
+          <source>No text was recognized in the image.</source>
+          <target state="new">No text was recognized in the image.</target>
+        </trans-unit>
       </group>
     </body>
   </file>
@@ -7207,6 +7215,18 @@ Not working for sending to elevated window</target>
         <trans-unit id="cultureManager6.TrayLocation" translate="yes" xml:space="preserve" extype="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" extradata="metadata">
           <source>1035, 57</source>
           <target state="needs-review-translation">1035, 57</target>
+        </trans-unit>
+        <trans-unit id="textFromPictureToolStripMenuItem.Size" translate="yes" xml:space="preserve" extype="System.Drawing.Size, System.Drawing">
+          <source>236, 22</source>
+          <target state="needs-review-translation">236, 22</target>
+        </trans-unit>
+        <trans-unit id="textFromPictureToolStripMenuItem.Text" translate="yes" xml:space="preserve">
+          <source>Text from picture</source>
+          <target state="new">Text from picture</target>
+        </trans-unit>
+        <trans-unit id="textFromPictureToolStripMenuItem.ToolTipText" translate="yes" xml:space="preserve">
+          <source>Recognize text from the current image clip and add it as a new text clip. Works on Windows 10 and later only.</source>
+          <target state="new">Recognize text from the current image clip and add it as a new text clip. Works on Windows 10 and later only.</target>
         </trans-unit>
       </group>
     </body>

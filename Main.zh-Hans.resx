@@ -3119,4 +3119,7 @@
   <metadata name="cultureManager6.TrayLocation" xml:space="preserve" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>1035, 57</value>
   </metadata>
+  <data name="textFromPictureToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
+    <value>236, 22</value>
+  </data>
 </root>

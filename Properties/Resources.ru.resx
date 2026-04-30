@@ -463,4 +463,10 @@
   <data name="Duplicate" xml:space="preserve">
     <value>Копия</value>
   </data>
+  <data name="OcrNotSupportedOnThisOs" xml:space="preserve">
+    <value>Распознавание текста из картинки требует Windows 10 или новее.</value>
+  </data>
+  <data name="OcrNoTextFound" xml:space="preserve">
+    <value>Текст в картинке не найден.</value>
+  </data>
 </root>

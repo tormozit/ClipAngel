@@ -1223,5 +1223,23 @@ namespace ClipAngel.Properties {
                 return ResourceManager.GetString("Zoom", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Text recognition from image requires Windows 10 or later.
+        /// </summary>
+        public static string OcrNotSupportedOnThisOs {
+            get {
+                return ResourceManager.GetString("OcrNotSupportedOnThisOs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No text was recognized in the image.
+        /// </summary>
+        public static string OcrNoTextFound {
+            get {
+                return ResourceManager.GetString("OcrNoTextFound", resourceCulture);
+            }
+        }
     }
 }
