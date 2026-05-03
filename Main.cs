@@ -4153,14 +4153,15 @@ namespace ClipAngel
             Process process = ProcessFromWindow(hwnd);
             if (process == null)
                 return result;
-            result.processId = process.Id;
             try
             {
+                result.processId = process.Id;
                 result.application = process.ProcessName;
                 hwnd = process.MainWindowHandle;
             }
-            catch (Exception e)
+            catch (Exception)
             {
+                // process terminated before we could read it
                 return result;
             }
             result.appPath = GetProcessMainModuleFullName(result.processId);
