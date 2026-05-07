@@ -330,6 +330,7 @@ namespace ClipAngel
             GlobalMouseHandler gmh = new GlobalMouseHandler();
             gmh.TheMouseMoved += new MouseMovedEvent(HideTitleTooltip);
             Application.AddMessageFilter(gmh);
+            Application.AddMessageFilter(new TabFilter(this));
 
             toolStripSearchOptions.DropDownDirection = ToolStripDropDownDirection.AboveRight;
             dele = new WinEventDelegate(WinEventProc);
@@ -461,11 +462,7 @@ namespace ClipAngel
         public class GlobalMouseHandler : IMessageFilter
         {
             private const int WM_MOUSEMOVE = 0x0200;
-
             public event MouseMovedEvent TheMouseMoved;
-
-            #region IMessageFilter Members
-
             public bool PreFilterMessage(ref Message m)
             {
                 if (m.Msg == WM_MOUSEMOVE)
@@ -478,8 +475,6 @@ namespace ClipAngel
                 // Always allow message to continue to the next filter control
                 return false;
             }
-
-            #endregion
         }
 
         private void OpenDatabase(bool updateEncryption = false)
@@ -1322,21 +1317,25 @@ namespace ClipAngel
                             //htmlTextBox.Document.OpenNew(false);
                             //htmlTextBox.Document.Write(htmlText);
                             htmlDoc.write(htmlText);
-                            htmlDoc.designMode = "Off"; // Explicitly disable edit mode to allow interaction with custom elements
-                            htmlDoc.close(); // Steals focus!!!
-                            
-                            if (htmlTextBox.Document != null && htmlTextBox.Document.Body != null)
+                            if (clipType == "1c")
                             {
-                                htmlTextBox.Document.Body.Drag += new HtmlElementEventHandler(htmlTextBoxDrag); // to prevent internal drag&drop
-                                htmlTextBox.Document.Body.KeyDown += new HtmlElementEventHandler(htmlTextBoxDocumentKeyDown);
-                                htmlTextBox.Document.AttachEventHandler("onselectionchange", htmlTextBoxDocumentSelectionChange);
+                                htmlDoc.designMode = "Off"; // Explicitly disable edit mode to allow interaction with custom elements
                             }
-                            mshtml.HTMLDocumentEvents2_Event iEvent = (mshtml.HTMLDocumentEvents2_Event) htmlDoc;
-                            iEvent.onclick += new mshtml.HTMLDocumentEvents2_onclickEventHandler(htmlTextBoxDocumentClick); //
-                            iEvent.onmousedown += new mshtml.HTMLDocumentEvents2_onmousedownEventHandler(htmlTextBoxMouseDown); //
-                            //iEvent.onselectionchange += new mshtml.HTMLDocumentEvents2_onselectionchangeEventHandler(htmlTextBoxDocumentSelectionChange);
-                            htmlInitialized = true;
+                            htmlDoc.close(); // Steals focus!!!
+                            //htmlDoc.selection.empty();
+                            htmlTextBox.Document.Body.Drag += new HtmlElementEventHandler(htmlTextBoxDrag); // to prevent internal drag&drop
+                            htmlTextBox.Document.Body.KeyDown += new HtmlElementEventHandler(htmlTextBoxDocumentKeyDown);
 
+                            // Need to be called every time, else handler will be lost
+                            htmlTextBox.Document.AttachEventHandler("onselectionchange", htmlTextBoxDocumentSelectionChange); // No multi call to handler, but why?
+                            if (!htmlInitialized)
+                            {
+                                mshtml.HTMLDocumentEvents2_Event iEvent = (mshtml.HTMLDocumentEvents2_Event)htmlDoc;
+                                iEvent.onclick += new mshtml.HTMLDocumentEvents2_onclickEventHandler(htmlTextBoxDocumentClick); //
+                                iEvent.onmousedown += new mshtml.HTMLDocumentEvents2_onmousedownEventHandler(htmlTextBoxMouseDown); //
+                                //iEvent.onselectionchange += new mshtml.HTMLDocumentEvents2_onselectionchangeEventHandler(htmlTextBoxDocumentSelectionChange);
+                                htmlInitialized = true;
+                            }
                         }
                         else
                         {
@@ -4664,6 +4663,22 @@ namespace ClipAngel
             this.Activate(); // Without it window can be shown and be not focused
         }
 
+        private class TabFilter : IMessageFilter
+        {
+            private readonly Main _form;
+            public TabFilter(Main form) { _form = form; }
+            public bool PreFilterMessage(ref Message m)
+            {
+                const int WM_KEYDOWN = 0x0100;
+                if (m.Msg == WM_KEYDOWN && (Keys)m.WParam == Keys.Tab)
+                {
+                    _form.FocusClipText();
+                    return true; // Tab перехвачен
+                }
+                return false;
+            }
+        }
+
         private void Main_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Escape)
@@ -6568,12 +6583,6 @@ namespace ClipAngel
                 sendKey(comboBoxSearchString.Handle, e.KeyData, false, true);
                 e.Handled = true;
             }
-            //else if (e.KeyCode == Keys.Tab)
-            //{
-            //    // Tired of trying to make it with TAB order
-            //    richTextBox.Focus();
-            //    e.Handled = true;
-            //}
             else if (e.KeyCode == Keys.A && e.Control)
             {
                 // Prevent CTRL+A from selection all clips
