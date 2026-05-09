@@ -1318,16 +1318,19 @@ namespace ClipAngel
                             //htmlTextBox.Document.Write(htmlText);
                             htmlDoc.write(htmlText);
                             if (clipType == "1c")
-                            {
                                 htmlDoc.designMode = "Off"; // Explicitly disable edit mode to allow interaction with custom elements
-                            }
+                            else
+                                htmlDoc.designMode = "On";
                             htmlDoc.close(); // Steals focus!!!
                             //htmlDoc.selection.empty();
-                            htmlTextBox.Document.Body.Drag += new HtmlElementEventHandler(htmlTextBoxDrag); // to prevent internal drag&drop
-                            htmlTextBox.Document.Body.KeyDown += new HtmlElementEventHandler(htmlTextBoxDocumentKeyDown);
+                            if (htmlTextBox.Document != null && htmlTextBox.Document.Body != null)
+                            {
+                                htmlTextBox.Document.Body.Drag += new HtmlElementEventHandler(htmlTextBoxDrag); // to prevent internal drag&drop
+                                htmlTextBox.Document.Body.KeyDown += new HtmlElementEventHandler(htmlTextBoxDocumentKeyDown);
 
-                            // Need to be called every time, else handler will be lost
-                            htmlTextBox.Document.AttachEventHandler("onselectionchange", htmlTextBoxDocumentSelectionChange); // No multi call to handler, but why?
+                                // Need to be called every time, else handler will be lost
+                                htmlTextBox.Document.AttachEventHandler("onselectionchange", htmlTextBoxDocumentSelectionChange); // No multi call to handler, but why?
+                            }
                             if (!htmlInitialized)
                             {
                                 mshtml.HTMLDocumentEvents2_Event iEvent = (mshtml.HTMLDocumentEvents2_Event)htmlDoc;
