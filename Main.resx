@@ -562,7 +562,7 @@ Edit search string right from list. Navigate in list right from search field.</v
     <value>Paste in active window selected clips as files </value>
   </data>
   <data name="toolStripMenuItem25.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+P</value>
+    <value>Control+P</value>
   </data>
   <data name="toolStripMenuItem25.Size" type="System.Drawing.Size, System.Drawing">
     <value>221, 22</value>
@@ -589,7 +589,7 @@ Edit search string right from list. Navigate in list right from search field.</v
     <value>Send text clip to all recipients of channel. </value>
   </data>
   <data name="copyToClipboardToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+C</value>
+    <value>Control+C</value>
   </data>
   <data name="copyToClipboardToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>221, 22</value>
@@ -625,7 +625,7 @@ Edit search string right from list. Navigate in list right from search field.</v
     <value>Mark selected clips as favorite</value>
   </data>
   <data name="toolStripMenuItem11.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+F4</value>
+    <value>Control+F4</value>
   </data>
   <data name="toolStripMenuItem11.Size" type="System.Drawing.Size, System.Drawing">
     <value>221, 22</value>
@@ -651,7 +651,7 @@ Changes in temp file are not synchronized with clip!</value>
     <value>None</value>
   </data>
   <data name="deleteToolStripMenuItem1.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Del</value>
+    <value>Delete</value>
   </data>
   <data name="deleteToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
     <value>221, 22</value>
@@ -828,7 +828,7 @@ Changes in temp file are not synchronized with clip!</value>
     <value>Open link (ALT+click)</value>
   </data>
   <data name="copyToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+C</value>
+    <value>Control+C</value>
   </data>
   <data name="copyToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>205, 22</value>
@@ -935,7 +935,7 @@ Changes in temp file are not synchronized with clip!</value>
 </value>
   </data>
   <data name="htmlMenuItemSelectAll.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+A</value>
+    <value>Control+A</value>
   </data>
   <data name="htmlMenuItemSelectAll.Size" type="System.Drawing.Size, System.Drawing">
     <value>208, 22</value>
@@ -1361,7 +1361,7 @@ Changes in temp file are not synchronized with clip!</value>
     <value>Set focus to clip text (TAB)</value>
   </data>
   <data name="windowAlwaysOnTopToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+T</value>
+    <value>Control+T</value>
   </data>
   <data name="windowAlwaysOnTopToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>212, 22</value>
@@ -1442,7 +1442,7 @@ When ON and "Fast window open" OFF, window will be shown in taskbar if visible.
     <value>250, 6</value>
   </data>
   <data name="moveTopToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+Alt+Up</value>
+    <value>Control+Alt+Up</value>
   </data>
   <data name="moveTopToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>253, 22</value>
@@ -1454,7 +1454,7 @@ When ON and "Fast window open" OFF, window will be shown in taskbar if visible.
     <value>Move selected clips to top</value>
   </data>
   <data name="moveUpToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+Up</value>
+    <value>Control+Up</value>
   </data>
   <data name="moveUpToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>253, 22</value>
@@ -1466,7 +1466,7 @@ When ON and "Fast window open" OFF, window will be shown in taskbar if visible.
     <value>Move selected clips one step up</value>
   </data>
   <data name="moveDownToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+Down</value>
+    <value>Control+Down</value>
   </data>
   <data name="moveDownToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>253, 22</value>
@@ -1529,7 +1529,7 @@ Sorting is kept until clip capture.</value>
     <value>Sort</value>
   </data>
   <data name="deleteAllNonFavoriteToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+Alt+K</value>
+    <value>Control+Alt+K</value>
   </data>
   <data name="deleteAllNonFavoriteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>253, 22</value>
@@ -1544,7 +1544,7 @@ Sorting is kept until clip capture.</value>
     <value>250, 6</value>
   </data>
   <data name="showAllMarksToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+1</value>
+    <value>Control+1</value>
   </data>
   <data name="showAllMarksToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>253, 22</value>
@@ -1553,7 +1553,7 @@ Sorting is kept until clip capture.</value>
     <value>Show all marks</value>
   </data>
   <data name="showOnlyFavoriteToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+2</value>
+    <value>Control+2</value>
   </data>
   <data name="showOnlyFavoriteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>253, 22</value>
@@ -1562,7 +1562,7 @@ Sorting is kept until clip capture.</value>
     <value>Show only favorite</value>
   </data>
   <data name="showOnlyUsedToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+3</value>
+    <value>Control+3</value>
   </data>
   <data name="showOnlyUsedToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>253, 22</value>
@@ -1724,7 +1724,7 @@ Sorting is kept until clip capture.</value>
     <value>Paste in active window selected clips as files </value>
   </data>
   <data name="pasteSpecialToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+P</value>
+    <value>Control+P</value>
   </data>
   <data name="pasteSpecialToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>221, 22</value>
@@ -1758,7 +1758,7 @@ Not working for sending to elevated window</value>
     <value>Paste</value>
   </data>
   <data name="pasteIntoSearchFieldMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+D</value>
+    <value>Control+D</value>
   </data>
   <data name="pasteIntoSearchFieldMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>220, 22</value>
@@ -1827,7 +1827,7 @@ Not working for sending to elevated window</value>
     <value>Find previous match in clip text (SHIFT+F3)</value>
   </data>
   <data name="textFormattingToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+N</value>
+    <value>Control+N</value>
   </data>
   <data name="textFormattingToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>220, 22</value>
@@ -1836,7 +1836,7 @@ Not working for sending to elevated window</value>
     <value>Native formatting</value>
   </data>
   <data name="wordWrapToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+W</value>
+    <value>Control+W</value>
   </data>
   <data name="wordWrapToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>220, 22</value>
@@ -1887,7 +1887,7 @@ Not working for sending to elevated window</value>
     <value>Edit clip text as plain text</value>
   </data>
   <data name="toolStripMenuItem16.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+F4</value>
+    <value>Control+F4</value>
   </data>
   <data name="toolStripMenuItem16.Size" type="System.Drawing.Size, System.Drawing">
     <value>220, 22</value>
@@ -1915,7 +1915,7 @@ Changes in temp file are not synchronized with clip!</value>
     <value>False</value>
   </data>
   <data name="saveAsFileMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+S</value>
+    <value>Control+S</value>
   </data>
   <data name="saveAsFileMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>220, 22</value>
@@ -1927,7 +1927,7 @@ Changes in temp file are not synchronized with clip!</value>
     <value>Save data to file with directory and name selection for text or image clip</value>
   </data>
   <data name="mergeTextOfClipsToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+Alt+J</value>
+    <value>Control+Alt+J</value>
   </data>
   <data name="mergeTextOfClipsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>220, 22</value>
@@ -2117,7 +2117,7 @@ added to ignore list, which can be edited in Settings window.</value>
     <value>Paste  text (CTRL+ENTER)</value>
   </data>
   <data name="toolStripMenuItem4.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Del</value>
+    <value>Delete</value>
   </data>
   <data name="toolStripMenuItem4.Size" type="System.Drawing.Size, System.Drawing">
     <value>208, 22</value>
