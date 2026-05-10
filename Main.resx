@@ -1976,6 +1976,15 @@ Changes in temp file are not synchronized with clip!</value>
     <value>Upload image clip to image hosting website. 
 Url will be saved in current clip and will be copied to clipboard.</value>
   </data>
+  <data name="textFromPictureToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>220, 22</value>
+  </data>
+  <data name="textFromPictureToolStripMenuItem.Text" xml:space="preserve">
+    <value>Text from picture</value>
+  </data>
+  <data name="textFromPictureToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>Recognize text from the current image clip and add it as a new text clip. Works on Windows 10 and later only.</value>
+  </data>
   <data name="ignoreApplicationInCaptureToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>220, 22</value>
   </data>
@@ -4325,6 +4334,12 @@ Changes in temp file are not synchronized with clip!
   <data name="&gt;&gt;uploadImageToWebToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;textFromPictureToolStripMenuItem.Name" xml:space="preserve">
+    <value>textFromPictureToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;textFromPictureToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;ignoreApplicationInCaptureToolStripMenuItem.Name" xml:space="preserve">
     <value>ignoreApplicationInCaptureToolStripMenuItem</value>
   </data>
@@ -4760,13 +4775,4 @@ Changes in temp file are not synchronized with clip!
   <metadata name="cultureManager6.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>1035, 57</value>
   </metadata>
-  <data name="textFromPictureToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>236, 22</value>
-  </data>
-  <data name="textFromPictureToolStripMenuItem.Text" xml:space="preserve">
-    <value>Text from picture</value>
-  </data>
-  <data name="textFromPictureToolStripMenuItem.ToolTipText" xml:space="preserve">
-    <value>Recognize text from the current image clip and add it as a new text clip. Works on Windows 10 and later only.</value>
-  </data>
 </root>

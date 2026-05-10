@@ -469,4 +469,7 @@
   <data name="OcrNoTextFound" xml:space="preserve">
     <value>Текст в картинке не найден.</value>
   </data>
+  <data name="_1c" xml:space="preserve">
+    <value>1C данные</value>
+  </data>
 </root>

@@ -386,8 +386,8 @@ namespace ClipAngel
             TypeFilter.DataSource = _comboItemsTypes;
             TypeFilter.DisplayMember = "Text";
             TypeFilter.ValueMember = "Name";
-            //MarkFilter.SelectedValue = "allTypes";
-            MarkFilter.SelectedIndex = 0;
+            //TypeFilter.SelectedValue = "allTypes";
+            TypeFilter.SelectedIndex = 0;
 
             BindingList<ListItemNameText> _comboItemsMarks = new BindingList<ListItemNameText>();
             _comboItemsMarks.Add(new ListItemNameText {Name = "allMarks"});
@@ -397,7 +397,7 @@ namespace ClipAngel
             MarkFilter.DisplayMember = "Text";
             MarkFilter.ValueMember = "Name";
             //MarkFilter.SelectedValue = "allMarks";
-            TypeFilter.SelectedIndex = 0;
+            MarkFilter.SelectedIndex = 0;
 
             (dataGridView.Columns["AppImage"] as DataGridViewImageColumn).DefaultCellStyle.NullValue = null;
             richTextBox.AutoWordSelection = false;
@@ -2035,6 +2035,8 @@ namespace ClipAngel
                 string filterValueText;
                 if (isText)
                     filterValueText = "'html','rtf','text'";
+                else if (filterValue == "_1Cdata") 
+                    filterValueText = "'1c'";
                 else
                     filterValueText = "'" + filterValue + "'";
                 sqlFilter += " AND type IN (" + filterValueText + ")";
@@ -5413,7 +5415,12 @@ namespace ClipAngel
             BindingList<ListItemNameText> comboItemsTypes = (BindingList<ListItemNameText>) TypeFilter.DataSource;
             foreach (ListItemNameText item in comboItemsTypes)
             {
-                item.Text = CurrentLangResourceManager.GetString(item.Name);
+                var itemText = CurrentLangResourceManager.GetString(item.Name);
+                if (String.IsNullOrEmpty(itemText))
+                {
+                    itemText = CurrentLangResourceManager.GetString("_" + item.Name);
+                }
+                item.Text = itemText;
             }
             // To refresh text in list
             TypeFilter.DisplayMember = "";

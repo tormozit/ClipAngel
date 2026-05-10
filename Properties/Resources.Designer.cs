@@ -61,6 +61,15 @@ namespace ClipAngel.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 1C data.
+        /// </summary>
+        public static string _1c {
+            get {
+                return ResourceManager.GetString("_1c", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Activated already running instance of the application.
         /// </summary>
         public static string ActivatedExistedProcess {
@@ -764,6 +773,24 @@ namespace ClipAngel.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to No text was recognized in the image..
+        /// </summary>
+        public static string OcrNoTextFound {
+            get {
+                return ResourceManager.GetString("OcrNoTextFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Text recognition from image requires Windows 10 or later..
+        /// </summary>
+        public static string OcrNotSupportedOnThisOs {
+            get {
+                return ResourceManager.GetString("OcrNotSupportedOnThisOs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         public static System.Drawing.Bitmap OpenFile {
@@ -1221,24 +1248,6 @@ namespace ClipAngel.Properties {
         public static string Zoom {
             get {
                 return ResourceManager.GetString("Zoom", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Text recognition from image requires Windows 10 or later.
-        /// </summary>
-        public static string OcrNotSupportedOnThisOs {
-            get {
-                return ResourceManager.GetString("OcrNotSupportedOnThisOs", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to No text was recognized in the image.
-        /// </summary>
-        public static string OcrNoTextFound {
-            get {
-                return ResourceManager.GetString("OcrNoTextFound", resourceCulture);
             }
         }
     }

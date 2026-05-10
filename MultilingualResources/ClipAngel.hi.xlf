@@ -1761,6 +1761,10 @@ Generation of image consumes CPU. If you experience high CPU load, set lower val
           <source>No text was recognized in the image.</source>
           <target state="new">No text was recognized in the image.</target>
         </trans-unit>
+        <trans-unit id="_1c" translate="yes" xml:space="preserve">
+          <source>1C data</source>
+          <target state="new">1C data</target>
+        </trans-unit>
       </group>
     </body>
   </file>
@@ -7238,8 +7242,9 @@ Not working for sending to elevated window</target>
           <target state="needs-review-translation">1035, 57</target>
         </trans-unit>
         <trans-unit id="textFromPictureToolStripMenuItem.Size" translate="yes" xml:space="preserve" extype="System.Drawing.Size, System.Drawing">
-          <source>236, 22</source>
+          <source>220, 22</source>
           <target state="needs-review-translation">236, 22</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="textFromPictureToolStripMenuItem.Text" translate="yes" xml:space="preserve">
           <source>Text from picture</source>
