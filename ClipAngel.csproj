@@ -153,9 +153,16 @@
     <Compile Include="AboutBox.Designer.cs">
       <DependentUpon>AboutBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="ToastForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ToastForm.Designer.cs">
+      <DependentUpon>ToastForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="SecretData1.cs" />
     <Compile Include="ClipboardHelper.cs" />
     <Compile Include="OcrHelper.cs" />
+    <Compile Include="OnlineOcrHelper.cs" />
     <Compile Include="Components\Attributes.cs" />
     <Compile Include="Components\CueComboBox.cs">
       <SubType>Component</SubType>

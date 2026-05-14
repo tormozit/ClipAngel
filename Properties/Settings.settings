@@ -242,5 +242,23 @@
     <Setting Name="IgnoreUrlsClipCapture" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
+    <Setting Name="UseOnlineOcr" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="OnlineOcrApiKey" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="OnlineOcrEndpoint" Type="System.String" Scope="User">
+      <Value Profile="(Default)">https://api.openai.com/v1</Value>
+    </Setting>
+    <Setting Name="OnlineOcrModel" Type="System.String" Scope="User">
+      <Value Profile="(Default)">gpt-4o</Value>
+    </Setting>
+    <Setting Name="AutoOcrImages" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="NotifyOnOcrComplete" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

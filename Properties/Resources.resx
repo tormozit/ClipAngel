@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -498,5 +498,65 @@
   </data>
   <data name="_1c" xml:space="preserve">
     <value>1C data</value>
+  </data>
+  <data name="OcrNotAvailable" xml:space="preserve">
+    <value>OCR is not available. Please configure online OCR or use Windows 10+.</value>
+  </data>
+  <data name="OcrEngineUnavailable" xml:space="preserve">
+    <value>OCR engine unavailable. Install a language pack with OCR support in Windows Settings → Time &amp; Language → Language.</value>
+  </data>
+  <data name="OnlineOcrNotConfigured" xml:space="preserve">
+    <value>Online OCR not configured. Please provide API key and endpoint.</value>
+  </data>
+  <data name="OnlineOcrRetriesFailed" xml:space="preserve">
+    <value>Online OCR failed after multiple retries</value>
+  </data>
+  <data name="OcrClipTitlePrefix" xml:space="preserve">
+    <value>OCR: </value>
+  </data>
+  <data name="Ocr" xml:space="preserve">
+    <value>OCR</value>
+  </data>
+  <data name="OcrToastCompleteTitle" xml:space="preserve">
+    <value>OCR Complete</value>
+  </data>
+  <data name="OcrToastCompleteBodyFormat" xml:space="preserve">
+    <value>Text recognized: {0}</value>
+  </data>
+  <data name="UseOnlineOcr" xml:space="preserve">
+    <value>Use online OCR</value>
+  </data>
+  <data name="UseOnlineOcrDescription" xml:space="preserve">
+    <value>Use online OCR service (OpenAI Vision / OpenRouter) for text recognition. When disabled or unavailable, falls back to the built-in Windows 10+ OCR engine.</value>
+  </data>
+  <data name="OnlineOcrApiKey" xml:space="preserve">
+    <value>Online OCR API key</value>
+  </data>
+  <data name="OnlineOcrApiKeyDescription" xml:space="preserve">
+    <value>API key for online OCR service (OpenAI / OpenRouter). Stored locally; environment variables OPENAI_API_KEY or OPENROUTER_API_KEY take precedence.</value>
+  </data>
+  <data name="OnlineOcrEndpoint" xml:space="preserve">
+    <value>Online OCR endpoint</value>
+  </data>
+  <data name="OnlineOcrEndpointDescription" xml:space="preserve">
+    <value>Base URL of the OpenAI-compatible API (e.g. https://api.openai.com/v1 or an OpenRouter endpoint).</value>
+  </data>
+  <data name="OnlineOcrModel" xml:space="preserve">
+    <value>Online OCR model</value>
+  </data>
+  <data name="OnlineOcrModelDescription" xml:space="preserve">
+    <value>Vision-capable model name to use for online OCR (for example: gpt-4o).</value>
+  </data>
+  <data name="AutoOcrImages" xml:space="preserve">
+    <value>Auto-recognize text in images</value>
+  </data>
+  <data name="AutoOcrImagesDescription" xml:space="preserve">
+    <value>Automatically run OCR on each captured image clip and add the recognized text as a new clip. Requires online OCR to be configured.</value>
+  </data>
+  <data name="NotifyOnOcrComplete" xml:space="preserve">
+    <value>Notify when OCR is complete</value>
+  </data>
+  <data name="NotifyOnOcrCompleteDescription" xml:space="preserve">
+    <value>Show a toast notification with a short preview when automatic OCR finishes.</value>
   </data>
 </root>
