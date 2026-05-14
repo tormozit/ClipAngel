@@ -752,6 +752,12 @@ namespace ClipAngel
             SearchIgnoreBigTexts = Properties.Settings.Default.SearchIgnoreBigTexts;
             ClipTempFileFolder = Properties.Settings.Default.ClipTempFileFolder;
             IgnoreExclusiveFormatClipCapture = Properties.Settings.Default.IgnoreExclusiveFormatClipCapture;
+            UseOnlineOcr = Properties.Settings.Default.UseOnlineOcr;
+            OnlineOcrApiKey = Properties.Settings.Default.OnlineOcrApiKey;
+            OnlineOcrEndpoint = Properties.Settings.Default.OnlineOcrEndpoint;
+            OnlineOcrModel = Properties.Settings.Default.OnlineOcrModel;
+            AutoOcrImages = Properties.Settings.Default.AutoOcrImages;
+            NotifyOnOcrComplete = Properties.Settings.Default.NotifyOnOcrComplete;
             //RestoreCaretPositionOnFocusReturn = Properties.Settings.Default.RestoreCaretPositionOnFocusReturn;
             GlobalHotkeyPasteText = Properties.Settings.Default.GlobalHotkeyPasteText;
             GlobalHotkeySimulateInput = Properties.Settings.Default.GlobalHotkeySimulateInput;
@@ -801,7 +807,8 @@ namespace ClipAngel
             string Keyname = Application.ProductName;
             try
             {
-                AutostartPath = reg.GetValue(Keyname).ToString();
+                var value = reg.GetValue(Keyname);
+                AutostartPath = value?.ToString() ?? "";
             }
             catch
             {
@@ -851,6 +858,12 @@ namespace ClipAngel
             Properties.Settings.Default.Language = Language;
             Properties.Settings.Default.TextCompareApplication = TextCompareApplication;
             Properties.Settings.Default.TextEditor = TextEditor;
+            Properties.Settings.Default.UseOnlineOcr = UseOnlineOcr;
+            Properties.Settings.Default.OnlineOcrApiKey = OnlineOcrApiKey;
+            Properties.Settings.Default.OnlineOcrEndpoint = OnlineOcrEndpoint;
+            Properties.Settings.Default.OnlineOcrModel = OnlineOcrModel;
+            Properties.Settings.Default.AutoOcrImages = AutoOcrImages;
+            Properties.Settings.Default.NotifyOnOcrComplete = NotifyOnOcrComplete;
             Properties.Settings.Default.RtfEditor = RtfEditor;
             Properties.Settings.Default.HtmlEditor = HtmlEditor;
             Properties.Settings.Default.ImageEditor = ImageEditor;
@@ -867,7 +880,6 @@ namespace ClipAngel
             Properties.Settings.Default.GlobalHotkeyIncrementalPaste = GlobalHotkeyIncrementalPaste;
             Properties.Settings.Default.GlobalHotkeyDecrementalPaste = GlobalHotkeyDecrementalPaste;
             Properties.Settings.Default.GlobalHotkeyCompareLastClips = GlobalHotkeyCompareLastClips;
-            Properties.Settings.Default.Language = Language;
 
             RegistryKey reg;
             reg = Registry.CurrentUser.CreateSubKey("Software\\Microsoft\\Windows\\CurrentVersion\\Run\\");
@@ -1154,5 +1166,27 @@ namespace ClipAngel
         [GlobalizedCategory("Other")]
         [EditorAttribute(typeof(DatabaseFileNameEditor), typeof(UITypeEditor))]
         public string DatabaseFile { get; set; }
+
+        [GlobalizedCategory("Ocr")]
+        [Editor(typeof(MyBoolEditor), typeof(UITypeEditor))]
+        public bool UseOnlineOcr { get; set; }
+
+        [GlobalizedCategory("Ocr")]
+        [PasswordPropertyText(true)]
+        public string OnlineOcrApiKey { get; set; }
+
+        [GlobalizedCategory("Ocr")]
+        public string OnlineOcrEndpoint { get; set; }
+
+        [GlobalizedCategory("Ocr")]
+        public string OnlineOcrModel { get; set; }
+
+        [GlobalizedCategory("Ocr")]
+        [Editor(typeof(MyBoolEditor), typeof(UITypeEditor))]
+        public bool AutoOcrImages { get; set; }
+
+        [GlobalizedCategory("Ocr")]
+        [Editor(typeof(MyBoolEditor), typeof(UITypeEditor))]
+        public bool NotifyOnOcrComplete { get; set; }
     }
 }

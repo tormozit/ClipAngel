@@ -1250,5 +1250,68 @@ namespace ClipAngel.Properties {
                 return ResourceManager.GetString("Zoom", resourceCulture);
             }
         }
+
+        /// <summary>
+        ///   Looks up a localized string similar to OCR: .
+        /// </summary>
+        public static string OcrClipTitlePrefix {
+            get {
+                return ResourceManager.GetString("OcrClipTitlePrefix", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to OCR is not available. Please configure online OCR or use Windows 10+..
+        /// </summary>
+        public static string OcrNotAvailable {
+            get {
+                return ResourceManager.GetString("OcrNotAvailable", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to OCR engine unavailable. Install a language pack with OCR support in Windows Settings → Time &amp; Language → Language..
+        /// </summary>
+        public static string OcrEngineUnavailable {
+            get {
+                return ResourceManager.GetString("OcrEngineUnavailable", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Online OCR not configured. Please provide API key and endpoint..
+        /// </summary>
+        public static string OnlineOcrNotConfigured {
+            get {
+                return ResourceManager.GetString("OnlineOcrNotConfigured", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Online OCR failed after multiple retries.
+        /// </summary>
+        public static string OnlineOcrRetriesFailed {
+            get {
+                return ResourceManager.GetString("OnlineOcrRetriesFailed", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to OCR Complete.
+        /// </summary>
+        public static string OcrToastCompleteTitle {
+            get {
+                return ResourceManager.GetString("OcrToastCompleteTitle", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Text recognized: {0}.
+        /// </summary>
+        public static string OcrToastCompleteBodyFormat {
+            get {
+                return ResourceManager.GetString("OcrToastCompleteBodyFormat", resourceCulture);
+            }
+        }
     }
 }

@@ -979,5 +979,90 @@ namespace ClipAngel.Properties {
                 this["IgnoreUrlsClipCapture"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool UseOnlineOcr {
+            get {
+                return ((bool)(this["UseOnlineOcr"]));
+            }
+            set {
+                this["UseOnlineOcr"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string OnlineOcrApiKey {
+            get {
+                return ((string)(this["OnlineOcrApiKey"]));
+            }
+            set {
+                this["OnlineOcrApiKey"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://api.openai.com/v1")]
+        public string OnlineOcrEndpoint {
+            get {
+                return ((string)(this["OnlineOcrEndpoint"]));
+            }
+            set {
+                this["OnlineOcrEndpoint"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("gpt-4o")]
+        public string OnlineOcrModel {
+            get {
+                return ((string)(this["OnlineOcrModel"]));
+            }
+            set {
+                this["OnlineOcrModel"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool AutoOcrImages {
+            get {
+                return ((bool)(this["AutoOcrImages"]));
+            }
+            set {
+                this["AutoOcrImages"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool NotifyOnOcrComplete {
+            get {
+                return ((bool)(this["NotifyOnOcrComplete"]));
+            }
+            set {
+                this["NotifyOnOcrComplete"] = value;
+            }
+        }
+
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool CyclicRecord {
+            get {
+                return ((bool)(this["CyclicRecord"]));
+            }
+            set {
+                this["CyclicRecord"] = value;
+            }
+        }
     }
 }

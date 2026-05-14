@@ -2758,6 +2758,14 @@ namespace ClipAngel
                         clipboardOwner.windowTitle, imageUrl, clipCharsImage, clipboardOwner.appPath, false, false, false, "");
                     needUpdateList = needUpdateList || clipAdded;
 
+                    // Auto OCR for images
+                    if (clipAdded && Properties.Settings.Default.AutoOcrImages &&
+                        OnlineOcrHelper.IsOnlineOcrConfigured(Properties.Settings.Default.OnlineOcrApiKey, Properties.Settings.Default.OnlineOcrEndpoint))
+                    {
+                        // Start async OCR without blocking
+                        Task.Run(async () => await PerformAutoOcrAsync(binaryBuffer, clipboardOwner.application, clipboardOwner.windowTitle));
+                    }
+
                     if (!String.IsNullOrWhiteSpace(clipText))
                         imageSampleBuffer = new byte[0];
                 }
@@ -8637,6 +8645,66 @@ namespace ClipAngel
             GotoLastRow();
         }
 
+        /// <summary>
+        /// Performs automatic OCR on captured image and adds recognized text as a clip
+        /// </summary>
+        private async Task PerformAutoOcrAsync(byte[] binaryBuffer, string application, string windowTitle)
+        {
+            try
+            {
+                if (binaryBuffer == null || binaryBuffer.Length == 0)
+                    return;
+
+                using (Image image = GetImageFromBinary(binaryBuffer))
+                using (Bitmap bitmap = new Bitmap(image))
+                {
+                    string recognizedText = await OcrHelper.RecognizeTextAutoAsync(bitmap);
+
+                    if (!string.IsNullOrWhiteSpace(recognizedText))
+                    {
+                        // Add recognized text as a new clip
+                        if (this.IsHandleCreated && !this.IsDisposed)
+                        {
+                            try
+                            {
+                                this.Invoke((MethodInvoker)delegate
+                                {
+                                    string titlePreview = recognizedText.Substring(0, Math.Min(50, recognizedText.Length));
+                                    AddClip(null, null, "", "", "text", recognizedText, application, windowTitle, "", 0, "", false, false, false, Properties.Resources.OcrClipTitlePrefix + titlePreview);
+                                    ReloadList();
+
+                                    // Show notification if enabled
+                                    if (Properties.Settings.Default.NotifyOnOcrComplete)
+                                    {
+                                        try
+                                        {
+                                            string preview = recognizedText.Substring(0, Math.Min(50, recognizedText.Length));
+                                            var toast = new ToastForm(Properties.Resources.OcrToastCompleteTitle,
+                                                string.Format(Properties.Resources.OcrToastCompleteBodyFormat, preview));
+                                            toast.Show();
+                                        }
+                                        catch (Exception ex)
+                                        {
+                                            Debug.WriteLine($"Failed to show notification: {ex.Message}");
+                                        }
+                                    }
+                                });
+                            }
+                            catch (ObjectDisposedException)
+                            {
+                                // Form was disposed during Invoke
+                                Debug.WriteLine("Form disposed during auto OCR Invoke");
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Auto OCR failed: {ex.Message}");
+            }
+        }
+
         async private void textFromPictureToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (LoadedClipRowReader == null || (string)LoadedClipRowReader["type"] != "img")
@@ -8657,8 +8725,10 @@ namespace ClipAngel
 
             try
             {
-                Image image = GetImageFromBinary(binary);
-                string recognizedText = await OcrHelper.RecognizeTextAsync(new Bitmap(image));
+                using (Image image = GetImageFromBinary(binary))
+                using (Bitmap bitmap = new Bitmap(image))
+                {
+                    string recognizedText = await OcrHelper.RecognizeTextAutoAsync(bitmap);
 
                 if (string.IsNullOrWhiteSpace(recognizedText))
                 {
@@ -8669,8 +8739,9 @@ namespace ClipAngel
                     return;
                 }
 
-                AddClip(null, null, "", "", "text", recognizedText);
-                GotoLastRow();
+                    AddClip(null, null, "", "", "text", recognizedText);
+                    GotoLastRow();
+                }
             }
             catch (Exception ex)
             {

@@ -39,7 +39,7 @@ namespace ClipAngel {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("ClipAngel.VisibleUserSettings", typeof(VisibleUserSettings).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("ClipAngel.VisibleUserSettings", typeof(VisibleUserSettings1).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -93,6 +93,24 @@ namespace ClipAngel {
         internal static string AutoCheckUpdateDescription {
             get {
                 return ResourceManager.GetString("AutoCheckUpdateDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Auto-recognize text in images.
+        /// </summary>
+        internal static string AutoOcrImages {
+            get {
+                return ResourceManager.GetString("AutoOcrImages", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Automatically run OCR on each captured image clip and add the recognized text as a new clip. Requires online OCR to be configured..
+        /// </summary>
+        internal static string AutoOcrImagesDescription {
+            get {
+                return ResourceManager.GetString("AutoOcrImagesDescription", resourceCulture);
             }
         }
         
@@ -886,6 +904,24 @@ namespace ClipAngel {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Notify when OCR is complete.
+        /// </summary>
+        internal static string NotifyOnOcrComplete {
+            get {
+                return ResourceManager.GetString("NotifyOnOcrComplete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Show a toast notification with a short preview when automatic OCR finishes..
+        /// </summary>
+        internal static string NotifyOnOcrCompleteDescription {
+            get {
+                return ResourceManager.GetString("NotifyOnOcrCompleteDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Number of clips.
         /// </summary>
         internal static string NumberOfClips {
@@ -900,6 +936,69 @@ namespace ClipAngel {
         internal static string NumberOfClipsDescription {
             get {
                 return ResourceManager.GetString("NumberOfClipsDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to OCR.
+        /// </summary>
+        internal static string Ocr {
+            get {
+                return ResourceManager.GetString("Ocr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Online OCR API key.
+        /// </summary>
+        internal static string OnlineOcrApiKey {
+            get {
+                return ResourceManager.GetString("OnlineOcrApiKey", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to API key for online OCR service (OpenAI / OpenRouter). Stored locally; environment variables OPENAI_API_KEY or OPENROUTER_API_KEY take precedence..
+        /// </summary>
+        internal static string OnlineOcrApiKeyDescription {
+            get {
+                return ResourceManager.GetString("OnlineOcrApiKeyDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Online OCR endpoint.
+        /// </summary>
+        internal static string OnlineOcrEndpoint {
+            get {
+                return ResourceManager.GetString("OnlineOcrEndpoint", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Base URL of the OpenAI-compatible API (e.g. https://api.openai.com/v1 or an OpenRouter endpoint)..
+        /// </summary>
+        internal static string OnlineOcrEndpointDescription {
+            get {
+                return ResourceManager.GetString("OnlineOcrEndpointDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Online OCR model.
+        /// </summary>
+        internal static string OnlineOcrModel {
+            get {
+                return ResourceManager.GetString("OnlineOcrModel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Vision-capable model name to use for online OCR (for example: gpt-4o)..
+        /// </summary>
+        internal static string OnlineOcrModelDescription {
+            get {
+                return ResourceManager.GetString("OnlineOcrModelDescription", resourceCulture);
             }
         }
         
@@ -1207,6 +1306,24 @@ namespace ClipAngel {
         internal static string UseFormattingInDuplicateDetectionDescription {
             get {
                 return ResourceManager.GetString("UseFormattingInDuplicateDetectionDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use online OCR.
+        /// </summary>
+        internal static string UseOnlineOcr {
+            get {
+                return ResourceManager.GetString("UseOnlineOcr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use online OCR service (OpenAI Vision / OpenRouter) for text recognition. When disabled or unavailable, falls back to the built-in Windows 10+ OCR engine..
+        /// </summary>
+        internal static string UseOnlineOcrDescription {
+            get {
+                return ResourceManager.GetString("UseOnlineOcrDescription", resourceCulture);
             }
         }
         
