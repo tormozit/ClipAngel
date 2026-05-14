@@ -69,7 +69,7 @@
     <value>大小</value>
   </data>
   <data name="wordWrapToolStripMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+W</value>
+    <value>Control+W</value>
   </data>
   <data name="StripLabelCreated.ToolTipText" xml:space="preserve">
     <value>创建时间</value>
@@ -84,7 +84,7 @@
     <value>在列表和剪辑文本之间切换焦点。如果焦点在其他地方，列表将被激活</value>
   </data>
   <data name="copyToClipboardToolStripMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+C</value>
+    <value>Control+C</value>
   </data>
   <data name="dataGridViewImageColumn5.HeaderText" xml:space="preserve">
     <value>VisualWeight</value>
@@ -163,7 +163,7 @@
     <value>171, 22</value>
   </data>
   <data name="windowAlwaysOnTopToolStripMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+T</value>
+    <value>Control+T</value>
   </data>
   <data name="openWithToolStripMenuItem.Text" xml:space="preserve">
     <value>打开文件...</value>
@@ -190,7 +190,7 @@
     <value>1</value>
   </data>
   <data name="deleteToolStripMenuItem1.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Del</value>
+    <value>Delete</value>
   </data>
   <data name="moveDownToolStripMenuItem.ToolTipText" xml:space="preserve">
     <value>将选中的剪辑向下移动</value>
@@ -308,7 +308,7 @@
     <value>False</value>
   </data>
   <data name="htmlMenuItemSelectAll.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+A</value>
+    <value>Control+A</value>
   </data>
   <data name="deleteToolStripMenuItem1.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>221, 22</value>
@@ -362,7 +362,7 @@
     <value>NoControl</value>
   </data>
   <data name="showOnlyUsedToolStripMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+3</value>
+    <value>Control+3</value>
   </data>
   <data name="pictureBoxSource.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>16, 20</value>
@@ -392,7 +392,7 @@
     <value>Top, Bottom, Left, Right</value>
   </data>
   <data name="moveDownToolStripMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+Down</value>
+    <value>Control+Down</value>
   </data>
   <data name="dataGridViewImageColumn1.Width" xml:space="preserve" type="System.Int32, mscorlib">
     <value>18</value>
@@ -430,10 +430,10 @@
     <value>MiddleRight</value>
   </data>
   <data name="toolStripMenuItem11.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+F4</value>
+    <value>Control+F4</value>
   </data>
   <data name="toolStripMenuItem16.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+F4</value>
+    <value>Control+F4</value>
   </data>
   <data name="contextMenuStripHtml.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>209, 164</value>
@@ -489,7 +489,7 @@
     <value>大小</value>
   </data>
   <data name="showAllMarksToolStripMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+1</value>
+    <value>Control+1</value>
   </data>
   <data name="MarkFilter.Items2" xml:space="preserve">
     <value>文件</value>
@@ -641,7 +641,7 @@
     <value>标为收藏</value>
   </data>
   <data name="textFormattingToolStripMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+N</value>
+    <value>Control+N</value>
   </data>
   <data name="notifyIcon.Icon" xml:space="preserve" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1295,7 +1295,7 @@
     <value>None</value>
   </data>
   <data name="toolStripMenuItem4.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Del</value>
+    <value>Delete</value>
   </data>
   <data name="windowAlwaysOnTopToolStripMenuItem.Text" xml:space="preserve">
     <value>窗口置顶</value>
@@ -1439,10 +1439,10 @@
     <value>比较上一剪辑</value>
   </data>
   <data name="copyToolStripMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+C</value>
+    <value>Control+C</value>
   </data>
   <data name="showOnlyFavoriteToolStripMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+2</value>
+    <value>Control+2</value>
   </data>
   <data name="toolStripMenuItem10.Text" xml:space="preserve">
     <value>文本比较</value>
@@ -1542,7 +1542,7 @@
     <value>粘贴文本 (CTRL+ENTER)</value>
   </data>
   <data name="moveUpToolStripMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+Up</value>
+    <value>Control+Up</value>
   </data>
   <data name="contextMenuStripNotifyIcon.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>188, 158</value>
@@ -1554,7 +1554,7 @@
     <value>False</value>
   </data>
   <data name="moveTopToolStripMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+Alt+Up</value>
+    <value>Control+Alt+Up</value>
   </data>
   <data name="tableLayoutPanelData.Location" xml:space="preserve" type="System.Drawing.Point, System.Drawing">
     <value>0, 27</value>
@@ -3074,16 +3074,16 @@
     <value>保存数据到文件并为文本或图片剪辑选择名称</value>
   </data>
   <data name="saveAsFileMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+S</value>
+    <value>Control+S</value>
   </data>
   <data name="mergeTextOfClipsToolStripMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+Alt+J</value>
+    <value>Control+Alt+J</value>
   </data>
   <data name="toolStripMenuItem25.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+P</value>
+    <value>Control+P</value>
   </data>
   <data name="pasteSpecialToolStripMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+P</value>
+    <value>Control+P</value>
   </data>
   <data name="decodeTextToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>220, 22</value>
@@ -3096,7 +3096,7 @@
 </value>
   </data>
   <data name="deleteAllNonFavoriteToolStripMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+Alt+K</value>
+    <value>Control+Alt+K</value>
   </data>
   <data name="connectRecipientToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>168, 22</value>

@@ -40,7 +40,7 @@
     <value>Μέγεθος</value>
   </data>
   <data name="wordWrapToolStripMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+W</value>
+    <value>Control+W</value>
   </data>
   <data name="deleteToolStripMenuItem1.Text" xml:space="preserve">
     <value>Διαγραφή</value>
@@ -109,7 +109,7 @@
     <value>23, 22</value>
   </data>
   <data name="deleteToolStripMenuItem1.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Del</value>
+    <value>Delete</value>
   </data>
   <data name="moveDownToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>253, 22</value>
@@ -178,7 +178,7 @@
     <value>False</value>
   </data>
   <data name="htmlMenuItemSelectAll.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+A</value>
+    <value>Control+A</value>
   </data>
   <data name="richTextBox.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>408, 94</value>
@@ -217,7 +217,7 @@
     <value>18</value>
   </data>
   <data name="showOnlyUsedToolStripMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+3</value>
+    <value>Control+3</value>
   </data>
   <data name="pictureBoxSource.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>16, 20</value>
@@ -241,7 +241,7 @@
     <value>Επιλογή</value>
   </data>
   <data name="moveDownToolStripMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+Down</value>
+    <value>Control+Down</value>
   </data>
   <data name="dataGridViewImageColumn1.Width" xml:space="preserve" type="System.Int32, mscorlib">
     <value>18</value>
@@ -274,7 +274,7 @@
     <value>5</value>
   </data>
   <data name="toolStripMenuItem16.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+F4</value>
+    <value>Control+F4</value>
   </data>
   <data name="contextMenuStripHtml.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>209, 164</value>
@@ -295,7 +295,7 @@
     <value>Έξοδος</value>
   </data>
   <data name="copyToClipboardToolStripMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+C</value>
+    <value>Control+C</value>
   </data>
   <data name="aboutToolStripMenuItem1.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>178, 22</value>
@@ -310,7 +310,7 @@
     <value>Μέγεθος</value>
   </data>
   <data name="showAllMarksToolStripMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+1</value>
+    <value>Control+1</value>
   </data>
   <data name="textBoxApplication.Anchor" xml:space="preserve" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -403,7 +403,7 @@
     <value>&amp;Επιλογές αναζήτησης...</value>
   </data>
   <data name="textFormattingToolStripMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+N</value>
+    <value>Control+N</value>
   </data>
   <data name="notifyIcon.Icon" xml:space="preserve" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1569,7 +1569,7 @@
     <value>None</value>
   </data>
   <data name="toolStripMenuItem4.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Del</value>
+    <value>Delete</value>
   </data>
   <data name="windowAlwaysOnTopToolStripMenuItem.Text" xml:space="preserve">
     <value>Πάντα σε πρώτο πλάνο</value>
@@ -1614,7 +1614,7 @@
     <value>Παράθυρο</value>
   </data>
   <data name="toolStripMenuItem11.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+F4</value>
+    <value>Control+F4</value>
   </data>
   <data name="openWithToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>219, 22</value>
@@ -1680,13 +1680,13 @@
     <value>63, 20</value>
   </data>
   <data name="copyToolStripMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+C</value>
+    <value>Control+C</value>
   </data>
   <data name="TypeFilter.Items2" xml:space="preserve">
     <value>αρχείο</value>
   </data>
   <data name="showOnlyFavoriteToolStripMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+2</value>
+    <value>Control+2</value>
   </data>
   <data name="pictureBoxSource.ImeMode" xml:space="preserve" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -1755,7 +1755,7 @@
     <value>5</value>
   </data>
   <data name="moveUpToolStripMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+Up</value>
+    <value>Control+Up</value>
   </data>
   <data name="urlTextBox.Location" xml:space="preserve" type="System.Drawing.Point, System.Drawing">
     <value>2, 345</value>
@@ -1764,7 +1764,7 @@
     <value>False</value>
   </data>
   <data name="moveTopToolStripMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+Alt+Up</value>
+    <value>Control+Alt+Up</value>
   </data>
   <data name="tableLayoutPanelData.Location" xml:space="preserve" type="System.Drawing.Point, System.Drawing">
     <value>0, 27</value>
@@ -2022,7 +2022,7 @@
     <value>253, 22</value>
   </data>
   <data name="windowAlwaysOnTopToolStripMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+T</value>
+    <value>Control+T</value>
   </data>
   <data name="toolStripTop.Dock" xml:space="preserve" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>None</value>
@@ -2352,22 +2352,22 @@
     <value>214, 22</value>
   </data>
   <data name="saveAsFileMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+S</value>
+    <value>Control+S</value>
   </data>
   <data name="mergeTextOfClipsToolStripMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+Alt+J</value>
+    <value>Control+Alt+J</value>
   </data>
   <data name="toolStripMenuItem25.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+P</value>
+    <value>Control+P</value>
   </data>
   <data name="pasteSpecialToolStripMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+P</value>
+    <value>Control+P</value>
   </data>
   <data name="decodeTextToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>220, 22</value>
   </data>
   <data name="deleteAllNonFavoriteToolStripMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+Alt+K</value>
+    <value>Control+Alt+K</value>
   </data>
   <data name="connectRecipientToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>168, 22</value>

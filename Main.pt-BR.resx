@@ -58,7 +58,7 @@
     <value>Tamanho</value>
   </data>
   <data name="wordWrapToolStripMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+W</value>
+    <value>Control+W</value>
   </data>
   <data name="StripLabelCreated.ToolTipText" xml:space="preserve">
     <value>Hora de criação</value>
@@ -70,7 +70,7 @@
     <value>Alternar o foco entre a lista e texto do clip. Se o foco está em outro lugar, a lista será ativada.</value>
   </data>
   <data name="copyToClipboardToolStripMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+C</value>
+    <value>Control+C</value>
   </data>
   <data name="dataGridViewImageColumn5.HeaderText" xml:space="preserve">
     <value>VisualWeight</value>
@@ -143,7 +143,7 @@ o submenu "Lista" tem comandos para seleção rápida</value>
     <value>171, 22</value>
   </data>
   <data name="windowAlwaysOnTopToolStripMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+T</value>
+    <value>Control+T</value>
   </data>
   <data name="openWithToolStripMenuItem.Text" xml:space="preserve">
     <value>Abrir arquivo com...</value>
@@ -170,7 +170,7 @@ o submenu "Lista" tem comandos para seleção rápida</value>
     <value>1</value>
   </data>
   <data name="deleteToolStripMenuItem1.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Del</value>
+    <value>Delete</value>
   </data>
   <data name="titleDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
     <value>Título</value>
@@ -276,7 +276,7 @@ Url será salva no clipe atual e será copiada à área de transferência.</valu
     <value>False</value>
   </data>
   <data name="htmlMenuItemSelectAll.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+A</value>
+    <value>Control+A</value>
   </data>
   <data name="richTextBox.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>408, 94</value>
@@ -324,7 +324,7 @@ Url será salva no clipe atual e será copiada à área de transferência.</valu
     <value>NoControl</value>
   </data>
   <data name="showOnlyUsedToolStripMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+3</value>
+    <value>Control+3</value>
   </data>
   <data name="pictureBoxSource.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>16, 20</value>
@@ -354,7 +354,7 @@ Url será salva no clipe atual e será copiada à área de transferência.</valu
     <value>Top, Bottom, Left, Right</value>
   </data>
   <data name="moveDownToolStripMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+Down</value>
+    <value>Control+Down</value>
   </data>
   <data name="dataGridViewImageColumn1.Width" xml:space="preserve" type="System.Int32, mscorlib">
     <value>18</value>
@@ -392,10 +392,10 @@ Alterações no arquivo temporário não são sincronizadas com o clipe!</value>
     <value>MiddleRight</value>
   </data>
   <data name="toolStripMenuItem11.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+F4</value>
+    <value>Control+F4</value>
   </data>
   <data name="toolStripMenuItem16.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+F4</value>
+    <value>Control+F4</value>
   </data>
   <data name="contextMenuStripHtml.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>209, 164</value>
@@ -440,7 +440,7 @@ Alterações no arquivo temporário não são sincronizadas com o clipe!</value>
     <value>Tamanho</value>
   </data>
   <data name="showAllMarksToolStripMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+1</value>
+    <value>Control+1</value>
   </data>
   <data name="MarkFilter.Items2" xml:space="preserve">
     <value>arquivo</value>
@@ -588,7 +588,7 @@ Alterações no arquivo temp não são sincronizadas com o clipe!
     <value>Marcar como favorito</value>
   </data>
   <data name="textFormattingToolStripMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+N</value>
+    <value>Control+N</value>
   </data>
   <data name="notifyIcon.Icon" xml:space="preserve" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1227,7 +1227,7 @@ Alterações no arquivo temporário não são sincronizadas com o clipe!</value>
     <value>None</value>
   </data>
   <data name="toolStripMenuItem4.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Del</value>
+    <value>Delete</value>
   </data>
   <data name="windowAlwaysOnTopToolStripMenuItem.Text" xml:space="preserve">
     <value>Sempre visível</value>
@@ -1350,10 +1350,10 @@ Alterações no arquivo temporário não são sincronizadas com o clipe!</value>
     <value>Compare os últimos clipes</value>
   </data>
   <data name="copyToolStripMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+C</value>
+    <value>Control+C</value>
   </data>
   <data name="showOnlyFavoriteToolStripMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+2</value>
+    <value>Control+2</value>
   </data>
   <data name="toolStripMenuItem10.Text" xml:space="preserve">
     <value>Comparação de texto</value>
@@ -1441,7 +1441,7 @@ O submenu "Lista" tem comandos para seleção rápida</value>
     <value>Magenta</value>
   </data>
   <data name="moveUpToolStripMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+Up</value>
+    <value>Control+Up</value>
   </data>
   <data name="urlTextBox.Location" xml:space="preserve" type="System.Drawing.Point, System.Drawing">
     <value>2, 345</value>
@@ -1450,7 +1450,7 @@ O submenu "Lista" tem comandos para seleção rápida</value>
     <value>False</value>
   </data>
   <data name="moveTopToolStripMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+Alt+Up</value>
+    <value>Control+Alt+Up</value>
   </data>
   <data name="tableLayoutPanelData.Location" xml:space="preserve" type="System.Drawing.Point, System.Drawing">
     <value>0, 27</value>
@@ -2717,22 +2717,22 @@ adicionado à lista de ignorar, que pode ser editado na janela de configuraçõe
     <value>214, 22</value>
   </data>
   <data name="saveAsFileMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+S</value>
+    <value>Control+S</value>
   </data>
   <data name="mergeTextOfClipsToolStripMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+Alt+J</value>
+    <value>Control+Alt+J</value>
   </data>
   <data name="toolStripMenuItem25.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+P</value>
+    <value>Control+P</value>
   </data>
   <data name="pasteSpecialToolStripMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+P</value>
+    <value>Control+P</value>
   </data>
   <data name="decodeTextToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>220, 22</value>
   </data>
   <data name="deleteAllNonFavoriteToolStripMenuItem.ShortcutKeys" xml:space="preserve" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+Alt+K</value>
+    <value>Control+Alt+K</value>
   </data>
   <data name="connectRecipientToolStripMenuItem.Size" xml:space="preserve" type="System.Drawing.Size, System.Drawing">
     <value>168, 22</value>
