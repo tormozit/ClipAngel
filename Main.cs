@@ -156,8 +156,6 @@ namespace ClipAngel
 
         private IntPtr HookChangeActiveWindow;
         private bool AllowFilterProcessing = true;
-        private static Color favoriteColor = Color.FromArgb(255, 230, 220);
-        private static Color _usedColor = Color.FromArgb(210, 255, 255);
         Bitmap imageText;
         Bitmap imageHtml;
         Bitmap imageRtf;
@@ -5335,14 +5333,24 @@ namespace ClipAngel
                 // Not yet fully read
                 return;
             }
+            var settings = ClipAngel.Properties.Settings.Default;
             foreach (DataGridViewCell cell in row.Cells)
             {
-                if (fav)
-                    cell.Style.BackColor = favoriteColor;
-                else if (used)
-                    cell.Style.BackColor = _usedColor;
+                if (fav && settings.TintFavoriteClips)
+                {
+                    cell.Style.BackColor = settings.FavoriteClipColor;
+                    cell.Style.ForeColor = settings.FavoriteClipTextColor;
+                }
+                else if (used && settings.TintUsedClips)
+                {
+                    cell.Style.BackColor = settings.UsedClipColor;
+                    cell.Style.ForeColor = settings.UsedClipTextColor;
+                }
                 else
+                {
                     cell.Style.BackColor = default(Color);
+                    cell.Style.ForeColor = default(Color);
+                }
             }
         }
 

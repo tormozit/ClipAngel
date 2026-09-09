@@ -252,6 +252,78 @@ namespace ClipAngel.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool TintFavoriteClips {
+            get {
+                return ((bool)(this["TintFavoriteClips"]));
+            }
+            set {
+                this["TintFavoriteClips"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("255, 230, 220")]
+        public global::System.Drawing.Color FavoriteClipColor {
+            get {
+                return ((global::System.Drawing.Color)(this["FavoriteClipColor"]));
+            }
+            set {
+                this["FavoriteClipColor"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Black")]
+        public global::System.Drawing.Color FavoriteClipTextColor {
+            get {
+                return ((global::System.Drawing.Color)(this["FavoriteClipTextColor"]));
+            }
+            set {
+                this["FavoriteClipTextColor"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool TintUsedClips {
+            get {
+                return ((bool)(this["TintUsedClips"]));
+            }
+            set {
+                this["TintUsedClips"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("210, 255, 255")]
+        public global::System.Drawing.Color UsedClipColor {
+            get {
+                return ((global::System.Drawing.Color)(this["UsedClipColor"]));
+            }
+            set {
+                this["UsedClipColor"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Black")]
+        public global::System.Drawing.Color UsedClipTextColor {
+            get {
+                return ((global::System.Drawing.Color)(this["UsedClipTextColor"]));
+            }
+            set {
+                this["UsedClipTextColor"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("Alt + B")]
         public string GlobalHotkeyOpenFavorites {
             get {

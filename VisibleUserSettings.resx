@@ -359,6 +359,42 @@ This format is usually  used by password managers when copying passwords to clip
   <data name="Max1CCodeSizeToColorize" xml:space="preserve">
     <value>Max 1C code size to colorize</value>
   </data>
+  <data name="TintFavoriteClips" xml:space="preserve">
+    <value>Tint favorite clips</value>
+  </data>
+  <data name="TintFavoriteClipsDescription" xml:space="preserve">
+    <value>Highlight favorite clips in the list with a background color. Turn off to leave favorites with the normal row color.</value>
+  </data>
+  <data name="FavoriteClipColor" xml:space="preserve">
+    <value>Favorite clip background color</value>
+  </data>
+  <data name="FavoriteClipColorDescription" xml:space="preserve">
+    <value>Background color used for favorite clips in the list.</value>
+  </data>
+  <data name="FavoriteClipTextColor" xml:space="preserve">
+    <value>Favorite clip text color</value>
+  </data>
+  <data name="FavoriteClipTextColorDescription" xml:space="preserve">
+    <value>Text (foreground) color used for favorite clips in the list. Set a contrasting color to keep favorites readable.</value>
+  </data>
+  <data name="TintUsedClips" xml:space="preserve">
+    <value>Tint used clips</value>
+  </data>
+  <data name="TintUsedClipsDescription" xml:space="preserve">
+    <value>Highlight clips that have already been pasted (used) with a background color. Turn off to leave used clips with the normal row color.</value>
+  </data>
+  <data name="UsedClipColor" xml:space="preserve">
+    <value>Used clip background color</value>
+  </data>
+  <data name="UsedClipColorDescription" xml:space="preserve">
+    <value>Background color used for clips that have already been pasted (used).</value>
+  </data>
+  <data name="UsedClipTextColor" xml:space="preserve">
+    <value>Used clip text color</value>
+  </data>
+  <data name="UsedClipTextColorDescription" xml:space="preserve">
+    <value>Text (foreground) color used for clips that have already been pasted (used). Set a contrasting color to keep used clips readable.</value>
+  </data>
   <data name="Max1CCodeSizeToColorizeDescription" xml:space="preserve">
     <value>Max 1C (Russian programming platform) code size in chars to colorize syntax. 1C code capture is detected by text content. 0 - do not colorize</value>
   </data>
