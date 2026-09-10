@@ -243,6 +243,18 @@
   <data name="FastWindowOpenDescription" xml:space="preserve">
     <value>Ускоренное открытие окна через применение некоторых трюков. Может приводить к некоторым незначительным проблемам открытия/закрытия окна.</value>
   </data>
+  <data name="FavoriteClipColor" xml:space="preserve">
+    <value>Цвет фона любимых клипов</value>
+  </data>
+  <data name="FavoriteClipColorDescription" xml:space="preserve">
+    <value>Цвет фона любимых клипов в списке </value>
+  </data>
+  <data name="FavoriteClipTextColor" xml:space="preserve">
+    <value>Цвет текста любимых клипов</value>
+  </data>
+  <data name="FavoriteClipTextColorDescription" xml:space="preserve">
+    <value>Цвет текста любимых клипов в списке</value>
+  </data>
   <data name="FilterListBySearchString" xml:space="preserve">
     <value>Фильтровать список строкой поиска</value>
   </data>
@@ -503,6 +515,30 @@ WinMerge, Araxis Merge, DiffMerge, Kdiff3. Для сравнения текст�
   </data>
   <data name="TextEditorDescription" xml:space="preserve">
     <value>Используется в команде "Открыть файл" клипа. Оставьте пустым для использования назначенного в ОС приложения открытия файлов текста (TXT).</value>
+  </data>
+  <data name="TintFavoriteClips" xml:space="preserve">
+    <value>Окрашивать любимые клипы</value>
+  </data>
+  <data name="TintFavoriteClipsDescription" xml:space="preserve">
+    <value>Окрашивать любимые клипы в списке выбранными цветами. Иначе использовать стандартную окраску.</value>
+  </data>
+  <data name="TintUsedClips" xml:space="preserve">
+    <value>Окрашивать использованные клипы</value>
+  </data>
+  <data name="TintUsedClipsDescription" xml:space="preserve">
+    <value>Окрашивать использованные клипы в списке выбранными цветами. Иначе использовать стандартную окраску.</value>
+  </data>
+  <data name="UsedClipColor" xml:space="preserve">
+    <value>Цвет фона использованных клипов</value>
+  </data>
+  <data name="UsedClipColorDescription" xml:space="preserve">
+    <value>Цвет фона использованных клипов в списке</value>
+  </data>
+  <data name="UsedClipTextColor" xml:space="preserve">
+    <value>Цвет текста использованных клипов</value>
+  </data>
+  <data name="UsedClipTextColorDescription" xml:space="preserve">
+    <value>Цвет текста использованных клипов в списке</value>
   </data>
   <data name="UseFormattingInDuplicateDetection" xml:space="preserve">
     <value>Использовать оформление при поиске дублей</value>

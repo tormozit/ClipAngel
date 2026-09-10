@@ -679,6 +679,54 @@ Gdy opcja jest wyłączona wyszukuje tylko w tekście i tytule klipów</target>
 Fragmenty adresów należy oddzielać przecinkami "," lub średnikami ";"
 Przykład: youtube.com,facebook.com</target>
         </trans-unit>
+        <trans-unit id="TintFavoriteClips" translate="yes" xml:space="preserve">
+          <source>Tint favorite clips</source>
+          <target state="new">Tint favorite clips</target>
+        </trans-unit>
+        <trans-unit id="TintFavoriteClipsDescription" translate="yes" xml:space="preserve">
+          <source>Highlight favorite clips in the list with a background color. Turn off to leave favorites with the normal row color.</source>
+          <target state="new">Highlight favorite clips in the list with a background color. Turn off to leave favorites with the normal row color.</target>
+        </trans-unit>
+        <trans-unit id="FavoriteClipColor" translate="yes" xml:space="preserve">
+          <source>Favorite clip background color</source>
+          <target state="new">Favorite clip background color</target>
+        </trans-unit>
+        <trans-unit id="FavoriteClipColorDescription" translate="yes" xml:space="preserve">
+          <source>Background color used for favorite clips in the list.</source>
+          <target state="new">Background color used for favorite clips in the list.</target>
+        </trans-unit>
+        <trans-unit id="FavoriteClipTextColor" translate="yes" xml:space="preserve">
+          <source>Favorite clip text color</source>
+          <target state="new">Favorite clip text color</target>
+        </trans-unit>
+        <trans-unit id="FavoriteClipTextColorDescription" translate="yes" xml:space="preserve">
+          <source>Text (foreground) color used for favorite clips in the list. Set a contrasting color to keep favorites readable.</source>
+          <target state="new">Text (foreground) color used for favorite clips in the list. Set a contrasting color to keep favorites readable.</target>
+        </trans-unit>
+        <trans-unit id="TintUsedClips" translate="yes" xml:space="preserve">
+          <source>Tint used clips</source>
+          <target state="new">Tint used clips</target>
+        </trans-unit>
+        <trans-unit id="TintUsedClipsDescription" translate="yes" xml:space="preserve">
+          <source>Highlight clips that have already been pasted (used) with a background color. Turn off to leave used clips with the normal row color.</source>
+          <target state="new">Highlight clips that have already been pasted (used) with a background color. Turn off to leave used clips with the normal row color.</target>
+        </trans-unit>
+        <trans-unit id="UsedClipColor" translate="yes" xml:space="preserve">
+          <source>Used clip background color</source>
+          <target state="new">Used clip background color</target>
+        </trans-unit>
+        <trans-unit id="UsedClipColorDescription" translate="yes" xml:space="preserve">
+          <source>Background color used for clips that have already been pasted (used).</source>
+          <target state="new">Background color used for clips that have already been pasted (used).</target>
+        </trans-unit>
+        <trans-unit id="UsedClipTextColor" translate="yes" xml:space="preserve">
+          <source>Used clip text color</source>
+          <target state="new">Used clip text color</target>
+        </trans-unit>
+        <trans-unit id="UsedClipTextColorDescription" translate="yes" xml:space="preserve">
+          <source>Text (foreground) color used for clips that have already been pasted (used). Set a contrasting color to keep used clips readable.</source>
+          <target state="new">Text (foreground) color used for clips that have already been pasted (used). Set a contrasting color to keep used clips readable.</target>
+        </trans-unit>
       </group>
     </body>
   </file>
@@ -1779,6 +1827,10 @@ Przykład: youtube.com,facebook.com</target>
         <trans-unit id="_1c" translate="yes" xml:space="preserve">
           <source>1C data</source>
           <target state="new">1C data</target>
+        </trans-unit>
+        <trans-unit id="List colors" translate="yes" xml:space="preserve">
+          <source>List colors</source>
+          <target state="new">List colors</target>
         </trans-unit>
       </group>
     </body>
