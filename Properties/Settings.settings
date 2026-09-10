@@ -59,6 +59,24 @@
     <Setting Name="Font" Type="System.Drawing.Font" Scope="User">
       <Value Profile="(Default)">Segoe UI, 9pt</Value>
     </Setting>
+    <Setting Name="TintFavoriteClips" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="FavoriteClipColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">255, 230, 220</Value>
+    </Setting>
+    <Setting Name="FavoriteClipTextColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">Black</Value>
+    </Setting>
+    <Setting Name="TintUsedClips" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="UsedClipColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">210, 255, 255</Value>
+    </Setting>
+    <Setting Name="UsedClipTextColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">Black</Value>
+    </Setting>
     <Setting Name="GlobalHotkeyOpenFavorites" Type="System.String" Scope="User">
       <Value Profile="(Default)">Alt + B</Value>
     </Setting>

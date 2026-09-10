@@ -734,6 +734,12 @@ namespace ClipAngel
             FilterListBySearchString = Properties.Settings.Default.FilterListBySearchString;
             AutoSelectMatchedClip = Properties.Settings.Default.AutoSelectMatchedClip;
             Max1CCodeSizeToColorize = Properties.Settings.Default.Max1CCodeSizeToColorize;
+            TintFavoriteClips = Properties.Settings.Default.TintFavoriteClips;
+            FavoriteClipColor = Properties.Settings.Default.FavoriteClipColor;
+            FavoriteClipTextColor = Properties.Settings.Default.FavoriteClipTextColor;
+            TintUsedClips = Properties.Settings.Default.TintUsedClips;
+            UsedClipColor = Properties.Settings.Default.UsedClipColor;
+            UsedClipTextColor = Properties.Settings.Default.UsedClipTextColor;
             EncryptDatabaseForCurrentUser = Properties.Settings.Default.EncryptDatabaseForCurrentUser;
             ReplaceDuplicates = Properties.Settings.Default.ReplaceDuplicates;
             GlobalHotkeySwitchMonitoring = Properties.Settings.Default.GlobalHotkeySwitchMonitoring;
@@ -820,6 +826,12 @@ namespace ClipAngel
             Properties.Settings.Default.CaptureImages = CaptureImages;
             Properties.Settings.Default.DeleteNonFavoriteClipsOnExit = DeleteNonFavoriteClipsOnExit;
             Properties.Settings.Default.Max1CCodeSizeToColorize = Max1CCodeSizeToColorize;
+            Properties.Settings.Default.TintFavoriteClips = TintFavoriteClips;
+            Properties.Settings.Default.FavoriteClipColor = FavoriteClipColor;
+            Properties.Settings.Default.FavoriteClipTextColor = FavoriteClipTextColor;
+            Properties.Settings.Default.TintUsedClips = TintUsedClips;
+            Properties.Settings.Default.UsedClipColor = UsedClipColor;
+            Properties.Settings.Default.UsedClipTextColor = UsedClipTextColor;
             Properties.Settings.Default.EncryptDatabaseForCurrentUser = EncryptDatabaseForCurrentUser;
             Properties.Settings.Default.ReplaceDuplicates = ReplaceDuplicates;
             Properties.Settings.Default.GlobalHotkeySwitchMonitoring = GlobalHotkeySwitchMonitoring;
@@ -1015,6 +1027,26 @@ namespace ClipAngel
 
         [GlobalizedCategory("Other")]
         public int Max1CCodeSizeToColorize { get; set; }
+
+        [GlobalizedCategory("List colors")]
+        [Editor(typeof(MyBoolEditor), typeof(UITypeEditor))]
+        public bool TintFavoriteClips { get; set; }
+
+        [GlobalizedCategory("List colors")]
+        public Color FavoriteClipColor { get; set; }
+
+        [GlobalizedCategory("List colors")]
+        public Color FavoriteClipTextColor { get; set; }
+
+        [GlobalizedCategory("List colors")]
+        [Editor(typeof(MyBoolEditor), typeof(UITypeEditor))]
+        public bool TintUsedClips { get; set; }
+
+        [GlobalizedCategory("List colors")]
+        public Color UsedClipColor { get; set; }
+
+        [GlobalizedCategory("List colors")]
+        public Color UsedClipTextColor { get; set; }
 
         [GlobalizedCategory("Other")]
         [Editor(typeof(MyBoolEditor), typeof(UITypeEditor))]
