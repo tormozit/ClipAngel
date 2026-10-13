@@ -472,4 +472,64 @@
   <data name="_1c" xml:space="preserve">
     <value>1C данные</value>
   </data>
+  <data name="OcrNotAvailable" xml:space="preserve">
+    <value>OCR недоступно. Пожалуйста, настройте онлайн OCR или используйте Windows 10+.</value>
+  </data>
+  <data name="OcrEngineUnavailable" xml:space="preserve">
+    <value>Движок OCR недоступен. Установите языковой пакет с поддержкой OCR в Настройках Windows → Время и язык → Язык.</value>
+  </data>
+  <data name="OnlineOcrNotConfigured" xml:space="preserve">
+    <value>Онлайн OCR не настроен. Пожалуйста, укажите API ключ и адрес.</value>
+  </data>
+  <data name="OnlineOcrRetriesFailed" xml:space="preserve">
+    <value>Ошибка онлайн OCR после нескольких попыток</value>
+  </data>
+  <data name="OcrClipTitlePrefix" xml:space="preserve">
+    <value>OCR: </value>
+  </data>
+  <data name="Ocr" xml:space="preserve">
+    <value>OCR</value>
+  </data>
+  <data name="OcrToastCompleteTitle" xml:space="preserve">
+    <value>OCR завершено</value>
+  </data>
+  <data name="OcrToastCompleteBodyFormat" xml:space="preserve">
+    <value>Распознан текст: {0}</value>
+  </data>
+  <data name="UseOnlineOcr" xml:space="preserve">
+    <value>Использовать онлайн OCR</value>
+  </data>
+  <data name="UseOnlineOcrDescription" xml:space="preserve">
+    <value>Использовать онлайн-сервис OCR (OpenAI Vision / OpenRouter) для распознавания текста. Когда отключено или недоступно, используется встроенный движок Windows 10+.</value>
+  </data>
+  <data name="OnlineOcrApiKey" xml:space="preserve">
+    <value>API ключ онлайн OCR</value>
+  </data>
+  <data name="OnlineOcrApiKeyDescription" xml:space="preserve">
+    <value>API ключ для сервиса онлайн OCR (OpenAI / OpenRouter). Хранится локально; переменные окружения OPENAI_API_KEY или OPENROUTER_API_KEY имеют приоритет.</value>
+  </data>
+  <data name="OnlineOcrEndpoint" xml:space="preserve">
+    <value>Адрес онлайн OCR (endpoint)</value>
+  </data>
+  <data name="OnlineOcrEndpointDescription" xml:space="preserve">
+    <value>Базовый URL OpenAI-совместимого API (например, https://api.openai.com/v1 или адрес OpenRouter).</value>
+  </data>
+  <data name="OnlineOcrModel" xml:space="preserve">
+    <value>Модель онлайн OCR</value>
+  </data>
+  <data name="OnlineOcrModelDescription" xml:space="preserve">
+    <value>Имя модели с поддержкой Vision для онлайн OCR (например: gpt-4o).</value>
+  </data>
+  <data name="AutoOcrImages" xml:space="preserve">
+    <value>Автораспознавание текста в картинках</value>
+  </data>
+  <data name="AutoOcrImagesDescription" xml:space="preserve">
+    <value>Автоматически запускать OCR для каждого захваченного изображения и добавлять распознанный текст как новый клип. Требует настройки онлайн OCR.</value>
+  </data>
+  <data name="NotifyOnOcrComplete" xml:space="preserve">
+    <value>Уведомлять о завершении OCR</value>
+  </data>
+  <data name="NotifyOnOcrCompleteDescription" xml:space="preserve">
+    <value>Показывать всплывающее уведомление с кратким превью при завершении автоматического распознавания.</value>
+  </data>
 </root>

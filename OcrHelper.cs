@@ -63,6 +63,40 @@ namespace ClipAngel
             return Task.Run(() => RecognizeSync(bitmap, origW, origH));
         }
 
+        /// <summary>
+        /// Recognizes text in bitmap using either local OCR (Windows 10+) or online OCR (OpenAI).
+        /// Automatically selects the appropriate OCR method based on settings and availability.
+        /// </summary>
+        public static async Task<string> RecognizeTextAutoAsync(Bitmap bitmap)
+        {
+            bool useOnlineOcr = Properties.Settings.Default.UseOnlineOcr;
+            string apiKey = Properties.Settings.Default.OnlineOcrApiKey;
+            string endpoint = Properties.Settings.Default.OnlineOcrEndpoint;
+            string model = Properties.Settings.Default.OnlineOcrModel;
+
+            // Try online OCR first if configured
+            if (useOnlineOcr && OnlineOcrHelper.IsOnlineOcrConfigured(apiKey, endpoint))
+            {
+                try
+                {
+                    return await OnlineOcrHelper.RecognizeTextAsync(bitmap, apiKey, endpoint, model);
+                }
+                catch (Exception ex)
+                {
+                    // Fallback to local OCR if online fails
+                    System.Diagnostics.Debug.WriteLine($"Online OCR failed: {ex.Message}");
+                }
+            }
+
+            // Fallback to local OCR
+            if (IsOcrSupported())
+            {
+                return await RecognizeTextAsync(bitmap);
+            }
+
+            throw new InvalidOperationException(Properties.Resources.OcrNotAvailable);
+        }
+
         // ── private implementation ────────────────────────────────────────────────
 
         private static string RecognizeSync(Bitmap bitmap, int origW, int origH)
@@ -139,9 +173,7 @@ namespace ClipAngel
                     BindingFlags.Public | BindingFlags.Static);
                 object engine = tryCreate.Invoke(null, null);
                 if (engine == null)
-                    throw new InvalidOperationException(
-                        "OCR engine unavailable. Install a language pack with OCR support in " +
-                        "Windows Settings \u2192 Time & Language \u2192 Language.");
+                    throw new InvalidOperationException(Properties.Resources.OcrEngineUnavailable);
 
                 // ── 6. engine.RecognizeAsync(softBitmap) ──────────────────────────
                 MethodInfo recognizeAsync = GetInstanceMethod(
