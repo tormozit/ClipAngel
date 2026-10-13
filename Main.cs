@@ -5498,7 +5498,7 @@ namespace ClipAngel
             toolStripUpdateToSeparator.Visible = false;
             try
             {
-                ServicePointManager.SecurityProtocol = SecurityProtocolType.Ssl3 | SecurityProtocolType.Tls | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls12;
+                ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
                 using (WebClient webClient = new WebClient())
                 {
                     webClient.Proxy.Credentials = CredentialCache.DefaultCredentials;
@@ -5548,6 +5548,7 @@ namespace ClipAngel
 
         private void RunUpdate()
         {
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
             using (WebClient webClient = new WebClient())
             {
                 webClient.Proxy.Credentials = CredentialCache.DefaultCredentials;
