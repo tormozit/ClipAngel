@@ -2826,7 +2826,7 @@ namespace ClipAngel
                 return null;
             headerSize = BitConverter.ToInt32(dibBytes, 0);
             // Only supporting 40-byte DIB from clipboard
-            if (headerSize != 40)
+            if (headerSize != 40 || dibBytes.Length < headerSize)
                 return null;
 
             // First - try get 24b bitmap + 8b alpfa (transparency)
@@ -2837,18 +2837,54 @@ namespace ClipAngel
             planes = BitConverter.ToInt16(dibBytes, 12);
             bitCount = BitConverter.ToInt16(dibBytes, 14);
             compression = BitConverter.ToInt32(dibBytes, 16);
-            if (bitCount == 32 && planes == 1 && (compression == 0))
+            // Negative biHeight means a top-down DIB: rows are already stored top-to-bottom
+            var topDown = height < 0;
+            var bitmapHeight = topDown ? -(long)height : height;
+            var stride = (long)width * 4;
+            if (bitCount == 32 && planes == 1 && (compression == 0)
+                && width > 0 && bitmapHeight > 0 && bitmapHeight <= int.MaxValue
+                && stride <= int.MaxValue
+                && headerSize + stride * bitmapHeight <= dibBytes.Length)
             {
-                var gch = GCHandle.Alloc(dibBytes, GCHandleType.Pinned);
+                Bitmap source = null;
                 try
                 {
-                    var ptr = new IntPtr((long)gch.AddrOfPinnedObject() + headerSize);
-                    bitmap = new Bitmap(width, height, width * 4, PixelFormat.Format32bppArgb, ptr);
-                    bitmap.RotateFlip(RotateFlipType.Rotate180FlipX);
+                    // Own the pixels before returning: clipboard bytes can move or be released.
+                    source = new Bitmap(width, (int)bitmapHeight, PixelFormat.Format32bppArgb);
+                    var data = source.LockBits(new Rectangle(0, 0, source.Width, source.Height),
+                        ImageLockMode.WriteOnly, PixelFormat.Format32bppArgb);
+                    try
+                    {
+                        for (var y = 0; y < source.Height; y++)
+                        {
+                            var sourceRow = topDown ? y : source.Height - 1 - y;
+                            Marshal.Copy(dibBytes, (int)(headerSize + sourceRow * stride),
+                                IntPtr.Add(data.Scan0, y * data.Stride), (int)stride);
+                        }
+                    }
+                    finally
+                    {
+                        source.UnlockBits(data);
+                    }
+                    bitmap = source;
+                }
+                catch (ExternalException)
+                {
+                    // Malformed DIB: let the caller fall back to DataFormats.Bitmap
+                    bitmap = null;
+                }
+                catch (ArgumentException)
+                {
+                    bitmap = null;
+                }
+                catch (OutOfMemoryException)
+                {
+                    bitmap = null;
                 }
                 finally
                 {
-                    gch.Free();
+                    if (source != null && bitmap != source)
+                        source.Dispose();
                 }
             }
             return bitmap;

@@ -671,6 +671,15 @@ namespace ClipAngel.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to List colors.
+        /// </summary>
+        public static string List_colors {
+            get {
+                return ResourceManager.GetString("List colors", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         public static System.Drawing.Bitmap MarkFavorite {
@@ -1188,7 +1197,7 @@ namespace ClipAngel.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 2.23.
+        ///   Looks up a localized string similar to 2.24.
         /// </summary>
         public static string VersionValue {
             get {

@@ -1693,8 +1693,8 @@ Przykład: youtube.com,facebook.com</target>
           <target state="translated">Klip nie został przechwycony ze względu na błąd odczytu schowka</target>
         </trans-unit>
         <trans-unit id="VersionValue" translate="yes" xml:space="preserve">
-          <source>2.23</source>
-          <target state="new">2.23</target>
+          <source>2.24</source>
+          <target state="new">2.24</target>
         </trans-unit>
         <trans-unit id="TargetWindow" translate="yes" xml:space="preserve">
           <source>Target window</source>
