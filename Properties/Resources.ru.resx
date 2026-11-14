@@ -472,4 +472,7 @@
   <data name="_1c" xml:space="preserve">
     <value>1C данные</value>
   </data>
+  <data name="List colors" xml:space="preserve">
+    <value>Цвета списка</value>
+  </data>
 </root>
